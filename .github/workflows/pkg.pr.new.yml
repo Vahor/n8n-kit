@@ -1,0 +1,19 @@
+name: Publish Pull Requests
+on:
+  pull_request:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build package
+        run: bun run build 
+      - name: Publish package
+        run: bunx pkg-pr-new publish --packageManager=bun

@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.repository == 'vahor/n8n-builder'
+    permissions:
+      contents: write # to create release (changesets/action)
+      id-token: write # OpenID Connect token needed for provenance
+      pull-requests: write # to create pull request (changesets/action)
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build package
+        run: bun run build 
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1.5.3
+        with:
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+          publish: bunx @changesets/cli publish
+          commitMode: github-api
+        env:
+          GITHUB_TOKEN: ${{ secrets.CHANGESET_PAT_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_ENV: production
+          NPM_CONFIG_PROVENANCE: true
+          HUSKY: 0
