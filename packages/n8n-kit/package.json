@@ -65,7 +65,8 @@
 		"@dagrejs/dagre": "^1.1.5"
 	},
 	"devDependencies": {
-		"typescript": "catalog:"
+		"typescript": "catalog:",
+		"tsdown": "catalog:"
 	},
 	"scripts": {
 		"build": "bunx tsdown",

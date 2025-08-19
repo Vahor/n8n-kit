@@ -1,0 +1,46 @@
+{
+	"name": "@vahor/n8n-kit-cli",
+	"version": "0.0.0",
+	"description": "CLI for n8n-kit",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Vahor/n8n-kit.git",
+		"directory": "packages/n8n-cli"
+	},
+	"bin": "dist/n8n-kit",
+	"type": "module",
+	"private": false,
+	"author": {
+		"email": "me@vahor.fr"
+	},
+	"keywords": [
+		"n8n",
+		"builder",
+		"workflow",
+		"automation"
+	],
+	"scripts": {
+		"build": "bunx tsdown",
+		"dev": "bunx tsdown --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"chalk": "^5.6.0",
+		"execa": "^9.6.0",
+		"ink-select-input": "^6.2.0",
+		"ink-table": "^3.1.0",
+		"yargs": "^17.7.2",
+		"zod": "^4.0.17"
+	},
+	"devDependencies": {
+		"typescript": "catalog:",
+		"tsdown": "catalog:"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"bun": ">=1.2.20"
+	}
+}

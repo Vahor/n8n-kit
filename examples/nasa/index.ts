@@ -25,4 +25,6 @@ const workflow = new Workflow("My workflow", {
 		),
 });
 
-console.log(JSON.stringify(workflow.build(), null, 2));
+const app = workflow;
+
+export { app };
