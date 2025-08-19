@@ -55,6 +55,6 @@ export const handler = async (
 	for (const workflow of app.workflows) {
 		const workflowPath = path.join(outputFolder, workflow.id);
 		await fs.promises.writeFile(workflowPath, JSON.stringify(workflow.build()));
-		console.log(`Wrote workflow ${workflow.id} to ${workflowPath}`);
+		console.log(`Wrote workflow '${workflow.id}' to ${workflowPath}`);
 	}
 };
