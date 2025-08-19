@@ -1,4 +1,5 @@
 import {
+	App,
 	If,
 	NoOp,
 	ScheduleTrigger,
@@ -25,6 +26,7 @@ const workflow = new Workflow("My workflow", {
 		),
 });
 
-const app = workflow;
+const app = new App();
+app.add(workflow);
 
 export { app };

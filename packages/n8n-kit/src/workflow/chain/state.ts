@@ -1,36 +1,36 @@
 import type { IChainable, INextable } from "./types";
 
-interface ChoiceTransition {
-	next: State;
-}
-
 export abstract class State implements IChainable {
 	public readonly id: string;
 
 	public readonly startState: State;
 	public abstract readonly endStates: INextable[];
 
-	public readonly choices: ChoiceTransition[] = [];
-
 	private readonly incomingStates: State[] = [];
-
-	private _next?: State;
+	private readonly nextStates: Map<number, State> = new Map(); // index -> state
 
 	public constructor(id: string) {
 		this.id = id;
 		this.startState = this;
 	}
 
-	public setNext(state: State) {
-		if (this._next) {
-			throw new Error(`State ${this.id} already has a next state`);
+	private setNext(index: number, state: State, override: boolean = false) {
+		const current = this.nextStates.get(index);
+		if (current && !override) {
+			throw new Error(
+				`Cannot override next state at index ${index}. Use \`override\` to override.`,
+			);
 		}
-		this._next = state;
-		state.addIncoming(this);
+		this.nextStates.set(index, state);
 	}
 
-	public addChoice(next: State) {
-		this.choices.push({ next });
+	public addNext(
+		state: State,
+		index: number | undefined = undefined,
+		override: boolean = false,
+	) {
+		this.setNext(index ?? this.nextStates.size, state, override);
+		state.addIncoming(this);
 	}
 
 	private addIncoming(source: State) {
@@ -40,20 +40,10 @@ export abstract class State implements IChainable {
 		this.incomingStates.push(source);
 	}
 
-	/**
-	 * Get the next state in the chain
-	 */
-	public get nextState(): State | undefined {
-		return this._next;
-	}
-
 	public listOutgoing(): State[] {
 		const ret: State[] = [];
-		if (this._next) {
-			ret.push(this._next);
-		}
-		for (const c of this.choices) {
-			ret.push(c.next);
+		for (const state of this.nextStates.values()) {
+			ret.push(state);
 		}
 		return ret;
 	}

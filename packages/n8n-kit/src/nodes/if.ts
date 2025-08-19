@@ -13,12 +13,12 @@ export class If extends BaseNode {
 	}
 
 	public true(next: IChainable) {
-		super.addChoice(next.startState);
+		super.addNext(next.startState);
 		return this;
 	}
 
 	public false(next: IChainable) {
-		super.addChoice(next.startState);
+		super.addNext(next.startState);
 		return this;
 	}
 

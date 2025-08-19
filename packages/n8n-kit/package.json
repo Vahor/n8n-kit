@@ -62,7 +62,8 @@
 		"automation"
 	],
 	"dependencies": {
-		"@dagrejs/dagre": "^1.1.5"
+		"@dagrejs/dagre": "^1.1.5",
+		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
 		"typescript": "catalog:",

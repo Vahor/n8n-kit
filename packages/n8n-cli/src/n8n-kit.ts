@@ -3,6 +3,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || "production";
 import chalk from "chalk";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import * as z from "zod";
 
 export const yargsInstance = yargs(hideBin(process.argv));
 
@@ -45,7 +46,11 @@ yargsInstance
 		}
 
 		if (error) {
-			console.error(chalk.red(error));
+			if (error instanceof z.ZodError) {
+				console.error(chalk.red(z.prettifyError(error)));
+			} else {
+				console.error(chalk.red(error));
+			}
 		}
 		process.exit(1);
 	})

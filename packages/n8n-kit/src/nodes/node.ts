@@ -52,7 +52,7 @@ export abstract class Node extends BaseNode implements INextable {
 	}
 
 	public next(next: IChainable): Chain {
-		super.setNext(next.startState);
+		super.addNext(next.startState);
 		return Chain.sequence(this, next);
 	}
 }

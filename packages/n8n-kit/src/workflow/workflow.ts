@@ -1,4 +1,5 @@
 import { BaseNode } from "../nodes/node";
+import { slugifyIdentifier } from "../utils/slugify";
 import type { Chain } from "./chain/chain";
 import { calculateLayout } from "./layout";
 import type { Tag } from "./tag";
@@ -14,11 +15,15 @@ interface WorkflowProps {
 
 export class Workflow {
 	public readonly id: string;
-	private readonly props: WorkflowProps;
+	public readonly props: WorkflowProps;
 
 	public constructor(id: string, props: WorkflowProps) {
-		this.id = id;
+		this.id = slugifyIdentifier(id);
 		this.props = props;
+	}
+
+	public getName() {
+		return this.props.name ?? "Untitled";
 	}
 
 	public build() {
@@ -45,7 +50,7 @@ export class Workflow {
 
 		return {
 			id: this.id,
-			name: this.props.name ?? "Untitled",
+			name: this.getName(),
 			nodes: nodes
 				.concat(this.props.unlinkedNodes ?? [])
 				.map((node) => node.toNode()),
@@ -57,4 +62,6 @@ export class Workflow {
 			tags: this.props.tags,
 		};
 	}
+
+	public "~validate"() {}
 }

@@ -8,7 +8,8 @@
 		],
 		"catalog": {
 			"tsdown": "^0.14.1",
-			"typescript": "^5.9.2"
+			"typescript": "^5.9.2",
+			"zod": "^4.0.17"
 		}
 	},
 	"description": "Build n8n workflows using code",
