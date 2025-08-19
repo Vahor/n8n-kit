@@ -1,3 +1,11 @@
+import {
+	If,
+	NoOp,
+	ScheduleTrigger,
+	StickyNote,
+	Workflow,
+} from "@vahor/n8n-kit";
+
 const workflow = new Workflow("My workflow", {
 	unlinkedNodes: [
 		new StickyNote("Sticky Note", {

@@ -16,7 +16,7 @@
 		"type": "git",
 		"url": "git+https://github.com/Vahor/n8n-kit.git"
 	},
-	"private": false,
+	"private": true,
 	"author": {
 		"email": "me@vahor.fr"
 	},
@@ -42,9 +42,6 @@
 		"build": "bun run build.ts",
 		"format": "bunx @biomejs/biome check ./ --write",
 		"typecheck": "tsc --noEmit --declaration"
-	},
-	"publishConfig": {
-		"access": "public"
 	},
 	"engines": {
 		"bun": ">=1.2.20"

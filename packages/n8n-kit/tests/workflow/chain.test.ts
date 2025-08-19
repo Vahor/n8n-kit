@@ -24,7 +24,7 @@ describe("Chain", () => {
 		const C = new If("C");
 		const D = new NoOp("D");
 
-		const chain = A.next(B).next(C.when(true, D));
+		const chain = A.next(B).next(C.true(D));
 
 		const workflow = new Workflow("test", {
 			definition: chain,
