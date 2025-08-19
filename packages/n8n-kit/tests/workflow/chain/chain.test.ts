@@ -4,9 +4,9 @@ import { NoOp } from "../../../src/nodes/no-ops";
 
 describe("Chain", () => {
 	test("can chain elements", () => {
-		const A = new NoOp("A");
-		const B = new NoOp("B");
-		const C = new NoOp("C");
+		const A = new NoOp("a");
+		const B = new NoOp("b");
+		const C = new NoOp("c");
 
 		const chain = A.next(B).next(C);
 
@@ -15,14 +15,14 @@ describe("Chain", () => {
 		});
 
 		const result = workflow.build();
-		expect(result.nodes.map((n) => n.id)).toEqual(["A", "B", "C"]);
+		expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c"]);
 	});
 
 	test("can loop elements", () => {
-		const A = new NoOp("A");
-		const B = new NoOp("B");
-		const C = new If("C");
-		const D = new NoOp("D");
+		const A = new NoOp("a");
+		const B = new NoOp("b");
+		const C = new If("c");
+		const D = new NoOp("d");
 
 		const chain = A.next(B).next(C.true(D));
 
@@ -31,6 +31,6 @@ describe("Chain", () => {
 		});
 
 		const result = workflow.build();
-		expect(result.nodes.map((n) => n.id)).toEqual(["A", "B", "C", "D"]);
+		expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c", "d"]);
 	});
 });

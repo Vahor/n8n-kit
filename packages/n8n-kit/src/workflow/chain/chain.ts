@@ -1,7 +1,21 @@
 import type { State } from "./state";
-import type { IChainable, INextable } from "./types";
+import type {
+	IChainable,
+	IContext,
+	INextable,
+	MergeIChainableContext,
+} from "./types";
 
 export const NO_END_STATES: INextable[] = [] as const;
+
+interface ChainContext {
+	[nodeId: string]: Record<string, unknown>;
+}
+
+type AddIChainableToChainContext<
+	N extends IChainable,
+	CC extends ChainContext,
+> = N extends IChainable<infer Id, infer C> ? { [k in Id]: C } & CC : CC;
 
 /**
  * A collection of states to chain onto
@@ -9,18 +23,25 @@ export const NO_END_STATES: INextable[] = [] as const;
  * A Chain has a start and zero or more chainable ends. If there are
  * zero ends, calling next() on the Chain will fail.
  */
-export class Chain implements IChainable {
+export class Chain<T extends ChainContext = {}> implements IChainable {
 	/**
 	 * Begin a new Chain from one chainable
 	 */
-	public static start(state: IChainable) {
-		return new Chain(state.startState, state.endStates, state);
+	public static start<N1 extends IChainable>(state: N1) {
+		return new Chain<AddIChainableToChainContext<N1, {}>>(
+			state.startState,
+			state.endStates,
+			state,
+		);
 	}
 
 	/**
 	 * Make a Chain with the start from one chain and the ends from another
 	 */
-	public static sequence(start: IChainable, next: IChainable) {
+	public static sequence<N1 extends IChainable, N2 extends IChainable>(
+		start: N1,
+		next: N2,
+	): Chain<MergeIChainableContext<N1, N2>> {
 		return new Chain(start.startState, next.endStates, next);
 	}
 
@@ -53,7 +74,7 @@ export class Chain implements IChainable {
 	private constructor(
 		startState: State,
 		endStates: INextable[],
-		private readonly lastAdded: IChainable,
+		private readonly lastAdded: IChainable<string>,
 	) {
 		this.id = lastAdded.id;
 		this.startState = startState;
@@ -63,7 +84,9 @@ export class Chain implements IChainable {
 	/**
 	 * Continue normal execution with the given state
 	 */
-	public next(next: IChainable): Chain {
+	public next<N extends IChainable>(
+		next: N,
+	): Chain<AddIChainableToChainContext<N, T>> {
 		if (!this.endStates || this.endStates.length === 0) {
 			throw new Error(
 				`Cannot add to chain: last state in chain (${this.lastAdded.id}) does not allow it`,

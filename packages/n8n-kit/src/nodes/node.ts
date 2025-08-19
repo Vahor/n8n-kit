@@ -1,6 +1,6 @@
 import { Chain } from "../workflow/chain/chain";
 import { State } from "../workflow/chain/state";
-import type { IChainable, INextable } from "../workflow/chain/types";
+import type { IChainable, IContext, INextable } from "../workflow/chain/types";
 
 /**
  * Position of the node in the n8n workflow editor.
@@ -21,7 +21,10 @@ export const DEFAULT_NODE_SIZE: NodeSize = {
 	height: 100,
 };
 
-export abstract class BaseNode extends State {
+export abstract class BaseNode<
+	LiteralId extends string = string,
+	T extends IContext = {},
+> extends State<LiteralId, T> {
 	public readonly name?: string;
 
 	protected abstract type: string;
@@ -43,15 +46,18 @@ export abstract class BaseNode extends State {
 	}
 }
 
-export abstract class Node extends BaseNode implements INextable {
+export abstract class Node<LiteralId extends string, T extends IContext>
+	extends BaseNode<LiteralId, T>
+	implements INextable
+{
 	public readonly endStates: INextable[];
 
-	constructor(id: string) {
+	constructor(id: LiteralId) {
 		super(id);
 		this.endStates = [this];
 	}
 
-	public next(next: IChainable): Chain {
+	public next<N extends IChainable>(next: N) {
 		super.addNext(next.startState);
 		return Chain.sequence(this, next);
 	}

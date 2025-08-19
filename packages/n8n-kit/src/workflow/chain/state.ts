@@ -1,7 +1,12 @@
-import type { IChainable, INextable } from "./types";
+import { validateIdentifier } from "../../utils/slugify";
+import type { IChainable, IContext, INextable } from "./types";
 
-export abstract class State implements IChainable {
-	public readonly id: string;
+export abstract class State<
+	LiteralId extends string = string,
+	T extends IContext = {},
+> implements IChainable<LiteralId, T>
+{
+	public readonly id: LiteralId;
 
 	public readonly startState: State;
 	public abstract readonly endStates: INextable[];
@@ -9,8 +14,8 @@ export abstract class State implements IChainable {
 	private readonly incomingStates: State[] = [];
 	private readonly nextStates: Map<number, State> = new Map(); // index -> state
 
-	public constructor(id: string) {
-		this.id = id;
+	public constructor(id: LiteralId) {
+		this.id = validateIdentifier(id);
 		this.startState = this;
 	}
 

@@ -13,17 +13,18 @@ export interface INextable {
 	next(state: IChainable): Chain;
 }
 
-export interface Identifiable {
+export interface Identifiable<Id extends string = string> {
 	/**
 	 * Descriptive identifier for this element
 	 */
-	readonly id: string;
+	readonly id: Id;
 }
 
 /**
  * Interface for objects that can be used in a Chain
  */
-export interface IChainable extends Identifiable {
+export interface IChainable<Id extends string = string, C extends IContext = {}>
+	extends Identifiable<Id> {
 	/**
 	 * The start state of this chainable
 	 */
@@ -34,3 +35,11 @@ export interface IChainable extends Identifiable {
 	 */
 	readonly endStates: INextable[];
 }
+
+export type MergeIChainableContext<
+	N1 extends IChainable,
+	N2 extends IChainable,
+> = (N1 extends IChainable<infer Id1, infer C1> ? { [k in Id1]: C1 } : {}) &
+	(N2 extends IChainable<infer Id2, infer C2> ? { [k in Id2]: C2 } : {});
+
+export type IContext = Record<string, unknown>;

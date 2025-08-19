@@ -1,5 +1,5 @@
 import { BaseNode } from "../nodes/node";
-import { slugifyIdentifier } from "../utils/slugify";
+import { validateIdentifier } from "../utils/slugify";
 import type { Chain } from "./chain/chain";
 import { calculateLayout } from "./layout";
 import type { Tag } from "./tag";
@@ -18,7 +18,7 @@ export class Workflow {
 	public readonly props: WorkflowProps;
 
 	public constructor(id: string, props: WorkflowProps) {
-		this.id = slugifyIdentifier(id);
+		this.id = validateIdentifier(id);
 		this.props = props;
 	}
 
