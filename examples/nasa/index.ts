@@ -1,6 +1,3 @@
-import { NoOp, Workflow } from "../../src";
-import { If, ScheduleTrigger, StickyNote } from "../../src/nodes";
-
 const workflow = new Workflow("My workflow", {
 	unlinkedNodes: [
 		new StickyNote("Sticky Note", {

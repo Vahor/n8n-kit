@@ -1,25 +1,22 @@
 {
-	"name": "@vahor/n8n-kit",
+	"name": "@vahor/n8n-kit-workspace",
 	"version": "0.0.0",
+	"workspaces": {
+		"packages": [
+			"packages/*",
+			"examples/*"
+		],
+		"catalog": {
+			"typescript": "^5.9.2"
+		}
+	},
 	"description": "Build n8n workflows using code",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Vahor/n8n-kit.git"
 	},
-	"module": "index.ts",
-	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"default": "./dist/index.js"
-		}
-	},
-	"main": "./dist/index.cjs",
 	"private": false,
-	"files": [
-		"dist"
-	],
 	"author": {
 		"email": "me@vahor.fr"
 	},
@@ -36,9 +33,9 @@
 		"@types/bun": "^1.2.20",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.2",
-		"oxc-transform": "^0.82.2",
 		"pkg-pr-new": "^0.0.55",
-		"typescript": "^5.9.2"
+		"tsdown": "^0.14.1",
+		"typescript": "catalog:"
 	},
 	"scripts": {
 		"prepare": "husky",
@@ -46,18 +43,15 @@
 		"format": "bunx @biomejs/biome check ./ --write",
 		"typecheck": "tsc --noEmit --declaration"
 	},
-	"lint-staged": {
-		"*": [
-			"biome check --no-errors-on-unmatched --files-ignore-unknown=true"
-		]
-	},
 	"publishConfig": {
 		"access": "public"
 	},
 	"engines": {
 		"bun": ">=1.2.20"
 	},
-	"dependencies": {
-		"@dagrejs/dagre": "^1.1.5"
+	"lint-staged": {
+		"*": [
+			"biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+		]
 	}
 }

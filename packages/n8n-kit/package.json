@@ -1,0 +1,79 @@
+{
+	"name": "@vahor/n8n-kit",
+	"version": "0.0.0",
+	"description": "Build n8n workflows using code",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Vahor/n8n-kit.git",
+		"directory": "packages/n8n-kit"
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"type": "module",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"import": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		},
+		"./nodes": {
+			"import": {
+				"types": "./dist/nodes/index.d.cts",
+				"default": "./dist/nodes/index.mjs"
+			},
+			"require": {
+				"types": "./dist/nodes/index.d.cts",
+				"default": "./dist/nodes/index.cjs"
+			}
+		},
+		"./workflow": {
+			"import": {
+				"types": "./dist/workflow/index.d.cts",
+				"default": "./dist/workflow/index.mjs"
+			},
+			"require": {
+				"types": "./dist/workflow/index.d.cts",
+				"default": "./dist/workflow/index.cjs"
+			}
+		}
+	},
+	"private": false,
+	"files": [
+		"dist"
+	],
+	"author": {
+		"email": "me@vahor.fr"
+	},
+	"keywords": [
+		"n8n",
+		"builder",
+		"workflow",
+		"automation"
+	],
+	"dependencies": {
+		"@dagrejs/dagre": "^1.1.5"
+	},
+	"devDependencies": {
+		"typescript": "catalog:"
+	},
+	"scripts": {
+		"build": "bunx tsdown",
+		"dev": "bunx tsdown --watch",
+		"format": "bunx @biomejs/biome check ./ --write",
+		"typecheck": "tsc --noEmit --declaration"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"bun": ">=1.2.20"
+	}
+}
