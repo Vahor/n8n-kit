@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "@vahor/n8n-builder",
+      "name": "@vahor/n8n-kit",
       "dependencies": {
         "@dagrejs/dagre": "^1.1.5",
       },

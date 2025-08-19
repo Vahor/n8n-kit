@@ -11,7 +11,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: github.repository == 'vahor/n8n-builder'
+    if: github.repository == 'vahor/n8n-kit'
     permissions:
       contents: write # to create release (changesets/action)
       id-token: write # OpenID Connect token needed for provenance

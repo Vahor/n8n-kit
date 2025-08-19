@@ -1,11 +1,11 @@
 {
-	"name": "@vahor/n8n-builder",
+	"name": "@vahor/n8n-kit",
 	"version": "0.0.0",
 	"description": "Build n8n workflows using code",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Vahor/n8n-builder.git"
+		"url": "git+https://github.com/Vahor/n8n-kit.git"
 	},
 	"module": "index.ts",
 	"type": "module",
