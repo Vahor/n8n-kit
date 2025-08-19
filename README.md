@@ -18,6 +18,7 @@ bun run examples/nasa/index.ts > examples/nasa/output.json
 - Add more precise types
 - Node with multiple inputs (merge)
 - Node output type (stored and usable with a state parametrr in the next method)
+- Call to subworkflow with correct input parameters.
 
 
 - Add credentials references
