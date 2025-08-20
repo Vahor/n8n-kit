@@ -4,66 +4,43 @@
 export const name = "eventbriteTrigger" as const;
 export const description = "Handle Eventbrite events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = { name: "Eventbrite Trigger" } as const;
-export const credentials = [
-	{
-		name: "eventbriteApi",
-		required: true,
-		displayOptions: { show: { authentication: ["privateKey"] } },
-	},
-	{
-		name: "eventbriteOAuth2Api",
-		required: true,
-		displayOptions: { show: { authentication: ["oAuth2"] } },
-	},
-] as const;
+export const defaults = {"name":"Eventbrite Trigger"} as const;
+export const credentials = [{"name":"eventbriteApi","required":true,"displayOptions":{"show":{"authentication":["privateKey"]}}},{"name":"eventbriteOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Handle Eventbrite events via webhooks
  */
 export interface EventbriteTriggerNodeParameters {
-	/**
-	 * Default: "privateKey"
-	 */
-	readonly authentication?: "privateKey" | "oAuth2";
 
-	/**
-	 * The Eventbrite Organization to work on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getOrganizations"}
-	 */
-	readonly organization: string;
+    /**
+     * Default: "privateKey"
+     */
+    readonly authentication?: "privateKey" | "oAuth2";
 
-	/**
-	 * Limit the triggers to this event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsDependsOn":["organization"],"loadOptionsMethod":"getEvents"}
-	 */
-	readonly event: string;
+    /**
+     * The Eventbrite Organization to work on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getOrganizations"}
+     */
+    readonly organization: string;
 
-	/**
-	 * One or more action to subscribe to
-	 * Default: []
-	 */
-	readonly actions: (
-		| "attendee.checked_in"
-		| "attendee.checked_out"
-		| "attendee.updated"
-		| "event.created"
-		| "event.published"
-		| "event.unpublished"
-		| "event.updated"
-		| "order.placed"
-		| "order.refunded"
-		| "order.updated"
-		| "organizer.updated"
-		| "ticket_class.created"
-		| "ticket_class.deleted"
-		| "ticket_class.updated"
-		| "venue.updated"
-	)[];
+    /**
+     * Limit the triggers to this event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsDependsOn":["organization"],"loadOptionsMethod":"getEvents"}
+     */
+    readonly event: string;
 
-	/**
-	 * By default does the webhook-data only contain the URL to receive the object data manually. If this option gets activated, it will resolve the data automatically.
-	 * Default: true
-	 */
-	readonly resolveData?: boolean;
+    /**
+     * One or more action to subscribe to
+     * Default: []
+     */
+    readonly actions: ("attendee.checked_in" | "attendee.checked_out" | "attendee.updated" | "event.created" | "event.published" | "event.unpublished" | "event.updated" | "order.placed" | "order.refunded" | "order.updated" | "organizer.updated" | "ticket_class.created" | "ticket_class.deleted" | "ticket_class.updated" | "venue.updated")[];
+
+    /**
+     * By default does the webhook-data only contain the URL to receive the object data manually. If this option gets activated, it will resolve the data automatically.
+     * Default: true
+     */
+    readonly resolveData?: boolean;
+
+
 }
+

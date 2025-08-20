@@ -4,54 +4,44 @@
 export const name = "messageBird" as const;
 export const description = "Sends SMS via MessageBird" as const;
 export const version = 1 as const;
-export const defaults = { name: "MessageBird" } as const;
-export const credentials = [
-	{ name: "messageBirdApi", required: true },
-] as const;
+export const defaults = {"name":"MessageBird"} as const;
+export const credentials = [{"name":"messageBirdApi","required":true}] as const
 
 /**
  * Sends SMS via MessageBird
  */
 export interface MessageBirdNodeParameters {
-	/**
-	 * Default: "sms"
-	 */
-	readonly resource?: "sms" | "balance";
 
-	/**
-	 * Default: "send"
-	 */
-	readonly operation?: "send" | "get";
+    /**
+     * Default: "sms"
+     */
+    readonly resource?: "sms" | "balance";
 
-	/**
-	 * The number from which to send the message
-	 */
-	readonly originator: string;
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send" | "get";
 
-	/**
-	 * All recipients separated by commas
-	 */
-	readonly recipients: string;
+    /**
+     * The number from which to send the message
+     */
+    readonly originator?: string;
 
-	/**
-	 * The message to be send
-	 */
-	readonly message: string;
+    /**
+     * All recipients separated by commas
+     */
+    readonly recipients?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		createdDatetime: any;
-		datacoding: "auto" | "plain" | "unicode";
-		gateway: number;
-		groupIds: string;
-		mclass: "1" | "0";
-		reference: string;
-		reportUrl: string;
-		scheduledDatetime: any;
-		type: "binary" | "flash" | "sms";
-		typeDetails: string;
-		validity: number;
-	};
+    /**
+     * The message to be send
+     */
+    readonly message?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "createdDatetime"?: any, "datacoding"?: "auto" | "plain" | "unicode", "gateway"?: number, "groupIds"?: string, "mclass"?: "1" | "0", "reference"?: string, "reportUrl"?: string, "scheduledDatetime"?: any, "type"?: "binary" | "flash" | "sms", "typeDetails"?: string, "validity"?: number };
+
+
 }
+

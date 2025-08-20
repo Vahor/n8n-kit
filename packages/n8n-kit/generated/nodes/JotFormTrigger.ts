@@ -4,28 +4,32 @@
 export const name = "jotFormTrigger" as const;
 export const description = "Handle JotForm events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = { name: "JotForm Trigger" } as const;
-export const credentials = [{ name: "jotFormApi", required: true }] as const;
+export const defaults = {"name":"JotForm Trigger"} as const;
+export const credentials = [{"name":"jotFormApi","required":true}] as const
 
 /**
  * Handle JotForm events via webhooks
  */
 export interface JotFormTriggerNodeParameters {
-	/**
-	 * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-	 * Type options: {"loadOptionsMethod":"getForms"}
-	 */
-	readonly form: string;
 
-	/**
-	 * By default does the webhook-data use internal keys instead of the names. If this option gets activated, it will resolve the keys automatically to the actual names.
-	 * Default: true
-	 */
-	readonly resolveData?: boolean;
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getForms"}
+     */
+    readonly form: string;
 
-	/**
-	 * Whether to return only the answers of the form and not any of the other data
-	 * Default: true
-	 */
-	readonly onlyAnswers?: boolean;
+    /**
+     * By default does the webhook-data use internal keys instead of the names. If this option gets activated, it will resolve the keys automatically to the actual names.
+     * Default: true
+     */
+    readonly resolveData?: boolean;
+
+    /**
+     * Whether to return only the answers of the form and not any of the other data
+     * Default: true
+     */
+    readonly onlyAnswers?: boolean;
+
+
 }
+

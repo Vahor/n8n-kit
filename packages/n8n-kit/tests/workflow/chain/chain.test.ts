@@ -10,7 +10,6 @@ describe("Chain", () => {
 		const C = new NoOp("c");
 
 		const chain = Chain.start(A).next(B).next(C);
-
 		const workflow = new Workflow("test", {
 			definition: chain,
 		});

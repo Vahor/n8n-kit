@@ -4,48 +4,44 @@
 export const name = "sms77" as const;
 export const description = "Send SMS and make text-to-speech calls" as const;
 export const version = 1 as const;
-export const defaults = { name: "seven" } as const;
-export const credentials = [{ name: "sms77Api", required: true }] as const;
+export const defaults = {"name":"seven"} as const;
+export const credentials = [{"name":"sms77Api","required":true}] as const
 
 /**
  * Send SMS and make text-to-speech calls
  */
 export interface Sms77NodeParameters {
-	/**
-	 * Default: "sms"
-	 */
-	readonly resource?: "sms" | "voice";
 
-	/**
-	 * Default: "send"
-	 */
-	readonly operation?: "send";
+    /**
+     * Default: "sms"
+     */
+    readonly resource?: "sms" | "voice";
 
-	/**
-	 * The caller ID displayed in the receivers display. Max 16 numeric or 11 alphanumeric characters.
-	 */
-	readonly from?: string;
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send";
 
-	/**
-	 * The number of your recipient(s) separated by comma. Can be regular numbers or contact/groups from seven.
-	 */
-	readonly to: string;
+    /**
+     * The caller ID displayed in the receivers display. Max 16 numeric or 11 alphanumeric characters.
+     */
+    readonly from?: string;
 
-	/**
-	 * The message to send. Max. 1520 characters
-	 */
-	readonly message: string;
+    /**
+     * The number of your recipient(s) separated by comma. Can be regular numbers or contact/groups from seven.
+     */
+    readonly to?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		delay: any;
-		foreign_id: string;
-		flash: boolean;
-		label: string;
-		performance_tracking: boolean;
-		ttl: number;
-		from: string;
-	};
+    /**
+     * The message to send. Max. 1520 characters
+     */
+    readonly message?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "delay"?: any, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number, "from"?: string };
+
+
 }
+

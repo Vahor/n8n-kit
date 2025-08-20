@@ -1,6 +1,7 @@
 import {
 	App,
 	Chain,
+	expr,
 	If,
 	Nasa,
 	NoOp,
@@ -32,8 +33,15 @@ const workflow = new Workflow("my-workflow", {
 			],
 		}),
 	)
-		.next(new Nasa("nasa", {}))
-		.next(() =>
+		.next(
+			new Nasa("nasa", {
+				resource: "donkiSolarFlare",
+				additionalFields: {
+					startDate: expr`$today.minus(1, 'day')`,
+				},
+			}),
+		)
+		.next(({ $ }) =>
 			new If("if", {
 				combinator: "and",
 				conditions: [
@@ -42,7 +50,7 @@ const workflow = new Workflow("my-workflow", {
 							type: "string",
 							operation: "contains",
 						},
-						leftValue: "TODO use $",
+						leftValue: $("json.classType").toExpression(),
 						rightValue: "C",
 					},
 				],

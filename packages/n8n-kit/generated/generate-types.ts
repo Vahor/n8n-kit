@@ -21,6 +21,9 @@ type NodeDescription = {
 		name: string;
 		required: boolean;
 		description: string;
+		displayOptions?: {
+			show: Record<string, boolean>;
+		};
 		type:
 			| "boolean"
 			| "string"
@@ -31,6 +34,7 @@ type NodeDescription = {
 			| "number"
 			| "notice";
 		options?: Array<{
+			required?: boolean;
 			name?: string;
 			value: string;
 			description: string;
@@ -152,7 +156,7 @@ const toTypescriptType = (property: NodeDescription["properties"][number]) => {
 			if (property.options && Array.isArray(property.options)) {
 				let result = "{ ";
 				for (const option of property.options) {
-					result += `"${option.name}": ${toTypescriptType(option)}, `;
+					result += `"${option.name}"${option.required ? "" : "?"}: ${toTypescriptType(option)}, `;
 				}
 				// Remove the last comma
 				result = result.slice(0, -2);
@@ -202,11 +206,17 @@ const generateTypescriptNodeOutput = async (
 			continue;
 		}
 		const storedProperty = propertiesMapped[property.name];
+		if (property.displayOptions?.show !== undefined) {
+			// if the property can be hidden, it's optional
+			property.required = false;
+		}
+
 		if (storedProperty) {
-			if (property.required) {
-				// if one variant is required, make all variants required
-				storedProperty.required = true;
-			}
+			if (property.required === undefined)
+				if (!property.required) {
+					// if one variant is optional, make all variants optional
+					storedProperty.required = false;
+				}
 			if (property.options) {
 				// merge options
 				// merge array but only keep one unique name

@@ -2,60 +2,42 @@
 // Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Gmail/GmailTrigger.node.ts' node
 
 export const name = "gmailTrigger" as const;
-export const description =
-	"Fetches emails from Gmail and starts the workflow on specified polling intervals." as const;
+export const description = "Fetches emails from Gmail and starts the workflow on specified polling intervals." as const;
 export const version = 1.3 as const;
-export const defaults = { name: "Gmail Trigger" } as const;
-export const credentials = [
-	{
-		name: "googleApi",
-		required: true,
-		displayOptions: { show: { authentication: ["serviceAccount"] } },
-	},
-	{
-		name: "gmailOAuth2",
-		required: true,
-		displayOptions: { show: { authentication: ["oAuth2"] } },
-	},
-] as const;
+export const defaults = {"name":"Gmail Trigger"} as const;
+export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Fetches emails from Gmail and starts the workflow on specified polling intervals.
  */
 export interface GmailTriggerNodeParameters {
-	/**
-	 * Default: "oAuth2"
-	 */
-	readonly authentication?: "oAuth2" | "serviceAccount";
 
-	/**
-	 * Default: "messageReceived"
-	 */
-	readonly event?: "messageReceived";
+    /**
+     * Default: "oAuth2"
+     */
+    readonly authentication?: "oAuth2" | "serviceAccount";
 
-	/**
-	 * Whether to return a simplified version of the response instead of the raw data
-	 * Default: true
-	 */
-	readonly simple?: boolean;
+    /**
+     * Default: "messageReceived"
+     */
+    readonly event?: "messageReceived";
 
-	/**
-	 * Default: {}
-	 */
-	readonly filters?: {
-		includeSpamTrash: boolean;
-		includeDrafts: boolean;
-		labelIds: string[];
-		q: string;
-		readStatus: "both" | "unread" | "read";
-		sender: string;
-	};
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		dataPropertyAttachmentsPrefixName: string;
-		downloadAttachments: boolean;
-	};
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "includeSpamTrash"?: boolean, "includeDrafts"?: boolean, "labelIds"?: string[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "sender"?: string };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean };
+
+
 }
+

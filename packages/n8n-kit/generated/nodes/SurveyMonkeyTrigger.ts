@@ -23,28 +23,28 @@ export interface SurveyMonkeyTriggerNodeParameters {
 
     /**
      */
-    readonly event: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated";
+    readonly event?: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated";
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getSurveys"}
      */
-    readonly surveyIds: ()[];
+    readonly surveyIds?: ()[];
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getSurveys"}
      */
-    readonly surveyId: string;
+    readonly surveyId?: string;
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getCollectors","loadOptionsDependsOn":["surveyId"]}
      */
-    readonly collectorIds: ()[];
+    readonly collectorIds?: ()[];
 
     /**
      * By default the webhook-data only contain the IDs. If this option gets activated, it will resolve the data automatically.

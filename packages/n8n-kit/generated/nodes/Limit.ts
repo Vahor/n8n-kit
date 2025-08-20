@@ -4,23 +4,27 @@
 export const name = "limit" as const;
 export const description = "Restrict the number of items" as const;
 export const version = 1 as const;
-export const defaults = { name: "Limit" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Limit"} as const;
+export const credentials = undefined 
 
 /**
  * Restrict the number of items
  */
 export interface LimitNodeParameters {
-	/**
-	 * If there are more items than this number, some are removed
-	 * Default: 1
-	 * Type options: {"minValue":1}
-	 */
-	readonly maxItems?: number;
 
-	/**
-	 * When removing items, whether to keep the ones at the start or the ending
-	 * Default: "firstItems"
-	 */
-	readonly keep?: "firstItems" | "lastItems";
+    /**
+     * If there are more items than this number, some are removed
+     * Default: 1
+     * Type options: {"minValue":1}
+     */
+    readonly maxItems?: number;
+
+    /**
+     * When removing items, whether to keep the ones at the start or the ending
+     * Default: "firstItems"
+     */
+    readonly keep?: "firstItems" | "lastItems";
+
+
 }
+

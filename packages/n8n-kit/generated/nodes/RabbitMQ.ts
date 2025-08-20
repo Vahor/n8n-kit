@@ -4,71 +4,66 @@
 export const name = "rabbitmq" as const;
 export const description = "Sends messages to a RabbitMQ topic" as const;
 export const version = 1.1 as const;
-export const defaults = { name: "RabbitMQ" } as const;
-export const credentials = [
-	{ name: "rabbitmq", required: true, testedBy: "rabbitmqConnectionTest" },
-] as const;
+export const defaults = {"name":"RabbitMQ"} as const;
+export const credentials = [{"name":"rabbitmq","required":true,"testedBy":"rabbitmqConnectionTest"}] as const
 
 /**
  * Sends messages to a RabbitMQ topic
  */
 export interface RabbitMQNodeParameters {
-	/**
-	 * Default: "sendMessage"
-	 */
-	readonly operation?: any;
 
-	/**
-	 */
-	readonly deleteMessage?: string;
+    /**
+     * Default: "sendMessage"
+     */
+    readonly operation?: any;
 
-	/**
-	 * To where data should be moved
-	 * Default: "queue"
-	 */
-	readonly mode?: "queue" | "exchange";
+    /**
+     */
+    readonly deleteMessage?: string;
 
-	/**
-	 * Name of the queue to publish to
-	 */
-	readonly queue?: string;
+    /**
+     * To where data should be moved
+     * Default: "queue"
+     */
+    readonly mode?: "queue" | "exchange";
 
-	/**
-	 * Name of the exchange to publish to
-	 */
-	readonly exchange?: string;
+    /**
+     * Name of the queue to publish to
+     */
+    readonly queue?: string;
 
-	/**
-	 * Type of exchange
-	 * Default: "fanout"
-	 */
-	readonly exchangeType?: "direct" | "topic" | "headers" | "fanout";
+    /**
+     * Name of the exchange to publish to
+     */
+    readonly exchange?: string;
 
-	/**
-	 * The routing key for the message
-	 */
-	readonly routingKey?: string;
+    /**
+     * Type of exchange
+     * Default: "fanout"
+     */
+    readonly exchangeType?: "direct" | "topic" | "headers" | "fanout";
 
-	/**
-	 * Whether to send the data the node receives as JSON
-	 * Default: true
-	 */
-	readonly sendInputData?: boolean;
+    /**
+     * The routing key for the message
+     */
+    readonly routingKey?: string;
 
-	/**
-	 * The message to be sent
-	 */
-	readonly message?: string;
+    /**
+     * Whether to send the data the node receives as JSON
+     * Default: true
+     */
+    readonly sendInputData?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		alternateExchange: string;
-		arguments: { argument: any };
-		autoDelete: boolean;
-		durable: boolean;
-		exclusive: boolean;
-		headers: { header: any };
-	};
+    /**
+     * The message to be sent
+     */
+    readonly message?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "alternateExchange"?: string, "arguments"?: { "argument": any }, "autoDelete"?: boolean, "durable"?: boolean, "exclusive"?: boolean, "headers"?: { "header": any } };
+
+
 }
+

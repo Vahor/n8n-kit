@@ -4,55 +4,46 @@
 export const name = "html" as const;
 export const description = "Work with HTML" as const;
 export const version = 1.2 as const;
-export const defaults = { name: "HTML" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"HTML"} as const;
+export const credentials = undefined 
 
 /**
  * Work with HTML
  */
 export interface HtmlNodeParameters {
-	/**
-	 * Default: "generateHtmlTemplate"
-	 */
-	readonly operation?:
-		| "generateHtmlTemplate"
-		| "extractHtmlContent"
-		| "convertToHtmlTable";
 
-	/**
-	 * HTML template to render
-	 * Default: "placeholder"
-	 * Type options: {"editor":"htmlEditor"}
-	 */
-	readonly html?: string;
+    /**
+     * Default: "generateHtmlTemplate"
+     */
+    readonly operation?: "generateHtmlTemplate" | "extractHtmlContent" | "convertToHtmlTable";
 
-	/**
-	 */
-	readonly notice?: string;
+    /**
+     * HTML template to render
+     * Default: "placeholder"
+     * Type options: {"editor":"htmlEditor"}
+     */
+    readonly html?: string;
 
-	/**
-	 * If HTML should be read from binary or JSON data
-	 * Default: "json"
-	 */
-	readonly sourceData?: "binary" | "json";
+    /**
+     */
+    readonly notice?: string;
 
-	/**
-	 * Default: "data"
-	 */
-	readonly dataPropertyName: string;
+    /**
+     * If HTML should be read from binary or JSON data
+     * Default: "json"
+     */
+    readonly sourceData?: "binary" | "json";
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		trimValues: boolean;
-		cleanUpText: boolean;
-		capitalize: boolean;
-		customStyling: boolean;
-		caption: string;
-		tableAttributes: string;
-		headerAttributes: string;
-		rowAttributes: string;
-		cellAttributes: string;
-	};
+    /**
+     * Default: "data"
+     */
+    readonly dataPropertyName?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean, "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
+
+
 }
+

@@ -4,20 +4,24 @@
 export const name = "scheduleTrigger" as const;
 export const description = "Triggers the workflow on a given schedule" as const;
 export const version = 1.2 as const;
-export const defaults = { name: "Schedule Trigger", color: "#31C49F" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Schedule Trigger","color":"#31C49F"} as const;
+export const credentials = undefined 
 
 /**
  * Triggers the workflow on a given schedule
  */
 export interface ScheduleTriggerNodeParameters {
-	/**
-	 */
-	readonly notice?: string;
 
-	/**
-	 * Default: {"interval":[{"field":"days"}]}
-	 * Type options: {"multipleValues":true}
-	 */
-	readonly rule?: { interval: any };
+    /**
+     */
+    readonly notice?: string;
+
+    /**
+     * Default: {"interval":[{"field":"days"}]}
+     * Type options: {"multipleValues":true}
+     */
+    readonly rule?: { "interval": any };
+
+
 }
+

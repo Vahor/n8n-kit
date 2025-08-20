@@ -4,17 +4,19 @@
 export const name = "phantombuster" as const;
 export const description = "Consume Phantombuster API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Phantombuster" } as const;
-export const credentials = [
-	{ name: "phantombusterApi", required: true },
-] as const;
+export const defaults = {"name":"Phantombuster"} as const;
+export const credentials = [{"name":"phantombusterApi","required":true}] as const
 
 /**
  * Consume Phantombuster API
  */
 export interface PhantombusterNodeParameters {
-	/**
-	 * Default: "agent"
-	 */
-	readonly resource?: "agent";
+
+    /**
+     * Default: "agent"
+     */
+    readonly resource?: "agent";
+
+
 }
+

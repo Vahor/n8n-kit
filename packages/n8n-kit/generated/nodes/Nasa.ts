@@ -4,86 +4,67 @@
 export const name = "nasa" as const;
 export const description = "Retrieve data from the NASA API" as const;
 export const version = 1 as const;
-export const defaults = { name: "NASA" } as const;
-export const credentials = [{ name: "nasaApi", required: true }] as const;
+export const defaults = {"name":"NASA"} as const;
+export const credentials = [{"name":"nasaApi","required":true}] as const
 
 /**
  * Retrieve data from the NASA API
  */
 export interface NasaNodeParameters {
-	/**
-	 * Default: "astronomyPictureOfTheDay"
-	 */
-	readonly resource?:
-		| "asteroidNeoBrowse"
-		| "asteroidNeoFeed"
-		| "asteroidNeoLookup"
-		| "astronomyPictureOfTheDay"
-		| "donkiCoronalMassEjection"
-		| "donkiHighSpeedStream"
-		| "donkiInterplanetaryShock"
-		| "donkiMagnetopauseCrossing"
-		| "donkiNotifications"
-		| "donkiRadiationBeltEnhancement"
-		| "donkiSolarEnergeticParticle"
-		| "donkiSolarFlare"
-		| "donkiWsaEnlilSimulation"
-		| "earthAssets"
-		| "earthImagery";
 
-	/**
-	 * Default: "get"
-	 */
-	readonly operation?: "get" | "getAll";
+    /**
+     * Default: "astronomyPictureOfTheDay"
+     */
+    readonly resource?: "asteroidNeoBrowse" | "asteroidNeoFeed" | "asteroidNeoLookup" | "astronomyPictureOfTheDay" | "donkiCoronalMassEjection" | "donkiHighSpeedStream" | "donkiInterplanetaryShock" | "donkiMagnetopauseCrossing" | "donkiNotifications" | "donkiRadiationBeltEnhancement" | "donkiSolarEnergeticParticle" | "donkiSolarFlare" | "donkiWsaEnlilSimulation" | "earthAssets" | "earthImagery";
 
-	/**
-	 * The ID of the asteroid to be returned
-	 */
-	readonly asteroidId: string;
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "get" | "getAll";
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		includeCloseApproachData: boolean;
-		date: any;
-		startDate: any;
-		endDate: any;
-		location: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B";
-		catalog: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG";
-		dim: number;
-	};
+    /**
+     * The ID of the asteroid to be returned
+     */
+    readonly asteroidId?: string;
 
-	/**
-	 * By default just the URL of the image is returned. When set to true the image will be downloaded.
-	 * Default: true
-	 */
-	readonly download?: boolean;
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "includeCloseApproachData"?: boolean, "date"?: any, "startDate"?: any, "endDate"?: any, "location"?: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B", "catalog"?: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG", "dim"?: number };
 
-	/**
-	 * Default: "data"
-	 */
-	readonly binaryPropertyName: string;
+    /**
+     * By default just the URL of the image is returned. When set to true the image will be downloaded.
+     * Default: true
+     */
+    readonly download?: boolean;
 
-	/**
-	 * Latitude for the location of the image
-	 */
-	readonly lat?: number;
+    /**
+     * Default: "data"
+     */
+    readonly binaryPropertyName?: string;
 
-	/**
-	 * Longitude for the location of the image
-	 */
-	readonly lon?: number;
+    /**
+     * Latitude for the location of the image
+     */
+    readonly lat?: number;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * Longitude for the location of the image
+     */
+    readonly lon?: number;
 
-	/**
-	 * Max number of results to return
-	 * Default: 20
-	 * Type options: {"minValue":1}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 20
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+
 }
+

@@ -11,7 +11,7 @@ export default defineConfig({
 	platform: "node",
 	entry: input,
 	clean: true,
-	unbundle: true,
+	unbundle: false, // TODO: issue when two files have the same name
 	dts: {
 		sourcemap: false,
 		tsconfig: "./tsconfig.build.json",

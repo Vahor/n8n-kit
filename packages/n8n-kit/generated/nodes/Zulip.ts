@@ -4,15 +4,19 @@
 export const name = "zulip" as const;
 export const description = "Consume Zulip API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Zulip" } as const;
-export const credentials = [{ name: "zulipApi", required: true }] as const;
+export const defaults = {"name":"Zulip"} as const;
+export const credentials = [{"name":"zulipApi","required":true}] as const
 
 /**
  * Consume Zulip API
  */
 export interface ZulipNodeParameters {
-	/**
-	 * Default: "message"
-	 */
-	readonly resource?: "message" | "stream" | "user";
+
+    /**
+     * Default: "message"
+     */
+    readonly resource?: "message" | "stream" | "user";
+
+
 }
+

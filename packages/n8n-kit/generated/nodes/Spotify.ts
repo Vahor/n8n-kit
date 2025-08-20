@@ -2,114 +2,81 @@
 // Generated from 'vendor/n8n/packages/nodes-base/nodes/Spotify/Spotify.node.ts' node
 
 export const name = "spotify" as const;
-export const description =
-	"Access public song data via the Spotify API" as const;
+export const description = "Access public song data via the Spotify API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Spotify" } as const;
-export const credentials = [
-	{ name: "spotifyOAuth2Api", required: true },
-] as const;
+export const defaults = {"name":"Spotify"} as const;
+export const credentials = [{"name":"spotifyOAuth2Api","required":true}] as const
 
 /**
  * Access public song data via the Spotify API
  */
 export interface SpotifyNodeParameters {
-	/**
-	 * Default: "player"
-	 */
-	readonly resource?:
-		| "album"
-		| "artist"
-		| "library"
-		| "myData"
-		| "player"
-		| "playlist"
-		| "track";
 
-	/**
-	 * Default: "addSongToQueue"
-	 */
-	readonly operation?:
-		| "addSongToQueue"
-		| "currentlyPlaying"
-		| "nextSong"
-		| "pause"
-		| "previousSong"
-		| "recentlyPlayed"
-		| "resume"
-		| "volume"
-		| "startMusic"
-		| "get"
-		| "getNewReleases"
-		| "getTracks"
-		| "search"
-		| "getAlbums"
-		| "getRelatedArtists"
-		| "getTopTracks"
-		| "add"
-		| "create"
-		| "getUserPlaylists"
-		| "delete"
-		| "getAudioFeatures"
-		| "getLikedTracks"
-		| "getFollowingArtists";
+    /**
+     * Default: "player"
+     */
+    readonly resource?: "album" | "artist" | "library" | "myData" | "player" | "playlist" | "track";
 
-	/**
-	 * Enter a playlist, artist, or album URI or ID
-	 */
-	readonly id: string;
+    /**
+     * Default: "addSongToQueue"
+     */
+    readonly operation?: "addSongToQueue" | "currentlyPlaying" | "nextSong" | "pause" | "previousSong" | "recentlyPlayed" | "resume" | "volume" | "startMusic" | "get" | "getNewReleases" | "getTracks" | "search" | "getAlbums" | "getRelatedArtists" | "getTopTracks" | "add" | "create" | "getUserPlaylists" | "delete" | "getAudioFeatures" | "getLikedTracks" | "getFollowingArtists";
 
-	/**
-	 * The keyword term to search for
-	 */
-	readonly query: string;
+    /**
+     * Enter a playlist, artist, or album URI or ID
+     */
+    readonly id?: string;
 
-	/**
-	 * Top tracks in which country? Enter the postal abbreviation
-	 * Default: "US"
-	 */
-	readonly country: string;
+    /**
+     * The keyword term to search for
+     */
+    readonly query?: string;
 
-	/**
-	 * Name of the playlist to create
-	 */
-	readonly name: string;
+    /**
+     * Top tracks in which country? Enter the postal abbreviation
+     * Default: "US"
+     */
+    readonly country?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		description: string;
-		public: boolean;
-		position: number;
-	};
+    /**
+     * Name of the playlist to create
+     */
+    readonly name?: string;
 
-	/**
-	 * The track's Spotify URI or its ID. The track to add/delete from the playlist.
-	 */
-	readonly trackID: string;
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "description"?: string, "public"?: boolean, "position"?: number };
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll: boolean;
+    /**
+     * The track's Spotify URI or its ID. The track to add/delete from the playlist.
+     */
+    readonly trackID?: string;
 
-	/**
-	 * Max number of results to return
-	 * Default: 50
-	 * Type options: {"minValue":1,"maxValue":100}
-	 */
-	readonly limit: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * The volume percentage to set
-	 * Default: 50
-	 * Type options: {"minValue":0,"maxValue":100}
-	 */
-	readonly volumePercent: number;
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
 
-	/**
-	 * Default: {}
-	 */
-	readonly filters?: { country: string; market: string };
+    /**
+     * The volume percentage to set
+     * Default: 50
+     * Type options: {"minValue":0,"maxValue":100}
+     */
+    readonly volumePercent?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "country"?: string, "market"?: string };
+
+
 }
+

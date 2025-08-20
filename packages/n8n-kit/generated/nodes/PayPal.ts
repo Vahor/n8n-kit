@@ -4,17 +4,19 @@
 export const name = "payPal" as const;
 export const description = "Consume PayPal API" as const;
 export const version = 1 as const;
-export const defaults = { name: "PayPal" } as const;
-export const credentials = [
-	{ name: "payPalApi", required: true, testedBy: "payPalApiTest" },
-] as const;
+export const defaults = {"name":"PayPal"} as const;
+export const credentials = [{"name":"payPalApi","required":true,"testedBy":"payPalApiTest"}] as const
 
 /**
  * Consume PayPal API
  */
 export interface PayPalNodeParameters {
-	/**
-	 * Default: "payout"
-	 */
-	readonly resource?: "payout" | "payoutItem";
+
+    /**
+     * Default: "payout"
+     */
+    readonly resource?: "payout" | "payoutItem";
+
+
 }
+

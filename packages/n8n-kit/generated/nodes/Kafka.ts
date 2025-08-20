@@ -4,73 +4,75 @@
 export const name = "kafka" as const;
 export const description = "Sends messages to a Kafka topic" as const;
 export const version = 1 as const;
-export const defaults = { name: "Kafka" } as const;
-export const credentials = [
-	{ name: "kafka", required: true, testedBy: "kafkaConnectionTest" },
-] as const;
+export const defaults = {"name":"Kafka"} as const;
+export const credentials = [{"name":"kafka","required":true,"testedBy":"kafkaConnectionTest"}] as const
 
 /**
  * Sends messages to a Kafka topic
  */
 export interface KafkaNodeParameters {
-	/**
-	 * Name of the queue of topic to publish to
-	 */
-	readonly topic?: string;
 
-	/**
-	 * Whether to send the data the node receives as JSON to Kafka
-	 * Default: true
-	 */
-	readonly sendInputData?: boolean;
+    /**
+     * Name of the queue of topic to publish to
+     */
+    readonly topic?: string;
 
-	/**
-	 * The message to be sent
-	 */
-	readonly message?: string;
+    /**
+     * Whether to send the data the node receives as JSON to Kafka
+     * Default: true
+     */
+    readonly sendInputData?: boolean;
 
-	/**
-	 */
-	readonly jsonParameters?: boolean;
+    /**
+     * The message to be sent
+     */
+    readonly message?: string;
 
-	/**
-	 * Whether to use Confluent Schema Registry
-	 */
-	readonly useSchemaRegistry?: boolean;
+    /**
+     */
+    readonly jsonParameters?: boolean;
 
-	/**
-	 * URL of the schema registry
-	 */
-	readonly schemaRegistryUrl: string;
+    /**
+     * Whether to use Confluent Schema Registry
+     */
+    readonly useSchemaRegistry?: boolean;
 
-	/**
-	 * Whether to use a message key
-	 */
-	readonly useKey?: boolean;
+    /**
+     * URL of the schema registry
+     */
+    readonly schemaRegistryUrl?: string;
 
-	/**
-	 * The message key
-	 */
-	readonly key: string;
+    /**
+     * Whether to use a message key
+     */
+    readonly useKey?: boolean;
 
-	/**
-	 * Namespace and Name of Schema in Schema Registry (namespace.name)
-	 */
-	readonly eventName: string;
+    /**
+     * The message key
+     */
+    readonly key?: string;
 
-	/**
-	 * Default: {}
-	 * Type options: {"multipleValues":true}
-	 */
-	readonly headersUi?: { headerValues: any };
+    /**
+     * Namespace and Name of Schema in Schema Registry (namespace.name)
+     */
+    readonly eventName?: string;
 
-	/**
-	 * Header parameters as JSON (flat object)
-	 */
-	readonly headerParametersJson?: any;
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly headersUi?: { "headerValues": any };
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { acks: boolean; compression: boolean; timeout: number };
+    /**
+     * Header parameters as JSON (flat object)
+     */
+    readonly headerParametersJson?: any;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "acks"?: boolean, "compression"?: boolean, "timeout"?: number };
+
+
 }
+

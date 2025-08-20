@@ -4,45 +4,35 @@
 export const name = "xml" as const;
 export const description = "Convert data from and to XML" as const;
 export const version = 1 as const;
-export const defaults = { name: "XML", color: "#333377" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"XML","color":"#333377"} as const;
+export const credentials = undefined 
 
 /**
  * Convert data from and to XML
  */
 export interface XmlNodeParameters {
-	/**
-	 * From and to what format the data should be converted
-	 * Default: "xmlToJson"
-	 */
-	readonly mode?: "jsonToxml" | "xmlToJson";
 
-	/**
-	 */
-	readonly xmlNotice?: string;
+    /**
+     * From and to what format the data should be converted
+     * Default: "xmlToJson"
+     */
+    readonly mode?: "jsonToxml" | "xmlToJson";
 
-	/**
-	 * Name of the property to which to contains the converted XML data
-	 * Default: "data"
-	 */
-	readonly dataPropertyName: string;
+    /**
+     */
+    readonly xmlNotice?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		allowSurrogateChars: boolean;
-		attrkey: string;
-		cdata: boolean;
-		charkey: string;
-		headless: boolean;
-		rootName: string;
-		explicitArray: boolean;
-		explicitRoot: boolean;
-		ignoreAttrs: boolean;
-		mergeAttrs: boolean;
-		normalize: boolean;
-		normalizeTags: boolean;
-		trim: boolean;
-	};
+    /**
+     * Name of the property to which to contains the converted XML data
+     * Default: "data"
+     */
+    readonly dataPropertyName?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "allowSurrogateChars"?: boolean, "attrkey"?: string, "cdata"?: boolean, "charkey"?: string, "headless"?: boolean, "rootName"?: string, "explicitArray"?: boolean, "explicitRoot"?: boolean, "ignoreAttrs"?: boolean, "mergeAttrs"?: boolean, "normalize"?: boolean, "normalizeTags"?: boolean, "trim"?: boolean };
+
+
 }
+

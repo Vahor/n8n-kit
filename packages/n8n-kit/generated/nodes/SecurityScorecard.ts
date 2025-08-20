@@ -4,23 +4,19 @@
 export const name = "securityScorecard" as const;
 export const description = "Consume SecurityScorecard API" as const;
 export const version = 1 as const;
-export const defaults = { name: "SecurityScorecard" } as const;
-export const credentials = [
-	{ name: "securityScorecardApi", required: true },
-] as const;
+export const defaults = {"name":"SecurityScorecard"} as const;
+export const credentials = [{"name":"securityScorecardApi","required":true}] as const
 
 /**
  * Consume SecurityScorecard API
  */
 export interface SecurityScorecardNodeParameters {
-	/**
-	 * Default: "company"
-	 */
-	readonly resource:
-		| "company"
-		| "industry"
-		| "invite"
-		| "portfolio"
-		| "portfolioCompany"
-		| "report";
+
+    /**
+     * Default: "company"
+     */
+    readonly resource: "company" | "industry" | "invite" | "portfolio" | "portfolioCompany" | "report";
+
+
 }
+

@@ -1,7 +1,7 @@
-import type { IsNever, IsRecord } from "../../utils/types";
+import type { IsNever, IsRecord, Prettify } from "../../utils/types";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import type { State } from "./state";
-import type { IChainable, INextable } from "./types";
+import type { IChainable, IContext, INextable } from "./types";
 
 export const NO_END_STATES: INextable[] = [] as const;
 
@@ -10,14 +10,14 @@ export interface ChainContext {
 }
 
 type AddIChainableToChainContext<
-	N extends IChainable,
+	N,
 	CC extends ChainContext,
 > = N extends IChainable<infer Id, infer C>
 	? IsNever<C> extends true
 		? CC
 		: IsRecord<C> extends true
 			? CC
-			: { [k in Id]: C } & CC & { json: C }
+			: Prettify<{ [k in Id]: C } & CC & { json: C }>
 	: CC;
 
 type ChainableProvider<N extends IChainable, CC extends ChainContext> =
@@ -31,6 +31,8 @@ type ChainableProvider<N extends IChainable, CC extends ChainContext> =
  * zero ends, calling next() on the Chain will fail.
  */
 export class Chain<CC extends ChainContext = {}> implements IChainable {
+	"~context": IContext = undefined as any;
+
 	/**
 	 * Begin a new Chain from one chainable
 	 */
@@ -90,9 +92,13 @@ export class Chain<CC extends ChainContext = {}> implements IChainable {
 			);
 		}
 
-		const $ = $$<CC>();
-
-		const next = typeof _next === "function" ? _next({ $: $ }) : _next;
+		let next: IChainable;
+		if (typeof _next === "function") {
+			const $ = $$<CC>();
+			next = _next({ $: $ });
+		} else {
+			next = _next;
+		}
 
 		for (const endState of this.endStates) {
 			endState.addNext(next);

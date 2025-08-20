@@ -4,92 +4,79 @@
 export const name = "awsTranscribe" as const;
 export const description = "Sends data to AWS Transcribe" as const;
 export const version = 1 as const;
-export const defaults = { name: "AWS Transcribe" } as const;
-export const credentials = [{ name: "aws", required: true }] as const;
+export const defaults = {"name":"AWS Transcribe"} as const;
+export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Sends data to AWS Transcribe
  */
 export interface AwsTranscribeNodeParameters {
-	/**
-	 * Default: "transcriptionJob"
-	 */
-	readonly resource?: "transcriptionJob";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation?: "create" | "delete" | "get" | "getAll";
+    /**
+     * Default: "transcriptionJob"
+     */
+    readonly resource?: "transcriptionJob";
 
-	/**
-	 * The name of the job
-	 */
-	readonly transcriptionJobName?: string;
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll";
 
-	/**
-	 * The S3 object location of the input media file
-	 */
-	readonly mediaFileUri?: string;
+    /**
+     * The name of the job
+     */
+    readonly transcriptionJobName?: string;
 
-	/**
-	 * Whether to set this field to true to enable automatic language identification
-	 */
-	readonly detectLanguage?: boolean;
+    /**
+     * The S3 object location of the input media file
+     */
+    readonly mediaFileUri?: string;
 
-	/**
-	 * Language used in the input media file
-	 * Default: "en-US"
-	 */
-	readonly languageCode?:
-		| "en-US"
-		| "en-GB"
-		| "de-DE"
-		| "en-IN"
-		| "en-IE"
-		| "ru-RU"
-		| "es-ES";
+    /**
+     * Whether to set this field to true to enable automatic language identification
+     */
+    readonly detectLanguage?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		channelIdentification: boolean;
-		maxAlternatives: number;
-		maxSpeakerLabels: number;
-		vocabularyName: string;
-		vocabularyFilterName: string;
-		vocabularyFilterMethod: "remove" | "mask" | "tag";
-	};
+    /**
+     * Language used in the input media file
+     * Default: "en-US"
+     */
+    readonly languageCode?: "en-US" | "en-GB" | "de-DE" | "en-IN" | "en-IE" | "ru-RU" | "es-ES";
 
-	/**
-	 * By default, the response only contains metadata about the transcript. Enable this option to retrieve the transcript instead.
-	 * Default: true
-	 */
-	readonly returnTranscript?: boolean;
+    /**
+     * Default: {}
+     */
+    readonly options?: { "channelIdentification"?: boolean, "maxAlternatives"?: number, "maxSpeakerLabels"?: number, "vocabularyName"?: string, "vocabularyFilterName"?: string, "vocabularyFilterMethod"?: "remove" | "mask" | "tag" };
 
-	/**
-	 * Whether to return a simplified version of the response instead of the raw data
-	 * Default: true
-	 */
-	readonly simple?: boolean;
+    /**
+     * By default, the response only contains metadata about the transcript. Enable this option to retrieve the transcript instead.
+     * Default: true
+     */
+    readonly returnTranscript?: boolean;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
 
-	/**
-	 * Max number of results to return
-	 * Default: 20
-	 * Type options: {"minValue":1}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly filters?: {
-		jobNameContains: string;
-		status: "COMPLETED" | "FAILED" | "IN_PROGRESS" | "QUEUED";
-	};
+    /**
+     * Max number of results to return
+     * Default: 20
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "jobNameContains"?: string, "status"?: "COMPLETED" | "FAILED" | "IN_PROGRESS" | "QUEUED" };
+
+
 }
+

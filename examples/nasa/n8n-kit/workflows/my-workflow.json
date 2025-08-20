@@ -24,10 +24,13 @@
 		{
 			"id": "nasa",
 			"name": "nasa",
-			"type": "n8n-nodes-base.noOp",
+			"type": "n8n-nodes-base.nasa",
 			"position": [250, 200],
 			"typeVersion": 1,
-			"parameters": {}
+			"parameters": {
+				"resource": "donkiSolarFlare",
+				"additionalFields": { "startDate": "={{ today.minus(1, 'day') }}" }
+			}
 		},
 		{
 			"id": "if",
@@ -40,7 +43,7 @@
 					"conditions": [
 						{
 							"operator": { "type": "string", "operation": "contains" },
-							"leftValue": "TODO use $",
+							"leftValue": "={{ $json.classType }}",
 							"rightValue": "C",
 							"id": "my-workflow/if/0"
 						}

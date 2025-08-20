@@ -67,8 +67,6 @@
 	},
 	"devDependencies": {
 		"@types/cli-progress": "^3.11.6",
-		"axios": "^1.11.0",
-		"cli-progress": "^3.12.0",
 		"codemaker": "^1.113.0",
 		"n8n-workflow": "^1.82.0",
 		"tinyglobby": "^0.2.14",

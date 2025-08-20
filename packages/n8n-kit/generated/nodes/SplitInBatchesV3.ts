@@ -2,29 +2,32 @@
 // Generated from 'vendor/n8n/packages/nodes-base/nodes/SplitInBatches/v3/SplitInBatchesV3.node.ts' node
 
 export const name = "splitInBatches" as const;
-export const description =
-	"Split data into batches and iterate over each batch" as const;
+export const description = "Split data into batches and iterate over each batch" as const;
 export const version = 3 as const;
-export const defaults = { name: "Loop Over Items", color: "#007755" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Loop Over Items","color":"#007755"} as const;
+export const credentials = undefined 
 
 /**
  * Split data into batches and iterate over each batch
  */
 export interface SplitInBatchesV3NodeParameters {
-	/**
-	 */
-	readonly splitInBatchesNotice?: string;
 
-	/**
-	 * The number of items to return with each call
-	 * Default: 1
-	 * Type options: {"minValue":1}
-	 */
-	readonly batchSize?: number;
+    /**
+     */
+    readonly splitInBatchesNotice?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { reset: boolean };
+    /**
+     * The number of items to return with each call
+     * Default: 1
+     * Type options: {"minValue":1}
+     */
+    readonly batchSize?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "reset"?: boolean };
+
+
 }
+

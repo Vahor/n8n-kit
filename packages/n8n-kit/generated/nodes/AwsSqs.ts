@@ -4,51 +4,51 @@
 export const name = "awsSqs" as const;
 export const description = "Sends messages to AWS SQS" as const;
 export const version = 1 as const;
-export const defaults = { name: "AWS SQS" } as const;
-export const credentials = [{ name: "aws", required: true }] as const;
+export const defaults = {"name":"AWS SQS"} as const;
+export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Sends messages to AWS SQS
  */
 export interface AwsSqsNodeParameters {
-	/**
-	 * Default: "sendMessage"
-	 */
-	readonly operation?: "sendMessage";
 
-	/**
-	 * Queue to send a message to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getQueues"}
-	 */
-	readonly queue: string;
+    /**
+     * Default: "sendMessage"
+     */
+    readonly operation?: "sendMessage";
 
-	/**
-	 * Default: "standard"
-	 */
-	readonly queueType?: "fifo" | "standard";
+    /**
+     * Queue to send a message to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getQueues"}
+     */
+    readonly queue?: string;
 
-	/**
-	 * Whether to send the data the node receives as JSON to SQS
-	 * Default: true
-	 */
-	readonly sendInputData?: boolean;
+    /**
+     * Default: "standard"
+     */
+    readonly queueType?: "fifo" | "standard";
 
-	/**
-	 * Message to send to the queue
-	 */
-	readonly message: string;
+    /**
+     * Whether to send the data the node receives as JSON to SQS
+     * Default: true
+     */
+    readonly sendInputData?: boolean;
 
-	/**
-	 * Tag that specifies that a message belongs to a specific message group. Applies only to FIFO (first-in-first-out) queues.
-	 */
-	readonly messageGroupId: string;
+    /**
+     * Message to send to the queue
+     */
+    readonly message?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		delaySeconds: number;
-		messageAttributes: { binary: any; number: any; string: any };
-		messageDeduplicationId: string;
-	};
+    /**
+     * Tag that specifies that a message belongs to a specific message group. Applies only to FIFO (first-in-first-out) queues.
+     */
+    readonly messageGroupId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "delaySeconds"?: number, "messageAttributes"?: { "binary": any, "number": any, "string": any }, "messageDeduplicationId"?: string };
+
+
 }
+

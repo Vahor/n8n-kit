@@ -4,136 +4,76 @@
 export const name = "freshdesk" as const;
 export const description = "Consume Freshdesk API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Freshdesk" } as const;
-export const credentials = [{ name: "freshdeskApi", required: true }] as const;
+export const defaults = {"name":"Freshdesk"} as const;
+export const credentials = [{"name":"freshdeskApi","required":true}] as const
 
 /**
  * Consume Freshdesk API
  */
 export interface FreshdeskNodeParameters {
-	/**
-	 * Default: "ticket"
-	 */
-	readonly resource: "contact" | "ticket";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation: "create" | "delete" | "get" | "getAll" | "update";
+    /**
+     * Default: "ticket"
+     */
+    readonly resource: "contact" | "ticket";
 
-	/**
-	 * Default: "requesterId"
-	 */
-	readonly requester:
-		| "email"
-		| "facebookId"
-		| "phone"
-		| "requesterId"
-		| "twitterId"
-		| "uniqueExternalId";
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-	/**
-	 * Value of the identification selected
-	 */
-	readonly requesterIdentificationValue: string;
+    /**
+     * Default: "requesterId"
+     */
+    readonly requester?: "email" | "facebookId" | "phone" | "requesterId" | "twitterId" | "uniqueExternalId";
 
-	/**
-	 * Default: "pending"
-	 */
-	readonly status: "closed" | "open" | "pending" | "resolved";
+    /**
+     * Value of the identification selected
+     */
+    readonly requesterIdentificationValue?: string;
 
-	/**
-	 * Default: "low"
-	 */
-	readonly priority: "low" | "medium" | "high" | "urgent";
+    /**
+     * Default: "pending"
+     */
+    readonly status?: "closed" | "open" | "pending" | "resolved";
 
-	/**
-	 * The channel through which the ticket was created
-	 * Default: "portal"
-	 */
-	readonly source:
-		| "chat"
-		| "email"
-		| "feedbackWidget"
-		| "mobileHelp"
-		| "OutboundEmail"
-		| "phone"
-		| "portal";
+    /**
+     * Default: "low"
+     */
+    readonly priority?: "low" | "medium" | "high" | "urgent";
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		agent: string;
-		ccEmails: string;
-		company: string;
-		description: string;
-		dueBy: any;
-		emailConfigId: number;
-		frDueBy: any;
-		group: string;
-		name: string;
-		product: string;
-		subject: string;
-		tags: string;
-		type: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund";
-		companyId: string;
-		include: ("company" | "description" | "requester" | "stats")[];
-		order: "asc" | "desc";
-		orderBy: "createdAt" | "dueBy" | "updatedAt";
-		requesterEmail: string;
-		requesterId: string;
-		updatedSince: any;
-	};
+    /**
+     * The channel through which the ticket was created
+     * Default: "portal"
+     */
+    readonly source?: "chat" | "email" | "feedbackWidget" | "mobileHelp" | "OutboundEmail" | "phone" | "portal";
 
-	/**
-	 */
-	readonly ticketId: string;
+    /**
+     * Default: {}
+     */
+    readonly options?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "description"?: string, "dueBy"?: any, "emailConfigId"?: number, "frDueBy"?: any, "group"?: string, "name"?: string, "product"?: string, "subject"?: string, "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund", "companyId"?: string, "include"?: ("company" | "description" | "requester" | "stats")[], "order"?: "asc" | "desc", "orderBy"?: "createdAt" | "dueBy" | "updatedAt", "requesterEmail"?: string, "requesterId"?: string, "updatedSince"?: any };
 
-	/**
-	 * Default: {}
-	 */
-	readonly updateFields?: {
-		agent: string;
-		ccEmails: string;
-		company: string;
-		dueBy: any;
-		emailConfigId: number;
-		frDueBy: any;
-		group: string;
-		name: string;
-		product: string;
-		priority: "low" | "medium" | "high" | "urgent";
-		requester:
-			| "email"
-			| "facebookId"
-			| "phone"
-			| "requesterId"
-			| "twitterId"
-			| "uniqueExternalId";
-		requesterIdentificationValue: string;
-		status: "open" | "pending" | "resolved" | "closed";
-		source:
-			| "chat"
-			| "email"
-			| "feedbackWidget"
-			| "mobileHelp"
-			| "OutboundEmail"
-			| "phone"
-			| "portal";
-		tags: string;
-		type: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund";
-	};
+    /**
+     */
+    readonly ticketId?: string;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "dueBy"?: any, "emailConfigId"?: number, "frDueBy"?: any, "group"?: string, "name"?: string, "product"?: string, "priority"?: "low" | "medium" | "high" | "urgent", "requester"?: "email" | "facebookId" | "phone" | "requesterId" | "twitterId" | "uniqueExternalId", "requesterIdentificationValue"?: string, "status"?: "open" | "pending" | "resolved" | "closed", "source"?: "chat" | "email" | "feedbackWidget" | "mobileHelp" | "OutboundEmail" | "phone" | "portal", "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund" };
 
-	/**
-	 * Max number of results to return
-	 * Default: 5
-	 * Type options: {"minValue":1,"maxValue":10}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 5
+     * Type options: {"minValue":1,"maxValue":10}
+     */
+    readonly limit?: number;
+
+
 }
+

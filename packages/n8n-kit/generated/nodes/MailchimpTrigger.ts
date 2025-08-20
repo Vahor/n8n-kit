@@ -4,51 +4,37 @@
 export const name = "mailchimpTrigger" as const;
 export const description = "Handle Mailchimp events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = { name: "Mailchimp Trigger" } as const;
-export const credentials = [
-	{
-		name: "mailchimpApi",
-		required: true,
-		displayOptions: { show: { authentication: ["apiKey"] } },
-	},
-	{
-		name: "mailchimpOAuth2Api",
-		required: true,
-		displayOptions: { show: { authentication: ["oAuth2"] } },
-	},
-] as const;
+export const defaults = {"name":"Mailchimp Trigger"} as const;
+export const credentials = [{"name":"mailchimpApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"mailchimpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Handle Mailchimp events via webhooks
  */
 export interface MailchimpTriggerNodeParameters {
-	/**
-	 * Default: "apiKey"
-	 */
-	readonly authentication?: "apiKey" | "oAuth2";
 
-	/**
-	 * The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getLists"}
-	 */
-	readonly list: string;
+    /**
+     * Default: "apiKey"
+     */
+    readonly authentication?: "apiKey" | "oAuth2";
 
-	/**
-	 * The events that can trigger the webhook and whether they are enabled
-	 * Default: []
-	 */
-	readonly events: (
-		| "campaign"
-		| "cleaned"
-		| "upemail"
-		| "profile"
-		| "subscribe"
-		| "unsubscribe"
-	)[];
+    /**
+     * The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getLists"}
+     */
+    readonly list: string;
 
-	/**
-	 * The possible sources of any events that can trigger the webhook and whether they are enabled
-	 * Default: []
-	 */
-	readonly sources: ("user" | "admin" | "api")[];
+    /**
+     * The events that can trigger the webhook and whether they are enabled
+     * Default: []
+     */
+    readonly events: ("campaign" | "cleaned" | "upemail" | "profile" | "subscribe" | "unsubscribe")[];
+
+    /**
+     * The possible sources of any events that can trigger the webhook and whether they are enabled
+     * Default: []
+     */
+    readonly sources: ("user" | "admin" | "api")[];
+
+
 }
+

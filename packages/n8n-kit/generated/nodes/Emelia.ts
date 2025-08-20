@@ -4,17 +4,19 @@
 export const name = "emelia" as const;
 export const description = "Consume the Emelia API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Emelia" } as const;
-export const credentials = [
-	{ name: "emeliaApi", required: true, testedBy: "emeliaApiTest" },
-] as const;
+export const defaults = {"name":"Emelia"} as const;
+export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emeliaApiTest"}] as const
 
 /**
  * Consume the Emelia API
  */
 export interface EmeliaNodeParameters {
-	/**
-	 * Default: "campaign"
-	 */
-	readonly resource: "campaign" | "contactList";
+
+    /**
+     * Default: "campaign"
+     */
+    readonly resource: "campaign" | "contactList";
+
+
 }
+

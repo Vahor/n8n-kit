@@ -4,36 +4,40 @@
 export const name = "twake" as const;
 export const description = "Consume Twake API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Twake" } as const;
-export const credentials = [{ name: "twakeCloudApi", required: true }] as const;
+export const defaults = {"name":"Twake"} as const;
+export const credentials = [{"name":"twakeCloudApi","required":true}] as const
 
 /**
  * Consume Twake API
  */
 export interface TwakeNodeParameters {
-	/**
-	 * Default: "message"
-	 */
-	readonly resource?: "message";
 
-	/**
-	 * Default: "send"
-	 */
-	readonly operation?: "send";
+    /**
+     * Default: "message"
+     */
+    readonly resource?: "message";
 
-	/**
-	 * Channel's ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getChannels"}
-	 */
-	readonly channelId?: string;
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send";
 
-	/**
-	 * Message content
-	 */
-	readonly content: string;
+    /**
+     * Channel's ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getChannels"}
+     */
+    readonly channelId?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: { senderIcon: string; senderName: string };
+    /**
+     * Message content
+     */
+    readonly content?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "senderIcon"?: string, "senderName"?: string };
+
+
 }
+

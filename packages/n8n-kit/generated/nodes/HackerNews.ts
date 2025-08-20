@@ -4,58 +4,51 @@
 export const name = "hackerNews" as const;
 export const description = "Consume Hacker News API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Hacker News" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Hacker News"} as const;
+export const credentials = undefined 
 
 /**
  * Consume Hacker News API
  */
 export interface HackerNewsNodeParameters {
-	/**
-	 * Default: "article"
-	 */
-	readonly resource?: "all" | "article" | "user";
 
-	/**
-	 * Default: "getAll"
-	 */
-	readonly operation?: "getAll" | "get";
+    /**
+     * Default: "article"
+     */
+    readonly resource?: "all" | "article" | "user";
 
-	/**
-	 * The ID of the Hacker News article to be returned
-	 */
-	readonly articleId: string;
+    /**
+     * Default: "getAll"
+     */
+    readonly operation?: "getAll" | "get";
 
-	/**
-	 * The Hacker News user to be returned
-	 */
-	readonly username: string;
+    /**
+     * The ID of the Hacker News article to be returned
+     */
+    readonly articleId?: string;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * The Hacker News user to be returned
+     */
+    readonly username?: string;
 
-	/**
-	 * Max number of results to return
-	 * Default: 100
-	 * Type options: {"minValue":1}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		includeComments: boolean;
-		keyword: string;
-		tags: (
-			| "ask_hn"
-			| "comment"
-			| "front_page"
-			| "poll"
-			| "show_hn"
-			| "story"
-		)[];
-	};
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "includeComments"?: boolean, "keyword"?: string, "tags"?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
+
+
 }
+

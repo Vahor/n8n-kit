@@ -1,4 +1,5 @@
 import type { ChainContext } from "./chain";
+import { expr } from "./expression";
 
 export type Primitive =
 	| string
@@ -72,15 +73,25 @@ export class ExpressionBuilder<T extends ChainContext, Path extends string> {
 
 	public getPath(): ExtractPath<Path> {
 		const rest = this.path.split(".").slice(1).join(".");
+		if (rest.length === 0) {
+			throw new Error("Invalid path for expression");
+		}
 		return rest as any;
 	}
 
-	public toExpression() {
+	public format() {
 		const nodeId = this.getNodeId();
 		if (nodeId === "json") {
-			return `{{ $json.${this.getPath()} }}`;
+			return `$json.${this.getPath()}`;
 		}
-		return `{{ $('${nodeId}').${this.getPath()} }}`;
+		return `$('${nodeId}').${this.getPath()}`;
+	}
+
+	/**
+	 * return ={{ format() }}
+	 */
+	public toExpression() {
+		return expr`${this}`;
 	}
 }
 

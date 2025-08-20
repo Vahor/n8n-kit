@@ -21,20 +21,20 @@ export interface BitbucketTriggerNodeParameters {
      * The repository of which to listen to the events. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
-    readonly workspace: string;
+    readonly workspace?: string;
 
     /**
      * The events to listen to. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getWorkspaceEvents"}
      */
-    readonly events: ()[];
+    readonly events?: ()[];
 
     /**
      * The repository of which to listen to the events. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getRepositories","loadOptionsDependsOn":["workspace"]}
      */
-    readonly repository: string;
+    readonly repository?: string;
 
 
 }

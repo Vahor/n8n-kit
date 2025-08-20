@@ -3,39 +3,26 @@ import type { IChainable, IContext, INextable } from "./types";
 
 export abstract class State<
 	LiteralId extends string = string,
-	T extends IContext = never,
+	T extends IContext = IContext,
 > implements IChainable<LiteralId, T>, INextable
 {
+	"~context": T = undefined as any;
+
 	public readonly id: LiteralId;
 
 	public readonly startState: State;
 	public abstract readonly endStates: INextable[];
 
 	private readonly incomingStates: State[] = [];
-	private readonly nextStates: Map<number, State> = new Map(); // index -> state
+	private readonly nextStates: State[] = [];
 
 	public constructor(id: LiteralId) {
 		this.id = validateIdentifier(id);
 		this.startState = this;
 	}
 
-	private setNext(index: number, state: State, override: boolean = false) {
-		// TODO: check if we really need to store the exact index
-		const current = this.nextStates.get(index);
-		if (current && !override) {
-			throw new Error(
-				`Cannot override next state at index ${index}. Use \`override\` to override.`,
-			);
-		}
-		this.nextStates.set(index, state);
-	}
-
-	public addNext(
-		state: State,
-		index: number | undefined = undefined,
-		override: boolean = false,
-	) {
-		this.setNext(index ?? this.nextStates.size, state, override);
+	public addNext(state: State) {
+		this.nextStates.push(state);
 		state.addIncoming(this);
 	}
 

@@ -4,53 +4,57 @@
 export const name = "stackby" as const;
 export const description = "Read, write, and delete data in Stackby" as const;
 export const version = 1 as const;
-export const defaults = { name: "Stackby" } as const;
-export const credentials = [{ name: "stackbyApi", required: true }] as const;
+export const defaults = {"name":"Stackby"} as const;
+export const credentials = [{"name":"stackbyApi","required":true}] as const
 
 /**
  * Read, write, and delete data in Stackby
  */
 export interface StackbyNodeParameters {
-	/**
-	 * Default: "append"
-	 */
-	readonly operation?: "append" | "delete" | "list" | "read";
 
-	/**
-	 * The ID of the stack to access
-	 */
-	readonly stackId: string;
+    /**
+     * Default: "append"
+     */
+    readonly operation?: "append" | "delete" | "list" | "read";
 
-	/**
-	 * Enter Table Name
-	 */
-	readonly table: string;
+    /**
+     * The ID of the stack to access
+     */
+    readonly stackId: string;
 
-	/**
-	 * ID of the record to return
-	 */
-	readonly id: string;
+    /**
+     * Enter Table Name
+     */
+    readonly table: string;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 * Default: true
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * ID of the record to return
+     */
+    readonly id?: string;
 
-	/**
-	 * Max number of results to return
-	 * Default: 1000
-	 * Type options: {"minValue":1,"maxValue":1000}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     * Default: true
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: { view: string };
+    /**
+     * Max number of results to return
+     * Default: 1000
+     * Type options: {"minValue":1,"maxValue":1000}
+     */
+    readonly limit?: number;
 
-	/**
-	 * Comma-separated list of the properties which should used as columns for the new rows
-	 */
-	readonly columns: string;
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "view"?: string };
+
+    /**
+     * Comma-separated list of the properties which should used as columns for the new rows
+     */
+    readonly columns?: string;
+
+
 }
+

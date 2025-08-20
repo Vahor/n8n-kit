@@ -4,53 +4,49 @@
 export const name = "postgresTrigger" as const;
 export const description = "Listens to Postgres messages" as const;
 export const version = 1 as const;
-export const defaults = { name: "Postgres Trigger" } as const;
-export const credentials = [{ name: "postgres", required: true }] as const;
+export const defaults = {"name":"Postgres Trigger"} as const;
+export const credentials = [{"name":"postgres","required":true}] as const
 
 /**
  * Listens to Postgres messages
  */
 export interface PostgresTriggerNodeParameters {
-	/**
-	 * Default: "createTrigger"
-	 */
-	readonly triggerMode?: "createTrigger" | "listenTrigger";
 
-	/**
-	 * Default: {"mode":"list","value":"public"}
-	 */
-	readonly schema: any;
+    /**
+     * Default: "createTrigger"
+     */
+    readonly triggerMode?: "createTrigger" | "listenTrigger";
 
-	/**
-	 * Default: {"mode":"list","value":""}
-	 */
-	readonly tableName: any;
+    /**
+     * Default: {"mode":"list","value":"public"}
+     */
+    readonly schema?: any;
 
-	/**
-	 * Name of the channel to listen to
-	 */
-	readonly channelName: string;
+    /**
+     * Default: {"mode":"list","value":""}
+     */
+    readonly tableName?: any;
 
-	/**
-	 * Default: "INSERT"
-	 */
-	readonly firesOn?: "INSERT" | "UPDATE" | "DELETE";
+    /**
+     * Name of the channel to listen to
+     */
+    readonly channelName?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		channelName: string;
-		functionName: string;
-		replaceIfExists: boolean;
-		triggerName: string;
-	};
+    /**
+     * Default: "INSERT"
+     */
+    readonly firesOn?: "INSERT" | "UPDATE" | "DELETE";
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		connectionTimeout: number;
-		delayClosingIdleConnection: number;
-	};
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "channelName"?: string, "functionName"?: string, "replaceIfExists"?: boolean, "triggerName"?: string };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "connectionTimeout"?: number, "delayClosingIdleConnection"?: number };
+
+
 }
+

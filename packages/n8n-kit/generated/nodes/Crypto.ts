@@ -4,82 +4,79 @@
 export const name = "crypto" as const;
 export const description = "Provide cryptographic utilities" as const;
 export const version = 1 as const;
-export const defaults = { name: "Crypto", color: "#408000" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Crypto","color":"#408000"} as const;
+export const credentials = undefined 
 
 /**
  * Provide cryptographic utilities
  */
 export interface CryptoNodeParameters {
-	/**
-	 * Default: "hash"
-	 */
-	readonly action?: "generate" | "hash" | "hmac" | "sign";
 
-	/**
-	 * The hash type to use
-	 * Default: "MD5"
-	 */
-	readonly type:
-		| "MD5"
-		| "SHA256"
-		| "SHA3-256"
-		| "SHA3-384"
-		| "SHA3-512"
-		| "SHA384"
-		| "SHA512";
+    /**
+     * Default: "hash"
+     */
+    readonly action?: "generate" | "hash" | "hmac" | "sign";
 
-	/**
-	 * Whether the data to hashed should be taken from binary field
-	 */
-	readonly binaryData: boolean;
+    /**
+     * The hash type to use
+     * Default: "MD5"
+     */
+    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
-	/**
-	 * Name of the binary property which contains the input data
-	 * Default: "data"
-	 */
-	readonly binaryPropertyName: string;
+    /**
+     * Whether the data to hashed should be taken from binary field
+     */
+    readonly binaryData?: boolean;
 
-	/**
-	 * The value that should be hashed
-	 */
-	readonly value: string;
+    /**
+     * Name of the binary property which contains the input data
+     * Default: "data"
+     */
+    readonly binaryPropertyName?: string;
 
-	/**
-	 * Name of the property to which to write the hash
-	 * Default: "data"
-	 */
-	readonly dataPropertyName: string;
+    /**
+     * The value that should be hashed
+     */
+    readonly value?: string;
 
-	/**
-	 * Default: "hex"
-	 */
-	readonly encoding: "base64" | "hex";
+    /**
+     * Name of the property to which to write the hash
+     * Default: "data"
+     */
+    readonly dataPropertyName?: string;
 
-	/**
-	 * Type options: {"password":true}
-	 */
-	readonly secret: string;
+    /**
+     * Default: "hex"
+     */
+    readonly encoding?: "base64" | "hex";
 
-	/**
-	 * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-	 */
-	readonly algorithm: string;
+    /**
+     * Type options: {"password":true}
+     */
+    readonly secret?: string;
 
-	/**
-	 * Private key to use when signing the string
-	 */
-	readonly privateKey: string;
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     */
+    readonly algorithm?: string;
 
-	/**
-	 * Encoding that will be used to generate string
-	 * Default: "uuid"
-	 */
-	readonly encodingType: "ascii" | "base64" | "hex" | "uuid";
+    /**
+     * Private key to use when signing the string
+     */
+    readonly privateKey?: string;
 
-	/**
-	 * Length of the generated string
-	 * Default: 32
-	 */
-	readonly stringLength?: number;
+    /**
+     * Encoding that will be used to generate string
+     * Default: "uuid"
+     */
+    readonly encodingType?: "ascii" | "base64" | "hex" | "uuid";
+
+    /**
+     * Length of the generated string
+     * Default: 32
+     */
+    readonly stringLength?: number;
+
+
 }
+

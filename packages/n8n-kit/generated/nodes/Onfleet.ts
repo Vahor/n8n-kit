@@ -4,27 +4,20 @@
 export const name = "onfleet" as const;
 export const description = "Consume Onfleet API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Onfleet" } as const;
-export const credentials = [
-	{ name: "onfleetApi", required: true, testedBy: "onfleetApiTest" },
-] as const;
+export const defaults = {"name":"Onfleet"} as const;
+export const credentials = [{"name":"onfleetApi","required":true,"testedBy":"onfleetApiTest"}] as const
 
 /**
  * Consume Onfleet API
  */
 export interface OnfleetNodeParameters {
-	/**
-	 * The resource to perform operations on
-	 * Default: "task"
-	 */
-	readonly resource?:
-		| "admin"
-		| "container"
-		| "destination"
-		| "hub"
-		| "organization"
-		| "recipient"
-		| "task"
-		| "team"
-		| "worker";
+
+    /**
+     * The resource to perform operations on
+     * Default: "task"
+     */
+    readonly resource?: "admin" | "container" | "destination" | "hub" | "organization" | "recipient" | "task" | "team" | "worker";
+
+
 }
+

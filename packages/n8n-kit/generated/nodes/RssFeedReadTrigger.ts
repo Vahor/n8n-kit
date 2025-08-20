@@ -2,19 +2,22 @@
 // Generated from 'vendor/n8n/packages/nodes-base/nodes/RssFeedRead/RssFeedReadTrigger.node.ts' node
 
 export const name = "rssFeedReadTrigger" as const;
-export const description =
-	"Starts a workflow when an RSS feed is updated" as const;
+export const description = "Starts a workflow when an RSS feed is updated" as const;
 export const version = 1 as const;
-export const defaults = { name: "RSS Feed Trigger", color: "#b02020" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"RSS Feed Trigger","color":"#b02020"} as const;
+export const credentials = undefined 
 
 /**
  * Starts a workflow when an RSS feed is updated
  */
 export interface RssFeedReadTriggerNodeParameters {
-	/**
-	 * URL of the RSS feed to poll
-	 * Default: "https://blog.n8n.io/rss/"
-	 */
-	readonly feedUrl: string;
+
+    /**
+     * URL of the RSS feed to poll
+     * Default: "https://blog.n8n.io/rss/"
+     */
+    readonly feedUrl: string;
+
+
 }
+

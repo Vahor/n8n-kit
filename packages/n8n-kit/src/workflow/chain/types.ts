@@ -22,7 +22,7 @@ export interface Identifiable<Id extends string = string> {
  */
 export interface IChainable<
 	Id extends string = string,
-	_C extends IContext = never,
+	C extends IContext = IContext,
 > extends Identifiable<Id> {
 	/**
 	 * The start state of this chainable
@@ -33,6 +33,12 @@ export interface IChainable<
 	 * The chainable end state(s) of this chainable
 	 */
 	readonly endStates: INextable[];
+
+	/**
+	 * @internal
+	 * Trick TS to make sure that the context type is conserved
+	 */
+	readonly "~context": C;
 }
 
 export type IContext = Record<string, unknown>;

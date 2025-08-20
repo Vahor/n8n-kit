@@ -4,19 +4,23 @@
 export const name = "n8nTrainingCustomerMessenger" as const;
 export const description = "Dummy node used for n8n training" as const;
 export const version = 1 as const;
-export const defaults = { name: "Customer Messenger (n8n training)" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Customer Messenger (n8n training)"} as const;
+export const credentials = undefined 
 
 /**
  * Dummy node used for n8n training
  */
 export interface N8nTrainingCustomerMessengerNodeParameters {
-	/**
-	 */
-	readonly customerId: string;
 
-	/**
-	 * Type options: {"rows":4}
-	 */
-	readonly message: string;
+    /**
+     */
+    readonly customerId: string;
+
+    /**
+     * Type options: {"rows":4}
+     */
+    readonly message: string;
+
+
 }
+

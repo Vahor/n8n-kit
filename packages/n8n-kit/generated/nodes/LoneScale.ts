@@ -4,77 +4,67 @@
 export const name = "loneScale" as const;
 export const description = "Create List, add / delete items" as const;
 export const version = 1 as const;
-export const defaults = { name: "LoneScale" } as const;
-export const credentials = [{ name: "loneScaleApi", required: true }] as const;
+export const defaults = {"name":"LoneScale"} as const;
+export const credentials = [{"name":"loneScaleApi","required":true}] as const
 
 /**
  * Create List, add / delete items
  */
 export interface LoneScaleNodeParameters {
-	/**
-	 * Create a new list
-	 * Default: "list"
-	 */
-	readonly resource: "list" | "item";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation?: "create";
+    /**
+     * Create a new list
+     * Default: "list"
+     */
+    readonly resource: "list" | "item";
 
-	/**
-	 * Type of your list
-	 * Default: "PEOPLE"
-	 */
-	readonly type: "COMPANY" | "PEOPLE";
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create";
 
-	/**
-	 * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-	 * Type options: {"loadOptionsMethod":"getLists","loadOptionsDependsOn":["type"]}
-	 */
-	readonly list: string;
+    /**
+     * Type of your list
+     * Default: "PEOPLE"
+     */
+    readonly type?: "COMPANY" | "PEOPLE";
 
-	/**
-	 * Contact first name
-	 */
-	readonly first_name: string;
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getLists","loadOptionsDependsOn":["type"]}
+     */
+    readonly list?: string;
 
-	/**
-	 * Contact last name
-	 */
-	readonly last_name: string;
+    /**
+     * Contact first name
+     */
+    readonly first_name?: string;
 
-	/**
-	 * Contact company name
-	 */
-	readonly company_name?: string;
+    /**
+     * Contact last name
+     */
+    readonly last_name?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly peopleAdditionalFields?: {
-		full_name: string;
-		email: string;
-		company_name: string;
-		current_position: string;
-		domain: string;
-		linkedin_url: string;
-		location: string;
-		contact_id: string;
-	};
+    /**
+     * Contact company name
+     */
+    readonly company_name?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly companyAdditionalFields?: {
-		linkedin_url: string;
-		domain: string;
-		location: string;
-		contact_id: string;
-	};
+    /**
+     * Default: {}
+     */
+    readonly peopleAdditionalFields?: { "full_name"?: string, "email"?: string, "company_name"?: string, "current_position"?: string, "domain"?: string, "linkedin_url"?: string, "location"?: string, "contact_id"?: string };
 
-	/**
-	 * Name of your list
-	 */
-	readonly name: string;
+    /**
+     * Default: {}
+     */
+    readonly companyAdditionalFields?: { "linkedin_url"?: string, "domain"?: string, "location"?: string, "contact_id"?: string };
+
+    /**
+     * Name of your list
+     */
+    readonly name?: string;
+
+
 }
+

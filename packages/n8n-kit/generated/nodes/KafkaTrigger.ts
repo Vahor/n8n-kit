@@ -4,47 +4,39 @@
 export const name = "kafkaTrigger" as const;
 export const description = "Consume messages from a Kafka topic" as const;
 export const version = 1.1 as const;
-export const defaults = { name: "Kafka Trigger" } as const;
-export const credentials = [{ name: "kafka", required: true }] as const;
+export const defaults = {"name":"Kafka Trigger"} as const;
+export const credentials = [{"name":"kafka","required":true}] as const
 
 /**
  * Consume messages from a Kafka topic
  */
 export interface KafkaTriggerNodeParameters {
-	/**
-	 * Name of the queue of topic to consume from
-	 */
-	readonly topic: string;
 
-	/**
-	 * ID of the consumer group
-	 */
-	readonly groupId: string;
+    /**
+     * Name of the queue of topic to consume from
+     */
+    readonly topic: string;
 
-	/**
-	 * Whether to use Confluent Schema Registry
-	 */
-	readonly useSchemaRegistry?: boolean;
+    /**
+     * ID of the consumer group
+     */
+    readonly groupId: string;
 
-	/**
-	 * URL of the schema registry
-	 */
-	readonly schemaRegistryUrl: string;
+    /**
+     * Whether to use Confluent Schema Registry
+     */
+    readonly useSchemaRegistry?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		allowAutoTopicCreation: boolean;
-		autoCommitThreshold: number;
-		autoCommitInterval: number;
-		heartbeatInterval: number;
-		maxInFlightRequests: number;
-		fromBeginning: boolean;
-		jsonParseMessage: boolean;
-		parallelProcessing: boolean;
-		onlyMessage: boolean;
-		returnHeaders: boolean;
-		sessionTimeout: number;
-	};
+    /**
+     * URL of the schema registry
+     */
+    readonly schemaRegistryUrl?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "allowAutoTopicCreation"?: boolean, "autoCommitThreshold"?: number, "autoCommitInterval"?: number, "heartbeatInterval"?: number, "maxInFlightRequests"?: number, "fromBeginning"?: boolean, "jsonParseMessage"?: boolean, "parallelProcessing"?: boolean, "onlyMessage"?: boolean, "returnHeaders"?: boolean, "sessionTimeout"?: number };
+
+
 }
+

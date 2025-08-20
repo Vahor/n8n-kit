@@ -4,20 +4,19 @@
 export const name = "airtop" as const;
 export const description = "Scrape and control any site with Airtop" as const;
 export const version = 1 as const;
-export const defaults = { name: "Airtop" } as const;
-export const credentials = [{ name: "airtopApi", required: true }] as const;
+export const defaults = {"name":"Airtop"} as const;
+export const credentials = [{"name":"airtopApi","required":true}] as const
 
 /**
  * Scrape and control any site with Airtop
  */
 export interface AirtopNodeParameters {
-	/**
-	 * Default: "session"
-	 */
-	readonly resource?:
-		| "extraction"
-		| "file"
-		| "interaction"
-		| "session"
-		| "window";
+
+    /**
+     * Default: "session"
+     */
+    readonly resource?: "extraction" | "file" | "interaction" | "session" | "window";
+
+
 }
+

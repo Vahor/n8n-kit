@@ -4,67 +4,54 @@
 export const name = "rocketchat" as const;
 export const description = "Consume RocketChat API" as const;
 export const version = 1 as const;
-export const defaults = { name: "RocketChat" } as const;
-export const credentials = [{ name: "rocketchatApi", required: true }] as const;
+export const defaults = {"name":"RocketChat"} as const;
+export const credentials = [{"name":"rocketchatApi","required":true}] as const
 
 /**
  * Consume RocketChat API
  */
 export interface RocketchatNodeParameters {
-	/**
-	 * Default: "chat"
-	 */
-	readonly resource?: "chat";
 
-	/**
-	 * Default: "postMessage"
-	 */
-	readonly operation?: "postMessage";
+    /**
+     * Default: "chat"
+     */
+    readonly resource?: "chat";
 
-	/**
-	 * The channel name with the prefix in front of it
-	 */
-	readonly channel: string;
+    /**
+     * Default: "postMessage"
+     */
+    readonly operation?: "postMessage";
 
-	/**
-	 * The text of the message to send, is optional because of attachments
-	 */
-	readonly text?: string;
+    /**
+     * The channel name with the prefix in front of it
+     */
+    readonly channel?: string;
 
-	/**
-	 */
-	readonly jsonParameters?: boolean;
+    /**
+     * The text of the message to send, is optional because of attachments
+     */
+    readonly text?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { alias: string; avatar: string; emoji: string };
+    /**
+     */
+    readonly jsonParameters?: boolean;
 
-	/**
-	 * Default: {}
-	 * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Attachment"}
-	 */
-	readonly attachments?: {
-		color: any;
-		text: string;
-		ts: any;
-		thumbUrl: string;
-		messageLink: string;
-		collapsed: boolean;
-		authorName: string;
-		authorLink: string;
-		authorIcon: string;
-		title: string;
-		titleLink: string;
-		titleLinkDownload: boolean;
-		imageUrl: string;
-		audioUrl: string;
-		videoUrl: string;
-		fields: { fieldsValues: any };
-	};
+    /**
+     * Default: {}
+     */
+    readonly options?: { "alias"?: string, "avatar"?: string, "emoji"?: string };
 
-	/**
-	 * Type options: {"alwaysOpenEditWindow":true}
-	 */
-	readonly attachmentsJson?: any;
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Attachment"}
+     */
+    readonly attachments?: { "color"?: any, "text"?: string, "ts"?: any, "thumbUrl"?: string, "messageLink"?: string, "collapsed"?: boolean, "authorName"?: string, "authorLink"?: string, "authorIcon"?: string, "title"?: string, "titleLink"?: string, "titleLinkDownload"?: boolean, "imageUrl"?: string, "audioUrl"?: string, "videoUrl"?: string, "fields"?: { "fieldsValues": any } };
+
+    /**
+     * Type options: {"alwaysOpenEditWindow":true}
+     */
+    readonly attachmentsJson?: any;
+
+
 }
+

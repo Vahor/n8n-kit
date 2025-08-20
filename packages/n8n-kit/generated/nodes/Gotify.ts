@@ -4,51 +4,55 @@
 export const name = "gotify" as const;
 export const description = "Consume Gotify API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Gotify" } as const;
-export const credentials = [{ name: "gotifyApi", required: true }] as const;
+export const defaults = {"name":"Gotify"} as const;
+export const credentials = [{"name":"gotifyApi","required":true}] as const
 
 /**
  * Consume Gotify API
  */
 export interface GotifyNodeParameters {
-	/**
-	 * Default: "message"
-	 */
-	readonly resource?: "message";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation?: "create" | "delete" | "getAll";
+    /**
+     * Default: "message"
+     */
+    readonly resource?: "message";
 
-	/**
-	 * The message to send, If using Markdown add the Content Type option
-	 */
-	readonly message: string;
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "delete" | "getAll";
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: { priority: number; title: string };
+    /**
+     * The message to send, If using Markdown add the Content Type option
+     */
+    readonly message?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { contentType: "text/plain" | "text/markdown" };
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "priority"?: number, "title"?: string };
 
-	/**
-	 */
-	readonly messageId: string;
+    /**
+     * Default: {}
+     */
+    readonly options?: { "contentType"?: "text/plain" | "text/markdown" };
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     */
+    readonly messageId?: string;
 
-	/**
-	 * Max number of results to return
-	 * Default: 20
-	 * Type options: {"minValue":1}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 20
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+
 }
+

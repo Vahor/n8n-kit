@@ -4,17 +4,19 @@
 export const name = "raindrop" as const;
 export const description = "Consume the Raindrop API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Raindrop" } as const;
-export const credentials = [
-	{ name: "raindropOAuth2Api", required: true },
-] as const;
+export const defaults = {"name":"Raindrop"} as const;
+export const credentials = [{"name":"raindropOAuth2Api","required":true}] as const
 
 /**
  * Consume the Raindrop API
  */
 export interface RaindropNodeParameters {
-	/**
-	 * Default: "collection"
-	 */
-	readonly resource?: "bookmark" | "collection" | "tag" | "user";
+
+    /**
+     * Default: "collection"
+     */
+    readonly resource?: "bookmark" | "collection" | "tag" | "user";
+
+
 }
+

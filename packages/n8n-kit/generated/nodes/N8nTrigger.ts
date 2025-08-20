@@ -2,17 +2,17 @@
 // Generated from 'vendor/n8n/packages/nodes-base/nodes/N8nTrigger/N8nTrigger.node.ts' node
 
 export const name = "n8nTrigger" as const;
-export const description =
-	"Handle events and perform actions on your n8n instance" as const;
+export const description = "Handle events and perform actions on your n8n instance" as const;
 export const version = 1 as const;
-export const defaults = { name: "n8n Trigger" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"n8n Trigger"} as const;
+export const credentials = undefined 
 
 /**
  * Handle events and perform actions on your n8n instance
  */
 export interface N8nTriggerNodeParameters {
-	/**
+
+    /**
      * `Specifies under which conditions an execution should happen:
 				<ul>
 					<li><b>Active Workflow Updated</b>: Triggers when this workflow is updated</li>
@@ -21,5 +21,8 @@ export interface N8nTriggerNodeParameters {
 				</ul>`
      * Default: []
      */
-	readonly events: ("update" | "init" | "activate")[];
+    readonly events: ("update" | "init" | "activate")[];
+
+
 }
+

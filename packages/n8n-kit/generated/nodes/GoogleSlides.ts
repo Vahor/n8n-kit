@@ -4,89 +4,77 @@
 export const name = "googleSlides" as const;
 export const description = "Consume the Google Slides API" as const;
 export const version = 2 as const;
-export const defaults = { name: "Google Slides" } as const;
-export const credentials = [
-	{
-		name: "googleApi",
-		required: true,
-		displayOptions: { show: { authentication: ["serviceAccount"] } },
-	},
-	{
-		name: "googleSlidesOAuth2Api",
-		required: true,
-		displayOptions: { show: { authentication: ["oAuth2"] } },
-	},
-] as const;
+export const defaults = {"name":"Google Slides"} as const;
+export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleSlidesOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume the Google Slides API
  */
 export interface GoogleSlidesNodeParameters {
-	/**
-	 * Default: "serviceAccount"
-	 */
-	readonly authentication?: "oAuth2" | "serviceAccount" | "oAuth2";
 
-	/**
-	 * Default: "presentation"
-	 */
-	readonly resource?: "page" | "presentation";
+    /**
+     * Default: "serviceAccount"
+     */
+    readonly authentication?: "oAuth2" | "serviceAccount" | "oAuth2";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation?:
-		| "create"
-		| "get"
-		| "getSlides"
-		| "replaceText"
-		| "getThumbnail";
+    /**
+     * Default: "presentation"
+     */
+    readonly resource?: "page" | "presentation";
 
-	/**
-	 * Title of the presentation to create
-	 */
-	readonly title: string;
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "get" | "getSlides" | "replaceText" | "getThumbnail";
 
-	/**
-	 * ID of the presentation to retrieve. Found in the presentation URL: <code>https://docs.google.com/presentation/d/PRESENTATION_ID/edit</code>
-	 */
-	readonly presentationId: string;
+    /**
+     * Title of the presentation to create
+     */
+    readonly title?: string;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * ID of the presentation to retrieve. Found in the presentation URL: <code>https://docs.google.com/presentation/d/PRESENTATION_ID/edit</code>
+     */
+    readonly presentationId?: string;
 
-	/**
-	 * Max number of results to return
-	 * Default: 100
-	 * Type options: {"minValue":1,"maxValue":500}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * ID of the page object to retrieve
-	 */
-	readonly pageObjectId: string;
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":500}
+     */
+    readonly limit?: number;
 
-	/**
-	 * Default: {}
-	 * Type options: {"multipleValues":true}
-	 */
-	readonly textUi?: { textValues: any };
+    /**
+     * ID of the page object to retrieve
+     */
+    readonly pageObjectId?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { revisionId: string };
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly textUi?: { "textValues": any };
 
-	/**
-	 * Name of the binary property to which to write the data of the read page
-	 */
-	readonly download?: boolean;
+    /**
+     * Default: {}
+     */
+    readonly options?: { "revisionId"?: string };
 
-	/**
-	 * Default: "data"
-	 */
-	readonly binaryProperty: string;
+    /**
+     * Name of the binary property to which to write the data of the read page
+     */
+    readonly download?: boolean;
+
+    /**
+     * Default: "data"
+     */
+    readonly binaryProperty?: string;
+
+
 }
+

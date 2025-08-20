@@ -4,35 +4,39 @@
 export const name = "msg91" as const;
 export const description = "Sends transactional SMS via MSG91" as const;
 export const version = 1 as const;
-export const defaults = { name: "MSG91" } as const;
-export const credentials = [{ name: "msg91Api", required: true }] as const;
+export const defaults = {"name":"MSG91"} as const;
+export const credentials = [{"name":"msg91Api","required":true}] as const
 
 /**
  * Sends transactional SMS via MSG91
  */
 export interface Msg91NodeParameters {
-	/**
-	 * Default: "sms"
-	 */
-	readonly resource?: "sms";
 
-	/**
-	 * Default: "send"
-	 */
-	readonly operation?: "send";
+    /**
+     * Default: "sms"
+     */
+    readonly resource?: "sms";
 
-	/**
-	 * The number from which to send the message
-	 */
-	readonly from: string;
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send";
 
-	/**
-	 * The number, with coutry code, to which to send the message
-	 */
-	readonly to: string;
+    /**
+     * The number from which to send the message
+     */
+    readonly from?: string;
 
-	/**
-	 * The message to send
-	 */
-	readonly message: string;
+    /**
+     * The number, with coutry code, to which to send the message
+     */
+    readonly to?: string;
+
+    /**
+     * The message to send
+     */
+    readonly message?: string;
+
+
 }
+

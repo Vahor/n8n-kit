@@ -4,20 +4,24 @@
 export const name = "rssFeedRead" as const;
 export const description = "Reads data from an RSS Feed" as const;
 export const version = 1.2 as const;
-export const defaults = { name: "RSS Read", color: "#b02020" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"RSS Read","color":"#b02020"} as const;
+export const credentials = undefined 
 
 /**
  * Reads data from an RSS Feed
  */
 export interface RssFeedReadNodeParameters {
-	/**
-	 * URL of the RSS feed
-	 */
-	readonly url: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { customFields: string; ignoreSSL: boolean };
+    /**
+     * URL of the RSS feed
+     */
+    readonly url: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "customFields"?: string, "ignoreSSL"?: boolean };
+
+
 }
+

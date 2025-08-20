@@ -4,15 +4,19 @@
 export const name = "humanticAi" as const;
 export const description = "Consume Humantic AI API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Humantic AI" } as const;
-export const credentials = [{ name: "humanticAiApi", required: true }] as const;
+export const defaults = {"name":"Humantic AI"} as const;
+export const credentials = [{"name":"humanticAiApi","required":true}] as const
 
 /**
  * Consume Humantic AI API
  */
 export interface HumanticAiNodeParameters {
-	/**
-	 * Default: "profile"
-	 */
-	readonly resource?: "profile";
+
+    /**
+     * Default: "profile"
+     */
+    readonly resource?: "profile";
+
+
 }
+

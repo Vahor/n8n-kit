@@ -4,163 +4,104 @@
 export const name = "beeminder" as const;
 export const description = "Consume Beeminder API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Beeminder" } as const;
-export const credentials = [
-	{
-		name: "beeminderApi",
-		required: true,
-		displayOptions: { show: { authentication: ["apiToken"] } },
-	},
-	{
-		name: "beeminderOAuth2Api",
-		required: true,
-		displayOptions: { show: { authentication: ["oAuth2"] } },
-	},
-] as const;
+export const defaults = {"name":"Beeminder"} as const;
+export const credentials = [{"name":"beeminderApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"beeminderOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Beeminder API
  */
 export interface BeeminderNodeParameters {
-	/**
-	 * Default: "apiToken"
-	 */
-	readonly authentication?: "apiToken" | "oAuth2";
 
-	/**
-	 * Default: "datapoint"
-	 */
-	readonly resource: "charge" | "datapoint" | "goal" | "user";
+    /**
+     * Default: "apiToken"
+     */
+    readonly authentication?: "apiToken" | "oAuth2";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation:
-		| "create"
-		| "createAll"
-		| "delete"
-		| "get"
-		| "getAll"
-		| "update"
-		| "getArchived"
-		| "refresh"
-		| "shortCircuit"
-		| "stepDown"
-		| "cancelStepDown"
-		| "uncle";
+    /**
+     * Default: "datapoint"
+     */
+    readonly resource: "charge" | "datapoint" | "goal" | "user";
 
-	/**
-	 * The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getGoals"}
-	 */
-	readonly goalName: string;
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "createAll" | "delete" | "get" | "getAll" | "update" | "getArchived" | "refresh" | "shortCircuit" | "stepDown" | "cancelStepDown" | "uncle";
 
-	/**
-	 * Charge amount in USD
-	 */
-	readonly amount: number;
+    /**
+     * The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getGoals"}
+     */
+    readonly goalName?: string;
 
-	/**
-	 * Array of datapoint objects to create. Each object should contain value and optionally timestamp, comment, etc.
-	 * Default: "[]"
-	 */
-	readonly datapoints: any;
+    /**
+     * Charge amount in USD
+     */
+    readonly amount?: number;
 
-	/**
-	 * Unique identifier for the goal
-	 */
-	readonly slug: string;
+    /**
+     * Array of datapoint objects to create. Each object should contain value and optionally timestamp, comment, etc.
+     * Default: "[]"
+     */
+    readonly datapoints?: any;
 
-	/**
-	 * Human-readable title for the goal
-	 */
-	readonly title: string;
+    /**
+     * Unique identifier for the goal
+     */
+    readonly slug?: string;
 
-	/**
-	 * Type of goal. <a href="https://api.beeminder.com/#attributes-2">More info here.</a>.
-	 * Default: "hustler"
-	 */
-	readonly goal_type:
-		| "hustler"
-		| "biker"
-		| "fatloser"
-		| "gainer"
-		| "inboxer"
-		| "drinker"
-		| "custom";
+    /**
+     * Human-readable title for the goal
+     */
+    readonly title?: string;
 
-	/**
-	 * Units for the goal (e.g., "hours", "pages", "pounds")
-	 */
-	readonly gunits: string;
+    /**
+     * Type of goal. <a href="https://api.beeminder.com/#attributes-2">More info here.</a>.
+     * Default: "hustler"
+     */
+    readonly goal_type?: "hustler" | "biker" | "fatloser" | "gainer" | "inboxer" | "drinker" | "custom";
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * Units for the goal (e.g., "hours", "pages", "pounds")
+     */
+    readonly gunits?: string;
 
-	/**
-	 * Max number of results to return
-	 * Default: 30
-	 * Type options: {"minValue":1,"maxValue":300}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * Datapoint value to send
-	 * Default: 1
-	 */
-	readonly value: number;
+    /**
+     * Max number of results to return
+     * Default: 30
+     * Type options: {"minValue":1,"maxValue":300}
+     */
+    readonly limit?: number;
 
-	/**
-	 */
-	readonly datapointId: string;
+    /**
+     * Datapoint value to send
+     * Default: 1
+     */
+    readonly value?: number;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		comment: string;
-		timestamp: any;
-		requestid: string;
-		note: string;
-		dryrun: boolean;
-		goaldate: any;
-		goalval: number;
-		rate: number;
-		initval: number;
-		secret: boolean;
-		datapublic: boolean;
-		datasource: "api" | "ifttt" | "zapier" | "manual";
-		tags: any;
-		datapoints: boolean;
-		emaciated: boolean;
-		associations: boolean;
-		diff_since: any;
-		skinny: boolean;
-		datapoints_count: number;
-	};
+    /**
+     */
+    readonly datapointId?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly updateFields?: {
-		title: string;
-		yaxis: string;
-		tmin: string;
-		tmax: string;
-		secret: boolean;
-		datapublic: boolean;
-		roadall: any;
-		datasource: "api" | "ifttt" | "zapier" | "";
-		tags: any;
-		value: number;
-		comment: string;
-		timestamp: any;
-	};
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "comment"?: string, "timestamp"?: any, "requestid"?: string, "note"?: string, "dryrun"?: boolean, "goaldate"?: any, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "tags"?: any, "datapoints"?: boolean, "emaciated"?: boolean, "associations"?: boolean, "diff_since"?: any, "skinny"?: boolean, "datapoints_count"?: number };
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { sort: string; page: number; per: number };
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "title"?: string, "yaxis"?: string, "tmin"?: string, "tmax"?: string, "secret"?: boolean, "datapublic"?: boolean, "roadall"?: any, "datasource"?: "api" | "ifttt" | "zapier" | "", "tags"?: any, "value"?: number, "comment"?: string, "timestamp"?: any };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "sort"?: string, "page"?: number, "per"?: number };
+
+
 }
+

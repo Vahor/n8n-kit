@@ -4,32 +4,19 @@
 export const name = "freshservice" as const;
 export const description = "Consume the Freshservice API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Freshservice" } as const;
-export const credentials = [
-	{ name: "freshserviceApi", required: true },
-] as const;
+export const defaults = {"name":"Freshservice"} as const;
+export const credentials = [{"name":"freshserviceApi","required":true}] as const
 
 /**
  * Consume the Freshservice API
  */
 export interface FreshserviceNodeParameters {
-	/**
-	 * Default: "agent"
-	 */
-	readonly resource?:
-		| "agent"
-		| "agentGroup"
-		| "agentRole"
-		| "announcement"
-		| "assetType"
-		| "change"
-		| "department"
-		| "location"
-		| "problem"
-		| "product"
-		| "release"
-		| "requester"
-		| "requesterGroup"
-		| "software"
-		| "ticket";
+
+    /**
+     * Default: "agent"
+     */
+    readonly resource?: "agent" | "agentGroup" | "agentRole" | "announcement" | "assetType" | "change" | "department" | "location" | "problem" | "product" | "release" | "requester" | "requesterGroup" | "software" | "ticket";
+
+
 }
+

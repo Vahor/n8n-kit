@@ -4,15 +4,19 @@
 export const name = "discourse" as const;
 export const description = "Consume Discourse API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Discourse" } as const;
-export const credentials = [{ name: "discourseApi", required: true }] as const;
+export const defaults = {"name":"Discourse"} as const;
+export const credentials = [{"name":"discourseApi","required":true}] as const
 
 /**
  * Consume Discourse API
  */
 export interface DiscourseNodeParameters {
-	/**
-	 * Default: "post"
-	 */
-	readonly resource?: "category" | "group" | "post" | "user" | "userGroup";
+
+    /**
+     * Default: "post"
+     */
+    readonly resource?: "category" | "group" | "post" | "user" | "userGroup";
+
+
 }
+

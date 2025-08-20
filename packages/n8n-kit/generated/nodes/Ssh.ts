@@ -4,63 +4,54 @@
 export const name = "ssh" as const;
 export const description = "Execute commands via SSH" as const;
 export const version = 1 as const;
-export const defaults = { name: "SSH", color: "#000000" } as const;
-export const credentials = [
-	{
-		name: "sshPassword",
-		required: true,
-		testedBy: "sshConnectionTest",
-		displayOptions: { show: { authentication: ["password"] } },
-	},
-	{
-		name: "sshPrivateKey",
-		required: true,
-		testedBy: "sshConnectionTest",
-		displayOptions: { show: { authentication: ["privateKey"] } },
-	},
-] as const;
+export const defaults = {"name":"SSH","color":"#000000"} as const;
+export const credentials = [{"name":"sshPassword","required":true,"testedBy":"sshConnectionTest","displayOptions":{"show":{"authentication":["password"]}}},{"name":"sshPrivateKey","required":true,"testedBy":"sshConnectionTest","displayOptions":{"show":{"authentication":["privateKey"]}}}] as const
 
 /**
  * Execute commands via SSH
  */
 export interface SshNodeParameters {
-	/**
-	 * Default: "password"
-	 */
-	readonly authentication?: "password" | "privateKey";
 
-	/**
-	 * Default: "command"
-	 */
-	readonly resource?: "command" | "file";
+    /**
+     * Default: "password"
+     */
+    readonly authentication?: "password" | "privateKey";
 
-	/**
-	 * Default: "execute"
-	 */
-	readonly operation?: "execute" | "download" | "upload";
+    /**
+     * Default: "command"
+     */
+    readonly resource?: "command" | "file";
 
-	/**
-	 * The command to be executed on a remote device
-	 */
-	readonly command?: string;
+    /**
+     * Default: "execute"
+     */
+    readonly operation?: "execute" | "download" | "upload";
 
-	/**
-	 * Default: "/"
-	 */
-	readonly cwd: string;
+    /**
+     * The command to be executed on a remote device
+     */
+    readonly command?: string;
 
-	/**
-	 * Default: "data"
-	 */
-	readonly binaryPropertyName: string;
+    /**
+     * Default: "/"
+     */
+    readonly cwd?: string;
 
-	/**
-	 * The directory to upload the file to. The name of the file does not need to be specified, it's taken from the binary data file name. To override this behavior, set the parameter "File Name" under options.
-	 */
-	readonly path: string;
+    /**
+     * Default: "data"
+     */
+    readonly binaryPropertyName?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { fileName: string };
+    /**
+     * The directory to upload the file to. The name of the file does not need to be specified, it's taken from the binary data file name. To override this behavior, set the parameter "File Name" under options.
+     */
+    readonly path?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "fileName"?: string };
+
+
 }
+

@@ -4,31 +4,30 @@
 export const name = "summarize" as const;
 export const description = "Sum, count, max, etc. across items" as const;
 export const version = 1.1 as const;
-export const defaults = { name: "Summarize" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Summarize"} as const;
+export const credentials = undefined 
 
 /**
  * Sum, count, max, etc. across items
  */
 export interface SummarizeNodeParameters {
-	/**
-	 * Default: {"values":[{"aggregation":"count","field":""}]}
-	 * Type options: {"multipleValues":true}
-	 */
-	readonly fieldsToSummarize?: { values: any };
 
-	/**
-	 * The name of the input fields that you want to split the summary by
-	 */
-	readonly fieldsToSplitBy?: string;
+    /**
+     * Default: {"values":[{"aggregation":"count","field":""}]}
+     * Type options: {"multipleValues":true}
+     */
+    readonly fieldsToSummarize?: { "values": any };
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		continueIfFieldNotFound: boolean;
-		disableDotNotation: boolean;
-		outputFormat: "separateItems" | "singleItem";
-		skipEmptySplitFields: boolean;
-	};
+    /**
+     * The name of the input fields that you want to split the summary by
+     */
+    readonly fieldsToSplitBy?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "continueIfFieldNotFound"?: boolean, "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
+
+
 }
+

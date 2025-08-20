@@ -4,15 +4,19 @@
 export const name = "plivo" as const;
 export const description = "Send SMS/MMS messages or make phone calls" as const;
 export const version = 1 as const;
-export const defaults = { name: "Plivo" } as const;
-export const credentials = [{ name: "plivoApi", required: true }] as const;
+export const defaults = {"name":"Plivo"} as const;
+export const credentials = [{"name":"plivoApi","required":true}] as const
 
 /**
  * Send SMS/MMS messages or make phone calls
  */
 export interface PlivoNodeParameters {
-	/**
-	 * Default: "sms"
-	 */
-	readonly resource: "call" | "mms" | "sms";
+
+    /**
+     * Default: "sms"
+     */
+    readonly resource: "call" | "mms" | "sms";
+
+
 }
+

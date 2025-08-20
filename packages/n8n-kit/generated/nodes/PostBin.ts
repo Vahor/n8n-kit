@@ -4,15 +4,19 @@
 export const name = "postBin" as const;
 export const description = "Consume PostBin API" as const;
 export const version = 1 as const;
-export const defaults = { name: "PostBin" } as const;
-export const credentials = [] as const;
+export const defaults = {"name":"PostBin"} as const;
+export const credentials = [] as const
 
 /**
  * Consume PostBin API
  */
 export interface PostBinNodeParameters {
-	/**
-	 * Default: "bin"
-	 */
-	readonly resource: "bin" | "request";
+
+    /**
+     * Default: "bin"
+     */
+    readonly resource: "bin" | "request";
+
+
 }
+

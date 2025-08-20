@@ -4,47 +4,49 @@
 export const name = "mocean" as const;
 export const description = "Send SMS and voice messages via Mocean" as const;
 export const version = 1 as const;
-export const defaults = { name: "Mocean" } as const;
-export const credentials = [
-	{ name: "moceanApi", required: true, testedBy: "moceanApiTest" },
-] as const;
+export const defaults = {"name":"Mocean"} as const;
+export const credentials = [{"name":"moceanApi","required":true,"testedBy":"moceanApiTest"}] as const
 
 /**
  * Send SMS and voice messages via Mocean
  */
 export interface MoceanNodeParameters {
-	/**
-	 * Default: "sms"
-	 */
-	readonly resource?: "sms" | "voice";
 
-	/**
-	 * Default: "send"
-	 */
-	readonly operation?: "send";
+    /**
+     * Default: "sms"
+     */
+    readonly resource?: "sms" | "voice";
 
-	/**
-	 * Number to which to send the message
-	 */
-	readonly from: string;
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send";
 
-	/**
-	 * Number from which to send the message
-	 */
-	readonly to: string;
+    /**
+     * Number to which to send the message
+     */
+    readonly from?: string;
 
-	/**
-	 * Default: "en-US"
-	 */
-	readonly language?: "cmn-CN" | "en-GB" | "en-US" | "ja-JP" | "ko-KR";
+    /**
+     * Number from which to send the message
+     */
+    readonly to?: string;
 
-	/**
-	 * Message to send
-	 */
-	readonly message: string;
+    /**
+     * Default: "en-US"
+     */
+    readonly language?: "cmn-CN" | "en-GB" | "en-US" | "ja-JP" | "ko-KR";
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: { dlrUrl: string };
+    /**
+     * Message to send
+     */
+    readonly message?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "dlrUrl"?: string };
+
+
 }
+

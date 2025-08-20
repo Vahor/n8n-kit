@@ -4,93 +4,80 @@
 export const name = "egoi" as const;
 export const description = "Consume E-goi API" as const;
 export const version = 1 as const;
-export const defaults = { name: "E-goi" } as const;
-export const credentials = [{ name: "egoiApi", required: true }] as const;
+export const defaults = {"name":"E-goi"} as const;
+export const credentials = [{"name":"egoiApi","required":true}] as const
 
 /**
  * Consume E-goi API
  */
 export interface EgoiNodeParameters {
-	/**
-	 * Default: "contact"
-	 */
-	readonly resource: "contact";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation: "create" | "get" | "getAll" | "update";
+    /**
+     * Default: "contact"
+     */
+    readonly resource: "contact";
 
-	/**
-	 * ID of list to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getLists"}
-	 */
-	readonly list?: string;
+    /**
+     * Default: "create"
+     */
+    readonly operation: "create" | "get" | "getAll" | "update";
 
-	/**
-	 * Email address for a subscriber
-	 */
-	readonly email?: string;
+    /**
+     * ID of list to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getLists"}
+     */
+    readonly list?: string;
 
-	/**
-	 * Contact ID of the subscriber
-	 */
-	readonly contactId?: string;
+    /**
+     * Email address for a subscriber
+     */
+    readonly email?: string;
 
-	/**
-	 * By default the response just includes the contact ID. If this option gets activated, it will resolve the data automatically.
-	 * Default: true
-	 */
-	readonly resolveData?: boolean;
+    /**
+     * Contact ID of the subscriber
+     */
+    readonly contactId?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		birth_date: any;
-		cellphone: string;
-		extraFieldsUi: { extraFieldValues: any };
-		first_name: string;
-		last_name: string;
-		status: "unconfirmed" | "active" | "inactive" | "removed";
-		tagIds: string[];
-	};
+    /**
+     * By default the response just includes the contact ID. If this option gets activated, it will resolve the data automatically.
+     * Default: true
+     */
+    readonly resolveData?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly updateFields?: {
-		birth_date: any;
-		cellphone: string;
-		email: string;
-		extraFieldsUi: { extraFieldValues: any };
-		first_name: string;
-		last_name: string;
-		status: "unconfirmed" | "active" | "inactive" | "removed";
-		tagIds: string[];
-	};
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "birth_date"?: any, "cellphone"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: string[] };
 
-	/**
-	 * Search by
-	 * Default: "id"
-	 */
-	readonly by?: "id" | "email";
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "birth_date"?: any, "cellphone"?: string, "email"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: string[] };
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * Search by
+     * Default: "id"
+     */
+    readonly by?: "id" | "email";
 
-	/**
-	 * Max number of results to return
-	 * Default: 100
-	 * Type options: {"minValue":1,"maxValue":500}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
 
-	/**
-	 * Whether to return a simplified version of the response instead of the raw data
-	 * Default: true
-	 */
-	readonly simple?: boolean;
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":500}
+     */
+    readonly limit?: number;
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
+
+
 }
+

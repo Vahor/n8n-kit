@@ -1,6 +1,6 @@
 # n8n-kit
 
-Chain code was very inspired from aws-cdk-lib
+Chain code was inspired from aws-cdk-lib
 
 
 ## Generate example:
@@ -14,9 +14,7 @@ bun run examples/nasa/index.ts > examples/nasa/output.json
 - Add more nodes
 - Add more examples (with screenshots)
 - Add more tests
-- Add more precise types
 - Node with multiple inputs (merge)
-- Node output type (stored and usable with a state parametrr in the next method)
 - Call to subworkflow with correct input parameters.
 - Add some sort of group (sticky node in background of multiple nodes)
 - Add a way to change the direction of graph

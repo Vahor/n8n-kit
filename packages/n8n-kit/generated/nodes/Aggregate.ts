@@ -2,54 +2,51 @@
 // Generated from 'vendor/n8n/packages/nodes-base/nodes/Transform/Aggregate/Aggregate.node.ts' node
 
 export const name = "aggregate" as const;
-export const description =
-	"Combine a field from many items into a list in a single item" as const;
+export const description = "Combine a field from many items into a list in a single item" as const;
 export const version = 1 as const;
-export const defaults = { name: "Aggregate" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Aggregate"} as const;
+export const credentials = undefined 
 
 /**
  * Combine a field from many items into a list in a single item
  */
 export interface AggregateNodeParameters {
-	/**
-	 * Default: "aggregateIndividualFields"
-	 */
-	readonly aggregate?: "aggregateIndividualFields" | "aggregateAllItemData";
 
-	/**
-	 * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
-	 * Type options: {"multipleValues":true}
-	 */
-	readonly fieldsToAggregate?: { fieldToAggregate: any };
+    /**
+     * Default: "aggregateIndividualFields"
+     */
+    readonly aggregate?: "aggregateIndividualFields" | "aggregateAllItemData";
 
-	/**
-	 * The name of the output field to put the data in
-	 * Default: "data"
-	 */
-	readonly destinationFieldName?: string;
+    /**
+     * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
+     * Type options: {"multipleValues":true}
+     */
+    readonly fieldsToAggregate?: { "fieldToAggregate": any };
 
-	/**
-	 * Default: "allFields"
-	 */
-	readonly include?: "allFields" | "specifiedFields" | "allFieldsExcept";
+    /**
+     * The name of the output field to put the data in
+     * Default: "data"
+     */
+    readonly destinationFieldName?: string;
 
-	/**
-	 */
-	readonly fieldsToExclude?: string;
+    /**
+     * Default: "allFields"
+     */
+    readonly include?: "allFields" | "specifiedFields" | "allFieldsExcept";
 
-	/**
-	 */
-	readonly fieldsToInclude?: string;
+    /**
+     */
+    readonly fieldsToExclude?: string;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		disableDotNotation: boolean;
-		mergeLists: boolean;
-		includeBinaries: boolean;
-		keepOnlyUnique: boolean;
-		keepMissing: boolean;
-	};
+    /**
+     */
+    readonly fieldsToInclude?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean };
+
+
 }
+

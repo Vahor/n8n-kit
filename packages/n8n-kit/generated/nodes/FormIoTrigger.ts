@@ -4,33 +4,37 @@
 export const name = "formIoTrigger" as const;
 export const description = "Handle form.io events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = { name: "Form.io Trigger" } as const;
-export const credentials = [{ name: "formIoApi", required: true }] as const;
+export const defaults = {"name":"Form.io Trigger"} as const;
+export const credentials = [{"name":"formIoApi","required":true}] as const
 
 /**
  * Handle form.io events via webhooks
  */
 export interface FormIoTriggerNodeParameters {
-	/**
-	 * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-	 * Type options: {"loadOptionsMethod":"getProjects"}
-	 */
-	readonly projectId: string;
 
-	/**
-	 * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-	 * Type options: {"loadOptionsDependsOn":["projectId"],"loadOptionsMethod":"getForms"}
-	 */
-	readonly formId: string;
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getProjects"}
+     */
+    readonly projectId: string;
 
-	/**
-	 * Default: []
-	 */
-	readonly events: ("create" | "update")[];
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsDependsOn":["projectId"],"loadOptionsMethod":"getForms"}
+     */
+    readonly formId: string;
 
-	/**
-	 * Whether to return a simplified version of the response instead of the raw data
-	 * Default: true
-	 */
-	readonly simple?: boolean;
+    /**
+     * Default: []
+     */
+    readonly events: ("create" | "update")[];
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
+
+
 }
+

@@ -4,15 +4,19 @@
 export const name = "taiga" as const;
 export const description = "Consume Taiga API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Taiga" } as const;
-export const credentials = [{ name: "taigaApi", required: true }] as const;
+export const defaults = {"name":"Taiga"} as const;
+export const credentials = [{"name":"taigaApi","required":true}] as const
 
 /**
  * Consume Taiga API
  */
 export interface TaigaNodeParameters {
-	/**
-	 * Default: "issue"
-	 */
-	readonly resource?: "epic" | "issue" | "task" | "userStory";
+
+    /**
+     * Default: "issue"
+     */
+    readonly resource?: "epic" | "issue" | "task" | "userStory";
+
+
 }
+

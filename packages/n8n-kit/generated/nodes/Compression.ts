@@ -4,42 +4,46 @@
 export const name = "compression" as const;
 export const description = "Compress and decompress files" as const;
 export const version = 1.1 as const;
-export const defaults = { name: "Compression", color: "#408000" } as const;
-export const credentials = undefined;
+export const defaults = {"name":"Compression","color":"#408000"} as const;
+export const credentials = undefined 
 
 /**
  * Compress and decompress files
  */
 export interface CompressionNodeParameters {
-	/**
-	 * Default: "decompress"
-	 */
-	readonly operation?: "compress" | "decompress";
 
-	/**
-	 * To process more than one file, use a comma-separated list of the binary fields names
-	 * Default: "data"
-	 */
-	readonly binaryPropertyName: string;
+    /**
+     * Default: "decompress"
+     */
+    readonly operation?: "compress" | "decompress";
 
-	/**
-	 * Format of the output
-	 */
-	readonly outputFormat?: "gzip" | "zip";
+    /**
+     * To process more than one file, use a comma-separated list of the binary fields names
+     * Default: "data"
+     */
+    readonly binaryPropertyName?: string;
 
-	/**
-	 * Name of the output file
-	 */
-	readonly fileName: string;
+    /**
+     * Format of the output
+     */
+    readonly outputFormat?: "gzip" | "zip";
 
-	/**
-	 * Default: "data"
-	 */
-	readonly binaryPropertyOutput?: string;
+    /**
+     * Name of the output file
+     */
+    readonly fileName?: string;
 
-	/**
-	 * Prefix to add to the gzip file
-	 * Default: "data"
-	 */
-	readonly outputPrefix: string;
+    /**
+     * Default: "data"
+     */
+    readonly binaryPropertyOutput?: string;
+
+    /**
+     * Prefix to add to the gzip file
+     * Default: "data"
+     */
+    readonly outputPrefix?: string;
+
+
 }
+

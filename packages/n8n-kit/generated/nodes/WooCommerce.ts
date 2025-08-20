@@ -4,17 +4,19 @@
 export const name = "wooCommerce" as const;
 export const description = "Consume WooCommerce API" as const;
 export const version = 1 as const;
-export const defaults = { name: "WooCommerce" } as const;
-export const credentials = [
-	{ name: "wooCommerceApi", required: true },
-] as const;
+export const defaults = {"name":"WooCommerce"} as const;
+export const credentials = [{"name":"wooCommerceApi","required":true}] as const
 
 /**
  * Consume WooCommerce API
  */
 export interface WooCommerceNodeParameters {
-	/**
-	 * Default: "product"
-	 */
-	readonly resource?: "customer" | "order" | "product";
+
+    /**
+     * Default: "product"
+     */
+    readonly resource?: "customer" | "order" | "product";
+
+
 }
+

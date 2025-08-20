@@ -1,10 +1,9 @@
+import type { NoOpNodeParameters } from "generated/nodes/NoOp";
 import { Node, type NodeProps } from "./node";
 
-type NoOpBaseProps = {};
+export interface NoOpProps extends NoOpNodeParameters, NodeProps {}
 
-export interface NoOpProps extends NoOpBaseProps, NodeProps {}
-
-export class NoOp<L extends string> extends Node<L, never> {
+export class NoOp<L extends string> extends Node<L> {
 	protected type = "n8n-nodes-base.noOp";
 	protected typeVersion = 1;
 

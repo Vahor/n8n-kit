@@ -4,27 +4,19 @@
 export const name = "monicaCrm" as const;
 export const description = "Consume the Monica CRM API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Monica CRM" } as const;
-export const credentials = [{ name: "monicaCrmApi", required: true }] as const;
+export const defaults = {"name":"Monica CRM"} as const;
+export const credentials = [{"name":"monicaCrmApi","required":true}] as const
 
 /**
  * Consume the Monica CRM API
  */
 export interface MonicaCrmNodeParameters {
-	/**
-	 * Default: "contact"
-	 */
-	readonly resource?:
-		| "activity"
-		| "call"
-		| "contact"
-		| "contactField"
-		| "contactTag"
-		| "conversation"
-		| "conversationMessage"
-		| "journalEntry"
-		| "note"
-		| "reminder"
-		| "tag"
-		| "task";
+
+    /**
+     * Default: "contact"
+     */
+    readonly resource?: "activity" | "call" | "contact" | "contactField" | "contactTag" | "conversation" | "conversationMessage" | "journalEntry" | "note" | "reminder" | "tag" | "task";
+
+
 }
+

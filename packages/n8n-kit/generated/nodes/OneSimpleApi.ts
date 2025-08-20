@@ -4,107 +4,77 @@
 export const name = "oneSimpleApi" as const;
 export const description = "A toolbox of no-code utilities" as const;
 export const version = 1 as const;
-export const defaults = { name: "One Simple API" } as const;
-export const credentials = [{ name: "oneSimpleApi", required: true }] as const;
+export const defaults = {"name":"One Simple API"} as const;
+export const credentials = [{"name":"oneSimpleApi","required":true}] as const
 
 /**
  * A toolbox of no-code utilities
  */
 export interface OneSimpleApiNodeParameters {
-	/**
-	 * Default: "website"
-	 */
-	readonly resource: "information" | "socialProfile" | "utility" | "website";
 
-	/**
-	 * Default: "pdf"
-	 */
-	readonly operation?:
-		| "pdf"
-		| "seo"
-		| "screenshot"
-		| "instagramProfile"
-		| "spotifyArtistProfile"
-		| "exchangeRate"
-		| "imageMetadata"
-		| "expandURL"
-		| "qrCode"
-		| "validateEmail";
+    /**
+     * Default: "website"
+     */
+    readonly resource: "information" | "socialProfile" | "utility" | "website";
 
-	/**
-	 * Link to webpage to convert
-	 */
-	readonly link: string;
+    /**
+     * Default: "pdf"
+     */
+    readonly operation?: "pdf" | "seo" | "screenshot" | "instagramProfile" | "spotifyArtistProfile" | "exchangeRate" | "imageMetadata" | "expandURL" | "qrCode" | "validateEmail";
 
-	/**
-	 * Whether to download the PDF or return a link to it
-	 */
-	readonly download: boolean;
+    /**
+     * Link to webpage to convert
+     */
+    readonly link?: string;
 
-	/**
-	 * The name of the output field to put the binary file data in
-	 * Default: "data"
-	 */
-	readonly output: string;
+    /**
+     * Whether to download the PDF or return a link to it
+     */
+    readonly download?: boolean;
 
-	/**
-	 * Default: {}
-	 */
-	readonly options?: {
-		page:
-			| "A0"
-			| "A1"
-			| "A2"
-			| "A3"
-			| "A4"
-			| "A5"
-			| "A6"
-			| "Ledger"
-			| "Legal"
-			| "Letter"
-			| "Tabloid";
-		force: boolean;
-		size: "Small" | "Medium" | "Large";
-		format: "PNG" | "SVG";
-		screen:
-			| "phone"
-			| "phone-landscape"
-			| "retina"
-			| "tablet"
-			| "tablet-landscape";
-		fullpage: boolean;
-		headers: boolean;
-	};
+    /**
+     * The name of the output field to put the binary file data in
+     * Default: "data"
+     */
+    readonly output?: string;
 
-	/**
-	 * The text that should be turned into a QR code - like a website URL
-	 */
-	readonly message: string;
+    /**
+     * Default: {}
+     */
+    readonly options?: { "page"?: "A0" | "A1" | "A2" | "A3" | "A4" | "A5" | "A6" | "Ledger" | "Legal" | "Letter" | "Tabloid", "force"?: boolean, "size"?: "Small" | "Medium" | "Large", "format"?: "PNG" | "SVG", "screen"?: "phone" | "phone-landscape" | "retina" | "tablet" | "tablet-landscape", "fullpage"?: boolean, "headers"?: boolean };
 
-	/**
-	 * Profile name to get details of
-	 */
-	readonly profileName: string;
+    /**
+     * The text that should be turned into a QR code - like a website URL
+     */
+    readonly message?: string;
 
-	/**
-	 * Artist name to get details for
-	 */
-	readonly artistName: string;
+    /**
+     * Profile name to get details of
+     */
+    readonly profileName?: string;
 
-	/**
-	 * Value to convert
-	 */
-	readonly value: string;
+    /**
+     * Artist name to get details for
+     */
+    readonly artistName?: string;
 
-	/**
-	 */
-	readonly fromCurrency: string;
+    /**
+     * Value to convert
+     */
+    readonly value?: string;
 
-	/**
-	 */
-	readonly toCurrency: string;
+    /**
+     */
+    readonly fromCurrency?: string;
 
-	/**
-	 */
-	readonly emailAddress: string;
+    /**
+     */
+    readonly toCurrency?: string;
+
+    /**
+     */
+    readonly emailAddress?: string;
+
+
 }
+

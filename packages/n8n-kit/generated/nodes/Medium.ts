@@ -4,94 +4,72 @@
 export const name = "medium" as const;
 export const description = "Consume Medium API" as const;
 export const version = 1 as const;
-export const defaults = { name: "Medium" } as const;
-export const credentials = [
-	{
-		name: "mediumApi",
-		required: true,
-		displayOptions: { show: { authentication: ["accessToken"] } },
-	},
-	{
-		name: "mediumOAuth2Api",
-		required: true,
-		displayOptions: { show: { authentication: ["oAuth2"] } },
-	},
-] as const;
+export const defaults = {"name":"Medium"} as const;
+export const credentials = [{"name":"mediumApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"mediumOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Medium API
  */
 export interface MediumNodeParameters {
-	/**
-	 * Default: "accessToken"
-	 */
-	readonly authentication?: "accessToken" | "oAuth2";
 
-	/**
-	 * Default: "post"
-	 */
-	readonly resource?: "post" | "publication";
+    /**
+     * Default: "accessToken"
+     */
+    readonly authentication?: "accessToken" | "oAuth2";
 
-	/**
-	 * Default: "create"
-	 */
-	readonly operation?: "create" | "getAll";
+    /**
+     * Default: "post"
+     */
+    readonly resource?: "post" | "publication";
 
-	/**
-	 * Whether you are posting for a publication
-	 */
-	readonly publication?: boolean;
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "getAll";
 
-	/**
-	 * Publication IDs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-	 * Type options: {"loadOptionsMethod":"getPublications"}
-	 */
-	readonly publicationId?: string;
+    /**
+     * Whether you are posting for a publication
+     */
+    readonly publication?: boolean;
 
-	/**
-	 * Title of the post. Max Length : 100 characters.
-	 */
-	readonly title: string;
+    /**
+     * Publication IDs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getPublications"}
+     */
+    readonly publicationId?: string;
 
-	/**
-	 * The format of the content to be posted
-	 */
-	readonly contentFormat: "html" | "markdown";
+    /**
+     * Title of the post. Max Length : 100 characters.
+     */
+    readonly title?: string;
 
-	/**
-	 * The body of the post, in a valid semantic HTML fragment, or Markdown
-	 */
-	readonly content: string;
+    /**
+     * The format of the content to be posted
+     */
+    readonly contentFormat?: "html" | "markdown";
 
-	/**
-	 * Default: {}
-	 */
-	readonly additionalFields?: {
-		canonicalUrl: string;
-		license:
-			| "all-rights-reserved"
-			| "cc-40-by"
-			| "cc-40-by-nc"
-			| "cc-40-by-nc-nd"
-			| "cc-40-by-nc-sa"
-			| "cc-40-by-nd"
-			| "cc-40-by-sa"
-			| "cc-40-zero"
-			| "public-domain";
-		notifyFollowers: boolean;
-		publishStatus: "public" | "draft" | "unlisted";
-		tags: string;
-	};
+    /**
+     * The body of the post, in a valid semantic HTML fragment, or Markdown
+     */
+    readonly content?: string;
 
-	/**
-	 * Whether to return all results or only up to a given limit
-	 */
-	readonly returnAll?: boolean;
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "canonicalUrl"?: string, "license"?: "all-rights-reserved" | "cc-40-by" | "cc-40-by-nc" | "cc-40-by-nc-nd" | "cc-40-by-nc-sa" | "cc-40-by-nd" | "cc-40-by-sa" | "cc-40-zero" | "public-domain", "notifyFollowers"?: boolean, "publishStatus"?: "public" | "draft" | "unlisted", "tags"?: string };
 
-	/**
-	 * Max number of results to return
-	 * Default: 100
-	 * Type options: {"minValue":1,"maxValue":200}
-	 */
-	readonly limit?: number;
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":200}
+     */
+    readonly limit?: number;
+
+
 }
+
