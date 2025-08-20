@@ -63,5 +63,24 @@ export class Workflow {
 		};
 	}
 
-	public "~validate"() {}
+	public "~validate"() {
+		const nodes = this.props.definition
+			.toList()
+			.filter((state): state is BaseNode => state instanceof BaseNode);
+
+		for (const node of nodes) {
+			node["~setParent"](this);
+		}
+		for (const node of this.props.unlinkedNodes ?? []) {
+			node["~setParent"](this);
+		}
+
+		for (const node of this.props.unlinkedNodes ?? []) {
+			if (!node.position) {
+				throw new Error(
+					`Node '${node.getPath()}' does not have a position. Position is required for unlinked nodes.`,
+				);
+			}
+		}
+	}
 }

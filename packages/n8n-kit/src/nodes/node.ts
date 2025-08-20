@@ -1,3 +1,4 @@
+import type { Workflow } from "../workflow";
 import { Chain } from "../workflow/chain/chain";
 import { State } from "../workflow/chain/state";
 import type { IChainable, IContext, INextable } from "../workflow/chain/types";
@@ -21,18 +22,37 @@ export const DEFAULT_NODE_SIZE: NodeSize = {
 	height: 100,
 };
 
+export interface NodeProps {
+	name?: string;
+}
+
 export abstract class BaseNode<
 	LiteralId extends string = string,
 	T extends IContext = {},
 > extends State<LiteralId, T> {
-	public readonly name?: string;
+	public name?: string;
+
+	protected abstract workflowParent?: Workflow;
 
 	protected abstract type: string;
 	protected abstract typeVersion: number;
+
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
 	abstract getParameters(): Record<string, unknown>;
+
+	public "~setParent"(parent: Workflow) {
+		if (this.workflowParent) {
+			throw new Error(`Node '${this.getPath()}' already has a parent.`);
+		}
+		this.workflowParent = parent;
+	}
+
+	public getPath() {
+		const parentId = this.workflowParent?.id ?? "none";
+		return `${parentId}/${this.id}`;
+	}
 
 	toNode() {
 		return {
@@ -52,9 +72,10 @@ export abstract class Node<LiteralId extends string, T extends IContext>
 {
 	public readonly endStates: INextable[];
 
-	constructor(id: LiteralId) {
+	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
 		this.endStates = [this];
+		this.name = props?.name;
 	}
 
 	public next<N extends IChainable>(next: N) {

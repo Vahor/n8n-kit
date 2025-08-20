@@ -12,7 +12,6 @@ bun run examples/nasa/index.ts > examples/nasa/output.json
 # TODO:
 
 - Add more nodes
-- All `unlinkedNodes` should have a position
 - Add more examples (with screenshots)
 - Add more tests
 - Add more precise types

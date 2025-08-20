@@ -7,9 +7,10 @@ import {
 	Workflow,
 } from "@vahor/n8n-kit";
 
-const workflow = new Workflow("My workflow", {
+const workflow = new Workflow("my-workflow", {
+	name: "NASA Example",
 	unlinkedNodes: [
-		new StickyNote("Sticky Note", {
+		new StickyNote("note", {
 			position: [0, 0],
 			content:
 				"## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
@@ -17,10 +18,10 @@ const workflow = new Workflow("My workflow", {
 			width: 600,
 		}),
 	],
-	definition: new ScheduleTrigger("Schedule Trigger")
-		.next(new NoOp("NASA"))
+	definition: new ScheduleTrigger("schedule-trigger")
+		.next(new NoOp("nasa"))
 		.next(
-			new If("If")
+			new If("if")
 				.true(new NoOp("PostBin(true)"))
 				.false(new NoOp("PostBin(false)")),
 		),

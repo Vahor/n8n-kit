@@ -1,7 +1,7 @@
 import slugify from "slugify";
 
 export const slugifyIdentifier = (str: string) =>
-	slugify(str, { lower: true, trim: true });
+	slugify(str, { lower: false, trim: true });
 
 export const validateIdentifier = <A extends string>(str: A): A => {
 	const slug = slugifyIdentifier(str);
