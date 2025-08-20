@@ -21,6 +21,8 @@ bun install @vahor/n8n-kit @vahor/n8n-kit-cli
 
 ### Example
 
+![Example workflow](https://github.com/Vahor/n8n-kit/blob/main/examples/nasa/output.png?raw=true)
+
 ```ts
 import { App, Chain, expr, If, Nasa, NoOp, PostBin, ScheduleTrigger, StickyNote, Workflow } from "@vahor/n8n-kit";
 
