@@ -74,6 +74,30 @@ export interface FreshdeskNodeParameters {
      */
     readonly limit?: number;
 
+    /**
+     * Name of the contact
+     */
+    readonly name?: string;
+
+    /**
+     * Primary email address of the contact. If you want to associate additional email(s) with this contact, use the other_emails attribute.
+     */
+    readonly email?: string;
+
+    /**
+     */
+    readonly contactId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "address"?: string, "company_id"?: number, "customFields"?: { "customField": any }, "description"?: string, "email"?: string, "job_title"?: string, "language"?: string, "mobile"?: string, "name"?: string, "other_companies"?: string, "other_emails"?: string, "phone"?: string, "tags"?: string, "time_zone"?: string, "twitter_id"?: string, "unique_external_id"?: string, "view_all_tickets"?: boolean };
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "company_id"?: number, "email"?: string, "mobile"?: string, "phone"?: string, "state"?: "blocked" | "deleted" | "unverified" | "verified", "updated_since"?: any };
+
 
 }
 

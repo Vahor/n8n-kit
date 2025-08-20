@@ -22,6 +22,22 @@ export interface DeepLNodeParameters {
      */
     readonly operation?: "translate";
 
+    /**
+     * Input text to translate
+     */
+    readonly text?: string;
+
+    /**
+     * Language to translate to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getLanguages"}
+     */
+    readonly translateTo?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "sourceLang"?: string, "splitSentences"?: "nonewlines" | "0" | "1", "preserveFormatting"?: "0" | "1", "formality"?: "more" | "less" | "default" };
+
 
 }
 

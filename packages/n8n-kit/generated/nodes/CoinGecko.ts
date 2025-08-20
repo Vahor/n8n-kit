@@ -17,6 +17,92 @@ export interface CoinGeckoNodeParameters {
      */
     readonly resource?: "coin" | "event";
 
+    /**
+     * Default: "getAll"
+     */
+    readonly operation?: "candlestick" | "get" | "getAll" | "history" | "market" | "marketChart" | "price" | "ticker";
+
+    /**
+     * Search by coin ID or contract address
+     * Default: "coinId"
+     */
+    readonly searchBy?: "coinId" | "contractAddress";
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getCoins"}
+     */
+    readonly coinId?: string;
+
+    /**
+     * The first currency in the pair. For BTC:ETH this is BTC. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getCoins"}
+     */
+    readonly baseCurrency?: string;
+
+    /**
+     * The first currency in the pair. For BTC:ETH this is BTC. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: []
+     * Type options: {"loadOptionsMethod":"getCoins"}
+     */
+    readonly baseCurrencies?: string[];
+
+    /**
+     * The ID of the platform issuing tokens
+     * Default: "ethereum"
+     */
+    readonly platformId?: "ethereum";
+
+    /**
+     * Token's contract address
+     */
+    readonly contractAddress?: string;
+
+    /**
+     * The contract address of tokens, comma-separated
+     */
+    readonly contractAddresses?: string;
+
+    /**
+     * The second currency in the pair. For BTC:ETH this is ETH. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getCurrencies"}
+     */
+    readonly quoteCurrency?: string;
+
+    /**
+     * The second currency in the pair. For BTC:ETH this is ETH. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: []
+     * Type options: {"loadOptionsMethod":"getCurrencies"}
+     */
+    readonly quoteCurrencies?: string[];
+
+    /**
+     * Return data for this many days in the past from now
+     */
+    readonly days?: "1" | "7" | "14" | "30" | "90" | "180" | "365" | "max";
+
+    /**
+     * The date of data snapshot
+     */
+    readonly date?: any;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":500}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "ids"?: string, "category"?: "decentralized_finance_defi", "order"?: "gecko_asc" | "gecko_desc" | "id_asc" | "id_desc" | "market_cap_asc" | "market_cap_desc" | "volume_asc" | "volume_desc", "sparkline"?: boolean, "price_change_percentage"?: ("1h" | "24h" | "7d" | "14d" | "30d" | "200d" | "1y")[], "include_24hr_change"?: boolean, "include_24hr_vol"?: boolean, "include_last_updated_at"?: boolean, "include_market_cap"?: boolean, "exchange_ids"?: string[], "include_exchange_logo"?: boolean, "localization"?: boolean, "community_data"?: boolean, "developer_data"?: boolean, "market_data"?: boolean, "tickers"?: boolean, "country_code"?: string, "from_date"?: any, "to_date"?: any, "type"?: string, "upcoming_events_only"?: boolean };
+
 
 }
 

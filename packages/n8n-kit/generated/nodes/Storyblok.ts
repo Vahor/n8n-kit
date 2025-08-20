@@ -23,6 +23,49 @@ export interface StoryblokNodeParameters {
      */
     readonly resource?: "story";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "get" | "getAll" | "delete" | "publish" | "unpublish";
+
+    /**
+     * The ID or slug of the story to get
+     */
+    readonly identifier?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "starts_with"?: string };
+
+    /**
+     * The name of the space. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getSpaces"}
+     */
+    readonly space?: string;
+
+    /**
+     * Numeric ID of the story
+     */
+    readonly storyId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "releaseId"?: string, "language"?: string };
+
 
 }
 

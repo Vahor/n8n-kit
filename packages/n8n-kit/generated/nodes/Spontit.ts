@@ -17,6 +17,21 @@ export interface SpontitNodeParameters {
      */
     readonly resource?: "push";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create";
+
+    /**
+     * To provide text in a push, supply one of either "content" or "pushContent" (or both). Limited to 2500 characters. (Required if a value for "pushContent" is not provided).
+     */
+    readonly content?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "channelName"?: string, "expirationStamp"?: any, "iOSDeepLink"?: string, "link"?: string, "openInHomeFeed"?: boolean, "openLinkInApp"?: boolean, "pushToEmails"?: string, "pushToFollowers"?: string, "pushToPhoneNumbers"?: string, "schedule"?: any, "subtitle"?: string, "pushTitle"?: string };
+
 
 }
 

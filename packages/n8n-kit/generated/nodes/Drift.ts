@@ -22,6 +22,31 @@ export interface DriftNodeParameters {
      */
     readonly resource?: "contact";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "getCustomAttributes" | "delete" | "get" | "update";
+
+    /**
+     * The email of the contact
+     */
+    readonly email?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "name"?: string, "phone"?: string };
+
+    /**
+     * Unique identifier for the contact
+     */
+    readonly contactId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "email"?: string, "name"?: string, "phone"?: string };
+
 
 }
 

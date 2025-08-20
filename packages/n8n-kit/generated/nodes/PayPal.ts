@@ -17,6 +17,59 @@ export interface PayPalNodeParameters {
      */
     readonly resource?: "payout" | "payoutItem";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "get" | "cancel";
+
+    /**
+     * A sender-specified ID number. Tracks the payout in an accounting system.
+     */
+    readonly senderBatchId?: string;
+
+    /**
+     */
+    readonly jsonParameters?: boolean;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly itemsUi?: { "itemsValues": any };
+
+    /**
+     * An array of individual payout items
+     * Type options: {"alwaysOpenEditWindow":true}
+     */
+    readonly itemsJson?: any;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "emailSubject"?: string, "emailMessage"?: string, "note"?: string };
+
+    /**
+     * The ID of the payout for which to show details
+     */
+    readonly payoutBatchId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"maxValue":1000,"minValue":1}
+     */
+    readonly limit?: number;
+
+    /**
+     * The ID of the payout item for which to show details
+     */
+    readonly payoutItemId?: string;
+
 
 }
 

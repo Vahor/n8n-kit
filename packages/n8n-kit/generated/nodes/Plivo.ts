@@ -17,6 +17,42 @@ export interface PlivoNodeParameters {
      */
     readonly resource: "call" | "mms" | "sms";
 
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send" | "make";
+
+    /**
+     * Plivo Number to send the SMS from
+     */
+    readonly from?: string;
+
+    /**
+     * Phone number to send the message to
+     */
+    readonly to?: string;
+
+    /**
+     * Message to send
+     */
+    readonly message?: string;
+
+    /**
+     * Comma-separated list of media URLs of the files from your file server
+     */
+    readonly media_urls?: string;
+
+    /**
+     * HTTP verb to be used when invoking the Answer URL
+     * Default: "POST"
+     */
+    readonly answer_method?: "GET" | "POST";
+
+    /**
+     * URL to be invoked by Plivo once the call is answered. It should return the XML to handle the call once answered.
+     */
+    readonly answer_url?: string;
+
 
 }
 

@@ -28,6 +28,51 @@ export interface SupabaseNodeParameters {
      */
     readonly resource?: "row";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsDependsOn":["useCustomSchema","schema"],"loadOptionsMethod":"getTables"}
+     */
+    readonly tableId?: string;
+
+    /**
+     * Default: "defineBelow"
+     */
+    readonly dataToSend?: "autoMapInputData" | "defineBelow";
+
+    /**
+     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
+     */
+    readonly inputsToIgnore?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
+     */
+    readonly fieldsUi?: { "fieldValues": any };
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly filters?: { "conditions": any };
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
 
 }
 

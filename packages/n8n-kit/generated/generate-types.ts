@@ -46,17 +46,22 @@ type NodeDescription = {
 	}>;
 };
 
-const visit = (node: ts.Node, result: any[] = []) => {
+const visit = (
+	rootNode: ts.Node,
+	node: ts.Node = rootNode,
+	result: any[] = [],
+) => {
 	if (ts.isClassDeclaration(node)) {
-		result.push(extractDescription(node));
+		result.push(extractDescription(rootNode, node));
 	}
-	ts.forEachChild(node, (child) => visit(child, result));
+
+	ts.forEachChild(node, (child) => visit(rootNode, child, result));
 	if (result.length > 0) {
 		return result[0] as NodeDescription;
 	}
 };
 
-const extractDescription = (node: ts.ClassDeclaration) => {
+const extractDescription = (rootNode: ts.Node, node: ts.ClassDeclaration) => {
 	for (const member of node.members) {
 		if (
 			ts.isPropertyDeclaration(member) &&
@@ -64,23 +69,29 @@ const extractDescription = (node: ts.ClassDeclaration) => {
 			member.initializer &&
 			ts.isObjectLiteralExpression(member.initializer)
 		) {
-			return extractObjectProperties(member.initializer);
+			return extractObjectProperties(rootNode, member.initializer);
 		}
 	}
 };
 
-const extractObjectProperties = (node: ts.ObjectLiteralExpression) => {
+const extractObjectProperties = (
+	rootNode: ts.Node,
+	node: ts.ObjectLiteralExpression,
+) => {
 	const properties = {};
 	for (const property of node.properties) {
 		if (ts.isPropertyAssignment(property)) {
-			properties[property.name.getText()] = extractValue(property.initializer);
+			properties[property.name.getText()] = extractValue(
+				rootNode,
+				property.initializer,
+			);
 		}
 	}
 
 	return properties;
 };
 
-const extractValue = (node: ts.Node) => {
+const extractValue = (rootNode: ts.Node, node: ts.Node) => {
 	if (ts.isStringLiteral(node)) {
 		return node.text;
 	}
@@ -94,13 +105,94 @@ const extractValue = (node: ts.Node) => {
 		return false;
 	}
 	if (ts.isArrayLiteralExpression(node)) {
-		return node.elements.map((element) => extractValue(element));
+		return node.elements.map((element) => extractValue(rootNode, element));
 	}
 	if (ts.isObjectLiteralExpression(node)) {
-		return extractObjectProperties(node);
+		return extractObjectProperties(rootNode, node);
+	}
+	if (ts.isSpreadElement(node)) {
+		const value = resolveImport(rootNode, node.expression.getText());
+		if (value) {
+			const res = extractValue(rootNode, value);
+			return res;
+		}
 	}
 	// For template literals, identifiers, or complex expressions
 	return node.getText();
+};
+
+const resolveImportPath = (path: string) => {
+	// Try different extensions
+	const extensions = [".ts", ".js", "/index.ts", "/index.js"];
+	for (const ext of extensions) {
+		const fullPath = path + ext;
+		if (fs.existsSync(fullPath)) {
+			return fullPath;
+		}
+	}
+
+	return path + ".ts"; // Default fallback
+};
+
+const extractConstFromFile = (path: string, variableName: string) => {
+	const correctPath = resolveImportPath(path);
+	const sourceFile = ts.createSourceFile(
+		correctPath,
+		fs.readFileSync(correctPath, "utf-8"),
+		ts.ScriptTarget.ES2022,
+		true,
+	);
+	for (const statement of sourceFile.statements) {
+		if (
+			ts.isVariableStatement(statement) &&
+			statement.modifiers?.some((m) => m.kind === ts.SyntaxKind.ExportKeyword)
+		) {
+			for (const declaration of statement.declarationList.declarations) {
+				if (ts.isVariableDeclaration(declaration)) {
+					if (declaration.name.getText() === variableName) {
+						return declaration.initializer;
+					}
+				}
+			}
+		}
+	}
+};
+
+const resolveImport = (
+	rootNode: ts.Node,
+	importName: string,
+	node = rootNode,
+	result: any[] = [],
+) => {
+	if (ts.isImportDeclaration(node)) {
+		if (
+			node.importClause?.namedBindings &&
+			ts.isNamedImports(node.importClause.namedBindings)
+		) {
+			node.importClause.namedBindings.elements.forEach((element) => {
+				if (
+					element.name.text === importName &&
+					node.moduleSpecifier &&
+					ts.isStringLiteral(node.moduleSpecifier)
+				) {
+					const modulePath = node.moduleSpecifier.text;
+					const rootNodeFilePath = rootNode.getSourceFile().fileName;
+					const modulePathFilePath = path.resolve(
+						path.dirname(rootNodeFilePath),
+						modulePath,
+					);
+					result.push(extractConstFromFile(modulePathFilePath, importName));
+				}
+			});
+		}
+	}
+
+	ts.forEachChild(node, (child) =>
+		resolveImport(rootNode, importName, child, result),
+	);
+	if (result.length > 0) {
+		return result[0];
+	}
 };
 
 const mapPropertyType = (type: string) => {
@@ -201,6 +293,12 @@ const generateTypescriptNodeOutput = async (
 	code.line(`export interface ${result.__nodename}NodeParameters {`);
 	code.indent();
 	const propertiesMapped: Record<string, any> = {};
+
+	// Note: required as I don't know how to handle spread operator :)
+	if (!Array.isArray(result.properties)) {
+		result.properties = [result.properties];
+	}
+	result.properties = result.properties.flat();
 	for (const property of result.properties) {
 		if (!property.name) {
 			continue;
@@ -220,9 +318,14 @@ const generateTypescriptNodeOutput = async (
 			if (property.options) {
 				// merge options
 				// merge array but only keep one unique name
-				const newOptions = storedProperty.options ?? [];
+				let newOptions = storedProperty.options ?? [];
+				if (!Array.isArray(newOptions)) {
+					newOptions = [newOptions];
+					storedProperty.options = newOptions;
+				}
+
 				for (const option of property.options) {
-					if (!newOptions.find((o) => o.name === option.name)) {
+					if (!newOptions?.find((o) => o.name === option.name)) {
 						newOptions.push(option);
 					}
 				}

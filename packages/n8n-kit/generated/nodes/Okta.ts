@@ -17,6 +17,76 @@ export interface OktaNodeParameters {
      */
     readonly resource?: "user";
 
+    /**
+     * Default: "getAll"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     * The user you want to operate on. Choose from the list, or specify an ID.
+     * Default: {"mode":"list","value":""}
+     */
+    readonly userId?: any;
+
+    /**
+     */
+    readonly firstName?: string;
+
+    /**
+     */
+    readonly lastName?: string;
+
+    /**
+     */
+    readonly login?: string;
+
+    /**
+     */
+    readonly email?: string;
+
+    /**
+     * Whether to activate the user and allow access to all assigned applications
+     * Default: true
+     */
+    readonly activate?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly getCreateFields?: any[];
+
+    /**
+     * Default: {}
+     */
+    readonly getUpdateFields?: any[];
+
+    /**
+     */
+    readonly searchQuery?: string;
+
+    /**
+     * Max number of results to return
+     * Default: 20
+     * Type options: {"minValue":1,"maxValue":200}
+     */
+    readonly limit?: number;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simplify?: boolean;
+
+    /**
+     * Whether to send a deactivation email to the administrator
+     */
+    readonly sendEmail?: boolean;
+
 
 }
 

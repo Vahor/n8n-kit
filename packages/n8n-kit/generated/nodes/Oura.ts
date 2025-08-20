@@ -17,6 +17,28 @@ export interface OuraNodeParameters {
      */
     readonly resource?: "profile" | "summary";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "get" | "getActivity" | "getReadiness" | "getSleep";
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 5
+     * Type options: {"minValue":1,"maxValue":10}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "end"?: any, "start"?: any };
+
 
 }
 

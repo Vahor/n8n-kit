@@ -17,6 +17,32 @@ export interface UnleashedSoftwareNodeParameters {
      */
     readonly resource?: "salesOrder" | "stockOnHand";
 
+    /**
+     * Default: "getAll"
+     */
+    readonly operation?: "getAll" | "get";
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":1000}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "customerId"?: string, "customerCode"?: string, "endDate"?: any, "modifiedSince"?: any, "orderNumber"?: string, "orderStatus"?: ("Backordered" | "Completed" | "Deleted" | "Parked" | "Placed")[], "startDate"?: any, "asAtDate"?: any, "IsAssembled"?: boolean, "orderBy"?: string, "productId"?: string, "warehouseCode"?: string, "warehouseName"?: string };
+
+    /**
+     */
+    readonly productId?: string;
+
 
 }
 

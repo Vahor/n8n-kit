@@ -22,6 +22,51 @@ export interface GoogleDocsNodeParameters {
      */
     readonly resource?: "document";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "get" | "update";
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Default: "myDrive"
+     * Type options: {"loadOptionsMethod":"getDrives"}
+     */
+    readonly driveId?: string;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsDependsOn":["driveId"],"loadOptionsMethod":"getFolders"}
+     */
+    readonly folderId?: string;
+
+    /**
+     */
+    readonly title?: string;
+
+    /**
+     * The ID in the document URL (or just paste the whole URL)
+     */
+    readonly documentURL?: string;
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
+
+    /**
+     * Actions applied to update the document
+     * Default: {"actionFields":[{"object":"text","action":"insert","locationChoice":"endOfSegmentLocation","index":0,"text":""}]}
+     * Type options: {"multipleValues":true}
+     */
+    readonly actionsUi?: { "actionFields": any };
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "writeControlObject": any };
+
 
 }
 

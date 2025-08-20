@@ -17,6 +17,43 @@ export interface NpmNodeParameters {
      */
     readonly resource?: "package" | "distTag";
 
+    /**
+     * Default: "getMetadata"
+     */
+    readonly operation?: "getMetadata" | "getVersions" | "search" | "getMany" | "update";
+
+    /**
+     */
+    readonly packageName?: string;
+
+    /**
+     * Default: "latest"
+     */
+    readonly packageVersion?: string;
+
+    /**
+     * The query text used to search for packages
+     */
+    readonly query?: string;
+
+    /**
+     * Max number of results to return
+     * Default: 10
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
+
+    /**
+     * Offset to return results from
+     * Type options: {"minValue":0}
+     */
+    readonly offset?: number;
+
+    /**
+     * Default: "latest"
+     */
+    readonly distTagName?: string;
+
 
 }
 

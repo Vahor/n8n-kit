@@ -17,6 +17,11 @@ export interface BrevoNodeParameters {
      */
     readonly resource?: "contact" | "attribute" | "email" | "sender";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "update" | "delete" | "getAll" | "upsert" | "get" | "send" | "sendTemplate";
+
 
 }
 

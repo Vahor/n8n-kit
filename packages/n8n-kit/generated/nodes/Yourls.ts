@@ -17,6 +17,26 @@ export interface YourlsNodeParameters {
      */
     readonly resource?: "url";
 
+    /**
+     * Default: "shorten"
+     */
+    readonly operation?: "expand" | "shorten" | "stats";
+
+    /**
+     * The URL to shorten
+     */
+    readonly url?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "keyword"?: string, "title"?: string };
+
+    /**
+     * The short URL to expand
+     */
+    readonly shortUrl?: string;
+
 
 }
 

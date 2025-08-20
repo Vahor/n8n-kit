@@ -22,6 +22,53 @@ export interface GetResponseNodeParameters {
      */
     readonly resource?: "contact";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     */
+    readonly email?: string;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getCampaigns"}
+     */
+    readonly campaignId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: string[] };
+
+    /**
+     * ID of contact to delete
+     */
+    readonly contactId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "ipAddress"?: string, "messageId"?: string, "fields"?: string, "campaignId"?: string, "changeOnFrom"?: any, "changeOnTo"?: any, "createdOnFrom"?: any, "createdOnTo"?: any, "exactMatch"?: boolean, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 20
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "campaignId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "email"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: string[] };
+
 
 }
 

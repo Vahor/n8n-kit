@@ -22,6 +22,49 @@ export interface StrapiNodeParameters {
      */
     readonly resource?: "entry";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     * Name of the content type
+     */
+    readonly contentType?: string;
+
+    /**
+     * Comma-separated list of the properties which should used as columns for the new rows
+     */
+    readonly columns?: string;
+
+    /**
+     * The ID of the entry to delete
+     */
+    readonly entryId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "publicationState"?: "live" | "preview", "sort"?: string, "where"?: string };
+
+    /**
+     * Name of the property which decides which rows in the database should be updated. Normally that would be "id".
+     * Default: "id"
+     */
+    readonly updateKey?: string;
+
 
 }
 

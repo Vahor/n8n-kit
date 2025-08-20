@@ -17,6 +17,31 @@ export interface ClearbitNodeParameters {
      */
     readonly resource?: "company" | "person";
 
+    /**
+     * Default: "enrich"
+     */
+    readonly operation?: "autocomplete" | "enrich";
+
+    /**
+     * The domain to look up
+     */
+    readonly domain?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "companyName"?: string, "facebook"?: string, "linkedin"?: string, "twitter"?: string, "company"?: string, "companyDomain"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "location"?: string, "linkedIn"?: string };
+
+    /**
+     * Name is the partial name of the company
+     */
+    readonly name?: string;
+
+    /**
+     * The email address to look up
+     */
+    readonly email?: string;
+
 
 }
 

@@ -17,6 +17,16 @@ export interface N8nNodeParameters {
      */
     readonly resource?: "audit" | "credential" | "execution" | "workflow";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "activate" | "deactivate" | "update";
+
+    /**
+     * Default: {}
+     */
+    readonly additionalOptions?: { "categories"?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], "daysAbandonedWorkflow"?: number };
+
 
 }
 

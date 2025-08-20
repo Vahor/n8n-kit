@@ -17,6 +17,11 @@ export interface OpenAiNodeParameters {
      */
     readonly resource?: "chat" | "image" | "text";
 
+    /**
+     * Default: "complete"
+     */
+    readonly operation?: "complete" | "create" | "edit" | "moderate";
+
 
 }
 

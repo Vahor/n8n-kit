@@ -17,6 +17,62 @@ export interface CustomerIoNodeParameters {
      */
     readonly resource?: "customer" | "event" | "campaign" | "segment";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "get" | "getAll" | "getMetrics" | "upsert" | "delete" | "track" | "trackAnonymous" | "add" | "remove";
+
+    /**
+     * The unique identifier for the campaign
+     */
+    readonly campaignId?: number;
+
+    /**
+     * Specify metric period
+     * Default: "days"
+     */
+    readonly period?: "hours" | "days" | "weeks" | "months";
+
+    /**
+     */
+    readonly jsonParameters?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook", "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: any, "customAttributes"?: { "customAttribute": any } };
+
+    /**
+     * The unique identifier for the customer
+     */
+    readonly id?: string;
+
+    /**
+     * Object of values to set as described <a href="https://github.com/agilecrm/rest-api#1-companys---companies-api">here</a>
+     * Type options: {"alwaysOpenEditWindow":true}
+     */
+    readonly additionalFieldsJson?: any;
+
+    /**
+     * The unique identifier for the customer
+     */
+    readonly customerId?: string;
+
+    /**
+     * Name of the event to track
+     */
+    readonly eventName?: string;
+
+    /**
+     * The unique identifier of the segment
+     */
+    readonly segmentId?: number;
+
+    /**
+     * A list of customer IDs to add to the segment
+     */
+    readonly customerIds?: string;
+
 
 }
 

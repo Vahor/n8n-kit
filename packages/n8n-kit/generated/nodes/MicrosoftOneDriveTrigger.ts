@@ -12,6 +12,33 @@ export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true
  */
 export interface MicrosoftOneDriveTriggerNodeParameters {
 
+    /**
+     * Default: "fileCreated"
+     */
+    readonly event?: "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated";
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
+
+    /**
+     * Whether to watch for the created file in a given folder, rather than the entire OneDrive
+     */
+    readonly watchFolder?: boolean;
+
+    /**
+     * How to select which file to watch
+     * Default: "anyFile"
+     */
+    readonly watch?: "anyFile" | "selectedFolder" | "selectedFile" | "anyFolder" | "oneSelectedFolder";
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "folderChild"?: boolean };
+
 
 }
 

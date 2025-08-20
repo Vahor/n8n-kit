@@ -17,6 +17,26 @@ export interface PostBinNodeParameters {
      */
     readonly resource: "bin" | "request";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "get" | "delete" | "removeFirst" | "send";
+
+    /**
+     * Unique identifier for each bin
+     */
+    readonly binId?: string;
+
+    /**
+     * Type options: {"rows":5}
+     */
+    readonly binContent?: string;
+
+    /**
+     * Unique identifier for each request
+     */
+    readonly requestId?: string;
+
 
 }
 

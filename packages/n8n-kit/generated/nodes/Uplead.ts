@@ -17,6 +17,36 @@ export interface UpleadNodeParameters {
      */
     readonly resource?: "company" | "person";
 
+    /**
+     * Default: "enrich"
+     */
+    readonly operation?: "enrich";
+
+    /**
+     * The name of the company (e.g – amazon)
+     */
+    readonly company?: string;
+
+    /**
+     * The domain name (e.g – amazon.com)
+     */
+    readonly domain?: string;
+
+    /**
+     * Email address (e.g – mbenioff@salesforce.com)
+     */
+    readonly email?: string;
+
+    /**
+     * First name of the person (e.g – Marc)
+     */
+    readonly firstname?: string;
+
+    /**
+     * Last name of the person (e.g – Benioff)
+     */
+    readonly lastname?: string;
+
 
 }
 

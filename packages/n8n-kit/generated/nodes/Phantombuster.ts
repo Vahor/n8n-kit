@@ -17,6 +17,44 @@ export interface PhantombusterNodeParameters {
      */
     readonly resource?: "agent";
 
+    /**
+     * Default: "launch"
+     */
+    readonly operation?: "delete" | "get" | "getAll" | "getOutput" | "launch";
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getAgents"}
+     */
+    readonly agentId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 25
+     * Type options: {"minValue":1,"maxValue":50}
+     */
+    readonly limit?: number;
+
+    /**
+     * By default the outpout is presented as string. If this option gets activated, it will resolve the data automatically.
+     * Default: true
+     */
+    readonly resolveData?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "prevContainerId"?: string, "prevStatus"?: "finished" | "lauch error" | "never launched" | "running" | "starting" | "unknown", "prevRuntimeEventIndex"?: number, "argumentsJson"?: any, "argumentsUi"?: { "argumentValues": any }, "bonusArgumentUi"?: { "bonusArgumentValue": any }, "bonusArgumentJson"?: string, "manualLaunch"?: boolean, "maxInstanceCount"?: number, "saveArgument"?: string };
+
+    /**
+     */
+    readonly jsonParameters?: boolean;
+
 
 }
 

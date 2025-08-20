@@ -22,6 +22,35 @@ export interface BitlyNodeParameters {
      */
     readonly resource?: "link";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "get" | "update";
+
+    /**
+     */
+    readonly longUrl?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "domain"?: string, "group"?: string, "tags"?: string[], "title"?: string };
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly deeplink?: { "deeplinkUi": any };
+
+    /**
+     */
+    readonly id?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "archived"?: boolean, "group"?: string, "longUrl"?: string, "tags"?: string[], "title"?: string };
+
 
 }
 

@@ -17,6 +17,123 @@ export interface SecurityScorecardNodeParameters {
      */
     readonly resource: "company" | "industry" | "invite" | "portfolio" | "portfolioCompany" | "report";
 
+    /**
+     * Default: "getFactor"
+     */
+    readonly operation?: "getFactor" | "getFactorHistorical" | "getHistoricalScore" | "getScorecard" | "getScorePlan" | "getScore" | "create" | "delete" | "getAll" | "update" | "add" | "remove" | "download" | "generate";
+
+    /**
+     * Primary identifier of a company or scorecard, i.e. domain.
+     */
+    readonly scorecardIdentifier?: string;
+
+    /**
+     * Score target
+     */
+    readonly score?: number;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "severity"?: string, "severity_in"?: string, "grade"?: string, "industry"?: string, "issueType"?: string, "status"?: "active" | "inactive", "vulnerability"?: string };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "date_from"?: any, "date_to"?: any, "timing"?: "daily" | "weekly" | "monthly", "from"?: any, "to"?: any, "format"?: "csv" | "pdf", "countries"?: string, "ips"?: string, "subdomains"?: string };
+
+    /**
+     * Default: "food"
+     */
+    readonly industry?: "food" | "healthcare" | "manofacturing" | "retail" | "technology";
+
+    /**
+     */
+    readonly email?: string;
+
+    /**
+     */
+    readonly firstName?: string;
+
+    /**
+     */
+    readonly lastName?: string;
+
+    /**
+     * Message for the invitee
+     */
+    readonly message?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "days_to_resolve_issue"?: number, "domain"?: string, "grade_to_maintain"?: string, "is_organization_point_of_contact"?: boolean, "issue_desc"?: string, "issue_title"?: string, "issue_type"?: string, "sendme_copy"?: boolean, "target_url"?: string };
+
+    /**
+     */
+    readonly portfolioId?: string;
+
+    /**
+     * Name of the portfolio
+     */
+    readonly name?: string;
+
+    /**
+     */
+    readonly description?: string;
+
+    /**
+     * Default: "shared"
+     */
+    readonly privacy?: "private" | "shared" | "team";
+
+    /**
+     * Company's domain name
+     */
+    readonly domain?: string;
+
+    /**
+     * Default: "detailed"
+     */
+    readonly report?: "detailed" | "events-json" | "issues" | "partnership" | "summary" | "full-scorecard-json" | "portfolio" | "scorecard-footprint";
+
+    /**
+     * Default: "securityscorecard"
+     */
+    readonly branding?: "securityscorecard" | "company_and_securityscorecard" | "company";
+
+    /**
+     */
+    readonly date?: any;
+
+    /**
+     * URL to a generated report
+     */
+    readonly url?: string;
+
+    /**
+     * Default: "data"
+     */
+    readonly binaryPropertyName?: string;
+
 
 }
 

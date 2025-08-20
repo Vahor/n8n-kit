@@ -17,6 +17,48 @@ export interface BubbleNodeParameters {
      */
     readonly resource?: "object";
 
+    /**
+     * Default: "get"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     * Name of data type of the object to create
+     */
+    readonly typeName?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly properties?: { "property": any };
+
+    /**
+     * ID of the object to retrieve
+     */
+    readonly objectId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
+
+    /**
+     */
+    readonly jsonParameters?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "filters"?: { "filter": any }, "filtersJson"?: any, "sort"?: { "sortValue": any } };
+
 
 }
 

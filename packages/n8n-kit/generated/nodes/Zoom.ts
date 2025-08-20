@@ -22,6 +22,48 @@ export interface ZoomNodeParameters {
      */
     readonly resource?: "meeting";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     * Topic of the meeting
+     */
+    readonly topic?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: any, "timeZone"?: string, "type"?: "1" | "2" | "3" | "8", "occurrenceId"?: string, "showPreviousOccurrences"?: boolean, "scheduleForReminder"?: boolean };
+
+    /**
+     * Meeting ID
+     */
+    readonly meetingId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 30
+     * Type options: {"minValue":1,"maxValue":300}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "type"?: "scheduled" | "live" | "upcoming" };
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: any, "timeZone"?: string, "topic"?: string, "type"?: "1" | "2" | "3" | "8" };
+
 
 }
 

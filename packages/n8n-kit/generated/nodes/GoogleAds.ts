@@ -18,8 +18,32 @@ export interface GoogleAdsNodeParameters {
     readonly resource?: "campaign";
 
     /**
+     * Default: "getAll"
+     */
+    readonly operation?: "getAll" | "get";
+
+    /**
      */
     readonly campaigsNotice?: string;
+
+    /**
+     */
+    readonly managerCustomerId?: string;
+
+    /**
+     */
+    readonly clientCustomerId?: string;
+
+    /**
+     * ID of the campaign
+     */
+    readonly campaignId?: string;
+
+    /**
+     * Additional options for fetching campaigns
+     * Default: {}
+     */
+    readonly additionalOptions?: { "dateRange"?: "allTime" | "TODAY" | "YESTERDAY" | "LAST_7_DAYS" | "LAST_BUSINESS_WEEK" | "THIS_MONTH" | "LAST_MONTH" | "LAST_14_DAYS" | "LAST_30_DAYS", "campaignStatus"?: "all" | "ENABLED" | "PAUSED" | "REMOVED" };
 
 
 }

@@ -21,6 +21,20 @@ export interface LineNodeParameters {
      */
     readonly resource?: "notification";
 
+    /**
+     * Default: "send"
+     */
+    readonly operation?: "send";
+
+    /**
+     */
+    readonly message?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "imageUi"?: { "imageValue": any }, "notificationDisabled"?: boolean, "stickerUi"?: { "stickerValue": any } };
+
 
 }
 

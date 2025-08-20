@@ -16,6 +16,12 @@ export interface TheHiveTriggerNodeParameters {
      */
     readonly notice?: string;
 
+    /**
+     * Events types
+     * Default: []
+     */
+    readonly events?: ("*" | "alert_create" | "alert_delete" | "alert_update" | "case_create" | "case_delete" | "case_update" | "case_task_log_create" | "case_task_log_delete" | "case_task_log_update" | "case_artifact_create" | "case_artifact_delete" | "case_artifact_update" | "case_task_create" | "case_task_delete" | "case_task_update")[];
+
 
 }
 

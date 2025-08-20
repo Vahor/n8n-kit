@@ -17,6 +17,35 @@ export interface PostHogNodeParameters {
      */
     readonly resource?: "alias" | "event" | "identity" | "track";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "page" | "screen";
+
+    /**
+     * The name of the alias
+     */
+    readonly alias?: string;
+
+    /**
+     * The user's distinct ID
+     */
+    readonly distinctId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "contextUi"?: { "contextValues": any }, "timestamp"?: any, "propertiesUi"?: { "propertyValues": any }, "messageId"?: string, "category"?: string };
+
+    /**
+     * The name of the event
+     */
+    readonly eventName?: string;
+
+    /**
+     */
+    readonly name?: string;
+
 
 }
 

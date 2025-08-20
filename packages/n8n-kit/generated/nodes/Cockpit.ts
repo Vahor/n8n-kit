@@ -17,6 +17,67 @@ export interface CockpitNodeParameters {
      */
     readonly resource?: "collection" | "form" | "singleton";
 
+    /**
+     * Default: "getAll"
+     */
+    readonly operation?: "create" | "getAll" | "update" | "submit" | "get";
+
+    /**
+     * Name of the collection to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getCollections"}
+     */
+    readonly collection?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":500}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "fields"?: string, "filter"?: any, "language"?: string, "populate"?: boolean, "rawData"?: boolean, "skip"?: number, "sort"?: any };
+
+    /**
+     */
+    readonly id?: string;
+
+    /**
+     * Whether new entry fields should be set via the value-key pair UI or JSON
+     */
+    readonly jsonDataFields?: boolean;
+
+    /**
+     * Entry data to send as JSON
+     * Type options: {"alwaysOpenEditWindow":true}
+     */
+    readonly dataFieldsJson?: any;
+
+    /**
+     * Entry data to send
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly dataFieldsUi?: { "field": any };
+
+    /**
+     * Name of the form to operate on
+     */
+    readonly form?: string;
+
+    /**
+     * Name of the singleton to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getSingletons"}
+     */
+    readonly singleton?: string;
+
 
 }
 

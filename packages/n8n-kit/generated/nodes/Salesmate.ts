@@ -17,6 +17,104 @@ export interface SalesmateNodeParameters {
      */
     readonly resource?: "activity" | "company" | "deal";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+
+    /**
+     */
+    readonly name?: string;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getUsers"}
+     */
+    readonly owner?: string;
+
+    /**
+     * Whether the data should include the fields details
+     */
+    readonly rawData?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "dueDate"?: any, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: any, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+
+    /**
+     */
+    readonly id?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "title"?: string, "type"?: string, "dueDate"?: any, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: any, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 10
+     * Type options: {"minValue":1,"maxValue":25}
+     */
+    readonly limit?: number;
+
+    /**
+     */
+    readonly jsonParameters?: boolean;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
+
+    /**
+     * Type options: {"alwaysOpenEditWindow":true}
+     */
+    readonly filtersJson?: any;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":false}
+     */
+    readonly filters?: { "filtersUi": any };
+
+    /**
+     */
+    readonly title?: string;
+
+    /**
+     * This field displays activity type such as call, meeting etc
+     */
+    readonly type?: string;
+
+    /**
+     * Primary contact for the deal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getContacts"}
+     */
+    readonly primaryContact?: string;
+
+    /**
+     */
+    readonly pipeline?: "Sales";
+
+    /**
+     * Default: "Open"
+     */
+    readonly status?: "Open" | "Close" | "Lost";
+
+    /**
+     */
+    readonly stage?: "New (Untouched)" | "Contacted" | "Qualified" | "In Negotiation" | "Proposal Presented";
+
+    /**
+     */
+    readonly currency?: string;
+
 
 }
 
