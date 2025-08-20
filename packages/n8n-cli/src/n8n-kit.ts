@@ -51,6 +51,7 @@ yargsInstance
 			} else {
 				console.error(chalk.red(error));
 			}
+			console.debug(error);
 		}
 		process.exit(1);
 	})

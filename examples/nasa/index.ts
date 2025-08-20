@@ -1,5 +1,6 @@
 import {
 	App,
+	Chain,
 	If,
 	NoOp,
 	ScheduleTrigger,
@@ -18,7 +19,7 @@ const workflow = new Workflow("my-workflow", {
 			width: 600,
 		}),
 	],
-	definition: new ScheduleTrigger("schedule-trigger")
+	definition: Chain.start(new ScheduleTrigger("schedule-trigger"))
 		.next(new NoOp("nasa"))
 		.next(
 			new If("if")

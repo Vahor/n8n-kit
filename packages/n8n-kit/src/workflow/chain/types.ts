@@ -1,16 +1,13 @@
-import type { Chain } from "./chain";
 import type { State } from "./state";
 
 /**
  * Interface for states that can have 'next' states
  */
 export interface INextable {
-	/**
-	 * Go to the indicated state after this state
-	 *
-	 * @returns The chain of states built up
+	/*
+	 * Add a next state to this state
 	 */
-	next(state: IChainable): Chain;
+	addNext(state: IChainable): void;
 }
 
 export interface Identifiable<Id extends string = string> {
@@ -23,8 +20,10 @@ export interface Identifiable<Id extends string = string> {
 /**
  * Interface for objects that can be used in a Chain
  */
-export interface IChainable<Id extends string = string, C extends IContext = {}>
-	extends Identifiable<Id> {
+export interface IChainable<
+	Id extends string = string,
+	_C extends IContext = never,
+> extends Identifiable<Id> {
 	/**
 	 * The start state of this chainable
 	 */
@@ -35,11 +34,5 @@ export interface IChainable<Id extends string = string, C extends IContext = {}>
 	 */
 	readonly endStates: INextable[];
 }
-
-export type MergeIChainableContext<
-	N1 extends IChainable,
-	N2 extends IChainable,
-> = (N1 extends IChainable<infer Id1, infer C1> ? { [k in Id1]: C1 } : {}) &
-	(N2 extends IChainable<infer Id2, infer C2> ? { [k in Id2]: C2 } : {});
 
 export type IContext = Record<string, unknown>;

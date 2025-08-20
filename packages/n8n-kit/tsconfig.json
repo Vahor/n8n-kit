@@ -19,9 +19,7 @@
 		"noImplicitOverride": true,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false,
-
-		"isolatedDeclaration": true
+		"noPropertyAccessFromIndexSignature": false
 	},
 	"include": ["src/**/*.ts", "tests/**/*.ts", "examples/**/*.ts"],
 	"exclude": ["node_modules"]

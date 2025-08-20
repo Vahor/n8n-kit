@@ -2,7 +2,7 @@ import { Chain } from "../workflow/chain/chain";
 import type { IChainable, INextable } from "../workflow/chain/types";
 import { BaseNode } from "./node";
 
-export class If extends BaseNode<{}> {
+export class If<L extends string> extends BaseNode<L> {
 	protected override type = "n8n-nodes-base.if";
 	protected override typeVersion = 2.2;
 

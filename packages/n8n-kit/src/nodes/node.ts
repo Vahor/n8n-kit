@@ -1,7 +1,6 @@
 import type { Workflow } from "../workflow";
-import { Chain } from "../workflow/chain/chain";
 import { State } from "../workflow/chain/state";
-import type { IChainable, IContext, INextable } from "../workflow/chain/types";
+import type { IContext, INextable } from "../workflow/chain/types";
 
 /**
  * Position of the node in the n8n workflow editor.
@@ -28,11 +27,11 @@ export interface NodeProps {
 
 export abstract class BaseNode<
 	LiteralId extends string = string,
-	T extends IContext = {},
+	T extends IContext = never,
 > extends State<LiteralId, T> {
 	public name?: string;
 
-	protected abstract workflowParent?: Workflow;
+	protected workflowParent?: Workflow;
 
 	protected abstract type: string;
 	protected abstract typeVersion: number;
@@ -66,20 +65,15 @@ export abstract class BaseNode<
 	}
 }
 
-export abstract class Node<LiteralId extends string, T extends IContext>
-	extends BaseNode<LiteralId, T>
-	implements INextable
-{
+export abstract class Node<
+	LiteralId extends string,
+	T extends IContext = never,
+> extends BaseNode<LiteralId, T> {
 	public readonly endStates: INextable[];
 
 	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
 		this.endStates = [this];
 		this.name = props?.name;
-	}
-
-	public next<N extends IChainable>(next: N) {
-		super.addNext(next.startState);
-		return Chain.sequence(this, next);
 	}
 }

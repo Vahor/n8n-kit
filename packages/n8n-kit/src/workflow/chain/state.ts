@@ -3,8 +3,8 @@ import type { IChainable, IContext, INextable } from "./types";
 
 export abstract class State<
 	LiteralId extends string = string,
-	T extends IContext = {},
-> implements IChainable<LiteralId, T>
+	T extends IContext = never,
+> implements IChainable<LiteralId, T>, INextable
 {
 	public readonly id: LiteralId;
 
@@ -20,6 +20,7 @@ export abstract class State<
 	}
 
 	private setNext(index: number, state: State, override: boolean = false) {
+		// TODO: check if we really need to store the exact index
 		const current = this.nextStates.get(index);
 		if (current && !override) {
 			throw new Error(

@@ -63,7 +63,7 @@ export class Workflow {
 		};
 	}
 
-	public "~validate"() {
+	public "~validate"(): void {
 		const nodes = this.props.definition
 			.toList()
 			.filter((state): state is BaseNode => state instanceof BaseNode);
