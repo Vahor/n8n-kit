@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/GraphQL/GraphQL.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/GraphQL/GraphQL.node.js' node
 
 export const name = "graphql" as const;
 export const description = "Makes a GraphQL request and returns the received data" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"GraphQL"} as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpCustomAuth","required":true,"displayOptions":{"show":{"authentication":["customAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["digestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["queryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
@@ -38,16 +38,15 @@ export interface GraphQLNodeParameters {
      * The format for the query payload
      * Default: "graphql"
      */
-    readonly requestFormat?: "graphql" | "json" | "json";
+    readonly requestFormat?: "graphql" | "json";
 
     /**
      * GraphQL query
-     * Type options: {"rows":6}
      */
     readonly query: string;
 
     /**
-     * Query variables as JSON object
+     * Query variables
      */
     readonly variables?: string;
 

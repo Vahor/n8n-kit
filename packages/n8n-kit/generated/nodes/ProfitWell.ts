@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ProfitWell/ProfitWell.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ProfitWell/ProfitWell.node.js' node
 
 export const name = "profitWell" as const;
 export const description = "Consume ProfitWell API" as const;

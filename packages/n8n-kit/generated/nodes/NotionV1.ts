@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Notion/v1/NotionV1.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Notion/v1/NotionV1.node.js' node
 
 export const name = "notion" as const;
 export const description = "Consume Notion API" as const;
@@ -33,6 +33,12 @@ export interface NotionV1NodeParameters {
     readonly blockId?: any;
 
     /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly blockUi?: { "blockValues": any };
+
+    /**
      * Whether to return all results or only up to a given limit
      */
     readonly returnAll?: boolean;
@@ -47,11 +53,6 @@ export interface NotionV1NodeParameters {
     /**
      */
     readonly fetchNestedBlocks?: boolean;
-
-    /**
-     * Default: true
-     */
-    readonly simplifyOutput?: boolean;
 
     /**
      * The Notion Database to get
@@ -91,6 +92,30 @@ export interface NotionV1NodeParameters {
      * Default: {"mode":"url","value":""}
      */
     readonly pageId?: any;
+
+    /**
+     * Default: "none"
+     */
+    readonly filterType?: "none" | "manual" | "json";
+
+    /**
+     * Default: "anyFilter"
+     */
+    readonly matchType?: "anyFilter" | "allFilters";
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly filters?: { "conditions": any };
+
+    /**
+     */
+    readonly jsonNotice?: string;
+
+    /**
+     */
+    readonly filterJson?: string;
 
     /**
      */

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Cisco/Webex/CiscoWebexTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Cisco/Webex/CiscoWebexTrigger.node.js' node
 
 export const name = "ciscoWebexTrigger" as const;
 export const description = "Starts the workflow when Cisco Webex events occur." as const;
@@ -16,6 +16,10 @@ export interface CiscoWebexTriggerNodeParameters {
      * Default: "meeting"
      */
     readonly resource: "all" | "attachmentAction" | "meeting" | "membership" | "message" | "recording" | "room";
+
+    /**
+     */
+    readonly event?: "created" | "deleted" | "updated" | "all" | "started" | "ended";
 
     /**
      * By default the response only contain a reference to the data the user inputed. If this option gets activated, it will resolve the data automatically.

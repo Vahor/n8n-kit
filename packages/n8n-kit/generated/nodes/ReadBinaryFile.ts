@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ReadBinaryFile/ReadBinaryFile.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ReadBinaryFile/ReadBinaryFile.node.js' node
 
 export const name = "readBinaryFile" as const;
 export const description = "Reads a binary file from disk" as const;

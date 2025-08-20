@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Gumroad/GumroadTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Gumroad/GumroadTrigger.node.js' node
 
 export const name = "gumroadTrigger" as const;
 export const description = "Handle Gumroad events via webhooks" as const;

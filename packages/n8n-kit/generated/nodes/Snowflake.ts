@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Snowflake/Snowflake.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Snowflake/Snowflake.node.js' node
 
 export const name = "snowflake" as const;
 export const description = "Get, add and update data in Snowflake" as const;
@@ -19,7 +19,7 @@ export interface SnowflakeNodeParameters {
 
     /**
      * The SQL query to execute
-     * Type options: {"editor":"sqlEditor"}
+     * Type options: {"editor":"sqlEditor","rows":5}
      */
     readonly query?: string;
 

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/TravisCi/TravisCi.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/TravisCi/TravisCi.node.js' node
 
 export const name = "travisCi" as const;
 export const description = "Consume TravisCI API" as const;

@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Brevo/BrevoTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Brevo/BrevoTrigger.node.js' node
 
 export const name = "sendInBlueTrigger" as const;
 export const description = "Starts the workflow when Brevo events occur" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Brevo Trigger"} as const;
-export const credentials = [{"name":"sendInBlueApi","required":true,"displayOptions":{"show":{}}}] as const
+export const credentials = [{"name":"sendInBlueApi","required":true}] as const
 
 /**
  * Starts the workflow when Brevo events occur

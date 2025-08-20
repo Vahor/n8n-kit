@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/AwsSnsTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/AwsSnsTrigger.node.js' node
 
 export const name = "awsSnsTrigger" as const;
 export const description = "Handle AWS SNS events via webhooks" as const;

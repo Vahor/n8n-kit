@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/SeaTable/v2/actions/SeaTable.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/SeaTable/SeaTable.node.js' node
 
 export const name = "seaTable" as const;
 export const description = "Consume the SeaTable API" as const;
-export const version = 2 as const;
+export const version = 1 as const;
 export const defaults = {"name":"SeaTable"} as const;
 export const credentials = [{"name":"seaTableApi","required":true}] as const
 
@@ -15,24 +15,70 @@ export interface SeaTableNodeParameters {
     /**
      * Default: "row"
      */
-    readonly resource?: "row" | "base" | "link" | "asset";
+    readonly resource?: "row";
 
     /**
+     * The operation being performed
      * Default: "create"
      */
-    readonly operation?: "create" | "remove" | "get" | "list" | "lock" | "search" | "unlock" | "update" | "snapshot" | "metadata" | "collaborator" | "add" | "list" | "remove" | "getPublicURL" | "upload";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTableNames"}
      */
-    readonly tableName?: string;
+    readonly tableName: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-     * Type options: {"loadOptionsDependsOn":["tableName"],"loadOptionsMethod":"getRowIds"}
+     * The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Type options: {"loadOptionsMethod":"getTableIds"}
+     */
+    readonly tableId?: string;
+
+    /**
      */
     readonly rowId?: string;
+
+    /**
+     * Whether to insert the input data this node receives in the new row
+     * Default: "defineBelow"
+     */
+    readonly fieldsToSend?: "autoMapInputData" | "defineBelow";
+
+    /**
+     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
+     */
+    readonly inputsToIgnore?: string;
+
+    /**
+     * Add destination column with its value
+     * Default: {}
+     * Type options: {"multipleValueButtonText":"Add Column to Send","multipleValues":true}
+     */
+    readonly columnsUi?: { "columnValues": any };
+
+    /**
+     * Whether to return all results or only up to a given limit
+     * Default: true
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1,"maxValue":100}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly filters?: { "view_name"?: string };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "convert_link_id"?: boolean, "direction"?: "asc" | "desc", "order_by"?: string };
 
 
 }

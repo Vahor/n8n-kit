@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/UnleashedSoftware/UnleashedSoftware.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/UnleashedSoftware/UnleashedSoftware.node.js' node
 
 export const name = "unleashedSoftware" as const;
 export const description = "Consume Unleashed Software API" as const;

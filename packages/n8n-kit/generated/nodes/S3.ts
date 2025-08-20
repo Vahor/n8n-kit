@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/S3/S3.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/S3/S3.node.js' node
 
 export const name = "s3" as const;
 export const description = "Sends data to any S3-compatible service" as const;
@@ -11,10 +11,6 @@ export const credentials = [{"name":"s3","required":true}] as const
  * Sends data to any S3-compatible service
  */
 export interface S3NodeParameters {
-
-    /**
-     */
-    readonly s3StandardNotice?: string;
 
     /**
      * Default: "file"
@@ -66,7 +62,7 @@ export interface S3NodeParameters {
     readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string, "versionId"?: string };
 
     /**
-     * The name of the source bucket should start with (/) and key name of the source object, separated by a slash (/)
+     * The name of the source bucket and key name of the source object, separated by a slash (/)
      */
     readonly sourcePath?: string;
 
@@ -91,6 +87,7 @@ export interface S3NodeParameters {
     readonly fileContent?: string;
 
     /**
+     * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

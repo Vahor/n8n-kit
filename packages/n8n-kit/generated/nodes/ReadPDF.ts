@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ReadPdf/ReadPDF.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ReadPdf/ReadPDF.node.js' node
 
 export const name = "readPDF" as const;
 export const description = "Reads a PDF and extracts its content" as const;

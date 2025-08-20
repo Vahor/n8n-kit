@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Figma/FigmaTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Figma/FigmaTrigger.node.js' node
 
 export const name = "figmaTrigger" as const;
 export const description = "Starts the workflow when Figma events occur" as const;

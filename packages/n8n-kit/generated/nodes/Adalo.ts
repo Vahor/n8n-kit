@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Adalo/Adalo.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Adalo/Adalo.node.js' node
 
 export const name = "adalo" as const;
 export const description = "Consume Adalo API" as const;

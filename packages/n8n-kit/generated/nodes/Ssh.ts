@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Ssh/Ssh.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Ssh/Ssh.node.js' node
 
 export const name = "ssh" as const;
 export const description = "Execute commands via SSH" as const;
@@ -38,6 +38,7 @@ export interface SshNodeParameters {
     readonly cwd?: string;
 
     /**
+     * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

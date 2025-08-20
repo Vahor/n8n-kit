@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Gotify/Gotify.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Gotify/Gotify.node.js' node
 
 export const name = "gotify" as const;
 export const description = "Consume Gotify API" as const;
@@ -23,7 +23,7 @@ export interface GotifyNodeParameters {
     readonly operation?: "create" | "delete" | "getAll";
 
     /**
-     * The message to send, If using Markdown add the Content Type option
+     * The message. Markdown (excluding html) is allowed.
      */
     readonly message?: string;
 
@@ -31,11 +31,6 @@ export interface GotifyNodeParameters {
      * Default: {}
      */
     readonly additionalFields?: { "priority"?: number, "title"?: string };
-
-    /**
-     * Default: {}
-     */
-    readonly options?: { "contentType"?: "text/plain" | "text/markdown" };
 
     /**
      */

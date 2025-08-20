@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Pushbullet/Pushbullet.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Pushbullet/Pushbullet.node.js' node
 
 export const name = "pushbullet" as const;
 export const description = "Consume Pushbullet API" as const;
@@ -43,6 +43,7 @@ export interface PushbulletNodeParameters {
     readonly url?: string;
 
     /**
+     * Name of the binary property which contains the data for the file to be created
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

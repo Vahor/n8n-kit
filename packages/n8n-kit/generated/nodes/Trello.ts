@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Trello/Trello.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Trello/Trello.node.js' node
 
 export const name = "trello" as const;
 export const description = "Create, change and delete boards and cards" as const;

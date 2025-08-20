@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Bubble/Bubble.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Bubble/Bubble.node.js' node
 
 export const name = "bubble" as const;
 export const description = "Consume the Bubble Data API" as const;

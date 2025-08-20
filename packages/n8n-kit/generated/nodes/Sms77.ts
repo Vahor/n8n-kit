@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Sms77/Sms77.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Sms77/Sms77.node.js' node
 
 export const name = "sms77" as const;
 export const description = "Send SMS and make text-to-speech calls" as const;
@@ -40,7 +40,7 @@ export interface Sms77NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "delay"?: string, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number, "from"?: string };
+    readonly options?: { "debug"?: boolean, "delay"?: string, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "no_reload"?: boolean, "performance_tracking"?: boolean, "ttl"?: number, "from"?: string, "xml"?: boolean };
 
 
 }

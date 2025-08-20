@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/OneSimpleApi/OneSimpleApi.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/OneSimpleApi/OneSimpleApi.node.js' node
 
 export const name = "oneSimpleApi" as const;
 export const description = "A toolbox of no-code utilities" as const;

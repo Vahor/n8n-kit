@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mocean/Mocean.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mocean/Mocean.node.js' node
 
 export const name = "mocean" as const;
 export const description = "Send SMS and voice messages via Mocean" as const;

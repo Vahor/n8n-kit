@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Ghost/Ghost.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Ghost/Ghost.node.js' node
 
 export const name = "ghost" as const;
 export const description = "Consume Ghost API" as const;

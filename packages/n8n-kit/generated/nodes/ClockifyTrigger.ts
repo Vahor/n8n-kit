@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Clockify/ClockifyTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Clockify/ClockifyTrigger.node.js' node
 
 export const name = "clockifyTrigger" as const;
 export const description = "Listens to Clockify events" as const;
@@ -13,15 +13,14 @@ export const credentials = [{"name":"clockifyApi","required":true}] as const
 export interface ClockifyTriggerNodeParameters {
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"listWorkspaces"}
      */
     readonly workspaceId: string;
 
     /**
-     * Default: "EntryTypes.NEW_TIME_ENTRY"
      */
-    readonly watchField: "EntryTypes.NEW_TIME_ENTRY";
+    readonly watchField: "0";
 
 
 }

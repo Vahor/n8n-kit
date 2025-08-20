@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/TheHive/TheHive.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/TheHive/TheHive.node.js' node
 
 export const name = "theHive" as const;
 export const description = "Consume TheHive API" as const;
@@ -18,7 +18,7 @@ export interface TheHiveNodeParameters {
     readonly resource: "alert" | "case" | "log" | "observable" | "task";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: "create"
      * Type options: {"loadOptionsMethod":"loadAlertOptions"}
      */
@@ -75,7 +75,7 @@ export interface TheHiveNodeParameters {
      * Traffict Light Protocol (TLP). Default=Amber.
      * Default: 2
      */
-    readonly tlp?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red";
+    readonly tlp?: "0" | "1" | "2" | "3";
 
     /**
      * Status of the alert
@@ -112,7 +112,7 @@ export interface TheHiveNodeParameters {
     readonly artifactUi?: { "artifactValues": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["id"],"loadOptionsMethod":"loadResponders"}
      */
     readonly responder?: string;
@@ -130,7 +130,7 @@ export interface TheHiveNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "artifactUi"?: { "artifactValues": any }, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "caseTemplate"?: string, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "status"?: "New" | "Updated" | "Ignored" | "Imported", "tags"?: string, "title"?: string, "tlp"?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red", "message"?: string, "ioc"?: boolean, "sighted"?: boolean, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "metrics"?: string, "owner"?: string, "resolutionStatus"?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", "startDate"?: string, "summary"?: string };
+    readonly updateFields?: { "artifactUi"?: { "artifactValues": any }, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "caseTemplate"?: string, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "status"?: "New" | "Updated" | "Ignored" | "Imported", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3", "message"?: string, "ioc"?: boolean, "sighted"?: boolean, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "metrics"?: string, "owner"?: string, "resolutionStatus"?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", "startDate"?: string, "summary"?: string };
 
     /**
      * Default: {}
@@ -140,10 +140,10 @@ export interface TheHiveNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red", "dataType"?: string[], "range"?: { "dateRange": any }, "ioc"?: boolean, "keyword"?: string, "message"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "data"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string };
+    readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3", "dataType"?: string[], "range"?: { "dateRange": any }, "ioc"?: boolean, "keyword"?: string, "message"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "data"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"loadObservableTypes"}
      */
     readonly dataType?: string;
@@ -153,7 +153,7 @@ export interface TheHiveNodeParameters {
     readonly data?: string;
 
     /**
-     * The name of the input binary field that represent the attachment file
+     * Binary Property that represent the attachment file
      * Default: "data"
      */
     readonly binaryProperty?: string;
@@ -179,7 +179,7 @@ export interface TheHiveNodeParameters {
     readonly sighted?: boolean;
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsDependsOn":["id","dataType"],"loadOptionsMethod":"loadAnalyzers"}
      */

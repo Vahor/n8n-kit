@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Webhook/Webhook.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Webhook/Webhook.node.js' node
 
 export const name = "webhook" as const;
 export const description = "Starts the workflow when a webhook is called" as const;
-export const version = 2.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"Webhook"} as const;
-export const credentials = "credentialsProperty(this.authPropertyName)" as const
+export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}}] as const
 
 /**
  * Starts the workflow when a webhook is called
@@ -13,32 +13,55 @@ export const credentials = "credentialsProperty(this.authPropertyName)" as const
 export interface WebhookNodeParameters {
 
     /**
-     * Whether to allow the webhook to listen for multiple HTTP methods
+     * The way to authenticate
+     * Default: "none"
      */
-    readonly multipleMethods?: boolean;
+    readonly authentication?: "basicAuth" | "headerAuth" | "none";
 
     /**
-     * The HTTP methods to listen to
-     * Default: ["GET","POST"]
+     * The HTTP method to listen to
+     * Default: "GET"
      */
-    readonly httpMethod?: ("DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT")[];
+    readonly httpMethod?: "DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT";
 
     /**
-     * The path to listen to, dynamic values could be specified by using ':', e.g. 'your-path/:dynamic-value'. If dynamic values are set 'webhookId' would be prepended to path.
+     * The path to listen to
      */
-    readonly path?: string;
+    readonly path: string;
+
+    /**
+     * When and how to respond to the webhook
+     * Default: "onReceived"
+     */
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode";
 
     /**
      */
     readonly webhookNotice?: string;
 
     /**
+     * The HTTP Response code to return
+     * Default: 200
+     * Type options: {"minValue":100,"maxValue":599}
      */
-    readonly webhookStreamingNotice?: string;
+    readonly responseCode?: number;
 
     /**
+     * What data should be returned. If it should return all items as an array or only the first item as object.
+     * Default: "firstEntryJson"
      */
-    readonly contentTypeNotice?: string;
+    readonly responseData?: "allEntries" | "firstEntryJson" | "firstEntryBinary" | "noData";
+
+    /**
+     * Name of the binary property to return
+     * Default: "data"
+     */
+    readonly responseBinaryPropertyName?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "binaryData"?: boolean, "binaryPropertyName": string, "ignoreBots"?: boolean, "noResponseBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string };
 
 
 }

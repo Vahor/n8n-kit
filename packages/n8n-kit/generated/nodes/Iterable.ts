@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Iterable/Iterable.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Iterable/Iterable.node.js' node
 
 export const name = "iterable" as const;
 export const description = "Consume Iterable API" as const;
@@ -64,7 +64,7 @@ export interface IterableNodeParameters {
     readonly email?: string;
 
     /**
-     * Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
     readonly listId?: string;

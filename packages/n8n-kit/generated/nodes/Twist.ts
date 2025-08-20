@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Twist/Twist.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Twist/Twist.node.js' node
 
 export const name = "twist" as const;
 export const description = "Consume Twist API" as const;
@@ -23,7 +23,7 @@ export interface TwistNodeParameters {
     readonly operation?: "archive" | "create" | "delete" | "get" | "getAll" | "unarchive" | "update";
 
     /**
-     * The ID of the workspace. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the workspace. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
     readonly workspaceId?: string;
@@ -81,7 +81,7 @@ export interface TwistNodeParameters {
     readonly commentId?: string;
 
     /**
-     * The ID of the conversation. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the conversation. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getConversations","loadOptionsDependsOn":["workspaceId"]}
      */
     readonly conversationId?: string;

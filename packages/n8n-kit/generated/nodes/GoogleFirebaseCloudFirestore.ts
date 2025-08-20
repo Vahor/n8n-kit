@@ -1,21 +1,16 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Firebase/CloudFirestore/GoogleFirebaseCloudFirestore.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Firebase/CloudFirestore/GoogleFirebaseCloudFirestore.node.js' node
 
 export const name = "googleFirebaseCloudFirestore" as const;
 export const description = "Interact with Google Firebase - Cloud Firestore API" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"Google Cloud Firestore"} as const;
-export const credentials = [{"name":"googleFirebaseCloudFirestoreOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["googleFirebaseCloudFirestoreOAuth2Api"]}}},{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}}] as const
+export const credentials = [{"name":"googleFirebaseCloudFirestoreOAuth2Api","required":true}] as const
 
 /**
  * Interact with Google Firebase - Cloud Firestore API
  */
 export interface GoogleFirebaseCloudFirestoreNodeParameters {
-
-    /**
-     * Default: "googleFirebaseCloudFirestoreOAuth2Api"
-     */
-    readonly authentication?: "googleFirebaseCloudFirestoreOAuth2Api" | "serviceAccount";
 
     /**
      * Default: "document"
@@ -28,7 +23,7 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
     readonly operation?: "create" | "upsert" | "delete" | "get" | "getAll" | "query";
 
     /**
-     * As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
     readonly projectId?: string;
@@ -45,10 +40,6 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
     readonly collection?: string;
 
     /**
-     */
-    readonly documentId?: string;
-
-    /**
      * List of attributes to save
      */
     readonly columns?: string;
@@ -58,6 +49,10 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      * Default: true
      */
     readonly simple?: boolean;
+
+    /**
+     */
+    readonly documentId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

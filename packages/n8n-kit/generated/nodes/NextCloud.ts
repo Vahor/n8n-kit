@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/NextCloud/NextCloud.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/NextCloud/NextCloud.node.js' node
 
 export const name = "nextCloud" as const;
 export const description = "Access data on Nextcloud" as const;
@@ -38,6 +38,7 @@ export interface NextCloudNodeParameters {
     readonly toPath?: string;
 
     /**
+     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

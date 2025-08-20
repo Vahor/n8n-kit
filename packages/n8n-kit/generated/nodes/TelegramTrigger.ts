@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Telegram/TelegramTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Telegram/TelegramTrigger.node.js' node
 
 export const name = "telegramTrigger" as const;
 export const description = "Starts the workflow on a Telegram update" as const;
-export const version = 1.2 as const;
+export const version = 1 as const;
 export const defaults = {"name":"Telegram Trigger"} as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const
 
@@ -11,10 +11,6 @@ export const credentials = [{"name":"telegramApi","required":true}] as const
  * Starts the workflow on a Telegram update
  */
 export interface TelegramTriggerNodeParameters {
-
-    /**
-     */
-    readonly telegramTriggerNotice?: string;
 
     /**
      * Default: []
@@ -28,7 +24,7 @@ export interface TelegramTriggerNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "download"?: boolean, "imageSize"?: "small" | "medium" | "large" | "extraLarge", "chatIds"?: string, "userIds"?: string };
+    readonly additionalFields?: { "download"?: boolean, "imageSize"?: "small" | "medium" | "large" | "extraLarge" };
 
 
 }

@@ -1,13 +1,13 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/RenameKeys/RenameKeys.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/RenameKeys/RenameKeys.node.js' node
 
 export const name = "renameKeys" as const;
-export const description = "Update item field names" as const;
+export const description = "Renames keys" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Rename Keys","color":"#772244"} as const;
 
 /**
- * Update item field names
+ * Renames keys
  */
 export interface RenameKeysNodeParameters {
 

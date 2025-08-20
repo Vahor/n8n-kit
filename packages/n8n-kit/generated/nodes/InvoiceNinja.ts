@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/InvoiceNinja/InvoiceNinja.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/InvoiceNinja/InvoiceNinja.node.js' node
 
 export const name = "invoiceNinja" as const;
 export const description = "Consume Invoice Ninja API" as const;
@@ -20,17 +20,17 @@ export interface InvoiceNinjaNodeParameters {
     /**
      * Default: "client"
      */
-    readonly resource?: "bank_transaction" | "client" | "expense" | "invoice" | "payment" | "quote" | "task";
+    readonly resource?: "client" | "expense" | "invoice" | "payment" | "quote" | "task";
 
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "email" | "matchPayment";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "email";
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "clientName"?: string, "idNumber"?: string, "privateNotes"?: string, "vatNumber"?: string, "workPhone"?: string, "website"?: string, "client"?: string, "autoBill"?: boolean, "customValue1"?: number, "customValue2"?: number, "discount"?: string, "dueDate"?: string, "email"?: string, "emailInvoice"?: boolean, "invoiceDate"?: string, "invoiceNumber"?: string, "invoiceStatus"?: "1" | "2", "isAmountDiscount"?: boolean, "markSent"?: boolean, "paid"?: number, "partial"?: number, "partialDueDate"?: string, "poNumber"?: string, "publicNotes"?: string, "taxName1"?: string, "taxName2"?: string, "taxRate1"?: number, "taxRate2"?: number, "description"?: string, "project"?: string, "paymentType"?: "5" | "28" | "8" | "1" | "2" | "32" | "17" | "3" | "16" | "13" | "4" | "10" | "9" | "11" | "31" | "15" | "24" | "19" | "20" | "21" | "7" | "27" | "12" | "14" | "30" | "29" | "22" | "23" | "25" | "18" | "26" | "6", "transferReference"?: string, "amount"?: number, "billable"?: boolean, "category"?: string, "expenseDate"?: string, "paymentDate"?: string, "transactionReference"?: string, "vendor"?: string, "emailQuote"?: boolean, "quoteDate"?: string, "quoteNumber"?: string, "quoteStatus"?: "1" | "2", "bankIntegrationId"?: string, "baseType"?: "CREDIT" | "DEBIT", "currencyId"?: string, "date"?: string };
+    readonly additionalFields?: { "clientName"?: string, "idNumber"?: string, "privateNotes"?: string, "vatNumber"?: string, "workPhone"?: string, "website"?: string, "client"?: string, "autoBill"?: boolean, "customValue1"?: number, "customValue2"?: number, "discount"?: string, "dueDate"?: string, "email"?: string, "emailInvoice"?: boolean, "invoiceDate"?: string, "invoiceNumber"?: string, "invoiceStatus"?: "1" | "2", "isAmountDiscount"?: boolean, "paid"?: number, "partial"?: number, "partialDueDate"?: string, "poNumber"?: string, "publicNotes"?: string, "taxName1"?: string, "taxName2"?: string, "taxRate1"?: number, "taxRate2"?: number, "description"?: string, "project"?: string, "paymentType"?: "5" | "28" | "8" | "1" | "2" | "32" | "17" | "3" | "16" | "13" | "4" | "10" | "9" | "11" | "31" | "15" | "24" | "19" | "20" | "21" | "7" | "27" | "12" | "14" | "30" | "29" | "22" | "23" | "25" | "18" | "26" | "6", "transferReference"?: string, "amount"?: number, "billable"?: boolean, "category"?: string, "expenseDate"?: string, "paymentDate"?: string, "transactionReference"?: string, "vendor"?: string, "emailQuote"?: boolean, "quoteDate"?: string, "quoteNumber"?: string, "quoteStatus"?: "1" | "2" };
 
     /**
      * Default: {}
@@ -57,7 +57,7 @@ export interface InvoiceNinjaNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "include"?: "invoices", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean, "invoiceNumber"?: string, "clientStatus"?: "all" | "paid" | "unpaid" | "overdue", "quoteNumber"?: string };
+    readonly options?: { "include"?: "invoices", "invoiceNumber"?: string, "quoteNumber"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -92,7 +92,7 @@ export interface InvoiceNinjaNodeParameters {
     readonly taskId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getInvoices"}
      */
     readonly invoice?: string;
@@ -113,10 +113,6 @@ export interface InvoiceNinjaNodeParameters {
     /**
      */
     readonly quoteId?: string;
-
-    /**
-     */
-    readonly bankTransactionId?: string;
 
 
 }

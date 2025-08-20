@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Linear/LinearTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Linear/LinearTrigger.node.js' node
 
 export const name = "linearTrigger" as const;
 export const description = "Starts the workflow when Linear events occur" as const;
@@ -18,11 +18,7 @@ export interface LinearTriggerNodeParameters {
     readonly authentication?: "apiToken" | "oAuth2";
 
     /**
-     */
-    readonly notice?: string;
-
-    /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
     readonly teamId?: string;

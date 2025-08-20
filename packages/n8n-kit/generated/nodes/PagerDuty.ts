@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/PagerDuty/PagerDuty.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/PagerDuty/PagerDuty.node.js' node
 
 export const name = "pagerDuty" as const;
 export const description = "Consume PagerDuty API" as const;
@@ -33,7 +33,7 @@ export interface PagerDutyNodeParameters {
     readonly title?: string;
 
     /**
-     * The incident will be created on this service. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The incident will be created on this service. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getServices"}
      */
     readonly serviceId?: string;

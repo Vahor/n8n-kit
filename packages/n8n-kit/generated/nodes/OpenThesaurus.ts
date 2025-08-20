@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/OpenThesaurus/OpenThesaurus.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/OpenThesaurus/OpenThesaurus.node.js' node
 
 export const name = "openThesaurus" as const;
 export const description = "Get synonmns for German words using the OpenThesaurus API" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/Rekognition/AwsRekognition.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/Rekognition/AwsRekognition.node.js' node
 
 export const name = "awsRekognition" as const;
 export const description = "Sends data to AWS Rekognition" as const;
@@ -33,6 +33,7 @@ export interface AwsRekognitionNodeParameters {
     readonly binaryData?: boolean;
 
     /**
+     * Object property name which holds binary data
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

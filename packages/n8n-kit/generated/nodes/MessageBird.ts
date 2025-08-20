@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/MessageBird/MessageBird.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/MessageBird/MessageBird.node.js' node
 
 export const name = "messageBird" as const;
 export const description = "Sends SMS via MessageBird" as const;

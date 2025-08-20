@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Disqus/Disqus.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Disqus/Disqus.node.js' node
 
 export const name = "disqus" as const;
 export const description = "Access data on Disqus" as const;

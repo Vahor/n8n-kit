@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/QuickChart/QuickChart.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/QuickChart/QuickChart.node.js' node
 
 export const name = "quickChart" as const;
 export const description = "Create a chart via QuickChart" as const;
@@ -15,7 +15,7 @@ export interface QuickChartNodeParameters {
      * The type of chart to create
      * Default: "bar"
      */
-    readonly chartType?: string;
+    readonly chartType?: "bar" | "doughnut" | "line" | "pie" | "polarArea";
 
     /**
      * Default: "manually"

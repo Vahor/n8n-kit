@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Chargebee/ChargebeeTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Chargebee/ChargebeeTrigger.node.js' node
 
 export const name = "chargebeeTrigger" as const;
 export const description = "Starts the workflow when Chargebee events occur" as const;

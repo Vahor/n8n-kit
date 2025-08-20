@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Oura/Oura.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Oura/Oura.node.js' node
 
 export const name = "oura" as const;
 export const description = "Consume Oura API" as const;

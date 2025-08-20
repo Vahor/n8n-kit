@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Jira/Jira.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Jira/Jira.node.js' node
 
 export const name = "jira" as const;
 export const description = "Consume Jira Software API" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Jira Software"} as const;
-export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}}] as const
+export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}}] as const
 
 /**
  * Consume Jira Software API
@@ -15,7 +15,7 @@ export interface JiraNodeParameters {
     /**
      * Default: "cloud"
      */
-    readonly jiraVersion?: "cloud" | "server" | "serverPat";
+    readonly jiraVersion?: "cloud" | "server";
 
     /**
      * Default: "issue"
@@ -79,7 +79,7 @@ export interface JiraNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string, "wikiMarkup"?: boolean, "orderBy"?: "+created" | "-created" };
+    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string };
 
     /**
      */
@@ -112,6 +112,7 @@ export interface JiraNodeParameters {
     readonly notificationRecipientsRestrictionsJson?: string;
 
     /**
+     * Object property name which holds binary data
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -126,6 +127,7 @@ export interface JiraNodeParameters {
     readonly download?: boolean;
 
     /**
+     * Object property name which holds binary data
      * Default: "data"
      */
     readonly binaryProperty?: string;

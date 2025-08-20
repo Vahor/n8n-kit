@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ConvertKit/ConvertKitTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ConvertKit/ConvertKitTrigger.node.js' node
 
 export const name = "convertKitTrigger" as const;
 export const description = "Handle ConvertKit events via webhooks" as const;
@@ -18,13 +18,13 @@ export interface ConvertKitTriggerNodeParameters {
     readonly event: "formSubscribe" | "linkClick" | "productPurchase" | "purchaseCreate" | "courseComplete" | "courseSubscribe" | "subscriberActivate" | "subscriberUnsubscribe" | "tagAdd" | "tagRemove";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getForms"}
      */
     readonly formId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getSequences"}
      */
     readonly courseId?: string;
@@ -39,7 +39,7 @@ export interface ConvertKitTriggerNodeParameters {
     readonly productId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTags"}
      */
     readonly tagId?: string;

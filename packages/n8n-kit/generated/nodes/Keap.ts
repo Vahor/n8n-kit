@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Keap/Keap.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Keap/Keap.node.js' node
 
 export const name = "keap" as const;
 export const description = "Consume Keap API" as const;
@@ -89,7 +89,7 @@ export interface KeapNodeParameters {
     readonly contactId?: string;
 
     /**
-     * The infusionsoft user to create the note on behalf of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The infusionsoft user to create the note on behalf of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly userId?: string;
@@ -104,7 +104,7 @@ export interface KeapNodeParameters {
     readonly filters?: { "contactId"?: number, "userId"?: string, "active"?: boolean, "email"?: string, "sinceSentDate"?: string, "untilSentDate"?: string, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getTags"}
      */
@@ -177,6 +177,7 @@ export interface KeapNodeParameters {
     readonly binaryData?: boolean;
 
     /**
+     * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

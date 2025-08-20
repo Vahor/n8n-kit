@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Cockpit/Cockpit.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Cockpit/Cockpit.node.js' node
 
 export const name = "cockpit" as const;
 export const description = "Consume Cockpit API" as const;
@@ -23,7 +23,7 @@ export interface CockpitNodeParameters {
     readonly operation?: "create" | "getAll" | "update" | "submit" | "get";
 
     /**
-     * Name of the collection to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Name of the collection to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCollections"}
      */
     readonly collection?: string;
@@ -73,7 +73,7 @@ export interface CockpitNodeParameters {
     readonly form?: string;
 
     /**
-     * Name of the singleton to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Name of the singleton to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSingletons"}
      */
     readonly singleton?: string;

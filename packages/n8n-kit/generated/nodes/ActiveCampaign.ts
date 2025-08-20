@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ActiveCampaign/ActiveCampaign.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ActiveCampaign/ActiveCampaign.node.js' node
 
 export const name = "activeCampaign" as const;
 export const description = "Create and edit data in ActiveCampaign" as const;
@@ -47,7 +47,25 @@ export interface ActiveCampaignNodeParameters {
      * The fields to update
      * Default: {}
      */
-    readonly updateFields?: { "tag"?: string, "description"?: string, "name"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "email"?: string, "firstName"?: string, "lastName"?: string, "phone"?: string, "title"?: string, "contact"?: number, "value"?: number, "currency"?: string, "group"?: string, "stage"?: string, "owner"?: string, "percent"?: number, "status"?: number, "service"?: string, "externalid"?: string, "logoUrl"?: string, "linkUrl"?: string, "syncStatus"?: number, "externalcheckoutid"?: string, "source"?: number, "totalPrice"?: number, "connectionid"?: number, "customerid"?: number, "externalupdatedDate"?: string, "abandonedDate"?: string, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "orderProducts"?: { "name"?: string, "price"?: number, "quantity"?: number, "externalid"?: string, "category"?: string, "sku"?: string, "description"?: string, "imageUrl"?: string, "productUrl"?: string }, "acceptsMarketing"?: boolean };
+    readonly updateFields?: { "tag"?: string, "description"?: string, "name"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "email"?: string, "firstName"?: string, "lastName"?: string, "phone"?: string, "title"?: string, "contact"?: number, "value"?: number, "currency"?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl", "group"?: string, "stage"?: string, "owner"?: string, "percent"?: number, "status"?: number, "service"?: string, "externalid"?: string, "logoUrl"?: string, "linkUrl"?: string, "syncStatus"?: number, "externalcheckoutid"?: string, "source"?: number, "totalPrice"?: number, "connectionid"?: number, "customerid"?: number, "externalupdatedDate"?: string, "abandonedDate"?: string, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "orderProducts"?: { "name"?: string, "price"?: number, "quantity"?: number, "externalid"?: string, "category"?: string, "sku"?: string, "description"?: string, "imageUrl"?: string, "productUrl"?: string }, "acceptsMarketing"?: boolean };
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 100
+     * Type options: {"minValue":1,"maxValue":500}
+     */
+    readonly limit?: number;
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
 
     /**
      */
@@ -109,7 +127,7 @@ export interface ActiveCampaignNodeParameters {
      * The currency of the deal in 3-character ISO format
      * Default: "eur"
      */
-    readonly currency?: "undefined";
+    readonly currency?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl";
 
     /**
      * The pipeline ID of the deal

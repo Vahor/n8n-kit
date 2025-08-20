@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/N8nTrainingCustomerMessenger/N8nTrainingCustomerMessenger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/N8nTrainingCustomerMessenger/N8nTrainingCustomerMessenger.node.js' node
 
 export const name = "n8nTrainingCustomerMessenger" as const;
 export const description = "Dummy node used for n8n training" as const;

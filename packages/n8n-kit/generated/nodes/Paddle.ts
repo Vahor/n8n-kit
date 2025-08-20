@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Paddle/Paddle.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Paddle/Paddle.node.js' node
 
 export const name = "paddle" as const;
 export const description = "Consume Paddle API" as const;
@@ -29,7 +29,7 @@ export interface PaddleNodeParameters {
     readonly couponType?: "checkout" | "product";
 
     /**
-     * Comma-separated list of product IDs. Required if coupon_type is product. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Comma-separated list of product IDs. Required if coupon_type is product. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getProducts"}
      */
@@ -103,7 +103,7 @@ export interface PaddleNodeParameters {
     readonly group?: string;
 
     /**
-     * The upcoming subscription payment ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The upcoming subscription payment ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getPayments"}
      */
     readonly paymentId?: string;

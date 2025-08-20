@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Contentful/Contentful.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Contentful/Contentful.node.js' node
 
 export const name = "contentful" as const;
 export const description = "Consume Contentful API" as const;
@@ -21,7 +21,7 @@ export interface ContentfulNodeParameters {
     /**
      * Default: "entry"
      */
-    readonly resource?: "undefined" | "undefined" | "undefined" | "undefined" | "undefined";
+    readonly resource?: "asset" | "contentType" | "entry" | "locale" | "space";
 
     /**
      * Default: "get"

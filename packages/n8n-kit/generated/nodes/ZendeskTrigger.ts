@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Zendesk/ZendeskTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Zendesk/ZendeskTrigger.node.js' node
 
 export const name = "zendeskTrigger" as const;
 export const description = "Handle Zendesk events via webhooks" as const;

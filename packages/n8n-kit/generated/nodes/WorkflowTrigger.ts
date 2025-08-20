@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/WorkflowTrigger/WorkflowTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/WorkflowTrigger/WorkflowTrigger.node.js' node
 
 export const name = "workflowTrigger" as const;
 export const description = "Triggers based on various lifecycle events, like when a workflow is activated" as const;
@@ -12,15 +12,11 @@ export const defaults = {"name":"Workflow Trigger","color":"#ff6d5a"} as const;
 export interface WorkflowTriggerNodeParameters {
 
     /**
-     */
-    readonly oldVersionNotice?: string;
-
-    /**
-     * `Specifies under which conditions an execution should happen:
+     * Specifies under which conditions an execution should happen:
 					<ul>
 						<li><b>Active Workflow Updated</b>: Triggers when this workflow is updated</li>
 						<li><b>Workflow Activated</b>: Triggers when this workflow is activated</li>
-					</ul>`
+					</ul>
      * Default: []
      */
     readonly events: ("update" | "activate")[];

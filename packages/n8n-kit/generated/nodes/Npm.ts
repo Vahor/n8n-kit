@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Npm/Npm.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Npm/Npm.node.js' node
 
 export const name = "npm" as const;
 export const description = "Consume NPM registry API" as const;

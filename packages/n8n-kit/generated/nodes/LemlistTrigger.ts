@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Lemlist/LemlistTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Lemlist/LemlistTrigger.node.js' node
 
 export const name = "lemlistTrigger" as const;
 export const description = "Handle Lemlist events via webhooks" as const;
@@ -14,7 +14,7 @@ export interface LemlistTriggerNodeParameters {
 
     /**
      */
-    readonly event: "undefined";
+    readonly event: "*" | "emailsBounced" | "emailsClicked" | "emailsFailed" | "emailsInterested" | "emailsNotInterested" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed";
 
     /**
      * Default: {}

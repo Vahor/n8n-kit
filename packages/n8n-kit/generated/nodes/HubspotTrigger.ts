@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Hubspot/HubspotTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Hubspot/HubspotTrigger.node.js' node
 
 export const name = "hubspotTrigger" as const;
 export const description = "Starts the workflow when HubSpot events occur" as const;

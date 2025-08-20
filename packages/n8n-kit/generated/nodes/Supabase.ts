@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Supabase/Supabase.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Supabase/Supabase.node.js' node
 
 export const name = "supabase" as const;
 export const description = "Add, get, delete and update data in a table" as const;
@@ -13,17 +13,6 @@ export const credentials = [{"name":"supabaseApi","required":true,"testedBy":"su
 export interface SupabaseNodeParameters {
 
     /**
-     * Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>)
-     */
-    readonly useCustomSchema?: boolean;
-
-    /**
-     * Name of database schema to use for table
-     * Default: "public"
-     */
-    readonly schema?: string;
-
-    /**
      * Default: "row"
      */
     readonly resource?: "row";
@@ -34,10 +23,35 @@ export interface SupabaseNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-     * Type options: {"loadOptionsDependsOn":["useCustomSchema","schema"],"loadOptionsMethod":"getTables"}
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getTables"}
      */
     readonly tableId?: string;
+
+    /**
+     * Default: "manual"
+     */
+    readonly filterType?: "manual" | "string" | "none";
+
+    /**
+     * Default: "anyFilter"
+     */
+    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
+
+    /**
+     * Filter to decide which rows get updated
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly filters?: { "conditions": any };
+
+    /**
+     */
+    readonly jsonNotice?: string;
+
+    /**
+     */
+    readonly filterString?: string;
 
     /**
      * Default: "defineBelow"
@@ -54,12 +68,6 @@ export interface SupabaseNodeParameters {
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
     readonly fieldsUi?: { "fieldValues": any };
-
-    /**
-     * Default: {}
-     * Type options: {"multipleValues":true}
-     */
-    readonly filters?: { "conditions": any };
 
     /**
      * Whether to return all results or only up to a given limit

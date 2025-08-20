@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/HelpScout/HelpScout.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/HelpScout/HelpScout.node.js' node
 
 export const name = "helpScout" as const;
-export const description = "Consume Help Scout API" as const;
+export const description = "Consume HelpScout API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Help Scout"} as const;
+export const defaults = {"name":"HelpScout"} as const;
 export const credentials = [{"name":"helpScoutOAuth2Api","required":true}] as const
 
 /**
- * Consume Help Scout API
+ * Consume HelpScout API
  */
 export interface HelpScoutNodeParameters {
 
@@ -23,7 +23,7 @@ export interface HelpScoutNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "properties" | "update";
 
     /**
-     * ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getMailboxes"}
      */
     readonly mailboxId?: string;

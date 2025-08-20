@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/MQTT/MqttTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/MQTT/MqttTrigger.node.js' node
 
 export const name = "mqttTrigger" as const;
 export const description = "Listens to MQTT events" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Demio/Demio.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Demio/Demio.node.js' node
 
 export const name = "demio" as const;
 export const description = "Consume the Demio API" as const;
@@ -59,7 +59,7 @@ export interface DemioNodeParameters {
     readonly email?: string;
 
     /**
-     * ID of the session. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * ID of the session. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getEventSessions","loadOptionsDependsOn":["eventId"]}
      */
     readonly dateId?: string;

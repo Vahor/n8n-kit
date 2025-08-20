@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/CloudNaturalLanguage/GoogleCloudNaturalLanguage.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/CloudNaturalLanguage/GoogleCloudNaturalLanguage.node.js' node
 
 export const name = "googleCloudNaturalLanguage" as const;
 export const description = "Consume Google Cloud Natural Language API" as const;

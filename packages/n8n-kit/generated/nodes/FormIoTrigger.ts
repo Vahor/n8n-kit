@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/FormIo/FormIoTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/FormIo/FormIoTrigger.node.js' node
 
 export const name = "formIoTrigger" as const;
 export const description = "Handle form.io events via webhooks" as const;
@@ -13,13 +13,13 @@ export const credentials = [{"name":"formIoApi","required":true}] as const
 export interface FormIoTriggerNodeParameters {
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
     readonly projectId: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["projectId"],"loadOptionsMethod":"getForms"}
      */
     readonly formId: string;

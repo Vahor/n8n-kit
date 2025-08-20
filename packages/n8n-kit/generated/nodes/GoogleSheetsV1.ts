@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Sheet/v1/GoogleSheetsV1.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Sheet/v1/GoogleSheetsV1.node.js' node
 
 export const name = "googleSheets" as const;
 export const description = "Read, update and write data to Google Sheets" as const;
@@ -11,6 +11,10 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  * Read, update and write data to Google Sheets
  */
 export interface GoogleSheetsV1NodeParameters {
+
+    /**
+     */
+    readonly oldVersionNotice?: string;
 
     /**
      * Default: "serviceAccount"

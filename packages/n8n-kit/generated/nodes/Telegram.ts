@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Telegram/Telegram.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Telegram/Telegram.node.js' node
 
 export const name = "telegram" as const;
 export const description = "Sends data to Telegram" as const;
-export const version = 1.2 as const;
+export const version = 1.1 as const;
 export const defaults = {"name":"Telegram"} as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const
 
@@ -20,10 +20,10 @@ export interface TelegramNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "SEND_AND_WAIT_OPERATION" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
+    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
 
     /**
-     * Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot
+     * Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      */
     readonly chatId?: string;
 
@@ -35,7 +35,7 @@ export interface TelegramNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "disable_notification"?: boolean, "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string, "mimeType"?: string, "undefined"?: any, "caption"?: string, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
+    readonly additionalFields?: { "disable_notification"?: boolean, "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string, "appendAttribution"?: boolean, "caption"?: string, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
 
     /**
      * Unique identifier of the target user
@@ -114,13 +114,13 @@ export interface TelegramNodeParameters {
 
     /**
      * Location latitude
-     * Type options: {"numberPrecision":10,"minValue":"-90","maxValue":90}
+     * Type options: {"numberPrecision":10,"minValue":-90,"maxValue":90}
      */
     readonly latitude?: number;
 
     /**
      * Location longitude
-     * Type options: {"numberPrecision":10,"minValue":"-180","maxValue":180}
+     * Type options: {"numberPrecision":10,"minValue":-180,"maxValue":180}
      */
     readonly longitude?: number;
 

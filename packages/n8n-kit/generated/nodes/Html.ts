@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Html/Html.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Html/Html.node.js' node
 
 export const name = "html" as const;
 export const description = "Work with HTML" as const;
-export const version = 1.2 as const;
+export const version = 1 as const;
 export const defaults = {"name":"HTML"} as const;
 
 /**
@@ -18,7 +18,7 @@ export interface HtmlNodeParameters {
 
     /**
      * HTML template to render
-     * Default: "placeholder"
+     * Default: "<!DOCTYPE html>\n\n<html>\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>My HTML document</title>\n</head>\n<body>\n  <div class=\"container\">\n    <h1>This is an H1 heading</h1>\n    <h2>This is an H2 heading</h2>\n    <p>This is a paragraph</p>\n  </div>\n</body>\n</html>\n\n<style>\n.container {\n  background-color: #ffffff;\n  text-align: center;\n  padding: 16px;\n  border-radius: 8px;\n}\n\nh1 {\n  color: #ff6d5a;\n  font-size: 24px;\n  font-weight: bold;\n  padding: 8px;\n}\n\nh2 {\n  color: #909399;\n  font-size: 18px;\n  font-weight: bold;\n  padding: 8px;\n}\n</style>\n\n<script>\nconsole.log(\"Hello World!\");\n</script>"
      * Type options: {"editor":"htmlEditor"}
      */
     readonly html?: string;
@@ -34,14 +34,21 @@ export interface HtmlNodeParameters {
     readonly sourceData?: "binary" | "json";
 
     /**
+     * Name of the binary property in which the HTML to extract the data from can be found
      * Default: "data"
      */
     readonly dataPropertyName?: string;
 
     /**
      * Default: {}
+     * Type options: {"multipleValues":true}
      */
-    readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean, "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
+    readonly extractionValues?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "trimValues"?: boolean, "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
 
 
 }

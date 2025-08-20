@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/InvoiceNinja/InvoiceNinjaTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/InvoiceNinja/InvoiceNinjaTrigger.node.js' node
 
 export const name = "invoiceNinjaTrigger" as const;
 export const description = "Starts the workflow when Invoice Ninja events occur" as const;

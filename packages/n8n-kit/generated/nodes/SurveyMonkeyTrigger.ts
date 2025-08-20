@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/SurveyMonkey/SurveyMonkeyTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/SurveyMonkey/SurveyMonkeyTrigger.node.js' node
 
 export const name = "surveyMonkeyTrigger" as const;
 export const description = "Starts the workflow when Survey Monkey events occur" as const;
@@ -26,21 +26,21 @@ export interface SurveyMonkeyTriggerNodeParameters {
     readonly event?: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated";
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getSurveys"}
      */
     readonly surveyIds?: ()[];
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getSurveys"}
      */
     readonly surveyId?: string;
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getCollectors","loadOptionsDependsOn":["surveyId"]}
      */

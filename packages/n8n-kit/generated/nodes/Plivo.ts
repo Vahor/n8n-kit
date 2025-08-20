@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Plivo/Plivo.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Plivo/Plivo.node.js' node
 
 export const name = "plivo" as const;
 export const description = "Send SMS/MMS messages or make phone calls" as const;

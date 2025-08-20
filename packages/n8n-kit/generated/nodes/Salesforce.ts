@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Salesforce/Salesforce.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Salesforce/Salesforce.node.js' node
 
 export const name = "salesforce" as const;
 export const description = "Consume Salesforce API" as const;
@@ -29,7 +29,7 @@ export interface SalesforceNodeParameters {
     readonly operation?: "addToCampaign" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "addToCampaign" | "upload" | "query" | "addComment" | "invoke";
 
     /**
-     * The field to check to see if the lead already exists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The field to check to see if the lead already exists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getExternalIdFields","loadOptionsDependsOn":["resource"]}
      */
     readonly externalId?: string;
@@ -82,7 +82,7 @@ export interface SalesforceNodeParameters {
     readonly options?: { "conditionsUi"?: { "conditionValues": any }, "fields"?: string, "status"?: string, "body"?: string, "isPrivate"?: boolean, "owner"?: string, "ownerId"?: string, "commentBody"?: string, "isPublished"?: boolean };
 
     /**
-     * ID of the campaign that needs to be fetched. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * ID of the campaign that needs to be fetched. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
     readonly campaignId?: string;
@@ -98,7 +98,7 @@ export interface SalesforceNodeParameters {
     readonly contactId?: string;
 
     /**
-     * Name of the custom object. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Name of the custom object. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCustomObjects"}
      */
     readonly customObject?: string;
@@ -116,6 +116,7 @@ export interface SalesforceNodeParameters {
     readonly recordId?: string;
 
     /**
+     * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -131,7 +132,7 @@ export interface SalesforceNodeParameters {
     readonly closeDate?: string;
 
     /**
-     * Required. Date when the opportunity is expected to close. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Required. Date when the opportunity is expected to close. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getStages"}
      */
     readonly stageName?: string;
@@ -152,7 +153,7 @@ export interface SalesforceNodeParameters {
     readonly query?: string;
 
     /**
-     * The type of case. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The type of case. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCaseTypes"}
      */
     readonly type?: string;
@@ -163,7 +164,7 @@ export interface SalesforceNodeParameters {
     readonly caseId?: string;
 
     /**
-     * The current status of the task, such as In Progress or Completed. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The current status of the task, such as In Progress or Completed. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTaskStatuses"}
      */
     readonly status?: string;

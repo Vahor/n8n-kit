@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Pushover/Pushover.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Pushover/Pushover.node.js' node
 
 export const name = "pushover" as const;
 export const description = "Consume Pushover API" as const;
@@ -34,7 +34,7 @@ export interface PushoverNodeParameters {
 
     /**
      * Send as -2 to generate no notification/alert, -1 to always send as a quiet notification, 1 to display as high-priority and bypass the user's quiet hours, or 2 to also require confirmation from the user
-     * Default: "-2"
+     * Default: -2
      */
     readonly priority?: "-2" | "-1" | "0" | "1" | "2";
 

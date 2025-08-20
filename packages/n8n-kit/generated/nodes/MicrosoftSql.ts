@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Microsoft/Sql/MicrosoftSql.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/Sql/MicrosoftSql.node.js' node
 
 export const name = "microsoftSql" as const;
 export const description = "Get, add and update data in Microsoft SQL" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"Microsoft SQL"} as const;
 export const credentials = [{"name":"microsoftSql","required":true,"testedBy":"microsoftSqlConnectionTest"}] as const
 
@@ -19,7 +19,7 @@ export interface MicrosoftSqlNodeParameters {
 
     /**
      * The SQL query to execute
-     * Type options: {"editor":"sqlEditor","sqlDialect":"MSSQL"}
+     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"MSSQL"}
      */
     readonly query?: string;
 

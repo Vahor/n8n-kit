@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Bannerbear/Bannerbear.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Bannerbear/Bannerbear.node.js' node
 
 export const name = "bannerbear" as const;
 export const description = "Consume Bannerbear API" as const;
@@ -23,7 +23,7 @@ export interface BannerbearNodeParameters {
     readonly operation?: "create" | "get" | "getAll";
 
     /**
-     * The template ID you want to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The template ID you want to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTemplates"}
      */
     readonly templateId?: string;

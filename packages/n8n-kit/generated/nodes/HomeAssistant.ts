@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/HomeAssistant/HomeAssistant.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/HomeAssistant/HomeAssistant.node.js' node
 
 export const name = "homeAssistant" as const;
 export const description = "Consume Home Assistant API" as const;
@@ -23,12 +23,13 @@ export interface HomeAssistantNodeParameters {
     readonly operation?: "getScreenshot" | "get" | "check" | "create" | "getAll" | "getErroLogs" | "getLogbookEntries" | "call" | "upsert";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCameraEntities"}
      */
     readonly cameraEntityId?: string;
 
     /**
+     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -62,13 +63,13 @@ export interface HomeAssistantNodeParameters {
     readonly additionalFields?: { "endTime"?: string, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: string, "entityId"?: string };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getDomains"}
      */
     readonly domain?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["domain"],"loadOptionsMethod":"getDomainServices"}
      */
     readonly service?: string;
@@ -80,7 +81,7 @@ export interface HomeAssistantNodeParameters {
     readonly serviceAttributes?: { "attributes": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAllEntities"}
      */
     readonly entityId?: string;

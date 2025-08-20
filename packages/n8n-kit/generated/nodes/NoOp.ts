@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/NoOp/NoOp.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/NoOp/NoOp.node.js' node
 
 export const name = "noOp" as const;
 export const description = "No Operation" as const;

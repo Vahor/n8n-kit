@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Amqp/AmqpTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Amqp/AmqpTrigger.node.js' node
 
 export const name = "amqpTrigger" as const;
 export const description = "Listens to AMQP 1.0 Messages" as const;

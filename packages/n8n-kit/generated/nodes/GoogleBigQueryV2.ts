@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/BigQuery/v2/GoogleBigQueryV2.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/BigQuery/v2/GoogleBigQueryV2.node.js' node
 
 export const name = "googleBigQuery" as const;
 export const description = "Consume Google BigQuery API" as const;
-export const version = 2.1 as const;
+export const version = 2 as const;
 export const defaults = {"name":"Google BigQuery"} as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBigQueryOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
@@ -26,6 +26,49 @@ export interface GoogleBigQueryV2NodeParameters {
      * Default: "executeQuery"
      */
     readonly operation?: "executeQuery" | "insert";
+
+    /**
+     * Projects to which you have been granted any project role
+     * Default: {"mode":"list","value":""}
+     */
+    readonly projectId?: any;
+
+    /**
+     * Default: {"mode":"list","value":""}
+     */
+    readonly datasetId?: any;
+
+    /**
+     * Default: {"mode":"list","value":""}
+     */
+    readonly tableId?: any;
+
+    /**
+     * SQL query to execute, you can find more information <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax" target="_blank">here</a>. Standard SQL syntax used by default, but you can also use Legacy SQL syntax by using optinon 'Use Legacy SQL'.
+     * Type options: {"editor":"sqlEditor","rows":5}
+     */
+    readonly sqlQuery?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "defaultDataset"?: string, "dryRun"?: boolean, "includeSchema"?: boolean, "location"?: string, "maximumBytesBilled"?: string, "maxResults"?: number, "timeoutMs"?: number, "rawOutput"?: boolean, "useLegacySql"?: boolean, "batchSize"?: number, "ignoreUnknownValues"?: boolean, "skipInvalidRows"?: boolean, "templateSuffix"?: string, "traceId"?: string };
+
+    /**
+     * Whether to insert the input data this node receives in the new row
+     * Default: "autoMap"
+     */
+    readonly dataMode?: "autoMap" | "define";
+
+    /**
+     */
+    readonly info?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValueButtonText":"Add Field","multipleValues":true}
+     */
+    readonly fieldsUi?: { "values": any };
 
 
 }

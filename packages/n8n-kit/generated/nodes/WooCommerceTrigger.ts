@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/WooCommerce/WooCommerceTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/WooCommerce/WooCommerceTrigger.node.js' node
 
 export const name = "wooCommerceTrigger" as const;
 export const description = "Handle WooCommerce events via webhooks" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Perspective/GooglePerspective.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Perspective/GooglePerspective.node.js' node
 
 export const name = "googlePerspective" as const;
 export const description = "Consume Google Perspective API" as const;

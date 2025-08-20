@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/GSuiteAdmin/GSuiteAdmin.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/GSuiteAdmin/GSuiteAdmin.node.js' node
 
 export const name = "gSuiteAdmin" as const;
 export const description = "Consume Google Workspace Admin API" as const;
@@ -15,18 +15,27 @@ export interface GSuiteAdminNodeParameters {
     /**
      * Default: "user"
      */
-    readonly resource?: "device" | "group" | "user";
+    readonly resource?: "group" | "user";
 
     /**
-     * Default: "get"
+     * Default: "create"
      */
-    readonly operation?: "get" | "getAll" | "update" | "changeStatus" | "create" | "delete" | "addToGroup" | "removeFromGroup";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Select the device you want to retrieve
-     * Default: {"mode":"list","value":""}
+     * The group's email address. If your account has multiple domains, select the appropriate domain for the email address. The email must be unique
      */
-    readonly deviceId?: any;
+    readonly email?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "description"?: string, "name"?: string, "changePasswordAtNextLogin"?: boolean, "phoneUi"?: { "phoneValues": any }, "emailUi"?: { "emailValues": any } };
+
+    /**
+     * Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
+     */
+    readonly groupId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -41,69 +50,14 @@ export interface GSuiteAdminNodeParameters {
     readonly limit?: number;
 
     /**
-     * What subset of fields to fetch for this device
-     * Default: "basic"
+     * Default: {}
      */
-    readonly projection?: "basic" | "full" | "basic" | "custom" | "full";
-
-    /**
-     * Whether to include devices from organizational units below your specified organizational unit
-     */
-    readonly includeChildOrgunits?: boolean;
+    readonly options?: { "customer"?: string, "domain"?: string, "orderBy"?: "email", "query"?: string, "sortOrder"?: "ASCENDING" | "DESCENDING", "userId"?: string, "customFieldMask"?: string[], "viewType"?: "admin_view" | "DESCENDING", "showDeleted"?: boolean };
 
     /**
      * Default: {}
      */
-    readonly filter?: { "orgUnitPath"?: string, "query"?: string, "customer"?: string, "domain"?: string, "userId"?: string, "showDeleted"?: boolean };
-
-    /**
-     * Define sorting rules for the results
-     * Default: {}
-     */
-    readonly sort?: { "sortRules": any };
-
-    /**
-     * Default: {}
-     */
-    readonly updateOptions?: { "orgUnitPath"?: string, "annotatedUser"?: string, "annotatedLocation"?: string, "annotatedAssetId"?: string, "notes"?: string };
-
-    /**
-     * Set the status of a device
-     * Default: "reenable"
-     */
-    readonly action?: "reenable" | "disable";
-
-    /**
-     * Select the group to perform the operation on
-     * Default: {"mode":"list","value":""}
-     */
-    readonly groupId?: any;
-
-    /**
-     * The group's display name
-     */
-    readonly name?: string;
-
-    /**
-     * The group's email address. If your account has multiple domains, select the appropriate domain for the email address. The email must be unique
-     */
-    readonly email?: string;
-
-    /**
-     * Default: {}
-     */
-    readonly additionalFields?: { "description"?: string, "changePasswordAtNextLogin"?: boolean, "phoneUi"?: { "phoneValues": any }, "emailUi"?: { "emailValues": any }, "roles"?: string[], "customFields"?: { "fieldValues": any } };
-
-    /**
-     * Default: {}
-     */
-    readonly updateFields?: { "description"?: string, "email"?: string, "name"?: string, "archived"?: boolean, "suspendUi"?: boolean, "changePasswordAtNextLogin"?: boolean, "firstName"?: string, "lastName"?: string, "password"?: string, "phoneUi"?: { "phoneValues": any }, "primaryEmail"?: string, "emailUi"?: { "emailValues": any }, "roles"?: string[], "customFields"?: { "fieldValues": any } };
-
-    /**
-     * Select the user to perform the operation on
-     * Default: {"mode":"list","value":""}
-     */
-    readonly userId?: any;
+    readonly updateFields?: { "description"?: string, "email"?: string, "name"?: string, "archived"?: boolean, "changePasswordAtNextLogin"?: boolean, "firstName"?: string, "lastName"?: string, "password"?: string, "phoneUi"?: { "phoneValues": any }, "primaryEmail"?: string, "emailUi"?: { "emailValues": any } };
 
     /**
      */
@@ -120,33 +74,31 @@ export interface GSuiteAdminNodeParameters {
     readonly password?: string;
 
     /**
-     * The username that will be set to the user. Example: If you domain is example.com and you set the username to n.smith then the user's final email address will be n.smith@example.com.
-     */
-    readonly username?: string;
-
-    /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getDomains"}
      */
     readonly domain?: string;
 
     /**
-     * Default: "simplified"
+     * The username that will be set to the user. Example: If you domain is example.com and you set the username to jhon then the user's final email address will be jhon@example.com.
      */
-    readonly output?: "simplified" | "raw" | "select";
+    readonly username?: string;
 
     /**
-     * Fields to include in the response when "Select Included Fields" is chosen
-     * Default: []
+     * Whether to make a user a super administrator
      */
-    readonly fields?: ("creationTime" | "isAdmin" | "kind" | "lastLoginTime" | "name" | "primaryEmail" | "suspended")[];
+    readonly makeAdmin?: boolean;
 
     /**
-     * A comma-separated list of schema names. All fields from these schemas are fetched. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-     * Default: []
-     * Type options: {"loadOptionsMethod":"getSchemas"}
+     * The value can be the user's primary email address, alias email address, or unique user ID
      */
-    readonly customFieldMask?: string[];
+    readonly userId?: string;
+
+    /**
+     * What subset of fields to fetch for this user
+     * Default: "basic"
+     */
+    readonly projection?: "basic" | "custom" | "full";
 
 
 }

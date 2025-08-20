@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Wufoo/WufooTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Wufoo/WufooTrigger.node.js' node
 
 export const name = "wufooTrigger" as const;
 export const description = "Handle Wufoo events via webhooks" as const;
@@ -13,7 +13,7 @@ export const credentials = [{"name":"wufooApi","required":true}] as const
 export interface WufooTriggerNodeParameters {
 
     /**
-     * The form upon which will trigger this node when a new entry is made. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The form upon which will trigger this node when a new entry is made. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getForms"}
      */
     readonly form: string;

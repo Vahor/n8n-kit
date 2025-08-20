@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Box/Box.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Box/Box.node.js' node
 
 export const name = "box" as const;
 export const description = "Consume Box API" as const;
@@ -37,6 +37,7 @@ export interface BoxNodeParameters {
     readonly additionalFields?: { "fields"?: string, "name"?: string, "version"?: string, "contet_types"?: string, "createdRangeUi"?: { "createdRangeValuesUi": any }, "direction"?: "ASC" | "DESC", "file_extensions"?: string, "ancestor_folder_ids"?: string, "scope"?: "user_content" | "enterprise_content", "size_range"?: string, "sort"?: "relevance" | "modified_at", "trash_content"?: "non_trashed_only" | "trashed_only", "updatedRangeUi"?: { "updatedRangeValuesUi": any }, "owner_user_ids"?: string };
 
     /**
+     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/Textract/AwsTextract.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/Textract/AwsTextract.node.js' node
 
 export const name = "awsTextract" as const;
 export const description = "Sends data to Amazon Textract" as const;

@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ExecutionData/ExecutionData.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ExecutionData/ExecutionData.node.js' node
 
 export const name = "executionData" as const;
 export const description = "Add execution data for search" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"Execution Data","color":"#29A568"} as const;
 
 /**

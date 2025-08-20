@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Uplead/Uplead.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Uplead/Uplead.node.js' node
 
 export const name = "uplead" as const;
 export const description = "Consume Uplead API" as const;

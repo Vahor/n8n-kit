@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mailchimp/Mailchimp.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mailchimp/Mailchimp.node.js' node
 
 export const name = "mailchimp" as const;
 export const description = "Consume Mailchimp API" as const;
@@ -28,7 +28,7 @@ export interface MailchimpNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "replicate" | "resend" | "send";
 
     /**
-     * List of lists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * List of lists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
     readonly list?: string;
@@ -110,7 +110,7 @@ export interface MailchimpNodeParameters {
     readonly tags?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGroupCategories","loadOptionsDependsOn":["list"]}
      */
     readonly groupCategory?: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Airtable/AirtableTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Airtable/AirtableTrigger.node.js' node
 
 export const name = "airtableTrigger" as const;
 export const description = "Starts the workflow when Airtable events occur" as const;

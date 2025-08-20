@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Firebase/RealtimeDatabase/GoogleFirebaseRealtimeDatabase.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Firebase/RealtimeDatabase/GoogleFirebaseRealtimeDatabase.node.js' node
 
 export const name = "googleFirebaseRealtimeDatabase" as const;
 export const description = "Interact with Google Firebase - Realtime Database API" as const;
@@ -13,7 +13,7 @@ export const credentials = [{"name":"googleFirebaseRealtimeDatabaseOAuth2Api"}] 
 export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
 
     /**
-     * As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
     readonly projectId: string;

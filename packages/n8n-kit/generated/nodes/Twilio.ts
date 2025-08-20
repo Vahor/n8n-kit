@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Twilio/Twilio.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Twilio/Twilio.node.js' node
 
 export const name = "twilio" as const;
 export const description = "Send SMS and WhatsApp messages or make phone calls" as const;

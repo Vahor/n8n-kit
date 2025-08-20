@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Totp/Totp.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Totp/Totp.node.js' node
 
 export const name = "totp" as const;
 export const description = "Generate a time-based one-time password" as const;

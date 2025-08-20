@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Bitwarden/Bitwarden.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Bitwarden/Bitwarden.node.js' node
 
 export const name = "bitwarden" as const;
 export const description = "Consume the Bitwarden API" as const;

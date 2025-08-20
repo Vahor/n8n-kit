@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mautic/MauticTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mautic/MauticTrigger.node.js' node
 
 export const name = "mauticTrigger" as const;
 export const description = "Handle Mautic events via webhooks" as const;
@@ -18,7 +18,7 @@ export interface MauticTriggerNodeParameters {
     readonly authentication?: "credentials" | "oAuth2";
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getEvents"}
      */

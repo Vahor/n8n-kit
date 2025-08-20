@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ICalendar/ICalendar.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ICalendar/ICalendar.node.js' node
 
 export const name = "iCal" as const;
 export const description = "Create iCalendar file" as const;
@@ -45,7 +45,7 @@ export interface ICalendarNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string, "useWorkflowTimezone"?: boolean };
+    readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string };
 
 
 }

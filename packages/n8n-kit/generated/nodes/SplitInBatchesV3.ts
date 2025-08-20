@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/SplitInBatches/v3/SplitInBatchesV3.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/SplitInBatches/v3/SplitInBatchesV3.node.js' node
 
 export const name = "splitInBatches" as const;
 export const description = "Split data into batches and iterate over each batch" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Zammad/Zammad.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Zammad/Zammad.node.js' node
 
 export const name = "zammad" as const;
 export const description = "Consume the Zammad API" as const;
@@ -32,19 +32,19 @@ export interface ZammadNodeParameters {
     readonly name?: string;
 
     /**
-     * Group to update. Specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Group to update. Specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      */
     readonly id?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "note"?: string, "shared"?: boolean, "domain"?: string, "domain_assignment"?: boolean, "vip"?: boolean, "addressUi"?: { "addressDetails": any }, "department"?: string, "email"?: string, "fax"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "web"?: string };
+    readonly additionalFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "note"?: string, "addressUi"?: { "addressDetails": any }, "department"?: string, "email"?: string, "fax"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "vip"?: boolean, "web"?: string };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "name"?: string, "note"?: string, "shared"?: boolean, "domain"?: string, "domain_assignment"?: boolean, "vip"?: boolean, "addressUi"?: { "addressDetails": any }, "department"?: string, "email"?: string, "fax"?: string, "firstname"?: string, "lastname"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "web"?: string };
+    readonly updateFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "name"?: string, "note"?: string, "addressUi"?: { "addressDetails": any }, "department"?: string, "email"?: string, "fax"?: string, "firstname"?: string, "lastname"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "vip"?: boolean, "web"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -64,13 +64,13 @@ export interface ZammadNodeParameters {
     readonly title?: string;
 
     /**
-     * Group that will own the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Group that will own the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadGroupNames"}
      */
     readonly group?: string;
 
     /**
-     * Email address of the customer concerned in the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Email address of the customer concerned in the ticket to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadCustomerEmails"}
      */
     readonly customer?: string;

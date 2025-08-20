@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/WhatsApp/WhatsApp.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/WhatsApp/WhatsApp.node.js' node
 
 export const name = "whatsApp" as const;
 export const description = "Access WhatsApp API" as const;
 export const version = 1 as const;
 export const defaults = {"name":"WhatsApp Business Cloud"} as const;
-export const credentials = [{"name":"WHATSAPP_CREDENTIALS_TYPE","required":true}] as const
+export const credentials = [{"name":"whatsAppApi","required":true}] as const
 
 /**
  * Access WhatsApp API
@@ -20,7 +20,7 @@ export interface WhatsAppNodeParameters {
     /**
      * Default: "sendTemplate"
      */
-    readonly operation?: "send" | "SEND_AND_WAIT_OPERATION" | "sendTemplate" | "mediaUpload" | "mediaUrlGet" | "mediaDelete";
+    readonly operation?: "send" | "sendTemplate" | "mediaUpload" | "mediaUrlGet" | "mediaDelete";
 
     /**
      * Default: "whatsapp"
@@ -56,12 +56,12 @@ export interface WhatsAppNodeParameters {
     readonly additionalFields?: { "addresses"?: { "address": any }, "birthday"?: string, "emails"?: { "data": any }, "organization"?: { "data": any }, "phones"?: { "data": any }, "urls"?: { "url": any }, "nameAndAddress"?: any, "mediaFilename"?: string, "mediaCaption"?: string, "previewUrl"?: boolean, "mediaFileName"?: string };
 
     /**
-     * Type options: {"minValue":"-180","maxValue":180}
+     * Type options: {"minValue":-180,"maxValue":180}
      */
     readonly longitude?: number;
 
     /**
-     * Type options: {"minValue":"-90","maxValue":90}
+     * Type options: {"minValue":-90,"maxValue":90}
      */
     readonly latitude?: number;
 

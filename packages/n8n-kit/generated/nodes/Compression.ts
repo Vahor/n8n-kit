@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Compression/Compression.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Compression/Compression.node.js' node
 
 export const name = "compression" as const;
 export const description = "Compress and decompress files" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"Compression","color":"#408000"} as const;
 
 /**
@@ -17,28 +17,29 @@ export interface CompressionNodeParameters {
     readonly operation?: "compress" | "decompress";
 
     /**
-     * To process more than one file, use a comma-separated list of the binary fields names
+     * Name of the binary property which contains the data for the file(s) to be compress/decompress. Multiple can be used separated by a comma (,).
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
 
     /**
-     * Format of the output
+     * Format of the output file
      */
     readonly outputFormat?: "gzip" | "zip";
 
     /**
-     * Name of the output file
+     * Name of the file to be compressed
      */
     readonly fileName?: string;
 
     /**
+     * Name of the binary property to which to write the data of the compressed files
      * Default: "data"
      */
     readonly binaryPropertyOutput?: string;
 
     /**
-     * Prefix to add to the gzip file
+     * Prefix use for all gzip compressed files
      * Default: "data"
      */
     readonly outputPrefix?: string;

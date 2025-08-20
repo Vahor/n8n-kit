@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Rocketchat/Rocketchat.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Rocketchat/Rocketchat.node.js' node
 
 export const name = "rocketchat" as const;
 export const description = "Consume RocketChat API" as const;

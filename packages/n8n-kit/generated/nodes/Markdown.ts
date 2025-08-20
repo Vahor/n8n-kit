@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Markdown/Markdown.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Markdown/Markdown.node.js' node
 
 export const name = "markdown" as const;
 export const description = "Convert data between Markdown and HTML" as const;

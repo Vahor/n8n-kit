@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ServiceNow/ServiceNow.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ServiceNow/ServiceNow.node.js' node
 
 export const name = "serviceNow" as const;
 export const description = "Consume ServiceNow API" as const;
@@ -29,7 +29,7 @@ export interface ServiceNowNodeParameters {
     readonly operation?: "upload" | "delete" | "get" | "getAll" | "create" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTables"}
      */
     readonly tableName?: string;

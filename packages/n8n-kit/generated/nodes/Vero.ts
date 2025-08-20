@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Vero/Vero.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Vero/Vero.node.js' node
 
 export const name = "vero" as const;
 export const description = "Consume Vero API" as const;

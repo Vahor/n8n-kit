@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/TheHiveProject/TheHiveProjectTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/TheHiveProject/TheHiveProjectTrigger.node.js' node
 
 export const name = "theHiveProjectTrigger" as const;
 export const description = "Starts the workflow when TheHive events occur" as const;
@@ -10,10 +10,6 @@ export const defaults = {"name":"TheHive Trigger"} as const;
  * Starts the workflow when TheHive events occur
  */
 export interface TheHiveProjectTriggerNodeParameters {
-
-    /**
-     */
-    readonly notice?: string;
 
     /**
      * Events types

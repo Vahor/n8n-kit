@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Cron/Cron.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Cron/Cron.node.js' node
 
 export const name = "cron" as const;
 export const description = "Triggers the workflow at a specific time" as const;
@@ -20,7 +20,7 @@ export interface CronNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Time"}
      */
-    readonly triggerTimes?: Record<string, any>;
+    readonly triggerTimes?: { "item": any };
 
 
 }

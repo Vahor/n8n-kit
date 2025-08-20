@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mailjet/MailjetTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mailjet/MailjetTrigger.node.js' node
 
 export const name = "mailjetTrigger" as const;
 export const description = "Handle Mailjet events via webhooks" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/ELB/AwsElb.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/ELB/AwsElb.node.js' node
 
 export const name = "awsElb" as const;
 export const description = "Sends data to AWS ELB API" as const;
@@ -44,7 +44,7 @@ export interface AwsElbNodeParameters {
     readonly type?: "application" | "network";
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getSubnets"}
      */
@@ -78,7 +78,7 @@ export interface AwsElbNodeParameters {
     readonly filters?: { "names"?: string };
 
     /**
-     * Unique identifier for a particular loadBalancer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Unique identifier for a particular loadBalancer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLoadBalancerListeners","loadOptionsDependsOn":["loadBalancerId"]}
      */
     readonly listenerId?: string;

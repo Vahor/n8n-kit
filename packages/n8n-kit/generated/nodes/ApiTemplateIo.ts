@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ApiTemplateIo/ApiTemplateIo.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ApiTemplateIo/ApiTemplateIo.node.js' node
 
 export const name = "apiTemplateIo" as const;
 export const description = "Consume the APITemplate.io API" as const;
@@ -23,13 +23,13 @@ export interface ApiTemplateIoNodeParameters {
     readonly operation?: "create" | "get";
 
     /**
-     * ID of the image template to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * ID of the image template to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getImageTemplates"}
      */
     readonly imageTemplateId?: string;
 
     /**
-     * ID of the PDF template to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * ID of the PDF template to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getPdfTemplates"}
      */
     readonly pdfTemplateId?: string;
@@ -44,6 +44,7 @@ export interface ApiTemplateIoNodeParameters {
     readonly download?: boolean;
 
     /**
+     * Name of the binary property to which to write to
      * Default: "data"
      */
     readonly binaryProperty?: string;

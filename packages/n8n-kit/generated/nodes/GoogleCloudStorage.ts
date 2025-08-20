@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/CloudStorage/GoogleCloudStorage.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/CloudStorage/GoogleCloudStorage.node.js' node
 
 export const name = "googleCloudStorage" as const;
 export const description = "Use the Google Cloud Storage API" as const;
@@ -114,17 +114,17 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: {}
      */
-    readonly createQuery?: { "contentEncoding"?: string, "undefined"?: any, "kmsKeyName"?: string, "undefined"?: any };
+    readonly createQuery?: { "contentEncoding"?: string, "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number, "kmsKeyName"?: string, "predefinedAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
     /**
      * Default: {}
      */
-    readonly getParameters?: { "undefined"?: any };
+    readonly getParameters?: { "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number };
 
     /**
      * Default: {}
      */
-    readonly metagenAndAclQuery?: { "undefined"?: any, "undefined"?: any };
+    readonly metagenAndAclQuery?: { "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number, "predefinedAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
     /**
      * Default: {}

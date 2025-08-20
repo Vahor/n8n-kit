@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Automizy/Automizy.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Automizy/Automizy.node.js' node
 
 export const name = "automizy" as const;
 export const description = "Consume Automizy API" as const;
@@ -11,10 +11,6 @@ export const credentials = [{"name":"automizyApi","required":true}] as const
  * Consume Automizy API
  */
 export interface AutomizyNodeParameters {
-
-    /**
-     */
-    readonly deprecated?: string;
 
     /**
      * Default: "contact"
@@ -32,7 +28,7 @@ export interface AutomizyNodeParameters {
     readonly email?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getLists"}
      */
     readonly listId?: string;

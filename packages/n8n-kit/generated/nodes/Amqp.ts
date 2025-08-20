@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Amqp/Amqp.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Amqp/Amqp.node.js' node
 
 export const name = "amqp" as const;
 export const description = "Sends a raw-message via AMQP 1.0, executed once per item" as const;

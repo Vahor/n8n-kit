@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/MySql/v2/MySqlV2.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/MySql/v2/MySqlV2.node.js' node
 
 export const name = "mySql" as const;
 export const description = "Get, add and update data in MySQL" as const;
-export const version = 2.5 as const;
+export const version = 2.2 as const;
 export const defaults = {"name":"MySQL"} as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest"}] as const
 
@@ -21,6 +21,86 @@ export interface MySqlV2NodeParameters {
      * Default: "insert"
      */
     readonly operation?: "deleteTable" | "executeQuery" | "insert" | "upsert" | "select" | "update";
+
+    /**
+     * The table you want to work on
+     * Default: {"mode":"list","value":""}
+     */
+    readonly table: any;
+
+    /**
+     * Default: "truncate"
+     */
+    readonly deleteCommand?: "truncate" | "delete" | "drop";
+
+    /**
+     * If not set, all rows will be selected
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly where?: { "values": any };
+
+    /**
+     * How to combine the conditions defined in "Select Rows": AND requires all conditions to be true, OR requires at least one condition to be true
+     * Default: "AND"
+     */
+    readonly combineConditions?: "AND" | "OR";
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "connectionTimeoutMillis"?: number, "connectionLimit"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "priority"?: "LOW_PRIORITY" | "HIGH_PRIORITY", "replaceEmptyStrings"?: boolean, "selectDistinct"?: boolean, "detailedOutput"?: boolean, "skipOnConflict"?: boolean };
+
+    /**
+     * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
+     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"MySQL"}
+     */
+    readonly query?: string;
+
+    /**
+     * Whether to map node input properties and the table data automatically or manually
+     * Default: "autoMapInputData"
+     */
+    readonly dataMode?: "autoMapInputData" | "defineBelow" | "defineBelow";
+
+    /**
+     */
+    readonly notice?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValueButtonText":"Add Value","multipleValues":true}
+     */
+    readonly valuesToSend?: { "values": any };
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly sort?: { "values": any };
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/" target="_blank">expression</a>
+     * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["schema.value","table.value"]}
+     */
+    readonly columnToMatchOn?: string;
+
+    /**
+     * Rows with a value in the specified "Column to Match On" that corresponds to the value in this field will be updated
+     */
+    readonly valueToMatchOn?: string;
 
 
 }

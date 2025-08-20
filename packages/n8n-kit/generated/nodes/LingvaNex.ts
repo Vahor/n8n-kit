@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/LingvaNex/LingvaNex.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/LingvaNex/LingvaNex.node.js' node
 
 export const name = "lingvaNex" as const;
 export const description = "Consume LingvaNex API" as const;
@@ -23,7 +23,7 @@ export interface LingvaNexNodeParameters {
     readonly text?: string;
 
     /**
-     * The language to use for translation of the input text, set to one of the language codes listed in <a href="https://cloud.google.com/translate/docs/languages">Language Support</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The language to use for translation of the input text, set to one of the language codes listed in <a href="https://cloud.google.com/translate/docs/languages">Language Support</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLanguages"}
      */
     readonly translateTo?: string;

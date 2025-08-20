@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Wekan/Wekan.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Wekan/Wekan.node.js' node
 
 export const name = "wekan" as const;
 export const description = "Consume Wekan API" as const;
@@ -28,7 +28,7 @@ export interface WekanNodeParameters {
     readonly title?: string;
 
     /**
-     * The user ID in Wekan. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The user ID in Wekan. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly owner?: string;
@@ -44,7 +44,7 @@ export interface WekanNodeParameters {
     readonly boardId?: string;
 
     /**
-     * The ID of the user that boards are attached. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the user that boards are attached. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly IdUser?: string;
@@ -62,25 +62,25 @@ export interface WekanNodeParameters {
     readonly limit?: number;
 
     /**
-     * The ID of the list to create card in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the list to create card in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists","loadOptionsDependsOn":["boardId"]}
      */
     readonly listId?: string;
 
     /**
-     * The swimlane ID of the new card. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The swimlane ID of the new card. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSwimlanes","loadOptionsDependsOn":["boardId"]}
      */
     readonly swimlaneId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly authorId?: string;
 
     /**
-     * The ID of the card to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the card to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCards","loadOptionsDependsOn":["boardId","listId"]}
      */
     readonly cardId?: string;
@@ -100,7 +100,7 @@ export interface WekanNodeParameters {
     readonly comment?: string;
 
     /**
-     * The ID of the comment to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the comment to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getComments","loadOptionsDependsOn":["boardId","cardId"]}
      */
     readonly commentId?: string;
@@ -113,13 +113,13 @@ export interface WekanNodeParameters {
     readonly items?: string;
 
     /**
-     * The ID of the checklist to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the checklist to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChecklists","loadOptionsDependsOn":["boardId","cardId"]}
      */
     readonly checklistId?: string;
 
     /**
-     * The ID of the checklistItem item to get. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the checklistItem item to get. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChecklistItems","loadOptionsDependsOn":["boardId","cardId","checklistId"]}
      */
     readonly checklistItemId?: string;

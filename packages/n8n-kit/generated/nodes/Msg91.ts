@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Msg91/Msg91.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Msg91/Msg91.node.js' node
 
 export const name = "msg91" as const;
 export const description = "Sends transactional SMS via MSG91" as const;

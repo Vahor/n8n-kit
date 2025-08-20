@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/Comprehend/AwsComprehend.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/Comprehend/AwsComprehend.node.js' node
 
 export const name = "awsComprehend" as const;
 export const description = "Sends data to Amazon Comprehend" as const;

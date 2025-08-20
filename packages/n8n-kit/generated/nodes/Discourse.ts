@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Discourse/Discourse.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Discourse/Discourse.node.js' node
 
 export const name = "discourse" as const;
 export const description = "Consume Discourse API" as const;
@@ -117,12 +117,7 @@ export interface DiscourseNodeParameters {
     /**
      * User flags to search for
      */
-    readonly flag?: "active" | "blocked" | "new" | "staff" | "suspect" | "suspended";
-
-    /**
-     * Default: {}
-     */
-    readonly options?: { "asc"?: boolean, "order"?: "created" | "days_visited" | "email" | "last_emailed" | "posts" | "posts_read" | "read_time" | "seen" | "topics_viewed" | "trust_level" | "username", "showEmails"?: boolean, "stats"?: boolean };
+    readonly flag?: "active" | "blocked" | "new" | "staff" | "suspect";
 
     /**
      * Usernames to add to group. Multiples can be defined separated by comma.

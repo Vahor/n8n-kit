@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Task/GoogleTasks.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Task/GoogleTasks.node.js' node
 
 export const name = "googleTasks" as const;
 export const description = "Consume Google Tasks API" as const;
@@ -23,7 +23,7 @@ export interface GoogleTasksNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTasks"}
      */
     readonly task?: string;

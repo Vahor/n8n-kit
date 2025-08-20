@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Jenkins/Jenkins.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Jenkins/Jenkins.node.js' node
 
 export const name = "jenkins" as const;
 export const description = "Consume Jenkins API" as const;
@@ -28,7 +28,7 @@ export interface JenkinsNodeParameters {
     readonly triggerParamsNotice?: string;
 
     /**
-     * Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getJobs"}
      */
     readonly job?: string;

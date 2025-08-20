@@ -68,6 +68,7 @@
 	"devDependencies": {
 		"@types/cli-progress": "^3.11.6",
 		"codemaker": "^1.113.0",
+		"n8n-nodes-base": "^1.14.1",
 		"n8n-workflow": "^1.82.0",
 		"tinyglobby": "^0.2.14",
 		"tsdown": "catalog:",

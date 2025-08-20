@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Emelia/Emelia.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Emelia/Emelia.node.js' node
 
 export const name = "emelia" as const;
 export const description = "Consume the Emelia API" as const;
@@ -23,7 +23,7 @@ export interface EmeliaNodeParameters {
     readonly operation?: "addContact" | "create" | "duplicate" | "get" | "getAll" | "pause" | "start" | "add";
 
     /**
-     * The ID of the campaign to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the campaign to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
@@ -62,7 +62,7 @@ export interface EmeliaNodeParameters {
     readonly options?: { "copyContacts"?: boolean, "copyProvider"?: boolean, "copyMails"?: boolean, "copySettings"?: boolean };
 
     /**
-     * The ID of the contact list to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the contact list to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getContactLists"}
      */

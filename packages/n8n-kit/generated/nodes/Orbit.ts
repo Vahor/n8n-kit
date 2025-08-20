@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Orbit/Orbit.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Orbit/Orbit.node.js' node
 
 export const name = "orbit" as const;
 export const description = "Consume Orbit API" as const;
@@ -13,10 +13,6 @@ export const credentials = [{"name":"orbitApi","required":true}] as const
 export interface OrbitNodeParameters {
 
     /**
-     */
-    readonly deprecated?: string;
-
-    /**
      * Default: "member"
      */
     readonly resource?: "activity" | "member" | "note" | "post";
@@ -27,8 +23,7 @@ export interface OrbitNodeParameters {
     readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "lookup" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-     * Default: "Deprecated"
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
     readonly workspaceId?: string;

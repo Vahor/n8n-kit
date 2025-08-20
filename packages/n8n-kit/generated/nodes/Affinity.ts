@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Affinity/Affinity.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Affinity/Affinity.node.js' node
 
 export const name = "affinity" as const;
 export const description = "Consume Affinity API" as const;

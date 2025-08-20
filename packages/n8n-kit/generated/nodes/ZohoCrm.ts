@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Zoho/ZohoCrm.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Zoho/ZohoCrm.node.js' node
 
 export const name = "zohoCrm" as const;
 export const description = "Consume Zoho CRM API" as const;
@@ -16,6 +16,133 @@ export interface ZohoCrmNodeParameters {
      * Default: "account"
      */
     readonly resource?: "account" | "contact" | "deal" | "invoice" | "lead" | "product" | "purchaseOrder" | "quote" | "salesOrder" | "vendor";
+
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "getFields";
+
+    /**
+     */
+    readonly accountName?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "Account_Number"?: string, "Account_Site"?: string, "Account_Type"?: string, "Annual_Revenue"?: number, "Billing_Address"?: { "address_fields": any }, "Contact_Details"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Employees"?: number, "Exchange_Rate"?: number, "Fax"?: string, "Industry"?: string, "Phone"?: string, "Shipping_Address"?: { "address_fields": any }, "Ticker_Symbol"?: string, "Website"?: string, "Assistant"?: string, "Date_of_Birth"?: string, "Department"?: string, "Email"?: string, "Secondary_Email"?: string, "First_Name"?: string, "Full_Name"?: string, "Mailing_Address"?: { "address_fields": any }, "Mobile"?: string, "Other_Address"?: { "address_fields": any }, "Asst_Phone"?: string, "Home_Phone"?: string, "Other_Phone"?: string, "Salutation"?: string, "Skype_ID"?: string, "Title"?: string, "Twitter"?: string, "Amount"?: number, "Closing_Date"?: string, "Lead_Conversion_Time"?: number, "Next_Step"?: string, "Overall_Sales_Duration"?: number, "Probability"?: number, "Sales_Cycle_Duration"?: number, "accountId"?: string, "Adjustment"?: number, "Due_Date"?: string, "Grand_Total"?: number, "Invoice_Date"?: string, "Invoice_Number"?: string, "Sales_Commission"?: number, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string, "Address"?: { "address_fields": any }, "Designation"?: string, "Email_Opt_Out"?: boolean, "Industry_Type"?: string, "Lead_Source"?: string, "Lead_Status"?: string, "No_of_Employees"?: number, "Commission_Rate"?: number, "Manufacturer"?: string, "Product_Active"?: boolean, "Product_Category"?: string, "Qty_in_Demand"?: number, "Qty_in_Stock"?: number, "Taxable"?: boolean, "Unit_Price"?: number, "Carrier"?: string, "Discount"?: number, "PO_Date"?: string, "PO_Number"?: string, "Tracking_Number"?: string, "Quote_Stage"?: string, "Team"?: string, "Valid_Till"?: string, "contactId"?: string, "dealId"?: string, "SO_Number"?: string, "Category"?: string };
+
+    /**
+     * ID of the account to delete. Can be found at the end of the URL.
+     */
+    readonly accountId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 5
+     * Type options: {"minValue":1,"maxValue":1000}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string };
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "Account_Name"?: string, "Account_Number"?: string, "Account_Site"?: string, "Account_Type"?: string, "Annual_Revenue"?: number, "Billing_Address"?: { "address_fields": any }, "Contact_Details"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Employees"?: number, "Exchange_Rate"?: number, "Fax"?: string, "Industry"?: string, "Phone"?: string, "Shipping_Address"?: { "address_fields": any }, "Ticker_Symbol"?: string, "Website"?: string, "Assistant"?: string, "Asst_Phone"?: string, "Date_of_Birth"?: string, "Department"?: string, "Email"?: string, "Secondary_Email"?: string, "First_Name"?: string, "Full_Name"?: string, "Home_Phone"?: string, "Last_Name"?: string, "Mailing_Address"?: { "address_fields": any }, "Mobile"?: string, "Other_Address"?: { "address_fields": any }, "Other_Phone"?: string, "Salutation"?: string, "Skype_ID"?: string, "Title"?: string, "Twitter"?: string, "Amount"?: number, "Closing_Date"?: string, "Deal_Name"?: string, "Lead_Conversion_Time"?: number, "Next_Step"?: string, "Overall_Sales_Duration"?: number, "Probability"?: number, "Sales_Cycle_Duration"?: number, "Stage"?: string, "accountId"?: string, "Adjustment"?: number, "Due_Date"?: string, "Grand_Total"?: number, "Invoice_Date"?: string, "Invoice_Number"?: string, "Product_Details"?: { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number }, "Sales_Commission"?: number, "Status"?: string, "Sub_Total"?: number, "Subject"?: string, "Tax"?: number, "Terms_and_Conditions"?: string, "Address"?: { "address_fields": any }, "Company"?: string, "Designation"?: string, "Email_Opt_Out"?: boolean, "Industry_Type"?: string, "Lead_Source"?: string, "Lead_Status"?: string, "No_of_Employees"?: number, "Commission_Rate"?: number, "Manufacturer"?: string, "Product_Active"?: boolean, "Product_Category"?: string, "Qty_in_Demand"?: number, "Qty_in_Stock"?: number, "Taxable"?: boolean, "Unit_Price"?: number, "Carrier"?: string, "Discount"?: number, "PO_Date"?: string, "PO_Number"?: string, "Tracking_Number"?: string, "Quote_Stage"?: string, "Team"?: string, "Valid_Till"?: string, "contactId"?: string, "dealId"?: string, "SO_Number"?: string, "Category"?: string, "Vendor_Name"?: string };
+
+    /**
+     */
+    readonly lastName?: string;
+
+    /**
+     * ID of the contact to delete
+     */
+    readonly contactId?: string;
+
+    /**
+     */
+    readonly dealName?: string;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Default: []
+     * Type options: {"loadOptionsMethod":"getDealStage"}
+     */
+    readonly stage?: string;
+
+    /**
+     * ID of the deal to delete
+     */
+    readonly dealId?: string;
+
+    /**
+     * Subject or title of the invoice
+     */
+    readonly subject?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Product"}
+     */
+    readonly Product_Details?: { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number };
+
+    /**
+     * ID of the invoice to delete
+     */
+    readonly invoiceId?: string;
+
+    /**
+     * Company at which the lead works
+     */
+    readonly Company?: string;
+
+    /**
+     * ID of the lead to delete
+     */
+    readonly leadId?: string;
+
+    /**
+     */
+    readonly productName?: string;
+
+    /**
+     * ID of the product to delete
+     */
+    readonly productId?: string;
+
+    /**
+     * ID of the vendor associated with the purchase order. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Default: []
+     * Type options: {"loadOptionsMethod":"getVendors"}
+     */
+    readonly vendorId?: string;
+
+    /**
+     * ID of the purchase order to delete
+     */
+    readonly purchaseOrderId?: string;
+
+    /**
+     * ID of the quote to delete
+     */
+    readonly quoteId?: string;
+
+    /**
+     * ID of the sales order to delete
+     */
+    readonly salesOrderId?: string;
+
+    /**
+     */
+    readonly vendorName?: string;
 
 
 }

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Contacts/GoogleContacts.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Contacts/GoogleContacts.node.js' node
 
 export const name = "googleContacts" as const;
 export const description = "Consume Google Contacts API" as const;

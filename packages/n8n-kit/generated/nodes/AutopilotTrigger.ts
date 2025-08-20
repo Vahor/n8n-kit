@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Autopilot/AutopilotTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Autopilot/AutopilotTrigger.node.js' node
 
 export const name = "autopilotTrigger" as const;
 export const description = "Handle Autopilot events via webhooks" as const;

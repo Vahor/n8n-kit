@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Sendy/Sendy.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Sendy/Sendy.node.js' node
 
 export const name = "sendy" as const;
 export const description = "Consume Sendy API" as const;

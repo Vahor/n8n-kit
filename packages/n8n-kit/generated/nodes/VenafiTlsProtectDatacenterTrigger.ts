@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Venafi/Datacenter/VenafiTlsProtectDatacenterTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Venafi/Datacenter/VenafiTlsProtectDatacenterTrigger.node.js' node
 
 export const name = "venafiTlsProtectDatacenterTrigger" as const;
 export const description = "Starts the workflow when Venafi events occur" as const;

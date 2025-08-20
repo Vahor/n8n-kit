@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Copper/CopperTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Copper/CopperTrigger.node.js' node
 
 export const name = "copperTrigger" as const;
 export const description = "Handle Copper events via webhooks" as const;

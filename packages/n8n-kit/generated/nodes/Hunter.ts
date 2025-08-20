@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Hunter/Hunter.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Hunter/Hunter.node.js' node
 
 export const name = "hunter" as const;
 export const description = "Consume Hunter API" as const;
@@ -24,7 +24,7 @@ export interface HunterNodeParameters {
     readonly domain?: string;
 
     /**
-     * Whether to return only the found emails
+     * Whether to return only the the found emails
      * Default: true
      */
     readonly onlyEmails?: boolean;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mindee/Mindee.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mindee/Mindee.node.js' node
 
 export const name = "mindee" as const;
 export const description = "Consume Mindee API" as const;
@@ -29,6 +29,7 @@ export interface MindeeNodeParameters {
     readonly operation?: "predict";
 
     /**
+     * Name of the binary property which containsthe data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

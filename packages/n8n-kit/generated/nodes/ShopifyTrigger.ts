@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Shopify/ShopifyTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Shopify/ShopifyTrigger.node.js' node
 
 export const name = "shopifyTrigger" as const;
 export const description = "Handle Shopify events via webhooks" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/SyncroMSP/v1/SyncroMspV1.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/SyncroMSP/v1/SyncroMspV1.node.js' node
 
 export const name = "syncroMsp" as const;
 export const description = "Gets data from SyncroMSP" as const;
@@ -51,12 +51,12 @@ export interface SyncroMspV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "undefined"?: any, "businessName"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastname"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string, "assetId"?: string, "contactId"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", "name"?: string, "resolved"?: boolean };
+    readonly additionalFields?: { "address"?: { "addressFields": any }, "businessName"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastname"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string, "assetId"?: string, "contactId"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", "name"?: string, "resolved"?: boolean };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "undefined"?: any, "businessName"?: string, "email"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastName"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string, "assetId"?: string, "contactId"?: string, "customerId"?: string, "dueDate"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", "subject"?: string, "name"?: string };
+    readonly updateFields?: { "address"?: { "addressFields": any }, "businessName"?: string, "email"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastName"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string, "assetId"?: string, "contactId"?: string, "customerId"?: string, "dueDate"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", "subject"?: string, "name"?: string };
 
     /**
      */

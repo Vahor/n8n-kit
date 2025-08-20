@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Salesmate/Salesmate.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Salesmate/Salesmate.node.js' node
 
 export const name = "salesmate" as const;
 export const description = "Consume Salesmate API" as const;
@@ -27,7 +27,7 @@ export interface SalesmateNodeParameters {
     readonly name?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly owner?: string;
@@ -93,7 +93,7 @@ export interface SalesmateNodeParameters {
     readonly type?: string;
 
     /**
-     * Primary contact for the deal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Primary contact for the deal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getContacts"}
      */
     readonly primaryContact?: string;

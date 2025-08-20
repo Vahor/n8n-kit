@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/CustomerIo/CustomerIoTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/CustomerIo/CustomerIoTrigger.node.js' node
 
 export const name = "customerIoTrigger" as const;
 export const description = "Starts the workflow on a Customer.io update (Beta)" as const;

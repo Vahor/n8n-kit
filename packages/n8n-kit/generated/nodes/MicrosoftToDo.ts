@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Microsoft/ToDo/MicrosoftToDo.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/ToDo/MicrosoftToDo.node.js' node
 
 export const name = "microsoftToDo" as const;
 export const description = "Consume Microsoft To Do API." as const;
@@ -23,7 +23,7 @@ export interface MicrosoftToDoNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTaskLists"}
      */
     readonly taskListId?: string;
@@ -66,7 +66,7 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
+    readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
 
     /**
      * A brief description of the task

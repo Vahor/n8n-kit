@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Metabase/Metabase.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Metabase/Metabase.node.js' node
 
 export const name = "metabase" as const;
 export const description = "Use the Metabase API" as const;

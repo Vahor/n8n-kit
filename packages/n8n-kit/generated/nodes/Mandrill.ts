@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mandrill/Mandrill.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mandrill/Mandrill.node.js' node
 
 export const name = "mandrill" as const;
 export const description = "Consume Mandrill API" as const;
@@ -23,7 +23,7 @@ export interface MandrillNodeParameters {
     readonly operation?: "sendTemplate" | "sendHtml";
 
     /**
-     * The template you want to send. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The template you want to send. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTemplates"}
      */
     readonly template?: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Eventbrite/EventbriteTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Eventbrite/EventbriteTrigger.node.js' node
 
 export const name = "eventbriteTrigger" as const;
 export const description = "Handle Eventbrite events via webhooks" as const;
@@ -18,13 +18,13 @@ export interface EventbriteTriggerNodeParameters {
     readonly authentication?: "privateKey" | "oAuth2";
 
     /**
-     * The Eventbrite Organization to work on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The Eventbrite Organization to work on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getOrganizations"}
      */
     readonly organization: string;
 
     /**
-     * Limit the triggers to this event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Limit the triggers to this event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["organization"],"loadOptionsMethod":"getEvents"}
      */
     readonly event: string;

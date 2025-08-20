@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Microsoft/OneDrive/MicrosoftOneDrive.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/OneDrive/MicrosoftOneDrive.node.js' node
 
 export const name = "microsoftOneDrive" as const;
 export const description = "Consume Microsoft OneDrive API" as const;
@@ -38,6 +38,7 @@ export interface MicrosoftOneDriveNodeParameters {
     readonly parentReference?: { "driveId"?: string, "driveType"?: string, "id"?: string, "listId"?: string, "name"?: string, "path"?: string, "shareId"?: string, "siteId"?: string };
 
     /**
+     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

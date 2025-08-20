@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/ClickUp/ClickUpTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/ClickUp/ClickUpTrigger.node.js' node
 
 export const name = "clickUpTrigger" as const;
 export const description = "Handle ClickUp events via webhooks (Beta)" as const;
@@ -18,7 +18,7 @@ export interface ClickUpTriggerNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
     readonly team: string;

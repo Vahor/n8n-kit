@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/FileMaker/FileMaker.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/FileMaker/FileMaker.node.js' node
 
 export const name = "filemaker" as const;
 export const description = "Retrieve data from the FileMaker data API" as const;
@@ -18,7 +18,7 @@ export interface FileMakerNodeParameters {
     readonly action?: "create" | "delete" | "duplicate" | "edit" | "find" | "records" | "record" | "performscript";
 
     /**
-     * FileMaker Layout Name. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * FileMaker Layout Name. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLayouts"}
      */
     readonly layout: string;
@@ -47,14 +47,14 @@ export interface FileMakerNodeParameters {
     readonly getPortals?: boolean;
 
     /**
-     * The portal result set to return. Use the portal object name or portal table name. If this parameter is omitted, the API will return all portal objects and records in the layout. For best performance, pass the portal object name or portal table name. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The portal result set to return. Use the portal object name or portal table name. If this parameter is omitted, the API will return all portal objects and records in the layout. For best performance, pass the portal object name or portal table name. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Default: []
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add portal","loadOptionsMethod":"getPortals"}
      */
     readonly portals?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getResponseLayouts"}
      */
     readonly responseLayout?: string;
@@ -83,7 +83,7 @@ export interface FileMakerNodeParameters {
     readonly setScriptBefore?: boolean;
 
     /**
-     * The name of the FileMaker script to be run after the action specified by the API call and after the subsequent sort. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The name of the FileMaker script to be run after the action specified by the API call and after the subsequent sort. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getScripts"}
      */
     readonly scriptBefore?: string;
@@ -99,7 +99,7 @@ export interface FileMakerNodeParameters {
     readonly setScriptSort?: boolean;
 
     /**
-     * The name of the FileMaker script to be run after the action specified by the API call but before the subsequent sort. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The name of the FileMaker script to be run after the action specified by the API call but before the subsequent sort. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getScripts"}
      */
     readonly scriptSort?: string;
@@ -115,7 +115,7 @@ export interface FileMakerNodeParameters {
     readonly setScriptAfter?: boolean;
 
     /**
-     * The name of the FileMaker script to be run after the action specified by the API call and after the subsequent sort. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The name of the FileMaker script to be run after the action specified by the API call and after the subsequent sort. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getScripts"}
      */
     readonly scriptAfter?: string;
@@ -138,7 +138,7 @@ export interface FileMakerNodeParameters {
     readonly fieldsParametersUi?: { "fields": any };
 
     /**
-     * The name of the FileMaker script to be run. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The name of the FileMaker script to be run. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getScripts"}
      */
     readonly script?: string;

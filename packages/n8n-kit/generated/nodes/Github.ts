@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Github/Github.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Github/Github.node.js' node
 
 export const name = "github" as const;
 export const description = "Consume GitHub API" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const defaults = {"name":"GitHub"} as const;
 export const credentials = [{"name":"githubApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"githubOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
@@ -20,16 +20,12 @@ export interface GithubNodeParameters {
     /**
      * Default: "issue"
      */
-    readonly resource?: "file" | "issue" | "organization" | "release" | "repository" | "review" | "user" | "workflow";
+    readonly resource?: "file" | "issue" | "organization" | "release" | "repository" | "review" | "user";
 
     /**
      * Default: "getRepositories"
      */
-    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "delete" | "list" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "invite" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "getUsage";
-
-    /**
-     */
-    readonly webhookNotice?: string;
+    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "delete" | "list" | "getIssues" | "getLicense" | "getProfile" | "listPopularPaths" | "listReferrers" | "invite" | "getAll" | "update";
 
     /**
      * Default: {"mode":"list","value":""}
@@ -40,24 +36,6 @@ export interface GithubNodeParameters {
      * Default: {"mode":"list","value":""}
      */
     readonly repository: any;
-
-    /**
-     * The workflow to dispatch
-     * Default: {"mode":"list","value":""}
-     */
-    readonly workflowId?: any;
-
-    /**
-     * The git reference for the workflow dispatch (branch or tag name)
-     * Default: "main"
-     */
-    readonly ref?: string;
-
-    /**
-     * JSON object with input parameters for the workflow
-     * Default: "{}"
-     */
-    readonly inputs?: string;
 
     /**
      * The file path of the file. Has to contain the full path.
@@ -75,6 +53,7 @@ export interface GithubNodeParameters {
     readonly fileContent?: string;
 
     /**
+     * Name of the binary property which contains the data for the file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -127,10 +106,10 @@ export interface GithubNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly editFields?: { "assignees"?: { "assignee"?: string }, "body"?: string, "labels"?: { "label"?: string }, "state"?: "closed" | "open", "state_reason"?: "completed" | "not_planned" | "reopened", "title"?: string };
+    readonly editFields?: { "title"?: string, "body"?: string, "state"?: "closed" | "open", "labels"?: { "label"?: string }, "assignees"?: { "assignee"?: string } };
 
     /**
-     * The reason for locking the issue
+     * The reason to lock the issue
      * Default: "resolved"
      */
     readonly lockReason?: "off-topic" | "too heated" | "resolved" | "spam";
@@ -167,12 +146,6 @@ export interface GithubNodeParameters {
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
     readonly getRepositoryIssuesFilters?: { "assignee"?: string, "creator"?: string, "mentioned"?: string, "labels"?: string, "since"?: string, "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "comments", "direction"?: "asc" | "desc" };
-
-    /**
-     * Default: {}
-     * Type options: {"multipleValueButtonText":"Add Filter"}
-     */
-    readonly getRepositoryPullRequestsFilters?: { "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "popularity" | "long-running", "direction"?: "asc" | "desc" };
 
     /**
      * The number of the pull request

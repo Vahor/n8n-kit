@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Mautic/Mautic.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Mautic/Mautic.node.js' node
 
 export const name = "mautic" as const;
 export const description = "Consume Mautic API" as const;
@@ -83,7 +83,7 @@ export interface MauticNodeParameters {
     readonly lastName?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCompanies"}
      */
     readonly company?: string;
@@ -125,25 +125,25 @@ export interface MauticNodeParameters {
     readonly options?: { "search"?: string, "orderBy"?: string, "orderByDir"?: "asc" | "desc", "publishedOnly"?: boolean, "minimal"?: boolean, "rawData"?: boolean };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCampaignEmails"}
      */
     readonly campaignEmailId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getSegments"}
      */
     readonly segmentId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
     readonly campaignId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getSegmentEmails"}
      */
     readonly segmentEmailId?: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Calendar/GoogleCalendarTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Calendar/GoogleCalendarTrigger.node.js' node
 
 export const name = "googleCalendarTrigger" as const;
 export const description = "Starts the workflow when Google Calendar events occur" as const;

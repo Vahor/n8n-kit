@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/AcuityScheduling/AcuitySchedulingTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/AcuityScheduling/AcuitySchedulingTrigger.node.js' node
 
 export const name = "acuitySchedulingTrigger" as const;
 export const description = "Handle Acuity Scheduling events via webhooks" as const;

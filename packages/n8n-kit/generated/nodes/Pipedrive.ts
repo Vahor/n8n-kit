@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Pipedrive/Pipedrive.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Pipedrive/Pipedrive.node.js' node
 
 export const name = "pipedrive" as const;
 export const description = "Create and edit data in Pipedrive" as const;
@@ -46,7 +46,7 @@ export interface PipedriveNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "deal_id"?: number, "due_date"?: string, "note"?: string, "org_id"?: string, "person_id"?: number, "user_id"?: string, "customProperties"?: { "property": any }, "currency"?: string, "label"?: string, "lost_reason"?: string, "probability"?: number, "stage_id"?: string, "status"?: "open" | "won" | "lost" | "deleted", "value"?: number, "visible_to"?: "1" | "3", "comments"?: string, "discount_percentage"?: number, "product_variation_id"?: string, "includeFields"?: string, "organizationId"?: string, "personId"?: string, "fields"?: ("custom_fields" | "notes" | "title")[], "activity_id"?: number, "product_id"?: number, "expected_close_date"?: string, "label_ids"?: string[], "organization_id"?: number, "owner_id"?: string, "exactMatch"?: boolean, "rawData"?: boolean, "email"?: string, "marketing_status"?: "no_consent" | "unsubscribed" | "subscribed" | "archived", "phone"?: string, "done"?: boolean, "exclude"?: string, "filterId"?: string, "firstChar"?: string, "sort"?: string, "lead_id"?: number, "end_date"?: string, "start_date"?: string, "type"?: string[] };
+    readonly additionalFields?: { "deal_id"?: number, "due_date"?: string, "note"?: string, "org_id"?: string, "person_id"?: number, "user_id"?: string, "customProperties"?: { "property": any }, "currency"?: string, "label"?: string, "lost_reason"?: string, "probability"?: number, "stage_id"?: string, "status"?: "open" | "won" | "lost" | "deleted", "value"?: number, "visible_to"?: "1" | "3", "comments"?: string, "discount_percentage"?: number, "product_variation_id"?: string, "includeFields"?: string, "organizationId"?: string, "personId"?: string, "fields"?: ("custom_fields" | "notes" | "title")[], "activity_id"?: number, "product_id"?: number, "expected_close_date"?: string, "label_ids"?: string[], "organization_id"?: number, "owner_id"?: string, "exactMatch"?: boolean, "rawData"?: boolean, "email"?: string, "marketing_status"?: "no_consent" | "unsubscribed" | "subscribed" | "archived", "phone"?: string, "done"?: boolean, "exclude"?: string, "filterId"?: string, "firstChar"?: string, "lead_id"?: number, "end_date"?: string, "start_date"?: string, "type"?: string[] };
 
     /**
      * ID of the activity to delete
@@ -56,7 +56,7 @@ export interface PipedriveNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "busy_flag"?: boolean, "deal_id"?: number, "due_date"?: string, "done"?: "0" | "1", "note"?: string, "org_id"?: string, "person_id"?: number, "public_description"?: string, "subject"?: string, "type"?: string, "user_id"?: string, "customProperties"?: { "property": any }, "currency"?: string, "label"?: string, "lost_reason"?: string, "probability"?: number, "stage_id"?: string, "status"?: "open" | "won" | "lost" | "deleted", "title"?: string, "value"?: number, "visible_to"?: "1" | "3", "comments"?: string, "discount_percentage"?: number, "item_price"?: number, "quantity"?: number, "product_variation_id"?: string, "name"?: string, "description"?: string, "owner_id"?: string, "label_ids"?: string[], "expected_close_date"?: string, "content"?: string, "lead_id"?: number, "email"?: string, "marketing_status"?: "no_consent" | "unsubscribed" | "subscribed" | "archived", "phone"?: string };
+    readonly updateFields?: { "deal_id"?: number, "due_date"?: string, "done"?: "0" | "1", "note"?: string, "org_id"?: string, "person_id"?: number, "subject"?: string, "type"?: string, "user_id"?: string, "customProperties"?: { "property": any }, "currency"?: string, "label"?: string, "lost_reason"?: string, "probability"?: number, "stage_id"?: string, "status"?: "open" | "won" | "lost" | "deleted", "title"?: string, "value"?: number, "visible_to"?: "1" | "3", "comments"?: string, "discount_percentage"?: number, "item_price"?: number, "quantity"?: number, "product_variation_id"?: string, "name"?: string, "description"?: string, "owner_id"?: string, "label_ids"?: string[], "expected_close_date"?: string, "content"?: string, "lead_id"?: number, "email"?: string, "marketing_status"?: "no_consent" | "unsubscribed" | "subscribed" | "archived", "phone"?: string };
 
     /**
      * The title of the deal to create
@@ -85,7 +85,7 @@ export interface PipedriveNodeParameters {
     readonly dealId?: number;
 
     /**
-     * The ID of the product to add to a deal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The ID of the product to add to a deal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProducts"}
      */
     readonly productId?: string;
@@ -104,7 +104,7 @@ export interface PipedriveNodeParameters {
     readonly quantity?: number;
 
     /**
-     * ID of the deal-product (the ID of the product attached to the deal). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * ID of the deal-product (the ID of the product attached to the deal). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProductsDeal","loadOptionsDependsOn":["dealId"]}
      */
     readonly productAttachmentId?: string;
@@ -132,6 +132,7 @@ export interface PipedriveNodeParameters {
     readonly limit?: number;
 
     /**
+     * Name of the binary property which contains the data for the file to be created
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

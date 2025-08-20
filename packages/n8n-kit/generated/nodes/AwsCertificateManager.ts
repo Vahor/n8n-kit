@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/CertificateManager/AwsCertificateManager.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/CertificateManager/AwsCertificateManager.node.js' node
 
 export const name = "awsCertificateManager" as const;
 export const description = "Sends data to AWS Certificate Manager" as const;

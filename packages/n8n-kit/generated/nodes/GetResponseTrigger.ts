@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/GetResponse/GetResponseTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/GetResponse/GetResponseTrigger.node.js' node
 
 export const name = "getResponseTrigger" as const;
 export const description = "Starts the workflow when GetResponse events occur" as const;
@@ -23,7 +23,7 @@ export interface GetResponseTriggerNodeParameters {
     readonly events: ("subscribe" | "unsubscribe" | "click" | "open" | "survey")[];
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getLists"}
      */

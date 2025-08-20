@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/DebugHelper/DebugHelper.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/DebugHelper/DebugHelper.node.js' node
 
 export const name = "debugHelper" as const;
 export const description = "Causes problems intentionally and generates useful data for debugging" as const;

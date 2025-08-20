@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Aws/AwsLambda.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Aws/AwsLambda.node.js' node
 
 export const name = "awsLambda" as const;
 export const description = "Invoke functions on AWS Lambda" as const;
@@ -18,7 +18,7 @@ export interface AwsLambdaNodeParameters {
     readonly operation?: "invoke";
 
     /**
-     * The function you want to invoke. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The function you want to invoke. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getFunctions"}
      */
     readonly function?: string;

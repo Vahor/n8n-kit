@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/DeepL/DeepL.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/DeepL/DeepL.node.js' node
 
 export const name = "deepL" as const;
 export const description = "Translate data using DeepL" as const;
@@ -28,7 +28,7 @@ export interface DeepLNodeParameters {
     readonly text?: string;
 
     /**
-     * Language to translate to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Language to translate to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLanguages"}
      */
     readonly translateTo?: string;

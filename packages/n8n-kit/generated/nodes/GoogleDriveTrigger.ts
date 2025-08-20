@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Drive/GoogleDriveTrigger.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Drive/GoogleDriveTrigger.node.js' node
 
 export const name = "googleDriveTrigger" as const;
 export const description = "Starts the workflow when Google Drive events occur" as const;
@@ -42,7 +42,7 @@ export interface GoogleDriveTriggerNodeParameters {
     readonly asas?: string;
 
     /**
-     * The drive to monitor. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The drive to monitor. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Default: "root"
      * Type options: {"loadOptionsMethod":"getDrives"}
      */

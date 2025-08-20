@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Notion/v2/NotionV2.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Notion/v2/NotionV2.node.js' node
 
 export const name = "notion" as const;
 export const description = "Consume Notion API" as const;
-export const version = 2.2 as const;
+export const version = 2 as const;
 export const defaults = {"name":"Notion"} as const;
 export const credentials = [{"name":"notionApi","required":true}] as const
 
@@ -15,10 +15,6 @@ export interface NotionV2NodeParameters {
     /**
      */
     readonly notionNotice?: string;
-
-    /**
-     */
-    readonly Credentials?: any;
 
     /**
      * Default: "page"
@@ -37,6 +33,12 @@ export interface NotionV2NodeParameters {
     readonly blockId?: any;
 
     /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly blockUi?: { "blockValues": any };
+
+    /**
      * Whether to return all results or only up to a given limit
      */
     readonly returnAll?: boolean;
@@ -51,11 +53,6 @@ export interface NotionV2NodeParameters {
     /**
      */
     readonly fetchNestedBlocks?: boolean;
-
-    /**
-     * Default: true
-     */
-    readonly simplifyOutput?: boolean;
 
     /**
      * The Notion Database to get
@@ -95,6 +92,30 @@ export interface NotionV2NodeParameters {
      * Default: {"mode":"url","value":""}
      */
     readonly pageId?: any;
+
+    /**
+     * Default: "none"
+     */
+    readonly filterType?: "none" | "manual" | "json";
+
+    /**
+     * Default: "anyFilter"
+     */
+    readonly matchType?: "anyFilter" | "allFilters";
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly filters?: { "conditions": any };
+
+    /**
+     */
+    readonly jsonNotice?: string;
+
+    /**
+     */
+    readonly filterJson?: string;
 
     /**
      */

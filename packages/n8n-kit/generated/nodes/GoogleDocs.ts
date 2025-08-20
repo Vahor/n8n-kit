@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/Google/Docs/GoogleDocs.node.ts' node
+// Generated from '/n8n-nodes-base/dist/nodes/Google/Docs/GoogleDocs.node.js' node
 
 export const name = "googleDocs" as const;
 export const description = "Consume Google Docs API." as const;
@@ -28,14 +28,14 @@ export interface GoogleDocsNodeParameters {
     readonly operation?: "create" | "get" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Default: "myDrive"
      * Type options: {"loadOptionsMethod":"getDrives"}
      */
     readonly driveId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["driveId"],"loadOptionsMethod":"getFolders"}
      */
     readonly folderId?: string;
