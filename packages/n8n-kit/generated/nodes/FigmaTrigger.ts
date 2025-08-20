@@ -1,0 +1,28 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from 'vendor/n8n/packages/nodes-base/nodes/Figma/FigmaTrigger.node.ts' node
+
+export const name = "figmaTrigger" as const;
+export const description =
+	"Starts the workflow when Figma events occur" as const;
+export const version = 1 as const;
+export const defaults = { name: "Figma Trigger (Beta)" } as const;
+export const credentials = [{ name: "figmaApi", required: true }] as const;
+
+/**
+ * Starts the workflow when Figma events occur
+ */
+export interface FigmaTriggerNodeParameters {
+	/**
+	 * Trigger will monitor this Figma Team for changes. Team ID can be found in the URL of a Figma Team page when viewed in a web browser: figma.com/files/team/{TEAM-ID}/.
+	 */
+	readonly teamId: string;
+
+	/**
+	 */
+	readonly triggerOn:
+		| "fileComment"
+		| "fileDelete"
+		| "fileUpdate"
+		| "fileVersionUpdate"
+		| "libraryPublish";
+}

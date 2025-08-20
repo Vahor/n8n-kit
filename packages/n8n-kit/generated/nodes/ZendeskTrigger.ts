@@ -1,0 +1,46 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from 'vendor/n8n/packages/nodes-base/nodes/Zendesk/ZendeskTrigger.node.ts' node
+
+export const name = "zendeskTrigger" as const;
+export const description = "Handle Zendesk events via webhooks" as const;
+export const version = 1 as const;
+export const defaults = { name: "Zendesk Trigger" } as const;
+export const credentials = [
+	{
+		name: "zendeskApi",
+		required: true,
+		displayOptions: { show: { authentication: ["apiToken"] } },
+	},
+	{
+		name: "zendeskOAuth2Api",
+		required: true,
+		displayOptions: { show: { authentication: ["oAuth2"] } },
+	},
+] as const;
+
+/**
+ * Handle Zendesk events via webhooks
+ */
+export interface ZendeskTriggerNodeParameters {
+	/**
+	 * Default: "apiToken"
+	 */
+	readonly authentication?: "apiToken" | "oAuth2";
+
+	/**
+	 * Default: "support"
+	 */
+	readonly service: "support";
+
+	/**
+	 * Default: {}
+	 */
+	readonly options?: { fields: string[] };
+
+	/**
+	 * The condition to set
+	 * Default: {}
+	 * Type options: {"multipleValues":true}
+	 */
+	readonly conditions?: { all: any; any: any };
+}

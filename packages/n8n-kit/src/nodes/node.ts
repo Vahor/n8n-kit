@@ -39,7 +39,7 @@ export abstract class BaseNode<
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
-	abstract getParameters(): Record<string, unknown>;
+	abstract getParameters(): object;
 
 	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
@@ -52,6 +52,8 @@ export abstract class BaseNode<
 		}
 		this.workflowParent = parent;
 	}
+
+	public "~validate"(): void {}
 
 	public getPath() {
 		const parentId = this.workflowParent?.id ?? "none";

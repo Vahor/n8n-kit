@@ -4,6 +4,7 @@ import type { App } from "@vahor/n8n-kit";
 import { table } from "table";
 import type { ArgumentsCamelCase, Argv } from "yargs";
 import { readConfigFile } from "../config";
+import { createFolder } from "../files";
 export const command = "build";
 export const description = "Build the project";
 export const builder = (yargs: Argv) =>
@@ -45,15 +46,10 @@ export const handler = async (
 		return;
 	}
 
-	const outputFolder = path.resolve(process.cwd(), config.out);
-	await fs.promises.mkdir(outputFolder, { recursive: true });
-	const outStat = await fs.promises.stat(outputFolder);
-	if (!outStat.isDirectory()) {
-		throw new Error(`Output folder ${outputFolder} is not a directory`);
-	}
+	const workflowsFolder = await createFolder(config, "workflows");
 
 	for (const workflow of app.workflows) {
-		const workflowPath = path.join(outputFolder, workflow.id);
+		const workflowPath = path.join(workflowsFolder, `${workflow.id}.json`);
 		await fs.promises.writeFile(workflowPath, JSON.stringify(workflow.build()));
 		console.log(`Wrote workflow '${workflow.id}' to ${workflowPath}`);
 	}

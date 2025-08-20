@@ -70,9 +70,11 @@ export class Workflow {
 
 		for (const node of nodes) {
 			node["~setParent"](this);
+			node["~validate"]();
 		}
 		for (const node of this.props.unlinkedNodes ?? []) {
 			node["~setParent"](this);
+			node["~validate"]();
 		}
 
 		for (const node of this.props.unlinkedNodes ?? []) {

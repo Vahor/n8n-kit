@@ -1,0 +1,36 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from 'vendor/n8n/packages/nodes-base/nodes/Supabase/Supabase.node.ts' node
+
+export const name = "supabase" as const;
+export const description =
+	"Add, get, delete and update data in a table" as const;
+export const version = 1 as const;
+export const defaults = { name: "Supabase" } as const;
+export const credentials = [
+	{
+		name: "supabaseApi",
+		required: true,
+		testedBy: "supabaseApiCredentialTest",
+	},
+] as const;
+
+/**
+ * Add, get, delete and update data in a table
+ */
+export interface SupabaseNodeParameters {
+	/**
+	 * Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>)
+	 */
+	readonly useCustomSchema?: boolean;
+
+	/**
+	 * Name of database schema to use for table
+	 * Default: "public"
+	 */
+	readonly schema?: string;
+
+	/**
+	 * Default: "row"
+	 */
+	readonly resource?: "row";
+}

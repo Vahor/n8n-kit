@@ -17,7 +17,7 @@ type AddIChainableToChainContext<
 		? CC
 		: IsRecord<C> extends true
 			? CC
-			: { [k in Id]: { c: C; a: C["keys"] } } & CC
+			: { [k in Id]: C } & CC & { json: C }
 	: CC;
 
 type ChainableProvider<N extends IChainable, CC extends ChainContext> =

@@ -22,7 +22,7 @@ describe("Chain", () => {
 	test("can loop elements", () => {
 		const A = new NoOp("a");
 		const B = new NoOp("b");
-		const C = new If("c");
+		const C = new If("c", { conditions: [] });
 		const D = new NoOp("d");
 
 		const chain = Chain.start(A).next(B).next(C.true(D));

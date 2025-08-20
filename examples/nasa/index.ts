@@ -2,6 +2,7 @@ import {
 	App,
 	Chain,
 	If,
+	Nasa,
 	NoOp,
 	ScheduleTrigger,
 	StickyNote,
@@ -21,12 +22,31 @@ const workflow = new Workflow("my-workflow", {
 	],
 	definition: Chain.start(
 		new ScheduleTrigger("schedule-trigger", {
-			interval: {},
+			interval: [
+				{
+					field: "weeks",
+					triggerAtDay: [1],
+					triggerAtHour: 9,
+					weeksInterval: 1,
+				},
+			],
 		}),
 	)
-		.next(new NoOp("nasa"))
-		.next(
-			new If("if")
+		.next(new Nasa("nasa", {}))
+		.next(() =>
+			new If("if", {
+				combinator: "and",
+				conditions: [
+					{
+						operator: {
+							type: "string",
+							operation: "contains",
+						},
+						leftValue: "TODO use $",
+						rightValue: "C",
+					},
+				],
+			})
 				.true(new NoOp("PostBin(true)"))
 				.false(new NoOp("PostBin(false)")),
 		),

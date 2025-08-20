@@ -36,8 +36,8 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.2",
 		"pkg-pr-new": "^0.0.55",
-		"typescript": "catalog:",
-		"tsdown": "catalog:"
+		"tsdown": "catalog:",
+		"typescript": "catalog:"
 	},
 	"scripts": {
 		"prepare": "husky",

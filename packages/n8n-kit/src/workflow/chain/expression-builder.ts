@@ -39,6 +39,13 @@ export type TypeOfField<
 	Context extends Record<string, unknown>,
 > = RecursiveDotNotation<Context, Field>;
 
+type ExtractNodeId<T extends string> =
+	T extends `${infer NodeId}.${infer _Rest}` ? NodeId : never;
+
+type ExtractPath<T extends string> = T extends `${infer _NodeId}.${infer Rest}`
+	? Rest
+	: never;
+
 export class ExpressionBuilder<T extends ChainContext, Path extends string> {
 	private readonly path: Path;
 
@@ -54,8 +61,26 @@ export class ExpressionBuilder<T extends ChainContext, Path extends string> {
 		return null as any;
 	}
 
-	public getPath(): Path {
+	public getFullPath(): Path {
 		return this.path;
+	}
+
+	public getNodeId(): ExtractNodeId<Path> {
+		const firstPart = this.path.split(".")[0];
+		return firstPart as any;
+	}
+
+	public getPath(): ExtractPath<Path> {
+		const rest = this.path.split(".").slice(1).join(".");
+		return rest as any;
+	}
+
+	public toExpression() {
+		const nodeId = this.getNodeId();
+		if (nodeId === "json") {
+			return `{{ $json.${this.getPath()} }}`;
+		}
+		return `{{ $('${nodeId}').${this.getPath()} }}`;
 	}
 }
 
