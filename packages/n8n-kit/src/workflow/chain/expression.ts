@@ -5,7 +5,7 @@ export function expr(strings: TemplateStringsArray, ...values: any[]) {
 		const value = values[i];
 
 		if (value instanceof ExpressionBuilder) {
-			return cur + value.format();
+			return `${cur}{{·${value.format()}·}}`;
 		}
 
 		if (typeof value === "string") {
@@ -19,5 +19,5 @@ export function expr(strings: TemplateStringsArray, ...values: any[]) {
 		return acc + cur;
 	}, "");
 
-	return `={{ ${result} }}`;
+	return `=${result}`;
 }

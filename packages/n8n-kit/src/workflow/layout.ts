@@ -18,9 +18,9 @@ export function calculateLayout(
 	g.setGraph({
 		rankdir: options.rankdir || "LR",
 		nodesep: options.nodesep || 100,
-		ranksep: options.ranksep || 50,
-		marginx: options.marginx || 50,
-		marginy: options.marginy || 50,
+		ranksep: options.ranksep || 100,
+		marginx: options.marginx || 60,
+		marginy: options.marginy || 60,
 	});
 
 	// Add nodes to the graph

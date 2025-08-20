@@ -6,7 +6,7 @@
 			"id": "schedule-trigger",
 			"name": "schedule-trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
-			"position": [100, 200],
+			"position": [115, 220],
 			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
@@ -25,18 +25,18 @@
 			"id": "nasa",
 			"name": "nasa",
 			"type": "n8n-nodes-base.nasa",
-			"position": [250, 200],
+			"position": [325, 220],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "donkiSolarFlare",
-				"additionalFields": { "startDate": "={{ today.minus(1, 'day') }}" }
+				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" }
 			}
 		},
 		{
 			"id": "if",
 			"name": "if",
 			"type": "n8n-nodes-base.if",
-			"position": [400, 200],
+			"position": [535, 220],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -60,18 +60,28 @@
 		{
 			"id": "PostBin(true)",
 			"name": "PostBin(true)",
-			"type": "n8n-nodes-base.noOp",
-			"position": [550, 100],
+			"type": "n8n-nodes-base.postBin",
+			"position": [745, 115],
 			"typeVersion": 1,
-			"parameters": {}
+			"parameters": {
+				"resource": "request",
+				"binId": "1741914338605-0907339996192",
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"operation": "send"
+			}
 		},
 		{
 			"id": "PostBin(false)",
 			"name": "PostBin(false)",
-			"type": "n8n-nodes-base.noOp",
-			"position": [550, 300],
+			"type": "n8n-nodes-base.postBin",
+			"position": [745, 325],
 			"typeVersion": 1,
-			"parameters": {}
+			"parameters": {
+				"resource": "request",
+				"binId": "1741914338605-0907339996192",
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"operation": "send"
+			}
 		},
 		{
 			"id": "note",

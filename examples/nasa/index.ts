@@ -4,7 +4,7 @@ import {
 	expr,
 	If,
 	Nasa,
-	NoOp,
+	PostBin,
 	ScheduleTrigger,
 	StickyNote,
 	Workflow,
@@ -37,7 +37,7 @@ const workflow = new Workflow("my-workflow", {
 			new Nasa("nasa", {
 				resource: "donkiSolarFlare",
 				additionalFields: {
-					startDate: expr`$today.minus(1, 'day')`,
+					startDate: expr`{{ $today.minus(1, 'day') }}`,
 				},
 			}),
 		)
@@ -55,8 +55,22 @@ const workflow = new Workflow("my-workflow", {
 					},
 				],
 			})
-				.true(new NoOp("PostBin(true)"))
-				.false(new NoOp("PostBin(false)")),
+				.true(
+					new PostBin("PostBin(true)", {
+						resource: "request",
+						binId: "1741914338605-0907339996192",
+						binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+						operation: "send",
+					}),
+				)
+				.false(
+					new PostBin("PostBin(false)", {
+						resource: "request",
+						binId: "1741914338605-0907339996192",
+						binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+						operation: "send",
+					}),
+				),
 		),
 });
 
