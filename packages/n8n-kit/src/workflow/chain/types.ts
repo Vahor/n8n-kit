@@ -7,7 +7,7 @@ export interface INextable {
 	/*
 	 * Add a next state to this state
 	 */
-	addNext(state: IChainable): void;
+	addNext(state: IChainable, index?: number): void;
 }
 
 export interface Identifiable<Id extends string = string> {

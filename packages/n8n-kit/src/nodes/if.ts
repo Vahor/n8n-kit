@@ -1,5 +1,4 @@
-// TODO: generated node is in v1, we want v2
-import { name } from "generated/nodes/If";
+import { name, version } from "generated/nodes/IfV2";
 import { Chain } from "../workflow/chain/chain";
 import type { IChainable, INextable } from "../workflow/chain/types";
 import { BaseNode, type NodeProps } from "./node";
@@ -43,7 +42,7 @@ export interface IfProps extends IfBaseProps, NodeProps {}
 
 export class If<L extends string> extends BaseNode<L> {
 	protected override type = `n8n-nodes-base.${name}`;
-	protected override typeVersion = 2.2;
+	protected override typeVersion = version;
 
 	public readonly endStates: INextable[] = [];
 

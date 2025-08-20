@@ -172,12 +172,13 @@ export class Chain<
 
 		const states = this.toList();
 
-		for (const id of ids) {
+		for (let i = 0; i < ids.length; i++) {
+			const id = ids[i];
 			const state = states.find((s) => s.id === id);
 			if (!state) {
 				throw new Error(`State '${id}' does not exist`);
 			}
-			(state as INextable).addNext(next);
+			(state as INextable).addNext(next, i);
 		}
 
 		return new Chain(this.startState, next.endStates, next);

@@ -1,4 +1,4 @@
-import { validateIdentifier } from "../../utils/slugify";
+import { checkInternalIdentifier } from "../../utils/slugify";
 import type { IChainable, IContext, INextable } from "./types";
 
 export abstract class State<
@@ -16,14 +16,26 @@ export abstract class State<
 	private readonly incomingStates: State[] = [];
 	private readonly nextStates: State[] = [];
 
+	// from id to <string, index>. If missing 0
+	private readonly connectionsIndexes: Record<string, number> = {};
+
 	public constructor(id: LiteralId) {
-		this.id = validateIdentifier(id);
+		checkInternalIdentifier(id);
+		this.id = id;
 		this.startState = this;
 	}
 
-	public addNext(state: State) {
+	public "~getConnectionIndex"(id: string) {
+		return this.connectionsIndexes[id] ?? 0;
+	}
+
+	public addNext(state: State, index = 0) {
 		this.nextStates.push(state);
 		state.addIncoming(this);
+
+		if (index !== undefined) {
+			state.connectionsIndexes[this.id] = index;
+		}
 	}
 
 	private addIncoming(source: State) {

@@ -189,7 +189,6 @@ let current = 0;
 for (const node of allNodes) {
 	try {
 		const nodeName = node.split("/").pop()?.split(".")[0]!;
-		console.log(node);
 
 		delete require.cache[node];
 		const file = await import(node);

@@ -33,18 +33,16 @@ export class Workflow {
 
 		calculateLayout(nodes);
 
-		type Connection = { node: string; type: "main"; index: 0 };
+		type Connection = { node: string; type: "main"; index: number };
 		const connections: Record<string, { main: Connection[][] }> = {};
 		for (const node of nodes) {
 			for (const endState of node.listOutgoing()) {
-				connections[node.id] ??= { main: [] };
-				connections[node.id]?.main.push([
-					{
-						node: endState.id,
-						type: "main",
-						index: 0,
-					},
-				]);
+				connections[node.id] ??= { main: [[]] };
+				connections[node.id]?.main[0]!.push({
+					node: endState.id,
+					type: "main",
+					index: endState["~getConnectionIndex"](node.id),
+				});
 			}
 		}
 

@@ -1,11 +1,11 @@
 import {
-	type MergeV2NodeParameters,
+	type MergeV3NodeParameters,
 	name,
 	version,
-} from "generated/nodes/MergeV2";
+} from "generated/nodes/MergeV3";
 import { Node, type NodeProps } from "./node";
 
-interface MergeBaseProps extends MergeV2NodeParameters {}
+interface MergeBaseProps extends MergeV3NodeParameters {}
 
 export interface MergeProps extends NodeProps, MergeBaseProps {}
 

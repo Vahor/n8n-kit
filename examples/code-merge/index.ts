@@ -11,14 +11,9 @@ import {
 
 const workflow = new Workflow("merge-example", {
 	name: "Merge Example",
-	definition: Chain.start(
-		new ManualTrigger("manual-trigger", {
-			name: "When clicking ‘Test workflow’",
-		}),
-	)
+	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.multiple([
-			new Code("code-1", {
-				name: "Sample data (name + language)",
+			new Code("Sample data (name + language)", {
 				jsCode: `
 return [
   {
@@ -42,8 +37,7 @@ return [
 ];
 `,
 			}),
-			new Code("code-2", {
-				name: "Sample data (greeting + language)",
+			new Code("Sample data (greeting + language)", {
 				jsCode: `
 return [
   {
@@ -63,9 +57,10 @@ return [
 			}),
 		])
 		.connect(
-			["code-1", "code-2"],
-			new Merge("merge", {
+			["Sample data (name + language)", "Sample data (greeting + language)"],
+			new Merge("Merge (name + language + greeting)", {
 				mode: "combine",
+				fieldsToMatchString: "language",
 			}),
 		),
 });

@@ -21,16 +21,12 @@ export const DEFAULT_NODE_SIZE: NodeSize = {
 	height: 110,
 };
 
-export interface NodeProps {
-	name?: string;
-}
+export type NodeProps = {};
 
 export abstract class BaseNode<
 	LiteralId extends string = string,
 	T extends IContext = never,
 > extends State<LiteralId, T> {
-	public name?: string;
-
 	protected workflowParent?: Workflow;
 
 	protected abstract type: string;
@@ -41,9 +37,8 @@ export abstract class BaseNode<
 
 	abstract getParameters(): object;
 
-	constructor(id: LiteralId, props?: NodeProps) {
+	constructor(id: LiteralId, _props?: NodeProps) {
 		super(id);
-		this.name = props?.name;
 	}
 
 	public "~setParent"(parent: Workflow) {
@@ -63,7 +58,7 @@ export abstract class BaseNode<
 	toNode() {
 		return {
 			id: this.id,
-			name: this.name ?? this.id,
+			name: this.id,
 			type: this.type,
 			position: this.position,
 			typeVersion: this.typeVersion,
