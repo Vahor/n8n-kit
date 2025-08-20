@@ -75,9 +75,12 @@
 		"typescript": "catalog:"
 	},
 	"scripts": {
+		"prebuild": "bun run generate:entrypoint",
 		"build": "bunx tsdown",
 		"dev": "bunx tsdown --watch",
-		"generate": "bun run generated/generate-types.ts",
+		"generate": "bun run generate:entrypoint && bun run generate:types",
+		"generate:entrypoint": "bun run scripts/generate-entrypoint.ts",
+		"generate:types": "bun run scripts/generate-types.ts",
 		"typecheck": "tsc --project tsconfig.check.json"
 	},
 	"publishConfig": {

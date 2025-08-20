@@ -1,8 +1,7 @@
-import * as fs from "node:fs";
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
-import { globSync } from "tinyglobby";
 import type { INodeTypeDescription } from "n8n-workflow";
+import { globSync } from "tinyglobby";
 
 const allNodes = globSync(
 	"../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
@@ -105,7 +104,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(
 		`export const defaults = ${JSON.stringify(result.defaults)} as const;`,
 	);
-	if (result.credentials != undefined) {
+	if (result.credentials != null) {
 		code.line(
 			`export const credentials = ${JSON.stringify(result.credentials)} as const`,
 		);
@@ -184,9 +183,6 @@ const generateTypescriptNodeOutput = async (
 	await code.save("generated/nodes");
 };
 
-const outputNodePath = path.resolve(__dirname, "nodes");
-await fs.promises.mkdir(outputNodePath, { recursive: true });
-
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
@@ -199,6 +195,7 @@ for (const node of allNodes) {
 	const instance = new firstExport();
 
 	if (instance.nodeVersions != null) {
+		console.log(nodeName);
 		continue;
 	}
 

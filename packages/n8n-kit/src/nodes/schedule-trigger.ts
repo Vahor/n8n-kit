@@ -1,3 +1,5 @@
+import { name, version } from "generated/nodes/ScheduleTrigger";
+
 import type { Rule } from "n8n-nodes-base/nodes/Schedule/SchedulerInterface";
 import { Node, type NodeProps } from "./node";
 
@@ -22,8 +24,8 @@ export class ScheduleTrigger<L extends string> extends Node<
 		Timezone: string;
 	}
 > {
-	protected override type = "n8n-nodes-base.scheduleTrigger";
-	protected override typeVersion = 1.2;
+	protected override type = `n8n-nodes-base.${name}`;
+	protected override typeVersion = version;
 
 	constructor(
 		id: L,
