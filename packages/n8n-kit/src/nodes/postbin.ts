@@ -9,12 +9,7 @@ interface PostBinBaseProps extends PostBinNodeParameters {}
 
 export interface PostBinProps extends NodeProps, PostBinBaseProps {}
 
-export class PostBin<L extends string> extends Node<
-	L,
-	{
-		classType: string;
-	}
-> {
+export class PostBin<L extends string> extends Node<L, {}> {
 	protected override type = `n8n-nodes-base.${name}`;
 	protected override typeVersion = version;
 
