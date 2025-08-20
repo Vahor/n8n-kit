@@ -19,7 +19,11 @@ const workflow = new Workflow("my-workflow", {
 			width: 600,
 		}),
 	],
-	definition: Chain.start(new ScheduleTrigger("schedule-trigger"))
+	definition: Chain.start(
+		new ScheduleTrigger("schedule-trigger", {
+			interval: {},
+		}),
+	)
 		.next(new NoOp("nasa"))
 		.next(
 			new If("if")

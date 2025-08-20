@@ -1,8 +1,8 @@
 import { NO_END_STATES } from "../workflow/chain/chain";
 import type { INextable } from "../workflow/chain/types";
-import { BaseNode, type NodePosition } from "./node";
+import { BaseNode, type NodePosition, type NodeProps } from "./node";
 
-interface StickyNoteProps {
+interface StickyNoteBaseProps {
 	position: NodePosition;
 
 	content: string;
@@ -11,6 +11,8 @@ interface StickyNoteProps {
 	// TODO: should be optional, and auto-generated
 	width: number;
 }
+
+export interface StickyNoteProps extends StickyNoteBaseProps, NodeProps {}
 
 export class StickyNote extends BaseNode {
 	public override endStates: INextable[] = NO_END_STATES;

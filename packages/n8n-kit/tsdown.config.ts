@@ -15,6 +15,7 @@ export default defineConfig({
 	dts: {
 		sourcemap: false,
 		tsconfig: "./tsconfig.build.json",
+		resolve: ["n8n-workflow"],
 	},
 	format: ["cjs", "esm"],
 	outExtensions: (ctx) => ({

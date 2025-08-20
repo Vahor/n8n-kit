@@ -41,6 +41,11 @@ export abstract class BaseNode<
 
 	abstract getParameters(): Record<string, unknown>;
 
+	constructor(id: LiteralId, props?: NodeProps) {
+		super(id);
+		this.name = props?.name;
+	}
+
 	public "~setParent"(parent: Workflow) {
 		if (this.workflowParent) {
 			throw new Error(`Node '${this.getPath()}' already has a parent.`);
@@ -72,8 +77,7 @@ export abstract class Node<
 	public readonly endStates: INextable[];
 
 	constructor(id: LiteralId, props?: NodeProps) {
-		super(id);
+		super(id, props);
 		this.endStates = [this];
-		this.name = props?.name;
 	}
 }

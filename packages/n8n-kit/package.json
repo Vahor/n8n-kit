@@ -66,8 +66,8 @@
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
-		"typescript": "catalog:",
-		"tsdown": "catalog:"
+		"tsdown": "catalog:",
+		"typescript": "catalog:"
 	},
 	"scripts": {
 		"build": "bunx tsdown",
