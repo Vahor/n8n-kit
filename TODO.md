@@ -3,7 +3,6 @@
 - Add more nodes (check if we can generate them)
 - Add more examples (with screenshots)
 - Add more tests ( and type tests)
-- Node with multiple inputs (merge)
 - Call to subworkflow with correct input parameters.
 - Add some sort of group (sticky node in background of multiple nodes)
 - Add a way to deploy from the terminal (needs API KEY, an app is a list of things to deploy)
