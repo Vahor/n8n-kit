@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/EmailReadImap/v1/EmailReadImapV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/EmailReadImap/v1/EmailReadImapV1.node.ts' node
 
 export const name = "emailReadImap" as const;
 export const description = "Triggers the workflow when a new email is received" as const;

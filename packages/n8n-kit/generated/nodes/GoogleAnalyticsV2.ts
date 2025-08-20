@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Analytics/v2/GoogleAnalyticsV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Analytics/v2/GoogleAnalyticsV2.node.ts' node
 
 export const name = "googleAnalytics" as const;
 export const description = "Use the Google Analytics API" as const;
@@ -40,12 +40,12 @@ export interface GoogleAnalyticsV2NodeParameters {
     readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
     /**
-     * Default: "2025-08-12T00:00:00.000+02:00"
+     * Default: "2025-08-13T00:00:00.000+02:00"
      */
     readonly startDate?: string;
 
     /**
-     * Default: "2025-08-19T00:00:00.000+02:00"
+     * Default: "2025-08-20T00:00:00.000+02:00"
      */
     readonly endDate?: string;
 

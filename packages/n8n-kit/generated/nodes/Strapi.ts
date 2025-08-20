@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Strapi/Strapi.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Strapi/Strapi.node.ts' node
 
 export const name = "strapi" as const;
 export const description = "Consume Strapi API" as const;

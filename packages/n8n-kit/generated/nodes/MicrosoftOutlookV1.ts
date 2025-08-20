@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/Outlook/v1/MicrosoftOutlookV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Outlook/v1/MicrosoftOutlookV1.node.ts' node
 
 export const name = "microsoftOutlook" as const;
 export const description = "Consume Microsoft Outlook API" as const;
@@ -79,7 +79,6 @@ export interface MicrosoftOutlookV1NodeParameters {
     readonly toRecipients?: string;
 
     /**
-     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

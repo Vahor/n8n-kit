@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/RssFeedRead/RssFeedRead.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/RssFeedRead/RssFeedRead.node.ts' node
 
 export const name = "rssFeedRead" as const;
 export const description = "Reads data from an RSS Feed" as const;
-export const version = 1 as const;
+export const version = 1.2 as const;
 export const defaults = {"name":"RSS Read","color":"#b02020"} as const;
 
 /**
@@ -19,7 +19,7 @@ export interface RssFeedReadNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "ignoreSSL"?: boolean };
+    readonly options?: { "customFields"?: string, "ignoreSSL"?: boolean };
 
 
 }

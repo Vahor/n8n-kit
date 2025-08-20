@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ItemLists/V3/ItemListsV3.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ItemLists/V3/ItemListsV3.node.ts' node
 
 export const name = "itemLists" as const;
 export const description = "Helper for working with lists of items and transforming arrays" as const;
-export const version = 3 as const;
+export const version = 3.1 as const;
 export const defaults = {"name":"Item Lists"} as const;
 export const credentials = [] as const
 
@@ -97,7 +97,7 @@ export interface ItemListsV3NodeParameters {
     /**
      * Javascript code to determine the order of any two items
      * Default: "// The two items to compare are in the variables a and b\n// Access the fields in a.json and b.json\n// Return -1 if a should go before b\n// Return 1 if b should go before a\n// Return 0 if there's no difference\n\nfieldName = 'myField';\n\nif (a.json[fieldName] < b.json[fieldName]) {\nreturn -1;\n}\nif (a.json[fieldName] > b.json[fieldName]) {\nreturn 1;\n}\nreturn 0;"
-     * Type options: {"alwaysOpenEditWindow":true,"editor":"code","rows":10}
+     * Type options: {"alwaysOpenEditWindow":true,"editor":"jsEditor","rows":10}
      */
     readonly code?: string;
 

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/HttpRequest/V2/HttpRequestV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/HttpRequest/V2/HttpRequestV2.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
@@ -69,7 +69,7 @@ export interface HttpRequestV2NodeParameters {
     readonly sendBinaryData?: boolean;
 
     /**
-     * Name of the binary property which contains the data for the file to be uploaded. For Form-Data Multipart, they can be provided in the format: <code>"sendKey1:binaryProperty1,sendKey2:binaryProperty2</code>
+     * For Form-Data Multipart, they can be provided in the format: <code>"sendKey1:binaryProperty1,sendKey2:binaryProperty2</code>
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

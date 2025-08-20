@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Elastic/ElasticSecurity/ElasticSecurity.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Elastic/ElasticSecurity/ElasticSecurity.node.ts' node
 
 export const name = "elasticSecurity" as const;
 export const description = "Consume the Elastic Security API" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Elastic Security"} as const;
-export const credentials = [{"name":"elasticSecurityApi","required":true,"testedBy":"elasticSecurityApiTest"}] as const
+export const credentials = [{"name":"elasticSecurityApi","required":true}] as const
 
 /**
  * Consume the Elastic Security API
@@ -27,7 +27,7 @@ export interface ElasticSecurityNodeParameters {
     readonly title?: string;
 
     /**
-     * Connectors allow you to send Elastic Security cases into other systems (only ServiceNow, Jira, or IBM Resilient). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Connectors allow you to send Elastic Security cases into other systems (only ServiceNow, Jira, or IBM Resilient). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getConnectors"}
      */
     readonly connectorId?: string;
@@ -134,7 +134,7 @@ export interface ElasticSecurityNodeParameters {
     readonly commentId?: string;
 
     /**
-     * Tag to attach to the case. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Tag to attach to the case. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTags"}
      */
     readonly tag?: string;

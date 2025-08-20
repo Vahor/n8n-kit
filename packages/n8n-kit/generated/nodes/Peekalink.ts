@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Peekalink/Peekalink.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Peekalink/Peekalink.node.ts' node
 
 export const name = "peekalink" as const;
 export const description = "Consume the Peekalink API" as const;

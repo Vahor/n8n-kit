@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/MySql/v1/MySqlV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/MySql/v1/MySqlV1.node.ts' node
 
 export const name = "mySql" as const;
 export const description = "Get, add and update data in MySQL" as const;
@@ -23,7 +23,7 @@ export interface MySqlV1NodeParameters {
 
     /**
      * The SQL query to execute
-     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"MySQL"}
+     * Type options: {"editor":"sqlEditor","sqlDialect":"MySQL"}
      */
     readonly query?: string;
 

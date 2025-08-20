@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/PhilipsHue/PhilipsHue.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/PhilipsHue/PhilipsHue.node.ts' node
 
 export const name = "philipsHue" as const;
 export const description = "Consume Philips Hue API" as const;

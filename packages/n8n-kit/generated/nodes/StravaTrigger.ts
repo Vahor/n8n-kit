@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Strava/StravaTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Strava/StravaTrigger.node.ts' node
 
 export const name = "stravaTrigger" as const;
 export const description = "Starts the workflow when Strava events occur" as const;

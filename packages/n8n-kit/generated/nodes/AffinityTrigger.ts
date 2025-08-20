@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Affinity/AffinityTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Affinity/AffinityTrigger.node.ts' node
 
 export const name = "affinityTrigger" as const;
 export const description = "Handle Affinity events via webhooks" as const;

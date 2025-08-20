@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Ldap/Ldap.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Ldap/Ldap.node.ts' node
 
 export const name = "ldap" as const;
 export const description = "Interact with LDAP servers" as const;

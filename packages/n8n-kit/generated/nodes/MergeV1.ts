@@ -1,13 +1,13 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Merge/v1/MergeV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Merge/v1/MergeV1.node.ts' node
 
-export const name = "merge" as const;
-export const description = "Merges data of multiple streams once data from both is available" as const;
+export const name = "undefined" as const;
+export const description = "undefined" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Merge","color":"#00bbcc"} as const;
 
 /**
- * Merges data of multiple streams once data from both is available
+ * undefined
  */
 export interface MergeV1NodeParameters {
 

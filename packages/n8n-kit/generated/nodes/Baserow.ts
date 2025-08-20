@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Baserow/Baserow.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Baserow/Baserow.node.ts' node
 
 export const name = "baserow" as const;
 export const description = "Consume the Baserow API" as const;
@@ -23,13 +23,13 @@ export interface BaserowNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Database to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Database to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDatabaseIds"}
      */
     readonly databaseId: string;
 
     /**
-     * Table to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Table to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["databaseId"],"loadOptionsMethod":"getTableIds"}
      */
     readonly tableId: string;

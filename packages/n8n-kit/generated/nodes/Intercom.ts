@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Intercom/Intercom.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Intercom/Intercom.node.ts' node
 
 export const name = "intercom" as const;
 export const description = "Consume Intercom API" as const;

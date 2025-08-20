@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/AgileCrm/AgileCrm.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/AgileCrm/AgileCrm.node.ts' node
 
 export const name = "agileCrm" as const;
 export const description = "Consume Agile CRM API" as const;

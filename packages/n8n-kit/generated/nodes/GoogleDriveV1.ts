@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Drive/v1/GoogleDriveV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Drive/v1/GoogleDriveV1.node.ts' node
 
 export const name = "googleDrive" as const;
 export const description = "Access data on Google Drive" as const;
@@ -38,7 +38,6 @@ export interface GoogleDriveV1NodeParameters {
     readonly fileId?: any;
 
     /**
-     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

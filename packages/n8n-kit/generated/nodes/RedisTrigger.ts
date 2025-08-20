@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Redis/RedisTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Redis/RedisTrigger.node.ts' node
 
 export const name = "redisTrigger" as const;
 export const description = "Subscribe to redis channel" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Redis Trigger"} as const;
-export const credentials = [{"name":"redis","required":true}] as const
+export const credentials = [{"name":"redis","required":true,"testedBy":"redisConnectionTest"}] as const
 
 /**
  * Subscribe to redis channel

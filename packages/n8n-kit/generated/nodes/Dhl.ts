@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Dhl/Dhl.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Dhl/Dhl.node.ts' node
 
 export const name = "dhl" as const;
 export const description = "Consume DHL API" as const;

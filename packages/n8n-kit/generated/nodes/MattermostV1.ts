@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Mattermost/v1/MattermostV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Mattermost/v1/MattermostV1.node.ts' node
 
 export const name = "mattermost" as const;
 export const description = "Sends data to Mattermost" as const;
@@ -23,7 +23,7 @@ export interface MattermostV1NodeParameters {
     readonly operation?: "addUser" | "create" | "delete" | "members" | "restore" | "search" | "statistics" | "post" | "postEphemeral" | "getAll" | "deactive" | "getByEmail" | "getById" | "invite";
 
     /**
-     * The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
     readonly teamId?: string;
@@ -45,7 +45,7 @@ export interface MattermostV1NodeParameters {
     readonly type?: "private" | "public";
 
     /**
-     * The ID of the channel to soft delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the channel to soft delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChannels"}
      */
     readonly channelId?: string;
@@ -70,7 +70,7 @@ export interface MattermostV1NodeParameters {
     readonly limit?: number;
 
     /**
-     * The ID of the user to invite into channel. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the user to invite into channel. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly userId?: string;

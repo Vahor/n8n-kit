@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/SyncroMSP/v1/SyncroMspV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/SyncroMSP/v1/SyncroMspV1.node.ts' node
 
 export const name = "syncroMsp" as const;
 export const description = "Gets data from SyncroMSP" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Dropcontact/Dropcontact.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Dropcontact/Dropcontact.node.ts' node
 
 export const name = "dropcontact" as const;
 export const description = "Find B2B emails and enrich contacts" as const;

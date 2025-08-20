@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/RespondToWebhook/RespondToWebhook.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/RespondToWebhook/RespondToWebhook.node.ts' node
 
 export const name = "respondToWebhook" as const;
 export const description = "Returns data for Webhook" as const;
-export const version = 1 as const;
+export const version = 1.5 as const;
 export const defaults = {"name":"Respond to Webhook"} as const;
-export const credentials = [] as const
+export const credentials = [{"name":"jwtAuth","required":true,"displayOptions":{"show":{"respondWith":["jwt"]}}}] as const
 
 /**
  * Returns data for Webhook
@@ -13,19 +13,46 @@ export const credentials = [] as const
 export interface RespondToWebhookNodeParameters {
 
     /**
+     * Whether to provide an additional output branch with the response sent to the webhook
+     */
+    readonly enableResponseOutput?: boolean;
+
+    /**
+     */
+    readonly generalNotice?: string;
+
+    /**
      * The data that should be returned
      * Default: "firstIncomingItem"
      */
-    readonly respondWith?: "binary" | "firstIncomingItem" | "json" | "noData" | "text";
+    readonly respondWith?: "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text";
+
+    /**
+     */
+    readonly credentials?: any;
 
     /**
      */
     readonly webhookNotice?: string;
 
     /**
-     * The HTTP Response JSON data
+     * The URL to redirect to
+     */
+    readonly redirectURL?: string;
+
+    /**
+     * The HTTP response JSON data
+     * Default: "{\n  \"myField\": \"value\"\n}"
+     * Type options: {"rows":4}
      */
     readonly responseBody?: string;
+
+    /**
+     * The payload to include in the JWT token
+     * Default: "{\n  \"myField\": \"value\"\n}"
+     * Type options: {"rows":4}
+     */
+    readonly payload?: string;
 
     /**
      * Default: "automatically"
@@ -39,9 +66,13 @@ export interface RespondToWebhookNodeParameters {
     readonly inputFieldName?: string;
 
     /**
+     */
+    readonly contentTypeNotice?: string;
+
+    /**
      * Default: {}
      */
-    readonly options?: { "responseCode"?: number, "responseHeaders"?: { "entries": any } };
+    readonly options?: { "responseCode"?: number, "responseHeaders"?: { "entries": any }, "responseKey"?: string, "enableStreaming"?: boolean };
 
 
 }

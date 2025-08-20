@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ActionNetwork/ActionNetwork.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ActionNetwork/ActionNetwork.node.ts' node
 
 export const name = "actionNetwork" as const;
 export const description = "Consume the Action Network API" as const;
@@ -102,7 +102,7 @@ export interface ActionNetworkNodeParameters {
     readonly tagId?: string;
 
     /**
-     * ID of the tagging to remove. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the tagging to remove. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsDependsOn":["tagId"],"loadOptionsMethod":"getTaggings"}
      */

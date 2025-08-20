@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Pushcut/PushcutTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Pushcut/PushcutTrigger.node.ts' node
 
 export const name = "pushcutTrigger" as const;
 export const description = "Starts the workflow when Pushcut events occur" as const;

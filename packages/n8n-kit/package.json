@@ -63,6 +63,7 @@
 	],
 	"dependencies": {
 		"@dagrejs/dagre": "^1.1.5",
+		"arktype": "catalog:",
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {

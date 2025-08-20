@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/FacebookLeadAds/FacebookLeadAdsTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/FacebookLeadAds/FacebookLeadAdsTrigger.node.ts' node
 
 export const name = "facebookLeadAdsTrigger" as const;
 export const description = "Handle Facebook Lead Ads events via webhooks" as const;

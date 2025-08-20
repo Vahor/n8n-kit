@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/MondayCom/MondayCom.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/MondayCom/MondayCom.node.ts' node
 
 export const name = "mondayCom" as const;
 export const description = "Consume Monday.com API" as const;
@@ -28,7 +28,7 @@ export interface MondayComNodeParameters {
     readonly operation?: "archive" | "create" | "get" | "getAll" | "delete" | "addUpdate" | "changeColumnValue" | "changeMultipleColumnValues" | "getByColumnValue" | "move";
 
     /**
-     * Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getBoards"}
      */
     readonly boardId?: string;
@@ -69,7 +69,7 @@ export interface MondayComNodeParameters {
     readonly columnType?: "checkbox" | "country" | "date" | "dropdown" | "email" | "hour" | "Link" | "longText" | "numbers" | "people" | "person" | "phone" | "rating" | "status" | "tags" | "team" | "text" | "timeline" | "timezone" | "week" | "worldClock";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGroups","loadOptionsDependsOn":["boardId"]}
      */
     readonly groupId?: string;
@@ -85,7 +85,7 @@ export interface MondayComNodeParameters {
     readonly value?: string;
 
     /**
-     * The column's unique identifier. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The column's unique identifier. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["boardId"]}
      */
     readonly columnId?: string;

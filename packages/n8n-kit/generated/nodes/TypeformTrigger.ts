@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Typeform/TypeformTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Typeform/TypeformTrigger.node.ts' node
 
 export const name = "typeformTrigger" as const;
 export const description = "Starts the workflow on a Typeform form submission" as const;
@@ -18,7 +18,7 @@ export interface TypeformTriggerNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /**
-     * Form which should trigger workflow on submission. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Form which should trigger workflow on submission. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getForms"}
      */
     readonly formId: string;

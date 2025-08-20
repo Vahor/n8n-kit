@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/QuickBooks/QuickBooks.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/QuickBooks/QuickBooks.node.ts' node
 
 export const name = "quickbooks" as const;
 export const description = "Consume the QuickBooks Online API" as const;
@@ -23,7 +23,7 @@ export interface QuickBooksNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "send" | "void" | "getReport";
 
     /**
-     * The ID of the vendor who the bill is for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the vendor who the bill is for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getVendors"}
      */
@@ -34,7 +34,7 @@ export interface QuickBooksNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly Line?: { "accountId"?: string, "Amount"?: number, "Description"?: string, "DetailType"?: "AccountBasedExpenseLineDetail" | "ItemBasedExpenseLineDetail", "itemId"?: string, "LineNum"?: number, "TaxCodeRef"?: string };
+    readonly Line?: { "accountId"?: string, "Amount"?: number, "Description"?: string, "DetailType"?: "AccountBasedExpenseLineDetail" | "ItemBasedExpenseLineDetail", "itemId"?: string, "LineNum"?: number, "TaxCodeRef"?: string, "Qty"?: number };
 
     /**
      * Default: {}
@@ -92,7 +92,7 @@ export interface QuickBooksNodeParameters {
     readonly employeeId?: string;
 
     /**
-     * The ID of the customer who the estimate is for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the customer who the estimate is for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getCustomers"}
      */
@@ -109,7 +109,6 @@ export interface QuickBooksNodeParameters {
     readonly download?: boolean;
 
     /**
-     * Name of the binary property to which to write to
      * Default: "data"
      */
     readonly binaryProperty?: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Spotify/Spotify.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Spotify/Spotify.node.ts' node
 
 export const name = "spotify" as const;
 export const description = "Access public song data via the Spotify API" as const;

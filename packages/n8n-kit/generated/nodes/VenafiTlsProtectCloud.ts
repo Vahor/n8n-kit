@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Venafi/ProtectCloud/VenafiTlsProtectCloud.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Venafi/ProtectCloud/VenafiTlsProtectCloud.node.ts' node
 
 export const name = "venafiTlsProtectCloud" as const;
 export const description = "Consume Venafi TLS Protect Cloud API" as const;
@@ -77,7 +77,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
     readonly filters?: { "subject"?: string };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getApplications"}
      */
     readonly applicationId?: string;
@@ -87,7 +87,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
     readonly existingCertificateId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCertificateIssuingTemplates"}
      */
     readonly certificateIssuingTemplateId?: string;
@@ -99,12 +99,6 @@ export interface VenafiTlsProtectCloudNodeParameters {
     /**
      */
     readonly generateCsr?: boolean;
-
-    /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
-     * Type options: {"loadOptionsMethod":"getApplicationServerTypes"}
-     */
-    readonly applicationServerTypeId?: string;
 
     /**
      * The Common Name field for the certificate Subject (CN)

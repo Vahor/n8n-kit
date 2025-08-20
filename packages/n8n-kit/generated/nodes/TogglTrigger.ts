@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Toggl/TogglTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Toggl/TogglTrigger.node.ts' node
 
 export const name = "togglTrigger" as const;
 export const description = "Starts the workflow when Toggl events occur" as const;

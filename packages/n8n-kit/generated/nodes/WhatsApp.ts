@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/WhatsApp/WhatsApp.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/WhatsApp/WhatsApp.node.ts' node
 
 export const name = "whatsApp" as const;
 export const description = "Access WhatsApp API" as const;
@@ -20,7 +20,7 @@ export interface WhatsAppNodeParameters {
     /**
      * Default: "sendTemplate"
      */
-    readonly operation?: "send" | "sendTemplate" | "mediaUpload" | "mediaUrlGet" | "mediaDelete";
+    readonly operation?: "send" | "sendAndWait" | "sendTemplate" | "mediaUpload" | "mediaUrlGet" | "mediaDelete";
 
     /**
      * Default: "whatsapp"
@@ -118,6 +118,43 @@ export interface WhatsAppNodeParameters {
      * The ID of the media
      */
     readonly mediaDeleteId?: string;
+
+    /**
+     * Type options: {"rows":4}
+     */
+    readonly message?: string;
+
+    /**
+     * Default: "approval"
+     */
+    readonly responseType?: "approval" | "freeText" | "customForm";
+
+    /**
+     * Default: "fields"
+     */
+    readonly defineForm?: "fields" | "json";
+
+    /**
+     * Default: "[\n   {\n      \"fieldLabel\":\"Name\",\n      \"placeholder\":\"enter you name\",\n      \"requiredField\":true\n   },\n   {\n      \"fieldLabel\":\"Age\",\n      \"fieldType\":\"number\",\n      \"placeholder\":\"enter your age\"\n   },\n   {\n      \"fieldLabel\":\"Email\",\n      \"fieldType\":\"email\",\n      \"requiredField\":true\n   }\n]"
+     * Type options: {"rows":5}
+     */
+    readonly jsonOutput?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly approvalOptions?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
 
 
 }

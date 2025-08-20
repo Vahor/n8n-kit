@@ -4,6 +4,7 @@
 export * from "./code";
 export * from "./if";
 export * from "./manual-trigger";
+export * from "./merge";
 export * from "./nasa";
 export * from "./no-op";
 export * from "./node";

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/JotForm/JotFormTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/JotForm/JotFormTrigger.node.ts' node
 
 export const name = "jotFormTrigger" as const;
 export const description = "Handle JotForm events via webhooks" as const;
@@ -13,7 +13,7 @@ export const credentials = [{"name":"jotFormApi","required":true}] as const
 export interface JotFormTriggerNodeParameters {
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getForms"}
      */
     readonly form: string;

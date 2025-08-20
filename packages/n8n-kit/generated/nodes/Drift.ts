@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Drift/Drift.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Drift/Drift.node.ts' node
 
 export const name = "drift" as const;
 export const description = "Consume Drift API" as const;

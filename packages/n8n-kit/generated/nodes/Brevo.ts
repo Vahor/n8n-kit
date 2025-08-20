@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Brevo/Brevo.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Brevo/Brevo.node.ts' node
 
 export const name = "sendInBlue" as const;
 export const description = "Consume Brevo API" as const;

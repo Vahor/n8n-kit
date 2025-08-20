@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Slack/V2/SlackV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Slack/V2/SlackV2.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
-export const version = 2.1 as const;
+export const version = 2.3 as const;
 export const defaults = {"name":"Slack"} as const;
 export const credentials = [{"name":"slackApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"slackOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
@@ -25,7 +25,7 @@ export interface SlackV2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "search" | "post" | "update" | "add" | "upload" | "remove" | "getPresence" | "updateProfile" | "disable" | "enable";
+    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "search" | "post" | "sendAndWait" | "update" | "add" | "upload" | "remove" | "getProfile" | "getPresence" | "updateProfile" | "disable" | "enable";
 
     /**
      * The Slack channel to archive
@@ -40,7 +40,7 @@ export interface SlackV2NodeParameters {
     readonly channelVisibility?: "public" | "private";
 
     /**
-     * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
@@ -49,10 +49,10 @@ export interface SlackV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "includeNumMembers"?: boolean, "channelId"?: string, "returnIm"?: boolean, "users"?: string[], "searchChannel"?: string[], "fileComment"?: string, "fileId"?: string, "timestamp"?: number, "channelIds"?: string[], "fileName"?: string, "initialComment"?: string, "threadTs"?: string, "title"?: string, "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status"?: { "set_status": any }, "user"?: string, "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean };
+    readonly options?: { "includeNumMembers"?: boolean, "channelId"?: string, "returnIm"?: boolean, "users"?: string[], "searchChannel"?: string[], "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "fileComment"?: string, "fileId"?: string, "timestamp"?: number, "channelIds"?: string[], "fileName"?: string, "initialComment"?: string, "threadTs"?: string, "title"?: string, "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status"?: { "set_status": any }, "user"?: string, "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly userId?: string;
@@ -160,6 +160,38 @@ export interface SlackV2NodeParameters {
      * Default: "desc"
      */
     readonly sort?: "desc" | "asc" | "relevance";
+
+    /**
+     * Type options: {"rows":4}
+     */
+    readonly message?: string;
+
+    /**
+     * Default: "approval"
+     */
+    readonly responseType?: "approval" | "freeText" | "customForm";
+
+    /**
+     * Default: "fields"
+     */
+    readonly defineForm?: "fields" | "json";
+
+    /**
+     * Default: "[\n   {\n      \"fieldLabel\":\"Name\",\n      \"placeholder\":\"enter you name\",\n      \"requiredField\":true\n   },\n   {\n      \"fieldLabel\":\"Age\",\n      \"fieldType\":\"number\",\n      \"placeholder\":\"enter your age\"\n   },\n   {\n      \"fieldLabel\":\"Email\",\n      \"fieldType\":\"email\",\n      \"requiredField\":true\n   }\n]"
+     * Type options: {"rows":5}
+     */
+    readonly jsonOutput?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly approvalOptions?: { "values": any };
 
     /**
      * Choose whether to add a star to a message or a file

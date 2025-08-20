@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Chargebee/Chargebee.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Chargebee/Chargebee.node.ts' node
 
 export const name = "chargebee" as const;
 export const description = "Retrieve data from Chargebee API" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ExecuteCommand/ExecuteCommand.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ExecuteCommand/ExecuteCommand.node.ts' node
 
 export const name = "executeCommand" as const;
 export const description = "Executes a command on the host" as const;

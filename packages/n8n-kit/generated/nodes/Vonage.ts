@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Vonage/Vonage.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Vonage/Vonage.node.ts' node
 
 export const name = "vonage" as const;
 export const description = "Consume Vonage API" as const;

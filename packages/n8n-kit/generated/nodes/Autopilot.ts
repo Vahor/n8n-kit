@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Autopilot/Autopilot.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Autopilot/Autopilot.node.ts' node
 
 export const name = "autopilot" as const;
 export const description = "Consume Autopilot API" as const;
@@ -50,13 +50,13 @@ export interface AutopilotNodeParameters {
     readonly limit?: number;
 
     /**
-     * List ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * List ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTriggers"}
      */
     readonly triggerId?: string;
 
     /**
-     * ID of the list to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the list to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
     readonly listId?: string;

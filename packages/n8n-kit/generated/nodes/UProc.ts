@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/UProc/UProc.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/UProc/UProc.node.ts' node
 
 export const name = "uproc" as const;
 export const description = "Consume uProc API" as const;

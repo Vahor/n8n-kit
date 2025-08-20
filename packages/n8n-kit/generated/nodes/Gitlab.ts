@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Gitlab/Gitlab.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Gitlab/Gitlab.node.ts' node
 
 export const name = "gitlab" as const;
 export const description = "Retrieve data from GitLab API" as const;
@@ -119,7 +119,7 @@ export interface GitlabNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
-    readonly getRepositoryIssuesFilters?: { "assignee_username"?: string, "author_username"?: string, "labels"?: string, "updated_after"?: string, "state"?: "" | "closed" | "opened", "order_by"?: "created_at" | "updated_at" | "priority", "sort"?: "asc" | "desc" };
+    readonly getRepositoryIssuesFilters?: { "assignee_username"?: string, "author_username"?: string, "search"?: string, "labels"?: string, "updated_after"?: string, "state"?: "" | "closed" | "opened", "order_by"?: "created_at" | "updated_at" | "priority", "sort"?: "asc" | "desc" };
 
     /**
      * The file path of the file. Has to contain the full path or leave it empty for root folder.
@@ -146,7 +146,6 @@ export interface GitlabNodeParameters {
     readonly asBinaryProperty?: boolean;
 
     /**
-     * Name of the binary property in which to save the binary data of the received file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

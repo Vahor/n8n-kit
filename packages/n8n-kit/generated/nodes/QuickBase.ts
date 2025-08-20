@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/QuickBase/QuickBase.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/QuickBase/QuickBase.node.ts' node
 
 export const name = "quickbase" as const;
 export const description = "Integrate with the Quick Base RESTful API" as const;
@@ -61,7 +61,6 @@ export interface QuickBaseNodeParameters {
     readonly versionNumber?: number;
 
     /**
-     * Object property name which holds binary data
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -88,7 +87,7 @@ export interface QuickBaseNodeParameters {
     readonly updateKey?: string;
 
     /**
-     * <p>You're updating records in a Quick Base table with data from an external file. In order for a merge like this to work, Quick Base needs a way to match records in the source data with corresponding records in the destination table.</p><p>You make this possible by choosing the field in the app table that holds unique matching values. This is called a merge field.</p>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * <p>You're updating records in a Quick Base table with data from an external file. In order for a merge like this to work, Quick Base needs a way to match records in the source data with corresponding records in the destination table.</p><p>You make this possible by choosing the field in the app table that holds unique matching values. This is called a merge field.</p>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUniqueTableFields"}
      */
     readonly mergeFieldId?: string;

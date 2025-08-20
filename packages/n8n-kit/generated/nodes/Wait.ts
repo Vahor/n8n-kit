@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Wait/Wait.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Wait/Wait.node.ts' node
 
 export const name = "wait" as const;
 export const description = "Wait before continue with execution" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const defaults = {"name":"Wait","color":"#804050"} as const;
-export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["headerAuth"]}}}] as const
+export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["jwtAuth"]}}}] as const
 
 /**
  * Wait before continue with execution
@@ -16,13 +16,13 @@ export interface WaitNodeParameters {
      * Determines the waiting mode to use before the workflow continues
      * Default: "timeInterval"
      */
-    readonly resume?: "timeInterval" | "specificTime" | "webhook";
+    readonly resume?: "timeInterval" | "specificTime" | "webhook" | "form";
 
     /**
-     * If and how incoming resume-webhook-requests to $execution.resumeUrl should be authenticated for additional security
+     * If and how incoming resume-webhook-requests to $execution.resumeFormUrl should be authenticated for additional security
      * Default: "none"
      */
-    readonly incomingAuthentication?: "basicAuth" | "headerAuth" | "none";
+    readonly incomingAuthentication?: "basicAuth" | "none" | "headerAuth" | "jwtAuth";
 
     /**
      * The date and time to wait for before continuing
@@ -47,6 +47,33 @@ export interface WaitNodeParameters {
     readonly webhookNotice?: string;
 
     /**
+     */
+    readonly formNotice?: string;
+
+    /**
+     * Shown at the top of the form
+     */
+    readonly formTitle?: string;
+
+    /**
+     * Shown underneath the Form Title. Can be used to prompt the user on how to complete the form. Accepts HTML.
+     * Type options: {"rows":2}
+     */
+    readonly formDescription?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * When to respond to the form submission
+     * Default: "onReceived"
+     */
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "streaming";
+
+    /**
      * The HTTP method of the Webhook call
      * Default: "GET"
      */
@@ -58,12 +85,6 @@ export interface WaitNodeParameters {
      * Type options: {"minValue":100,"maxValue":599}
      */
     readonly responseCode?: number;
-
-    /**
-     * When and how to respond to the webhook
-     * Default: "onReceived"
-     */
-    readonly responseMode?: "onReceived" | "lastNode" | "responseNode";
 
     /**
      * What data should be returned. If it should return all items as an array or only the first item as object.
@@ -78,7 +99,7 @@ export interface WaitNodeParameters {
     readonly responseBinaryPropertyName?: string;
 
     /**
-     * If no webhook call is received, the workflow will automatically resume execution after the specified limit type
+     * Whether to limit the time this node should wait for a user response before execution resumes
      */
     readonly limitWaitTime?: boolean;
 
@@ -109,7 +130,7 @@ export interface WaitNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "binaryData"?: boolean, "binaryPropertyName": string, "ignoreBots"?: boolean, "noResponseBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string };
+    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string, "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any } };
 
 
 }

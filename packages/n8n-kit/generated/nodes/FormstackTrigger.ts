@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Formstack/FormstackTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Formstack/FormstackTrigger.node.ts' node
 
 export const name = "formstackTrigger" as const;
 export const description = "Starts the workflow on a Formstack form submission." as const;
@@ -18,7 +18,7 @@ export interface FormstackTriggerNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /**
-     * The Formstack form to monitor for new submissions. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The Formstack form to monitor for new submissions. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getForms"}
      */
     readonly formId: string;

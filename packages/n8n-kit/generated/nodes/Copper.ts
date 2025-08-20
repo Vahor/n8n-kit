@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Copper/Copper.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Copper/Copper.node.ts' node
 
 export const name = "copper" as const;
 export const description = "Consume the Copper API" as const;

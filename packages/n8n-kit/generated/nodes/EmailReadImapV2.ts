@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/EmailReadImap/v2/EmailReadImapV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/EmailReadImap/v2/EmailReadImapV2.node.ts' node
 
 export const name = "emailReadImap" as const;
 export const description = "Triggers the workflow when a new email is received" as const;
-export const version = 2 as const;
+export const version = 2.1 as const;
 export const defaults = {"name":"Email Trigger (IMAP)","color":"#44AA22"} as const;
 export const credentials = [{"name":"imap","required":true,"testedBy":"imapConnectionTest"}] as const
 
@@ -43,7 +43,7 @@ export interface EmailReadImapV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "customEmailConfig"?: string, "forceReconnect"?: number };
+    readonly options?: { "customEmailConfig"?: string, "forceReconnect"?: number, "trackLastMessageId"?: boolean };
 
 
 }

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Stripe/Stripe.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Stripe/Stripe.node.ts' node
 
 export const name = "stripe" as const;
 export const description = "Consume the Stripe API" as const;
@@ -50,7 +50,7 @@ export interface StripeNodeParameters {
     readonly amount?: number;
 
     /**
-     * Three-letter ISO currency code, e.g. <code>USD</code> or <code>EUR</code>. It must be a <a href="https://stripe.com/docs/currencies">Stripe-supported currency</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Three-letter ISO currency code, e.g. <code>USD</code> or <code>EUR</code>. It must be a <a href="https://stripe.com/docs/currencies">Stripe-supported currency</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCurrencies"}
      */
     readonly currency?: string;

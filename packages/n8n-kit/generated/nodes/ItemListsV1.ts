@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ItemLists/V1/ItemListsV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ItemLists/V1/ItemListsV1.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
@@ -90,7 +90,7 @@ export interface ItemListsV1NodeParameters {
     /**
      * Javascript code to determine the order of any two items
      * Default: "// The two items to compare are in the variables a and b\n// Access the fields in a.json and b.json\n// Return -1 if a should go before b\n// Return 1 if b should go before a\n// Return 0 if there's no difference\n\nfieldName = 'myField';\n\nif (a.json[fieldName] < b.json[fieldName]) {\n\t\treturn -1;\n}\nif (a.json[fieldName] > b.json[fieldName]) {\n\t\treturn 1;\n}\nreturn 0;"
-     * Type options: {"alwaysOpenEditWindow":true,"editor":"code","rows":10}
+     * Type options: {"alwaysOpenEditWindow":true,"editor":"jsEditor","rows":10}
      */
     readonly code?: string;
 

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Box/BoxTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Box/BoxTrigger.node.ts' node
 
 export const name = "boxTrigger" as const;
 export const description = "Starts the workflow when Box events occur" as const;

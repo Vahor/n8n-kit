@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/MySql/v2/MySqlV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/MySql/v2/MySqlV2.node.ts' node
 
 export const name = "mySql" as const;
 export const description = "Get, add and update data in MySQL" as const;
-export const version = 2.2 as const;
+export const version = 2.5 as const;
 export const defaults = {"name":"MySQL"} as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest"}] as const
 
@@ -49,11 +49,11 @@ export interface MySqlV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "connectionTimeoutMillis"?: number, "connectionLimit"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "priority"?: "LOW_PRIORITY" | "HIGH_PRIORITY", "replaceEmptyStrings"?: boolean, "selectDistinct"?: boolean, "detailedOutput"?: boolean, "skipOnConflict"?: boolean };
+    readonly options?: { "connectionTimeoutMillis"?: number, "connectionLimit"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "decimalNumbers"?: boolean, "priority"?: "LOW_PRIORITY" | "HIGH_PRIORITY", "replaceEmptyStrings"?: boolean, "selectDistinct"?: boolean, "detailedOutput"?: boolean, "skipOnConflict"?: boolean };
 
     /**
      * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
-     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"MySQL"}
+     * Type options: {"editor":"sqlEditor","sqlDialect":"MySQL"}
      */
     readonly query?: string;
 
@@ -92,7 +92,7 @@ export interface MySqlV2NodeParameters {
     readonly sort?: { "values": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/" target="_blank">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["schema.value","table.value"]}
      */
     readonly columnToMatchOn?: string;

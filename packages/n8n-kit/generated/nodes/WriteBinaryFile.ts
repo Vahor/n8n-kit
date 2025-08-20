@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/WriteBinaryFile/WriteBinaryFile.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/WriteBinaryFile/WriteBinaryFile.node.ts' node
 
 export const name = "writeBinaryFile" as const;
 export const description = "Writes a binary file to disk" as const;

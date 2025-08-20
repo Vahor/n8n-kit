@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Zulip/Zulip.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Zulip/Zulip.node.ts' node
 
 export const name = "zulip" as const;
 export const description = "Consume Zulip API" as const;
@@ -23,7 +23,7 @@ export interface ZulipNodeParameters {
     readonly operation?: "delete" | "get" | "sendPrivate" | "sendStream" | "update" | "updateFile" | "create" | "getAll" | "getSubscribed" | "deactivate";
 
     /**
-     * The destination stream, or a comma-separated list containing the usernames (emails) of the recipients. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The destination stream, or a comma-separated list containing the usernames (emails) of the recipients. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
@@ -35,13 +35,13 @@ export interface ZulipNodeParameters {
     readonly content?: string;
 
     /**
-     * The destination stream, or a comma-separated list containing the usernames (emails) of the recipients. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The destination stream, or a comma-separated list containing the usernames (emails) of the recipients. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getStreams"}
      */
     readonly stream?: string;
 
     /**
-     * The topic of the message. Only required if type is stream, ignored otherwise. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The topic of the message. Only required if type is stream, ignored otherwise. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["stream"],"loadOptionsMethod":"getTopics"}
      */
     readonly topic?: string;
@@ -57,7 +57,6 @@ export interface ZulipNodeParameters {
     readonly updateFields?: { "content"?: string, "propagateMode"?: "changeOne" | "changeLater" | "changeAll", "topic"?: string };
 
     /**
-     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly dataBinaryProperty?: string;

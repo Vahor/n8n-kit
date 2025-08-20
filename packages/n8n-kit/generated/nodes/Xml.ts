@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Xml/Xml.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Xml/Xml.node.ts' node
 
 export const name = "xml" as const;
 export const description = "Convert data from and to XML" as const;
@@ -16,6 +16,10 @@ export interface XmlNodeParameters {
      * Default: "xmlToJson"
      */
     readonly mode?: "jsonToxml" | "xmlToJson";
+
+    /**
+     */
+    readonly xmlNotice?: string;
 
     /**
      * Name of the property to which to contains the converted XML data

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/PostBin/PostBin.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/PostBin/PostBin.node.ts' node
 
 export const name = "postBin" as const;
 export const description = "Consume PostBin API" as const;

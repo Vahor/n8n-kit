@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Airtable/v1/AirtableV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Airtable/v1/AirtableV1.node.ts' node
 
 export const name = "airtable" as const;
 export const description = "Read, update, write and delete data from Airtable" as const;
@@ -15,11 +15,15 @@ export interface AirtableV1NodeParameters {
     /**
      * Default: "airtableApi"
      */
-    readonly authentication?: "airtableApi" | "airtableTokenApi" | "airtableOAuth2Api";
+    readonly authentication?: "airtableTokenApi" | "airtableOAuth2Api" | "airtableApi";
 
     /**
      */
     readonly oldVersionNotice?: string;
+
+    /**
+     */
+    readonly deprecated?: string;
 
     /**
      * Default: "read"

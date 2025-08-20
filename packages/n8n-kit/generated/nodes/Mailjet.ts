@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Mailjet/Mailjet.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Mailjet/Mailjet.node.ts' node
 
 export const name = "mailjet" as const;
 export const description = "Consume Mailjet API" as const;
@@ -68,7 +68,7 @@ export interface MailjetNodeParameters {
     readonly variablesUi?: { "variablesValues": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTemplates"}
      */
     readonly templateId?: string;

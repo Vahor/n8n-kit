@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Ftp/Ftp.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Ftp/Ftp.node.ts' node
 
 export const name = "ftp" as const;
-export const description = "Transfers files via FTP or SFTP" as const;
+export const description = "Transfer files via FTP or SFTP" as const;
 export const version = 1 as const;
 export const defaults = {"name":"FTP","color":"#303050"} as const;
 export const credentials = [{"name":"ftp","required":true,"displayOptions":{"show":{"protocol":["ftp"]}},"testedBy":"ftpConnectionTest"},{"name":"sftp","required":true,"displayOptions":{"show":{"protocol":["sftp"]}},"testedBy":"sftpConnectionTest"}] as const
 
 /**
- * Transfers files via FTP or SFTP
+ * Transfer files via FTP or SFTP
  */
 export interface FtpNodeParameters {
 
@@ -31,10 +31,9 @@ export interface FtpNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "folder"?: boolean, "recursive"?: boolean, "createDirectories"?: boolean };
+    readonly options?: { "folder"?: boolean, "recursive"?: boolean, "enableConcurrentReads"?: boolean, "maxConcurrentReads"?: number, "chunkSize"?: number, "createDirectories"?: boolean };
 
     /**
-     * Object property name which holds binary data
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

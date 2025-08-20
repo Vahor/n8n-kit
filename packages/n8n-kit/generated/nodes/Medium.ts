@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Medium/Medium.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Medium/Medium.node.ts' node
 
 export const name = "medium" as const;
 export const description = "Consume Medium API" as const;
@@ -33,7 +33,7 @@ export interface MediumNodeParameters {
     readonly publication?: boolean;
 
     /**
-     * Publication IDs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Publication IDs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getPublications"}
      */
     readonly publicationId?: string;

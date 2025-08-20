@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Nasa/Nasa.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Nasa/Nasa.node.ts' node
 
 export const name = "nasa" as const;
 export const description = "Retrieve data from the NASA API" as const;
@@ -39,7 +39,6 @@ export interface NasaNodeParameters {
     readonly download?: boolean;
 
     /**
-     * Name of the binary property to which to write to
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

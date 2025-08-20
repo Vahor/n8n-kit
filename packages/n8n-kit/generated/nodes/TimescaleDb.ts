@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/TimescaleDb/TimescaleDb.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/TimescaleDb/TimescaleDb.node.ts' node
 
 export const name = "timescaleDb" as const;
 export const description = "Add and update data in TimescaleDB" as const;
@@ -19,7 +19,7 @@ export interface TimescaleDbNodeParameters {
 
     /**
      * The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.
-     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"PostgreSQL"}
+     * Type options: {"editor":"sqlEditor","sqlDialect":"PostgreSQL"}
      */
     readonly query?: string;
 

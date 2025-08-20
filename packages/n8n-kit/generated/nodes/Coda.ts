@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Coda/Coda.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Coda/Coda.node.ts' node
 
 export const name = "coda" as const;
 export const description = "Consume Coda API" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const defaults = {"name":"Coda"} as const;
 export const credentials = [{"name":"codaApi","required":true}] as const
 
@@ -23,13 +23,13 @@ export interface CodaNodeParameters {
     readonly operation?: "createRow" | "deleteRow" | "getAllColumns" | "getAllRows" | "getColumn" | "getRow" | "pushButton" | "get" | "getAll" | "getAllViewColumns" | "getAllViewRows" | "updateViewRow";
 
     /**
-     * ID of the doc. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the doc. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDocs"}
      */
     readonly docId?: string;
 
     /**
-     * The table to create the row in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The table to create the row in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["docId"],"loadOptionsMethod":"getTables"}
      */
     readonly tableId?: string;
@@ -57,7 +57,7 @@ export interface CodaNodeParameters {
     readonly limit?: number;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["docId","tableId"]}
      */
     readonly columnId?: string;

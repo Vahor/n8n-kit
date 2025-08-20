@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/SentryIo/SentryIo.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/SentryIo/SentryIo.node.ts' node
 
 export const name = "sentryIo" as const;
 export const description = "Consume Sentry.io API" as const;
@@ -33,13 +33,13 @@ export interface SentryIoNodeParameters {
     readonly operation?: "get" | "getAll" | "delete" | "update" | "create";
 
     /**
-     * The slug of the organization the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The slug of the organization the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getOrganizations"}
      */
     readonly organizationSlug?: string;
 
     /**
-     * The slug of the project the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The slug of the project the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects","loadOptionsDependsOn":["organizationSlug"]}
      */
     readonly projectSlug?: string;
@@ -88,7 +88,7 @@ export interface SentryIoNodeParameters {
     readonly agreeTerms?: boolean;
 
     /**
-     * The slug of the organization to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The slug of the organization to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getOrganizations"}
      */
     readonly organization_slug?: string;
@@ -99,7 +99,7 @@ export interface SentryIoNodeParameters {
     readonly updateFields?: { "name"?: string, "slug"?: string, "isBookmarked"?: boolean, "digestsMaxDelay"?: number, "digestsMinDelay"?: number, "team"?: string, "platform"?: string, "commits"?: { "commitProperties": any }, "dateReleased"?: string, "ref"?: string, "refs"?: { "refProperties": any }, "url"?: string };
 
     /**
-     * The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTeams","loadOptionsDependsOn":["organizationSlug"]}
      */
     readonly teamSlug?: string;
@@ -115,7 +115,7 @@ export interface SentryIoNodeParameters {
     readonly url?: string;
 
     /**
-     * A list of project slugs that are involved in this release. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * A list of project slugs that are involved in this release. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getProjects"}
      */

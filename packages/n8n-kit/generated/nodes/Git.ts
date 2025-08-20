@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Git/Git.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Git/Git.node.ts' node
 
 export const name = "git" as const;
 export const description = "Control git." as const;

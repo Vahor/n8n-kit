@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Matrix/Matrix.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Matrix/Matrix.node.ts' node
 
 export const name = "matrix" as const;
 export const description = "Consume Matrix API" as const;
@@ -41,7 +41,7 @@ export interface MatrixNodeParameters {
      * Type of file being uploaded
      * Default: "image"
      */
-    readonly mediaType?: "file" | "image";
+    readonly mediaType?: "file" | "image" | "audio" | "video";
 
     /**
      * Default: {}

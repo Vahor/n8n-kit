@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Cloudflare/Cloudflare.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Cloudflare/Cloudflare.node.ts' node
 
 export const name = "cloudflare" as const;
 export const description = "Consume Cloudflare API" as const;
@@ -23,7 +23,7 @@ export interface CloudflareNodeParameters {
     readonly operation?: "delete" | "get" | "getMany" | "upload";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getZones"}
      */
     readonly zoneId?: string;

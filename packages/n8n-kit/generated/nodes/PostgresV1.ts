@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Postgres/v1/PostgresV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Postgres/v1/PostgresV1.node.ts' node
 
 export const name = "postgres" as const;
 export const description = "Get, add and update data in Postgres" as const;
@@ -23,7 +23,7 @@ export interface PostgresV1NodeParameters {
 
     /**
      * The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.
-     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"PostgreSQL"}
+     * Type options: {"editor":"sqlEditor","sqlDialect":"PostgreSQL"}
      */
     readonly query?: string;
 

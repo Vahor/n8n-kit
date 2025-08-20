@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Aws/SQS/AwsSqs.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Aws/SQS/AwsSqs.node.ts' node
 
 export const name = "awsSqs" as const;
 export const description = "Sends messages to AWS SQS" as const;
@@ -18,7 +18,7 @@ export interface AwsSqsNodeParameters {
     readonly operation?: "sendMessage";
 
     /**
-     * Queue to send a message to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Queue to send a message to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getQueues"}
      */
     readonly queue?: string;

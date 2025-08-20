@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Elastic/Elasticsearch/Elasticsearch.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Elastic/Elasticsearch/Elasticsearch.node.ts' node
 
 export const name = "elasticsearch" as const;
 export const description = "Consume the Elasticsearch API" as const;
@@ -33,15 +33,15 @@ export interface ElasticsearchNodeParameters {
     readonly documentId?: string;
 
     /**
+     * Default: {}
+     */
+    readonly options?: { "bulkOperation"?: boolean, "_source_excludes"?: string, "_source_includes"?: string, "stored_fields"?: boolean, "allow_no_indices"?: boolean, "allow_partial_search_results"?: boolean, "batched_reduce_size"?: number, "ccs_minimize_roundtrips"?: boolean, "docvalue_fields"?: string, "expand_wildcards"?: "all" | "closed" | "hidden" | "none" | "open", "explain"?: boolean, "ignore_throttled"?: boolean, "ignore_unavailable"?: boolean, "max_concurrent_shard_requests"?: number, "pre_filter_shard_size"?: number, "query"?: string, "request_cache"?: boolean, "routing"?: string, "search_type"?: "dfs_query_then_fetch" | "query_then_fetch", "seq_no_primary_term"?: boolean, "sort"?: string, "stats"?: string, "terminate_after"?: number, "timeout"?: string, "track_scores"?: boolean, "track_total_hits"?: number, "version"?: boolean, "pipeline"?: string, "refresh"?: "true" | "wait_for" | "false" };
+
+    /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
     readonly simple?: boolean;
-
-    /**
-     * Default: {}
-     */
-    readonly options?: { "_source_excludes"?: string, "_source_includes"?: string, "stored_fields"?: boolean, "allow_no_indices"?: boolean, "allow_partial_search_results"?: boolean, "batched_reduce_size"?: number, "ccs_minimize_roundtrips"?: boolean, "docvalue_fields"?: string, "expand_wildcards"?: "all" | "closed" | "hidden" | "none" | "open", "explain"?: boolean, "ignore_throttled"?: boolean, "ignore_unavailable"?: boolean, "max_concurrent_shard_requests"?: number, "pre_filter_shard_size"?: number, "query"?: string, "request_cache"?: boolean, "routing"?: string, "search_type"?: "dfs_query_then_fetch" | "query_then_fetch", "seq_no_primary_term"?: boolean, "sort"?: string, "stats"?: string, "terminate_after"?: number, "timeout"?: string, "track_scores"?: boolean, "track_total_hits"?: number, "version"?: boolean, "pipeline"?: string, "refresh"?: "true" | "wait_for" | "false" };
 
     /**
      * Whether to return all results or only up to a given limit

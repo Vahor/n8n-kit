@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Postmark/PostmarkTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Postmark/PostmarkTrigger.node.ts' node
 
 export const name = "postmarkTrigger" as const;
 export const description = "Starts the workflow when Postmark events occur" as const;

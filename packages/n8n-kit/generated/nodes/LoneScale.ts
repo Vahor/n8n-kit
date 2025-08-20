@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/LoneScale/LoneScale.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/LoneScale/LoneScale.node.ts' node
 
 export const name = "loneScale" as const;
 export const description = "Create List, add / delete items" as const;
@@ -30,7 +30,7 @@ export interface LoneScaleNodeParameters {
     readonly type?: "COMPANY" | "PEOPLE";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getLists","loadOptionsDependsOn":["type"]}
      */
     readonly list?: string;

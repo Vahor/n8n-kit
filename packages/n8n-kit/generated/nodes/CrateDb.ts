@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/CrateDb/CrateDb.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/CrateDb/CrateDb.node.ts' node
 
 export const name = "crateDb" as const;
 export const description = "Add and update data in CrateDB" as const;

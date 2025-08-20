@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/MongoDb/MongoDb.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/MongoDb/MongoDb.node.ts' node
 
 export const name = "mongoDb" as const;
 export const description = "Find, insert and update documents in MongoDB" as const;
-export const version = 1 as const;
+export const version = 1.2 as const;
 export const defaults = {"name":"MongoDB"} as const;
 export const credentials = [{"name":"mongoDb","required":true,"testedBy":"mongoDbCredentialTest"}] as const
 
@@ -13,9 +13,14 @@ export const credentials = [{"name":"mongoDb","required":true,"testedBy":"mongoD
 export interface MongoDbNodeParameters {
 
     /**
+     * Default: "document"
+     */
+    readonly resource?: "searchIndexes" | "document";
+
+    /**
      * Default: "find"
      */
-    readonly operation?: "aggregate" | "delete" | "find" | "findOneAndReplace" | "findOneAndUpdate" | "insert" | "update";
+    readonly operation?: "aggregate" | "delete" | "find" | "findOneAndReplace" | "findOneAndUpdate" | "insert" | "update" | "createSearchIndex" | "dropSearchIndex" | "listSearchIndexes";
 
     /**
      * MongoDB Collection
@@ -32,7 +37,7 @@ export interface MongoDbNodeParameters {
      * Add query options
      * Default: {}
      */
-    readonly options?: { "limit"?: number, "skip"?: number, "sort"?: string, "dateFields"?: string, "useDotNotation"?: boolean };
+    readonly options?: { "limit"?: number, "skip"?: number, "sort"?: string, "projection"?: string, "dateFields"?: string, "useDotNotation"?: boolean };
 
     /**
      * Comma-separated list of the fields to be included into the new document
@@ -49,6 +54,29 @@ export interface MongoDbNodeParameters {
      * Whether to perform an insert if no documents match the update key
      */
     readonly upsert?: boolean;
+
+    /**
+     * If provided, only lists indexes with the specified name
+     */
+    readonly indexName?: string;
+
+    /**
+     * The name of the search index
+     */
+    readonly indexNameRequired?: string;
+
+    /**
+     * The search index definition
+     * Default: "{}"
+     * Type options: {"alwaysOpenEditWindow":true}
+     */
+    readonly indexDefinition?: string;
+
+    /**
+     * The search index index type
+     * Default: "vectorSearch"
+     */
+    readonly indexType?: "vectorSearch" | "search";
 
 
 }

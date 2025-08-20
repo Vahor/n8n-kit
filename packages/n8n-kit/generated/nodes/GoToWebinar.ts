@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/GoToWebinar/GoToWebinar.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/GoToWebinar/GoToWebinar.node.ts' node
 
 export const name = "goToWebinar" as const;
 export const description = "Consume the GoToWebinar API" as const;
@@ -23,13 +23,13 @@ export interface GoToWebinarNodeParameters {
     readonly operation?: "get" | "getAll" | "getDetails" | "create" | "delete" | "reinvite" | "update";
 
     /**
-     * Key of the webinar that the attendee attended. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Key of the webinar that the attendee attended. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWebinars"}
      */
     readonly webinarKey?: string;
 
     /**
-     * Key of the session that the attendee attended. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Key of the session that the attendee attended. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWebinarSessions","loadOptionsDependsOn":["webinarKey"]}
      */
     readonly sessionKey?: string;

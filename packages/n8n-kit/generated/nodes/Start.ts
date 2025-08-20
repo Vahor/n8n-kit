@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Start/Start.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Start/Start.node.ts' node
 
 export const name = "start" as const;
 export const description = "Starts the workflow execution from this node" as const;

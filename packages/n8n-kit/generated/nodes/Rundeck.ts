@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Rundeck/Rundeck.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Rundeck/Rundeck.node.ts' node
 
 export const name = "rundeck" as const;
 export const description = "Manage Rundeck API" as const;

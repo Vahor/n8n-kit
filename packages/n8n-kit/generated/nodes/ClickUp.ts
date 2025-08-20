@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ClickUp/ClickUp.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ClickUp/ClickUp.node.ts' node
 
 export const name = "clickUp" as const;
 export const description = "Consume ClickUp API (Beta)" as const;
@@ -81,19 +81,19 @@ export interface ClickUpNodeParameters {
     readonly limit?: number;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
     readonly team?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getSpaces","loadOptionsDependsOn":["team"]}
      */
     readonly space?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getFolders","loadOptionsDependsOn":["space"]}
      */
     readonly folder?: string;
@@ -153,10 +153,20 @@ export interface ClickUpNodeParameters {
     readonly folderless?: boolean;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getFolderlessLists","loadOptionsDependsOn":["space"]}
      */
     readonly list?: string;
+
+    /**
+     * Whether to also fetch and include subtasks for this task
+     */
+    readonly includeSubtasks?: boolean;
+
+    /**
+     * Whether to include the markdown_description field in the response. This is important for preserving links in the description.
+     */
+    readonly includeMarkdownDescription?: boolean;
 
     /**
      * The ID of the field to add custom field to
@@ -210,7 +220,7 @@ export interface ClickUpNodeParameters {
     readonly tagsUi?: { "tagsValues": any };
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getTimeEntryTags","loadOptionsDependsOn":["teamId"]}
      */

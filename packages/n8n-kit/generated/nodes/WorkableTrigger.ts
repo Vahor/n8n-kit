@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Workable/WorkableTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Workable/WorkableTrigger.node.ts' node
 
 export const name = "workableTrigger" as const;
 export const description = "Starts the workflow when Workable events occur" as const;

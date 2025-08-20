@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Kafka/Kafka.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Kafka/Kafka.node.ts' node
 
 export const name = "kafka" as const;
 export const description = "Sends messages to a Kafka topic" as const;
@@ -18,7 +18,7 @@ export interface KafkaNodeParameters {
     readonly topic?: string;
 
     /**
-     * Whether to send the the data the node receives as JSON to Kafka
+     * Whether to send the data the node receives as JSON to Kafka
      * Default: true
      */
     readonly sendInputData?: boolean;

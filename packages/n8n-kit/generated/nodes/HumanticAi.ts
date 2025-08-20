@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/HumanticAI/HumanticAi.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/HumanticAI/HumanticAi.node.ts' node
 
 export const name = "humanticAi" as const;
 export const description = "Consume Humantic AI API" as const;
@@ -33,7 +33,6 @@ export interface HumanticAiNodeParameters {
     readonly sendResume?: boolean;
 
     /**
-     * The resume in PDF or DOCX format
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

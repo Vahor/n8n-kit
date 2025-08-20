@@ -7,7 +7,7 @@
 			"name": "schedule-trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
 			"position": [115, 220],
-			"typeVersion": 1.2,
+			"typeVersion": 1.1,
 			"parameters": {
 				"rule": {
 					"interval": [
@@ -43,7 +43,7 @@
 					"conditions": [
 						{
 							"operator": { "type": "string", "operation": "contains" },
-							"leftValue": "={{ $json.classType }}",
+							"leftValue": "={{·$json.classType·}}",
 							"rightValue": "C",
 							"id": "my-workflow/if/0"
 						}
@@ -66,7 +66,7 @@
 			"parameters": {
 				"resource": "request",
 				"binId": "1741914338605-0907339996192",
-				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"binContent": "=There was a solar flare of class {{·$json.classType·}}",
 				"operation": "send"
 			}
 		},
@@ -79,7 +79,7 @@
 			"parameters": {
 				"resource": "request",
 				"binId": "1741914338605-0907339996192",
-				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"binContent": "=There was a solar flare of class {{·$json.classType·}}",
 				"operation": "send"
 			}
 		},

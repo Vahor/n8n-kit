@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Zoom/Zoom.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Zoom/Zoom.node.ts' node
 
 export const name = "zoom" as const;
 export const description = "Consume Zoom API" as const;

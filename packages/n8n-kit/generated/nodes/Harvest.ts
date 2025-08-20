@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Harvest/Harvest.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Harvest/Harvest.node.ts' node
 
 export const name = "harvest" as const;
 export const description = "Access data on Harvest" as const;
@@ -28,7 +28,7 @@ export interface HarvestNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "createByDuration" | "createByStartEnd" | "deleteExternal" | "restartTime" | "stopTime" | "me";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAccounts"}
      */
     readonly accountId: string;

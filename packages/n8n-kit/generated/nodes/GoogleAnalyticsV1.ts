@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Analytics/v1/GoogleAnalyticsV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Analytics/v1/GoogleAnalyticsV1.node.ts' node
 
 export const name = "googleAnalytics" as const;
 export const description = "Use the Google Analytics API" as const;
@@ -27,7 +27,7 @@ export interface GoogleAnalyticsV1NodeParameters {
     readonly operation?: "get" | "search";
 
     /**
-     * The View ID of Google Analytics. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The View ID of Google Analytics. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getViews"}
      */
     readonly viewId?: string;

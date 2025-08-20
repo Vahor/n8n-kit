@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Cron/Cron.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Cron/Cron.node.ts' node
 
 export const name = "cron" as const;
 export const description = "Triggers the workflow at a specific time" as const;

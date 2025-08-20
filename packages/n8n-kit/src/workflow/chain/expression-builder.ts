@@ -1,44 +1,6 @@
+import type { JoinKeys, OmitRootLevel, TypeOfField } from "../../utils/types";
 import type { ChainContext } from "./chain";
 import { expr } from "./expression";
-
-export type Primitive =
-	| string
-	| number
-	| boolean
-	| bigint
-	| symbol
-	| null
-	| undefined;
-
-export type JoinKeys<T, OnlyLeaf = false, Prefix extends string = ""> = {
-	[K in keyof T]: T[K] extends Function
-		? `${Prefix}${Extract<K, string>}`
-		: T[K] extends Primitive | Array<Primitive> | Date
-			? `${Prefix}${Extract<K, string>}`
-			: T[K] extends object
-				?
-						| (OnlyLeaf extends true ? never : `${Prefix}${Extract<K, string>}`)
-						| JoinKeys<T[K], OnlyLeaf, `${Prefix}${Extract<K, string>}.`>
-				: `${Prefix}${Extract<K, string>}`;
-}[keyof T];
-
-export type OmitRootLevel<T> = T extends `${infer _1}.${infer _2}` ? T : never;
-
-export type RecursiveDotNotation<
-	T,
-	Path extends string,
-> = Path extends `${infer Key}.${infer Rest}`
-	? Key extends keyof T
-		? RecursiveDotNotation<T[Key], Rest>
-		: never
-	: Path extends keyof T
-		? T[Path]
-		: never;
-
-export type TypeOfField<
-	Field extends string,
-	Context extends Record<string, unknown>,
-> = RecursiveDotNotation<Context, Field>;
 
 type ExtractNodeId<T extends string> =
 	T extends `${infer NodeId}.${infer _Rest}` ? NodeId : never;

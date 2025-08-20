@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Grafana/Grafana.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Grafana/Grafana.node.ts' node
 
 export const name = "grafana" as const;
 export const description = "Consume the Grafana API" as const;
@@ -70,13 +70,13 @@ export interface GrafanaNodeParameters {
     readonly teamId?: string;
 
     /**
-     * User to add to a team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * User to add to a team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly userId?: string;
 
     /**
-     * User to remove from the team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * User to remove from the team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly memberId?: string;

@@ -1,28 +1,39 @@
-import type { IsNever, IsRecord, Prettify } from "../../utils/types";
+import type { AnyString, IsAny, IsNever, Prettify } from "../../utils/types";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import type { State } from "./state";
 import type { IChainable, IContext, INextable } from "./types";
 
 export const NO_END_STATES: INextable[] = [] as const;
 
-export interface ChainContext {
-	[nodeId: string]: Record<string, unknown>;
-}
+type PREVIOUS_CONTENT = "json";
+
+export type ChainContext = {
+	[nodeId: string]: any;
+};
 
 type AddIChainableToChainContext<
 	N,
 	CC extends ChainContext,
+	WithPrevious = true,
 > = N extends IChainable<infer Id, infer C>
 	? IsNever<C> extends true
 		? CC
-		: IsRecord<C> extends true
+		: IsAny<C> extends true
 			? CC
-			: Prettify<{ [k in Id]: C } & CC & { json: C }>
+			: Prettify<
+					{ [k in Id]: C } & CC & {
+							[k in PREVIOUS_CONTENT]: WithPrevious extends true ? C : never;
+						}
+				>
 	: CC;
 
 type ChainableProvider<N extends IChainable, CC extends ChainContext> =
 	| N
 	| ((params: { $: ExpressionBuilderProvider<CC> }) => N);
+
+type MultipleChainableProvider<N extends IChainable, CC extends ChainContext> =
+	| Array<N>
+	| ((params: { $: ExpressionBuilderProvider<CC> }) => Array<N>);
 
 /**
  * A collection of states to chain onto
@@ -30,14 +41,18 @@ type ChainableProvider<N extends IChainable, CC extends ChainContext> =
  * A Chain has a start and zero or more chainable ends. If there are
  * zero ends, calling next() on the Chain will fail.
  */
-export class Chain<CC extends ChainContext = {}> implements IChainable {
+export class Chain<
+	CC extends ChainContext = {},
+	IdsInContext extends string[] = [],
+> implements IChainable
+{
 	"~context": IContext = undefined as any;
 
 	/**
 	 * Begin a new Chain from one chainable
 	 */
 	public static start<N1 extends IChainable>(state: N1) {
-		return new Chain<AddIChainableToChainContext<N1, {}>>(
+		return new Chain<AddIChainableToChainContext<N1, {}>, [N1["id"]]>(
 			state.startState,
 			state.endStates,
 			state,
@@ -80,17 +95,21 @@ export class Chain<CC extends ChainContext = {}> implements IChainable {
 		this.endStates = endStates;
 	}
 
-	/**
-	 * Continue normal execution with the given state
-	 */
-	public next<N extends IChainable>(
-		_next: ChainableProvider<N, CC>,
-	): Chain<AddIChainableToChainContext<N, CC>> {
+	private checkCanAddNext() {
 		if (!this.endStates || this.endStates.length === 0) {
 			throw new Error(
 				`Cannot add to chain: last state in chain (${this.lastAdded.id}) does not allow it`,
 			);
 		}
+	}
+
+	/**
+	 * Continue normal execution with the given state
+	 */
+	public next<N extends IChainable>(
+		_next: ChainableProvider<N, CC>,
+	): Chain<AddIChainableToChainContext<N, CC>, [...IdsInContext, N["id"]]> {
+		void this.checkCanAddNext();
 
 		let next: IChainable;
 		if (typeof _next === "function") {
@@ -102,6 +121,63 @@ export class Chain<CC extends ChainContext = {}> implements IChainable {
 
 		for (const endState of this.endStates) {
 			endState.addNext(next);
+		}
+
+		return new Chain(this.startState, next.endStates, next);
+	}
+
+	public multiple<N extends IChainable>(
+		_next: MultipleChainableProvider<N, CC>,
+	): Chain<
+		AddIChainableToChainContext<N, CC, false>,
+		[...IdsInContext, N["id"]]
+	> {
+		void this.checkCanAddNext();
+
+		let next: IChainable[];
+		if (typeof _next === "function") {
+			const $ = $$<CC>();
+			next = _next({ $: $ });
+		} else {
+			next = _next;
+		}
+
+		if (next.length === 0) {
+			throw new Error(
+				"At least one state must be provided when using multiple",
+			);
+		}
+
+		for (const endState of this.endStates) {
+			for (const nextState of next) {
+				endState.addNext(nextState);
+			}
+		}
+		return new Chain(this.startState, this.endStates, next.at(-1)!);
+	}
+
+	public connect<Keys extends IdsInContext[number], N extends IChainable>(
+		ids: Array<Keys & AnyString>,
+		_next: ChainableProvider<N, CC>,
+	): Chain<AddIChainableToChainContext<N, CC>> {
+		void this.checkCanAddNext();
+
+		let next: IChainable;
+		if (typeof _next === "function") {
+			const $ = $$<CC>();
+			next = _next({ $: $ });
+		} else {
+			next = _next;
+		}
+
+		const states = this.toList();
+
+		for (const id of ids) {
+			const state = states.find((s) => s.id === id);
+			if (!state) {
+				throw new Error(`State '${id}' does not exist`);
+			}
+			(state as INextable).addNext(next);
 		}
 
 		return new Chain(this.startState, next.endStates, next);

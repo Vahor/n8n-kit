@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/CustomerIo/CustomerIo.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/CustomerIo/CustomerIo.node.ts' node
 
 export const name = "customerIo" as const;
 export const description = "Consume Customer.io API" as const;

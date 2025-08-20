@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Onfleet/Onfleet.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Onfleet/Onfleet.node.ts' node
 
 export const name = "onfleet" as const;
 export const description = "Consume Onfleet API" as const;
@@ -163,14 +163,14 @@ export interface OnfleetNodeParameters {
     readonly overrideFields?: { "completeAfter"?: string, "completeBefore"?: string, "includeBarcodes"?: boolean, "includeDependencies"?: boolean, "includeMetadata"?: boolean, "notes"?: string, "pickupTask"?: boolean, "serviceTime"?: number };
 
     /**
-     * A list of workers. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * A list of workers. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getWorkers"}
      */
     readonly workers?: string[];
 
     /**
-     * A list of managing administrators. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * A list of managing administrators. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getAdmins"}
      */
@@ -182,7 +182,7 @@ export interface OnfleetNodeParameters {
     readonly byLocation?: boolean;
 
     /**
-     * One or more teams of which the worker is a member. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * One or more teams of which the worker is a member. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getTeams"}
      */

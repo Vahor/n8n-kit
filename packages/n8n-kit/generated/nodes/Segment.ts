@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Segment/Segment.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Segment/Segment.node.ts' node
 
 export const name = "segment" as const;
 export const description = "Consume Segment API" as const;

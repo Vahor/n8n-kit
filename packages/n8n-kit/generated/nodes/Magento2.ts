@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Magento/Magento2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Magento/Magento2.node.ts' node
 
 export const name = "magento2" as const;
 export const description = "Consume Magento API" as const;
@@ -56,7 +56,7 @@ export interface Magento2NodeParameters {
     readonly lastName?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getWebsites"}
      */
     readonly website_id?: string;
@@ -121,7 +121,7 @@ export interface Magento2NodeParameters {
     readonly name?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAttributeSets"}
      */
     readonly attributeSetId?: string;

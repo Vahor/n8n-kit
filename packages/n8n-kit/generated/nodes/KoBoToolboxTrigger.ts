@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/KoBoToolbox/KoBoToolboxTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/KoBoToolbox/KoBoToolboxTrigger.node.ts' node
 
 export const name = "koBoToolboxTrigger" as const;
 export const description = "Process KoBoToolbox submissions" as const;
@@ -13,7 +13,7 @@ export const credentials = [{"name":"koBoToolboxApi","required":true}] as const
 export interface KoBoToolboxTriggerNodeParameters {
 
     /**
-     * Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadForms"}
      */
     readonly formId: string;

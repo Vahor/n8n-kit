@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Asana/Asana.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Asana/Asana.node.ts' node
 
 export const name = "asana" as const;
 export const description = "Consume Asana REST API" as const;
@@ -60,7 +60,7 @@ export interface AsanaNodeParameters {
     readonly options?: { "opt_fields"?: string[], "opt_pretty"?: boolean };
 
     /**
-     * The workspace to create the task in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The workspace to create the task in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
     readonly workspace?: string;
@@ -77,13 +77,13 @@ export interface AsanaNodeParameters {
     readonly filters?: { "assignee"?: string, "opt_fields"?: string[], "opt_pretty"?: boolean, "project"?: string, "section"?: string, "workspace"?: string, "completed_since"?: string, "modified_since"?: string };
 
     /**
-     * Project to show the sections of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Project to show the sections of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
     readonly projectId?: string;
 
     /**
-     * The Section to move the task to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The Section to move the task to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["projectId"],"loadOptionsMethod":"getSections"}
      */
     readonly section?: string;
@@ -108,16 +108,16 @@ export interface AsanaNodeParameters {
      * Properties of the task comment
      * Default: {}
      */
-    readonly additionalFields?: { "is_pinned"?: boolean, "insert_after"?: string, "insert_before"?: string, "section"?: string, "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "notes"?: string, "archived"?: boolean, "team"?: string };
+    readonly additionalFields?: { "is_pinned"?: boolean, "insert_after"?: string, "insert_before"?: string, "section"?: string, "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "notes"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "archived"?: boolean, "team"?: string };
 
     /**
-     * The project where the task will be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The project where the task will be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
     readonly project?: string;
 
     /**
-     * The tag that should be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The tag that should be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["id"],"loadOptionsMethod":"getTags"}
      */
     readonly tag?: string;
@@ -128,7 +128,7 @@ export interface AsanaNodeParameters {
     readonly userId?: string;
 
     /**
-     * The team this project will be assigned to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The team this project will be assigned to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["workspace"],"loadOptionsMethod":"getTeams"}
      */
     readonly team?: string;
@@ -137,7 +137,7 @@ export interface AsanaNodeParameters {
      * Other properties to set
      * Default: {}
      */
-    readonly updateFields?: { "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "name"?: string, "notes"?: string, "owner"?: string, "team"?: string };
+    readonly updateFields?: { "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "name"?: string, "notes"?: string, "owner"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "team"?: string };
 
 
 }

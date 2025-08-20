@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/QuickChart/QuickChart.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/QuickChart/QuickChart.node.ts' node
 
 export const name = "quickChart" as const;
 export const description = "Create a chart via QuickChart" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Gmail/v2/GmailV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Gmail/v2/GmailV2.node.ts' node
 
 export const name = "gmail" as const;
 export const description = "Consume the Gmail API" as const;
@@ -11,6 +11,11 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  * Consume the Gmail API
  */
 export interface GmailV2NodeParameters {
+
+    /**
+     * Type options: {"calloutAction":{"label":"Email triage agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"email_triage_agent_with_gmail"}}
+     */
+    readonly preBuiltAgentsCalloutGmail?: any;
 
     /**
      * Default: "oAuth2"
@@ -25,7 +30,7 @@ export interface GmailV2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "addLabels" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "trash" | "untrash";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "addLabels" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "trash" | "untrash";
 
     /**
      */
@@ -34,6 +39,10 @@ export interface GmailV2NodeParameters {
     /**
      */
     readonly subject?: string;
+
+    /**
+     */
+    readonly threadNotice?: string;
 
     /**
      * Default: "text"
@@ -47,7 +56,7 @@ export interface GmailV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "sendTo"?: string, "bccList"?: string, "ccList"?: string, "replyTo"?: string, "attachmentsUi"?: { "attachmentsBinary": any }, "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean, "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show", "appendAttribution"?: boolean, "senderName"?: string, "replyToSenderOnly"?: boolean, "returnOnlyMessages"?: boolean };
+    readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string, "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean, "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show", "appendAttribution"?: boolean, "senderName"?: string, "replyToSenderOnly"?: boolean, "limitWaitTime"?: { "values": any }, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "returnOnlyMessages"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -92,11 +101,38 @@ export interface GmailV2NodeParameters {
     readonly filters?: { "includeSpamTrash"?: boolean, "labelIds"?: string[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string, "sender"?: string };
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */
     readonly labelIds?: string[];
+
+    /**
+     * Default: "approval"
+     */
+    readonly responseType?: "approval" | "freeText" | "customForm";
+
+    /**
+     * Default: "fields"
+     */
+    readonly defineForm?: "fields" | "json";
+
+    /**
+     * Default: "[\n   {\n      \"fieldLabel\":\"Name\",\n      \"placeholder\":\"enter you name\",\n      \"requiredField\":true\n   },\n   {\n      \"fieldLabel\":\"Age\",\n      \"fieldType\":\"number\",\n      \"placeholder\":\"enter your age\"\n   },\n   {\n      \"fieldLabel\":\"Email\",\n      \"fieldType\":\"email\",\n      \"requiredField\":true\n   }\n]"
+     * Type options: {"rows":5}
+     */
+    readonly jsonOutput?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly approvalOptions?: { "values": any };
 
     /**
      * The ID of the thread you are operating on

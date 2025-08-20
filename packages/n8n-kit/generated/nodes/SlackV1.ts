@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Slack/V1/SlackV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Slack/V1/SlackV1.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
@@ -32,7 +32,7 @@ export interface SlackV1NodeParameters {
     readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "post" | "postEphemeral" | "update" | "add" | "upload" | "remove" | "info" | "getPresence" | "disable" | "enable";
 
     /**
-     * The name of the channel to archive. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The name of the channel to archive. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChannels"}
      */
     readonly channelId?: string;
@@ -43,14 +43,14 @@ export interface SlackV1NodeParameters {
     readonly additionalFields?: { "isPrivate"?: boolean, "includeNumMembers"?: boolean, "channelIds"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean, "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status_emoji"?: string, "status_expiration"?: string, "status_text"?: string, "user"?: string, "include_labels"?: boolean };
 
     /**
-     * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly userIds?: string[];
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly userId?: string;
@@ -174,7 +174,6 @@ export interface SlackV1NodeParameters {
     readonly fileContent?: string;
 
     /**
-     * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

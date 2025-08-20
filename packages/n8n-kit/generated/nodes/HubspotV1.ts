@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Hubspot/V1/HubspotV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Hubspot/V1/HubspotV1.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
@@ -109,7 +109,7 @@ export interface HubspotV1NodeParameters {
     readonly domain?: string;
 
     /**
-     * The dealstage is required when creating a deal. See the CRM Pipelines API for details on managing pipelines and stages. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The dealstage is required when creating a deal. See the CRM Pipelines API for details on managing pipelines and stages. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDealStages"}
      */
     readonly stage?: string;
@@ -134,7 +134,7 @@ export interface HubspotV1NodeParameters {
     readonly engagementId?: string;
 
     /**
-     * The ID of the form you're sending data to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the form you're sending data to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getForms"}
      */
     readonly formId?: string;
@@ -152,13 +152,13 @@ export interface HubspotV1NodeParameters {
     readonly lengalConsentUi?: { "lengalConsentValues": any, "legitimateInterestValues": any };
 
     /**
-     * The ID of the pipeline the ticket is in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the pipeline the ticket is in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTicketPipelines"}
      */
     readonly pipelineId?: string;
 
     /**
-     * The ID of the pipeline the ticket is in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the pipeline the ticket is in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTicketStages","loadOptionsDependsOn":["pipelineId"]}
      */
     readonly stageId?: string;

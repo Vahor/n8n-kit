@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Onfleet/OnfleetTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Onfleet/OnfleetTrigger.node.ts' node
 
 export const name = "onfleetTrigger" as const;
 export const description = "Starts the workflow when Onfleet events occur" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/Excel/v1/MicrosoftExcelV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Excel/v1/MicrosoftExcelV1.node.ts' node
 
 export const name = "microsoftExcel" as const;
 export const description = "Consume Microsoft Excel API" as const;
@@ -27,7 +27,7 @@ export interface MicrosoftExcelV1NodeParameters {
     readonly operation?: "addWorksheet" | "getAll" | "getContent" | "addRow" | "getColumns" | "getRows" | "lookup";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getWorkbooks"}
      */
     readonly workbook?: string;
@@ -55,7 +55,7 @@ export interface MicrosoftExcelV1NodeParameters {
     readonly filters?: { "fields"?: string };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getworksheets","loadOptionsDependsOn":["workbook"]}
      */
     readonly worksheet?: string;
@@ -91,7 +91,7 @@ export interface MicrosoftExcelV1NodeParameters {
     readonly keyRow?: number;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTables","loadOptionsDependsOn":["worksheet"]}
      */
     readonly table?: string;

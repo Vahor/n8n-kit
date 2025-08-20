@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Wise/Wise.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Wise/Wise.node.ts' node
 
 export const name = "wise" as const;
 export const description = "Consume the Wise API" as const;
@@ -23,14 +23,14 @@ export interface WiseNodeParameters {
     readonly operation?: "getBalances" | "getCurrencies" | "getStatement" | "get" | "getAll" | "create" | "delete" | "execute";
 
     /**
-     * ID of the user profile to retrieve the balance of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the user profile to retrieve the balance of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getProfiles"}
      */
     readonly profileId?: string;
 
     /**
-     * ID of the borderless account to retrieve the statement of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the borderless account to retrieve the statement of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getBorderlessAccounts","loadOptionsDependsOn":["profileId"]}
      */
@@ -45,10 +45,9 @@ export interface WiseNodeParameters {
      * File format to retrieve the statement in
      * Default: "json"
      */
-    readonly format?: "json" | "csv" | "pdf";
+    readonly format?: "json" | "csv" | "pdf" | "xml";
 
     /**
-     * Name of the binary property to which to write to
      * Default: "data"
      */
     readonly binaryProperty?: string;
@@ -74,7 +73,7 @@ export interface WiseNodeParameters {
     readonly target?: string;
 
     /**
-     * ID of the account that will receive the funds. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the account that will receive the funds. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getRecipients"}
      */

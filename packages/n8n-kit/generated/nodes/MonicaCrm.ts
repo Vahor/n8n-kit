@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/MonicaCrm/MonicaCrm.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/MonicaCrm/MonicaCrm.node.ts' node
 
 export const name = "monicaCrm" as const;
 export const description = "Consume the Monica CRM API" as const;
@@ -23,7 +23,7 @@ export interface MonicaCrmNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "add" | "remove";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getActivityTypes"}
      */
     readonly activityTypeId?: string;
@@ -95,7 +95,7 @@ export interface MonicaCrmNodeParameters {
     readonly firstName?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGenders"}
      */
     readonly genderId?: string;
@@ -106,7 +106,7 @@ export interface MonicaCrmNodeParameters {
     readonly filters?: { "query"?: string, "sort"?: "created_at" | "-created_at" | "updated_at" | "-updated_at" };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getContactFieldTypes"}
      */
     readonly contactFieldTypeId?: string;
@@ -122,14 +122,14 @@ export interface MonicaCrmNodeParameters {
     readonly contactFieldId?: string;
 
     /**
-     * Tags to add to the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Tags to add to the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getTagsToAdd"}
      */
     readonly tagsToAdd?: string[];
 
     /**
-     * Tags to remove from the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Tags to remove from the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getTagsToRemove"}
      */

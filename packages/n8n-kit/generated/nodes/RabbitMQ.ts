@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/RabbitMQ/RabbitMQ.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/RabbitMQ/RabbitMQ.node.ts' node
 
 export const name = "rabbitmq" as const;
 export const description = "Sends messages to a RabbitMQ topic" as const;
@@ -49,7 +49,7 @@ export interface RabbitMQNodeParameters {
     readonly routingKey?: string;
 
     /**
-     * Whether to send the the data the node receives as JSON
+     * Whether to send the data the node receives as JSON
      * Default: true
      */
     readonly sendInputData?: boolean;

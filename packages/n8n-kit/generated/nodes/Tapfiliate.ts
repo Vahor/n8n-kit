@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Tapfiliate/Tapfiliate.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Tapfiliate/Tapfiliate.node.ts' node
 
 export const name = "tapfiliate" as const;
 export const description = "Consume Tapfiliate API" as const;
@@ -82,7 +82,7 @@ export interface TapfiliateNodeParameters {
     readonly value?: string;
 
     /**
-     * The ID of the Program to add the affiliate to. This ID can be found as part of the URL when viewing the program on the platform. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The ID of the Program to add the affiliate to. This ID can be found as part of the URL when viewing the program on the platform. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getPrograms"}
      */
     readonly programId?: string;

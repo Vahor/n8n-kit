@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/SseTrigger/SseTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/SseTrigger/SseTrigger.node.ts' node
 
 export const name = "sseTrigger" as const;
 export const description = "Triggers the workflow when Server-Sent Events occur" as const;

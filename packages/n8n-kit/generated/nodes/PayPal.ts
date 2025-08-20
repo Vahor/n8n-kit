@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/PayPal/PayPal.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/PayPal/PayPal.node.ts' node
 
 export const name = "payPal" as const;
 export const description = "Consume PayPal API" as const;

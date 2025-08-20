@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Gitlab/GitlabTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Gitlab/GitlabTrigger.node.ts' node
 
 export const name = "gitlabTrigger" as const;
 export const description = "Starts the workflow when GitLab events occur" as const;
@@ -18,12 +18,12 @@ export interface GitlabTriggerNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /**
-     * Owner of the repsitory
+     * Owner of the repository
      */
     readonly owner: string;
 
     /**
-     * The name of the repsitory
+     * The name of the repository
      */
     readonly repository: string;
 

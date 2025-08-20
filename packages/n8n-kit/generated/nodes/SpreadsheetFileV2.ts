@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/SpreadsheetFile/v2/SpreadsheetFileV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/SpreadsheetFile/v2/SpreadsheetFileV2.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
@@ -17,7 +17,6 @@ export interface SpreadsheetFileV2NodeParameters {
     readonly operation?: "fromFile" | "toFile";
 
     /**
-     * Name of the binary property from which to read the binary data of the spreadsheet file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -31,7 +30,7 @@ export interface SpreadsheetFileV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "compression"?: boolean, "fileName"?: string, "headerRow"?: boolean, "delimiter"?: string, "fromLine"?: number, "maxRowCount"?: number, "enableBOM"?: boolean, "includeEmptyCells"?: boolean, "rawData"?: boolean, "readAsString"?: boolean, "range"?: string, "sheetName"?: string, "sheetName"?: string };
+    readonly options?: { "delimiter"?: string, "encoding"?: "ascii" | "latin1" | "ucs-2" | "ucs2" | "utf-8" | "utf16le" | "utf8", "enableBOM"?: boolean, "relaxQuotes"?: boolean, "headerRow"?: boolean, "includeEmptyCells"?: boolean, "maxRowCount"?: number, "range"?: string, "rawData"?: boolean, "readAsString"?: boolean, "sheetName"?: string, "fromLine"?: number, "compression"?: boolean, "fileName"?: string };
 
 
 }

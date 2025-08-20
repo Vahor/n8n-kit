@@ -41,4 +41,4 @@ export interface IChainable<
 	readonly "~context": C;
 }
 
-export type IContext = Record<string, unknown>;
+export type IContext = any;

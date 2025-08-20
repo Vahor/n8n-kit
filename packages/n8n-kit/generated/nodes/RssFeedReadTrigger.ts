@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/RssFeedRead/RssFeedReadTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/RssFeedRead/RssFeedReadTrigger.node.ts' node
 
 export const name = "rssFeedReadTrigger" as const;
 export const description = "Starts a workflow when an RSS feed is updated" as const;

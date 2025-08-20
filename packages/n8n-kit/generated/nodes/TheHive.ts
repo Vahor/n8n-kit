@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/TheHive/TheHive.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/TheHive/TheHive.node.ts' node
 
 export const name = "theHive" as const;
 export const description = "Consume TheHive API" as const;
@@ -18,7 +18,7 @@ export interface TheHiveNodeParameters {
     readonly resource: "alert" | "case" | "log" | "observable" | "task";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: "create"
      * Type options: {"loadOptionsMethod":"loadAlertOptions"}
      */
@@ -112,7 +112,7 @@ export interface TheHiveNodeParameters {
     readonly artifactUi?: { "artifactValues": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["id"],"loadOptionsMethod":"loadResponders"}
      */
     readonly responder?: string;
@@ -143,7 +143,7 @@ export interface TheHiveNodeParameters {
     readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3", "dataType"?: string[], "range"?: { "dateRange": any }, "ioc"?: boolean, "keyword"?: string, "message"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "data"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"loadObservableTypes"}
      */
     readonly dataType?: string;
@@ -153,7 +153,7 @@ export interface TheHiveNodeParameters {
     readonly data?: string;
 
     /**
-     * Binary Property that represent the attachment file
+     * The name of the input binary field that represent the attachment file
      * Default: "data"
      */
     readonly binaryProperty?: string;
@@ -179,7 +179,7 @@ export interface TheHiveNodeParameters {
     readonly sighted?: boolean;
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsDependsOn":["id","dataType"],"loadOptionsMethod":"loadAnalyzers"}
      */

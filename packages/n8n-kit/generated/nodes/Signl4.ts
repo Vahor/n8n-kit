@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Signl4/Signl4.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Signl4/Signl4.node.ts' node
 
 export const name = "signl4" as const;
 export const description = "Consume SIGNL4 API" as const;

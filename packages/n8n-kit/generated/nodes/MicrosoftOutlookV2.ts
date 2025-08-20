@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/Outlook/v2/MicrosoftOutlookV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Outlook/v2/MicrosoftOutlookV2.node.ts' node
 
 export const name = "microsoftOutlook" as const;
 export const description = "Consume Microsoft Outlook API" as const;
@@ -20,7 +20,7 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "send" | "move" | "reply" | "add" | "download";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "send" | "move" | "reply" | "sendAndWait" | "add" | "download";
 
     /**
      * The name of the calendar to create
@@ -102,7 +102,7 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean, "folderId"?: any, "fields"?: ("childFolderCount" | "displayName" | "isHidden" | "parentFolderId" | "totalItemCount" | "unreadItemCount")[], "includeChildFolders"?: boolean, "getMimeContent"?: { "values": any }, "saveAsDraft"?: boolean, "fileName"?: string };
+    readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean, "folderId"?: any, "fields"?: ("childFolderCount" | "displayName" | "isHidden" | "parentFolderId" | "totalItemCount" | "unreadItemCount")[], "includeChildFolders"?: boolean, "getMimeContent"?: { "values": any }, "saveAsDraft"?: boolean, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "fileName"?: string };
 
     /**
      * Comma-separated list of email addresses of recipients
@@ -110,12 +110,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-20T22:18:45.175+02:00"
+     * Default: "2025-08-21T00:04:26.730+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-20T22:48:45.175+02:00"
+     * Default: "2025-08-21T00:34:26.730+02:00"
      */
     readonly endDateTime?: string;
 
@@ -169,6 +169,33 @@ export interface MicrosoftOutlookV2NodeParameters {
      * Comma-separated list of email addresses of recipients
      */
     readonly toRecipients?: string;
+
+    /**
+     * Default: "approval"
+     */
+    readonly responseType?: "approval" | "freeText" | "customForm";
+
+    /**
+     * Default: "fields"
+     */
+    readonly defineForm?: "fields" | "json";
+
+    /**
+     * Default: "[\n   {\n      \"fieldLabel\":\"Name\",\n      \"placeholder\":\"enter you name\",\n      \"requiredField\":true\n   },\n   {\n      \"fieldLabel\":\"Age\",\n      \"fieldType\":\"number\",\n      \"placeholder\":\"enter your age\"\n   },\n   {\n      \"fieldLabel\":\"Email\",\n      \"fieldType\":\"email\",\n      \"requiredField\":true\n   }\n]"
+     * Type options: {"rows":5}
+     */
+    readonly jsonOutput?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly approvalOptions?: { "values": any };
 
     /**
      * Default: "data"

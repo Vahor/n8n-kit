@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/HaloPSA/HaloPSA.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/HaloPSA/HaloPSA.node.ts' node
 
 export const name = "haloPSA" as const;
 export const description = "Consume HaloPSA API" as const;
@@ -65,7 +65,7 @@ export interface HaloPSANodeParameters {
     readonly updateFields?: { "inactive"?: "false" | "true", "name"?: string, "notes"?: string, "is_vip"?: boolean, "website"?: string, "agent_id"?: string, "details"?: string, "startdate"?: string, "summary"?: string, "targetdate"?: string, "client_id"?: string, "maincontact_name"?: string, "phonenumber"?: string, "emailaddress"?: string, "password"?: string, "site_id"?: string, "surname"?: string };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getHaloPSATicketsTypes"}
      */
     readonly ticketType?: string;

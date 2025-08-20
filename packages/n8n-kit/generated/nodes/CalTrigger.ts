@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Cal/CalTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Cal/CalTrigger.node.ts' node
 
 export const name = "calTrigger" as const;
-export const description = "Handle Cal events via webhooks" as const;
+export const description = "Handle Cal.com events via webhooks" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Cal Trigger"} as const;
+export const defaults = {"name":"Cal.com Trigger"} as const;
 export const credentials = [{"name":"calApi","required":true}] as const
 
 /**
- * Handle Cal events via webhooks
+ * Handle Cal.com events via webhooks
  */
 export interface CalTriggerNodeParameters {
 

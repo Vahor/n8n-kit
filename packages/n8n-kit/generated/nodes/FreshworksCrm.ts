@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/FreshworksCrm/FreshworksCrm.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/FreshworksCrm/FreshworksCrm.node.ts' node
 
 export const name = "freshworksCrm" as const;
 export const description = "Consume the Freshworks CRM API" as const;
@@ -38,7 +38,7 @@ export interface FreshworksCrmNodeParameters {
     readonly accountId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAccountViews"}
      */
     readonly view?: string;
@@ -144,13 +144,13 @@ export interface FreshworksCrmNodeParameters {
     readonly noteId?: string;
 
     /**
-     * ID of a sales activity type for which the sales activity is created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of a sales activity type for which the sales activity is created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSalesActivityTypes"}
      */
     readonly sales_activity_type_id?: string;
 
     /**
-     * ID of the user who owns the sales activity. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the user who owns the sales activity. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
     readonly ownerId?: string;

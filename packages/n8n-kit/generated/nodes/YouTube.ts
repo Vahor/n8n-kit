@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/YouTube/YouTube.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/YouTube/YouTube.node.ts' node
 
 export const name = "youTube" as const;
 export const description = "Consume YouTube API" as const;
@@ -83,13 +83,13 @@ export interface YouTubeNodeParameters {
     readonly playlistItemId?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCountriesCodes"}
      */
     readonly regionCode?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getVideoCategories","loadOptionsDependsOn":["regionCode"]}
      */
     readonly categoryId?: string;

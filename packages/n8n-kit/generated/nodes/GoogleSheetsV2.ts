@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Sheet/v2/GoogleSheetsV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Sheet/v2/GoogleSheetsV2.node.ts' node
 
 export const name = "googleSheets" as const;
 export const description = "Read, update and write data to Google Sheets" as const;
-export const version = 4.1 as const;
+export const version = 4.7 as const;
 export const defaults = {"name":"Google Sheets"} as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}},"testedBy":"googleApiCredentialTest"},{"name":"googleSheetsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
@@ -11,6 +11,11 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  * Read, update and write data to Google Sheets
  */
 export interface GoogleSheetsV2NodeParameters {
+
+    /**
+     * Type options: {"calloutAction":{"label":"Task management agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"task_management_agent_with_google_sheets"}}
+     */
+    readonly preBuiltAgentsCalloutGoogleSheets?: any;
 
     /**
      * Default: "oAuth2"
@@ -63,7 +68,7 @@ export interface GoogleSheetsV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "dataLocationOnSheet"?: { "values": any }, "outputFormatting"?: { "values": any }, "returnAllMatches"?: "returnFirstMatch" | "returnAllMatches", "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
+    readonly options?: { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "useAppend"?: boolean, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "dataLocationOnSheet"?: { "values": any }, "outputFormatting"?: { "values": any }, "returnFirstMatch"?: boolean, "returnAllMatches"?: "returnFirstMatch" | "returnAllMatches", "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
 
     /**
      * What to clear
@@ -125,7 +130,13 @@ export interface GoogleSheetsV2NodeParameters {
     readonly filtersUI?: { "values": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * How to combine the conditions defined in "Filters": AND requires all conditions to be true, OR requires at least one condition to be true
+     * Default: "OR"
+     */
+    readonly combineFilters?: "AND" | "OR";
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["sheetName.value"],"loadOptionsMethod":"getSheetHeaderRowAndSkipEmpty"}
      */
     readonly columnToMatchOn?: string;

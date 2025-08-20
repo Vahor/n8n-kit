@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Redis/Redis.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Redis/Redis.node.ts' node
 
 export const name = "redis" as const;
 export const description = "Get, send and update data in Redis" as const;
@@ -18,15 +18,15 @@ export interface RedisNodeParameters {
     readonly operation?: "delete" | "get" | "incr" | "info" | "keys" | "pop" | "publish" | "push" | "set";
 
     /**
+     * Name of the key to delete from Redis
+     */
+    readonly key?: string;
+
+    /**
      * Name of the property to write received data to. Supports dot-notation. Example: "data.person[0].name".
      * Default: "propertyName"
      */
     readonly propertyName?: string;
-
-    /**
-     * Name of the key to delete from Redis
-     */
-    readonly key?: string;
 
     /**
      * The type of the key to get

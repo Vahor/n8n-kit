@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Grist/Grist.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Grist/Grist.node.ts' node
 
 export const name = "grist" as const;
 export const description = "Consume the Grist API" as const;

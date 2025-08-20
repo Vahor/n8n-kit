@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Slides/GoogleSlides.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Slides/GoogleSlides.node.ts' node
 
 export const name = "googleSlides" as const;
 export const description = "Consume the Google Slides API" as const;
@@ -71,7 +71,6 @@ export interface GoogleSlidesNodeParameters {
     readonly download?: boolean;
 
     /**
-     * Name of the binary property to which to write to
      * Default: "data"
      */
     readonly binaryProperty?: string;

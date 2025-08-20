@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Airtable/v2/AirtableV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Airtable/v2/AirtableV2.node.ts' node
 
 export const name = "airtable" as const;
 export const description = "Read, update, write and delete data from Airtable" as const;
-export const version = 2 as const;
+export const version = 2.1 as const;
 export const defaults = {"name":"Airtable"} as const;
 export const credentials = [{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const
 
@@ -23,7 +23,7 @@ export interface AirtableV2NodeParameters {
     readonly resource?: "base" | "record";
 
     /**
-     * Default: "read"
+     * Default: "get"
      */
     readonly operation?: "create" | "upsert" | "deleteRecord" | "get" | "search" | "update" | "getMany" | "getSchema";
 
@@ -34,6 +34,7 @@ export interface AirtableV2NodeParameters {
 
     /**
      * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["base.value"]}
      */
     readonly table?: any;
 

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Kafka/KafkaTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Kafka/KafkaTrigger.node.ts' node
 
 export const name = "kafkaTrigger" as const;
 export const description = "Consume messages from a Kafka topic" as const;

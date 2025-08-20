@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ErrorTrigger/ErrorTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ErrorTrigger/ErrorTrigger.node.ts' node
 
 export const name = "errorTrigger" as const;
 export const description = "Triggers the workflow when another workflow has an error" as const;

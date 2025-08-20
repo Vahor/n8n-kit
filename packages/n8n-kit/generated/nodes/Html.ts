@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Html/Html.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Html/Html.node.ts' node
 
 export const name = "html" as const;
 export const description = "Work with HTML" as const;
-export const version = 1 as const;
+export const version = 1.2 as const;
 export const defaults = {"name":"HTML"} as const;
 
 /**
@@ -34,7 +34,6 @@ export interface HtmlNodeParameters {
     readonly sourceData?: "binary" | "json";
 
     /**
-     * Name of the binary property in which the HTML to extract the data from can be found
      * Default: "data"
      */
     readonly dataPropertyName?: string;
@@ -48,7 +47,7 @@ export interface HtmlNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "trimValues"?: boolean, "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
+    readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean, "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
 
 
 }

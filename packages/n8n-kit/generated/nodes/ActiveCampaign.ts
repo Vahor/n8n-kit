@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ActiveCampaign/ActiveCampaign.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ActiveCampaign/ActiveCampaign.node.ts' node
 
 export const name = "activeCampaign" as const;
 export const description = "Create and edit data in ActiveCampaign" as const;

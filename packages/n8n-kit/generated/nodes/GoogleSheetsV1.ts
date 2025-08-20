@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Sheet/v1/GoogleSheetsV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Sheet/v1/GoogleSheetsV1.node.ts' node
 
 export const name = "googleSheets" as const;
 export const description = "Read, update and write data to Google Sheets" as const;

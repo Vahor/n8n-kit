@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/Excel/v2/MicrosoftExcelV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Excel/v2/MicrosoftExcelV2.node.ts' node
 
 export const name = "microsoftExcel" as const;
 export const description = "Consume Microsoft Excel API" as const;
-export const version = 2 as const;
+export const version = 2.1 as const;
 export const defaults = {"name":"Microsoft Excel 365"} as const;
 export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] as const
 
@@ -60,7 +60,7 @@ export interface MicrosoftExcelV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "index"?: number, "rawData"?: boolean, "dataProperty": string, "returnAllMatches"?: boolean, "fields"?: string, "updateAll"?: boolean };
+    readonly options?: { "index"?: number, "rawData"?: boolean, "dataProperty": string, "returnAllMatches"?: boolean, "fields"?: string, "updateAll"?: boolean, "appendAfterSelectedRange"?: boolean };
 
     /**
      * Default: "auto"
@@ -144,7 +144,7 @@ export interface MicrosoftExcelV2NodeParameters {
     readonly dataStartRow?: number;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["worksheet.value","workbook.value","range"],"loadOptionsMethod":"getWorksheetColumnRow"}
      */
     readonly columnToMatchOn?: string;

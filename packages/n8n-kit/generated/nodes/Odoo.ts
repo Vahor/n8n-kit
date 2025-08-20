@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Odoo/Odoo.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Odoo/Odoo.node.ts' node
 
 export const name = "odoo" as const;
 export const description = "Consume Odoo API" as const;
@@ -18,7 +18,7 @@ export interface OdooNodeParameters {
     readonly resource?: "contact" | "custom" | "note" | "opportunity";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getModels"}
      */
     readonly customResource?: string;

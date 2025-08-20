@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/BigQuery/v1/GoogleBigQueryV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/BigQuery/v1/GoogleBigQueryV1.node.ts' node
 
 export const name = "googleBigQuery" as const;
 export const description = "Consume Google BigQuery API" as const;
@@ -32,19 +32,19 @@ export interface GoogleBigQueryV1NodeParameters {
     readonly operation?: "create" | "getAll";
 
     /**
-     * ID of the project to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the project to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
     readonly projectId?: string;
 
     /**
-     * ID of the dataset to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the dataset to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDatasets","loadOptionsDependsOn":["projectId"]}
      */
     readonly datasetId?: string;
 
     /**
-     * ID of the table to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the table to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTables","loadOptionsDependsOn":["projectId","datasetId"]}
      */
     readonly tableId?: string;

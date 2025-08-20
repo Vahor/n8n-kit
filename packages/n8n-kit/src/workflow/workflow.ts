@@ -6,7 +6,7 @@ import type { Tag } from "./tag";
 
 interface WorkflowProps {
 	name?: string;
-	definition: Chain;
+	definition: Chain<any, any>;
 	unlinkedNodes?: BaseNode[];
 	tags?: Tag[];
 	active?: boolean;

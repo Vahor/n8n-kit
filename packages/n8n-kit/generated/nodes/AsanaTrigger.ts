@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Asana/AsanaTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Asana/AsanaTrigger.node.ts' node
 
 export const name = "asanaTrigger" as const;
 export const description = "Starts the workflow when Asana events occur." as const;
@@ -23,7 +23,7 @@ export interface AsanaTriggerNodeParameters {
     readonly resource: string;
 
     /**
-     * The workspace ID the resource is registered under. This is only required if you want to allow overriding existing webhooks. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The workspace ID the resource is registered under. This is only required if you want to allow overriding existing webhooks. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
     readonly workspace?: string;

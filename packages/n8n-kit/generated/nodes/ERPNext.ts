@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ERPNext/ERPNext.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ERPNext/ERPNext.node.ts' node
 
 export const name = "erpNext" as const;
 export const description = "Consume ERPNext API" as const;
@@ -23,7 +23,7 @@ export interface ERPNextNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * DocType whose documents to retrieve. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * DocType whose documents to retrieve. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDocTypes"}
      */
     readonly docType?: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Aws/SES/AwsSes.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Aws/SES/AwsSes.node.ts' node
 
 export const name = "awsSes" as const;
 export const description = "Sends data to AWS SES" as const;

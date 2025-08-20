@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Flow/Flow.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Flow/Flow.node.ts' node
 
 export const name = "flow" as const;
 export const description = "Consume Flow API" as const;

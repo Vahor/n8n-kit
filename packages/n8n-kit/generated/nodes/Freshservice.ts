@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Freshservice/Freshservice.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Freshservice/Freshservice.node.ts' node
 
 export const name = "freshservice" as const;
 export const description = "Consume the Freshservice API" as const;
@@ -113,7 +113,7 @@ export interface FreshserviceNodeParameters {
     readonly assetTypeId?: string;
 
     /**
-     * ID of the requester of the change. Choose from the list or specify an ID. You can also specify the ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the requester of the change. Choose from the list or specify an ID. You can also specify the ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getRequesters"}
      */
     readonly requesterId?: string;

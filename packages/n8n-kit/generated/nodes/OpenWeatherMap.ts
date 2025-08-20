@@ -1,10 +1,10 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/OpenWeatherMap/OpenWeatherMap.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/OpenWeatherMap/OpenWeatherMap.node.ts' node
 
 export const name = "openWeatherMap" as const;
 export const description = "Gets current and future weather information" as const;
 export const version = 1 as const;
-export const defaults = {"name":"OpenWeatherMap","color":"#554455"} as const;
+export const defaults = {"name":"OpenWeatherMap"} as const;
 export const credentials = [{"name":"openWeatherMapApi","required":true}] as const
 
 /**

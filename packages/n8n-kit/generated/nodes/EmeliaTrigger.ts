@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Emelia/EmeliaTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Emelia/EmeliaTrigger.node.ts' node
 
 export const name = "emeliaTrigger" as const;
 export const description = "Handle Emelia campaign activity events via webhooks" as const;
@@ -13,7 +13,7 @@ export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emel
 export interface EmeliaTriggerNodeParameters {
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
     readonly campaignId: string;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Cortex/Cortex.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Cortex/Cortex.node.ts' node
 
 export const name = "cortex" as const;
 export const description = "Apply the Cortex analyzer/responder on the given entity" as const;
@@ -25,13 +25,13 @@ export interface CortexNodeParameters {
     readonly operation?: "execute" | "get" | "report";
 
     /**
-     * Choose the analyzer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Choose the analyzer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadActiveAnalyzers"}
      */
     readonly analyzer?: string;
 
     /**
-     * Choose the observable type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Choose the observable type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadObservableOptions","loadOptionsDependsOn":["analyzer"]}
      */
     readonly observableType?: string;
@@ -42,7 +42,6 @@ export interface CortexNodeParameters {
     readonly observableValue?: string;
 
     /**
-     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
@@ -59,13 +58,13 @@ export interface CortexNodeParameters {
     readonly additionalFields?: { "force"?: boolean, "timeout"?: number };
 
     /**
-     * Choose the responder. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Choose the responder. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadActiveResponders"}
      */
     readonly responder?: string;
 
     /**
-     * Choose the Data type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Choose the Data type. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadDataTypeOptions","loadOptionsDependsOn":["responder"]}
      */
     readonly entityType?: string;

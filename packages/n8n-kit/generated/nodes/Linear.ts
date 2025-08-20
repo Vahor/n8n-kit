@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Linear/Linear.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Linear/Linear.node.ts' node
 
 export const name = "linear" as const;
 export const description = "Consume Linear API" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const defaults = {"name":"Linear"} as const;
 export const credentials = [{"name":"linearApi","required":true,"testedBy":"linearApiTest","displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"linearOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
@@ -20,15 +20,28 @@ export interface LinearNodeParameters {
     /**
      * Default: "issue"
      */
-    readonly resource?: "issue";
+    readonly resource?: "comment" | "issue";
 
     /**
-     * Default: "create"
+     * Default: "addComment"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "addComment" | "addLink" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     */
+    readonly issueId?: string;
+
+    /**
+     */
+    readonly comment?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "parentId"?: string, "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string };
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
     readonly teamId?: string;
@@ -38,15 +51,6 @@ export interface LinearNodeParameters {
     readonly title?: string;
 
     /**
-     * Default: {}
-     */
-    readonly additionalFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string };
-
-    /**
-     */
-    readonly issueId?: string;
-
-    /**
      * Whether to return all results or only up to a given limit
      */
     readonly returnAll?: boolean;
@@ -54,7 +58,7 @@ export interface LinearNodeParameters {
     /**
      * Max number of results to return
      * Default: 50
-     * Type options: {"minValue":1,"maxValue":300}
+     * Type options: {"minValue":1}
      */
     readonly limit?: number;
 
@@ -62,6 +66,10 @@ export interface LinearNodeParameters {
      * Default: {}
      */
     readonly updateFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "3" | "0", "stateId"?: string, "teamId"?: string, "title"?: string };
+
+    /**
+     */
+    readonly link?: string;
 
 
 }

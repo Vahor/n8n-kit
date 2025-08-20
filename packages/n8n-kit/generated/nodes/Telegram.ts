@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Telegram/Telegram.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Telegram/Telegram.node.ts' node
 
 export const name = "telegram" as const;
 export const description = "Sends data to Telegram" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const defaults = {"name":"Telegram"} as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const
 
@@ -13,6 +13,11 @@ export const credentials = [{"name":"telegramApi","required":true}] as const
 export interface TelegramNodeParameters {
 
     /**
+     * Type options: {"calloutAction":{"label":"Voice assistant agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"voice_assistant_agent_with_telegram_and_gcal"}}
+     */
+    readonly preBuiltAgentsCalloutTelegram?: any;
+
+    /**
      * Default: "message"
      */
     readonly resource?: "chat" | "callback" | "file" | "message";
@@ -20,10 +25,10 @@ export interface TelegramNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
+    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendAndWait" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
 
     /**
-     * Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot
      */
     readonly chatId?: string;
 
@@ -35,7 +40,7 @@ export interface TelegramNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "disable_notification"?: boolean, "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string, "appendAttribution"?: boolean, "caption"?: string, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
+    readonly additionalFields?: { "disable_notification"?: boolean, "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string, "mimeType"?: string, "appendAttribution"?: boolean, "caption"?: string, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
 
     /**
      * Unique identifier of the target user
@@ -164,6 +169,43 @@ export interface TelegramNodeParameters {
      * Default: {}
      */
     readonly replyKeyboardRemove?: { "remove_keyboard"?: boolean, "selective"?: boolean };
+
+    /**
+     * Type options: {"rows":4}
+     */
+    readonly message?: string;
+
+    /**
+     * Default: "approval"
+     */
+    readonly responseType?: "approval" | "freeText" | "customForm";
+
+    /**
+     * Default: "fields"
+     */
+    readonly defineForm?: "fields" | "json";
+
+    /**
+     * Default: "[\n   {\n      \"fieldLabel\":\"Name\",\n      \"placeholder\":\"enter you name\",\n      \"requiredField\":true\n   },\n   {\n      \"fieldLabel\":\"Age\",\n      \"fieldType\":\"number\",\n      \"placeholder\":\"enter your age\"\n   },\n   {\n      \"fieldLabel\":\"Email\",\n      \"fieldType\":\"email\",\n      \"requiredField\":true\n   }\n]"
+     * Type options: {"rows":5}
+     */
+    readonly jsonOutput?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly approvalOptions?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
 
 
 }

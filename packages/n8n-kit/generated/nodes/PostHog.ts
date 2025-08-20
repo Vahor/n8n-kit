@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/PostHog/PostHog.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/PostHog/PostHog.node.ts' node
 
 export const name = "postHog" as const;
 export const description = "Consume PostHog API" as const;

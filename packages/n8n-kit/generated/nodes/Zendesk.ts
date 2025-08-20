@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Zendesk/Zendesk.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Zendesk/Zendesk.node.ts' node
 
 export const name = "zendesk" as const;
 export const description = "Consume Zendesk API" as const;

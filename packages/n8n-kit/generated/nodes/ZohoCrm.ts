@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Zoho/ZohoCrm.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Zoho/ZohoCrm.node.ts' node
 
 export const name = "zohoCrm" as const;
 export const description = "Consume Zoho CRM API" as const;
@@ -72,7 +72,7 @@ export interface ZohoCrmNodeParameters {
     readonly dealName?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getDealStage"}
      */
@@ -119,7 +119,7 @@ export interface ZohoCrmNodeParameters {
     readonly productId?: string;
 
     /**
-     * ID of the vendor associated with the purchase order. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the vendor associated with the purchase order. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getVendors"}
      */

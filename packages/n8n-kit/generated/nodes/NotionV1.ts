@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Notion/v1/NotionV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Notion/v1/NotionV1.node.ts' node
 
 export const name = "notion" as const;
 export const description = "Consume Notion API" as const;
@@ -53,6 +53,11 @@ export interface NotionV1NodeParameters {
     /**
      */
     readonly fetchNestedBlocks?: boolean;
+
+    /**
+     * Default: true
+     */
+    readonly simplifyOutput?: boolean;
 
     /**
      * The Notion Database to get

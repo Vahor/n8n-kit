@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/SecurityScorecard/SecurityScorecard.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/SecurityScorecard/SecurityScorecard.node.ts' node
 
 export const name = "securityScorecard" as const;
 export const description = "Consume SecurityScorecard API" as const;
@@ -130,7 +130,6 @@ export interface SecurityScorecardNodeParameters {
     readonly url?: string;
 
     /**
-     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

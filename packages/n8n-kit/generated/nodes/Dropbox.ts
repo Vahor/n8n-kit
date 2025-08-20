@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Dropbox/Dropbox.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Dropbox/Dropbox.node.ts' node
 
 export const name = "dropbox" as const;
 export const description = "Access data on Dropbox" as const;
@@ -39,7 +39,6 @@ export interface DropboxNodeParameters {
     readonly toPath?: string;
 
     /**
-     * Name of the binary property to which to write the data of the read file
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

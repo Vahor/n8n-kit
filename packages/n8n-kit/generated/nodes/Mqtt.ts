@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/MQTT/Mqtt.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/MQTT/Mqtt.node.ts' node
 
 export const name = "mqtt" as const;
 export const description = "Push messages to MQTT" as const;
@@ -18,7 +18,7 @@ export interface MqttNodeParameters {
     readonly topic: string;
 
     /**
-     * Whether to send the the data the node receives as JSON
+     * Whether to send the data the node receives as JSON
      * Default: true
      */
     readonly sendInputData?: boolean;

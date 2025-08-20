@@ -1,6 +1,6 @@
 import slugify from "slugify";
 
-const internalIdentifiers = ["json"];
+const internalIdentifiers = ["json", "~ids"];
 
 export const slugifyIdentifier = (str: string) =>
 	slugify(str, { lower: false, trim: true });

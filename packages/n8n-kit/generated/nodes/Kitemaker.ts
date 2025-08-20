@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Kitemaker/Kitemaker.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Kitemaker/Kitemaker.node.ts' node
 
 export const name = "kitemaker" as const;
 export const description = "Consume the Kitemaker GraphQL API" as const;
@@ -40,14 +40,14 @@ export interface KitemakerNodeParameters {
     readonly title?: string;
 
     /**
-     * ID of the space to retrieve the work items from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the space to retrieve the work items from. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
     readonly spaceId?: string;
 
     /**
-     * ID of the status to set on the item to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the status to set on the item to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsDependsOn":["spaceId"],"loadOptionsMethod":"getStatuses"}
      */

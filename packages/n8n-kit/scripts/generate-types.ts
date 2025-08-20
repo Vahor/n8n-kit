@@ -4,7 +4,8 @@ import type { INodeTypeDescription } from "n8n-workflow";
 import { globSync } from "tinyglobby";
 
 const allNodes = globSync(
-	"../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
+	// "../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
+	"../vendor/n8n/packages/nodes-base/nodes/**/**/*.node.ts",
 	{
 		cwd: path.resolve(__dirname),
 	},
@@ -186,27 +187,32 @@ const generateTypescriptNodeOutput = async (
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
-	const nodeName = node.split("/").pop()?.split(".")[0]!;
+	try {
+		const nodeName = node.split("/").pop()?.split(".")[0]!;
+		console.log(node);
 
-	delete require.cache[node];
-	const file = await import(node);
-	const firstExport = Object.values(file)[0];
-	// @ts-expect-error: it works
-	const instance = new firstExport();
+		delete require.cache[node];
+		const file = await import(node);
+		const firstExport = Object.values(file)[0];
+		// @ts-expect-error: it works
+		const instance = new firstExport();
 
-	if (instance.nodeVersions != null) {
-		console.log(nodeName);
-		continue;
+		if (instance.nodeVersions != null) {
+			console.error(nodeName);
+			continue;
+		}
+
+		const nodePathWithoutStartingSlash = node.split("vendor")[1];
+
+		const description = instance.description;
+		description.__filepath = nodePathWithoutStartingSlash;
+		description.__nodename = nodeName;
+
+		await generateTypescriptNodeOutput(description, `${nodeName}.ts`);
+		current++;
+	} catch (e) {
+		console.error(e);
 	}
-
-	const nodePathWithoutStartingSlash = node.split("node_modules")[1];
-
-	const description = instance.description;
-	description.__filepath = nodePathWithoutStartingSlash;
-	description.__nodename = nodeName;
-
-	await generateTypescriptNodeOutput(description, `${nodeName}.ts`);
-	current++;
 	process.stdout.write(`\r${current}/${count}`);
 }
 console.log();

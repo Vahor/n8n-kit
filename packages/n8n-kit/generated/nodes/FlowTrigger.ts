@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Flow/FlowTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Flow/FlowTrigger.node.ts' node
 
 export const name = "flowTrigger" as const;
 export const description = "Handle Flow events via webhooks" as const;

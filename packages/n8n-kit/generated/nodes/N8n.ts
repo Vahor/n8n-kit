@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/N8n/N8n.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/N8n/N8n.node.ts' node
 
 export const name = "n8n" as const;
 export const description = "Handle events and perform actions on your n8n instance" as const;
@@ -66,7 +66,7 @@ export interface N8nNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "workflowId"?: any, "status"?: "error" | "success" | "waiting", "activeWorkflows"?: boolean, "tags"?: string };
+    readonly filters?: { "workflowId"?: any, "status"?: "error" | "success" | "waiting", "activeWorkflows"?: boolean, "tags"?: string, "name"?: string, "projectId"?: string, "excludePinnedData"?: boolean };
 
     /**
      * Default: {}

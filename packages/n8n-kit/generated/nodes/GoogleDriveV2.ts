@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Drive/v2/GoogleDriveV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Drive/v2/GoogleDriveV2.node.ts' node
 
 export const name = "googleDrive" as const;
 export const description = "Access data on Google Drive" as const;
@@ -11,6 +11,11 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  * Access data on Google Drive
  */
 export interface GoogleDriveV2NodeParameters {
+
+    /**
+     * Type options: {"calloutAction":{"label":"Knowledge store agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"knowledge_store_agent_with_google_drive"}}
+     */
+    readonly preBuiltAgentsCalloutGoogleDrive?: any;
 
     /**
      * Default: "oAuth2"

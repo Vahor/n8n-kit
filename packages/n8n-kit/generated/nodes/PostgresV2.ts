@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Postgres/v2/PostgresV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Postgres/v2/PostgresV2.node.ts' node
 
 export const name = "postgres" as const;
 export const description = "Get, add and update data in Postgres" as const;
-export const version = 2.3 as const;
+export const version = 2.6 as const;
 export const defaults = {"name":"Postgres"} as const;
 export const credentials = [{"name":"postgres","required":true,"testedBy":"postgresConnectionTest"}] as const
 
@@ -60,11 +60,11 @@ export interface PostgresV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "cascade"?: boolean, "connectionTimeout"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean };
+    readonly options?: { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean };
 
     /**
      * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
-     * Type options: {"editor":"sqlEditor","rows":5,"sqlDialect":"PostgreSQL"}
+     * Type options: {"editor":"sqlEditor","sqlDialect":"PostgreSQL"}
      */
     readonly query?: string;
 
@@ -109,7 +109,7 @@ export interface PostgresV2NodeParameters {
     readonly sort?: { "values": any };
 
     /**
-     * The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/" target="_blank">expression</a>.
+     * The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>.
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["schema.value","table.value"]}
      */
     readonly columnToMatchOn?: string;

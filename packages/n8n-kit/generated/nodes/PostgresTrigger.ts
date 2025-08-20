@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Postgres/PostgresTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Postgres/PostgresTrigger.node.ts' node
 
 export const name = "postgresTrigger" as const;
 export const description = "Listens to Postgres messages" as const;
@@ -41,6 +41,11 @@ export interface PostgresTriggerNodeParameters {
      * Default: {}
      */
     readonly additionalFields?: { "channelName"?: string, "functionName"?: string, "replaceIfExists"?: boolean, "triggerName"?: string };
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "connectionTimeout"?: number, "delayClosingIdleConnection"?: number };
 
 
 }

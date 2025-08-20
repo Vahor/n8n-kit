@@ -1,13 +1,13 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Set/v2/SetV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Set/v2/SetV2.node.ts' node
 
 export const name = "set" as const;
-export const description = "Change the structure of your items" as const;
-export const version = 3.2 as const;
-export const defaults = {"name":"Edit Fields","color":"#0000FF"} as const;
+export const description = "Modify, add, or remove item fields" as const;
+export const version = 3.4 as const;
+export const defaults = {"name":"Edit Fields"} as const;
 
 /**
- * Change the structure of your items
+ * Modify, add, or remove item fields
  */
 export interface SetV2NodeParameters {
 
@@ -31,8 +31,8 @@ export interface SetV2NodeParameters {
     readonly duplicateWarning?: string;
 
     /**
-     * Default: "{\n  \"my_field_1\": \"value\",\n  \"my_field_2\": 1\n}"
-     * Type options: {"editor":"json","editorLanguage":"json","rows":5}
+     * Default: "{\n  \"my_field_1\": \"value\",\n  \"my_field_2\": 1\n}\n"
+     * Type options: {"rows":5}
      */
     readonly jsonOutput?: string;
 
@@ -44,10 +44,20 @@ export interface SetV2NodeParameters {
     readonly fields?: { "values": any };
 
     /**
+     * Default: {}
+     */
+    readonly assignments?: any;
+
+    /**
      * How to select the fields you want to include in your output items
      * Default: "all"
      */
-    readonly include?: "all" | "none" | "selected" | "except";
+    readonly include?: "all" | "none" | "selected" | "except" | "all" | "selected" | "except";
+
+    /**
+     * Whether to pass to the output all the input fields (along with the fields set in 'Fields to Set')
+     */
+    readonly includeOtherFields?: boolean;
 
     /**
      * Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel.
@@ -62,7 +72,7 @@ export interface SetV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "includeBinary"?: boolean, "ignoreConversionErrors"?: boolean, "dotNotation"?: boolean };
+    readonly options?: { "includeBinary"?: boolean, "stripBinary"?: boolean, "ignoreConversionErrors"?: boolean, "dotNotation"?: boolean };
 
 
 }

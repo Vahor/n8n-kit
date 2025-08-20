@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Crypto/Crypto.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Crypto/Crypto.node.ts' node
 
 export const name = "crypto" as const;
 export const description = "Provide cryptographic utilities" as const;
@@ -55,7 +55,7 @@ export interface CryptoNodeParameters {
     readonly secret?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      */
     readonly algorithm?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "sha512-224" | "sha512-256" | "ripemd160";
 

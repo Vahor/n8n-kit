@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Storyblok/Storyblok.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Storyblok/Storyblok.node.ts' node
 
 export const name = "storyblok" as const;
 export const description = "Consume Storyblok API" as const;
@@ -51,7 +51,7 @@ export interface StoryblokNodeParameters {
     readonly filters?: { "starts_with"?: string };
 
     /**
-     * The name of the space. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The name of the space. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
     readonly space?: string;

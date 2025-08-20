@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Marketstack/Marketstack.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Marketstack/Marketstack.node.ts' node
 
 export const name = "marketstack" as const;
 export const description = "Consume Marketstack API" as const;

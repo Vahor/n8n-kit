@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/BambooHr/BambooHr.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/BambooHr/BambooHr.node.ts' node
 
 export const name = "bambooHr" as const;
 export const description = "Consume BambooHR API" as const;
@@ -46,13 +46,13 @@ export interface BambooHrNodeParameters {
     readonly dateOfBirth?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getDepartments"}
      */
     readonly department?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getDivisions"}
      */
     readonly division?: string;
@@ -74,7 +74,7 @@ export interface BambooHrNodeParameters {
     readonly hireDate?: string;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getEmployeeLocations"}
      */
     readonly location?: string;
@@ -122,7 +122,7 @@ export interface BambooHrNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: string[], "share"?: boolean, "fd"?: boolean };
+    readonly options?: { "fields"?: string[], "share"?: boolean, "fd"?: boolean, "onlyCurrent"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Switch/V2/SwitchV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Switch/V2/SwitchV2.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;
@@ -41,12 +41,12 @@ export interface SwitchV2NodeParameters {
 
     /**
      * Default: {}
-     * Type options: {"multipleValues":true}
+     * Type options: {"multipleValues":true,"sortable":true}
      */
     readonly rules?: { "rules": any };
 
     /**
-     * The output to which to route all items which do not match any of the rules. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The output to which to route all items which do not match any of the rules. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: -1
      * Type options: {"loadOptionsDependsOn":["rules.rules"],"loadOptionsMethod":"getFallbackOutputOptions"}
      */

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Shopify/Shopify.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Shopify/Shopify.node.ts' node
 
 export const name = "shopify" as const;
 export const description = "Consume Shopify API" as const;
@@ -11,6 +11,10 @@ export const credentials = [{"name":"shopifyApi","required":true,"displayOptions
  * Consume Shopify API
  */
 export interface ShopifyNodeParameters {
+
+    /**
+     */
+    readonly apiVersion?: string;
 
     /**
      * Default: "apiKey"

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/HtmlExtract/HtmlExtract.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/HtmlExtract/HtmlExtract.node.ts' node
 
 export const name = "htmlExtract" as const;
 export const description = "Extracts data from HTML" as const;
@@ -18,7 +18,6 @@ export interface HtmlExtractNodeParameters {
     readonly sourceData?: "binary" | "json";
 
     /**
-     * Name of the binary property in which the HTML to extract the data from can be found
      * Default: "data"
      */
     readonly dataPropertyName?: string;

@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Notion/v2/NotionV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Notion/v2/NotionV2.node.ts' node
 
 export const name = "notion" as const;
 export const description = "Consume Notion API" as const;
-export const version = 2 as const;
+export const version = 2.2 as const;
 export const defaults = {"name":"Notion"} as const;
 export const credentials = [{"name":"notionApi","required":true}] as const
 
@@ -15,6 +15,10 @@ export interface NotionV2NodeParameters {
     /**
      */
     readonly notionNotice?: string;
+
+    /**
+     */
+    readonly Credentials?: any;
 
     /**
      * Default: "page"
@@ -53,6 +57,11 @@ export interface NotionV2NodeParameters {
     /**
      */
     readonly fetchNestedBlocks?: boolean;
+
+    /**
+     * Default: true
+     */
+    readonly simplifyOutput?: boolean;
 
     /**
      * The Notion Database to get

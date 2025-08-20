@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Netlify/Netlify.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Netlify/Netlify.node.ts' node
 
 export const name = "netlify" as const;
 export const description = "Consume Netlify API" as const;
@@ -23,7 +23,7 @@ export interface NetlifyNodeParameters {
     readonly operation?: "cancel" | "create" | "get" | "getAll" | "delete";
 
     /**
-     * Enter the Site ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Enter the Site ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSites"}
      */
     readonly siteId?: string;

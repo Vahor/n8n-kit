@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Interval/Interval.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Interval/Interval.node.ts' node
 
 export const name = "interval" as const;
 export const description = "Triggers the workflow in a given interval" as const;

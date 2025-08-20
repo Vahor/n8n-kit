@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Microsoft/GraphSecurity/MicrosoftGraphSecurity.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/GraphSecurity/MicrosoftGraphSecurity.node.ts' node
 
 export const name = "microsoftGraphSecurity" as const;
 export const description = "Consume the Microsoft Graph Security API" as const;

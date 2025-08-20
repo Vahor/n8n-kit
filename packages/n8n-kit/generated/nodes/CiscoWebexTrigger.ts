@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Cisco/Webex/CiscoWebexTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Cisco/Webex/CiscoWebexTrigger.node.ts' node
 
 export const name = "ciscoWebexTrigger" as const;
 export const description = "Starts the workflow when Cisco Webex events occur." as const;

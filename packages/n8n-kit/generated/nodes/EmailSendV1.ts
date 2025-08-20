@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/EmailSend/v1/EmailSendV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/EmailSend/v1/EmailSendV1.node.ts' node
 
 export const name = "emailSend" as const;
 export const description = "Sends an Email" as const;

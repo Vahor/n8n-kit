@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Mailgun/Mailgun.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Mailgun/Mailgun.node.ts' node
 
 export const name = "mailgun" as const;
 export const description = "Sends an email via Mailgun" as const;

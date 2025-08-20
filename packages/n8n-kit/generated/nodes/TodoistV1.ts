@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Todoist/v1/TodoistV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Todoist/v1/TodoistV1.node.ts' node
 
 export const name = "todoist" as const;
 export const description = "Consume Todoist API" as const;
@@ -38,13 +38,13 @@ export interface TodoistV1NodeParameters {
     readonly project?: any;
 
     /**
-     * Section to which you want move the task. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Section to which you want move the task. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSections","loadOptionsDependsOn":["project"]}
      */
     readonly section?: string;
 
     /**
-     * Optional labels that will be assigned to a created task. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Optional labels that will be assigned to a created task. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */

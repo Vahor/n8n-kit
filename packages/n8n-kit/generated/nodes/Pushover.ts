@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Pushover/Pushover.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Pushover/Pushover.node.ts' node
 
 export const name = "pushover" as const;
 export const description = "Consume Pushover API" as const;

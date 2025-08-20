@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Aws/S3/V1/AwsS3V1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Aws/S3/V1/AwsS3V1.node.ts' node
 
 export const name = "awsS3" as const;
 export const description = "Sends data to AWS S3" as const;
@@ -62,7 +62,7 @@ export interface AwsS3V1NodeParameters {
     readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string, "versionId"?: string };
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a slash (/)
+     * The name of the source bucket should start with (/) and key name of the source object, separated by a slash (/)
      */
     readonly sourcePath?: string;
 
@@ -87,7 +87,6 @@ export interface AwsS3V1NodeParameters {
     readonly fileContent?: string;
 
     /**
-     * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
     readonly binaryPropertyName?: string;

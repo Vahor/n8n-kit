@@ -1,11 +1,11 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/EmailSend/v2/EmailSendV2.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/EmailSend/v2/EmailSendV2.node.ts' node
 
 export const name = "emailSend" as const;
 export const description = "Sends an email using SMTP protocol" as const;
 export const version = 2.1 as const;
 export const defaults = {"name":"Send Email","color":"#00bb88"} as const;
-export const credentials = [{"name":"smtp","required":true}] as const
+export const credentials = [{"name":"smtp","required":true,"testedBy":"smtpConnectionTest"}] as const
 
 /**
  * Sends an email using SMTP protocol
@@ -20,7 +20,7 @@ export interface EmailSendV2NodeParameters {
     /**
      * Default: "send"
      */
-    readonly operation?: any;
+    readonly operation?: "send" | "sendAndWait";
 
     /**
      * Email address of the sender. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
@@ -57,7 +57,39 @@ export interface EmailSendV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "appendAttribution"?: boolean, "attachments"?: string, "ccEmail"?: string, "bccEmail"?: string, "allowUnauthorizedCerts"?: boolean, "replyTo"?: string };
+    readonly options?: { "appendAttribution"?: boolean, "attachments"?: string, "ccEmail"?: string, "bccEmail"?: string, "allowUnauthorizedCerts"?: boolean, "replyTo"?: string, "limitWaitTime"?: { "values": any }, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
+
+    /**
+     * Type options: {"rows":4}
+     */
+    readonly message?: string;
+
+    /**
+     * Default: "approval"
+     */
+    readonly responseType?: "approval" | "freeText" | "customForm";
+
+    /**
+     * Default: "fields"
+     */
+    readonly defineForm?: "fields" | "json";
+
+    /**
+     * Default: "[\n   {\n      \"fieldLabel\":\"Name\",\n      \"placeholder\":\"enter you name\",\n      \"requiredField\":true\n   },\n   {\n      \"fieldLabel\":\"Age\",\n      \"fieldType\":\"number\",\n      \"placeholder\":\"enter your age\"\n   },\n   {\n      \"fieldLabel\":\"Email\",\n      \"fieldType\":\"email\",\n      \"requiredField\":true\n   }\n]"
+     * Type options: {"rows":5}
+     */
+    readonly jsonOutput?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly formFields?: { "values": any };
+
+    /**
+     * Default: {}
+     */
+    readonly approvalOptions?: { "values": any };
 
 
 }

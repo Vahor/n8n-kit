@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/DateTime/V1/DateTimeV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/DateTime/V1/DateTimeV1.node.ts' node
 
 export const name = "dateTime" as const;
 export const description = "Allows you to manipulate date and time values" as const;

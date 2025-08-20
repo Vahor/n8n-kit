@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Google/Sheet/GoogleSheetsTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Google/Sheet/GoogleSheetsTrigger.node.ts' node
 
 export const name = "googleSheetsTrigger" as const;
 export const description = "Starts the workflow when Google Sheets events occur" as const;
@@ -24,6 +24,7 @@ export interface GoogleSheetsTriggerNodeParameters {
 
     /**
      * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["documentId.value"]}
      */
     readonly sheetName: any;
 

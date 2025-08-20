@@ -1,10 +1,10 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/ExecuteWorkflowTrigger/ExecuteWorkflowTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflowTrigger/ExecuteWorkflowTrigger.node.ts' node
 
 export const name = "executeWorkflowTrigger" as const;
 export const description = "Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows." as const;
-export const version = 1 as const;
-export const defaults = {"name":"Execute Workflow Trigger","color":"#ff6d5a"} as const;
+export const version = 1.1 as const;
+export const defaults = {"name":"When Executed by Another Workflow","color":"#ff6d5a"} as const;
 
 /**
  * Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.
@@ -12,13 +12,38 @@ export const defaults = {"name":"Execute Workflow Trigger","color":"#ff6d5a"} as
 export interface ExecuteWorkflowTriggerNodeParameters {
 
     /**
+     * Default: "worklfow_call"
+     */
+    readonly events?: any;
+
+    /**
      */
     readonly notice?: string;
 
     /**
-     * Default: "worklfow_call"
      */
-    readonly events?: any;
+    readonly outdatedVersionWarning?: string;
+
+    /**
+     * Default: "workflowInputs"
+     */
+    readonly inputSource?: "workflowInputs" | "jsonExample" | "passthrough";
+
+    /**
+     */
+    readonly jsonExample_notice?: string;
+
+    /**
+     * Default: "{\n  \"aField\": \"a string\",\n  \"aNumber\": 123,\n  \"thisFieldAcceptsAnyType\": null,\n  \"anArray\": []\n}"
+     */
+    readonly jsonExample?: string;
+
+    /**
+     * Define expected input fields. If no inputs are provided, all data from the calling workflow will be passed through.
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true,"minRequiredFields":1}
+     */
+    readonly workflowInputs?: { "values": any };
 
 
 }

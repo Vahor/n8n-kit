@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Lemlist/LemlistTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Lemlist/LemlistTrigger.node.ts' node
 
 export const name = "lemlistTrigger" as const;
 export const description = "Handle Lemlist events via webhooks" as const;
@@ -14,7 +14,7 @@ export interface LemlistTriggerNodeParameters {
 
     /**
      */
-    readonly event: "*" | "emailsBounced" | "emailsClicked" | "emailsFailed" | "emailsInterested" | "emailsNotInterested" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed";
+    readonly event: "*" | "contacted" | "hooked" | "attracted" | "warmed" | "interested" | "skipped" | "notInterested" | "emailsSent" | "emailsOpened" | "emailsClicked" | "emailsReplied" | "emailsBounced" | "emailsSendFailed" | "emailsFailed" | "emailsUnsubscribed" | "emailsInterested" | "emailsNotInterested" | "opportunitiesDone" | "aircallCreated" | "aircallEnded" | "aircallDone" | "aircallInterested" | "aircallNotInterested" | "apiDone" | "apiInterested" | "apiNotInterested" | "apiFailed" | "linkedinVisitDone" | "linkedinVisitFailed" | "linkedinInviteDone" | "linkedinInviteFailed" | "linkedinInviteAccepted" | "linkedinReplied" | "linkedinSent" | "linkedinVoiceNoteDone" | "linkedinVoiceNoteFailed" | "linkedinInterested" | "linkedinNotInterested" | "linkedinSendFailed" | "manualInterested" | "manualNotInterested" | "paused" | "resumed" | "customDomainErrors" | "connectionIssue" | "sendLimitReached" | "lemwarmPaused";
 
     /**
      * Default: {}

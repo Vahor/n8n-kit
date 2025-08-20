@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Freshdesk/Freshdesk.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Freshdesk/Freshdesk.node.ts' node
 
 export const name = "freshdesk" as const;
 export const description = "Consume Freshdesk API" as const;

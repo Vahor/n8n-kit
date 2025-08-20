@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Switch/V1/SwitchV1.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Switch/V1/SwitchV1.node.ts' node
 
 export const name = "undefined" as const;
 export const description = "undefined" as const;

@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/KoBoToolbox/KoBoToolbox.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/KoBoToolbox/KoBoToolbox.node.ts' node
 
 export const name = "koBoToolbox" as const;
 export const description = "Work with KoBoToolbox forms and submissions" as const;
@@ -23,7 +23,7 @@ export interface KoBoToolboxNodeParameters {
     readonly operation?: "get" | "getAll" | "redeploy" | "getLogs" | "retryAll" | "retryOne" | "delete" | "getValidation" | "setValidation" | "create";
 
     /**
-     * Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadForms"}
      */
     readonly formId?: string;

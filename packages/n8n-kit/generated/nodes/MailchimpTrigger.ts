@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Mailchimp/MailchimpTrigger.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Mailchimp/MailchimpTrigger.node.ts' node
 
 export const name = "mailchimpTrigger" as const;
 export const description = "Handle Mailchimp events via webhooks" as const;
@@ -18,7 +18,7 @@ export interface MailchimpTriggerNodeParameters {
     readonly authentication?: "apiKey" | "oAuth2";
 
     /**
-     * The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * The list that is gonna fire the event. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
     readonly list: string;

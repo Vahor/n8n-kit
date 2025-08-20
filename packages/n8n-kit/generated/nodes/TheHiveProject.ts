@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/TheHiveProject/TheHiveProject.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/TheHiveProject/TheHiveProject.node.ts' node
 
 export const name = "theHiveProject" as const;
 export const description = "Consume TheHive 5 API" as const;
@@ -45,7 +45,7 @@ export interface TheHiveProjectNodeParameters {
     readonly id?: any;
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["id","id.value"],"loadOptionsMethod":"loadResponders"}
      */
     readonly responder?: string;
@@ -80,7 +80,7 @@ export interface TheHiveProjectNodeParameters {
     readonly sort?: { "fields": any };
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"loadAlertStatus"}
      */
     readonly status?: string;
@@ -110,7 +110,7 @@ export interface TheHiveProjectNodeParameters {
     readonly caseFields?: any;
 
     /**
-     * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
+     * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadCaseAttachments"}
      */
     readonly attachmentId?: string;
@@ -170,7 +170,7 @@ export interface TheHiveProjectNodeParameters {
     readonly createIn?: "case" | "alert";
 
     /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: "file"
      * Type options: {"loadOptionsMethod":"loadObservableTypes"}
      */
@@ -192,7 +192,7 @@ export interface TheHiveProjectNodeParameters {
     readonly observableId?: any;
 
     /**
-     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>
+     * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsDependsOn":["observableId.value","dataType"],"loadOptionsMethod":"loadAnalyzers"}
      */
@@ -237,7 +237,7 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Search for objects with filtering and sorting capabilities
      * Default: "=[\n  {\n    \"_name\": \"listOrganisation\"\n  }\n]"
-     * Type options: {"editor":"json","rows":10}
+     * Type options: {"rows":10}
      */
     readonly queryJson?: string;
 

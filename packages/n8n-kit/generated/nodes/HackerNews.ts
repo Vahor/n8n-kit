@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/HackerNews/HackerNews.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/HackerNews/HackerNews.node.ts' node
 
 export const name = "hackerNews" as const;
 export const description = "Consume Hacker News API" as const;

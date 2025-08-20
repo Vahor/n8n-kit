@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/Strava/Strava.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/Strava/Strava.node.ts' node
 
 export const name = "strava" as const;
 export const description = "Consume Strava API" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const defaults = {"name":"Strava"} as const;
 export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const
 
@@ -33,6 +33,12 @@ export interface StravaNodeParameters {
     readonly type?: string;
 
     /**
+     * Type of sport
+     * Default: "Run"
+     */
+    readonly sport_type?: "AlpineSki" | "BackcountrySki" | "Badminton" | "Canoeing" | "Crossfit" | "EBikeRide" | "Elliptical" | "EMountainBikeRide" | "Golf" | "GravelRide" | "Handcycle" | "HighIntensityIntervalTraining" | "Hike" | "IceSkate" | "InlineSkate" | "Kayaking" | "Kitesurf" | "MountainBikeRide" | "NordicSki" | "Pickleball" | "Pilates" | "Racquetball" | "Ride" | "RockClimbing" | "RollerSki" | "Rowing" | "Run" | "Sail" | "Skateboard" | "Snowboard" | "Snowshoe" | "Soccer" | "Squash" | "StairStepper" | "StandUpPaddling" | "Surfing" | "Swim" | "TableTennis" | "Tennis" | "TrailRun" | "Velomobile" | "VirtualRide" | "VirtualRow" | "VirtualRun" | "Walk" | "WeightTraining" | "Wheelchair" | "Windsurf" | "Workout" | "Yoga";
+
+    /**
      * ISO 8601 formatted date time
      */
     readonly startDate?: string;
@@ -56,7 +62,7 @@ export interface StravaNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "commute"?: boolean, "description"?: string, "gear_id"?: string, "hide_from_home"?: boolean, "name"?: string, "type"?: string, "trainer"?: boolean };
+    readonly updateFields?: { "commute"?: boolean, "description"?: string, "gear_id"?: string, "hide_from_home"?: boolean, "name"?: string, "type"?: string, "sport_type"?: "AlpineSki" | "BackcountrySki" | "Badminton" | "Canoeing" | "Crossfit" | "EBikeRide" | "Elliptical" | "EMountainBikeRide" | "Golf" | "GravelRide" | "Handcycle" | "HighIntensityIntervalTraining" | "Hike" | "IceSkate" | "InlineSkate" | "Kayaking" | "Kitesurf" | "MountainBikeRide" | "NordicSki" | "Pickleball" | "Pilates" | "Racquetball" | "Ride" | "RockClimbing" | "RollerSki" | "Rowing" | "Run" | "Sail" | "Skateboard" | "Snowboard" | "Snowshoe" | "Soccer" | "Squash" | "StairStepper" | "StandUpPaddling" | "Surfing" | "Swim" | "TableTennis" | "Tennis" | "TrailRun" | "Velomobile" | "VirtualRide" | "VirtualRow" | "VirtualRun" | "Walk" | "WeightTraining" | "Wheelchair" | "Windsurf" | "Workout" | "Yoga", "trainer"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit

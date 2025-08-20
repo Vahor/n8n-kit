@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n-nodes-base/dist/nodes/WooCommerce/WooCommerce.node.js' node
+// Generated from '/n8n/packages/nodes-base/nodes/WooCommerce/WooCommerce.node.ts' node
 
 export const name = "wooCommerce" as const;
 export const description = "Consume WooCommerce API" as const;
