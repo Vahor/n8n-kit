@@ -37,7 +37,7 @@ export interface EmeliaNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: any, "lastName"?: string, "lastOpen"?: any, "lastReplied"?: any, "mailsSent"?: number, "phoneNumber"?: string };
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
 
     /**
      * The name of the campaign to create

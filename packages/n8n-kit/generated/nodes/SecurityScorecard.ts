@@ -58,7 +58,7 @@ export interface SecurityScorecardNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "date_from"?: any, "date_to"?: any, "timing"?: "daily" | "weekly" | "monthly", "from"?: any, "to"?: any, "format"?: "csv" | "pdf", "countries"?: string, "ips"?: string, "subdomains"?: string };
+    readonly options?: { "date_from"?: string, "date_to"?: string, "timing"?: "daily" | "weekly" | "monthly", "from"?: string, "to"?: string, "format"?: "csv" | "pdf", "countries"?: string, "ips"?: string, "subdomains"?: string };
 
     /**
      * Default: "food"
@@ -122,7 +122,7 @@ export interface SecurityScorecardNodeParameters {
 
     /**
      */
-    readonly date?: any;
+    readonly date?: string;
 
     /**
      * URL to a generated report

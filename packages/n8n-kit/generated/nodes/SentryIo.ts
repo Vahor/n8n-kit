@@ -75,7 +75,7 @@ export interface SentryIoNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "query"?: string, "statsPeriod"?: "14d" | "24h", "shortIdLookUp"?: boolean, "assignedTo"?: string, "hasSeen"?: boolean, "isBookmarked"?: boolean, "isPublic"?: boolean, "isSubscribed"?: boolean, "status"?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved", "member"?: boolean, "owner"?: boolean, "slug"?: string, "dateReleased"?: any, "commits"?: { "commitProperties": any }, "refs"?: { "refProperties": any } };
+    readonly additionalFields?: { "query"?: string, "statsPeriod"?: "14d" | "24h", "shortIdLookUp"?: boolean, "assignedTo"?: string, "hasSeen"?: boolean, "isBookmarked"?: boolean, "isPublic"?: boolean, "isSubscribed"?: boolean, "status"?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved", "member"?: boolean, "owner"?: boolean, "slug"?: string, "dateReleased"?: string, "commits"?: { "commitProperties": any }, "refs"?: { "refProperties": any } };
 
     /**
      * The slug of the organization the team should be created for
@@ -96,7 +96,7 @@ export interface SentryIoNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "slug"?: string, "isBookmarked"?: boolean, "digestsMaxDelay"?: number, "digestsMinDelay"?: number, "team"?: string, "platform"?: string, "commits"?: { "commitProperties": any }, "dateReleased"?: any, "ref"?: string, "refs"?: { "refProperties": any }, "url"?: string };
+    readonly updateFields?: { "name"?: string, "slug"?: string, "isBookmarked"?: boolean, "digestsMaxDelay"?: number, "digestsMinDelay"?: number, "team"?: string, "platform"?: string, "commits"?: { "commitProperties": any }, "dateReleased"?: string, "ref"?: string, "refs"?: { "refProperties": any }, "url"?: string };
 
     /**
      * The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

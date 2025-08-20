@@ -50,7 +50,7 @@ export interface MailchimpNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "emailType"?: "html" | "text", "language"?: string, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: any, "tags"?: string, "vip"?: boolean, "timestampOpt"?: any, "fields"?: string, "excludeFields"?: string, "beforeLastChanged"?: any, "beforeTimestampOpt"?: any, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "sinceLastChanged"?: any, "isSyncing"?: boolean, "beforeCreateTime"?: any, "beforeSendTime"?: any, "listId"?: string, "sinceCreateTime"?: any, "sinceSendTime"?: any, "sortDirection"?: "ASC" | "DESC", "sortField"?: "create_time" | "send_time" };
+    readonly options?: { "emailType"?: "html" | "text", "language"?: string, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "tags"?: string, "vip"?: boolean, "timestampOpt"?: string, "fields"?: string, "excludeFields"?: string, "beforeLastChanged"?: string, "beforeTimestampOpt"?: string, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "sinceLastChanged"?: string, "isSyncing"?: boolean, "beforeCreateTime"?: string, "beforeSendTime"?: string, "listId"?: string, "sinceCreateTime"?: string, "sinceSendTime"?: string, "sortDirection"?: "ASC" | "DESC", "sortField"?: "create_time" | "send_time" };
 
     /**
      * Subscriber location information.n
@@ -68,12 +68,12 @@ export interface MailchimpNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly mergeFieldsJson?: any;
+    readonly mergeFieldsJson?: string;
 
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly locationJson?: any;
+    readonly locationJson?: string;
 
     /**
      * Default: {}
@@ -84,7 +84,7 @@ export interface MailchimpNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly groupJson?: any;
+    readonly groupJson?: string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -101,7 +101,7 @@ export interface MailchimpNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "emailType"?: "html" | "text", "groupsUi"?: { "groupsValues": any }, "language"?: string, "mergeFieldsUi"?: { "mergeFieldsValues": any }, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: any, "skipMergeValidation"?: boolean, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "vip"?: boolean, "locationFieldsUi"?: { "locationFieldsValues": any }, "timestampOpt"?: any };
+    readonly updateFields?: { "emailType"?: "html" | "text", "groupsUi"?: { "groupsValues": any }, "language"?: string, "mergeFieldsUi"?: { "mergeFieldsValues": any }, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "skipMergeValidation"?: boolean, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "vip"?: boolean, "locationFieldsUi"?: { "locationFieldsValues": any }, "timestampOpt"?: string };
 
     /**
      * Default: []

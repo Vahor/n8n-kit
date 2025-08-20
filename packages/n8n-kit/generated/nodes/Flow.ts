@@ -35,7 +35,7 @@ export interface FlowNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "ownerid"?: string, "listID"?: string, "startsOn"?: any, "dueOn"?: any, "mirrorParentSubscribers"?: boolean, "mirrorParentTags"?: boolean, "noteContent"?: string, "noteMimeType"?: "text/plain" | "text/x-markdown" | "text/html", "parentId"?: string, "positionList"?: number, "positionUpcoming"?: number, "position"?: number, "sectionId"?: string, "tags"?: string };
+    readonly additionalFields?: { "ownerid"?: string, "listID"?: string, "startsOn"?: string, "dueOn"?: string, "mirrorParentSubscribers"?: boolean, "mirrorParentTags"?: boolean, "noteContent"?: string, "noteMimeType"?: "text/plain" | "text/x-markdown" | "text/html", "parentId"?: string, "positionList"?: number, "positionUpcoming"?: number, "position"?: number, "sectionId"?: string, "tags"?: string };
 
     /**
      */
@@ -44,12 +44,12 @@ export interface FlowNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "completed"?: boolean, "ownerid"?: string, "listID"?: string, "startsOn"?: any, "dueOn"?: any, "mirrorParentSubscribers"?: boolean, "mirrorParentTags"?: boolean, "noteContent"?: string, "noteMimeType"?: "text/plain" | "text/x-markdown" | "text/html", "parentId"?: string, "positionList"?: number, "positionUpcoming"?: number, "position"?: number, "sectionId"?: string, "tags"?: string };
+    readonly updateFields?: { "name"?: string, "completed"?: boolean, "ownerid"?: string, "listID"?: string, "startsOn"?: string, "dueOn"?: string, "mirrorParentSubscribers"?: boolean, "mirrorParentTags"?: boolean, "noteContent"?: string, "noteMimeType"?: "text/plain" | "text/x-markdown" | "text/html", "parentId"?: string, "positionList"?: number, "positionUpcoming"?: number, "position"?: number, "sectionId"?: string, "tags"?: string };
 
     /**
      * Default: {}
      */
-    readonly filters?: { "include"?: ("schedule" | "files" | "file_associations" | "parent")[], "order"?: "account_id" | "completed_at" | "created_at" | "due_on" | "list_id" | "name" | "owner_id" | "position" | "section_id" | "starts_on" | "updated_at", "workspaceId"?: string, "createdBefore"?: any, "createdAfter"?: any, "updateBefore"?: any, "updateAfter"?: any, "deleted"?: boolean, "cleared"?: boolean };
+    readonly filters?: { "include"?: ("schedule" | "files" | "file_associations" | "parent")[], "order"?: "account_id" | "completed_at" | "created_at" | "due_on" | "list_id" | "name" | "owner_id" | "position" | "section_id" | "starts_on" | "updated_at", "workspaceId"?: string, "createdBefore"?: string, "createdAfter"?: string, "updateBefore"?: string, "updateAfter"?: string, "deleted"?: boolean, "cleared"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit

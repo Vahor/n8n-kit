@@ -20,7 +20,7 @@ export interface AmqpNodeParameters {
     /**
      * Header parameters as JSON (flat object). Sent as application_properties in amqp-message meta info.
      */
-    readonly headerParametersJson?: any;
+    readonly headerParametersJson?: string;
 
     /**
      * Default: {}

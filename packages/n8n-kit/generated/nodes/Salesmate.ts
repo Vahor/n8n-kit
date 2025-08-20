@@ -40,7 +40,7 @@ export interface SalesmateNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "dueDate"?: any, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: any, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+    readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
     /**
      */
@@ -49,7 +49,7 @@ export interface SalesmateNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "title"?: string, "type"?: string, "dueDate"?: any, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: any, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+    readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "title"?: string, "type"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -75,7 +75,7 @@ export interface SalesmateNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly filtersJson?: any;
+    readonly filtersJson?: string;
 
     /**
      * Default: {}

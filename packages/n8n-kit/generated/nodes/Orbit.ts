@@ -44,7 +44,7 @@ export interface OrbitNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "activityType"?: string, "description"?: string, "key"?: string, "link"?: string, "linkText"?: string, "occurredAt"?: any, "bio"?: string, "birthday"?: any, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string, "publishedAt"?: any };
+    readonly additionalFields?: { "activityType"?: string, "description"?: string, "key"?: string, "link"?: string, "linkText"?: string, "occurredAt"?: string, "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string, "publishedAt"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -104,7 +104,7 @@ export interface OrbitNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "bio"?: string, "birthday"?: any, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string };
+    readonly updateFields?: { "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string };
 
     /**
      * The identity is used to find the member. If no member exists, a new member will be created and linked to the provided identity.

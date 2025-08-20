@@ -47,7 +47,7 @@ export interface VeroNodeParameters {
      * Key value pairs that represent the custom user properties you want to update
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly dataAttributesJson?: any;
+    readonly dataAttributesJson?: string;
 
     /**
      * The new unique identifier of the user
@@ -79,7 +79,7 @@ export interface VeroNodeParameters {
      * Key value pairs that represent reserved, Vero-specific operators. Refer to the note on “deduplication” below.
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly extraAttributesJson?: any;
+    readonly extraAttributesJson?: string;
 
 
 }

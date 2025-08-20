@@ -92,7 +92,7 @@ export interface WekanNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "authorId"?: string, "assignees"?: string[], "color"?: "black" | "blue" | "crimson" | "darkgreen" | "gold" | "gray" | "green" | "indigo" | "lime" | "magenta" | "mistyrose" | "navy" | "orange" | "paleturquoise" | "peachpuff" | "pink" | "plum" | "purple" | "red" | "saddlebrown" | "silver" | "sky" | "slateblue" | "white" | "yellow", "description"?: string, "dueAt"?: any, "endAt"?: any, "labelIds"?: string, "listId"?: string, "members"?: string[], "isOverTime"?: boolean, "parentId"?: string, "receivedAt"?: any, "sort"?: number, "spentTime"?: number, "startAt"?: any, "swimlaneId"?: string, "title"?: string, "isFinished"?: boolean };
+    readonly updateFields?: { "authorId"?: string, "assignees"?: string[], "color"?: "black" | "blue" | "crimson" | "darkgreen" | "gold" | "gray" | "green" | "indigo" | "lime" | "magenta" | "mistyrose" | "navy" | "orange" | "paleturquoise" | "peachpuff" | "pink" | "plum" | "purple" | "red" | "saddlebrown" | "silver" | "sky" | "slateblue" | "white" | "yellow", "description"?: string, "dueAt"?: string, "endAt"?: string, "labelIds"?: string, "listId"?: string, "members"?: string[], "isOverTime"?: boolean, "parentId"?: string, "receivedAt"?: string, "sort"?: number, "spentTime"?: number, "startAt"?: string, "swimlaneId"?: string, "title"?: string, "isFinished"?: boolean };
 
     /**
      * The comment text

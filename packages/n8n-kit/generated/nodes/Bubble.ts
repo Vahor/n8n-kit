@@ -57,7 +57,7 @@ export interface BubbleNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "filters"?: { "filter": any }, "filtersJson"?: any, "sort"?: { "sortValue": any } };
+    readonly options?: { "filters"?: { "filter": any }, "filtersJson"?: string, "sort"?: { "sortValue": any } };
 
 
 }

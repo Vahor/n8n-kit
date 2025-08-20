@@ -41,7 +41,7 @@ export interface ExecuteWorkflowNodeParameters {
      * Default: "\n\n\n"
      * Type options: {"rows":10}
      */
-    readonly workflowJson?: any;
+    readonly workflowJson?: string;
 
     /**
      * The URL from which to load the workflow from

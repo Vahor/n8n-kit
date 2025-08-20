@@ -45,13 +45,13 @@ export interface MandrillNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "async"?: boolean, "autoText"?: boolean, "autoHtml"?: boolean, "bccAddress"?: string, "fromName"?: string, "googleAnalyticsCampaign"?: string, "googleAnalyticsDomains"?: string, "html"?: string, "important"?: boolean, "inlineCss"?: boolean, "ipPool"?: string, "preserveRecipients"?: boolean, "returnPathDomain"?: string, "sendAt"?: any, "signingDomain"?: string, "subAccount"?: string, "subject"?: string, "tags"?: string, "text"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean, "trackingDomain"?: string, "urlStripQs"?: boolean, "viewContentLink"?: boolean };
+    readonly options?: { "async"?: boolean, "autoText"?: boolean, "autoHtml"?: boolean, "bccAddress"?: string, "fromName"?: string, "googleAnalyticsCampaign"?: string, "googleAnalyticsDomains"?: string, "html"?: string, "important"?: boolean, "inlineCss"?: boolean, "ipPool"?: string, "preserveRecipients"?: boolean, "returnPathDomain"?: string, "sendAt"?: string, "signingDomain"?: string, "subAccount"?: string, "subject"?: string, "tags"?: string, "text"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean, "trackingDomain"?: string, "urlStripQs"?: boolean, "viewContentLink"?: boolean };
 
     /**
      * Global merge variables
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly mergeVarsJson?: any;
+    readonly mergeVarsJson?: string;
 
     /**
      * Per-recipient merge variables
@@ -71,13 +71,13 @@ export interface MandrillNodeParameters {
      * Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill search api.
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly metadataJson?: any;
+    readonly metadataJson?: string;
 
     /**
      * An array of supported attachments to add to the message
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly attachmentsJson?: any;
+    readonly attachmentsJson?: string;
 
     /**
      * Array of supported attachments to add to the message
@@ -90,7 +90,7 @@ export interface MandrillNodeParameters {
      * Optional extra headers to add to the message (most headers are allowed)
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly headersJson?: any;
+    readonly headersJson?: string;
 
     /**
      * Optional extra headers to add to the message (most headers are allowed)

@@ -83,7 +83,7 @@ export interface CoinGeckoNodeParameters {
     /**
      * The date of data snapshot
      */
-    readonly date?: any;
+    readonly date?: string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -100,7 +100,7 @@ export interface CoinGeckoNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "ids"?: string, "category"?: "decentralized_finance_defi", "order"?: "gecko_asc" | "gecko_desc" | "id_asc" | "id_desc" | "market_cap_asc" | "market_cap_desc" | "volume_asc" | "volume_desc", "sparkline"?: boolean, "price_change_percentage"?: ("1h" | "24h" | "7d" | "14d" | "30d" | "200d" | "1y")[], "include_24hr_change"?: boolean, "include_24hr_vol"?: boolean, "include_last_updated_at"?: boolean, "include_market_cap"?: boolean, "exchange_ids"?: string[], "include_exchange_logo"?: boolean, "localization"?: boolean, "community_data"?: boolean, "developer_data"?: boolean, "market_data"?: boolean, "tickers"?: boolean, "country_code"?: string, "from_date"?: any, "to_date"?: any, "type"?: string, "upcoming_events_only"?: boolean };
+    readonly options?: { "ids"?: string, "category"?: "decentralized_finance_defi", "order"?: "gecko_asc" | "gecko_desc" | "id_asc" | "id_desc" | "market_cap_asc" | "market_cap_desc" | "volume_asc" | "volume_desc", "sparkline"?: boolean, "price_change_percentage"?: ("1h" | "24h" | "7d" | "14d" | "30d" | "200d" | "1y")[], "include_24hr_change"?: boolean, "include_24hr_vol"?: boolean, "include_last_updated_at"?: boolean, "include_market_cap"?: boolean, "exchange_ids"?: string[], "include_exchange_logo"?: boolean, "localization"?: boolean, "community_data"?: boolean, "developer_data"?: boolean, "market_data"?: boolean, "tickers"?: boolean, "country_code"?: string, "from_date"?: string, "to_date"?: string, "type"?: string, "upcoming_events_only"?: boolean };
 
 
 }

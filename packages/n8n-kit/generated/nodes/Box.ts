@@ -93,7 +93,7 @@ export interface BoxNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "can_view_path"?: boolean, "expires_at"?: any, "fields"?: string, "notify"?: boolean, "access"?: "collaborators" | "open" };
+    readonly options?: { "can_view_path"?: boolean, "expires_at"?: string, "fields"?: string, "notify"?: boolean, "access"?: "collaborators" | "open" };
 
     /**
      * The name the file should be saved as
@@ -127,7 +127,7 @@ export interface BoxNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "can_non_owners_invite"?: boolean, "can_non_owners_view_collaborators"?: boolean, "description"?: string, "fields"?: string, "is_collaboration_restricted_to_enterprise"?: boolean, "name"?: string, "parentId"?: string, "shared_link"?: { "access"?: "collaborators" | "company" | "open", "password"?: string, "permissions"?: { "can_download"?: boolean, "unshared_at"?: any, "vanity_name"?: string }, "tags"?: string } };
+    readonly updateFields?: { "can_non_owners_invite"?: boolean, "can_non_owners_view_collaborators"?: boolean, "description"?: string, "fields"?: string, "is_collaboration_restricted_to_enterprise"?: boolean, "name"?: string, "parentId"?: string, "shared_link"?: { "access"?: "collaborators" | "company" | "open", "password"?: string, "permissions"?: { "can_download"?: boolean, "unshared_at"?: string, "vanity_name"?: string }, "tags"?: string } };
 
 
 }

@@ -52,7 +52,7 @@ export interface HelpScoutNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assignTo"?: number, "autoReply"?: boolean, "closedAt"?: any, "createdAt"?: any, "customerEmail"?: string, "customerId"?: number, "imported"?: boolean, "tags"?: string[], "user"?: number, "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string, "draft"?: boolean };
+    readonly additionalFields?: { "assignTo"?: number, "autoReply"?: boolean, "closedAt"?: string, "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "imported"?: boolean, "tags"?: string[], "user"?: number, "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string, "draft"?: boolean };
 
     /**
      * Default: {}
@@ -79,7 +79,7 @@ export interface HelpScoutNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "assignTo"?: number, "embed"?: "threads", "folder"?: string, "mailbox"?: string, "modifiedSince"?: any, "number"?: number, "query"?: string, "sortField"?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", "sortOrder"?: "asc" | "desc", "status"?: "active" | "all" | "closed" | "open" | "pending" | "spam", "tags"?: string[], "firstName"?: string, "lastName"?: string };
+    readonly options?: { "assignTo"?: number, "embed"?: "threads", "folder"?: string, "mailbox"?: string, "modifiedSince"?: string, "number"?: number, "query"?: string, "sortField"?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", "sortOrder"?: "asc" | "desc", "status"?: "active" | "all" | "closed" | "open" | "pending" | "spam", "tags"?: string[], "firstName"?: string, "lastName"?: string };
 
     /**
      * Default: {}

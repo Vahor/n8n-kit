@@ -81,7 +81,7 @@ export interface AgileCrmNodeParameters {
      * Object of values to set as described <a href="https://github.com/agilecrm/rest-api#1-contacts---companies-api">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: any;
+    readonly additionalFieldsJson?: string;
 
     /**
      * Default: {}
@@ -101,7 +101,7 @@ export interface AgileCrmNodeParameters {
     /**
      * Closing date of deal
      */
-    readonly closeDate?: any;
+    readonly closeDate?: string;
 
     /**
      * Expected Value of deal

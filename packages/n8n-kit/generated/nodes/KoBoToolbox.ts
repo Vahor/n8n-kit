@@ -68,12 +68,12 @@ export interface KoBoToolboxNodeParameters {
     /**
      * Minimum date for the hook log to retrieve
      */
-    readonly startDate?: any;
+    readonly startDate?: string;
 
     /**
      * Maximum date for the hook log to retrieve
      */
-    readonly endDate?: any;
+    readonly endDate?: string;
 
     /**
      * Submission ID (number, e.g. 245128)

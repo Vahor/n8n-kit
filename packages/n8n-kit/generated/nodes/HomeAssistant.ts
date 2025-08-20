@@ -59,7 +59,7 @@ export interface HomeAssistantNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "endTime"?: any, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: any, "entityId"?: string };
+    readonly additionalFields?: { "endTime"?: string, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: string, "entityId"?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

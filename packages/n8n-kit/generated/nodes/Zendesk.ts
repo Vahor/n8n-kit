@@ -45,7 +45,7 @@ export interface ZendeskNodeParameters {
      * Object of values to set as described <a href="https://developer.zendesk.com/rest_api/docs/support/tickets">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: any;
+    readonly additionalFieldsJson?: string;
 
     /**
      */
@@ -60,7 +60,7 @@ export interface ZendeskNodeParameters {
      * Object of values to update as described <a href="https://developer.zendesk.com/rest_api/docs/support/tickets">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly updateFieldsJson?: any;
+    readonly updateFieldsJson?: string;
 
     /**
      * Default: "regular"

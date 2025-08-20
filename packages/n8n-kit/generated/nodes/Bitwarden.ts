@@ -47,7 +47,7 @@ export interface BitwardenNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "actingUserId"?: string, "end"?: any, "itemID"?: string, "start"?: any };
+    readonly filters?: { "actingUserId"?: string, "end"?: string, "itemID"?: string, "start"?: string };
 
     /**
      * The identifier of the group

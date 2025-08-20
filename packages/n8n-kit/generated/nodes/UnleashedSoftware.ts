@@ -37,7 +37,7 @@ export interface UnleashedSoftwareNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "customerId"?: string, "customerCode"?: string, "endDate"?: any, "modifiedSince"?: any, "orderNumber"?: string, "orderStatus"?: ("Backordered" | "Completed" | "Deleted" | "Parked" | "Placed")[], "startDate"?: any, "asAtDate"?: any, "IsAssembled"?: boolean, "orderBy"?: string, "productId"?: string, "warehouseCode"?: string, "warehouseName"?: string };
+    readonly filters?: { "customerId"?: string, "customerCode"?: string, "endDate"?: string, "modifiedSince"?: string, "orderNumber"?: string, "orderStatus"?: ("Backordered" | "Completed" | "Deleted" | "Parked" | "Placed")[], "startDate"?: string, "asAtDate"?: string, "IsAssembled"?: boolean, "orderBy"?: string, "productId"?: string, "warehouseCode"?: string, "warehouseName"?: string };
 
     /**
      */

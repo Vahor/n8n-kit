@@ -40,7 +40,7 @@ export interface CustomerIoNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook", "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: any, "customAttributes"?: { "customAttribute": any } };
+    readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook", "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: string, "customAttributes"?: { "customAttribute": any } };
 
     /**
      * The unique identifier for the customer
@@ -51,7 +51,7 @@ export interface CustomerIoNodeParameters {
      * Object of values to set as described <a href="https://github.com/agilecrm/rest-api#1-companys---companies-api">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: any;
+    readonly additionalFieldsJson?: string;
 
     /**
      * The unique identifier for the customer

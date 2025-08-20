@@ -53,12 +53,12 @@ export interface GoogleBusinessProfileNodeParameters {
     /**
      * The start date and time of the event
      */
-    readonly startDateTime?: any;
+    readonly startDateTime?: string;
 
     /**
      * The end date and time of the event
      */
-    readonly endDateTime?: any;
+    readonly endDateTime?: string;
 
     /**
      * The start date of the offer
@@ -79,7 +79,7 @@ export interface GoogleBusinessProfileNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalOptions?: { "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string, "summary"?: string, "startDateTime"?: any, "endDateTime"?: any, "title"?: string, "startDate"?: string, "endDate"?: string };
+    readonly additionalOptions?: { "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string, "summary"?: string, "startDateTime"?: string, "endDateTime"?: string, "title"?: string, "startDate"?: string, "endDate"?: string };
 
     /**
      * Select the post to retrieve its details

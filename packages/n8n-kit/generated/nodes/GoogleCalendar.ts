@@ -31,27 +31,27 @@ export interface GoogleCalendarNodeParameters {
     /**
      * Start of the interval
      */
-    readonly timeMin?: any;
+    readonly timeMin?: string;
 
     /**
      * End of the interval
      */
-    readonly timeMax?: any;
+    readonly timeMax?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "outputFormat"?: "availability" | "bookedSlots" | "raw", "timezone"?: any, "sendUpdates"?: "all" | "externalOnly" | "none", "maxAttendees"?: number, "returnNextInstance"?: boolean, "timeZone"?: any, "timeMin"?: any, "timeMax"?: any, "singleEvents"?: boolean, "fields"?: string, "iCalUID"?: string, "orderBy"?: "startTime" | "updated", "query"?: string, "recurringEventHandling"?: "expand" | "first" | "next", "showDeleted"?: boolean, "showHiddenInvitations"?: boolean, "updatedMin"?: any };
+    readonly options?: { "outputFormat"?: "availability" | "bookedSlots" | "raw", "timezone"?: any, "sendUpdates"?: "all" | "externalOnly" | "none", "maxAttendees"?: number, "returnNextInstance"?: boolean, "timeZone"?: any, "timeMin"?: string, "timeMax"?: string, "singleEvents"?: boolean, "fields"?: string, "iCalUID"?: string, "orderBy"?: "startTime" | "updated", "query"?: string, "recurringEventHandling"?: "expand" | "first" | "next", "showDeleted"?: boolean, "showHiddenInvitations"?: boolean, "updatedMin"?: string };
 
     /**
      * Start time of the event
      */
-    readonly start?: any;
+    readonly start?: string;
 
     /**
      * End time of the event
      */
-    readonly end?: any;
+    readonly end?: string;
 
     /**
      * Default: true
@@ -61,7 +61,7 @@ export interface GoogleCalendarNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "allday"?: "yes" | "no", "attendees"?: string, "color"?: string, "conferenceDataUi"?: { "conferenceDataValues": any }, "description"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: any, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "summary"?: string, "visibility"?: "confidential" | "default" | "private" | "public" };
+    readonly additionalFields?: { "allday"?: "yes" | "no", "attendees"?: string, "color"?: string, "conferenceDataUi"?: { "conferenceDataValues": any }, "description"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: string, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "summary"?: string, "visibility"?: "confidential" | "default" | "private" | "public" };
 
     /**
      * If the event doesn't use the default reminders, this lists the reminders specific to the event
@@ -94,7 +94,7 @@ export interface GoogleCalendarNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "allday"?: "yes" | "no", "attendeesUi"?: { "values": any }, "attendees"?: string, "color"?: string, "description"?: string, "end"?: any, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: any, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "start"?: any, "summary"?: string, "visibility"?: "confidential" | "default" | "public" | "private" };
+    readonly updateFields?: { "allday"?: "yes" | "no", "attendeesUi"?: { "values": any }, "attendees"?: string, "color"?: string, "description"?: string, "end"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: string, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "start"?: string, "summary"?: string, "visibility"?: "confidential" | "default" | "public" | "private" };
 
     /**
      */

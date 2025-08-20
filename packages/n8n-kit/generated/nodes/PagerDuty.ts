@@ -74,7 +74,7 @@ export interface PagerDutyNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "dateRange"?: "all", "incidentKey"?: string, "include"?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], "serviceIds"?: string[], "since"?: any, "sortBy"?: string, "statuses"?: ("acknowledged" | "resolved" | "triggered")[], "teamIds"?: string, "timeZone"?: string, "until"?: any, "urgencies"?: ("high" | "low")[], "userIds"?: string, "isOverview"?: boolean };
+    readonly options?: { "dateRange"?: "all", "incidentKey"?: string, "include"?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], "serviceIds"?: string[], "since"?: string, "sortBy"?: string, "statuses"?: ("acknowledged" | "resolved" | "triggered")[], "teamIds"?: string, "timeZone"?: string, "until"?: string, "urgencies"?: ("high" | "low")[], "userIds"?: string, "isOverview"?: boolean };
 
     /**
      * Default: {}

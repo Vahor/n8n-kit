@@ -47,12 +47,12 @@ export interface EgoiNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "birth_date"?: any, "cellphone"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: string[] };
+    readonly additionalFields?: { "birth_date"?: string, "cellphone"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: string[] };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "birth_date"?: any, "cellphone"?: string, "email"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: string[] };
+    readonly updateFields?: { "birth_date"?: string, "cellphone"?: string, "email"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: string[] };
 
     /**
      * Search by

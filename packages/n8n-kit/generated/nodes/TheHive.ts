@@ -64,7 +64,7 @@ export interface TheHiveNodeParameters {
     /**
      * Date and time when the alert was raised default=now
      */
-    readonly date?: any;
+    readonly date?: string;
 
     /**
      * Case Tags
@@ -130,17 +130,17 @@ export interface TheHiveNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "artifactUi"?: { "artifactValues": any }, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "caseTemplate"?: string, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "status"?: "New" | "Updated" | "Ignored" | "Imported", "tags"?: string, "title"?: string, "tlp"?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red", "message"?: string, "ioc"?: boolean, "sighted"?: boolean, "endDate"?: any, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "metrics"?: any, "owner"?: string, "resolutionStatus"?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", "startDate"?: any, "summary"?: string };
+    readonly updateFields?: { "artifactUi"?: { "artifactValues": any }, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "caseTemplate"?: string, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "status"?: "New" | "Updated" | "Ignored" | "Imported", "tags"?: string, "title"?: string, "tlp"?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red", "message"?: string, "ioc"?: boolean, "sighted"?: boolean, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "metrics"?: string, "owner"?: string, "resolutionStatus"?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", "startDate"?: string, "summary"?: string };
 
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: string, "includeSimilar"?: boolean, "tags"?: string, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "endDate"?: any, "summary"?: string, "metrics"?: any, "description"?: string, "owner"?: string, "startDate"?: any, "attachmentValues"?: { "attachmentValues": any } };
+    readonly options?: { "sort"?: string, "includeSimilar"?: boolean, "tags"?: string, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "endDate"?: string, "summary"?: string, "metrics"?: string, "description"?: string, "owner"?: string, "startDate"?: string, "attachmentValues"?: { "attachmentValues": any } };
 
     /**
      * Default: {}
      */
-    readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red", "dataType"?: string[], "range"?: { "dateRange": any }, "ioc"?: boolean, "keyword"?: string, "message"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "data"?: string, "endDate"?: any, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "startDate"?: any, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string };
+    readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "TLPs.white" | "TLPs.green" | "TLPs.amber" | "TLPs.red", "dataType"?: string[], "range"?: { "dateRange": any }, "ioc"?: boolean, "keyword"?: string, "message"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "data"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -166,7 +166,7 @@ export interface TheHiveNodeParameters {
     /**
      * Date and time of the begin of the case default=now
      */
-    readonly startDate?: any;
+    readonly startDate?: string;
 
     /**
      * Whether the observable is an IOC (Indicator of compromise)

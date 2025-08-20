@@ -29,7 +29,7 @@ export interface KeapNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "emailAddress"?: string, "notes"?: string, "optInReason"?: string, "website"?: string, "anniversary"?: any, "companyId"?: number, "contactType"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "jobTitle"?: string, "leadSourceId"?: number, "middleName"?: string, "ownerId"?: string, "preferredLocale"?: string, "preferredName"?: string, "sourceType"?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", "spouseName"?: string, "timezone"?: string, "body"?: string, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other", "contactId"?: number, "userId"?: string, "leadAffiliateId"?: number, "promoCodes"?: string, "salesAffiliateId"?: number, "active"?: boolean, "productDesc"?: string, "productPrice"?: number, "productShortDesc"?: string, "sku"?: string, "subscriptionOnly"?: boolean, "clickedDate"?: any, "headers"?: string, "htmlContent"?: string, "openedDate"?: any, "originalProvider"?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", "originalProviderId"?: string, "plainContent"?: string, "providerSourceId"?: string, "receivedDate"?: any, "sentDate"?: any, "sentFromReplyAddress"?: string, "sentToBccAddresses"?: string, "sentToCCAddresses"?: string, "subject"?: string, "addressField"?: string };
+    readonly additionalFields?: { "emailAddress"?: string, "notes"?: string, "optInReason"?: string, "website"?: string, "anniversary"?: string, "companyId"?: number, "contactType"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "jobTitle"?: string, "leadSourceId"?: number, "middleName"?: string, "ownerId"?: string, "preferredLocale"?: string, "preferredName"?: string, "sourceType"?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", "spouseName"?: string, "timezone"?: string, "body"?: string, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other", "contactId"?: number, "userId"?: string, "leadAffiliateId"?: number, "promoCodes"?: string, "salesAffiliateId"?: number, "active"?: boolean, "productDesc"?: string, "productPrice"?: number, "productShortDesc"?: string, "sku"?: string, "subscriptionOnly"?: boolean, "clickedDate"?: string, "headers"?: string, "htmlContent"?: string, "openedDate"?: string, "originalProvider"?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", "originalProviderId"?: string, "plainContent"?: string, "providerSourceId"?: string, "receivedDate"?: string, "sentDate"?: string, "sentFromReplyAddress"?: string, "sentToBccAddresses"?: string, "sentToCCAddresses"?: string, "subject"?: string, "addressField"?: string };
 
     /**
      * Default: {}
@@ -64,7 +64,7 @@ export interface KeapNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "companyName"?: string, "order"?: "datecreated" | "id" | "name", "orderDirection"?: "ascending" | "descending", "fields"?: string, "email"?: string, "givenName"?: string, "familyName"?: string, "since"?: any, "until"?: any, "paid"?: boolean, "contactId"?: number, "productId"?: number };
+    readonly options?: { "companyName"?: string, "order"?: "datecreated" | "id" | "name", "orderDirection"?: "ascending" | "descending", "fields"?: string, "email"?: string, "givenName"?: string, "familyName"?: string, "since"?: string, "until"?: string, "paid"?: boolean, "contactId"?: number, "productId"?: number };
 
     /**
      * Performs duplicate checking by one of the following options: Email, EmailAndName. If a match is found using the option provided, the existing contact will be updated.
@@ -101,7 +101,7 @@ export interface KeapNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "contactId"?: number, "userId"?: string, "active"?: boolean, "email"?: string, "sinceSentDate"?: any, "untilSentDate"?: any, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
+    readonly filters?: { "contactId"?: number, "userId"?: string, "active"?: boolean, "email"?: string, "sinceSentDate"?: string, "untilSentDate"?: string, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -112,7 +112,7 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly orderDate?: any;
+    readonly orderDate?: string;
 
     /**
      */

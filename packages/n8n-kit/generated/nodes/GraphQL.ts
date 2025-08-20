@@ -49,7 +49,7 @@ export interface GraphQLNodeParameters {
     /**
      * Query variables as JSON object
      */
-    readonly variables?: any;
+    readonly variables?: string;
 
     /**
      * Name of operation to execute

@@ -32,6 +32,8 @@ type NodeDescription = {
 			| "fixedCollection"
 			| "collection"
 			| "number"
+			| "json"
+			| "dateTime"
 			| "notice";
 		options?: Array<{
 			required?: boolean;
@@ -253,6 +255,8 @@ const mapPropertyType = (type: string) => {
 		case "boolean":
 			return "boolean";
 		case "notice":
+		case "dateTime":
+		case "json":
 		case "string":
 			return "string";
 		case "options":

@@ -83,7 +83,7 @@ export interface IntercomNodeParameters {
      * A hash of key/value pairs to represent custom data you want to attribute to a user
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly customAttributesJson?: any;
+    readonly customAttributesJson?: string;
 
     /**
      * A hash of key/value pairs to represent custom data you want to attribute to a user

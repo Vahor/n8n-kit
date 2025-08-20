@@ -57,7 +57,7 @@ export interface GithubNodeParameters {
      * JSON object with input parameters for the workflow
      * Default: "{}"
      */
-    readonly inputs?: any;
+    readonly inputs?: string;
 
     /**
      * The file path of the file. Has to contain the full path.
@@ -166,7 +166,7 @@ export interface GithubNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
-    readonly getRepositoryIssuesFilters?: { "assignee"?: string, "creator"?: string, "mentioned"?: string, "labels"?: string, "since"?: any, "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "comments", "direction"?: "asc" | "desc" };
+    readonly getRepositoryIssuesFilters?: { "assignee"?: string, "creator"?: string, "mentioned"?: string, "labels"?: string, "since"?: string, "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "comments", "direction"?: "asc" | "desc" };
 
     /**
      * Default: {}

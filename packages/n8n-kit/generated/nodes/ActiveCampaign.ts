@@ -36,7 +36,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "firstName"?: string, "lastName"?: string, "phone"?: string, "datetime"?: any, "email"?: string, "email_like"?: string, "exclude"?: string, "formid"?: string, "listid"?: string, "search"?: string, "segmentid"?: string, "seriesid"?: string, "status"?: "1" | "-1" | "3" | "0" | "2", "tagid"?: string, "filters[created_before]"?: any, "filters[created_after]"?: any, "filters[updated_before]"?: any, "filters[updated_after]"?: any, "waitid"?: string, "orderBy"?: "orders[cdate]" | "orders[email]" | "orders[first_name]" | "orders[last_name]" | "orders[name]" | "orders[score]", "percent"?: number, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: any, "shippingMethod"?: string, "orderNumber"?: string, "acceptsMarketing"?: boolean };
+    readonly additionalFields?: { "description"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "firstName"?: string, "lastName"?: string, "phone"?: string, "datetime"?: string, "email"?: string, "email_like"?: string, "exclude"?: string, "formid"?: string, "listid"?: string, "search"?: string, "segmentid"?: string, "seriesid"?: string, "status"?: "1" | "-1" | "3" | "0" | "2", "tagid"?: string, "filters[created_before]"?: string, "filters[created_after]"?: string, "filters[updated_before]"?: string, "filters[updated_after]"?: string, "waitid"?: string, "orderBy"?: "orders[cdate]" | "orders[email]" | "orders[first_name]" | "orders[last_name]" | "orders[name]" | "orders[score]", "percent"?: number, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "acceptsMarketing"?: boolean };
 
     /**
      * ID of the tag to update
@@ -47,7 +47,7 @@ export interface ActiveCampaignNodeParameters {
      * The fields to update
      * Default: {}
      */
-    readonly updateFields?: { "tag"?: string, "description"?: string, "name"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "email"?: string, "firstName"?: string, "lastName"?: string, "phone"?: string, "title"?: string, "contact"?: number, "value"?: number, "currency"?: string, "group"?: string, "stage"?: string, "owner"?: string, "percent"?: number, "status"?: number, "service"?: string, "externalid"?: string, "logoUrl"?: string, "linkUrl"?: string, "syncStatus"?: number, "externalcheckoutid"?: string, "source"?: number, "totalPrice"?: number, "connectionid"?: number, "customerid"?: number, "externalupdatedDate"?: any, "abandonedDate"?: any, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: any, "shippingMethod"?: string, "orderNumber"?: string, "orderProducts"?: { "name"?: string, "price"?: number, "quantity"?: number, "externalid"?: string, "category"?: string, "sku"?: string, "description"?: string, "imageUrl"?: string, "productUrl"?: string }, "acceptsMarketing"?: boolean };
+    readonly updateFields?: { "tag"?: string, "description"?: string, "name"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "email"?: string, "firstName"?: string, "lastName"?: string, "phone"?: string, "title"?: string, "contact"?: number, "value"?: number, "currency"?: string, "group"?: string, "stage"?: string, "owner"?: string, "percent"?: number, "status"?: number, "service"?: string, "externalid"?: string, "logoUrl"?: string, "linkUrl"?: string, "syncStatus"?: number, "externalcheckoutid"?: string, "source"?: number, "totalPrice"?: number, "connectionid"?: number, "customerid"?: number, "externalupdatedDate"?: string, "abandonedDate"?: string, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "orderProducts"?: { "name"?: string, "price"?: number, "quantity"?: number, "externalid"?: string, "category"?: string, "sku"?: string, "description"?: string, "imageUrl"?: string, "productUrl"?: string }, "acceptsMarketing"?: boolean };
 
     /**
      */
@@ -194,12 +194,12 @@ export interface ActiveCampaignNodeParameters {
     /**
      * The date the order was placed
      */
-    readonly externalCreatedDate?: any;
+    readonly externalCreatedDate?: string;
 
     /**
      * The date the cart was abandoned. REQUIRED ONLY IF INCLUDING EXTERNALCHECKOUTID.
      */
-    readonly abandonedDate?: any;
+    readonly abandonedDate?: string;
 
     /**
      * All ordered products

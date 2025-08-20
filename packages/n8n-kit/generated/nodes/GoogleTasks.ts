@@ -36,7 +36,7 @@ export interface GoogleTasksNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "completed"?: any, "deleted"?: boolean, "dueDate"?: any, "notes"?: string, "parent"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "completedMax"?: any, "completedMin"?: any, "dueMin"?: any, "dueMax"?: any, "showCompleted"?: boolean, "showDeleted"?: boolean, "showHidden"?: boolean, "updatedMin"?: any };
+    readonly additionalFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "parent"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "completedMax"?: string, "completedMin"?: string, "dueMin"?: string, "dueMax"?: string, "showCompleted"?: boolean, "showDeleted"?: boolean, "showHidden"?: boolean, "updatedMin"?: string };
 
     /**
      */
@@ -57,7 +57,7 @@ export interface GoogleTasksNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "completed"?: any, "deleted"?: boolean, "dueDate"?: any, "notes"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "title"?: string };
+    readonly updateFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "title"?: string };
 
 
 }

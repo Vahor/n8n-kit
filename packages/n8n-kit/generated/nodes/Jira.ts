@@ -96,7 +96,7 @@ export interface JiraNodeParameters {
      * The recipients of the email notification for the issue
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly notificationRecipientsJson?: any;
+    readonly notificationRecipientsJson?: string;
 
     /**
      * Restricts the notifications to users with the specified permissions
@@ -109,7 +109,7 @@ export interface JiraNodeParameters {
      * Restricts the notifications to users with the specified permissions
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly notificationRecipientsRestrictionsJson?: any;
+    readonly notificationRecipientsRestrictionsJson?: string;
 
     /**
      * Default: "data"
@@ -138,7 +138,7 @@ export interface JiraNodeParameters {
     /**
      * The Atlassian Document Format (ADF). Online builder can be found <a href="https://developer.atlassian.com/cloud/jira/platform/apis/document/playground/">here</a>.
      */
-    readonly commentJson?: any;
+    readonly commentJson?: string;
 
     /**
      * The ID of the comment

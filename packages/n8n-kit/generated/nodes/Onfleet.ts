@@ -80,7 +80,7 @@ export interface OnfleetNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "from"?: any, "state"?: ("all" | "2" | "1" | "3" | "0")[], "to"?: any, "dropOff"?: { "dropOffProperties": any }, "pickUp"?: { "pickUpProperties": any }, "undefined"?: any };
+    readonly filters?: { "from"?: string, "state"?: ("all" | "2" | "1" | "3" | "0")[], "to"?: string, "dropOff"?: { "dropOffProperties": any }, "pickUp"?: { "pickUpProperties": any }, "undefined"?: any };
 
     /**
      * Default: {}

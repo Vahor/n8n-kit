@@ -45,7 +45,7 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: any, "reminderDateTime"?: any, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred" };
+    readonly additionalFields?: { "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred" };
 
     /**
      */
@@ -66,7 +66,7 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: any, "reminderDateTime"?: any, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
+    readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
 
     /**
      * A brief description of the task

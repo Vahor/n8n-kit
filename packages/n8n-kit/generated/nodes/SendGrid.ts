@@ -67,7 +67,7 @@ export interface SendGridNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "alternateEmails"?: string, "city"?: string, "country"?: string, "firstName"?: string, "lastName"?: string, "postalCode"?: string, "stateProvinceRegion"?: string, "listIdsUi"?: { "listIdValues": any }, "customFieldsUi"?: { "customFieldValues": any }, "attachments"?: string, "bccEmail"?: string, "categories"?: string, "ccEmail"?: string, "enableSandbox"?: boolean, "ipPoolName"?: string, "replyToEmail"?: string, "headers"?: { "details": any }, "sendAt"?: any };
+    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "alternateEmails"?: string, "city"?: string, "country"?: string, "firstName"?: string, "lastName"?: string, "postalCode"?: string, "stateProvinceRegion"?: string, "listIdsUi"?: { "listIdValues": any }, "customFieldsUi"?: { "customFieldValues": any }, "attachments"?: string, "bccEmail"?: string, "categories"?: string, "ccEmail"?: string, "enableSandbox"?: boolean, "ipPoolName"?: string, "replyToEmail"?: string, "headers"?: { "details": any }, "sendAt"?: string };
 
     /**
      * ID of the contact. Multiple can be added separated by comma.

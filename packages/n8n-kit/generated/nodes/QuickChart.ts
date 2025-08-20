@@ -37,7 +37,7 @@ export interface QuickChartNodeParameters {
     /**
      * Data to use for the dataset, documentation and examples <a href="https://quickchart.io/documentation/chart-types/" target="_blank">here</a>
      */
-    readonly data: any;
+    readonly data: string;
 
     /**
      * The binary data will be displayed in the Output panel on the right, under the Binary tab

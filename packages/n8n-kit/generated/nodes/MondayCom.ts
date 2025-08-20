@@ -46,7 +46,7 @@ export interface MondayComNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "templateId"?: number, "defaults"?: any, "columnValues"?: any };
+    readonly additionalFields?: { "templateId"?: number, "defaults"?: string, "columnValues"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -94,7 +94,7 @@ export interface MondayComNodeParameters {
      * The column fields and values in JSON format. Documentation can be found <a href="https://monday.com/developers/v2#mutations-section-columns-change-multiple-column-values">here</a>.
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly columnValues?: any;
+    readonly columnValues?: string;
 
     /**
      * The column value to search items by

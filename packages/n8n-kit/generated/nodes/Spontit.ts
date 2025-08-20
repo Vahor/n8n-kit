@@ -30,7 +30,7 @@ export interface SpontitNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "channelName"?: string, "expirationStamp"?: any, "iOSDeepLink"?: string, "link"?: string, "openInHomeFeed"?: boolean, "openLinkInApp"?: boolean, "pushToEmails"?: string, "pushToFollowers"?: string, "pushToPhoneNumbers"?: string, "schedule"?: any, "subtitle"?: string, "pushTitle"?: string };
+    readonly additionalFields?: { "channelName"?: string, "expirationStamp"?: string, "iOSDeepLink"?: string, "link"?: string, "openInHomeFeed"?: boolean, "openLinkInApp"?: boolean, "pushToEmails"?: string, "pushToFollowers"?: string, "pushToPhoneNumbers"?: string, "schedule"?: string, "subtitle"?: string, "pushTitle"?: string };
 
 
 }

@@ -47,7 +47,7 @@ export interface GhostNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "authors"?: string[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: any, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: string[], "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
+    readonly additionalFields?: { "authors"?: string[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: string[], "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
 
     /**
      * The ID of the post to delete
@@ -85,7 +85,7 @@ export interface GhostNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "authors"?: string[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: any, "contentJson"?: any, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: any, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: string[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
+    readonly updateFields?: { "authors"?: string[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: string, "contentJson"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: string[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
 
 
 }

@@ -42,7 +42,7 @@ export interface BeeminderNodeParameters {
      * Array of datapoint objects to create. Each object should contain value and optionally timestamp, comment, etc.
      * Default: "[]"
      */
-    readonly datapoints?: any;
+    readonly datapoints?: string;
 
     /**
      * Unique identifier for the goal
@@ -90,12 +90,12 @@ export interface BeeminderNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "comment"?: string, "timestamp"?: any, "requestid"?: string, "note"?: string, "dryrun"?: boolean, "goaldate"?: any, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "tags"?: any, "datapoints"?: boolean, "emaciated"?: boolean, "associations"?: boolean, "diff_since"?: any, "skinny"?: boolean, "datapoints_count"?: number };
+    readonly additionalFields?: { "comment"?: string, "timestamp"?: string, "requestid"?: string, "note"?: string, "dryrun"?: boolean, "goaldate"?: string, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "tags"?: string, "datapoints"?: boolean, "emaciated"?: boolean, "associations"?: boolean, "diff_since"?: string, "skinny"?: boolean, "datapoints_count"?: number };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "title"?: string, "yaxis"?: string, "tmin"?: string, "tmax"?: string, "secret"?: boolean, "datapublic"?: boolean, "roadall"?: any, "datasource"?: "api" | "ifttt" | "zapier" | "", "tags"?: any, "value"?: number, "comment"?: string, "timestamp"?: any };
+    readonly updateFields?: { "title"?: string, "yaxis"?: string, "tmin"?: string, "tmax"?: string, "secret"?: boolean, "datapublic"?: boolean, "roadall"?: string, "datasource"?: "api" | "ifttt" | "zapier" | "", "tags"?: string, "value"?: number, "comment"?: string, "timestamp"?: string };
 
     /**
      * Default: {}

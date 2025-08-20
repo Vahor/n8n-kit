@@ -30,7 +30,7 @@ export interface IterableNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "campaignId"?: string, "createdAt"?: any, "dataFieldsUi"?: { "dataFieldValues": any }, "email"?: string, "id"?: string, "templateId"?: string, "userId"?: string, "mergeNestedObjects"?: boolean, "channelUnsubscribe"?: boolean };
+    readonly additionalFields?: { "campaignId"?: string, "createdAt"?: string, "dataFieldsUi"?: { "dataFieldValues": any }, "email"?: string, "id"?: string, "templateId"?: string, "userId"?: string, "mergeNestedObjects"?: boolean, "channelUnsubscribe"?: boolean };
 
     /**
      * Identifier to be used

@@ -32,7 +32,7 @@ export interface JwtNodeParameters {
      * Default: "{\n  \"my_field_1\": \"value 1\",\n  \"my_field_2\": \"value 2\"\n}\n"
      * Type options: {"rows":5}
      */
-    readonly claimsJson?: any;
+    readonly claimsJson?: string;
 
     /**
      * The token to verify or decode

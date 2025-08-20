@@ -43,12 +43,12 @@ export interface YouTubeNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "categoryId"?: string, "forUsername"?: string, "id"?: string, "managedByMe"?: boolean, "channelId"?: string, "forDeveloper"?: boolean, "publishedAfter"?: any, "publishedBefore"?: any, "q"?: string, "regionCode"?: string, "relatedToVideoId"?: string, "videoCategoryId"?: string, "videoSyndicated"?: boolean, "videoType"?: "any" | "episode" | "movie" };
+    readonly filters?: { "categoryId"?: string, "forUsername"?: string, "id"?: string, "managedByMe"?: boolean, "channelId"?: string, "forDeveloper"?: boolean, "publishedAfter"?: string, "publishedBefore"?: string, "q"?: string, "regionCode"?: string, "relatedToVideoId"?: string, "videoCategoryId"?: string, "videoSyndicated"?: boolean, "videoType"?: "any" | "episode" | "movie" };
 
     /**
      * Default: {}
      */
-    readonly options?: { "h1"?: string, "onBehalfOfContentOwner"?: string, "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "defaultLanguage"?: string, "onBehalfOfContentOwnerChannel"?: string, "endAt"?: any, "note"?: string, "position"?: number, "startAt"?: any, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "publicStatsViewable"?: boolean, "publishAt"?: any, "recordingDate"?: any, "selfDeclaredMadeForKids"?: boolean, "order"?: "date" | "relevance", "safeSearch"?: "moderate" | "none" | "strict" };
+    readonly options?: { "h1"?: string, "onBehalfOfContentOwner"?: string, "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "defaultLanguage"?: string, "onBehalfOfContentOwnerChannel"?: string, "endAt"?: string, "note"?: string, "position"?: number, "startAt"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "publicStatsViewable"?: boolean, "publishAt"?: string, "recordingDate"?: string, "selfDeclaredMadeForKids"?: boolean, "order"?: "date" | "relevance", "safeSearch"?: "moderate" | "none" | "strict" };
 
     /**
      * ID of the channel
@@ -58,7 +58,7 @@ export interface YouTubeNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "brandingSettingsUi"?: { "channelSettingsValues": any, "imageSettingsValues": any, "statusValue": any }, "onBehalfOfContentOwner"?: string, "defaultLanguage"?: string, "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "publicStatsViewable"?: boolean, "publishAt"?: any, "recordingDate"?: any, "selfDeclaredMadeForKids"?: boolean };
+    readonly updateFields?: { "brandingSettingsUi"?: { "channelSettingsValues": any, "imageSettingsValues": any, "statusValue": any }, "onBehalfOfContentOwner"?: string, "defaultLanguage"?: string, "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "publicStatsViewable"?: boolean, "publishAt"?: string, "recordingDate"?: string, "selfDeclaredMadeForKids"?: boolean };
 
     /**
      * Default: "data"

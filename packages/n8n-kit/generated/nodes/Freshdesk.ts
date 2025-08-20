@@ -51,7 +51,7 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "description"?: string, "dueBy"?: any, "emailConfigId"?: number, "frDueBy"?: any, "group"?: string, "name"?: string, "product"?: string, "subject"?: string, "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund", "companyId"?: string, "include"?: ("company" | "description" | "requester" | "stats")[], "order"?: "asc" | "desc", "orderBy"?: "createdAt" | "dueBy" | "updatedAt", "requesterEmail"?: string, "requesterId"?: string, "updatedSince"?: any };
+    readonly options?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "description"?: string, "dueBy"?: string, "emailConfigId"?: number, "frDueBy"?: string, "group"?: string, "name"?: string, "product"?: string, "subject"?: string, "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund", "companyId"?: string, "include"?: ("company" | "description" | "requester" | "stats")[], "order"?: "asc" | "desc", "orderBy"?: "createdAt" | "dueBy" | "updatedAt", "requesterEmail"?: string, "requesterId"?: string, "updatedSince"?: string };
 
     /**
      */
@@ -60,7 +60,7 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "dueBy"?: any, "emailConfigId"?: number, "frDueBy"?: any, "group"?: string, "name"?: string, "product"?: string, "priority"?: "low" | "medium" | "high" | "urgent", "requester"?: "email" | "facebookId" | "phone" | "requesterId" | "twitterId" | "uniqueExternalId", "requesterIdentificationValue"?: string, "status"?: "open" | "pending" | "resolved" | "closed", "source"?: "chat" | "email" | "feedbackWidget" | "mobileHelp" | "OutboundEmail" | "phone" | "portal", "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund" };
+    readonly updateFields?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "dueBy"?: string, "emailConfigId"?: number, "frDueBy"?: string, "group"?: string, "name"?: string, "product"?: string, "priority"?: "low" | "medium" | "high" | "urgent", "requester"?: "email" | "facebookId" | "phone" | "requesterId" | "twitterId" | "uniqueExternalId", "requesterIdentificationValue"?: string, "status"?: "open" | "pending" | "resolved" | "closed", "source"?: "chat" | "email" | "feedbackWidget" | "mobileHelp" | "OutboundEmail" | "phone" | "portal", "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund" };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -96,7 +96,7 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "company_id"?: number, "email"?: string, "mobile"?: string, "phone"?: string, "state"?: "blocked" | "deleted" | "unverified" | "verified", "updated_since"?: any };
+    readonly filters?: { "company_id"?: number, "email"?: string, "mobile"?: string, "phone"?: string, "state"?: "blocked" | "deleted" | "unverified" | "verified", "updated_since"?: string };
 
 
 }

@@ -35,7 +35,7 @@ export interface PostHogNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "contextUi"?: { "contextValues": any }, "timestamp"?: any, "propertiesUi"?: { "propertyValues": any }, "messageId"?: string, "category"?: string };
+    readonly additionalFields?: { "contextUi"?: { "contextValues": any }, "timestamp"?: string, "propertiesUi"?: { "propertyValues": any }, "messageId"?: string, "category"?: string };
 
     /**
      * The name of the event

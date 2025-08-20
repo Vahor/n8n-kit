@@ -57,7 +57,7 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: {}
      */
-    readonly createBody?: { "acl"?: any, "billing"?: any, "cors"?: any, "customPlacementConfig"?: any, "dataLocations"?: any, "defaultEventBasedHold"?: boolean, "defaultObjectAcl"?: any, "encryption"?: any, "iamConfiguration"?: any, "labels"?: any, "lifecycle"?: any, "location"?: string, "logging"?: any, "retentionPolicy"?: any, "rpo"?: string, "storageClass"?: string, "versioning"?: any, "website"?: any };
+    readonly createBody?: { "acl"?: string, "billing"?: string, "cors"?: string, "customPlacementConfig"?: string, "dataLocations"?: string, "defaultEventBasedHold"?: boolean, "defaultObjectAcl"?: string, "encryption"?: string, "iamConfiguration"?: string, "labels"?: string, "lifecycle"?: string, "location"?: string, "logging"?: string, "retentionPolicy"?: string, "rpo"?: string, "storageClass"?: string, "versioning"?: string, "website"?: string };
 
     /**
      */
@@ -104,12 +104,12 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: {}
      */
-    readonly createData?: { "acl"?: any, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "crc32c"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "md5Hash"?: string, "metadata"?: any, "storageClass"?: string, "temporaryHold"?: boolean };
+    readonly createData?: { "acl"?: string, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "crc32c"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "md5Hash"?: string, "metadata"?: string, "storageClass"?: string, "temporaryHold"?: boolean };
 
     /**
      * Default: {"acl":"[]"}
      */
-    readonly updateData?: { "acl"?: any, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "metadata"?: any, "temporaryHold"?: boolean };
+    readonly updateData?: { "acl"?: string, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "metadata"?: string, "temporaryHold"?: boolean };
 
     /**
      * Default: {}

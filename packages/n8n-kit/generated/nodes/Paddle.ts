@@ -62,12 +62,12 @@ export interface PaddleNodeParameters {
      * Attributes in JSON form
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: any;
+    readonly additionalFieldsJson?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "allowedUses"?: number, "couponCode"?: string, "couponPrefix"?: string, "description"?: string, "expires"?: any, "group"?: string, "numberOfCoupons"?: number, "recurring"?: boolean, "discount"?: { "discountProperties": any }, "newCouponCode"?: string, "newGroup"?: string, "productIds"?: string, "from"?: any, "to"?: any, "isPaid"?: boolean, "plan"?: string, "subscriptionId"?: number, "state"?: "active" | "past_due" | "paused" | "trialing", "isOneOffCharge"?: boolean, "planId"?: string };
+    readonly additionalFields?: { "allowedUses"?: number, "couponCode"?: string, "couponPrefix"?: string, "description"?: string, "expires"?: string, "group"?: string, "numberOfCoupons"?: number, "recurring"?: boolean, "discount"?: { "discountProperties": any }, "newCouponCode"?: string, "newGroup"?: string, "productIds"?: string, "from"?: string, "to"?: string, "isPaid"?: boolean, "plan"?: string, "subscriptionId"?: number, "state"?: "active" | "past_due" | "paused" | "trialing", "isOneOffCharge"?: boolean, "planId"?: string };
 
     /**
      * The specific product/subscription ID
@@ -111,7 +111,7 @@ export interface PaddleNodeParameters {
     /**
      * Date you want to move the payment to
      */
-    readonly date?: any;
+    readonly date?: string;
 
     /**
      * Filter: The subscription plan ID

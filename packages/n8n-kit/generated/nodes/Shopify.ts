@@ -34,7 +34,7 @@ export interface ShopifyNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "billingAddressUi"?: { "billingAddressValues": any }, "discountCodesUi"?: { "discountCodesValues": any }, "email"?: string, "fulfillmentStatus"?: "fulfilled" | "null" | "partial" | "restocked", "inventoryBehaviour"?: "bypass" | "decrementIgnoringPolicy" | "decrementObeyingPolicy", "locationId"?: string, "note"?: string, "sendFulfillmentReceipt"?: boolean, "sendReceipt"?: boolean, "shippingAddressUi"?: { "shippingAddressValues": any }, "sourceName"?: string, "tags"?: string, "test"?: boolean, "body_html"?: string, "handle"?: string, "images"?: { "created_at"?: any, "id"?: number, "position"?: number, "product_id"?: number, "variant_ids"?: number, "src"?: string, "width"?: number, "height"?: number, "updated_at"?: any }, "productOptions"?: { "option": any }, "product_type"?: string, "published_at"?: any, "published_scope"?: "global" | "web", "template_suffix"?: string, "vendor"?: string, "fields"?: string, "collection_id"?: string, "created_at_max"?: any, "created_at_min"?: any, "ids"?: string, "presentment_currencies"?: string, "published_at_max"?: any, "published_at_min"?: any, "published_status"?: "any" | "published" | "unpublished", "title"?: string, "updated_at_max"?: any, "updated_at_min"?: any };
+    readonly additionalFields?: { "billingAddressUi"?: { "billingAddressValues": any }, "discountCodesUi"?: { "discountCodesValues": any }, "email"?: string, "fulfillmentStatus"?: "fulfilled" | "null" | "partial" | "restocked", "inventoryBehaviour"?: "bypass" | "decrementIgnoringPolicy" | "decrementObeyingPolicy", "locationId"?: string, "note"?: string, "sendFulfillmentReceipt"?: boolean, "sendReceipt"?: boolean, "shippingAddressUi"?: { "shippingAddressValues": any }, "sourceName"?: string, "tags"?: string, "test"?: boolean, "body_html"?: string, "handle"?: string, "images"?: { "created_at"?: string, "id"?: number, "position"?: number, "product_id"?: number, "variant_ids"?: number, "src"?: string, "width"?: number, "height"?: number, "updated_at"?: string }, "productOptions"?: { "option": any }, "product_type"?: string, "published_at"?: string, "published_scope"?: "global" | "web", "template_suffix"?: string, "vendor"?: string, "fields"?: string, "collection_id"?: string, "created_at_max"?: string, "created_at_min"?: string, "ids"?: string, "presentment_currencies"?: string, "published_at_max"?: string, "published_at_min"?: string, "published_status"?: "any" | "published" | "unpublished", "title"?: string, "updated_at_max"?: string, "updated_at_min"?: string };
 
     /**
      * Default: {}
@@ -49,7 +49,7 @@ export interface ShopifyNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: string, "attributionAppId"?: string, "createdAtMin"?: any, "createdAtMax"?: any, "financialStatus"?: "any" | "authorized" | "paid" | "partiallyPaid" | "partiallyRefunded" | "pending" | "refunded" | "unpaid" | "voided", "fulfillmentStatus"?: "any" | "partial" | "shipped" | "unfulfilled" | "unshipped", "ids"?: string, "processedAtMax"?: any, "processedAtMin"?: any, "status"?: "any" | "Cancelled" | "closed" | "open", "sinceId"?: string, "updatedAtMax"?: any, "updatedAtMin"?: any };
+    readonly options?: { "fields"?: string, "attributionAppId"?: string, "createdAtMin"?: string, "createdAtMax"?: string, "financialStatus"?: "any" | "authorized" | "paid" | "partiallyPaid" | "partiallyRefunded" | "pending" | "refunded" | "unpaid" | "voided", "fulfillmentStatus"?: "any" | "partial" | "shipped" | "unfulfilled" | "unshipped", "ids"?: string, "processedAtMax"?: string, "processedAtMin"?: string, "status"?: "any" | "Cancelled" | "closed" | "open", "sinceId"?: string, "updatedAtMax"?: string, "updatedAtMin"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -66,7 +66,7 @@ export interface ShopifyNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "email"?: string, "locationId"?: string, "note"?: string, "shippingAddressUi"?: { "shippingAddressValues": any }, "sourceName"?: string, "tags"?: string, "body_html"?: string, "handle"?: string, "images"?: { "created_at"?: any, "id"?: number, "position"?: number, "product_id"?: number, "variant_ids"?: number, "src"?: string, "width"?: number, "height"?: number, "updated_at"?: any }, "productOptions"?: { "option": any }, "product_type"?: string, "published_at"?: any, "published_scope"?: "global" | "web", "template_suffix"?: string, "title"?: string, "vendor"?: string };
+    readonly updateFields?: { "email"?: string, "locationId"?: string, "note"?: string, "shippingAddressUi"?: { "shippingAddressValues": any }, "sourceName"?: string, "tags"?: string, "body_html"?: string, "handle"?: string, "images"?: { "created_at"?: string, "id"?: number, "position"?: number, "product_id"?: number, "variant_ids"?: number, "src"?: string, "width"?: number, "height"?: number, "updated_at"?: string }, "productOptions"?: { "option": any }, "product_type"?: string, "published_at"?: string, "published_scope"?: "global" | "web", "template_suffix"?: string, "title"?: string, "vendor"?: string };
 
     /**
      * The name of the product

@@ -66,7 +66,7 @@ export interface KafkaNodeParameters {
     /**
      * Header parameters as JSON (flat object)
      */
-    readonly headerParametersJson?: any;
+    readonly headerParametersJson?: string;
 
     /**
      * Default: {}

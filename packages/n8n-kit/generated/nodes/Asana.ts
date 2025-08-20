@@ -40,7 +40,7 @@ export interface AsanaNodeParameters {
     /**
      * Default: {}
      */
-    readonly otherProperties?: { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: any, "liked"?: boolean, "notes"?: string, "workspace"?: string, "name"?: string, "projects"?: string[] };
+    readonly otherProperties?: { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "liked"?: boolean, "notes"?: string, "workspace"?: string, "name"?: string, "projects"?: string[] };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -74,7 +74,7 @@ export interface AsanaNodeParameters {
      * Properties to search for
      * Default: {}
      */
-    readonly filters?: { "assignee"?: string, "opt_fields"?: string[], "opt_pretty"?: boolean, "project"?: string, "section"?: string, "workspace"?: string, "completed_since"?: any, "modified_since"?: any };
+    readonly filters?: { "assignee"?: string, "opt_fields"?: string[], "opt_pretty"?: boolean, "project"?: string, "section"?: string, "workspace"?: string, "completed_since"?: string, "modified_since"?: string };
 
     /**
      * Project to show the sections of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -108,7 +108,7 @@ export interface AsanaNodeParameters {
      * Properties of the task comment
      * Default: {}
      */
-    readonly additionalFields?: { "is_pinned"?: boolean, "insert_after"?: string, "insert_before"?: string, "section"?: string, "color"?: string, "due_on"?: any, "notes"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "archived"?: boolean, "team"?: string };
+    readonly additionalFields?: { "is_pinned"?: boolean, "insert_after"?: string, "insert_before"?: string, "section"?: string, "color"?: string, "due_on"?: string, "notes"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "archived"?: boolean, "team"?: string };
 
     /**
      * The project where the task will be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -137,7 +137,7 @@ export interface AsanaNodeParameters {
      * Other properties to set
      * Default: {}
      */
-    readonly updateFields?: { "color"?: string, "due_on"?: any, "name"?: string, "notes"?: string, "owner"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "team"?: string };
+    readonly updateFields?: { "color"?: string, "due_on"?: string, "name"?: string, "notes"?: string, "owner"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "team"?: string };
 
 
 }

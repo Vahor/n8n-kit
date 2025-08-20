@@ -30,7 +30,7 @@ export interface WordpressNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "authorId"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "date"?: any, "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "format"?: "aside" | "audio" | "chat" | "gallery" | "image" | "link" | "quote" | "standard" | "status" | "video", "sticky"?: boolean, "categories"?: string[], "tags"?: string[], "postTemplate"?: { "values": any }, "parent"?: number, "pageTemplate"?: { "values": any }, "menuOrder"?: number, "featuredMediaId"?: number, "url"?: string, "description"?: string, "nickname"?: string };
+    readonly additionalFields?: { "authorId"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "date"?: string, "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "format"?: "aside" | "audio" | "chat" | "gallery" | "image" | "link" | "quote" | "standard" | "status" | "video", "sticky"?: boolean, "categories"?: string[], "tags"?: string[], "postTemplate"?: { "values": any }, "parent"?: number, "pageTemplate"?: { "values": any }, "menuOrder"?: number, "featuredMediaId"?: number, "url"?: string, "description"?: string, "nickname"?: string };
 
     /**
      * Unique identifier for the object
@@ -40,12 +40,12 @@ export interface WordpressNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "authorId"?: string, "title"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "date"?: any, "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "format"?: "aside" | "audio" | "chat" | "gallery" | "image" | "link" | "quote" | "standard" | "status" | "video", "sticky"?: boolean, "categories"?: string[], "tags"?: string[], "postTemplate"?: { "values": any }, "parent"?: number, "pageTemplate"?: { "values": any }, "menuOrder"?: number, "featuredMediaId"?: number, "username"?: string, "name"?: string, "firstName"?: string, "lastName"?: string, "email"?: string, "url"?: string, "description"?: string, "nickname"?: string };
+    readonly updateFields?: { "authorId"?: string, "title"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "date"?: string, "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "format"?: "aside" | "audio" | "chat" | "gallery" | "image" | "link" | "quote" | "standard" | "status" | "video", "sticky"?: boolean, "categories"?: string[], "tags"?: string[], "postTemplate"?: { "values": any }, "parent"?: number, "pageTemplate"?: { "values": any }, "menuOrder"?: number, "featuredMediaId"?: number, "username"?: string, "name"?: string, "firstName"?: string, "lastName"?: string, "email"?: string, "url"?: string, "description"?: string, "nickname"?: string };
 
     /**
      * Default: {}
      */
-    readonly options?: { "password"?: string, "context"?: "view" | "embed" | "edit", "after"?: any, "author"?: string[], "before"?: any, "categories"?: string[], "excludedCategories"?: string[], "excludedTags"?: string[], "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "sticky"?: boolean, "tags"?: string[], "force"?: boolean, "menuOrder"?: number, "page"?: number, "parent"?: number, "who"?: "authors" };
+    readonly options?: { "password"?: string, "context"?: "view" | "embed" | "edit", "after"?: string, "author"?: string[], "before"?: string, "categories"?: string[], "excludedCategories"?: string[], "excludedTags"?: string[], "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "sticky"?: boolean, "tags"?: string[], "force"?: boolean, "menuOrder"?: number, "page"?: number, "parent"?: number, "who"?: "authors" };
 
     /**
      * Whether to return all results or only up to a given limit

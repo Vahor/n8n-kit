@@ -69,7 +69,7 @@ export interface ZulipNodeParameters {
      * JSON format parameters for stream creation
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: any;
+    readonly additionalFieldsJson?: string;
 
     /**
      * A list of dictionaries containing the the key name and value specifying the name of the stream to subscribe. If the stream does not exist a new stream is created.

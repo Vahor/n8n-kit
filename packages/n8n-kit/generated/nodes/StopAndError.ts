@@ -25,7 +25,7 @@ export interface StopAndErrorNodeParameters {
      * Object containing error properties
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly errorObject?: any;
+    readonly errorObject?: string;
 
 
 }

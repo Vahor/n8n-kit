@@ -50,7 +50,7 @@ export interface GetResponseNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "ipAddress"?: string, "messageId"?: string, "fields"?: string, "campaignId"?: string, "changeOnFrom"?: any, "changeOnTo"?: any, "createdOnFrom"?: any, "createdOnTo"?: any, "exactMatch"?: boolean, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
+    readonly options?: { "ipAddress"?: string, "messageId"?: string, "fields"?: string, "campaignId"?: string, "changeOnFrom"?: string, "changeOnTo"?: string, "createdOnFrom"?: string, "createdOnTo"?: string, "exactMatch"?: boolean, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
 
     /**
      * Whether to return all results or only up to a given limit

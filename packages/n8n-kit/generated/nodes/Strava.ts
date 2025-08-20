@@ -41,7 +41,7 @@ export interface StravaNodeParameters {
     /**
      * ISO 8601 formatted date time
      */
-    readonly startDate?: any;
+    readonly startDate?: string;
 
     /**
      * In seconds

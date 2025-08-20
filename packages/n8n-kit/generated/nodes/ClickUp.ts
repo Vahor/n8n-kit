@@ -42,12 +42,12 @@ export interface ClickUpNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "position"?: number, "assignee"?: string, "parent"?: string, "resolved"?: boolean, "commentText"?: string, "addOwners"?: string, "color"?: any, "description"?: string, "dueDate"?: any, "removeOwners"?: string, "note"?: string, "stepsCurrent"?: number, "stepsEnd"?: number, "stepsStart"?: number, "unit"?: string, "addAssignees"?: string, "content"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "removeAssignees"?: string, "status"?: string, "startDate"?: any, "startDateTime"?: boolean, "timeEstimate"?: number, "billable"?: boolean, "duration"?: number, "start"?: any, "tags"?: string[], "task"?: string, "unsetStatus"?: boolean };
+    readonly updateFields?: { "name"?: string, "position"?: number, "assignee"?: string, "parent"?: string, "resolved"?: boolean, "commentText"?: string, "addOwners"?: string, "color"?: any, "description"?: string, "dueDate"?: string, "removeOwners"?: string, "note"?: string, "stepsCurrent"?: number, "stepsEnd"?: number, "stepsStart"?: number, "unit"?: string, "addAssignees"?: string, "content"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "removeAssignees"?: string, "status"?: string, "startDate"?: string, "startDateTime"?: boolean, "timeEstimate"?: number, "billable"?: boolean, "duration"?: number, "start"?: string, "tags"?: string[], "task"?: string, "unsetStatus"?: boolean };
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assignee"?: string, "notifyAll"?: boolean, "color"?: any, "description"?: string, "dueDate"?: any, "multipleOwners"?: boolean, "owners"?: string, "listIds"?: string, "stepsStart"?: number, "stepsEnd"?: number, "taskIds"?: string, "unit"?: string, "custom_task_ids"?: boolean, "team_id"?: string, "assignees"?: string[], "customFieldsJson"?: any, "content"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "parentId"?: string, "priority"?: number, "startDate"?: any, "startDateTime"?: boolean, "status"?: string, "tags"?: string[], "timeEstimate"?: number, "billable"?: boolean };
+    readonly additionalFields?: { "assignee"?: string, "notifyAll"?: boolean, "color"?: any, "description"?: string, "dueDate"?: string, "multipleOwners"?: boolean, "owners"?: string, "listIds"?: string, "stepsStart"?: number, "stepsEnd"?: number, "taskIds"?: string, "unit"?: string, "custom_task_ids"?: boolean, "team_id"?: string, "assignees"?: string[], "customFieldsJson"?: string, "content"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "parentId"?: string, "priority"?: number, "startDate"?: string, "startDateTime"?: boolean, "status"?: string, "tags"?: string[], "timeEstimate"?: number, "billable"?: boolean };
 
     /**
      */
@@ -101,7 +101,7 @@ export interface ClickUpNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "archived"?: boolean, "assignees"?: string[], "customFieldsUi"?: { "customFieldsValues": any }, "dateCreatedGt"?: any, "dateCreatedLt"?: any, "dateUpdatedGt"?: any, "dateUpdatedLt"?: any, "dueDateGt"?: any, "dueDateLt"?: any, "includeClosed"?: boolean, "orderBy"?: "id" | "created" | "updated" | "dueDate", "statuses"?: string[], "subtasks"?: boolean, "tags"?: string[], "end_date"?: any, "start_date"?: any };
+    readonly filters?: { "archived"?: boolean, "assignees"?: string[], "customFieldsUi"?: { "customFieldsValues": any }, "dateCreatedGt"?: string, "dateCreatedLt"?: string, "dateUpdatedGt"?: string, "dateUpdatedLt"?: string, "dueDateGt"?: string, "dueDateLt"?: string, "includeClosed"?: boolean, "orderBy"?: "id" | "created" | "updated" | "dueDate", "statuses"?: string[], "subtasks"?: boolean, "tags"?: string[], "end_date"?: string, "start_date"?: string };
 
     /**
      */
@@ -198,7 +198,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly start?: any;
+    readonly start?: string;
 
     /**
      * Duration in minutes

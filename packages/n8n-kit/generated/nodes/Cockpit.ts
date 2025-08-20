@@ -43,7 +43,7 @@ export interface CockpitNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: string, "filter"?: any, "language"?: string, "populate"?: boolean, "rawData"?: boolean, "skip"?: number, "sort"?: any };
+    readonly options?: { "fields"?: string, "filter"?: string, "language"?: string, "populate"?: boolean, "rawData"?: boolean, "skip"?: number, "sort"?: string };
 
     /**
      */
@@ -58,7 +58,7 @@ export interface CockpitNodeParameters {
      * Entry data to send as JSON
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly dataFieldsJson?: any;
+    readonly dataFieldsJson?: string;
 
     /**
      * Entry data to send

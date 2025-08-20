@@ -77,7 +77,7 @@ export interface PushbulletNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "active"?: boolean, "modified_after"?: any };
+    readonly filters?: { "active"?: boolean, "modified_after"?: string };
 
     /**
      * Whether to mark a push as having been dismissed by the user, will cause any notifications for the push to be hidden if possible

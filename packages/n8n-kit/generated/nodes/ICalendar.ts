@@ -24,12 +24,12 @@ export interface ICalendarNodeParameters {
     /**
      * Date and time at which the event begins. (For all-day events, the time will be ignored.).
      */
-    readonly start: any;
+    readonly start: string;
 
     /**
      * Date and time at which the event ends. (For all-day events, the time will be ignored.).
      */
-    readonly end: any;
+    readonly end: string;
 
     /**
      * Whether the event lasts all day or not

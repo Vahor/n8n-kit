@@ -51,7 +51,7 @@ export interface GitlabNodeParameters {
     /**
      * Due Date for issue
      */
-    readonly due_date?: any;
+    readonly due_date?: string;
 
     /**
      * Default: {"label":""}
@@ -74,7 +74,7 @@ export interface GitlabNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly editFields?: { "title"?: string, "description"?: string, "state"?: "closed" | "open", "labels"?: { "label"?: string }, "assignee_ids"?: { "assignee"?: string }, "due_date"?: any };
+    readonly editFields?: { "title"?: string, "description"?: string, "state"?: "closed" | "open", "labels"?: { "label"?: string }, "assignee_ids"?: { "assignee"?: string }, "due_date"?: string };
 
     /**
      * The reason to lock the issue
@@ -91,7 +91,7 @@ export interface GitlabNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly additionalFields?: { "name"?: string, "description"?: string, "ref"?: string, "order_by"?: "created_at" | "released_at", "sort"?: "asc" | "desc", "milestones"?: string, "released_at"?: any };
+    readonly additionalFields?: { "name"?: string, "description"?: string, "ref"?: string, "order_by"?: "created_at" | "released_at", "sort"?: "asc" | "desc", "milestones"?: string, "released_at"?: string };
 
     /**
      * The ID or URL-encoded path of the project
@@ -119,7 +119,7 @@ export interface GitlabNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
-    readonly getRepositoryIssuesFilters?: { "assignee_username"?: string, "author_username"?: string, "search"?: string, "labels"?: string, "updated_after"?: any, "state"?: "" | "closed" | "opened", "order_by"?: "created_at" | "updated_at" | "priority", "sort"?: "asc" | "desc" };
+    readonly getRepositoryIssuesFilters?: { "assignee_username"?: string, "author_username"?: string, "search"?: string, "labels"?: string, "updated_after"?: string, "state"?: "" | "closed" | "opened", "order_by"?: "created_at" | "updated_at" | "priority", "sort"?: "asc" | "desc" };
 
     /**
      * The file path of the file. Has to contain the full path or leave it empty for root folder.

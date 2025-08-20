@@ -50,11 +50,11 @@ export interface ApiTemplateIoNodeParameters {
 
     /**
      */
-    readonly overridesJson?: any;
+    readonly overridesJson?: string;
 
     /**
      */
-    readonly propertiesJson?: any;
+    readonly propertiesJson?: string;
 
     /**
      * Default: {}

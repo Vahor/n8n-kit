@@ -57,7 +57,7 @@ export interface FacebookGraphApiNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: { "field": any }, "queryParameters"?: { "parameter": any }, "queryParametersJson"?: any };
+    readonly options?: { "fields"?: { "field": any }, "queryParameters"?: { "parameter": any }, "queryParametersJson"?: string };
 
 
 }

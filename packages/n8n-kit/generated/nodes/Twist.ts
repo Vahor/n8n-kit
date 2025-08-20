@@ -58,7 +58,7 @@ export interface TwistNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "archived"?: boolean, "as_ids"?: boolean, "to_obj_index"?: number, "newer_than_ts"?: any, "older_than_ts"?: any, "order_by"?: "ASC" | "DESC", "from_obj_index"?: number, "filter_by"?: "attached_to_me" | "everyone" | "is_starred" };
+    readonly filters?: { "archived"?: boolean, "as_ids"?: boolean, "to_obj_index"?: number, "newer_than_ts"?: string, "older_than_ts"?: string, "order_by"?: "ASC" | "DESC", "from_obj_index"?: number, "filter_by"?: "attached_to_me" | "everyone" | "is_starred" };
 
     /**
      * Default: {}

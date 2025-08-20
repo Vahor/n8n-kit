@@ -41,7 +41,7 @@ export interface PayPalNodeParameters {
      * An array of individual payout items
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly itemsJson?: any;
+    readonly itemsJson?: string;
 
     /**
      * Default: {}

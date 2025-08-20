@@ -40,7 +40,7 @@ export interface Sms77NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "delay"?: any, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number, "from"?: string };
+    readonly options?: { "delay"?: string, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number, "from"?: string };
 
 
 }

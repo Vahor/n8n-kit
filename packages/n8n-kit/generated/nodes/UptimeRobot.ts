@@ -62,7 +62,7 @@ export interface UptimeRobotNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "friendly_name"?: string, "http_auth_type"?: "1" | "2", "http_method"?: "6" | "2" | "1" | "7" | "5" | "3" | "4", "http_password"?: string, "http_username"?: string, "interval"?: number, "port"?: number, "status"?: "0" | "1", "sub_type"?: "99" | "3" | "1" | "2" | "6" | "5" | "4", "url"?: string, "value"?: string, "start_time"?: any, "type"?: "1" | "2" | "3" | "4", "weekDay"?: "1" | "2" | "3" | "4" | "5" | "6" | "7", "monthDay"?: number, "custom_domain"?: string, "monitors"?: string, "password"?: string, "sort"?: "1" | "2" | "3" | "4" };
+    readonly updateFields?: { "friendly_name"?: string, "http_auth_type"?: "1" | "2", "http_method"?: "6" | "2" | "1" | "7" | "5" | "3" | "4", "http_password"?: string, "http_username"?: string, "interval"?: number, "port"?: number, "status"?: "0" | "1", "sub_type"?: "99" | "3" | "1" | "2" | "6" | "5" | "4", "url"?: string, "value"?: string, "start_time"?: string, "type"?: "1" | "2" | "3" | "4", "weekDay"?: "1" | "2" | "3" | "4" | "5" | "6" | "7", "monthDay"?: number, "custom_domain"?: string, "monitors"?: string, "password"?: string, "sort"?: "1" | "2" | "3" | "4" };
 
     /**
      * The correspondent value for the alert contact type
@@ -88,7 +88,7 @@ export interface UptimeRobotNodeParameters {
     /**
      * The maintenance window start datetime
      */
-    readonly start_time?: any;
+    readonly start_time?: string;
 
     /**
      * Monitor IDs to be displayed in status page (the values are separated with a dash (-) or 0 for all monitors)

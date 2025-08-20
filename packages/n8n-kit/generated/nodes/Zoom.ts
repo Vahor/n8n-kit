@@ -35,7 +35,7 @@ export interface ZoomNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: any, "timeZone"?: string, "type"?: "1" | "2" | "3" | "8", "occurrenceId"?: string, "showPreviousOccurrences"?: boolean, "scheduleForReminder"?: boolean };
+    readonly additionalFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: string, "timeZone"?: string, "type"?: "1" | "2" | "3" | "8", "occurrenceId"?: string, "showPreviousOccurrences"?: boolean, "scheduleForReminder"?: boolean };
 
     /**
      * Meeting ID
@@ -62,7 +62,7 @@ export interface ZoomNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: any, "timeZone"?: string, "topic"?: string, "type"?: "1" | "2" | "3" | "8" };
+    readonly updateFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: string, "timeZone"?: string, "topic"?: string, "type"?: "1" | "2" | "3" | "8" };
 
 
 }

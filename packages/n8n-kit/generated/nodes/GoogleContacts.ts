@@ -33,7 +33,7 @@ export interface GoogleContactsNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addressesUi"?: { "addressesValues": any }, "birthday"?: any, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: string[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
+    readonly additionalFields?: { "addressesUi"?: { "addressesValues": any }, "birthday"?: string, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: string[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
 
     /**
      */
@@ -80,7 +80,7 @@ export interface GoogleContactsNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "etag"?: string, "familyName"?: string, "givenName"?: string, "addressesUi"?: { "addressesValues": any }, "birthday"?: any, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: string[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
+    readonly updateFields?: { "etag"?: string, "familyName"?: string, "givenName"?: string, "addressesUi"?: { "addressesValues": any }, "birthday"?: string, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: string[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
 
 
 }

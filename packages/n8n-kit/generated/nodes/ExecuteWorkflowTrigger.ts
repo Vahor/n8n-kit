@@ -36,7 +36,7 @@ export interface ExecuteWorkflowTriggerNodeParameters {
     /**
      * Default: "JSON.stringify(\n\t\t\t\t\t{\n\t\t\t\t\t\taField: 'a string',\n\t\t\t\t\t\taNumber: 123,\n\t\t\t\t\t\tthisFieldAcceptsAnyType: null,\n\t\t\t\t\t\tanArray: [],\n\t\t\t\t\t},\n\t\t\t\t\tnull,\n\t\t\t\t\t2,\n\t\t\t\t)"
      */
-    readonly JSON_EXAMPLE?: any;
+    readonly JSON_EXAMPLE?: string;
 
     /**
      * Define expected input fields. If no inputs are provided, all data from the calling workflow will be passed through.
