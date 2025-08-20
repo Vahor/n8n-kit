@@ -112,21 +112,34 @@ const extractValue = (rootNode: ts.Node, node: ts.Node) => {
 	if (ts.isArrayLiteralExpression(node)) {
 		return node.elements.map((element) => extractValue(rootNode, element));
 	}
+	if (node.kind === 235) {
+		// @ts-expect-error I don't know which type this is
+		return extractValue(rootNode, node.expression);
+	}
 	if (ts.isObjectLiteralExpression(node)) {
 		return extractObjectProperties(rootNode, node);
 	}
 	if (ts.isSpreadElement(node)) {
 		const value = resolveImport(rootNode, node.expression.getText());
 		if (value) {
-			const res = extractValue(rootNode, value);
+			const res = extractValue(value[1], value[0]);
 			return res;
 		}
 	}
+	if (ts.isVariableStatement(node)) {
+		const declaration = node.declarationList.declarations[0];
+		if (declaration?.initializer)
+			return extractValue(rootNode, declaration.initializer);
+	}
+	if (ts.isVariableDeclaration(node)) {
+		if (node.initializer) return extractValue(rootNode, node.initializer);
+	}
+
 	// For template literals, identifiers, or complex expressions
 	return node.getText();
 };
 
-const resolveImportPath = (path: string) => {
+const resolveImportPath = (path: string, possibleExtensions: string[] = []) => {
 	// Try different extensions
 	const extensions = [".ts", ".js", "/index.ts", "/index.js"];
 	for (const ext of extensions) {
@@ -177,13 +190,33 @@ const resolveImport = (
 	result: any[] = [],
 ) => {
 	if (ts.isImportDeclaration(node)) {
-		if (
-			node.importClause?.namedBindings &&
-			ts.isNamedImports(node.importClause.namedBindings)
-		) {
-			node.importClause.namedBindings.elements.forEach((element) => {
+		if (node.importClause?.namedBindings) {
+			if (ts.isNamedImports(node.importClause.namedBindings)) {
+				node.importClause.namedBindings.elements.forEach((element) => {
+					if (
+						element.name.text === importName &&
+						node.moduleSpecifier &&
+						ts.isStringLiteral(node.moduleSpecifier)
+					) {
+						const modulePath = node.moduleSpecifier.text;
+						const rootNodeFilePath = rootNode.getSourceFile().fileName;
+						const modulePathFilePath = path.resolve(
+							path.dirname(rootNodeFilePath),
+							modulePath,
+						);
+						const res = extractConstFromFile(modulePathFilePath, importName);
+						if (res) {
+							result.push(res);
+						}
+					}
+				});
+			} else if (ts.isNamespaceImport(node.importClause.namedBindings)) {
+				const namespaceName = node.importClause.namedBindings.name.text;
+				const importNameParts = importName.split(".");
+
+				// TODO: move this to a function
 				if (
-					element.name.text === importName &&
+					namespaceName === importNameParts[0] &&
 					node.moduleSpecifier &&
 					ts.isStringLiteral(node.moduleSpecifier)
 				) {
@@ -193,12 +226,17 @@ const resolveImport = (
 						path.dirname(rootNodeFilePath),
 						modulePath,
 					);
-					const res = extractConstFromFile(modulePathFilePath, importName)?.[0];
+
+					const res = extractConstFromFile(
+						modulePathFilePath,
+						importNameParts[1],
+					);
+
 					if (res) {
 						result.push(res);
 					}
 				}
-			});
+			}
 		}
 	}
 
@@ -392,28 +430,40 @@ for (const node of allNodes) {
 	let result = visit(sourceFile);
 	if (!result) {
 		// possible versions, not very pretty but works
-		const versionDescriptionFile =
-			node.split("/").slice(0, -1).join("/") + "/VersionDescription";
-		console.error(
-			"Failed to parse node, trying version description",
-			versionDescriptionFile,
-		);
-		const versionDescriptionNode = extractConstFromFile(
-			versionDescriptionFile,
-			"versionDescription",
-		);
-		if (!versionDescriptionNode) {
-			console.error("Failed to parse node", node);
-			continue;
+		const possibleDescriptionFiles = [
+			"VersionDescription",
+			"actions/versionDescription",
+		];
+
+		for (const descriptionFile of possibleDescriptionFiles) {
+			const versionDescriptionFile =
+				node.split("/").slice(0, -1).join("/") + "/" + descriptionFile;
+			// console.error(
+			// 	"Failed to parse node, trying version description",
+			// 	versionDescriptionFile,
+			// );
+			const versionDescriptionNode = extractConstFromFile(
+				versionDescriptionFile,
+				"versionDescription",
+			);
+			if (!versionDescriptionNode) {
+				continue;
+			}
+
+			result = extractObjectProperties(
+				versionDescriptionNode[1],
+				versionDescriptionNode[0] as ts.ObjectLiteralExpression,
+			) as NodeDescription;
+
+			if (!result) {
+				// console.error("Failed to parse node", node);
+				continue;
+			}
+			break;
 		}
 
-		result = extractObjectProperties(
-			versionDescriptionNode[1],
-			versionDescriptionNode[0] as ts.ObjectLiteralExpression,
-		) as NodeDescription;
-
 		if (!result) {
-			console.error("Failed to parse node", node);
+			// console.error("Tested all possible files, failed to parse node", node);
 			continue;
 		}
 	}

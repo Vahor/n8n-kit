@@ -17,6 +17,16 @@ export interface AirtopNodeParameters {
      */
     readonly resource?: "extraction" | "file" | "interaction" | "session" | "window";
 
+    /**
+     * Default: "create"
+     */
+    readonly operation?: "create" | "save" | "terminate" | "waitForDownload" | "close" | "create" | "getLiveView" | "list" | "load" | "takeScreenshot" | "deleteFile" | "get" | "getMany" | "load" | "upload" | "query" | "getPaginated" | "scrape" | "click" | "fill" | "hover" | "scroll" | "type";
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "visualScope"?: "auto" | "viewport" | "page" | "scan", "waitForNavigation"?: "load" | "domcontentloaded" | "networkidle0" | "networkidle2" };
+
 
 }
 

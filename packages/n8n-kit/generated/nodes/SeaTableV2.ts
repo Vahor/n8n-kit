@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from 'vendor/n8n/packages/nodes-base/nodes/SeaTable/v2/actions/SeaTable.node.ts' node
+// Generated from 'vendor/n8n/packages/nodes-base/nodes/SeaTable/v2/SeaTableV2.node.ts' node
 
 export const name = "seaTable" as const;
 export const description = "Consume the SeaTable API" as const;
@@ -10,7 +10,7 @@ export const credentials = [{"name":"seaTableApi","required":true}] as const
 /**
  * Consume the SeaTable API
  */
-export interface SeaTableNodeParameters {
+export interface SeaTableV2NodeParameters {
 
     /**
      * Default: "row"

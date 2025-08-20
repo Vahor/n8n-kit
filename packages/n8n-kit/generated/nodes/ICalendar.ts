@@ -17,6 +17,36 @@ export interface ICalendarNodeParameters {
      */
     readonly operation?: "createEventFile";
 
+    /**
+     */
+    readonly title?: string;
+
+    /**
+     * Date and time at which the event begins. (For all-day events, the time will be ignored.).
+     */
+    readonly start: any;
+
+    /**
+     * Date and time at which the event ends. (For all-day events, the time will be ignored.).
+     */
+    readonly end: any;
+
+    /**
+     * Whether the event lasts all day or not
+     */
+    readonly allDay?: boolean;
+
+    /**
+     * The field that your iCalendar file will be available under in the output
+     * Default: "data"
+     */
+    readonly binaryPropertyName: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string, "useWorkflowTimezone"?: boolean };
+
 
 }
 

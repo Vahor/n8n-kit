@@ -77,18 +77,24 @@ export interface NotionV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: { "sortValue": any }, "iconType"?: "emoji" | "file", "icon"?: string, "filter"?: { "filters": any } };
-
-    /**
-     * The Notion Page to archive
-     * Default: {"mode":"url","value":""}
-     */
-    readonly pageId?: any;
+    readonly options?: { "sort"?: { "sortValue": any }, "iconType"?: "emoji" | "file", "icon"?: string, "downloadFiles"?: boolean, "filter"?: { "singleCondition": any, "multipleCondition": any } };
 
     /**
      * Page title. Appears at the top of the page and can be found via Quick Find.
      */
     readonly title?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly propertiesUi?: { "propertyValues": any };
+
+    /**
+     * The Notion Database Page to update
+     * Default: {"mode":"url","value":""}
+     */
+    readonly pageId?: any;
 
     /**
      */
