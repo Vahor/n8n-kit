@@ -5,7 +5,6 @@ export const name = "extractFromFile" as const;
 export const description = "Convert binary data to JSON" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Extract from File"} as const;
-export const credentials = undefined 
 
 /**
  * Convert binary data to JSON

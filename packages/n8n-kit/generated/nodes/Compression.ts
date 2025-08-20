@@ -5,7 +5,6 @@ export const name = "compression" as const;
 export const description = "Compress and decompress files" as const;
 export const version = 1.1 as const;
 export const defaults = {"name":"Compression","color":"#408000"} as const;
-export const credentials = undefined 
 
 /**
  * Compress and decompress files

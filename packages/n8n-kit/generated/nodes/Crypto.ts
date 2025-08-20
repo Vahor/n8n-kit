@@ -5,7 +5,6 @@ export const name = "crypto" as const;
 export const description = "Provide cryptographic utilities" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Crypto","color":"#408000"} as const;
-export const credentials = undefined 
 
 /**
  * Provide cryptographic utilities

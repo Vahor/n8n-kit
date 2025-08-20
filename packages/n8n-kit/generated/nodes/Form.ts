@@ -5,7 +5,6 @@ export const name = "form" as const;
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const version = 2.3 as const;
 export const defaults = {"name":"Form"} as const;
-export const credentials = undefined 
 
 /**
  * Generate webforms in n8n and pass their responses to the workflow

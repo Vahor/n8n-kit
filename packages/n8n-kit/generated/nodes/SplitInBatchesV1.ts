@@ -5,7 +5,6 @@ export const name = "splitInBatches" as const;
 export const description = "Split data into batches and iterate over each batch" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Split In Batches","color":"#007755"} as const;
-export const credentials = undefined 
 
 /**
  * Split data into batches and iterate over each batch

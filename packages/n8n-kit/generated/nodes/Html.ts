@@ -5,7 +5,6 @@ export const name = "html" as const;
 export const description = "Work with HTML" as const;
 export const version = 1.2 as const;
 export const defaults = {"name":"HTML"} as const;
-export const credentials = undefined 
 
 /**
  * Work with HTML

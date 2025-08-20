@@ -5,7 +5,6 @@ export const name = "xml" as const;
 export const description = "Convert data from and to XML" as const;
 export const version = 1 as const;
 export const defaults = {"name":"XML","color":"#333377"} as const;
-export const credentials = undefined 
 
 /**
  * Convert data from and to XML

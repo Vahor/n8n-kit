@@ -5,7 +5,6 @@ export const name = "splitOut" as const;
 export const description = "Turn a list inside item(s) into separate items" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Split Out"} as const;
-export const credentials = undefined 
 
 /**
  * Turn a list inside item(s) into separate items

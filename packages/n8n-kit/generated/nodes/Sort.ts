@@ -5,7 +5,6 @@ export const name = "sort" as const;
 export const description = "Change items order" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Sort"} as const;
-export const credentials = undefined 
 
 /**
  * Change items order

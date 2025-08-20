@@ -5,7 +5,6 @@ export const name = "stickyNote" as const;
 export const description = "Make your workflow easier to understand" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Sticky Note","color":"#FFD233"} as const;
-export const credentials = undefined 
 
 /**
  * Make your workflow easier to understand

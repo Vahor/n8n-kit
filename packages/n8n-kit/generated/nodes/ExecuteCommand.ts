@@ -5,7 +5,6 @@ export const name = "executeCommand" as const;
 export const description = "Executes a command on the host" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Execute Command","color":"#886644"} as const;
-export const credentials = undefined 
 
 /**
  * Executes a command on the host

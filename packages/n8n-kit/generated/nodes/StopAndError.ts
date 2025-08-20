@@ -5,7 +5,6 @@ export const name = "stopAndError" as const;
 export const description = "Throw an error in the workflow" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Stop and Error","color":"#ff0000"} as const;
-export const credentials = undefined 
 
 /**
  * Throw an error in the workflow

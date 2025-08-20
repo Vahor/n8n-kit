@@ -5,7 +5,6 @@ export const name = "executeWorkflow" as const;
 export const description = "Execute another workflow" as const;
 export const version = 1.2 as const;
 export const defaults = {"name":"Execute Workflow","color":"#ff6d5a"} as const;
-export const credentials = undefined 
 
 /**
  * Execute another workflow

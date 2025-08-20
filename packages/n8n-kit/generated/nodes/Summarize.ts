@@ -5,7 +5,6 @@ export const name = "summarize" as const;
 export const description = "Sum, count, max, etc. across items" as const;
 export const version = 1.1 as const;
 export const defaults = {"name":"Summarize"} as const;
-export const credentials = undefined 
 
 /**
  * Sum, count, max, etc. across items

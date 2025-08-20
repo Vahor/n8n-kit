@@ -5,7 +5,6 @@ export const name = "coinGecko" as const;
 export const description = "Consume CoinGecko API" as const;
 export const version = 1 as const;
 export const defaults = {"name":"CoinGecko"} as const;
-export const credentials = undefined 
 
 /**
  * Consume CoinGecko API

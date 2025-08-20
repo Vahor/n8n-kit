@@ -282,9 +282,11 @@ const generateTypescriptNodeOutput = async (
 	code.line(
 		`export const defaults = ${JSON.stringify(result.defaults)} as const;`,
 	);
-	code.line(
-		`export const credentials = ${JSON.stringify(result.credentials)} ${result.credentials != undefined ? "as const" : ""}`,
-	);
+	if (result.credentials != undefined) {
+		code.line(
+			`export const credentials = ${JSON.stringify(result.credentials)} as const`,
+		);
+	}
 	code.line();
 
 	code.line(`/**`);

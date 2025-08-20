@@ -5,7 +5,6 @@ export const name = "editImage" as const;
 export const description = "Edits an image like blur, resize or adding border and text" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Edit Image","color":"#553399"} as const;
-export const credentials = undefined 
 
 /**
  * Edits an image like blur, resize or adding border and text

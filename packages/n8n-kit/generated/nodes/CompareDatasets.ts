@@ -5,7 +5,6 @@ export const name = "compareDatasets" as const;
 export const description = "Compare two inputs for changes" as const;
 export const version = 2.3 as const;
 export const defaults = {"name":"Compare Datasets"} as const;
-export const credentials = undefined 
 
 /**
  * Compare two inputs for changes

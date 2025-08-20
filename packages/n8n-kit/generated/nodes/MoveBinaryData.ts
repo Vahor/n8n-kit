@@ -5,7 +5,6 @@ export const name = "moveBinaryData" as const;
 export const description = "Move data between binary and JSON properties" as const;
 export const version = 1.1 as const;
 export const defaults = {"name":"Convert to/from binary data","color":"#7722CC"} as const;
-export const credentials = undefined 
 
 /**
  * Move data between binary and JSON properties

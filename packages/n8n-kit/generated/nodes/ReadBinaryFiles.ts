@@ -5,7 +5,6 @@ export const name = "readBinaryFiles" as const;
 export const description = "Reads binary files from disk" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Read Binary Files","color":"#44AA44"} as const;
-export const credentials = undefined 
 
 /**
  * Reads binary files from disk

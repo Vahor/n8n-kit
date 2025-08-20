@@ -5,7 +5,6 @@ export const name = "hackerNews" as const;
 export const description = "Consume Hacker News API" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Hacker News"} as const;
-export const credentials = undefined 
 
 /**
  * Consume Hacker News API

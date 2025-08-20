@@ -5,7 +5,6 @@ export const name = "htmlExtract" as const;
 export const description = "Extracts data from HTML" as const;
 export const version = 1 as const;
 export const defaults = {"name":"HTML Extract","color":"#333377"} as const;
-export const credentials = undefined 
 
 /**
  * Extracts data from HTML

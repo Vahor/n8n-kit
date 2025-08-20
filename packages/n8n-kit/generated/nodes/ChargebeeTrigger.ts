@@ -5,7 +5,6 @@ export const name = "chargebeeTrigger" as const;
 export const description = "Starts the workflow when Chargebee events occur" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Chargebee Trigger"} as const;
-export const credentials = undefined 
 
 /**
  * Starts the workflow when Chargebee events occur

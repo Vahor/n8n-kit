@@ -5,7 +5,6 @@ export const name = "limit" as const;
 export const description = "Restrict the number of items" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Limit"} as const;
-export const credentials = undefined 
 
 /**
  * Restrict the number of items

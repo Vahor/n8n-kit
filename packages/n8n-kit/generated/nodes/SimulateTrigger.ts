@@ -5,7 +5,6 @@ export const name = "simulateTrigger" as const;
 export const description = "Simulate a trigger node" as const;
 export const version = 1 as const;
 export const defaults = {"name":"Simulate Trigger","color":"#b0b0b0"} as const;
-export const credentials = undefined 
 
 /**
  * Simulate a trigger node
