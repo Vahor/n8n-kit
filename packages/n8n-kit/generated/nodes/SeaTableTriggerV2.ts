@@ -22,6 +22,18 @@ export interface SeaTableTriggerV2NodeParameters {
      */
     readonly operation?: "create" | "remove" | "get" | "list" | "lock" | "search" | "unlock" | "update" | "snapshot" | "metadata" | "collaborator" | "add" | "list" | "remove" | "getPublicURL" | "upload";
 
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsMethod":"getTableNames"}
+     */
+    readonly tableName?: string;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsDependsOn":["tableName"],"loadOptionsMethod":"getRowIds"}
+     */
+    readonly rowId?: string;
+
 
 }
 

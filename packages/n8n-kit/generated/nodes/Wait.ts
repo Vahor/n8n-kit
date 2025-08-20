@@ -27,7 +27,7 @@ export interface WaitNodeParameters {
     /**
      * The date and time to wait for before continuing
      */
-    readonly dateTime?: any;
+    readonly dateTime?: string;
 
     /**
      */

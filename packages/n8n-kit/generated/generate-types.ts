@@ -56,7 +56,12 @@ const visit = (
 	if (
 		ts.isClassDeclaration(node) &&
 		node.heritageClauses?.some((clause) =>
-			clause.types.some((type) => type.getText() === "INodeType"),
+			clause.types.some(
+				(type) =>
+					type.getText() === "INodeType" ||
+					type.getText() === "Webhook" ||
+					type.getText() === "Node",
+			),
 		)
 	) {
 		result.push(extractDescription(rootNode, node));
@@ -125,6 +130,9 @@ const extractValue = (rootNode: ts.Node, node: ts.Node) => {
 		const value = resolveImport(rootNode, node.expression.getText());
 		if (value) {
 			const res = extractValue(value[1], value[0]);
+			if (Array.isArray(res)) {
+				return res.flat();
+			}
 			return res;
 		}
 	}
@@ -143,7 +151,13 @@ const extractValue = (rootNode: ts.Node, node: ts.Node) => {
 
 const resolveImportPath = (path: string, possibleExtensions: string[] = []) => {
 	// Try different extensions
-	const extensions = [".ts", ".js", "/index.ts", "/index.js"];
+	const extensions = [
+		...possibleExtensions,
+		".ts",
+		".js",
+		"/index.ts",
+		"/index.js",
+	];
 	for (const ext of extensions) {
 		const fullPath = path + ext;
 		if (fs.existsSync(fullPath)) {
@@ -158,7 +172,12 @@ const extractConstFromFile = (
 	path: string,
 	variableName: string,
 ): [ts.Expression, ts.SourceFile] | undefined => {
-	const correctPath = resolveImportPath(path);
+	const correctPath = resolveImportPath(path, [
+		`/${variableName}.ts`,
+		`/${variableName}.js`,
+		`/${variableName}/index.ts`,
+		`/${variableName}/index.js`,
+	]);
 	if (!correctPath) return undefined;
 	const sourceFile = ts.createSourceFile(
 		correctPath,
@@ -166,23 +185,37 @@ const extractConstFromFile = (
 		ts.ScriptTarget.ES2022,
 		true,
 	);
+	let possibleMatches: [ts.Expression, ts.SourceFile] | undefined = undefined;
+	const variableNamePattern = [
+		new RegExp(`.*${variableName}.*`, "i"),
+		new RegExp(`.*${addOrRemovePlural(variableName)}.*`, "i"),
+	];
 	for (const statement of sourceFile.statements) {
 		if (
 			ts.isVariableStatement(statement) &&
 			statement.modifiers?.some((m) => m.kind === ts.SyntaxKind.ExportKeyword)
 		) {
 			for (const declaration of statement.declarationList.declarations) {
-				if (ts.isVariableDeclaration(declaration)) {
-					if (
-						declaration.name.getText() === variableName &&
-						declaration.initializer
-					) {
+				if (ts.isVariableDeclaration(declaration) && declaration.initializer) {
+					if (declaration.name.getText() === variableName) {
 						return [declaration.initializer, sourceFile];
+					}
+					if (
+						variableNamePattern.some((pattern) =>
+							declaration.name.getText().match(pattern),
+						)
+					) {
+						possibleMatches = [declaration.initializer, sourceFile];
 					}
 				}
 			}
 		}
 	}
+	return possibleMatches;
+};
+
+const addOrRemovePlural = (name: string) => {
+	return name.endsWith("s") ? name.slice(0, -1) : name + "s";
 };
 
 const resolveImport = (

@@ -17,6 +17,74 @@ export interface OdooNodeParameters {
      */
     readonly resource?: "contact" | "custom" | "note" | "opportunity";
 
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
+     */
+    readonly fieldsToCreateOrUpdate?: { "fields": any };
+
+    /**
+     */
+    readonly customResourceId?: string;
+
+    /**
+     * Whether to return all results or only up to a given limit
+     */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1,"maxValue":1000}
+     */
+    readonly limit?: number;
+
+    /**
+     * Default: {}
+     */
+    readonly options?: { "fieldsList"?: string[] };
+
+    /**
+     * Filter request by applying filters
+     * Default: {}
+     * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Filter"}
+     */
+    readonly filterRequest?: { "filter": any };
+
+    /**
+     */
+    readonly opportunityName?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly additionalFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number, "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "vat"?: string, "website"?: string };
+
+    /**
+     */
+    readonly opportunityId?: string;
+
+    /**
+     * Default: {}
+     */
+    readonly updateFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number, "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "vat"?: string, "website"?: string };
+
+    /**
+     */
+    readonly contactName?: string;
+
+    /**
+     */
+    readonly contactId?: string;
+
+    /**
+     */
+    readonly memo?: string;
+
+    /**
+     */
+    readonly noteId?: string;
+
 
 }
 
