@@ -51,7 +51,12 @@ const visit = (
 	node: ts.Node = rootNode,
 	result: any[] = [],
 ) => {
-	if (ts.isClassDeclaration(node)) {
+	if (
+		ts.isClassDeclaration(node) &&
+		node.heritageClauses?.some((clause) =>
+			clause.types.some((type) => type.getText() === "INodeType"),
+		)
+	) {
 		result.push(extractDescription(rootNode, node));
 	}
 
@@ -131,11 +136,15 @@ const resolveImportPath = (path: string) => {
 		}
 	}
 
-	return path + ".ts"; // Default fallback
+	return null;
 };
 
-const extractConstFromFile = (path: string, variableName: string) => {
+const extractConstFromFile = (
+	path: string,
+	variableName: string,
+): [ts.Expression, ts.SourceFile] | undefined => {
 	const correctPath = resolveImportPath(path);
+	if (!correctPath) return undefined;
 	const sourceFile = ts.createSourceFile(
 		correctPath,
 		fs.readFileSync(correctPath, "utf-8"),
@@ -149,8 +158,11 @@ const extractConstFromFile = (path: string, variableName: string) => {
 		) {
 			for (const declaration of statement.declarationList.declarations) {
 				if (ts.isVariableDeclaration(declaration)) {
-					if (declaration.name.getText() === variableName) {
-						return declaration.initializer;
+					if (
+						declaration.name.getText() === variableName &&
+						declaration.initializer
+					) {
+						return [declaration.initializer, sourceFile];
 					}
 				}
 			}
@@ -181,7 +193,10 @@ const resolveImport = (
 						path.dirname(rootNodeFilePath),
 						modulePath,
 					);
-					result.push(extractConstFromFile(modulePathFilePath, importName));
+					const res = extractConstFromFile(modulePathFilePath, importName)?.[0];
+					if (res) {
+						result.push(res);
+					}
 				}
 			});
 		}
@@ -374,10 +389,33 @@ for (const node of allNodes) {
 		true,
 	);
 
-	const result = visit(sourceFile);
+	let result = visit(sourceFile);
 	if (!result) {
-		// console.error("Failed to parse node", node);
-		continue;
+		// possible versions, not very pretty but works
+		const versionDescriptionFile =
+			node.split("/").slice(0, -1).join("/") + "/VersionDescription";
+		console.error(
+			"Failed to parse node, trying version description",
+			versionDescriptionFile,
+		);
+		const versionDescriptionNode = extractConstFromFile(
+			versionDescriptionFile,
+			"versionDescription",
+		);
+		if (!versionDescriptionNode) {
+			console.error("Failed to parse node", node);
+			continue;
+		}
+
+		result = extractObjectProperties(
+			versionDescriptionNode[1],
+			versionDescriptionNode[0] as ts.ObjectLiteralExpression,
+		) as NodeDescription;
+
+		if (!result) {
+			console.error("Failed to parse node", node);
+			continue;
+		}
 	}
 	const nodeName = node.split("/").pop()?.split(".")[0]!;
 	result.__filepath = node;
