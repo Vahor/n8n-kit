@@ -43,6 +43,16 @@
 				"types": "./dist/workflow/index.d.cts",
 				"default": "./dist/workflow/index.cjs"
 			}
+		},
+		"./logger": {
+			"import": {
+				"types": "./dist/logger.d.cts",
+				"default": "./dist/logger.mjs"
+			},
+			"require": {
+				"types": "./dist/logger.d.cts",
+				"default": "./dist/logger.cjs"
+			}
 		}
 	},
 	"private": false,

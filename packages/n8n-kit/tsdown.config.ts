@@ -2,6 +2,7 @@ import { defineConfig } from "tsdown";
 
 export const input = [
 	"src/index.ts",
+	"src/logger.ts",
 	"src/workflow/index.ts",
 	"src/nodes/index.ts",
 ];

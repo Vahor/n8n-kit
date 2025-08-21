@@ -1,102 +1,111 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
-import type { App, Workflow } from "@vahor/n8n-kit";
-import { table } from "table";
+import { confirm } from "@inquirer/prompts";
+import { workflowTagId } from "@vahor/n8n-kit";
+import logger from "@vahor/n8n-kit/logger";
+import chalk from "chalk";
 import type { Argv } from "yargs";
-import { readConfigFile } from "../config";
-import { env } from "../env";
-import { createFolder, resolvePath } from "../files";
-
-//
+import { N8nApi } from "../n8n-api";
+import { loadApplication } from "./build";
 
 export const command = "deploy";
-export const description = "Deploy workflows to n8n";
-export const builder = (yargs: Argv) =>
-	yargs
-		.showHelpOnFail(true)
-		.option("no-build", {
-			type: "boolean",
-			describe: "Do not build the workflows",
-			default: false,
-		})
-		.option("no-deploy", {
-			type: "boolean",
-			describe: "Do not deploy the workflows",
-			default: false,
-		})
-		.option("dry-run", {
-			type: "boolean",
-			describe: "Build files but do not write them to disk and do not deploy",
-			default: false,
-		});
+export const description = "Deploy app to n8n";
+export const builder = (yargs: Argv) => yargs.showHelpOnFail(true);
 
 type DeployOptions = {
 	noBuild: boolean;
 	noDeploy: boolean;
 	dryRun: boolean;
+	yes: boolean;
 };
 
-export const buildWorkflows = async (options: DeployOptions) => {
-	const config = await readConfigFile();
-	const entrypoint = path.resolve(process.cwd(), config.entrypoint);
-	const fullPath = path.resolve(entrypoint);
+export const handler = async (options: DeployOptions) => {
+	const app = await loadApplication();
 
-	// Resolve the entrypoint path
-	delete require.cache[fullPath];
-	const { app: _app } = await import(fullPath);
-
-	if (_app === undefined) {
-		throw new Error("Entrypoint does not export an app; Use `export { app }`");
+	if (options.dryRun || options.noDeploy) {
+		logger.log("Dry run, not deploying workflows");
+		return;
 	}
 
-	const app: App = _app;
-	app["~validate"]();
-
-	if (app.workflows.length === 0) {
-		console.log("No workflows found");
-		return [];
+	console.log();
+	if (!options.yes) {
+		const result = await confirm({
+			message: "This will overwrite existing workflows, continue?",
+		});
+		if (!result) process.exit(0);
+	} else {
+		logger.log("Skipping confirmation prompt");
 	}
+	console.log();
 
-	console.log(`Found ${app.workflows.length} workflows`);
+	const n8n = new N8nApi();
 
-	console.log(
-		table([["ID", "Name"], ...app.workflows.map((w) => [w.id, w.getName()])]),
-	);
+	logger.log("Fetching tags...");
+	const tags = await n8n.getTags();
 
-	const workflowsFolder = resolvePath(config, "workflows");
-	if (!options.noBuild) {
-		await createFolder(config, "workflows");
-		for (const workflow of app.workflows) {
-			const workflowPath = path.join(workflowsFolder, `${workflow.id}.json`);
-			const workflowJson = JSON.stringify(workflow.build());
-			if (options.dryRun) {
-				console.log(
-					`[dry-run] Wrote workflow '${workflow.id}' to ${workflowPath}`,
-				);
-				continue;
-			}
-			await fs.promises.writeFile(workflowPath, workflowJson);
-			console.log(`Wrote workflow '${workflow.id}' to ${workflowPath}`);
+	logger.log("Resolving workflow ids...");
+	for (const workflow of app.workflows) {
+		logger.setContext(`resolve:${workflow.id}`);
+
+		const tag = workflowTagId(workflow.hashId);
+		const match = (
+			await n8n.listWorkflows({
+				tags: [tag],
+			})
+		).filter((w) => w.isArchived === false);
+		if (match.length === 0) logger.debug("No match found");
+		if (match.length > 1) {
+			logger.error(
+				`Multiple matches found for workflow ${workflow.id} (${tag})`,
+			);
+			process.exit(1);
+		}
+		if (match.length === 1) {
+			workflow.n8nWorkflowId = match[0]!.id;
+			logger.log(
+				`Found match for workflow ${chalk.cyan(workflow.n8nWorkflowId)}`,
+			);
 		}
 	}
 
-	return app.workflows;
-};
+	logger.log("Deploying workflows...");
 
-export const deployWorkflows = async (
-	workflows: Workflow[],
-	options: DeployOptions,
-) => {
-	if (options.dryRun || options.noDeploy) {
-		console.log("Dry run, not deploying workflows");
-		return;
+	for (const workflow of app.workflows) {
+		logger.setContext(`deploy:${workflow.id}`);
+
+		const buildWorkflow = workflow.build();
+		const { id: _id, tags: workflowTags, active, ...rest } = buildWorkflow;
+
+		// Create missing tags
+		for (const tag of workflowTags) {
+			const existingTag = tags.find((t) => t.name === tag.name);
+			if (!existingTag) {
+				logger.log(`Creating tag ${chalk.bold(tag.name)}`);
+				const result = await n8n.createTag(tag.name);
+				tag.id = result.id;
+			} else {
+				tag.id = existingTag.id;
+			}
+		}
+
+		// Create or update workflow
+		if (workflow.n8nWorkflowId) {
+			await n8n.updateWorkflow(workflow.n8nWorkflowId, rest);
+			logger.log(`Updated workflow ${chalk.bold(workflow.id)}`);
+		} else {
+			const result = await n8n.createWorkflow(rest);
+			workflow.n8nWorkflowId = result.id;
+			logger.log(`Created workflow ${chalk.bold(workflow.id)}`);
+		}
+
+		// Apply tags
+		await n8n.updateTags(
+			workflow.n8nWorkflowId,
+			workflowTags.map((t) => ({ id: t.id! })),
+		);
+
+		// Set active
+		await n8n.setActiveWorkflow(workflow.n8nWorkflowId, active);
+
+		logger.log("Done");
+		logger.setContext(null);
 	}
-	const apiKey = env.N8N_API_KEY;
-	console.log(apiKey, workflows);
-};
-
-export const handler = async (argv: DeployOptions) => {
-	const workflows = await buildWorkflows(argv);
-	if (!workflows.length) return;
-	await deployWorkflows(workflows, argv);
 };

@@ -11,6 +11,7 @@ import {
 } from "@vahor/n8n-kit";
 
 const workflow = new Workflow("my-workflow", {
+	active: true,
 	name: "NASA Example",
 	unlinkedNodes: [
 		new StickyNote("note", {

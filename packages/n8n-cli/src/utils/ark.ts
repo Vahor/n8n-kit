@@ -29,7 +29,6 @@ const formatErrors = (errors: ArkErrors): string =>
 		})
 		.join("\n");
 
-export const formatArkErrors = (errors: ArkErrors): string => {
-	const message = "Errors found while validating environment variables";
+export const formatArkErrors = (errors: ArkErrors, message: string): string => {
 	return `${chalk.red(message)}\n${indent(formatErrors(errors))}\n`;
 };

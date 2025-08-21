@@ -1,5 +1,4 @@
 {
-	"id": "workflow-trigger",
 	"name": "Workflow with trigger",
 	"nodes": [
 		{
@@ -47,8 +46,7 @@
 			"main": [[{ "node": "log-result", "type": "main", "index": 0 }]]
 		}
 	},
-	"active": false,
 	"settings": {},
 	"staticData": {},
-	"meta": {}
+	"tags": [{ "name": "@vahor/n8n-kit-id-workflow-trigger" }]
 }

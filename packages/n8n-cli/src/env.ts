@@ -3,23 +3,19 @@ import { formatArkErrors } from "./utils/ark";
 
 const envArkSchema = type({
 	N8N_API_KEY: "string",
+	N8N_BASE_URL: "string.url",
 });
 
 const parsed = envArkSchema(process.env);
-const initialized = false;
+let cached: Exclude<typeof parsed, type.errors> | undefined;
 
-export const validateEnv = () => {
-	if (!parsed) {
-		throw new Error("env is not initialized");
-	}
+export const env = (k: keyof (typeof envArkSchema)["infer"]) => {
+	if (cached !== undefined) return cached[k];
 	if (parsed instanceof type.errors) {
-		const message = formatArkErrors(parsed);
-		console.error(message);
+		const message = "Errors found while validating environment variables";
+		console.error(formatArkErrors(parsed, message));
 		process.exit(1);
 	}
-	return parsed;
+	cached = parsed;
+	return parsed[k];
 };
-if (!initialized) {
-	validateEnv();
-}
-export const env: Exclude<typeof parsed, type.errors> = parsed as any;

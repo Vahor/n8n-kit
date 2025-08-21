@@ -1,6 +1,7 @@
 import type { Type } from "arktype";
+import { prefix } from "../constants";
 import { BaseNode } from "../nodes/node";
-import { validateIdentifier } from "../utils/slugify";
+import { shortHash, validateIdentifier } from "../utils/slugify";
 import type { Chain, ChainContext } from "./chain/chain";
 import { Group } from "./group";
 import { calculateLayout } from "./layout";
@@ -18,7 +19,7 @@ interface WorkflowProps<
 		| Chain<C_CC, any>
 		| ((workflow: Workflow<Input, Output>) => Chain<C_CC, any>);
 	unlinkedNodes?: BaseNode<any, any>[];
-	tags?: Tag[];
+	tags?: Tag[] | undefined;
 	active?: boolean;
 	description?: string;
 
@@ -65,6 +66,11 @@ export class Workflow<
 	C_CC extends ChainContext = any,
 > {
 	public readonly id: string;
+	public readonly hashId: string;
+	private readonly tags: Tag[];
+
+	// Undefined until we know the id
+	public n8nWorkflowId: string | undefined = undefined;
 
 	/**
 	 * @internal
@@ -79,7 +85,9 @@ export class Workflow<
 		id: string,
 		public readonly props: WorkflowProps<Input, Output, C_CC>,
 	) {
+		this.hashId = shortHash(id);
 		this.id = validateIdentifier(id);
+		this.tags = this.buildTags();
 	}
 
 	public addUnlinkedNode(node: BaseNode<any, any>) {
@@ -138,19 +146,29 @@ export class Workflow<
 		}
 
 		return {
-			id: this.id,
+			id: this.hashId,
 			name: this.getName(),
 			nodes: [
 				...nodes.map((node) => node.toNode()),
 				...(this.props.unlinkedNodes?.map((node) => node.toNode()) ?? []),
 			],
 			connections: connections,
-			active: this.props.active ?? false,
 			settings: this.props.settings ?? {},
 			staticData: {},
-			meta: {},
-			tags: this.props.tags,
+			active: this.props.active ?? false,
+			tags: this.tags,
 		};
+	}
+
+	private buildTags() {
+		const tags = [...(this.props.tags ?? [])].filter(
+			(tag) => !tag.name.startsWith(`${prefix}id-`),
+		);
+
+		tags.push({
+			name: workflowTagId(this.hashId),
+		});
+		return tags;
 	}
 
 	/**
@@ -224,3 +242,7 @@ export class Workflow<
 		this.isValid = true;
 	}
 }
+
+export type WorkflowDefinition = ReturnType<Workflow["build"]>;
+
+export const workflowTagId = (id: string) => `${prefix}${id}`;

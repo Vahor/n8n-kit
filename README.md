@@ -17,7 +17,7 @@ bun install @vahor/n8n-kit @vahor/n8n-kit-cli
 
 - Define workflows using typescript. Each node and expressions is typed as possible.
 - Once a workflow is defined, it can be deployed to n8n using the CLI.
-- The CLI has multiple commands: `deploy`, `list`, `diff`
+- The CLI has multiple commands: `deploy`, `list`, `diff`...
 
 ### Example
 
@@ -106,9 +106,12 @@ bunx n8n-kit --help
 ```
 
 - `init`: Initialize a new project (create a `n8n-kit.config.json` file)
-- `deploy`: Deploy a workflow to n8n
-- `list`: List all workflows (on n8n instance)
-- `diff`: Diff a workflow with the one on n8n
+- `deploy`: Deploy an app to n8n
+- `build`: Build the app
+- `workflow`: Manage workflows
+	- `list`: List existing workflows
+	- `get`: Get a workflow
+	- `diff`: Diff a workflow with the one on n8n
 
 ## Limitations
 

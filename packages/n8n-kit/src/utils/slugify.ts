@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import slugify from "slugify";
 
 const internalIdentifiers = ["json", "~ids"];
@@ -26,3 +27,8 @@ export const validateIdentifier = <A extends string>(str: A): A => {
 	}
 	return slug as A;
 };
+
+export function shortHash(text: string, length = 9) {
+	const hash = crypto.createHash("sha256").update(text).digest("base64");
+	return hash.substring(0, length);
+}

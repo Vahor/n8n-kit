@@ -1,3 +1,5 @@
+import logger from "@vahor/n8n-kit/logger";
+
 process.env.NODE_ENV = process.env.NODE_ENV || "production";
 
 import chalk from "chalk";
@@ -5,18 +7,47 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
 export const yargsInstance = yargs(hideBin(process.argv));
+export type GlobalOptions = {
+	dryRun: boolean;
+	yes: boolean;
+	debug: boolean;
+};
 
 yargsInstance
 	.scriptName("n8n-kit")
+
 	.command(require("./cmds/init"))
 	.command(require("./cmds/deploy"))
+	.command(require("./cmds/build"))
 	.command(require("./cmds/workflow"))
+
+	.option("dry-run", {
+		type: "boolean",
+		describe: "Don't write to disk or deploy anything",
+		default: false,
+	})
+	.option("yes", {
+		type: "boolean",
+		describe: "Skip confirmation prompt",
+		default: false,
+	})
+	.option("debug", {
+		type: "boolean",
+		describe: "Enable debug mode",
+		default: false,
+	})
+
+	.middleware((argv) => {
+		if (argv.debug) {
+			process.env.DEBUG = "true";
+		}
+		if (argv.dryRun) {
+			logger.setDryRun(true);
+		}
+	})
+
 	.recommendCommands()
 	.exitProcess(false)
-	.env("N8N_KIT")
-	.epilogue(
-		`Options can be specified via environment variables with the "N8N_KIT_" prefix.`,
-	)
 	.help()
 	.alias("h", "help")
 	.completion()

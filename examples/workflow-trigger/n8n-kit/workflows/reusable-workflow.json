@@ -1,5 +1,4 @@
 {
-	"id": "reusable-workflow",
 	"name": "Reusable workflow",
 	"nodes": [
 		{
@@ -21,8 +20,7 @@
 		}
 	],
 	"connections": {},
-	"active": false,
 	"settings": {},
 	"staticData": {},
-	"meta": {}
+	"tags": [{ "name": "@vahor/n8n-kit-id-reusable-workflow" }]
 }
