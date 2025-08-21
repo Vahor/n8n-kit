@@ -91,7 +91,8 @@
 		"dev": "bunx tsdown --watch",
 		"generate": "bun run generate:entrypoint && bun run generate:types",
 		"generate:entrypoint": "bun run scripts/generate-entrypoint.ts",
-		"generate:types": "bun run scripts/generate-types.ts",
+		"generate:nodes": "bun run scripts/generate-nodes.ts",
+		"generate:credentials": "bun run scripts/generate-credentials.ts",
 		"typecheck": "tsc --project tsconfig.check.json"
 	},
 	"publishConfig": {

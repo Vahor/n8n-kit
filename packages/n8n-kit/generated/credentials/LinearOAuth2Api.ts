@@ -1,0 +1,54 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from '/n8n/packages/nodes-base/credentials/LinearOAuth2Api.credentials.ts' credentials
+
+export const name = "linearOAuth2Api" as const;
+
+/**
+ * displayName: Linear OAuth2 API
+ * documentationUrl: linear
+ */
+export interface LinearOAuth2ApiNodeParameters {
+
+    /**
+     * Default: "authorizationCode"
+     */
+    readonly grantType?: any;
+
+    /**
+     * Default: "https://linear.app/oauth/authorize"
+     */
+    readonly authUrl: any;
+
+    /**
+     * Default: "https://api.linear.app/oauth/token"
+     */
+    readonly accessTokenUrl: any;
+
+    /**
+     * Default: "user"
+     */
+    readonly actor?: "user" | "application";
+
+    /**
+     * Grants the "Admin" scope, Needed to create webhooks
+     */
+    readonly includeAdminScope?: boolean;
+
+    /**
+     * Default: "={{$self[\"includeAdminScope\"] ? \"read write issues:create comments:create admin\" : \"read write issues:create comments:create\"}}"
+     */
+    readonly scope: any;
+
+    /**
+     * Default: "={{\"actor=\"+$self[\"actor\"]}}"
+     */
+    readonly authQueryParameters?: any;
+
+    /**
+     * Default: "body"
+     */
+    readonly authentication?: any;
+
+
+}
+

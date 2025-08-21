@@ -1,0 +1,75 @@
+import { INodeTypeDescription } from "n8n-workflow";
+
+export const mapPropertyType = (type: string) => {
+	switch (type) {
+		case "boolean":
+			return "boolean";
+		case "notice":
+		case "dateTime":
+		case "json":
+		case "string":
+			return "string";
+		case "options":
+			return "string";
+		case "number":
+			return "number";
+	}
+	return "any";
+};
+
+export const toTypescriptType = (
+	property: INodeTypeDescription["properties"][number],
+) => {
+	switch (property.type) {
+		case "options":
+			if (property.options && Array.isArray(property.options)) {
+				const values = property.options
+					// @ts-expect-error: TODO: fix this
+					.map((opt) => `"${opt.value}"`)
+					.join(" | ");
+				return values || "string";
+			}
+			return "string";
+
+		case "multiOptions":
+			if (property.options && Array.isArray(property.options)) {
+				const values = property.options
+					// @ts-expect-error: TODO: fix this
+					.map((opt) => `"${opt.value}"`)
+					.join(" | ");
+				return `(${values})[]` || "string[]";
+			}
+			return "string[]";
+
+		case "fixedCollection":
+			if (property.options && Array.isArray(property.options)) {
+				let result = "{ ";
+				for (const option of property.options) {
+					result += `"${option.name}": any, `;
+				}
+				// Remove the last comma
+				result = result.slice(0, -2);
+				result += " }";
+				return result;
+			}
+
+			return "Record<string, any>";
+
+		case "collection":
+			if (property.options && Array.isArray(property.options)) {
+				let result = "{ ";
+				for (const option of property.options) {
+					// @ts-expect-error: TODO: fix this
+					result += `"${option.name}"${option.required ? "" : "?"}: ${toTypescriptType(option)}, `;
+				}
+				// Remove the last comma
+				result = result.slice(0, -2);
+				result += " }";
+				return result;
+			}
+			return "any[]";
+
+		default:
+			return mapPropertyType(property.type);
+	}
+};

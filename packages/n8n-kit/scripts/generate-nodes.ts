@@ -2,6 +2,7 @@ import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import type { INodeTypeDescription } from "n8n-workflow";
 import { globSync } from "tinyglobby";
+import { toTypescriptType } from "./shared";
 
 const allNodes = globSync(
 	// "../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
@@ -10,80 +11,6 @@ const allNodes = globSync(
 		cwd: path.resolve(__dirname),
 	},
 );
-
-const mapPropertyType = (type: string) => {
-	switch (type) {
-		case "boolean":
-			return "boolean";
-		case "notice":
-		case "dateTime":
-		case "json":
-		case "string":
-			return "string";
-		case "options":
-			return "string";
-		case "number":
-			return "number";
-	}
-	return "any";
-};
-
-const toTypescriptType = (
-	property: INodeTypeDescription["properties"][number],
-) => {
-	switch (property.type) {
-		case "options":
-			if (property.options && Array.isArray(property.options)) {
-				const values = property.options
-					// @ts-expect-error: TODO: fix this
-					.map((opt) => `"${opt.value}"`)
-					.join(" | ");
-				return values || "string";
-			}
-			return "string";
-
-		case "multiOptions":
-			if (property.options && Array.isArray(property.options)) {
-				const values = property.options
-					// @ts-expect-error: TODO: fix this
-					.map((opt) => `"${opt.value}"`)
-					.join(" | ");
-				return `(${values})[]` || "string[]";
-			}
-			return "string[]";
-
-		case "fixedCollection":
-			if (property.options && Array.isArray(property.options)) {
-				let result = "{ ";
-				for (const option of property.options) {
-					result += `"${option.name}": any, `;
-				}
-				// Remove the last comma
-				result = result.slice(0, -2);
-				result += " }";
-				return result;
-			}
-
-			return "Record<string, any>";
-
-		case "collection":
-			if (property.options && Array.isArray(property.options)) {
-				let result = "{ ";
-				for (const option of property.options) {
-					// @ts-expect-error: TODO: fix this
-					result += `"${option.name}"${option.required ? "" : "?"}: ${toTypescriptType(option)}, `;
-				}
-				// Remove the last comma
-				result = result.slice(0, -2);
-				result += " }";
-				return result;
-			}
-			return "any[]";
-
-		default:
-			return mapPropertyType(property.type);
-	}
-};
 
 const generateTypescriptNodeOutput = async (
 	result: INodeTypeDescription & { __filepath: string; __nodename: string },
@@ -102,14 +29,6 @@ const generateTypescriptNodeOutput = async (
 	code.line(
 		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : result.version} as const;`,
 	);
-	code.line(
-		`export const defaults = ${JSON.stringify(result.defaults)} as const;`,
-	);
-	if (result.credentials != null) {
-		code.line(
-			`export const credentials = ${JSON.stringify(result.credentials)} as const`,
-		);
-	}
 	code.line();
 
 	code.line(`/**`);
