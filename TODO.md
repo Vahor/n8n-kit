@@ -11,3 +11,7 @@
 - Add credentials references
 - Add a way to deploy credentials
 - Add CONTRIBUTING.md
+
+## Tests to add:
+
+- Propagate types for if nodes

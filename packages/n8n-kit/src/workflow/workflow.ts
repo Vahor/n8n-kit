@@ -1,11 +1,14 @@
+import type { Type } from "arktype";
 import { BaseNode } from "../nodes/node";
 import { validateIdentifier } from "../utils/slugify";
 import type { Chain } from "./chain/chain";
 import { calculateLayout } from "./layout";
 import type { Tag } from "./tag";
 
-interface WorkflowProps {
+interface WorkflowProps<Input extends Type, Output extends Type> {
 	name?: string;
+	inputSchema?: Input;
+	outputSchema?: Output;
 	definition: Chain<any, any>;
 	unlinkedNodes?: BaseNode[];
 	tags?: Tag[];
@@ -13,11 +16,11 @@ interface WorkflowProps {
 	description?: string;
 }
 
-export class Workflow {
+export class Workflow<Input extends Type, Output extends Type> {
 	public readonly id: string;
-	public readonly props: WorkflowProps;
+	public readonly props: WorkflowProps<Input, Output>;
 
-	public constructor(id: string, props: WorkflowProps) {
+	public constructor(id: string, props: WorkflowProps<Input, Output>) {
 		this.id = validateIdentifier(id);
 		this.props = props;
 	}
@@ -59,6 +62,22 @@ export class Workflow {
 			meta: {},
 			tags: this.props.tags,
 		};
+	}
+
+	/**
+	 * Should only be used with `typeof`
+	 * Returns null.
+	 */
+	public getInputType(): Input["infer"] {
+		return null as any;
+	}
+
+	/**
+	 * Should only be used with `typeof`
+	 * Returns null.
+	 */
+	public getOutputType(): Output["infer"] {
+		return null as any;
 	}
 
 	public "~validate"(): void {
