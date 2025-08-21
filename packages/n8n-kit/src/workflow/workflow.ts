@@ -21,6 +21,42 @@ interface WorkflowProps<
 	tags?: Tag[];
 	active?: boolean;
 	description?: string;
+
+	settings?: {
+		/**
+		 * @default "v1"
+		 */
+		executionOrder: "v1" | "v2";
+
+		timezone?: string;
+
+		/**
+		 * @default "all"
+		 */
+		saveDataErrorExecution?: "all" | "none";
+		/**
+		 * @default "all"
+		 */
+		saveDataSuccessExecution?: "all" | "none";
+
+		/**
+		 * @default true
+		 */
+		saveExecutionProgress?: boolean;
+
+		/**
+		 * @default true
+		 */
+		saveManualExecutions?: boolean;
+
+		callerPolicy?: "workflowsFromSameOwner";
+
+		/**
+		 * In seconds
+		 * @default undefined
+		 */
+		executionTimeout?: number | undefined;
+	};
 }
 
 export class Workflow<
@@ -109,7 +145,7 @@ export class Workflow<
 			],
 			connections: connections,
 			active: this.props.active ?? false,
-			settings: {},
+			settings: this.props.settings ?? {},
 			staticData: {},
 			meta: {},
 			tags: this.props.tags,
