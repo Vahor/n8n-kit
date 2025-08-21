@@ -1,6 +1,12 @@
-import { name, version } from "generated/nodes/IfV2";
+import { version } from "generated/nodes/IfV2";
+import type { IsNullable } from "../utils/types";
 import { Chain } from "../workflow/chain/chain";
-import type { IChainable, INextable } from "../workflow/chain/types";
+import type {
+	ConnectionOptions,
+	IChainable,
+	IContext,
+	INextable,
+} from "../workflow/chain/types";
 import { BaseNode, type NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
@@ -40,8 +46,15 @@ interface IfBaseProps {
 
 export interface IfProps extends IfBaseProps, NodeProps {}
 
-export class If<L extends string> extends BaseNode<L> {
-	protected override type = `n8n-nodes-base.${name}`;
+type trueAlreayUsedError = "true() is already used";
+type falseAlreayUsedError = "false() is already used";
+
+export class If<
+	L extends string,
+	True extends IContext | null = null,
+	False extends IContext | null = null,
+> extends BaseNode<L> {
+	protected override type = `n8n-nodes-base.if`;
 	protected override typeVersion = version;
 
 	public readonly endStates: INextable[] = [];
@@ -76,14 +89,26 @@ export class If<L extends string> extends BaseNode<L> {
 		};
 	}
 
-	public true(next: IChainable) {
-		super.addNext(next.startState);
-		return this;
+	public true<C extends IContext>(
+		next: IsNullable<True> extends true
+			? IChainable<any, C>
+			: trueAlreayUsedError,
+		connectionOptions?: Omit<ConnectionOptions, "from">,
+	): If<L, C, False> {
+		if (typeof next === "string") throw new Error(next);
+		super.addNext(next.startState, { ...connectionOptions, from: 0 });
+		return this as any;
 	}
 
-	public false(next: IChainable) {
-		super.addNext(next.startState);
-		return this;
+	public false<C extends IContext>(
+		next: IsNullable<False> extends true
+			? IChainable<any, C>
+			: falseAlreayUsedError,
+		connectionOptions?: Omit<ConnectionOptions, "from">,
+	): If<L, True, C> {
+		if (typeof next === "string") throw new Error(next);
+		super.addNext(next.startState, { ...connectionOptions, from: 1 });
+		return this as any;
 	}
 
 	public afterwards(): Chain {

@@ -7,7 +7,7 @@
 			"name": "schedule-trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
 			"position": [115, 220],
-			"typeVersion": 1.1,
+			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
 					"interval": [
@@ -92,7 +92,8 @@
 			"parameters": {
 				"content": "## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
 				"height": 120,
-				"width": 600
+				"width": 600,
+				"color": 1
 			}
 		}
 	],

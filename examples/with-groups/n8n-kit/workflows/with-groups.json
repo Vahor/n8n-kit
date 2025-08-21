@@ -1,0 +1,95 @@
+{
+	"id": "with-groups",
+	"name": "Workflow with groups",
+	"nodes": [
+		{
+			"id": "When clicking ‘Test workflow’",
+			"name": "When clicking ‘Test workflow’",
+			"type": "n8n-nodes-base.manualTrigger",
+			"position": [115, 300],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "inside group 1",
+			"name": "inside group 1",
+			"type": "n8n-nodes-base.noOp",
+			"position": [525, 425],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "inside group 2",
+			"name": "inside group 2",
+			"type": "n8n-nodes-base.noOp",
+			"position": [935, 175],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "inside group 1 - 2",
+			"name": "inside group 1 - 2",
+			"type": "n8n-nodes-base.noOp",
+			"position": [935, 425],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "after groups",
+			"name": "after groups",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1345, 300],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "group-1",
+			"name": "group-1",
+			"type": "n8n-nodes-base.stickyNote",
+			"position": [465, 365],
+			"typeVersion": 1,
+			"parameters": {
+				"content": "Group 1",
+				"height": 230,
+				"width": 640,
+				"color": 1
+			}
+		},
+		{
+			"id": "group-2",
+			"name": "group-2",
+			"type": "n8n-nodes-base.stickyNote",
+			"position": [875, 115],
+			"typeVersion": 1,
+			"parameters": {
+				"content": "Group 2",
+				"height": 230,
+				"width": 230,
+				"color": 3
+			}
+		}
+	],
+	"connections": {
+		"When clicking ‘Test workflow’": {
+			"main": [
+				[
+					{ "node": "inside group 1", "type": "main", "index": 0 },
+					{ "node": "inside group 2", "type": "main", "index": 0 }
+				]
+			]
+		},
+		"inside group 1": {
+			"main": [[{ "node": "inside group 1 - 2", "type": "main", "index": 0 }]]
+		},
+		"inside group 2": {
+			"main": [[{ "node": "after groups", "type": "main", "index": 0 }]]
+		},
+		"inside group 1 - 2": {
+			"main": [[{ "node": "after groups", "type": "main", "index": 0 }]]
+		}
+	},
+	"active": false,
+	"settings": {},
+	"staticData": {},
+	"meta": {}
+}

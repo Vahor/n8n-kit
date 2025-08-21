@@ -10,6 +10,8 @@ export type IsRecord<T> = string extends keyof T ? true : false;
 
 export type IsAny<T> = 0 extends 1 & T ? true : false;
 
+export type IsNullable<T> = T extends null ? true : false;
+
 export type Primitive =
 	| string
 	| number
@@ -50,3 +52,7 @@ export type TypeOfField<
 	Field extends string,
 	Context extends Record<string, unknown>,
 > = RecursiveDotNotation<Context, Field>;
+
+export type Last<T extends any[]> = T extends [...any[], infer _Last]
+	? _Last
+	: never;

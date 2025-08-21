@@ -1,5 +1,19 @@
 import type { State } from "./state";
 
+export interface ConnectionOptions {
+	/**
+	 * From which input to connect
+	 * Example: If nodes have a true/false output, true is 0, false is 1
+	 */
+	from?: number;
+
+	/**
+	 * To which output to connect
+	 * Example: Merge nodes have two inputs, top is 0, bottom is 1
+	 */
+	to?: number;
+}
+
 /**
  * Interface for states that can have 'next' states
  */
@@ -7,7 +21,7 @@ export interface INextable {
 	/*
 	 * Add a next state to this state
 	 */
-	addNext(state: IChainable, index?: number): void;
+	addNext(state: IChainable, connectionOptions?: ConnectionOptions): void;
 }
 
 export interface Identifiable<Id extends string = string> {

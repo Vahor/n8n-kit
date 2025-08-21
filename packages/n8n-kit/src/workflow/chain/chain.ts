@@ -1,7 +1,8 @@
 import type { AnyString, IsAny, IsNever, Prettify } from "../../utils/types";
+import { Group } from "../group";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import type { State } from "./state";
-import type { IChainable, IContext, INextable } from "./types";
+import type { IChainable, INextable } from "./types";
 
 export const NO_END_STATES: INextable[] = [] as const;
 
@@ -15,17 +16,31 @@ type AddIChainableToChainContext<
 	N,
 	CC extends ChainContext,
 	WithPrevious = true,
-> = N extends IChainable<infer Id, infer C>
-	? IsNever<C> extends true
-		? CC
-		: IsAny<C> extends true
+> = N extends Group<infer _, infer G_Chain_CC, any>
+	? Prettify<Omit<CC, PREVIOUS_CONTENT> & G_Chain_CC>
+	: N extends IChainable<infer Id, infer C>
+		? IsNever<C> extends true
 			? CC
-			: Prettify<
-					{ [k in Id]: C } & CC & {
-							[k in PREVIOUS_CONTENT]: WithPrevious extends true ? C : never;
-						}
-				>
-	: CC;
+			: IsAny<C> extends true
+				? CC
+				: Prettify<
+						{ [k in Id]: C } & Omit<CC, PREVIOUS_CONTENT> & {
+								[k in PREVIOUS_CONTENT as WithPrevious extends true
+									? k
+									: never]: C;
+							}
+					>
+		: CC;
+
+type AddNodeIdToIds<N, Ids extends string[]> = N extends Group<
+	infer _,
+	any,
+	infer G_Chain_Ids
+>
+	? [...Ids, ...G_Chain_Ids]
+	: N extends IChainable<infer Id>
+		? [...Ids, Id]
+		: Ids;
 
 type ChainableProvider<N extends IChainable, CC extends ChainContext> =
 	| N
@@ -34,6 +49,9 @@ type ChainableProvider<N extends IChainable, CC extends ChainContext> =
 type MultipleChainableProvider<N extends IChainable, CC extends ChainContext> =
 	| Array<N>
 	| ((params: { $: ExpressionBuilderProvider<CC> }) => Array<N>);
+
+type nextAfterMultipleError =
+	"Cannot use next() after multiple(), use connect() instead";
 
 /**
  * A collection of states to chain onto
@@ -44,9 +62,10 @@ type MultipleChainableProvider<N extends IChainable, CC extends ChainContext> =
 export class Chain<
 	CC extends ChainContext = {},
 	IdsInContext extends string[] = [],
+	EndsInMultiple = false,
 > implements IChainable
 {
-	"~context": IContext = undefined as any;
+	"~context": CC = undefined as any;
 
 	/**
 	 * Begin a new Chain from one chainable
@@ -107,9 +126,18 @@ export class Chain<
 	 * Continue normal execution with the given state
 	 */
 	public next<N extends IChainable>(
-		_next: ChainableProvider<N, CC>,
-	): Chain<AddIChainableToChainContext<N, CC>, [...IdsInContext, N["id"]]> {
+		_next: EndsInMultiple extends true
+			? nextAfterMultipleError
+			: ChainableProvider<N, CC>,
+	): Chain<
+		AddIChainableToChainContext<N, CC>,
+		AddNodeIdToIds<N, IdsInContext>
+	> {
 		void this.checkCanAddNext();
+		if (typeof _next === "string") {
+			// that's only a type error. We are not enforcing it at runtime
+			throw new Error(_next);
+		}
 
 		let next: IChainable;
 		if (typeof _next === "function") {
@@ -130,7 +158,8 @@ export class Chain<
 		_next: MultipleChainableProvider<N, CC>,
 	): Chain<
 		AddIChainableToChainContext<N, CC, false>,
-		[...IdsInContext, N["id"]]
+		AddNodeIdToIds<N, IdsInContext>,
+		true
 	> {
 		void this.checkCanAddNext();
 
@@ -150,15 +179,31 @@ export class Chain<
 
 		for (const endState of this.endStates) {
 			for (const nextState of next) {
+				if (nextState instanceof Group) {
+					const nodes = nextState.chain.toList();
+					if (nodes.length === 0) {
+						throw new Error("Group must have at least one node");
+					}
+					// Add the group just for the sticky layout
+					// TODO: try to add the type here.
+					this.next(nodes[0]! as any);
+					continue;
+				}
+
 				endState.addNext(nextState);
 			}
 		}
 		return new Chain(this.startState, this.endStates, next.at(-1)!);
 	}
 
-	public connect<Keys extends IdsInContext[number], N extends IChainable>(
-		ids: Array<Keys & AnyString>,
+	public connect<
+		Keys extends IdsInContext[number],
+		Ids extends Array<Keys & AnyString>,
+		N extends IChainable,
+	>(
+		ids: Ids,
 		_next: ChainableProvider<N, CC>,
+		connectionOptions?: { [k in Ids[number]]?: { index?: number } },
 	): Chain<AddIChainableToChainContext<N, CC>> {
 		void this.checkCanAddNext();
 
@@ -172,13 +217,13 @@ export class Chain<
 
 		const states = this.toList();
 
-		for (let i = 0; i < ids.length; i++) {
-			const id = ids[i];
+		for (const id of ids) {
 			const state = states.find((s) => s.id === id);
 			if (!state) {
 				throw new Error(`State '${id}' does not exist`);
 			}
-			(state as INextable).addNext(next, i);
+			const index = connectionOptions?.[id]?.index ?? 0;
+			(state as INextable).addNext(next, { to: index });
 		}
 
 		return new Chain(this.startState, next.endStates, next);

@@ -117,6 +117,7 @@ bunx n8n-kit --help
     - The limitation is mostly on required/optional parameters, and the relationship between input type and output type. (e.g. when setting an input parameter the output can be of a different type)
 - As the graph is built dynamically you'll lose style.
    - e.g. if you want to change direction in the middle of a graph, that's not possible. It's Left-to-Right.
+- Currently there's no way to add priority to a node. n8n runs nodes top-to-bottom, here you'll lose that order.
 
 If you have an idea for a feature or possible fix to one of the limitations, please open an issue.
 

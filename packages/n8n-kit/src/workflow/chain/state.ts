@@ -1,5 +1,10 @@
 import { checkInternalIdentifier } from "../../utils/slugify";
-import type { IChainable, IContext, INextable } from "./types";
+import type {
+	ConnectionOptions,
+	IChainable,
+	IContext,
+	INextable,
+} from "./types";
 
 export abstract class State<
 	LiteralId extends string = string,
@@ -17,7 +22,7 @@ export abstract class State<
 	private readonly nextStates: State[] = [];
 
 	// from id to <string, index>. If missing 0
-	private readonly connectionsIndexes: Record<string, number> = {};
+	private readonly connectionsOptions: Record<string, ConnectionOptions> = {};
 
 	public constructor(id: LiteralId) {
 		checkInternalIdentifier(id);
@@ -25,16 +30,20 @@ export abstract class State<
 		this.startState = this;
 	}
 
-	public "~getConnectionIndex"(id: string) {
-		return this.connectionsIndexes[id] ?? 0;
+	public "~getConnectionOptions"(id: string): Required<ConnectionOptions> {
+		const connectionOptions = this.connectionsOptions[id];
+		return {
+			from: connectionOptions?.from ?? 0,
+			to: connectionOptions?.to ?? 0,
+		};
 	}
 
-	public addNext(state: State, index = 0) {
+	public addNext(state: State, connectionOptions?: ConnectionOptions) {
 		this.nextStates.push(state);
 		state.addIncoming(this);
 
-		if (index !== undefined) {
-			state.connectionsIndexes[this.id] = index;
+		if (connectionOptions) {
+			this.connectionsOptions[state.id] = connectionOptions;
 		}
 	}
 

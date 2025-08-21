@@ -35,6 +35,8 @@ export abstract class BaseNode<
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
+	public groupId?: string;
+
 	abstract getParameters(): object;
 
 	constructor(id: LiteralId, _props?: NodeProps) {
@@ -43,9 +45,24 @@ export abstract class BaseNode<
 
 	public "~setParent"(parent: Workflow) {
 		if (this.workflowParent) {
+			if (this.workflowParent.id === parent.id) {
+				return;
+			}
 			throw new Error(`Node '${this.getPath()}' already has a parent.`);
 		}
 		this.workflowParent = parent;
+	}
+
+	public "~setGroup"(groupId: string) {
+		if (this.groupId) {
+			if (this.groupId === groupId) {
+				return;
+			}
+			throw new Error(
+				`Node '${this.getPath()}' is already in group '${this.groupId}' cannot move to '${groupId}'`,
+			);
+		}
+		this.groupId = groupId;
 	}
 
 	public "~validate"(): void {}
