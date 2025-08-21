@@ -19,7 +19,7 @@ describe("ExecuteWorkflowTrigger", () => {
 
 		const executeNode = new ExecuteWorkflowTrigger(workflow, "test", {});
 		const parameters = executeNode.getParameters();
-		expect(parameters.workflowInput).toEqual({
+		expect(parameters.workflowInputs).toEqual({
 			values: [
 				{
 					name: "a",

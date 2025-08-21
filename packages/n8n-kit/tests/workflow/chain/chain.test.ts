@@ -104,7 +104,7 @@ describe("Chain", () => {
 
 			const chain = Chain.start(Start)
 				.multiple([A, B])
-				.connect(["a", "b"], C, { b: { index: 1 } })
+				.connect(["a", "b"], C, { b: { to: 1 } })
 				.next(D);
 
 			const workflow = new Workflow("test", {
