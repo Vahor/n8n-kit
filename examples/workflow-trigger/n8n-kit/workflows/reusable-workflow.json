@@ -1,0 +1,28 @@
+{
+	"id": "reusable-workflow",
+	"name": "Reusable workflow",
+	"nodes": [
+		{
+			"id": "workflow-trigger",
+			"name": "workflow-trigger",
+			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"position": [115, 115],
+			"typeVersion": 1.1,
+			"parameters": {
+				"workflowInputs": {
+					"values": [
+						{ "name": "a", "type": "string" },
+						{ "name": "b", "type": "number" },
+						{ "name": "c", "type": "number" },
+						{ "name": "d", "type": "any" }
+					]
+				}
+			}
+		}
+	],
+	"connections": {},
+	"active": false,
+	"settings": {},
+	"staticData": {},
+	"meta": {}
+}

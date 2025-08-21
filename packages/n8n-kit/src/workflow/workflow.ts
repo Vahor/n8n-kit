@@ -65,7 +65,6 @@ export class Workflow<
 	C_CC extends ChainContext = any,
 > {
 	public readonly id: string;
-	public readonly props: WorkflowProps<Input, Output, C_CC>;
 
 	/**
 	 * @internal
@@ -76,9 +75,11 @@ export class Workflow<
 	 */
 	public "~cachedDefinition"?: Chain<C_CC, any>;
 
-	public constructor(id: string, props: WorkflowProps<Input, Output, C_CC>) {
+	public constructor(
+		id: string,
+		public readonly props: WorkflowProps<Input, Output, C_CC>,
+	) {
 		this.id = validateIdentifier(id);
-		this.props = props;
 	}
 
 	public addUnlinkedNode(node: BaseNode<any, any>) {
@@ -160,12 +161,20 @@ export class Workflow<
 		return null as any;
 	}
 
+	public getInputSchema(): Input | null {
+		return this.props.inputSchema ?? null;
+	}
+
 	/**
 	 * Should only be used with `typeof`
 	 * Returns null.
 	 */
 	public getOutputType(): Output["infer"] {
 		return null as any;
+	}
+
+	public getOutputSchema(): Output | null {
+		return this.props.outputSchema ?? null;
 	}
 
 	public "~validate"(): void {

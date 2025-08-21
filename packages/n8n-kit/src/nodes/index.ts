@@ -2,6 +2,8 @@
 // see scripts/generate-entrypoint.ts
 
 export * from "./code";
+export * from "./execute-workflow";
+export * from "./execute-workflow-trigger";
 export * from "./if";
 export * from "./manual-trigger";
 export * from "./merge";

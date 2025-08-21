@@ -1,0 +1,54 @@
+{
+	"id": "workflow-trigger",
+	"name": "Workflow with trigger",
+	"nodes": [
+		{
+			"id": "When clicking ‘Test workflow’",
+			"name": "When clicking ‘Test workflow’",
+			"type": "n8n-nodes-base.manualTrigger",
+			"position": [115, 115],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "call-reusable-workflow",
+			"name": "call-reusable-workflow",
+			"type": "n8n-nodes-base.executeWorkflow",
+			"position": [325, 115],
+			"typeVersion": 1.2,
+			"parameters": {
+				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" },
+				"workflowId": {
+					"value": "reusable-workflow",
+					"mode": "list",
+					"cachedResultName": "reusable-workflow"
+				},
+				"source": "database"
+			}
+		},
+		{
+			"id": "log-result",
+			"name": "log-result",
+			"type": "n8n-nodes-base.code",
+			"position": [535, 115],
+			"typeVersion": 2,
+			"parameters": {
+				"jsCode": "=console.log({{·$('call-reusable-workflow').hello·}});"
+			}
+		}
+	],
+	"connections": {
+		"When clicking ‘Test workflow’": {
+			"main": [
+				[{ "node": "call-reusable-workflow", "type": "main", "index": 0 }]
+			]
+		},
+		"call-reusable-workflow": {
+			"main": [[{ "node": "log-result", "type": "main", "index": 0 }]]
+		}
+	},
+	"active": false,
+	"settings": {},
+	"staticData": {},
+	"meta": {}
+}

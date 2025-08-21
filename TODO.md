@@ -11,6 +11,8 @@
 - Add a way to deploy credentials
 - Add CONTRIBUTING.md
 
+- When importing a workflow we get `Node does not have any credentials set`
+
 ## Tests to add:
 
 - Propagate types for if nodes
