@@ -27,6 +27,12 @@
         "@vahor/n8n-kit": "workspace:*",
       },
     },
+    "examples/with-groups": {
+      "name": "example-with-groups",
+      "dependencies": {
+        "@vahor/n8n-kit": "workspace:*",
+      },
+    },
     "packages/n8n-cli": {
       "name": "@vahor/n8n-kit-cli",
       "version": "0.0.0",
@@ -896,6 +902,8 @@
     "example-merge": ["example-merge@workspace:examples/code-merge"],
 
     "example-nasa": ["example-nasa@workspace:examples/nasa"],
+
+    "example-with-groups": ["example-with-groups@workspace:examples/with-groups"],
 
     "execa": ["execa@9.6.0", "", { "dependencies": { "@sindresorhus/merge-streams": "^4.0.0", "cross-spawn": "^7.0.6", "figures": "^6.1.0", "get-stream": "^9.0.0", "human-signals": "^8.0.1", "is-plain-obj": "^4.1.0", "is-stream": "^4.0.1", "npm-run-path": "^6.0.0", "pretty-ms": "^9.2.0", "signal-exit": "^4.1.0", "strip-final-newline": "^4.0.0", "yoctocolors": "^2.1.1" } }, "sha512-jpWzZ1ZhwUmeWRhS7Qv3mhpOhLfwI+uAX4e5fOcXqwMR7EcJ0pj2kV1CVzHVMX/LphnKWD3LObjZCoJ71lKpHw=="],
 
