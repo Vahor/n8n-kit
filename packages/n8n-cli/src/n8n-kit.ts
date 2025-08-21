@@ -3,14 +3,13 @@ process.env.NODE_ENV = process.env.NODE_ENV || "production";
 import chalk from "chalk";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import * as z from "zod";
 
 export const yargsInstance = yargs(hideBin(process.argv));
 
 yargsInstance
 	.scriptName("n8n-kit")
 	.command(require("./cmds/init"))
-	.command(require("./cmds/build"))
+	.command(require("./cmds/deploy"))
 	.command(require("./cmds/workflow"))
 	.recommendCommands()
 	.exitProcess(false)
@@ -21,6 +20,9 @@ yargsInstance
 	.help()
 	.alias("h", "help")
 	.completion()
+	.parserConfiguration({
+		"boolean-negation": false, // Disable automatic --no- handling
+	})
 	.command({
 		command: "*", // catches everything not previously matched
 		handler: (argv) => {
@@ -46,12 +48,7 @@ yargsInstance
 		}
 
 		if (error) {
-			if (error instanceof z.ZodError) {
-				console.error(chalk.red(z.prettifyError(error)));
-			} else {
-				console.error(chalk.red(error));
-			}
-			console.debug(error);
+			console.error(chalk.red(error));
 		}
 		process.exit(1);
 	})

@@ -6,11 +6,15 @@ export const createFolder = async (
 	config: N8nKitConfig,
 	subFolderName: string,
 ) => {
-	const outputFolder = path.resolve(process.cwd(), config.out, subFolderName);
+	const outputFolder = resolvePath(config, subFolderName);
 	await fs.promises.mkdir(outputFolder, { recursive: true });
 	const outStat = await fs.promises.stat(outputFolder);
 	if (!outStat.isDirectory()) {
 		throw new Error(`Output folder ${outputFolder} is not a directory`);
 	}
 	return outputFolder;
+};
+
+export const resolvePath = (config: N8nKitConfig, subFolderName: string) => {
+	return path.resolve(process.cwd(), config.out, subFolderName);
 };

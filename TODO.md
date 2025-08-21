@@ -12,6 +12,7 @@
 - Add CONTRIBUTING.md
 
 - When importing a workflow we get `Node does not have any credentials set`
+- Add a proper logger, that can handle prefix for `[dry-run]`, maybe colors, etc.
 
 ## Tests to add:
 
