@@ -39,11 +39,6 @@ export interface ServiceNowOAuth2ApiCredentials {
     readonly "authQueryParameters"?: any;
 
     /**
-     * Default: "grant_type=authorization_code"
-     */
-    readonly "authQueryParameters"?: any;
-
-    /**
      * Default: "header"
      */
     readonly "authentication"?: any;

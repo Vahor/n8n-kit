@@ -36,11 +36,6 @@ export interface ERPNextApiCredentials {
     readonly "domain"?: "erpnext.com" | "frappe.cloud";
 
     /**
-     * Fully qualified domain name of self-hosted ERPNext instance
-     */
-    readonly "domain"?: string;
-
-    /**
      * Whether to connect even if SSL certificate validation is not possible
      */
     readonly "allowUnauthorizedCerts"?: boolean;

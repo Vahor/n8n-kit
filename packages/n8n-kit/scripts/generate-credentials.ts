@@ -65,7 +65,10 @@ const generateTypescriptCredentialsOutput = async (
 	code.line(`export interface ${result.__nodename}Credentials {`);
 	code.indent();
 
+	const visited = new Set<string>();
 	for (const property of result.properties) {
+		if (visited.has(property.name)) continue;
+		visited.add(property.name);
 		code.line(`/**`);
 		if (property.description) {
 			code.line(` * ${property.description}`);

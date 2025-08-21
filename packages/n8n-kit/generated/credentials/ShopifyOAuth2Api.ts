@@ -29,11 +29,6 @@ export interface ShopifyOAuth2ApiCredentials {
     readonly "clientSecret": string;
 
     /**
-     * Default: "authorizationCode"
-     */
-    readonly "grantType"?: any;
-
-    /**
      * Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/authorize"
      */
     readonly "authUrl": any;

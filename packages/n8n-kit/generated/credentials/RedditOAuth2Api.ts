@@ -20,16 +20,6 @@ export interface RedditOAuth2ApiCredentials {
     readonly "authQueryParameters"?: any;
 
     /**
-     * Default: "grant_type=authorization_code"
-     */
-    readonly "authQueryParameters"?: any;
-
-    /**
-     * Default: "duration=permanent"
-     */
-    readonly "authQueryParameters"?: any;
-
-    /**
      * Default: "https://www.reddit.com/api/v1/authorize"
      */
     readonly "authUrl"?: any;
