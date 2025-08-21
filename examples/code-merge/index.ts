@@ -62,7 +62,7 @@ return [
 				mode: "combine",
 				fieldsToMatchString: "language",
 			}),
-			{ "Sample data (greeting + language)": { index: 1 } },
+			{ "Sample data (greeting + language)": { to: 1 } },
 		),
 });
 

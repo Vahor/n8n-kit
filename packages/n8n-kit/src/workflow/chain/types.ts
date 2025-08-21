@@ -4,12 +4,14 @@ export interface ConnectionOptions {
 	/**
 	 * From which input to connect
 	 * Example: If nodes have a true/false output, true is 0, false is 1
+	 * @default 0
 	 */
 	from?: number;
 
 	/**
 	 * To which output to connect
 	 * Example: Merge nodes have two inputs, top is 0, bottom is 1
+	 * @default 0
 	 */
 	to?: number;
 }

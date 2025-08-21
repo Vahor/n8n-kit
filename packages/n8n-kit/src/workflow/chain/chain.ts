@@ -2,7 +2,7 @@ import type { AnyString, IsAny, IsNever, Prettify } from "../../utils/types";
 import { Group } from "../group";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import type { State } from "./state";
-import type { IChainable, INextable } from "./types";
+import type { ConnectionOptions, IChainable, INextable } from "./types";
 
 export const NO_END_STATES: INextable[] = [] as const;
 
@@ -203,7 +203,7 @@ export class Chain<
 	>(
 		ids: Ids,
 		_next: ChainableProvider<N, CC>,
-		connectionOptions?: { [k in Ids[number]]?: { index?: number } },
+		connectionOptions?: { [k in Ids[number]]?: Pick<ConnectionOptions, "to"> },
 	): Chain<AddIChainableToChainContext<N, CC>> {
 		void this.checkCanAddNext();
 
