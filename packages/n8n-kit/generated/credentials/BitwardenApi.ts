@@ -7,25 +7,27 @@ export const name = "bitwardenApi" as const;
  * displayName: Bitwarden API
  * documentationUrl: bitwarden
  */
-export interface BitwardenApiNodeParameters {
+export interface BitwardenApiCredentials {
 
     /**
      */
-    readonly clientId?: string;
+    readonly "clientId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientSecret?: string;
+    readonly "clientSecret"?: string;
 
     /**
      * Default: "cloudHosted"
      */
-    readonly environment?: "cloudHosted" | "selfHosted";
+    readonly "environment"?: "cloudHosted" | "selfHosted";
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
+
+    readonly __name: "bitwardenApi";
 
 
 }

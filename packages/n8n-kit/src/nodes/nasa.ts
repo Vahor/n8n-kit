@@ -1,9 +1,13 @@
+import type { NasaApiCredentials } from "generated/credentials/NasaApi";
 import { type NasaNodeParameters, version } from "generated/nodes/Nasa";
+import type { Credentials } from "../credentials";
 import { Node, type NodeProps } from "./node";
 
 interface NasaBaseProps extends NasaNodeParameters {}
 
-export interface NasaProps extends NodeProps, NasaBaseProps {}
+export interface NasaProps extends NodeProps, NasaBaseProps {
+	credentials: Credentials<NasaApiCredentials>;
+}
 
 export class Nasa<L extends string, P extends NasaProps> extends Node<
 	L,
@@ -22,6 +26,11 @@ export class Nasa<L extends string, P extends NasaProps> extends Node<
 	}
 
 	override getParameters() {
-		return this.props;
+		const { credentials: _, ...rest } = this.props;
+		return rest;
+	}
+
+	public override getCredentials() {
+		return this.props.credentials;
 	}
 }

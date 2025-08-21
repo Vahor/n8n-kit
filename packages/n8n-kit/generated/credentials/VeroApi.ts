@@ -7,12 +7,14 @@ export const name = "veroApi" as const;
  * displayName: Vero API
  * documentationUrl: vero
  */
-export interface VeroApiNodeParameters {
+export interface VeroApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly authToken?: string;
+    readonly "authToken"?: string;
+
+    readonly __name: "veroApi";
 
 
 }

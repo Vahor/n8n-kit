@@ -7,12 +7,14 @@ export const name = "getResponseApi" as const;
  * displayName: GetResponse API
  * documentationUrl: getResponse
  */
-export interface GetResponseApiNodeParameters {
+export interface GetResponseApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "getResponseApi";
 
 
 }

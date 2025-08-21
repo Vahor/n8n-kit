@@ -7,20 +7,22 @@ export const name = "httpHeaderAuth" as const;
  * displayName: Header Auth
  * documentationUrl: httpRequest
  */
-export interface HttpHeaderAuthNodeParameters {
+export interface HttpHeaderAuthCredentials {
 
     /**
      */
-    readonly name?: string;
+    readonly "name"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly value?: string;
+    readonly "value"?: string;
 
     /**
      */
-    readonly useCustomAuth?: string;
+    readonly "useCustomAuth"?: string;
+
+    readonly __name: "httpHeaderAuth";
 
 
 }

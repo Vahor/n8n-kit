@@ -7,16 +7,18 @@ export const name = "uprocApi" as const;
  * displayName: uProc API
  * documentationUrl: uProc
  */
-export interface UProcApiNodeParameters {
+export interface UProcApiCredentials {
 
     /**
      */
-    readonly email?: string;
+    readonly "email"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "uprocApi";
 
 
 }

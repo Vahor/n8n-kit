@@ -7,16 +7,18 @@ export const name = "bitbucketApi" as const;
  * displayName: Bitbucket API
  * documentationUrl: bitbucket
  */
-export interface BitbucketApiNodeParameters {
+export interface BitbucketApiCredentials {
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly appPassword?: string;
+    readonly "appPassword"?: string;
+
+    readonly __name: "bitbucketApi";
 
 
 }

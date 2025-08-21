@@ -7,22 +7,24 @@ export const name = "qualysApi" as const;
  * displayName: Qualys API
  * documentationUrl: qualys
  */
-export interface QualysApiNodeParameters {
+export interface QualysApiCredentials {
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password: string;
+    readonly "password": string;
 
     /**
      * User description, like a user agent
      * Default: "n8n application"
      */
-    readonly requestedWith?: string;
+    readonly "requestedWith"?: string;
+
+    readonly __name: "qualysApi";
 
 
 }

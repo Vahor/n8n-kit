@@ -7,16 +7,18 @@ export const name = "impervaWafApi" as const;
  * displayName: Imperva WAF API
  * documentationUrl: impervawaf
  */
-export interface ImpervaWafApiNodeParameters {
+export interface ImpervaWafApiCredentials {
 
     /**
      */
-    readonly apiID: string;
+    readonly "apiID": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "impervaWafApi";
 
 
 }

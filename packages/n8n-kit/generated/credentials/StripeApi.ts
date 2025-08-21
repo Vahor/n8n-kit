@@ -7,12 +7,14 @@ export const name = "stripeApi" as const;
  * displayName: Stripe API
  * documentationUrl: stripe
  */
-export interface StripeApiNodeParameters {
+export interface StripeApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly secretKey?: string;
+    readonly "secretKey"?: string;
+
+    readonly __name: "stripeApi";
 
 
 }

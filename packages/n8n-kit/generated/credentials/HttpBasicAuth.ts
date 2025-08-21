@@ -7,16 +7,18 @@ export const name = "httpBasicAuth" as const;
  * displayName: Basic Auth
  * documentationUrl: httpRequest
  */
-export interface HttpBasicAuthNodeParameters {
+export interface HttpBasicAuthCredentials {
 
     /**
      */
-    readonly user?: string;
+    readonly "user"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "httpBasicAuth";
 
 
 }

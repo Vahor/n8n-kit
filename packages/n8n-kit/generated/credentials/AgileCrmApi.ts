@@ -7,21 +7,23 @@ export const name = "agileCrmApi" as const;
  * displayName: AgileCRM API
  * documentationUrl: agileCrm
  */
-export interface AgileCrmApiNodeParameters {
+export interface AgileCrmApiCredentials {
 
     /**
      */
-    readonly email?: string;
+    readonly "email"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * If the domain is https://example.agilecrm.com "example" would have to be entered
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
+
+    readonly __name: "agileCrmApi";
 
 
 }

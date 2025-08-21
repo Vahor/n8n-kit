@@ -7,16 +7,18 @@ export const name = "togglApi" as const;
  * displayName: Toggl API
  * documentationUrl: toggl
  */
-export interface TogglApiNodeParameters {
+export interface TogglApiCredentials {
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "togglApi";
 
 
 }

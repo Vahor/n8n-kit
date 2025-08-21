@@ -7,13 +7,15 @@ export const name = "profitWellApi" as const;
  * displayName: ProfitWell API
  * documentationUrl: profitWell
  */
-export interface ProfitWellApiNodeParameters {
+export interface ProfitWellApiCredentials {
 
     /**
      * Your Private Token
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "profitWellApi";
 
 
 }

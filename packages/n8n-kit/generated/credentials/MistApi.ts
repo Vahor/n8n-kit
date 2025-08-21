@@ -7,17 +7,19 @@ export const name = "mistApi" as const;
  * displayName: Mist API
  * documentationUrl: mist
  */
-export interface MistApiNodeParameters {
+export interface MistApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly token: string;
+    readonly "token": string;
 
     /**
      * Default: "eu"
      */
-    readonly region?: "eu" | "global";
+    readonly "region"?: "eu" | "global";
+
+    readonly __name: "mistApi";
 
 
 }

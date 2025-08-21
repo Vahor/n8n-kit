@@ -7,31 +7,33 @@ export const name = "twilioApi" as const;
  * displayName: Twilio API
  * documentationUrl: twilio
  */
-export interface TwilioApiNodeParameters {
+export interface TwilioApiCredentials {
 
     /**
      * Default: "authToken"
      */
-    readonly authType?: "authToken" | "apiKey";
+    readonly "authType"?: "authToken" | "apiKey";
 
     /**
      */
-    readonly accountSid?: string;
-
-    /**
-     * Type options: {"password":true}
-     */
-    readonly authToken?: string;
+    readonly "accountSid"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKeySid?: string;
+    readonly "authToken"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKeySecret?: string;
+    readonly "apiKeySid"?: string;
+
+    /**
+     * Type options: {"password":true}
+     */
+    readonly "apiKeySecret"?: string;
+
+    readonly __name: "twilioApi";
 
 
 }

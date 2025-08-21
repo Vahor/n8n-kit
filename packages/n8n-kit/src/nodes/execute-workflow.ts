@@ -38,7 +38,8 @@ export class ExecuteWorkflow<
 	override getParameters() {
 		return {
 			...this.props,
-			workflow: undefined,
+			// nice thank you typescript
+			workflow: undefined as undefined,
 			workflowId: {
 				value: this.props.workflow.id,
 				mode: "list",

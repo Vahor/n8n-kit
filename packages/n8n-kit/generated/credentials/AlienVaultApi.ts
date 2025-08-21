@@ -7,12 +7,14 @@ export const name = "alienVaultApi" as const;
  * displayName: AlienVault API
  * documentationUrl: alienvault
  */
-export interface AlienVaultApiNodeParameters {
+export interface AlienVaultApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
+
+    readonly __name: "alienVaultApi";
 
 
 }

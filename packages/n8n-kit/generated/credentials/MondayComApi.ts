@@ -7,12 +7,14 @@ export const name = "mondayComApi" as const;
  * displayName: Monday.com API
  * documentationUrl: mondayCom
  */
-export interface MondayComApiNodeParameters {
+export interface MondayComApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "mondayComApi";
 
 
 }

@@ -7,17 +7,19 @@ export const name = "googleAdsOAuth2Api" as const;
  * displayName: Google Ads OAuth2 API
  * documentationUrl: google/oauth-single-service
  */
-export interface GoogleAdsOAuth2ApiNodeParameters {
+export interface GoogleAdsOAuth2ApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly developerToken: string;
+    readonly "developerToken": string;
 
     /**
      * Default: "https://www.googleapis.com/auth/adwords"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
+
+    readonly __name: "googleAdsOAuth2Api";
 
 
 }

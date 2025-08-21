@@ -7,25 +7,27 @@ export const name = "wordpressApi" as const;
  * displayName: Wordpress API
  * documentationUrl: wordpress
  */
-export interface WordpressApiNodeParameters {
+export interface WordpressApiCredentials {
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "wordpressApi";
 
 
 }

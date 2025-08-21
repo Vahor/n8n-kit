@@ -7,12 +7,14 @@ export const name = "egoiApi" as const;
  * displayName: E-Goi API
  * documentationUrl: egoi
  */
-export interface EgoiApiNodeParameters {
+export interface EgoiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "egoiApi";
 
 
 }

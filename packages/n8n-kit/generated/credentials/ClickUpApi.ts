@@ -7,12 +7,14 @@ export const name = "clickUpApi" as const;
  * displayName: ClickUp API
  * documentationUrl: clickUp
  */
-export interface ClickUpApiNodeParameters {
+export interface ClickUpApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "clickUpApi";
 
 
 }

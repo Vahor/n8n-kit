@@ -7,17 +7,19 @@ export const name = "demioApi" as const;
  * displayName: Demio API
  * documentationUrl: demio
  */
-export interface DemioApiNodeParameters {
+export interface DemioApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiSecret?: string;
+    readonly "apiSecret"?: string;
+
+    readonly __name: "demioApi";
 
 
 }

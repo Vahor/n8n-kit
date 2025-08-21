@@ -7,20 +7,22 @@ export const name = "zulipApi" as const;
  * displayName: Zulip API
  * documentationUrl: zulip
  */
-export interface ZulipApiNodeParameters {
+export interface ZulipApiCredentials {
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      */
-    readonly email?: string;
+    readonly "email"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "zulipApi";
 
 
 }

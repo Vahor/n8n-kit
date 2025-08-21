@@ -1,5 +1,5 @@
 {
-	"id": "my-workflow",
+	"id": "iJFYtqyGW",
 	"name": "NASA Example",
 	"nodes": [
 		{
@@ -30,7 +30,8 @@
 			"parameters": {
 				"resource": "donkiSolarFlare",
 				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" }
-			}
+			},
+			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } }
 		},
 		{
 			"id": "if",
@@ -109,8 +110,8 @@
 			]
 		}
 	},
-	"active": false,
 	"settings": {},
 	"staticData": {},
-	"meta": {}
+	"active": true,
+	"tags": [{ "name": "@vahor/n8n-kit-iJFYtqyGW" }]
 }

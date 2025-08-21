@@ -7,12 +7,14 @@ export const name = "lingvaNexApi" as const;
  * displayName: LingvaNex API
  * documentationUrl: lingvaNex
  */
-export interface LingvaNexApiNodeParameters {
+export interface LingvaNexApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "lingvaNexApi";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "apiTemplateIoApi" as const;
  * displayName: APITemplate.io API
  * documentationUrl: apiTemplateIo
  */
-export interface ApiTemplateIoApiNodeParameters {
+export interface ApiTemplateIoApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "apiTemplateIoApi";
 
 
 }

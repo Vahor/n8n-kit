@@ -7,21 +7,23 @@ export const name = "ciscoSecureEndpointApi" as const;
  * displayName: Cisco Secure Endpoint (AMP) API
  * documentationUrl: ciscosecureendpoint
  */
-export interface CiscoSecureEndpointApiNodeParameters {
+export interface CiscoSecureEndpointApiCredentials {
 
     /**
      * Default: "amp"
      */
-    readonly region?: "apjc.amp" | "eu.amp" | "amp";
+    readonly "region"?: "apjc.amp" | "eu.amp" | "amp";
 
     /**
      */
-    readonly clientId: string;
+    readonly "clientId": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientSecret: string;
+    readonly "clientSecret": string;
+
+    readonly __name: "ciscoSecureEndpointApi";
 
 
 }

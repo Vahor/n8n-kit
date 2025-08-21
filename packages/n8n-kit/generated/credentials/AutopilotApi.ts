@@ -7,12 +7,14 @@ export const name = "autopilotApi" as const;
  * displayName: Autopilot API
  * documentationUrl: autopilot
  */
-export interface AutopilotApiNodeParameters {
+export interface AutopilotApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "autopilotApi";
 
 
 }

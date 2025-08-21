@@ -7,37 +7,39 @@ export const name = "crateDb" as const;
  * displayName: CrateDB
  * documentationUrl: crateDb
  */
-export interface CrateDbNodeParameters {
+export interface CrateDbCredentials {
 
     /**
      * Default: "localhost"
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      * Default: "doc"
      */
-    readonly database?: string;
+    readonly "database"?: string;
 
     /**
      * Default: "crate"
      */
-    readonly user?: string;
+    readonly "user"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * Default: "disable"
      */
-    readonly ssl?: "allow" | "disable" | "require";
+    readonly "ssl"?: "allow" | "disable" | "require";
 
     /**
      * Default: 5432
      */
-    readonly port?: number;
+    readonly "port"?: number;
+
+    readonly __name: "crateDb";
 
 
 }

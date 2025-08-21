@@ -1,6 +1,6 @@
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
-import type { ICredentialType, INodeTypeDescription } from "n8n-workflow";
+import type { ICredentialType } from "n8n-workflow";
 import { globSync } from "tinyglobby";
 import { toTypescriptType } from "./shared";
 
@@ -11,6 +11,37 @@ const allNodes = globSync(
 		cwd: path.resolve(__dirname),
 	},
 );
+
+const generateEntrypoint = async () => {
+	const code = new CodeMaker();
+	code.openFile("index.ts");
+
+	code.line(`// GENERATED FILE, DO NOT EDIT`);
+	code.line(`// see scripts/generate-credentials.ts`);
+	code.line();
+
+	for (const node of allNodes) {
+		const nodeName = node.split("/").pop()?.split(".")[0]!;
+
+		code.line(
+			`import type { ${nodeName}Credentials } from "./${nodeName}.ts";`,
+		);
+	}
+
+	code.line();
+	code.line(`export type N8nCredentialsUnion =`);
+	code.indent();
+	for (const node of allNodes) {
+		const nodeName = node.split("/").pop()?.split(".")[0]!;
+
+		code.line(`| ${nodeName}Credentials`);
+	}
+	code.unindent();
+	code.line();
+
+	code.closeFile("index.ts");
+	await code.save("generated/credentials");
+};
 
 const generateTypescriptCredentialsOutput = async (
 	result: ICredentialType & { __filepath: string; __nodename: string },
@@ -31,7 +62,7 @@ const generateTypescriptCredentialsOutput = async (
 	code.line(` * displayName: ${result.displayName}`);
 	code.line(` * documentationUrl: ${result.documentationUrl}`);
 	code.line(` */`);
-	code.line(`export interface ${result.__nodename}NodeParameters {`);
+	code.line(`export interface ${result.__nodename}Credentials {`);
 	code.indent();
 
 	for (const property of result.properties) {
@@ -47,10 +78,13 @@ const generateTypescriptCredentialsOutput = async (
 		}
 		code.line(` */`);
 		code.line(
-			`readonly ${property.name}${property.required ? "" : "?"}: ${toTypescriptType(property)};`,
+			`readonly ${JSON.stringify(property.name)}${property.required ? "" : "?"}: ${toTypescriptType(property)};`,
 		);
 		code.line();
 	}
+
+	code.line(`readonly __name: "${result.name}";`);
+	code.line();
 
 	code.unindent();
 	code.line(`}`);
@@ -72,7 +106,7 @@ for (const node of allNodes) {
 		// @ts-expect-error: it works
 		const instance = new firstExport();
 
-		if (instance.nodeVersions != null) {
+		if (instance.name == null) {
 			console.error(nodeName);
 			continue;
 		}
@@ -91,3 +125,4 @@ for (const node of allNodes) {
 }
 console.log();
 console.log(count - current, "nodes failed to parse");
+await generateEntrypoint();

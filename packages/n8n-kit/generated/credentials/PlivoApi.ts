@@ -7,16 +7,18 @@ export const name = "plivoApi" as const;
  * displayName: Plivo API
  * documentationUrl: plivo
  */
-export interface PlivoApiNodeParameters {
+export interface PlivoApiCredentials {
 
     /**
      */
-    readonly authId?: string;
+    readonly "authId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly authToken?: string;
+    readonly "authToken"?: string;
+
+    readonly __name: "plivoApi";
 
 
 }

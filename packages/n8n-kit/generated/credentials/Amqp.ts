@@ -7,29 +7,31 @@ export const name = "amqp" as const;
  * displayName: AMQP
  * documentationUrl: amqp
  */
-export interface AmqpNodeParameters {
+export interface AmqpCredentials {
 
     /**
      */
-    readonly hostname?: string;
+    readonly "hostname"?: string;
 
     /**
      * Default: 5672
      */
-    readonly port?: number;
+    readonly "port"?: number;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      */
-    readonly transportType?: string;
+    readonly "transportType"?: string;
+
+    readonly __name: "amqp";
 
 
 }

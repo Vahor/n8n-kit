@@ -7,12 +7,14 @@ export const name = "dropcontactApi" as const;
  * displayName: Dropcontact API
  * documentationUrl: dropcontact
  */
-export interface DropcontactApiNodeParameters {
+export interface DropcontactApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "dropcontactApi";
 
 
 }

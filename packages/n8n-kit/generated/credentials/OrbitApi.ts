@@ -7,16 +7,18 @@ export const name = "orbitApi" as const;
  * displayName: Orbit API
  * documentationUrl: orbit
  */
-export interface OrbitApiNodeParameters {
+export interface OrbitApiCredentials {
 
     /**
      */
-    readonly deprecated?: string;
+    readonly "deprecated"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "orbitApi";
 
 
 }

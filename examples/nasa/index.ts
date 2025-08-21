@@ -1,6 +1,7 @@
 import {
 	App,
 	Chain,
+	Credentials,
 	expr,
 	If,
 	Nasa,
@@ -9,6 +10,11 @@ import {
 	StickyNote,
 	Workflow,
 } from "@vahor/n8n-kit";
+
+const nasaCredentials = Credentials.byId("nasa-credentials", {
+	name: "nasaApi",
+	id: "yTwI5ccVwfGll1Kf",
+});
 
 const workflow = new Workflow("my-workflow", {
 	active: true,
@@ -36,6 +42,7 @@ const workflow = new Workflow("my-workflow", {
 	)
 		.next(
 			new Nasa("nasa", {
+				credentials: nasaCredentials,
 				resource: "donkiSolarFlare",
 				additionalFields: {
 					startDate: expr`{{ $today.minus(1, 'day') }}`,
@@ -76,6 +83,7 @@ const workflow = new Workflow("my-workflow", {
 });
 
 const app = new App();
+app.add(nasaCredentials);
 app.add(workflow);
 
 export { app };

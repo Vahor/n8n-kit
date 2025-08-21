@@ -7,16 +7,18 @@ export const name = "httpBearerAuth" as const;
  * displayName: Bearer Auth
  * documentationUrl: httpRequest
  */
-export interface HttpBearerAuthNodeParameters {
+export interface HttpBearerAuthCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly token?: string;
+    readonly "token"?: string;
 
     /**
      */
-    readonly useCustomAuth?: string;
+    readonly "useCustomAuth"?: string;
+
+    readonly __name: "httpBearerAuth";
 
 
 }

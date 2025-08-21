@@ -7,23 +7,25 @@ export const name = "shopifyAccessTokenApi" as const;
  * displayName: Shopify Access Token API
  * documentationUrl: shopify
  */
-export interface ShopifyAccessTokenApiNodeParameters {
+export interface ShopifyAccessTokenApiCredentials {
 
     /**
      * Only the subdomain without .myshopify.com
      */
-    readonly shopSubdomain: string;
+    readonly "shopSubdomain": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
 
     /**
      * Secret key needed to verify the webhook when using Shopify Trigger node
      * Type options: {"password":true}
      */
-    readonly appSecretKey: string;
+    readonly "appSecretKey": string;
+
+    readonly __name: "shopifyAccessTokenApi";
 
 
 }

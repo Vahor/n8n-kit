@@ -7,23 +7,25 @@ export const name = "microsoftAzureCosmosDbSharedKeyApi" as const;
  * displayName: Microsoft Azure Cosmos DB API
  * documentationUrl: azurecosmosdb
  */
-export interface MicrosoftAzureCosmosDbSharedKeyApiNodeParameters {
+export interface MicrosoftAzureCosmosDbSharedKeyApiCredentials {
 
     /**
      * Account name
      */
-    readonly account: string;
+    readonly "account": string;
 
     /**
      * Account key
      * Type options: {"password":true}
      */
-    readonly key: string;
+    readonly "key": string;
 
     /**
      * Database name
      */
-    readonly database: string;
+    readonly "database": string;
+
+    readonly __name: "microsoftAzureCosmosDbSharedKeyApi";
 
 
 }

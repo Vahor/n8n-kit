@@ -7,12 +7,14 @@ export const name = "hunterApi" as const;
  * displayName: Hunter API
  * documentationUrl: hunter
  */
-export interface HunterApiNodeParameters {
+export interface HunterApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "hunterApi";
 
 
 }

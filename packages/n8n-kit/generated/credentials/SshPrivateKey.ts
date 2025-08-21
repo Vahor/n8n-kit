@@ -7,31 +7,33 @@ export const name = "sshPrivateKey" as const;
  * displayName: SSH Private Key
  * documentationUrl: ssh
  */
-export interface SshPrivateKeyNodeParameters {
+export interface SshPrivateKeyCredentials {
 
     /**
      */
-    readonly host: string;
+    readonly "host": string;
 
     /**
      * Default: 22
      */
-    readonly port: number;
+    readonly "port": number;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"rows":4,"password":true}
      */
-    readonly privateKey?: string;
+    readonly "privateKey"?: string;
 
     /**
      * Passphase used to create the key, if no passphase was used leave empty
      * Type options: {"password":true}
      */
-    readonly passphrase?: string;
+    readonly "passphrase"?: string;
+
+    readonly __name: "sshPrivateKey";
 
 
 }

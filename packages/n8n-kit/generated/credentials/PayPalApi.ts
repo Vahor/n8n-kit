@@ -7,21 +7,23 @@ export const name = "payPalApi" as const;
  * displayName: PayPal API
  * documentationUrl: payPal
  */
-export interface PayPalApiNodeParameters {
+export interface PayPalApiCredentials {
 
     /**
      */
-    readonly clientId?: string;
+    readonly "clientId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly secret?: string;
+    readonly "secret"?: string;
 
     /**
      * Default: "live"
      */
-    readonly env?: "sanbox" | "live";
+    readonly "env"?: "sanbox" | "live";
+
+    readonly __name: "payPalApi";
 
 
 }

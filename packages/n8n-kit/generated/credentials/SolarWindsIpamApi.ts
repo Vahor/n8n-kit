@@ -7,23 +7,25 @@ export const name = "solarWindsIpamApi" as const;
  * displayName: SolarWinds IPAM
  * documentationUrl: solarwindsipam
  */
-export interface SolarWindsIpamApiNodeParameters {
+export interface SolarWindsIpamApiCredentials {
 
     /**
      * The base URL of your SolarWinds IPAM server.
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      * The username for SolarWinds IPAM API.
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * The password for SolarWinds IPAM API.
      * Type options: {"password":true}
      */
-    readonly password: string;
+    readonly "password": string;
+
+    readonly __name: "solarWindsIpamApi";
 
 
 }

@@ -7,20 +7,22 @@ export const name = "citrixAdcApi" as const;
  * displayName: Netscaler ADC API
  * documentationUrl: netscaleradc
  */
-export interface NetscalerAdcApiNodeParameters {
+export interface NetscalerAdcApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password: string;
+    readonly "password": string;
+
+    readonly __name: "citrixAdcApi";
 
 
 }

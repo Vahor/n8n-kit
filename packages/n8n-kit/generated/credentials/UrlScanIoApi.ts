@@ -7,12 +7,14 @@ export const name = "urlScanIoApi" as const;
  * displayName: urlscan.io API
  * documentationUrl: urlScanIo
  */
-export interface UrlScanIoApiNodeParameters {
+export interface UrlScanIoApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "urlScanIoApi";
 
 
 }

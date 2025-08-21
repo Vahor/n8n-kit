@@ -7,35 +7,37 @@ export const name = "boxOAuth2Api" as const;
  * displayName: Box OAuth2 API
  * documentationUrl: box
  */
-export interface BoxOAuth2ApiNodeParameters {
+export interface BoxOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://account.box.com/api/oauth2/authorize"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "https://api.box.com/oauth2/token"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "boxOAuth2Api";
 
 
 }

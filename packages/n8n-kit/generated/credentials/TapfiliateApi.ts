@@ -7,12 +7,14 @@ export const name = "tapfiliateApi" as const;
  * displayName: Tapfiliate API
  * documentationUrl: tapfiliate
  */
-export interface TapfiliateApiNodeParameters {
+export interface TapfiliateApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "tapfiliateApi";
 
 
 }

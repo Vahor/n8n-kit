@@ -7,12 +7,14 @@ export const name = "openWeatherMapApi" as const;
  * displayName: OpenWeatherMap API
  * documentationUrl: openWeatherMap
  */
-export interface OpenWeatherMapApiNodeParameters {
+export interface OpenWeatherMapApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "openWeatherMapApi";
 
 
 }

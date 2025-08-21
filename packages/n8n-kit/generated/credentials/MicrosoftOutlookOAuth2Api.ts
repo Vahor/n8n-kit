@@ -7,21 +7,23 @@ export const name = "microsoftOutlookOAuth2Api" as const;
  * displayName: Microsoft Outlook OAuth2 API
  * documentationUrl: microsoft
  */
-export interface MicrosoftOutlookOAuth2ApiNodeParameters {
+export interface MicrosoftOutlookOAuth2ApiCredentials {
 
     /**
      * Default: "openid offline_access Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.Read.Shared Calendars.ReadWrite Mail.ReadWrite Mail.ReadWrite.Shared Mail.Send Mail.Send.Shared MailboxSettings.Read"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly useShared?: boolean;
+    readonly "useShared"?: boolean;
 
     /**
      * Target user's UPN or ID
      */
-    readonly userPrincipalName?: string;
+    readonly "userPrincipalName"?: string;
+
+    readonly __name: "microsoftOutlookOAuth2Api";
 
 
 }

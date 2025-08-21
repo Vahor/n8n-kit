@@ -7,37 +7,39 @@ export const name = "sftp" as const;
  * displayName: SFTP
  * documentationUrl: ftp
  */
-export interface SftpNodeParameters {
+export interface SftpCredentials {
 
     /**
      */
-    readonly host: string;
+    readonly "host": string;
 
     /**
      * Default: 22
      */
-    readonly port: number;
+    readonly "port": number;
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * String that contains a private key for either key-based or hostbased user authentication (OpenSSH format)
      * Type options: {"password":true}
      */
-    readonly privateKey?: string;
+    readonly "privateKey"?: string;
 
     /**
      * For an encrypted private key, this is the passphrase used to decrypt it
      * Type options: {"password":true}
      */
-    readonly passphrase?: string;
+    readonly "passphrase"?: string;
+
+    readonly __name: "sftp";
 
 
 }

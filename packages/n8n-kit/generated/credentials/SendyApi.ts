@@ -7,16 +7,18 @@ export const name = "sendyApi" as const;
  * displayName: Sendy API
  * documentationUrl: sendy
  */
-export interface SendyApiNodeParameters {
+export interface SendyApiCredentials {
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "sendyApi";
 
 
 }

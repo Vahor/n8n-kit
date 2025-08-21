@@ -7,12 +7,14 @@ export const name = "highLevelApi" as const;
  * displayName: HighLevel API
  * documentationUrl: highLevel
  */
-export interface HighLevelApiNodeParameters {
+export interface HighLevelApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "highLevelApi";
 
 
 }

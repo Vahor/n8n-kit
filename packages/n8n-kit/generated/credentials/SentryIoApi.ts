@@ -7,12 +7,14 @@ export const name = "sentryIoApi" as const;
  * displayName: Sentry.io API
  * documentationUrl: sentryIo
  */
-export interface SentryIoApiNodeParameters {
+export interface SentryIoApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly token?: string;
+    readonly "token"?: string;
+
+    readonly __name: "sentryIoApi";
 
 
 }

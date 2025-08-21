@@ -7,12 +7,14 @@ export const name = "gumroadApi" as const;
  * displayName: Gumroad API
  * documentationUrl: gumroad
  */
-export interface GumroadApiNodeParameters {
+export interface GumroadApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "gumroadApi";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "pagerDutyApi" as const;
  * displayName: PagerDuty API
  * documentationUrl: pagerDuty
  */
-export interface PagerDutyApiNodeParameters {
+export interface PagerDutyApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "pagerDutyApi";
 
 
 }

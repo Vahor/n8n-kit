@@ -7,16 +7,18 @@ export const name = "ghostAdminApi" as const;
  * displayName: Ghost Admin API
  * documentationUrl: ghost
  */
-export interface GhostAdminApiNodeParameters {
+export interface GhostAdminApiCredentials {
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "ghostAdminApi";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "travisCiApi" as const;
  * displayName: Travis API
  * documentationUrl: travisCi
  */
-export interface TravisCiApiNodeParameters {
+export interface TravisCiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "travisCiApi";
 
 
 }

@@ -7,16 +7,18 @@ export const name = "rapid7InsightVmApi" as const;
  * displayName: Rapid7 InsightVM API
  * documentationUrl: rapid7insightvm
  */
-export interface Rapid7InsightVmApiNodeParameters {
+export interface Rapid7InsightVmApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "rapid7InsightVmApi";
 
 
 }

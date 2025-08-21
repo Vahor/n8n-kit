@@ -7,12 +7,14 @@ export const name = "mandrillApi" as const;
  * displayName: Mandrill API
  * documentationUrl: mandrill
  */
-export interface MandrillApiNodeParameters {
+export interface MandrillApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "mandrillApi";
 
 
 }

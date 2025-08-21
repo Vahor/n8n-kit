@@ -7,35 +7,37 @@ export const name = "zoomOAuth2Api" as const;
  * displayName: Zoom OAuth2 API
  * documentationUrl: zoom
  */
-export interface ZoomOAuth2ApiNodeParameters {
+export interface ZoomOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://zoom.us/oauth/authorize"
      */
-    readonly authUrl?: any;
+    readonly "authUrl"?: any;
 
     /**
      * Default: "https://zoom.us/oauth/token"
      */
-    readonly accessTokenUrl?: any;
+    readonly "accessTokenUrl"?: any;
 
     /**
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "header"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "zoomOAuth2Api";
 
 
 }

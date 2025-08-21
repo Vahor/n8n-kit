@@ -7,12 +7,14 @@ export const name = "actionNetworkApi" as const;
  * displayName: Action Network API
  * documentationUrl: actionNetwork
  */
-export interface ActionNetworkApiNodeParameters {
+export interface ActionNetworkApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "actionNetworkApi";
 
 
 }

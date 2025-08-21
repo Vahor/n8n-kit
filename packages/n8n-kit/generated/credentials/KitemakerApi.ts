@@ -7,12 +7,14 @@ export const name = "kitemakerApi" as const;
  * displayName: Kitemaker API
  * documentationUrl: kitemaker
  */
-export interface KitemakerApiNodeParameters {
+export interface KitemakerApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly personalAccessToken?: string;
+    readonly "personalAccessToken"?: string;
+
+    readonly __name: "kitemakerApi";
 
 
 }

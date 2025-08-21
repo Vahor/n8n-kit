@@ -7,12 +7,14 @@ export const name = "notionApi" as const;
  * displayName: Notion API
  * documentationUrl: notion
  */
-export interface NotionApiNodeParameters {
+export interface NotionApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "notionApi";
 
 
 }

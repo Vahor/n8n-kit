@@ -7,25 +7,27 @@ export const name = "elasticsearchApi" as const;
  * displayName: Elasticsearch API
  * documentationUrl: elasticsearch
  */
-export interface ElasticsearchApiNodeParameters {
+export interface ElasticsearchApiCredentials {
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * Referred to as Elasticsearch 'endpoint' in the Elastic deployment dashboard
      */
-    readonly baseUrl?: string;
+    readonly "baseUrl"?: string;
 
     /**
      */
-    readonly ignoreSSLIssues?: boolean;
+    readonly "ignoreSSLIssues"?: boolean;
+
+    readonly __name: "elasticsearchApi";
 
 
 }

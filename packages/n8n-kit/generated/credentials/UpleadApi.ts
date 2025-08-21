@@ -7,12 +7,14 @@ export const name = "upleadApi" as const;
  * displayName: Uplead API
  * documentationUrl: uplead
  */
-export interface UpleadApiNodeParameters {
+export interface UpleadApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "upleadApi";
 
 
 }

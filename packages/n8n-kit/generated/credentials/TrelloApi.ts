@@ -7,22 +7,24 @@ export const name = "trelloApi" as const;
  * displayName: Trello API
  * documentationUrl: trello
  */
-export interface TrelloApiNodeParameters {
+export interface TrelloApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken: string;
+    readonly "apiToken": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly oauthSecret?: any;
+    readonly "oauthSecret"?: any;
+
+    readonly __name: "trelloApi";
 
 
 }

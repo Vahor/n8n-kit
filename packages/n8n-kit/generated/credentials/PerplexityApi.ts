@@ -7,13 +7,15 @@ export const name = "perplexityApi" as const;
  * displayName: Perplexity API
  * documentationUrl: perplexity
  */
-export interface PerplexityApiNodeParameters {
+export interface PerplexityApiCredentials {
 
     /**
      * Your Perplexity API key. Get it from your Perplexity account.
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "perplexityApi";
 
 
 }

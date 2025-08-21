@@ -7,36 +7,38 @@ export const name = "stravaOAuth2Api" as const;
  * displayName: Strava OAuth2 API
  * documentationUrl: strava
  */
-export interface StravaOAuth2ApiNodeParameters {
+export interface StravaOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://www.strava.com/oauth/authorize"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "https://www.strava.com/oauth/token"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      * Default: "activity:read_all,activity:write"
      */
-    readonly scope: any;
+    readonly "scope": any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "stravaOAuth2Api";
 
 
 }

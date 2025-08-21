@@ -7,16 +7,18 @@ export const name = "rundeckApi" as const;
  * displayName: Rundeck API
  * documentationUrl: rundeck
  */
-export interface RundeckApiNodeParameters {
+export interface RundeckApiCredentials {
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly token?: string;
+    readonly "token"?: string;
+
+    readonly __name: "rundeckApi";
 
 
 }

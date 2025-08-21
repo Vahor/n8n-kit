@@ -7,23 +7,25 @@ export const name = "wiseApi" as const;
  * displayName: Wise API
  * documentationUrl: wise
  */
-export interface WiseApiNodeParameters {
+export interface WiseApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
 
     /**
      * Default: "live"
      */
-    readonly environment?: "live" | "test";
+    readonly "environment"?: "live" | "test";
 
     /**
      * Optional private key used for Strong Customer Authentication (SCA). Only needed to retrieve statements, and execute transfers.
      * Type options: {"password":true}
      */
-    readonly privateKey?: string;
+    readonly "privateKey"?: string;
+
+    readonly __name: "wiseApi";
 
 
 }

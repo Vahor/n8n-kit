@@ -7,40 +7,42 @@ export const name = "kafka" as const;
  * displayName: Kafka
  * documentationUrl: kafka
  */
-export interface KafkaNodeParameters {
+export interface KafkaCredentials {
 
     /**
      */
-    readonly clientId?: string;
+    readonly "clientId"?: string;
 
     /**
      */
-    readonly brokers?: string;
+    readonly "brokers"?: string;
 
     /**
      * Default: true
      */
-    readonly ssl?: boolean;
+    readonly "ssl"?: boolean;
 
     /**
      */
-    readonly authentication?: boolean;
+    readonly "authentication"?: boolean;
 
     /**
      * Optional username if authenticated is required
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Optional password if authenticated is required
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * Default: "plain"
      */
-    readonly saslMechanism?: "plain" | "scram-sha-256" | "scram-sha-512";
+    readonly "saslMechanism"?: "plain" | "scram-sha-256" | "scram-sha-512";
+
+    readonly __name: "kafka";
 
 
 }

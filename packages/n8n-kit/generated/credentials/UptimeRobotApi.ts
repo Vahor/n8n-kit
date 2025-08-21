@@ -7,12 +7,14 @@ export const name = "uptimeRobotApi" as const;
  * displayName: Uptime Robot API
  * documentationUrl: uptimeRobot
  */
-export interface UptimeRobotApiNodeParameters {
+export interface UptimeRobotApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "uptimeRobotApi";
 
 
 }

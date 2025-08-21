@@ -7,27 +7,29 @@ export const name = "gristApi" as const;
  * displayName: Grist API
  * documentationUrl: grist
  */
-export interface GristApiNodeParameters {
+export interface GristApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      * Default: "free"
      */
-    readonly planType?: "free" | "paid" | "selfHosted";
+    readonly "planType"?: "free" | "paid" | "selfHosted";
 
     /**
      * Custom subdomain of your team
      */
-    readonly customSubdomain: string;
+    readonly "customSubdomain": string;
 
     /**
      * URL of your Grist instance. Include http/https without /api and no trailing slash.
      */
-    readonly selfHostedUrl: string;
+    readonly "selfHostedUrl": string;
+
+    readonly __name: "gristApi";
 
 
 }

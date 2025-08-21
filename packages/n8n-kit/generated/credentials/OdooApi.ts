@@ -7,24 +7,26 @@ export const name = "odooApi" as const;
  * displayName: Odoo API
  * documentationUrl: odoo
  */
-export interface OdooApiNodeParameters {
+export interface OdooApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password: string;
+    readonly "password": string;
 
     /**
      */
-    readonly db?: string;
+    readonly "db"?: string;
+
+    readonly __name: "odooApi";
 
 
 }

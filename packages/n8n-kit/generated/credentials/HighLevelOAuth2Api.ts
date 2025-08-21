@@ -7,39 +7,41 @@ export const name = "highLevelOAuth2Api" as const;
  * displayName: HighLevel OAuth2 API
  * documentationUrl: highLevel
  */
-export interface HighLevelOAuth2ApiNodeParameters {
+export interface HighLevelOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://marketplace.leadconnectorhq.com/oauth/chooselocation"
      */
-    readonly authUrl: "https://marketplace.leadconnectorhq.com/oauth/chooselocation" | "https://marketplace.gohighlevel.com/oauth/chooselocation";
+    readonly "authUrl": "https://marketplace.leadconnectorhq.com/oauth/chooselocation" | "https://marketplace.gohighlevel.com/oauth/chooselocation";
 
     /**
      */
-    readonly scope: string;
+    readonly "scope": string;
 
     /**
      * Default: "https://services.leadconnectorhq.com/oauth/token"
      */
-    readonly accessTokenUrl?: any;
+    readonly "accessTokenUrl"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
 
     /**
      */
-    readonly notice?: string;
+    readonly "notice"?: string;
+
+    readonly __name: "highLevelOAuth2Api";
 
 
 }

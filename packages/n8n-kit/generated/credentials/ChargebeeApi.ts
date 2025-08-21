@@ -7,16 +7,18 @@ export const name = "chargebeeApi" as const;
  * displayName: Chargebee API
  * documentationUrl: chargebee
  */
-export interface ChargebeeApiNodeParameters {
+export interface ChargebeeApiCredentials {
 
     /**
      */
-    readonly accountName?: string;
+    readonly "accountName"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "chargebeeApi";
 
 
 }

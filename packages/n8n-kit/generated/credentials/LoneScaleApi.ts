@@ -7,12 +7,14 @@ export const name = "loneScaleApi" as const;
  * displayName: LoneScale API
  * documentationUrl: lonescale
  */
-export interface LoneScaleApiNodeParameters {
+export interface LoneScaleApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "loneScaleApi";
 
 
 }

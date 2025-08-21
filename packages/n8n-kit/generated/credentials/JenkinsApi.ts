@@ -7,20 +7,22 @@ export const name = "jenkinsApi" as const;
  * displayName: Jenkins API
  * documentationUrl: jenkins
  */
-export interface JenkinsApiNodeParameters {
+export interface JenkinsApiCredentials {
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      */
-    readonly baseUrl?: string;
+    readonly "baseUrl"?: string;
+
+    readonly __name: "jenkinsApi";
 
 
 }

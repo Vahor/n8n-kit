@@ -7,19 +7,21 @@ export const name = "paddleApi" as const;
  * displayName: Paddle API
  * documentationUrl: paddle
  */
-export interface PaddleApiNodeParameters {
+export interface PaddleApiCredentials {
 
     /**
      */
-    readonly vendorAuthCode?: string;
+    readonly "vendorAuthCode"?: string;
 
     /**
      */
-    readonly vendorId?: string;
+    readonly "vendorId"?: string;
 
     /**
      */
-    readonly sandbox?: boolean;
+    readonly "sandbox"?: boolean;
+
+    readonly __name: "paddleApi";
 
 
 }

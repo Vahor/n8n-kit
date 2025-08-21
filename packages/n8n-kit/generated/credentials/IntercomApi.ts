@@ -7,12 +7,14 @@ export const name = "intercomApi" as const;
  * displayName: Intercom API
  * documentationUrl: intercom
  */
-export interface IntercomApiNodeParameters {
+export interface IntercomApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "intercomApi";
 
 
 }

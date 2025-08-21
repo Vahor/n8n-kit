@@ -7,12 +7,14 @@ export const name = "mindeeReceiptApi" as const;
  * displayName: Mindee Receipt API
  * documentationUrl: mindee
  */
-export interface MindeeReceiptApiNodeParameters {
+export interface MindeeReceiptApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "mindeeReceiptApi";
 
 
 }

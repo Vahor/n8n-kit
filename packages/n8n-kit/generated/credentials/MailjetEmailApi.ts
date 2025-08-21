@@ -7,22 +7,24 @@ export const name = "mailjetEmailApi" as const;
  * displayName: Mailjet Email API
  * documentationUrl: mailjet
  */
-export interface MailjetEmailApiNodeParameters {
+export interface MailjetEmailApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly secretKey?: string;
+    readonly "secretKey"?: string;
 
     /**
      * Whether to allow to run the API call in a Sandbox mode, where all validations of the payload will be done without delivering the message
      */
-    readonly sandboxMode?: boolean;
+    readonly "sandboxMode"?: boolean;
+
+    readonly __name: "mailjetEmailApi";
 
 
 }

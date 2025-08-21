@@ -7,17 +7,19 @@ export const name = "grafanaApi" as const;
  * displayName: Grafana API
  * documentationUrl: grafana
  */
-export interface GrafanaApiNodeParameters {
+export interface GrafanaApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      * Base URL of your Grafana instance
      */
-    readonly baseUrl: string;
+    readonly "baseUrl": string;
+
+    readonly __name: "grafanaApi";
 
 
 }

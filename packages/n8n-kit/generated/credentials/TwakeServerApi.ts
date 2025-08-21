@@ -7,20 +7,22 @@ export const name = "twakeServerApi" as const;
  * displayName: Twake Server API
  * documentationUrl: twake
  */
-export interface TwakeServerApiNodeParameters {
+export interface TwakeServerApiCredentials {
 
     /**
      */
-    readonly hostUrl?: string;
+    readonly "hostUrl"?: string;
 
     /**
      */
-    readonly publicId?: string;
+    readonly "publicId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly privateApiKey?: string;
+    readonly "privateApiKey"?: string;
+
+    readonly __name: "twakeServerApi";
 
 
 }

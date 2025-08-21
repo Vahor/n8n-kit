@@ -7,12 +7,14 @@ export const name = "affinityApi" as const;
  * displayName: Affinity API
  * documentationUrl: affinity
  */
-export interface AffinityApiNodeParameters {
+export interface AffinityApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "affinityApi";
 
 
 }

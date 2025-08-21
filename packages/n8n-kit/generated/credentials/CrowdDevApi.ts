@@ -7,26 +7,28 @@ export const name = "crowdDevApi" as const;
  * displayName: crowd.dev API
  * documentationUrl: crowddev
  */
-export interface CrowdDevApiNodeParameters {
+export interface CrowdDevApiCredentials {
 
     /**
      * Default: "https://app.crowd.dev"
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      */
-    readonly tenantId?: string;
+    readonly "tenantId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly token?: string;
+    readonly "token"?: string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "crowdDevApi";
 
 
 }

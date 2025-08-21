@@ -7,12 +7,14 @@ export const name = "postmarkApi" as const;
  * displayName: Postmark API
  * documentationUrl: postmark
  */
-export interface PostmarkApiNodeParameters {
+export interface PostmarkApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly serverToken?: string;
+    readonly "serverToken"?: string;
+
+    readonly __name: "postmarkApi";
 
 
 }

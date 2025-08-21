@@ -7,16 +7,18 @@ export const name = "carbonBlackApi" as const;
  * displayName: Carbon Black API
  * documentationUrl: carbonblack
  */
-export interface CarbonBlackApiNodeParameters {
+export interface CarbonBlackApiCredentials {
 
     /**
      */
-    readonly apiUrl?: string;
+    readonly "apiUrl"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
+
+    readonly __name: "carbonBlackApi";
 
 
 }

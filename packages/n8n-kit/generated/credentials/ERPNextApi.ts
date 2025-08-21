@@ -7,43 +7,45 @@ export const name = "erpNextApi" as const;
  * displayName: ERPNext API
  * documentationUrl: erpnext
  */
-export interface ERPNextApiNodeParameters {
+export interface ERPNextApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiSecret?: string;
+    readonly "apiSecret"?: string;
 
     /**
      * Default: "cloudHosted"
      */
-    readonly environment?: "cloudHosted" | "selfHosted";
+    readonly "environment"?: "cloudHosted" | "selfHosted";
 
     /**
      * Subdomain of cloud-hosted ERPNext instance. For example, "n8n" is the subdomain in: <code>https://n8n.erpnext.com</code>
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
 
     /**
      * Domain for your cloud hosted ERPNext instance.
      * Default: "erpnext.com"
      */
-    readonly domain?: "erpnext.com" | "frappe.cloud";
+    readonly "domain"?: "erpnext.com" | "frappe.cloud";
 
     /**
      * Fully qualified domain name of self-hosted ERPNext instance
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "erpNextApi";
 
 
 }

@@ -7,21 +7,23 @@ export const name = "invoiceNinjaApi" as const;
  * displayName: Invoice Ninja API
  * documentationUrl: invoiceNinja
  */
-export interface InvoiceNinjaApiNodeParameters {
+export interface InvoiceNinjaApiCredentials {
 
     /**
      */
-    readonly url?: string;
-
-    /**
-     * Type options: {"password":true}
-     */
-    readonly apiToken?: string;
+    readonly "url"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly secret?: string;
+    readonly "apiToken"?: string;
+
+    /**
+     * Type options: {"password":true}
+     */
+    readonly "secret"?: string;
+
+    readonly __name: "invoiceNinjaApi";
 
 
 }

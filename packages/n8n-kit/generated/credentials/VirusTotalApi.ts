@@ -7,12 +7,14 @@ export const name = "virusTotalApi" as const;
  * displayName: VirusTotal API
  * documentationUrl: virustotal
  */
-export interface VirusTotalApiNodeParameters {
+export interface VirusTotalApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
+
+    readonly __name: "virusTotalApi";
 
 
 }

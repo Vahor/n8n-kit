@@ -7,12 +7,14 @@ export const name = "storyblokContentApi" as const;
  * displayName: Storyblok Content API
  * documentationUrl: storyblok
  */
-export interface StoryblokContentApiNodeParameters {
+export interface StoryblokContentApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "storyblokContentApi";
 
 
 }

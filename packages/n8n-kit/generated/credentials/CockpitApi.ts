@@ -7,16 +7,18 @@ export const name = "cockpitApi" as const;
  * displayName: Cockpit API
  * documentationUrl: cockpit
  */
-export interface CockpitApiNodeParameters {
+export interface CockpitApiCredentials {
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "cockpitApi";
 
 
 }

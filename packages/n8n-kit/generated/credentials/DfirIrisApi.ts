@@ -7,21 +7,23 @@ export const name = "dfirIrisApi" as const;
  * displayName: DFIR-IRIS API
  * documentationUrl: dfiriris
  */
-export interface DfirIrisApiNodeParameters {
+export interface DfirIrisApiCredentials {
 
     /**
      * The API endpoints are reachable on the same Address and port as the web interface.
      */
-    readonly baseUrl: string;
+    readonly "baseUrl": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      */
-    readonly skipSslCertificateValidation?: boolean;
+    readonly "skipSslCertificateValidation"?: boolean;
+
+    readonly __name: "dfirIrisApi";
 
 
 }

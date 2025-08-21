@@ -7,12 +7,14 @@ export const name = "eventbriteApi" as const;
  * displayName: Eventbrite API
  * documentationUrl: eventbrite
  */
-export interface EventbriteApiNodeParameters {
+export interface EventbriteApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "eventbriteApi";
 
 
 }

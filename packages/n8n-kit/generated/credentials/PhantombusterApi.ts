@@ -7,12 +7,14 @@ export const name = "phantombusterApi" as const;
  * displayName: Phantombuster API
  * documentationUrl: phantombuster
  */
-export interface PhantombusterApiNodeParameters {
+export interface PhantombusterApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "phantombusterApi";
 
 
 }

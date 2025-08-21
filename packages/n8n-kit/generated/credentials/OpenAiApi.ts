@@ -7,23 +7,25 @@ export const name = "openAiApi" as const;
  * displayName: OpenAi
  * documentationUrl: openAi
  */
-export interface OpenAiApiNodeParameters {
+export interface OpenAiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      * For users who belong to multiple organizations, you can set which organization is used for an API request. Usage from these API requests will count against the specified organization's subscription quota.
      */
-    readonly organizationId?: string;
+    readonly "organizationId"?: string;
 
     /**
      * Override the default base URL for the API
      * Default: "https://api.openai.com/v1"
      */
-    readonly url?: string;
+    readonly "url"?: string;
+
+    readonly __name: "openAiApi";
 
 
 }

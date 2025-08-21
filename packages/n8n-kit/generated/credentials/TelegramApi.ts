@@ -7,19 +7,21 @@ export const name = "telegramApi" as const;
  * displayName: Telegram API
  * documentationUrl: telegram
  */
-export interface TelegramApiNodeParameters {
+export interface TelegramApiCredentials {
 
     /**
      * Chat with the <a href="https://telegram.me/botfather">bot father</a> to obtain the access token
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      * Base URL for Telegram Bot API
      * Default: "https://api.telegram.org"
      */
-    readonly baseUrl?: string;
+    readonly "baseUrl"?: string;
+
+    readonly __name: "telegramApi";
 
 
 }

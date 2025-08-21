@@ -7,12 +7,14 @@ export const name = "facebookGraphApi" as const;
  * displayName: Facebook Graph API
  * documentationUrl: facebookgraph
  */
-export interface FacebookGraphApiNodeParameters {
+export interface FacebookGraphApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "facebookGraphApi";
 
 
 }

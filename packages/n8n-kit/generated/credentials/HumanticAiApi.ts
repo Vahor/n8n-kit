@@ -7,12 +7,14 @@ export const name = "humanticAiApi" as const;
  * displayName: Humantic AI API
  * documentationUrl: humanticAi
  */
-export interface HumanticAiApiNodeParameters {
+export interface HumanticAiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "humanticAiApi";
 
 
 }

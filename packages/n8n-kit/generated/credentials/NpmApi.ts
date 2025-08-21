@@ -7,17 +7,19 @@ export const name = "npmApi" as const;
  * displayName: Npm API
  * documentationUrl: npm
  */
-export interface NpmApiNodeParameters {
+export interface NpmApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      * Default: "https://registry.npmjs.org"
      */
-    readonly registryUrl?: string;
+    readonly "registryUrl"?: string;
+
+    readonly __name: "npmApi";
 
 
 }

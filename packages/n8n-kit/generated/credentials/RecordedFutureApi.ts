@@ -7,12 +7,14 @@ export const name = "recordedFutureApi" as const;
  * displayName: Recorded Future API
  * documentationUrl: recordedfuture
  */
-export interface RecordedFutureApiNodeParameters {
+export interface RecordedFutureApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "recordedFutureApi";
 
 
 }

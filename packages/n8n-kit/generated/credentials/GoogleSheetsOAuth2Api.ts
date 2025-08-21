@@ -7,16 +7,18 @@ export const name = "googleSheetsOAuth2Api" as const;
  * displayName: Google Sheets OAuth2 API
  * documentationUrl: google/oauth-single-service
  */
-export interface GoogleSheetsOAuth2ApiNodeParameters {
+export interface GoogleSheetsOAuth2ApiCredentials {
 
     /**
      * Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly notice?: string;
+    readonly "notice"?: string;
+
+    readonly __name: "googleSheetsOAuth2Api";
 
 
 }

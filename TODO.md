@@ -7,8 +7,6 @@
 - Add a way to deploy from the terminal (needs API KEY, an app is a list of things to deploy)
 - I don't really like the `unlinkedNodes` property name.
 
-- Add credentials references
-- Add a way to deploy credentials
 - Add CONTRIBUTING.md
 
 - When importing a workflow we get `Node does not have any credentials set`

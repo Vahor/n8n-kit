@@ -7,12 +7,14 @@ export const name = "googleBooksOAuth2Api" as const;
  * displayName: Google Books OAuth2 API
  * documentationUrl: google/oauth-single-service
  */
-export interface GoogleBooksOAuth2ApiNodeParameters {
+export interface GoogleBooksOAuth2ApiCredentials {
 
     /**
      * Default: "https://www.googleapis.com/auth/books"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
+
+    readonly __name: "googleBooksOAuth2Api";
 
 
 }

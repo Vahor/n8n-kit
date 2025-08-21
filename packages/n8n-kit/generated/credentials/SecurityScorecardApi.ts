@@ -7,12 +7,14 @@ export const name = "securityScorecardApi" as const;
  * displayName: SecurityScorecard API
  * documentationUrl: securityScorecard
  */
-export interface SecurityScorecardApiNodeParameters {
+export interface SecurityScorecardApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "securityScorecardApi";
 
 
 }

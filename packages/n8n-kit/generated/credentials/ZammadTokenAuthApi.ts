@@ -7,21 +7,23 @@ export const name = "zammadTokenAuthApi" as const;
  * displayName: Zammad Token Auth API
  * documentationUrl: zammad
  */
-export interface ZammadTokenAuthApiNodeParameters {
+export interface ZammadTokenAuthApiCredentials {
 
     /**
      */
-    readonly baseUrl: string;
+    readonly "baseUrl": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "zammadTokenAuthApi";
 
 
 }

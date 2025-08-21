@@ -7,12 +7,14 @@ export const name = "discordBotApi" as const;
  * displayName: Discord Bot API
  * documentationUrl: discord
  */
-export interface DiscordBotApiNodeParameters {
+export interface DiscordBotApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly botToken: string;
+    readonly "botToken": string;
+
+    readonly __name: "discordBotApi";
 
 
 }

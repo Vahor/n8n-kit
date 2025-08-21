@@ -7,39 +7,41 @@ export const name = "venafiTlsProtectDatacenterApi" as const;
  * displayName: Venafi TLS Protect Datacenter API
  * documentationUrl: venafitlsprotectdatacenter
  */
-export interface VenafiTlsProtectDatacenterApiNodeParameters {
+export interface VenafiTlsProtectDatacenterApiCredentials {
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
 
     /**
      */
-    readonly clientId?: string;
+    readonly "clientId"?: string;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * Default: true
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
 
     /**
      * Type options: {"expirable":true}
      */
-    readonly token?: any;
+    readonly "token"?: any;
 
     /**
      * Default: "certificate:manage"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
+
+    readonly __name: "venafiTlsProtectDatacenterApi";
 
 
 }

@@ -7,16 +7,18 @@ export const name = "jiraSoftwareServerPatApi" as const;
  * displayName: Jira SW Server (PAT) API
  * documentationUrl: jira
  */
-export interface JiraSoftwareServerPatApiNodeParameters {
+export interface JiraSoftwareServerPatApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly personalAccessToken?: string;
+    readonly "personalAccessToken"?: string;
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
+
+    readonly __name: "jiraSoftwareServerPatApi";
 
 
 }

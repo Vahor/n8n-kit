@@ -7,12 +7,14 @@ export const name = "oneSimpleApi" as const;
  * displayName: One Simple API
  * documentationUrl: oneSimpleApi
  */
-export interface OneSimpleApiNodeParameters {
+export interface OneSimpleApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "oneSimpleApi";
 
 
 }

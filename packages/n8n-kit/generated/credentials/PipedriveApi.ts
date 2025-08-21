@@ -7,12 +7,14 @@ export const name = "pipedriveApi" as const;
  * displayName: Pipedrive API
  * documentationUrl: pipedrive
  */
-export interface PipedriveApiNodeParameters {
+export interface PipedriveApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "pipedriveApi";
 
 
 }

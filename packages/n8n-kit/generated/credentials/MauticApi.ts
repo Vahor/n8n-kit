@@ -7,20 +7,22 @@ export const name = "mauticApi" as const;
  * displayName: Mautic API
  * documentationUrl: mautic
  */
-export interface MauticApiNodeParameters {
+export interface MauticApiCredentials {
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "mauticApi";
 
 
 }

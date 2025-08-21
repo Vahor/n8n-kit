@@ -7,7 +7,7 @@ export const name = "surveyMonkeyApi" as const;
  * displayName: SurveyMonkey API
  * documentationUrl: surveyMonkey
  */
-export interface SurveyMonkeyApiNodeParameters {
+export interface SurveyMonkeyApiCredentials {
 
     /**
      * The access token must have the following scopes:
@@ -21,16 +21,18 @@ export interface SurveyMonkeyApiNodeParameters {
 			</ul>
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      */
-    readonly clientId?: string;
+    readonly "clientId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientSecret?: string;
+    readonly "clientSecret"?: string;
+
+    readonly __name: "surveyMonkeyApi";
 
 
 }

@@ -7,20 +7,22 @@ export const name = "discourseApi" as const;
  * displayName: Discourse API
  * documentationUrl: discourse
  */
-export interface DiscourseApiNodeParameters {
+export interface DiscourseApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
+
+    readonly __name: "discourseApi";
 
 
 }

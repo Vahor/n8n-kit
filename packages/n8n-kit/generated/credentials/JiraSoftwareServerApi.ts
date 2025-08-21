@@ -7,20 +7,22 @@ export const name = "jiraSoftwareServerApi" as const;
  * displayName: Jira SW Server API
  * documentationUrl: jira
  */
-export interface JiraSoftwareServerApiNodeParameters {
+export interface JiraSoftwareServerApiCredentials {
 
     /**
      */
-    readonly email?: string;
+    readonly "email"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
+
+    readonly __name: "jiraSoftwareServerApi";
 
 
 }

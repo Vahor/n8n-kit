@@ -7,16 +7,18 @@ export const name = "spontitApi" as const;
  * displayName: Spontit API
  * documentationUrl: spontit
  */
-export interface SpontitApiNodeParameters {
+export interface SpontitApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
+
+    readonly __name: "spontitApi";
 
 
 }

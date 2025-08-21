@@ -222,8 +222,8 @@ export class Chain<
 			if (!state) {
 				throw new Error(`State '${id}' does not exist`);
 			}
-			const index = connectionOptions?.[id]?.index ?? 0;
-			(state as INextable).addNext(next, { to: index });
+			const to = connectionOptions?.[id]?.to ?? 0;
+			(state as INextable).addNext(next, { to: to });
 		}
 
 		return new Chain(this.startState, next.endStates, next);

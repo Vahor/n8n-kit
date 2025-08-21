@@ -7,12 +7,14 @@ export const name = "codaApi" as const;
  * displayName: Coda API
  * documentationUrl: coda
  */
-export interface CodaApiNodeParameters {
+export interface CodaApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "codaApi";
 
 
 }

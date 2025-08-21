@@ -7,30 +7,32 @@ export const name = "bubbleApi" as const;
  * displayName: Bubble API
  * documentationUrl: bubble
  */
-export interface BubbleApiNodeParameters {
+export interface BubbleApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
 
     /**
      */
-    readonly appName?: string;
+    readonly "appName"?: string;
 
     /**
      * Default: "live"
      */
-    readonly environment?: "development" | "live";
+    readonly "environment"?: "development" | "live";
 
     /**
      * Default: "bubbleHosted"
      */
-    readonly hosting?: "bubbleHosted" | "selfHosted";
+    readonly "hosting"?: "bubbleHosted" | "selfHosted";
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
+
+    readonly __name: "bubbleApi";
 
 
 }

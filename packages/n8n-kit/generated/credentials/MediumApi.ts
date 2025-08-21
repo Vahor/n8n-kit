@@ -7,12 +7,14 @@ export const name = "mediumApi" as const;
  * displayName: Medium API
  * documentationUrl: medium
  */
-export interface MediumApiNodeParameters {
+export interface MediumApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "mediumApi";
 
 
 }

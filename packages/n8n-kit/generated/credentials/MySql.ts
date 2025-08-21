@@ -7,96 +7,98 @@ export const name = "mySql" as const;
  * displayName: MySQL
  * documentationUrl: mySql
  */
-export interface MySqlNodeParameters {
+export interface MySqlCredentials {
 
     /**
      * Default: "localhost"
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      * Default: "mysql"
      */
-    readonly database?: string;
+    readonly "database"?: string;
 
     /**
      * Default: "mysql"
      */
-    readonly user?: string;
+    readonly "user"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * Default: 3306
      */
-    readonly port?: number;
+    readonly "port"?: number;
 
     /**
      * The milliseconds before a timeout occurs during the initial connection to the MySQL server
      * Default: 10000
      */
-    readonly connectTimeout?: number;
+    readonly "connectTimeout"?: number;
 
     /**
      */
-    readonly ssl?: boolean;
-
-    /**
-     * Type options: {"password":true}
-     */
-    readonly caCertificate?: string;
+    readonly "ssl"?: boolean;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientPrivateKey?: string;
+    readonly "caCertificate"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientCertificate?: string;
+    readonly "clientPrivateKey"?: string;
+
+    /**
+     * Type options: {"password":true}
+     */
+    readonly "clientCertificate"?: string;
 
     /**
      */
-    readonly sshTunnel?: boolean;
+    readonly "sshTunnel"?: boolean;
 
     /**
      * Default: "password"
      */
-    readonly sshAuthenticateWith?: "password" | "privateKey";
+    readonly "sshAuthenticateWith"?: "password" | "privateKey";
 
     /**
      * Default: "localhost"
      */
-    readonly sshHost?: string;
+    readonly "sshHost"?: string;
 
     /**
      * Default: 22
      */
-    readonly sshPort?: number;
+    readonly "sshPort"?: number;
 
     /**
      * Default: "root"
      */
-    readonly sshUser?: string;
+    readonly "sshUser"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly sshPassword?: string;
+    readonly "sshPassword"?: string;
 
     /**
      * Type options: {"rows":4,"password":true}
      */
-    readonly privateKey?: string;
+    readonly "privateKey"?: string;
 
     /**
      * Passphrase used to create the key, if no passphrase was used leave empty
      */
-    readonly passphrase?: string;
+    readonly "passphrase"?: string;
+
+    readonly __name: "mySql";
 
 
 }

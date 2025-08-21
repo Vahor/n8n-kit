@@ -7,20 +7,22 @@ export const name = "kibanaApi" as const;
  * displayName: Kibana API
  * documentationUrl: kibana
  */
-export interface KibanaApiNodeParameters {
+export interface KibanaApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password: string;
+    readonly "password": string;
+
+    readonly __name: "kibanaApi";
 
 
 }

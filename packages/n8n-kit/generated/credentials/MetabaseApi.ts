@@ -7,25 +7,27 @@ export const name = "metabaseApi" as const;
  * displayName: Metabase API
  * documentationUrl: metabase
  */
-export interface MetabaseApiNodeParameters {
+export interface MetabaseApiCredentials {
 
     /**
      * Type options: {"expirable":true}
      */
-    readonly sessionToken?: any;
+    readonly "sessionToken"?: any;
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "metabaseApi";
 
 
 }

@@ -1,3 +1,4 @@
+import type { Credentials } from "../credentials";
 import type { Workflow } from "../workflow";
 import { State } from "../workflow/chain/state";
 import type { IContext, INextable } from "../workflow/chain/types";
@@ -38,6 +39,12 @@ export abstract class BaseNode<
 	public groupId?: string;
 
 	abstract getParameters(): object;
+	public getCredentials():
+		| Credentials<any>
+		| Array<Credentials<any>>
+		| undefined {
+		return undefined;
+	}
 
 	constructor(id: LiteralId, _props?: NodeProps) {
 		super(id);
@@ -72,6 +79,15 @@ export abstract class BaseNode<
 		return `${parentId}/${this.id}`;
 	}
 
+	private credentialsToNode() {
+		let credentials = this.getCredentials();
+		if (!credentials) return undefined;
+		if (!Array.isArray(credentials)) credentials = [credentials];
+		return Object.fromEntries(
+			credentials.map((cred) => [cred.name, { id: cred.n8nCredentialsId }]),
+		);
+	}
+
 	toNode() {
 		return {
 			id: this.id,
@@ -80,6 +96,7 @@ export abstract class BaseNode<
 			position: this.position,
 			typeVersion: this.typeVersion,
 			parameters: this.getParameters(),
+			credentials: this.credentialsToNode(),
 		};
 	}
 }

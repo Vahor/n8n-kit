@@ -7,17 +7,19 @@ export const name = "oktaApi" as const;
  * displayName: Okta API
  * documentationUrl: okta
  */
-export interface OktaApiNodeParameters {
+export interface OktaApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      * Secure Session Web Service Access Token
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
+
+    readonly __name: "oktaApi";
 
 
 }

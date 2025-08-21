@@ -7,17 +7,19 @@ export const name = "gitlabApi" as const;
  * displayName: GitLab API
  * documentationUrl: gitlab
  */
-export interface GitlabApiNodeParameters {
+export interface GitlabApiCredentials {
 
     /**
      * Default: "https://gitlab.com"
      */
-    readonly server?: string;
+    readonly "server"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "gitlabApi";
 
 
 }

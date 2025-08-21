@@ -7,21 +7,23 @@ export const name = "monicaCrmApi" as const;
  * displayName: Monica CRM API
  * documentationUrl: monicaCrm
  */
-export interface MonicaCrmApiNodeParameters {
+export interface MonicaCrmApiCredentials {
 
     /**
      * Default: "cloudHosted"
      */
-    readonly environment?: "cloudHosted" | "selfHosted";
+    readonly "environment"?: "cloudHosted" | "selfHosted";
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "monicaCrmApi";
 
 
 }

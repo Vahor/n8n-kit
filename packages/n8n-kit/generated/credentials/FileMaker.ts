@@ -7,24 +7,26 @@ export const name = "fileMaker" as const;
  * displayName: FileMaker API
  * documentationUrl: fileMaker
  */
-export interface FileMakerNodeParameters {
+export interface FileMakerCredentials {
 
     /**
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      */
-    readonly db?: string;
+    readonly "db"?: string;
 
     /**
      */
-    readonly login?: string;
+    readonly "login"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "fileMaker";
 
 
 }

@@ -7,36 +7,38 @@ export const name = "sentryIoOAuth2Api" as const;
  * displayName: Sentry.io OAuth2 API
  * documentationUrl: sentryIo
  */
-export interface SentryIoOAuth2ApiNodeParameters {
+export interface SentryIoOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://sentry.io/oauth/authorize/"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "https://sentry.io/oauth/token/"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      * Default: "event:admin event:read org:read project:read project:releases team:read event:write org:admin project:write team:write project:admin team:admin"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "sentryIoOAuth2Api";
 
 
 }

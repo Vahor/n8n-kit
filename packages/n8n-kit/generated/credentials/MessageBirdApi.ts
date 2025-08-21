@@ -7,12 +7,14 @@ export const name = "messageBirdApi" as const;
  * displayName: MessageBird API
  * documentationUrl: messageBird
  */
-export interface MessageBirdApiNodeParameters {
+export interface MessageBirdApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessKey?: string;
+    readonly "accessKey"?: string;
+
+    readonly __name: "messageBirdApi";
 
 
 }

@@ -7,17 +7,19 @@ export const name = "deepLApi" as const;
  * displayName: DeepL API
  * documentationUrl: deepL
  */
-export interface DeepLApiNodeParameters {
+export interface DeepLApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * Default: "pro"
      */
-    readonly apiPlan?: "pro" | "free";
+    readonly "apiPlan"?: "pro" | "free";
+
+    readonly __name: "deepLApi";
 
 
 }

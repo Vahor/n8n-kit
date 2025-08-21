@@ -7,12 +7,14 @@ export const name = "lemlistApi" as const;
  * displayName: Lemlist API
  * documentationUrl: lemlist
  */
-export interface LemlistApiNodeParameters {
+export interface LemlistApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "lemlistApi";
 
 
 }

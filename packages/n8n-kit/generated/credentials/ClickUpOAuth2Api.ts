@@ -7,35 +7,37 @@ export const name = "clickUpOAuth2Api" as const;
  * displayName: ClickUp OAuth2 API
  * documentationUrl: clickUp
  */
-export interface ClickUpOAuth2ApiNodeParameters {
+export interface ClickUpOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://app.clickup.com/api"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "https://api.clickup.com/api/v2/oauth/token"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "clickUpOAuth2Api";
 
 
 }

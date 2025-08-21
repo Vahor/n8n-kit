@@ -7,17 +7,19 @@ export const name = "venafiTlsProtectCloudApi" as const;
  * displayName: Venafi TLS Protect Cloud
  * documentationUrl: venafitlsprotectcloud
  */
-export interface VenafiTlsProtectCloudApiNodeParameters {
+export interface VenafiTlsProtectCloudApiCredentials {
 
     /**
      * Default: "cloud"
      */
-    readonly region?: "cloud" | "eu";
+    readonly "region"?: "cloud" | "eu";
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "venafiTlsProtectCloudApi";
 
 
 }

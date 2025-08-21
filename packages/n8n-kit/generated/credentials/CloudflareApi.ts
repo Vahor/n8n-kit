@@ -7,12 +7,14 @@ export const name = "cloudflareApi" as const;
  * displayName: Cloudflare API
  * documentationUrl: cloudflare
  */
-export interface CloudflareApiNodeParameters {
+export interface CloudflareApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "cloudflareApi";
 
 
 }

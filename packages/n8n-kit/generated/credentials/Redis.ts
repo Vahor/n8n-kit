@@ -7,34 +7,36 @@ export const name = "redis" as const;
  * displayName: Redis
  * documentationUrl: redis
  */
-export interface RedisNodeParameters {
+export interface RedisCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      */
-    readonly user?: string;
+    readonly "user"?: string;
 
     /**
      * Default: "localhost"
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      * Default: 6379
      */
-    readonly port?: number;
+    readonly "port"?: number;
 
     /**
      */
-    readonly database?: number;
+    readonly "database"?: number;
 
     /**
      */
-    readonly ssl?: boolean;
+    readonly "ssl"?: boolean;
+
+    readonly __name: "redis";
 
 
 }

@@ -7,16 +7,18 @@ export const name = "workableApi" as const;
  * displayName: Workable API
  * documentationUrl: workable
  */
-export interface WorkableApiNodeParameters {
+export interface WorkableApiCredentials {
 
     /**
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "workableApi";
 
 
 }

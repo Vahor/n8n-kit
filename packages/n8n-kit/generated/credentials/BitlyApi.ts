@@ -7,12 +7,14 @@ export const name = "bitlyApi" as const;
  * displayName: Bitly API
  * documentationUrl: bitly
  */
-export interface BitlyApiNodeParameters {
+export interface BitlyApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "bitlyApi";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "bannerbearApi" as const;
  * displayName: Bannerbear API
  * documentationUrl: bannerbear
  */
-export interface BannerbearApiNodeParameters {
+export interface BannerbearApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "bannerbearApi";
 
 
 }

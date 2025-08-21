@@ -7,20 +7,22 @@ export const name = "rocketchatApi" as const;
  * displayName: Rocket API
  * documentationUrl: rocketchat
  */
-export interface RocketchatApiNodeParameters {
+export interface RocketchatApiCredentials {
 
     /**
      */
-    readonly userId?: string;
+    readonly "userId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly authKey?: string;
+    readonly "authKey"?: string;
 
     /**
      */
-    readonly domain?: string;
+    readonly "domain"?: string;
+
+    readonly __name: "rocketchatApi";
 
 
 }

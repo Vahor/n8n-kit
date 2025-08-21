@@ -7,16 +7,18 @@ export const name = "trellixEpoApi" as const;
  * displayName: Trellix (McAfee) ePolicy Orchestrator API
  * documentationUrl: trellixepo
  */
-export interface TrellixEpoApiNodeParameters {
+export interface TrellixEpoApiCredentials {
 
     /**
      */
-    readonly username: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password: string;
+    readonly "password": string;
+
+    readonly __name: "trellixEpoApi";
 
 
 }

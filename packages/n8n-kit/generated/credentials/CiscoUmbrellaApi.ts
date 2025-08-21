@@ -7,22 +7,24 @@ export const name = "ciscoUmbrellaApi" as const;
  * displayName: Cisco Umbrella API
  * documentationUrl: ciscoumbrella
  */
-export interface CiscoUmbrellaApiNodeParameters {
+export interface CiscoUmbrellaApiCredentials {
 
     /**
      * Type options: {"expirable":true}
      */
-    readonly sessionToken?: any;
+    readonly "sessionToken"?: any;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly secret: string;
+    readonly "secret": string;
+
+    readonly __name: "ciscoUmbrellaApi";
 
 
 }

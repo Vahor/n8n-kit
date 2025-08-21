@@ -7,12 +7,14 @@ export const name = "todoistApi" as const;
  * displayName: Todoist API
  * documentationUrl: todoist
  */
-export interface TodoistApiNodeParameters {
+export interface TodoistApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "todoistApi";
 
 
 }

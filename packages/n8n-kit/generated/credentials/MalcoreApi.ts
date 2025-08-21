@@ -7,12 +7,14 @@ export const name = "malcoreApi" as const;
  * displayName: MalcoreAPI
  * documentationUrl: malcore
  */
-export interface MalcoreApiNodeParameters {
+export interface MalcoreApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "malcoreApi";
 
 
 }

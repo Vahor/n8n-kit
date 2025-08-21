@@ -7,30 +7,32 @@ export const name = "zscalerZiaApi" as const;
  * displayName: Zscaler ZIA API
  * documentationUrl: zscalerzia
  */
-export interface ZscalerZiaApiNodeParameters {
+export interface ZscalerZiaApiCredentials {
 
     /**
      * Type options: {"expirable":true}
      */
-    readonly cookie?: any;
+    readonly "cookie"?: any;
 
     /**
      */
-    readonly baseUrl: string;
+    readonly "baseUrl": string;
 
     /**
      */
-    readonly username: string;
-
-    /**
-     * Type options: {"password":true}
-     */
-    readonly password: string;
+    readonly "username": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "password": string;
+
+    /**
+     * Type options: {"password":true}
+     */
+    readonly "apiKey": string;
+
+    readonly __name: "zscalerZiaApi";
 
 
 }

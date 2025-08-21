@@ -7,16 +7,18 @@ export const name = "airtableApi" as const;
  * displayName: Airtable API
  * documentationUrl: airtable
  */
-export interface AirtableApiNodeParameters {
+export interface AirtableApiCredentials {
 
     /**
      */
-    readonly deprecated?: string;
+    readonly "deprecated"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "airtableApi";
 
 
 }

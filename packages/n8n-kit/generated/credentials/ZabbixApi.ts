@@ -7,16 +7,18 @@ export const name = "zabbixApi" as const;
  * displayName: Zabbix API
  * documentationUrl: zabbix
  */
-export interface ZabbixApiNodeParameters {
+export interface ZabbixApiCredentials {
 
     /**
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken: string;
+    readonly "apiToken": string;
+
+    readonly __name: "zabbixApi";
 
 
 }

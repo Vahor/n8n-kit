@@ -7,16 +7,18 @@ export const name = "googleBusinessProfileOAuth2Api" as const;
  * displayName: Google Business Profile OAuth2 API
  * documentationUrl: google/oauth-single-service
  */
-export interface GoogleBusinessProfileOAuth2ApiNodeParameters {
+export interface GoogleBusinessProfileOAuth2ApiCredentials {
 
     /**
      * Default: "https://www.googleapis.com/auth/business.manage"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly notice?: string;
+    readonly "notice"?: string;
+
+    readonly __name: "googleBusinessProfileOAuth2Api";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "shufflerApi" as const;
  * displayName: Shuffler API
  * documentationUrl: shuffler
  */
-export interface ShufflerApiNodeParameters {
+export interface ShufflerApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "shufflerApi";
 
 
 }

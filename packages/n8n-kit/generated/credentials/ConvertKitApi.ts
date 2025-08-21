@@ -7,12 +7,14 @@ export const name = "convertKitApi" as const;
  * displayName: ConvertKit API
  * documentationUrl: convertKit
  */
-export interface ConvertKitApiNodeParameters {
+export interface ConvertKitApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiSecret?: string;
+    readonly "apiSecret"?: string;
+
+    readonly __name: "convertKitApi";
 
 
 }

@@ -7,17 +7,19 @@ export const name = "calApi" as const;
  * displayName: Cal API
  * documentationUrl: cal
  */
-export interface CalApiNodeParameters {
+export interface CalApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * Default: "https://api.cal.com"
      */
-    readonly host?: string;
+    readonly "host"?: string;
+
+    readonly __name: "calApi";
 
 
 }

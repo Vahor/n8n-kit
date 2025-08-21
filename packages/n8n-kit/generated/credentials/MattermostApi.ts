@@ -7,21 +7,23 @@ export const name = "mattermostApi" as const;
  * displayName: Mattermost API
  * documentationUrl: mattermost
  */
-export interface MattermostApiNodeParameters {
+export interface MattermostApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      */
-    readonly baseUrl?: string;
+    readonly "baseUrl"?: string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "mattermostApi";
 
 
 }

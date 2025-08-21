@@ -7,16 +7,18 @@ export const name = "unleashedSoftwareApi" as const;
  * displayName: Unleashed API
  * documentationUrl: unleashedSoftware
  */
-export interface UnleashedSoftwareApiNodeParameters {
+export interface UnleashedSoftwareApiCredentials {
 
     /**
      */
-    readonly apiId?: string;
+    readonly "apiId"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "unleashedSoftwareApi";
 
 
 }

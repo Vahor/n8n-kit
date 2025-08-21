@@ -7,17 +7,19 @@ export const name = "moceanApi" as const;
  * displayName: Mocean Api
  * documentationUrl: mocean
  */
-export interface MoceanApiNodeParameters {
+export interface MoceanApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly mocean-api-key?: string;
+    readonly "mocean-api-key"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly mocean-api-secret?: string;
+    readonly "mocean-api-secret"?: string;
+
+    readonly __name: "moceanApi";
 
 
 }

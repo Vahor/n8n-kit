@@ -7,35 +7,37 @@ export const name = "imap" as const;
  * displayName: IMAP
  * documentationUrl: imap
  */
-export interface ImapNodeParameters {
+export interface ImapCredentials {
 
     /**
      */
-    readonly user?: string;
+    readonly "user"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      * Default: 993
      */
-    readonly port?: number;
+    readonly "port"?: number;
 
     /**
      * Default: true
      */
-    readonly secure?: boolean;
+    readonly "secure"?: boolean;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "imap";
 
 
 }

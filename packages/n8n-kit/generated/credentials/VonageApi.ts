@@ -7,17 +7,19 @@ export const name = "vonageApi" as const;
  * displayName: Vonage API
  * documentationUrl: vonage
  */
-export interface VonageApiNodeParameters {
+export interface VonageApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiSecret?: string;
+    readonly "apiSecret"?: string;
+
+    readonly __name: "vonageApi";
 
 
 }

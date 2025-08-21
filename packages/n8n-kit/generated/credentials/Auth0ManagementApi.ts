@@ -7,26 +7,28 @@ export const name = "auth0ManagementApi" as const;
  * displayName: Auth0 Management API
  * documentationUrl: auth0management
  */
-export interface Auth0ManagementApiNodeParameters {
+export interface Auth0ManagementApiCredentials {
 
     /**
      * Type options: {"expirable":true,"password":true}
      */
-    readonly sessionToken?: any;
+    readonly "sessionToken"?: any;
 
     /**
      * Default: "your-domain.eu.auth0.com"
      */
-    readonly domain: string;
+    readonly "domain": string;
 
     /**
      */
-    readonly clientId: string;
+    readonly "clientId": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientSecret: string;
+    readonly "clientSecret": string;
+
+    readonly __name: "auth0ManagementApi";
 
 
 }

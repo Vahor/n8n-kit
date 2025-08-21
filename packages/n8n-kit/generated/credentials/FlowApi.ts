@@ -7,16 +7,18 @@ export const name = "flowApi" as const;
  * displayName: Flow API
  * documentationUrl: flow
  */
-export interface FlowApiNodeParameters {
+export interface FlowApiCredentials {
 
     /**
      */
-    readonly organizationId?: number;
+    readonly "organizationId"?: number;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "flowApi";
 
 
 }

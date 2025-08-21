@@ -7,16 +7,18 @@ export const name = "supabaseApi" as const;
  * displayName: Supabase API
  * documentationUrl: supabase
  */
-export interface SupabaseApiNodeParameters {
+export interface SupabaseApiCredentials {
 
     /**
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly serviceRole?: string;
+    readonly "serviceRole"?: string;
+
+    readonly __name: "supabaseApi";
 
 
 }

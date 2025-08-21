@@ -7,16 +7,18 @@ export const name = "httpQueryAuth" as const;
  * displayName: Query Auth
  * documentationUrl: httpRequest
  */
-export interface HttpQueryAuthNodeParameters {
+export interface HttpQueryAuthCredentials {
 
     /**
      */
-    readonly name?: string;
+    readonly "name"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly value?: string;
+    readonly "value"?: string;
+
+    readonly __name: "httpQueryAuth";
 
 
 }

@@ -7,29 +7,31 @@ export const name = "gotifyApi" as const;
  * displayName: Gotify API
  * documentationUrl: gotify
  */
-export interface GotifyApiNodeParameters {
+export interface GotifyApiCredentials {
 
     /**
      * (Optional) Needed for message creation
      * Type options: {"password":true}
      */
-    readonly appApiToken?: string;
+    readonly "appApiToken"?: string;
 
     /**
      * (Optional) Needed for everything (delete, getAll) but message creation
      * Type options: {"password":true}
      */
-    readonly clientApiToken?: string;
+    readonly "clientApiToken"?: string;
 
     /**
      * The URL of the Gotify host
      */
-    readonly url?: string;
+    readonly "url"?: string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly ignoreSSLIssues?: boolean;
+    readonly "ignoreSSLIssues"?: boolean;
+
+    readonly __name: "gotifyApi";
 
 
 }

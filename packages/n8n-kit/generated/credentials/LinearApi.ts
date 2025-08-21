@@ -7,12 +7,14 @@ export const name = "linearApi" as const;
  * displayName: Linear API
  * documentationUrl: linear
  */
-export interface LinearApiNodeParameters {
+export interface LinearApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "linearApi";
 
 
 }

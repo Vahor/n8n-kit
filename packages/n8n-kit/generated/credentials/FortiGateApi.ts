@@ -7,12 +7,14 @@ export const name = "fortiGateApi" as const;
  * displayName: Fortinet FortiGate API
  * documentationUrl: fortigate
  */
-export interface FortiGateApiNodeParameters {
+export interface FortiGateApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken: string;
+    readonly "accessToken": string;
+
+    readonly __name: "fortiGateApi";
 
 
 }

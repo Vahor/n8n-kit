@@ -7,15 +7,17 @@ export const name = "yourlsApi" as const;
  * displayName: Yourls API
  * documentationUrl: yourls
  */
-export interface YourlsApiNodeParameters {
+export interface YourlsApiCredentials {
 
     /**
      */
-    readonly signature?: string;
+    readonly "signature"?: string;
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
+
+    readonly __name: "yourlsApi";
 
 
 }

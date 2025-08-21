@@ -7,21 +7,23 @@ export const name = "zendeskApi" as const;
  * displayName: Zendesk API
  * documentationUrl: zendesk
  */
-export interface ZendeskApiNodeParameters {
+export interface ZendeskApiCredentials {
 
     /**
      * The subdomain of your Zendesk work environment
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
 
     /**
      */
-    readonly email?: string;
+    readonly "email"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "zendeskApi";
 
 
 }

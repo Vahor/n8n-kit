@@ -7,16 +7,18 @@ export const name = "hubspotApi" as const;
  * displayName: HubSpot API
  * documentationUrl: hubspot
  */
-export interface HubspotApiNodeParameters {
+export interface HubspotApiCredentials {
 
     /**
      */
-    readonly notice?: string;
+    readonly "notice"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "hubspotApi";
 
 
 }

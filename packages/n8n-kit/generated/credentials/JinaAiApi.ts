@@ -7,12 +7,14 @@ export const name = "jinaAiApi" as const;
  * displayName: Jina AI API
  * documentationUrl: jinaai
  */
-export interface JinaAiApiNodeParameters {
+export interface JinaAiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "jinaAiApi";
 
 
 }

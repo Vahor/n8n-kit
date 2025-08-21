@@ -7,16 +7,18 @@ export const name = "zoomApi" as const;
  * displayName: Zoom API
  * documentationUrl: zoom
  */
-export interface ZoomApiNodeParameters {
+export interface ZoomApiCredentials {
 
     /**
      */
-    readonly notice?: string;
+    readonly "notice"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "zoomApi";
 
 
 }

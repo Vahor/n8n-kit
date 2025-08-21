@@ -7,23 +7,25 @@ export const name = "datadogApi" as const;
  * displayName: Datadog API
  * documentationUrl: datadog
  */
-export interface DatadogApiNodeParameters {
+export interface DatadogApiCredentials {
 
     /**
      * Default: "https://api.datadoghq.com"
      */
-    readonly url: string;
+    readonly "url": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
 
     /**
      * For some endpoints, you also need an Application key.
      * Type options: {"password":true}
      */
-    readonly appKey?: string;
+    readonly "appKey"?: string;
+
+    readonly __name: "datadogApi";
 
 
 }

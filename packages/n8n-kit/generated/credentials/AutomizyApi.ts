@@ -7,16 +7,18 @@ export const name = "automizyApi" as const;
  * displayName: Automizy API
  * documentationUrl: automizy
  */
-export interface AutomizyApiNodeParameters {
+export interface AutomizyApiCredentials {
 
     /**
      */
-    readonly deprecated?: string;
+    readonly "deprecated"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiToken?: string;
+    readonly "apiToken"?: string;
+
+    readonly __name: "automizyApi";
 
 
 }

@@ -7,18 +7,20 @@ export const name = "mailerLiteApi" as const;
  * displayName: Mailer Lite API
  * documentationUrl: mailerLite
  */
-export interface MailerLiteApiNodeParameters {
+export interface MailerLiteApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      * If the Classic API should be used, If this is your first time using this node this should be false.
      * Default: true
      */
-    readonly classicApi?: boolean;
+    readonly "classicApi"?: boolean;
+
+    readonly __name: "mailerLiteApi";
 
 
 }

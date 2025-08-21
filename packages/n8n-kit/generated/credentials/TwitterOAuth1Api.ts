@@ -7,31 +7,33 @@ export const name = "twitterOAuth1Api" as const;
  * displayName: X OAuth API
  * documentationUrl: twitter
  */
-export interface TwitterOAuth1ApiNodeParameters {
+export interface TwitterOAuth1ApiCredentials {
 
     /**
      * Default: "https://api.twitter.com/oauth/request_token"
      */
-    readonly requestTokenUrl?: any;
+    readonly "requestTokenUrl"?: any;
 
     /**
      * Default: "https://api.twitter.com/oauth/authorize"
      */
-    readonly authUrl?: any;
+    readonly "authUrl"?: any;
 
     /**
      * Default: "https://api.twitter.com/oauth/access_token"
      */
-    readonly accessTokenUrl?: any;
+    readonly "accessTokenUrl"?: any;
 
     /**
      * Default: "HMAC-SHA1"
      */
-    readonly signatureMethod?: any;
+    readonly "signatureMethod"?: any;
 
     /**
      */
-    readonly apiPermissions?: string;
+    readonly "apiPermissions"?: string;
+
+    readonly __name: "twitterOAuth1Api";
 
 
 }

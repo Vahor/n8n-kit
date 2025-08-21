@@ -7,12 +7,14 @@ export const name = "circleCiApi" as const;
  * displayName: CircleCI API
  * documentationUrl: circleCi
  */
-export interface CircleCiApiNodeParameters {
+export interface CircleCiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "circleCiApi";
 
 
 }

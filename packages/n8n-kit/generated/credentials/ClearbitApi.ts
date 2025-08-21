@@ -7,12 +7,14 @@ export const name = "clearbitApi" as const;
  * displayName: Clearbit API
  * documentationUrl: clearbit
  */
-export interface ClearbitApiNodeParameters {
+export interface ClearbitApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "clearbitApi";
 
 
 }

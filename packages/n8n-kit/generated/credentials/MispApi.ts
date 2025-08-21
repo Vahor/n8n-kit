@@ -7,21 +7,23 @@ export const name = "mispApi" as const;
  * displayName: MISP API
  * documentationUrl: misp
  */
-export interface MispApiNodeParameters {
+export interface MispApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      */
-    readonly baseUrl?: string;
+    readonly "baseUrl"?: string;
 
     /**
      * Whether to connect even if SSL certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
+
+    readonly __name: "mispApi";
 
 
 }

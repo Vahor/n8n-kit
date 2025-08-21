@@ -1,4 +1,4 @@
-import { INodeTypeDescription } from "n8n-workflow";
+import type { INodeTypeDescription } from "n8n-workflow";
 
 export const mapPropertyType = (type: string) => {
 	switch (type) {

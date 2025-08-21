@@ -7,12 +7,14 @@ export const name = "emeliaApi" as const;
  * displayName: Emelia API
  * documentationUrl: emelia
  */
-export interface EmeliaApiNodeParameters {
+export interface EmeliaApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "emeliaApi";
 
 
 }

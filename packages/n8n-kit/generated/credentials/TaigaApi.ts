@@ -7,25 +7,27 @@ export const name = "taigaApi" as const;
  * displayName: Taiga API
  * documentationUrl: taiga
  */
-export interface TaigaApiNodeParameters {
+export interface TaigaApiCredentials {
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
 
     /**
      * Default: "cloud"
      */
-    readonly environment?: "cloud" | "selfHosted";
+    readonly "environment"?: "cloud" | "selfHosted";
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
+
+    readonly __name: "taigaApi";
 
 
 }

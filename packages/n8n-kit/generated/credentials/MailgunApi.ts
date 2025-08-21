@@ -7,22 +7,24 @@ export const name = "mailgunApi" as const;
  * displayName: Mailgun API
  * documentationUrl: mailgun
  */
-export interface MailgunApiNodeParameters {
+export interface MailgunApiCredentials {
 
     /**
      * The configured mailgun API domain
      * Default: "api.mailgun.net"
      */
-    readonly apiDomain?: "api.eu.mailgun.net" | "api.mailgun.net";
+    readonly "apiDomain"?: "api.eu.mailgun.net" | "api.mailgun.net";
 
     /**
      */
-    readonly emailDomain?: string;
+    readonly "emailDomain"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "mailgunApi";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "qRadarApi" as const;
  * displayName: QRadar API
  * documentationUrl: qradar
  */
-export interface QRadarApiNodeParameters {
+export interface QRadarApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "qRadarApi";
 
 
 }

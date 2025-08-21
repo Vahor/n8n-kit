@@ -7,12 +7,14 @@ export const name = "clockifyApi" as const;
  * displayName: Clockify API
  * documentationUrl: clockify
  */
-export interface ClockifyApiNodeParameters {
+export interface ClockifyApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "clockifyApi";
 
 
 }

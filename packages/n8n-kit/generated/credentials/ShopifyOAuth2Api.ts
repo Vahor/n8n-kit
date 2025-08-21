@@ -7,56 +7,58 @@ export const name = "shopifyOAuth2Api" as const;
  * displayName: Shopify OAuth2 API
  * documentationUrl: shopify
  */
-export interface ShopifyOAuth2ApiNodeParameters {
+export interface ShopifyOAuth2ApiCredentials {
 
     /**
      * Only the subdomain without .myshopify.com
      */
-    readonly shopSubdomain: string;
+    readonly "shopSubdomain": string;
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      */
-    readonly clientId: string;
+    readonly "clientId": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly clientSecret: string;
+    readonly "clientSecret": string;
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/authorize"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/access_token"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      * Default: "write_orders read_orders write_products read_products"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      * Default: "access_mode=value"
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "shopifyOAuth2Api";
 
 
 }

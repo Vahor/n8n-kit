@@ -7,17 +7,19 @@ export const name = "matrixApi" as const;
  * displayName: Matrix API
  * documentationUrl: matrix
  */
-export interface MatrixApiNodeParameters {
+export interface MatrixApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      * Default: "https://matrix-client.matrix.org"
      */
-    readonly homeserverUrl?: string;
+    readonly "homeserverUrl"?: string;
+
+    readonly __name: "matrixApi";
 
 
 }

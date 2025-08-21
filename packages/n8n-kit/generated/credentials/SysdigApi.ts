@@ -7,12 +7,14 @@ export const name = "sysdigApi" as const;
  * displayName: Sysdig API
  * documentationUrl: sysdig
  */
-export interface SysdigApiNodeParameters {
+export interface SysdigApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "sysdigApi";
 
 
 }

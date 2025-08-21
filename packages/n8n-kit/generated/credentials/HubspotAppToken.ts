@@ -7,12 +7,14 @@ export const name = "hubspotAppToken" as const;
  * displayName: HubSpot App Token
  * documentationUrl: hubspot
  */
-export interface HubspotAppTokenNodeParameters {
+export interface HubspotAppTokenCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly appToken?: string;
+    readonly "appToken"?: string;
+
+    readonly __name: "hubspotAppToken";
 
 
 }

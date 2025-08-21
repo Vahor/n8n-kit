@@ -7,40 +7,42 @@ export const name = "twitterOAuth2Api" as const;
  * displayName: X OAuth2 API
  * documentationUrl: twitter
  */
-export interface TwitterOAuth2ApiNodeParameters {
+export interface TwitterOAuth2ApiCredentials {
 
     /**
      */
-    readonly apiPermissions?: string;
+    readonly "apiPermissions"?: string;
 
     /**
      * Default: "pkce"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://twitter.com/i/oauth2/authorize"
      */
-    readonly authUrl?: any;
+    readonly "authUrl"?: any;
 
     /**
      * Default: "https://api.twitter.com/2/oauth2/token"
      */
-    readonly accessTokenUrl?: any;
+    readonly "accessTokenUrl"?: any;
 
     /**
      * Default: "tweet.read users.read tweet.write tweet.moderate.write users.read follows.read follows.write offline.access like.read like.write dm.write dm.read list.read list.write"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "header"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "twitterOAuth2Api";
 
 
 }

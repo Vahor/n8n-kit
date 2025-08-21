@@ -7,12 +7,14 @@ export const name = "ciscoMerakiApi" as const;
  * displayName: Cisco Meraki API
  * documentationUrl: ciscomeraki
  */
-export interface CiscoMerakiApiNodeParameters {
+export interface CiscoMerakiApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "ciscoMerakiApi";
 
 
 }

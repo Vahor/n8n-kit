@@ -120,6 +120,7 @@ bunx n8n-kit --help
 - As the graph is built dynamically you'll lose style.
    - e.g. if you want to change direction in the middle of a graph, that's not possible. It's Left-to-Right.
 - Currently there's no way to add priority to a node. n8n runs nodes top-to-bottom, here you'll lose that order.
+- Credentials has to be defined on n8n and referenced in the code using th `Credentials.byId` method.
 
 If you have an idea for a feature or possible fix to one of the limitations, please open an issue.
 

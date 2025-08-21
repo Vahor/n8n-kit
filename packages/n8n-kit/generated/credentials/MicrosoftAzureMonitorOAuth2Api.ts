@@ -7,46 +7,48 @@ export const name = "microsoftAzureMonitorOAuth2Api" as const;
  * displayName: Microsoft Azure Monitor OAuth2 API
  * documentationUrl: microsoftazuremonitor
  */
-export interface MicrosoftAzureMonitorOAuth2ApiNodeParameters {
+export interface MicrosoftAzureMonitorOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: "authorizationCode" | "clientCredentials";
+    readonly "grantType"?: "authorizationCode" | "clientCredentials";
 
     /**
      */
-    readonly tenantId: string;
+    readonly "tenantId": string;
 
     /**
      * Default: "https://api.loganalytics.azure.com"
      */
-    readonly resource?: "https://api.loganalytics.azure.com" | "https://api.loganalytics.io" | "https://monitor.azure.com" | "https://management.azure.com";
+    readonly "resource"?: "https://api.loganalytics.azure.com" | "https://api.loganalytics.io" | "https://monitor.azure.com" | "https://management.azure.com";
 
     /**
      * Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/authorize"
      */
-    readonly authUrl?: any;
+    readonly "authUrl"?: any;
 
     /**
      * Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/{{$self[\"grantType\"] === \"clientCredentials\" ? \"v2.0/\" : \"\"}}token"
      */
-    readonly accessTokenUrl?: any;
+    readonly "accessTokenUrl"?: any;
 
     /**
      * Default: "={{$self[\"grantType\"] === \"clientCredentials\" ? \"\" : \"resource=\" + $self[\"resource\"]}}"
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "={{$self[\"grantType\"] === \"clientCredentials\" ? $self[\"resource\"] + \"/.default\" : \"\"}}"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "microsoftAzureMonitorOAuth2Api";
 
 
 }

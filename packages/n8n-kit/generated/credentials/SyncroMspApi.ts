@@ -7,16 +7,18 @@ export const name = "syncroMspApi" as const;
  * displayName: SyncroMSP API
  * documentationUrl: syncromsp
  */
-export interface SyncroMspApiNodeParameters {
+export interface SyncroMspApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
+
+    readonly __name: "syncroMspApi";
 
 
 }

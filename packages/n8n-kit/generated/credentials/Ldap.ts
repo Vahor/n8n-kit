@@ -7,50 +7,52 @@ export const name = "ldap" as const;
  * displayName: LDAP
  * documentationUrl: ldap
  */
-export interface LdapNodeParameters {
+export interface LdapCredentials {
 
     /**
      * IP or domain of the LDAP server
      */
-    readonly hostname: string;
+    readonly "hostname": string;
 
     /**
      * Port used to connect to the LDAP server
      * Default: "389"
      */
-    readonly port?: string;
+    readonly "port"?: string;
 
     /**
      * Distinguished Name of the user to connect as
      */
-    readonly bindDN?: string;
+    readonly "bindDN"?: string;
 
     /**
      * Password of the user provided in the Binding DN field above
      * Type options: {"password":true}
      */
-    readonly bindPassword?: string;
+    readonly "bindPassword"?: string;
 
     /**
      * Default: "none"
      */
-    readonly connectionSecurity?: "none" | "tls" | "startTls";
+    readonly "connectionSecurity"?: "none" | "tls" | "startTls";
 
     /**
      * Whether to connect even if SSL/TLS certificate validation is not possible
      */
-    readonly allowUnauthorizedCerts?: boolean;
+    readonly "allowUnauthorizedCerts"?: boolean;
 
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly caCertificate?: string;
+    readonly "caCertificate"?: string;
 
     /**
      * Optional connection timeout in seconds
      * Default: 300
      */
-    readonly timeout?: number;
+    readonly "timeout"?: number;
+
+    readonly __name: "ldap";
 
 
 }

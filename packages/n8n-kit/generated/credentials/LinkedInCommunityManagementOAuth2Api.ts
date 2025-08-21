@@ -7,36 +7,38 @@ export const name = "linkedInCommunityManagementOAuth2Api" as const;
  * displayName: LinkedIn Community Management OAuth2 API
  * documentationUrl: linkedIn
  */
-export interface LinkedInCommunityManagementOAuth2ApiNodeParameters {
+export interface LinkedInCommunityManagementOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://www.linkedin.com/oauth/v2/authorization"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "https://www.linkedin.com/oauth/v2/accessToken"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      * Default: "w_member_social w_organization_social r_basicprofile"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "linkedInCommunityManagementOAuth2Api";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "netlifyApi" as const;
  * displayName: Netlify API
  * documentationUrl: netlify
  */
-export interface NetlifyApiNodeParameters {
+export interface NetlifyApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "netlifyApi";
 
 
 }

@@ -7,16 +7,18 @@ export const name = "salesmateApi" as const;
  * displayName: Salesmate API
  * documentationUrl: salesmate
  */
-export interface SalesmateApiNodeParameters {
+export interface SalesmateApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly sessionToken?: string;
+    readonly "sessionToken"?: string;
 
     /**
      */
-    readonly url?: string;
+    readonly "url"?: string;
+
+    readonly __name: "salesmateApi";
 
 
 }

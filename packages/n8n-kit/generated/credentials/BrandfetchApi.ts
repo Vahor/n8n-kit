@@ -7,12 +7,14 @@ export const name = "brandfetchApi" as const;
  * displayName: Brandfetch API
  * documentationUrl: brandfetch
  */
-export interface BrandfetchApiNodeParameters {
+export interface BrandfetchApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "brandfetchApi";
 
 
 }

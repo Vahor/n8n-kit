@@ -7,12 +7,14 @@ export const name = "dynatraceApi" as const;
  * displayName: DynatraceAPI
  * documentationUrl: dynatrace
  */
-export interface DynatraceApiNodeParameters {
+export interface DynatraceApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "dynatraceApi";
 
 
 }

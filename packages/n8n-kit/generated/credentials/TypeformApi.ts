@@ -7,12 +7,14 @@ export const name = "typeformApi" as const;
  * displayName: Typeform API
  * documentationUrl: typeform
  */
-export interface TypeformApiNodeParameters {
+export interface TypeformApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "typeformApi";
 
 
 }

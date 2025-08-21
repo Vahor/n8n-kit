@@ -7,12 +7,14 @@ export const name = "figmaApi" as const;
  * displayName: Figma API
  * documentationUrl: figma
  */
-export interface FigmaApiNodeParameters {
+export interface FigmaApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "figmaApi";
 
 
 }

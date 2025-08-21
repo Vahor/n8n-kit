@@ -7,16 +7,18 @@ export const name = "microsoftSharePointOAuth2Api" as const;
  * displayName: Microsoft SharePoint OAuth2 API
  * documentationUrl: microsoft
  */
-export interface MicrosoftSharePointOAuth2ApiNodeParameters {
+export interface MicrosoftSharePointOAuth2ApiCredentials {
 
     /**
      * Default: "=openid offline_access https://{{$self.subdomain}}.sharepoint.com/.default"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
+
+    readonly __name: "microsoftSharePointOAuth2Api";
 
 
 }

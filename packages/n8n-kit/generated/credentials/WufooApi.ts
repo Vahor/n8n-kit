@@ -7,16 +7,18 @@ export const name = "wufooApi" as const;
  * displayName: Wufoo API
  * documentationUrl: wufoo
  */
-export interface WufooApiNodeParameters {
+export interface WufooApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
 
     /**
      */
-    readonly subdomain?: string;
+    readonly "subdomain"?: string;
+
+    readonly __name: "wufooApi";
 
 
 }

@@ -7,12 +7,14 @@ export const name = "ouraApi" as const;
  * displayName: Oura API
  * documentationUrl: oura
  */
-export interface OuraApiNodeParameters {
+export interface OuraApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
+
+    readonly __name: "ouraApi";
 
 
 }

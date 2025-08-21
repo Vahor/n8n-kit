@@ -7,12 +7,14 @@ export const name = "mailcheckApi" as const;
  * displayName: Mailcheck API
  * documentationUrl: mailcheck
  */
-export interface MailcheckApiNodeParameters {
+export interface MailcheckApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "mailcheckApi";
 
 
 }

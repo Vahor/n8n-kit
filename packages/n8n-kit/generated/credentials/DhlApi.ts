@@ -7,12 +7,14 @@ export const name = "dhlApi" as const;
  * displayName: DHL API
  * documentationUrl: dhl
  */
-export interface DhlApiNodeParameters {
+export interface DhlApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "dhlApi";
 
 
 }

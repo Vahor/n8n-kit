@@ -7,12 +7,14 @@ export const name = "sendInBlueApi" as const;
  * displayName: Brevo
  * documentationUrl: brevo
  */
-export interface BrevoApiNodeParameters {
+export interface BrevoApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey?: string;
+    readonly "apiKey"?: string;
+
+    readonly __name: "sendInBlueApi";
 
 
 }

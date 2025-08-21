@@ -7,12 +7,14 @@ export const name = "segmentApi" as const;
  * displayName: Segment API
  * documentationUrl: segment
  */
-export interface SegmentApiNodeParameters {
+export interface SegmentApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly writekey?: string;
+    readonly "writekey"?: string;
+
+    readonly __name: "segmentApi";
 
 
 }

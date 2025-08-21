@@ -7,25 +7,27 @@ export const name = "ftp" as const;
  * displayName: FTP
  * documentationUrl: ftp
  */
-export interface FtpNodeParameters {
+export interface FtpCredentials {
 
     /**
      */
-    readonly host: string;
+    readonly "host": string;
 
     /**
      * Default: 21
      */
-    readonly port: number;
+    readonly "port": number;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "ftp";
 
 
 }

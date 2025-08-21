@@ -7,16 +7,18 @@ export const name = "airtableTokenApi" as const;
  * displayName: Airtable Personal Access Token API
  * documentationUrl: airtable
  */
-export interface AirtableTokenApiNodeParameters {
+export interface AirtableTokenApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      */
-    readonly notice?: string;
+    readonly "notice"?: string;
+
+    readonly __name: "airtableTokenApi";
 
 
 }

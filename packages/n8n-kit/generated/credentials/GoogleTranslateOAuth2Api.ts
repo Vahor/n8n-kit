@@ -7,12 +7,14 @@ export const name = "googleTranslateOAuth2Api" as const;
  * displayName: Google Translate OAuth2 API
  * documentationUrl: google/oauth-single-service
  */
-export interface GoogleTranslateOAuth2ApiNodeParameters {
+export interface GoogleTranslateOAuth2ApiCredentials {
 
     /**
      * Default: "https://www.googleapis.com/auth/cloud-translation"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
+
+    readonly __name: "googleTranslateOAuth2Api";
 
 
 }

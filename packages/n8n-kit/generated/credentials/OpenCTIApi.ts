@@ -7,12 +7,14 @@ export const name = "openCtiApi" as const;
  * displayName: OpenCTI API
  * documentationUrl: opencti
  */
-export interface OpenCTIApiNodeParameters {
+export interface OpenCTIApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly apiKey: string;
+    readonly "apiKey": string;
+
+    readonly __name: "openCtiApi";
 
 
 }

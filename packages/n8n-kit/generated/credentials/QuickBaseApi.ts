@@ -7,16 +7,18 @@ export const name = "quickbaseApi" as const;
  * displayName: Quick Base API
  * documentationUrl: quickbase
  */
-export interface QuickBaseApiNodeParameters {
+export interface QuickBaseApiCredentials {
 
     /**
      */
-    readonly hostname: string;
+    readonly "hostname": string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly userToken: string;
+    readonly "userToken": string;
+
+    readonly __name: "quickbaseApi";
 
 
 }

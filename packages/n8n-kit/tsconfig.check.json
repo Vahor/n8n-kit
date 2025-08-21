@@ -9,7 +9,8 @@
 		"strictNullChecks": false,
 		"paths": {
 			"n8n-nodes-base/*": ["./vendor/n8n/packages/nodes-base/*"],
-			"generated/nodes/*": ["./generated/nodes/*"]
+			"generated/nodes/*": ["./generated/nodes/*"],
+			"generated/credentials/*": ["./generated/credentials/*"]
 		}
 	},
 	"include": ["src/**/*.ts"],

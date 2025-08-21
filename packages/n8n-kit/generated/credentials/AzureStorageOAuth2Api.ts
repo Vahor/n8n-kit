@@ -7,21 +7,23 @@ export const name = "azureStorageOAuth2Api" as const;
  * displayName: Azure Storage OAuth2 API
  * documentationUrl: azurestorage
  */
-export interface AzureStorageOAuth2ApiNodeParameters {
+export interface AzureStorageOAuth2ApiCredentials {
 
     /**
      */
-    readonly account?: string;
+    readonly "account"?: string;
 
     /**
      * Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net"
      */
-    readonly baseUrl?: any;
+    readonly "baseUrl"?: any;
 
     /**
      * Default: "https://storage.azure.com/.default"
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
+
+    readonly __name: "azureStorageOAuth2Api";
 
 
 }

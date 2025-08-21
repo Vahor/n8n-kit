@@ -7,21 +7,23 @@ export const name = "baserowApi" as const;
  * displayName: Baserow API
  * documentationUrl: baserow
  */
-export interface BaserowApiNodeParameters {
+export interface BaserowApiCredentials {
 
     /**
      * Default: "https://api.baserow.io"
      */
-    readonly host?: string;
+    readonly "host"?: string;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "baserowApi";
 
 
 }

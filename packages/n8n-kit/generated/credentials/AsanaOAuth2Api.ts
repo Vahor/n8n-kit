@@ -7,35 +7,37 @@ export const name = "asanaOAuth2Api" as const;
  * displayName: Asana OAuth2 API
  * documentationUrl: asana
  */
-export interface AsanaOAuth2ApiNodeParameters {
+export interface AsanaOAuth2ApiCredentials {
 
     /**
      * Default: "authorizationCode"
      */
-    readonly grantType?: any;
+    readonly "grantType"?: any;
 
     /**
      * Default: "https://app.asana.com/-/oauth_authorize"
      */
-    readonly authUrl: any;
+    readonly "authUrl": any;
 
     /**
      * Default: "https://app.asana.com/-/oauth_token"
      */
-    readonly accessTokenUrl: any;
+    readonly "accessTokenUrl": any;
 
     /**
      */
-    readonly scope?: any;
+    readonly "scope"?: any;
 
     /**
      */
-    readonly authQueryParameters?: any;
+    readonly "authQueryParameters"?: any;
 
     /**
      * Default: "body"
      */
-    readonly authentication?: any;
+    readonly "authentication"?: any;
+
+    readonly __name: "asanaOAuth2Api";
 
 
 }

@@ -7,25 +7,27 @@ export const name = "sshPassword" as const;
  * displayName: SSH Password
  * documentationUrl: ssh
  */
-export interface SshPasswordNodeParameters {
+export interface SshPasswordCredentials {
 
     /**
      */
-    readonly host: string;
+    readonly "host": string;
 
     /**
      * Default: 22
      */
-    readonly port: number;
+    readonly "port": number;
 
     /**
      */
-    readonly username?: string;
+    readonly "username"?: string;
 
     /**
      * Type options: {"password":true}
      */
-    readonly password?: string;
+    readonly "password"?: string;
+
+    readonly __name: "sshPassword";
 
 
 }

@@ -7,17 +7,19 @@ export const name = "dropboxApi" as const;
  * displayName: Dropbox API
  * documentationUrl: dropbox
  */
-export interface DropboxApiNodeParameters {
+export interface DropboxApiCredentials {
 
     /**
      * Type options: {"password":true}
      */
-    readonly accessToken?: string;
+    readonly "accessToken"?: string;
 
     /**
      * Default: "full"
      */
-    readonly accessType?: "folder" | "full";
+    readonly "accessType"?: "folder" | "full";
+
+    readonly __name: "dropboxApi";
 
 
 }
