@@ -45,7 +45,7 @@
 		"format": "bunx @biomejs/biome check ./ --write",
 		"typecheck": "tsc --noEmit --declaration",
 		"ci:version": "changeset version && bun update",
-		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun publish || true); done && changeset tag"
+		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun build && bun publish || true); done && changeset tag"
 	},
 	"engines": {
 		"bun": ">=1.2.20"
