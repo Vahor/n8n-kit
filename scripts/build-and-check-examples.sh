@@ -24,7 +24,7 @@ for example_dir in $EXAMPLE_DIRS; do
 
     cd "$example_dir"
 
-	node ../../packages/n8n-cli/dist/index.js build
+	bun ../../packages/n8n-cli/dist/index.js build
 
 	cd "$ROOT_DIR"
 done
