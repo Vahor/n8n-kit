@@ -1,5 +1,5 @@
 import type { Argv } from "yargs";
-import { yargsInstance } from "../n8n-kit";
+import { yargsInstance } from "..";
 
 export const command = "workflow [command]";
 export const description = "Manage workflows";

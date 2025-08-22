@@ -1,7 +1,7 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-	entry: "src/n8n-kit.ts",
+	entry: "src/index.ts",
 	format: "esm",
 	target: "es2020",
 	banner: {

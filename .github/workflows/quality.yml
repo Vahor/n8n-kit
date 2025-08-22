@@ -2,7 +2,8 @@ name: Code quality
 
 on:
   push:
-  workflow_dispatch:
+    branches:
+      - main
   pull_request:
 
 permissions:
@@ -43,6 +44,23 @@ jobs:
         run: bun run --filter '@vahor/n8n-kit' build
       - name: Run typecheck
         run: bun run --filter '*' typecheck
+
+  examples:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build n8n-kit
+        run: bun run --filter '*' build
+      - name: Check examples
+        run: bash scripts/build-and-check-examples.sh
 
   test-cli:
     runs-on: ubuntu-latest

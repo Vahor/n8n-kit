@@ -1,11 +1,12 @@
 {
+	"id": "KuH6Hip/VTjf1",
 	"name": "Reusable workflow",
 	"nodes": [
 		{
 			"id": "workflow-trigger",
 			"name": "workflow-trigger",
 			"type": "n8n-nodes-base.executeWorkflowTrigger",
-			"position": [115, 115],
+			"position": [55, 55],
 			"typeVersion": 1.1,
 			"parameters": {
 				"workflowInputs": {
@@ -22,5 +23,6 @@
 	"connections": {},
 	"settings": {},
 	"staticData": {},
-	"tags": [{ "name": "@vahor/n8n-kit-id-reusable-workflow" }]
+	"active": false,
+	"tags": [{ "name": "@vahor/n8n-KuH6Hip/VTjf1" }]
 }

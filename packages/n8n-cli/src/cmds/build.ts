@@ -5,9 +5,9 @@ import logger from "@vahor/n8n-kit/logger";
 import chalk from "chalk";
 import { table } from "table";
 import type { Argv } from "yargs";
+import type { GlobalOptions } from "..";
 import { readConfigFile } from "../config";
 import { createFolder, resolvePath } from "../files";
-import type { GlobalOptions } from "../n8n-kit";
 
 export const command = "build";
 export const description = "Build app and save json files";

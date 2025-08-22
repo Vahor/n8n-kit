@@ -1,12 +1,12 @@
 {
-	"id": "merge-example",
+	"id": "EatwhykX1zB3w",
 	"name": "Merge Example",
 	"nodes": [
 		{
 			"id": "When clicking ‘Test workflow’",
 			"name": "When clicking ‘Test workflow’",
 			"type": "n8n-nodes-base.manualTrigger",
-			"position": [115, 220],
+			"position": [55, 170],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -14,7 +14,7 @@
 			"id": "Sample data (name + language)",
 			"name": "Sample data (name + language)",
 			"type": "n8n-nodes-base.code",
-			"position": [325, 115],
+			"position": [245, 55],
 			"typeVersion": 2,
 			"parameters": {
 				"jsCode": "\nreturn [\n  {\n    json: {\n      name: 'Stefan',\n      language: 'de',\n    }\n  },\n  {\n    json: {\n      name: 'Jim',\n      language: 'en',\n    }\n  },\n  {\n    json: {\n      name: 'Hans',\n      language: 'de',\n    }\n  }\n];\n"
@@ -24,7 +24,7 @@
 			"id": "Sample data (greeting + language)",
 			"name": "Sample data (greeting + language)",
 			"type": "n8n-nodes-base.code",
-			"position": [325, 325],
+			"position": [245, 285],
 			"typeVersion": 2,
 			"parameters": {
 				"jsCode": "\nreturn [\n  {\n    json: {\n      greeting: 'Hello',\n      language: 'en',\n    }\n  },\n  {\n    json: {\n      greeting: 'Hallo',\n      language: 'de',\n    }\n  }\n];\n"
@@ -34,7 +34,7 @@
 			"id": "Merge (name + language + greeting)",
 			"name": "Merge (name + language + greeting)",
 			"type": "n8n-nodes-base.merge",
-			"position": [535, 220],
+			"position": [435, 170],
 			"typeVersion": 3.2,
 			"parameters": { "mode": "combine", "fieldsToMatchString": "language" }
 		}
@@ -79,8 +79,8 @@
 			]
 		}
 	},
-	"active": false,
 	"settings": {},
 	"staticData": {},
-	"meta": {}
+	"active": false,
+	"tags": [{ "name": "@vahor/n8n-EatwhykX1zB3w" }]
 }

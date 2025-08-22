@@ -8,7 +8,9 @@
 		"url": "git+https://github.com/Vahor/n8n-kit.git",
 		"directory": "packages/n8n-cli"
 	},
-	"bin": "dist/n8n-kit",
+	"bin": {
+		"@vahor/n8n": "./dist/index.js"
+	},
 	"type": "module",
 	"private": false,
 	"author": {

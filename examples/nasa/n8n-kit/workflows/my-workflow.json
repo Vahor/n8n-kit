@@ -6,11 +6,10 @@
 			"id": "schedule-trigger",
 			"name": "Schedule trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
-			"position": [115, 220],
+			"position": [55, 170],
 			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
-					"name": "Schedule trigger",
 					"interval": [
 						{
 							"field": "weeks",
@@ -26,7 +25,7 @@
 			"id": "nasa",
 			"name": "nasa",
 			"type": "n8n-nodes-base.nasa",
-			"position": [325, 220],
+			"position": [245, 170],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "donkiSolarFlare",
@@ -38,14 +37,18 @@
 			"id": "if",
 			"name": "if",
 			"type": "n8n-nodes-base.if",
-			"position": [535, 220],
+			"position": [435, 170],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
 					"conditions": [
 						{
-							"operator": { "type": "string", "operation": "contains" },
-							"leftValue": "={{·$json.classType·}}",
+							"operator": {
+								"type": "string",
+								"operation": "contains",
+								"singleValue": false
+							},
+							"leftValue": "={{ $json.classType }}",
 							"rightValue": "C",
 							"id": "my-workflow/if/0"
 						}
@@ -63,12 +66,12 @@
 			"id": "PostBin(true)",
 			"name": "PostBin(true)",
 			"type": "n8n-nodes-base.postBin",
-			"position": [745, 115],
+			"position": [625, 55],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "request",
 				"binId": "1741914338605-0907339996192",
-				"binContent": "=There was a solar flare of class {{·$json.classType·}}",
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
 				"operation": "send"
 			}
 		},
@@ -76,12 +79,12 @@
 			"id": "PostBin(false)",
 			"name": "PostBin(false)",
 			"type": "n8n-nodes-base.postBin",
-			"position": [745, 325],
+			"position": [625, 285],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "request",
 				"binId": "1741914338605-0907339996192",
-				"binContent": "=There was a solar flare of class {{·$json.classType·}}",
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
 				"operation": "send"
 			}
 		},
