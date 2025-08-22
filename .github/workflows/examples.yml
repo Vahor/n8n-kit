@@ -12,6 +12,7 @@ jobs:
   run:
     if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/check-examples')
     runs-on: ubuntu-latest
+    permissions: write-all
 
     steps:
       - name: Post starting comment
@@ -38,6 +39,10 @@ jobs:
         with:
           fetch-depth: 0
           submodules: true
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
       - name: Build
         run: bun run --filter '*' build
 
