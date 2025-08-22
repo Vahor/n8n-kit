@@ -4,13 +4,12 @@
 	"nodes": [
 		{
 			"id": "schedule-trigger",
-			"name": "Schedule trigger",
+			"name": "schedule-trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
 			"position": [115, 220],
 			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
-					"name": "Schedule trigger",
 					"interval": [
 						{
 							"field": "weeks",
@@ -100,7 +99,7 @@
 		}
 	],
 	"connections": {
-		"Schedule trigger": {
+		"schedule-trigger": {
 			"main": [[{ "node": "nasa", "type": "main", "index": 0 }]]
 		},
 		"nasa": { "main": [[{ "node": "if", "type": "main", "index": 0 }]] },

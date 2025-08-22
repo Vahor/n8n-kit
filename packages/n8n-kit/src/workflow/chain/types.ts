@@ -22,6 +22,7 @@ export interface ConnectionOptions {
 export interface INextable {
 	/*
 	 * Add a next state to this state
+	 * @internal
 	 */
 	addNext(state: IChainable, connectionOptions?: ConnectionOptions): void;
 }

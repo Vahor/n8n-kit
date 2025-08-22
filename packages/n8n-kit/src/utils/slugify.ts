@@ -28,7 +28,7 @@ export const validateIdentifier = <A extends string>(str: A): A => {
 	return slug as A;
 };
 
-export function shortHash(text: string, length = 9) {
+export function shortHash(text: string, length = 12) {
 	const hash = crypto.createHash("sha256").update(text).digest("base64");
 	return hash.substring(0, length);
 }

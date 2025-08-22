@@ -10,7 +10,7 @@ interface ManualTriggerBaseProps extends ManualTriggerNodeParameters {}
 export interface ManualTriggerProps extends NodeProps, ManualTriggerBaseProps {}
 
 export class ManualTrigger<L extends string> extends Node<L, {}> {
-	protected override type = `n8n-nodes-base.${name}`;
+	protected override type = `n8n-nodes-base.${name}` as const;
 	protected override typeVersion = version;
 
 	constructor(

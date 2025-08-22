@@ -15,7 +15,7 @@ export class Code<L extends string, P extends CodeProps> extends Node<
 		? never
 		: NonNullable<P["outputSchema"]>["infer"]
 > {
-	protected override type = `n8n-nodes-base.${name}`;
+	protected override type = `n8n-nodes-base.${name}` as const;
 	protected override typeVersion = version;
 
 	public constructor(

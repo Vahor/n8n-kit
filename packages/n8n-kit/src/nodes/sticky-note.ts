@@ -31,7 +31,7 @@ export interface StickyNoteProps extends StickyNoteBaseProps, NodeProps {}
 export class StickyNote extends BaseNode {
 	public override endStates: INextable[] = NO_END_STATES;
 
-	protected type = `n8n-nodes-base.${name}`;
+	protected type = `n8n-nodes-base.${name}` as const;
 	protected typeVersion = version;
 
 	constructor(

@@ -19,7 +19,7 @@ export class N8nApi {
 		endpoint: `${string}`,
 		options: RequestInit = {},
 	): Promise<T> {
-		const url = `${this.baseUrl}/api/v1${endpoint}`;
+		const url = `${this.baseUrl}${endpoint}`;
 		logger.debug(`${options.method ?? "GET"} ${url}`);
 		const response = await fetch(url, {
 			...options,
@@ -49,7 +49,7 @@ export class N8nApi {
 	async createWorkflow(
 		input: Omit<WorkflowDefinition, "id" | "tags" | "active">,
 	): Promise<WorkflowDefinition> {
-		return this.request("/workflows", {
+		return this.request("/api/v1/workflows", {
 			method: "POST",
 			body: JSON.stringify(input),
 		});
@@ -59,7 +59,7 @@ export class N8nApi {
 		id: string,
 		input: Omit<WorkflowDefinition, "id" | "tags" | "active">,
 	) {
-		return this.request(`/workflows/${id}`, {
+		return this.request(`/api/v1/workflows/${id}`, {
 			method: "PUT",
 			body: JSON.stringify(input),
 		});
@@ -67,7 +67,7 @@ export class N8nApi {
 
 	async setActiveWorkflow(id: string, active: boolean) {
 		const endpoint = active ? "activate" : "deactivate";
-		return this.request(`/workflows/${id}/${endpoint}`, {
+		return this.request(`/api/v1/workflows/${id}/${endpoint}`, {
 			method: "POST",
 		});
 	}
@@ -99,18 +99,18 @@ export class N8nApi {
 	}
 
 	async getTags(): Promise<{ id: string; name: string }[]> {
-		return this.paginatedRequest("/tags") as any;
+		return this.paginatedRequest("/api/v1/tags") as any;
 	}
 
 	async createTag(name: string): Promise<{ id: string }> {
-		return this.request("/tags", {
+		return this.request("/api/v1/tags", {
 			method: "POST",
 			body: JSON.stringify({ name }),
 		});
 	}
 
 	async updateTags(id: string, tags: { id: string }[]) {
-		return this.request(`/workflows/${id}/tags`, {
+		return this.request(`/api/v1/workflows/${id}/tags`, {
 			method: "PUT",
 			body: JSON.stringify(tags),
 		});
@@ -122,12 +122,12 @@ export class N8nApi {
 		name?: string;
 		projectId?: string;
 	}): Promise<Array<WorkflowDefinition & { isArchived: boolean }>> {
-		return this.paginatedRequest(`/workflows`, query, {
+		return this.paginatedRequest(`/api/v1/workflows`, query, {
 			method: "GET",
 		});
 	}
 
 	async getWorkflowById(id: string): Promise<WorkflowDefinition> {
-		return this.request(`/workflows/${id}`);
+		return this.request(`/api/v1/workflows/${id}`);
 	}
 }

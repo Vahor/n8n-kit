@@ -22,7 +22,9 @@ export const DEFAULT_NODE_SIZE: NodeSize = {
 	height: 110,
 };
 
-export type NodeProps = {};
+export type NodeProps = {
+	name?: string;
+};
 
 export abstract class BaseNode<
 	LiteralId extends string = string,
@@ -30,9 +32,10 @@ export abstract class BaseNode<
 > extends State<LiteralId, T> {
 	protected workflowParent?: Workflow;
 
-	protected abstract type: string;
+	protected abstract readonly type: string;
 	protected abstract typeVersion: number;
 
+	public name?: string;
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
@@ -46,8 +49,9 @@ export abstract class BaseNode<
 		return undefined;
 	}
 
-	constructor(id: LiteralId, _props?: NodeProps) {
+	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
+		this.name = props?.name;
 	}
 
 	public "~setParent"(parent: Workflow) {
@@ -79,6 +83,10 @@ export abstract class BaseNode<
 		return `${parentId}/${this.id}`;
 	}
 
+	public getName() {
+		return this.name ?? this.id;
+	}
+
 	private credentialsToNode() {
 		let credentials = this.getCredentials();
 		if (!credentials) return undefined;
@@ -89,13 +97,15 @@ export abstract class BaseNode<
 	}
 
 	toNode() {
+		// Often getParameters() returns this.props. So we want to remove the props from the parameters
+		const { name: _, ...rest } = this.getParameters() as Record<string, any>;
 		return {
 			id: this.id,
-			name: this.id,
+			name: this.getName(),
 			type: this.type,
 			position: this.position,
 			typeVersion: this.typeVersion,
-			parameters: this.getParameters(),
+			parameters: rest,
 			credentials: this.credentialsToNode(),
 		};
 	}

@@ -25,7 +25,7 @@ export class ExecuteWorkflow<
 	Input extends Type,
 	Output extends Type,
 > extends Node<L, Output["infer"]> {
-	protected override type = `n8n-nodes-base.${name}`;
+	protected override type = `n8n-nodes-base.${name}` as const;
 	protected override typeVersion = version;
 
 	public constructor(

@@ -85,7 +85,7 @@ export class Workflow<
 		id: string,
 		public readonly props: WorkflowProps<Input, Output, C_CC>,
 	) {
-		this.hashId = shortHash(id);
+		this.hashId = shortHash(id, 24 - prefix.length);
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
 	}
@@ -129,8 +129,8 @@ export class Workflow<
 		for (const node of nodes) {
 			if (node instanceof Group) continue;
 			for (const endState of node.listOutgoing()) {
-				connections[node.id] ??= { main: [] };
-				const nodeConnection = connections[node.id]!;
+				connections[node.getName()] ??= { main: [] };
+				const nodeConnection = connections[node.getName()]!;
 				const connectionOptions = node["~getConnectionOptions"](endState.id);
 
 				if (!nodeConnection.main[connectionOptions.from]) {

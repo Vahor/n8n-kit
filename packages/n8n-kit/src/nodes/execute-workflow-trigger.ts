@@ -18,7 +18,7 @@ export class ExecuteWorkflowTrigger<
 	L extends string,
 	Input extends Type,
 > extends Node<L, Input["infer"]> {
-	protected override type = `n8n-nodes-base.${name}`;
+	protected override type = `n8n-nodes-base.${name}` as const;
 	protected override typeVersion = version;
 
 	public constructor(

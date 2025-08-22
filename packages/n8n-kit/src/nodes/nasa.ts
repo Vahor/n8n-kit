@@ -15,7 +15,7 @@ export class Nasa<L extends string, P extends NasaProps> extends Node<
 		? { classType: string }
 		: { __TODO: string }
 > {
-	protected override type = "n8n-nodes-base.nasa";
+	protected override type = "n8n-nodes-base.nasa" as const;
 	protected override typeVersion = version;
 
 	constructor(

@@ -2,6 +2,8 @@ export type Prettify<T> = {
 	[K in keyof T]: T[K];
 } & {};
 
+export type RequireFields<T, K extends keyof T> = T & Required<Pick<T, K>>;
+
 export type AnyString = string & {};
 
 export type IsNever<T> = [T] extends [never] ? true : false;
@@ -21,16 +23,37 @@ export type Primitive =
 	| null
 	| undefined;
 
+export type NeedsBrackets<T> = T extends `${infer _1}.${infer _2}`
+	? true
+	: T extends `${infer _1} ${infer _2}`
+		? true
+		: false;
+
+type FormatWithPrefix<
+	T extends string,
+	Prefix extends string,
+> = NeedsBrackets<T> extends true
+	? `${Prefix}['${T}']`
+	: Prefix extends ""
+		? T
+		: `${Prefix}.${T}`;
+
 export type JoinKeys<T, OnlyLeaf = false, Prefix extends string = ""> = {
 	[K in keyof T]: T[K] extends Function
 		? `${Prefix}${Extract<K, string>}`
 		: T[K] extends Primitive | Array<Primitive> | Date
-			? `${Prefix}${Extract<K, string>}`
+			? FormatWithPrefix<Extract<K, string>, Prefix>
 			: T[K] extends object
 				?
-						| (OnlyLeaf extends true ? never : `${Prefix}${Extract<K, string>}`)
-						| JoinKeys<T[K], OnlyLeaf, `${Prefix}${Extract<K, string>}.`>
-				: `${Prefix}${Extract<K, string>}`;
+						| (OnlyLeaf extends true
+								? never
+								: FormatWithPrefix<Extract<K, string>, Prefix>)
+						| JoinKeys<
+								T[K],
+								OnlyLeaf,
+								FormatWithPrefix<Extract<K, string>, Prefix>
+						  >
+				: FormatWithPrefix<Extract<K, string>, Prefix>;
 }[keyof T];
 
 export type OmitRootLevel<T> = T extends `${infer _1}.${infer _2}` ? T : never;

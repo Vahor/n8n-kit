@@ -1,0 +1,76 @@
+{
+	"id": "Vep5Pzx1nKJBc",
+	"name": "Complex Workflow",
+	"nodes": [
+		{
+			"id": "webhook",
+			"name": "Webhook",
+			"type": "n8n-nodes-base.webhook",
+			"position": [115, 115],
+			"typeVersion": 2.1,
+			"parameters": {
+				"httpMethod": "POST",
+				"path": "abc",
+				"responseMode": "responseNode",
+				"outputSchema": {
+					"body": {
+						"required": [
+							{ "key": "entity_id", "value": "string" },
+							{
+								"key": "execution_type",
+								"value": [{ "unit": "full" }, { "unit": "partial" }]
+							}
+						],
+						"domain": "object"
+					}
+				}
+			}
+		},
+		{
+			"id": "check-valid-body",
+			"name": "check-valid-body",
+			"type": "n8n-nodes-base.if",
+			"position": [325, 115],
+			"typeVersion": 2.2,
+			"parameters": {
+				"conditions": {
+					"conditions": [
+						{
+							"leftValue": "={{ $json.body }}",
+							"operator": {
+								"type": "string",
+								"operation": "exists",
+								"singleValue": true
+							},
+							"id": "complex-workflow/check-valid-body/0"
+						},
+						{
+							"leftValue": "={{ $json.body.execution_type }}",
+							"operator": {
+								"type": "string",
+								"operation": "exists",
+								"singleValue": true
+							},
+							"id": "complex-workflow/check-valid-body/1"
+						}
+					],
+					"combinator": "and",
+					"options": {
+						"caseSensitive": true,
+						"version": 2,
+						"typeValidation": "strict"
+					}
+				}
+			}
+		}
+	],
+	"connections": {
+		"Webhook": {
+			"main": [[{ "node": "check-valid-body", "type": "main", "index": 0 }]]
+		}
+	},
+	"settings": {},
+	"staticData": {},
+	"active": true,
+	"tags": [{ "name": "@vahor/n8n-Vep5Pzx1nKJBc" }]
+}

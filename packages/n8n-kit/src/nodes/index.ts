@@ -13,3 +13,4 @@ export * from "./node";
 export * from "./postbin";
 export * from "./schedule-trigger";
 export * from "./sticky-note";
+export * from "./webhook";

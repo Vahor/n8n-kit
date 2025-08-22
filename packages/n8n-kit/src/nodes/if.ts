@@ -1,5 +1,6 @@
 import { version } from "generated/nodes/IfV2";
 import type { IsNullable } from "../utils/types";
+import { ExpressionBuilder } from "../workflow";
 import { Chain } from "../workflow/chain/chain";
 import type {
 	ConnectionOptions,
@@ -11,8 +12,8 @@ import { BaseNode, type NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
 type StringCondition = BaseCondition & {
-	leftValue: string;
-	rightValue?: string;
+	leftValue: ExpressionBuilder<any, any> | string;
+	rightValue?: ExpressionBuilder<any, any> | string;
 	operator: {
 		type: "string";
 		operation:
@@ -27,13 +28,21 @@ type StringCondition = BaseCondition & {
 			| "startsWith"
 			| "notStartsWith"
 			| "isEmpty"
-			| "isNotEmpty";
+			| "isNotEmpty"
+			| "exists";
 	};
 };
 
 type BaseCondition = {
 	/* @internal */
 	id?: string;
+	leftValue: unknown;
+	rightValue?: unknown;
+	operator: {
+		type: unknown;
+		operation: unknown;
+		singleValue?: boolean;
+	};
 };
 
 interface IfBaseProps {
@@ -54,7 +63,7 @@ export class If<
 	True extends IContext | null = null,
 	False extends IContext | null = null,
 > extends BaseNode<L> {
-	protected override type = `n8n-nodes-base.if`;
+	protected override type = `n8n-nodes-base.if` as const;
 	protected override typeVersion = version;
 
 	public readonly endStates: INextable[] = [];
@@ -72,6 +81,13 @@ export class If<
 		for (let i = 0; i < this.props.conditions.length; i++) {
 			const condition = this.props.conditions[i]!;
 			condition.id = `${this.getPath()}/${i}`;
+			condition.operator.singleValue = condition.rightValue === undefined;
+			if (condition.leftValue instanceof ExpressionBuilder) {
+				condition.leftValue = condition.leftValue.toExpression();
+			}
+			if (condition.rightValue instanceof ExpressionBuilder) {
+				condition.rightValue = condition.rightValue.toExpression();
+			}
 		}
 	}
 

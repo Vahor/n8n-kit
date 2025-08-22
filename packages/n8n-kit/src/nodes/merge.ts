@@ -10,7 +10,7 @@ interface MergeBaseProps extends MergeV3NodeParameters {}
 export interface MergeProps extends NodeProps, MergeBaseProps {}
 
 export class Merge<L extends string> extends Node<L, {}> {
-	protected override type = `n8n-nodes-base.${name}`;
+	protected override type = `n8n-nodes-base.${name}` as const;
 	protected override typeVersion = version;
 
 	constructor(

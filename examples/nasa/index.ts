@@ -30,6 +30,7 @@ const workflow = new Workflow("my-workflow", {
 	],
 	definition: Chain.start(
 		new ScheduleTrigger("schedule-trigger", {
+			name: "Schedule trigger",
 			interval: [
 				{
 					field: "weeks",

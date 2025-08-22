@@ -24,7 +24,7 @@ export class ScheduleTrigger<L extends string> extends Node<
 		Timezone: string;
 	}
 > {
-	protected override type = `n8n-nodes-base.${name}`;
+	protected override type = `n8n-nodes-base.${name}` as const;
 	protected override typeVersion = version;
 
 	constructor(
@@ -35,8 +35,9 @@ export class ScheduleTrigger<L extends string> extends Node<
 	}
 
 	override getParameters() {
+		const { name: _, ...rest } = this.props;
 		return {
-			rule: this.props,
+			rule: rest,
 		};
 	}
 }

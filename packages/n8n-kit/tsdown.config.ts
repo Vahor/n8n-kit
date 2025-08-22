@@ -16,9 +16,9 @@ export default defineConfig({
 	dts: {
 		sourcemap: false,
 		tsconfig: "./tsconfig.build.json",
-		resolve: ["n8n-workflow"],
 	},
 	format: ["cjs", "esm"],
+	external: ["@dagrejs/dagre"],
 	outExtensions: (ctx) => ({
 		dts: ctx.format === "cjs" ? ".d.cts" : ".d.mts",
 		js: ctx.format === "cjs" ? ".cjs" : ".mjs",
