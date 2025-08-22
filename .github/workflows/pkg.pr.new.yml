@@ -14,6 +14,6 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Build package
-        run: bun run build 
+        run: bun run --filter '*' build
       - name: Publish package
-        run: bunx pkg-pr-new publish --packageManager=bun
+        run: bunx pkg-pr-new publish --packageManager=bun './packages/n8n-kit' './packages/n8n-cli'

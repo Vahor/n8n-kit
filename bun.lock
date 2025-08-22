@@ -6,10 +6,10 @@
       "devDependencies": {
         "@biomejs/biome": "2.2.0",
         "@changesets/changelog-github": "^0.5.1",
-        "@changesets/cli": "^2.29.5",
+        "@changesets/cli": "^2.29.6",
         "@types/bun": "^1.2.20",
         "husky": "^9.1.7",
-        "lint-staged": "^16.1.2",
+        "lint-staged": "^16.1.5",
         "pkg-pr-new": "^0.0.55",
         "tsdown": "catalog:",
         "typescript": "catalog:",
@@ -48,7 +48,9 @@
     "packages/n8n-cli": {
       "name": "@vahor/n8n-kit-cli",
       "version": "0.0.0",
-      "bin": "dist/n8n-kit",
+      "bin": {
+        "@vahor/n8n": "./dist/index.js",
+      },
       "dependencies": {
         "@inquirer/prompts": "^7.8.3",
         "@vahor/n8n-kit": "workspace:*",

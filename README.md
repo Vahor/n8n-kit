@@ -179,7 +179,7 @@ expr`{{ $today.minus(1, 'day') }}` // result in "={{ $today.minus(1, 'day') }}"
 ### CLI
 
 ```sh
-bunx n8n-kit --help
+bunx @vahor/n8n --help 
 ```
 
 - `init`: Initialize a new project (create a `n8n-kit.config.json` file)
