@@ -4,8 +4,6 @@
 [![npm downloads](https://img.shields.io/npm/dm/%40vahor%2Fn8n-kit)](https://www.npmjs.com/package/@vahor/n8n-kit)
 
 
-# n8n-kit
-
 Build n8n workflows using code.
 And deploy them using the CLI.
 
