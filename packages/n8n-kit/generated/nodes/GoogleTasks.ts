@@ -4,8 +4,6 @@
 export const name = "googleTasks" as const;
 export const description = "Consume Google Tasks API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Tasks"} as const;
-export const credentials = [{"name":"googleTasksOAuth2Api","required":true}] as const
 
 /**
  * Consume Google Tasks API
@@ -26,7 +24,7 @@ export interface GoogleTasksNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTasks"}
      */
-    readonly task?: string;
+    readonly task?: string | string | string | string | string;
 
     /**
      * Title of the task
@@ -36,11 +34,11 @@ export interface GoogleTasksNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "parent"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "completedMax"?: string, "completedMin"?: string, "dueMin"?: string, "dueMax"?: string, "showCompleted"?: boolean, "showDeleted"?: boolean, "showHidden"?: boolean, "updatedMin"?: string };
+    readonly additionalFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "parent"?: string, "previous"?: string, "status"?: "needsAction" | "completed" } | { "completedMax"?: string, "completedMin"?: string, "dueMin"?: string, "dueMax"?: string, "showCompleted"?: boolean, "showDeleted"?: boolean, "showHidden"?: boolean, "updatedMin"?: string };
 
     /**
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit

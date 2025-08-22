@@ -4,8 +4,6 @@
 export const name = "airtop" as const;
 export const description = "Scrape and control any site with Airtop" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Airtop"} as const;
-export const credentials = [{"name":"airtopApi","required":true}] as const
 
 /**
  * Scrape and control any site with Airtop
@@ -25,7 +23,7 @@ export interface AirtopNodeParameters {
     /**
      * The name of the Airtop profile to load or create
      */
-    readonly profileName?: string;
+    readonly profileName?: string | string | string;
 
     /**
      * Whether to automatically save the <a href="https://docs.airtop.ai/guides/how-to/saving-a-profile" target="_blank">Airtop profile</a> for this session upon termination
@@ -58,7 +56,7 @@ export interface AirtopNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "solveCaptcha"?: boolean, "extensionIds"?: string, "timeout"?: number, "waitUntil"?: "load" | "domContentLoaded" | "complete" | "noWait", "includeNavigationBar"?: boolean, "screenResolution"?: string, "disableResize"?: boolean, "outputSchema"?: string, "parseJsonOutput"?: boolean, "interactionMode"?: "auto" | "accurate" | "cost-efficient", "paginationMode"?: "auto" | "paginated" | "infinite-scroll", "includeVisualAnalysis"?: boolean, "visualScope"?: "auto" | "viewport" | "page" | "scan", "waitForNavigation"?: "load" | "domcontentloaded" | "networkidle0" | "networkidle2" };
+    readonly additionalFields?: { "solveCaptcha"?: boolean, "extensionIds"?: string } | { "timeout"?: number } | { "waitUntil"?: "load" | "domContentLoaded" | "complete" | "noWait" } | { "includeNavigationBar"?: boolean, "screenResolution"?: string, "disableResize"?: boolean } | { "waitUntil"?: "complete" | "domContentLoaded" | "load" | "noWait" } | { "outputSchema"?: string, "parseJsonOutput"?: boolean, "interactionMode"?: "auto" | "accurate" | "cost-efficient", "paginationMode"?: "auto" | "paginated" | "infinite-scroll" } | { "outputSchema"?: string, "parseJsonOutput"?: boolean, "includeVisualAnalysis"?: boolean } | { "visualScope"?: "auto" | "viewport" | "page" | "scan", "waitForNavigation"?: "load" | "domcontentloaded" | "networkidle0" | "networkidle2" };
 
     /**
      * Default: "This operation will save the profile on session termination"
@@ -69,18 +67,18 @@ export interface AirtopNodeParameters {
      * The ID of the <a href="https://docs.airtop.ai/guides/how-to/creating-a-session" target="_blank">Session</a> to use
      * Default: "={{ $json[\"sessionId\"] }}"
      */
-    readonly sessionId?: string;
+    readonly sessionId?: string | string | string | string | string | string | string | string;
 
     /**
      * The ID of the <a href="https://docs.airtop.ai/guides/how-to/creating-a-session#windows" target="_blank">Window</a> to use
      * Default: "={{ $json[\"windowId\"] }}"
      */
-    readonly windowId?: string;
+    readonly windowId?: string | string | string | string | string;
 
     /**
      * Initial URL to load in the window. Defaults to https://www.google.com.
      */
-    readonly url?: string;
+    readonly url?: string | string | string | string;
 
     /**
      * Whether to get the URL of the window's <a href="https://docs.airtop.ai/guides/how-to/creating-a-live-view" target="_blank">Live View</a>
@@ -110,7 +108,7 @@ export interface AirtopNodeParameters {
     /**
      * ID of the file to delete
      */
-    readonly fileId?: string;
+    readonly fileId?: string | string | string;
 
     /**
      * Whether to output the file in binary format if the file is ready for download
@@ -143,13 +141,13 @@ export interface AirtopNodeParameters {
     /**
      * Optional description of the file input to interact with
      */
-    readonly elementDescription?: string;
+    readonly elementDescription?: string | string | string | string | string;
 
     /**
      * Whether to include hidden elements in the interaction
      * Default: true
      */
-    readonly includeHiddenElements?: boolean;
+    readonly includeHiddenElements?: boolean | boolean;
 
     /**
      * Name for the file to upload. For a session, all files loaded should have <b>unique names</b>.
@@ -196,7 +194,7 @@ export interface AirtopNodeParameters {
      * The prompt to extract data from the pages
      * Type options: {"rows":4}
      */
-    readonly prompt?: string;
+    readonly prompt?: string | string;
 
     /**
      * The information to fill into the form written in natural language

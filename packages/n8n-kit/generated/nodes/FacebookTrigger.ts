@@ -4,8 +4,6 @@
 export const name = "facebookTrigger" as const;
 export const description = "Starts the workflow when Facebook events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Facebook Trigger"} as const;
-export const credentials = [{"name":"facebookGraphAppApi","required":true}] as const
 
 /**
  * Starts the workflow when Facebook events occur

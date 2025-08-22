@@ -4,8 +4,6 @@
 export const name = "harvest" as const;
 export const description = "Access data on Harvest" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Harvest"} as const;
-export const credentials = [{"name":"harvestApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"harvestOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Access data on Harvest
@@ -25,7 +23,7 @@ export interface HarvestNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "createByDuration" | "createByStartEnd" | "deleteExternal" | "restartTime" | "stopTime" | "me";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "get" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "createByDuration" | "createByStartEnd" | "delete" | "deleteExternal" | "get" | "getAll" | "restartTime" | "stopTime" | "update" | "create" | "delete" | "get" | "getAll" | "me" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -36,54 +34,54 @@ export interface HarvestNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "is_active"?: boolean, "updated_since"?: string, "client_id"?: string, "from"?: string, "state"?: string, "to"?: string, "page"?: number, "is_billed"?: boolean, "project_id"?: string, "user_id"?: string, "is_running"?: boolean };
+    readonly filters?: { "is_active"?: boolean, "updated_since"?: string } | { "is_active"?: boolean, "updated_since"?: string } | { "client_id"?: string, "from"?: string, "state"?: string, "to"?: string, "updated_since"?: string, "page"?: number } | { "client_id"?: string, "from"?: string, "is_billed"?: boolean, "page"?: number, "project_id"?: string, "to"?: string, "updated_since"?: string, "user_id"?: string } | { "client_id"?: string, "from"?: string, "page"?: number, "project_id"?: string, "state"?: ("draft" | "open" | "paid" | "closed")[], "to"?: string, "updated_since"?: string } | { "client_id"?: string, "is_active"?: boolean, "page"?: number, "updated_since"?: string } | { "is_active"?: boolean, "page"?: number, "updated_since"?: string } | { "client_id"?: string, "from"?: string, "is_billed"?: boolean, "is_running"?: boolean, "page"?: number, "to"?: string, "updated_since"?: string, "user_id"?: string } | { "is_active"?: boolean, "updated_since"?: string, "page"?: number };
 
     /**
      * The ID of the client you are retrieving
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * The name of the client
      */
-    readonly name?: string;
+    readonly name?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "address"?: string, "currency"?: string, "is_active"?: string, "email"?: string, "fax"?: string, "last_name"?: string, "phone_mobile"?: string, "phone_office"?: string, "title"?: string, "over_budget_notification_percentage"?: string, "issue_date"?: string, "notes"?: string, "number"?: string, "purchase_order"?: string, "subject"?: string, "tax"?: string, "tax2"?: string, "billable"?: boolean, "total_cost"?: string, "units"?: string, "user_id"?: boolean, "ends_on"?: string, "estimate_id"?: string, "payment_term"?: string, "retainer_id"?: boolean, "budget"?: number, "budget_is_monthly"?: boolean, "cost_budget"?: string, "cost_budget_include_expenses"?: boolean, "fee"?: string, "hourly_rate"?: string, "is_fixed_fee"?: boolean, "notify_when_over_budget"?: boolean, "show_budget_to_all"?: boolean, "starts_on"?: string, "billable_by_default"?: boolean, "default_hourly_rate"?: number, "is_default"?: boolean, "hours"?: number, "ended_time"?: string, "started_time"?: string, "can_create_invoices"?: boolean, "can_create_projects"?: boolean, "can_see_rates"?: boolean, "cost_rate"?: number, "has_access_to_all_future_projects"?: boolean, "is_admin"?: boolean, "is_contractor"?: boolean, "is_project_manager"?: boolean, "roles"?: string, "timezone"?: string, "weekly_capacity"?: number };
+    readonly additionalFields?: { "address"?: string, "currency"?: string, "is_active"?: string } | { "email"?: string, "fax"?: string, "last_name"?: string, "phone_mobile"?: string, "phone_office"?: string, "title"?: string } | { "currency"?: string, "over_budget_notification_percentage"?: string, "issue_date"?: string, "notes"?: string, "number"?: string, "purchase_order"?: string, "subject"?: string, "tax"?: string, "tax2"?: string } | { "billable"?: boolean, "notes"?: string, "total_cost"?: string, "units"?: string, "user_id"?: boolean } | { "currency"?: string, "over_budget_notification_percentage"?: string, "ends_on"?: string, "estimate_id"?: string, "issue_date"?: string, "notes"?: string, "number"?: string, "payment_term"?: string, "purchase_order"?: string, "retainer_id"?: boolean, "subject"?: string, "tax"?: string, "tax2"?: string } | { "budget"?: number, "budget_is_monthly"?: boolean, "cost_budget"?: string, "cost_budget_include_expenses"?: boolean, "ends_on"?: string, "fee"?: string, "hourly_rate"?: string, "is_active"?: boolean, "is_fixed_fee"?: boolean, "notes"?: string, "notify_when_over_budget"?: boolean, "over_budget_notification_percentage"?: string, "show_budget_to_all"?: boolean, "starts_on"?: string } | { "billable_by_default"?: boolean, "default_hourly_rate"?: number, "is_active"?: boolean, "is_default"?: boolean } | { "hours"?: number, "notes"?: string, "user_id"?: string } | { "ended_time"?: string, "notes"?: string, "started_time"?: string, "user_id"?: string } | { "can_create_invoices"?: boolean, "can_create_projects"?: boolean, "can_see_rates"?: boolean, "cost_rate"?: number, "default_hourly_rate"?: string, "has_access_to_all_future_projects"?: boolean, "is_active"?: boolean, "is_admin"?: boolean, "is_contractor"?: boolean, "is_project_manager"?: boolean, "roles"?: string, "timezone"?: string, "weekly_capacity"?: number };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "address"?: string, "currency"?: string, "is_active"?: boolean, "name"?: string, "client_id"?: string, "email"?: string, "fax"?: string, "first_name"?: string, "last_name"?: string, "phone_mobile"?: string, "phone_office"?: string, "title"?: string, "over_budget_notification_percentage"?: string, "issue_date"?: string, "number"?: string, "notes"?: string, "purchase_order"?: string, "subject"?: string, "tax"?: string, "tax2"?: string, "billable"?: boolean, "expense_category_id"?: string, "project_id"?: string, "spent_date"?: string, "total_cost"?: string, "units"?: string, "user_id"?: boolean, "ends_on"?: string, "estimate_id"?: string, "payment_term"?: string, "retainer_id"?: boolean, "bill_by"?: "none" | "People" | "Project" | "Tasks", "budget"?: string, "budget_by"?: string, "budget_is_monthly"?: boolean, "cost_budget"?: string, "cost_budget_include_expenses"?: boolean, "fee"?: string, "hourly_rate"?: string, "is_billable"?: boolean, "is_fixed_fee"?: boolean, "notify_when_over_budget"?: boolean, "show_budget_to_all"?: boolean, "starts_on"?: string, "billable_by_default"?: boolean, "default_hourly_rate"?: number, "is_default"?: boolean, "ended_time"?: string, "hours"?: number, "started_time"?: string, "can_create_invoices"?: boolean, "can_create_projects"?: boolean, "can_see_rates"?: boolean, "cost_rate"?: number, "has_access_to_all_future_projects"?: boolean, "is_admin"?: boolean, "is_contractor"?: boolean, "is_project_manager"?: boolean, "roles"?: string, "timezone"?: string, "weekly_capacity"?: number };
+    readonly updateFields?: { "address"?: string, "currency"?: string, "is_active"?: boolean, "name"?: string } | { "client_id"?: string, "email"?: string, "fax"?: string, "first_name"?: string, "last_name"?: string, "phone_mobile"?: string, "phone_office"?: string, "title"?: string } | { "client_id"?: string, "currency"?: string, "over_budget_notification_percentage"?: string, "issue_date"?: string, "number"?: string, "notes"?: string, "purchase_order"?: string, "subject"?: string, "tax"?: string, "tax2"?: string } | { "billable"?: boolean, "expense_category_id"?: string, "notes"?: string, "project_id"?: string, "spent_date"?: string, "total_cost"?: string, "units"?: string, "user_id"?: boolean } | { "client_id"?: string, "currency"?: string, "over_budget_notification_percentage"?: string, "ends_on"?: string, "estimate_id"?: string, "issue_date"?: string, "notes"?: string, "number"?: string, "payment_term"?: string, "purchase_order"?: string, "retainer_id"?: boolean, "subject"?: string, "tax"?: string, "tax2"?: string } | { "bill_by"?: "none" | "People" | "Project" | "Tasks", "budget"?: string, "budget_by"?: string, "budget_is_monthly"?: boolean, "client_id"?: string, "cost_budget"?: string, "cost_budget_include_expenses"?: boolean, "ends_on"?: string, "fee"?: string, "hourly_rate"?: string, "is_active"?: boolean, "is_billable"?: boolean, "is_fixed_fee"?: boolean, "name"?: string, "notes"?: string, "notify_when_over_budget"?: boolean, "over_budget_notification_percentage"?: string, "show_budget_to_all"?: boolean, "starts_on"?: string } | { "billable_by_default"?: boolean, "default_hourly_rate"?: number, "is_active"?: boolean, "is_default"?: boolean, "name"?: string } | { "ended_time"?: string, "hours"?: number, "notes"?: string, "started_time"?: string } | { "can_create_invoices"?: boolean, "can_create_projects"?: boolean, "can_see_rates"?: boolean, "cost_rate"?: number, "default_hourly_rate"?: string, "email"?: string, "first_name"?: string, "has_access_to_all_future_projects"?: boolean, "is_active"?: boolean, "is_admin"?: boolean, "is_contractor"?: boolean, "is_project_manager"?: boolean, "last_name"?: string, "roles"?: string, "timezone"?: string, "weekly_capacity"?: number };
 
     /**
      * The first name of the contact
      */
-    readonly firstName?: string;
+    readonly firstName?: string | string;
 
     /**
      * The ID of the client associated with this contact
      */
-    readonly clientId?: string;
+    readonly clientId?: string | string | string | string;
 
     /**
      * The ID of the project associated with this expense
      */
-    readonly projectId?: string;
+    readonly projectId?: string | string | string;
 
     /**
      * The ID of the expense category this expense is being tracked against
@@ -93,7 +91,7 @@ export interface HarvestNodeParameters {
     /**
      * Date the expense occurred
      */
-    readonly spentDate?: string;
+    readonly spentDate?: string | string | string;
 
     /**
      * Whether the project is billable or not
@@ -116,7 +114,7 @@ export interface HarvestNodeParameters {
     /**
      * The ID of the task to associate with the time entry
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string;
 
     /**
      * The last name of the user

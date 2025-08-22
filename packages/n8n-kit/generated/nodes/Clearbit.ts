@@ -4,8 +4,6 @@
 export const name = "clearbit" as const;
 export const description = "Consume Clearbit API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Clearbit"} as const;
-export const credentials = [{"name":"clearbitApi","required":true}] as const
 
 /**
  * Consume Clearbit API
@@ -20,7 +18,7 @@ export interface ClearbitNodeParameters {
     /**
      * Default: "enrich"
      */
-    readonly operation?: "autocomplete" | "enrich";
+    readonly operation?: "autocomplete" | "enrich" | "enrich";
 
     /**
      * The domain to look up
@@ -30,7 +28,7 @@ export interface ClearbitNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "companyName"?: string, "facebook"?: string, "linkedin"?: string, "twitter"?: string, "company"?: string, "companyDomain"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "location"?: string, "linkedIn"?: string };
+    readonly additionalFields?: { "companyName"?: string, "facebook"?: string, "linkedin"?: string, "twitter"?: string } | { "company"?: string, "companyDomain"?: string, "facebook"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "location"?: string, "linkedIn"?: string, "twitter"?: string };
 
     /**
      * Name is the partial name of the company

@@ -4,8 +4,6 @@
 export const name = "googleTranslate" as const;
 export const description = "Translate data using Google Translate" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Translate"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleTranslateOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Translate data using Google Translate
@@ -15,7 +13,7 @@ export interface GoogleTranslateNodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2";
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /**
      * Default: "language"

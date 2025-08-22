@@ -4,8 +4,6 @@
 export const name = "twilio" as const;
 export const description = "Send SMS and WhatsApp messages or make phone calls" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Twilio"} as const;
-export const credentials = [{"name":"twilioApi","required":true}] as const
 
 /**
  * Send SMS and WhatsApp messages or make phone calls
@@ -40,7 +38,7 @@ export interface TwilioNodeParameters {
     /**
      * The message to send
      */
-    readonly message?: string;
+    readonly message?: string | string;
 
     /**
      * Whether to use the <a href="https://www.twilio.com/docs/voice/twiml">Twilio Markup Language</a> in the message

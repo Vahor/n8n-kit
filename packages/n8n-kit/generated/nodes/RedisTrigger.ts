@@ -4,8 +4,6 @@
 export const name = "redisTrigger" as const;
 export const description = "Subscribe to redis channel" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Redis Trigger"} as const;
-export const credentials = [{"name":"redis","required":true,"testedBy":"redisConnectionTest"}] as const
 
 /**
  * Subscribe to redis channel

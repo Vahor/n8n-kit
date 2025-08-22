@@ -4,8 +4,6 @@
 export const name = "monicaCrm" as const;
 export const description = "Consume the Monica CRM API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Monica CRM"} as const;
-export const credentials = [{"name":"monicaCrmApi","required":true}] as const
 
 /**
  * Consume the Monica CRM API
@@ -20,7 +18,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "add" | "remove";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "update" | "add" | "remove" | "create" | "delete" | "get" | "update" | "add" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -36,7 +34,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * Date when the activity happened
      */
-    readonly happenedAt?: string;
+    readonly happenedAt?: string | string | string;
 
     /**
      * Brief description of the activity - max 255 characters
@@ -46,34 +44,34 @@ export interface MonicaCrmNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string, "birthdate"?: string, "deceasedDate"?: string, "isDeceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true", "isFavorited"?: boolean };
+    readonly additionalFields?: { "description"?: string } | { "birthdate"?: string, "deceasedDate"?: string, "isDeceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "isFavorited"?: boolean } | { "description"?: string } | { "description"?: string };
 
     /**
      * ID of the activity to delete
      */
-    readonly activityId?: string;
+    readonly activityId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "activity_type_id"?: string, "contacts"?: string, "description"?: string, "happened_at"?: string, "summary"?: string, "calledAt"?: string, "contactId"?: string, "content"?: string, "birthdate"?: string, "deceased_date"?: string, "first_name"?: string, "gender_id"?: string, "is_deceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true", "contact_id"?: string, "written_at"?: string, "written_by_me"?: "true" | "false", "post"?: string, "title"?: string, "body"?: string, "is_favorited"?: boolean, "frequency_type"?: "one_time" | "week" | "month" | "year", "initial_data"?: string, "frequency_number"?: number, "completed"?: boolean };
+    readonly updateFields?: { "activity_type_id"?: string, "contacts"?: string, "description"?: string, "happened_at"?: string, "summary"?: string } | { "calledAt"?: string, "contactId"?: string, "content"?: string } | { "birthdate"?: string, "deceased_date"?: string, "first_name"?: string, "gender_id"?: string, "is_deceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "contact_id"?: string, "content"?: string, "written_at"?: string, "written_by_me"?: "true" | "false" } | { "post"?: string, "title"?: string } | { "body"?: string, "contact_id"?: string, "is_favorited"?: boolean } | { "contact_id"?: string, "description"?: string, "frequency_type"?: "one_time" | "week" | "month" | "year", "initial_data"?: string, "frequency_number"?: number, "title"?: string } | { "contactId"?: string, "completed"?: boolean, "description"?: string, "title"?: string };
 
     /**
      * ID of the contact to associate the call with
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Date when the call happened
@@ -83,12 +81,12 @@ export interface MonicaCrmNodeParameters {
     /**
      * Description of the call - max 100,000 characters
      */
-    readonly content?: string;
+    readonly content?: string | string;
 
     /**
      * ID of the call to delete
      */
-    readonly callId?: string;
+    readonly callId?: string | string | string;
 
     /**
      */
@@ -109,17 +107,17 @@ export interface MonicaCrmNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getContactFieldTypes"}
      */
-    readonly contactFieldTypeId?: string;
+    readonly contactFieldTypeId?: string | string | string | string;
 
     /**
      * Content of the contact field - max 255 characters
      */
-    readonly data?: string;
+    readonly data?: string | string;
 
     /**
      * ID of the contactField to delete
      */
-    readonly contactFieldId?: string;
+    readonly contactFieldId?: string | string | string;
 
     /**
      * Tags to add to the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -138,7 +136,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the conversation to delete
      */
-    readonly conversationId?: string;
+    readonly conversationId?: string | string | string | string | string;
 
     /**
      * Date when the message was written
@@ -159,7 +157,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * Title of the journal entry - max 250 characters
      */
-    readonly title?: string;
+    readonly title?: string | string | string;
 
     /**
      * Content of the journal entry - max 100,000 characters
@@ -169,7 +167,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the journal entry to delete
      */
-    readonly journalId?: string;
+    readonly journalId?: string | string | string;
 
     /**
      * Body of the note - max 100,000 characters
@@ -179,7 +177,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the note to delete
      */
-    readonly noteId?: string;
+    readonly noteId?: string | string | string;
 
     /**
      * Type of frequency of the reminder
@@ -200,22 +198,22 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the reminder to delete
      */
-    readonly reminderId?: string;
+    readonly reminderId?: string | string | string;
 
     /**
      * Name of the tag - max 250 characters
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * ID of the tag to delete
      */
-    readonly tagId?: string;
+    readonly tagId?: string | string | string;
 
     /**
      * ID of the task to delete
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
 
 }

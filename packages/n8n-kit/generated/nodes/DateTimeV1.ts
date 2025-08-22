@@ -4,7 +4,6 @@
 export const name = "dateTime" as const;
 export const description = "Allows you to manipulate date and time values" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Date & Time","color":"#408000"} as const;
 
 /**
  * Allows you to manipulate date and time values
@@ -23,13 +22,13 @@ export interface DateTimeV1NodeParameters {
     /**
      * The value that should be converted
      */
-    readonly value?: string;
+    readonly value?: string | string;
 
     /**
      * Name of the property to which to write the converted date
      * Default: "data"
      */
-    readonly dataPropertyName?: string;
+    readonly dataPropertyName?: string | string;
 
     /**
      * Whether a predefined format should be selected or custom format entered
@@ -39,12 +38,12 @@ export interface DateTimeV1NodeParameters {
     /**
      * The format to convert the date to
      */
-    readonly toFormat?: string;
+    readonly toFormat?: string | "MM/DD/YYYY" | "YYYY/MM/DD" | "MMMM DD YYYY" | "MM-DD-YYYY" | "YYYY-MM-DD" | "X" | "x";
 
     /**
      * Default: {}
      */
-    readonly options?: { "fromFormat"?: string, "fromTimezone"?: string, "toTimezone"?: string };
+    readonly options?: { "fromFormat"?: string, "fromTimezone"?: string, "toTimezone"?: string } | { "fromFormat"?: string };
 
     /**
      * Default: "add"

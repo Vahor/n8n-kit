@@ -4,8 +4,6 @@
 export const name = "microsoftTeams" as const;
 export const description = "Consume Microsoft Teams API" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Microsoft Teams"} as const;
-export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const
 
 /**
  * Consume Microsoft Teams API
@@ -24,13 +22,13 @@ export interface MicrosoftTeamsV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
-    readonly teamId?: string;
+    readonly teamId?: string | string | string | string | string | string | string;
 
     /**
      * Channel name as it will appear to the user in Microsoft Teams
@@ -40,47 +38,47 @@ export interface MicrosoftTeamsV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "description"?: string, "type"?: "private" | "standard", "includeLinkToWorkflow"?: boolean, "makeReply"?: string };
+    readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getChannels","loadOptionsDependsOn":["teamId"]}
      */
-    readonly channelId?: string;
+    readonly channelId?: string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "description"?: string, "assignedTo"?: string, "bucketId"?: string, "dueDateTime"?: string, "groupId"?: string, "labels"?: string[], "percentComplete"?: number, "planId"?: string, "title"?: string };
+    readonly updateFields?: { "name"?: string, "description"?: string } | { "assignedTo"?: string, "bucketId"?: string, "dueDateTime"?: string, "groupId"?: string, "labels"?: string[], "percentComplete"?: number, "planId"?: string, "title"?: string };
 
     /**
      * The type of the content
      * Default: "text"
      */
-    readonly messageType?: "text" | "html";
+    readonly messageType?: "text" | "html" | "text" | "html";
 
     /**
      * The content of the item
      */
-    readonly message?: string;
+    readonly message?: string | string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getChats"}
      */
-    readonly chatId?: string;
+    readonly chatId?: string | string;
 
     /**
      */
@@ -95,13 +93,13 @@ export interface MicrosoftTeamsV1NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGroups","loadOptionsDependsOn":["groupSource"]}
      */
-    readonly groupId?: string;
+    readonly groupId?: string | string;
 
     /**
      * The plan for the task to belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getPlans","loadOptionsDependsOn":["groupId"]}
      */
-    readonly planId?: string;
+    readonly planId?: string | string;
 
     /**
      * The bucket for the task to belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -121,7 +119,7 @@ export interface MicrosoftTeamsV1NodeParameters {
 
     /**
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
     /**
      * Default: "member"

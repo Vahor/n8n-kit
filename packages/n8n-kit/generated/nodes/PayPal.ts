@@ -4,8 +4,6 @@
 export const name = "payPal" as const;
 export const description = "Consume PayPal API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"PayPal"} as const;
-export const credentials = [{"name":"payPalApi","required":true,"testedBy":"payPalApiTest"}] as const
 
 /**
  * Consume PayPal API
@@ -20,7 +18,7 @@ export interface PayPalNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "cancel";
+    readonly operation?: "create" | "get" | "cancel" | "get";
 
     /**
      * A sender-specified ID number. Tracks the payout in an accounting system.
@@ -68,7 +66,7 @@ export interface PayPalNodeParameters {
     /**
      * The ID of the payout item for which to show details
      */
-    readonly payoutItemId?: string;
+    readonly payoutItemId?: string | string;
 
 
 }

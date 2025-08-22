@@ -4,8 +4,6 @@
 export const name = "highLevel" as const;
 export const description = "Consume HighLevel API v2" as const;
 export const version = 2 as const;
-export const defaults = {"name":"HighLevel"} as const;
-export const credentials = [{"name":"highLevelOAuth2Api","required":true}] as const
 
 /**
  * Consume HighLevel API v2
@@ -20,7 +18,7 @@ export interface HighLevelV2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "bookAppointment" | "getFreeSlots";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "bookAppointment" | "getFreeSlots";
 
     /**
      */
@@ -29,43 +27,43 @@ export interface HighLevelV2NodeParameters {
     /**
      * Email or Phone are required to create contact
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * Phone or Email are required to create contact. Phone number has to start with a valid <a href="https://en.wikipedia.org/wiki/List_of_country_calling_codes">country code</a> leading with + sign.
      */
-    readonly phone?: string;
+    readonly phone?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "notes"?: string, "tags"?: string, "timezone"?: any, "website"?: string, "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "stageId"?: string, "body"?: string, "endTime"?: string, "title"?: string, "appointmentStatus"?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", "assignedUserId"?: string, "address"?: string, "ignoreDateRange"?: boolean, "toNotify"?: boolean, "userId"?: string, "userIds"?: { "userIds"?: string }, "enableLookBusy"?: boolean };
+    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "notes"?: string, "tags"?: string, "timezone"?: any, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "tags"?: string, "stageId"?: string } | { "assignedTo"?: string, "body"?: string } | { "endTime"?: string, "title"?: string, "appointmentStatus"?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", "assignedUserId"?: string, "address"?: string, "ignoreDateRange"?: boolean, "toNotify"?: boolean } | { "timezone"?: string, "userId"?: string, "userIds"?: { "userIds"?: string }, "enableLookBusy"?: boolean };
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: any, "website"?: string, "assignedTo"?: string, "monetaryValue"?: number, "pipelineId"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "completed"?: boolean, "body"?: string, "dueDate"?: string, "title"?: string };
+    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: any, "website"?: string } | { "assignedTo"?: string, "monetaryValue"?: number, "name"?: string, "pipelineId"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned" } | { "assignedTo"?: string, "completed"?: boolean, "body"?: string, "dueDate"?: string, "title"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "query"?: string, "assignedTo"?: string, "campaignId"?: string, "endDate"?: string, "pipelineId"?: string, "stageId"?: string, "startDate"?: string, "status"?: "open" | "won" | "lost" | "abandoned" };
+    readonly filters?: { "query"?: string } | { "assignedTo"?: string, "campaignId"?: string, "endDate"?: string, "pipelineId"?: string, "stageId"?: string, "startDate"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "query"?: string };
 
     /**
      * Default: {}
@@ -89,7 +87,7 @@ export interface HighLevelV2NodeParameters {
 
     /**
      */
-    readonly opportunityId?: string;
+    readonly opportunityId?: string | string | string;
 
     /**
      */
@@ -105,11 +103,11 @@ export interface HighLevelV2NodeParameters {
 
     /**
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
     /**
      */
-    readonly calendarId?: string;
+    readonly calendarId?: string | string;
 
     /**
      */

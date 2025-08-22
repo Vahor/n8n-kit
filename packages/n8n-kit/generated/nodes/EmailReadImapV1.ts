@@ -4,8 +4,6 @@
 export const name = "emailReadImap" as const;
 export const description = "Triggers the workflow when a new email is received" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Email Trigger (IMAP)","color":"#44AA22"} as const;
-export const credentials = [{"name":"imap","required":true,"testedBy":"imapConnectionTest"}] as const
 
 /**
  * Triggers the workflow when a new email is received
@@ -38,7 +36,7 @@ export interface EmailReadImapV1NodeParameters {
      * Prefix for name of the binary property to which to write the attachments. An index starting with 0 will be added. So if name is "attachment_" the first attachment is saved to "attachment_0"
      * Default: "attachment_"
      */
-    readonly dataPropertyAttachmentsPrefixName?: string;
+    readonly dataPropertyAttachmentsPrefixName?: string | string;
 
     /**
      * Default: {}

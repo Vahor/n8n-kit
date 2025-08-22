@@ -4,7 +4,6 @@
 export const name = "removeDuplicates" as const;
 export const description = "Delete items with matching field values" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Remove Duplicates"} as const;
 
 /**
  * Delete items with matching field values

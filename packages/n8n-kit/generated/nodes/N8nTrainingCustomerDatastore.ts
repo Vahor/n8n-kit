@@ -4,7 +4,6 @@
 export const name = "n8nTrainingCustomerDatastore" as const;
 export const description = "Dummy node used for n8n training" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Customer Datastore (n8n training)"} as const;
 
 /**
  * Dummy node used for n8n training

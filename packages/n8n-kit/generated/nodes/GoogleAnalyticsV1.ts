@@ -4,8 +4,6 @@
 export const name = "googleAnalytics" as const;
 export const description = "Use the Google Analytics API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Analytics"} as const;
-export const credentials = [{"name":"googleAnalyticsOAuth2","required":true}] as const
 
 /**
  * Use the Google Analytics API
@@ -30,19 +28,19 @@ export interface GoogleAnalyticsV1NodeParameters {
      * The View ID of Google Analytics. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getViews"}
      */
-    readonly viewId?: string;
+    readonly viewId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 1000
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
@@ -53,7 +51,7 @@ export interface GoogleAnalyticsV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "dateRangesUi"?: { "dateRanges": any }, "dimensionUi"?: { "dimensionValues": any }, "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "metricsUi"?: { "metricValues": any }, "useResourceQuotas"?: boolean, "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
+    readonly additionalFields?: { "dateRangesUi"?: { "dateRanges": any }, "dimensionUi"?: { "dimensionValues": any }, "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "metricsUi"?: { "metricValues": any }, "useResourceQuotas"?: boolean } | { "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
 
     /**
      * ID of a user

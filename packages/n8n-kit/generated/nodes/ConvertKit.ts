@@ -4,8 +4,6 @@
 export const name = "convertKit" as const;
 export const description = "Consume ConvertKit API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"ConvertKit"} as const;
-export const credentials = [{"name":"convertKitApi","required":true}] as const
 
 /**
  * Consume ConvertKit API
@@ -20,12 +18,12 @@ export interface ConvertKitNodeParameters {
     /**
      * Default: "update"
      */
-    readonly operation?: "create" | "delete" | "getAll" | "update" | "addSubscriber" | "getSubscriptions" | "add";
+    readonly operation?: "create" | "delete" | "getAll" | "update" | "addSubscriber" | "getAll" | "getSubscriptions" | "addSubscriber" | "getAll" | "getSubscriptions" | "create" | "getAll" | "add" | "getAll" | "delete";
 
     /**
      * The ID of your custom field
      */
-    readonly id?: string;
+    readonly id?: string | string | string;
 
     /**
      * The label of the custom field
@@ -35,24 +33,24 @@ export interface ConvertKitNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number;
 
     /**
      * The subscriber's email address
      */
-    readonly email?: string;
+    readonly email?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string, "subscriberState"?: "active" | "cancelled", "tags"?: string[], "fields"?: { "field": any } };
+    readonly additionalFields?: { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" } | { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string, "tags"?: string[] } | { "subscriberState"?: "active" | "cancelled" } | { "fields"?: { "field": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" };
 
     /**
      * Tag name, multiple can be added separated by comma

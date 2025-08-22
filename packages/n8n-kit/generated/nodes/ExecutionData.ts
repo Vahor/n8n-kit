@@ -4,7 +4,6 @@
 export const name = "executionData" as const;
 export const description = "Add execution data for search" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Execution Data","color":"#29A568"} as const;
 
 /**
  * Add execution data for search

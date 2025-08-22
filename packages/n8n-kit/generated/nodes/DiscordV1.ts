@@ -4,7 +4,6 @@
 export const name = "discord" as const;
 export const description = "Sends data to Discord" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Discord"} as const;
 
 /**
  * Sends data to Discord

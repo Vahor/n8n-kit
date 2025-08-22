@@ -4,8 +4,6 @@
 export const name = "supabase" as const;
 export const description = "Add, get, delete and update data in a table" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Supabase"} as const;
-export const credentials = [{"name":"supabaseApi","required":true,"testedBy":"supabaseApiCredentialTest"}] as const
 
 /**
  * Add, get, delete and update data in a table
@@ -42,27 +40,27 @@ export interface SupabaseNodeParameters {
     /**
      * Default: "manual"
      */
-    readonly filterType?: "manual" | "string" | "none";
+    readonly filterType?: "manual" | "string" | "manual" | "string" | "none" | "manual" | "string";
 
     /**
      * Default: "anyFilter"
      */
-    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
+    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
 
     /**
      * Filter to decide which rows get updated
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any };
+    readonly filters?: { "conditions": any } | { "conditions": any } | { "conditions": any } | { "conditions": any };
 
     /**
      */
-    readonly jsonNotice?: string;
+    readonly jsonNotice?: string | string | string;
 
     /**
      */
-    readonly filterString?: string;
+    readonly filterString?: string | string | string;
 
     /**
      * Default: "defineBelow"

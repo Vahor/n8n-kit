@@ -4,8 +4,6 @@
 export const name = "jira" as const;
 export const description = "Consume Jira Software API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Jira Software"} as const;
-export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}}] as const
 
 /**
  * Consume Jira Software API
@@ -25,7 +23,7 @@ export interface JiraNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "changelog" | "create" | "delete" | "get" | "getAll" | "notify" | "transitions" | "update" | "add" | "remove";
+    readonly operation?: "changelog" | "create" | "delete" | "get" | "getAll" | "notify" | "transitions" | "update" | "add" | "get" | "getAll" | "remove" | "add" | "get" | "getAll" | "remove" | "update" | "create" | "delete" | "get";
 
     /**
      * Default: {"mode":"list","value":""}
@@ -44,11 +42,11 @@ export interface JiraNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assignee"?: any, "description"?: string, "componentIds"?: string[], "customFieldsUi"?: { "customFieldsValues": any }, "labels"?: string[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: any, "reporter"?: any, "updateHistory"?: boolean, "expand"?: string, "fields"?: string, "fieldsByKey"?: boolean, "properties"?: string, "htmlBody"?: string, "subject"?: string, "textBody"?: string, "transitionId"?: string, "skipRemoteOnlyCondition"?: boolean, "password"?: string, "notification"?: boolean };
+    readonly additionalFields?: { "assignee"?: any, "description"?: string, "componentIds"?: string[], "customFieldsUi"?: { "customFieldsValues": any }, "labels"?: string[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: any, "reporter"?: any, "updateHistory"?: boolean } | { "expand"?: string, "fields"?: string, "fieldsByKey"?: boolean, "properties"?: string, "updateHistory"?: boolean } | { "htmlBody"?: string, "subject"?: string, "textBody"?: string } | { "expand"?: string, "transitionId"?: string, "skipRemoteOnlyCondition"?: boolean } | { "password"?: string, "notification"?: boolean } | { "expand"?: ("groups" | "applicationRoles")[] };
 
     /**
      */
-    readonly issueKey?: string;
+    readonly issueKey?: string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Default: {}
@@ -67,23 +65,23 @@ export interface JiraNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string, "wikiMarkup"?: boolean, "orderBy"?: "+created" | "-created" };
+    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean } | { "expand"?: "renderedBody" } | { "expand"?: "renderedBody", "orderBy"?: "+created" | "-created" } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean };
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean | boolean;
 
     /**
      * The recipients of the email notification for the issue
@@ -119,31 +117,31 @@ export interface JiraNodeParameters {
     /**
      * The ID of the attachment
      */
-    readonly attachmentId?: string;
+    readonly attachmentId?: string | string;
 
     /**
      */
-    readonly download?: boolean;
+    readonly download?: boolean | boolean;
 
     /**
      * Default: "data"
      */
-    readonly binaryProperty?: string;
+    readonly binaryProperty?: string | string;
 
     /**
      * Comment's text
      */
-    readonly comment?: string;
+    readonly comment?: string | string;
 
     /**
      * The Atlassian Document Format (ADF). Online builder can be found <a href="https://developer.atlassian.com/cloud/jira/platform/apis/document/playground/">here</a>.
      */
-    readonly commentJson?: string;
+    readonly commentJson?: string | string;
 
     /**
      * The ID of the comment
      */
-    readonly commentId?: string;
+    readonly commentId?: string | string | string;
 
     /**
      */
@@ -160,7 +158,7 @@ export interface JiraNodeParameters {
     /**
      * Account ID of the user to delete
      */
-    readonly accountId?: string;
+    readonly accountId?: string | string;
 
 
 }

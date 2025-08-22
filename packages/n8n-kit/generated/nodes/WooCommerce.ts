@@ -4,8 +4,6 @@
 export const name = "wooCommerce" as const;
 export const description = "Consume WooCommerce API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"WooCommerce"} as const;
-export const credentials = [{"name":"wooCommerceApi","required":true}] as const
 
 /**
  * Consume WooCommerce API
@@ -20,7 +18,7 @@ export interface WooCommerceNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -29,24 +27,24 @@ export interface WooCommerceNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "billing"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "first_name"?: string, "last_name"?: string, "meta_data"?: { "meta_data_fields": any }, "password"?: string, "shipping"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "username"?: string, "backorders"?: "no" | "notify" | "yes", "buttonText"?: string, "catalogVisibility"?: "catalog" | "hidden" | "search" | "visible", "categories"?: string[], "crossSellIds"?: string, "dateOnSaleFrom"?: string, "dateOnSaleTo"?: string, "description"?: string, "downloadable"?: boolean, "externalUrl"?: string, "featured"?: boolean, "manageStock"?: boolean, "menuOrder"?: number, "parentId"?: string, "purchaseNote"?: string, "regularPrice"?: string, "reviewsAllowed"?: boolean, "salePrice"?: string, "shippingClass"?: string, "shortDescription"?: string, "sku"?: string, "slug"?: string, "soldIndividually"?: boolean, "status"?: "draft" | "pending" | "private" | "publish", "stockQuantity"?: number, "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tags"?: string[], "taxClass"?: string, "taxStatus"?: "taxable" | "shipping" | "none", "type"?: "simple" | "grouped" | "external" | "variable", "upsellIds"?: string, "virtual"?: boolean, "weight"?: string, "currency"?: string, "customerId"?: string, "customerNote"?: string, "paymentMethodId"?: string, "paymentMethodTitle"?: string, "setPaid"?: boolean, "transactionID"?: string };
+    readonly additionalFields?: { "billing"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "first_name"?: string, "last_name"?: string, "meta_data"?: { "meta_data_fields": any }, "password"?: string, "shipping"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "username"?: string } | { "backorders"?: "no" | "notify" | "yes", "buttonText"?: string, "catalogVisibility"?: "catalog" | "hidden" | "search" | "visible", "categories"?: string[], "crossSellIds"?: string, "dateOnSaleFrom"?: string, "dateOnSaleTo"?: string, "description"?: string, "downloadable"?: boolean, "externalUrl"?: string, "featured"?: boolean, "manageStock"?: boolean, "menuOrder"?: number, "parentId"?: string, "purchaseNote"?: string, "regularPrice"?: string, "reviewsAllowed"?: boolean, "salePrice"?: string, "shippingClass"?: string, "shortDescription"?: string, "sku"?: string, "slug"?: string, "soldIndividually"?: boolean, "status"?: "draft" | "pending" | "private" | "publish", "stockQuantity"?: number, "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tags"?: string[], "taxClass"?: string, "taxStatus"?: "taxable" | "shipping" | "none", "type"?: "simple" | "grouped" | "external" | "variable", "upsellIds"?: string, "virtual"?: boolean, "weight"?: string } | { "currency"?: string, "customerId"?: string, "customerNote"?: string, "parentId"?: string, "paymentMethodId"?: string, "paymentMethodTitle"?: string, "setPaid"?: boolean, "status"?: "cancelled" | "completed" | "failed" | "on-hold" | "pending" | "processing" | "refunded" | "trash", "transactionID"?: string };
 
     /**
      * ID of the customer to delete
      */
-    readonly customerId?: string;
+    readonly customerId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
@@ -56,7 +54,7 @@ export interface WooCommerceNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "billing"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "first_name"?: string, "last_name"?: string, "meta_data"?: { "meta_data_fields": any }, "password"?: string, "shipping"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "backorders"?: "no" | "notify" | "yes", "buttonText"?: string, "catalogVisibility"?: "visible" | "catalog" | "search" | "hidden", "categories"?: string[], "crossSellIds"?: string, "dateOnSaleFrom"?: string, "dateOnSaleTo"?: string, "description"?: string, "downloadable"?: boolean, "externalUrl"?: string, "featured"?: boolean, "manageStock"?: boolean, "menuOrder"?: number, "name"?: string, "parentId"?: string, "purchaseNote"?: string, "regularPrice"?: string, "reviewsAllowed"?: boolean, "salePrice"?: string, "shippingClass"?: string, "shortDescription"?: string, "sku"?: string, "slug"?: string, "soldIndividually"?: boolean, "status"?: "draft" | "pending" | "private" | "publish", "stockQuantity"?: number, "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tags"?: string[], "taxClass"?: string, "taxStatus"?: "taxable" | "shipping" | "none", "type"?: "simple" | "grouped" | "external" | "variable", "upsellIds"?: string, "virtual"?: boolean, "weight"?: string, "currency"?: string, "customerId"?: string, "customerNote"?: string, "paymentMethodId"?: string, "paymentMethodTitle"?: string, "transactionID"?: string };
+    readonly updateFields?: { "billing"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "first_name"?: string, "last_name"?: string, "meta_data"?: { "meta_data_fields": any }, "password"?: string, "shipping"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string } } | { "backorders"?: "no" | "notify" | "yes", "buttonText"?: string, "catalogVisibility"?: "visible" | "catalog" | "search" | "hidden", "categories"?: string[], "crossSellIds"?: string, "dateOnSaleFrom"?: string, "dateOnSaleTo"?: string, "description"?: string, "downloadable"?: boolean, "externalUrl"?: string, "featured"?: boolean, "manageStock"?: boolean, "menuOrder"?: number, "name"?: string, "parentId"?: string, "purchaseNote"?: string, "regularPrice"?: string, "reviewsAllowed"?: boolean, "salePrice"?: string, "shippingClass"?: string, "shortDescription"?: string, "sku"?: string, "slug"?: string, "soldIndividually"?: boolean, "status"?: "draft" | "pending" | "private" | "publish", "stockQuantity"?: number, "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tags"?: string[], "taxClass"?: string, "taxStatus"?: "taxable" | "shipping" | "none", "type"?: "simple" | "grouped" | "external" | "variable", "upsellIds"?: string, "virtual"?: boolean, "weight"?: string } | { "currency"?: string, "customerId"?: string, "customerNote"?: string, "parentId"?: string, "paymentMethodId"?: string, "paymentMethodTitle"?: string, "status"?: "cancelled" | "completed" | "failed" | "on-hold" | "pending" | "processing" | "refunded" | "trash", "transactionID"?: string };
 
     /**
      * Product name
@@ -68,76 +66,76 @@ export interface WooCommerceNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly dimensionsUi?: { "dimensionsValues": any };
+    readonly dimensionsUi?: { "dimensionsValues": any } | { "dimensionsValues": any };
 
     /**
      * Product Image
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly imagesUi?: { "imagesValues": any };
+    readonly imagesUi?: { "imagesValues": any } | { "imagesValues": any };
 
     /**
      * Meta data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly metadataUi?: { "metadataValues": any };
+    readonly metadataUi?: { "metadataValues": any } | { "metadataValues": any } | { "metadataValues": any } | { "metadataValues": any };
 
     /**
      */
-    readonly productId?: string;
+    readonly productId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "after"?: string, "before"?: string, "category"?: string, "context"?: "view" | "embed" | "edit", "featured"?: boolean, "maxPrice"?: string, "minPrice"?: string, "order"?: "asc" | "desc", "orderBy"?: "date" | "id" | "include" | "slug" | "title", "search"?: string, "sku"?: string, "slug"?: string, "status"?: "any" | "draft" | "pending" | "private" | "publish", "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tag"?: string, "taxClass"?: "standard" | "reduced-rate" | "zero-rate.", "type"?: "simple" | "grouped" | "external" | "variable", "customer"?: string, "decimalPoints"?: number, "product"?: string };
+    readonly options?: { "after"?: string, "before"?: string, "category"?: string, "context"?: "view" | "embed" | "edit", "featured"?: boolean, "maxPrice"?: string, "minPrice"?: string, "order"?: "asc" | "desc", "orderBy"?: "date" | "id" | "include" | "slug" | "title", "search"?: string, "sku"?: string, "slug"?: string, "status"?: "any" | "draft" | "pending" | "private" | "publish", "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tag"?: string, "taxClass"?: "standard" | "reduced-rate" | "zero-rate.", "type"?: "simple" | "grouped" | "external" | "variable" } | { "after"?: string, "before"?: string, "customer"?: string, "decimalPoints"?: number, "order"?: "asc" | "desc", "product"?: string, "orderBy"?: "date" | "id" | "include" | "slug" | "title", "search"?: string, "status"?: "any" | "cancelled" | "completed" | "failed" | "on-hold" | "pending" | "processing" | "refunded" | "trash" };
 
     /**
      * Billing address
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly billingUi?: { "billingValues": any };
+    readonly billingUi?: { "billingValues": any } | { "billingValues": any };
 
     /**
      * Coupons line data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly couponLinesUi?: { "couponLinesValues": any };
+    readonly couponLinesUi?: { "couponLinesValues": any } | { "couponLinesValues": any };
 
     /**
      * Fee line data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly feeLinesUi?: { "feeLinesValues": any };
+    readonly feeLinesUi?: { "feeLinesValues": any } | { "feeLinesValues": any };
 
     /**
      * Line item data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly lineItemsUi?: { "lineItemsValues": any };
+    readonly lineItemsUi?: { "lineItemsValues": any } | { "lineItemsValues": any };
 
     /**
      * Shipping address
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly shippingUi?: { "shippingValues": any };
+    readonly shippingUi?: { "shippingValues": any } | { "shippingValues": any };
 
     /**
      * Shipping line data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly shippingLinesUi?: { "shippingLinesValues": any };
+    readonly shippingLinesUi?: { "shippingLinesValues": any } | { "shippingLinesValues": any };
 
     /**
      */
-    readonly orderId?: string;
+    readonly orderId?: string | string | string;
 
 
 }

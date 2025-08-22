@@ -4,8 +4,6 @@
 export const name = "contentful" as const;
 export const description = "Consume Contentful API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Contentful"} as const;
-export const credentials = [{"name":"contentfulApi","required":true}] as const
 
 /**
  * Consume Contentful API
@@ -26,13 +24,13 @@ export interface ContentfulNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll";
+    readonly operation?: "get" | "get" | "get" | "getAll" | "get" | "getAll" | "getAll";
 
     /**
      * The ID for the Contentful environment (e.g. master, staging, etc.). Depending on your plan, you might not have environments. In that case use "master".
      * Default: "master"
      */
-    readonly environmentId?: string;
+    readonly environmentId?: string | string | string | string;
 
     /**
      */
@@ -41,19 +39,19 @@ export interface ContentfulNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "rawData"?: boolean, "content_type"?: string, "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string };
+    readonly additionalFields?: { "rawData"?: boolean } | { "content_type"?: string, "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean } | { "rawData"?: boolean } | { "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      */

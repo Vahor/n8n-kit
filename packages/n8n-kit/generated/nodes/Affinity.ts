@@ -4,8 +4,6 @@
 export const name = "affinity" as const;
 export const description = "Consume Affinity API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Affinity"} as const;
-export const credentials = [{"name":"affinityApi","required":true}] as const
 
 /**
  * Consume Affinity API
@@ -20,24 +18,24 @@ export interface AffinityNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "create" | "delete" | "update";
+    readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The unique ID of the list object to be retrieved
      */
-    readonly listId?: string;
+    readonly listId?: string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":10}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * The unique ID of the entity (person, organization, or opportunity) to add to this list
@@ -47,12 +45,12 @@ export interface AffinityNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "creator_id"?: string, "persons"?: string[], "organizations"?: string[] };
+    readonly additionalFields?: { "creator_id"?: string } | { "persons"?: string[] } | { "organizations"?: string[] };
 
     /**
      * The unique ID of the list entry object to be retrieved
      */
-    readonly listEntryId?: string;
+    readonly listEntryId?: string | string;
 
     /**
      * The name of the organization
@@ -67,17 +65,17 @@ export interface AffinityNodeParameters {
     /**
      * Unique identifier for the organization
      */
-    readonly organizationId?: string;
+    readonly organizationId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "domain"?: string, "name"?: string, "persons"?: string[], "firstName"?: string, "lastName"?: string, "organizations"?: string[] };
+    readonly updateFields?: { "domain"?: string, "name"?: string, "persons"?: string[] } | { "firstName"?: string, "lastName"?: string, "organizations"?: string[] };
 
     /**
      * Default: {}
      */
-    readonly options?: { "withInteractionDates"?: boolean, "term"?: string };
+    readonly options?: { "withInteractionDates"?: boolean } | { "term"?: string, "withInteractionDates"?: boolean } | { "withInteractionDates"?: boolean } | { "term"?: string, "withInteractionDates"?: boolean };
 
     /**
      * The first name of the person
@@ -94,12 +92,12 @@ export interface AffinityNodeParameters {
      * Default: []
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add To Email"}
      */
-    readonly emails?: string;
+    readonly emails?: string | string;
 
     /**
      * Unique identifier for the person
      */
-    readonly personId?: string;
+    readonly personId?: string | string | string;
 
 
 }

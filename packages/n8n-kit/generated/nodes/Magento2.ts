@@ -4,8 +4,6 @@
 export const name = "magento2" as const;
 export const description = "Consume Magento API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Magento 2"} as const;
-export const credentials = [{"name":"magento2Api","required":true}] as const
 
 /**
  * Consume Magento API
@@ -20,12 +18,12 @@ export interface Magento2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "cancel" | "ship";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "cancel" | "get" | "getAll" | "ship" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Email address of the user to create
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * First name of the user to create
@@ -40,12 +38,12 @@ export interface Magento2NodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string, "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
+    readonly additionalFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string } | { "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
 
     /**
      * ID of the customer to update
      */
-    readonly customerId?: string;
+    readonly customerId?: string | string;
 
     /**
      */
@@ -64,57 +62,57 @@ export interface Magento2NodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string, "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
+    readonly updateFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string } | { "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":10}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: "none"
      */
-    readonly filterType?: "none" | "manual" | "json";
+    readonly filterType?: "none" | "manual" | "json" | "none" | "manual" | "json" | "none" | "manual" | "json";
 
     /**
      * Default: "anyFilter"
      */
-    readonly matchType?: "anyFilter" | "allFilters";
+    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any };
+    readonly filters?: { "conditions": any } | { "conditions": any } | { "conditions": any };
 
     /**
      */
-    readonly jsonNotice?: string;
+    readonly jsonNotice?: string | string | string;
 
     /**
      */
-    readonly filterJson?: string;
+    readonly filterJson?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: { "sort": any } };
+    readonly options?: { "sort"?: { "sort": any } } | { "sort"?: { "sort": any } } | { "sort"?: { "sort": any } };
 
     /**
      */
-    readonly orderId?: string;
+    readonly orderId?: string | string;
 
     /**
      * Stock-keeping unit of the product
      */
-    readonly sku?: string;
+    readonly sku?: string | string;
 
     /**
      */

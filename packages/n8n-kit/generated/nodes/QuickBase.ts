@@ -4,8 +4,6 @@
 export const name = "quickbase" as const;
 export const description = "Integrate with the Quick Base RESTful API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Quick Base"} as const;
-export const credentials = [{"name":"quickbaseApi","required":true}] as const
 
 /**
  * Integrate with the Quick Base RESTful API
@@ -20,29 +18,29 @@ export interface QuickBaseNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "delete" | "download" | "create" | "upsert" | "update" | "get" | "run";
+    readonly operation?: "getAll" | "delete" | "download" | "create" | "upsert" | "delete" | "getAll" | "update" | "get" | "run";
 
     /**
      * The table identifier
      */
-    readonly tableId?: string;
+    readonly tableId?: string | string | string | string | string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "includeFieldPerms"?: boolean, "fields"?: string[], "useFieldIDs"?: boolean, "select"?: string[], "sortByUi"?: { "sortByValues": any }, "where"?: string };
+    readonly options?: { "includeFieldPerms"?: boolean } | { "fields"?: string[], "useFieldIDs"?: boolean } | { "select"?: string[], "sortByUi"?: { "sortByValues": any }, "where"?: string } | { "fields"?: string[], "useFieldIDs"?: boolean } | { "fields"?: string[], "useFieldIDs"?: boolean };
 
     /**
      * The unique identifier of the record
@@ -68,13 +66,13 @@ export interface QuickBaseNodeParameters {
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string;
+    readonly columns?: string | string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean;
 
     /**
      * The filter to delete records. To delete all records specify a filter that will include all records, for example {3.GT.0} where 3 is the ID of the Record ID field.
@@ -84,7 +82,7 @@ export interface QuickBaseNodeParameters {
     /**
      * Update can use the key field on the table, or any other supported unique field
      */
-    readonly updateKey?: string;
+    readonly updateKey?: string | string;
 
     /**
      * <p>You're updating records in a Quick Base table with data from an external file. In order for a merge like this to work, Quick Base needs a way to match records in the source data with corresponding records in the destination table.</p><p>You make this possible by choosing the field in the app table that holds unique matching values. This is called a merge field.</p>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -95,7 +93,7 @@ export interface QuickBaseNodeParameters {
     /**
      * The identifier of the report, unique to the table
      */
-    readonly reportId?: string;
+    readonly reportId?: string | string;
 
 
 }

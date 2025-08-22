@@ -4,8 +4,6 @@
 export const name = "stackby" as const;
 export const description = "Read, write, and delete data in Stackby" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Stackby"} as const;
-export const credentials = [{"name":"stackbyApi","required":true}] as const
 
 /**
  * Read, write, and delete data in Stackby

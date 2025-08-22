@@ -4,8 +4,6 @@
 export const name = "timescaleDb" as const;
 export const description = "Add and update data in TimescaleDB" as const;
 export const version = 1 as const;
-export const defaults = {"name":"TimescaleDB"} as const;
-export const credentials = [{"name":"timescaleDb","required":true}] as const
 
 /**
  * Add and update data in TimescaleDB
@@ -27,17 +25,17 @@ export interface TimescaleDbNodeParameters {
      * Name of the schema the table belongs to
      * Default: "public"
      */
-    readonly schema?: string;
+    readonly schema?: string | string;
 
     /**
      * Name of the table in which to insert data to
      */
-    readonly table?: string;
+    readonly table?: string | string;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string;
+    readonly columns?: string | string;
 
     /**
      * Name of the property which decides which rows in the database should be updated. Normally that would be "id".

@@ -4,8 +4,6 @@
 export const name = "splunk" as const;
 export const description = "Consume the Splunk Enterprise API" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Splunk"} as const;
-export const credentials = [{"name":"splunkApi","required":true}] as const
 
 /**
  * Consume the Splunk Enterprise API
@@ -20,39 +18,39 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: "getReport"
      */
-    readonly operation?: "getReport" | "getMetrics" | "create" | "deleteReport" | "get" | "getAll" | "create" | "getResult" | "update";
+    readonly operation?: "getReport" | "getMetrics" | "create" | "deleteReport" | "get" | "getAll" | "create" | "deleteJob" | "get" | "getAll" | "getResult" | "create" | "deleteUser" | "get" | "getAll" | "update";
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly searchJobId?: any;
+    readonly searchJobId?: any | any | any | any;
 
     /**
      * The name of the report
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly reportId?: any;
+    readonly reportId?: any | any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "add_orphan_field"?: boolean, "listDefaultActionArgs"?: boolean, "add_summary_to_metadata"?: boolean };
+    readonly options?: { "add_orphan_field"?: boolean, "listDefaultActionArgs"?: boolean } | { "add_summary_to_metadata"?: boolean };
 
     /**
      * Search language string to execute, in Splunk's <a href="https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual">Search Processing Language</a>
@@ -63,7 +61,7 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "adhoc_search_level"?: "fast" | "smart" | "verbose", "auto_cancel"?: number, "auto_finalize_ec"?: number, "auto_pause"?: number, "index_earliest"?: string, "earliest_time"?: string, "exec_mode"?: "blocking" | "normal" | "oneshot", "indexedRealtimeOffset"?: number, "index_latest"?: string, "latest_time"?: string, "max_time"?: number, "namespace"?: string, "reduce_freq"?: number, "remote_server_list"?: string, "reuse_max_seconds_ago"?: number, "rf"?: string, "search_mode"?: "normal" | "realtime", "status_buckets"?: number, "timeout"?: number, "workload_pool"?: string, "email"?: string, "realname"?: string };
+    readonly additionalFields?: { "adhoc_search_level"?: "fast" | "smart" | "verbose", "auto_cancel"?: number, "auto_finalize_ec"?: number, "auto_pause"?: number, "index_earliest"?: string, "earliest_time"?: string, "exec_mode"?: "blocking" | "normal" | "oneshot", "indexedRealtimeOffset"?: number, "index_latest"?: string, "latest_time"?: string, "max_time"?: number, "namespace"?: string, "reduce_freq"?: number, "remote_server_list"?: string, "reuse_max_seconds_ago"?: number, "rf"?: string, "search_mode"?: "normal" | "realtime", "status_buckets"?: number, "timeout"?: number, "workload_pool"?: string } | { "email"?: string, "realname"?: string };
 
     /**
      * Default: {}
@@ -90,7 +88,7 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any;
+    readonly userId?: any | any | any;
 
     /**
      * Default: {}

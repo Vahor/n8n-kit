@@ -4,8 +4,6 @@
 export const name = "homeAssistant" as const;
 export const description = "Consume Home Assistant API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Home Assistant"} as const;
-export const credentials = [{"name":"homeAssistantApi","required":true,"testedBy":"homeAssistantApiTest"}] as const
 
 /**
  * Consume Home Assistant API
@@ -20,7 +18,7 @@ export interface HomeAssistantNodeParameters {
     /**
      * Default: "getScreenshot"
      */
-    readonly operation?: "getScreenshot" | "get" | "check" | "create" | "getAll" | "getErroLogs" | "getLogbookEntries" | "call" | "upsert";
+    readonly operation?: "getScreenshot" | "get" | "check" | "create" | "getAll" | "getAll" | "getErroLogs" | "getLogbookEntries" | "call" | "getAll" | "upsert" | "get" | "getAll" | "create";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -36,14 +34,14 @@ export interface HomeAssistantNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * The Entity ID for which an event will be created
@@ -59,7 +57,7 @@ export interface HomeAssistantNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "endTime"?: string, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: string, "entityId"?: string };
+    readonly additionalFields?: { "endTime"?: string, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: string } | { "endTime"?: string, "entityId"?: string, "startTime"?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -83,7 +81,7 @@ export interface HomeAssistantNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAllEntities"}
      */
-    readonly entityId?: string;
+    readonly entityId?: string | string;
 
     /**
      */

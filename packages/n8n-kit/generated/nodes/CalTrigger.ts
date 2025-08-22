@@ -4,8 +4,6 @@
 export const name = "calTrigger" as const;
 export const description = "Handle Cal.com events via webhooks" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Cal.com Trigger"} as const;
-export const credentials = [{"name":"calApi","required":true}] as const
 
 /**
  * Handle Cal.com events via webhooks
@@ -20,7 +18,7 @@ export interface CalTriggerNodeParameters {
     /**
      * Default: 1
      */
-    readonly version?: "1" | "2";
+    readonly version?: "1" | "2" | "1" | "2";
 
     /**
      * Default: {}

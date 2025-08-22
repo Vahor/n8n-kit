@@ -4,8 +4,6 @@
 export const name = "github" as const;
 export const description = "Consume GitHub API" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"GitHub"} as const;
-export const credentials = [{"name":"githubApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"githubOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume GitHub API
@@ -25,7 +23,7 @@ export interface GithubNodeParameters {
     /**
      * Default: "getRepositories"
      */
-    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "delete" | "list" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "invite" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "getUsage";
+    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
 
     /**
      */
@@ -51,7 +49,7 @@ export interface GithubNodeParameters {
      * The git reference for the workflow dispatch (branch or tag name)
      * Default: "main"
      */
-    readonly ref?: string;
+    readonly ref?: string | any;
 
     /**
      * JSON object with input parameters for the workflow
@@ -62,7 +60,7 @@ export interface GithubNodeParameters {
     /**
      * The file path of the file. Has to contain the full path.
      */
-    readonly filePath?: string;
+    readonly filePath?: string | string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -77,7 +75,7 @@ export interface GithubNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      */
@@ -87,7 +85,7 @@ export interface GithubNodeParameters {
      * Additional fields to add
      * Default: {}
      */
-    readonly additionalParameters?: { "author": any, "branch": any, "committer": any, "reference": any };
+    readonly additionalParameters?: { "author": any, "branch": any, "committer": any } | { "reference"?: string };
 
     /**
      * Whether to set the data of the file as binary property instead of returning the raw API response
@@ -104,7 +102,7 @@ export interface GithubNodeParameters {
      * The body of the issue
      * Type options: {"rows":5}
      */
-    readonly body?: string;
+    readonly body?: string | string | string | string;
 
     /**
      * Default: {"label":""}
@@ -121,7 +119,7 @@ export interface GithubNodeParameters {
     /**
      * The number of the issue on which to create the comment on
      */
-    readonly issueNumber?: number;
+    readonly issueNumber?: number | number | number | number;
 
     /**
      * Default: {}
@@ -144,7 +142,7 @@ export interface GithubNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly additionalFields?: { "name"?: string, "body"?: string, "draft"?: boolean, "prerelease"?: boolean, "target_commitish"?: string, "tag_name"?: string, "commitId"?: string };
+    readonly additionalFields?: { "name"?: string, "body"?: string, "draft"?: boolean, "prerelease"?: boolean, "target_commitish"?: string } | { "body"?: string, "draft"?: boolean, "name"?: string, "prerelease"?: boolean, "tag_name"?: string, "target_commitish"?: string } | { "commitId"?: string };
 
     /**
      */
@@ -153,14 +151,14 @@ export interface GithubNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number;
 
     /**
      * Default: {}
@@ -177,7 +175,7 @@ export interface GithubNodeParameters {
     /**
      * The number of the pull request
      */
-    readonly pullRequestNumber?: number;
+    readonly pullRequestNumber?: number | number | number;
 
     /**
      * ID of the review

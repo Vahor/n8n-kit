@@ -4,7 +4,6 @@
 export const name = "executeWorkflow" as const;
 export const description = "Execute another workflow" as const;
 export const version = 1.2 as const;
-export const defaults = {"name":"Execute Workflow","color":"#ff6d5a"} as const;
 
 /**
  * Execute another workflow
@@ -24,12 +23,12 @@ export interface ExecuteWorkflowNodeParameters {
      * Where to get the workflow to execute from
      * Default: "database"
      */
-    readonly source?: "database" | "localFile" | "parameter" | "url" | "parameter";
+    readonly source?: "database" | "localFile" | "parameter" | "url" | "database" | "parameter";
 
     /**
      * Note on using an expression here: if this node is set to run once with all items, they will all be sent to the <em>same</em> workflow. That workflow's ID will be calculated by evaluating the expression for the <strong>first input item</strong>.
      */
-    readonly workflowId?: string;
+    readonly workflowId?: string | any;
 
     /**
      * The path to local JSON workflow file to execute

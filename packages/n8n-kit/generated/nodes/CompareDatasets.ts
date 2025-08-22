@@ -4,7 +4,6 @@
 export const name = "compareDatasets" as const;
 export const description = "Compare two inputs for changes" as const;
 export const version = 2.3 as const;
-export const defaults = {"name":"Compare Datasets"} as const;
 
 /**
  * Compare two inputs for changes
@@ -24,7 +23,7 @@ export interface CompareDatasetsNodeParameters {
     /**
      * Default: "preferInput2"
      */
-    readonly resolve?: "preferInput1" | "preferInput2" | "mix" | "includeBoth";
+    readonly resolve?: "preferInput1" | "preferInput2" | "mix" | "includeBoth" | "preferInput1" | "preferInput2" | "mix" | "includeBoth";
 
     /**
      * Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same.

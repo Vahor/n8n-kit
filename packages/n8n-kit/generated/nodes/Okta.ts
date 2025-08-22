@@ -4,8 +4,6 @@
 export const name = "okta" as const;
 export const description = "Use the Okta API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Okta"} as const;
-export const credentials = [{"name":"oktaApi","required":true}] as const
 
 /**
  * Use the Okta API

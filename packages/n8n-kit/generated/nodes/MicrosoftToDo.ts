@@ -4,8 +4,6 @@
 export const name = "microsoftToDo" as const;
 export const description = "Consume Microsoft To Do API." as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft To Do"} as const;
-export const credentials = [{"name":"microsoftToDoOAuth2Api","required":true}] as const
 
 /**
  * Consume Microsoft To Do API.
@@ -20,22 +18,22 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTaskLists"}
      */
-    readonly taskListId?: string;
+    readonly taskListId?: string | string | string;
 
     /**
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string;
 
     /**
      * Field indicating title of the linked entity
      */
-    readonly displayName?: string;
+    readonly displayName?: string | string | string;
 
     /**
      * App name of the source that is sending the linked entity
@@ -45,7 +43,7 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred" };
+    readonly additionalFields?: { "externalId"?: string, "webUrl"?: string } | { "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred" };
 
     /**
      */
@@ -54,19 +52,19 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string, "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
+    readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string } | { "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
 
     /**
      * A brief description of the task

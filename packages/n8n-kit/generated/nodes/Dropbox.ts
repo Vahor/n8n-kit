@@ -4,8 +4,6 @@
 export const name = "dropbox" as const;
 export const description = "Access data on Dropbox" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Dropbox"} as const;
-export const credentials = [{"name":"dropboxApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"dropboxOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Access data on Dropbox
@@ -26,22 +24,22 @@ export interface DropboxNodeParameters {
     /**
      * Default: "upload"
      */
-    readonly operation?: "copy" | "delete" | "download" | "move" | "upload" | "create" | "list" | "query";
+    readonly operation?: "copy" | "delete" | "download" | "move" | "upload" | "copy" | "create" | "delete" | "list" | "move" | "query";
 
     /**
      * The path of file or folder to copy
      */
-    readonly path?: string;
+    readonly path?: string | string | string | string | string | string | string;
 
     /**
      * The destination path of file or folder
      */
-    readonly toPath?: string;
+    readonly toPath?: string | string;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -67,14 +65,14 @@ export interface DropboxNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
@@ -85,7 +83,7 @@ export interface DropboxNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "file_categories"?: ("audio" | "document" | "paper" | "folder" | "image" | "other" | "pdf" | "presentation" | "spreadsheet" | "video")[], "file_extensions"?: string, "path"?: string, "include_deleted"?: boolean, "include_has_explicit_shared_members"?: boolean, "include_mounted_folders"?: boolean, "include_non_downloadable_files"?: boolean, "recursive"?: boolean };
+    readonly filters?: { "file_categories"?: ("audio" | "document" | "paper" | "folder" | "image" | "other" | "pdf" | "presentation" | "spreadsheet" | "video")[], "file_extensions"?: string, "path"?: string } | { "include_deleted"?: boolean, "include_has_explicit_shared_members"?: boolean, "include_mounted_folders"?: boolean, "include_non_downloadable_files"?: boolean, "recursive"?: boolean };
 
 
 }

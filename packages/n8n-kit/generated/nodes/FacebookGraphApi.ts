@@ -4,8 +4,6 @@
 export const name = "facebookGraphApi" as const;
 export const description = "Interacts with Facebook using the Graph API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Facebook Graph API"} as const;
-export const credentials = [{"name":"facebookGraphApi","required":true}] as const
 
 /**
  * Interacts with Facebook using the Graph API

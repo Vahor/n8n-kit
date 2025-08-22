@@ -4,8 +4,6 @@
 export const name = "googleBigQuery" as const;
 export const description = "Consume Google BigQuery API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google BigQuery"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBigQueryOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Google BigQuery API
@@ -35,19 +33,19 @@ export interface GoogleBigQueryV1NodeParameters {
      * ID of the project to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly projectId?: string;
+    readonly projectId?: string | string;
 
     /**
      * ID of the dataset to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDatasets","loadOptionsDependsOn":["projectId"]}
      */
-    readonly datasetId?: string;
+    readonly datasetId?: string | string;
 
     /**
      * ID of the table to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTables","loadOptionsDependsOn":["projectId","datasetId"]}
      */
-    readonly tableId?: string;
+    readonly tableId?: string | string;
 
     /**
      * Comma-separated list of the item properties to use as columns
@@ -57,7 +55,7 @@ export interface GoogleBigQueryV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "ignoreUnknownValues"?: boolean, "skipInvalidRows"?: boolean, "templateSuffix"?: string, "traceId"?: string, "selectedFields"?: string };
+    readonly options?: { "ignoreUnknownValues"?: boolean, "skipInvalidRows"?: boolean, "templateSuffix"?: string, "traceId"?: string } | { "selectedFields"?: string };
 
     /**
      * Whether to return all results or only up to a given limit

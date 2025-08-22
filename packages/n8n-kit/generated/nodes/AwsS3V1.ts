@@ -4,8 +4,6 @@
 export const name = "awsS3" as const;
 export const description = "Sends data to AWS S3" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AWS S3"} as const;
-export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Sends data to AWS S3
@@ -20,33 +18,33 @@ export interface AwsS3V1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "getAll" | "search" | "copy" | "download" | "upload";
+    readonly operation?: "create" | "delete" | "getAll" | "search" | "create" | "delete" | "getAll" | "copy" | "delete" | "download" | "getAll" | "upload";
 
     /**
      * A succinct description of the nature, symptoms, cause, or effect of the bucket
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "acl"?: "authenticatedRead" | "Private" | "publicRead" | "publicReadWrite", "bucketObjectLockEnabled"?: boolean, "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWrite"?: boolean, "grantWriteAcp"?: boolean, "region"?: string, "delimiter"?: string, "encodingType"?: "url", "fetchOwner"?: boolean, "prefix"?: string, "requesterPays"?: boolean, "startAfter"?: string, "parentFolderKey"?: string, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "RecudedRedundancy" | "standard" | "standardIA", "lockLegalHold"?: boolean, "lockMode"?: "governance" | "compliance", "lockRetainUntilDate"?: string, "metadataDirective"?: "copy" | "replace", "serverSideEncryption"?: "AES256" | "aws:kms", "serverSideEncryptionContext"?: string, "encryptionAwsKmsKeyId"?: string, "serversideEncryptionCustomerAlgorithm"?: string, "serversideEncryptionCustomerKey"?: string, "serversideEncryptionCustomerKeyMD5"?: string, "taggingDirective"?: "copy" | "replace" };
+    readonly additionalFields?: { "acl"?: "authenticatedRead" | "Private" | "publicRead" | "publicReadWrite", "bucketObjectLockEnabled"?: boolean, "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWrite"?: boolean, "grantWriteAcp"?: boolean, "region"?: string } | { "delimiter"?: string, "encodingType"?: "url", "fetchOwner"?: boolean, "prefix"?: string, "requesterPays"?: boolean, "startAfter"?: string } | { "parentFolderKey"?: string, "requesterPays"?: boolean, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "RecudedRedundancy" | "standard" | "standardIA" } | { "acl"?: "authenticatedRead" | "awsExecRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "publicRead" | "publicReadWrite", "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWriteAcp"?: boolean, "lockLegalHold"?: boolean, "lockMode"?: "governance" | "compliance", "lockRetainUntilDate"?: string, "metadataDirective"?: "copy" | "replace", "requesterPays"?: boolean, "serverSideEncryption"?: "AES256" | "aws:kms", "serverSideEncryptionContext"?: string, "encryptionAwsKmsKeyId"?: string, "serversideEncryptionCustomerAlgorithm"?: string, "serversideEncryptionCustomerKey"?: string, "serversideEncryptionCustomerKeyMD5"?: string, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "standard" | "standardIA", "taggingDirective"?: "copy" | "replace" } | { "acl"?: "authenticatedRead" | "awsExecRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "publicRead" | "publicReadWrite", "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWriteAcp"?: boolean, "lockLegalHold"?: boolean, "lockMode"?: "governance" | "compliance", "lockRetainUntilDate"?: string, "parentFolderKey"?: string, "requesterPays"?: boolean, "serverSideEncryption"?: "AES256" | "aws:kms", "serverSideEncryptionContext"?: string, "encryptionAwsKmsKeyId"?: string, "serversideEncryptionCustomerAlgorithm"?: string, "serversideEncryptionCustomerKey"?: string, "serversideEncryptionCustomerKeyMD5"?: string, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "standard" | "standardIA" };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      */
-    readonly bucketName?: string;
+    readonly bucketName?: string | string | string | string | string | string | string | string;
 
     /**
      */
@@ -59,7 +57,7 @@ export interface AwsS3V1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string, "versionId"?: string };
+    readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string } | { "versionId"?: string } | { "fetchOwner"?: boolean, "folderKey"?: string };
 
     /**
      * The name of the source bucket should start with (/) and key name of the source object, separated by a slash (/)
@@ -73,7 +71,7 @@ export interface AwsS3V1NodeParameters {
 
     /**
      */
-    readonly fileName?: string;
+    readonly fileName?: string | string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -89,7 +87,7 @@ export interface AwsS3V1NodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Optional extra headers to add to the message (most headers are allowed)
@@ -100,7 +98,7 @@ export interface AwsS3V1NodeParameters {
 
     /**
      */
-    readonly fileKey?: string;
+    readonly fileKey?: string | string;
 
 
 }

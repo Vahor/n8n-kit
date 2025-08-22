@@ -4,8 +4,6 @@
 export const name = "citrixAdc" as const;
 export const description = "Consume Netscaler ADC API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Netscaler ADC"} as const;
-export const credentials = [{"name":"citrixAdcApi","required":true}] as const
 
 /**
  * Consume Netscaler ADC API
@@ -25,13 +23,13 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Name for and, optionally, path to the generated certificate file. /nsconfig/ssl/ is the default path.
      */
-    readonly certificateFileName?: string;
+    readonly certificateFileName?: string | string;
 
     /**
      * Format in which the certificate is stored on the appliance
      * Default: "PEM"
      */
-    readonly certificateFormat?: "PEM" | "DER";
+    readonly certificateFormat?: "PEM" | "DER" | "PEM" | "DER";
 
     /**
      * Default: "ROOT_CERT"
@@ -68,7 +66,7 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Name for and, optionally, path to the private key. You can either use an existing RSA or DSA key that you own or create a new private key on the Netscaler ADC. This file is required only when creating a self-signed Root-CA certificate. The key file is stored in the /nsconfig/ssl directory by default.
      */
-    readonly privateKeyFileName?: string;
+    readonly privateKeyFileName?: string | string;
 
     /**
      * Serial number file maintained for the CA certificate. This file contains the serial number of the next certificate to be issued or signed by the CA.
@@ -84,7 +82,7 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "pempassphrase"?: string, "pempassphrase"?: string, "subjectaltname"?: string, "days"?: string };
+    readonly additionalFields?: { "pempassphrase"?: string | string, "subjectaltname"?: string, "days"?: string };
 
     /**
      * Name for the certificate and private-key pair
@@ -117,13 +115,13 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Default: "/nsconfig/ssl/"
      */
-    readonly fileLocation?: string;
+    readonly fileLocation?: string | string;
 
     /**
      * The name of the incoming field containing the binary file data to be processed
      * Default: "data"
      */
-    readonly binaryProperty?: string;
+    readonly binaryProperty?: string | string;
 
     /**
      * Default: {}

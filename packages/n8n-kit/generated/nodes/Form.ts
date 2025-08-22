@@ -4,7 +4,6 @@
 export const name = "form" as const;
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const version = 2.3 as const;
-export const defaults = {"name":"Form"} as const;
 
 /**
  * Generate webforms in n8n and pass their responses to the workflow
@@ -40,36 +39,36 @@ export interface FormNodeParameters {
     /**
      * Whether to limit the time this node should wait for a user response before execution resumes
      */
-    readonly limitWaitTime?: boolean;
+    readonly limitWaitTime?: boolean | boolean;
 
     /**
      * Sets the condition for the execution to resume. Can be a specified date or after some time.
      * Default: "afterTimeInterval"
      */
-    readonly limitType?: "afterTimeInterval" | "atSpecifiedTime";
+    readonly limitType?: "afterTimeInterval" | "atSpecifiedTime" | "afterTimeInterval" | "atSpecifiedTime";
 
     /**
      * The time to wait
      * Default: 1
      * Type options: {"minValue":0,"numberPrecision":2}
      */
-    readonly resumeAmount?: number;
+    readonly resumeAmount?: number | number;
 
     /**
      * Unit of the interval value
      * Default: "hours"
      */
-    readonly resumeUnit?: "minutes" | "hours" | "days";
+    readonly resumeUnit?: "minutes" | "hours" | "days" | "minutes" | "hours" | "days";
 
     /**
      * Continue execution after the specified date and time
      */
-    readonly maxDateAndTime?: string;
+    readonly maxDateAndTime?: string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "formTitle"?: string, "formDescription"?: string, "buttonLabel"?: string, "customCss"?: string };
+    readonly options?: { "formTitle"?: string, "formDescription"?: string, "buttonLabel"?: string, "customCss"?: string } | { "formTitle"?: string, "customCss"?: string };
 
     /**
      * Default: "text"

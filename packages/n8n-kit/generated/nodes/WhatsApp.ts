@@ -4,8 +4,6 @@
 export const name = "whatsApp" as const;
 export const description = "Access WhatsApp API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"WhatsApp Business Cloud"} as const;
-export const credentials = [{"name":"whatsAppApi","required":true}] as const
 
 /**
  * Access WhatsApp API
@@ -31,7 +29,7 @@ export interface WhatsAppNodeParameters {
      * The ID of the business account's phone number from which the message will be sent from
      * Type options: {"loadOptions":{"routing":{"request":{"url":"={{$credentials.businessAccountId}}/phone_numbers","method":"GET"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.display_phone_number}} - {{$responseItem.verified_name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly phoneNumberId?: string;
+    readonly phoneNumberId?: string | string;
 
     /**
      * Phone number of the recipient of the message
@@ -53,7 +51,7 @@ export interface WhatsAppNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addresses"?: { "address": any }, "birthday"?: string, "emails"?: { "data": any }, "organization"?: { "data": any }, "phones"?: { "data": any }, "urls"?: { "url": any }, "nameAndAddress"?: any, "mediaFilename"?: string, "mediaCaption"?: string, "previewUrl"?: boolean, "mediaFileName"?: string };
+    readonly additionalFields?: { "addresses"?: { "address": any }, "birthday"?: string, "emails"?: { "data": any }, "organization"?: { "data": any }, "phones"?: { "data": any }, "urls"?: { "url": any } } | { "nameAndAddress": any } | { "mediaFilename"?: string, "mediaCaption"?: string } | { "previewUrl"?: boolean } | { "mediaFileName"?: string };
 
     /**
      * Type options: {"minValue":-180,"maxValue":180}
@@ -74,7 +72,7 @@ export interface WhatsAppNodeParameters {
      * Use a link, an ID, or n8n to upload an audio file
      * Default: "useMediaLink"
      */
-    readonly mediaPath?: "useMediaLink" | "useMediaId" | "useMedian8n";
+    readonly mediaPath?: "useMediaLink" | "useMediaId" | "useMedian8n" | "useMediaLink" | "useMediaId" | "useMedian8n" | "useMediaLink" | "useMediaId" | "useMedian8n" | "useMediaLink" | "useMediaId" | "useMedian8n";
 
     /**
      * Link of the media to be sent
@@ -90,7 +88,7 @@ export interface WhatsAppNodeParameters {
      * The name of the input field containing the binary file data to be uploaded
      * Default: "data"
      */
-    readonly mediaPropertyName?: string;
+    readonly mediaPropertyName?: string | string;
 
     /**
      * The name of the file (required when using a file ID)
@@ -154,7 +152,7 @@ export interface WhatsAppNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
+    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
 
 }

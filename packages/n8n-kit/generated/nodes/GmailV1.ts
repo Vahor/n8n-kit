@@ -4,8 +4,6 @@
 export const name = "gmail" as const;
 export const description = "Consume the Gmail API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Gmail"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume the Gmail API
@@ -29,47 +27,47 @@ export interface GmailV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "reply" | "send" | "add" | "remove";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "delete" | "get" | "getAll" | "reply" | "send" | "add" | "remove";
 
     /**
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string | string;
 
     /**
      */
-    readonly subject?: string;
+    readonly subject?: string | string;
 
     /**
      * Whether the message should also be included as HTML
      */
-    readonly includeHtml?: boolean;
+    readonly includeHtml?: boolean | boolean;
 
     /**
      * The HTML message body
      */
-    readonly htmlMessage?: string;
+    readonly htmlMessage?: string | string;
 
     /**
      * The message body. If HTML formatted, then you have to add and activate the option "HTML content" in the "Additional Options" section.
      */
-    readonly message?: string;
+    readonly message?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "toList"?: string, "ccList"?: string, "bccList"?: string, "attachmentsUi"?: { "attachmentsBinary": any }, "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "metadata" | "minimal" | "raw" | "resolved", "includeSpamTrash"?: boolean, "senderName"?: string, "labelIds"?: string[], "q"?: string };
+    readonly additionalFields?: { "toList"?: string, "ccList"?: string, "bccList"?: string, "attachmentsUi"?: { "attachmentsBinary": any } } | { "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "metadata" | "minimal" | "raw" | "resolved" } | { "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", "includeSpamTrash"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string } | { "format"?: "full" | "metadata" | "minimal" | "raw" | "resolved", "dataPropertyAttachmentsPrefixName"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", "includeSpamTrash"?: boolean, "labelIds"?: string[], "q"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 10
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Label Name

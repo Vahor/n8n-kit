@@ -4,8 +4,6 @@
 export const name = "microsoftEntra" as const;
 export const description = "Interact with Microsoft Entra ID API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft Entra ID"} as const;
-export const credentials = [{"name":"microsoftEntraOAuth2Api","required":true}] as const
 
 /**
  * Interact with Microsoft Entra ID API
@@ -20,7 +18,7 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "addGroup" | "removeGroup";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "addGroup" | "create" | "delete" | "get" | "getAll" | "removeGroup" | "update";
 
     /**
      */
@@ -29,12 +27,12 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * The name to display in the address book for the group
      */
-    readonly displayName?: string;
+    readonly displayName?: string | string;
 
     /**
      * The mail alias for the group. Only enter the local-part without the domain.
      */
-    readonly mailNickname?: string;
+    readonly mailNickname?: string | string;
 
     /**
      * Whether the group is mail-enabled
@@ -54,24 +52,24 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "isAssignableToRole"?: boolean, "description"?: string, "membershipRule"?: string, "membershipRuleProcessingState"?: "On" | "Paused", "preferredDataLocation"?: string, "uniqueName"?: string, "visibility"?: "Private" | "Public", "aboutMe"?: string, "ageGroup"?: "Adult" | "Minor" | "NotAdult", "birthday"?: string, "businessPhones"?: string, "city"?: string, "companyName"?: string, "consentProvidedForMinor"?: "Denied" | "Granted" | "NotRequired", "country"?: string, "department"?: string, "employeeId"?: string, "employeeType"?: string, "employeeHireDate"?: string, "employeeLeaveDateTime"?: string, "employeeOrgData"?: { "employeeOrgValues": any }, "givenName"?: string, "forceChangePassword"?: "forceChangePasswordNextSignIn" | "forceChangePasswordNextSignInWithMfa", "interests"?: string, "jobTitle"?: string, "surname"?: string, "mail"?: string, "mobilePhone"?: string, "mySite"?: string, "officeLocation"?: string, "onPremisesImmutableId"?: string, "otherMails"?: string, "passwordPolicies"?: ("DisablePasswordExpiration" | "DisableStrongPassword")[], "pastProjects"?: string, "postalCode"?: string, "preferredLanguage"?: string, "responsibilities"?: string, "schools"?: string, "skills"?: string, "state"?: string, "streetAddress"?: string, "usageLocation"?: string, "userType"?: "Guest" | "Member" };
+    readonly additionalFields?: { "isAssignableToRole"?: boolean, "description"?: string, "membershipRule"?: string, "membershipRuleProcessingState"?: "On" | "Paused", "preferredDataLocation"?: string, "uniqueName"?: string, "visibility"?: "Private" | "Public" } | { "aboutMe"?: string, "ageGroup"?: "Adult" | "Minor" | "NotAdult", "birthday"?: string, "businessPhones"?: string, "city"?: string, "companyName"?: string, "consentProvidedForMinor"?: "Denied" | "Granted" | "NotRequired", "country"?: string, "department"?: string, "employeeId"?: string, "employeeType"?: string, "employeeHireDate"?: string, "employeeLeaveDateTime"?: string, "employeeOrgData"?: { "employeeOrgValues": any }, "givenName"?: string, "forceChangePassword"?: "forceChangePasswordNextSignIn" | "forceChangePasswordNextSignInWithMfa", "interests"?: string, "jobTitle"?: string, "surname"?: string, "mail"?: string, "mobilePhone"?: string, "mySite"?: string, "officeLocation"?: string, "onPremisesImmutableId"?: string, "otherMails"?: string, "passwordPolicies"?: ("DisablePasswordExpiration" | "DisableStrongPassword")[], "pastProjects"?: string, "postalCode"?: string, "preferredLanguage"?: string, "responsibilities"?: string, "schools"?: string, "skills"?: string, "state"?: string, "streetAddress"?: string, "usageLocation"?: string, "userType"?: "Guest" | "Member" };
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any;
+    readonly group?: any | any | any | any | any;
 
     /**
      * Default: "simple"
      */
-    readonly output?: "simple" | "raw" | "fields";
+    readonly output?: "simple" | "raw" | "fields" | "simple" | "raw" | "fields" | "simple" | "raw" | "fields" | "simple" | "raw" | "fields";
 
     /**
      * The fields to add to the output
      * Default: []
      * Type options: {"loadOptionsMethod":"getGroupProperties"}
      */
-    readonly fields?: string[];
+    readonly fields?: string[] | string[] | string[] | string[];
 
     /**
      * Default: {}
@@ -81,29 +79,29 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * <a href="https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter">Query parameter</a> to filter results by
      */
-    readonly filter?: string;
+    readonly filter?: string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "allowExternalSenders"?: boolean, "autoSubscribeNewMembers"?: boolean, "description"?: string, "displayName"?: string, "mailNickname"?: string, "membershipRule"?: string, "membershipRuleProcessingState"?: "On" | "Paused", "preferredDataLocation"?: string, "securityEnabled"?: boolean, "uniqueName"?: string, "visibility"?: "Private" | "Public", "aboutMe"?: string, "accountEnabled"?: boolean, "ageGroup"?: "Adult" | "Minor" | "NotAdult", "birthday"?: string, "businessPhones"?: string, "city"?: string, "companyName"?: string, "consentProvidedForMinor"?: "Denied" | "Granted" | "NotRequired", "country"?: string, "department"?: string, "employeeId"?: string, "employeeType"?: string, "givenName"?: string, "employeeHireDate"?: string, "employeeLeaveDateTime"?: string, "employeeOrgData"?: { "employeeOrgValues": any }, "forceChangePassword"?: "forceChangePasswordNextSignIn" | "forceChangePasswordNextSignInWithMfa", "interests"?: string, "jobTitle"?: string, "surname"?: string, "mail"?: string, "mobilePhone"?: string, "mySite"?: string, "officeLocation"?: string, "onPremisesImmutableId"?: string, "otherMails"?: string, "password"?: string, "passwordPolicies"?: ("DisablePasswordExpiration" | "DisableStrongPassword")[], "pastProjects"?: string, "postalCode"?: string, "preferredLanguage"?: string, "responsibilities"?: string, "schools"?: string, "skills"?: string, "state"?: string, "streetAddress"?: string, "usageLocation"?: string, "userPrincipalName"?: string, "userType"?: "Guest" | "Member" };
+    readonly updateFields?: { "allowExternalSenders"?: boolean, "autoSubscribeNewMembers"?: boolean, "description"?: string, "displayName"?: string, "mailNickname"?: string, "membershipRule"?: string, "membershipRuleProcessingState"?: "On" | "Paused", "preferredDataLocation"?: string, "securityEnabled"?: boolean, "uniqueName"?: string, "visibility"?: "Private" | "Public" } | { "aboutMe"?: string, "accountEnabled"?: boolean, "ageGroup"?: "Adult" | "Minor" | "NotAdult", "birthday"?: string, "businessPhones"?: string, "city"?: string, "companyName"?: string, "consentProvidedForMinor"?: "Denied" | "Granted" | "NotRequired", "country"?: string, "department"?: string, "displayName"?: string, "employeeId"?: string, "employeeType"?: string, "givenName"?: string, "employeeHireDate"?: string, "employeeLeaveDateTime"?: string, "employeeOrgData"?: { "employeeOrgValues": any }, "forceChangePassword"?: "forceChangePasswordNextSignIn" | "forceChangePasswordNextSignInWithMfa", "interests"?: string, "jobTitle"?: string, "surname"?: string, "mail"?: string, "mailNickname"?: string, "mobilePhone"?: string, "mySite"?: string, "officeLocation"?: string, "onPremisesImmutableId"?: string, "otherMails"?: string, "password"?: string, "passwordPolicies"?: ("DisablePasswordExpiration" | "DisableStrongPassword")[], "pastProjects"?: string, "postalCode"?: string, "preferredLanguage"?: string, "responsibilities"?: string, "schools"?: string, "skills"?: string, "state"?: string, "streetAddress"?: string, "usageLocation"?: string, "userPrincipalName"?: string, "userType"?: "Guest" | "Member" };
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: any | any | any | any | any;
 
     /**
      * Whether the account is enabled

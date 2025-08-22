@@ -4,8 +4,6 @@
 export const name = "profitWell" as const;
 export const description = "Consume ProfitWell API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"ProfitWell"} as const;
-export const credentials = [{"name":"profitWellApi","required":true}] as const
 
 /**
  * Consume ProfitWell API

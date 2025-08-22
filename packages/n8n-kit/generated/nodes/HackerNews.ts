@@ -4,7 +4,6 @@
 export const name = "hackerNews" as const;
 export const description = "Consume Hacker News API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Hacker News"} as const;
 
 /**
  * Consume Hacker News API
@@ -19,7 +18,7 @@ export interface HackerNewsNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "get";
+    readonly operation?: "getAll" | "get" | "get";
 
     /**
      * The ID of the Hacker News article to be returned
@@ -46,7 +45,7 @@ export interface HackerNewsNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "includeComments"?: boolean, "keyword"?: string, "tags"?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
+    readonly additionalFields?: { "includeComments"?: boolean } | { "keyword"?: string, "tags"?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
 
 
 }

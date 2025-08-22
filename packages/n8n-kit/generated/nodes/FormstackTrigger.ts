@@ -4,8 +4,6 @@
 export const name = "formstackTrigger" as const;
 export const description = "Starts the workflow on a Formstack form submission." as const;
 export const version = 1 as const;
-export const defaults = {"name":"Formstack Trigger"} as const;
-export const credentials = [{"name":"formstackApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"formstackOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Starts the workflow on a Formstack form submission.

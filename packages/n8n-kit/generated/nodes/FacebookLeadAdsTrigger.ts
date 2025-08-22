@@ -4,8 +4,6 @@
 export const name = "facebookLeadAdsTrigger" as const;
 export const description = "Handle Facebook Lead Ads events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Facebook Lead Ads Trigger"} as const;
-export const credentials = [{"name":"facebookLeadAdsOAuth2Api","required":true}] as const
 
 /**
  * Handle Facebook Lead Ads events via webhooks

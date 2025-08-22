@@ -4,8 +4,6 @@
 export const name = "theHiveProject" as const;
 export const description = "Consume TheHive 5 API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"TheHive 5"} as const;
-export const credentials = [{"name":"theHiveProjectApi","required":true}] as const
 
 /**
  * Consume TheHive 5 API
@@ -20,7 +18,7 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "deleteAlert" | "executeResponder" | "get" | "merge" | "promote" | "search" | "update" | "status" | "addAttachment" | "deleteAttachment" | "deleteCase" | "getAttachment" | "getTimeline" | "executeAnalyzer" | "executeQuery";
+    readonly operation?: "create" | "deleteAlert" | "executeResponder" | "get" | "merge" | "promote" | "search" | "update" | "status" | "addAttachment" | "create" | "deleteAttachment" | "deleteCase" | "executeResponder" | "get" | "getAttachment" | "getTimeline" | "search" | "update" | "add" | "deleteComment" | "search" | "update" | "addAttachment" | "create" | "deleteLog" | "deleteAttachment" | "executeResponder" | "get" | "search" | "create" | "deleteObservable" | "executeAnalyzer" | "executeResponder" | "get" | "search" | "update" | "create" | "deletePage" | "search" | "update" | "executeQuery" | "create" | "deleteTask" | "executeResponder" | "get" | "search" | "update";
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -37,47 +35,47 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly alertId?: any;
+    readonly alertId?: any | any | any | any | any | any | any;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly id?: any;
+    readonly id?: any | any | any | any | any | any | any | any | any;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["id","id.value"],"loadOptionsMethod":"loadResponders"}
      */
-    readonly responder?: string;
+    readonly responder?: string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "includeSimilarAlerts"?: boolean, "includeSimilarCases"?: boolean, "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[], "caseTemplate"?: string, "canRename"?: boolean, "fileName"?: string, "dataPropertyName"?: string, "category"?: string, "title"?: string, "order"?: number };
+    readonly options?: { "includeSimilarAlerts"?: boolean, "includeSimilarCases"?: boolean } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "caseTemplate"?: string } | { "canRename"?: boolean } | { "fileName"?: string, "dataPropertyName"?: string } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "category"?: string, "title"?: string, "order"?: number } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number | number;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "values": any };
+    readonly filters?: { "values": any } | { "values": any } | { "values": any } | { "values": any } | { "values": any } | { "values": any } | { "values": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { "fields": any };
+    readonly sort?: { "fields": any } | { "fields": any } | { "fields": any } | { "fields": any } | { "fields": any } | { "fields": any } | { "fields": any };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -88,7 +86,7 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly caseId?: any;
+    readonly caseId?: any | any | any | any | any | any | any | any | any | any | any | any | any | any | any;
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -101,7 +99,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { "values": any };
+    readonly attachmentsUi?: { "values": any } | { "values": any } | { "values": any } | { "values": any };
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -113,7 +111,7 @@ export interface TheHiveProjectNodeParameters {
      * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadCaseAttachments"}
      */
-    readonly attachmentId?: string;
+    readonly attachmentId?: string | string | string;
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -129,28 +127,28 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Type options: {"rows":2}
      */
-    readonly message?: string;
+    readonly message?: string | string;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly commentId?: any;
+    readonly commentId?: any | any;
 
     /**
      * Whether to search for comments in all alerts and cases or in a specific case or alert
      * Default: "all"
      */
-    readonly searchIn?: "all" | "alert" | "case";
+    readonly searchIn?: "all" | "alert" | "case" | "all" | "alert" | "case";
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly logId?: any;
+    readonly logId?: any | any | any | any;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly taskId?: any;
+    readonly taskId?: any | any | any | any;
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -174,7 +172,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: "file"
      * Type options: {"loadOptionsMethod":"loadObservableTypes"}
      */
-    readonly dataType?: string;
+    readonly dataType?: string | string;
 
     /**
      */
@@ -189,7 +187,7 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly observableId?: any;
+    readonly observableId?: any | any | any;
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -207,7 +205,7 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: "case"
      */
-    readonly location?: "case" | "knowledgeBase";
+    readonly location?: "case" | "knowledgeBase" | "case" | "knowledgeBase" | "case" | "knowledgeBase";
 
     /**
      */
@@ -220,13 +218,13 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Type options: {"rows":2}
      */
-    readonly content?: string;
+    readonly content?: string | string;
 
     /**
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["caseId"]}
      */
-    readonly pageId?: any;
+    readonly pageId?: any | any;
 
     /**
      * Whether to search in knowledge base or only in the selected case

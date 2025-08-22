@@ -4,8 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 4.2 as const;
-export const defaults = {"name":"HTTP Request","color":"#0004F5"} as const;
-export const credentials = [{"name":"httpSslAuth","required":true,"displayOptions":{"show":{"provideSslCertificates":[true]}}}] as const
 
 /**
  * undefined
@@ -116,13 +114,13 @@ export interface HttpRequestV3NodeParameters {
      * The body can be specified using explicit fields (<code>keypair</code>) or using a JavaScript object (<code>json</code>)
      * Default: "keypair"
      */
-    readonly specifyBody?: "keypair" | "json" | "string";
+    readonly specifyBody?: "keypair" | "json" | "keypair" | "string";
 
     /**
      * Default: {"parameters":[{"name":"","value":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly bodyParameters?: { "parameters": any };
+    readonly bodyParameters?: { "parameters": any } | { "parameters": any } | { "parameters": any };
 
     /**
      */
@@ -130,7 +128,7 @@ export interface HttpRequestV3NodeParameters {
 
     /**
      */
-    readonly body?: string;
+    readonly body?: string | string;
 
     /**
      * The name of the incoming field containing the binary file data to be processed
@@ -144,7 +142,7 @@ export interface HttpRequestV3NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "batching"?: { "batch": any }, "allowUnauthorizedCerts"?: boolean, "queryParameterArrays"?: "repeat" | "brackets" | "indices", "lowercaseHeaders"?: boolean, "redirect"?: { "redirect": any }, "redirect"?: { "redirect": any }, "response"?: { "response": any }, "pagination"?: { "pagination": any }, "proxy"?: string, "timeout"?: number };
+    readonly options?: { "batching"?: { "batch": any }, "allowUnauthorizedCerts"?: boolean, "queryParameterArrays"?: "repeat" | "brackets" | "indices", "lowercaseHeaders"?: boolean, "redirect"?: { "redirect": any } | { "redirect": any }, "response"?: { "response": any }, "pagination"?: { "pagination": any }, "proxy"?: string, "timeout"?: number };
 
     /**
      * Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost

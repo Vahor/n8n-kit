@@ -4,8 +4,6 @@
 export const name = "activeCampaignTrigger" as const;
 export const description = "Handle ActiveCampaign events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"ActiveCampaign Trigger"} as const;
-export const credentials = [{"name":"activeCampaignApi","required":true}] as const
 
 /**
  * Handle ActiveCampaign events via webhooks

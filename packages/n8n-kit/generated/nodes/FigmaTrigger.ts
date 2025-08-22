@@ -4,8 +4,6 @@
 export const name = "figmaTrigger" as const;
 export const description = "Starts the workflow when Figma events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Figma Trigger (Beta)"} as const;
-export const credentials = [{"name":"figmaApi","required":true}] as const
 
 /**
  * Starts the workflow when Figma events occur

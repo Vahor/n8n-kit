@@ -4,8 +4,6 @@
 export const name = "emailSend" as const;
 export const description = "Sends an Email" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Send Email","color":"#00bb88"} as const;
-export const credentials = [{"name":"smtp","required":true}] as const
 
 /**
  * Sends an Email

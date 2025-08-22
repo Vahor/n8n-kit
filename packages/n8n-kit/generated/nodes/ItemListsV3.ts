@@ -4,8 +4,6 @@
 export const name = "itemLists" as const;
 export const description = "Helper for working with lists of items and transforming arrays" as const;
 export const version = 3.1 as const;
-export const defaults = {"name":"Item Lists"} as const;
-export const credentials = [] as const
 
 /**
  * Helper for working with lists of items and transforming arrays
@@ -46,16 +44,16 @@ export interface ItemListsV3NodeParameters {
 
     /**
      */
-    readonly fieldsToExclude?: string;
+    readonly fieldsToExclude?: string | string;
 
     /**
      */
-    readonly fieldsToInclude?: string;
+    readonly fieldsToInclude?: string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean, "removeOtherFields"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
+    readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean } | { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean } | { "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean } | { "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
 
     /**
      * If there are more items than this number, some are removed
@@ -115,7 +113,7 @@ export interface ItemListsV3NodeParameters {
     /**
      * The name of the input fields that you want to split the summary by
      */
-    readonly fieldsToSplitBy?: string;
+    readonly fieldsToSplitBy?: string | string;
 
 
 }

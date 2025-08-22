@@ -4,8 +4,6 @@
 export const name = "emelia" as const;
 export const description = "Consume the Emelia API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Emelia"} as const;
-export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emeliaApiTest"}] as const
 
 /**
  * Consume the Emelia API
@@ -20,41 +18,41 @@ export interface EmeliaNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "addContact" | "create" | "duplicate" | "get" | "getAll" | "pause" | "start" | "add";
+    readonly operation?: "addContact" | "create" | "duplicate" | "get" | "getAll" | "pause" | "start" | "add" | "getAll";
 
     /**
      * The ID of the campaign to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
-    readonly campaignId?: string;
+    readonly campaignId?: string | string | string | string | string;
 
     /**
      * The email of the contact to add to the campaign
      */
-    readonly contactEmail?: string;
+    readonly contactEmail?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string } | { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
 
     /**
      * The name of the campaign to create
      */
-    readonly campaignName?: string;
+    readonly campaignName?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}

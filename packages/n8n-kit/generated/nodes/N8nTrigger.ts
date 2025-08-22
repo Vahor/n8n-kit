@@ -4,7 +4,6 @@
 export const name = "n8nTrigger" as const;
 export const description = "Handle events and perform actions on your n8n instance" as const;
 export const version = 1 as const;
-export const defaults = {"name":"n8n Trigger"} as const;
 
 /**
  * Handle events and perform actions on your n8n instance

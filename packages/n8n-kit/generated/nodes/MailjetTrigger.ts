@@ -4,8 +4,6 @@
 export const name = "mailjetTrigger" as const;
 export const description = "Handle Mailjet events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mailjet Trigger"} as const;
-export const credentials = [{"name":"mailjetEmailApi","required":true}] as const
 
 /**
  * Handle Mailjet events via webhooks

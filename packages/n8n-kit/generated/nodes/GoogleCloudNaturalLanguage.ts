@@ -4,8 +4,6 @@
 export const name = "googleCloudNaturalLanguage" as const;
 export const description = "Consume Google Cloud Natural Language API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Cloud Natural Language"} as const;
-export const credentials = [{"name":"googleCloudNaturalLanguageOAuth2Api","required":true}] as const
 
 /**
  * Consume Google Cloud Natural Language API

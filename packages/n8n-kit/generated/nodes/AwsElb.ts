@@ -4,8 +4,6 @@
 export const name = "awsElb" as const;
 export const description = "Sends data to AWS ELB API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AWS ELB"} as const;
-export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Sends data to AWS ELB API
@@ -20,7 +18,7 @@ export interface AwsElbNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getMany" | "add" | "remove";
+    readonly operation?: "create" | "delete" | "get" | "getMany" | "add" | "getMany" | "remove";
 
     /**
      * The type of IP addresses used by the subnets for your load balancer
@@ -58,19 +56,19 @@ export interface AwsElbNodeParameters {
     /**
      * Unique identifier for a particular loadBalancer
      */
-    readonly loadBalancerId?: string;
+    readonly loadBalancerId?: string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"maxValue":400,"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
@@ -81,12 +79,12 @@ export interface AwsElbNodeParameters {
      * Unique identifier for a particular loadBalancer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLoadBalancerListeners","loadOptionsDependsOn":["loadBalancerId"]}
      */
-    readonly listenerId?: string;
+    readonly listenerId?: string | string | string;
 
     /**
      * Unique identifier for a particular loadBalancer
      */
-    readonly certificateId?: string;
+    readonly certificateId?: string | string;
 
 
 }

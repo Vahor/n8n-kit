@@ -4,8 +4,6 @@
 export const name = "taigaTrigger" as const;
 export const description = "Handle Taiga events via webhook" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Taiga Trigger"} as const;
-export const credentials = [{"name":"taigaApi","required":true}] as const
 
 /**
  * Handle Taiga events via webhook

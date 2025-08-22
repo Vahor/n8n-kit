@@ -4,8 +4,6 @@
 export const name = "plivo" as const;
 export const description = "Send SMS/MMS messages or make phone calls" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Plivo"} as const;
-export const credentials = [{"name":"plivoApi","required":true}] as const
 
 /**
  * Send SMS/MMS messages or make phone calls
@@ -20,22 +18,22 @@ export interface PlivoNodeParameters {
     /**
      * Default: "send"
      */
-    readonly operation?: "send" | "make";
+    readonly operation?: "send" | "send" | "make";
 
     /**
      * Plivo Number to send the SMS from
      */
-    readonly from?: string;
+    readonly from?: string | string | string;
 
     /**
      * Phone number to send the message to
      */
-    readonly to?: string;
+    readonly to?: string | string | string;
 
     /**
      * Message to send
      */
-    readonly message?: string;
+    readonly message?: string | string;
 
     /**
      * Comma-separated list of media URLs of the files from your file server

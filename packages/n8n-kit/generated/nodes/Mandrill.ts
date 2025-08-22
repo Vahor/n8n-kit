@@ -4,8 +4,6 @@
 export const name = "mandrill" as const;
 export const description = "Consume Mandrill API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mandrill"} as const;
-export const credentials = [{"name":"mandrillApi","required":true}] as const
 
 /**
  * Consume Mandrill API

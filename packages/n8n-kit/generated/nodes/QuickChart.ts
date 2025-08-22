@@ -4,7 +4,6 @@
 export const name = "quickChart" as const;
 export const description = "Create a chart via QuickChart" as const;
 export const version = 1 as const;
-export const defaults = {"name":"QuickChart"} as const;
 
 /**
  * Create a chart via QuickChart

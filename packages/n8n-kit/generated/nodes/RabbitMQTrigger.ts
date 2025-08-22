@@ -4,8 +4,6 @@
 export const name = "rabbitmqTrigger" as const;
 export const description = "Listens to RabbitMQ messages" as const;
 export const version = 1 as const;
-export const defaults = {"name":"RabbitMQ Trigger"} as const;
-export const credentials = [{"name":"rabbitmq","required":true}] as const
 
 /**
  * Listens to RabbitMQ messages

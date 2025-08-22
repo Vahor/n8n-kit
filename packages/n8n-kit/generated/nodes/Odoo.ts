@@ -4,8 +4,6 @@
 export const name = "odoo" as const;
 export const description = "Consume Odoo API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Odoo"} as const;
-export const credentials = [{"name":"odooApi","required":true,"testedBy":"odooApiTest"}] as const
 
 /**
  * Consume Odoo API
@@ -26,34 +24,34 @@ export interface OdooNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
      */
-    readonly fieldsToCreateOrUpdate?: { "fields": any };
+    readonly fieldsToCreateOrUpdate?: { "fields": any } | { "fields": any };
 
     /**
      */
-    readonly customResourceId?: string;
+    readonly customResourceId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "fieldsList"?: string[] };
+    readonly options?: { "fieldsList"?: string[] } | { "fieldsList"?: string[] } | { "fieldsList"?: string[] } | { "fieldsList"?: string[] };
 
     /**
      * Filter request by applying filters
@@ -69,16 +67,16 @@ export interface OdooNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number, "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "vat"?: string, "website"?: string };
+    readonly additionalFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "phone"?: string, "vat"?: string, "website"?: string };
 
     /**
      */
-    readonly opportunityId?: string;
+    readonly opportunityId?: string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number, "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "vat"?: string, "website"?: string };
+    readonly updateFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "name"?: string, "phone"?: string, "vat"?: string, "website"?: string };
 
     /**
      */
@@ -86,15 +84,15 @@ export interface OdooNodeParameters {
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string;
 
     /**
      */
-    readonly memo?: string;
+    readonly memo?: string | string;
 
     /**
      */
-    readonly noteId?: string;
+    readonly noteId?: string | string;
 
 
 }

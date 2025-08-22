@@ -4,8 +4,6 @@
 export const name = "zendeskTrigger" as const;
 export const description = "Handle Zendesk events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Zendesk Trigger"} as const;
-export const credentials = [{"name":"zendeskApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"zendeskOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Handle Zendesk events via webhooks

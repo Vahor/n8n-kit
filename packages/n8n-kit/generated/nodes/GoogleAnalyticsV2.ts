@@ -4,8 +4,6 @@
 export const name = "googleAnalytics" as const;
 export const description = "Use the Google Analytics API" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Analytics"} as const;
-export const credentials = [{"name":"googleAnalyticsOAuth2","required":true}] as const
 
 /**
  * Use the Google Analytics API
@@ -37,17 +35,17 @@ export interface GoogleAnalyticsV2NodeParameters {
     /**
      * Default: "last7days"
      */
-    readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
+    readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom" | "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
     /**
-     * Default: "2025-08-13T00:00:00.000+02:00"
+     * Default: "2025-08-14T00:00:00.000+02:00"
      */
-    readonly startDate?: string;
+    readonly startDate?: string | string;
 
     /**
-     * Default: "2025-08-20T00:00:00.000+02:00"
+     * Default: "2025-08-21T00:00:00.000+02:00"
      */
-    readonly endDate?: string;
+    readonly endDate?: string | string;
 
     /**
      * The quantitative measurements of a report. For example, the metric eventCount is the total number of events. Requests are allowed up to 10 metrics.
@@ -66,31 +64,31 @@ export interface GoogleAnalyticsV2NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "currencyCode"?: string, "dimensionFiltersUI"?: { "filterExpressions": any }, "metricAggregations"?: ("MAXIMUM" | "MINIMUM" | "TOTAL")[], "metricsFiltersUI"?: { "filterExpressions": any }, "keepEmptyRows"?: boolean, "orderByUI"?: { "metricOrderBy": any, "dimmensionOrderBy": any }, "returnPropertyQuota"?: boolean, "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "useResourceQuotas"?: boolean, "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
+    readonly additionalFields?: { "currencyCode"?: string, "dimensionFiltersUI"?: { "filterExpressions": any }, "metricAggregations"?: ("MAXIMUM" | "MINIMUM" | "TOTAL")[], "metricsFiltersUI"?: { "filterExpressions": any }, "keepEmptyRows"?: boolean, "orderByUI"?: { "metricOrderBy": any, "dimmensionOrderBy": any }, "returnPropertyQuota"?: boolean } | { "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "useResourceQuotas"?: boolean } | { "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
 
     /**
      * The View of Google Analytics
      * Default: {"mode":"list","value":""}
      */
-    readonly viewId?: any;
+    readonly viewId?: any | string;
 
     /**
      * Metrics in the request

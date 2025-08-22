@@ -4,8 +4,6 @@
 export const name = "stripeTrigger" as const;
 export const description = "Handle Stripe events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Stripe Trigger"} as const;
-export const credentials = [{"name":"stripeApi","required":true}] as const
 
 /**
  * Handle Stripe events via webhooks

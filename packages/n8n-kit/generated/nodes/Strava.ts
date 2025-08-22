@@ -4,8 +4,6 @@
 export const name = "strava" as const;
 export const description = "Consume Strava API" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Strava"} as const;
-export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const
 
 /**
  * Consume Strava API
@@ -57,7 +55,7 @@ export interface StravaNodeParameters {
     /**
      * ID or email of activity
      */
-    readonly activityId?: string;
+    readonly activityId?: string | string | string;
 
     /**
      * Default: {}
@@ -67,14 +65,14 @@ export interface StravaNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Desired stream types to return

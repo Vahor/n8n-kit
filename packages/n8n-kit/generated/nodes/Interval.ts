@@ -4,7 +4,6 @@
 export const name = "interval" as const;
 export const description = "Triggers the workflow in a given interval" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Interval","color":"#00FF00"} as const;
 
 /**
  * Triggers the workflow in a given interval

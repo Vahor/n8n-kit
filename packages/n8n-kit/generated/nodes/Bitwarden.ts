@@ -4,8 +4,6 @@
 export const name = "bitwarden" as const;
 export const description = "Consume the Bitwarden API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Bitwarden"} as const;
-export const credentials = [{"name":"bitwardenApi","required":true}] as const
 
 /**
  * Consume the Bitwarden API
@@ -20,7 +18,7 @@ export interface BitwardenNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "delete" | "get" | "getAll" | "update" | "create" | "getMembers" | "updateMembers" | "getGroups" | "updateGroups";
+    readonly operation?: "delete" | "get" | "getAll" | "update" | "getAll" | "create" | "delete" | "get" | "getAll" | "getMembers" | "update" | "updateMembers" | "create" | "delete" | "get" | "getGroups" | "getAll" | "update" | "updateGroups";
 
     /**
      * The identifier of the collection
@@ -30,19 +28,19 @@ export interface BitwardenNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 10
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "groups"?: string[], "externalId"?: string, "accessAll"?: boolean, "collections"?: string[], "name"?: string, "type"?: "0" | "1" | "2" | "3" };
+    readonly updateFields?: { "groups"?: string[], "externalId"?: string } | { "accessAll"?: boolean, "collections"?: string[], "externalId"?: string, "name"?: string } | { "type"?: "0" | "1" | "2" | "3", "collections"?: string[], "externalId"?: string, "accessAll"?: boolean };
 
     /**
      * Default: {}
@@ -62,12 +60,12 @@ export interface BitwardenNodeParameters {
     /**
      * Whether to allow this group to access all collections within the organization, instead of only its associated collections. If set to true, this option overrides any collection assignments.
      */
-    readonly accessAll?: boolean;
+    readonly accessAll?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "collections"?: string[], "externalId"?: string };
+    readonly additionalFields?: { "collections"?: string[], "externalId"?: string } | { "collections"?: string[], "externalId"?: string };
 
     /**
      * Comma-separated list of IDs of members to set in a group

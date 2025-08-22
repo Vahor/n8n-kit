@@ -4,8 +4,6 @@
 export const name = "googleSheets" as const;
 export const description = "Read, update and write data to Google Sheets" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Sheets"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}},"testedBy":"googleApiCredentialTest"},{"name":"googleSheetsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Read, update and write data to Google Sheets
@@ -19,7 +17,7 @@ export interface GoogleSheetsV1NodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2";
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /**
      * Default: "sheet"
@@ -29,7 +27,7 @@ export interface GoogleSheetsV1NodeParameters {
     /**
      * Default: "read"
      */
-    readonly operation?: "append" | "clear" | "create" | "upsert" | "delete" | "lookup" | "read" | "remove" | "update";
+    readonly operation?: "append" | "clear" | "create" | "upsert" | "delete" | "lookup" | "read" | "remove" | "update" | "create";
 
     /**
      * The ID of the Google Spreadsheet. Found as part of the sheet URL https://docs.google.com/spreadsheets/d/{ID}/.
@@ -52,13 +50,13 @@ export interface GoogleSheetsV1NodeParameters {
     /**
      * Whether the data should be returned RAW instead of parsed into keys according to their header
      */
-    readonly rawData?: boolean;
+    readonly rawData?: boolean | boolean;
 
     /**
      * The name of the property into which to write the RAW data
      * Default: "data"
      */
-    readonly dataProperty?: string;
+    readonly dataProperty?: string | string;
 
     /**
      * Index of the first row which contains the actual data and not the keys. Starts with 0.
@@ -92,7 +90,7 @@ export interface GoogleSheetsV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "continue"?: boolean, "returnAllMatches"?: boolean, "usePathForKeyRow"?: boolean, "valueInputMode"?: "RAW" | "USER_ENTERED", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE", "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR", "gridProperties"?: { "columnCount"?: number, "columnGroupControlAfter"?: boolean, "frozenColumnCount"?: number, "frozenRowCount"?: number, "hideGridlines"?: boolean, "rowCount"?: number, "rowGroupControlAfter"?: boolean }, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "title"?: string };
+    readonly options?: { "continue"?: boolean, "returnAllMatches"?: boolean, "usePathForKeyRow"?: boolean, "valueInputMode"?: "RAW" | "USER_ENTERED", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { "gridProperties"?: { "columnCount"?: number, "columnGroupControlAfter"?: boolean, "frozenColumnCount"?: number, "frozenRowCount"?: number, "hideGridlines"?: boolean, "rowCount"?: number, "rowGroupControlAfter"?: boolean }, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "title"?: string };
 
     /**
      * The title of the spreadsheet

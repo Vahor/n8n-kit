@@ -4,8 +4,6 @@
 export const name = "reddit" as const;
 export const description = "Consume the Reddit API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Reddit"} as const;
-export const credentials = [{"name":"redditOAuth2Api","required":true,"displayOptions":{"show":{"resource":["postComment","post","profile"]}}}] as const
 
 /**
  * Consume the Reddit API
@@ -20,12 +18,12 @@ export interface RedditNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "delete" | "reply" | "get" | "search";
+    readonly operation?: "create" | "getAll" | "delete" | "reply" | "get" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "search" | "get";
 
     /**
      * ID of the post to write the comment to. Found in the post URL: <code>/r/[subreddit_name]/comments/[post_id]/[post_title]</code>
      */
-    readonly postId?: string;
+    readonly postId?: string | string | string | string;
 
     /**
      * Text of the comment. Markdown supported.
@@ -35,24 +33,24 @@ export interface RedditNodeParameters {
     /**
      * The name of subreddit where the post is
      */
-    readonly subreddit?: string;
+    readonly subreddit?: string | string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number;
 
     /**
      * ID of the comment to remove. Found in the comment URL:<code>/r/[subreddit_name]/comments/[post_id]/[post_title]/[comment_id]</code>
      */
-    readonly commentId?: string;
+    readonly commentId?: string | string;
 
     /**
      * Text of the reply. Markdown supported.
@@ -74,7 +72,7 @@ export interface RedditNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "keyword"?: string, "trending"?: boolean, "category"?: "top" | "hot" | "new" | "rising" };
+    readonly filters?: { "keyword"?: string, "trending"?: boolean } | { "category"?: "top" | "hot" | "new" | "rising" };
 
     /**
      * The kind of the post to create

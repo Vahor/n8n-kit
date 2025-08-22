@@ -4,8 +4,6 @@
 export const name = "crowdDev" as const;
 export const description = "crowd.dev is an open-source suite of community and data tools built to unlock community-led growth for your organization." as const;
 export const version = 1 as const;
-export const defaults = {"name":"crowd.dev"} as const;
-export const credentials = [{"name":"crowdDevApi","required":true}] as const
 
 /**
  * crowd.dev is an open-source suite of community and data tools built to unlock community-led growth for your organization.
@@ -20,13 +18,13 @@ export interface CrowdDevNodeParameters {
     /**
      * Default: "createWithMember"
      */
-    readonly operation?: "createWithMember" | "createForMember" | "createOrUpdate" | "delete" | "find" | "update" | "destroy" | "list";
+    readonly operation?: "createWithMember" | "createForMember" | "createOrUpdate" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "destroy" | "find" | "list" | "update";
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly username?: { "itemChoice": any };
+    readonly username?: { "itemChoice": any } | string;
 
     /**
      * UI friendly name of the member
@@ -63,7 +61,7 @@ export interface CrowdDevNodeParameters {
     /**
      * Platform on which the activity took place
      */
-    readonly platform?: string;
+    readonly platform?: string | string;
 
     /**
      * The ID of the activity in the platform (e.g. the ID of the message in Discord)
@@ -73,12 +71,12 @@ export interface CrowdDevNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalOptions?: { "title"?: string, "body"?: string, "channel"?: string, "sourceParentId"?: string, "displayName"?: string, "emails"?: { "itemChoice": any }, "joinedAt"?: string, "organizations"?: { "itemChoice": any }, "tags"?: { "itemChoice": any }, "tasks"?: { "itemChoice": any }, "notes"?: { "itemChoice": any }, "activities"?: { "itemChoice": any }, "url"?: string, "description"?: string, "logo"?: string, "employees"?: number, "members"?: { "itemChoice": any }, "name"?: string, "status"?: string, "assigneess"?: string };
+    readonly additionalOptions?: { "title"?: string, "body"?: string, "channel"?: string, "sourceParentId"?: string } | { "displayName"?: string, "emails"?: { "itemChoice": any }, "joinedAt"?: string, "organizations"?: { "itemChoice": any }, "tags"?: { "itemChoice": any }, "tasks"?: { "itemChoice": any }, "notes"?: { "itemChoice": any }, "activities"?: { "itemChoice": any } } | { "url"?: string, "description"?: string, "logo"?: string, "employees"?: number, "members"?: { "itemChoice": any } } | { "name"?: string, "body"?: string, "status"?: string, "members"?: { "itemChoice": any }, "activities"?: { "itemChoice": any }, "assigneess"?: string };
 
     /**
      * The ID of the member
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string;
 
     /**
      * The body of the note

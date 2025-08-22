@@ -4,8 +4,6 @@
 export const name = "kafkaTrigger" as const;
 export const description = "Consume messages from a Kafka topic" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Kafka Trigger"} as const;
-export const credentials = [{"name":"kafka","required":true}] as const
 
 /**
  * Consume messages from a Kafka topic

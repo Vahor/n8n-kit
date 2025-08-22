@@ -4,8 +4,6 @@
 export const name = "discourse" as const;
 export const description = "Consume Discourse API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Discourse"} as const;
-export const credentials = [{"name":"discourseApi","required":true}] as const
 
 /**
  * Consume Discourse API
@@ -21,12 +19,12 @@ export interface DiscourseNodeParameters {
      * Choose an operation
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "update" | "get" | "add" | "remove";
+    readonly operation?: "create" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "add" | "remove";
 
     /**
      * Name of the category
      */
-    readonly name?: string;
+    readonly name?: string | string | string | string | string;
 
     /**
      * Color of the category
@@ -43,14 +41,14 @@ export interface DiscourseNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * ID of the category
@@ -60,12 +58,12 @@ export interface DiscourseNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "color"?: any, "textColor"?: any, "edit_reason"?: string, "cooked"?: boolean };
+    readonly updateFields?: { "color"?: any, "textColor"?: any } | { "edit_reason"?: string, "cooked"?: boolean };
 
     /**
      * ID of the group to update
      */
-    readonly groupId?: string;
+    readonly groupId?: string | string | string;
 
     /**
      * Title of the post
@@ -75,17 +73,17 @@ export interface DiscourseNodeParameters {
     /**
      * Content of the post
      */
-    readonly content?: string;
+    readonly content?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "category"?: string, "reply_to_post_number"?: string, "topic_id"?: string, "active"?: boolean, "approved"?: boolean };
+    readonly additionalFields?: { "category"?: string, "reply_to_post_number"?: string, "topic_id"?: string } | { "active"?: boolean, "approved"?: boolean };
 
     /**
      * ID of the post
      */
-    readonly postId?: string;
+    readonly postId?: string | string;
 
     /**
      * Email of the user to create
@@ -95,7 +93,7 @@ export interface DiscourseNodeParameters {
     /**
      * The username of the user to create
      */
-    readonly username?: string;
+    readonly username?: string | string;
 
     /**
      * The password of the user to create
@@ -127,7 +125,7 @@ export interface DiscourseNodeParameters {
     /**
      * Usernames to add to group. Multiples can be defined separated by comma.
      */
-    readonly usernames?: string;
+    readonly usernames?: string | string;
 
 
 }

@@ -4,8 +4,6 @@
 export const name = "clockifyTrigger" as const;
 export const description = "Listens to Clockify events" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Clockify Trigger"} as const;
-export const credentials = [{"name":"clockifyApi","required":true}] as const
 
 /**
  * Listens to Clockify events

@@ -4,8 +4,6 @@
 export const name = "orbit" as const;
 export const description = "Consume Orbit API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Orbit"} as const;
-export const credentials = [{"name":"orbitApi","required":true}] as const
 
 /**
  * Consume Orbit API
@@ -24,18 +22,18 @@ export interface OrbitNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "lookup" | "update";
+    readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "getAll" | "update" | "create" | "getAll" | "delete";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: "Deprecated"
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
-    readonly workspaceId?: string;
+    readonly workspaceId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      */
-    readonly memberId?: string;
+    readonly memberId?: string | string | string | string | string | string | string | string | string;
 
     /**
      */
@@ -44,29 +42,29 @@ export interface OrbitNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "activityType"?: string, "description"?: string, "key"?: string, "link"?: string, "linkText"?: string, "occurredAt"?: string, "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string, "publishedAt"?: string };
+    readonly additionalFields?: { "activityType"?: string, "description"?: string, "key"?: string, "link"?: string, "linkText"?: string, "occurredAt"?: string } | { "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string } | { "publishedAt"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "memberId"?: string };
+    readonly filters?: { "memberId"?: string } | { "memberId"?: string };
 
     /**
      * By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically.
      */
-    readonly resolveIdentities?: boolean;
+    readonly resolveIdentities?: boolean | boolean;
 
     /**
      * Default: {}
@@ -115,7 +113,7 @@ export interface OrbitNodeParameters {
 
     /**
      */
-    readonly note?: string;
+    readonly note?: string | string;
 
     /**
      */

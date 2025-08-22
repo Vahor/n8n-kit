@@ -4,8 +4,6 @@
 export const name = "linearTrigger" as const;
 export const description = "Starts the workflow when Linear events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Linear Trigger"} as const;
-export const credentials = [{"name":"linearApi","required":true,"testedBy":"linearApiTest","displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"linearOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Starts the workflow when Linear events occur

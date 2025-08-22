@@ -4,8 +4,6 @@
 export const name = "sendy" as const;
 export const description = "Consume Sendy API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Sendy"} as const;
-export const credentials = [{"name":"sendyApi","required":true}] as const
 
 /**
  * Consume Sendy API
@@ -64,17 +62,17 @@ export interface SendyNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "excludeListIds"?: string, "excludeSegmentIds"?: string, "listIds"?: string, "plainText"?: string, "queryString"?: string, "segmentIds"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean, "country"?: string, "gdpr"?: boolean, "hp"?: boolean, "ipaddress"?: string, "name"?: string, "referrer"?: string, "silent"?: boolean };
+    readonly additionalFields?: { "excludeListIds"?: string, "excludeSegmentIds"?: string, "listIds"?: string, "plainText"?: string, "queryString"?: string, "segmentIds"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean } | { "country"?: string, "gdpr"?: boolean, "hp"?: boolean, "ipaddress"?: string, "name"?: string, "referrer"?: string, "silent"?: boolean };
 
     /**
      * Email address of the subscriber
      */
-    readonly email?: string;
+    readonly email?: string | string | string | string;
 
     /**
      * The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID.
      */
-    readonly listId?: string;
+    readonly listId?: string | string | string | string | string;
 
 
 }

@@ -4,8 +4,6 @@
 export const name = "actionNetwork" as const;
 export const description = "Consume the Action Network API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Action Network"} as const;
-export const credentials = [{"name":"actionNetworkApi","required":true}] as const
 
 /**
  * Consume the Action Network API
@@ -20,23 +18,23 @@ export interface ActionNetworkNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll" | "update" | "add" | "remove";
+    readonly operation?: "create" | "get" | "getAll" | "create" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "add" | "remove";
 
     /**
      * ID of the person to create an attendance for
      */
-    readonly personId?: string;
+    readonly personId?: string | string | string | string | string;
 
     /**
      * ID of the event to create an attendance for
      */
-    readonly eventId?: string;
+    readonly eventId?: string | string | string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * ID of the attendance to retrieve
@@ -46,29 +44,29 @@ export interface ActionNetworkNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number;
 
     /**
      * Source where the event originated
      */
-    readonly originSystem?: string;
+    readonly originSystem?: string | string;
 
     /**
      * Title of the event to create
      */
-    readonly title?: string;
+    readonly title?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "browser_url"?: string, "description"?: string, "end_date"?: string, "featured_image_url"?: string, "instructions"?: string, "location"?: { "postal_addresses_fields": any }, "name"?: string, "start_date"?: string, "family_name"?: string, "given_name"?: string, "languages_spoken"?: "da" | "nl" | "en" | "fi" | "fr" | "de" | "hu" | "id" | "ja" | "pt" | "br" | "ru" | "es" | "sv" | "tr" | "cy", "phone_numbers"?: { "phone_numbers_fields": any }, "postal_addresses"?: { "postal_addresses_fields": any }, "petition_text"?: string, "target"?: string, "comments"?: string };
+    readonly additionalFields?: { "browser_url"?: string, "description"?: string, "end_date"?: string, "featured_image_url"?: string, "instructions"?: string, "location"?: { "postal_addresses_fields": any }, "name"?: string, "start_date"?: string } | { "family_name"?: string, "given_name"?: string, "languages_spoken"?: "da" | "nl" | "en" | "fi" | "fr" | "de" | "hu" | "id" | "ja" | "pt" | "br" | "ru" | "es" | "sv" | "tr" | "cy", "phone_numbers"?: { "phone_numbers_fields": any }, "postal_addresses"?: { "postal_addresses_fields": any } } | { "browser_url"?: string, "featured_image_url"?: string, "name"?: string, "petition_text"?: string, "target"?: string } | { "comments"?: string };
 
     /**
      * Person’s email addresses
@@ -79,17 +77,17 @@ export interface ActionNetworkNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "family_name"?: string, "given_name"?: string, "languages_spoken"?: "da" | "nl" | "en" | "fi" | "fr" | "de" | "hu" | "id" | "ja" | "pt" | "br" | "ru" | "es" | "sv" | "tr" | "cy", "phone_numbers"?: { "phone_numbers_fields": any }, "postal_addresses"?: { "postal_addresses_fields": any }, "browser_url"?: string, "featured_image_url"?: string, "name"?: string, "petition_text"?: string, "target"?: string, "comments"?: string };
+    readonly updateFields?: { "family_name"?: string, "given_name"?: string, "languages_spoken"?: "da" | "nl" | "en" | "fi" | "fr" | "de" | "hu" | "id" | "ja" | "pt" | "br" | "ru" | "es" | "sv" | "tr" | "cy", "phone_numbers"?: { "phone_numbers_fields": any }, "postal_addresses"?: { "postal_addresses_fields": any } } | { "browser_url"?: string, "featured_image_url"?: string, "name"?: string, "petition_text"?: string, "target"?: string } | { "comments"?: string };
 
     /**
      * ID of the petition to retrieve
      */
-    readonly petitionId?: string;
+    readonly petitionId?: string | string | string | string | string | string;
 
     /**
      * ID of the signature to retrieve
      */
-    readonly signatureId?: string;
+    readonly signatureId?: string | string;
 
     /**
      * Name of the tag to create
@@ -99,7 +97,7 @@ export interface ActionNetworkNodeParameters {
     /**
      * ID of the tag to retrieve
      */
-    readonly tagId?: string;
+    readonly tagId?: string | string | string;
 
     /**
      * ID of the tagging to remove. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

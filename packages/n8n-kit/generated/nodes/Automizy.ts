@@ -4,8 +4,6 @@
 export const name = "automizy" as const;
 export const description = "Consume Automizy API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Automizy"} as const;
-export const credentials = [{"name":"automizyApi","required":true}] as const
 
 /**
  * Consume Automizy API
@@ -24,40 +22,40 @@ export interface AutomizyNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The email address of the contact
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getLists"}
      */
-    readonly listId?: string;
+    readonly listId?: string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: string[], "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string };
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: string[] } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string };
 
     /**
      * Can be ID or email
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
@@ -66,7 +64,7 @@ export interface AutomizyNodeParameters {
 
     /**
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
 
 }

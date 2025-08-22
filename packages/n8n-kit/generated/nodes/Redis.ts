@@ -4,8 +4,6 @@
 export const name = "redis" as const;
 export const description = "Get, send and update data in Redis" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Redis"} as const;
-export const credentials = [{"name":"redis","required":true,"testedBy":"redisConnectionTest"}] as const
 
 /**
  * Get, send and update data in Redis
@@ -20,36 +18,36 @@ export interface RedisNodeParameters {
     /**
      * Name of the key to delete from Redis
      */
-    readonly key?: string;
+    readonly key?: string | string | string | string;
 
     /**
      * Name of the property to write received data to. Supports dot-notation. Example: "data.person[0].name".
      * Default: "propertyName"
      */
-    readonly propertyName?: string;
+    readonly propertyName?: string | string;
 
     /**
      * The type of the key to get
      * Default: "automatic"
      */
-    readonly keyType?: "automatic" | "hash" | "list" | "sets" | "string";
+    readonly keyType?: "automatic" | "hash" | "list" | "sets" | "string" | "automatic" | "hash" | "list" | "sets" | "string";
 
     /**
      * Default: {}
      */
-    readonly options?: { "dotNotation"?: boolean };
+    readonly options?: { "dotNotation"?: boolean } | { "dotNotation"?: boolean };
 
     /**
      * Whether to set a timeout on key
      */
-    readonly expire?: boolean;
+    readonly expire?: boolean | boolean;
 
     /**
      * Number of seconds before key expiration
      * Default: 60
      * Type options: {"minValue":1}
      */
-    readonly ttl?: number;
+    readonly ttl?: number | number;
 
     /**
      * The key pattern for the keys to return
@@ -81,7 +79,7 @@ export interface RedisNodeParameters {
     /**
      * Data to publish
      */
-    readonly messageData?: string;
+    readonly messageData?: string | string;
 
     /**
      * Name of the list in Redis

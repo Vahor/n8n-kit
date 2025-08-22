@@ -4,8 +4,6 @@
 export const name = "mqtt" as const;
 export const description = "Push messages to MQTT" as const;
 export const version = 1 as const;
-export const defaults = {"name":"MQTT"} as const;
-export const credentials = [{"name":"mqtt","required":true,"testedBy":"mqttConnectionTest"}] as const
 
 /**
  * Push messages to MQTT

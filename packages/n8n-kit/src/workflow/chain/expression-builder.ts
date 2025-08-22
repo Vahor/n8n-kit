@@ -1,5 +1,5 @@
 import type { JoinKeys, TypeOfField } from "../../utils/types";
-import type { ChainContext } from "./chain";
+import type { ChainContext, ExtractChainContext } from "./chain";
 import { expr } from "./expression";
 
 type ExtractNodeId<T extends string> =
@@ -34,7 +34,10 @@ type SubPath<T extends ChainContext, Path extends string> = ExtractStartingWith<
 	Path
 >;
 
-export class ExpressionBuilder<T extends ChainContext, Path extends string> {
+export class ExpressionBuilder<
+	T extends ChainContext = any,
+	Path extends string = any,
+> {
 	private readonly path: Path;
 	private readonly methodCalls: string[] = [];
 
@@ -92,7 +95,7 @@ export class ExpressionBuilder<T extends ChainContext, Path extends string> {
 		let baseExpression: string;
 
 		let path = this.getPath() as string;
-		if (!path.startsWith("[")) path = `.${path}`;
+		if (!path.startsWith("[") && path.length > 0) path = `.${path}`;
 
 		if (nodeId === "json") {
 			baseExpression = `$json${path}`;
@@ -151,3 +154,21 @@ export function $$<T extends ChainContext>() {
 export type ExpressionBuilderProvider<CC extends ChainContext> = ReturnType<
 	typeof $$<CC>
 >;
+
+export type $Selector<T> = ExpressionBuilderProvider<ExtractChainContext<T>>;
+
+export const recursiveExpression = (value: Record<string, any>) => {
+	const entries = Object.entries(value);
+	for (let i = 0; i < entries.length; i++) {
+		const [key, value] = entries[i]!;
+		entries[i] = [
+			key,
+			value instanceof ExpressionBuilder
+				? value.toExpression().slice(1)
+				: typeof value === "object"
+					? recursiveExpression(value)
+					: value,
+		];
+	}
+	return Object.fromEntries(entries);
+};

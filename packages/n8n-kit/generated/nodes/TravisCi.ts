@@ -4,8 +4,6 @@
 export const name = "travisCi" as const;
 export const description = "Consume TravisCI API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"TravisCI"} as const;
-export const credentials = [{"name":"travisCiApi","required":true}] as const
 
 /**
  * Consume TravisCI API
@@ -25,12 +23,12 @@ export interface TravisCiNodeParameters {
     /**
      * Value uniquely identifying the build
      */
-    readonly buildId?: string;
+    readonly buildId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "include"?: string, "order"?: "asc" | "desc", "sortBy"?: "created_at" | "finished_at" | "id" | "number" | "started_at", "message"?: string, "mergeMode"?: "deep_merge" | "deep_merge_append" | "deep_merge_prepend" | "merge" | "replace" };
+    readonly additionalFields?: { "include"?: string } | { "include"?: string, "order"?: "asc" | "desc", "sortBy"?: "created_at" | "finished_at" | "id" | "number" | "started_at" } | { "message"?: string, "mergeMode"?: "deep_merge" | "deep_merge_append" | "deep_merge_prepend" | "merge" | "replace" };
 
     /**
      * Whether to return all results or only up to a given limit

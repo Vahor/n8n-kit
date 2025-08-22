@@ -4,8 +4,6 @@
 export const name = "securityScorecard" as const;
 export const description = "Consume SecurityScorecard API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"SecurityScorecard"} as const;
-export const credentials = [{"name":"securityScorecardApi","required":true}] as const
 
 /**
  * Consume SecurityScorecard API
@@ -20,12 +18,12 @@ export interface SecurityScorecardNodeParameters {
     /**
      * Default: "getFactor"
      */
-    readonly operation?: "getFactor" | "getFactorHistorical" | "getHistoricalScore" | "getScorecard" | "getScorePlan" | "getScore" | "create" | "delete" | "getAll" | "update" | "add" | "remove" | "download" | "generate";
+    readonly operation?: "getFactor" | "getFactorHistorical" | "getHistoricalScore" | "getScorecard" | "getScorePlan" | "getFactor" | "getFactorHistorical" | "getScore" | "create" | "create" | "delete" | "getAll" | "update" | "add" | "getAll" | "remove" | "download" | "generate" | "getAll";
 
     /**
      * Primary identifier of a company or scorecard, i.e. domain.
      */
-    readonly scorecardIdentifier?: string;
+    readonly scorecardIdentifier?: string | string;
 
     /**
      * Score target
@@ -35,30 +33,30 @@ export interface SecurityScorecardNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "severity"?: string, "severity_in"?: string, "grade"?: string, "industry"?: string, "issueType"?: string, "status"?: "active" | "inactive", "vulnerability"?: string };
+    readonly filters?: { "severity"?: string, "severity_in"?: string } | { "grade"?: string, "industry"?: string, "issueType"?: string, "status"?: "active" | "inactive", "vulnerability"?: string };
 
     /**
      * Default: {}
      */
-    readonly options?: { "date_from"?: string, "date_to"?: string, "timing"?: "daily" | "weekly" | "monthly", "from"?: string, "to"?: string, "format"?: "csv" | "pdf", "countries"?: string, "ips"?: string, "subdomains"?: string };
+    readonly options?: { "date_from"?: string, "date_to"?: string, "timing"?: "daily" | "weekly" | "monthly" } | { "from"?: string, "to"?: string } | { "format"?: "csv" | "pdf" } | { "countries"?: string, "format"?: "csv" | "pdf", "ips"?: string, "subdomains"?: string };
 
     /**
      * Default: "food"
@@ -89,7 +87,7 @@ export interface SecurityScorecardNodeParameters {
 
     /**
      */
-    readonly portfolioId?: string;
+    readonly portfolioId?: string | string | string;
 
     /**
      * Name of the portfolio

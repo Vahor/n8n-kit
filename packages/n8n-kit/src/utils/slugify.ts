@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 import slugify from "slugify";
 
-const internalIdentifiers = ["json", "~ids"];
+const internalIdentifiers = ["json"];
 
 export const slugifyIdentifier = (str: string) =>
 	slugify(str, { lower: false, trim: true });

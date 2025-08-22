@@ -4,8 +4,6 @@
 export const name = "telegram" as const;
 export const description = "Sends data to Telegram" as const;
 export const version = 1.2 as const;
-export const defaults = {"name":"Telegram"} as const;
-export const credentials = [{"name":"telegramApi","required":true}] as const
 
 /**
  * Sends data to Telegram
@@ -25,22 +23,22 @@ export interface TelegramNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendAndWait" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
+    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "get" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendAndWait" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
 
     /**
      * Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot
      */
-    readonly chatId?: string;
+    readonly chatId?: string | string | string;
 
     /**
      * Unique identifier of the message to delete
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "disable_notification"?: boolean, "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string, "mimeType"?: string, "appendAttribution"?: boolean, "caption"?: string, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
+    readonly additionalFields?: { "disable_notification"?: boolean } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "mimeType"?: string } | { "appendAttribution"?: boolean, "caption"?: string, "disable_notification"?: boolean, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
 
     /**
      * Unique identifier of the target user
@@ -60,7 +58,7 @@ export interface TelegramNodeParameters {
     /**
      * Unique identifier for the query to be answered
      */
-    readonly queryId?: string;
+    readonly queryId?: string | string;
 
     /**
      * A JSON-serialized array of results for the inline query
@@ -104,12 +102,12 @@ export interface TelegramNodeParameters {
      * Additional interface options
      * Default: "none"
      */
-    readonly replyMarkup?: "none" | "inlineKeyboard" | "forceReply" | "replyKeyboard" | "replyKeyboardRemove";
+    readonly replyMarkup?: "none" | "inlineKeyboard" | "forceReply" | "inlineKeyboard" | "none" | "replyKeyboard" | "replyKeyboardRemove";
 
     /**
      * Animation to send. Pass a file_id to send an animation that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get an animation from the Internet.
      */
-    readonly file?: string;
+    readonly file?: string | string | string | string | string | string;
 
     /**
      * Type of action to broadcast. Choose one, depending on what the user is about to receive. The status is set for 5 seconds or less (when a message arrives from your bot).
@@ -205,7 +203,7 @@ export interface TelegramNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
+    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
 
 }

@@ -4,8 +4,6 @@
 export const name = "stripe" as const;
 export const description = "Consume the Stripe API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Stripe"} as const;
-export const credentials = [{"name":"stripeApi","required":true}] as const
 
 /**
  * Consume the Stripe API
@@ -20,12 +18,12 @@ export interface StripeNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "add" | "remove" | "create" | "getAll" | "update" | "delete";
+    readonly operation?: "get" | "add" | "get" | "remove" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "create";
 
     /**
      * ID of the customer to be associated with this card
      */
-    readonly customerId?: string;
+    readonly customerId?: string | string | string | string | string | string | string | string | string;
 
     /**
      * Token representing sensitive card information
@@ -41,19 +39,19 @@ export interface StripeNodeParameters {
     /**
      * ID of the source to retrieve
      */
-    readonly sourceId?: string;
+    readonly sourceId?: string | string | string;
 
     /**
      * Amount in cents to be collected for this charge, e.g. enter <code>100</code> for $1.00
      * Type options: {"minValue":0,"maxValue":99999999}
      */
-    readonly amount?: number;
+    readonly amount?: number | number;
 
     /**
      * Three-letter ISO currency code, e.g. <code>USD</code> or <code>EUR</code>. It must be a <a href="https://stripe.com/docs/currencies">Stripe-supported currency</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCurrencies"}
      */
-    readonly currency?: string;
+    readonly currency?: string | string | string;
 
     /**
      * ID of the customer's payment source to be charged
@@ -63,29 +61,29 @@ export interface StripeNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any }, "address"?: { "details": any }, "email"?: string, "phone"?: string, "statement_descriptor"?: string };
+    readonly additionalFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any } } | { "address"?: { "details": any }, "description"?: string, "email"?: string, "metadata"?: { "metadataProperties": any }, "phone"?: string, "shipping"?: { "shippingProperties": any } } | { "metadata"?: { "metadataProperties": any }, "statement_descriptor"?: string };
 
     /**
      * ID of the charge to retrieve
      */
-    readonly chargeId?: string;
+    readonly chargeId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any }, "address"?: { "details": any }, "email"?: string, "name"?: string, "phone"?: string };
+    readonly updateFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any } } | { "address"?: { "details": any }, "description"?: string, "email"?: string, "metadata"?: { "metadataProperties": any }, "name"?: string, "phone"?: string, "shipping"?: { "shippingProperties": any } };
 
     /**
      * How long the discount will be in effect

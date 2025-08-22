@@ -4,8 +4,6 @@
 export const name = "venafiTlsProtectDatacenter" as const;
 export const description = "Consume Venafi TLS Protect Datacenter" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Venafi TLS Protect Datacenter"} as const;
-export const credentials = [{"name":"venafiTlsProtectDatacenterApi","required":true}] as const
 
 /**
  * Consume Venafi TLS Protect Datacenter
@@ -20,7 +18,7 @@ export interface VenafiTlsProtectDatacenterNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "download" | "get" | "getMany" | "renew";
+    readonly operation?: "create" | "delete" | "download" | "get" | "getMany" | "renew" | "get";
 
     /**
      * The folder DN for the new certificate. If the value is missing, the folder name is the system default. If no system default is configured
@@ -35,7 +33,7 @@ export interface VenafiTlsProtectDatacenterNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "Approvers"?: string, "CADN"?: string, "CertificateType"?: "Code Signing" | "Device" | "Server" | "User", "City"?: string, "Contacts"?: string, "Country"?: string, "customFieldsUi"?: { "customFielsValues": any }, "CreatedBy"?: string, "Devices"?: { "applications"?: string, "CloudInstanceID"?: string, "CloudRegion"?: string, "CloudService"?: string, "ConcurrentConnectionLimit"?: number, "Contacts"?: string, "CreatedBy"?: string, "CredentialDN"?: string, "description"?: string, "EnforceKnownHost"?: boolean, "host"?: string, "ObjectName"?: string, "port"?: number, "SudoCredentialDN"?: number, "TempDirectory"?: string, "TrustedFingerprint"?: string, "UseSudo"?: boolean }, "DisableAutomaticRenewal"?: boolean, "EllipticCurve"?: "P256" | "P384" | "P521", "KeyAlgorithm"?: "RSA" | "ECC", "KeyBitSize"?: number, "ManagementType"?: "Enrollment" | "Monitoring" | "Provisioning" | "Unassigned", "origin"?: string, "Organization"?: string, "OrganizationalUnit"?: string, "PKCS10"?: string, "Reenable"?: boolean, "SetWorkToDo"?: boolean, "State"?: string, "SubjectAltNamesUi"?: { "SubjectAltNamesValues": any }, "IncludeChain"?: boolean, "RootFirstOrder"?: string, "KeystorePassword"?: string };
+    readonly additionalFields?: { "Approvers"?: string, "CADN"?: string, "CertificateType"?: "Code Signing" | "Device" | "Server" | "User", "City"?: string, "Contacts"?: string, "Country"?: string, "customFieldsUi"?: { "customFielsValues": any }, "CreatedBy"?: string, "Devices"?: { "applications"?: string, "CloudInstanceID"?: string, "CloudRegion"?: string, "CloudService"?: string, "ConcurrentConnectionLimit"?: number, "Contacts"?: string, "CreatedBy"?: string, "CredentialDN"?: string, "description"?: string, "EnforceKnownHost"?: boolean, "host"?: string, "ObjectName"?: string, "port"?: number, "SudoCredentialDN"?: number, "TempDirectory"?: string, "TrustedFingerprint"?: string, "UseSudo"?: boolean }, "DisableAutomaticRenewal"?: boolean, "EllipticCurve"?: "P256" | "P384" | "P521", "KeyAlgorithm"?: "RSA" | "ECC", "KeyBitSize"?: number, "ManagementType"?: "Enrollment" | "Monitoring" | "Provisioning" | "Unassigned", "origin"?: string, "Organization"?: string, "OrganizationalUnit"?: string, "PKCS10"?: string, "Reenable"?: boolean, "SetWorkToDo"?: boolean, "State"?: string, "SubjectAltNamesUi"?: { "SubjectAltNamesValues": any } } | { "IncludeChain"?: boolean, "RootFirstOrder"?: string, "KeystorePassword"?: string } | { "PKCS10"?: string, "Reenable"?: boolean } | { "PKCS10"?: string };
 
     /**
      */

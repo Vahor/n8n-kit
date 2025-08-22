@@ -39,14 +39,19 @@ export class StickyNote extends BaseNode {
 		public readonly props: StickyNoteProps,
 	) {
 		super(id);
+		this.size = {
+			width: props.width,
+			height: props.height,
+		};
 		this.position = props.position;
 	}
 
 	getParameters() {
 		return {
 			content: this.props.content,
-			height: this.props.height,
-			width: this.props.width,
+			height: this.size.height,
+			width: this.size.width,
+
 			color: this.props.color ? StickyNoteColors[this.props.color] : 1,
 		};
 	}

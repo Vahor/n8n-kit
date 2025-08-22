@@ -4,7 +4,6 @@
 export const name = "readPDF" as const;
 export const description = "Reads a PDF and extracts its content" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Read PDF","color":"#003355"} as const;
 
 /**
  * Reads a PDF and extracts its content

@@ -4,7 +4,6 @@
 export const name = "e2eTest" as const;
 export const description = "Dummy node used for e2e testing" as const;
 export const version = 1 as const;
-export const defaults = {"name":"E2E Test"} as const;
 
 /**
  * Dummy node used for e2e testing

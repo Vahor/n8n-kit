@@ -4,8 +4,6 @@
 export const name = "totp" as const;
 export const description = "Generate a time-based one-time password" as const;
 export const version = 1 as const;
-export const defaults = {"name":"TOTP"} as const;
-export const credentials = [{"name":"totpApi","required":true}] as const
 
 /**
  * Generate a time-based one-time password

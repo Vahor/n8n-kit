@@ -4,8 +4,6 @@
 export const name = "nextCloud" as const;
 export const description = "Access data on Nextcloud" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Nextcloud"} as const;
-export const credentials = [{"name":"nextCloudApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"nextCloudOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Access data on Nextcloud
@@ -25,22 +23,22 @@ export interface NextCloudNodeParameters {
     /**
      * Default: "upload"
      */
-    readonly operation?: "copy" | "delete" | "download" | "move" | "share" | "upload" | "create" | "list" | "get" | "getAll" | "update";
+    readonly operation?: "copy" | "delete" | "download" | "move" | "share" | "upload" | "copy" | "create" | "delete" | "list" | "move" | "share" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The path of file or folder to copy. The path should start with "/".
      */
-    readonly path?: string;
+    readonly path?: string | string | string | string | string | string | string | string;
 
     /**
      * The destination path of file or folder. The path should start with "/".
      */
-    readonly toPath?: string;
+    readonly toPath?: string | string;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      */
@@ -64,7 +62,7 @@ export interface NextCloudNodeParameters {
     /**
      * The Email address to share with
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * The ID of the group to share with
@@ -79,12 +77,12 @@ export interface NextCloudNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "password"?: string, "permissions"?: "31" | "4" | "8" | "1" | "2", "search"?: string, "offset"?: number };
+    readonly options?: { "password"?: string, "permissions"?: "31" | "4" | "8" | "1" | "2" } | { "search"?: string, "offset"?: number };
 
     /**
      * Username the user will have
      */
-    readonly userId?: string;
+    readonly userId?: string | string;
 
     /**
      * Default: {}

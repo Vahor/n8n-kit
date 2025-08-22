@@ -1,4 +1,5 @@
 import { checkInternalIdentifier } from "../../utils/slugify";
+import { Group } from "../group";
 import type {
 	ConnectionOptions,
 	IChainable,
@@ -18,8 +19,7 @@ export abstract class State<
 	public readonly startState: State;
 	public abstract readonly endStates: INextable[];
 
-	private readonly incomingStates: State[] = [];
-	private readonly nextStates: State[] = [];
+	private readonly nextStates: IChainable[] = [];
 
 	// from id to <string, index>. If missing 0
 	private readonly connectionsOptions: Record<string, ConnectionOptions> = {};
@@ -38,24 +38,26 @@ export abstract class State<
 		};
 	}
 
-	public addNext(state: State, connectionOptions?: ConnectionOptions) {
+	public addNext(state: IChainable, connectionOptions?: ConnectionOptions) {
+		if (state instanceof Group) {
+			const nodes = state.chain.toList();
+			if (nodes.length === 0) {
+				throw new Error("Group must have at least one node");
+			}
+			// Add the group just for the sticky layout
+			this.addNext(nodes[0]!, connectionOptions);
+			return;
+		}
+
 		this.nextStates.push(state);
-		state.addIncoming(this);
 
 		if (connectionOptions) {
 			this.connectionsOptions[state.id] = connectionOptions;
 		}
 	}
 
-	private addIncoming(source: State) {
-		if (this.incomingStates.includes(source)) {
-			return;
-		}
-		this.incomingStates.push(source);
-	}
-
-	public listOutgoing(): State[] {
-		const ret: State[] = [];
+	public listOutgoing(): IChainable[] {
+		const ret: IChainable[] = [];
 		for (const state of this.nextStates.values()) {
 			ret.push(state);
 		}

@@ -4,8 +4,6 @@
 export const name = "salesforceTrigger" as const;
 export const description = "Fetches data from Salesforce and starts the workflow on specified polling intervals." as const;
 export const version = 1 as const;
-export const defaults = {"name":"Salesforce Trigger"} as const;
-export const credentials = [{"name":"salesforceOAuth2Api","required":true}] as const
 
 /**
  * Fetches data from Salesforce and starts the workflow on specified polling intervals.

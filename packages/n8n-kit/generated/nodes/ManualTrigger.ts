@@ -4,7 +4,6 @@
 export const name = "manualTrigger" as const;
 export const description = "Runs the flow on clicking a button in n8n" as const;
 export const version = 1 as const;
-export const defaults = {"name":"When clicking ‘Execute workflow’","color":"#909298"} as const;
 
 /**
  * Runs the flow on clicking a button in n8n

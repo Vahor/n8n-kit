@@ -39,7 +39,7 @@ export abstract class BaseNode<
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
-	public groupId?: string;
+	public groupIds: string[] = [];
 
 	abstract getParameters(): object;
 	public getCredentials():
@@ -65,15 +65,8 @@ export abstract class BaseNode<
 	}
 
 	public "~setGroup"(groupId: string) {
-		if (this.groupId) {
-			if (this.groupId === groupId) {
-				return;
-			}
-			throw new Error(
-				`Node '${this.getPath()}' is already in group '${this.groupId}' cannot move to '${groupId}'`,
-			);
-		}
-		this.groupId = groupId;
+		if (this.groupIds.includes(groupId)) return;
+		this.groupIds.push(groupId);
 	}
 
 	public "~validate"(): void {}

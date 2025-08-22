@@ -1,6 +1,7 @@
-import logger from "@vahor/n8n-kit/logger";
-
+Error.stackTraceLimit = Infinity;
 process.env.NODE_ENV = process.env.NODE_ENV || "production";
+
+import logger from "@vahor/n8n-kit/logger";
 
 import chalk from "chalk";
 import yargs from "yargs";

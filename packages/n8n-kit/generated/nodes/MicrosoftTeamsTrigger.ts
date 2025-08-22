@@ -4,8 +4,6 @@
 export const name = "microsoftTeamsTrigger" as const;
 export const description = "Triggers workflows in n8n based on events from Microsoft Teams, such as new messages or team updates, using specified configurations." as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft Teams Trigger"} as const;
-export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const
 
 /**
  * Triggers workflows in n8n based on events from Microsoft Teams, such as new messages or team updates, using specified configurations.

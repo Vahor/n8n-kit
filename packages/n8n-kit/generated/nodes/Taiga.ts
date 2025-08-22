@@ -4,8 +4,6 @@
 export const name = "taiga" as const;
 export const description = "Consume Taiga API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Taiga"} as const;
-export const credentials = [{"name":"taigaApi","required":true}] as const
 
 /**
  * Consume Taiga API
@@ -20,64 +18,64 @@ export interface TaigaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * ID of the project to which the epic belongs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly projectId?: string;
+    readonly projectId?: string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      */
-    readonly subject?: string;
+    readonly subject?: string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: any, "description"?: string, "is_blocked"?: boolean, "tags"?: string[], "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "type"?: string, "taskboard_order"?: number, "user_story"?: string, "us_order"?: number, "backlog_order"?: number, "kanban_order"?: number, "sprint_order"?: number };
+    readonly additionalFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: any, "description"?: string, "is_blocked"?: boolean, "tags"?: string[] } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "tags"?: string[], "type"?: string } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "status"?: string, "tags"?: string[], "taskboard_order"?: number, "user_story"?: string, "us_order"?: number } | { "assigned_to"?: string, "backlog_order"?: number, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "kanban_order"?: number, "milestone"?: string, "sprint_order"?: number, "status"?: string, "tags"?: string[], "type"?: string };
 
     /**
      * ID of the epic to delete
      */
-    readonly epicId?: string;
+    readonly epicId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "assigned_to"?: string, "statusIsClosed"?: boolean, "orderBy"?: "assigned_to" | "created_date" | "modified_date" | "owner" | "priority" | "severity" | "status" | "subject" | "type", "owner"?: string, "priority"?: string, "role"?: string, "severity"?: string, "status"?: string, "tags"?: string[], "type"?: string, "milestone"?: string, "userStory"?: string, "epic"?: string, "statusIsArchived"?: boolean };
+    readonly filters?: { "assigned_to"?: string, "statusIsClosed"?: boolean } | { "assigned_to"?: string, "orderBy"?: "assigned_to" | "created_date" | "modified_date" | "owner" | "priority" | "severity" | "status" | "subject" | "type", "owner"?: string, "priority"?: string, "role"?: string, "severity"?: string, "status"?: string, "tags"?: string[], "type"?: string } | { "assigned_to"?: string, "statusIsClosed"?: boolean, "milestone"?: string, "owner"?: string, "role"?: string, "status"?: string, "tags"?: string[], "userStory"?: string } | { "assigned_to"?: string, "epic"?: string, "statusIsClosed"?: boolean, "statusIsArchived"?: boolean, "milestone"?: string, "role"?: string, "status"?: string, "tags"?: string[] };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: any, "description"?: string, "is_blocked"?: boolean, "subject"?: string, "tags"?: string[], "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "type"?: string, "user_story"?: string, "us_order"?: number, "taskboard_order"?: number, "backlog_order"?: number, "kanban_order"?: number, "sprint_order"?: number };
+    readonly updateFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: any, "description"?: string, "is_blocked"?: boolean, "subject"?: string, "tags"?: string[] } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "subject"?: string, "tags"?: string[], "type"?: string } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "status"?: string, "subject"?: string, "user_story"?: string, "us_order"?: number, "tags"?: string[], "taskboard_order"?: number } | { "assigned_to"?: string, "backlog_order"?: number, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "kanban_order"?: number, "milestone"?: string, "subject"?: string, "sprint_order"?: number, "status"?: string, "tags"?: string[], "type"?: string };
 
     /**
      * ID of the issue to delete
      */
-    readonly issueId?: string;
+    readonly issueId?: string | string | string;
 
     /**
      * ID of the task to delete
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
     /**
      * ID of the user story to delete
      */
-    readonly userStoryId?: string;
+    readonly userStoryId?: string | string | string;
 
 
 }

@@ -4,8 +4,6 @@
 export const name = "pipedriveTrigger" as const;
 export const description = "Starts the workflow when Pipedrive events occur" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Pipedrive Trigger"} as const;
-export const credentials = [{"name":"pipedriveApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"pipedriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}}] as const
 
 /**
  * Starts the workflow when Pipedrive events occur
@@ -27,7 +25,7 @@ export interface PipedriveTriggerNodeParameters {
      * Type of action to receive notifications about
      * Default: "*"
      */
-    readonly action?: "added" | "*" | "deleted" | "merged" | "updated" | "create" | "delete" | "change";
+    readonly action?: "added" | "*" | "deleted" | "merged" | "updated" | "*" | "create" | "delete" | "change";
 
     /**
      * Type of object to receive notifications about

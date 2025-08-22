@@ -4,7 +4,6 @@
 export const name = "aggregate" as const;
 export const description = "Combine a field from many items into a list in a single item" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Aggregate"} as const;
 
 /**
  * Combine a field from many items into a list in a single item

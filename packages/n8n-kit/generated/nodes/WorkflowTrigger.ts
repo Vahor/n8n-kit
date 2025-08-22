@@ -4,7 +4,6 @@
 export const name = "workflowTrigger" as const;
 export const description = "Triggers based on various lifecycle events, like when a workflow is activated" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Workflow Trigger","color":"#ff6d5a"} as const;
 
 /**
  * Triggers based on various lifecycle events, like when a workflow is activated

@@ -4,8 +4,6 @@
 export const name = "azureCosmosDb" as const;
 export const description = "Interact with Azure Cosmos DB API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Azure Cosmos DB"} as const;
-export const credentials = [{"name":"microsoftAzureCosmosDbSharedKeyApi","required":true}] as const
 
 /**
  * Interact with Azure Cosmos DB API
@@ -20,7 +18,7 @@ export interface AzureCosmosDbNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "query" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "query" | "update";
 
     /**
      * Unique identifier for the new container
@@ -36,43 +34,43 @@ export interface AzureCosmosDbNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "indexingPolicy"?: string, "maxThroughput"?: number, "offerThroughput"?: number, "partitionKey"?: string };
+    readonly additionalFields?: { "indexingPolicy"?: string, "maxThroughput"?: number, "offerThroughput"?: number } | { "partitionKey"?: string } | { "partitionKey"?: string } | { "partitionKey"?: string };
 
     /**
      * Select the container you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly container?: any;
+    readonly container?: any | any | any | any | any | any | any | any;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * The item contents as a JSON object
      * Default: "{\n\t\"id\": \"replace_with_new_document_id\"\n}"
      */
-    readonly customProperties?: string;
+    readonly customProperties?: string | string;
 
     /**
      * Select the item to be deleted
      * Default: {"mode":"list","value":""}
      */
-    readonly item?: any;
+    readonly item?: any | any | any;
 
     /**
      * The SQL query to execute. Use $1, $2, $3, etc., to reference the 'Query Parameters' set in the options below.

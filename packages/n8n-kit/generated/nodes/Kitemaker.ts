@@ -4,8 +4,6 @@
 export const name = "kitemaker" as const;
 export const description = "Consume the Kitemaker GraphQL API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Kitemaker"} as const;
-export const credentials = [{"name":"kitemakerApi","required":true}] as const
 
 /**
  * Consume the Kitemaker GraphQL API
@@ -20,19 +18,19 @@ export interface KitemakerNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "create" | "update";
+    readonly operation?: "get" | "getAll" | "getAll" | "create" | "get" | "getAll" | "update";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Title of the work item to create
@@ -44,7 +42,7 @@ export interface KitemakerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
-    readonly spaceId?: string;
+    readonly spaceId?: string | string;
 
     /**
      * ID of the status to set on the item to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -61,7 +59,7 @@ export interface KitemakerNodeParameters {
     /**
      * ID of the work item to retrieve
      */
-    readonly workItemId?: string;
+    readonly workItemId?: string | string;
 
     /**
      * Default: {}

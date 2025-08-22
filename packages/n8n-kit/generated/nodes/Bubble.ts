@@ -4,8 +4,6 @@
 export const name = "bubble" as const;
 export const description = "Consume the Bubble Data API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Bubble"} as const;
-export const credentials = [{"name":"bubbleApi","required":true}] as const
 
 /**
  * Consume the Bubble Data API
@@ -25,18 +23,18 @@ export interface BubbleNodeParameters {
     /**
      * Name of data type of the object to create
      */
-    readonly typeName?: string;
+    readonly typeName?: string | string | string | string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "property": any };
+    readonly properties?: { "property": any } | { "property": any };
 
     /**
      * ID of the object to retrieve
      */
-    readonly objectId?: string;
+    readonly objectId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit

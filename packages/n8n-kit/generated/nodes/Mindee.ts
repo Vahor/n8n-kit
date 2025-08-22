@@ -4,8 +4,6 @@
 export const name = "mindee" as const;
 export const description = "Consume Mindee API" as const;
 export const version = 3 as const;
-export const defaults = {"name":"Mindee"} as const;
-export const credentials = [{"name":"mindeeReceiptApi","required":true,"displayOptions":{"show":{"resource":["receipt"]}}},{"name":"mindeeInvoiceApi","required":true,"displayOptions":{"show":{"resource":["invoice"]}}}] as const
 
 /**
  * Consume Mindee API
@@ -16,7 +14,7 @@ export interface MindeeNodeParameters {
      * Which Mindee API Version to use
      * Default: 1
      */
-    readonly apiVersion?: "1" | "3" | "4";
+    readonly apiVersion?: "1" | "3" | "4" | "1" | "3" | "4" | "1" | "3" | "4";
 
     /**
      * Default: "receipt"

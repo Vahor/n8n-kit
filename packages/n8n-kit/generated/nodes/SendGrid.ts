@@ -4,8 +4,6 @@
 export const name = "sendGrid" as const;
 export const description = "Consume SendGrid API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"SendGrid"} as const;
-export const credentials = [{"name":"sendGridApi","required":true}] as const
 
 /**
  * Consume SendGrid API
@@ -20,29 +18,29 @@ export interface SendGridNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "upsert" | "send";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "upsert" | "delete" | "get" | "getAll" | "send";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Name of the list
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * ID of the list
      */
-    readonly listId?: string;
+    readonly listId?: string | string | string;
 
     /**
      * Whether to delete all contacts on the list
@@ -62,12 +60,12 @@ export interface SendGridNodeParameters {
     /**
      * Primary email for the contact
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "alternateEmails"?: string, "city"?: string, "country"?: string, "firstName"?: string, "lastName"?: string, "postalCode"?: string, "stateProvinceRegion"?: string, "listIdsUi"?: { "listIdValues": any }, "customFieldsUi"?: { "customFieldValues": any }, "attachments"?: string, "bccEmail"?: string, "categories"?: string, "ccEmail"?: string, "enableSandbox"?: boolean, "ipPoolName"?: string, "replyToEmail"?: string, "headers"?: { "details": any }, "sendAt"?: string };
+    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "alternateEmails"?: string, "city"?: string, "country"?: string, "firstName"?: string, "lastName"?: string, "postalCode"?: string, "stateProvinceRegion"?: string, "listIdsUi"?: { "listIdValues": any }, "customFieldsUi"?: { "customFieldValues": any } } | { "attachments"?: string, "bccEmail"?: string, "categories"?: string, "ccEmail"?: string, "enableSandbox"?: boolean, "ipPoolName"?: string, "replyToEmail"?: string, "headers"?: { "details": any }, "sendAt"?: string };
 
     /**
      * ID of the contact. Multiple can be added separated by comma.

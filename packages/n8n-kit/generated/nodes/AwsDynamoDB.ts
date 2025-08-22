@@ -4,8 +4,6 @@
 export const name = "awsDynamoDb" as const;
 export const description = "Consume the AWS DynamoDB API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AWS DynamoDB"} as const;
-export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Consume the AWS DynamoDB API
@@ -49,7 +47,7 @@ export interface AwsDynamoDBNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "eavUi": { "eavValues": any }, "conditionExpression"?: string, "eanUi"?: { "eanValues": any }, "expressionAttributeUi": { "expressionAttributeValues": any }, "projectionExpression"?: string, "readType"?: "stronglyConsistentRead" | "eventuallyConsistentRead" };
+    readonly additionalFields?: { "eavUi": { "eavValues": any }, "conditionExpression"?: string, "eanUi"?: { "eanValues": any } } | { "conditionExpression"?: string, "eanUi"?: { "eanValues": any }, "expressionAttributeUi": { "expressionAttributeValues": any } } | { "projectionExpression"?: string, "eanUi"?: { "eanValues": any }, "readType"?: "stronglyConsistentRead" | "eventuallyConsistentRead" };
 
     /**
      * Use ReturnValues if you want to get the item attributes as they appeared before they were deleted
@@ -62,18 +60,18 @@ export interface AwsDynamoDBNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly keysUi?: { "keyValues": any };
+    readonly keysUi?: { "keyValues": any } | { "keyValues": any };
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean;
 
     /**
      * Default: "ALL_ATTRIBUTES"
      */
-    readonly select?: "ALL_ATTRIBUTES" | "ALL_PROJECTED_ATTRIBUTES" | "SPECIFIC_ATTRIBUTES" | "COUNT";
+    readonly select?: "ALL_ATTRIBUTES" | "ALL_PROJECTED_ATTRIBUTES" | "SPECIFIC_ATTRIBUTES" | "ALL_ATTRIBUTES" | "ALL_PROJECTED_ATTRIBUTES" | "COUNT" | "SPECIFIC_ATTRIBUTES";
 
     /**
      * Whether to do an scan or query. Check <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-query-scan.html" >differences</a>.

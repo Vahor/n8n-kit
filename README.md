@@ -140,7 +140,28 @@ Example:
 
 ```ts
 $("json.classType").toExpression() //  result in "={{ $json.classType }}"
-$("Node Name.nested.property").toExpression() // result in "={{ $('Node Name').item.json.nested.property }}"
+$("['Node Name'].nested.property").toExpression() // result in "={{ $('Node Name').nested.property }}"
+```
+
+You can also use `.call()` to call a method on the selected property.
+
+```ts
+$("json['a.b.c']")
+.call("keys")
+.call("map", (key: string) => key.toUpperCase())
+.call("join", ", ")
+.toExpression()
+
+// results in `= {{ $json['a.b.c'].keys().map((key) => key.toUpperCase()).join(', ') }}` 
+```
+
+and `.prop()` to access a property of the selected property.
+
+```ts
+$("json['a.b.c']")
+.prop("['d.e.f']")
+
+// results in `= {{ $json['a.b.c']['d.e.f'] }}`
 ```
 
 ### Functions

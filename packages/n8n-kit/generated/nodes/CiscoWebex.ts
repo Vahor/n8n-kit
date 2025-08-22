@@ -4,8 +4,6 @@
 export const name = "ciscoWebex" as const;
 export const description = "Consume the Cisco Webex API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Webex by Cisco"} as const;
-export const credentials = [{"name":"ciscoWebexOAuth2Api","required":true}] as const
 
 /**
  * Consume the Cisco Webex API
@@ -20,7 +18,7 @@ export interface CiscoWebexNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Meeting title. The title can be a maximum of 128 characters long.
@@ -40,34 +38,34 @@ export interface CiscoWebexNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "agenda"?: string, "allowAnyUserToBeCoHost"?: boolean, "allowAuthenticatedDevices"?: boolean, "allowFirstUserToBeCoHost"?: boolean, "autoAcceptRequest"?: boolean, "enableConnectAudioBeforeHost"?: boolean, "enabledAutoRecordMeeting"?: boolean, "enabledJoinBeforeHost"?: boolean, "excludePassword"?: boolean, "hostEmail"?: string, "integrationTags"?: string, "inviteesUi"?: { "inviteeValues": any }, "joinBeforeHostMinutes"?: "0" | "5" | "10" | "15", "publicMeeting"?: boolean, "recurrence"?: string, "requireRegistrationInfo"?: ("requireFirstName" | "requireLastName" | "requireEmail" | "requireJobTitle" | "requireCompanyName" | "requireAddress1" | "requireAddress2" | "requireCity" | "requireState" | "requireZipCode" | "requireCountryRegion" | "requireWorkPhone" | "requireFax")[], "reminderTime"?: number, "sendEmail"?: boolean, "siteUrl"?: string, "attachmentsUi"?: { "attachmentValues": any }, "fileUi"?: { "fileValue": any }, "markdown"?: string };
+    readonly additionalFields?: { "agenda"?: string, "allowAnyUserToBeCoHost"?: boolean, "allowAuthenticatedDevices"?: boolean, "allowFirstUserToBeCoHost"?: boolean, "autoAcceptRequest"?: boolean, "enableConnectAudioBeforeHost"?: boolean, "enabledAutoRecordMeeting"?: boolean, "enabledJoinBeforeHost"?: boolean, "excludePassword"?: boolean, "hostEmail"?: string, "integrationTags"?: string, "inviteesUi"?: { "inviteeValues": any }, "joinBeforeHostMinutes"?: "0" | "5" | "10" | "15", "publicMeeting"?: boolean, "recurrence"?: string, "requireRegistrationInfo"?: ("requireFirstName" | "requireLastName" | "requireEmail" | "requireJobTitle" | "requireCompanyName" | "requireAddress1" | "requireAddress2" | "requireCity" | "requireState" | "requireZipCode" | "requireCountryRegion" | "requireWorkPhone" | "requireFax")[], "reminderTime"?: number, "sendEmail"?: boolean, "siteUrl"?: string } | { "attachmentsUi"?: { "attachmentValues": any }, "fileUi"?: { "fileValue": any }, "markdown"?: string };
 
     /**
      * ID of the meeting
      */
-    readonly meetingId?: string;
+    readonly meetingId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "hostEmail"?: string, "sendEmail"?: boolean, "password"?: string };
+    readonly options?: { "hostEmail"?: string, "sendEmail"?: boolean } | { "hostEmail"?: string, "password"?: string, "sendEmail"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "from"?: string, "hostEmail"?: string, "integrationTag"?: string, "current"?: boolean, "meetingNumber"?: string, "meetingType"?: "meetingSeries" | "scheduledMeeting" | "meeting", "participantEmail"?: string, "siteUrl"?: string, "state"?: "active" | "ended" | "expired" | "inProgress" | "lobby" | "missed" | "ready" | "scheduled", "to"?: string, "webLink"?: string, "before"?: string, "beforeMessage"?: string, "parentId"?: string, "mentionedPeople"?: string };
+    readonly filters?: { "from"?: string, "hostEmail"?: string, "integrationTag"?: string, "current"?: boolean, "meetingNumber"?: string, "meetingType"?: "meetingSeries" | "scheduledMeeting" | "meeting", "participantEmail"?: string, "siteUrl"?: string, "state"?: "active" | "ended" | "expired" | "inProgress" | "lobby" | "missed" | "ready" | "scheduled", "to"?: string, "webLink"?: string } | { "before"?: string, "beforeMessage"?: string, "parentId"?: string, "mentionedPeople"?: string };
 
     /**
      * Default: {}
@@ -83,7 +81,7 @@ export interface CiscoWebexNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getRooms"}
      */
-    readonly roomId?: string;
+    readonly roomId?: string | string;
 
     /**
      * Default: "email"
@@ -101,12 +99,12 @@ export interface CiscoWebexNodeParameters {
     /**
      * The message, in plain text
      */
-    readonly text?: string;
+    readonly text?: string | string;
 
     /**
      * ID of the message to delete
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string;
 
     /**
      * Whether the message uses markdown

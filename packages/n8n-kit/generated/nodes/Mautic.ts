@@ -4,8 +4,6 @@
 export const name = "mautic" as const;
 export const description = "Consume Mautic API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mautic"} as const;
-export const credentials = [{"name":"mauticApi","required":true,"displayOptions":{"show":{"authentication":["credentials"]}}},{"name":"mauticOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Mautic API
@@ -25,7 +23,7 @@ export interface MauticNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "editContactPoint" | "editDoNotContactList" | "sendEmail" | "add" | "remove" | "send";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "editContactPoint" | "editDoNotContactList" | "get" | "getAll" | "sendEmail" | "update" | "add" | "remove" | "add" | "remove" | "add" | "remove" | "send";
 
     /**
      * The name of the company to create
@@ -36,38 +34,38 @@ export interface MauticNodeParameters {
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "annualRevenue"?: number, "companyEmail"?: string, "customFieldsUi"?: { "customFieldValues": any }, "description"?: string, "fax"?: string, "industry"?: string, "isPublished"?: boolean, "numberOfEmpoyees"?: number, "overwriteWithBlank"?: boolean, "phone"?: string, "website"?: string, "orderByDir"?: "asc" | "desc", "orderBy"?: string, "search"?: string, "b2bOrb2c"?: "B2B" | "B2C", "crmId"?: string, "hasPurchased"?: boolean, "ipAddress"?: string, "lastActive"?: string, "mobile"?: string, "ownerId"?: string, "prospectOrCustomer"?: "Prospect" | "Customer", "sandbox"?: boolean, "stage"?: string, "tags"?: string[], "socialMediaUi"?: { "socialMediaValues": any }, "reason"?: "1" | "2" | "3", "comments"?: string };
+    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "annualRevenue"?: number, "companyEmail"?: string, "customFieldsUi"?: { "customFieldValues": any }, "description"?: string, "fax"?: string, "industry"?: string, "isPublished"?: boolean, "numberOfEmpoyees"?: number, "overwriteWithBlank"?: boolean, "phone"?: string, "website"?: string } | { "orderByDir"?: "asc" | "desc", "orderBy"?: string, "search"?: string } | { "addressUi"?: { "addressValues": any }, "b2bOrb2c"?: "B2B" | "B2C", "crmId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "fax"?: string, "hasPurchased"?: boolean, "ipAddress"?: string, "lastActive"?: string, "mobile"?: string, "ownerId"?: string, "phone"?: string, "prospectOrCustomer"?: "Prospect" | "Customer", "sandbox"?: boolean, "stage"?: string, "tags"?: string[], "socialMediaUi"?: { "socialMediaValues": any }, "website"?: string } | { "reason"?: "1" | "2" | "3", "comments"?: string };
 
     /**
      * The ID of the company to update
      */
-    readonly companyId?: string;
+    readonly companyId?: string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "addressUi"?: { "addressValues": any }, "annualRevenue"?: number, "companyEmail"?: string, "name"?: string, "customFieldsUi"?: { "customFieldValues": any }, "description"?: string, "fax"?: string, "industry"?: string, "isPublished"?: boolean, "numberOfEmpoyees"?: number, "overwriteWithBlank"?: boolean, "phone"?: string, "website"?: string, "bodyJson"?: string, "b2bOrb2c"?: "B2B" | "B2C", "crmId"?: string, "email"?: string, "firstName"?: string, "hasPurchased"?: boolean, "ipAddress"?: string, "lastActive"?: string, "lastName"?: string, "mobile"?: string, "ownerId"?: string, "position"?: string, "company"?: string, "prospectOrCustomer"?: "Prospect" | "Customer", "sandbox"?: boolean, "stage"?: string, "tags"?: string[], "title"?: string, "socialMediaUi"?: { "socialMediaValues": any } };
+    readonly updateFields?: { "addressUi"?: { "addressValues": any }, "annualRevenue"?: number, "companyEmail"?: string, "name"?: string, "customFieldsUi"?: { "customFieldValues": any }, "description"?: string, "fax"?: string, "industry"?: string, "isPublished"?: boolean, "numberOfEmpoyees"?: number, "overwriteWithBlank"?: boolean, "phone"?: string, "website"?: string } | { "bodyJson"?: string, "addressUi"?: { "addressValues": any }, "b2bOrb2c"?: "B2B" | "B2C", "crmId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "email"?: string, "fax"?: string, "firstName"?: string, "hasPurchased"?: boolean, "ipAddress"?: string | string, "lastActive"?: string, "lastName"?: string, "mobile"?: string, "ownerId"?: string, "phone"?: string, "position"?: string, "company"?: string, "prospectOrCustomer"?: "Prospect" | "Customer", "sandbox"?: boolean, "stage"?: string, "tags"?: string[], "title"?: string, "socialMediaUi"?: { "socialMediaValues": any }, "website"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 30
      * Type options: {"minValue":1,"maxValue":30}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Email address of the contact
@@ -103,12 +101,12 @@ export interface MauticNodeParameters {
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string | string | string | string | string | string | string;
 
     /**
      * Default: "add"
      */
-    readonly action?: "add" | "remove";
+    readonly action?: "add" | "remove" | "add" | "remove";
 
     /**
      * Default: "email"

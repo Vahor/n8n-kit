@@ -4,7 +4,6 @@
 export const name = "writeBinaryFile" as const;
 export const description = "Writes a binary file to disk" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Write Binary File","color":"#CC2233"} as const;
 
 /**
  * Writes a binary file to disk

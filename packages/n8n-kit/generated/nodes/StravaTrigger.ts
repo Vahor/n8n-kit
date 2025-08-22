@@ -4,8 +4,6 @@
 export const name = "stravaTrigger" as const;
 export const description = "Starts the workflow when Strava events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Strava Trigger"} as const;
-export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const
 
 /**
  * Starts the workflow when Strava events occur

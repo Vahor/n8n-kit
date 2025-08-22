@@ -4,8 +4,6 @@
 export const name = "whatsAppTrigger" as const;
 export const description = "Handle WhatsApp events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"WhatsApp Trigger"} as const;
-export const credentials = [{"name":"whatsAppTriggerApi","required":true}] as const
 
 /**
  * Handle WhatsApp events via webhooks

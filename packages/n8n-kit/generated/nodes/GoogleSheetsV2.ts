@@ -4,8 +4,6 @@
 export const name = "googleSheets" as const;
 export const description = "Read, update and write data to Google Sheets" as const;
 export const version = 4.7 as const;
-export const defaults = {"name":"Google Sheets"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}},"testedBy":"googleApiCredentialTest"},{"name":"googleSheetsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Read, update and write data to Google Sheets
@@ -30,12 +28,12 @@ export interface GoogleSheetsV2NodeParameters {
     /**
      * Default: "read"
      */
-    readonly operation?: "appendOrUpdate" | "append" | "clear" | "create" | "remove" | "delete" | "read" | "update";
+    readonly operation?: "appendOrUpdate" | "append" | "clear" | "create" | "remove" | "delete" | "read" | "update" | "create" | "deleteSpreadsheet";
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly documentId?: any;
+    readonly documentId?: any | any;
 
     /**
      * Default: {"mode":"list","value":""}
@@ -47,7 +45,7 @@ export interface GoogleSheetsV2NodeParameters {
      * Whether to insert the input data this node receives in the new row
      * Default: "defineBelow"
      */
-    readonly dataMode?: "autoMapInputData" | "defineBelow" | "nothing";
+    readonly dataMode?: "autoMapInputData" | "defineBelow" | "nothing" | "autoMapInputData" | "defineBelow" | "nothing" | "autoMapInputData" | "defineBelow" | "nothing";
 
     /**
      */
@@ -57,18 +55,18 @@ export interface GoogleSheetsV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any, "values": any };
+    readonly fieldsUi?: { "fieldValues": any } | { "values": any } | { "values": any };
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
      * Type options: {"loadOptionsDependsOn":["sheetName.value"],"resourceMapper":{"resourceMapperMethod":"getMappingColumns","mode":"add","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":false}}
      */
-    readonly columns?: any;
+    readonly columns?: any | any | any | any | any;
 
     /**
      * Default: {}
      */
-    readonly options?: { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "useAppend"?: boolean, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "dataLocationOnSheet"?: { "values": any }, "outputFormatting"?: { "values": any }, "returnFirstMatch"?: boolean, "returnAllMatches"?: "returnFirstMatch" | "returnAllMatches", "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
+    readonly options?: { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error" | "insertInNewColumn" | "ignoreIt" | "error", "useAppend"?: boolean } | { "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any } | { "dataLocationOnSheet"?: { "values": any }, "outputFormatting"?: { "values": any }, "returnFirstMatch"?: boolean, "returnAllMatches"?: "returnFirstMatch" | "returnAllMatches" } | { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error" | "insertInNewColumn" | "ignoreIt" | "error" } | { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error" | "insertInNewColumn" | "ignoreIt" | "error", "useAppend"?: boolean } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
 
     /**
      * What to clear
@@ -85,7 +83,7 @@ export interface GoogleSheetsV2NodeParameters {
      * Default: 1
      * Type options: {"minValue":1}
      */
-    readonly startIndex?: number;
+    readonly startIndex?: number | string | number | string;
 
     /**
      * Default: 1
@@ -109,7 +107,7 @@ export interface GoogleSheetsV2NodeParameters {
      * The name of the sheet
      * Default: "n8n-sheet"
      */
-    readonly title?: string;
+    readonly title?: string | string;
 
     /**
      * What to delete
@@ -121,7 +119,7 @@ export interface GoogleSheetsV2NodeParameters {
      * Default: 1
      * Type options: {"minValue":1}
      */
-    readonly numberToDelete?: number;
+    readonly numberToDelete?: number | number;
 
     /**
      * Default: {}
@@ -133,17 +131,17 @@ export interface GoogleSheetsV2NodeParameters {
      * How to combine the conditions defined in "Filters": AND requires all conditions to be true, OR requires at least one condition to be true
      * Default: "OR"
      */
-    readonly combineFilters?: "AND" | "OR";
+    readonly combineFilters?: "AND" | "OR" | "AND" | "OR";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["sheetName.value"],"loadOptionsMethod":"getSheetHeaderRowAndSkipEmpty"}
      */
-    readonly columnToMatchOn?: string;
+    readonly columnToMatchOn?: string | string;
 
     /**
      */
-    readonly valueToMatchOn?: string;
+    readonly valueToMatchOn?: string | string;
 
     /**
      * Default: {}

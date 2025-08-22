@@ -4,8 +4,6 @@
 export const name = "sendInBlue" as const;
 export const description = "Consume Brevo API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Brevo"} as const;
-export const credentials = [{"name":"sendInBlueApi","required":true}] as const
 
 /**
  * Consume Brevo API
@@ -20,7 +18,7 @@ export interface BrevoNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "update" | "delete" | "getAll" | "upsert" | "get" | "send" | "sendTemplate";
+    readonly operation?: "create" | "update" | "delete" | "getAll" | "create" | "delete" | "getAll" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "send" | "sendTemplate";
 
     /**
      * Category of the attribute
@@ -84,14 +82,14 @@ export interface BrevoNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Name of the sender
@@ -101,7 +99,7 @@ export interface BrevoNodeParameters {
     /**
      * Email of the sender
      */
-    readonly email?: string;
+    readonly email?: string | string | string;
 
     /**
      * ID of the sender to delete
@@ -128,7 +126,7 @@ export interface BrevoNodeParameters {
     /**
      * Email (urlencoded) OR ID of the contact OR its SMS attribute value
      */
-    readonly identifier?: string;
+    readonly identifier?: string | string | string;
 
     /**
      * Array of attributes to be updated
@@ -169,13 +167,13 @@ export interface BrevoNodeParameters {
 
     /**
      */
-    readonly receipients?: string;
+    readonly receipients?: string | string;
 
     /**
      * Additional fields to add
      * Default: {}
      */
-    readonly additionalFields?: { "emailAttachments"?: { "attachment": any }, "receipientsBCC"?: { "receipientBcc": any }, "receipientsCC"?: { "receipientCc": any }, "emailTags"?: { "tags": any }, "templateParameters"?: { "parameterValues": any } };
+    readonly additionalFields?: { "emailAttachments"?: { "attachment": any }, "receipientsBCC"?: { "receipientBcc": any }, "receipientsCC"?: { "receipientCc": any }, "emailTags"?: { "tags": any } } | { "emailAttachments"?: { "attachment": any }, "emailTags"?: { "tags": any }, "templateParameters"?: { "parameterValues": any } };
 
     /**
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v3/smtp/templates","qs":{"templateStatus":true,"limit":1000,"offset":0,"sort":"desc"}},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"templates"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

@@ -4,8 +4,6 @@
 export const name = "gmail" as const;
 export const description = "Consume the Gmail API" as const;
 export const version = 2.1 as const;
-export const defaults = {"name":"Gmail"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume the Gmail API
@@ -30,15 +28,15 @@ export interface GmailV2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "addLabels" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "trash" | "untrash";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "addLabels" | "delete" | "get" | "getAll" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "addLabels" | "delete" | "get" | "getAll" | "removeLabels" | "reply" | "trash" | "untrash";
 
     /**
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string | string | string;
 
     /**
      */
-    readonly subject?: string;
+    readonly subject?: string | string | string;
 
     /**
      */
@@ -47,28 +45,28 @@ export interface GmailV2NodeParameters {
     /**
      * Default: "text"
      */
-    readonly emailType?: "html" | "text";
+    readonly emailType?: "html" | "text" | "text" | "html" | "text" | "html" | "text" | "html";
 
     /**
      */
-    readonly message?: string;
+    readonly message?: string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string, "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean, "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show", "appendAttribution"?: boolean, "senderName"?: string, "replyToSenderOnly"?: boolean, "limitWaitTime"?: { "values": any }, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "returnOnlyMessages"?: boolean };
+    readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean } | { "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show" } | { "appendAttribution"?: boolean, "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyTo"?: string, "replyToSenderOnly"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyToSenderOnly"?: boolean } | { "returnOnlyMessages"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Label Name
@@ -83,29 +81,29 @@ export interface GmailV2NodeParameters {
     /**
      * The email addresses of the recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com.
      */
-    readonly sendTo?: string;
+    readonly sendTo?: string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean;
 
     /**
      */
-    readonly filtersNotice?: string;
+    readonly filtersNotice?: string | string;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "includeSpamTrash"?: boolean, "labelIds"?: string[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string, "sender"?: string };
+    readonly filters?: { "includeSpamTrash"?: boolean, "labelIds"?: string[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string, "sender"?: string } | { "includeSpamTrash"?: boolean, "labelIds"?: string[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */
-    readonly labelIds?: string[];
+    readonly labelIds?: string[] | string[];
 
     /**
      * Default: "approval"
@@ -137,7 +135,7 @@ export interface GmailV2NodeParameters {
     /**
      * The ID of the thread you are operating on
      */
-    readonly threadId?: string;
+    readonly threadId?: string | string;
 
 
 }

@@ -4,8 +4,6 @@
 export const name = "googleFirebaseRealtimeDatabase" as const;
 export const description = "Interact with Google Firebase - Realtime Database API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Cloud Realtime Database"} as const;
-export const credentials = [{"name":"googleFirebaseRealtimeDatabaseOAuth2Api"}] as const
 
 /**
  * Interact with Google Firebase - Realtime Database API
@@ -26,7 +24,7 @@ export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
     /**
      * Object path on database. Do not append .json.
      */
-    readonly path: string;
+    readonly path: string | string;
 
     /**
      * Attributes to save

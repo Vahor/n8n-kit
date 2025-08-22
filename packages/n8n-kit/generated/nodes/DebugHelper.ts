@@ -4,8 +4,6 @@
 export const name = "debugHelper" as const;
 export const description = "Causes problems intentionally and generates useful data for debugging" as const;
 export const version = 1 as const;
-export const defaults = {"name":"DebugHelper"} as const;
-export const credentials = [] as const
 
 /**
  * Causes problems intentionally and generates useful data for debugging

@@ -4,8 +4,6 @@
 export const name = "jinaAi" as const;
 export const description = "Interact with Jina AI API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Jina AI"} as const;
-export const credentials = [{"name":"jinaAiApi","required":true}] as const
 
 /**
  * Interact with Jina AI API
@@ -31,12 +29,12 @@ export interface JinaAiNodeParameters {
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simplify?: boolean;
+    readonly simplify?: boolean | boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly options?: { "outputFormat"?: "html" | "" | "markdown" | "screenshot" | "text", "targetSelector"?: string, "excludeSelector"?: string, "enableImageCaptioning"?: boolean, "waitForSelector"?: string, "siteFilter"?: string, "pageNumber"?: number, "maxReturnedSources"?: number, "prioritizeSources"?: string, "excludeSources"?: string };
+    readonly options?: { "outputFormat"?: "html" | "" | "markdown" | "screenshot" | "text", "targetSelector"?: string, "excludeSelector"?: string, "enableImageCaptioning"?: boolean, "waitForSelector"?: string } | { "outputFormat"?: "html" | "" | "markdown" | "screenshot" | "text", "siteFilter"?: string, "pageNumber"?: number } | { "maxReturnedSources"?: number, "prioritizeSources"?: string, "excludeSources"?: string, "siteFilter"?: string };
 
     /**
      */

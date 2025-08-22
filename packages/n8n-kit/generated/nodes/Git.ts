@@ -4,8 +4,6 @@
 export const name = "git" as const;
 export const description = "Control git." as const;
 export const version = 1 as const;
-export const defaults = {"name":"Git"} as const;
-export const credentials = [{"name":"gitPassword","required":true,"displayOptions":{"show":{"authentication":["gitPassword"]}}}] as const
 
 /**
  * Control git.
@@ -26,7 +24,7 @@ export interface GitNodeParameters {
     /**
      * Local path of the git repository to operate on
      */
-    readonly repositoryPath: string;
+    readonly repositoryPath: string | string;
 
     /**
      * Comma-separated list of paths (absolute or relative to Repository Path) of files or folders to add
@@ -46,7 +44,7 @@ export interface GitNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "mode"?: "append" | "set", "pathsToAdd"?: string, "file"?: string, "targetRepository"?: string };
+    readonly options?: { "mode"?: "append" | "set" } | { "pathsToAdd"?: string } | { "file"?: string } | { "targetRepository"?: string };
 
     /**
      * The URL or path of the repository to clone

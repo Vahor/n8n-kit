@@ -4,8 +4,6 @@
 export const name = "boxTrigger" as const;
 export const description = "Starts the workflow when Box events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Box Trigger"} as const;
-export const credentials = [{"name":"boxOAuth2Api","required":true}] as const
 
 /**
  * Starts the workflow when Box events occur

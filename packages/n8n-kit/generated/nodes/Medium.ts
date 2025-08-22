@@ -4,8 +4,6 @@
 export const name = "medium" as const;
 export const description = "Consume Medium API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Medium"} as const;
-export const credentials = [{"name":"mediumApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"mediumOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Medium API

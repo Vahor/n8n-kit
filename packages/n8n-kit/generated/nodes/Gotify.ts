@@ -4,8 +4,6 @@
 export const name = "gotify" as const;
 export const description = "Consume Gotify API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Gotify"} as const;
-export const credentials = [{"name":"gotifyApi","required":true}] as const
 
 /**
  * Consume Gotify API

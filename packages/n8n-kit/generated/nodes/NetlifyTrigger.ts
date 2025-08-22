@@ -4,8 +4,6 @@
 export const name = "netlifyTrigger" as const;
 export const description = "Handle netlify events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Netlify Trigger"} as const;
-export const credentials = [{"name":"netlifyApi","required":true}] as const
 
 /**
  * Handle netlify events via webhooks

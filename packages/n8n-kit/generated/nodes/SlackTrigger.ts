@@ -4,8 +4,6 @@
 export const name = "slackTrigger" as const;
 export const description = "Handle Slack events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Slack Trigger"} as const;
-export const credentials = [{"name":"slackApi","required":true}] as const
 
 /**
  * Handle Slack events via webhooks
@@ -19,7 +17,7 @@ export interface SlackTriggerNodeParameters {
 
     /**
      */
-    readonly notice?: string;
+    readonly notice?: string | string;
 
     /**
      * Default: []

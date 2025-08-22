@@ -4,8 +4,6 @@
 export const name = "venafiTlsProtectCloud" as const;
 export const description = "Consume Venafi TLS Protect Cloud API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Venafi TLS Protect Cloud"} as const;
-export const credentials = [{"name":"venafiTlsProtectCloudApi","required":true}] as const
 
 /**
  * Consume Venafi TLS Protect Cloud API
@@ -20,11 +18,11 @@ export interface VenafiTlsProtectCloudNodeParameters {
     /**
      * Default: "delete"
      */
-    readonly operation?: "delete" | "download" | "get" | "getMany" | "renew" | "create";
+    readonly operation?: "delete" | "download" | "get" | "getMany" | "renew" | "create" | "get" | "getMany";
 
     /**
      */
-    readonly certificateId?: string;
+    readonly certificateId?: string | string;
 
     /**
      * Default: "certificate"
@@ -57,19 +55,19 @@ export interface VenafiTlsProtectCloudNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "chainOrder"?: "EE_FIRST" | "EE_ONLY" | "ROOT_FIRST", "format"?: "PEM" | "DER", "validityPeriod"?: "P1Y" | "P10D" | "PT12H" };
+    readonly options?: { "chainOrder"?: "EE_FIRST" | "EE_ONLY" | "ROOT_FIRST", "format"?: "PEM" | "DER" } | { "validityPeriod"?: "P1Y" | "P10D" | "PT12H" } | { "validityPeriod"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
@@ -80,7 +78,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getApplications"}
      */
-    readonly applicationId?: string;
+    readonly applicationId?: string | string;
 
     /**
      */
@@ -90,11 +88,11 @@ export interface VenafiTlsProtectCloudNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCertificateIssuingTemplates"}
      */
-    readonly certificateIssuingTemplateId?: string;
+    readonly certificateIssuingTemplateId?: string | string;
 
     /**
      */
-    readonly certificateSigningRequest?: string;
+    readonly certificateSigningRequest?: string | string;
 
     /**
      */

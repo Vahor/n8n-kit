@@ -4,8 +4,6 @@
 export const name = "flow" as const;
 export const description = "Consume Flow API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Flow"} as const;
-export const credentials = [{"name":"flowApi","required":true}] as const
 
 /**
  * Consume Flow API
@@ -25,7 +23,7 @@ export interface FlowNodeParameters {
     /**
      * Create resources under the given workspace
      */
-    readonly workspaceId?: string;
+    readonly workspaceId?: string | string;
 
     /**
      * The title of the task
@@ -39,7 +37,7 @@ export interface FlowNodeParameters {
 
     /**
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string;
 
     /**
      * Default: {}
@@ -49,7 +47,7 @@ export interface FlowNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "include"?: ("schedule" | "files" | "file_associations" | "parent")[], "order"?: "account_id" | "completed_at" | "created_at" | "due_on" | "list_id" | "name" | "owner_id" | "position" | "section_id" | "starts_on" | "updated_at", "workspaceId"?: string, "createdBefore"?: string, "createdAfter"?: string, "updateBefore"?: string, "updateAfter"?: string, "deleted"?: boolean, "cleared"?: boolean };
+    readonly filters?: { "include"?: ("schedule" | "files" | "file_associations" | "parent")[] } | { "include"?: ("schedule" | "files" | "file_associations" | "parent")[], "order"?: "account_id" | "completed_at" | "created_at" | "due_on" | "list_id" | "name" | "owner_id" | "position" | "section_id" | "starts_on" | "updated_at", "workspaceId"?: string, "createdBefore"?: string, "createdAfter"?: string, "updateBefore"?: string, "updateAfter"?: string, "deleted"?: boolean, "cleared"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit

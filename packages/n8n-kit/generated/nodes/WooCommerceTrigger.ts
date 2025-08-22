@@ -4,8 +4,6 @@
 export const name = "wooCommerceTrigger" as const;
 export const description = "Handle WooCommerce events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"WooCommerce Trigger"} as const;
-export const credentials = [{"name":"wooCommerceApi","required":true}] as const
 
 /**
  * Handle WooCommerce events via webhooks

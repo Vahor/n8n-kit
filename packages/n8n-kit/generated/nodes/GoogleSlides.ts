@@ -4,8 +4,6 @@
 export const name = "googleSlides" as const;
 export const description = "Consume the Google Slides API" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Slides"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleSlidesOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume the Google Slides API
@@ -15,7 +13,7 @@ export interface GoogleSlidesNodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "oAuth2" | "serviceAccount" | "oAuth2";
+    readonly authentication?: "oAuth2" | "serviceAccount" | "oAuth2" | "serviceAccount";
 
     /**
      * Default: "presentation"
@@ -25,7 +23,7 @@ export interface GoogleSlidesNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getSlides" | "replaceText" | "getThumbnail";
+    readonly operation?: "create" | "get" | "getSlides" | "replaceText" | "get" | "getThumbnail";
 
     /**
      * Title of the presentation to create

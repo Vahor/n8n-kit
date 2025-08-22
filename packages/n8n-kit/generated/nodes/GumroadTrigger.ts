@@ -4,8 +4,6 @@
 export const name = "gumroadTrigger" as const;
 export const description = "Handle Gumroad events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Gumroad Trigger"} as const;
-export const credentials = [{"name":"gumroadApi","required":true}] as const
 
 /**
  * Handle Gumroad events via webhooks

@@ -1,6 +1,6 @@
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
-import type { INodeTypeDescription } from "n8n-workflow";
+import type { INodeProperties, INodeTypeDescription } from "n8n-workflow";
 import { globSync } from "tinyglobby";
 import { toTypescriptType } from "./shared";
 
@@ -27,7 +27,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(`export const name = "${result.name}" as const;`);
 	code.line(`export const description = "${result.description}" as const;`);
 	code.line(
-		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : result.version} as const;`,
+		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : (result.version ?? 0)} as const;`,
 	);
 	code.line();
 
@@ -36,49 +36,34 @@ const generateTypescriptNodeOutput = async (
 	code.line(` */`);
 	code.line(`export interface ${result.__nodename}NodeParameters {`);
 	code.indent();
-	const propertiesMapped: Record<string, any> = {};
 
-	// Note: required as I don't know how to handle spread operator :)
-	if (!Array.isArray(result.properties)) {
-		result.properties = [result.properties];
-	}
-	result.properties = result.properties.flat();
+	if (!result.properties) result.properties = [];
+
+	const visitedProperties: Record<
+		string,
+		INodeProperties & {
+			__versionsOfProperty: INodeProperties[];
+		}
+	> = {};
 	for (const property of result.properties) {
-		if (!property.name) {
+		if (visitedProperties[property.name]) {
+			visitedProperties[property.name].__versionsOfProperty.push(property);
 			continue;
 		}
-		const storedProperty = propertiesMapped[property.name];
-		if (property.displayOptions?.show !== undefined) {
-			// if the property can be hidden, it's optional
-			property.required = false;
-		}
+		visitedProperties[property.name] = {
+			...property,
+			__versionsOfProperty: [property],
+		};
 
-		if (storedProperty) {
-			if (property.required === undefined)
-				if (!property.required) {
-					// if one variant is optional, make all variants optional
-					storedProperty.required = false;
-				}
-			if (property.options) {
-				// merge options
-				// merge array but only keep one unique name
-				let newOptions = storedProperty.options ?? [];
-				if (!Array.isArray(newOptions)) {
-					newOptions = [newOptions];
-					storedProperty.options = newOptions;
-				}
-
-				for (const option of property.options) {
-					if (!newOptions?.find((o) => o.name === option.name)) {
-						newOptions.push(option);
-					}
-				}
-			}
-			continue;
+		if (!property.required) {
+			visitedProperties[property.name].required = false;
 		}
-		propertiesMapped[property.name] = property;
+		if (property.displayOptions?.show != null) {
+			visitedProperties[property.name].required = false;
+		}
 	}
-	for (const property of Object.values(propertiesMapped)) {
+
+	for (const property of Object.values(visitedProperties)) {
 		code.line(`/**`);
 		if (property.description) {
 			code.line(` * ${property.description}`);
@@ -90,8 +75,12 @@ const generateTypescriptNodeOutput = async (
 			code.line(` * Type options: ${JSON.stringify(property.typeOptions)}`);
 		}
 		code.line(` */`);
+		// There will be duplicates but theses are ok (like "GET" | "GET")
+		const typeUnion = property.__versionsOfProperty
+			.map((p) => toTypescriptType(p))
+			.join(" | ");
 		code.line(
-			`readonly ${property.name}${property.required ? "" : "?"}: ${toTypescriptType(property)};`,
+			`readonly ${property.name}${property.required ? "" : "?"}: ${typeUnion};`,
 		);
 		code.line();
 	}
@@ -106,21 +95,32 @@ const generateTypescriptNodeOutput = async (
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
-	try {
-		const nodeName = node.split("/").pop()?.split(".")[0]!;
+	const nodeName = node.split("/").pop()?.split(".")[0]!;
+	const nodePathWithoutStartingSlash = node.split("vendor")[1];
 
+	try {
 		delete require.cache[node];
 		const file = await import(node);
-		const firstExport = Object.values(file)[0];
+		const firstClassExport = Object.values(file).find(
+			(v) => typeof v === "function",
+		);
+		if (!firstClassExport) {
+			// console.error(`No class export for ${nodePathWithoutStartingSlash}`);
+			continue;
+		}
 		// @ts-expect-error: it works
-		const instance = new firstExport();
+		const instance = new firstClassExport();
 
 		if (instance.nodeVersions != null) {
-			console.error(nodeName);
+			// We expect to find a .v2.node.ts file later
+			current++;
 			continue;
 		}
 
-		const nodePathWithoutStartingSlash = node.split("vendor")[1];
+		if (!instance.description) {
+			console.error(`No description for ${nodePathWithoutStartingSlash}`);
+			continue;
+		}
 
 		const description = instance.description;
 		description.__filepath = nodePathWithoutStartingSlash;
@@ -130,6 +130,7 @@ for (const node of allNodes) {
 		current++;
 	} catch (e) {
 		console.error(e);
+		console.error(node);
 	}
 	process.stdout.write(`\r${current}/${count}`);
 }

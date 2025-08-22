@@ -4,8 +4,6 @@
 export const name = "mailchimp" as const;
 export const description = "Consume Mailchimp API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mailchimp"} as const;
-export const credentials = [{"name":"mailchimpApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"mailchimpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Mailchimp API
@@ -25,18 +23,18 @@ export interface MailchimpNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "replicate" | "resend" | "send";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "delete" | "get" | "getAll" | "replicate" | "resend" | "send";
 
     /**
      * List of lists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
-    readonly list?: string;
+    readonly list?: string | string | string | string | string | string | string;
 
     /**
      * Email address for a subscriber
      */
-    readonly email?: string;
+    readonly email?: string | string | string | string | string;
 
     /**
      * Subscriber's current status
@@ -45,12 +43,12 @@ export interface MailchimpNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly options?: { "emailType"?: "html" | "text", "language"?: string, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "tags"?: string, "vip"?: boolean, "timestampOpt"?: string, "fields"?: string, "excludeFields"?: string, "beforeLastChanged"?: string, "beforeTimestampOpt"?: string, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "sinceLastChanged"?: string, "isSyncing"?: boolean, "beforeCreateTime"?: string, "beforeSendTime"?: string, "listId"?: string, "sinceCreateTime"?: string, "sinceSendTime"?: string, "sortDirection"?: "ASC" | "DESC", "sortField"?: "create_time" | "send_time" };
+    readonly options?: { "emailType"?: "html" | "text", "language"?: string, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "tags"?: string, "vip"?: boolean, "timestampOpt"?: string } | { "fields"?: string, "excludeFields"?: string } | { "beforeLastChanged"?: string, "beforeTimestampOpt"?: string, "emailType"?: "html" | "text", "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "sinceLastChanged"?: string } | { "isSyncing"?: boolean } | { "beforeCreateTime"?: string, "beforeSendTime"?: string, "excludeFields"?: string[], "fields"?: string[], "listId"?: string, "sinceCreateTime"?: string, "sinceSendTime"?: string, "sortDirection"?: "ASC" | "DESC", "sortField"?: "create_time" | "send_time", "status"?: "save" | "sending" | "sent" | "schedule" };
 
     /**
      * Subscriber location information.n
@@ -68,12 +66,12 @@ export interface MailchimpNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly mergeFieldsJson?: string;
+    readonly mergeFieldsJson?: string | string;
 
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly locationJson?: string;
+    readonly locationJson?: string | string;
 
     /**
      * Default: {}
@@ -84,19 +82,19 @@ export interface MailchimpNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly groupJson?: string;
+    readonly groupJson?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 500
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}

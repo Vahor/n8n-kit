@@ -4,8 +4,6 @@
 export const name = "salesmate" as const;
 export const description = "Consume Salesmate API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Salesmate"} as const;
-export const credentials = [{"name":"salesmateApi","required":true}] as const
 
 /**
  * Consume Salesmate API
@@ -20,7 +18,7 @@ export interface SalesmateNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -30,62 +28,62 @@ export interface SalesmateNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly owner?: string;
+    readonly owner?: string | string | string;
 
     /**
      * Whether the data should include the fields details
      */
-    readonly rawData?: boolean;
+    readonly rawData?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+    readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string | string, "description"?: string, "tags"?: string } | { "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
     /**
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "billingState"?: string, "description"?: string, "tags"?: string, "title"?: string, "type"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+    readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string | string, "description"?: string, "tags"?: string } | { "title"?: string, "type"?: string, "owner"?: string, "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "title"?: string, "owner"?: string, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "currency"?: string, "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 10
      * Type options: {"minValue":1,"maxValue":25}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
+    readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" } | { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" } | { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
 
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly filtersJson?: string;
+    readonly filtersJson?: string | string | string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly filters?: { "filtersUi": any };
+    readonly filters?: { "filtersUi": any } | { "filtersUi": any } | { "filtersUi": any };
 
     /**
      */
-    readonly title?: string;
+    readonly title?: string | string;
 
     /**
      * This field displays activity type such as call, meeting etc

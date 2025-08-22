@@ -4,8 +4,6 @@
 export const name = "formTrigger" as const;
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const version = 2.3 as const;
-export const defaults = {"name":"On form submission"} as const;
-export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const
 
 /**
  * Generate webforms in n8n and pass their responses to the workflow
@@ -43,7 +41,7 @@ export interface FormTriggerV2NodeParameters {
      * When to respond to the form submission
      * Default: "onReceived"
      */
-    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "streaming";
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode";
 
     /**
      */
@@ -56,7 +54,7 @@ export interface FormTriggerV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean, "useWorkflowTimezone"?: boolean, "customCss"?: string };
+    readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean | boolean, "customCss"?: string };
 
 
 }

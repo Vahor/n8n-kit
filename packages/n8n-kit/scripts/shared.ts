@@ -1,4 +1,4 @@
-import type { INodeTypeDescription } from "n8n-workflow";
+import type { INodeProperties, INodeTypeDescription } from "n8n-workflow";
 
 export const mapPropertyType = (type: string) => {
 	switch (type) {
@@ -58,9 +58,33 @@ export const toTypescriptType = (
 		case "collection":
 			if (property.options && Array.isArray(property.options)) {
 				let result = "{ ";
-				for (const option of property.options) {
-					// @ts-expect-error: TODO: fix this
-					result += `"${option.name}"${option.required ? "" : "?"}: ${toTypescriptType(option)}, `;
+
+				const visitedProperties: Record<
+					string,
+					INodeProperties & {
+						__versionsOfProperty: INodeProperties[];
+					}
+				> = {};
+				for (const p of property.options) {
+					if (visitedProperties[p.name]) {
+						visitedProperties[p.name].__versionsOfProperty.push(
+							p as INodeProperties,
+						);
+						continue;
+					}
+					visitedProperties[p.name] = {
+						...(p as INodeProperties),
+						__versionsOfProperty: [p as INodeProperties],
+					};
+				}
+
+				for (const option of Object.values(visitedProperties)) {
+					// There will be duplicates but theses are ok (like "GET" | "GET")
+					const typeUnion = option.__versionsOfProperty
+						.map((p) => toTypescriptType(p))
+						.join(" | ");
+
+					result += `"${option.name}"${option.required ? "" : "?"}: ${typeUnion}, `;
 				}
 				// Remove the last comma
 				result = result.slice(0, -2);

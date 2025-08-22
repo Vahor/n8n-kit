@@ -4,8 +4,6 @@
 export const name = "rabbitmq" as const;
 export const description = "Sends messages to a RabbitMQ topic" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"RabbitMQ"} as const;
-export const credentials = [{"name":"rabbitmq","required":true,"testedBy":"rabbitmqConnectionTest"}] as const
 
 /**
  * Sends messages to a RabbitMQ topic
@@ -15,7 +13,7 @@ export interface RabbitMQNodeParameters {
     /**
      * Default: "sendMessage"
      */
-    readonly operation?: any;
+    readonly operation?: any | "sendMessage" | "deleteMessage";
 
     /**
      */

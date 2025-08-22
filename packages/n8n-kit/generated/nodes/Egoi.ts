@@ -4,8 +4,6 @@
 export const name = "egoi" as const;
 export const description = "Consume E-goi API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"E-goi"} as const;
-export const credentials = [{"name":"egoiApi","required":true}] as const
 
 /**
  * Consume E-goi API
@@ -31,12 +29,12 @@ export interface EgoiNodeParameters {
     /**
      * Email address for a subscriber
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * Contact ID of the subscriber
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string;
 
     /**
      * By default the response just includes the contact ID. If this option gets activated, it will resolve the data automatically.

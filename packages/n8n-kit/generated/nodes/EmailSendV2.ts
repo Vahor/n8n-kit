@@ -4,8 +4,6 @@
 export const name = "emailSend" as const;
 export const description = "Sends an email using SMTP protocol" as const;
 export const version = 2.1 as const;
-export const defaults = {"name":"Send Email","color":"#00bb88"} as const;
-export const credentials = [{"name":"smtp","required":true,"testedBy":"smtpConnectionTest"}] as const
 
 /**
  * Sends an email using SMTP protocol
@@ -25,22 +23,22 @@ export interface EmailSendV2NodeParameters {
     /**
      * Email address of the sender. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
      */
-    readonly fromEmail?: string;
+    readonly fromEmail?: string | string;
 
     /**
      * Email address of the recipient. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
      */
-    readonly toEmail?: string;
+    readonly toEmail?: string | string;
 
     /**
      * Subject line of the email
      */
-    readonly subject?: string;
+    readonly subject?: string | string;
 
     /**
      * Default: "html"
      */
-    readonly emailFormat?: "text" | "html" | "both";
+    readonly emailFormat?: "text" | "html" | "both" | "text" | "html" | "both";
 
     /**
      * Plain text message of email
@@ -57,7 +55,7 @@ export interface EmailSendV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "appendAttribution"?: boolean, "attachments"?: string, "ccEmail"?: string, "bccEmail"?: string, "allowUnauthorizedCerts"?: boolean, "replyTo"?: string, "limitWaitTime"?: { "values": any }, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
+    readonly options?: { "appendAttribution"?: boolean, "attachments"?: string, "ccEmail"?: string, "bccEmail"?: string, "allowUnauthorizedCerts"?: boolean, "replyTo"?: string } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
     /**
      * Type options: {"rows":4}

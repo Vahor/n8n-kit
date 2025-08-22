@@ -4,8 +4,6 @@
 export const name = "mySql" as const;
 export const description = "Get, add and update data in MySQL" as const;
 export const version = 1 as const;
-export const defaults = {"name":"MySQL"} as const;
-export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest"}] as const
 
 /**
  * Get, add and update data in MySQL
@@ -31,12 +29,12 @@ export interface MySqlV1NodeParameters {
      * Name of the table in which to insert data to
      * Default: {"mode":"list","value":""}
      */
-    readonly table?: any;
+    readonly table?: any | any;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string;
+    readonly columns?: string | string;
 
     /**
      * Modifiers for INSERT statement

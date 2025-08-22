@@ -4,8 +4,6 @@
 export const name = "microsoftOutlook" as const;
 export const description = "Consume Microsoft Outlook API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft Outlook"} as const;
-export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const
 
 /**
  * Consume Microsoft Outlook API
@@ -24,26 +22,26 @@ export interface MicrosoftOutlookV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "send" | "update" | "getAll" | "getMime" | "move" | "reply" | "add" | "download" | "getChildren";
+    readonly operation?: "create" | "delete" | "get" | "send" | "update" | "delete" | "get" | "getAll" | "getMime" | "move" | "reply" | "send" | "update" | "add" | "download" | "get" | "getAll" | "create" | "delete" | "get" | "getChildren" | "getAll" | "getAll";
 
     /**
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string;
 
     /**
      * The subject of the message
      */
-    readonly subject?: string;
+    readonly subject?: string | string;
 
     /**
      * Message body content
      */
-    readonly bodyContent?: string;
+    readonly bodyContent?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "recipients"?: string, "bodyContent"?: string, "subject"?: string, "saveToSentItems"?: boolean, "fileName"?: string, "fields"?: string, "filter"?: string, "dataPropertyAttachmentsPrefixName"?: string };
+    readonly additionalFields?: { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string } | { "recipients"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "saveToSentItems"?: boolean } | { "fileName"?: string } | { "fields"?: string, "filter"?: string } | { "fields"?: string, "filter"?: string } | { "fields"?: string, "filter"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "filter"?: string };
 
     /**
      * Default: "reply"
@@ -64,14 +62,14 @@ export interface MicrosoftOutlookV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Email addresses of recipients. Multiple can be added separated by comma.
@@ -81,12 +79,12 @@ export interface MicrosoftOutlookV1NodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Target Folder ID
      */
-    readonly folderId?: string;
+    readonly folderId?: string | string | string;
 
     /**
      */
@@ -124,7 +122,7 @@ export interface MicrosoftOutlookV1NodeParameters {
      * Fields to update
      * Default: {}
      */
-    readonly updateFields?: { "displayName"?: string, "filterQuery"?: string, "includeNestedFolders"?: boolean, "sourceFolderIds"?: string, "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string };
+    readonly updateFields?: { "displayName"?: string, "filterQuery"?: string, "includeNestedFolders"?: boolean, "sourceFolderIds"?: string } | { "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string };
 
 
 }

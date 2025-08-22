@@ -4,8 +4,6 @@
 export const name = "questDb" as const;
 export const description = "Get, add and update data in QuestDB" as const;
 export const version = 1 as const;
-export const defaults = {"name":"QuestDB"} as const;
-export const credentials = [{"name":"questDb","required":true}] as const
 
 /**
  * Get, add and update data in QuestDB
@@ -47,7 +45,7 @@ export interface QuestDbNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "mode"?: "independently" | "transaction", "queryParams"?: string };
+    readonly additionalFields?: { "mode"?: "independently" | "transaction", "queryParams"?: string } | any;
 
 
 }

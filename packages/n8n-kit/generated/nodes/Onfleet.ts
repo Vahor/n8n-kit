@@ -4,8 +4,6 @@
 export const name = "onfleet" as const;
 export const description = "Consume Onfleet API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Onfleet"} as const;
-export const credentials = [{"name":"onfleetApi","required":true,"testedBy":"onfleetApiTest"}] as const
 
 /**
  * Consume Onfleet API
@@ -21,29 +19,29 @@ export interface OnfleetNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "getAll" | "update" | "addTask" | "get" | "updateTask" | "get" | "getDelegatee" | "clone" | "complete" | "autoDispatch" | "getTimeEstimates" | "getSchedule";
+    readonly operation?: "create" | "delete" | "getAll" | "update" | "addTask" | "get" | "updateTask" | "create" | "get" | "create" | "getAll" | "update" | "get" | "getDelegatee" | "create" | "get" | "update" | "clone" | "complete" | "create" | "delete" | "get" | "getAll" | "update" | "autoDispatch" | "create" | "delete" | "get" | "getAll" | "getTimeEstimates" | "update" | "create" | "delete" | "get" | "getAll" | "getSchedule" | "update";
 
     /**
      * The ID of the admin object for lookup
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 64
      * Type options: {"minValue":1,"maxValue":64}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number;
 
     /**
      * The administrator's name
      */
-    readonly name?: string;
+    readonly name?: string | string | string | string | string;
 
     /**
      * The administrator's email address
@@ -53,12 +51,12 @@ export interface OnfleetNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "phone"?: string, "isReadOnly"?: boolean, "addressApartment"?: string, "addressName"?: string, "addressNotes"?: string, "addressPostalCode"?: string, "teams"?: string[], "recipientNotes"?: string, "recipientSkipSMSNotifications"?: boolean, "notes"?: string, "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "pickupTask"?: boolean, "quantity"?: number, "recipient"?: { "recipientProperties": any }, "recipientName"?: string, "serviceTime"?: number, "useMerchantForProxy"?: boolean, "hub"?: string, "enableSelfAssignment"?: boolean, "endingRoute"?: { "endingRouteProperties": any }, "maxAllowedDelay"?: number, "maxTasksPerRoute"?: number, "scheduleTimeWindow"?: { "scheduleTimeWindowProperties": any }, "taskTimeWindow"?: { "taskTimeWindowProperties": any }, "capacity"?: number, "displayName"?: string, "vehicle"?: { "vehicleProperties": any } };
+    readonly additionalFields?: { "phone"?: string, "isReadOnly"?: boolean } | { "addressApartment"?: string, "addressName"?: string, "addressNotes"?: string } | { "addressApartment"?: string, "addressName"?: string, "addressNotes"?: string, "addressPostalCode"?: string } | { "teams"?: string[] } | { "recipientNotes"?: string, "recipientSkipSMSNotifications"?: boolean } | { "notes"?: string } | { "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "notes"?: string, "pickupTask"?: boolean, "quantity"?: number, "recipient"?: { "recipientProperties": any }, "recipientName"?: string, "recipientNotes"?: string, "recipientSkipSMSNotifications"?: boolean, "serviceTime"?: number, "useMerchantForProxy"?: boolean } | { "hub"?: string, "enableSelfAssignment"?: boolean } | { "endingRoute"?: { "endingRouteProperties": any }, "maxAllowedDelay"?: number, "maxTasksPerRoute"?: number, "scheduleTimeWindow"?: { "scheduleTimeWindowProperties": any }, "serviceTime"?: number, "taskTimeWindow"?: { "taskTimeWindowProperties": any } } | { "capacity"?: number, "displayName"?: string, "vehicle"?: { "vehicleProperties": any } };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "phone"?: string, "isReadOnly"?: boolean, "destination"?: { "destinationProperties": any }, "teams"?: string[], "recipientName"?: string, "notes"?: string, "recipientPhone"?: string, "skipSMSNotifications"?: boolean, "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "pickupTask"?: boolean, "quantity"?: number, "serviceTime"?: number, "managers"?: string[], "hub"?: string, "enableSelfAssignment"?: boolean, "workers"?: string[], "capacity"?: number, "displayName"?: string };
+    readonly updateFields?: { "name"?: string, "phone"?: string, "isReadOnly"?: boolean } | { "destination"?: { "destinationProperties": any }, "name"?: string, "teams"?: string[] } | { "recipientName"?: string, "notes"?: string, "recipientPhone"?: string, "skipSMSNotifications"?: boolean } | { "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "notes"?: string, "pickupTask"?: boolean, "quantity"?: number, "serviceTime"?: number } | { "managers"?: string[], "hub"?: string, "name"?: string, "enableSelfAssignment"?: boolean, "workers"?: string[] } | { "capacity"?: number, "displayName"?: string, "name"?: string, "teams"?: string[] };
 
     /**
      */
@@ -88,7 +86,7 @@ export interface OnfleetNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "considerDependencies"?: boolean, "recipientSkipPhoneNumberValidation"?: boolean, "filter"?: ("accountStatus" | "activeTask" | "capacity" | "delayTime" | "displayName" | "imageUrl" | "location" | "metadata" | "name" | "onDuty" | "organization" | "phone" | "tasks" | "teams" | "timeCreated" | "timeLastModified" | "timeLastSeen" | "userData" | "vehicle" | "id")[], "analytics"?: boolean };
+    readonly options?: { "considerDependencies"?: boolean } | { "recipientSkipPhoneNumberValidation"?: boolean } | { "filter"?: ("accountStatus" | "activeTask" | "capacity" | "delayTime" | "displayName" | "imageUrl" | "location" | "metadata" | "name" | "onDuty" | "organization" | "phone" | "tasks" | "teams" | "timeCreated" | "timeLastModified" | "timeLastSeen" | "userData" | "vehicle" | "id")[] } | { "analytics"?: boolean, "filter"?: ("accountStatus" | "activeTask" | "capacity" | "delayTime" | "displayName" | "imageUrl" | "location" | "metadata" | "name" | "onDuty" | "organization" | "phone" | "tasks" | "teams" | "timeCreated" | "timeLastModified" | "timeLastSeen" | "userData" | "vehicle" | "id")[] };
 
     /**
      * Whether or not the address is specified in a single unparsed string
@@ -123,7 +121,7 @@ export interface OnfleetNodeParameters {
     /**
      * Default: {}
      */
-    readonly destination?: { "destinationProperties": any };
+    readonly destination?: { "destinationProperties": any } | { "destinationProperties": any };
 
     /**
      * The variable that is used for looking up a recipient
@@ -134,7 +132,7 @@ export interface OnfleetNodeParameters {
     /**
      * The phone of the recipient for lookup
      */
-    readonly phone?: string;
+    readonly phone?: string | string;
 
     /**
      * The recipient's complete name
@@ -155,7 +153,7 @@ export interface OnfleetNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "from"?: string, "state"?: ("all" | "2" | "1" | "3" | "0")[], "to"?: string, "dropOff"?: { "dropOffProperties": any }, "pickUp"?: { "pickUpProperties": any }, "restrictedVehicleTypes"?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", "serviceTime"?: number, "radius"?: number, "states"?: ("2" | "1" | "0")[], "teams"?: string[], "phones"?: string };
+    readonly filters?: { "from"?: string, "state"?: ("all" | "2" | "1" | "3" | "0")[], "to"?: string } | { "dropOff"?: { "dropOffProperties": any }, "pickUp"?: { "pickUpProperties": any }, "restrictedVehicleTypes"?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", "serviceTime"?: number } | { "radius"?: number } | { "states"?: ("2" | "1" | "0")[], "teams"?: string[], "phones"?: string };
 
     /**
      * Default: {}

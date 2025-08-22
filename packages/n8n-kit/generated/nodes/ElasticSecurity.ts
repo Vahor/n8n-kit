@@ -4,8 +4,6 @@
 export const name = "elasticSecurity" as const;
 export const description = "Consume the Elastic Security API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Elastic Security"} as const;
-export const credentials = [{"name":"elasticSecurityApi","required":true}] as const
 
 /**
  * Consume the Elastic Security API
@@ -20,7 +18,7 @@ export interface ElasticSecurityNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "getStatus" | "update" | "add" | "remove";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "getStatus" | "update" | "add" | "get" | "getAll" | "remove" | "update" | "add" | "remove" | "create";
 
     /**
      */
@@ -35,7 +33,7 @@ export interface ElasticSecurityNodeParameters {
     /**
      * Default: ".jira"
      */
-    readonly connectorType?: ".resilient" | ".jira" | ".servicenow";
+    readonly connectorType?: ".resilient" | ".jira" | ".servicenow" | ".resilient" | ".jira" | ".servicenow";
 
     /**
      * Type of the Jira issue to create for this case
@@ -85,23 +83,23 @@ export interface ElasticSecurityNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string, "owner"?: string, "syncAlerts"?: boolean };
+    readonly additionalFields?: { "description"?: string, "owner"?: string, "syncAlerts"?: boolean } | { "owner"?: string };
 
     /**
      */
-    readonly caseId?: string;
+    readonly caseId?: string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
@@ -120,24 +118,24 @@ export interface ElasticSecurityNodeParameters {
 
     /**
      */
-    readonly comment?: string;
+    readonly comment?: string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean;
 
     /**
      * ID of the case comment to retrieve
      */
-    readonly commentId?: string;
+    readonly commentId?: string | string | string;
 
     /**
      * Tag to attach to the case. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTags"}
      */
-    readonly tag?: string;
+    readonly tag?: string | string;
 
     /**
      * Connectors allow you to send Elastic Security cases into other systems (only ServiceNow, Jira, or IBM Resilient)

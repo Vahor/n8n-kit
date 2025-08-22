@@ -4,8 +4,6 @@
 export const name = "postBin" as const;
 export const description = "Consume PostBin API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"PostBin"} as const;
-export const credentials = [] as const
 
 /**
  * Consume PostBin API
@@ -20,12 +18,12 @@ export interface PostBinNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "delete" | "removeFirst" | "send";
+    readonly operation?: "create" | "get" | "delete" | "get" | "removeFirst" | "send";
 
     /**
      * Unique identifier for each bin
      */
-    readonly binId?: string;
+    readonly binId?: string | string;
 
     /**
      * Type options: {"rows":5}

@@ -4,7 +4,6 @@
 export const name = "theHiveProjectTrigger" as const;
 export const description = "Starts the workflow when TheHive events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"TheHive Trigger"} as const;
 
 /**
  * Starts the workflow when TheHive events occur

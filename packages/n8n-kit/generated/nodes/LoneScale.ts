@@ -4,8 +4,6 @@
 export const name = "loneScale" as const;
 export const description = "Create List, add / delete items" as const;
 export const version = 1 as const;
-export const defaults = {"name":"LoneScale"} as const;
-export const credentials = [{"name":"loneScaleApi","required":true}] as const
 
 /**
  * Create List, add / delete items
@@ -21,13 +19,13 @@ export interface LoneScaleNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create";
+    readonly operation?: "create" | "add";
 
     /**
      * Type of your list
      * Default: "PEOPLE"
      */
-    readonly type?: "COMPANY" | "PEOPLE";
+    readonly type?: "COMPANY" | "PEOPLE" | "COMPANY" | "PEOPLE";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

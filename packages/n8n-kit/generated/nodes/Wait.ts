@@ -4,8 +4,6 @@
 export const name = "wait" as const;
 export const description = "Wait before continue with execution" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Wait","color":"#804050"} as const;
-export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["jwtAuth"]}}}] as const
 
 /**
  * Wait before continue with execution
@@ -22,7 +20,7 @@ export interface WaitNodeParameters {
      * If and how incoming resume-webhook-requests to $execution.resumeFormUrl should be authenticated for additional security
      * Default: "none"
      */
-    readonly incomingAuthentication?: "basicAuth" | "none" | "headerAuth" | "jwtAuth";
+    readonly incomingAuthentication?: "basicAuth" | "none" | "basicAuth" | "headerAuth" | "jwtAuth" | "none";
 
     /**
      * The date and time to wait for before continuing
@@ -34,13 +32,13 @@ export interface WaitNodeParameters {
      * Default: 1
      * Type options: {"minValue":0,"numberPrecision":2}
      */
-    readonly amount?: number;
+    readonly amount?: number | number;
 
     /**
      * The time unit of the Wait Amount value
      * Default: "hours"
      */
-    readonly unit?: "seconds" | "minutes" | "hours" | "days";
+    readonly unit?: "seconds" | "minutes" | "hours" | "days" | "seconds" | "minutes" | "hours" | "days";
 
     /**
      */
@@ -71,7 +69,7 @@ export interface WaitNodeParameters {
      * When to respond to the form submission
      * Default: "onReceived"
      */
-    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "streaming";
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "responseNode";
 
     /**
      * The HTTP method of the Webhook call
@@ -130,7 +128,7 @@ export interface WaitNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string, "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any } };
+    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string | string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean | boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any }, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "webhookSuffix"?: string };
 
 
 }

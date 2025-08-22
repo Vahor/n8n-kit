@@ -4,8 +4,6 @@
 export const name = "mondayCom" as const;
 export const description = "Consume Monday.com API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Monday.com"} as const;
-export const credentials = [{"name":"mondayComApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"mondayComOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Monday.com API
@@ -25,18 +23,18 @@ export interface MondayComNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "archive" | "create" | "get" | "getAll" | "delete" | "addUpdate" | "changeColumnValue" | "changeMultipleColumnValues" | "getByColumnValue" | "move";
+    readonly operation?: "archive" | "create" | "get" | "getAll" | "create" | "getAll" | "delete" | "create" | "getAll" | "addUpdate" | "changeColumnValue" | "changeMultipleColumnValues" | "create" | "delete" | "get" | "getByColumnValue" | "getAll" | "move";
 
     /**
      * Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getBoards"}
      */
-    readonly boardId?: string;
+    readonly boardId?: string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * The board's name
      */
-    readonly name?: string;
+    readonly name?: string | string | string;
 
     /**
      * The board's kind (public / private / share)
@@ -46,19 +44,19 @@ export interface MondayComNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "templateId"?: number, "defaults"?: string, "columnValues"?: string };
+    readonly additionalFields?: { "templateId"?: number } | { "defaults"?: string } | { "columnValues"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      */
@@ -72,23 +70,23 @@ export interface MondayComNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGroups","loadOptionsDependsOn":["boardId"]}
      */
-    readonly groupId?: string;
+    readonly groupId?: string | string | string | string;
 
     /**
      * The unique identifier of the item to add update to
      */
-    readonly itemId?: string;
+    readonly itemId?: string | string | string | string | string | string;
 
     /**
      * The update text to add
      */
-    readonly value?: string;
+    readonly value?: string | string;
 
     /**
      * The column's unique identifier. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["boardId"]}
      */
-    readonly columnId?: string;
+    readonly columnId?: string | string;
 
     /**
      * The column fields and values in JSON format. Documentation can be found <a href="https://monday.com/developers/v2#mutations-section-columns-change-multiple-column-values">here</a>.

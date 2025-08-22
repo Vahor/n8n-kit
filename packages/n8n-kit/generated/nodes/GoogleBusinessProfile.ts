@@ -4,8 +4,6 @@
 export const name = "googleBusinessProfile" as const;
 export const description = "Consume Google Business Profile API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Business Profile"} as const;
-export const credentials = [{"name":"googleBusinessProfileOAuth2Api","required":true}] as const
 
 /**
  * Consume Google Business Profile API
@@ -20,19 +18,19 @@ export interface GoogleBusinessProfileNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "delete" | "reply";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "delete" | "get" | "getAll" | "reply";
 
     /**
      * The Google Business Profile account
      * Default: {"mode":"list","value":""}
      */
-    readonly account?: any;
+    readonly account?: any | any | any | any | any | any | any | any | any;
 
     /**
      * The specific location or business associated with the account
      * Default: {"mode":"list","value":""}
      */
-    readonly location?: any;
+    readonly location?: any | any | any | any | any | any | any | any | any;
 
     /**
      * The type of post to create (standard, event, offer, or alert)
@@ -48,7 +46,7 @@ export interface GoogleBusinessProfileNodeParameters {
     /**
      * E.g. Sales this week.
      */
-    readonly title?: string;
+    readonly title?: string | string;
 
     /**
      * The start date and time of the event
@@ -79,25 +77,25 @@ export interface GoogleBusinessProfileNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalOptions?: { "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string, "summary"?: string, "startDateTime"?: string, "endDateTime"?: string, "title"?: string, "startDate"?: string, "endDate"?: string };
+    readonly additionalOptions?: { "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string } | { "summary"?: string, "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "GET_OFFER" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "startDateTime"?: string, "endDateTime"?: string, "title"?: string, "startDate"?: string, "endDate"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string };
 
     /**
      * Select the post to retrieve its details
      * Default: {"mode":"list","value":""}
      */
-    readonly post?: any;
+    readonly post?: any | any | any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      */
@@ -107,7 +105,7 @@ export interface GoogleBusinessProfileNodeParameters {
      * Select the review to retrieve its details
      * Default: {"mode":"list","value":""}
      */
-    readonly review?: any;
+    readonly review?: any | any | any;
 
     /**
      * The body of the reply (up to 4096 characters)

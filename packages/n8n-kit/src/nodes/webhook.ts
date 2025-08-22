@@ -49,6 +49,7 @@ export class Webhook<L extends string, P extends WebhookProps> extends Node<
 	}
 
 	override getParameters() {
-		return this.props;
+		const { outputSchema: _, ...rest } = this.props;
+		return rest;
 	}
 }

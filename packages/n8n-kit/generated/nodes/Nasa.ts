@@ -4,8 +4,6 @@
 export const name = "nasa" as const;
 export const description = "Retrieve data from the NASA API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"NASA"} as const;
-export const credentials = [{"name":"nasaApi","required":true}] as const
 
 /**
  * Retrieve data from the NASA API
@@ -20,7 +18,7 @@ export interface NasaNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll";
+    readonly operation?: "get" | "get" | "get" | "getAll" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get";
 
     /**
      * The ID of the asteroid to be returned
@@ -30,7 +28,7 @@ export interface NasaNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "includeCloseApproachData"?: boolean, "date"?: string, "startDate"?: string, "endDate"?: string, "location"?: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B", "catalog"?: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG", "dim"?: number };
+    readonly additionalFields?: { "includeCloseApproachData"?: boolean } | { "date"?: string } | { "startDate"?: string, "endDate"?: string } | { "startDate"?: string, "endDate"?: string, "location"?: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B", "catalog"?: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG" } | { "date"?: string, "dim"?: number };
 
     /**
      * By default just the URL of the image is returned. When set to true the image will be downloaded.
@@ -41,7 +39,7 @@ export interface NasaNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Latitude for the location of the image

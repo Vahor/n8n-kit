@@ -4,8 +4,6 @@
 export const name = "twake" as const;
 export const description = "Consume Twake API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Twake"} as const;
-export const credentials = [{"name":"twakeCloudApi","required":true}] as const
 
 /**
  * Consume Twake API

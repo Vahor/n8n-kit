@@ -4,8 +4,6 @@
 export const name = "customerIoTrigger" as const;
 export const description = "Starts the workflow on a Customer.io update (Beta)" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Customer.io Trigger"} as const;
-export const credentials = [{"name":"customerIoApi","required":true}] as const
 
 /**
  * Starts the workflow on a Customer.io update (Beta)

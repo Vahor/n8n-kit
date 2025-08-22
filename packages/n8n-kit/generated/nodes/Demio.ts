@@ -4,8 +4,6 @@
 export const name = "demio" as const;
 export const description = "Consume the Demio API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Demio"} as const;
-export const credentials = [{"name":"demioApi","required":true}] as const
 
 /**
  * Consume the Demio API
@@ -20,7 +18,7 @@ export interface DemioNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "register";
+    readonly operation?: "get" | "getAll" | "register" | "get";
 
     /**
      * Whether to return all results or only up to a given limit
@@ -37,16 +35,16 @@ export interface DemioNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "type"?: "automated" | "past" | "upcoming", "status"?: "attended" | "banned" | "completed" | "did-not-attend" | "left-early" };
+    readonly filters?: { "type"?: "automated" | "past" | "upcoming" } | { "status"?: "attended" | "banned" | "completed" | "did-not-attend" | "left-early" };
 
     /**
      */
-    readonly eventId?: string;
+    readonly eventId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "active"?: boolean, "date_id"?: string, "company"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "ref_url"?: string, "gdpr"?: string, "last_name"?: string, "phone_number"?: string, "website"?: string };
+    readonly additionalFields?: { "active"?: boolean, "date_id"?: string } | { "company"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "ref_url"?: string, "gdpr"?: string, "last_name"?: string, "phone_number"?: string, "date_id"?: string, "website"?: string };
 
     /**
      * The registrant's first name

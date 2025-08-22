@@ -4,8 +4,6 @@
 export const name = "storyblok" as const;
 export const description = "Consume Storyblok API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Storyblok"} as const;
-export const credentials = [{"name":"storyblokContentApi","required":true,"displayOptions":{"show":{"source":["contentApi"]}}},{"name":"storyblokManagementApi","required":true,"displayOptions":{"show":{"source":["managementApi"]}}}] as const
 
 /**
  * Consume Storyblok API
@@ -21,12 +19,12 @@ export interface StoryblokNodeParameters {
     /**
      * Default: "story"
      */
-    readonly resource?: "story";
+    readonly resource?: "story" | "story";
 
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "delete" | "publish" | "unpublish";
+    readonly operation?: "get" | "getAll" | "delete" | "get" | "getAll" | "publish" | "unpublish";
 
     /**
      * The ID or slug of the story to get
@@ -36,30 +34,30 @@ export interface StoryblokNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "starts_with"?: string };
+    readonly filters?: { "starts_with"?: string } | { "starts_with"?: string };
 
     /**
      * The name of the space. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
-    readonly space?: string;
+    readonly space?: string | string | string | string | string;
 
     /**
      * Numeric ID of the story
      */
-    readonly storyId?: string;
+    readonly storyId?: string | string | string | string;
 
     /**
      * Default: {}

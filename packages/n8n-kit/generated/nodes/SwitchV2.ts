@@ -4,7 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Switch","color":"#506000"} as const;
 
 /**
  * undefined
@@ -37,13 +36,13 @@ export interface SwitchV2NodeParameters {
     /**
      * The value to compare with the first one
      */
-    readonly value1?: boolean;
+    readonly value1?: boolean | string | number | string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly rules?: { "rules": any };
+    readonly rules?: { "rules": any } | { "rules": any } | { "rules": any } | { "rules": any };
 
     /**
      * The output to which to route all items which do not match any of the rules. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

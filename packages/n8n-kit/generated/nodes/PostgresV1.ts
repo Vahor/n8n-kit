@@ -4,8 +4,6 @@
 export const name = "postgres" as const;
 export const description = "Get, add and update data in Postgres" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Postgres"} as const;
-export const credentials = [{"name":"postgres","required":true,"testedBy":"postgresConnectionTest"}] as const
 
 /**
  * Get, add and update data in Postgres
@@ -31,17 +29,17 @@ export interface PostgresV1NodeParameters {
      * Name of the schema the table belongs to
      * Default: "public"
      */
-    readonly schema?: string;
+    readonly schema?: string | string;
 
     /**
      * Name of the table in which to insert data to
      */
-    readonly table?: string;
+    readonly table?: string | string;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows. You can use type casting with colons (:) like id:int.
      */
-    readonly columns?: string;
+    readonly columns?: string | string;
 
     /**
      * Comma-separated list of the properties which decides which rows in the database should be updated. Normally that would be "id".

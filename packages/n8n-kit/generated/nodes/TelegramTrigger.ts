@@ -4,8 +4,6 @@
 export const name = "telegramTrigger" as const;
 export const description = "Starts the workflow on a Telegram update" as const;
 export const version = 1.2 as const;
-export const defaults = {"name":"Telegram Trigger"} as const;
-export const credentials = [{"name":"telegramApi","required":true}] as const
 
 /**
  * Starts the workflow on a Telegram update

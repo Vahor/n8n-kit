@@ -4,8 +4,6 @@
 export const name = "ftp" as const;
 export const description = "Transfer files via FTP or SFTP" as const;
 export const version = 1 as const;
-export const defaults = {"name":"FTP","color":"#303050"} as const;
-export const credentials = [{"name":"ftp","required":true,"displayOptions":{"show":{"protocol":["ftp"]}},"testedBy":"ftpConnectionTest"},{"name":"sftp","required":true,"displayOptions":{"show":{"protocol":["sftp"]}},"testedBy":"sftpConnectionTest"}] as const
 
 /**
  * Transfer files via FTP or SFTP
@@ -26,17 +24,17 @@ export interface FtpNodeParameters {
     /**
      * The file path of the file to delete. Has to contain the full path.
      */
-    readonly path?: string;
+    readonly path?: string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "folder"?: boolean, "recursive"?: boolean, "enableConcurrentReads"?: boolean, "maxConcurrentReads"?: number, "chunkSize"?: number, "createDirectories"?: boolean };
+    readonly options?: { "folder"?: boolean, "recursive"?: boolean } | { "enableConcurrentReads"?: boolean, "maxConcurrentReads"?: number, "chunkSize"?: number } | { "createDirectories"?: boolean };
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      */

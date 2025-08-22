@@ -4,8 +4,6 @@
 export const name = "signl4" as const;
 export const description = "Consume SIGNL4 API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"SIGNL4"} as const;
-export const credentials = [{"name":"signl4Api","required":true}] as const
 
 /**
  * Consume SIGNL4 API

@@ -4,8 +4,6 @@
 export const name = "helpScout" as const;
 export const description = "Consume Help Scout API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Help Scout"} as const;
-export const credentials = [{"name":"helpScoutOAuth2Api","required":true}] as const
 
 /**
  * Consume Help Scout API
@@ -20,13 +18,13 @@ export interface HelpScoutNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "properties" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "get" | "getAll" | "properties" | "update" | "get" | "getAll" | "create" | "getAll";
 
     /**
      * ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getMailboxes"}
      */
-    readonly mailboxId?: string;
+    readonly mailboxId?: string | string;
 
     /**
      * Conversation status
@@ -41,18 +39,18 @@ export interface HelpScoutNodeParameters {
     /**
      * Conversation type
      */
-    readonly type?: "chat" | "email" | "phone" | "customer" | "note" | "reply";
+    readonly type?: "chat" | "email" | "phone" | "chat" | "customer" | "note" | "phone" | "reply";
 
     /**
      * By default the response only contain the ID to resource. If this option gets activated, it will resolve the data automatically.
      * Default: true
      */
-    readonly resolveData?: boolean;
+    readonly resolveData?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assignTo"?: number, "autoReply"?: boolean, "closedAt"?: string, "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "imported"?: boolean, "tags"?: string[], "user"?: number, "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string, "draft"?: boolean };
+    readonly additionalFields?: { "assignTo"?: number, "autoReply"?: boolean, "closedAt"?: string, "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "imported"?: boolean, "tags"?: string[], "user"?: number } | { "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string } | { "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "draft"?: boolean, "imported"?: boolean };
 
     /**
      * Default: {}
@@ -62,24 +60,24 @@ export interface HelpScoutNodeParameters {
 
     /**
      */
-    readonly conversationId?: string;
+    readonly conversationId?: string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "assignTo"?: number, "embed"?: "threads", "folder"?: string, "mailbox"?: string, "modifiedSince"?: string, "number"?: number, "query"?: string, "sortField"?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", "sortOrder"?: "asc" | "desc", "status"?: "active" | "all" | "closed" | "open" | "pending" | "spam", "tags"?: string[], "firstName"?: string, "lastName"?: string };
+    readonly options?: { "assignTo"?: number, "embed"?: "threads", "folder"?: string, "mailbox"?: string, "modifiedSince"?: string, "number"?: number, "query"?: string, "sortField"?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", "sortOrder"?: "asc" | "desc", "status"?: "active" | "all" | "closed" | "open" | "pending" | "spam", "tags"?: string[] } | { "firstName"?: string, "lastName"?: string, "mailbox"?: string, "modifiedSince"?: string, "sortField"?: "score" | "firstName" | "lastName" | "modifiedAt", "sortOrder"?: "asc" | "desc", "query"?: string };
 
     /**
      * Default: {}
@@ -118,7 +116,7 @@ export interface HelpScoutNodeParameters {
 
     /**
      */
-    readonly customerId?: string;
+    readonly customerId?: string | string;
 
     /**
      * Default: {}

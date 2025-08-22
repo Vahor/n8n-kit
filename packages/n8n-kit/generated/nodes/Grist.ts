@@ -4,8 +4,6 @@
 export const name = "grist" as const;
 export const description = "Consume the Grist API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Grist"} as const;
-export const credentials = [{"name":"gristApi","required":true,"testedBy":"gristApiTest"}] as const
 
 /**
  * Consume the Grist API
@@ -30,7 +28,7 @@ export interface GristNodeParameters {
     /**
      * ID of the row to delete, or comma-separated list of row IDs to delete
      */
-    readonly rowId?: string;
+    readonly rowId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit

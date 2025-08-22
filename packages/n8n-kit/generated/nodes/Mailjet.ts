@@ -4,8 +4,6 @@
 export const name = "mailjet" as const;
 export const description = "Consume Mailjet API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mailjet"} as const;
-export const credentials = [{"name":"mailjetEmailApi","required":true,"displayOptions":{"show":{"resource":["email"]}}},{"name":"mailjetSmsApi","required":true,"displayOptions":{"show":{"resource":["sms"]}}}] as const
 
 /**
  * Consume Mailjet API
@@ -20,17 +18,17 @@ export interface MailjetNodeParameters {
     /**
      * Default: "send"
      */
-    readonly operation?: "send" | "sendTemplate";
+    readonly operation?: "send" | "sendTemplate" | "send";
 
     /**
      * The title for the email
      */
-    readonly fromEmail?: string;
+    readonly fromEmail?: string | string;
 
     /**
      * Email address of the recipient. Multiple ones can be separated by comma.
      */
-    readonly toEmail?: string;
+    readonly toEmail?: string | string;
 
     /**
      * Subject line of the email
@@ -40,7 +38,7 @@ export interface MailjetNodeParameters {
     /**
      * Plain text message of email
      */
-    readonly text?: string;
+    readonly text?: string | string;
 
     /**
      * HTML text message of email
@@ -49,23 +47,23 @@ export interface MailjetNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "bccEmail"?: string, "ccAddresses"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "templateLanguage"?: boolean, "trackClicks"?: "account_default" | "disabled" | "enabled", "trackOpens"?: "account_default" | "disabled" | "enabled", "ccEmail"?: string, "subject"?: string };
+    readonly additionalFields?: { "bccEmail"?: string, "ccAddresses"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "templateLanguage"?: boolean, "trackClicks"?: "account_default" | "disabled" | "enabled", "trackOpens"?: "account_default" | "disabled" | "enabled" } | { "bccEmail"?: string, "ccEmail"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "subject"?: string, "templateLanguage"?: boolean, "trackClicks"?: string, "trackOpens"?: string };
 
     /**
      * HTML text message of email
      */
-    readonly variablesJson?: string;
+    readonly variablesJson?: string | string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly variablesUi?: { "variablesValues": any };
+    readonly variablesUi?: { "variablesValues": any } | { "variablesValues": any };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

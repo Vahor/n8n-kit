@@ -4,8 +4,6 @@
 export const name = "wufooTrigger" as const;
 export const description = "Handle Wufoo events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Wufoo Trigger"} as const;
-export const credentials = [{"name":"wufooApi","required":true}] as const
 
 /**
  * Handle Wufoo events via webhooks

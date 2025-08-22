@@ -4,8 +4,6 @@
 export const name = "activeCampaign" as const;
 export const description = "Create and edit data in ActiveCampaign" as const;
 export const version = 1 as const;
-export const defaults = {"name":"ActiveCampaign"} as const;
-export const credentials = [{"name":"activeCampaignApi","required":true}] as const
 
 /**
  * Create and edit data in ActiveCampaign
@@ -20,7 +18,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "add" | "remove" | "createNote" | "updateNote" | "getByProductId" | "getByOrderId";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "update" | "add" | "remove" | "add" | "remove" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "createNote" | "delete" | "get" | "getAll" | "update" | "updateNote" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "getAll" | "getByProductId" | "getByOrderId";
 
     /**
      * Tag-type of the new tag
@@ -31,45 +29,45 @@ export interface ActiveCampaignNodeParameters {
     /**
      * Name of the new tag
      */
-    readonly name?: string;
+    readonly name?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "firstName"?: string, "lastName"?: string, "phone"?: string, "datetime"?: string, "email"?: string, "email_like"?: string, "exclude"?: string, "formid"?: string, "listid"?: string, "search"?: string, "segmentid"?: string, "seriesid"?: string, "status"?: "1" | "-1" | "3" | "0" | "2", "tagid"?: string, "filters[created_before]"?: string, "filters[created_after]"?: string, "filters[updated_before]"?: string, "filters[updated_after]"?: string, "waitid"?: string, "orderBy"?: "orders[cdate]" | "orders[email]" | "orders[first_name]" | "orders[last_name]" | "orders[name]" | "orders[score]", "percent"?: number, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "acceptsMarketing"?: boolean };
+    readonly additionalFields?: { "description"?: string } | { "accountUrl"?: string, "fields"?: { "property": any } } | { "jobTitle"?: string } | { "fieldValues"?: { "property": any }, "firstName"?: string, "lastName"?: string, "phone"?: string } | { "datetime"?: string, "email"?: string, "email_like"?: string, "exclude"?: string, "formid"?: string, "listid"?: string, "search"?: string, "segmentid"?: string, "seriesid"?: string, "status"?: "1" | "-1" | "3" | "0" | "2", "tagid"?: string, "filters[created_before]"?: string, "filters[created_after]"?: string, "filters[updated_before]"?: string, "filters[updated_after]"?: string, "waitid"?: string, "orderBy"?: "orders[cdate]" | "orders[email]" | "orders[first_name]" | "orders[last_name]" | "orders[name]" | "orders[score]" } | { "description"?: string, "percent"?: number, "status"?: number } | { "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string } | { "acceptsMarketing"?: boolean };
 
     /**
      * ID of the tag to update
      */
-    readonly tagId?: number;
+    readonly tagId?: number | number | number | string;
 
     /**
      * The fields to update
      * Default: {}
      */
-    readonly updateFields?: { "tag"?: string, "description"?: string, "name"?: string, "accountUrl"?: string, "fields"?: { "property": any }, "jobTitle"?: string, "fieldValues"?: { "property": any }, "email"?: string, "firstName"?: string, "lastName"?: string, "phone"?: string, "title"?: string, "contact"?: number, "value"?: number, "currency"?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl", "group"?: string, "stage"?: string, "owner"?: string, "percent"?: number, "status"?: number, "service"?: string, "externalid"?: string, "logoUrl"?: string, "linkUrl"?: string, "syncStatus"?: number, "externalcheckoutid"?: string, "source"?: number, "totalPrice"?: number, "connectionid"?: number, "customerid"?: number, "externalupdatedDate"?: string, "abandonedDate"?: string, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "orderProducts"?: { "name"?: string, "price"?: number, "quantity"?: number, "externalid"?: string, "category"?: string, "sku"?: string, "description"?: string, "imageUrl"?: string, "productUrl"?: string }, "acceptsMarketing"?: boolean };
+    readonly updateFields?: { "tag"?: string, "description"?: string } | { "name"?: string, "accountUrl"?: string, "fields"?: { "property": any } } | { "jobTitle"?: string } | { "fieldValues"?: { "property": any }, "email"?: string, "firstName"?: string, "lastName"?: string, "phone"?: string } | { "title"?: string, "contact"?: number, "value"?: number, "currency"?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl", "description"?: string, "group"?: string, "stage"?: string, "owner"?: string, "percent"?: number, "status"?: number } | { "service"?: string, "externalid"?: string, "name"?: string, "logoUrl"?: string, "linkUrl"?: string, "status"?: number, "syncStatus"?: number } | { "externalid"?: string, "externalcheckoutid"?: string, "source"?: number, "email"?: string, "totalPrice"?: number, "currency"?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl", "connectionid"?: number, "customerid"?: number, "externalupdatedDate"?: string, "abandonedDate"?: string, "shippingAmount"?: number, "taxAmount"?: number, "discountAmount"?: number, "orderUrl"?: string, "externalUpdatedDate"?: string, "shippingMethod"?: string, "orderNumber"?: string, "orderProducts"?: { "name"?: string, "price"?: number, "quantity"?: number, "externalid"?: string, "category"?: string, "sku"?: string, "description"?: string, "imageUrl"?: string, "productUrl"?: string } } | { "connectionid"?: string, "externalid"?: string, "email"?: string, "acceptsMarketing"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number | number | number | number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      */
-    readonly contactId?: number;
+    readonly contactId?: number | number | number | number | number | number;
 
     /**
      * ID of the contact tag to delete
@@ -78,12 +76,12 @@ export interface ActiveCampaignNodeParameters {
 
     /**
      */
-    readonly listId?: number;
+    readonly listId?: number | number;
 
     /**
      * ID of the account to update
      */
-    readonly accountId?: number;
+    readonly accountId?: number | number | number;
 
     /**
      * Default: {}
@@ -96,17 +94,17 @@ export interface ActiveCampaignNodeParameters {
 
     /**
      */
-    readonly contact?: number;
+    readonly contact?: number | number;
 
     /**
      * ID of the account contact to delete
      */
-    readonly accountContactId?: number;
+    readonly accountContactId?: number | number;
 
     /**
      * The email of the contact to create
      */
-    readonly email?: string;
+    readonly email?: string | string | string;
 
     /**
      * Whether to update user if it exists already. If not set and user exists it will error instead.
@@ -127,7 +125,7 @@ export interface ActiveCampaignNodeParameters {
      * The currency of the deal in 3-character ISO format
      * Default: "eur"
      */
-    readonly currency?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl";
+    readonly currency?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl" | "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl";
 
     /**
      * The pipeline ID of the deal
@@ -147,12 +145,12 @@ export interface ActiveCampaignNodeParameters {
     /**
      * ID of the deal to update
      */
-    readonly dealId?: number;
+    readonly dealId?: number | number | number | number | number;
 
     /**
      * The content of the deal note
      */
-    readonly dealNote?: string;
+    readonly dealNote?: string | string;
 
     /**
      * The ID of the deal note
@@ -167,7 +165,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * The ID of the account in the external service
      */
-    readonly externalid?: string;
+    readonly externalid?: string | string | string;
 
     /**
      * The URL to a logo image for the external service
@@ -182,7 +180,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * ID of the connection to update
      */
-    readonly connectionId?: number;
+    readonly connectionId?: number | number | number;
 
     /**
      * The ID of the cart in the external service. ONLY REQUIRED IF EXTERNALID IS NOT INCLUDED.
@@ -202,7 +200,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * The ID of the connection from which this order originated
      */
-    readonly connectionid?: number;
+    readonly connectionid?: number | string;
 
     /**
      * The ID of the customer associated with this order
@@ -229,12 +227,12 @@ export interface ActiveCampaignNodeParameters {
     /**
      * The ID of the e-commerce order
      */
-    readonly orderId?: number;
+    readonly orderId?: number | number | number | number;
 
     /**
      * ID of the E-commerce customer to update
      */
-    readonly ecommerceCustomerId?: number;
+    readonly ecommerceCustomerId?: number | number | number;
 
     /**
      * The ID of the product you'd like returned

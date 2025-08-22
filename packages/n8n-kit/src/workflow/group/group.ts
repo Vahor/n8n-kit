@@ -1,49 +1,42 @@
-import { name, version } from "generated/nodes/StickyNote";
-
-import { BaseNode, Node, type StickyNoteProps } from "../../nodes";
-import { StickyNoteColors } from "../../nodes/sticky-note";
-import type { Chain, ChainContext } from "../chain";
+import { BaseNode, type StickyNoteProps } from "../../nodes";
+import { StickyNote } from "../../nodes/sticky-note";
+import type { Chain, ChainContext, State } from "../chain";
 import { GROUP_DEFAULT_POSITION } from "../layout";
 import type { Workflow } from "../workflow";
+
+interface GroupProps
+	extends Omit<StickyNoteProps, "position" | "width" | "height"> {
+	filterNodes?: (node: State, index: number) => boolean;
+}
 
 export class Group<
 	LiteralId extends string,
 	C_CC extends ChainContext = {},
 	C_Ids extends string[] = [],
-> extends Node<LiteralId, {}> {
-	protected type = `n8n-nodes-base.${name}`;
-	protected typeVersion = version;
-
+> extends StickyNote {
 	constructor(
-		workflow: Workflow | null,
+		workflow: Workflow,
 		id: LiteralId,
-		public readonly props: Omit<
-			StickyNoteProps,
-			"position" | "width" | "height"
-		>,
+		public readonly _props: GroupProps,
 		public readonly chain: Chain<C_CC, C_Ids>,
 	) {
-		super(id);
-		this.position = GROUP_DEFAULT_POSITION;
-		workflow?.addUnlinkedNode(this);
+		super(id, {
+			..._props,
+			position: GROUP_DEFAULT_POSITION,
+			width: 0,
+			height: 0,
+		});
+		workflow.addUnlinkedNode(this);
 	}
 
 	override "~validate"(): void {
-		const nodes = this.chain.toList().slice(0, -1);
-		for (const node of nodes) {
+		const nodes = this.chain.toList();
+		for (let i = 0; i < nodes.length; i++) {
+			const node = nodes[i]!;
+			if (this._props.filterNodes?.(node, i) === false) continue;
 			if (node instanceof BaseNode) {
 				node["~setGroup"](this.id);
 			}
 		}
-	}
-
-	override getParameters() {
-		// TODO: check if we can extends from StickyNote
-		return {
-			content: this.props.content,
-			height: this.size.height,
-			width: this.size.width,
-			color: this.props.color ? StickyNoteColors[this.props.color] : 1,
-		};
 	}
 }

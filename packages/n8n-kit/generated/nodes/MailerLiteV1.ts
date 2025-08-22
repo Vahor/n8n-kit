@@ -4,8 +4,6 @@
 export const name = "mailerLite" as const;
 export const description = "Consume Mailer Lite API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"MailerLite"} as const;
-export const credentials = [{"name":"mailerLiteApi","required":true}] as const
 
 /**
  * Consume Mailer Lite API
@@ -35,7 +33,7 @@ export interface MailerLiteV1NodeParameters {
     /**
      * Email of subscriber
      */
-    readonly subscriberId?: string;
+    readonly subscriberId?: string | string | string;
 
     /**
      * Default: {}

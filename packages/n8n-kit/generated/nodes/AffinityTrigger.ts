@@ -4,8 +4,6 @@
 export const name = "affinityTrigger" as const;
 export const description = "Handle Affinity events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Affinity Trigger"} as const;
-export const credentials = [{"name":"affinityApi","required":true}] as const
 
 /**
  * Handle Affinity events via webhooks

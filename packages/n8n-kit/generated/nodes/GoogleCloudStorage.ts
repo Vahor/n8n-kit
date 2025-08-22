@@ -4,8 +4,6 @@
 export const name = "googleCloudStorage" as const;
 export const description = "Use the Google Cloud Storage API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Cloud Storage"} as const;
-export const credentials = [{"name":"googleCloudStorageOAuth2Api","required":true,"testedBy":{"request":{"method":"GET","url":"/b/"}}}] as const
 
 /**
  * Use the Google Cloud Storage API
@@ -20,7 +18,7 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -28,7 +26,7 @@ export interface GoogleCloudStorageNodeParameters {
 
     /**
      */
-    readonly bucketName?: string;
+    readonly bucketName?: string | string;
 
     /**
      */
@@ -37,12 +35,12 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: "noAcl"
      */
-    readonly projection?: "full" | "noAcl";
+    readonly projection?: "full" | "noAcl" | "full" | "noAcl";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Default: {}

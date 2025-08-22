@@ -4,8 +4,6 @@
 export const name = "pushover" as const;
 export const description = "Consume Pushover API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Pushover"} as const;
-export const credentials = [{"name":"pushoverApi","required":true}] as const
 
 /**
  * Consume Pushover API
@@ -55,7 +53,7 @@ export interface PushoverNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string, "title"?: string, "timestamp"?: string, "url"?: string, "url_title"?: string };
+    readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string | string, "title"?: string, "url"?: string, "url_title"?: string };
 
 
 }

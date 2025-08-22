@@ -4,7 +4,6 @@
 export const name = "executeWorkflowTrigger" as const;
 export const description = "Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows." as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"When Executed by Another Workflow","color":"#ff6d5a"} as const;
 
 /**
  * Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.

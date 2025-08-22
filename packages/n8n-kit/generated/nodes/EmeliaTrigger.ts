@@ -4,8 +4,6 @@
 export const name = "emeliaTrigger" as const;
 export const description = "Handle Emelia campaign activity events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Emelia Trigger"} as const;
-export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emeliaApiTest"}] as const
 
 /**
  * Handle Emelia campaign activity events via webhooks

@@ -4,8 +4,6 @@
 export const name = "apiTemplateIo" as const;
 export const description = "Consume the APITemplate.io API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"APITemplate.io"} as const;
-export const credentials = [{"name":"apiTemplateIoApi","required":true}] as const
 
 /**
  * Consume the APITemplate.io API
@@ -20,7 +18,7 @@ export interface ApiTemplateIoNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get";
+    readonly operation?: "create" | "create" | "get";
 
     /**
      * ID of the image template to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

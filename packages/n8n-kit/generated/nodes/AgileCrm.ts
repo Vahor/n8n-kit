@@ -4,8 +4,6 @@
 export const name = "agileCrm" as const;
 export const description = "Consume Agile CRM API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Agile CRM"} as const;
-export const credentials = [{"name":"agileCrmApi","required":true}] as const
 
 /**
  * Consume Agile CRM API
@@ -20,83 +18,83 @@ export interface AgileCrmNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Unique identifier for a particular contact
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: "none"
      */
-    readonly filterType?: "none" | "manual" | "json";
+    readonly filterType?: "none" | "manual" | "json" | "none" | "manual" | "json";
 
     /**
      * Default: "anyFilter"
      */
-    readonly matchType?: "anyFilter" | "allFilters";
+    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any };
+    readonly filters?: { "conditions": any } | { "conditions": any };
 
     /**
      */
-    readonly jsonNotice?: string;
+    readonly jsonNotice?: string | string;
 
     /**
      */
-    readonly filterJson?: string;
+    readonly filterJson?: string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: { "sort": any } };
+    readonly options?: { "sort"?: { "sort": any } } | { "sort"?: { "sort": any } };
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Object of values to set as described <a href="https://github.com/agilecrm/rest-api#1-contacts---companies-api">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: string;
+    readonly additionalFieldsJson?: string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "addressOptions"?: { "addressProperties": any }, "company"?: string, "emailOptions"?: { "emailProperties": any }, "firstName"?: string, "lastName"?: string, "leadScore"?: number, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "phoneOptions"?: { "phoneProperties": any }, "tags"?: string, "title"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any }, "email"?: string, "name"?: string, "phone"?: string, "contactIds"?: string, "customData"?: { "customProperty": any }, "expectedValue"?: number, "probability"?: number };
+    readonly additionalFields?: { "addressOptions"?: { "addressProperties": any }, "company"?: string, "emailOptions"?: { "emailProperties": any }, "firstName"?: string, "lastName"?: string, "leadScore"?: number, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "phoneOptions"?: { "phoneProperties": any }, "tags"?: string, "title"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "addressOptions"?: { "addressProperties": any }, "company"?: string, "emailOptions"?: { "emailProperties": any }, "firstName"?: string, "lastName"?: string, "leadScore"?: number, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "phoneOptions"?: { "phoneProperties": any }, "tags"?: string, "title"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "addressOptions"?: { "addressProperties": any }, "email"?: string, "name"?: string, "phone"?: string, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "tags"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "addressOptions"?: { "addressProperties": any }, "email"?: string, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "tags"?: string, "name"?: string, "phone"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "contactIds"?: string, "customData"?: { "customProperty": any } } | { "expectedValue"?: number, "name"?: string, "probability"?: number, "contactIds"?: string, "customData"?: { "customProperty": any } };
 
     /**
      * Unique identifier for a particular company
      */
-    readonly companyId?: string;
+    readonly companyId?: string | string | string;
 
     /**
      * Unique identifier for a particular deal
      */
-    readonly dealId?: string;
+    readonly dealId?: string | string | string;
 
     /**
      * Closing date of deal

@@ -4,8 +4,6 @@
 export const name = "grafana" as const;
 export const description = "Consume the Grafana API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Grafana"} as const;
-export const credentials = [{"name":"grafanaApi","required":true}] as const
 
 /**
  * Consume the Grafana API
@@ -20,7 +18,7 @@ export interface GrafanaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "add" | "remove";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "add" | "getAll" | "remove" | "delete" | "getAll" | "update";
 
     /**
      * Title of the dashboard to create
@@ -30,34 +28,34 @@ export interface GrafanaNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "folderId"?: string, "email"?: string };
+    readonly additionalFields?: { "folderId"?: string } | { "email"?: string };
 
     /**
      * Unique alphabetic identifier or URL of the dashboard to delete
      */
-    readonly dashboardUidOrUrl?: string;
+    readonly dashboardUidOrUrl?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "query"?: string, "name"?: string };
+    readonly filters?: { "query"?: string } | { "name"?: string };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "folderId"?: string, "title"?: string, "email"?: string, "name"?: string, "role"?: "Admin" | "Editor" | "Viewer" };
+    readonly updateFields?: { "folderId"?: string, "title"?: string } | { "email"?: string, "name"?: string } | { "role"?: "Admin" | "Editor" | "Viewer" };
 
     /**
      * Name of the team to create
@@ -67,13 +65,13 @@ export interface GrafanaNodeParameters {
     /**
      * ID of the team to delete
      */
-    readonly teamId?: string;
+    readonly teamId?: string | string | string | string | string | string;
 
     /**
      * User to add to a team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userId?: string;
+    readonly userId?: string | string | string;
 
     /**
      * User to remove from the team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

@@ -4,8 +4,6 @@
 export const name = "filemaker" as const;
 export const description = "Retrieve data from the FileMaker data API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"FileMaker"} as const;
-export const credentials = [{"name":"fileMaker","required":true}] as const
 
 /**
  * Retrieve data from the FileMaker data API

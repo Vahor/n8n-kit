@@ -4,8 +4,6 @@
 export const name = "discord" as const;
 export const description = "Sends data to Discord" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Discord"} as const;
-export const credentials = [{"name":"discordBotApi","required":true,"displayOptions":{"show":{"authentication":["botToken"]}}},{"name":"discordOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"discordWebhookApi","displayOptions":{"show":{"authentication":["webhook"]}}}] as const
 
 /**
  * Sends data to Discord
@@ -25,41 +23,41 @@ export interface DiscordV2NodeParameters {
     /**
      * Default: "send"
      */
-    readonly operation?: "deleteMessage" | "get" | "getAll" | "react" | "send" | "sendAndWait" | "create" | "update" | "roleAdd" | "roleRemove" | "sendLegacy";
+    readonly operation?: "deleteMessage" | "get" | "getAll" | "react" | "send" | "sendAndWait" | "create" | "deleteChannel" | "get" | "getAll" | "update" | "getAll" | "roleAdd" | "roleRemove" | "sendLegacy";
 
     /**
      * Select the server (guild) that your bot is connected to
      * Default: {"mode":"list","value":""}
      */
-    readonly guildId?: any;
+    readonly guildId?: any | any | any;
 
     /**
      * Select the channel by name, URL, or ID
      * Default: {"mode":"list","value":""}
      */
-    readonly channelId?: any;
+    readonly channelId?: any | any | any | any | any | any | any | any | any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "simplify"?: boolean, "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "message_reference"?: string, "tts"?: boolean, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "nsfw"?: boolean, "bitrate"?: number, "categoryId"?: any, "position"?: number, "rate_limit_per_user"?: number, "topic"?: string, "user_limit"?: number, "filter"?: ("0" | "2" | "4")[], "avatar_url"?: string, "username"?: string, "wait"?: boolean };
+    readonly options?: { "simplify"?: boolean } | { "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "message_reference"?: string, "tts"?: boolean } | { "simplify"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "nsfw"?: boolean, "bitrate"?: number, "categoryId"?: any, "position"?: number, "rate_limit_per_user"?: number, "topic"?: string, "user_limit"?: number } | { "filter"?: ("0" | "2" | "4")[] } | { "nsfw"?: boolean, "bitrate"?: number, "categoryId"?: any, "position"?: number, "rate_limit_per_user"?: number, "topic"?: string, "user_limit"?: number } | { "simplify"?: boolean } | { "avatar_url"?: string, "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "tts"?: boolean, "username"?: string, "wait"?: boolean };
 
     /**
      * The ID of the message
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string;
 
     /**
      * The emoji you want to react with
@@ -70,31 +68,31 @@ export interface DiscordV2NodeParameters {
      * Send message to a channel or DM to a user
      * Default: "channel"
      */
-    readonly sendTo?: "user" | "channel";
+    readonly sendTo?: "user" | "channel" | "user" | "channel";
 
     /**
      * Select the user you want to assign a role to
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any;
+    readonly userId?: any | any | any | any;
 
     /**
      * The content of the message (up to 2000 characters)
      * Type options: {"rows":2}
      */
-    readonly content?: string;
+    readonly content?: string | string;
 
     /**
      * Default: []
      * Type options: {"multipleValues":true}
      */
-    readonly embeds?: { "values": any };
+    readonly embeds?: { "values": any } | { "values": any };
 
     /**
      * Default: []
      * Type options: {"multipleValues":true}
      */
-    readonly files?: { "values": any };
+    readonly files?: { "values": any } | { "values": any };
 
     /**
      * Type options: {"rows":4}
@@ -131,7 +129,7 @@ export interface DiscordV2NodeParameters {
     /**
      * The name of the channel
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * The type of channel to create
@@ -149,7 +147,7 @@ export interface DiscordV2NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getRoles","loadOptionsDependsOn":["userId.value","guildId.value","operation"]}
      */
-    readonly role?: string[];
+    readonly role?: string[] | string[];
 
 
 }

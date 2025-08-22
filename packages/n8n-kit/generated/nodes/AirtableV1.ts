@@ -4,8 +4,6 @@
 export const name = "airtable" as const;
 export const description = "Read, update, write and delete data from Airtable" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Airtable"} as const;
-export const credentials = [{"name":"airtableApi","required":true,"displayOptions":{"show":{"authentication":["airtableApi"]}}},{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const
 
 /**
  * Read, update, write and delete data from Airtable
@@ -52,12 +50,12 @@ export interface AirtableV1NodeParameters {
      * Default: []
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
      */
-    readonly fields?: string;
+    readonly fields?: string | string;
 
     /**
      * ID of the record to delete
      */
-    readonly id?: string;
+    readonly id?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit

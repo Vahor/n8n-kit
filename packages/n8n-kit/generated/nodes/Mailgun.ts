@@ -4,8 +4,6 @@
 export const name = "mailgun" as const;
 export const description = "Sends an email via Mailgun" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mailgun"} as const;
-export const credentials = [{"name":"mailgunApi","required":true}] as const
 
 /**
  * Sends an email via Mailgun

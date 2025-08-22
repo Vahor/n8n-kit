@@ -52,8 +52,11 @@ describe("Chain", () => {
 				outputSchema: type({ hello: "'c'" }),
 				jsCode: "return { hello: 'c' };",
 			});
+			const wf = {
+				addUnlinkedNode: () => {},
+			} as any;
 			const AA = new Group(
-				null,
+				wf,
 				"aa",
 				{
 					content: "Group A",
@@ -61,7 +64,7 @@ describe("Chain", () => {
 				Chain.start(A),
 			);
 			const BB = new Group(
-				null,
+				wf,
 				"bb",
 				{
 					content: "Group B",

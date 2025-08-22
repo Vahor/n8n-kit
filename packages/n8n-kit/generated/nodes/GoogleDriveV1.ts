@@ -4,8 +4,6 @@
 export const name = "googleDrive" as const;
 export const description = "Access data on Google Drive" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Drive"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Access data on Google Drive
@@ -19,7 +17,7 @@ export interface GoogleDriveV1NodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2";
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /**
      * Default: "file"
@@ -29,23 +27,23 @@ export interface GoogleDriveV1NodeParameters {
     /**
      * Default: "upload"
      */
-    readonly operation?: "copy" | "delete" | "download" | "list" | "share" | "update" | "upload" | "create" | "get";
+    readonly operation?: "copy" | "delete" | "download" | "list" | "share" | "update" | "upload" | "create" | "delete" | "share" | "create" | "delete" | "get" | "list" | "update";
 
     /**
      * The ID of the file
      * Default: {"mode":"list","value":""}
      */
-    readonly fileId?: any;
+    readonly fileId?: any | any;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "googleFileConversion"?: { "conversion": any }, "fileName"?: string, "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[], "emailMessage"?: string, "enforceSingleParent"?: boolean, "moveToNewOwnersRoot"?: boolean, "sendNotificationEmail"?: boolean, "supportsAllDrives"?: boolean, "transferOwnership"?: boolean, "useDomainAdminAccess"?: boolean, "name"?: string, "parents"?: string, "spaces"?: ("*" | "appDataFolder" | "drive" | "photos")[], "corpora"?: "user" | "domain" | "drive" | "allDrives", "driveId"?: string, "capabilities"?: { "canAddChildren"?: boolean, "canChangeCopyRequiresWriterPermissionRestriction"?: boolean, "canChangeDomainUsersOnlyRestriction"?: boolean, "canChangeDriveBackground"?: boolean, "canChangeDriveMembersOnlyRestriction"?: boolean, "canComment"?: boolean, "canCopy"?: boolean, "canDeleteChildren"?: boolean, "canDeleteDrive"?: boolean, "canDownload"?: boolean, "canEdit"?: boolean, "canListChildren"?: boolean, "canManageMembers"?: boolean, "canReadRevisions"?: boolean, "canRename"?: boolean, "canRenameDrive"?: boolean, "canShare"?: boolean, "canTrashChildren"?: boolean }, "colorRgb"?: any, "createdTime"?: string, "hidden"?: boolean, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean }, "q"?: string, "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any } };
+    readonly options?: { "googleFileConversion"?: { "conversion": any }, "fileName"?: string } | { "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "emailMessage"?: string, "enforceSingleParent"?: boolean, "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[], "moveToNewOwnersRoot"?: boolean, "sendNotificationEmail"?: boolean, "supportsAllDrives"?: boolean, "transferOwnership"?: boolean, "useDomainAdminAccess"?: boolean, "name"?: string, "parents"?: string, "spaces"?: ("*" | "appDataFolder" | "drive" | "photos")[], "corpora"?: "user" | "domain" | "drive" | "allDrives", "driveId"?: string } | { "capabilities"?: { "canAddChildren"?: boolean, "canChangeCopyRequiresWriterPermissionRestriction"?: boolean, "canChangeDomainUsersOnlyRestriction"?: boolean, "canChangeDriveBackground"?: boolean, "canChangeDriveMembersOnlyRestriction"?: boolean, "canComment"?: boolean, "canCopy"?: boolean, "canDeleteChildren"?: boolean, "canDeleteDrive"?: boolean, "canDownload"?: boolean, "canEdit"?: boolean, "canListChildren"?: boolean, "canManageMembers"?: boolean, "canReadRevisions"?: boolean, "canRename"?: boolean, "canRenameDrive"?: boolean, "canShare"?: boolean, "canTrashChildren"?: boolean }, "colorRgb"?: any, "createdTime"?: string, "hidden"?: boolean, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "useDomainAdminAccess"?: boolean } | { "q"?: string, "useDomainAdminAccess"?: boolean } | { "colorRgb"?: any, "name"?: string, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any } };
 
     /**
      * Whether a query string should be used to filter results
@@ -62,7 +60,7 @@ export interface GoogleDriveV1NodeParameters {
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Filters to use to return only specific files
@@ -95,7 +93,7 @@ export interface GoogleDriveV1NodeParameters {
     /**
      * The name the file should be saved as
      */
-    readonly name?: string;
+    readonly name?: string | string | string;
 
     /**
      * By default the response only contain the ID of the file. If this option gets activated, it will resolve the data automatically.

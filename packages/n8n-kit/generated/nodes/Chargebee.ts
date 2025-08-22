@@ -4,8 +4,6 @@
 export const name = "chargebee" as const;
 export const description = "Retrieve data from Chargebee API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Chargebee"} as const;
-export const credentials = [{"name":"chargebeeApi","required":true}] as const
 
 /**
  * Retrieve data from Chargebee API
@@ -50,7 +48,7 @@ export interface ChargebeeNodeParameters {
     /**
      * The ID of the subscription to cancel
      */
-    readonly subscriptionId?: string;
+    readonly subscriptionId?: string | string;
 
     /**
      * Whether it will not cancel it directly in will instead schedule the cancelation for the end of the term

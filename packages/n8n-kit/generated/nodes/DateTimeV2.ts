@@ -4,7 +4,6 @@
 export const name = "undefined" as const;
 export const description = "Manipulate date and time values" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Date & Time","color":"#408000"} as const;
 
 /**
  * Manipulate date and time values
@@ -18,7 +17,7 @@ export interface DateTimeV2NodeParameters {
 
     /**
      */
-    readonly notice?: string;
+    readonly notice?: string | string | string | string | string | string;
 
     /**
      * When deactivated, the time will be set to midnight
@@ -30,33 +29,33 @@ export interface DateTimeV2NodeParameters {
      * Name of the field to put the output in
      * Default: "currentDate"
      */
-    readonly outputFieldName?: string;
+    readonly outputFieldName?: string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "includeInputFields"?: boolean, "timezone"?: string, "fromFormat"?: string, "isoString"?: boolean };
+    readonly options?: { "includeInputFields"?: boolean, "timezone"?: string } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "fromFormat"?: string, "timezone"?: boolean } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "isoString"?: boolean } | { "includeInputFields"?: boolean };
 
     /**
      * The date that you want to change
      */
-    readonly magnitude?: string;
+    readonly magnitude?: string | string;
 
     /**
      * Time unit for Duration parameter below
      * Default: "days"
      */
-    readonly timeUnit?: "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds";
+    readonly timeUnit?: "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds" | "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds";
 
     /**
      * The number of time units to add to the date
      */
-    readonly duration?: number;
+    readonly duration?: number | number;
 
     /**
      * The date that you want to format
      */
-    readonly date?: string;
+    readonly date?: string | string | string;
 
     /**
      * The format to convert the date to

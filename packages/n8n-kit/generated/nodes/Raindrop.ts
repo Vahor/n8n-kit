@@ -4,8 +4,6 @@
 export const name = "raindrop" as const;
 export const description = "Consume the Raindrop API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Raindrop"} as const;
-export const credentials = [{"name":"raindropOAuth2Api","required":true}] as const
 
 /**
  * Consume the Raindrop API
@@ -20,13 +18,13 @@ export interface RaindropNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "delete" | "getAll" | "get";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCollections"}
      */
-    readonly collectionId?: string;
+    readonly collectionId?: string | string | string | string | string;
 
     /**
      * Link of the bookmark to be created
@@ -36,29 +34,29 @@ export interface RaindropNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string, "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "view"?: "list" | "simple" | "grid" | "Masonry", "collectionId"?: string };
+    readonly additionalFields?: { "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string } | { "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "view"?: "list" | "simple" | "grid" | "Masonry" } | { "collectionId"?: string };
 
     /**
      * The ID of the bookmark to delete
      */
-    readonly bookmarkId?: string;
+    readonly bookmarkId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":10}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "collectionId"?: string, "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string, "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "view"?: "list" | "simple" | "grid" | "Masonry" };
+    readonly updateFields?: { "collectionId"?: string, "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string } | { "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "title"?: string, "view"?: "list" | "simple" | "grid" | "Masonry" };
 
     /**
      * Title of the collection to create

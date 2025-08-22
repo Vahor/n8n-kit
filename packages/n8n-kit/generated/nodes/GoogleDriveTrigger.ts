@@ -4,8 +4,6 @@
 export const name = "googleDriveTrigger" as const;
 export const description = "Starts the workflow when Google Drive events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Drive Trigger"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Starts the workflow when Google Drive events occur
@@ -30,7 +28,7 @@ export interface GoogleDriveTriggerNodeParameters {
      * When to trigger this node
      * Default: "fileUpdated"
      */
-    readonly event?: "fileUpdated" | "fileCreated" | "folderCreated" | "folderUpdated" | "watchFolderUpdated";
+    readonly event?: "fileUpdated" | "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated" | "watchFolderUpdated" | "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated";
 
     /**
      * Default: {"mode":"list","value":""}

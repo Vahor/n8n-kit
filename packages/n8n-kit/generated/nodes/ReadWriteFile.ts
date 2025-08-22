@@ -4,7 +4,6 @@
 export const name = "readWriteFile" as const;
 export const description = "Read or write files from the computer that runs n8n" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Read/Write Files from Disk"} as const;
 
 /**
  * Read or write files from the computer that runs n8n
@@ -28,7 +27,7 @@ export interface ReadWriteFileNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fileExtension"?: string, "fileName"?: string, "mimeType"?: string, "dataPropertyName"?: string, "append"?: boolean };
+    readonly options?: { "fileExtension"?: string, "fileName"?: string, "mimeType"?: string, "dataPropertyName"?: string } | { "append"?: boolean };
 
     /**
      * Path and name of the file that should be written. Also include the file extension.

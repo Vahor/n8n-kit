@@ -4,8 +4,6 @@
 export const name = "zendesk" as const;
 export const description = "Consume Zendesk API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Zendesk"} as const;
-export const credentials = [{"name":"zendeskApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"zendeskOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Zendesk API
@@ -25,7 +23,7 @@ export interface ZendeskNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "recover" | "update" | "getOrganizations" | "getRelatedData" | "search" | "count";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "recover" | "update" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getOrganizations" | "getRelatedData" | "search" | "update" | "count" | "create" | "delete" | "get" | "getAll" | "getRelatedData" | "update";
 
     /**
      * The first comment on the ticket
@@ -34,12 +32,12 @@ export interface ZendeskNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "externalId"?: string, "group"?: string, "recipient"?: string, "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved", "subject"?: string, "tags"?: string[], "type"?: "question" | "incident" | "problem" | "task", "alias"?: string, "custom_role_id"?: number, "details"?: string, "email"?: string, "external_id"?: string, "locale"?: string, "moderator"?: boolean, "notes"?: string, "only_private_comments"?: boolean, "organization_id"?: string, "phone"?: string, "report_csv"?: boolean, "restricted_agent"?: boolean, "role"?: "end-user" | "agent" | "admin", "signature"?: string, "suspended"?: boolean, "ticket_restriction"?: "organization" | "groups" | "assigned" | "requested", "time_zone"?: string, "userFieldsUi"?: { "userFieldValues": any }, "verified"?: boolean, "domain_names"?: string, "organizationFieldsUi"?: { "organizationFieldValues": any } };
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "externalId"?: string, "group"?: string, "recipient"?: string, "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved", "subject"?: string, "tags"?: string[], "type"?: "question" | "incident" | "problem" | "task" } | { "alias"?: string, "custom_role_id"?: number, "details"?: string, "email"?: string, "external_id"?: string, "locale"?: string, "moderator"?: boolean, "notes"?: string, "only_private_comments"?: boolean, "organization_id"?: string, "phone"?: string, "report_csv"?: boolean, "restricted_agent"?: boolean, "role"?: "end-user" | "agent" | "admin", "signature"?: string, "suspended"?: boolean, "tags"?: string[], "ticket_restriction"?: "organization" | "groups" | "assigned" | "requested", "time_zone"?: string, "userFieldsUi"?: { "userFieldValues": any }, "verified"?: boolean } | { "details"?: string, "domain_names"?: string, "notes"?: string, "organizationFieldsUi"?: { "organizationFieldValues": any }, "tags"?: string[] };
 
     /**
      * Object of values to set as described <a href="https://developer.zendesk.com/rest_api/docs/support/tickets">here</a>
@@ -49,12 +47,12 @@ export interface ZendeskNodeParameters {
 
     /**
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "assigneeEmail"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "externalId"?: string, "group"?: string, "internalNote"?: string, "publicReply"?: string, "recipient"?: string, "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved", "subject"?: string, "tags"?: string[], "type"?: "question" | "incident" | "problem" | "task", "alias"?: string, "custom_role_id"?: number, "details"?: string, "email"?: string, "external_id"?: string, "locale"?: string, "moderator"?: boolean, "name"?: string, "notes"?: string, "only_private_comments"?: boolean, "organization_id"?: string, "phone"?: string, "report_csv"?: boolean, "restricted_agent"?: boolean, "role"?: "end-user" | "agent" | "admin", "signature"?: string, "suspended"?: boolean, "ticket_restriction"?: "organization" | "groups" | "assigned" | "requested", "time_zone"?: string, "userFieldsUi"?: { "userFieldValues": any }, "verified"?: boolean, "domain_names"?: string, "organizationFieldsUi"?: { "organizationFieldValues": any } };
+    readonly updateFields?: { "assigneeEmail"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "externalId"?: string, "group"?: string, "internalNote"?: string, "publicReply"?: string, "recipient"?: string, "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved", "subject"?: string, "tags"?: string[], "type"?: "question" | "incident" | "problem" | "task" } | { "alias"?: string, "custom_role_id"?: number, "details"?: string, "email"?: string, "external_id"?: string, "locale"?: string, "moderator"?: boolean, "name"?: string, "notes"?: string, "only_private_comments"?: boolean, "organization_id"?: string, "phone"?: string, "report_csv"?: boolean, "restricted_agent"?: boolean, "role"?: "end-user" | "agent" | "admin", "signature"?: string, "suspended"?: boolean, "tags"?: string[], "ticket_restriction"?: "organization" | "groups" | "assigned" | "requested", "time_zone"?: string, "userFieldsUi"?: { "userFieldValues": any }, "verified"?: boolean } | { "details"?: string, "domain_names"?: string, "name"?: string, "notes"?: string, "organizationFieldsUi"?: { "organizationFieldValues": any }, "tags"?: string[] };
 
     /**
      * Object of values to update as described <a href="https://developer.zendesk.com/rest_api/docs/support/tickets">here</a>
@@ -70,14 +68,14 @@ export interface ZendeskNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number;
 
     /**
      * Default: {}
@@ -91,12 +89,12 @@ export interface ZendeskNodeParameters {
     /**
      * The user's name
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "role"?: ("end-user" | "agent" | "admin")[], "query"?: string, "external_id"?: string };
+    readonly filters?: { "role"?: ("end-user" | "agent" | "admin")[] } | { "query"?: string, "external_id"?: string };
 
 
 }

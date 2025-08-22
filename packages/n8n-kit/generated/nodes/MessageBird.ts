@@ -4,8 +4,6 @@
 export const name = "messageBird" as const;
 export const description = "Sends SMS via MessageBird" as const;
 export const version = 1 as const;
-export const defaults = {"name":"MessageBird"} as const;
-export const credentials = [{"name":"messageBirdApi","required":true}] as const
 
 /**
  * Sends SMS via MessageBird

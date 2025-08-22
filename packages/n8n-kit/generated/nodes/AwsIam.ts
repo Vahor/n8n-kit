@@ -4,8 +4,6 @@
 export const name = "awsIam" as const;
 export const description = "Interacts with Amazon IAM" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AWS IAM"} as const;
-export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Interacts with Amazon IAM
@@ -20,53 +18,53 @@ export interface AwsIamNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "addToGroup" | "create" | "delete" | "get" | "getAll" | "removeFromGroup" | "update";
+    readonly operation?: "addToGroup" | "create" | "delete" | "get" | "getAll" | "removeFromGroup" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Select the user you want to add to the group
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: any | any | any | any | any;
 
     /**
      * Select the group you want to add the user to
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any;
+    readonly group?: any | any | any | any | any;
 
     /**
      * The username of the new user to create
      * Type options: {"maxLength":64,"regex":"^[A-Za-z0-9+=,\\.@_-]+$"}
      */
-    readonly userName?: string;
+    readonly userName?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "path"?: string, "permissionsBoundary"?: string, "tags"?: { "tags": any }, "pathPrefix"?: string };
+    readonly additionalFields?: { "path"?: string, "permissionsBoundary"?: string, "tags"?: { "tags": any } } | { "pathPrefix"?: string } | { "path"?: string } | { "path"?: string } | { "path"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * The name of the new group to create
      * Type options: {"maxLength":128,"regex":"^[+=,.@\\-_A-Za-z0-9]+$"}
      */
-    readonly groupName?: string;
+    readonly groupName?: string | string;
 
     /**
      * Whether to include a list of users in the group
      */
-    readonly includeUsers?: boolean;
+    readonly includeUsers?: boolean | boolean;
 
 
 }

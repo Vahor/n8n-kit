@@ -4,8 +4,6 @@
 export const name = "surveyMonkeyTrigger" as const;
 export const description = "Starts the workflow when Survey Monkey events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"SurveyMonkey Trigger"} as const;
-export const credentials = [{"name":"surveyMonkeyApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"surveyMonkeyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Starts the workflow when Survey Monkey events occur
@@ -23,7 +21,7 @@ export interface SurveyMonkeyTriggerNodeParameters {
 
     /**
      */
-    readonly event?: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated";
+    readonly event?: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated";
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

@@ -4,8 +4,6 @@
 export const name = "freshdesk" as const;
 export const description = "Consume Freshdesk API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Freshdesk"} as const;
-export const credentials = [{"name":"freshdeskApi","required":true}] as const
 
 /**
  * Consume Freshdesk API
@@ -20,7 +18,7 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Default: "requesterId"
@@ -51,11 +49,11 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "description"?: string, "dueBy"?: string, "emailConfigId"?: number, "frDueBy"?: string, "group"?: string, "name"?: string, "product"?: string, "subject"?: string, "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund", "companyId"?: string, "include"?: ("company" | "description" | "requester" | "stats")[], "order"?: "asc" | "desc", "orderBy"?: "createdAt" | "dueBy" | "updatedAt", "requesterEmail"?: string, "requesterId"?: string, "updatedSince"?: string };
+    readonly options?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "description"?: string, "dueBy"?: string, "emailConfigId"?: number, "frDueBy"?: string, "group"?: string, "name"?: string, "product"?: string, "subject"?: string, "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund" } | { "companyId"?: string, "include"?: ("company" | "description" | "requester" | "stats")[], "order"?: "asc" | "desc", "orderBy"?: "createdAt" | "dueBy" | "updatedAt", "requesterEmail"?: string, "requesterId"?: string, "updatedSince"?: string };
 
     /**
      */
-    readonly ticketId?: string;
+    readonly ticketId?: string | string | string;
 
     /**
      * Default: {}
@@ -86,7 +84,7 @@ export interface FreshdeskNodeParameters {
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string;
 
     /**
      * Default: {}

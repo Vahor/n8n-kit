@@ -4,8 +4,6 @@
 export const name = "autopilot" as const;
 export const description = "Consume Autopilot API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Autopilot"} as const;
-export const credentials = [{"name":"autopilotApi","required":true}] as const
 
 /**
  * Consume Autopilot API
@@ -20,7 +18,7 @@ export interface AutopilotNodeParameters {
     /**
      * Default: "upsert"
      */
-    readonly operation?: "upsert" | "delete" | "get" | "getAll" | "add" | "exist" | "remove" | "create";
+    readonly operation?: "upsert" | "delete" | "get" | "getAll" | "add" | "add" | "exist" | "getAll" | "remove" | "create" | "getAll";
 
     /**
      * Email address of the contact
@@ -35,19 +33,19 @@ export interface AutopilotNodeParameters {
     /**
      * Can be ID or email
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * List ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

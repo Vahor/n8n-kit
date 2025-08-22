@@ -4,8 +4,6 @@
 export const name = "ldap" as const;
 export const description = "Interact with LDAP servers" as const;
 export const version = 1 as const;
-export const defaults = {"name":"LDAP"} as const;
-export const credentials = [{"name":"ldap","required":true,"testedBy":"ldapConnectionTest"}] as const
 
 /**
  * Interact with LDAP servers
@@ -25,7 +23,7 @@ export interface LdapNodeParameters {
      * The distinguished name of the entry to compare
      * Type options: {"alwaysOpenEditWindow":false}
      */
-    readonly dn?: string;
+    readonly dn?: string | string | string | string | string | string;
 
     /**
      * The ID of the attribute to compare
@@ -49,7 +47,7 @@ export interface LdapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attributes?: { "attribute": any, "add": any, "replace": any, "delete": any };
+    readonly attributes?: { "attribute": any } | { "add": any, "replace": any, "delete": any };
 
     /**
      * The distinguished name of the subtree to search in

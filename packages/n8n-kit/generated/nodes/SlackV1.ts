@@ -4,8 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Slack"} as const;
-export const credentials = [{"name":"slackApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"slackOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * undefined
@@ -29,18 +27,18 @@ export interface SlackV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "post" | "postEphemeral" | "update" | "add" | "upload" | "remove" | "info" | "getPresence" | "disable" | "enable";
+    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "post" | "postEphemeral" | "update" | "add" | "delete" | "getAll" | "get" | "getAll" | "upload" | "add" | "get" | "remove" | "info" | "getAll" | "getPresence" | "create" | "disable" | "enable" | "getAll" | "update" | "get" | "update";
 
     /**
      * The name of the channel to archive. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChannels"}
      */
-    readonly channelId?: string;
+    readonly channelId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "isPrivate"?: boolean, "includeNumMembers"?: boolean, "channelIds"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean, "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status_emoji"?: string, "status_expiration"?: string, "status_text"?: string, "user"?: string, "include_labels"?: boolean };
+    readonly additionalFields?: { "isPrivate"?: boolean } | { "includeNumMembers"?: boolean } | { "channelIds"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean } | { "include_count"?: boolean } | { "include_count"?: boolean } | { "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean } | { "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status_emoji"?: string, "status_expiration"?: string, "status_text"?: string, "user"?: string } | { "include_labels"?: boolean, "user"?: string };
 
     /**
      * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -58,19 +56,19 @@ export interface SlackV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[], "inclusive"?: boolean, "latest"?: string, "oldest"?: string, "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "userId"?: string };
+    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
 
     /**
      * Whether to resolve the data automatically. By default the response only contain the ID to resource.
@@ -80,17 +78,17 @@ export interface SlackV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "channelId"?: string, "returnIm"?: boolean, "users"?: string[], "fileComment"?: string, "fileId"?: string, "timestamp"?: string, "channelIds"?: string[], "fileName"?: string, "initialComment"?: string, "threadTs"?: string, "title"?: string };
+    readonly options?: { "channelId"?: string, "returnIm"?: boolean, "users"?: string[] } | { "channelId"?: string, "fileComment"?: string, "fileId"?: string, "timestamp"?: string } | { "channelId"?: string, "fileId"?: string, "fileComment"?: string, "timestamp"?: string } | { "channelIds"?: string[], "fileName"?: string, "initialComment"?: string, "threadTs"?: string, "title"?: string };
 
     /**
      * New name for conversation
      */
-    readonly name?: string;
+    readonly name?: string | string | string;
 
     /**
      * Unique identifier of a thread's parent message
      */
-    readonly ts?: string;
+    readonly ts?: string | string;
 
     /**
      * A new, specialer purpose
@@ -105,7 +103,7 @@ export interface SlackV1NodeParameters {
     /**
      * Timestamp of the message to get permanent link
      */
-    readonly timestamp?: string;
+    readonly timestamp?: string | string | string;
 
     /**
      * The channel to send the message to
@@ -115,16 +113,16 @@ export interface SlackV1NodeParameters {
     /**
      * The user ID to send the message to
      */
-    readonly user?: string;
+    readonly user?: string | string | string;
 
     /**
      * The text to send
      */
-    readonly text?: string;
+    readonly text?: string | string;
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Other options to set
@@ -137,24 +135,24 @@ export interface SlackV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
+    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } } | { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "link_names"?: boolean, "parse"?: "client" | "full" | "none", "channels"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean, "name"?: string };
+    readonly updateFields?: { "link_names"?: boolean, "parse"?: "client" | "full" | "none" } | { "channels"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean, "name"?: string };
 
     /**
      * The attachments to add
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly attachmentsJson?: string;
+    readonly attachmentsJson?: string | string;
 
     /**
      * The blocks to add
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly blocksJson?: string;
+    readonly blocksJson?: string | string;
 
     /**
      * The blocks to add
@@ -185,7 +183,7 @@ export interface SlackV1NodeParameters {
     /**
      * The encoded ID of the User Group to update
      */
-    readonly userGroupId?: string;
+    readonly userGroupId?: string | string | string;
 
 
 }

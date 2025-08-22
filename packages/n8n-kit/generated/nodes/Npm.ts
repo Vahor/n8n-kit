@@ -4,8 +4,6 @@
 export const name = "npm" as const;
 export const description = "Consume NPM registry API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"npm"} as const;
-export const credentials = [{"name":"npmApi","required":false}] as const
 
 /**
  * Consume NPM registry API
@@ -24,12 +22,12 @@ export interface NpmNodeParameters {
 
     /**
      */
-    readonly packageName?: string;
+    readonly packageName?: string | string;
 
     /**
      * Default: "latest"
      */
-    readonly packageVersion?: string;
+    readonly packageVersion?: string | string;
 
     /**
      * The query text used to search for packages

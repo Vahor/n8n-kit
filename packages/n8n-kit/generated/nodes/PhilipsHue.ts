@@ -4,8 +4,6 @@
 export const name = "philipsHue" as const;
 export const description = "Consume Philips Hue API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Philips Hue"} as const;
-export const credentials = [{"name":"philipsHueOAuth2Api","required":true}] as const
 
 /**
  * Consume Philips Hue API
@@ -24,7 +22,7 @@ export interface PhilipsHueNodeParameters {
 
     /**
      */
-    readonly lightId?: string;
+    readonly lightId?: string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit

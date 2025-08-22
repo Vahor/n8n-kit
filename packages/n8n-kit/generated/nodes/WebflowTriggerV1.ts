@@ -4,8 +4,6 @@
 export const name = "webflowTrigger" as const;
 export const description = "Handle Webflow events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Webflow Trigger"} as const;
-export const credentials = [{"name":"webflowApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"webflowOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Handle Webflow events via webhooks

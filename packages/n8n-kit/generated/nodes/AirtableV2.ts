@@ -4,8 +4,6 @@
 export const name = "airtable" as const;
 export const description = "Read, update, write and delete data from Airtable" as const;
 export const version = 2.1 as const;
-export const defaults = {"name":"Airtable"} as const;
-export const credentials = [{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const
 
 /**
  * Read, update, write and delete data from Airtable
@@ -30,7 +28,7 @@ export interface AirtableV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly base?: any;
+    readonly base?: any | any;
 
     /**
      * Default: {"mode":"list","value":""}
@@ -42,17 +40,17 @@ export interface AirtableV2NodeParameters {
      * Default: {"mappingMode":"defineBelow","value":null}
      * Type options: {"loadOptionsDependsOn":["table.value","base.value"],"resourceMapper":{"resourceMapperMethod":"getColumns","mode":"add","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":true}}
      */
-    readonly columns?: any;
+    readonly columns?: any | any | any;
 
     /**
      * Default: {}
      */
-    readonly options?: { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean, "downloadFields"?: string[], "fields"?: string[], "view"?: any, "permissionLevel"?: ("comment" | "create" | "edit" | "none" | "read")[] };
+    readonly options?: { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "downloadFields"?: string[] } | { "downloadFields"?: string[], "fields"?: string[], "view"?: any } | { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "permissionLevel"?: ("comment" | "create" | "edit" | "none" | "read")[] };
 
     /**
      * ID of the record to delete. <a href="https://support.airtable.com/docs/record-id" target="_blank">More info</a>.
      */
-    readonly id?: string;
+    readonly id?: string | string;
 
     /**
      * The formula will be evaluated for each record, and if the result is not 0, false, "", NaN, [], or #Error! the record will be included in the response. <a href="https://support.airtable.com/docs/formula-field-reference" target="_blank">More info</a>.
@@ -63,14 +61,14 @@ export interface AirtableV2NodeParameters {
      * Whether to return all results or only up to a given limit
      * Default: true
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Defines how the returned records should be ordered

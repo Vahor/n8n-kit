@@ -4,8 +4,6 @@
 export const name = "erpNext" as const;
 export const description = "Consume ERPNext API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"ERPNext"} as const;
-export const credentials = [{"name":"erpNextApi","required":true}] as const
 
 /**
  * Consume ERPNext API
@@ -26,7 +24,7 @@ export interface ERPNextNodeParameters {
      * DocType whose documents to retrieve. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDocTypes"}
      */
-    readonly docType?: string;
+    readonly docType?: string | string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -49,12 +47,12 @@ export interface ERPNextNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "customProperty": any };
+    readonly properties?: { "customProperty": any } | { "customProperty": any };
 
     /**
      * The name (ID) of document you would like to get
      */
-    readonly documentName?: string;
+    readonly documentName?: string | string | string;
 
 
 }

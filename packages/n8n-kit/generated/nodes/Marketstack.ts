@@ -4,8 +4,6 @@
 export const name = "marketstack" as const;
 export const description = "Consume Marketstack API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Marketstack"} as const;
-export const credentials = [{"name":"marketstackApi","required":true}] as const
 
 /**
  * Consume Marketstack API
@@ -20,7 +18,7 @@ export interface MarketstackNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "get";
+    readonly operation?: "getAll" | "get" | "get";
 
     /**
      * One or multiple comma-separated stock symbols (tickers) to retrieve, e.g. <code>AAPL</code> or <code>AAPL,MSFT</code>

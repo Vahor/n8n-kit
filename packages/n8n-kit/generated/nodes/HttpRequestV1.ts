@@ -4,8 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 1 as const;
-export const defaults = {"name":"HTTP Request","color":"#2200DD"} as const;
-export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["digestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["queryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * undefined
@@ -44,7 +42,7 @@ export interface HttpRequestV1NodeParameters {
      * Name of the property to which to write the response data
      * Default: "data"
      */
-    readonly dataPropertyName?: string;
+    readonly dataPropertyName?: string | string;
 
     /**
      * Whether the query and/or body parameter should be set via the value-key pair UI or JSON/RAW

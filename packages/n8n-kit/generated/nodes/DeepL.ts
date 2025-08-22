@@ -4,8 +4,6 @@
 export const name = "deepL" as const;
 export const description = "Translate data using DeepL" as const;
 export const version = 1 as const;
-export const defaults = {"name":"DeepL"} as const;
-export const credentials = [{"name":"deepLApi","required":true}] as const
 
 /**
  * Translate data using DeepL

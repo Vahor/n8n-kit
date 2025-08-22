@@ -4,8 +4,6 @@
 export const name = "gitlab" as const;
 export const description = "Retrieve data from GitLab API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"GitLab"} as const;
-export const credentials = [{"name":"gitlabApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gitlabOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Retrieve data from GitLab API
@@ -25,7 +23,7 @@ export interface GitlabNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "createComment" | "edit" | "get" | "lock" | "getIssues" | "getRepositories" | "delete" | "getAll" | "update" | "list";
+    readonly operation?: "create" | "createComment" | "edit" | "get" | "lock" | "get" | "getIssues" | "getRepositories" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "edit" | "get" | "list";
 
     /**
      * User, group or namespace of the project
@@ -46,7 +44,7 @@ export interface GitlabNodeParameters {
      * The body of the issue
      * Type options: {"rows":5}
      */
-    readonly body?: string;
+    readonly body?: string | string;
 
     /**
      * Due Date for issue
@@ -68,7 +66,7 @@ export interface GitlabNodeParameters {
     /**
      * The number of the issue on which to create the comment on
      */
-    readonly issueNumber?: number;
+    readonly issueNumber?: number | number | number | number;
 
     /**
      * Default: {}
@@ -91,17 +89,17 @@ export interface GitlabNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly additionalFields?: { "name"?: string, "description"?: string, "ref"?: string, "order_by"?: "created_at" | "released_at", "sort"?: "asc" | "desc", "milestones"?: string, "released_at"?: string };
+    readonly additionalFields?: { "name"?: string, "description"?: string, "ref"?: string } | { "order_by"?: "created_at" | "released_at", "sort"?: "asc" | "desc" } | { "name"?: string, "description"?: string, "milestones"?: string, "released_at"?: string };
 
     /**
      * The ID or URL-encoded path of the project
      */
-    readonly projectId?: string;
+    readonly projectId?: string | string | string;
 
     /**
      * The Git tag the release is associated with
      */
-    readonly tag_name?: string;
+    readonly tag_name?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -124,7 +122,7 @@ export interface GitlabNodeParameters {
     /**
      * The file path of the file. Has to contain the full path or leave it empty for root folder.
      */
-    readonly filePath?: string;
+    readonly filePath?: string | string;
 
     /**
      * Page of results to display
@@ -137,7 +135,7 @@ export interface GitlabNodeParameters {
      * Additional fields to add
      * Default: {}
      */
-    readonly additionalParameters?: { "ref"?: string, "recursive"?: boolean, "reference"?: string, "branchStart"?: any, "author"?: any, "encoding"?: any };
+    readonly additionalParameters?: { "ref"?: string, "recursive"?: boolean } | { "reference"?: string } | { "branchStart": any, "author": any, "encoding": any };
 
     /**
      * Whether to set the data of the file as binary property instead of returning the raw API response
@@ -148,7 +146,7 @@ export interface GitlabNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Whether the data to upload should be taken from binary field

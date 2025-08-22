@@ -4,8 +4,6 @@
 export const name = "googleContacts" as const;
 export const description = "Consume Google Contacts API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Contacts"} as const;
-export const credentials = [{"name":"googleContactsOAuth2Api","required":true}] as const
 
 /**
  * Consume Google Contacts API
@@ -37,18 +35,18 @@ export interface GoogleContactsNodeParameters {
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string;
 
     /**
      * A field mask to restrict which fields on each person are returned. Multiple fields can be specified by separating them with commas.
      * Default: []
      */
-    readonly fields?: ("*" | "addresses" | "biographies" | "birthdays" | "coverPhotos" | "emailAddresses" | "events" | "genders" | "imClients" | "interests" | "locales" | "memberships" | "metadata" | "names" | "nicknames" | "occupations" | "organizations" | "phoneNumbers" | "photos" | "relations" | "residences" | "sipAddresses" | "skills" | "urls" | "userDefined")[];
+    readonly fields?: ("*" | "addresses" | "biographies" | "birthdays" | "coverPhotos" | "emailAddresses" | "events" | "genders" | "imClients" | "interests" | "locales" | "memberships" | "metadata" | "names" | "nicknames" | "occupations" | "organizations" | "phoneNumbers" | "photos" | "relations" | "residences" | "sipAddresses" | "skills" | "urls" | "userDefined")[] | ("*" | "addresses" | "biographies" | "birthdays" | "coverPhotos" | "emailAddresses" | "events" | "genders" | "imClients" | "interests" | "locales" | "memberships" | "metadata" | "names" | "nicknames" | "occupations" | "organizations" | "phoneNumbers" | "photos" | "relations" | "residences" | "sipAddresses" | "skills" | "urls" | "userDefined")[] | ("*" | "addresses" | "biographies" | "birthdays" | "coverPhotos" | "emailAddresses" | "events" | "genders" | "imClients" | "interests" | "locales" | "memberships" | "metadata" | "names" | "nicknames" | "occupations" | "organizations" | "phoneNumbers" | "photos" | "relations" | "residences" | "sipAddresses" | "skills" | "urls" | "userDefined")[];
 
     /**
      * Whether to return the data exactly in the way it got received from the API
      */
-    readonly rawData?: boolean;
+    readonly rawData?: boolean | boolean;
 
     /**
      * Whether to return all results or only up to a given limit

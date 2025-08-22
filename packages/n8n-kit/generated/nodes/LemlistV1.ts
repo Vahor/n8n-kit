@@ -4,8 +4,6 @@
 export const name = "lemlist" as const;
 export const description = "Consume the Lemlist API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Lemlist"} as const;
-export const credentials = [{"name":"lemlistApi","required":true}] as const
 
 /**
  * Consume the Lemlist API
@@ -20,19 +18,19 @@ export interface LemlistV1NodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "create" | "delete" | "get" | "unsubscribe" | "add";
+    readonly operation?: "getAll" | "getAll" | "create" | "delete" | "get" | "unsubscribe" | "get" | "add" | "delete" | "getAll";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
@@ -44,12 +42,12 @@ export interface LemlistV1NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
-    readonly campaignId?: string;
+    readonly campaignId?: string | string | string;
 
     /**
      * Email of the lead to create
      */
-    readonly email?: string;
+    readonly email?: string | string | string | string | string | string;
 
     /**
      * Default: {}

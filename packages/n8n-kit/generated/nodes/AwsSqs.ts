@@ -4,8 +4,6 @@
 export const name = "awsSqs" as const;
 export const description = "Sends messages to AWS SQS" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AWS SQS"} as const;
-export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Sends messages to AWS SQS

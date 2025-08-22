@@ -4,8 +4,6 @@
 export const name = "linear" as const;
 export const description = "Consume Linear API" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Linear"} as const;
-export const credentials = [{"name":"linearApi","required":true,"testedBy":"linearApiTest","displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"linearOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Linear API
@@ -29,7 +27,7 @@ export interface LinearNodeParameters {
 
     /**
      */
-    readonly issueId?: string;
+    readonly issueId?: string | string | string;
 
     /**
      */
@@ -38,7 +36,7 @@ export interface LinearNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "parentId"?: string, "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string };
+    readonly additionalFields?: { "parentId"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -65,7 +63,7 @@ export interface LinearNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "3" | "0", "stateId"?: string, "teamId"?: string, "title"?: string };
+    readonly updateFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "3" | "0", "stateId"?: string, "teamId"?: string, "title"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string, "teamId"?: string, "title"?: string };
 
     /**
      */

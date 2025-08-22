@@ -4,8 +4,6 @@
 export const name = "matrix" as const;
 export const description = "Consume Matrix API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Matrix"} as const;
-export const credentials = [{"name":"matrixApi","required":true}] as const
 
 /**
  * Consume Matrix API
@@ -20,12 +18,12 @@ export interface MatrixNodeParameters {
     /**
      * Default: "me"
      */
-    readonly operation?: "me" | "get" | "upload" | "create" | "getAll" | "invite" | "join" | "kick" | "leave";
+    readonly operation?: "me" | "get" | "upload" | "create" | "getAll" | "create" | "invite" | "join" | "kick" | "leave" | "getAll";
 
     /**
      * The room related to the event
      */
-    readonly roomId?: string;
+    readonly roomId?: string | string | string | string | string | string | string | string;
 
     /**
      * The room related to the event
@@ -107,7 +105,7 @@ export interface MatrixNodeParameters {
     /**
      * The fully qualified user ID of the invitee
      */
-    readonly userId?: string;
+    readonly userId?: string | string;
 
     /**
      * Reason for kick

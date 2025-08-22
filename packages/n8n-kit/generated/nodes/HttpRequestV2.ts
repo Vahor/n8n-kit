@@ -4,8 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 2 as const;
-export const defaults = {"name":"HTTP Request","color":"#2200DD"} as const;
-export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["httpBasicAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["httpDigestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["httpHeaderAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["httpQueryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1Api"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2Api"]}}}] as const
 
 /**
  * undefined
@@ -51,7 +49,7 @@ export interface HttpRequestV2NodeParameters {
      * Name of the property to which to write the response data
      * Default: "data"
      */
-    readonly dataPropertyName?: string;
+    readonly dataPropertyName?: string | string;
 
     /**
      * Whether the query and/or body parameter should be set via the value-key pair UI or JSON/RAW

@@ -4,8 +4,6 @@
 export const name = "googleBooks" as const;
 export const description = "Read data from Google Books" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Books"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBooksOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Read data from Google Books
@@ -15,7 +13,7 @@ export interface GoogleBooksNodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2";
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /**
      * Default: "bookshelf"
@@ -25,7 +23,7 @@ export interface GoogleBooksNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "add" | "clear" | "move" | "remove";
+    readonly operation?: "get" | "getAll" | "add" | "clear" | "getAll" | "move" | "remove" | "get" | "getAll";
 
     /**
      */
@@ -44,7 +42,7 @@ export interface GoogleBooksNodeParameters {
     /**
      * ID of the bookshelf
      */
-    readonly shelfId?: string;
+    readonly shelfId?: string | string;
 
     /**
      * ID of the volume

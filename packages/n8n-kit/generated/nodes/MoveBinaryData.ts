@@ -4,7 +4,6 @@
 export const name = "moveBinaryData" as const;
 export const description = "Move data between binary and JSON properties" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Convert to/from binary data","color":"#7722CC"} as const;
 
 /**
  * Move data between binary and JSON properties
@@ -27,13 +26,13 @@ export interface MoveBinaryDataNodeParameters {
      * The name of the binary key to get data from. It is also possible to define deep keys by using dot-notation like for example: "level1.level2.currentKey".
      * Default: "data"
      */
-    readonly sourceKey?: string;
+    readonly sourceKey?: string | string;
 
     /**
      * The name the JSON key to copy data to. It is also possible to define deep keys by using dot-notation like for example: "level1.level2.newKey".
      * Default: "data"
      */
-    readonly destinationKey?: string;
+    readonly destinationKey?: string | string;
 
     /**
      * Whether all JSON data should be converted to binary. Else only the data of one key will be converted.

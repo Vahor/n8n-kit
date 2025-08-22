@@ -4,8 +4,6 @@
 export const name = "cockpit" as const;
 export const description = "Consume Cockpit API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Cockpit"} as const;
-export const credentials = [{"name":"cockpitApi","required":true}] as const
 
 /**
  * Consume Cockpit API
@@ -52,20 +50,20 @@ export interface CockpitNodeParameters {
     /**
      * Whether new entry fields should be set via the value-key pair UI or JSON
      */
-    readonly jsonDataFields?: boolean;
+    readonly jsonDataFields?: boolean | boolean;
 
     /**
      * Entry data to send as JSON
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly dataFieldsJson?: string;
+    readonly dataFieldsJson?: string | string;
 
     /**
      * Entry data to send
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataFieldsUi?: { "field": any };
+    readonly dataFieldsUi?: { "field": any } | { "field": any };
 
     /**
      * Name of the form to operate on

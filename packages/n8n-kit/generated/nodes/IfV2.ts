@@ -4,7 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 2.2 as const;
-export const defaults = {"name":"If","color":"#408000"} as const;
 
 /**
  * undefined

@@ -4,8 +4,6 @@
 export const name = "microsoftOneDrive" as const;
 export const description = "Consume Microsoft OneDrive API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft OneDrive"} as const;
-export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const
 
 /**
  * Consume Microsoft OneDrive API
@@ -20,11 +18,11 @@ export interface MicrosoftOneDriveNodeParameters {
     /**
      * Default: "upload"
      */
-    readonly operation?: "copy" | "delete" | "download" | "get" | "rename" | "search" | "share" | "upload" | "create" | "getChildren";
+    readonly operation?: "copy" | "delete" | "download" | "get" | "rename" | "search" | "share" | "upload" | "create" | "delete" | "getChildren" | "rename" | "search" | "share";
 
     /**
      */
-    readonly fileId?: string;
+    readonly fileId?: string | string | string | string | string;
 
     /**
      * Default: {}
@@ -40,32 +38,32 @@ export interface MicrosoftOneDriveNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * ID of the file
      */
-    readonly itemId?: string;
+    readonly itemId?: string | string;
 
     /**
      * New name for file
      */
-    readonly newName?: string;
+    readonly newName?: string | string;
 
     /**
      * The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.
      */
-    readonly query?: string;
+    readonly query?: string | string;
 
     /**
      * The type of sharing link to create
      */
-    readonly type?: "view" | "edit" | "embed";
+    readonly type?: "view" | "edit" | "embed" | "view" | "edit" | "embed";
 
     /**
      * The type of sharing link to create
      */
-    readonly scope?: "anonymous" | "organization";
+    readonly scope?: "anonymous" | "organization" | "anonymous" | "organization";
 
     /**
      * The name the file should be saved as
@@ -99,7 +97,7 @@ export interface MicrosoftOneDriveNodeParameters {
 
     /**
      */
-    readonly folderId?: string;
+    readonly folderId?: string | string;
 
 
 }

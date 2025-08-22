@@ -4,8 +4,6 @@
 export const name = "formIoTrigger" as const;
 export const description = "Handle form.io events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Form.io Trigger"} as const;
-export const credentials = [{"name":"formIoApi","required":true}] as const
 
 /**
  * Handle form.io events via webhooks

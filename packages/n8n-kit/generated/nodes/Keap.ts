@@ -4,8 +4,6 @@
 export const name = "keap" as const;
 export const description = "Consume Keap API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Keap"} as const;
-export const credentials = [{"name":"keapOAuth2Api","required":true}] as const
 
 /**
  * Consume Keap API
@@ -20,7 +18,7 @@ export interface KeapNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "update" | "createRecord" | "send" | "upload";
+    readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "create" | "get" | "delete" | "getAll" | "create" | "delete" | "get" | "getAll" | "createRecord" | "getAll" | "send" | "delete" | "getAll" | "upload";
 
     /**
      */
@@ -29,42 +27,42 @@ export interface KeapNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "emailAddress"?: string, "notes"?: string, "optInReason"?: string, "website"?: string, "anniversary"?: string, "companyId"?: number, "contactType"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "jobTitle"?: string, "leadSourceId"?: number, "middleName"?: string, "ownerId"?: string, "preferredLocale"?: string, "preferredName"?: string, "sourceType"?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", "spouseName"?: string, "timezone"?: string, "body"?: string, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other", "contactId"?: number, "userId"?: string, "leadAffiliateId"?: number, "promoCodes"?: string, "salesAffiliateId"?: number, "active"?: boolean, "productDesc"?: string, "productPrice"?: number, "productShortDesc"?: string, "sku"?: string, "subscriptionOnly"?: boolean, "clickedDate"?: string, "headers"?: string, "htmlContent"?: string, "openedDate"?: string, "originalProvider"?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", "originalProviderId"?: string, "plainContent"?: string, "providerSourceId"?: string, "receivedDate"?: string, "sentDate"?: string, "sentFromReplyAddress"?: string, "sentToBccAddresses"?: string, "sentToCCAddresses"?: string, "subject"?: string, "addressField"?: string };
+    readonly additionalFields?: { "emailAddress"?: string, "notes"?: string, "optInReason"?: string, "website"?: string } | { "anniversary"?: string, "companyId"?: number, "contactType"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "jobTitle"?: string, "leadSourceId"?: number, "middleName"?: string, "optInReason"?: string, "ownerId"?: string, "preferredLocale"?: string, "preferredName"?: string, "sourceType"?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", "spouseName"?: string, "timezone"?: string, "website"?: string } | { "body"?: string, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other" } | { "body"?: string, "contactId"?: number, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other", "userId"?: string } | { "leadAffiliateId"?: number, "promoCodes"?: string, "salesAffiliateId"?: number } | { "active"?: boolean, "productDesc"?: string, "productPrice"?: number, "productShortDesc"?: string, "sku"?: string, "subscriptionOnly"?: boolean } | { "clickedDate"?: string, "contactId"?: number, "headers"?: string, "htmlContent"?: string, "openedDate"?: string, "originalProvider"?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", "originalProviderId"?: string, "plainContent"?: string, "providerSourceId"?: string, "receivedDate"?: string, "sentDate"?: string, "sentFromReplyAddress"?: string, "sentToBccAddresses"?: string, "sentToCCAddresses"?: string, "subject"?: string } | { "addressField"?: string, "htmlContent"?: string, "plainContent"?: string };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly addressesUi?: { "addressesValues": any };
+    readonly addressesUi?: { "addressesValues": any } | { "addressesValues": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly faxesUi?: { "faxesValues": any };
+    readonly faxesUi?: { "faxesValues": any } | { "faxesValues": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly phonesUi?: { "phonesValues": any };
+    readonly phonesUi?: { "phonesValues": any } | { "phonesValues": any };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":200}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number | number | number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "companyName"?: string, "order"?: "datecreated" | "id" | "name", "orderDirection"?: "ascending" | "descending", "fields"?: string, "email"?: string, "givenName"?: string, "familyName"?: string, "since"?: string, "until"?: string, "paid"?: boolean, "contactId"?: number, "productId"?: number };
+    readonly options?: { "companyName"?: string, "order"?: "datecreated" | "id" | "name", "orderDirection"?: "ascending" | "descending", "fields"?: string } | { "fields"?: string } | { "email"?: string, "givenName"?: string, "familyName"?: string, "order"?: "date" | "email" | "id" | "name", "orderDirection"?: "ascending" | "descending", "since"?: string, "until"?: string } | { "since"?: string, "until"?: string, "paid"?: boolean, "order"?: string, "contactId"?: number, "productId"?: number };
 
     /**
      * Performs duplicate checking by one of the following options: Email, EmailAndName. If a match is found using the option provided, the existing contact will be updated.
@@ -86,29 +84,29 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string | string | string | string | string | string;
 
     /**
      * The infusionsoft user to create the note on behalf of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userId?: string;
+    readonly userId?: string | string;
 
     /**
      */
-    readonly noteId?: string;
+    readonly noteId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "contactId"?: number, "userId"?: string, "active"?: boolean, "email"?: string, "sinceSentDate"?: string, "untilSentDate"?: string, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
+    readonly filters?: { "contactId"?: number, "userId"?: string } | { "active"?: boolean } | { "contactId"?: number, "email"?: string, "sinceSentDate"?: string, "untilSentDate"?: string } | { "contactId"?: number, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getTags"}
      */
-    readonly tagIds?: string[];
+    readonly tagIds?: string[] | string;
 
     /**
      */
@@ -136,7 +134,7 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly orderId?: string;
+    readonly orderId?: string | string;
 
     /**
      */
@@ -144,7 +142,7 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly productId?: string;
+    readonly productId?: string | string;
 
     /**
      */

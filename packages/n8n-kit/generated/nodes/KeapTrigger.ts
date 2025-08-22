@@ -4,8 +4,6 @@
 export const name = "keapTrigger" as const;
 export const description = "Starts the workflow when Infusionsoft events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Keap Trigger"} as const;
-export const credentials = [{"name":"keapOAuth2Api","required":true}] as const
 
 /**
  * Starts the workflow when Infusionsoft events occur

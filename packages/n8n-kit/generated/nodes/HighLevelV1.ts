@@ -4,8 +4,6 @@
 export const name = "highLevel" as const;
 export const description = "Consume HighLevel API v1" as const;
 export const version = 1 as const;
-export const defaults = {"name":"HighLevel"} as const;
-export const credentials = [{"name":"highLevelApi","required":true}] as const
 
 /**
  * Consume HighLevel API v1
@@ -20,7 +18,7 @@ export interface HighLevelV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "lookup" | "update" | "create";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -29,43 +27,43 @@ export interface HighLevelV1NodeParameters {
     /**
      * Email or Phone are required to create contact
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * Phone or Email are required to create contact. Phone number has to start with a valid <a href="https://en.wikipedia.org/wiki/List_of_country_calling_codes">country code</a> leading with + sign.
      */
-    readonly phone?: string;
+    readonly phone?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string, "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "description"?: string, "status"?: "incompleted" | "completed" };
+    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "name"?: string, "tags"?: string } | { "assignedTo"?: string, "description"?: string, "status"?: "incompleted" | "completed" };
 
     /**
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string, "assignedTo"?: string, "companyName"?: string, "contactIdentifier"?: string, "monetaryValue"?: number, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "title"?: string, "description"?: string, "dueDate"?: string };
+    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "contactIdentifier"?: string, "monetaryValue"?: number, "name"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "title"?: string, "tags"?: string } | { "assignedTo"?: string, "description"?: string, "dueDate"?: string, "status"?: "incompleted" | "completed", "title"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "query"?: string, "assignedTo"?: string, "campaignId"?: string, "endDate"?: string, "stageId"?: string, "startDate"?: string, "status"?: "open" | "won" | "lost" | "abandoned" };
+    readonly filters?: { "query"?: string } | { "assignedTo"?: string, "campaignId"?: string, "endDate"?: string, "stageId"?: string, "startDate"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "query"?: string };
 
     /**
      * Default: {}
@@ -91,7 +89,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly title?: string;
+    readonly title?: string | string;
 
     /**
      * Default: "open"
@@ -100,7 +98,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly opportunityId?: string;
+    readonly opportunityId?: string | string | string;
 
     /**
      */
@@ -108,7 +106,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
 
 }

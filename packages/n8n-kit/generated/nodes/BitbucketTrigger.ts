@@ -4,8 +4,6 @@
 export const name = "bitbucketTrigger" as const;
 export const description = "Handle Bitbucket events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Bitbucket Trigger"} as const;
-export const credentials = [{"name":"bitbucketApi","required":true,"testedBy":"bitbucketApiTest"}] as const
 
 /**
  * Handle Bitbucket events via webhooks
@@ -28,7 +26,7 @@ export interface BitbucketTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getWorkspaceEvents"}
      */
-    readonly events?: ()[];
+    readonly events?: ()[] | ()[];
 
     /**
      * The repository of which to listen to the events. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

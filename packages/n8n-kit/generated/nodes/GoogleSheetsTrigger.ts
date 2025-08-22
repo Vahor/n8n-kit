@@ -4,8 +4,6 @@
 export const name = "googleSheetsTrigger" as const;
 export const description = "Starts the workflow when Google Sheets events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Sheets Trigger"} as const;
-export const credentials = [{"name":"googleSheetsTriggerOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["triggerOAuth2"]}}}] as const
 
 /**
  * Starts the workflow when Google Sheets events occur

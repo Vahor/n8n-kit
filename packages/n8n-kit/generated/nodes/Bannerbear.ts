@@ -4,8 +4,6 @@
 export const name = "bannerbear" as const;
 export const description = "Consume Bannerbear API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Bannerbear"} as const;
-export const credentials = [{"name":"bannerbearApi","required":true}] as const
 
 /**
  * Consume Bannerbear API
@@ -20,13 +18,13 @@ export interface BannerbearNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll";
+    readonly operation?: "create" | "get" | "get" | "getAll";
 
     /**
      * The template ID you want to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTemplates"}
      */
-    readonly templateId?: string;
+    readonly templateId?: string | string;
 
     /**
      * Default: {}

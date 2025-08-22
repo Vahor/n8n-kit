@@ -4,8 +4,6 @@
 export const name = "wise" as const;
 export const description = "Consume the Wise API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Wise"} as const;
-export const credentials = [{"name":"wiseApi","required":true}] as const
 
 /**
  * Consume the Wise API
@@ -20,14 +18,14 @@ export interface WiseNodeParameters {
     /**
      * Default: "getBalances"
      */
-    readonly operation?: "getBalances" | "getCurrencies" | "getStatement" | "get" | "getAll" | "create" | "delete" | "execute";
+    readonly operation?: "getBalances" | "getCurrencies" | "getStatement" | "get" | "get" | "getAll" | "create" | "get" | "getAll" | "create" | "delete" | "execute" | "get" | "getAll";
 
     /**
      * ID of the user profile to retrieve the balance of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getProfiles"}
      */
-    readonly profileId?: string;
+    readonly profileId?: string | string | string | string | string | string | string;
 
     /**
      * ID of the borderless account to retrieve the statement of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -50,17 +48,17 @@ export interface WiseNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryProperty?: string;
+    readonly binaryProperty?: string | string;
 
     /**
      * Name of the file that will be downloaded
      */
-    readonly fileName?: string;
+    readonly fileName?: string | string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "lineStyle"?: "COMPACT" | "FLAT", "range"?: { "rangeProperties": any }, "interval"?: "day" | "hour" | "minute", "time"?: string, "reference"?: string };
+    readonly additionalFields?: { "lineStyle"?: "COMPACT" | "FLAT", "range"?: { "rangeProperties": any } } | { "interval"?: "day" | "hour" | "minute", "range"?: { "rangeProperties": any }, "time"?: string } | { "reference"?: string };
 
     /**
      * Code of the source currency to retrieve the exchange rate for
@@ -77,7 +75,7 @@ export interface WiseNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getRecipients"}
      */
-    readonly targetAccountId?: string;
+    readonly targetAccountId?: string | string;
 
     /**
      * Whether the amount is to be sent or received
@@ -105,24 +103,24 @@ export interface WiseNodeParameters {
     /**
      * ID of the quote to retrieve
      */
-    readonly quoteId?: string;
+    readonly quoteId?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * ID of the transfer to delete
      */
-    readonly transferId?: string;
+    readonly transferId?: string | string | string;
 
     /**
      * Whether to download the transfer receipt as a PDF file. Only for executed transfers, having status 'Outgoing Payment Sent'.

@@ -4,8 +4,6 @@
 export const name = "baserow" as const;
 export const description = "Consume the Baserow API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Baserow"} as const;
-export const credentials = [{"name":"baserowApi","required":true}] as const
 
 /**
  * Consume the Baserow API
@@ -37,7 +35,7 @@ export interface BaserowNodeParameters {
     /**
      * ID of the row to return
      */
-    readonly rowId?: string;
+    readonly rowId?: string | string | string;
 
     /**
      * Whether to insert the input data this node receives in the new row

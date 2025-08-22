@@ -4,8 +4,6 @@
 export const name = "seaTable" as const;
 export const description = "Consume the SeaTable API" as const;
 export const version = 2 as const;
-export const defaults = {"name":"SeaTable"} as const;
-export const credentials = [{"name":"seaTableApi","required":true}] as const
 
 /**
  * Consume the SeaTable API
@@ -26,19 +24,19 @@ export interface SeaTableV2NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTableNames"}
      */
-    readonly tableName?: string;
+    readonly tableName?: string | string | string | string | string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["tableName"],"loadOptionsMethod":"getRowIds"}
      */
-    readonly rowId?: string;
+    readonly rowId?: string | string | string;
 
     /**
      * Whether to insert the input data this node receives in the new row
      * Default: "defineBelow"
      */
-    readonly fieldsToSend?: "autoMapInputData" | "defineBelow";
+    readonly fieldsToSend?: "autoMapInputData" | "defineBelow" | "autoMapInputData" | "defineBelow";
 
     /**
      * Whether to use the column default values to populate new rows during creation (only available for normal backend)
@@ -47,19 +45,19 @@ export interface SeaTableV2NodeParameters {
 
     /**
      */
-    readonly notice?: string;
+    readonly notice?: string | string | string;
 
     /**
      * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
      */
-    readonly inputsToIgnore?: string;
+    readonly inputsToIgnore?: string | string;
 
     /**
      * Add destination column with its value. Provide the value in this way. Date: YYYY-MM-DD or YYYY-MM-DD hh:mm. Duration: time in seconds. Checkbox: true, on or 1. Multi-Select: comma-separated list.
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Column to Send","multipleValues":true}
      */
-    readonly columnsUi?: { "columnValues": any };
+    readonly columnsUi?: { "columnValues": any } | { "columnValues": any };
 
     /**
      * Whether write to Big Data backend (true) or not (false). True requires the activation of the Big Data backend in the base.
@@ -69,7 +67,7 @@ export interface SeaTableV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "simple"?: boolean, "convert"?: boolean, "insensitive"?: boolean, "wildcard"?: boolean, "replace"?: boolean, "append"?: boolean };
+    readonly options?: { "simple"?: boolean, "convert"?: boolean } | { "simple"?: boolean, "convert"?: boolean } | { "insensitive"?: boolean, "wildcard"?: boolean, "simple"?: boolean, "convert"?: boolean } | { "replace"?: boolean, "append"?: boolean };
 
     /**
      * The name of SeaTable view to access, or specify by using an expression. Provide it in the way "col.name:::col.type".
@@ -97,17 +95,17 @@ export interface SeaTableV2NodeParameters {
      * Choose from the list of specify the Link Column by using an expression. You have to provide it in the way "column_name:::link_id:::other_table_id".
      * Type options: {"loadOptionsDependsOn":["tableName"],"loadOptionsMethod":"getLinkColumns"}
      */
-    readonly linkColumn?: string;
+    readonly linkColumn?: string | string | string;
 
     /**
      * Provide the row ID of table you selected
      */
-    readonly linkColumnSourceId?: string;
+    readonly linkColumnSourceId?: string | string;
 
     /**
      * Provide the row ID of table you want to link
      */
-    readonly linkColumnTargetId?: string;
+    readonly linkColumnTargetId?: string | string;
 
     /**
      * Choose from the list, or specify the name using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

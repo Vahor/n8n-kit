@@ -4,8 +4,6 @@
 export const name = "iterable" as const;
 export const description = "Consume Iterable API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Iterable"} as const;
-export const credentials = [{"name":"iterableApi","required":true}] as const
 
 /**
  * Consume Iterable API
@@ -30,16 +28,16 @@ export interface IterableNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "campaignId"?: string, "createdAt"?: string, "dataFieldsUi"?: { "dataFieldValues": any }, "email"?: string, "id"?: string, "templateId"?: string, "userId"?: string, "mergeNestedObjects"?: boolean, "channelUnsubscribe"?: boolean };
+    readonly additionalFields?: { "campaignId"?: string, "createdAt"?: string, "dataFieldsUi"?: { "dataFieldValues": any }, "email"?: string, "id"?: string, "templateId"?: string, "userId"?: string } | { "dataFieldsUi"?: { "dataFieldValues": any }, "mergeNestedObjects"?: boolean } | { "campaignId"?: number, "channelUnsubscribe"?: boolean };
 
     /**
      * Identifier to be used
      */
-    readonly identifier?: "email" | "userId";
+    readonly identifier?: "email" | "userId" | "email" | "userId" | "email" | "userId";
 
     /**
      */
-    readonly value?: string;
+    readonly value?: string | string | string;
 
     /**
      * Whether to create a new user if the idetifier does not exist
@@ -51,23 +49,23 @@ export interface IterableNodeParameters {
      * Identifier to be used
      * Default: "email"
      */
-    readonly by?: "email" | "userId";
+    readonly by?: "email" | "userId" | "email" | "userId";
 
     /**
      * Unique identifier for a particular user
      */
-    readonly userId?: string;
+    readonly userId?: string | string;
 
     /**
      * Email for a particular user
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * Identifier to be used. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
-    readonly listId?: string;
+    readonly listId?: string | string;
 
 
 }

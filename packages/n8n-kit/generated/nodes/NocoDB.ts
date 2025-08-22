@@ -4,8 +4,6 @@
 export const name = "nocoDb" as const;
 export const description = "Read, update, write and delete data from NocoDB" as const;
 export const version = 3 as const;
-export const defaults = {"name":"NocoDB"} as const;
-export const credentials = [{"name":"nocoDb","required":true,"displayOptions":{"show":{"authentication":["nocoDb"]}}},{"name":"nocoDbApiToken","required":true,"displayOptions":{"show":{"authentication":["nocoDbApiToken"]}}}] as const
 
 /**
  * Read, update, write and delete data from NocoDB
@@ -20,7 +18,7 @@ export interface NocoDBNodeParameters {
     /**
      * Default: 1
      */
-    readonly version?: "1" | "2" | "3";
+    readonly version?: "1" | "2" | "3" | "1" | "2" | "3" | "1" | "2" | "3";
 
     /**
      * Default: "row"
@@ -43,27 +41,27 @@ export interface NocoDBNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["workspaceId"],"loadOptionsMethod":"getBases"}
      */
-    readonly projectId?: string;
+    readonly projectId?: string | string | string;
 
     /**
      * The table to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["projectId"],"loadOptionsMethod":"getTables"}
      */
-    readonly table?: string;
+    readonly table?: string | string;
 
     /**
      * Default: "id"
      */
-    readonly primaryKey?: "id" | "ncRecordId" | "custom";
+    readonly primaryKey?: "id" | "ncRecordId" | "custom" | "id" | "ncRecordId" | "custom";
 
     /**
      */
-    readonly customPrimaryKey?: string;
+    readonly customPrimaryKey?: string | string;
 
     /**
      * The value of the ID field
      */
-    readonly id?: string;
+    readonly id?: string | string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -80,12 +78,12 @@ export interface NocoDBNodeParameters {
     /**
      * Whether the attachment fields define in 'Download Fields' will be downloaded
      */
-    readonly downloadAttachments?: boolean;
+    readonly downloadAttachments?: boolean | boolean;
 
     /**
      * Name of the fields of type 'attachment' that should be downloaded. Multiple ones can be defined separated by comma. Case sensitive.
      */
-    readonly downloadFieldNames?: string;
+    readonly downloadFieldNames?: string | string;
 
     /**
      * Default: {}
@@ -100,7 +98,7 @@ export interface NocoDBNodeParameters {
 
     /**
      */
-    readonly info?: string;
+    readonly info?: string | string;
 
     /**
      * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.

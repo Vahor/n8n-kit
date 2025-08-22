@@ -4,8 +4,6 @@
 export const name = "bambooHr" as const;
 export const description = "Consume BambooHR API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"BambooHR"} as const;
-export const credentials = [{"name":"bambooHrApi","required":true,"testedBy":"bambooHrApiCredentialTest"}] as const
 
 /**
  * Consume BambooHR API
@@ -20,20 +18,20 @@ export interface BambooHrNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll" | "update" | "delete" | "download" | "upload";
+    readonly operation?: "create" | "get" | "getAll" | "update" | "delete" | "download" | "getAll" | "update" | "upload" | "delete" | "download" | "getAll" | "update" | "upload" | "get";
 
     /**
      * Whether the employee to create was added to a pay schedule synced with Trax Payroll
      */
-    readonly synced?: boolean;
+    readonly synced?: boolean | boolean;
 
     /**
      */
-    readonly firstName?: string;
+    readonly firstName?: string | string;
 
     /**
      */
-    readonly lastName?: string;
+    readonly lastName?: string | string;
 
     /**
      * Default: {}
@@ -43,72 +41,72 @@ export interface BambooHrNodeParameters {
 
     /**
      */
-    readonly dateOfBirth?: string;
+    readonly dateOfBirth?: string | string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getDepartments"}
      */
-    readonly department?: string;
+    readonly department?: string | string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getDivisions"}
      */
-    readonly division?: string;
+    readonly division?: string | string;
 
     /**
      */
-    readonly employeeNumber?: string;
+    readonly employeeNumber?: string | string;
 
     /**
      */
-    readonly exempt?: "exempt" | "non-exempt";
+    readonly exempt?: "exempt" | "non-exempt" | "exempt" | "non-exempt";
 
     /**
      */
-    readonly gender?: "female" | "male";
+    readonly gender?: "female" | "male" | "female" | "male";
 
     /**
      */
-    readonly hireDate?: string;
+    readonly hireDate?: string | string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getEmployeeLocations"}
      */
-    readonly location?: string;
+    readonly location?: string | string;
 
     /**
      */
-    readonly maritalStatus?: "single" | "married" | "domesticPartnership";
+    readonly maritalStatus?: "single" | "married" | "domesticPartnership" | "single" | "married" | "domesticPartnership";
 
     /**
      */
-    readonly mobilePhone?: string;
+    readonly mobilePhone?: string | string;
 
     /**
      */
-    readonly paidPer?: "hour" | "day" | "week" | "month" | "quater" | "year";
+    readonly paidPer?: "hour" | "day" | "week" | "month" | "quater" | "year" | "hour" | "day" | "week" | "month" | "quater" | "year";
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly payRate?: { "value": any };
+    readonly payRate?: { "value": any } | { "value": any };
 
     /**
      */
-    readonly payType?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly";
+    readonly payType?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly" | "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly";
 
     /**
      */
-    readonly preferredName?: string;
+    readonly preferredName?: string | string;
 
     /**
      * A standard United States Social Security number, with dashes
      */
-    readonly ssn?: string;
+    readonly ssn?: string | string;
 
     /**
      * Default: {}
@@ -117,24 +115,24 @@ export interface BambooHrNodeParameters {
 
     /**
      */
-    readonly employeeId?: string;
+    readonly employeeId?: string | string | string | string | string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: string[], "share"?: boolean, "fd"?: boolean, "onlyCurrent"?: boolean };
+    readonly options?: { "fields"?: string[] } | { "share"?: boolean } | { "share"?: boolean } | { "fd"?: boolean, "onlyCurrent"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
@@ -145,34 +143,34 @@ export interface BambooHrNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "addasasress"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "firstName"?: string, "lastName"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string, "categoryId"?: string, "name"?: string, "shareWithEmployee"?: boolean };
+    readonly updateFields?: { "addasasress"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "firstName"?: string, "lastName"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string } | { "categoryId"?: string, "name"?: string, "shareWithEmployee"?: boolean } | { "categoryId"?: string, "name"?: string, "shareWithEmployee"?: boolean };
 
     /**
      * ID of the employee file
      */
-    readonly fileId?: string;
+    readonly fileId?: string | string | string | string | string | string;
 
     /**
      * The name of the output field to put the binary file data in
      * Default: "data"
      */
-    readonly output?: string;
+    readonly output?: string | string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simplifyOutput?: boolean;
+    readonly simplifyOutput?: boolean | boolean;
 
     /**
      */
-    readonly categoryId?: string;
+    readonly categoryId?: string | string;
 
     /**
      * The name of the input field containing the binary file data to be uploaded. Supported file types: PNG, JPEG.
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * ID of the report. You can get the report number by hovering over the report name on the reports page and grabbing the ID.

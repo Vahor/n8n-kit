@@ -4,8 +4,6 @@
 export const name = "googleDocs" as const;
 export const description = "Consume Google Docs API." as const;
 export const version = 2 as const;
-export const defaults = {"name":"Google Docs"} as const;
-export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDocsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Google Docs API.
@@ -15,7 +13,7 @@ export interface GoogleDocsNodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2";
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /**
      * Default: "document"
@@ -47,13 +45,13 @@ export interface GoogleDocsNodeParameters {
     /**
      * The ID in the document URL (or just paste the whole URL)
      */
-    readonly documentURL?: string;
+    readonly documentURL?: string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean;
+    readonly simple?: boolean | boolean;
 
     /**
      * Actions applied to update the document

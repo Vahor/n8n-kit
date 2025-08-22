@@ -4,7 +4,6 @@
 export const name = "htmlExtract" as const;
 export const description = "Extracts data from HTML" as const;
 export const version = 1 as const;
-export const defaults = {"name":"HTML Extract","color":"#333377"} as const;
 
 /**
  * Extracts data from HTML
@@ -20,7 +19,7 @@ export interface HtmlExtractNodeParameters {
     /**
      * Default: "data"
      */
-    readonly dataPropertyName?: string;
+    readonly dataPropertyName?: string | string;
 
     /**
      * Default: {}

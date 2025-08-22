@@ -4,8 +4,6 @@
 export const name = "airtableTrigger" as const;
 export const description = "Starts the workflow when Airtable events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Airtable Trigger"} as const;
-export const credentials = [{"name":"airtableApi","required":true,"displayOptions":{"show":{"authentication":["airtableApi"]}}},{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const
 
 /**
  * Starts the workflow when Airtable events occur

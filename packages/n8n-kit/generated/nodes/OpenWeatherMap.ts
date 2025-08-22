@@ -4,8 +4,6 @@
 export const name = "openWeatherMap" as const;
 export const description = "Gets current and future weather information" as const;
 export const version = 1 as const;
-export const defaults = {"name":"OpenWeatherMap"} as const;
-export const credentials = [{"name":"openWeatherMapApi","required":true}] as const
 
 /**
  * Gets current and future weather information

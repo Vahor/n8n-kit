@@ -4,8 +4,6 @@
 export const name = "googleChat" as const;
 export const description = "Consume Google Chat API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Google Chat"} as const;
-export const credentials = [{"name":"googleApi","required":true,"testedBy":"testGoogleTokenAuth","displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleChatOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Google Chat API
@@ -25,7 +23,7 @@ export interface GoogleChatNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "create" | "delete" | "sendAndWait" | "update";
+    readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "sendAndWait" | "update" | "get" | "getAll";
 
     /**
      * Member to be retrieved in the form "spaces/*/members/*"
@@ -37,24 +35,24 @@ export interface GoogleChatNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
-    readonly spaceId?: string;
+    readonly spaceId?: string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Whether to pass the message object as JSON
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Default: {}
@@ -63,7 +61,7 @@ export interface GoogleChatNodeParameters {
 
     /**
      */
-    readonly jsonNotice?: string;
+    readonly jsonNotice?: string | string;
 
     /**
      * Message input as JSON Object or JSON String
@@ -79,7 +77,7 @@ export interface GoogleChatNodeParameters {
     /**
      * Resource name of the message to be deleted, in the form "spaces//messages/"
      */
-    readonly messageId?: string;
+    readonly messageId?: string | string | string;
 
     /**
      * Default: {}
@@ -127,7 +125,7 @@ export interface GoogleChatNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string };
+    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
 
 }

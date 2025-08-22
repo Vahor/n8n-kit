@@ -4,8 +4,6 @@
 export const name = "payPalTrigger" as const;
 export const description = "Handle PayPal events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"PayPal Trigger"} as const;
-export const credentials = [{"name":"payPalApi","required":true}] as const
 
 /**
  * Handle PayPal events via webhooks

@@ -4,8 +4,6 @@
 export const name = "typeformTrigger" as const;
 export const description = "Starts the workflow on a Typeform form submission" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"Typeform Trigger"} as const;
-export const credentials = [{"name":"typeformApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}},"testedBy":"testTypeformTokenAuth"},{"name":"typeformOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Starts the workflow on a Typeform form submission

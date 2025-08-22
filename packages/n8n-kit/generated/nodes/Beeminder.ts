@@ -4,8 +4,6 @@
 export const name = "beeminder" as const;
 export const description = "Consume Beeminder API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Beeminder"} as const;
-export const credentials = [{"name":"beeminderApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"beeminderOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Beeminder API
@@ -25,13 +23,13 @@ export interface BeeminderNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "createAll" | "delete" | "get" | "getAll" | "update" | "getArchived" | "refresh" | "shortCircuit" | "stepDown" | "cancelStepDown" | "uncle";
+    readonly operation?: "create" | "create" | "createAll" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "getArchived" | "update" | "refresh" | "shortCircuit" | "stepDown" | "cancelStepDown" | "uncle" | "get";
 
     /**
      * The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getGoals"}
      */
-    readonly goalName?: string;
+    readonly goalName?: string | string | string;
 
     /**
      * Charge amount in USD
@@ -90,12 +88,12 @@ export interface BeeminderNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "comment"?: string, "timestamp"?: string, "requestid"?: string, "note"?: string, "dryrun"?: boolean, "goaldate"?: string, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "tags"?: string, "datapoints"?: boolean, "emaciated"?: boolean, "associations"?: boolean, "diff_since"?: string, "skinny"?: boolean, "datapoints_count"?: number };
+    readonly additionalFields?: { "comment"?: string, "timestamp"?: string, "requestid"?: string } | { "note"?: string, "dryrun"?: boolean } | { "goaldate"?: string, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "dryrun"?: boolean, "tags"?: string } | { "datapoints"?: boolean, "emaciated"?: boolean } | { "associations"?: boolean, "diff_since"?: string, "skinny"?: boolean, "emaciated"?: boolean, "datapoints_count"?: number } | { "emaciated"?: boolean } | { "emaciated"?: boolean };
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "title"?: string, "yaxis"?: string, "tmin"?: string, "tmax"?: string, "secret"?: boolean, "datapublic"?: boolean, "roadall"?: string, "datasource"?: "api" | "ifttt" | "zapier" | "", "tags"?: string, "value"?: number, "comment"?: string, "timestamp"?: string };
+    readonly updateFields?: { "title"?: string, "yaxis"?: string, "tmin"?: string, "tmax"?: string, "secret"?: boolean, "datapublic"?: boolean, "roadall"?: string, "datasource"?: "api" | "ifttt" | "zapier" | "", "tags"?: string } | { "value"?: number, "comment"?: string, "timestamp"?: string };
 
     /**
      * Default: {}

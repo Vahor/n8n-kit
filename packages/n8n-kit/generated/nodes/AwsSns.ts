@@ -4,8 +4,6 @@
 export const name = "awsSns" as const;
 export const description = "Sends data to AWS SNS" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AWS SNS"} as const;
-export const credentials = [{"name":"aws","required":true}] as const
 
 /**
  * Sends data to AWS SNS

@@ -4,8 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Item Lists"} as const;
-export const credentials = [] as const
 
 /**
  * undefined
@@ -37,7 +35,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToInclude?: { "fields": any };
+    readonly fieldsToInclude?: { "fields": any } | { "fields": any };
 
     /**
      * Default: "aggregateIndividualFields"
@@ -60,7 +58,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToExclude?: { "fields": any };
+    readonly fieldsToExclude?: { "fields": any } | { "fields": any };
 
     /**
      * The fields of the input items to compare to see if they are the same
@@ -110,7 +108,7 @@ export interface ItemListsV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "removeOtherFields"?: boolean, "disableDotNotation"?: boolean, "destinationFieldName"?: string, "mergeLists"?: boolean, "keepMissing"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
+    readonly options?: { "removeOtherFields"?: boolean, "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "mergeLists"?: boolean, "keepMissing"?: boolean } | { "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
 
     /**
      * Default: {"values":[{"aggregation":"count","field":""}]}
@@ -121,7 +119,7 @@ export interface ItemListsV1NodeParameters {
     /**
      * The name of the input fields that you want to split the summary by
      */
-    readonly fieldsToSplitBy?: string;
+    readonly fieldsToSplitBy?: string | string;
 
 
 }

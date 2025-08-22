@@ -4,8 +4,6 @@
 export const name = "jwt" as const;
 export const description = "JWT" as const;
 export const version = 1 as const;
-export const defaults = {"name":"JWT"} as const;
-export const credentials = [{"name":"jwtAuth","required":true}] as const
 
 /**
  * JWT

@@ -4,7 +4,6 @@
 export const name = "aiTransform" as const;
 export const description = "Modify data based on instructions written in plain english" as const;
 export const version = 1 as const;
-export const defaults = {"name":"AI Transform"} as const;
 
 /**
  * Modify data based on instructions written in plain english

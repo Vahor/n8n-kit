@@ -4,8 +4,6 @@
 export const name = "mqttTrigger" as const;
 export const description = "Listens to MQTT events" as const;
 export const version = 1 as const;
-export const defaults = {"name":"MQTT Trigger"} as const;
-export const credentials = [{"name":"mqtt","required":true}] as const
 
 /**
  * Listens to MQTT events

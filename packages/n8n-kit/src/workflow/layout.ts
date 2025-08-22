@@ -27,17 +27,17 @@ export function calculateLayout(
 
 	g.setGraph({
 		rankdir: options.rankdir || "LR",
-		nodesep: options.nodesep || 100,
-		ranksep: options.ranksep || 100,
-		marginx: options.marginx || 60,
-		marginy: options.marginy || 60,
+		nodesep: options.nodesep || 120, // vertical distance between nodes
+		ranksep: options.ranksep || 80, // horizontal distance between nodes
 	});
 
 	// Add nodes to the graph
 	for (const node of nodes) {
 		if (node instanceof Group) {
 			g.setNode(node.id, {
-				label: node.id,
+				label: "",
+				// width: DEFAULT_NODE_SIZE.width * 3, // Suppose multiple nodes in a group
+				// height: DEFAULT_NODE_SIZE.height,
 			});
 			continue;
 		}
@@ -51,8 +51,8 @@ export function calculateLayout(
 	// Add edges based on connections
 	for (const node of nodes) {
 		if (node instanceof Group) continue;
-		if (node.groupId) {
-			g.setParent(node.id, node.groupId);
+		for (const groupid of node.groupIds) {
+			g.setParent(node.id, groupid);
 		}
 		for (const endState of node.listOutgoing()) {
 			g.setEdge(node.id, endState.id, {
@@ -74,35 +74,20 @@ export function calculateLayout(
 	});
 
 	// Update group positions and sizes
-	const groupPadding = 60;
+	const groupPadding = DEFAULT_NODE_SIZE.width / 2;
 	for (const node of nodes) {
 		if (!(node instanceof Group)) continue;
-		const nodesInGroup = nodes.filter((n) => n.groupId === node.id);
-		const minX = Math.min(
-			...nodesInGroup.map(
-				(n) => n.position![0] - n.size.width / 2 - groupPadding,
-			),
-		);
-		const maxX = Math.max(
-			...nodesInGroup.map(
-				(n) => n.position![0] + n.size.width / 2 + groupPadding,
-			),
-		);
-		const minY = Math.min(
-			...nodesInGroup.map(
-				(n) => n.position![1] - n.size.height / 2 - groupPadding,
-			),
-		);
-		const maxY = Math.max(
-			...nodesInGroup.map(
-				(n) => n.position![1] + n.size.height / 2 + groupPadding,
-			),
-		);
+		const nodesInGroup = nodes.filter((n) => n.groupIds.includes(node.id));
+
+		const minX = Math.min(...nodesInGroup.map((n) => n.position![0]));
+		const maxX = Math.max(...nodesInGroup.map((n) => n.position![0]));
+		const minY = Math.min(...nodesInGroup.map((n) => n.position![1]));
+		const maxY = Math.max(...nodesInGroup.map((n) => n.position![1]));
 		node.size = {
-			width: maxX - minX,
-			height: maxY - minY,
+			width: maxX - minX + 2 * groupPadding + DEFAULT_NODE_SIZE.width,
+			height: maxY - minY + 2 * groupPadding + DEFAULT_NODE_SIZE.height,
 		};
-		node.position![0] -= node.size.width / 2 - DEFAULT_NODE_SIZE.width / 2;
-		node.position![1] -= node.size.height / 2 - DEFAULT_NODE_SIZE.height / 2;
+		node.position![0] = minX - groupPadding;
+		node.position![1] = minY - groupPadding;
 	}
 }

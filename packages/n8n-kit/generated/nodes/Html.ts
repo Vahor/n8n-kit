@@ -4,7 +4,6 @@
 export const name = "html" as const;
 export const description = "Work with HTML" as const;
 export const version = 1.2 as const;
-export const defaults = {"name":"HTML"} as const;
 
 /**
  * Work with HTML
@@ -36,18 +35,18 @@ export interface HtmlNodeParameters {
     /**
      * Default: "data"
      */
-    readonly dataPropertyName?: string;
+    readonly dataPropertyName?: string | string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly extractionValues?: { "values": any };
+    readonly extractionValues?: { "values": any } | { "values": any };
 
     /**
      * Default: {}
      */
-    readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean, "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
+    readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean } | { "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
 
 
 }

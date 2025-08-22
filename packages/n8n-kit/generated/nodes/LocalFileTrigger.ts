@@ -4,7 +4,6 @@
 export const name = "localFileTrigger" as const;
 export const description = "Triggers a workflow on file system changes" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Local File Trigger","color":"#404040"} as const;
 
 /**
  * Triggers a workflow on file system changes
@@ -17,7 +16,7 @@ export interface LocalFileTriggerNodeParameters {
 
     /**
      */
-    readonly path?: string;
+    readonly path?: string | string;
 
     /**
      * The events to listen to

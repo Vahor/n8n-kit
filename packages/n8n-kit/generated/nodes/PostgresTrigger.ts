@@ -4,8 +4,6 @@
 export const name = "postgresTrigger" as const;
 export const description = "Listens to Postgres messages" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Postgres Trigger"} as const;
-export const credentials = [{"name":"postgres","required":true}] as const
 
 /**
  * Listens to Postgres messages

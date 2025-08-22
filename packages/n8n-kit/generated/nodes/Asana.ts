@@ -4,8 +4,6 @@
 export const name = "asana" as const;
 export const description = "Consume Asana REST API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Asana"} as const;
-export const credentials = [{"name":"asanaApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}},"testedBy":{"request":{"method":"GET","url":"/users/me"}}},{"name":"asanaOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume Asana REST API
@@ -25,34 +23,34 @@ export interface AsanaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "delete" | "get" | "move" | "search" | "update" | "add" | "remove";
+    readonly operation?: "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "move" | "search" | "update" | "add" | "remove" | "add" | "remove" | "add" | "remove" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The task to operate on
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string;
 
     /**
      * The name of the subtask to create
      */
-    readonly name?: string;
+    readonly name?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly otherProperties?: { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "liked"?: boolean, "notes"?: string, "workspace"?: string, "name"?: string, "projects"?: string[] };
+    readonly otherProperties?: { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "liked"?: boolean, "notes"?: string, "workspace"?: string } | { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "name"?: string, "liked"?: boolean, "notes"?: string, "projects"?: string[] };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
@@ -63,12 +61,12 @@ export interface AsanaNodeParameters {
      * The workspace to create the task in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
-    readonly workspace?: string;
+    readonly workspace?: string | string | string | string | string | string;
 
     /**
      * The ID of the task to delete
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string | string | string | string | string | string | string | string | string;
 
     /**
      * Properties to search for
@@ -102,25 +100,25 @@ export interface AsanaNodeParameters {
     /**
      * The plain text of the comment to add
      */
-    readonly text?: string;
+    readonly text?: string | string;
 
     /**
      * Properties of the task comment
      * Default: {}
      */
-    readonly additionalFields?: { "is_pinned"?: boolean, "insert_after"?: string, "insert_before"?: string, "section"?: string, "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "notes"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "archived"?: boolean, "team"?: string };
+    readonly additionalFields?: { "is_pinned"?: boolean } | { "insert_after"?: string, "insert_before"?: string, "section"?: string } | { "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "notes"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace" } | { "archived"?: boolean, "team"?: string };
 
     /**
      * The project where the task will be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly project?: string;
+    readonly project?: string | string;
 
     /**
      * The tag that should be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["id"],"loadOptionsMethod":"getTags"}
      */
-    readonly tag?: string;
+    readonly tag?: string | string;
 
     /**
      * An identifier for the user to get data of. Can be one of an email address,the globally unique identifier for the user, or the keyword me to indicate the current user making the request.

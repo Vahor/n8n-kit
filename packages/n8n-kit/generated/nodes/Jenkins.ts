@@ -4,8 +4,6 @@
 export const name = "jenkins" as const;
 export const description = "Consume Jenkins API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Jenkins"} as const;
-export const credentials = [{"name":"jenkinsApi","required":true,"testedBy":"jenkinApiCredentialTest"}] as const
 
 /**
  * Consume Jenkins API
@@ -31,7 +29,7 @@ export interface JenkinsNodeParameters {
      * Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getJobs"}
      */
-    readonly job?: string;
+    readonly job?: string | string;
 
     /**
      * Parameters for Jenkins job

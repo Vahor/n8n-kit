@@ -4,8 +4,6 @@
 export const name = "microsoftGraphSecurity" as const;
 export const description = "Consume the Microsoft Graph Security API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft Graph Security"} as const;
-export const credentials = [{"name":"microsoftGraphSecurityOAuth2Api","required":true}] as const
 
 /**
  * Consume the Microsoft Graph Security API
@@ -20,7 +18,7 @@ export interface MicrosoftGraphSecurityNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "update";
+    readonly operation?: "get" | "getAll" | "get" | "getAll" | "update";
 
     /**
      * ID of the secure score to retrieve
@@ -30,24 +28,24 @@ export interface MicrosoftGraphSecurityNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "filter"?: string, "includeControlScores"?: boolean };
+    readonly filters?: { "filter"?: string, "includeControlScores"?: boolean } | { "filter"?: string };
 
     /**
      * ID of the secure score control profile to retrieve
      */
-    readonly secureScoreControlProfileId?: string;
+    readonly secureScoreControlProfileId?: string | string;
 
     /**
      * Name of the provider of the security product or service

@@ -4,8 +4,6 @@
 export const name = "vero" as const;
 export const description = "Consume Vero API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Vero"} as const;
-export const credentials = [{"name":"veroApi","required":true}] as const
 
 /**
  * Consume Vero API
@@ -25,11 +23,11 @@ export interface VeroNodeParameters {
     /**
      * The unique identifier of the customer
      */
-    readonly id?: string;
+    readonly id?: string | string | string | string | string | string | string | string;
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean;
 
     /**
      * Default: {}
@@ -41,13 +39,13 @@ export interface VeroNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataAttributesUi?: { "dataAttributesValues": any };
+    readonly dataAttributesUi?: { "dataAttributesValues": any } | { "dataAttributesValues": any };
 
     /**
      * Key value pairs that represent the custom user properties you want to update
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly dataAttributesJson?: string;
+    readonly dataAttributesJson?: string | string;
 
     /**
      * The new unique identifier of the user
@@ -57,7 +55,7 @@ export interface VeroNodeParameters {
     /**
      * Tags to add separated by ","
      */
-    readonly tags?: string;
+    readonly tags?: string | string;
 
     /**
      */

@@ -4,7 +4,6 @@
 export const name = "editImage" as const;
 export const description = "Edits an image like blur, resize or adding border and text" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Edit Image","color":"#553399"} as const;
 
 /**
  * Edits an image like blur, resize or adding border and text
@@ -34,21 +33,21 @@ export interface EditImageNodeParameters {
      * Default: "#ffffff00"
      * Type options: {"showAlpha":true}
      */
-    readonly backgroundColor?: any;
+    readonly backgroundColor?: any | any;
 
     /**
      * The width of the image to create
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly width?: number;
+    readonly width?: number | number | number;
 
     /**
      * The height of the image to create
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly height?: number;
+    readonly height?: number | number | number;
 
     /**
      * The primitive to draw
@@ -61,7 +60,7 @@ export interface EditImageNodeParameters {
      * Default: "#ff000000"
      * Type options: {"showAlpha":true}
      */
-    readonly color?: any;
+    readonly color?: any | any;
 
     /**
      * X (horizontal) start position of the primitive
@@ -114,13 +113,13 @@ export interface EditImageNodeParameters {
      * X (horizontal) position of the text
      * Default: 50
      */
-    readonly positionX?: number;
+    readonly positionX?: number | number | number;
 
     /**
      * Y (vertical) position of the text
      * Default: 50
      */
-    readonly positionY?: number;
+    readonly positionY?: number | number | number;
 
     /**
      * Max amount of characters in a line before a line-break should get added

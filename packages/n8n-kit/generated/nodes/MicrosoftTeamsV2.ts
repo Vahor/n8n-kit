@@ -4,8 +4,6 @@
 export const name = "microsoftTeams" as const;
 export const description = "Consume Microsoft Teams API" as const;
 export const version = 2 as const;
-export const defaults = {"name":"Microsoft Teams"} as const;
-export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const
 
 /**
  * Consume Microsoft Teams API
@@ -20,60 +18,60 @@ export interface MicrosoftTeamsV2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "deleteChannel" | "get" | "getAll" | "update" | "sendAndWait";
+    readonly operation?: "create" | "deleteChannel" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll" | "sendAndWait" | "create" | "deleteTask" | "get" | "getAll" | "update";
 
     /**
      * Select the team from the list, by URL, or by ID (the ID is the "groupId" parameter in the URL you get from "Get a link to the team")
      * Default: {"mode":"list","value":""}
      */
-    readonly teamId?: any;
+    readonly teamId?: any | any | any | any | any | any | any;
 
     /**
      * The name of the new channel you want to create
      */
-    readonly name?: string;
+    readonly name?: string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "description"?: string, "type"?: "private" | "standard", "includeLinkToWorkflow"?: boolean, "makeReply"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean, "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "assignedTo"?: any, "dueDateTime"?: string, "percentComplete"?: number };
+    readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "description"?: string } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "assignedTo"?: any, "dueDateTime"?: string, "percentComplete"?: number };
 
     /**
      * Select the channel from the list, by URL, or by ID (the ID is the "threadId" in the URL)
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["teamId.value"]}
      */
-    readonly channelId?: any;
+    readonly channelId?: any | any | any | any | any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * Whether the message is plain text or HTML
      * Default: "text"
      */
-    readonly contentType?: "text" | "html";
+    readonly contentType?: "text" | "html" | "text" | "html";
 
     /**
      * The content of the message to be sent
      * Type options: {"rows":2}
      */
-    readonly message?: string;
+    readonly message?: string | string | string;
 
     /**
      * Select the chat from the list, by URL, or by ID (find the chat ID after "conversations/" in the URL)
      * Default: {"mode":"list","value":""}
      */
-    readonly chatId?: any;
+    readonly chatId?: any | any | any | any;
 
     /**
      * The ID of the message to retrieve
@@ -111,14 +109,14 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupSource"]}
      */
-    readonly groupId?: any;
+    readonly groupId?: any | any;
 
     /**
      * The plan for the task to belong to
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupId.value"]}
      */
-    readonly planId?: any;
+    readonly planId?: any | any;
 
     /**
      * The bucket for the task to belong to
@@ -135,7 +133,7 @@ export interface MicrosoftTeamsV2NodeParameters {
     /**
      * The ID of the task to delete
      */
-    readonly taskId?: string;
+    readonly taskId?: string | string | string;
 
     /**
      * Whether to retrieve the tasks for a user or for a plan

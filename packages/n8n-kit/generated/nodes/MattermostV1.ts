@@ -4,8 +4,6 @@
 export const name = "mattermost" as const;
 export const description = "Sends data to Mattermost" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Mattermost"} as const;
-export const credentials = [{"name":"mattermostApi","required":true}] as const
 
 /**
  * Sends data to Mattermost
@@ -20,13 +18,13 @@ export interface MattermostV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "addUser" | "create" | "delete" | "members" | "restore" | "search" | "statistics" | "post" | "postEphemeral" | "getAll" | "deactive" | "getByEmail" | "getById" | "invite";
+    readonly operation?: "addUser" | "create" | "delete" | "members" | "restore" | "search" | "statistics" | "delete" | "post" | "postEphemeral" | "create" | "delete" | "getAll" | "create" | "deactive" | "getByEmail" | "getById" | "getAll" | "invite";
 
     /**
      * The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
-    readonly teamId?: string;
+    readonly teamId?: string | string | string | string;
 
     /**
      * The non-unique UI name for the channel
@@ -48,7 +46,7 @@ export interface MattermostV1NodeParameters {
      * The ID of the channel to soft delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChannels"}
      */
-    readonly channelId?: string;
+    readonly channelId?: string | string | string | string | string | string | string;
 
     /**
      * By default the response only contain the ID of the user. If this option gets activated, it will resolve the user automatically.
@@ -60,20 +58,20 @@ export interface MattermostV1NodeParameters {
      * Whether to return all results or only up to a given limit
      * Default: true
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number | number;
 
     /**
      * The ID of the user to invite into channel. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userId?: string;
+    readonly userId?: string | string | string | string | string;
 
     /**
      * The search term for Channels in a Team
@@ -83,12 +81,12 @@ export interface MattermostV1NodeParameters {
     /**
      * ID of the post to delete
      */
-    readonly postId?: string;
+    readonly postId?: string | string | string | string;
 
     /**
      * The text to send
      */
-    readonly message?: string;
+    readonly message?: string | string;
 
     /**
      * The attachment to add
@@ -106,7 +104,7 @@ export interface MattermostV1NodeParameters {
     /**
      * Emoji to use for this reaction
      */
-    readonly emojiName?: string;
+    readonly emojiName?: string | string;
 
     /**
      */
@@ -122,7 +120,7 @@ export interface MattermostV1NodeParameters {
 
     /**
      */
-    readonly email?: string;
+    readonly email?: string | string;
 
     /**
      * The password used for email authentication
@@ -133,7 +131,7 @@ export interface MattermostV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "first_name"?: string, "last_name"?: string, "locale"?: string, "nickname"?: string, "notificationUi"?: { "notificationValues": any }, "inChannel"?: string, "inTeam"?: string, "notInTeam"?: string, "notInChannel"?: string, "sort"?: "createdAt" | "lastActivityAt" | "status" | "username", "since"?: string };
+    readonly additionalFields?: { "first_name"?: string, "last_name"?: string, "locale"?: string, "nickname"?: string, "notificationUi"?: { "notificationValues": any } } | { "inChannel"?: string, "inTeam"?: string, "notInTeam"?: string, "notInChannel"?: string, "sort"?: "createdAt" | "lastActivityAt" | "status" | "username" } | { "since"?: string };
 
     /**
      * User's ID

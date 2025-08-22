@@ -4,8 +4,6 @@
 export const name = "openAi" as const;
 export const description = "Consume Open AI" as const;
 export const version = 1.1 as const;
-export const defaults = {"name":"OpenAI"} as const;
-export const credentials = [{"name":"openAiApi","required":true}] as const
 
 /**
  * Consume Open AI
@@ -24,14 +22,14 @@ export interface OpenAiNodeParameters {
     /**
      * Default: "complete"
      */
-    readonly operation?: "complete" | "create" | "edit" | "moderate";
+    readonly operation?: "complete" | "create" | "complete" | "edit" | "moderate";
 
     /**
      * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
      * Default: "gpt-3.5-turbo"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('gpt-') && !$responseItem.id.startsWith('gpt-4-vision') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly model?: string;
+    readonly model?: string | string | string | "code-davinci-edit-001" | "text-davinci-edit-001" | "text-moderation-stable" | "text-moderation-latest";
 
     /**
      * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
@@ -44,19 +42,19 @@ export interface OpenAiNodeParameters {
      * Default: {}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly prompt?: { "messages": any };
+    readonly prompt?: { "messages": any } | string | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simplifyOutput?: boolean;
+    readonly simplifyOutput?: boolean | boolean | boolean;
 
     /**
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "echo"?: boolean, "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number, "quality"?: "hd" | "standard", "size"?: "256x256" | "512x512" | "1024x1024", "style"?: "natural" | "vivid" };
+    readonly options?: { "echo"?: boolean, "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number } | { "n"?: number, "quality"?: "hd" | "standard", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792", "style"?: "natural" | "vivid" } | { "echo"?: boolean, "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number };
 
     /**
      * The model to use for image generation
@@ -74,7 +72,7 @@ export interface OpenAiNodeParameters {
     /**
      * The input text to be edited
      */
-    readonly input?: string;
+    readonly input?: string | string;
 
     /**
      * The instruction that tells the model how to edit the input text

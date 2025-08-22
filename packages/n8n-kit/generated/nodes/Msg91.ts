@@ -4,8 +4,6 @@
 export const name = "msg91" as const;
 export const description = "Sends transactional SMS via MSG91" as const;
 export const version = 1 as const;
-export const defaults = {"name":"MSG91"} as const;
-export const credentials = [{"name":"msg91Api","required":true}] as const
 
 /**
  * Sends transactional SMS via MSG91

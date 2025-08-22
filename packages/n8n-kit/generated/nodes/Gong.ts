@@ -4,8 +4,6 @@
 export const name = "gong" as const;
 export const description = "Interact with Gong API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Gong"} as const;
-export const credentials = [{"name":"gongApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gongOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Interact with Gong API
@@ -25,7 +23,7 @@ export interface GongNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "get" | "getAll";
+    readonly operation?: "get" | "getAll" | "get" | "getAll";
 
     /**
      * Default: {"mode":"list","value":""}
@@ -35,24 +33,24 @@ export interface GongNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "properties"?: ("pointsOfInterest" | "media" | "brief" | "publicComments" | "highlights" | "keyPoints" | "callOutcome" | "outline" | "parties" | "structure" | "topics" | "trackers" | "transcript")[] };
+    readonly options?: { "properties"?: ("pointsOfInterest" | "media" | "brief" | "publicComments" | "highlights" | "keyPoints" | "callOutcome" | "outline" | "parties" | "structure" | "topics" | "trackers" | "transcript")[] } | { "properties"?: ("parties" | "topics")[] };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number;
+    readonly limit?: number | number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "fromDateTime"?: string, "toDateTime"?: string, "workspaceId"?: string, "callIds"?: string, "primaryUserIds"?: any, "createdFromDateTime"?: string, "createdToDateTime"?: string, "userIds"?: string };
+    readonly filters?: { "fromDateTime"?: string, "toDateTime"?: string, "workspaceId"?: string, "callIds"?: string, "primaryUserIds"?: any } | { "createdFromDateTime"?: string, "createdToDateTime"?: string, "userIds"?: string };
 
     /**
      * Default: {"mode":"list","value":""}

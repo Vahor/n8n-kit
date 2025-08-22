@@ -4,8 +4,6 @@
 export const name = "webhook" as const;
 export const description = "Starts the workflow when a webhook is called" as const;
 export const version = 2.1 as const;
-export const defaults = {"name":"Webhook"} as const;
-export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"authentication":["jwtAuth"]}}}] as const
 
 /**
  * Starts the workflow when a webhook is called
@@ -21,7 +19,7 @@ export interface WebhookNodeParameters {
      * The HTTP method to listen to
      * Default: "GET"
      */
-    readonly httpMethod?: "DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT";
+    readonly httpMethod?: "DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT" | ("DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT")[];
 
     /**
      * The path to listen to, dynamic values could be specified by using ':', e.g. 'your-path/:dynamic-value'. If dynamic values are set 'webhookId' would be prepended to path.
@@ -38,7 +36,7 @@ export interface WebhookNodeParameters {
      * When and how to respond to the webhook
      * Default: "onReceived"
      */
-    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "streaming";
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "responseNode" | "streaming";
 
     /**
      */
@@ -74,7 +72,7 @@ export interface WebhookNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "responsePropertyName"?: string, "binaryPropertyName"?: string, "rawBody"?: boolean, "rawBody"?: boolean, "responseCode"?: { "values": any }, "responseContentType"?: string, "responseData"?: string, "responseHeaders"?: { "entries": any } };
+    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string | string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "responsePropertyName"?: string, "rawBody"?: boolean | boolean, "responseCode"?: { "values": any }, "responseContentType"?: string, "responseData"?: string, "responseHeaders"?: { "entries": any } };
 
 
 }

@@ -4,7 +4,6 @@
 export const name = "formTrigger" as const;
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const version = 1 as const;
-export const defaults = {"name":"n8n Form Trigger"} as const;
 
 /**
  * Generate webforms in n8n and pass their responses to the workflow
@@ -37,7 +36,7 @@ export interface FormTriggerV1NodeParameters {
      * When to respond to the form submission
      * Default: "onReceived"
      */
-    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "streaming";
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode";
 
     /**
      * Default: {}

@@ -4,7 +4,6 @@
 export const name = "start" as const;
 export const description = "Starts the workflow execution from this node" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Start","color":"#00e000"} as const;
 
 /**
  * Starts the workflow execution from this node

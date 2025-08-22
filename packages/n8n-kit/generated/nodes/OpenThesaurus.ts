@@ -4,7 +4,6 @@
 export const name = "openThesaurus" as const;
 export const description = "Get synonmns for German words using the OpenThesaurus API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"OpenThesaurus"} as const;
 
 /**
  * Get synonmns for German words using the OpenThesaurus API

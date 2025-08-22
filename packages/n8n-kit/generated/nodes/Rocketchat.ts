@@ -4,8 +4,6 @@
 export const name = "rocketchat" as const;
 export const description = "Consume RocketChat API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"RocketChat"} as const;
-export const credentials = [{"name":"rocketchatApi","required":true}] as const
 
 /**
  * Consume RocketChat API

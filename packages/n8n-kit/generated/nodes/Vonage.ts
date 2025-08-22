@@ -4,8 +4,6 @@
 export const name = "vonage" as const;
 export const description = "Consume Vonage API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Vonage"} as const;
-export const credentials = [{"name":"vonageApi","required":true}] as const
 
 /**
  * Consume Vonage API

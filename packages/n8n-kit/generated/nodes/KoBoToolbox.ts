@@ -4,8 +4,6 @@
 export const name = "koBoToolbox" as const;
 export const description = "Work with KoBoToolbox forms and submissions" as const;
 export const version = 1 as const;
-export const defaults = {"name":"KoBoToolbox"} as const;
-export const credentials = [{"name":"koBoToolboxApi","required":true}] as const
 
 /**
  * Work with KoBoToolbox forms and submissions
@@ -20,30 +18,30 @@ export interface KoBoToolboxNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "redeploy" | "getLogs" | "retryAll" | "retryOne" | "delete" | "getValidation" | "setValidation" | "create";
+    readonly operation?: "get" | "getAll" | "redeploy" | "get" | "getAll" | "getLogs" | "retryAll" | "retryOne" | "delete" | "get" | "getAll" | "getValidation" | "setValidation" | "create" | "delete" | "get" | "getAll";
 
     /**
      * Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadForms"}
      */
-    readonly formId?: string;
+    readonly formId?: string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 1000
      * Type options: {"maxValue":3000}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: { "value": any }, "download"?: boolean, "binaryNamingScheme"?: "sequence" | "question", "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "version"?: "download_url" | "download_small_url" | "download_medium_url" | "download_large_url", "selectMask"?: string, "numberMask"?: string, "reformat"?: boolean };
+    readonly options?: { "sort"?: { "value": any } } | { "download"?: boolean, "binaryNamingScheme"?: "sequence" | "question", "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "version"?: "download_url" | "download_small_url" | "download_medium_url" | "download_large_url", "selectMask"?: string, "numberMask"?: string, "reformat"?: boolean, "sort"?: string };
 
     /**
      * Default: {}
@@ -107,7 +105,7 @@ export interface KoBoToolboxNodeParameters {
      * Name of the binary property to write the file into
      * Default: "data"
      */
-    readonly binaryPropertyName?: string;
+    readonly binaryPropertyName?: string | string;
 
     /**
      * Whether to download the file content into a binary property

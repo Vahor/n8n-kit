@@ -4,8 +4,6 @@
 export const name = "customerIo" as const;
 export const description = "Consume Customer.io API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Customer.io"} as const;
-export const credentials = [{"name":"customerIoApi","required":true}] as const
 
 /**
  * Consume Customer.io API
@@ -25,7 +23,7 @@ export interface CustomerIoNodeParameters {
     /**
      * The unique identifier for the campaign
      */
-    readonly campaignId?: number;
+    readonly campaignId?: number | number;
 
     /**
      * Specify metric period
@@ -35,23 +33,23 @@ export interface CustomerIoNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean;
+    readonly jsonParameters?: boolean | boolean | boolean | boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook", "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: string, "customAttributes"?: { "customAttribute": any } };
+    readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook" } | { "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: string } | { "customAttributes"?: { "customAttribute": any }, "type"?: string } | { "customAttributes"?: { "customAttribute": any } };
 
     /**
      * The unique identifier for the customer
      */
-    readonly id?: string;
+    readonly id?: string | string;
 
     /**
      * Object of values to set as described <a href="https://github.com/agilecrm/rest-api#1-companys---companies-api">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: string;
+    readonly additionalFieldsJson?: string | string | string;
 
     /**
      * The unique identifier for the customer
@@ -61,7 +59,7 @@ export interface CustomerIoNodeParameters {
     /**
      * Name of the event to track
      */
-    readonly eventName?: string;
+    readonly eventName?: string | string;
 
     /**
      * The unique identifier of the segment

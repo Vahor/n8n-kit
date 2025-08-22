@@ -4,7 +4,6 @@
 export const name = "merge" as const;
 export const description = "Merges data of multiple streams once data from both is available" as const;
 export const version = 3.2 as const;
-export const defaults = {"name":"Merge"} as const;
 
 /**
  * Merges data of multiple streams once data from both is available
@@ -27,12 +26,12 @@ export interface MergeV3NodeParameters {
      * The number of data inputs you want to merge. The node waits for all connected inputs to be executed.
      * Default: 2
      */
-    readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
+    readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
 
     /**
      * Default: {}
      */
-    readonly options?: { "clashHandling"?: { "values": any }, "fuzzyCompare"?: boolean, "disableDotNotation"?: boolean, "multipleMatches"?: "all" | "first", "emptyQueryResult"?: "success" | "empty", "includeUnpaired"?: boolean };
+    readonly options?: { "clashHandling"?: { "values": any }, "fuzzyCompare"?: boolean } | { "clashHandling"?: { "values": any } | { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "multipleMatches"?: "all" | "first" | "all" | "first" } | { "emptyQueryResult"?: "success" | "empty" } | { "clashHandling"?: { "values": any }, "includeUnpaired"?: boolean };
 
     /**
      * Whether name(s) of field to match are different in input 1 and input 2
@@ -60,7 +59,7 @@ export interface MergeV3NodeParameters {
     /**
      * Default: "both"
      */
-    readonly outputDataFrom?: "both" | "input1" | "input2" | "both";
+    readonly outputDataFrom?: "both" | "input1" | "input2" | "both" | "input1" | "input2";
 
     /**
      * Input data available as tables with corresponding number, e.g. input1, input2

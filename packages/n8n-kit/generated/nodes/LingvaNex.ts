@@ -4,8 +4,6 @@
 export const name = "lingvaNex" as const;
 export const description = "Consume LingvaNex API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"LingvaNex"} as const;
-export const credentials = [{"name":"lingvaNexApi","required":true}] as const
 
 /**
  * Consume LingvaNex API

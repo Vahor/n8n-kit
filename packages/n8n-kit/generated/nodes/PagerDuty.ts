@@ -4,8 +4,6 @@
 export const name = "pagerDuty" as const;
 export const description = "Consume PagerDuty API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"PagerDuty"} as const;
-export const credentials = [{"name":"pagerDutyApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"pagerDutyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume PagerDuty API
@@ -25,7 +23,7 @@ export interface PagerDutyNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "get" | "getAll" | "update" | "create" | "getAll" | "get" | "getAll" | "get";
 
     /**
      * A succinct description of the nature, symptoms, cause, or effect of the incident
@@ -41,7 +39,7 @@ export interface PagerDutyNodeParameters {
     /**
      * The email address of a valid user associated with the account making the request
      */
-    readonly email?: string;
+    readonly email?: string | string | string;
 
     /**
      * Default: {}
@@ -52,29 +50,29 @@ export interface PagerDutyNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly conferenceBridgeUi?: { "conferenceBridgeValues": any };
+    readonly conferenceBridgeUi?: { "conferenceBridgeValues": any } | { "conferenceBridgeValues": any };
 
     /**
      * Unique identifier for the incident
      */
-    readonly incidentId?: string;
+    readonly incidentId?: string | string | string | string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean;
+    readonly returnAll?: boolean | boolean | boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number;
+    readonly limit?: number | number | number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "dateRange"?: "all", "incidentKey"?: string, "include"?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], "serviceIds"?: string[], "since"?: string, "sortBy"?: string, "statuses"?: ("acknowledged" | "resolved" | "triggered")[], "teamIds"?: string, "timeZone"?: string, "until"?: string, "urgencies"?: ("high" | "low")[], "userIds"?: string, "isOverview"?: boolean };
+    readonly options?: { "dateRange"?: "all", "incidentKey"?: string, "include"?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], "serviceIds"?: string[], "since"?: string, "sortBy"?: string, "statuses"?: ("acknowledged" | "resolved" | "triggered")[], "teamIds"?: string, "timeZone"?: string, "until"?: string, "urgencies"?: ("high" | "low")[], "userIds"?: string } | { "include"?: ("channels" | "incidents" | "services" | "teams")[], "isOverview"?: boolean, "since"?: string, "timeZone"?: string, "until"?: string };
 
     /**
      * Default: {}

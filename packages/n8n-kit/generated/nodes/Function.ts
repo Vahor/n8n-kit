@@ -4,7 +4,6 @@
 export const name = "function" as const;
 export const description = "Run custom function code which gets executed once and allows you to add, remove, change and replace items" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Function","color":"#FF9922"} as const;
 
 /**
  * Run custom function code which gets executed once and allows you to add, remove, change and replace items

@@ -4,8 +4,6 @@
 export const name = "convertKitTrigger" as const;
 export const description = "Handle ConvertKit events via webhooks" as const;
 export const version = 1 as const;
-export const defaults = {"name":"ConvertKit Trigger"} as const;
-export const credentials = [{"name":"convertKitApi","required":true}] as const
 
 /**
  * Handle ConvertKit events via webhooks

@@ -4,8 +4,6 @@
 export const name = "mailerLiteTrigger" as const;
 export const description = "Starts the workflow when MailerLite events occur" as const;
 export const version = 2 as const;
-export const defaults = {"name":"MailerLite Trigger"} as const;
-export const credentials = [{"name":"mailerLiteApi","required":true}] as const
 
 /**
  * Starts the workflow when MailerLite events occur

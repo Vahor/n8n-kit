@@ -4,7 +4,6 @@
 export const name = "set" as const;
 export const description = "Modify, add, or remove item fields" as const;
 export const version = 3.4 as const;
-export const defaults = {"name":"Edit Fields"} as const;
 
 /**
  * Modify, add, or remove item fields
@@ -62,12 +61,12 @@ export interface SetV2NodeParameters {
     /**
      * Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel.
      */
-    readonly includeFields?: string;
+    readonly includeFields?: string | string;
 
     /**
      * Comma-separated list of the field names you want to exclude from the output. You can drag the selected fields from the input panel.
      */
-    readonly excludeFields?: string;
+    readonly excludeFields?: string | string;
 
     /**
      * Default: {}

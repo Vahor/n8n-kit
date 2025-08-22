@@ -6,44 +6,23 @@
 			"id": "webhook",
 			"name": "Webhook",
 			"type": "n8n-nodes-base.webhook",
-			"position": [115, 115],
+			"position": [55, 270],
 			"typeVersion": 2.1,
 			"parameters": {
 				"httpMethod": "POST",
 				"path": "abc",
-				"responseMode": "responseNode",
-				"outputSchema": {
-					"body": {
-						"required": [
-							{ "key": "entity_id", "value": "string" },
-							{
-								"key": "execution_type",
-								"value": [{ "unit": "full" }, { "unit": "partial" }]
-							}
-						],
-						"domain": "object"
-					}
-				}
+				"responseMode": "responseNode"
 			}
 		},
 		{
-			"id": "check-valid-body",
-			"name": "check-valid-body",
+			"id": "check-valid-entity-id",
+			"name": "check-valid-entity-id",
 			"type": "n8n-nodes-base.if",
-			"position": [325, 115],
+			"position": [405, 270],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
 					"conditions": [
-						{
-							"leftValue": "={{ $json.body }}",
-							"operator": {
-								"type": "string",
-								"operation": "exists",
-								"singleValue": true
-							},
-							"id": "complex-workflow/check-valid-body/0"
-						},
 						{
 							"leftValue": "={{ $json.body.execution_type }}",
 							"operator": {
@@ -51,7 +30,7 @@
 								"operation": "exists",
 								"singleValue": true
 							},
-							"id": "complex-workflow/check-valid-body/1"
+							"id": "complex-workflow/check-valid-entity-id/0"
 						}
 					],
 					"combinator": "and",
@@ -62,12 +41,175 @@
 					}
 				}
 			}
+		},
+		{
+			"id": "invalid-entity-id",
+			"name": "invalid-entity-id",
+			"type": "n8n-nodes-base.noOp",
+			"position": [755, 125],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "check-valid-execution-type",
+			"name": "check-valid-execution-type",
+			"type": "n8n-nodes-base.if",
+			"position": [755, 405],
+			"typeVersion": 2.2,
+			"parameters": {
+				"conditions": {
+					"conditions": [
+						{
+							"leftValue": "={{ $json.body.execution_type }}",
+							"operator": {
+								"type": "string",
+								"operation": "exists",
+								"singleValue": true
+							},
+							"id": "complex-workflow/check-valid-execution-type/0"
+						}
+					],
+					"combinator": "and",
+					"options": {
+						"caseSensitive": true,
+						"version": 2,
+						"typeValidation": "strict"
+					}
+				}
+			}
+		},
+		{
+			"id": "invalid-entity-id-response",
+			"name": "invalid-entity-id-response",
+			"type": "n8n-nodes-base.respondToWebhook",
+			"position": [1105, 125],
+			"typeVersion": 1.5,
+			"parameters": {
+				"respondWith": "json",
+				"responseBody": "={\n  \"error\": \"Invalid entity id\",\n  \"data\": {\n    \"body\": \"{{ $json.body }}\"\n  }\n}",
+				"options": { "responseCode": 400 }
+			}
+		},
+		{
+			"id": "invalid-execution-type",
+			"name": "invalid-execution-type",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1105, 395],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "nooo",
+			"name": "nooo",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1105, 655],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "invalid-execution-type-response",
+			"name": "invalid-execution-type-response",
+			"type": "n8n-nodes-base.respondToWebhook",
+			"position": [1455, 395],
+			"typeVersion": 1.5,
+			"parameters": {
+				"respondWith": "json",
+				"responseBody": "={\n  \"error\": \"Invalid execution type\",\n  \"data\": {\n    \"body\": \"{{ $json.body }}\"\n  }\n}",
+				"options": { "responseCode": 400 }
+			}
+		},
+		{
+			"id": "2",
+			"name": "2",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1455, 655],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "3",
+			"name": "3",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1805, 655],
+			"typeVersion": 1,
+			"parameters": {}
+		},
+		{
+			"id": "invalid-entity-id-handle-error-message-group",
+			"name": "invalid-entity-id-handle-error-message-group",
+			"type": "n8n-nodes-base.stickyNote",
+			"position": [700, 70],
+			"typeVersion": 1,
+			"parameters": {
+				"content": "Handle error message",
+				"height": 220,
+				"width": 570,
+				"color": 3
+			}
+		},
+		{
+			"id": "invalid-execution-type-handle-error-message-group",
+			"name": "invalid-execution-type-handle-error-message-group",
+			"type": "n8n-nodes-base.stickyNote",
+			"position": [1050, 340],
+			"typeVersion": 1,
+			"parameters": {
+				"content": "Handle error message",
+				"height": 220,
+				"width": 570,
+				"color": 3
+			}
+		},
+		{
+			"id": "check-valid-execution-type-group",
+			"name": "check-valid-execution-type-group",
+			"type": "n8n-nodes-base.stickyNote",
+			"position": [700, 340],
+			"typeVersion": 1,
+			"parameters": {
+				"content": "Check valid execution type",
+				"height": 230,
+				"width": 920,
+				"color": 1
+			}
 		}
 	],
 	"connections": {
+		"2": { "main": [[{ "node": "3", "type": "main", "index": 0 }]] },
 		"Webhook": {
-			"main": [[{ "node": "check-valid-body", "type": "main", "index": 0 }]]
-		}
+			"main": [
+				[{ "node": "check-valid-entity-id", "type": "main", "index": 0 }]
+			]
+		},
+		"check-valid-entity-id": {
+			"main": [
+				[{ "node": "check-valid-execution-type", "type": "main", "index": 0 }],
+				[{ "node": "invalid-entity-id", "type": "main", "index": 0 }]
+			]
+		},
+		"invalid-entity-id": {
+			"main": [
+				[{ "node": "invalid-entity-id-response", "type": "main", "index": 0 }]
+			]
+		},
+		"check-valid-execution-type": {
+			"main": [
+				[{ "node": "nooo", "type": "main", "index": 0 }],
+				[{ "node": "invalid-execution-type", "type": "main", "index": 0 }]
+			]
+		},
+		"invalid-execution-type": {
+			"main": [
+				[
+					{
+						"node": "invalid-execution-type-response",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"nooo": { "main": [[{ "node": "2", "type": "main", "index": 0 }]] }
 	},
 	"settings": {},
 	"staticData": {},

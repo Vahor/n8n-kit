@@ -4,8 +4,6 @@
 export const name = "getResponse" as const;
 export const description = "Consume GetResponse API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"GetResponse"} as const;
-export const credentials = [{"name":"getResponseApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"getResponseOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const
 
 /**
  * Consume GetResponse API
@@ -45,12 +43,12 @@ export interface GetResponseNodeParameters {
     /**
      * ID of contact to delete
      */
-    readonly contactId?: string;
+    readonly contactId?: string | string | string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "ipAddress"?: string, "messageId"?: string, "fields"?: string, "campaignId"?: string, "changeOnFrom"?: string, "changeOnTo"?: string, "createdOnFrom"?: string, "createdOnTo"?: string, "exactMatch"?: boolean, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
+    readonly options?: { "ipAddress"?: string, "messageId"?: string } | { "fields"?: string } | { "campaignId"?: string, "changeOnFrom"?: string, "changeOnTo"?: string, "createdOnFrom"?: string, "createdOnTo"?: string, "exactMatch"?: boolean, "fields"?: string, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
 
     /**
      * Whether to return all results or only up to a given limit

@@ -4,8 +4,6 @@
 export const name = "microsoftOneDriveTrigger" as const;
 export const description = "Trigger for Microsoft OneDrive API." as const;
 export const version = 1 as const;
-export const defaults = {"name":"Microsoft OneDrive Trigger"} as const;
-export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const
 
 /**
  * Trigger for Microsoft OneDrive API.
@@ -26,13 +24,13 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
     /**
      * Whether to watch for the created file in a given folder, rather than the entire OneDrive
      */
-    readonly watchFolder?: boolean;
+    readonly watchFolder?: boolean | boolean;
 
     /**
      * How to select which file to watch
      * Default: "anyFile"
      */
-    readonly watch?: "anyFile" | "selectedFolder" | "selectedFile" | "anyFolder" | "oneSelectedFolder";
+    readonly watch?: "anyFile" | "selectedFolder" | "selectedFile" | "anyFolder" | "selectedFolder" | "oneSelectedFolder";
 
     /**
      * The file to operate on. The 'By URL' option only accepts URLs that start with 'https://onedrive.live.com'.
@@ -44,12 +42,12 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
      * The folder to operate on. The 'By URL' option only accepts URLs that start with 'https://onedrive.live.com'.
      * Default: {"mode":"id","value":"","cachedResultName":""}
      */
-    readonly folderId?: any;
+    readonly folderId?: any | any;
 
     /**
      * Default: {}
      */
-    readonly options?: { "folderChild"?: boolean };
+    readonly options?: { "folderChild"?: boolean } | { "folderChild"?: boolean };
 
 
 }

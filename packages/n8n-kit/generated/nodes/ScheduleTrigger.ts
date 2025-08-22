@@ -4,7 +4,6 @@
 export const name = "scheduleTrigger" as const;
 export const description = "Triggers the workflow on a given schedule" as const;
 export const version = 1.2 as const;
-export const defaults = {"name":"Schedule Trigger","color":"#31C49F"} as const;
 
 /**
  * Triggers the workflow on a given schedule

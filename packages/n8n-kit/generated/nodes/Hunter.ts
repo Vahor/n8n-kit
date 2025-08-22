@@ -4,8 +4,6 @@
 export const name = "hunter" as const;
 export const description = "Consume Hunter API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Hunter"} as const;
-export const credentials = [{"name":"hunterApi","required":true}] as const
 
 /**
  * Consume Hunter API
@@ -21,7 +19,7 @@ export interface HunterNodeParameters {
     /**
      * Domain name from which you want to find the email addresses. For example, "stripe.com".
      */
-    readonly domain?: string;
+    readonly domain?: string | string;
 
     /**
      * Whether to return only the found emails

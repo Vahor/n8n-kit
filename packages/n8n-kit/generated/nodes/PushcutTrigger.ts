@@ -4,8 +4,6 @@
 export const name = "pushcutTrigger" as const;
 export const description = "Starts the workflow when Pushcut events occur" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Pushcut Trigger"} as const;
-export const credentials = [{"name":"pushcutApi","required":true}] as const
 
 /**
  * Starts the workflow when Pushcut events occur

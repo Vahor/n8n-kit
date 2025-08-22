@@ -4,7 +4,6 @@
 export const name = "undefined" as const;
 export const description = "undefined" as const;
 export const version = 2.1 as const;
-export const defaults = {"name":"Merge"} as const;
 
 /**
  * undefined
@@ -36,7 +35,7 @@ export interface MergeV2NodeParameters {
     /**
      * Default: "both"
      */
-    readonly outputDataFrom?: "both" | "input1" | "input2" | "both";
+    readonly outputDataFrom?: "both" | "input1" | "input2" | "both" | "input1" | "input2";
 
     /**
      * Default: "waitForBoth"
@@ -51,7 +50,7 @@ export interface MergeV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "clashHandling"?: { "values": any }, "clashHandling"?: { "values": any }, "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first", "multipleMatches"?: "all" | "first" };
+    readonly options?: { "clashHandling"?: { "values": any } | { "values": any } | { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first" | "all" | "first" };
 
 
 }

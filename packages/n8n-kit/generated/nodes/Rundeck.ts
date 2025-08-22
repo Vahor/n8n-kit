@@ -4,8 +4,6 @@
 export const name = "rundeck" as const;
 export const description = "Manage Rundeck API" as const;
 export const version = 1 as const;
-export const defaults = {"name":"Rundeck"} as const;
-export const credentials = [{"name":"rundeckApi","required":true}] as const
 
 /**
  * Manage Rundeck API
@@ -25,7 +23,7 @@ export interface RundeckNodeParameters {
     /**
      * The job ID to execute
      */
-    readonly jobid?: string;
+    readonly jobid?: string | string;
 
     /**
      * Default: {}
