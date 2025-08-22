@@ -28,7 +28,7 @@ export interface CiscoWebexTriggerNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "hasFiles"?: boolean, "isLocked"?: boolean, "isModerator"?: boolean, "mentionedPeople"?: string, "messageId"?: string, "ownedBy"?: string, "personEmail"?: string | string, "personId"?: string | string | string, "roomId"?: string | string | string, "roomType"?: "direct" | "group", "type"?: "direct" | "group" };
+    readonly filters?: { "hasFiles"?: boolean, "isLocked"?: boolean, "isModerator"?: boolean, "mentionedPeople"?: string, "messageId"?: string, "ownedBy"?: string, "personEmail"?: string, "personId"?: string, "roomId"?: string, "roomType"?: "direct" | "group", "type"?: "direct" | "group" };
 
 
 }

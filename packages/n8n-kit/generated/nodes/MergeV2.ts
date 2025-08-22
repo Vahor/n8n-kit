@@ -50,7 +50,7 @@ export interface MergeV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "clashHandling"?: { "values": any } | { "values": any } | { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first" | "all" | "first" };
+    readonly options?: { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first" };
 
 
 }

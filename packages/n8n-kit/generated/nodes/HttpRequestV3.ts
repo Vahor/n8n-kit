@@ -142,7 +142,7 @@ export interface HttpRequestV3NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "batching"?: { "batch": any }, "allowUnauthorizedCerts"?: boolean, "queryParameterArrays"?: "repeat" | "brackets" | "indices", "lowercaseHeaders"?: boolean, "redirect"?: { "redirect": any } | { "redirect": any }, "response"?: { "response": any }, "pagination"?: { "pagination": any }, "proxy"?: string, "timeout"?: number };
+    readonly options?: { "batching"?: { "batch": any }, "allowUnauthorizedCerts"?: boolean, "queryParameterArrays"?: "repeat" | "brackets" | "indices", "lowercaseHeaders"?: boolean, "redirect"?: { "redirect": any }, "response"?: { "response": any }, "pagination"?: { "pagination": any }, "proxy"?: string, "timeout"?: number };
 
     /**
      * Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost

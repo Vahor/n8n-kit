@@ -72,7 +72,7 @@ export interface WebhookNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string | string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "responsePropertyName"?: string, "rawBody"?: boolean | boolean, "responseCode"?: { "values": any }, "responseContentType"?: string, "responseData"?: string, "responseHeaders"?: { "entries": any } };
+    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "responsePropertyName"?: string, "rawBody"?: boolean, "responseCode"?: { "values": any }, "responseContentType"?: string, "responseData"?: string, "responseHeaders"?: { "entries": any } };
 
 
 }

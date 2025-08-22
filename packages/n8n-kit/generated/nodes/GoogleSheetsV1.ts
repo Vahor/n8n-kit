@@ -90,7 +90,7 @@ export interface GoogleSheetsV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "continue"?: boolean, "returnAllMatches"?: boolean, "usePathForKeyRow"?: boolean, "valueInputMode"?: "RAW" | "USER_ENTERED", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { "gridProperties"?: { "columnCount"?: number, "columnGroupControlAfter"?: boolean, "frozenColumnCount"?: number, "frozenRowCount"?: number, "hideGridlines"?: boolean, "rowCount"?: number, "rowGroupControlAfter"?: boolean }, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "title"?: string };
+    readonly options?: { "continue"?: boolean, "returnAllMatches"?: boolean, "usePathForKeyRow"?: boolean, "valueInputMode"?: "RAW" | "USER_ENTERED", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { "gridProperties"?: { "columnCount"?: number, "columnGroupControlAfter"?: boolean, "frozenColumnCount"?: number, "frozenRowCount"?: number, "hideGridlines"?: boolean, "rowCount"?: number, "rowGroupControlAfter"?: boolean }, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: any, "title"?: string };
 
     /**
      * The title of the spreadsheet

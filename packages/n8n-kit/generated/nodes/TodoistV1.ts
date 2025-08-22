@@ -85,7 +85,7 @@ export interface TodoistV1NodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "content"?: string, "description"?: string, "dueDateTime"?: string, "dueLang"?: string | string, "dueString"?: string, "labels"?: string[], "priority"?: number };
+    readonly updateFields?: { "content"?: string, "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "labels"?: string[], "priority"?: number };
 
 
 }

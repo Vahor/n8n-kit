@@ -80,9 +80,11 @@ export const toTypescriptType = (
 
 				for (const option of Object.values(visitedProperties)) {
 					// There will be duplicates but theses are ok (like "GET" | "GET")
-					const typeUnion = option.__versionsOfProperty
-						.map((p) => toTypescriptType(p))
-						.join(" | ");
+					const typeUnion = [
+						...new Set(
+							option.__versionsOfProperty.map((p) => toTypescriptType(p)),
+						),
+					].join(" | ");
 
 					result += `"${option.name}"${option.required ? "" : "?"}: ${typeUnion}, `;
 				}

@@ -128,7 +128,7 @@ export interface WaitNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string | string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean | boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any }, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "webhookSuffix"?: string };
+    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any }, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "webhookSuffix"?: string };
 
 
 }

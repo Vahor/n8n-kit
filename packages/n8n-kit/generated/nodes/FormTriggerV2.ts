@@ -54,7 +54,7 @@ export interface FormTriggerV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean | boolean, "customCss"?: string };
+    readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean, "customCss"?: string };
 
 
 }

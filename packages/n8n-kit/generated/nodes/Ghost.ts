@@ -83,7 +83,7 @@ export interface GhostNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "authors"?: string[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: string | string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: string[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
+    readonly updateFields?: { "authors"?: string[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: string[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
 
 
 }

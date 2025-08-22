@@ -82,7 +82,7 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "pempassphrase"?: string | string, "subjectaltname"?: string, "days"?: string };
+    readonly additionalFields?: { "pempassphrase"?: string, "subjectaltname"?: string, "days"?: string };
 
     /**
      * Name for the certificate and private-key pair

@@ -53,7 +53,7 @@ export interface PushoverNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string | string, "title"?: string, "url"?: string, "url_title"?: string };
+    readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string, "title"?: string, "url"?: string, "url_title"?: string };
 
 
 }

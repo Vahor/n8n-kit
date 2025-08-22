@@ -31,7 +31,7 @@ export interface MergeV3NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "clashHandling"?: { "values": any }, "fuzzyCompare"?: boolean } | { "clashHandling"?: { "values": any } | { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "multipleMatches"?: "all" | "first" | "all" | "first" } | { "emptyQueryResult"?: "success" | "empty" } | { "clashHandling"?: { "values": any }, "includeUnpaired"?: boolean };
+    readonly options?: { "clashHandling"?: { "values": any }, "fuzzyCompare"?: boolean } | { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "multipleMatches"?: "all" | "first" } | { "emptyQueryResult"?: "success" | "empty" } | { "clashHandling"?: { "values": any }, "includeUnpaired"?: boolean };
 
     /**
      * Whether name(s) of field to match are different in input 1 and input 2
