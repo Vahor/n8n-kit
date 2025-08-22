@@ -22,13 +22,13 @@ export interface DateTimeV1NodeParameters {
     /**
      * The value that should be converted
      */
-    readonly value?: string | string;
+    readonly value?: string;
 
     /**
      * Name of the property to which to write the converted date
      * Default: "data"
      */
-    readonly dataPropertyName?: string | string;
+    readonly dataPropertyName?: string;
 
     /**
      * Whether a predefined format should be selected or custom format entered

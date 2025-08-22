@@ -18,12 +18,12 @@ export interface WordpressNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "get" | "getAll" | "update";
 
     /**
      * The title for the post
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * Default: {}
@@ -33,7 +33,7 @@ export interface WordpressNodeParameters {
     /**
      * Unique identifier for the object
      */
-    readonly postId?: string | string | string;
+    readonly postId?: string;
 
     /**
      * Default: {}
@@ -43,24 +43,24 @@ export interface WordpressNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "password"?: string, "context"?: "view" | "embed" | "edit" } | { "after"?: string, "author"?: string[], "before"?: string, "categories"?: string[], "context"?: "view" | "embed" | "edit", "excludedCategories"?: string[], "excludedTags"?: string[], "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "sticky"?: boolean, "tags"?: string[] } | { "force"?: boolean } | { "password"?: string, "context"?: "view" | "embed" | "edit" } | { "after"?: string, "author"?: string[], "before"?: string, "context"?: "view" | "embed" | "edit", "menuOrder"?: number, "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "page"?: number, "parent"?: number, "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish" } | { "force"?: boolean } | { "context"?: "view" | "embed" | "edit" } | { "context"?: "view" | "embed" | "edit", "orderBy"?: "email" | "id" | "include" | "include_slugs" | "name" | "registered_date" | "slug" | "url", "order"?: "asc" | "desc", "search"?: string, "who"?: "authors" };
+    readonly options?: { "password"?: string, "context"?: "view" | "embed" | "edit" } | { "after"?: string, "author"?: string[], "before"?: string, "categories"?: string[], "context"?: "view" | "embed" | "edit", "excludedCategories"?: string[], "excludedTags"?: string[], "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "sticky"?: boolean, "tags"?: string[] } | { "force"?: boolean } | { "after"?: string, "author"?: string[], "before"?: string, "context"?: "view" | "embed" | "edit", "menuOrder"?: number, "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "page"?: number, "parent"?: number, "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish" } | { "context"?: "view" | "embed" | "edit" } | { "context"?: "view" | "embed" | "edit", "orderBy"?: "email" | "id" | "include" | "include_slugs" | "name" | "registered_date" | "slug" | "url", "order"?: "asc" | "desc", "search"?: string, "who"?: "authors" };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":10}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Unique identifier for the object
      */
-    readonly pageId?: string | string | string;
+    readonly pageId?: string;
 
     /**
      * Login name for the user
@@ -96,7 +96,7 @@ export interface WordpressNodeParameters {
     /**
      * Unique identifier for the user
      */
-    readonly userId?: string | string;
+    readonly userId?: string;
 
     /**
      * Reassign the deleted user's posts and links to this user ID

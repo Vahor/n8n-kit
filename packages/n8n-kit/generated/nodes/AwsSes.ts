@@ -28,7 +28,7 @@ export interface AwsSesNodeParameters {
     /**
      * The name of the custom verification email template
      */
-    readonly templateName?: string | string | string | string | string;
+    readonly templateName?: string;
 
     /**
      * The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML
@@ -68,14 +68,14 @@ export interface AwsSesNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Whether body is HTML or simple text
@@ -94,14 +94,14 @@ export interface AwsSesNodeParameters {
     /**
      * Email address of the sender
      */
-    readonly fromEmail?: string | string;
+    readonly fromEmail?: string;
 
     /**
      * Email addresses of the recipients
      * Default: []
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add To Email"}
      */
-    readonly toAddresses?: string | string;
+    readonly toAddresses?: string;
 
     /**
      * Default: {}

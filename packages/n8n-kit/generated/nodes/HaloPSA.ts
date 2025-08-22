@@ -18,7 +18,7 @@ export interface HaloPSANodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Enter client name
@@ -32,30 +32,30 @@ export interface HaloPSANodeParameters {
 
     /**
      */
-    readonly clientId?: string | string | string | string;
+    readonly clientId?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simplify?: boolean | boolean | boolean | boolean;
+    readonly simplify?: boolean;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "activeStatus"?: "active" | "all" | "inactive", "search"?: string } | { "activeStatus"?: "active" | "all" | "inactive", "search"?: string } | { "activeStatus"?: "active" | "all" | "inactive", "search"?: string } | { "activeStatus"?: "active" | "all" | "inactive", "search"?: string };
+    readonly filters?: { "activeStatus"?: "active" | "all" | "inactive", "search"?: string };
 
     /**
      * Default: {}
@@ -78,7 +78,7 @@ export interface HaloPSANodeParameters {
 
     /**
      */
-    readonly ticketId?: string | string;
+    readonly ticketId?: string;
 
     /**
      * Enter site name
@@ -92,7 +92,7 @@ export interface HaloPSANodeParameters {
 
     /**
      */
-    readonly siteId?: string | string | string;
+    readonly siteId?: string;
 
     /**
      * Enter user name
@@ -101,7 +101,7 @@ export interface HaloPSANodeParameters {
 
     /**
      */
-    readonly userId?: string | string;
+    readonly userId?: string;
 
 
 }

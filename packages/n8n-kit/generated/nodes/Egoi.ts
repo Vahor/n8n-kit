@@ -29,12 +29,12 @@ export interface EgoiNodeParameters {
     /**
      * Email address for a subscriber
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * Contact ID of the subscriber
      */
-    readonly contactId?: string | string;
+    readonly contactId?: string;
 
     /**
      * By default the response just includes the contact ID. If this option gets activated, it will resolve the data automatically.

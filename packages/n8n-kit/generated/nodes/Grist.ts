@@ -28,7 +28,7 @@ export interface GristNodeParameters {
     /**
      * ID of the row to delete, or comma-separated list of row IDs to delete
      */
-    readonly rowId?: string | string;
+    readonly rowId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

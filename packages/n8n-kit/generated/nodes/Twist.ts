@@ -18,13 +18,13 @@ export interface TwistNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "archive" | "create" | "delete" | "get" | "getAll" | "unarchive" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "archive" | "create" | "delete" | "get" | "getAll" | "unarchive" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The ID of the workspace. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
-    readonly workspaceId?: string | string | string | string;
+    readonly workspaceId?: string;
 
     /**
      * The name of the channel
@@ -39,19 +39,19 @@ export interface TwistNodeParameters {
     /**
      * The ID of the channel
      */
-    readonly channelId?: string | string | string | string;
+    readonly channelId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -61,33 +61,33 @@ export interface TwistNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "color"?: "6" | "1" | "4" | "0" | "7" | "9" | "5" | "11" | "8" | "3" | "2" | "10", "description"?: string, "name"?: string, "public"?: boolean } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: string[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: string[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: string[], "title"?: string };
+    readonly updateFields?: { "color"?: "6" | "1" | "4" | "0" | "7" | "9" | "5" | "11" | "8" | "3" | "2" | "10", "description"?: string, "name"?: string, "public"?: boolean } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: string[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: string[], "title"?: string };
 
     /**
      * The ID of the thread
      */
-    readonly threadId?: string | string | string | string;
+    readonly threadId?: string;
 
     /**
      * The content of the comment
      */
-    readonly content?: string | string | string;
+    readonly content?: string;
 
     /**
      * The ID of the comment
      */
-    readonly commentId?: string | string;
+    readonly commentId?: string;
 
     /**
      * The ID of the conversation. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getConversations","loadOptionsDependsOn":["workspaceId"]}
      */
-    readonly conversationId?: string | string;
+    readonly conversationId?: string;
 
     /**
      * The ID of the conversation message
      */
-    readonly id?: string | string;
+    readonly id?: string;
 
     /**
      * The title of the new thread (1 < length < 300)

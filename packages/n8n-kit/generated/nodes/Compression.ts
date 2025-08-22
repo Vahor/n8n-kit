@@ -19,28 +19,28 @@ export interface CompressionNodeParameters {
      * To process more than one file, use a comma-separated list of the binary fields names
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Format of the output
      */
-    readonly outputFormat?: "gzip" | "zip" | "gzip" | "zip";
+    readonly outputFormat?: "gzip" | "zip";
 
     /**
      * Name of the output file
      */
-    readonly fileName?: string | string;
+    readonly fileName?: string;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyOutput?: string | string;
+    readonly binaryPropertyOutput?: string;
 
     /**
      * Prefix to add to the gzip file
      * Default: "data"
      */
-    readonly outputPrefix?: string | string;
+    readonly outputPrefix?: string;
 
 
 }

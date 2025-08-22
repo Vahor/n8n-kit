@@ -18,7 +18,7 @@ export interface HackerNewsNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "get" | "get";
+    readonly operation?: "getAll" | "get";
 
     /**
      * The ID of the Hacker News article to be returned

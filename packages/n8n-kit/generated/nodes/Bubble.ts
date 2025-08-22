@@ -23,18 +23,18 @@ export interface BubbleNodeParameters {
     /**
      * Name of data type of the object to create
      */
-    readonly typeName?: string | string | string | string;
+    readonly typeName?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "property": any } | { "property": any };
+    readonly properties?: { "property": any };
 
     /**
      * ID of the object to retrieve
      */
-    readonly objectId?: string | string;
+    readonly objectId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

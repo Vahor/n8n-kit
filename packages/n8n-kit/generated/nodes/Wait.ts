@@ -32,13 +32,13 @@ export interface WaitNodeParameters {
      * Default: 1
      * Type options: {"minValue":0,"numberPrecision":2}
      */
-    readonly amount?: number | number;
+    readonly amount?: number;
 
     /**
      * The time unit of the Wait Amount value
      * Default: "hours"
      */
-    readonly unit?: "seconds" | "minutes" | "hours" | "days" | "seconds" | "minutes" | "hours" | "days";
+    readonly unit?: "seconds" | "minutes" | "hours" | "days";
 
     /**
      */
@@ -69,7 +69,7 @@ export interface WaitNodeParameters {
      * When to respond to the form submission
      * Default: "onReceived"
      */
-    readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "responseNode";
+    readonly responseMode?: "onReceived" | "lastNode" | "responseNode";
 
     /**
      * The HTTP method of the Webhook call

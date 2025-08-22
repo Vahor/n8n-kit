@@ -29,7 +29,7 @@ export interface BeeminderNodeParameters {
      * The name of the goal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getGoals"}
      */
-    readonly goalName?: string | string | string;
+    readonly goalName?: string;
 
     /**
      * Charge amount in USD
@@ -88,7 +88,7 @@ export interface BeeminderNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "comment"?: string, "timestamp"?: string, "requestid"?: string } | { "note"?: string, "dryrun"?: boolean } | { "goaldate"?: string, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "dryrun"?: boolean, "tags"?: string } | { "datapoints"?: boolean, "emaciated"?: boolean } | { "associations"?: boolean, "diff_since"?: string, "skinny"?: boolean, "emaciated"?: boolean, "datapoints_count"?: number } | { "emaciated"?: boolean } | { "emaciated"?: boolean };
+    readonly additionalFields?: { "comment"?: string, "timestamp"?: string, "requestid"?: string } | { "note"?: string, "dryrun"?: boolean } | { "goaldate"?: string, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "dryrun"?: boolean, "tags"?: string } | { "datapoints"?: boolean, "emaciated"?: boolean } | { "associations"?: boolean, "diff_since"?: string, "skinny"?: boolean, "emaciated"?: boolean, "datapoints_count"?: number } | { "emaciated"?: boolean };
 
     /**
      * Default: {}

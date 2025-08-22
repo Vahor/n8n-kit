@@ -39,7 +39,7 @@ export interface DemioNodeParameters {
 
     /**
      */
-    readonly eventId?: string | string | string;
+    readonly eventId?: string;
 
     /**
      * Default: {}

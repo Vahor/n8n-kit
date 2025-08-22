@@ -22,13 +22,13 @@ export interface MicrosoftTeamsV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
-    readonly teamId?: string | string | string | string | string | string | string;
+    readonly teamId?: string;
 
     /**
      * Channel name as it will appear to the user in Microsoft Teams
@@ -44,19 +44,19 @@ export interface MicrosoftTeamsV1NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getChannels","loadOptionsDependsOn":["teamId"]}
      */
-    readonly channelId?: string | string | string | string | string;
+    readonly channelId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -67,18 +67,18 @@ export interface MicrosoftTeamsV1NodeParameters {
      * The type of the content
      * Default: "text"
      */
-    readonly messageType?: "text" | "html" | "text" | "html";
+    readonly messageType?: "text" | "html";
 
     /**
      * The content of the item
      */
-    readonly message?: string | string;
+    readonly message?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getChats"}
      */
-    readonly chatId?: string | string;
+    readonly chatId?: string;
 
     /**
      */
@@ -93,13 +93,13 @@ export interface MicrosoftTeamsV1NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGroups","loadOptionsDependsOn":["groupSource"]}
      */
-    readonly groupId?: string | string;
+    readonly groupId?: string;
 
     /**
      * The plan for the task to belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getPlans","loadOptionsDependsOn":["groupId"]}
      */
-    readonly planId?: string | string;
+    readonly planId?: string;
 
     /**
      * The bucket for the task to belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -119,7 +119,7 @@ export interface MicrosoftTeamsV1NodeParameters {
 
     /**
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
     /**
      * Default: "member"

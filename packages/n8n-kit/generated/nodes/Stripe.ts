@@ -23,7 +23,7 @@ export interface StripeNodeParameters {
     /**
      * ID of the customer to be associated with this card
      */
-    readonly customerId?: string | string | string | string | string | string | string | string | string;
+    readonly customerId?: string;
 
     /**
      * Token representing sensitive card information
@@ -39,19 +39,19 @@ export interface StripeNodeParameters {
     /**
      * ID of the source to retrieve
      */
-    readonly sourceId?: string | string | string;
+    readonly sourceId?: string;
 
     /**
      * Amount in cents to be collected for this charge, e.g. enter <code>100</code> for $1.00
      * Type options: {"minValue":0,"maxValue":99999999}
      */
-    readonly amount?: number | number;
+    readonly amount?: number;
 
     /**
      * Three-letter ISO currency code, e.g. <code>USD</code> or <code>EUR</code>. It must be a <a href="https://stripe.com/docs/currencies">Stripe-supported currency</a>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCurrencies"}
      */
-    readonly currency?: string | string | string;
+    readonly currency?: string;
 
     /**
      * ID of the customer's payment source to be charged
@@ -66,19 +66,19 @@ export interface StripeNodeParameters {
     /**
      * ID of the charge to retrieve
      */
-    readonly chargeId?: string | string;
+    readonly chargeId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

@@ -26,13 +26,13 @@ export interface MoveBinaryDataNodeParameters {
      * The name of the binary key to get data from. It is also possible to define deep keys by using dot-notation like for example: "level1.level2.currentKey".
      * Default: "data"
      */
-    readonly sourceKey?: string | string;
+    readonly sourceKey?: string;
 
     /**
      * The name the JSON key to copy data to. It is also possible to define deep keys by using dot-notation like for example: "level1.level2.newKey".
      * Default: "data"
      */
-    readonly destinationKey?: string | string;
+    readonly destinationKey?: string;
 
     /**
      * Whether all JSON data should be converted to binary. Else only the data of one key will be converted.

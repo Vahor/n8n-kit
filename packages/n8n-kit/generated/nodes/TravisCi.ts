@@ -23,7 +23,7 @@ export interface TravisCiNodeParameters {
     /**
      * Value uniquely identifying the build
      */
-    readonly buildId?: string | string | string;
+    readonly buildId?: string;
 
     /**
      * Default: {}

@@ -27,7 +27,7 @@ export interface ShopifyNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Default: {}
@@ -42,7 +42,7 @@ export interface ShopifyNodeParameters {
 
     /**
      */
-    readonly orderId?: string | string | string;
+    readonly orderId?: string;
 
     /**
      * Default: {}
@@ -52,14 +52,14 @@ export interface ShopifyNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":250}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -73,7 +73,7 @@ export interface ShopifyNodeParameters {
 
     /**
      */
-    readonly productId?: string | string | string;
+    readonly productId?: string;
 
 
 }

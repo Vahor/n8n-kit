@@ -29,20 +29,20 @@ export interface GSuiteAdminNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * What subset of fields to fetch for this device
      * Default: "basic"
      */
-    readonly projection?: "basic" | "full" | "basic" | "custom" | "full" | "basic" | "custom" | "full";
+    readonly projection?: "basic" | "full" | "basic" | "custom" | "full";
 
     /**
      * Whether to include devices from organizational units below your specified organizational unit
@@ -58,7 +58,7 @@ export interface GSuiteAdminNodeParameters {
      * Define sorting rules for the results
      * Default: {}
      */
-    readonly sort?: { "sortRules": any } | { "sortRules": any } | { "sortRules": any };
+    readonly sort?: { "sortRules": any };
 
     /**
      * Default: {}
@@ -75,7 +75,7 @@ export interface GSuiteAdminNodeParameters {
      * Select the group to perform the operation on
      * Default: {"mode":"list","value":""}
      */
-    readonly groupId?: any | any;
+    readonly groupId?: any;
 
     /**
      * The group's display name
@@ -131,20 +131,20 @@ export interface GSuiteAdminNodeParameters {
     /**
      * Default: "simplified"
      */
-    readonly output?: "simplified" | "raw" | "select" | "simplified" | "raw" | "select";
+    readonly output?: "simplified" | "raw" | "select";
 
     /**
      * Fields to include in the response when "Select Included Fields" is chosen
      * Default: []
      */
-    readonly fields?: ("creationTime" | "isAdmin" | "kind" | "lastLoginTime" | "name" | "primaryEmail" | "suspended")[] | ("creationTime" | "isAdmin" | "kind" | "lastLoginTime" | "name" | "primaryEmail" | "suspended")[];
+    readonly fields?: ("creationTime" | "isAdmin" | "kind" | "lastLoginTime" | "name" | "primaryEmail" | "suspended")[];
 
     /**
      * A comma-separated list of schema names. All fields from these schemas are fetched. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getSchemas"}
      */
-    readonly customFieldMask?: string[] | string[];
+    readonly customFieldMask?: string[];
 
 
 }

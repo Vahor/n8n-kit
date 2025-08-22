@@ -23,7 +23,7 @@ export interface PipedriveNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "duplicate" | "get" | "getAll" | "search" | "update" | "getAll" | "add" | "getAll" | "remove" | "update" | "create" | "delete" | "download" | "get" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "search" | "update" | "create" | "delete" | "get" | "getAll" | "search" | "update" | "getAll";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "duplicate" | "get" | "getAll" | "search" | "update" | "getAll" | "add" | "getAll" | "remove" | "update" | "create" | "delete" | "download" | "get" | "update" | "create" | "delete" | "get" | "getAll" | "search" | "update";
 
     /**
      * The subject of the activity to create
@@ -49,7 +49,7 @@ export interface PipedriveNodeParameters {
     /**
      * ID of the activity to delete
      */
-    readonly activityId?: number | number | number;
+    readonly activityId?: number;
 
     /**
      * Default: {}
@@ -59,13 +59,13 @@ export interface PipedriveNodeParameters {
     /**
      * The title of the deal to create
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * Type of entity to link to this deal
      * Default: "organization"
      */
-    readonly associateWith?: "organization" | "person" | "organization" | "person";
+    readonly associateWith?: "organization" | "person";
 
     /**
      * ID of the organization this deal will be associated with
@@ -75,12 +75,12 @@ export interface PipedriveNodeParameters {
     /**
      * ID of the person this deal will be associated with
      */
-    readonly person_id?: number | number;
+    readonly person_id?: number;
 
     /**
      * ID of the deal to delete
      */
-    readonly dealId?: number | number | number | number | string | string | string | string | string;
+    readonly dealId?: number | string;
 
     /**
      * The ID of the product to add to a deal. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -105,12 +105,12 @@ export interface PipedriveNodeParameters {
      * ID of the deal-product (the ID of the product attached to the deal). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProductsDeal","loadOptionsDependsOn":["dealId"]}
      */
-    readonly productAttachmentId?: string | string;
+    readonly productAttachmentId?: string;
 
     /**
      * The search term to look for. Minimum 2 characters (or 1 if using exact_match).
      */
-    readonly term?: string | string | string;
+    readonly term?: string;
 
     /**
      * Whether only full exact matches against the given term are returned. It is not case sensitive.
@@ -120,24 +120,24 @@ export interface PipedriveNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * ID of the file to delete
      */
-    readonly fileId?: number | number | number | number;
+    readonly fileId?: number;
 
     /**
      * ID of the organization to link to this lead
@@ -147,7 +147,7 @@ export interface PipedriveNodeParameters {
     /**
      * ID of the lead to delete
      */
-    readonly leadId?: string | string | string;
+    readonly leadId?: string;
 
     /**
      * The content of the note to create
@@ -158,22 +158,22 @@ export interface PipedriveNodeParameters {
     /**
      * ID of the note to delete
      */
-    readonly noteId?: number | number | number;
+    readonly noteId?: number;
 
     /**
      * The name of the organization to create
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * ID of the organization to delete
      */
-    readonly organizationId?: number | number | number;
+    readonly organizationId?: number;
 
     /**
      * ID of the person to delete
      */
-    readonly personId?: number | number | number;
+    readonly personId?: number;
 
     /**
      * By default do custom properties get returned only as ID instead of their actual name. Also option fields contain only the ID instead of their actual value. If this option gets set they get automatically resolved.

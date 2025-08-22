@@ -25,34 +25,34 @@ export interface EmeliaNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
-    readonly campaignId?: string | string | string | string | string;
+    readonly campaignId?: string;
 
     /**
      * The email of the contact to add to the campaign
      */
-    readonly contactEmail?: string | string;
+    readonly contactEmail?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string } | { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
 
     /**
      * The name of the campaign to create
      */
-    readonly campaignName?: string | string;
+    readonly campaignName?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

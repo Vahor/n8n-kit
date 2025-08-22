@@ -23,12 +23,12 @@ export interface MailjetNodeParameters {
     /**
      * The title for the email
      */
-    readonly fromEmail?: string | string;
+    readonly fromEmail?: string;
 
     /**
      * Email address of the recipient. Multiple ones can be separated by comma.
      */
-    readonly toEmail?: string | string;
+    readonly toEmail?: string;
 
     /**
      * Subject line of the email
@@ -38,7 +38,7 @@ export interface MailjetNodeParameters {
     /**
      * Plain text message of email
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * HTML text message of email
@@ -47,7 +47,7 @@ export interface MailjetNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -57,13 +57,13 @@ export interface MailjetNodeParameters {
     /**
      * HTML text message of email
      */
-    readonly variablesJson?: string | string;
+    readonly variablesJson?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly variablesUi?: { "variablesValues": any } | { "variablesValues": any };
+    readonly variablesUi?: { "variablesValues": any };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

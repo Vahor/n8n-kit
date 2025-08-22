@@ -35,7 +35,7 @@ export interface BaserowNodeParameters {
     /**
      * ID of the row to return
      */
-    readonly rowId?: string | string | string;
+    readonly rowId?: string;
 
     /**
      * Whether to insert the input data this node receives in the new row

@@ -38,12 +38,12 @@ export interface SshNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * The directory to upload the file to. The name of the file does not need to be specified, it's taken from the binary data file name. To override this behavior, set the parameter "File Name" under options.
      */
-    readonly path?: string | string;
+    readonly path?: string;
 
     /**
      * Default: {}

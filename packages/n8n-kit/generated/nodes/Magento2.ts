@@ -18,12 +18,12 @@ export interface Magento2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "cancel" | "get" | "getAll" | "ship" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "cancel" | "get" | "getAll" | "ship";
 
     /**
      * Email address of the user to create
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * First name of the user to create
@@ -43,7 +43,7 @@ export interface Magento2NodeParameters {
     /**
      * ID of the customer to update
      */
-    readonly customerId?: string | string;
+    readonly customerId?: string;
 
     /**
      */
@@ -67,52 +67,52 @@ export interface Magento2NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":10}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: "none"
      */
-    readonly filterType?: "none" | "manual" | "json" | "none" | "manual" | "json" | "none" | "manual" | "json";
+    readonly filterType?: "none" | "manual" | "json";
 
     /**
      * Default: "anyFilter"
      */
-    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
+    readonly matchType?: "anyFilter" | "allFilters";
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any } | { "conditions": any } | { "conditions": any };
+    readonly filters?: { "conditions": any };
 
     /**
      */
-    readonly jsonNotice?: string | string | string;
+    readonly jsonNotice?: string;
 
     /**
      */
-    readonly filterJson?: string | string | string;
+    readonly filterJson?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: { "sort": any } } | { "sort"?: { "sort": any } } | { "sort"?: { "sort": any } };
+    readonly options?: { "sort"?: { "sort": any } };
 
     /**
      */
-    readonly orderId?: string | string;
+    readonly orderId?: string;
 
     /**
      * Stock-keeping unit of the product
      */
-    readonly sku?: string | string;
+    readonly sku?: string;
 
     /**
      */

@@ -33,7 +33,7 @@ export interface YourlsNodeParameters {
     /**
      * The short URL to expand
      */
-    readonly shortUrl?: string | string;
+    readonly shortUrl?: string;
 
 
 }

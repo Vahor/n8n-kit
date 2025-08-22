@@ -23,7 +23,7 @@ export interface RundeckNodeParameters {
     /**
      * The job ID to execute
      */
-    readonly jobid?: string | string;
+    readonly jobid?: string;
 
     /**
      * Default: {}

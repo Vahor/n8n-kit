@@ -18,7 +18,7 @@ export interface HighLevelV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -27,12 +27,12 @@ export interface HighLevelV1NodeParameters {
     /**
      * Email or Phone are required to create contact
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * Phone or Email are required to create contact. Phone number has to start with a valid <a href="https://en.wikipedia.org/wiki/List_of_country_calling_codes">country code</a> leading with + sign.
      */
-    readonly phone?: string | string;
+    readonly phone?: string;
 
     /**
      * Default: {}
@@ -41,7 +41,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly contactId?: string | string | string | string | string | string | string | string;
+    readonly contactId?: string;
 
     /**
      * Default: {}
@@ -51,14 +51,14 @@ export interface HighLevelV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -89,7 +89,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * Default: "open"
@@ -98,7 +98,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly opportunityId?: string | string | string;
+    readonly opportunityId?: string;
 
     /**
      */
@@ -106,7 +106,7 @@ export interface HighLevelV1NodeParameters {
 
     /**
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
 
 }

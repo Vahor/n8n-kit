@@ -27,30 +27,30 @@ export interface GmailV1NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "delete" | "get" | "getAll" | "reply" | "send" | "add" | "remove";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "delete" | "get" | "getAll" | "reply" | "send" | "add" | "remove";
 
     /**
      */
-    readonly messageId?: string | string | string | string;
+    readonly messageId?: string;
 
     /**
      */
-    readonly subject?: string | string;
+    readonly subject?: string;
 
     /**
      * Whether the message should also be included as HTML
      */
-    readonly includeHtml?: boolean | boolean;
+    readonly includeHtml?: boolean;
 
     /**
      * The HTML message body
      */
-    readonly htmlMessage?: string | string;
+    readonly htmlMessage?: string;
 
     /**
      * The message body. If HTML formatted, then you have to add and activate the option "HTML content" in the "Additional Options" section.
      */
-    readonly message?: string | string;
+    readonly message?: string;
 
     /**
      * Default: {}
@@ -60,14 +60,14 @@ export interface GmailV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 10
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Label Name

@@ -24,7 +24,7 @@ export interface FtpNodeParameters {
     /**
      * The file path of the file to delete. Has to contain the full path.
      */
-    readonly path?: string | string | string | string;
+    readonly path?: string;
 
     /**
      * Default: {}
@@ -34,7 +34,7 @@ export interface FtpNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      */

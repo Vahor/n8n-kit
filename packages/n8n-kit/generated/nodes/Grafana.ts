@@ -18,7 +18,7 @@ export interface GrafanaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "add" | "getAll" | "remove" | "delete" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "add" | "getAll" | "remove" | "delete" | "getAll" | "update";
 
     /**
      * Title of the dashboard to create
@@ -33,19 +33,19 @@ export interface GrafanaNodeParameters {
     /**
      * Unique alphabetic identifier or URL of the dashboard to delete
      */
-    readonly dashboardUidOrUrl?: string | string | string;
+    readonly dashboardUidOrUrl?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -65,13 +65,13 @@ export interface GrafanaNodeParameters {
     /**
      * ID of the team to delete
      */
-    readonly teamId?: string | string | string | string | string | string;
+    readonly teamId?: string;
 
     /**
      * User to add to a team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userId?: string | string | string;
+    readonly userId?: string;
 
     /**
      * User to remove from the team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

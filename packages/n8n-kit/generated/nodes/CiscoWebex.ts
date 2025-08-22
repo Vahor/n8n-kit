@@ -18,7 +18,7 @@ export interface CiscoWebexNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Meeting title. The title can be a maximum of 128 characters long.
@@ -43,7 +43,7 @@ export interface CiscoWebexNodeParameters {
     /**
      * ID of the meeting
      */
-    readonly meetingId?: string | string | string;
+    readonly meetingId?: string;
 
     /**
      * Default: {}
@@ -53,14 +53,14 @@ export interface CiscoWebexNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -81,7 +81,7 @@ export interface CiscoWebexNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getRooms"}
      */
-    readonly roomId?: string | string;
+    readonly roomId?: string;
 
     /**
      * Default: "email"
@@ -99,12 +99,12 @@ export interface CiscoWebexNodeParameters {
     /**
      * The message, in plain text
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * ID of the message to delete
      */
-    readonly messageId?: string | string | string;
+    readonly messageId?: string;
 
     /**
      * Whether the message uses markdown

@@ -43,7 +43,7 @@ export interface GetResponseNodeParameters {
     /**
      * ID of contact to delete
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      * Default: {}

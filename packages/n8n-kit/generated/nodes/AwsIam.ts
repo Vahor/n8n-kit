@@ -24,47 +24,47 @@ export interface AwsIamNodeParameters {
      * Select the user you want to add to the group
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any | any | any | any | any;
+    readonly user?: any;
 
     /**
      * Select the group you want to add the user to
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any | any | any | any | any;
+    readonly group?: any;
 
     /**
      * The username of the new user to create
      * Type options: {"maxLength":64,"regex":"^[A-Za-z0-9+=,\\.@_-]+$"}
      */
-    readonly userName?: string | string;
+    readonly userName?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "path"?: string, "permissionsBoundary"?: string, "tags"?: { "tags": any } } | { "pathPrefix"?: string } | { "path"?: string } | { "path"?: string } | { "path"?: string };
+    readonly additionalFields?: { "path"?: string, "permissionsBoundary"?: string, "tags"?: { "tags": any } } | { "pathPrefix"?: string } | { "path"?: string };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * The name of the new group to create
      * Type options: {"maxLength":128,"regex":"^[+=,.@\\-_A-Za-z0-9]+$"}
      */
-    readonly groupName?: string | string;
+    readonly groupName?: string;
 
     /**
      * Whether to include a list of users in the group
      */
-    readonly includeUsers?: boolean | boolean;
+    readonly includeUsers?: boolean;
 
 
 }

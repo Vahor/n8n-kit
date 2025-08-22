@@ -33,7 +33,7 @@ export interface N8nNodeParameters {
     /**
      * The available types depend on nodes installed on the n8n instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'.
      */
-    readonly credentialTypeName?: string | string;
+    readonly credentialTypeName?: string;
 
     /**
      * A valid JSON object with properties required for this Credential Type. To see the expected format, you can use 'Get Schema' operation.
@@ -47,19 +47,19 @@ export interface N8nNodeParameters {
 
     /**
      */
-    readonly executionId?: string | string;
+    readonly executionId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":250}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -69,20 +69,20 @@ export interface N8nNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "activeWorkflows"?: boolean } | { "activeWorkflows"?: boolean };
+    readonly options?: { "activeWorkflows"?: boolean };
 
     /**
      * Workflow to filter the executions by
      * Default: {"mode":"list","value":""}
      */
-    readonly workflowId?: any | any | any | any | any;
+    readonly workflowId?: any;
 
     /**
      * A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href="https://docs.n8n.io/api/api-reference/#tag/Workflow/paths/~1workflows/post">documentation</a>.
      * Default: "{ \"name\": \"My workflow\", \"nodes\": [], \"connections\": {}, \"settings\": {} }"
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly workflowObject?: string | string;
+    readonly workflowObject?: string;
 
 
 }

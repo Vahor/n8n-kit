@@ -29,11 +29,11 @@ export interface OrbitNodeParameters {
      * Default: "Deprecated"
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
-    readonly workspaceId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly workspaceId?: string;
 
     /**
      */
-    readonly memberId?: string | string | string | string | string | string | string | string | string;
+    readonly memberId?: string;
 
     /**
      */
@@ -47,24 +47,24 @@ export interface OrbitNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "memberId"?: string } | { "memberId"?: string };
+    readonly filters?: { "memberId"?: string };
 
     /**
      * By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically.
      */
-    readonly resolveIdentities?: boolean | boolean;
+    readonly resolveIdentities?: boolean;
 
     /**
      * Default: {}
@@ -113,7 +113,7 @@ export interface OrbitNodeParameters {
 
     /**
      */
-    readonly note?: string | string;
+    readonly note?: string;
 
     /**
      */

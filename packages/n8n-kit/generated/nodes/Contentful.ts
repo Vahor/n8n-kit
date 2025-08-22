@@ -24,13 +24,13 @@ export interface ContentfulNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "get" | "get" | "getAll" | "get" | "getAll" | "getAll";
+    readonly operation?: "get" | "get" | "getAll" | "getAll";
 
     /**
      * The ID for the Contentful environment (e.g. master, staging, etc.). Depending on your plan, you might not have environments. In that case use "master".
      * Default: "master"
      */
-    readonly environmentId?: string | string | string | string;
+    readonly environmentId?: string;
 
     /**
      */
@@ -39,19 +39,19 @@ export interface ContentfulNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "rawData"?: boolean } | { "content_type"?: string, "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean } | { "rawData"?: boolean } | { "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean };
+    readonly additionalFields?: { "rawData"?: boolean } | { "content_type"?: string, "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean } | { "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      */

@@ -18,12 +18,12 @@ export interface MispNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "search" | "update" | "create" | "delete" | "get" | "getAll" | "publish" | "search" | "unpublish" | "update" | "add" | "remove" | "create" | "disable" | "enable" | "get" | "getAll" | "update" | "delete" | "get" | "getAll" | "get" | "getAll" | "search" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "get" | "getAll";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "search" | "update" | "create" | "delete" | "get" | "getAll" | "publish" | "search" | "unpublish" | "update" | "add" | "remove" | "create" | "disable" | "enable" | "get" | "getAll" | "update" | "delete" | "get" | "getAll" | "get" | "getAll" | "search" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "update";
 
     /**
      * UUID of the event to attach the attribute to
      */
-    readonly eventId?: string | string | string | string | string | string | string | string;
+    readonly eventId?: string;
 
     /**
      * Default: "text"
@@ -32,41 +32,41 @@ export interface MispNodeParameters {
 
     /**
      */
-    readonly value?: string | string | string | string;
+    readonly value?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string } | { "category"?: string, "deleted"?: boolean, "searchall"?: string, "tags"?: string, "type"?: string, "published"?: boolean } | { "analysis"?: "0" | "1" | "2", "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string, "threat_level_id"?: "1" | "2" | "3" | "4" } | { "category"?: string, "deleted"?: boolean, "searchall"?: string, "tags"?: string, "type"?: string, "published"?: boolean } | { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "json"?: string } | { "category"?: string, "deleted"?: boolean, "searchall"?: string, "tags"?: string, "type"?: string, "published"?: boolean } | { "created_by_email"?: string, "description"?: string, "nationality"?: string, "sector"?: string, "type"?: string, "usercount"?: number } | { "colour"?: any } | { "gpgkey"?: string, "invited_by"?: string, "org_id"?: string };
+    readonly additionalFields?: { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string } | { "category"?: string, "deleted"?: boolean, "searchall"?: string, "tags"?: string, "type"?: string, "published"?: boolean } | { "analysis"?: "0" | "1" | "2", "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string, "threat_level_id"?: "1" | "2" | "3" | "4" } | { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "json"?: string } | { "created_by_email"?: string, "description"?: string, "nationality"?: string, "sector"?: string, "type"?: string, "usercount"?: number } | { "colour"?: any } | { "gpgkey"?: string, "invited_by"?: string, "org_id"?: string };
 
     /**
      * UUID or numeric ID of the attribute
      */
-    readonly attributeId?: string | string | string;
+    readonly attributeId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Whether to use JSON to specify the fields for the search request
      */
-    readonly useJson?: boolean | boolean | boolean;
+    readonly useJson?: boolean;
 
     /**
      * Get more info at {YOUR_BASE_URL_SPECIFIED_IN_CREDENTIALS}/api/openapi#operation/restSearchAttributes
      * Default: "{\n  \"value\": \"search value\",\n  \"type\": \"text\"\n}\n"
      * Type options: {"rows":5}
      */
-    readonly jsonOutput?: string | string | string;
+    readonly jsonOutput?: string;
 
     /**
      * Default: {}
@@ -88,11 +88,11 @@ export interface MispNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTags"}
      */
-    readonly tagId?: string | string | string | string;
+    readonly tagId?: string;
 
     /**
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      */
@@ -105,12 +105,12 @@ export interface MispNodeParameters {
     /**
      * UUID or numeric ID of the feed
      */
-    readonly feedId?: string | string | string | string;
+    readonly feedId?: string;
 
     /**
      * UUID or numeric ID of the galaxy
      */
-    readonly galaxyId?: string | string;
+    readonly galaxyId?: string;
 
     /**
      * Numeric ID of the noticelist
@@ -120,7 +120,7 @@ export interface MispNodeParameters {
     /**
      * UUID or numeric ID of the organisation
      */
-    readonly organisationId?: string | string | string;
+    readonly organisationId?: string;
 
     /**
      */
@@ -134,7 +134,7 @@ export interface MispNodeParameters {
     /**
      * Numeric ID of the user
      */
-    readonly userId?: string | string | string;
+    readonly userId?: string;
 
     /**
      * Numeric ID of the warninglist

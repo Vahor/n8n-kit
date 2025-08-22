@@ -22,7 +22,7 @@ export interface SegmentNodeParameters {
 
     /**
      */
-    readonly userId?: string | string | string | string;
+    readonly userId?: string;
 
     /**
      * A Group ID is the unique identifier which you recognize a group by in your own database
@@ -33,19 +33,19 @@ export interface SegmentNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly traits?: { "traitsUi": any } | { "traitsUi": any };
+    readonly traits?: { "traitsUi": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly context?: { "contextUi": any } | { "contextUi": any } | { "contextUi": any } | { "contextUi": any };
+    readonly context?: { "contextUi": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly integrations?: { "integrationsUi": any } | { "integrationsUi": any } | { "integrationsUi": any } | { "integrationsUi": any };
+    readonly integrations?: { "integrationsUi": any };
 
     /**
      * Name of the action that a user has performed
@@ -56,7 +56,7 @@ export interface SegmentNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "propertiesUi": any } | { "propertiesUi": any };
+    readonly properties?: { "propertiesUi": any };
 
     /**
      * Name of the page For example, most sites have a “Signup” page that can be useful to tag, so you can see users as they move through your funnel

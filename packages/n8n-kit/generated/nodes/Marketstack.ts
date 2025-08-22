@@ -18,7 +18,7 @@ export interface MarketstackNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "get" | "get";
+    readonly operation?: "getAll" | "get";
 
     /**
      * One or multiple comma-separated stock symbols (tickers) to retrieve, e.g. <code>AAPL</code> or <code>AAPL,MSFT</code>

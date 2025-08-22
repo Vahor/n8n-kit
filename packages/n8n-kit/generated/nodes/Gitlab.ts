@@ -44,7 +44,7 @@ export interface GitlabNodeParameters {
      * The body of the issue
      * Type options: {"rows":5}
      */
-    readonly body?: string | string;
+    readonly body?: string;
 
     /**
      * Due Date for issue
@@ -66,7 +66,7 @@ export interface GitlabNodeParameters {
     /**
      * The number of the issue on which to create the comment on
      */
-    readonly issueNumber?: number | number | number | number;
+    readonly issueNumber?: number;
 
     /**
      * Default: {}
@@ -94,12 +94,12 @@ export interface GitlabNodeParameters {
     /**
      * The ID or URL-encoded path of the project
      */
-    readonly projectId?: string | string | string;
+    readonly projectId?: string;
 
     /**
      * The Git tag the release is associated with
      */
-    readonly tag_name?: string | string;
+    readonly tag_name?: string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -122,7 +122,7 @@ export interface GitlabNodeParameters {
     /**
      * The file path of the file. Has to contain the full path or leave it empty for root folder.
      */
-    readonly filePath?: string | string;
+    readonly filePath?: string;
 
     /**
      * Page of results to display
@@ -146,7 +146,7 @@ export interface GitlabNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Whether the data to upload should be taken from binary field

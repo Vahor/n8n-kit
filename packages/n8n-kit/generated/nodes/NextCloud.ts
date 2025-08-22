@@ -28,17 +28,17 @@ export interface NextCloudNodeParameters {
     /**
      * The path of file or folder to copy. The path should start with "/".
      */
-    readonly path?: string | string | string | string | string | string | string | string;
+    readonly path?: string;
 
     /**
      * The destination path of file or folder. The path should start with "/".
      */
-    readonly toPath?: string | string;
+    readonly toPath?: string;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      */
@@ -62,7 +62,7 @@ export interface NextCloudNodeParameters {
     /**
      * The Email address to share with
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * The ID of the group to share with
@@ -82,7 +82,7 @@ export interface NextCloudNodeParameters {
     /**
      * Username the user will have
      */
-    readonly userId?: string | string;
+    readonly userId?: string;
 
     /**
      * Default: {}

@@ -16,7 +16,7 @@ export interface LocalFileTriggerNodeParameters {
 
     /**
      */
-    readonly path?: string | string;
+    readonly path?: string;
 
     /**
      * The events to listen to

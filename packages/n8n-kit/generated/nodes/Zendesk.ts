@@ -32,7 +32,7 @@ export interface ZendeskNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -47,7 +47,7 @@ export interface ZendeskNodeParameters {
 
     /**
      */
-    readonly id?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Default: {}
@@ -68,14 +68,14 @@ export interface ZendeskNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -89,7 +89,7 @@ export interface ZendeskNodeParameters {
     /**
      * The user's name
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * Default: {}

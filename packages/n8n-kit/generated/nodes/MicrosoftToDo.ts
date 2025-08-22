@@ -18,22 +18,22 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTaskLists"}
      */
-    readonly taskListId?: string | string | string;
+    readonly taskListId?: string;
 
     /**
      */
-    readonly taskId?: string | string;
+    readonly taskId?: string;
 
     /**
      * Field indicating title of the linked entity
      */
-    readonly displayName?: string | string | string;
+    readonly displayName?: string;
 
     /**
      * App name of the source that is sending the linked entity
@@ -52,14 +52,14 @@ export interface MicrosoftToDoNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

@@ -19,7 +19,7 @@ export interface StoryblokNodeParameters {
     /**
      * Default: "story"
      */
-    readonly resource?: "story" | "story";
+    readonly resource?: "story";
 
     /**
      * Default: "get"
@@ -34,30 +34,30 @@ export interface StoryblokNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "starts_with"?: string } | { "starts_with"?: string };
+    readonly filters?: { "starts_with"?: string };
 
     /**
      * The name of the space. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
-    readonly space?: string | string | string | string | string;
+    readonly space?: string;
 
     /**
      * Numeric ID of the story
      */
-    readonly storyId?: string | string | string | string;
+    readonly storyId?: string;
 
     /**
      * Default: {}

@@ -47,18 +47,18 @@ export interface PostgresV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly where?: { "values": any } | { "values": any };
+    readonly where?: { "values": any };
 
     /**
      * How to combine the conditions defined in "Select Rows": AND requires all conditions to be true, OR requires at least one condition to be true
      * Default: "AND"
      */
-    readonly combineConditions?: "AND" | "OR" | "AND" | "OR";
+    readonly combineConditions?: "AND" | "OR";
 
     /**
      * Default: {}
      */
-    readonly options?: { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean } | { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean } | { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean } | { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean } | { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean } | { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean };
+    readonly options?: { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: string[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean };
 
     /**
      * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
@@ -70,23 +70,23 @@ export interface PostgresV2NodeParameters {
      * Whether to map node input properties and the table data automatically or manually
      * Default: "autoMapInputData"
      */
-    readonly dataMode?: "autoMapInputData" | "defineBelow" | "autoMapInputData" | "defineBelow" | "autoMapInputData" | "defineBelow";
+    readonly dataMode?: "autoMapInputData" | "defineBelow";
 
     /**
      */
-    readonly notice?: string | string | string;
+    readonly notice?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Value","multipleValues":true}
      */
-    readonly valuesToSend?: { "values": any } | { "values": any } | { "values": any };
+    readonly valuesToSend?: { "values": any };
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
      * Type options: {"loadOptionsDependsOn":["table.value","operation"],"resourceMapper":{"resourceMapperMethod":"getMappingColumns","mode":"add","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":true}}
      */
-    readonly columns?: any | any | any;
+    readonly columns?: any;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -110,12 +110,12 @@ export interface PostgresV2NodeParameters {
      * The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>.
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["schema.value","table.value"]}
      */
-    readonly columnToMatchOn?: string | string;
+    readonly columnToMatchOn?: string;
 
     /**
      * Rows with a value in the specified "Column to Match On" that corresponds to the value in this field will be updated
      */
-    readonly valueToMatchOn?: string | string;
+    readonly valueToMatchOn?: string;
 
 
 }

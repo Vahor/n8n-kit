@@ -18,7 +18,7 @@ export interface SalesmateNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -28,12 +28,12 @@ export interface SalesmateNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly owner?: string | string | string;
+    readonly owner?: string;
 
     /**
      * Whether the data should include the fields details
      */
-    readonly rawData?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly rawData?: boolean;
 
     /**
      * Default: {}
@@ -42,7 +42,7 @@ export interface SalesmateNodeParameters {
 
     /**
      */
-    readonly id?: string | string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Default: {}
@@ -52,38 +52,38 @@ export interface SalesmateNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 10
      * Type options: {"minValue":1,"maxValue":25}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
      */
-    readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" } | { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" } | { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
+    readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
 
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly filtersJson?: string | string | string;
+    readonly filtersJson?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly filters?: { "filtersUi": any } | { "filtersUi": any } | { "filtersUi": any };
+    readonly filters?: { "filtersUi": any };
 
     /**
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * This field displays activity type such as call, meeting etc

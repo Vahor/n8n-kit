@@ -29,7 +29,7 @@ export interface JenkinsNodeParameters {
      * Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getJobs"}
      */
-    readonly job?: string | string;
+    readonly job?: string;
 
     /**
      * Parameters for Jenkins job

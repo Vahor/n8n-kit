@@ -18,23 +18,23 @@ export interface ActionNetworkNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll" | "create" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "add" | "remove";
+    readonly operation?: "create" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "add" | "remove";
 
     /**
      * ID of the person to create an attendance for
      */
-    readonly personId?: string | string | string | string | string;
+    readonly personId?: string;
 
     /**
      * ID of the event to create an attendance for
      */
-    readonly eventId?: string | string | string | string;
+    readonly eventId?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * ID of the attendance to retrieve
@@ -44,24 +44,24 @@ export interface ActionNetworkNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Source where the event originated
      */
-    readonly originSystem?: string | string;
+    readonly originSystem?: string;
 
     /**
      * Title of the event to create
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * Default: {}
@@ -82,12 +82,12 @@ export interface ActionNetworkNodeParameters {
     /**
      * ID of the petition to retrieve
      */
-    readonly petitionId?: string | string | string | string | string | string;
+    readonly petitionId?: string;
 
     /**
      * ID of the signature to retrieve
      */
-    readonly signatureId?: string | string;
+    readonly signatureId?: string;
 
     /**
      * Name of the tag to create
@@ -97,7 +97,7 @@ export interface ActionNetworkNodeParameters {
     /**
      * ID of the tag to retrieve
      */
-    readonly tagId?: string | string | string;
+    readonly tagId?: string;
 
     /**
      * ID of the tagging to remove. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

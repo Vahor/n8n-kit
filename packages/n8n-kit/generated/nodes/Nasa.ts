@@ -18,7 +18,7 @@ export interface NasaNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "get" | "get" | "getAll" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get" | "get";
+    readonly operation?: "get" | "getAll";
 
     /**
      * The ID of the asteroid to be returned
@@ -39,7 +39,7 @@ export interface NasaNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Latitude for the location of the image

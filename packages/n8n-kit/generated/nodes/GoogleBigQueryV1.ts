@@ -33,19 +33,19 @@ export interface GoogleBigQueryV1NodeParameters {
      * ID of the project to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly projectId?: string | string;
+    readonly projectId?: string;
 
     /**
      * ID of the dataset to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDatasets","loadOptionsDependsOn":["projectId"]}
      */
-    readonly datasetId?: string | string;
+    readonly datasetId?: string;
 
     /**
      * ID of the table to create the record in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTables","loadOptionsDependsOn":["projectId","datasetId"]}
      */
-    readonly tableId?: string | string;
+    readonly tableId?: string;
 
     /**
      * Comma-separated list of the item properties to use as columns

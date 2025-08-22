@@ -56,19 +56,19 @@ export interface AwsElbNodeParameters {
     /**
      * Unique identifier for a particular loadBalancer
      */
-    readonly loadBalancerId?: string | string | string | string | string;
+    readonly loadBalancerId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"maxValue":400,"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -79,12 +79,12 @@ export interface AwsElbNodeParameters {
      * Unique identifier for a particular loadBalancer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLoadBalancerListeners","loadOptionsDependsOn":["loadBalancerId"]}
      */
-    readonly listenerId?: string | string | string;
+    readonly listenerId?: string;
 
     /**
      * Unique identifier for a particular loadBalancer
      */
-    readonly certificateId?: string | string;
+    readonly certificateId?: string;
 
 
 }

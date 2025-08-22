@@ -23,7 +23,7 @@ export interface CustomerIoNodeParameters {
     /**
      * The unique identifier for the campaign
      */
-    readonly campaignId?: number | number;
+    readonly campaignId?: number;
 
     /**
      * Specify metric period
@@ -33,7 +33,7 @@ export interface CustomerIoNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean | boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -43,13 +43,13 @@ export interface CustomerIoNodeParameters {
     /**
      * The unique identifier for the customer
      */
-    readonly id?: string | string;
+    readonly id?: string;
 
     /**
      * Object of values to set as described <a href="https://github.com/agilecrm/rest-api#1-companys---companies-api">here</a>
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: string | string | string;
+    readonly additionalFieldsJson?: string;
 
     /**
      * The unique identifier for the customer
@@ -59,7 +59,7 @@ export interface CustomerIoNodeParameters {
     /**
      * Name of the event to track
      */
-    readonly eventName?: string | string;
+    readonly eventName?: string;
 
     /**
      * The unique identifier of the segment

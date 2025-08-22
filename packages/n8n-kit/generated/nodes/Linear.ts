@@ -27,7 +27,7 @@ export interface LinearNodeParameters {
 
     /**
      */
-    readonly issueId?: string | string | string;
+    readonly issueId?: string;
 
     /**
      */

@@ -18,17 +18,17 @@ export interface TaigaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * ID of the project to which the epic belongs. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly projectId?: string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly projectId?: string;
 
     /**
      */
-    readonly subject?: string | string | string | string;
+    readonly subject?: string;
 
     /**
      * Default: {}
@@ -38,19 +38,19 @@ export interface TaigaNodeParameters {
     /**
      * ID of the epic to delete
      */
-    readonly epicId?: string | string | string;
+    readonly epicId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -65,17 +65,17 @@ export interface TaigaNodeParameters {
     /**
      * ID of the issue to delete
      */
-    readonly issueId?: string | string | string;
+    readonly issueId?: string;
 
     /**
      * ID of the task to delete
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
     /**
      * ID of the user story to delete
      */
-    readonly userStoryId?: string | string | string;
+    readonly userStoryId?: string;
 
 
 }

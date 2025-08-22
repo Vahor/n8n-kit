@@ -18,7 +18,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "update" | "add" | "remove" | "create" | "delete" | "get" | "update" | "add" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "update" | "add" | "remove" | "add" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -34,7 +34,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * Date when the activity happened
      */
-    readonly happenedAt?: string | string | string;
+    readonly happenedAt?: string;
 
     /**
      * Brief description of the activity - max 255 characters
@@ -44,24 +44,24 @@ export interface MonicaCrmNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string } | { "birthdate"?: string, "deceasedDate"?: string, "isDeceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "isFavorited"?: boolean } | { "description"?: string } | { "description"?: string };
+    readonly additionalFields?: { "description"?: string } | { "birthdate"?: string, "deceasedDate"?: string, "isDeceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "isFavorited"?: boolean };
 
     /**
      * ID of the activity to delete
      */
-    readonly activityId?: string | string | string;
+    readonly activityId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -71,7 +71,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the contact to associate the call with
      */
-    readonly contactId?: string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly contactId?: string;
 
     /**
      * Date when the call happened
@@ -81,12 +81,12 @@ export interface MonicaCrmNodeParameters {
     /**
      * Description of the call - max 100,000 characters
      */
-    readonly content?: string | string;
+    readonly content?: string;
 
     /**
      * ID of the call to delete
      */
-    readonly callId?: string | string | string;
+    readonly callId?: string;
 
     /**
      */
@@ -107,17 +107,17 @@ export interface MonicaCrmNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getContactFieldTypes"}
      */
-    readonly contactFieldTypeId?: string | string | string | string;
+    readonly contactFieldTypeId?: string;
 
     /**
      * Content of the contact field - max 255 characters
      */
-    readonly data?: string | string;
+    readonly data?: string;
 
     /**
      * ID of the contactField to delete
      */
-    readonly contactFieldId?: string | string | string;
+    readonly contactFieldId?: string;
 
     /**
      * Tags to add to the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -136,7 +136,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the conversation to delete
      */
-    readonly conversationId?: string | string | string | string | string;
+    readonly conversationId?: string;
 
     /**
      * Date when the message was written
@@ -157,7 +157,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * Title of the journal entry - max 250 characters
      */
-    readonly title?: string | string | string;
+    readonly title?: string;
 
     /**
      * Content of the journal entry - max 100,000 characters
@@ -167,7 +167,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the journal entry to delete
      */
-    readonly journalId?: string | string | string;
+    readonly journalId?: string;
 
     /**
      * Body of the note - max 100,000 characters
@@ -177,7 +177,7 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the note to delete
      */
-    readonly noteId?: string | string | string;
+    readonly noteId?: string;
 
     /**
      * Type of frequency of the reminder
@@ -198,22 +198,22 @@ export interface MonicaCrmNodeParameters {
     /**
      * ID of the reminder to delete
      */
-    readonly reminderId?: string | string | string;
+    readonly reminderId?: string;
 
     /**
      * Name of the tag - max 250 characters
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * ID of the tag to delete
      */
-    readonly tagId?: string | string | string;
+    readonly tagId?: string;
 
     /**
      * ID of the task to delete
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
 
 }

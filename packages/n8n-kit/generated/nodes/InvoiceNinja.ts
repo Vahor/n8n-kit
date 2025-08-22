@@ -13,7 +13,7 @@ export interface InvoiceNinjaNodeParameters {
     /**
      * Default: "v4"
      */
-    readonly apiVersion?: "v4" | "v5" | "v4" | "v5";
+    readonly apiVersion?: "v4" | "v5";
 
     /**
      * Default: "client"
@@ -23,7 +23,7 @@ export interface InvoiceNinjaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "email" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "email" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "matchPayment";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "email" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "matchPayment";
 
     /**
      * Default: {}
@@ -50,34 +50,34 @@ export interface InvoiceNinjaNodeParameters {
 
     /**
      */
-    readonly clientId?: string | string;
+    readonly clientId?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "include"?: "invoices" } | { "include"?: "invoices", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean } | { "include"?: "client" } | { "invoiceNumber"?: string, "include"?: "client", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean, "clientStatus"?: "all" | "paid" | "unpaid" | "overdue" } | { "include"?: "client" } | { "include"?: "client" } | { "include"?: "client" } | { "include"?: "client", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean } | { "include"?: "client" } | { "quoteNumber"?: string, "include"?: "client", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean };
+    readonly options?: { "include"?: "invoices" } | { "include"?: "invoices", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean } | { "include"?: "client" } | { "invoiceNumber"?: string, "include"?: "client", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean, "clientStatus"?: "all" | "paid" | "unpaid" | "overdue" } | { "include"?: "client", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean } | { "quoteNumber"?: string, "include"?: "client", "status"?: "active" | "archived" | "deleted", "createdAt"?: string, "updatedAt"?: string, "isDeleted"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":60}
      */
-    readonly limit?: number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly invoiceItemsUi?: { "invoiceItemsValues": any } | { "invoiceItemsValues": any };
+    readonly invoiceItemsUi?: { "invoiceItemsValues": any };
 
     /**
      */
-    readonly invoiceId?: string | string | string;
+    readonly invoiceId?: string;
 
     /**
      * Default: {}
@@ -87,7 +87,7 @@ export interface InvoiceNinjaNodeParameters {
 
     /**
      */
-    readonly taskId?: string | string;
+    readonly taskId?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -102,19 +102,19 @@ export interface InvoiceNinjaNodeParameters {
 
     /**
      */
-    readonly paymentId?: string | string | string;
+    readonly paymentId?: string;
 
     /**
      */
-    readonly expenseId?: string | string;
+    readonly expenseId?: string;
 
     /**
      */
-    readonly quoteId?: string | string | string;
+    readonly quoteId?: string;
 
     /**
      */
-    readonly bankTransactionId?: string | string | string;
+    readonly bankTransactionId?: string;
 
 
 }

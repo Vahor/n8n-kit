@@ -23,24 +23,24 @@ export interface SendGridNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Name of the list
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * ID of the list
      */
-    readonly listId?: string | string | string;
+    readonly listId?: string;
 
     /**
      * Whether to delete all contacts on the list
@@ -60,7 +60,7 @@ export interface SendGridNodeParameters {
     /**
      * Primary email for the contact
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * Default: {}

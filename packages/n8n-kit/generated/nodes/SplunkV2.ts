@@ -23,29 +23,29 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly searchJobId?: any | any | any | any;
+    readonly searchJobId?: any;
 
     /**
      * The name of the report
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly reportId?: any | any;
+    readonly reportId?: any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -88,7 +88,7 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any | any | any;
+    readonly userId?: any;
 
     /**
      * Default: {}

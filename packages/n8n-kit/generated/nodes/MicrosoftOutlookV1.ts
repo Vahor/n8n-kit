@@ -26,22 +26,22 @@ export interface MicrosoftOutlookV1NodeParameters {
 
     /**
      */
-    readonly messageId?: string | string | string;
+    readonly messageId?: string;
 
     /**
      * The subject of the message
      */
-    readonly subject?: string | string;
+    readonly subject?: string;
 
     /**
      * Message body content
      */
-    readonly bodyContent?: string | string;
+    readonly bodyContent?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string } | { "recipients"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "saveToSentItems"?: boolean } | { "fileName"?: string } | { "fields"?: string, "filter"?: string } | { "fields"?: string, "filter"?: string } | { "fields"?: string, "filter"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "filter"?: string };
+    readonly additionalFields?: { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string } | { "recipients"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: string[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "saveToSentItems"?: boolean } | { "fileName"?: string } | { "fields"?: string, "filter"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "filter"?: string };
 
     /**
      * Default: "reply"
@@ -62,14 +62,14 @@ export interface MicrosoftOutlookV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Email addresses of recipients. Multiple can be added separated by comma.
@@ -79,12 +79,12 @@ export interface MicrosoftOutlookV1NodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Target Folder ID
      */
-    readonly folderId?: string | string | string;
+    readonly folderId?: string;
 
     /**
      */

@@ -23,7 +23,7 @@ export interface PostBinNodeParameters {
     /**
      * Unique identifier for each bin
      */
-    readonly binId?: string | string;
+    readonly binId?: string;
 
     /**
      * Type options: {"rows":5}

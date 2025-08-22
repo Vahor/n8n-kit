@@ -28,17 +28,17 @@ export interface StrapiNodeParameters {
     /**
      * Name of the content type
      */
-    readonly contentType?: string | string | string | string | string;
+    readonly contentType?: string;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string | string;
+    readonly columns?: string;
 
     /**
      * The ID of the entry to delete
      */
-    readonly entryId?: string | string;
+    readonly entryId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

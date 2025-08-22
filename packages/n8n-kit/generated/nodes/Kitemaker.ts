@@ -18,19 +18,19 @@ export interface KitemakerNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "getAll" | "create" | "get" | "getAll" | "update";
+    readonly operation?: "get" | "getAll" | "create" | "get" | "getAll" | "update";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Title of the work item to create
@@ -42,7 +42,7 @@ export interface KitemakerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
-    readonly spaceId?: string | string;
+    readonly spaceId?: string;
 
     /**
      * ID of the status to set on the item to create. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -59,7 +59,7 @@ export interface KitemakerNodeParameters {
     /**
      * ID of the work item to retrieve
      */
-    readonly workItemId?: string | string;
+    readonly workItemId?: string;
 
     /**
      * Default: {}

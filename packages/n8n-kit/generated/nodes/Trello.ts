@@ -18,13 +18,13 @@ export interface TrelloNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "update" | "add" | "getAll" | "invite" | "remove" | "create" | "delete" | "get" | "update" | "create" | "delete" | "update" | "create" | "createCheckItem" | "delete" | "deleteCheckItem" | "get" | "getCheckItem" | "completedCheckItems" | "getAll" | "updateCheckItem" | "addLabel" | "create" | "delete" | "get" | "getAll" | "removeLabel" | "update" | "archive" | "create" | "get" | "getCards" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "update" | "add" | "getAll" | "invite" | "remove" | "create" | "delete" | "update" | "create" | "createCheckItem" | "delete" | "deleteCheckItem" | "get" | "getCheckItem" | "completedCheckItems" | "getAll" | "updateCheckItem" | "addLabel" | "create" | "delete" | "get" | "getAll" | "removeLabel" | "update" | "archive" | "create" | "get" | "getCards" | "getAll" | "update";
 
     /**
      * The ID of the card
      * Default: {"mode":"list","value":""}
      */
-    readonly cardId?: any | any | any | any;
+    readonly cardId?: any;
 
     /**
      * The URL of the attachment to add
@@ -34,22 +34,22 @@ export interface TrelloNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "mimeType"?: string, "name"?: string } | { "fields"?: string } | { "fields"?: string } | { "prefs_cardAging"?: "pirate" | "regular", "prefs_background"?: string, "prefs_comments"?: "disabled" | "members" | "observers" | "org" | "public", "prefs_cardCovers"?: boolean, "prefs_invitations"?: "admins" | "members", "keepFromSource"?: string, "defaultLabels"?: boolean, "defaultLists"?: boolean, "idOrganization"?: string, "prefs_permissionLevel"?: "org" | "private" | "public", "powerUps"?: "all" | "calendar" | "cardAging" | "recap" | "voting", "prefs_selfJoin"?: boolean, "idBoardSource"?: string, "prefs_voting"?: "disabled" | "members" | "observers" | "org" | "public" } | { "fields"?: string, "pluginData"?: boolean } | { "allowBillableGuest"?: boolean } | { "type"?: "normal" | "admin" | "observer", "fullName"?: string } | { "due"?: string, "dueComplete"?: boolean, "pos"?: string, "idMembers"?: string, "idLabels"?: string, "urlSource"?: string, "idCardSource"?: string, "keepFromSource"?: string } | { "fields"?: string, "board"?: boolean, "board_fields"?: string, "customFieldItems"?: boolean, "members"?: boolean, "member_fields"?: string, "pluginData"?: boolean, "stickers"?: boolean, "sticker_fields"?: string } | { "idChecklistSource"?: string, "pos"?: string } | { "fields"?: string } | { "fields"?: string } | { "checked"?: boolean, "pos"?: string } | { "fields"?: string } | { "name"?: string, "state"?: "complete" | "incomplete", "checklistId"?: string, "pos"?: string } | { "fields"?: string } | { "fields"?: string } | { "fields"?: string } | { "idListSource"?: string, "pos"?: string } | { "fields"?: string } | { "fields"?: string } | { "fields"?: string };
+    readonly additionalFields?: { "mimeType"?: string, "name"?: string } | { "fields"?: string } | { "prefs_cardAging"?: "pirate" | "regular", "prefs_background"?: string, "prefs_comments"?: "disabled" | "members" | "observers" | "org" | "public", "prefs_cardCovers"?: boolean, "prefs_invitations"?: "admins" | "members", "keepFromSource"?: string, "defaultLabels"?: boolean, "defaultLists"?: boolean, "idOrganization"?: string, "prefs_permissionLevel"?: "org" | "private" | "public", "powerUps"?: "all" | "calendar" | "cardAging" | "recap" | "voting", "prefs_selfJoin"?: boolean, "idBoardSource"?: string, "prefs_voting"?: "disabled" | "members" | "observers" | "org" | "public" } | { "fields"?: string, "pluginData"?: boolean } | { "allowBillableGuest"?: boolean } | { "type"?: "normal" | "admin" | "observer", "fullName"?: string } | { "due"?: string, "dueComplete"?: boolean, "pos"?: string, "idMembers"?: string, "idLabels"?: string, "urlSource"?: string, "idCardSource"?: string, "keepFromSource"?: string } | { "fields"?: string, "board"?: boolean, "board_fields"?: string, "customFieldItems"?: boolean, "members"?: boolean, "member_fields"?: string, "pluginData"?: boolean, "stickers"?: boolean, "sticker_fields"?: string } | { "idChecklistSource"?: string, "pos"?: string } | { "checked"?: boolean, "pos"?: string } | { "name"?: string, "state"?: "complete" | "incomplete", "checklistId"?: string, "pos"?: string } | { "idListSource"?: string, "pos"?: string };
 
     /**
      * The ID of the attachment to delete
      */
-    readonly id?: string | string | any | string | string | string | string | any | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly id?: string | any;
 
     /**
      * The name of the board
      */
-    readonly name?: string | string | string | string | string | string;
+    readonly name?: string;
 
     /**
      * The description of the board
      */
-    readonly description?: string | string;
+    readonly description?: string;
 
     /**
      * Default: {}
@@ -59,19 +59,19 @@ export interface TrelloNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * The ID of the member to add to the board
      */
-    readonly idMember?: string | string;
+    readonly idMember?: string;
 
     /**
      * Determines the type of membership the user being added should have
@@ -92,12 +92,12 @@ export interface TrelloNodeParameters {
     /**
      * Text of the comment
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * The ID of the comment to delete
      */
-    readonly commentId?: string | string;
+    readonly commentId?: string;
 
     /**
      * The ID of the checklist to update
@@ -107,7 +107,7 @@ export interface TrelloNodeParameters {
     /**
      * The ID of the checklist item to delete
      */
-    readonly checkItemId?: string | string | string;
+    readonly checkItemId?: string;
 
     /**
      * The ID of the board

@@ -36,13 +36,13 @@ export interface SwitchV2NodeParameters {
     /**
      * The value to compare with the first one
      */
-    readonly value1?: boolean | string | number | string;
+    readonly value1?: boolean | string | number;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly rules?: { "rules": any } | { "rules": any } | { "rules": any } | { "rules": any };
+    readonly rules?: { "rules": any };
 
     /**
      * The output to which to route all items which do not match any of the rules. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

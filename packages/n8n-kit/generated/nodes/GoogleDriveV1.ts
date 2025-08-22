@@ -33,12 +33,12 @@ export interface GoogleDriveV1NodeParameters {
      * The ID of the file
      * Default: {"mode":"list","value":""}
      */
-    readonly fileId?: any | any;
+    readonly fileId?: any;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Default: {}
@@ -60,7 +60,7 @@ export interface GoogleDriveV1NodeParameters {
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Filters to use to return only specific files
@@ -93,7 +93,7 @@ export interface GoogleDriveV1NodeParameters {
     /**
      * The name the file should be saved as
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * By default the response only contain the ID of the file. If this option gets activated, it will resolve the data automatically.

@@ -50,12 +50,12 @@ export interface AirtableV1NodeParameters {
      * Default: []
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
      */
-    readonly fields?: string | string;
+    readonly fields?: string;
 
     /**
      * ID of the record to delete
      */
-    readonly id?: string | string | string;
+    readonly id?: string;
 
     /**
      * Whether to return all results or only up to a given limit

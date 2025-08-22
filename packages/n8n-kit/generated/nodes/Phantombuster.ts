@@ -24,7 +24,7 @@ export interface PhantombusterNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAgents"}
      */
-    readonly agentId?: string | string | string | string;
+    readonly agentId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -42,7 +42,7 @@ export interface PhantombusterNodeParameters {
      * By default the outpout is presented as string. If this option gets activated, it will resolve the data automatically.
      * Default: true
      */
-    readonly resolveData?: boolean | boolean;
+    readonly resolveData?: boolean;
 
     /**
      * Default: {}

@@ -23,7 +23,7 @@ export interface GongNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "get" | "getAll" | "get" | "getAll";
+    readonly operation?: "get" | "getAll";
 
     /**
      * Default: {"mode":"list","value":""}
@@ -38,14 +38,14 @@ export interface GongNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

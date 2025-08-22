@@ -23,7 +23,7 @@ export interface GoogleBooksNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "add" | "clear" | "getAll" | "move" | "remove" | "get" | "getAll";
+    readonly operation?: "get" | "getAll" | "add" | "clear" | "getAll" | "move" | "remove";
 
     /**
      */
@@ -42,7 +42,7 @@ export interface GoogleBooksNodeParameters {
     /**
      * ID of the bookshelf
      */
-    readonly shelfId?: string | string;
+    readonly shelfId?: string;
 
     /**
      * ID of the volume

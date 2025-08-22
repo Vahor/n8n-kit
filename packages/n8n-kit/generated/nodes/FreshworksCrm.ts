@@ -18,12 +18,12 @@ export interface FreshworksCrmNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "update" | "get" | "getAll" | "query" | "lookup" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "update" | "get" | "getAll" | "query" | "lookup";
 
     /**
      * Name of the account
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
@@ -33,25 +33,25 @@ export interface FreshworksCrmNodeParameters {
     /**
      * ID of the account to delete
      */
-    readonly accountId?: string | string | string;
+    readonly accountId?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAccountViews"}
      */
-    readonly view?: string | string | string;
+    readonly view?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -61,7 +61,7 @@ export interface FreshworksCrmNodeParameters {
     /**
      * Title of the appointment
      */
-    readonly title?: string | string | string;
+    readonly title?: string;
 
     /**
      * Timestamp that denotes the start of appointment. Start date if this is an all-day appointment.
@@ -82,7 +82,7 @@ export interface FreshworksCrmNodeParameters {
     /**
      * ID of the appointment to delete
      */
-    readonly appointmentId?: string | string | string;
+    readonly appointmentId?: string;
 
     /**
      * Default: {}
@@ -107,7 +107,7 @@ export interface FreshworksCrmNodeParameters {
     /**
      * ID of the contact to delete
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      * Value of the deal
@@ -117,7 +117,7 @@ export interface FreshworksCrmNodeParameters {
     /**
      * ID of the deal to delete
      */
-    readonly dealId?: string | string | string;
+    readonly dealId?: string;
 
     /**
      * Content of the note
@@ -129,17 +129,17 @@ export interface FreshworksCrmNodeParameters {
      * Type of the entity for which the note is created
      * Default: "Contact"
      */
-    readonly targetableType?: "Contact" | "Deal" | "SalesAccount" | "Contact" | "Deal" | "SalesAccount" | "Contact" | "Deal" | "SalesAccount";
+    readonly targetableType?: "Contact" | "Deal" | "SalesAccount";
 
     /**
      * ID of the entity for which note is created. The type of entity is selected in "Target Type".
      */
-    readonly targetable_id?: string | string | string;
+    readonly targetable_id?: string;
 
     /**
      * ID of the note to delete
      */
-    readonly noteId?: string | string;
+    readonly noteId?: string;
 
     /**
      * ID of a sales activity type for which the sales activity is created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -151,7 +151,7 @@ export interface FreshworksCrmNodeParameters {
      * ID of the user who owns the sales activity. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly ownerId?: string | string;
+    readonly ownerId?: string;
 
     /**
      * Timestamp that denotes the end of sales activity
@@ -166,7 +166,7 @@ export interface FreshworksCrmNodeParameters {
     /**
      * ID of the salesActivity to delete
      */
-    readonly salesActivityId?: string | string | string;
+    readonly salesActivityId?: string;
 
     /**
      * Enter a term that will be used for searching entities
@@ -209,7 +209,7 @@ export interface FreshworksCrmNodeParameters {
     /**
      * ID of the task to delete
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
 
 }

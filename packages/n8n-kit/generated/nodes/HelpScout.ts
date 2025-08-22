@@ -24,7 +24,7 @@ export interface HelpScoutNodeParameters {
      * ID of a mailbox where the conversation is being created. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getMailboxes"}
      */
-    readonly mailboxId?: string | string;
+    readonly mailboxId?: string;
 
     /**
      * Conversation status
@@ -45,7 +45,7 @@ export interface HelpScoutNodeParameters {
      * By default the response only contain the ID to resource. If this option gets activated, it will resolve the data automatically.
      * Default: true
      */
-    readonly resolveData?: boolean | boolean;
+    readonly resolveData?: boolean;
 
     /**
      * Default: {}
@@ -60,19 +60,19 @@ export interface HelpScoutNodeParameters {
 
     /**
      */
-    readonly conversationId?: string | string | string | string;
+    readonly conversationId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -116,7 +116,7 @@ export interface HelpScoutNodeParameters {
 
     /**
      */
-    readonly customerId?: string | string;
+    readonly customerId?: string;
 
     /**
      * Default: {}

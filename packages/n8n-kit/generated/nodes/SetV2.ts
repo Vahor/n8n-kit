@@ -61,12 +61,12 @@ export interface SetV2NodeParameters {
     /**
      * Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel.
      */
-    readonly includeFields?: string | string;
+    readonly includeFields?: string;
 
     /**
      * Comma-separated list of the field names you want to exclude from the output. You can drag the selected fields from the input panel.
      */
-    readonly excludeFields?: string | string;
+    readonly excludeFields?: string;
 
     /**
      * Default: {}

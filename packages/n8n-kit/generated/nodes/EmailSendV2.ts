@@ -23,22 +23,22 @@ export interface EmailSendV2NodeParameters {
     /**
      * Email address of the sender. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
      */
-    readonly fromEmail?: string | string;
+    readonly fromEmail?: string;
 
     /**
      * Email address of the recipient. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
      */
-    readonly toEmail?: string | string;
+    readonly toEmail?: string;
 
     /**
      * Subject line of the email
      */
-    readonly subject?: string | string;
+    readonly subject?: string;
 
     /**
      * Default: "html"
      */
-    readonly emailFormat?: "text" | "html" | "both" | "text" | "html" | "both";
+    readonly emailFormat?: "text" | "html" | "both";
 
     /**
      * Plain text message of email

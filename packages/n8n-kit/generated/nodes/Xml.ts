@@ -24,7 +24,7 @@ export interface XmlNodeParameters {
      * Name of the property to which to contains the converted XML data
      * Default: "data"
      */
-    readonly dataPropertyName?: string | string;
+    readonly dataPropertyName?: string;
 
     /**
      * Default: {}

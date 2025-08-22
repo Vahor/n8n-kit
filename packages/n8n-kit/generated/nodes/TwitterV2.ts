@@ -24,13 +24,13 @@ export interface TwitterV2NodeParameters {
      * The user you want to send the message to
      * Default: {"mode":"username","value":""}
      */
-    readonly user?: any | any | any;
+    readonly user?: any;
 
     /**
      * The text of the direct message. URL encoding is required. Max length of 10,000 characters.
      * Type options: {"rows":2}
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * Default: {}
@@ -61,7 +61,7 @@ export interface TwitterV2NodeParameters {
      * The tweet to like
      * Default: {"mode":"id","value":""}
      */
-    readonly tweetId?: any | any;
+    readonly tweetId?: any;
 
     /**
      * A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href="https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators">here</a>.

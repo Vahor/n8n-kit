@@ -22,7 +22,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
 
     /**
      */
-    readonly certificateId?: string | string;
+    readonly certificateId?: string;
 
     /**
      * Default: "certificate"
@@ -60,14 +60,14 @@ export interface VenafiTlsProtectCloudNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -78,7 +78,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getApplications"}
      */
-    readonly applicationId?: string | string;
+    readonly applicationId?: string;
 
     /**
      */
@@ -88,11 +88,11 @@ export interface VenafiTlsProtectCloudNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCertificateIssuingTemplates"}
      */
-    readonly certificateIssuingTemplateId?: string | string;
+    readonly certificateIssuingTemplateId?: string;
 
     /**
      */
-    readonly certificateSigningRequest?: string | string;
+    readonly certificateSigningRequest?: string;
 
     /**
      */

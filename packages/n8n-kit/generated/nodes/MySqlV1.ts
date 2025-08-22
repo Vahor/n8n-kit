@@ -29,12 +29,12 @@ export interface MySqlV1NodeParameters {
      * Name of the table in which to insert data to
      * Default: {"mode":"list","value":""}
      */
-    readonly table?: any | any;
+    readonly table?: any;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string | string;
+    readonly columns?: string;
 
     /**
      * Modifiers for INSERT statement

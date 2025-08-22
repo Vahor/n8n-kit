@@ -23,13 +23,13 @@ export interface AzureStorageNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll";
+    readonly operation?: "create" | "delete" | "get" | "getAll";
 
     /**
      * Container to create or replace a blob in
      * Default: {"mode":"list","value":""}
      */
-    readonly container?: any | any | any | any | any | any;
+    readonly container?: any;
 
     /**
      * The name of the new or existing blob
@@ -61,19 +61,19 @@ export interface AzureStorageNodeParameters {
      * Blob to be deleted
      * Default: {"mode":"list","value":""}
      */
-    readonly blob?: any | any;
+    readonly blob?: any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * The name of the new container

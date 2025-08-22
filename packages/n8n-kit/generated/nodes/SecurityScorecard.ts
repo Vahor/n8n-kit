@@ -23,7 +23,7 @@ export interface SecurityScorecardNodeParameters {
     /**
      * Primary identifier of a company or scorecard, i.e. domain.
      */
-    readonly scorecardIdentifier?: string | string;
+    readonly scorecardIdentifier?: string;
 
     /**
      * Score target
@@ -33,20 +33,20 @@ export interface SecurityScorecardNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Default: {}
@@ -87,7 +87,7 @@ export interface SecurityScorecardNodeParameters {
 
     /**
      */
-    readonly portfolioId?: string | string | string;
+    readonly portfolioId?: string;
 
     /**
      * Name of the portfolio

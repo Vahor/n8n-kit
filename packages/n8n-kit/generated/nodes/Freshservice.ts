@@ -18,15 +18,15 @@ export interface FreshserviceNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "get" | "getAll";
 
     /**
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      */
-    readonly firstName?: string | string;
+    readonly firstName?: string;
 
     /**
      * Role to assign to the agent
@@ -43,19 +43,19 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the agent to delete
      */
-    readonly agentId?: string | string | string;
+    readonly agentId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -65,16 +65,16 @@ export interface FreshserviceNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "address"?: string, "background_information"?: string, "department_ids"?: string[], "email"?: string, "first_name"?: string, "job_title"?: string, "language"?: "en" | "ar" | "ca" | "cs" | "cy-GB" | "da" | "de" | "es" | "es-LA" | "et" | "fi" | "fr" | "he" | "hu" | "id" | "it" | "ja-JP" | "ko" | "LV" | "nb-NO" | "nl" | "pl" | "pt" | "pt-BR" | "pt-PT" | "ru-RU" | "sk" | "sk-SK" | "sl" | "sv-SE" | "th" | "tr" | "UK" | "vi" | "zh-CN" | "zh-TW", "last_name"?: string, "location_id"?: string, "member_of"?: string[], "mobile_phone_number"?: string, "observer_of"?: string[], "scoreboard_level_id"?: "1" | "2" | "3" | "4" | "5" | "6", "time_format"?: "12h" | "24h", "work_phone_number"?: string } | { "description"?: string, "escalate_to"?: string, "members"?: string[], "name"?: string, "observers"?: string[], "unassigned_for"?: "1d" | "1h" | "12h" | "2d" | "2h" | "3d" | "30m" | "8h" } | { "additional_emails"?: string, "body_html"?: string, "departments"?: string[], "title"?: string, "visibility"?: "agents_only" | "grouped_visibility" | "everyone" } | { "description"?: string, "name"?: string } | { "agent_id"?: string, "change_type"?: "1" | "2" | "3" | "4", "department_id"?: string, "description"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "priority"?: "1" | "2" | "3" | "4", "requester_id"?: string, "risk"?: "1" | "2" | "3" | "4", "status"?: "1" | "2" | "3" | "4" | "5" | "6", "subject"?: string } | { "description"?: string, "domains"?: string, "name"?: string } | { "name"?: string, "address"?: { "addressFields": any } } | { "agent_id"?: string, "department_id"?: string, "description"?: string, "due_by"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "priority"?: "1" | "2" | "3" | "4", "requester_id"?: string, "status"?: "1" | "2" | "3", "subject"?: string } | { "asset_type_id"?: string, "description"?: string, "manufacturer"?: string, "mode_of_procurement"?: "Buy" | "Lease" | "Both", "name"?: string, "status"?: "In Production" | "In Pipeline" | "Retired" } | { "department_id"?: string, "description"?: string, "group_id"?: string, "priority"?: "1" | "2" | "3" | "4", "release_type"?: "1" | "2" | "3" | "4", "status"?: "1" | "2" | "3" | "4" | "5", "subject"?: string } | { "address"?: string, "background_information"?: string, "department_ids"?: string[], "first_name"?: string, "job_title"?: string, "language"?: "en" | "ar" | "ca" | "cs" | "cy-GB" | "da" | "de" | "es" | "es-LA" | "et" | "fi" | "fr" | "he" | "hu" | "id" | "it" | "ja-JP" | "ko" | "LV" | "nb-NO" | "nl" | "pl" | "pt" | "pt-BR" | "pt-PT" | "ru-RU" | "sk" | "sk-SK" | "sl" | "sv-SE" | "th" | "tr" | "UK" | "vi" | "zh-CN" | "zh-TW", "last_name"?: string, "location_id"?: string, "mobile_phone_number"?: string, "primary_email"?: string, "secondary_emails"?: string, "time_format"?: "12h" | "24h", "work_phone_number"?: string } | { "description"?: string, "name"?: string } | { "application_type"?: "desktop" | "mobile" | "saas", "description"?: string, "name"?: string, "notes"?: string, "status"?: "disabled" | "ignored" | "needs review" | "restricted" } | { "department_id"?: string, "description"?: string, "email"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3" | "4", "status"?: "2" | "3" | "4" | "5", "subject"?: string };
+    readonly updateFields?: { "address"?: string, "background_information"?: string, "department_ids"?: string[], "email"?: string, "first_name"?: string, "job_title"?: string, "language"?: "en" | "ar" | "ca" | "cs" | "cy-GB" | "da" | "de" | "es" | "es-LA" | "et" | "fi" | "fr" | "he" | "hu" | "id" | "it" | "ja-JP" | "ko" | "LV" | "nb-NO" | "nl" | "pl" | "pt" | "pt-BR" | "pt-PT" | "ru-RU" | "sk" | "sk-SK" | "sl" | "sv-SE" | "th" | "tr" | "UK" | "vi" | "zh-CN" | "zh-TW", "last_name"?: string, "location_id"?: string, "member_of"?: string[], "mobile_phone_number"?: string, "observer_of"?: string[], "scoreboard_level_id"?: "1" | "2" | "3" | "4" | "5" | "6", "time_format"?: "12h" | "24h", "work_phone_number"?: string } | { "description"?: string, "escalate_to"?: string, "members"?: string[], "name"?: string, "observers"?: string[], "unassigned_for"?: "1d" | "1h" | "12h" | "2d" | "2h" | "3d" | "30m" | "8h" } | { "additional_emails"?: string, "body_html"?: string, "departments"?: string[], "title"?: string, "visibility"?: "agents_only" | "grouped_visibility" | "everyone" } | { "description"?: string, "name"?: string } | { "agent_id"?: string, "change_type"?: "1" | "2" | "3" | "4", "department_id"?: string, "description"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "priority"?: "1" | "2" | "3" | "4", "requester_id"?: string, "risk"?: "1" | "2" | "3" | "4", "status"?: "1" | "2" | "3" | "4" | "5" | "6", "subject"?: string } | { "description"?: string, "domains"?: string, "name"?: string } | { "name"?: string, "address"?: { "addressFields": any } } | { "agent_id"?: string, "department_id"?: string, "description"?: string, "due_by"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "priority"?: "1" | "2" | "3" | "4", "requester_id"?: string, "status"?: "1" | "2" | "3", "subject"?: string } | { "asset_type_id"?: string, "description"?: string, "manufacturer"?: string, "mode_of_procurement"?: "Buy" | "Lease" | "Both", "name"?: string, "status"?: "In Production" | "In Pipeline" | "Retired" } | { "department_id"?: string, "description"?: string, "group_id"?: string, "priority"?: "1" | "2" | "3" | "4", "release_type"?: "1" | "2" | "3" | "4", "status"?: "1" | "2" | "3" | "4" | "5", "subject"?: string } | { "address"?: string, "background_information"?: string, "department_ids"?: string[], "first_name"?: string, "job_title"?: string, "language"?: "en" | "ar" | "ca" | "cs" | "cy-GB" | "da" | "de" | "es" | "es-LA" | "et" | "fi" | "fr" | "he" | "hu" | "id" | "it" | "ja-JP" | "ko" | "LV" | "nb-NO" | "nl" | "pl" | "pt" | "pt-BR" | "pt-PT" | "ru-RU" | "sk" | "sk-SK" | "sl" | "sv-SE" | "th" | "tr" | "UK" | "vi" | "zh-CN" | "zh-TW", "last_name"?: string, "location_id"?: string, "mobile_phone_number"?: string, "primary_email"?: string, "secondary_emails"?: string, "time_format"?: "12h" | "24h", "work_phone_number"?: string } | { "application_type"?: "desktop" | "mobile" | "saas", "description"?: string, "name"?: string, "notes"?: string, "status"?: "disabled" | "ignored" | "needs review" | "restricted" } | { "department_id"?: string, "description"?: string, "email"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3" | "4", "status"?: "2" | "3" | "4" | "5", "subject"?: string };
 
     /**
      */
-    readonly name?: string | string | string | string | string | string | string;
+    readonly name?: string;
 
     /**
      * ID of the agent group to delete
      */
-    readonly agentGroupId?: string | string | string;
+    readonly agentGroupId?: string;
 
     /**
      * ID of the agent role to retrieve
@@ -103,45 +103,45 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the announcement to delete
      */
-    readonly announcementId?: string | string | string;
+    readonly announcementId?: string;
 
     /**
      * ID of the asset type to delete
      */
-    readonly assetTypeId?: string | string | string | string;
+    readonly assetTypeId?: string;
 
     /**
      * ID of the requester of the change. Choose from the list or specify an ID. You can also specify the ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getRequesters"}
      */
-    readonly requesterId?: string | string | string | string | string;
+    readonly requesterId?: string;
 
     /**
      */
-    readonly subject?: string | string | string | string;
+    readonly subject?: string;
 
     /**
      */
-    readonly plannedStartDate?: string | string;
+    readonly plannedStartDate?: string;
 
     /**
      */
-    readonly plannedEndDate?: string | string;
+    readonly plannedEndDate?: string;
 
     /**
      * ID of the change to delete
      */
-    readonly changeId?: string | string | string;
+    readonly changeId?: string;
 
     /**
      * ID of the department to delete
      */
-    readonly departmentId?: string | string | string;
+    readonly departmentId?: string;
 
     /**
      * ID of the location to delete
      */
-    readonly locationId?: string | string | string;
+    readonly locationId?: string;
 
     /**
      * Date when the problem is due to be solved
@@ -151,12 +151,12 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the problem to delete
      */
-    readonly problemId?: string | string | string;
+    readonly problemId?: string;
 
     /**
      * ID of the product to delete
      */
-    readonly productId?: string | string | string;
+    readonly productId?: string;
 
     /**
      * Default: 1
@@ -166,7 +166,7 @@ export interface FreshserviceNodeParameters {
     /**
      * Default: 1
      */
-    readonly priority?: "1" | "2" | "3" | "4" | "1" | "2" | "3" | "4";
+    readonly priority?: "1" | "2" | "3" | "4";
 
     /**
      * Default: 1
@@ -176,7 +176,7 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the release to delete
      */
-    readonly releaseId?: string | string | string;
+    readonly releaseId?: string;
 
     /**
      */
@@ -185,7 +185,7 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the requester group to delete
      */
-    readonly requesterGroupId?: string | string | string;
+    readonly requesterGroupId?: string;
 
     /**
      * Default: "desktop"
@@ -195,7 +195,7 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the software application to delete
      */
-    readonly softwareId?: string | string | string;
+    readonly softwareId?: string;
 
     /**
      * HTML supported
@@ -205,7 +205,7 @@ export interface FreshserviceNodeParameters {
     /**
      * ID of the ticket to delete
      */
-    readonly ticketId?: string | string | string;
+    readonly ticketId?: string;
 
 
 }

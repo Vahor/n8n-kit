@@ -67,12 +67,12 @@ export interface SendyNodeParameters {
     /**
      * Email address of the subscriber
      */
-    readonly email?: string | string | string | string;
+    readonly email?: string;
 
     /**
      * The list ID you want to subscribe a user to. This encrypted & hashed ID can be found under View all lists section named ID.
      */
-    readonly listId?: string | string | string | string | string;
+    readonly listId?: string;
 
 
 }

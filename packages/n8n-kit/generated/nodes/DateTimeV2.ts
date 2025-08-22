@@ -17,7 +17,7 @@ export interface DateTimeV2NodeParameters {
 
     /**
      */
-    readonly notice?: string | string | string | string | string | string;
+    readonly notice?: string;
 
     /**
      * When deactivated, the time will be set to midnight
@@ -29,33 +29,33 @@ export interface DateTimeV2NodeParameters {
      * Name of the field to put the output in
      * Default: "currentDate"
      */
-    readonly outputFieldName?: string | string | string | string | string | string | string;
+    readonly outputFieldName?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "includeInputFields"?: boolean, "timezone"?: string } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "fromFormat"?: string, "timezone"?: boolean } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "isoString"?: boolean } | { "includeInputFields"?: boolean };
+    readonly options?: { "includeInputFields"?: boolean, "timezone"?: string } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "fromFormat"?: string, "timezone"?: boolean } | { "includeInputFields"?: boolean, "isoString"?: boolean };
 
     /**
      * The date that you want to change
      */
-    readonly magnitude?: string | string;
+    readonly magnitude?: string;
 
     /**
      * Time unit for Duration parameter below
      * Default: "days"
      */
-    readonly timeUnit?: "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds" | "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds";
+    readonly timeUnit?: "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds";
 
     /**
      * The number of time units to add to the date
      */
-    readonly duration?: number | number;
+    readonly duration?: number;
 
     /**
      * The date that you want to format
      */
-    readonly date?: string | string | string;
+    readonly date?: string;
 
     /**
      * The format to convert the date to

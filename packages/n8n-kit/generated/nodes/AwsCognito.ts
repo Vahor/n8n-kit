@@ -24,7 +24,7 @@ export interface AwsCognitoNodeParameters {
      * Select the user pool to use
      * Default: {"mode":"list","value":""}
      */
-    readonly userPool?: any | any | any | any | any | any | any | any | any | any | any | any | any;
+    readonly userPool?: any;
 
     /**
      * The name of the new group to create
@@ -34,30 +34,30 @@ export interface AwsCognitoNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "description"?: string, "precedence"?: number, "arn"?: string } | { "description"?: string, "precedence"?: number, "arn"?: string } | { "messageAction"?: "RESEND" | "SUPPRESS", "forceAliasCreation"?: boolean, "userAttributes": { "attributes": any }, "desiredDeliveryMediums"?: ("SMS" | "EMAIL")[], "temporaryPasswordOptions"?: string };
+    readonly additionalFields?: { "description"?: string, "precedence"?: number, "arn"?: string } | { "messageAction"?: "RESEND" | "SUPPRESS", "forceAliasCreation"?: boolean, "userAttributes": { "attributes": any }, "desiredDeliveryMediums"?: ("SMS" | "EMAIL")[], "temporaryPasswordOptions"?: string };
 
     /**
      * Select the group you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any | any | any | any | any;
+    readonly group?: any;
 
     /**
      * Whether to include a list of users in the group
      */
-    readonly includeUsers?: boolean | boolean;
+    readonly includeUsers?: boolean;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":60}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Depending on the user pool settings, this parameter requires the username, the email, or the phone number. No whitespace is allowed.
@@ -68,13 +68,13 @@ export interface AwsCognitoNodeParameters {
      * Select the user you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any | any | any | any | any;
+    readonly user?: any;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Default: {}

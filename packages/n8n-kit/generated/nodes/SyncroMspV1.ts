@@ -18,19 +18,19 @@ export interface SyncroMspV1NodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "mute";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "mute";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 25
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -40,11 +40,11 @@ export interface SyncroMspV1NodeParameters {
     /**
      * Get specific customer by ID
      */
-    readonly customerId?: string | string | string | string | string | string;
+    readonly customerId?: string;
 
     /**
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * Default: {}
@@ -63,17 +63,17 @@ export interface SyncroMspV1NodeParameters {
     /**
      * Get specific customer by ID
      */
-    readonly ticketId?: string | string | string;
+    readonly ticketId?: string;
 
     /**
      * Get specific contact by ID
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      * Get specific RMM alert by ID
      */
-    readonly alertId?: string | string | string;
+    readonly alertId?: string;
 
     /**
      */

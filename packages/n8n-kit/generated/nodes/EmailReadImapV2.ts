@@ -36,7 +36,7 @@ export interface EmailReadImapV2NodeParameters {
      * Prefix for name of the binary property to which to write the attachments. An index starting with 0 will be added. So if name is "attachment_" the first attachment is saved to "attachment_0"
      * Default: "attachment_"
      */
-    readonly dataPropertyAttachmentsPrefixName?: string | string;
+    readonly dataPropertyAttachmentsPrefixName?: string;
 
     /**
      * Default: {}

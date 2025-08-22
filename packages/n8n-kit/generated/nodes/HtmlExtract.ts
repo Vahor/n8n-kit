@@ -19,7 +19,7 @@ export interface HtmlExtractNodeParameters {
     /**
      * Default: "data"
      */
-    readonly dataPropertyName?: string | string;
+    readonly dataPropertyName?: string;
 
     /**
      * Default: {}

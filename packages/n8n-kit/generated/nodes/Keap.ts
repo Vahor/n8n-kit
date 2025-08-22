@@ -33,31 +33,31 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly addressesUi?: { "addressesValues": any } | { "addressesValues": any };
+    readonly addressesUi?: { "addressesValues": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly faxesUi?: { "faxesValues": any } | { "faxesValues": any };
+    readonly faxesUi?: { "faxesValues": any };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly phonesUi?: { "phonesValues": any } | { "phonesValues": any };
+    readonly phonesUi?: { "phonesValues": any };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":200}
      */
-    readonly limit?: number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -84,17 +84,17 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly contactId?: string | string | string | string | string | string | string | string;
+    readonly contactId?: string;
 
     /**
      * The infusionsoft user to create the note on behalf of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userId?: string | string;
+    readonly userId?: string;
 
     /**
      */
-    readonly noteId?: string | string | string;
+    readonly noteId?: string;
 
     /**
      * Default: {}
@@ -134,7 +134,7 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly orderId?: string | string;
+    readonly orderId?: string;
 
     /**
      */
@@ -142,7 +142,7 @@ export interface KeapNodeParameters {
 
     /**
      */
-    readonly productId?: string | string;
+    readonly productId?: string;
 
     /**
      */

@@ -24,12 +24,12 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Select the team from the list, by URL, or by ID (the ID is the "groupId" parameter in the URL you get from "Get a link to the team")
      * Default: {"mode":"list","value":""}
      */
-    readonly teamId?: any | any | any | any | any | any | any;
+    readonly teamId?: any;
 
     /**
      * The name of the new channel you want to create
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
@@ -41,37 +41,37 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["teamId.value"]}
      */
-    readonly channelId?: any | any | any | any | any;
+    readonly channelId?: any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Whether the message is plain text or HTML
      * Default: "text"
      */
-    readonly contentType?: "text" | "html" | "text" | "html";
+    readonly contentType?: "text" | "html";
 
     /**
      * The content of the message to be sent
      * Type options: {"rows":2}
      */
-    readonly message?: string | string | string;
+    readonly message?: string;
 
     /**
      * Select the chat from the list, by URL, or by ID (find the chat ID after "conversations/" in the URL)
      * Default: {"mode":"list","value":""}
      */
-    readonly chatId?: any | any | any | any;
+    readonly chatId?: any;
 
     /**
      * The ID of the message to retrieve
@@ -109,14 +109,14 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupSource"]}
      */
-    readonly groupId?: any | any;
+    readonly groupId?: any;
 
     /**
      * The plan for the task to belong to
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupId.value"]}
      */
-    readonly planId?: any | any;
+    readonly planId?: any;
 
     /**
      * The bucket for the task to belong to
@@ -133,7 +133,7 @@ export interface MicrosoftTeamsV2NodeParameters {
     /**
      * The ID of the task to delete
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
     /**
      * Whether to retrieve the tasks for a user or for a plan

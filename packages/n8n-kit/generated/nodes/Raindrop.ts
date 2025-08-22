@@ -18,13 +18,13 @@ export interface RaindropNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "delete" | "getAll" | "get";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "delete" | "getAll" | "get";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCollections"}
      */
-    readonly collectionId?: string | string | string | string | string;
+    readonly collectionId?: string;
 
     /**
      * Link of the bookmark to be created
@@ -39,19 +39,19 @@ export interface RaindropNodeParameters {
     /**
      * The ID of the bookmark to delete
      */
-    readonly bookmarkId?: string | string | string;
+    readonly bookmarkId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":10}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

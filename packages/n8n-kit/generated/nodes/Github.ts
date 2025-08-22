@@ -60,7 +60,7 @@ export interface GithubNodeParameters {
     /**
      * The file path of the file. Has to contain the full path.
      */
-    readonly filePath?: string | string;
+    readonly filePath?: string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -75,7 +75,7 @@ export interface GithubNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      */
@@ -102,7 +102,7 @@ export interface GithubNodeParameters {
      * The body of the issue
      * Type options: {"rows":5}
      */
-    readonly body?: string | string | string | string;
+    readonly body?: string;
 
     /**
      * Default: {"label":""}
@@ -119,7 +119,7 @@ export interface GithubNodeParameters {
     /**
      * The number of the issue on which to create the comment on
      */
-    readonly issueNumber?: number | number | number | number;
+    readonly issueNumber?: number;
 
     /**
      * Default: {}
@@ -151,14 +151,14 @@ export interface GithubNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -175,7 +175,7 @@ export interface GithubNodeParameters {
     /**
      * The number of the pull request
      */
-    readonly pullRequestNumber?: number | number | number;
+    readonly pullRequestNumber?: number;
 
     /**
      * ID of the review

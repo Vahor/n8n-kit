@@ -24,7 +24,7 @@ export interface GitNodeParameters {
     /**
      * Local path of the git repository to operate on
      */
-    readonly repositoryPath: string | string;
+    readonly repositoryPath: string;
 
     /**
      * Comma-separated list of paths (absolute or relative to Repository Path) of files or folders to add

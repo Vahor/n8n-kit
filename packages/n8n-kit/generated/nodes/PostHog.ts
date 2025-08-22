@@ -18,7 +18,7 @@ export interface PostHogNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "create" | "create" | "page" | "screen";
+    readonly operation?: "create" | "page" | "screen";
 
     /**
      * The name of the alias
@@ -28,7 +28,7 @@ export interface PostHogNodeParameters {
     /**
      * The user's distinct ID
      */
-    readonly distinctId?: string | string | string | string;
+    readonly distinctId?: string;
 
     /**
      * Default: {}

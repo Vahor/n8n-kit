@@ -23,7 +23,7 @@ export interface DisqusNodeParameters {
     /**
      * The short name(aka ID) of the forum to get
      */
-    readonly id?: string | string | string | string;
+    readonly id?: string;
 
     /**
      * Default: {}
@@ -33,14 +33,14 @@ export interface DisqusNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
 
 }

@@ -28,7 +28,7 @@ export interface MailerLiteV2NodeParameters {
     /**
      * Email of subscriber
      */
-    readonly subscriberId?: string | string | string;
+    readonly subscriberId?: string;
 
     /**
      * Default: {}

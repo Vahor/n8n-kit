@@ -24,13 +24,13 @@ export interface GoogleBusinessProfileNodeParameters {
      * The Google Business Profile account
      * Default: {"mode":"list","value":""}
      */
-    readonly account?: any | any | any | any | any | any | any | any | any;
+    readonly account?: any;
 
     /**
      * The specific location or business associated with the account
      * Default: {"mode":"list","value":""}
      */
-    readonly location?: any | any | any | any | any | any | any | any | any;
+    readonly location?: any;
 
     /**
      * The type of post to create (standard, event, offer, or alert)
@@ -46,7 +46,7 @@ export interface GoogleBusinessProfileNodeParameters {
     /**
      * E.g. Sales this week.
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * The start date and time of the event
@@ -83,19 +83,19 @@ export interface GoogleBusinessProfileNodeParameters {
      * Select the post to retrieve its details
      * Default: {"mode":"list","value":""}
      */
-    readonly post?: any | any | any;
+    readonly post?: any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 20
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      */
@@ -105,7 +105,7 @@ export interface GoogleBusinessProfileNodeParameters {
      * Select the review to retrieve its details
      * Default: {"mode":"list","value":""}
      */
-    readonly review?: any | any | any;
+    readonly review?: any;
 
     /**
      * The body of the reply (up to 4096 characters)

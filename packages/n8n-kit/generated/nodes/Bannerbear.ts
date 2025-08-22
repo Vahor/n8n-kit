@@ -24,7 +24,7 @@ export interface BannerbearNodeParameters {
      * The template ID you want to use. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTemplates"}
      */
-    readonly templateId?: string | string;
+    readonly templateId?: string;
 
     /**
      * Default: {}

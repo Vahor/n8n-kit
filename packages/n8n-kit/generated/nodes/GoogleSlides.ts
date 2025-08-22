@@ -13,7 +13,7 @@ export interface GoogleSlidesNodeParameters {
     /**
      * Default: "serviceAccount"
      */
-    readonly authentication?: "oAuth2" | "serviceAccount" | "oAuth2" | "serviceAccount";
+    readonly authentication?: "oAuth2" | "serviceAccount";
 
     /**
      * Default: "presentation"

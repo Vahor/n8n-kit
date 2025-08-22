@@ -29,12 +29,12 @@ export interface MondayComNodeParameters {
      * Board unique identifiers. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getBoards"}
      */
-    readonly boardId?: string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly boardId?: string;
 
     /**
      * The board's name
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * The board's kind (public / private / share)
@@ -49,14 +49,14 @@ export interface MondayComNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      */
@@ -70,23 +70,23 @@ export interface MondayComNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getGroups","loadOptionsDependsOn":["boardId"]}
      */
-    readonly groupId?: string | string | string | string;
+    readonly groupId?: string;
 
     /**
      * The unique identifier of the item to add update to
      */
-    readonly itemId?: string | string | string | string | string | string;
+    readonly itemId?: string;
 
     /**
      * The update text to add
      */
-    readonly value?: string | string;
+    readonly value?: string;
 
     /**
      * The column's unique identifier. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getColumns","loadOptionsDependsOn":["boardId"]}
      */
-    readonly columnId?: string | string;
+    readonly columnId?: string;
 
     /**
      * The column fields and values in JSON format. Documentation can be found <a href="https://monday.com/developers/v2#mutations-section-columns-change-multiple-column-values">here</a>.

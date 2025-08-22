@@ -76,9 +76,9 @@ const generateTypescriptNodeOutput = async (
 		}
 		code.line(` */`);
 		// There will be duplicates but theses are ok (like "GET" | "GET")
-		const typeUnion = property.__versionsOfProperty
-			.map((p) => toTypescriptType(p))
-			.join(" | ");
+		const typeUnion = [
+			...new Set(property.__versionsOfProperty.map((p) => toTypescriptType(p))),
+		].join(" | ");
 		code.line(
 			`readonly ${property.name}${property.required ? "" : "?"}: ${typeUnion};`,
 		);

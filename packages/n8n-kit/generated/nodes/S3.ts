@@ -27,7 +27,7 @@ export interface S3NodeParameters {
     /**
      * A succinct description of the nature, symptoms, cause, or effect of the bucket
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
@@ -37,18 +37,18 @@ export interface S3NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      */
-    readonly bucketName?: string | string | string | string | string | string | string | string;
+    readonly bucketName?: string;
 
     /**
      */
@@ -61,7 +61,7 @@ export interface S3NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string } | { "versionId"?: string } | { "fetchOwner"?: boolean, "folderKey"?: string };
+    readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string } | { "versionId"?: string };
 
     /**
      * The name of the source bucket should start with (/) and key name of the source object, separated by a slash (/)
@@ -75,7 +75,7 @@ export interface S3NodeParameters {
 
     /**
      */
-    readonly fileName?: string | string;
+    readonly fileName?: string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -91,7 +91,7 @@ export interface S3NodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Optional extra headers to add to the message (most headers are allowed)
@@ -102,7 +102,7 @@ export interface S3NodeParameters {
 
     /**
      */
-    readonly fileKey?: string | string;
+    readonly fileKey?: string;
 
 
 }

@@ -25,7 +25,7 @@ export interface WiseNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getProfiles"}
      */
-    readonly profileId?: string | string | string | string | string | string | string;
+    readonly profileId?: string;
 
     /**
      * ID of the borderless account to retrieve the statement of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -48,12 +48,12 @@ export interface WiseNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryProperty?: string | string;
+    readonly binaryProperty?: string;
 
     /**
      * Name of the file that will be downloaded
      */
-    readonly fileName?: string | string;
+    readonly fileName?: string;
 
     /**
      * Default: {}
@@ -75,7 +75,7 @@ export interface WiseNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getRecipients"}
      */
-    readonly targetAccountId?: string | string;
+    readonly targetAccountId?: string;
 
     /**
      * Whether the amount is to be sent or received
@@ -103,24 +103,24 @@ export interface WiseNodeParameters {
     /**
      * ID of the quote to retrieve
      */
-    readonly quoteId?: string | string;
+    readonly quoteId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * ID of the transfer to delete
      */
-    readonly transferId?: string | string | string;
+    readonly transferId?: string;
 
     /**
      * Whether to download the transfer receipt as a PDF file. Only for executed transfers, having status 'Outgoing Payment Sent'.

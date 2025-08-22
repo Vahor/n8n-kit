@@ -60,13 +60,13 @@ export interface AwsDynamoDBNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly keysUi?: { "keyValues": any } | { "keyValues": any };
+    readonly keysUi?: { "keyValues": any };
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Default: "ALL_ATTRIBUTES"

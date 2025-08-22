@@ -33,21 +33,21 @@ export interface EditImageNodeParameters {
      * Default: "#ffffff00"
      * Type options: {"showAlpha":true}
      */
-    readonly backgroundColor?: any | any;
+    readonly backgroundColor?: any;
 
     /**
      * The width of the image to create
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly width?: number | number | number;
+    readonly width?: number;
 
     /**
      * The height of the image to create
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly height?: number | number | number;
+    readonly height?: number;
 
     /**
      * The primitive to draw
@@ -60,7 +60,7 @@ export interface EditImageNodeParameters {
      * Default: "#ff000000"
      * Type options: {"showAlpha":true}
      */
-    readonly color?: any | any;
+    readonly color?: any;
 
     /**
      * X (horizontal) start position of the primitive
@@ -113,13 +113,13 @@ export interface EditImageNodeParameters {
      * X (horizontal) position of the text
      * Default: 50
      */
-    readonly positionX?: number | number | number;
+    readonly positionX?: number;
 
     /**
      * Y (vertical) position of the text
      * Default: 50
      */
-    readonly positionY?: number | number | number;
+    readonly positionY?: number;
 
     /**
      * Max amount of characters in a line before a line-break should get added

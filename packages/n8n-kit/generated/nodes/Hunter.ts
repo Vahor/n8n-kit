@@ -19,7 +19,7 @@ export interface HunterNodeParameters {
     /**
      * Domain name from which you want to find the email addresses. For example, "stripe.com".
      */
-    readonly domain?: string | string;
+    readonly domain?: string;
 
     /**
      * Whether to return only the found emails

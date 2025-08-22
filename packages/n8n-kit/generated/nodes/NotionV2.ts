@@ -26,31 +26,31 @@ export interface NotionV2NodeParameters {
     /**
      * Default: "append"
      */
-    readonly operation?: "append" | "getAll" | "get" | "getAll" | "search" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "update" | "create" | "get" | "search" | "archive" | "create" | "search" | "get" | "getAll";
+    readonly operation?: "append" | "getAll" | "get" | "getAll" | "search" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "update" | "create" | "get" | "search" | "archive" | "create" | "search";
 
     /**
      * The Notion Block to append blocks to
      * Default: {"mode":"url","value":""}
      */
-    readonly blockId?: any | any | any | any;
+    readonly blockId?: any;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly blockUi?: { "blockValues": any } | { "blockValues": any } | { "blockValues": any };
+    readonly blockUi?: { "blockValues": any };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      */
@@ -65,40 +65,40 @@ export interface NotionV2NodeParameters {
      * The Notion Database to get
      * Default: {"mode":"list","value":""}
      */
-    readonly databaseId?: any | any | any;
+    readonly databaseId?: any;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * The text to search for
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: { "sortValue": any } } | { "iconType"?: "emoji" | "file", "icon"?: string } | { "iconType"?: "emoji" | "file", "icon"?: string } | { "downloadFiles"?: boolean, "filter"?: { "singleCondition": any, "multipleCondition": any }, "sort"?: { "sortValue": any } } | { "iconType"?: "emoji" | "file", "icon"?: string } | { "filter"?: { "filters": any }, "sort"?: { "sortValue": any } };
+    readonly options?: { "sort"?: { "sortValue": any } } | { "iconType"?: "emoji" | "file", "icon"?: string } | { "downloadFiles"?: boolean, "filter"?: { "singleCondition": any, "multipleCondition": any }, "sort"?: { "sortValue": any } } | { "filter"?: { "filters": any }, "sort"?: { "sortValue": any } };
 
     /**
      * Page title. Appears at the top of the page and can be found via Quick Find.
      */
-    readonly title?: string | string;
+    readonly title?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly propertiesUi?: { "propertyValues": any } | { "propertyValues": any };
+    readonly propertiesUi?: { "propertyValues": any };
 
     /**
      * The Notion Database Page to update
      * Default: {"mode":"url","value":""}
      */
-    readonly pageId?: any | any | any | any | string;
+    readonly pageId?: any | string;
 
     /**
      * Default: "none"

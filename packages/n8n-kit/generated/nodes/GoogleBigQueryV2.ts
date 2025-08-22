@@ -45,7 +45,7 @@ export interface GoogleBigQueryV2NodeParameters {
      * SQL query to execute, you can find more information <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax" target="_blank">here</a>. Standard SQL syntax used by default, but you can also use Legacy SQL syntax by using optinon 'Use Legacy SQL'.
      * Type options: {"editor":"sqlEditor"}
      */
-    readonly sqlQuery?: string | string;
+    readonly sqlQuery?: string;
 
     /**
      * Default: {}

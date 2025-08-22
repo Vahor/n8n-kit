@@ -22,7 +22,7 @@ export interface PhilipsHueNodeParameters {
 
     /**
      */
-    readonly lightId?: string | string | string;
+    readonly lightId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

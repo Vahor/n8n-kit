@@ -19,12 +19,12 @@ export interface DiscourseNodeParameters {
      * Choose an operation
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "add" | "remove";
+    readonly operation?: "create" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "add" | "remove";
 
     /**
      * Name of the category
      */
-    readonly name?: string | string | string | string | string;
+    readonly name?: string;
 
     /**
      * Color of the category
@@ -41,14 +41,14 @@ export interface DiscourseNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * ID of the category
@@ -63,7 +63,7 @@ export interface DiscourseNodeParameters {
     /**
      * ID of the group to update
      */
-    readonly groupId?: string | string | string;
+    readonly groupId?: string;
 
     /**
      * Title of the post
@@ -73,7 +73,7 @@ export interface DiscourseNodeParameters {
     /**
      * Content of the post
      */
-    readonly content?: string | string;
+    readonly content?: string;
 
     /**
      * Default: {}
@@ -83,7 +83,7 @@ export interface DiscourseNodeParameters {
     /**
      * ID of the post
      */
-    readonly postId?: string | string;
+    readonly postId?: string;
 
     /**
      * Email of the user to create
@@ -93,7 +93,7 @@ export interface DiscourseNodeParameters {
     /**
      * The username of the user to create
      */
-    readonly username?: string | string;
+    readonly username?: string;
 
     /**
      * The password of the user to create
@@ -125,7 +125,7 @@ export interface DiscourseNodeParameters {
     /**
      * Usernames to add to group. Multiples can be defined separated by comma.
      */
-    readonly usernames?: string | string;
+    readonly usernames?: string;
 
 
 }

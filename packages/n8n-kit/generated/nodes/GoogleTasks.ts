@@ -24,7 +24,7 @@ export interface GoogleTasksNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTasks"}
      */
-    readonly task?: string | string | string | string | string;
+    readonly task?: string;
 
     /**
      * Title of the task
@@ -38,7 +38,7 @@ export interface GoogleTasksNodeParameters {
 
     /**
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

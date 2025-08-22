@@ -18,7 +18,7 @@ export interface UpleadNodeParameters {
     /**
      * Default: "enrich"
      */
-    readonly operation?: "enrich" | "enrich";
+    readonly operation?: "enrich";
 
     /**
      * The name of the company (e.g – amazon)
@@ -28,7 +28,7 @@ export interface UpleadNodeParameters {
     /**
      * The domain name (e.g – amazon.com)
      */
-    readonly domain?: string | string;
+    readonly domain?: string;
 
     /**
      * Email address (e.g – mbenioff@salesforce.com)

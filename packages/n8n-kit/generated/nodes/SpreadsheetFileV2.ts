@@ -18,7 +18,7 @@ export interface SpreadsheetFileV2NodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * The format of the binary data to read from

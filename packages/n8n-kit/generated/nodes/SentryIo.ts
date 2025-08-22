@@ -28,19 +28,19 @@ export interface SentryIoNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "get" | "getAll" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The slug of the organization the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getOrganizations"}
      */
-    readonly organizationSlug?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly organizationSlug?: string;
 
     /**
      * The slug of the project the events belong to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects","loadOptionsDependsOn":["organizationSlug"]}
      */
-    readonly projectSlug?: string | string | string | string | string | string;
+    readonly projectSlug?: string;
 
     /**
      * Whether the event payload will include the full event body, including the stack trace
@@ -51,14 +51,14 @@ export interface SentryIoNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * The ID of the event to retrieve (either the numeric primary-key or the hexadecimal ID as reported by the raven client)
@@ -68,17 +68,17 @@ export interface SentryIoNodeParameters {
     /**
      * ID of issue to get
      */
-    readonly issueId?: string | string;
+    readonly issueId?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "query"?: string, "statsPeriod"?: "14d" | "24h", "shortIdLookUp"?: boolean } | { "assignedTo"?: string, "hasSeen"?: boolean, "isBookmarked"?: boolean, "isPublic"?: boolean, "isSubscribed"?: boolean, "status"?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved" } | { "member"?: boolean, "owner"?: boolean } | { "slug"?: string } | { "slug"?: string } | { "query"?: string } | { "dateReleased"?: string, "commits"?: { "commitProperties": any }, "refs"?: { "refProperties": any } } | { "slug"?: string };
+    readonly additionalFields?: { "query"?: string, "statsPeriod"?: "14d" | "24h", "shortIdLookUp"?: boolean } | { "assignedTo"?: string, "hasSeen"?: boolean, "isBookmarked"?: boolean, "isPublic"?: boolean, "isSubscribed"?: boolean, "status"?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved" } | { "member"?: boolean, "owner"?: boolean } | { "slug"?: string } | { "query"?: string } | { "dateReleased"?: string, "commits"?: { "commitProperties": any }, "refs"?: { "refProperties": any } };
 
     /**
      * The slug of the organization the team should be created for
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Whether you agree to the applicable terms of service and privacy policy of Sentry.io
@@ -94,18 +94,18 @@ export interface SentryIoNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "slug"?: string } | { "isBookmarked"?: boolean, "digestsMaxDelay"?: number, "digestsMinDelay"?: number, "name"?: string, "slug"?: string, "team"?: string, "platform"?: string } | { "commits"?: { "commitProperties": any }, "dateReleased"?: string, "ref"?: string, "refs"?: { "refProperties": any }, "url"?: string } | { "name"?: string, "slug"?: string };
+    readonly updateFields?: { "name"?: string, "slug"?: string } | { "isBookmarked"?: boolean, "digestsMaxDelay"?: number, "digestsMinDelay"?: number, "name"?: string, "slug"?: string, "team"?: string, "platform"?: string } | { "commits"?: { "commitProperties": any }, "dateReleased"?: string, "ref"?: string, "refs"?: { "refProperties": any }, "url"?: string };
 
     /**
      * The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTeams","loadOptionsDependsOn":["organizationSlug"]}
      */
-    readonly teamSlug?: string | string | string | string;
+    readonly teamSlug?: string;
 
     /**
      * The version identifier of the release
      */
-    readonly version?: string | string | string;
+    readonly version?: string;
 
     /**
      * A URL that points to the release. This can be the path to an online interface to the sourcecode for instance.

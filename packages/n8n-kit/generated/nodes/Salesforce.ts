@@ -24,18 +24,18 @@ export interface SalesforceNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "addToCampaign" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "addToCampaign" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "upload" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "query" | "addComment" | "create" | "delete" | "get" | "getAll" | "getSummary" | "update" | "create" | "delete" | "get" | "getAll" | "getSummary" | "update" | "create" | "delete" | "get" | "getAll" | "getSummary" | "update" | "get" | "getAll" | "getAll" | "invoke";
+    readonly operation?: "addToCampaign" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "upload" | "addNote" | "create" | "upsert" | "delete" | "get" | "getAll" | "getSummary" | "update" | "query" | "addComment" | "create" | "delete" | "get" | "getAll" | "getSummary" | "update" | "create" | "delete" | "get" | "getAll" | "getSummary" | "update" | "get" | "getAll" | "getAll" | "invoke";
 
     /**
      * The field to check to see if the lead already exists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getExternalIdFields","loadOptionsDependsOn":["resource"]}
      */
-    readonly externalId?: string | string | string | string | string;
+    readonly externalId?: string;
 
     /**
      * If this value exists in the 'match against' field, update the lead. Otherwise create a new one.
      */
-    readonly externalIdValue?: string | string | string | string | string;
+    readonly externalIdValue?: string;
 
     /**
      * Company of the lead. If person account record types have been enabled, and if the value of Company is null, the lead converts to a person account.
@@ -45,7 +45,7 @@ export interface SalesforceNodeParameters {
     /**
      * Required. Last name of the lead. Limited to 80 characters.
      */
-    readonly lastname?: string | string;
+    readonly lastname?: string;
 
     /**
      * Default: {}
@@ -55,7 +55,7 @@ export interface SalesforceNodeParameters {
     /**
      * ID of Lead that needs to be fetched
      */
-    readonly leadId?: string | string | string | string | string;
+    readonly leadId?: string;
 
     /**
      * Default: {}
@@ -65,63 +65,63 @@ export interface SalesforceNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "status"?: string } | { "body"?: string, "isPrivate"?: boolean, "owner"?: string } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "status"?: string } | { "body"?: string, "isPrivate"?: boolean, "owner"?: string } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string[] } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "body"?: string, "isPrivate"?: boolean, "owner"?: string } | { "fields"?: string, "conditionsUi"?: { "conditionValues": any } } | { "body"?: string, "isPrivate"?: boolean, "ownerId"?: string } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "commentBody"?: string, "isPublished"?: boolean } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string };
+    readonly options?: { "conditionsUi"?: { "conditionValues": any }, "fields"?: string } | { "status"?: string } | { "body"?: string, "isPrivate"?: boolean, "owner"?: string } | { "conditionsUi"?: { "conditionValues": any }, "fields"?: string[] } | { "fields"?: string, "conditionsUi"?: { "conditionValues": any } } | { "body"?: string, "isPrivate"?: boolean, "ownerId"?: string } | { "commentBody"?: string, "isPublished"?: boolean };
 
     /**
      * ID of the campaign that needs to be fetched. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
-    readonly campaignId?: string | string;
+    readonly campaignId?: string;
 
     /**
      * Title of the note
      */
-    readonly title?: string | string | string | string | string;
+    readonly title?: string;
 
     /**
      * ID of contact that needs to be fetched
      */
-    readonly contactId?: string | string | string | string | string;
+    readonly contactId?: string;
 
     /**
      * Name of the custom object. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCustomObjects"}
      */
-    readonly customObject?: string | string | string | string | string;
+    readonly customObject?: string;
 
     /**
      * Filter by custom fields
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly customFieldsUi?: { "customFieldsValues": any } | { "customFieldsValues": any };
+    readonly customFieldsUi?: { "customFieldsValues": any };
 
     /**
      * Record ID to be updated
      */
-    readonly recordId?: string | string | string;
+    readonly recordId?: string;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Required. Last name of the opportunity. Limited to 80 characters.
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Required. Date when the opportunity is expected to close.
@@ -137,12 +137,12 @@ export interface SalesforceNodeParameters {
     /**
      * ID of opportunity that needs to be fetched
      */
-    readonly opportunityId?: string | string | string | string;
+    readonly opportunityId?: string;
 
     /**
      * ID of account that needs to be fetched
      */
-    readonly accountId?: string | string | string | string;
+    readonly accountId?: string;
 
     /**
      * A SOQL query. An example query parameter string might look like: “SELECT+Name+FROM+MyObject”. If the SOQL query string is invalid, a MALFORMED_QUERY response is returned.
@@ -158,7 +158,7 @@ export interface SalesforceNodeParameters {
     /**
      * ID of case that needs to be fetched
      */
-    readonly caseId?: string | string | string | string;
+    readonly caseId?: string;
 
     /**
      * The current status of the task, such as In Progress or Completed. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -169,7 +169,7 @@ export interface SalesforceNodeParameters {
     /**
      * ID of task that needs to be fetched
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
     /**
      */
@@ -178,7 +178,7 @@ export interface SalesforceNodeParameters {
     /**
      * ID of attachment that needs to be fetched
      */
-    readonly attachmentId?: string | string | string;
+    readonly attachmentId?: string;
 
     /**
      * ID of user that needs to be fetched

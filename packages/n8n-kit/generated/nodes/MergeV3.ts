@@ -26,7 +26,7 @@ export interface MergeV3NodeParameters {
      * The number of data inputs you want to merge. The node waits for all connected inputs to be executed.
      * Default: 2
      */
-    readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
+    readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
 
     /**
      * Default: {}
@@ -59,7 +59,7 @@ export interface MergeV3NodeParameters {
     /**
      * Default: "both"
      */
-    readonly outputDataFrom?: "both" | "input1" | "input2" | "both" | "input1" | "input2";
+    readonly outputDataFrom?: "both" | "input1" | "input2";
 
     /**
      * Input data available as tables with corresponding number, e.g. input1, input2

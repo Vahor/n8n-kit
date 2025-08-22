@@ -20,7 +20,7 @@ export interface CortexNodeParameters {
      * Choose an operation
      * Default: "execute"
      */
-    readonly operation?: "execute" | "execute" | "get" | "report";
+    readonly operation?: "execute" | "get" | "report";
 
     /**
      * Choose the analyzer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -80,7 +80,7 @@ export interface CortexNodeParameters {
      * Default: {}
      * Type options: {"loadOptionsDependsOn":["entityType"]}
      */
-    readonly parameters?: { "values": any } | { "values": any } | { "values": any } | { "values": any } | { "values": any };
+    readonly parameters?: { "values": any };
 
     /**
      * ID of the job

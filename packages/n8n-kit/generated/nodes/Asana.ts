@@ -23,17 +23,17 @@ export interface AsanaNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "move" | "search" | "update" | "add" | "remove" | "add" | "remove" | "add" | "remove" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "move" | "search" | "update" | "add" | "remove" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The task to operate on
      */
-    readonly taskId?: string | string;
+    readonly taskId?: string;
 
     /**
      * The name of the subtask to create
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
@@ -43,14 +43,14 @@ export interface AsanaNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -61,12 +61,12 @@ export interface AsanaNodeParameters {
      * The workspace to create the task in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getWorkspaces"}
      */
-    readonly workspace?: string | string | string | string | string | string;
+    readonly workspace?: string;
 
     /**
      * The ID of the task to delete
      */
-    readonly id?: string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Properties to search for
@@ -100,7 +100,7 @@ export interface AsanaNodeParameters {
     /**
      * The plain text of the comment to add
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * Properties of the task comment
@@ -112,13 +112,13 @@ export interface AsanaNodeParameters {
      * The project where the task will be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly project?: string | string;
+    readonly project?: string;
 
     /**
      * The tag that should be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["id"],"loadOptionsMethod":"getTags"}
      */
-    readonly tag?: string | string;
+    readonly tag?: string;
 
     /**
      * An identifier for the user to get data of. Can be one of an email address,the globally unique identifier for the user, or the keyword me to indicate the current user making the request.

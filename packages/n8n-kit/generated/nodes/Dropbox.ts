@@ -29,17 +29,17 @@ export interface DropboxNodeParameters {
     /**
      * The path of file or folder to copy
      */
-    readonly path?: string | string | string | string | string | string | string;
+    readonly path?: string;
 
     /**
      * The destination path of file or folder
      */
-    readonly toPath?: string | string;
+    readonly toPath?: string;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -65,14 +65,14 @@ export interface DropboxNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data

@@ -18,7 +18,7 @@ export interface CalTriggerNodeParameters {
     /**
      * Default: 1
      */
-    readonly version?: "1" | "2" | "1" | "2";
+    readonly version?: "1" | "2";
 
     /**
      * Default: {}

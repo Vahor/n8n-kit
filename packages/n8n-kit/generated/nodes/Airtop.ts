@@ -23,7 +23,7 @@ export interface AirtopNodeParameters {
     /**
      * The name of the Airtop profile to load or create
      */
-    readonly profileName?: string | string | string;
+    readonly profileName?: string;
 
     /**
      * Whether to automatically save the <a href="https://docs.airtop.ai/guides/how-to/saving-a-profile" target="_blank">Airtop profile</a> for this session upon termination
@@ -67,18 +67,18 @@ export interface AirtopNodeParameters {
      * The ID of the <a href="https://docs.airtop.ai/guides/how-to/creating-a-session" target="_blank">Session</a> to use
      * Default: "={{ $json[\"sessionId\"] }}"
      */
-    readonly sessionId?: string | string | string | string | string | string | string | string;
+    readonly sessionId?: string;
 
     /**
      * The ID of the <a href="https://docs.airtop.ai/guides/how-to/creating-a-session#windows" target="_blank">Window</a> to use
      * Default: "={{ $json[\"windowId\"] }}"
      */
-    readonly windowId?: string | string | string | string | string;
+    readonly windowId?: string;
 
     /**
      * Initial URL to load in the window. Defaults to https://www.google.com.
      */
-    readonly url?: string | string | string | string;
+    readonly url?: string;
 
     /**
      * Whether to get the URL of the window's <a href="https://docs.airtop.ai/guides/how-to/creating-a-live-view" target="_blank">Live View</a>
@@ -108,7 +108,7 @@ export interface AirtopNodeParameters {
     /**
      * ID of the file to delete
      */
-    readonly fileId?: string | string | string;
+    readonly fileId?: string;
 
     /**
      * Whether to output the file in binary format if the file is ready for download
@@ -141,13 +141,13 @@ export interface AirtopNodeParameters {
     /**
      * Optional description of the file input to interact with
      */
-    readonly elementDescription?: string | string | string | string | string;
+    readonly elementDescription?: string;
 
     /**
      * Whether to include hidden elements in the interaction
      * Default: true
      */
-    readonly includeHiddenElements?: boolean | boolean;
+    readonly includeHiddenElements?: boolean;
 
     /**
      * Name for the file to upload. For a session, all files loaded should have <b>unique names</b>.
@@ -194,7 +194,7 @@ export interface AirtopNodeParameters {
      * The prompt to extract data from the pages
      * Type options: {"rows":4}
      */
-    readonly prompt?: string | string;
+    readonly prompt?: string;
 
     /**
      * The information to fill into the form written in natural language

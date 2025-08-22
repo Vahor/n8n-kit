@@ -23,7 +23,7 @@ export interface HarvestNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "get" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "createByDuration" | "createByStartEnd" | "delete" | "deleteExternal" | "get" | "getAll" | "restartTime" | "stopTime" | "update" | "create" | "delete" | "get" | "getAll" | "me" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "get" | "createByDuration" | "createByStartEnd" | "delete" | "deleteExternal" | "get" | "getAll" | "restartTime" | "stopTime" | "update" | "create" | "delete" | "get" | "getAll" | "me" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -34,29 +34,29 @@ export interface HarvestNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "is_active"?: boolean, "updated_since"?: string } | { "is_active"?: boolean, "updated_since"?: string } | { "client_id"?: string, "from"?: string, "state"?: string, "to"?: string, "updated_since"?: string, "page"?: number } | { "client_id"?: string, "from"?: string, "is_billed"?: boolean, "page"?: number, "project_id"?: string, "to"?: string, "updated_since"?: string, "user_id"?: string } | { "client_id"?: string, "from"?: string, "page"?: number, "project_id"?: string, "state"?: ("draft" | "open" | "paid" | "closed")[], "to"?: string, "updated_since"?: string } | { "client_id"?: string, "is_active"?: boolean, "page"?: number, "updated_since"?: string } | { "is_active"?: boolean, "page"?: number, "updated_since"?: string } | { "client_id"?: string, "from"?: string, "is_billed"?: boolean, "is_running"?: boolean, "page"?: number, "to"?: string, "updated_since"?: string, "user_id"?: string } | { "is_active"?: boolean, "updated_since"?: string, "page"?: number };
+    readonly filters?: { "is_active"?: boolean, "updated_since"?: string } | { "client_id"?: string, "from"?: string, "state"?: string, "to"?: string, "updated_since"?: string, "page"?: number } | { "client_id"?: string, "from"?: string, "is_billed"?: boolean, "page"?: number, "project_id"?: string, "to"?: string, "updated_since"?: string, "user_id"?: string } | { "client_id"?: string, "from"?: string, "page"?: number, "project_id"?: string, "state"?: ("draft" | "open" | "paid" | "closed")[], "to"?: string, "updated_since"?: string } | { "client_id"?: string, "is_active"?: boolean, "page"?: number, "updated_since"?: string } | { "is_active"?: boolean, "page"?: number, "updated_since"?: string } | { "client_id"?: string, "from"?: string, "is_billed"?: boolean, "is_running"?: boolean, "page"?: number, "to"?: string, "updated_since"?: string, "user_id"?: string } | { "is_active"?: boolean, "updated_since"?: string, "page"?: number };
 
     /**
      * The ID of the client you are retrieving
      */
-    readonly id?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * The name of the client
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
@@ -71,17 +71,17 @@ export interface HarvestNodeParameters {
     /**
      * The first name of the contact
      */
-    readonly firstName?: string | string;
+    readonly firstName?: string;
 
     /**
      * The ID of the client associated with this contact
      */
-    readonly clientId?: string | string | string | string;
+    readonly clientId?: string;
 
     /**
      * The ID of the project associated with this expense
      */
-    readonly projectId?: string | string | string;
+    readonly projectId?: string;
 
     /**
      * The ID of the expense category this expense is being tracked against
@@ -91,7 +91,7 @@ export interface HarvestNodeParameters {
     /**
      * Date the expense occurred
      */
-    readonly spentDate?: string | string | string;
+    readonly spentDate?: string;
 
     /**
      * Whether the project is billable or not
@@ -114,7 +114,7 @@ export interface HarvestNodeParameters {
     /**
      * The ID of the task to associate with the time entry
      */
-    readonly taskId?: string | string;
+    readonly taskId?: string;
 
     /**
      * The last name of the user

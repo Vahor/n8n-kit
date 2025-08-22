@@ -13,7 +13,7 @@ export interface InvoiceNinjaTriggerNodeParameters {
     /**
      * Default: "v4"
      */
-    readonly apiVersion?: "v4" | "v5" | "v4" | "v5";
+    readonly apiVersion?: "v4" | "v5";
 
     /**
      */

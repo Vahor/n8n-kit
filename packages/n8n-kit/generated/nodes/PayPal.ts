@@ -66,7 +66,7 @@ export interface PayPalNodeParameters {
     /**
      * The ID of the payout item for which to show details
      */
-    readonly payoutItemId?: string | string;
+    readonly payoutItemId?: string;
 
 
 }

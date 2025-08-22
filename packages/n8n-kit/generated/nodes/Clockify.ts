@@ -18,19 +18,19 @@ export interface ClockifyNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "update" | "getAll" | "getAll";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "update" | "getAll";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -42,11 +42,11 @@ export interface ClockifyNodeParameters {
     /**
      * Name of client being created
      */
-    readonly name?: string | string | string | string | string;
+    readonly name?: string;
 
     /**
      */
-    readonly clientId?: string | string | string;
+    readonly clientId?: string;
 
     /**
      * Default: {}
@@ -60,16 +60,16 @@ export interface ClockifyNodeParameters {
 
     /**
      */
-    readonly projectId?: string | string | string | string;
+    readonly projectId?: string;
 
     /**
      */
-    readonly tagId?: string | string;
+    readonly tagId?: string;
 
     /**
      * ID of task to delete
      */
-    readonly taskId?: string | string | string;
+    readonly taskId?: string;
 
     /**
      * Default: {}
@@ -82,7 +82,7 @@ export interface ClockifyNodeParameters {
 
     /**
      */
-    readonly timeEntryId?: string | string | string;
+    readonly timeEntryId?: string;
 
 
 }

@@ -23,11 +23,11 @@ export interface VeroNodeParameters {
     /**
      * The unique identifier of the customer
      */
-    readonly id?: string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -39,13 +39,13 @@ export interface VeroNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataAttributesUi?: { "dataAttributesValues": any } | { "dataAttributesValues": any };
+    readonly dataAttributesUi?: { "dataAttributesValues": any };
 
     /**
      * Key value pairs that represent the custom user properties you want to update
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly dataAttributesJson?: string | string;
+    readonly dataAttributesJson?: string;
 
     /**
      * The new unique identifier of the user
@@ -55,7 +55,7 @@ export interface VeroNodeParameters {
     /**
      * Tags to add separated by ","
      */
-    readonly tags?: string | string;
+    readonly tags?: string;
 
     /**
      */

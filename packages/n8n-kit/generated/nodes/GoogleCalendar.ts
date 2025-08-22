@@ -29,17 +29,17 @@ export interface GoogleCalendarNodeParameters {
      * Google Calendar to operate on
      * Default: {"mode":"list","value":""}
      */
-    readonly calendar?: any | any;
+    readonly calendar?: any;
 
     /**
      * Start of the interval
      */
-    readonly timeMin?: string | string | string;
+    readonly timeMin?: string;
 
     /**
      * End of the interval
      */
-    readonly timeMax?: string | string | string;
+    readonly timeMax?: string;
 
     /**
      * Default: {}
@@ -49,17 +49,17 @@ export interface GoogleCalendarNodeParameters {
     /**
      * Start time of the event
      */
-    readonly start?: string | string;
+    readonly start?: string;
 
     /**
      * End time of the event
      */
-    readonly end?: string | string;
+    readonly end?: string;
 
     /**
      * Default: true
      */
-    readonly useDefaultReminders?: boolean | boolean;
+    readonly useDefaultReminders?: boolean;
 
     /**
      * Default: {}
@@ -71,11 +71,11 @@ export interface GoogleCalendarNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly remindersUi?: { "remindersValues": any } | { "remindersValues": any };
+    readonly remindersUi?: { "remindersValues": any };
 
     /**
      */
-    readonly eventId?: string | string | string;
+    readonly eventId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

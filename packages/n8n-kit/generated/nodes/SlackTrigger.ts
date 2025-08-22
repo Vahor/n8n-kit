@@ -17,7 +17,7 @@ export interface SlackTriggerNodeParameters {
 
     /**
      */
-    readonly notice?: string | string;
+    readonly notice?: string;
 
     /**
      * Default: []

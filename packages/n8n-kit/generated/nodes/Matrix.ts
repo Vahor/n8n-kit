@@ -23,7 +23,7 @@ export interface MatrixNodeParameters {
     /**
      * The room related to the event
      */
-    readonly roomId?: string | string | string | string | string | string | string | string;
+    readonly roomId?: string;
 
     /**
      * The room related to the event
@@ -105,7 +105,7 @@ export interface MatrixNodeParameters {
     /**
      * The fully qualified user ID of the invitee
      */
-    readonly userId?: string | string;
+    readonly userId?: string;
 
     /**
      * Reason for kick

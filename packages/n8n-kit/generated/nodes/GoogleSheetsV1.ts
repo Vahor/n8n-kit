@@ -50,13 +50,13 @@ export interface GoogleSheetsV1NodeParameters {
     /**
      * Whether the data should be returned RAW instead of parsed into keys according to their header
      */
-    readonly rawData?: boolean | boolean;
+    readonly rawData?: boolean;
 
     /**
      * The name of the property into which to write the RAW data
      * Default: "data"
      */
-    readonly dataProperty?: string | string;
+    readonly dataProperty?: string;
 
     /**
      * Index of the first row which contains the actual data and not the keys. Starts with 0.

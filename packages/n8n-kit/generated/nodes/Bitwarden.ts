@@ -28,14 +28,14 @@ export interface BitwardenNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 10
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -60,12 +60,12 @@ export interface BitwardenNodeParameters {
     /**
      * Whether to allow this group to access all collections within the organization, instead of only its associated collections. If set to true, this option overrides any collection assignments.
      */
-    readonly accessAll?: boolean | boolean;
+    readonly accessAll?: boolean;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "collections"?: string[], "externalId"?: string } | { "collections"?: string[], "externalId"?: string };
+    readonly additionalFields?: { "collections"?: string[], "externalId"?: string };
 
     /**
      * Comma-separated list of IDs of members to set in a group

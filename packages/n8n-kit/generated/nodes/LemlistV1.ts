@@ -18,19 +18,19 @@ export interface LemlistV1NodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "getAll" | "getAll" | "create" | "delete" | "get" | "unsubscribe" | "get" | "add" | "delete" | "getAll";
+    readonly operation?: "getAll" | "create" | "delete" | "get" | "unsubscribe" | "get" | "add" | "delete" | "getAll";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -42,12 +42,12 @@ export interface LemlistV1NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getCampaigns"}
      */
-    readonly campaignId?: string | string | string;
+    readonly campaignId?: string;
 
     /**
      * Email of the lead to create
      */
-    readonly email?: string | string | string | string | string | string;
+    readonly email?: string;
 
     /**
      * Default: {}

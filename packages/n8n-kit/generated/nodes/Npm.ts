@@ -22,12 +22,12 @@ export interface NpmNodeParameters {
 
     /**
      */
-    readonly packageName?: string | string;
+    readonly packageName?: string;
 
     /**
      * Default: "latest"
      */
-    readonly packageVersion?: string | string;
+    readonly packageVersion?: string;
 
     /**
      * The query text used to search for packages

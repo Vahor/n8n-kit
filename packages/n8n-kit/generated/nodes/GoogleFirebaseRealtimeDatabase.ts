@@ -24,7 +24,7 @@ export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
     /**
      * Object path on database. Do not append .json.
      */
-    readonly path: string | string;
+    readonly path: string;
 
     /**
      * Attributes to save

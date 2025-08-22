@@ -14,7 +14,7 @@ export interface MindeeNodeParameters {
      * Which Mindee API Version to use
      * Default: 1
      */
-    readonly apiVersion?: "1" | "3" | "4" | "1" | "3" | "4" | "1" | "3" | "4";
+    readonly apiVersion?: "1" | "3" | "4";
 
     /**
      * Default: "receipt"

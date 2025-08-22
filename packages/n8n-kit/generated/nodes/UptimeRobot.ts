@@ -18,12 +18,12 @@ export interface UptimeRobotNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "create" | "delete" | "get" | "getAll" | "reset" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll";
+    readonly operation?: "get" | "create" | "delete" | "get" | "getAll" | "reset" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll";
 
     /**
      * The friendly name of the monitor
      */
-    readonly friendlyName?: string | string | string | string;
+    readonly friendlyName?: string;
 
     /**
      * The type of the monitor
@@ -38,19 +38,19 @@ export interface UptimeRobotNodeParameters {
     /**
      * The ID of the monitor
      */
-    readonly id?: string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -71,7 +71,7 @@ export interface UptimeRobotNodeParameters {
      * The maintenance window activation period (minutes)
      * Default: 1
      */
-    readonly duration?: number | number;
+    readonly duration?: number;
 
     /**
      */

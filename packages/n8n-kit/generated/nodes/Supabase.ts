@@ -40,27 +40,27 @@ export interface SupabaseNodeParameters {
     /**
      * Default: "manual"
      */
-    readonly filterType?: "manual" | "string" | "manual" | "string" | "none" | "manual" | "string";
+    readonly filterType?: "manual" | "string" | "none" | "manual" | "string";
 
     /**
      * Default: "anyFilter"
      */
-    readonly matchType?: "anyFilter" | "allFilters" | "anyFilter" | "allFilters" | "anyFilter" | "allFilters";
+    readonly matchType?: "anyFilter" | "allFilters";
 
     /**
      * Filter to decide which rows get updated
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any } | { "conditions": any } | { "conditions": any } | { "conditions": any };
+    readonly filters?: { "conditions": any };
 
     /**
      */
-    readonly jsonNotice?: string | string | string;
+    readonly jsonNotice?: string;
 
     /**
      */
-    readonly filterString?: string | string | string;
+    readonly filterString?: string;
 
     /**
      * Default: "defineBelow"

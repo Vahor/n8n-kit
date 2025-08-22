@@ -28,17 +28,17 @@ export interface TelegramNodeParameters {
     /**
      * Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot
      */
-    readonly chatId?: string | string | string;
+    readonly chatId?: string;
 
     /**
      * Unique identifier of the message to delete
      */
-    readonly messageId?: string | string | string;
+    readonly messageId?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "disable_notification"?: boolean } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "mimeType"?: string } | { "appendAttribution"?: boolean, "caption"?: string, "disable_notification"?: boolean, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
+    readonly additionalFields?: { "disable_notification"?: boolean } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "mimeType"?: string } | { "appendAttribution"?: boolean, "caption"?: string, "disable_notification"?: boolean, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
 
     /**
      * Unique identifier of the target user
@@ -58,7 +58,7 @@ export interface TelegramNodeParameters {
     /**
      * Unique identifier for the query to be answered
      */
-    readonly queryId?: string | string;
+    readonly queryId?: string;
 
     /**
      * A JSON-serialized array of results for the inline query
@@ -107,7 +107,7 @@ export interface TelegramNodeParameters {
     /**
      * Animation to send. Pass a file_id to send an animation that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get an animation from the Internet.
      */
-    readonly file?: string | string | string | string | string | string;
+    readonly file?: string;
 
     /**
      * Type of action to broadcast. Choose one, depending on what the user is about to receive. The status is set for 5 seconds or less (when a message arrives from your bot).

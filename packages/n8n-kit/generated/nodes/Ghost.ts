@@ -35,12 +35,12 @@ export interface GhostNodeParameters {
      * The format of the post
      * Default: "html"
      */
-    readonly contentFormat?: "html" | "mobileDoc" | "lexical" | "html" | "mobileDoc" | "lexical";
+    readonly contentFormat?: "html" | "mobileDoc" | "lexical";
 
     /**
      * The content of the post to create
      */
-    readonly content?: string | string | string;
+    readonly content?: string;
 
     /**
      * Default: {}
@@ -50,7 +50,7 @@ export interface GhostNodeParameters {
     /**
      * The ID of the post to delete
      */
-    readonly postId?: string | string;
+    readonly postId?: string;
 
     /**
      * Get the post either by slug or ID

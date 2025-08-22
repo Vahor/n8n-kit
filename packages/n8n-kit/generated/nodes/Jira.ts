@@ -46,7 +46,7 @@ export interface JiraNodeParameters {
 
     /**
      */
-    readonly issueKey?: string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly issueKey?: string;
 
     /**
      * Default: {}
@@ -65,23 +65,23 @@ export interface JiraNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean } | { "expand"?: "renderedBody" } | { "expand"?: "renderedBody", "orderBy"?: "+created" | "-created" } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean };
+    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean } | { "expand"?: "renderedBody" } | { "expand"?: "renderedBody", "orderBy"?: "+created" | "-created" };
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * The recipients of the email notification for the issue
@@ -117,31 +117,31 @@ export interface JiraNodeParameters {
     /**
      * The ID of the attachment
      */
-    readonly attachmentId?: string | string;
+    readonly attachmentId?: string;
 
     /**
      */
-    readonly download?: boolean | boolean;
+    readonly download?: boolean;
 
     /**
      * Default: "data"
      */
-    readonly binaryProperty?: string | string;
+    readonly binaryProperty?: string;
 
     /**
      * Comment's text
      */
-    readonly comment?: string | string;
+    readonly comment?: string;
 
     /**
      * The Atlassian Document Format (ADF). Online builder can be found <a href="https://developer.atlassian.com/cloud/jira/platform/apis/document/playground/">here</a>.
      */
-    readonly commentJson?: string | string;
+    readonly commentJson?: string;
 
     /**
      * The ID of the comment
      */
-    readonly commentId?: string | string | string;
+    readonly commentId?: string;
 
     /**
      */
@@ -158,7 +158,7 @@ export interface JiraNodeParameters {
     /**
      * Account ID of the user to delete
      */
-    readonly accountId?: string | string;
+    readonly accountId?: string;
 
 
 }

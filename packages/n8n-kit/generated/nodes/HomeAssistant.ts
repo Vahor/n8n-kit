@@ -34,14 +34,14 @@ export interface HomeAssistantNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * The Entity ID for which an event will be created
@@ -81,7 +81,7 @@ export interface HomeAssistantNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getAllEntities"}
      */
-    readonly entityId?: string | string;
+    readonly entityId?: string;
 
     /**
      */

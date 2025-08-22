@@ -55,7 +55,7 @@ export interface StravaNodeParameters {
     /**
      * ID or email of activity
      */
-    readonly activityId?: string | string | string;
+    readonly activityId?: string;
 
     /**
      * Default: {}
@@ -65,14 +65,14 @@ export interface StravaNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Desired stream types to return

@@ -48,7 +48,7 @@ export interface ChargebeeNodeParameters {
     /**
      * The ID of the subscription to cancel
      */
-    readonly subscriptionId?: string | string;
+    readonly subscriptionId?: string;
 
     /**
      * Whether it will not cancel it directly in will instead schedule the cancelation for the end of the term

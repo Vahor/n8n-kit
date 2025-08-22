@@ -23,7 +23,7 @@ export interface RespondToWebhookNodeParameters {
      * The data that should be returned
      * Default: "firstIncomingItem"
      */
-    readonly respondWith?: "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text" | "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text";
+    readonly respondWith?: "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text";
 
     /**
      */
@@ -43,7 +43,7 @@ export interface RespondToWebhookNodeParameters {
      * Default: "{\n  \"myField\": \"value\"\n}"
      * Type options: {"rows":4}
      */
-    readonly responseBody?: string | string;
+    readonly responseBody?: string;
 
     /**
      * The payload to include in the JWT token

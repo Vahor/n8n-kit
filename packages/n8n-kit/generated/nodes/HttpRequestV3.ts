@@ -120,7 +120,7 @@ export interface HttpRequestV3NodeParameters {
      * Default: {"parameters":[{"name":"","value":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly bodyParameters?: { "parameters": any } | { "parameters": any } | { "parameters": any };
+    readonly bodyParameters?: { "parameters": any };
 
     /**
      */
@@ -128,7 +128,7 @@ export interface HttpRequestV3NodeParameters {
 
     /**
      */
-    readonly body?: string | string;
+    readonly body?: string;
 
     /**
      * The name of the incoming field containing the binary file data to be processed

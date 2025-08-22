@@ -18,38 +18,38 @@ export interface ZohoCrmNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getFields" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "create" | "upsert" | "delete" | "get" | "getFields" | "getAll" | "update";
 
     /**
      */
-    readonly accountName?: string | string;
+    readonly accountName?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "Account_Number"?: string, "Account_Site"?: string, "Account_Type"?: string, "Annual_Revenue"?: number, "Billing_Address"?: { "address_fields": any }, "Contact_Details"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Employees"?: number, "Exchange_Rate"?: number, "Fax"?: string, "Industry"?: string, "Phone"?: string, "Shipping_Address"?: { "address_fields": any }, "Ticker_Symbol"?: string, "Website"?: string } | { "Assistant"?: string, "customFields"?: { "customFields": any }, "Date_of_Birth"?: string, "Department"?: string, "Description"?: string, "Email"?: string, "Secondary_Email"?: string, "Fax"?: string, "First_Name"?: string, "Full_Name"?: string, "Mailing_Address"?: { "address_fields": any }, "Mobile"?: string, "Other_Address"?: { "address_fields": any }, "Phone"?: string, "Asst_Phone"?: string, "Home_Phone"?: string, "Other_Phone"?: string, "Salutation"?: string, "Skype_ID"?: string, "Title"?: string, "Twitter"?: string } | { "Assistant"?: string, "customFields"?: { "customFields": any }, "Date_of_Birth"?: string, "Department"?: string, "Description"?: string, "Email"?: string, "Secondary_Email"?: string, "Fax"?: string, "First_Name"?: string, "Full_Name"?: string, "Mailing_Address"?: { "address_fields": any }, "Mobile"?: string, "Other_Address"?: { "address_fields": any }, "Phone"?: string, "Asst_Phone"?: string, "Home_Phone"?: string, "Other_Phone"?: string, "Salutation"?: string, "Skype_ID"?: string, "Title"?: string, "Twitter"?: string } | { "Amount"?: number, "Closing_Date"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Lead_Conversion_Time"?: number, "Next_Step"?: string, "Overall_Sales_Duration"?: number, "Probability"?: number, "Sales_Cycle_Duration"?: number } | { "accountId"?: string, "Adjustment"?: number, "Billing_Address"?: { "address_fields": any }, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Due_Date"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "Invoice_Date"?: string, "Invoice_Number"?: string, "Sales_Commission"?: number, "Shipping_Address"?: { "address_fields": any }, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string } | { "Address"?: { "address_fields": any }, "Annual_Revenue"?: number, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Designation"?: string, "Email"?: string, "Email_Opt_Out"?: boolean, "Fax"?: string, "First_Name"?: string, "Full_Name"?: string, "Industry"?: string, "Industry_Type"?: string, "Lead_Source"?: string, "Lead_Status"?: string, "Mobile"?: string, "No_of_Employees"?: number, "Phone"?: string, "Salutation"?: string, "Secondary_Email"?: string, "Skype_ID"?: string, "Twitter"?: string, "Website"?: string } | { "Address"?: { "address_fields": any }, "Annual_Revenue"?: number, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Designation"?: string, "Email"?: string, "Email_Opt_Out"?: boolean, "Fax"?: string, "First_Name"?: string, "Full_Name"?: string, "Industry"?: string, "Industry_Type"?: string, "Lead_Source"?: string, "Lead_Status"?: string, "Mobile"?: string, "No_of_Employees"?: number, "Phone"?: string, "Salutation"?: string, "Secondary_Email"?: string, "Skype_ID"?: string, "Twitter"?: string, "Website"?: string } | { "Commission_Rate"?: number, "customFields"?: { "customFields": any }, "Description"?: string, "Manufacturer"?: string, "Product_Active"?: boolean, "Product_Category"?: string, "Qty_in_Demand"?: number, "Qty_in_Stock"?: number, "Taxable"?: boolean, "Unit_Price"?: number } | { "Adjustment"?: number, "Billing_Address"?: { "billing_address_fields": any }, "Carrier"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Discount"?: number, "Due_Date"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "PO_Date"?: string, "PO_Number"?: string, "Sales_Commission"?: number, "Shipping_Address"?: { "address_fields": any }, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string, "Tracking_Number"?: string } | { "Adjustment"?: number, "Billing_Address"?: { "address_fields": any }, "Carrier"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "Quote_Stage"?: string, "Shipping_Address"?: { "address_fields": any }, "Sub_Total"?: number, "Tax"?: number, "Team"?: string, "Terms_and_Conditions"?: string, "Valid_Till"?: string } | { "Adjustment"?: number, "Billing_Address"?: { "address_fields": any }, "Carrier"?: string, "contactId"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "dealId"?: string, "Description"?: string, "Discount"?: number, "Due_Date"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "SO_Number"?: string, "Sales_Commission"?: number, "Shipping_Address"?: { "address_fields": any }, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string } | { "Address"?: { "address_fields": any }, "Category"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Email"?: string, "Phone"?: string, "Website"?: string };
+    readonly additionalFields?: { "Account_Number"?: string, "Account_Site"?: string, "Account_Type"?: string, "Annual_Revenue"?: number, "Billing_Address"?: { "address_fields": any }, "Contact_Details"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Employees"?: number, "Exchange_Rate"?: number, "Fax"?: string, "Industry"?: string, "Phone"?: string, "Shipping_Address"?: { "address_fields": any }, "Ticker_Symbol"?: string, "Website"?: string } | { "Assistant"?: string, "customFields"?: { "customFields": any }, "Date_of_Birth"?: string, "Department"?: string, "Description"?: string, "Email"?: string, "Secondary_Email"?: string, "Fax"?: string, "First_Name"?: string, "Full_Name"?: string, "Mailing_Address"?: { "address_fields": any }, "Mobile"?: string, "Other_Address"?: { "address_fields": any }, "Phone"?: string, "Asst_Phone"?: string, "Home_Phone"?: string, "Other_Phone"?: string, "Salutation"?: string, "Skype_ID"?: string, "Title"?: string, "Twitter"?: string } | { "Amount"?: number, "Closing_Date"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Lead_Conversion_Time"?: number, "Next_Step"?: string, "Overall_Sales_Duration"?: number, "Probability"?: number, "Sales_Cycle_Duration"?: number } | { "accountId"?: string, "Adjustment"?: number, "Billing_Address"?: { "address_fields": any }, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Due_Date"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "Invoice_Date"?: string, "Invoice_Number"?: string, "Sales_Commission"?: number, "Shipping_Address"?: { "address_fields": any }, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string } | { "Address"?: { "address_fields": any }, "Annual_Revenue"?: number, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Designation"?: string, "Email"?: string, "Email_Opt_Out"?: boolean, "Fax"?: string, "First_Name"?: string, "Full_Name"?: string, "Industry"?: string, "Industry_Type"?: string, "Lead_Source"?: string, "Lead_Status"?: string, "Mobile"?: string, "No_of_Employees"?: number, "Phone"?: string, "Salutation"?: string, "Secondary_Email"?: string, "Skype_ID"?: string, "Twitter"?: string, "Website"?: string } | { "Commission_Rate"?: number, "customFields"?: { "customFields": any }, "Description"?: string, "Manufacturer"?: string, "Product_Active"?: boolean, "Product_Category"?: string, "Qty_in_Demand"?: number, "Qty_in_Stock"?: number, "Taxable"?: boolean, "Unit_Price"?: number } | { "Adjustment"?: number, "Billing_Address"?: { "billing_address_fields": any }, "Carrier"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Discount"?: number, "Due_Date"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "PO_Date"?: string, "PO_Number"?: string, "Sales_Commission"?: number, "Shipping_Address"?: { "address_fields": any }, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string, "Tracking_Number"?: string } | { "Adjustment"?: number, "Billing_Address"?: { "address_fields": any }, "Carrier"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "Quote_Stage"?: string, "Shipping_Address"?: { "address_fields": any }, "Sub_Total"?: number, "Tax"?: number, "Team"?: string, "Terms_and_Conditions"?: string, "Valid_Till"?: string } | { "Adjustment"?: number, "Billing_Address"?: { "address_fields": any }, "Carrier"?: string, "contactId"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "dealId"?: string, "Description"?: string, "Discount"?: number, "Due_Date"?: string, "Exchange_Rate"?: number, "Grand_Total"?: number, "SO_Number"?: string, "Sales_Commission"?: number, "Shipping_Address"?: { "address_fields": any }, "Status"?: string, "Sub_Total"?: number, "Tax"?: number, "Terms_and_Conditions"?: string } | { "Address"?: { "address_fields": any }, "Category"?: string, "Currency"?: "USD" | "EUR" | "AED" | "AFN" | "ALL" | "ARS" | "AUD" | "AZN" | "BBD" | "BDT" | "BGN" | "BMD" | "BND" | "BOB" | "BRL" | "BSD" | "BWP" | "BZD" | "CAD" | "CHF" | "CLP" | "CNY" | "COP" | "CRC" | "CZK" | "DKK" | "DOP" | "DZD" | "EGP" | "FJD" | "GBP" | "GTQ" | "HKD" | "HNL" | "HRK" | "HUF" | "IDR" | "ILS" | "INR" | "JMD" | "JPY" | "KES" | "KRW" | "KZT" | "LAK" | "LBP" | "LKR" | "LRD" | "MAD" | "MMK" | "MOP" | "MRO" | "MUR" | "MVR" | "MXN" | "MYR" | "NIO" | "NOK" | "NPR" | "NZD" | "PEN" | "PGK" | "PHP" | "PKR" | "PLN" | "QAR" | "RON" | "RUB" | "SAR" | "SBD" | "SCR" | "SEK" | "SGD" | "SYP" | "THB" | "TOP" | "TRY" | "TTD" | "TWD" | "UAH" | "VND" | "VUV" | "WST" | "XCD" | "XOF" | "YER" | "ZAR", "customFields"?: { "customFields": any }, "Description"?: string, "Email"?: string, "Phone"?: string, "Website"?: string };
 
     /**
      * ID of the account to delete. Can be found at the end of the URL.
      */
-    readonly accountId?: string | string | string | string;
+    readonly accountId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 5
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string } | { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string };
+    readonly options?: { "approved"?: boolean, "converted"?: boolean, "fields"?: string[], "include_child"?: boolean, "sort_by"?: string, "sort_order"?: "asc" | "desc", "territory_id"?: string };
 
     /**
      * Default: {}
@@ -58,16 +58,16 @@ export interface ZohoCrmNodeParameters {
 
     /**
      */
-    readonly lastName?: string | string | string | string;
+    readonly lastName?: string;
 
     /**
      * ID of the contact to delete
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      */
-    readonly dealName?: string | string;
+    readonly dealName?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -79,68 +79,68 @@ export interface ZohoCrmNodeParameters {
     /**
      * ID of the deal to delete
      */
-    readonly dealId?: string | string | string;
+    readonly dealId?: string;
 
     /**
      * Subject or title of the invoice
      */
-    readonly subject?: string | string | string | string | string | string | string | string;
+    readonly subject?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Product"}
      */
-    readonly Product_Details?: { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number } | { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number } | { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number } | { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number };
+    readonly Product_Details?: { "list_price"?: number, "id"?: string, "product_description"?: string, "quantity"?: number, "quantity_in_stock"?: number, "Tax"?: number, "total"?: number, "total_after_discount"?: number, "net_total"?: number, "unit_price"?: number };
 
     /**
      * ID of the invoice to delete
      */
-    readonly invoiceId?: string | string | string;
+    readonly invoiceId?: string;
 
     /**
      * Company at which the lead works
      */
-    readonly Company?: string | string;
+    readonly Company?: string;
 
     /**
      * ID of the lead to delete
      */
-    readonly leadId?: string | string | string;
+    readonly leadId?: string;
 
     /**
      */
-    readonly productName?: string | string;
+    readonly productName?: string;
 
     /**
      * ID of the product to delete
      */
-    readonly productId?: string | string | string;
+    readonly productId?: string;
 
     /**
      * ID of the vendor associated with the purchase order. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getVendors"}
      */
-    readonly vendorId?: string | string | string | string;
+    readonly vendorId?: string;
 
     /**
      * ID of the purchase order to delete
      */
-    readonly purchaseOrderId?: string | string | string;
+    readonly purchaseOrderId?: string;
 
     /**
      * ID of the quote to delete
      */
-    readonly quoteId?: string | string | string;
+    readonly quoteId?: string;
 
     /**
      * ID of the sales order to delete
      */
-    readonly salesOrderId?: string | string | string;
+    readonly salesOrderId?: string;
 
     /**
      */
-    readonly vendorName?: string | string;
+    readonly vendorName?: string;
 
 
 }

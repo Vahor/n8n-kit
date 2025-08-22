@@ -29,7 +29,7 @@ export interface JinaAiNodeParameters {
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simplify?: boolean | boolean | boolean;
+    readonly simplify?: boolean;
 
     /**
      * Default: {}

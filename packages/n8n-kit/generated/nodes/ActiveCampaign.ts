@@ -18,7 +18,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "update" | "add" | "remove" | "add" | "remove" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "createNote" | "delete" | "get" | "getAll" | "update" | "updateNote" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "getAll" | "getByProductId" | "getByOrderId";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "update" | "add" | "remove" | "getAll" | "create" | "createNote" | "delete" | "get" | "getAll" | "update" | "updateNote" | "getAll" | "getByProductId" | "getByOrderId";
 
     /**
      * Tag-type of the new tag
@@ -29,7 +29,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * Name of the new tag
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
@@ -39,7 +39,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * ID of the tag to update
      */
-    readonly tagId?: number | number | number | string;
+    readonly tagId?: number | string;
 
     /**
      * The fields to update
@@ -50,24 +50,24 @@ export interface ActiveCampaignNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      */
-    readonly contactId?: number | number | number | number | number | number;
+    readonly contactId?: number;
 
     /**
      * ID of the contact tag to delete
@@ -76,12 +76,12 @@ export interface ActiveCampaignNodeParameters {
 
     /**
      */
-    readonly listId?: number | number;
+    readonly listId?: number;
 
     /**
      * ID of the account to update
      */
-    readonly accountId?: number | number | number;
+    readonly accountId?: number;
 
     /**
      * Default: {}
@@ -94,17 +94,17 @@ export interface ActiveCampaignNodeParameters {
 
     /**
      */
-    readonly contact?: number | number;
+    readonly contact?: number;
 
     /**
      * ID of the account contact to delete
      */
-    readonly accountContactId?: number | number;
+    readonly accountContactId?: number;
 
     /**
      * The email of the contact to create
      */
-    readonly email?: string | string | string;
+    readonly email?: string;
 
     /**
      * Whether to update user if it exists already. If not set and user exists it will error instead.
@@ -125,7 +125,7 @@ export interface ActiveCampaignNodeParameters {
      * The currency of the deal in 3-character ISO format
      * Default: "eur"
      */
-    readonly currency?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl" | "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl";
+    readonly currency?: "eur" | "usd" | "gbp" | "chf" | "cny" | "" | "aed" | "afn" | "all" | "amd" | "ang" | "aoa" | "ars" | "aud" | "awg" | "azn" | "bam" | "bbd" | "bdt" | "bgn" | "bhd" | "bif" | "bmd" | "bnd" | "bob" | "brl" | "bsd" | "btc" | "btn" | "bwp" | "byn" | "bzd" | "cad" | "cdf" | "clf" | "clp" | "cnh" | "cop" | "crc" | "cuc" | "cup" | "cve" | "czk" | "djf" | "dkk" | "dop" | "dzd" | "egp" | "ern" | "etb" | "fjd" | "fkp" | "gel" | "ggp" | "ghs" | "gip" | "gmd" | "gnf" | "gtq" | "gyd" | "hkd" | "hnl" | "hrk" | "htg" | "huf" | "idr" | "ils" | "imp" | "inr" | "iqd" | "irr" | "isk" | "jep" | "jmd" | "jod" | "jpy" | "kes" | "kgs" | "khr" | "kmf" | "kpw" | "krw" | "kwd" | "kyd" | "kzt" | "lak" | "lbp" | "lkr" | "lrd" | "lsl" | "lyd" | "mad" | "mdl" | "mga" | "mkd" | "mmk" | "mnt" | "mop" | "mro" | "mru" | "mur" | "mvr" | "mwk" | "mxn" | "myr" | "mzn" | "nad" | "ngn" | "nio" | "nok" | "npr" | "nzd" | "omr" | "pab" | "pen" | "pgk" | "php" | "pkr" | "pln" | "pyg" | "qar" | "ron" | "rsd" | "rub" | "rwf" | "sar" | "sbd" | "scr" | "sdg" | "sek" | "sgd" | "shp" | "sll" | "sos" | "srd" | "ssp" | "std" | "stn" | "svc" | "syp" | "szl" | "thb" | "tjs" | "tmt" | "tnd" | "top" | "try" | "ttd" | "twd" | "tzs" | "uah" | "ugx" | "uyu" | "uzs" | "vef" | "vnd" | "vuv" | "wst" | "xaf" | "xag" | "xau" | "xcd" | "xdr" | "xof" | "xpd" | "xpf" | "xpt" | "yer" | "zar" | "zmw" | "zwl";
 
     /**
      * The pipeline ID of the deal
@@ -145,12 +145,12 @@ export interface ActiveCampaignNodeParameters {
     /**
      * ID of the deal to update
      */
-    readonly dealId?: number | number | number | number | number;
+    readonly dealId?: number;
 
     /**
      * The content of the deal note
      */
-    readonly dealNote?: string | string;
+    readonly dealNote?: string;
 
     /**
      * The ID of the deal note
@@ -165,7 +165,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * The ID of the account in the external service
      */
-    readonly externalid?: string | string | string;
+    readonly externalid?: string;
 
     /**
      * The URL to a logo image for the external service
@@ -180,7 +180,7 @@ export interface ActiveCampaignNodeParameters {
     /**
      * ID of the connection to update
      */
-    readonly connectionId?: number | number | number;
+    readonly connectionId?: number;
 
     /**
      * The ID of the cart in the external service. ONLY REQUIRED IF EXTERNALID IS NOT INCLUDED.
@@ -227,12 +227,12 @@ export interface ActiveCampaignNodeParameters {
     /**
      * The ID of the e-commerce order
      */
-    readonly orderId?: number | number | number | number;
+    readonly orderId?: number;
 
     /**
      * ID of the E-commerce customer to update
      */
-    readonly ecommerceCustomerId?: number | number | number;
+    readonly ecommerceCustomerId?: number;
 
     /**
      * The ID of the product you'd like returned

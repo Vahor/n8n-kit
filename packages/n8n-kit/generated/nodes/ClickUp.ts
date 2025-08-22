@@ -23,19 +23,19 @@ export interface ClickUpNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "update" | "create" | "delete" | "update" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "update" | "add" | "remove" | "add" | "remove" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "member" | "setCustomField" | "update" | "create" | "delete" | "create" | "delete" | "get" | "getAll" | "start" | "stop" | "update" | "add" | "getAll" | "remove" | "create" | "customFields" | "delete" | "get" | "getAll" | "member" | "update";
+    readonly operation?: "create" | "delete" | "update" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "add" | "remove" | "create" | "delete" | "get" | "getAll" | "member" | "setCustomField" | "update" | "create" | "delete" | "create" | "delete" | "get" | "getAll" | "start" | "stop" | "update" | "add" | "getAll" | "remove" | "create" | "customFields" | "delete" | "get" | "getAll" | "member" | "update";
 
     /**
      */
-    readonly task?: string | string | string | string | string | string | string | string;
+    readonly task?: string;
 
     /**
      */
-    readonly name?: string | string | string | string | string | string | string | string | string;
+    readonly name?: string;
 
     /**
      */
-    readonly checklist?: string | string | string | string | string;
+    readonly checklist?: string;
 
     /**
      * Default: {}
@@ -49,7 +49,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly checklistItem?: string | string;
+    readonly checklistItem?: string;
 
     /**
      */
@@ -57,7 +57,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly id?: string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      */
@@ -65,7 +65,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly comment?: string | string;
+    readonly comment?: string;
 
     /**
      */
@@ -76,34 +76,34 @@ export interface ClickUpNodeParameters {
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
-    readonly team?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly team?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getSpaces","loadOptionsDependsOn":["team"]}
      */
-    readonly space?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly space?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getFolders","loadOptionsDependsOn":["space"]}
      */
-    readonly folder?: string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly folder?: string;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "archived"?: boolean } | { "archived"?: boolean, "assignees"?: string[], "customFieldsUi"?: { "customFieldsValues": any }, "dateCreatedGt"?: string, "dateCreatedLt"?: string, "dateUpdatedGt"?: string, "dateUpdatedLt"?: string, "dueDateGt"?: string, "dueDateLt"?: string, "includeClosed"?: boolean, "orderBy"?: "id" | "created" | "updated" | "dueDate", "statuses"?: string[], "subtasks"?: boolean, "tags"?: string[] } | { "end_date"?: string, "start_date"?: string } | { "archived"?: boolean };
+    readonly filters?: { "archived"?: boolean } | { "archived"?: boolean, "assignees"?: string[], "customFieldsUi"?: { "customFieldsValues": any }, "dateCreatedGt"?: string, "dateCreatedLt"?: string, "dateUpdatedGt"?: string, "dateUpdatedLt"?: string, "dueDateGt"?: string, "dueDateLt"?: string, "includeClosed"?: boolean, "orderBy"?: "id" | "created" | "updated" | "dueDate", "statuses"?: string[], "subtasks"?: boolean, "tags"?: string[] } | { "end_date"?: string, "start_date"?: string };
 
     /**
      */
-    readonly goal?: string | string | string | string;
+    readonly goal?: string;
 
     /**
      */
@@ -111,11 +111,11 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly keyResult?: string | string;
+    readonly keyResult?: string;
 
     /**
      */
-    readonly taskId?: string | string;
+    readonly taskId?: string;
 
     /**
      */
@@ -144,17 +144,17 @@ export interface ClickUpNodeParameters {
      * Whether to return all results or only up to a given limit
      * Default: true
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      */
-    readonly folderless?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly folderless?: boolean;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getFolderlessLists","loadOptionsDependsOn":["space"]}
      */
-    readonly list?: string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly list?: string;
 
     /**
      * Whether to also fetch and include subtasks for this task
@@ -183,7 +183,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly dependsOnTask?: string | string | string | string;
+    readonly dependsOnTask?: string;
 
     /**
      * Whether to return just the current running time entry
@@ -192,7 +192,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly timeEntry?: string | string | string;
+    readonly timeEntry?: string;
 
     /**
      */
@@ -209,7 +209,7 @@ export interface ClickUpNodeParameters {
 
     /**
      */
-    readonly timeEntryIds?: string | string;
+    readonly timeEntryIds?: string;
 
     /**
      * Default: {}

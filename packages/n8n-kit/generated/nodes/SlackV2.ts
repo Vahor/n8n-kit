@@ -29,7 +29,7 @@ export interface SlackV2NodeParameters {
      * The Slack channel to archive
      * Default: {"mode":"list","value":""}
      */
-    readonly channelId?: any | any | string | any | any | any | any | any | any | any | any | any | any | any | any | any | any | any | any | any | any | any;
+    readonly channelId?: any | string;
 
     /**
      * Whether to create a Public or a Private Slack channel. <a href="https://slack.com/help/articles/360017938993-What-is-a-channel">More info</a>.
@@ -58,19 +58,19 @@ export interface SlackV2NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
+    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
 
     /**
      * Whether to resolve the data automatically. By default the response only contain the ID to resource.
@@ -80,12 +80,12 @@ export interface SlackV2NodeParameters {
     /**
      * New name for conversation
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Timestamp of the message to reply
      */
-    readonly ts?: number | number;
+    readonly ts?: number;
 
     /**
      * A new, specialer purpose
@@ -99,33 +99,33 @@ export interface SlackV2NodeParameters {
     /**
      * Timestamp of the message to message
      */
-    readonly timestamp?: number | number | number | number;
+    readonly timestamp?: number;
 
     /**
      */
-    readonly select?: "channel" | "user" | "channel" | "user" | "channel" | "user";
+    readonly select?: "channel" | "user";
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any | any | any | any | any;
+    readonly user?: any;
 
     /**
      * Whether to send a simple text message, or use Slack’s Blocks UI builder for more sophisticated messages that include form fields, sections and more
      * Default: "text"
      */
-    readonly messageType?: "text" | "block" | "attachment" | "text" | "block" | "attachment";
+    readonly messageType?: "text" | "block" | "attachment";
 
     /**
      * The message text to post. Supports <a href="https://api.slack.com/reference/surfaces/formatting">markdown</a> by default - this can be disabled in "Options".
      */
-    readonly text?: string | string | string | string;
+    readonly text?: string;
 
     /**
      * Enter the JSON output from Slack's visual Block Kit Builder here. You can then use expressions to add variable content to your blocks. To create blocks, use <a target='_blank' href='https://app.slack.com/block-kit-builder'>Slack's Block Kit Builder</a>
      * Type options: {"rows":3}
      */
-    readonly blocksUi?: string | string;
+    readonly blocksUi?: string;
 
     /**
      */
@@ -199,7 +199,7 @@ export interface SlackV2NodeParameters {
     /**
      * File to add star to
      */
-    readonly fileId?: string | string;
+    readonly fileId?: string;
 
     /**
      * Whether the data to upload should be taken from binary field
@@ -214,7 +214,7 @@ export interface SlackV2NodeParameters {
      * Name of the binary property which contains the data for the file to be uploaded
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Default: {}
@@ -224,7 +224,7 @@ export interface SlackV2NodeParameters {
     /**
      * The encoded ID of the User Group to update
      */
-    readonly userGroupId?: string | string | string;
+    readonly userGroupId?: string;
 
     /**
      * Default: {}

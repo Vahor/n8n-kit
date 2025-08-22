@@ -38,7 +38,7 @@ export interface TwilioNodeParameters {
     /**
      * The message to send
      */
-    readonly message?: string | string;
+    readonly message?: string;
 
     /**
      * Whether to use the <a href="https://www.twilio.com/docs/voice/twiml">Twilio Markup Language</a> in the message

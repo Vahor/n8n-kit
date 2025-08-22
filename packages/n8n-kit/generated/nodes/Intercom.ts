@@ -18,7 +18,7 @@ export interface IntercomNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "users";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "users";
 
     /**
      * The Intercom defined ID representing the Lead
@@ -28,14 +28,14 @@ export interface IntercomNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":60}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -50,7 +50,7 @@ export interface IntercomNodeParameters {
     /**
      * View by value
      */
-    readonly value?: string | string | string | string | string | string | string;
+    readonly value?: string;
 
     /**
      * The property via which to query the user
@@ -70,7 +70,7 @@ export interface IntercomNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -81,14 +81,14 @@ export interface IntercomNodeParameters {
      * A hash of key/value pairs to represent custom data you want to attribute to a user
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly customAttributesJson?: string | string | string;
+    readonly customAttributesJson?: string;
 
     /**
      * A hash of key/value pairs to represent custom data you want to attribute to a user
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly customAttributesUi?: { "customAttributesValues": any } | { "customAttributesValues": any } | { "customAttributesValues": any };
+    readonly customAttributesUi?: { "customAttributesValues": any };
 
     /**
      */

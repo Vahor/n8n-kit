@@ -24,29 +24,29 @@ export interface WebflowV2NodeParameters {
      * ID of the site containing the collection whose items to add to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSites"}
      */
-    readonly siteId?: string | string | string | string | string;
+    readonly siteId?: string;
 
     /**
      * ID of the collection to add an item to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCollections","loadOptionsDependsOn":["siteId"]}
      */
-    readonly collectionId?: string | string | string | string | string;
+    readonly collectionId?: string;
 
     /**
      * Whether the item should be published on the live site
      */
-    readonly live?: boolean | boolean;
+    readonly live?: boolean;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any } | { "fieldValues": any };
+    readonly fieldsUi?: { "fieldValues": any };
 
     /**
      * ID of the item to operate on
      */
-    readonly itemId?: string | string | string;
+    readonly itemId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

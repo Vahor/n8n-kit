@@ -24,7 +24,7 @@ export interface NetlifyNodeParameters {
      * Enter the Site ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSites"}
      */
-    readonly siteId?: string | string;
+    readonly siteId?: string;
 
     /**
      */
@@ -33,14 +33,14 @@ export interface NetlifyNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":200}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

@@ -19,7 +19,7 @@ export interface SummarizeNodeParameters {
     /**
      * The name of the input fields that you want to split the summary by
      */
-    readonly fieldsToSplitBy?: string | string;
+    readonly fieldsToSplitBy?: string;
 
     /**
      * Default: {}

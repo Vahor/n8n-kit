@@ -24,19 +24,19 @@ export interface YouTubeNodeParameters {
      * The fields parameter specifies a comma-separated list of one or more channel resource properties that the API response will include
      * Default: ["*"]
      */
-    readonly part?: ("*" | "brandingSettings" | "contentDetails" | "contentOwnerDetails" | "id" | "localizations" | "snippet" | "statistics" | "status" | "topicDetails")[] | ("*" | "brandingSettings" | "contentDetails" | "contentOwnerDetails" | "id" | "localizations" | "snippet" | "statistics" | "status" | "topicDetails")[] | ("*" | "contentDetails" | "id" | "localizations" | "player" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "localizations" | "player" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "liveStreamingDetails" | "localizations" | "player" | "recordingDetails" | "snippet" | "statistics" | "status" | "topicDetails")[];
+    readonly part?: ("*" | "brandingSettings" | "contentDetails" | "contentOwnerDetails" | "id" | "localizations" | "snippet" | "statistics" | "status" | "topicDetails")[] | ("*" | "contentDetails" | "id" | "localizations" | "player" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "liveStreamingDetails" | "localizations" | "player" | "recordingDetails" | "snippet" | "statistics" | "status" | "topicDetails")[];
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 25
      * Type options: {"minValue":1,"maxValue":50}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -46,12 +46,12 @@ export interface YouTubeNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "h1"?: string, "onBehalfOfContentOwner"?: string } | { "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "defaultLanguage"?: string, "onBehalfOfContentOwnerChannel"?: string, "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwner"?: string, "onBehalfOfContentOwnerChannel"?: string } | { "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwnerChannel"?: string, "onBehalfOfContentOwner"?: string } | { "endAt"?: string, "note"?: string, "onBehalfOfContentOwner"?: string, "position"?: number, "startAt"?: string } | { "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwner"?: string } | { "defaultLanguage"?: string, "description"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "privacyStatus"?: "private" | "public" | "unlisted", "publicStatsViewable"?: boolean, "publishAt"?: string, "recordingDate"?: string, "selfDeclaredMadeForKids"?: boolean, "tags"?: string } | { "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwner"?: string } | { "order"?: "date" | "relevance", "safeSearch"?: "moderate" | "none" | "strict" };
+    readonly options?: { "h1"?: string, "onBehalfOfContentOwner"?: string } | { "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "defaultLanguage"?: string, "onBehalfOfContentOwnerChannel"?: string, "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwner"?: string, "onBehalfOfContentOwnerChannel"?: string } | { "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwnerChannel"?: string, "onBehalfOfContentOwner"?: string } | { "endAt"?: string, "note"?: string, "onBehalfOfContentOwner"?: string, "position"?: number, "startAt"?: string } | { "defaultLanguage"?: string, "description"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "privacyStatus"?: "private" | "public" | "unlisted", "publicStatsViewable"?: boolean, "publishAt"?: string, "recordingDate"?: string, "selfDeclaredMadeForKids"?: boolean, "tags"?: string } | { "order"?: "date" | "relevance", "safeSearch"?: "moderate" | "none" | "strict" };
 
     /**
      * ID of the channel
      */
-    readonly channelId?: string | string | string;
+    readonly channelId?: string;
 
     /**
      * Default: {}
@@ -61,36 +61,36 @@ export interface YouTubeNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryProperty?: string | string;
+    readonly binaryProperty?: string;
 
     /**
      * The playlist's title
      */
-    readonly title?: string | string | string | string;
+    readonly title?: string;
 
     /**
      */
-    readonly playlistId?: string | string | string | string | string;
+    readonly playlistId?: string;
 
     /**
      */
-    readonly videoId?: string | string | string | string | string;
+    readonly videoId?: string;
 
     /**
      */
-    readonly playlistItemId?: string | string;
+    readonly playlistItemId?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getCountriesCodes"}
      */
-    readonly regionCode?: string | string | string;
+    readonly regionCode?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getVideoCategories","loadOptionsDependsOn":["regionCode"]}
      */
-    readonly categoryId?: string | string;
+    readonly categoryId?: string;
 
     /**
      */

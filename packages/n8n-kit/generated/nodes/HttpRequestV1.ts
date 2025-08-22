@@ -42,7 +42,7 @@ export interface HttpRequestV1NodeParameters {
      * Name of the property to which to write the response data
      * Default: "data"
      */
-    readonly dataPropertyName?: string | string;
+    readonly dataPropertyName?: string;
 
     /**
      * Whether the query and/or body parameter should be set via the value-key pair UI or JSON/RAW

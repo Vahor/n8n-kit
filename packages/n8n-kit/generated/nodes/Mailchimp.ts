@@ -29,12 +29,12 @@ export interface MailchimpNodeParameters {
      * List of lists. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists"}
      */
-    readonly list?: string | string | string | string | string | string | string;
+    readonly list?: string;
 
     /**
      * Email address for a subscriber
      */
-    readonly email?: string | string | string | string | string;
+    readonly email?: string;
 
     /**
      * Subscriber's current status
@@ -43,7 +43,7 @@ export interface MailchimpNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -66,12 +66,12 @@ export interface MailchimpNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly mergeFieldsJson?: string | string;
+    readonly mergeFieldsJson?: string;
 
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly locationJson?: string | string;
+    readonly locationJson?: string;
 
     /**
      * Default: {}
@@ -82,19 +82,19 @@ export interface MailchimpNodeParameters {
     /**
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly groupJson?: string | string;
+    readonly groupJson?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 500
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

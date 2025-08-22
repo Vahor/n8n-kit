@@ -33,7 +33,7 @@ export interface MailerLiteV1NodeParameters {
     /**
      * Email of subscriber
      */
-    readonly subscriberId?: string | string | string;
+    readonly subscriberId?: string;
 
     /**
      * Default: {}

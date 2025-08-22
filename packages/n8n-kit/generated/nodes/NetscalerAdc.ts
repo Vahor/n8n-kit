@@ -23,13 +23,13 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Name for and, optionally, path to the generated certificate file. /nsconfig/ssl/ is the default path.
      */
-    readonly certificateFileName?: string | string;
+    readonly certificateFileName?: string;
 
     /**
      * Format in which the certificate is stored on the appliance
      * Default: "PEM"
      */
-    readonly certificateFormat?: "PEM" | "DER" | "PEM" | "DER";
+    readonly certificateFormat?: "PEM" | "DER";
 
     /**
      * Default: "ROOT_CERT"
@@ -66,7 +66,7 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Name for and, optionally, path to the private key. You can either use an existing RSA or DSA key that you own or create a new private key on the Netscaler ADC. This file is required only when creating a self-signed Root-CA certificate. The key file is stored in the /nsconfig/ssl directory by default.
      */
-    readonly privateKeyFileName?: string | string;
+    readonly privateKeyFileName?: string;
 
     /**
      * Serial number file maintained for the CA certificate. This file contains the serial number of the next certificate to be issued or signed by the CA.
@@ -115,13 +115,13 @@ export interface NetscalerAdcNodeParameters {
     /**
      * Default: "/nsconfig/ssl/"
      */
-    readonly fileLocation?: string | string;
+    readonly fileLocation?: string;
 
     /**
      * The name of the incoming field containing the binary file data to be processed
      * Default: "data"
      */
-    readonly binaryProperty?: string | string;
+    readonly binaryProperty?: string;
 
     /**
      * Default: {}

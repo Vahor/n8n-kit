@@ -22,7 +22,7 @@ export interface SpreadsheetFileV1NodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * The format of the file to save the data as

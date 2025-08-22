@@ -18,22 +18,22 @@ export interface PlivoNodeParameters {
     /**
      * Default: "send"
      */
-    readonly operation?: "send" | "send" | "make";
+    readonly operation?: "send" | "make";
 
     /**
      * Plivo Number to send the SMS from
      */
-    readonly from?: string | string | string;
+    readonly from?: string;
 
     /**
      * Phone number to send the message to
      */
-    readonly to?: string | string | string;
+    readonly to?: string;
 
     /**
      * Message to send
      */
-    readonly message?: string | string;
+    readonly message?: string;
 
     /**
      * Comma-separated list of media URLs of the files from your file server

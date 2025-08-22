@@ -33,7 +33,7 @@ export interface ElasticSecurityNodeParameters {
     /**
      * Default: ".jira"
      */
-    readonly connectorType?: ".resilient" | ".jira" | ".servicenow" | ".resilient" | ".jira" | ".servicenow";
+    readonly connectorType?: ".resilient" | ".jira" | ".servicenow";
 
     /**
      * Type of the Jira issue to create for this case
@@ -87,19 +87,19 @@ export interface ElasticSecurityNodeParameters {
 
     /**
      */
-    readonly caseId?: string | string | string | string | string | string | string | string | string | string;
+    readonly caseId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -118,24 +118,24 @@ export interface ElasticSecurityNodeParameters {
 
     /**
      */
-    readonly comment?: string | string;
+    readonly comment?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * ID of the case comment to retrieve
      */
-    readonly commentId?: string | string | string;
+    readonly commentId?: string;
 
     /**
      * Tag to attach to the case. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTags"}
      */
-    readonly tag?: string | string;
+    readonly tag?: string;
 
     /**
      * Connectors allow you to send Elastic Security cases into other systems (only ServiceNow, Jira, or IBM Resilient)

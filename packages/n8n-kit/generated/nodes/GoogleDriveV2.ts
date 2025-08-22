@@ -33,36 +33,36 @@ export interface GoogleDriveV2NodeParameters {
     /**
      * The name of the shared drive to create
      */
-    readonly name?: string | string | string | string | string;
+    readonly name?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "capabilities"?: { "canAddChildren"?: boolean, "canChangeCopyRequiresWriterPermissionRestriction"?: boolean, "canChangeDomainUsersOnlyRestriction"?: boolean, "canChangeDriveBackground"?: boolean, "canChangeDriveMembersOnlyRestriction"?: boolean, "canComment"?: boolean, "canCopy"?: boolean, "canDeleteChildren"?: boolean, "canDeleteDrive"?: boolean, "canDownload"?: boolean, "canEdit"?: boolean, "canListChildren"?: boolean, "canManageMembers"?: boolean, "canReadRevisions"?: boolean, "canRename"?: boolean, "canRenameDrive"?: boolean, "canShare"?: boolean, "canTrashChildren"?: boolean }, "colorRgb"?: any, "hidden"?: boolean, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "useDomainAdminAccess"?: boolean } | { "q"?: string, "useDomainAdminAccess"?: boolean } | { "colorRgb"?: any, "name"?: string, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "copyRequiresWriterPermission"?: boolean, "description"?: string } | { "deletePermanently"?: boolean } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "convertToGoogleDocument"?: boolean } | { "binaryPropertyName"?: string, "googleFileConversion"?: { "conversion": any }, "fileName"?: string } | { "emailMessage"?: string, "moveToNewOwnersRoot"?: boolean, "sendNotificationEmail"?: boolean, "transferOwnership"?: boolean, "useDomainAdminAccess"?: boolean } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "trashed"?: boolean, "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "simplifyOutput"?: boolean } | { "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "simplifyOutput"?: boolean, "folderColorRgb"?: any } | { "deletePermanently"?: boolean } | { "emailMessage"?: string, "moveToNewOwnersRoot"?: boolean, "sendNotificationEmail"?: boolean, "transferOwnership"?: boolean, "useDomainAdminAccess"?: boolean };
+    readonly options?: { "capabilities"?: { "canAddChildren"?: boolean, "canChangeCopyRequiresWriterPermissionRestriction"?: boolean, "canChangeDomainUsersOnlyRestriction"?: boolean, "canChangeDriveBackground"?: boolean, "canChangeDriveMembersOnlyRestriction"?: boolean, "canComment"?: boolean, "canCopy"?: boolean, "canDeleteChildren"?: boolean, "canDeleteDrive"?: boolean, "canDownload"?: boolean, "canEdit"?: boolean, "canListChildren"?: boolean, "canManageMembers"?: boolean, "canReadRevisions"?: boolean, "canRename"?: boolean, "canRenameDrive"?: boolean, "canShare"?: boolean, "canTrashChildren"?: boolean }, "colorRgb"?: any, "hidden"?: boolean, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "useDomainAdminAccess"?: boolean } | { "q"?: string, "useDomainAdminAccess"?: boolean } | { "colorRgb"?: any, "name"?: string, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "copyRequiresWriterPermission"?: boolean, "description"?: string } | { "deletePermanently"?: boolean } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "convertToGoogleDocument"?: boolean } | { "binaryPropertyName"?: string, "googleFileConversion"?: { "conversion": any }, "fileName"?: string } | { "emailMessage"?: string, "moveToNewOwnersRoot"?: boolean, "sendNotificationEmail"?: boolean, "transferOwnership"?: boolean, "useDomainAdminAccess"?: boolean } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "trashed"?: boolean, "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "simplifyOutput"?: boolean } | { "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "simplifyOutput"?: boolean, "folderColorRgb"?: any };
 
     /**
      * The shared drive to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly driveId?: any | any | any | any | any | any | any | any;
+    readonly driveId?: any;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":200}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * The file to copy
      * Default: {"mode":"list","value":""}
      */
-    readonly fileId?: any | any | any | any | any | any;
+    readonly fileId?: any;
 
     /**
      * Whether to copy the file in the same folder as the original file
@@ -74,7 +74,7 @@ export interface GoogleDriveV2NodeParameters {
      * The folder where to save the copied file
      * Default: {"mode":"list","value":"root","cachedResultName":"/ (Root folder)"}
      */
-    readonly folderId?: any | any | any | any | any;
+    readonly folderId?: any;
 
     /**
      * The text to create the file with
@@ -86,7 +86,7 @@ export interface GoogleDriveV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly permissionsUi?: { "permissionsValues": any } | { "permissionsValues": any };
+    readonly permissionsUi?: { "permissionsValues": any };
 
     /**
      * Whether to send a new binary data to update the file
@@ -97,7 +97,7 @@ export interface GoogleDriveV2NodeParameters {
      * Find the name of input field containing the binary data to update the file in the Input panel on the left, in the Binary tab
      * Default: "data"
      */
-    readonly inputDataFieldName?: string | string;
+    readonly inputDataFieldName?: string;
 
     /**
      * If not specified, the file name will not be changed
@@ -113,7 +113,7 @@ export interface GoogleDriveV2NodeParameters {
     /**
      * The name of the file or folder to search for. Returns also files and folders whose names partially match this search term.
      */
-    readonly queryString?: string | string;
+    readonly queryString?: string;
 
     /**
      * Default: {}
@@ -124,7 +124,7 @@ export interface GoogleDriveV2NodeParameters {
      * The folder to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly folderNoRootId?: any | any;
+    readonly folderNoRootId?: any;
 
 
 }

@@ -24,12 +24,12 @@ export interface SnowflakeNodeParameters {
     /**
      * Name of the table in which to insert data to
      */
-    readonly table?: string | string;
+    readonly table?: string;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string | string;
+    readonly columns?: string;
 
     /**
      * Name of the property which decides which rows in the database should be updated. Normally that would be "id".

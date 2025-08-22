@@ -35,7 +35,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToInclude?: { "fields": any } | { "fields": any };
+    readonly fieldsToInclude?: { "fields": any };
 
     /**
      * Default: "aggregateIndividualFields"
@@ -58,7 +58,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToExclude?: { "fields": any } | { "fields": any };
+    readonly fieldsToExclude?: { "fields": any };
 
     /**
      * The fields of the input items to compare to see if they are the same
@@ -119,7 +119,7 @@ export interface ItemListsV1NodeParameters {
     /**
      * The name of the input fields that you want to split the summary by
      */
-    readonly fieldsToSplitBy?: string | string;
+    readonly fieldsToSplitBy?: string;
 
 
 }

@@ -82,14 +82,14 @@ export interface BrevoNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Name of the sender
@@ -99,7 +99,7 @@ export interface BrevoNodeParameters {
     /**
      * Email of the sender
      */
-    readonly email?: string | string | string;
+    readonly email?: string;
 
     /**
      * ID of the sender to delete
@@ -126,7 +126,7 @@ export interface BrevoNodeParameters {
     /**
      * Email (urlencoded) OR ID of the contact OR its SMS attribute value
      */
-    readonly identifier?: string | string | string;
+    readonly identifier?: string;
 
     /**
      * Array of attributes to be updated
@@ -167,7 +167,7 @@ export interface BrevoNodeParameters {
 
     /**
      */
-    readonly receipients?: string | string;
+    readonly receipients?: string;
 
     /**
      * Additional fields to add

@@ -23,7 +23,7 @@ export interface MauticNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "editContactPoint" | "editDoNotContactList" | "get" | "getAll" | "sendEmail" | "update" | "add" | "remove" | "add" | "remove" | "add" | "remove" | "send";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "editContactPoint" | "editDoNotContactList" | "get" | "getAll" | "sendEmail" | "update" | "add" | "remove" | "send";
 
     /**
      * The name of the company to create
@@ -34,7 +34,7 @@ export interface MauticNodeParameters {
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Default: {}
@@ -44,7 +44,7 @@ export interface MauticNodeParameters {
     /**
      * The ID of the company to update
      */
-    readonly companyId?: string | string | string | string;
+    readonly companyId?: string;
 
     /**
      * Default: {}
@@ -54,18 +54,18 @@ export interface MauticNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 30
      * Type options: {"minValue":1,"maxValue":30}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Email address of the contact
@@ -101,12 +101,12 @@ export interface MauticNodeParameters {
 
     /**
      */
-    readonly contactId?: string | string | string | string | string | string | string | string | string;
+    readonly contactId?: string;
 
     /**
      * Default: "add"
      */
-    readonly action?: "add" | "remove" | "add" | "remove";
+    readonly action?: "add" | "remove";
 
     /**
      * Default: "email"

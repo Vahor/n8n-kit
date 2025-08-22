@@ -17,7 +17,7 @@ export interface CiscoWebexTriggerNodeParameters {
 
     /**
      */
-    readonly event?: "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "started" | "ended" | "all" | "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "created" | "updated" | "deleted" | "all";
+    readonly event?: "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "started" | "ended" | "all" | "created" | "deleted" | "updated" | "created" | "updated" | "deleted" | "all";
 
     /**
      * By default the response only contain a reference to the data the user inputed. If this option gets activated, it will resolve the data automatically.

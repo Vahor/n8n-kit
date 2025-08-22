@@ -23,17 +23,17 @@ export interface HumanticAiNodeParameters {
     /**
      * The LinkedIn profile URL or email ID for creating a Humantic profile. If you are sending the resume, this should be a unique string.
      */
-    readonly userId?: string | string | string;
+    readonly userId?: string;
 
     /**
      * Whether to send a resume for a resume based analysis
      */
-    readonly sendResume?: boolean | boolean;
+    readonly sendResume?: boolean;
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Default: {}

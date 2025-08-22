@@ -18,12 +18,12 @@ export interface ConvertKitNodeParameters {
     /**
      * Default: "update"
      */
-    readonly operation?: "create" | "delete" | "getAll" | "update" | "addSubscriber" | "getAll" | "getSubscriptions" | "addSubscriber" | "getAll" | "getSubscriptions" | "create" | "getAll" | "add" | "getAll" | "delete";
+    readonly operation?: "create" | "delete" | "getAll" | "update" | "addSubscriber" | "getAll" | "getSubscriptions" | "create" | "getAll" | "add" | "getAll" | "delete";
 
     /**
      * The ID of your custom field
      */
-    readonly id?: string | string | string;
+    readonly id?: string;
 
     /**
      * The label of the custom field
@@ -33,24 +33,24 @@ export interface ConvertKitNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * The subscriber's email address
      */
-    readonly email?: string | string | string;
+    readonly email?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" } | { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string, "tags"?: string[] } | { "subscriberState"?: "active" | "cancelled" } | { "fields"?: { "field": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" };
+    readonly additionalFields?: { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" } | { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string, "tags"?: string[] } | { "fields"?: { "field": any }, "firstName"?: string };
 
     /**
      * Tag name, multiple can be added separated by comma

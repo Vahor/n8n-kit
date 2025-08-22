@@ -38,7 +38,7 @@ export interface ZoomNodeParameters {
     /**
      * Meeting ID
      */
-    readonly meetingId?: string | string | string;
+    readonly meetingId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

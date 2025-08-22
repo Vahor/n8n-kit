@@ -54,11 +54,11 @@ export interface PushbulletNodeParameters {
     /**
      * The value to be set depending on the target selected. For example, if the target selected is email then this field would take the email address of the person you are trying to send the push to.
      */
-    readonly value?: string | string;
+    readonly value?: string;
 
     /**
      */
-    readonly pushId?: string | string;
+    readonly pushId?: string;
 
     /**
      * Whether to return all results or only up to a given limit

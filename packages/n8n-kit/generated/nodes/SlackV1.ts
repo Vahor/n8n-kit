@@ -33,12 +33,12 @@ export interface SlackV1NodeParameters {
      * The name of the channel to archive. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChannels"}
      */
-    readonly channelId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly channelId?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "isPrivate"?: boolean } | { "includeNumMembers"?: boolean } | { "channelIds"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean } | { "include_count"?: boolean } | { "include_count"?: boolean } | { "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean } | { "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status_emoji"?: string, "status_expiration"?: string, "status_text"?: string, "user"?: string } | { "include_labels"?: boolean, "user"?: string };
+    readonly additionalFields?: { "isPrivate"?: boolean } | { "includeNumMembers"?: boolean } | { "channelIds"?: string[], "description"?: string, "handle"?: string, "include_count"?: boolean } | { "include_count"?: boolean } | { "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean } | { "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status_emoji"?: string, "status_expiration"?: string, "status_text"?: string, "user"?: string } | { "include_labels"?: boolean, "user"?: string };
 
     /**
      * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -56,19 +56,19 @@ export interface SlackV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
+    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
 
     /**
      * Whether to resolve the data automatically. By default the response only contain the ID to resource.
@@ -83,12 +83,12 @@ export interface SlackV1NodeParameters {
     /**
      * New name for conversation
      */
-    readonly name?: string | string | string;
+    readonly name?: string;
 
     /**
      * Unique identifier of a thread's parent message
      */
-    readonly ts?: string | string;
+    readonly ts?: string;
 
     /**
      * A new, specialer purpose
@@ -103,7 +103,7 @@ export interface SlackV1NodeParameters {
     /**
      * Timestamp of the message to get permanent link
      */
-    readonly timestamp?: string | string | string;
+    readonly timestamp?: string;
 
     /**
      * The channel to send the message to
@@ -113,16 +113,16 @@ export interface SlackV1NodeParameters {
     /**
      * The user ID to send the message to
      */
-    readonly user?: string | string | string;
+    readonly user?: string;
 
     /**
      * The text to send
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Other options to set
@@ -135,7 +135,7 @@ export interface SlackV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } } | { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
+    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
 
     /**
      * Default: {}
@@ -146,13 +146,13 @@ export interface SlackV1NodeParameters {
      * The attachments to add
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly attachmentsJson?: string | string;
+    readonly attachmentsJson?: string;
 
     /**
      * The blocks to add
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly blocksJson?: string | string;
+    readonly blocksJson?: string;
 
     /**
      * The blocks to add
@@ -183,7 +183,7 @@ export interface SlackV1NodeParameters {
     /**
      * The encoded ID of the User Group to update
      */
-    readonly userGroupId?: string | string | string;
+    readonly userGroupId?: string;
 
 
 }

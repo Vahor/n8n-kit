@@ -28,7 +28,7 @@ export interface MicrosoftExcelV1NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getWorkbooks"}
      */
-    readonly workbook?: string | string | string | string | string | string | string;
+    readonly workbook?: string;
 
     /**
      * Default: {}
@@ -38,25 +38,25 @@ export interface MicrosoftExcelV1NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "fields"?: string } | { "fields"?: string } | { "fields"?: string } | { "fields"?: string } | { "fields"?: string };
+    readonly filters?: { "fields"?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getworksheets","loadOptionsDependsOn":["workbook"]}
      */
-    readonly worksheet?: string | string | string | string | string;
+    readonly worksheet?: string;
 
     /**
      * The address or the name of the range. If not specified, the entire worksheet range is returned.
@@ -67,13 +67,13 @@ export interface MicrosoftExcelV1NodeParameters {
     /**
      * Whether the data should be returned RAW instead of parsed into keys according to their header
      */
-    readonly rawData?: boolean | boolean | boolean;
+    readonly rawData?: boolean;
 
     /**
      * The name of the property into which to write the RAW data
      * Default: "data"
      */
-    readonly dataProperty?: string | string | string;
+    readonly dataProperty?: string;
 
     /**
      * Index of the first row which contains the actual data and not the keys. Starts with 0.
@@ -92,7 +92,7 @@ export interface MicrosoftExcelV1NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTables","loadOptionsDependsOn":["worksheet"]}
      */
-    readonly table?: string | string | string | string;
+    readonly table?: string;
 
     /**
      * The name of the column in which to look for value

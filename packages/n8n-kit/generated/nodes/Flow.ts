@@ -23,7 +23,7 @@ export interface FlowNodeParameters {
     /**
      * Create resources under the given workspace
      */
-    readonly workspaceId?: string | string;
+    readonly workspaceId?: string;
 
     /**
      * The title of the task
@@ -37,7 +37,7 @@ export interface FlowNodeParameters {
 
     /**
      */
-    readonly taskId?: string | string;
+    readonly taskId?: string;
 
     /**
      * Default: {}

@@ -28,14 +28,14 @@ export interface MicrosoftGraphSecurityNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -45,7 +45,7 @@ export interface MicrosoftGraphSecurityNodeParameters {
     /**
      * ID of the secure score control profile to retrieve
      */
-    readonly secureScoreControlProfileId?: string | string;
+    readonly secureScoreControlProfileId?: string;
 
     /**
      * Name of the provider of the security product or service

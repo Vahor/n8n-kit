@@ -23,24 +23,24 @@ export interface QuickBaseNodeParameters {
     /**
      * The table identifier
      */
-    readonly tableId?: string | string | string | string | string | string | string | string | string;
+    readonly tableId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "includeFieldPerms"?: boolean } | { "fields"?: string[], "useFieldIDs"?: boolean } | { "select"?: string[], "sortByUi"?: { "sortByValues": any }, "where"?: string } | { "fields"?: string[], "useFieldIDs"?: boolean } | { "fields"?: string[], "useFieldIDs"?: boolean };
+    readonly options?: { "includeFieldPerms"?: boolean } | { "fields"?: string[], "useFieldIDs"?: boolean } | { "select"?: string[], "sortByUi"?: { "sortByValues": any }, "where"?: string };
 
     /**
      * The unique identifier of the record
@@ -66,13 +66,13 @@ export interface QuickBaseNodeParameters {
     /**
      * Comma-separated list of the properties which should used as columns for the new rows
      */
-    readonly columns?: string | string | string;
+    readonly columns?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * The filter to delete records. To delete all records specify a filter that will include all records, for example {3.GT.0} where 3 is the ID of the Record ID field.
@@ -82,7 +82,7 @@ export interface QuickBaseNodeParameters {
     /**
      * Update can use the key field on the table, or any other supported unique field
      */
-    readonly updateKey?: string | string;
+    readonly updateKey?: string;
 
     /**
      * <p>You're updating records in a Quick Base table with data from an external file. In order for a merge like this to work, Quick Base needs a way to match records in the source data with corresponding records in the destination table.</p><p>You make this possible by choosing the field in the app table that holds unique matching values. This is called a merge field.</p>. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -93,7 +93,7 @@ export interface QuickBaseNodeParameters {
     /**
      * The identifier of the report, unique to the table
      */
-    readonly reportId?: string | string;
+    readonly reportId?: string;
 
 
 }

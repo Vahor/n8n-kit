@@ -35,17 +35,17 @@ export interface GoogleAnalyticsV2NodeParameters {
     /**
      * Default: "last7days"
      */
-    readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom" | "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
+    readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
     /**
      * Default: "2025-08-14T00:00:00.000+02:00"
      */
-    readonly startDate?: string | string;
+    readonly startDate?: string;
 
     /**
      * Default: "2025-08-21T00:00:00.000+02:00"
      */
-    readonly endDate?: string | string;
+    readonly endDate?: string;
 
     /**
      * The quantitative measurements of a report. For example, the metric eventCount is the total number of events. Requests are allowed up to 10 metrics.
@@ -64,20 +64,20 @@ export interface GoogleAnalyticsV2NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Default: {}

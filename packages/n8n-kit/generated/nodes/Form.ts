@@ -39,31 +39,31 @@ export interface FormNodeParameters {
     /**
      * Whether to limit the time this node should wait for a user response before execution resumes
      */
-    readonly limitWaitTime?: boolean | boolean;
+    readonly limitWaitTime?: boolean;
 
     /**
      * Sets the condition for the execution to resume. Can be a specified date or after some time.
      * Default: "afterTimeInterval"
      */
-    readonly limitType?: "afterTimeInterval" | "atSpecifiedTime" | "afterTimeInterval" | "atSpecifiedTime";
+    readonly limitType?: "afterTimeInterval" | "atSpecifiedTime";
 
     /**
      * The time to wait
      * Default: 1
      * Type options: {"minValue":0,"numberPrecision":2}
      */
-    readonly resumeAmount?: number | number;
+    readonly resumeAmount?: number;
 
     /**
      * Unit of the interval value
      * Default: "hours"
      */
-    readonly resumeUnit?: "minutes" | "hours" | "days" | "minutes" | "hours" | "days";
+    readonly resumeUnit?: "minutes" | "hours" | "days";
 
     /**
      * Continue execution after the specified date and time
      */
-    readonly maxDateAndTime?: string | string;
+    readonly maxDateAndTime?: string;
 
     /**
      * Default: {}

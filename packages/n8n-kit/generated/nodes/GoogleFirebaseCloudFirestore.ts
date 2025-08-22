@@ -29,45 +29,45 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      * As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly projectId?: string | string | string | string | string | string | string;
+    readonly projectId?: string;
 
     /**
      * Usually the provided default value will work
      * Default: "(default)"
      */
-    readonly database?: string | string | string | string | string | string | string;
+    readonly database?: string;
 
     /**
      * Collection name
      */
-    readonly collection?: string | string | string | string | string;
+    readonly collection?: string;
 
     /**
      */
-    readonly documentId?: string | string | string;
+    readonly documentId?: string;
 
     /**
      * List of attributes to save
      */
-    readonly columns?: string | string;
+    readonly columns?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Must correspond to a document ID

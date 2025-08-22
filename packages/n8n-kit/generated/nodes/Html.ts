@@ -35,13 +35,13 @@ export interface HtmlNodeParameters {
     /**
      * Default: "data"
      */
-    readonly dataPropertyName?: string | string;
+    readonly dataPropertyName?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly extractionValues?: { "values": any } | { "values": any };
+    readonly extractionValues?: { "values": any };
 
     /**
      * Default: {}

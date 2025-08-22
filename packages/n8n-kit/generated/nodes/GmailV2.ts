@@ -28,15 +28,15 @@ export interface GmailV2NodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "addLabels" | "delete" | "get" | "getAll" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "addLabels" | "delete" | "get" | "getAll" | "removeLabels" | "reply" | "trash" | "untrash";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "addLabels" | "delete" | "get" | "getAll" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "addLabels" | "delete" | "get" | "getAll" | "removeLabels" | "reply" | "trash" | "untrash";
 
     /**
      */
-    readonly messageId?: string | string | string | string | string;
+    readonly messageId?: string;
 
     /**
      */
-    readonly subject?: string | string | string;
+    readonly subject?: string;
 
     /**
      */
@@ -45,28 +45,28 @@ export interface GmailV2NodeParameters {
     /**
      * Default: "text"
      */
-    readonly emailType?: "html" | "text" | "text" | "html" | "text" | "html" | "text" | "html";
+    readonly emailType?: "html" | "text" | "text" | "html";
 
     /**
      */
-    readonly message?: string | string | string | string;
+    readonly message?: string;
 
     /**
      * Default: {}
      */
-    readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean } | { "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show" } | { "appendAttribution"?: boolean, "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyTo"?: string, "replyToSenderOnly"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyToSenderOnly"?: boolean } | { "returnOnlyMessages"?: boolean };
+    readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean } | { "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show" } | { "appendAttribution"?: boolean, "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyTo"?: string, "replyToSenderOnly"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyToSenderOnly"?: boolean } | { "returnOnlyMessages"?: boolean };
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Label Name
@@ -81,17 +81,17 @@ export interface GmailV2NodeParameters {
     /**
      * The email addresses of the recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com.
      */
-    readonly sendTo?: string | string;
+    readonly sendTo?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      */
-    readonly filtersNotice?: string | string;
+    readonly filtersNotice?: string;
 
     /**
      * Default: {}
@@ -103,7 +103,7 @@ export interface GmailV2NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */
-    readonly labelIds?: string[] | string[];
+    readonly labelIds?: string[];
 
     /**
      * Default: "approval"
@@ -135,7 +135,7 @@ export interface GmailV2NodeParameters {
     /**
      * The ID of the thread you are operating on
      */
-    readonly threadId?: string | string;
+    readonly threadId?: string;
 
 
 }

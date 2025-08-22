@@ -24,34 +24,34 @@ export interface OdooNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
      */
-    readonly fieldsToCreateOrUpdate?: { "fields": any } | { "fields": any };
+    readonly fieldsToCreateOrUpdate?: { "fields": any };
 
     /**
      */
-    readonly customResourceId?: string | string;
+    readonly customResourceId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":1000}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
      */
-    readonly options?: { "fieldsList"?: string[] } | { "fieldsList"?: string[] } | { "fieldsList"?: string[] } | { "fieldsList"?: string[] };
+    readonly options?: { "fieldsList"?: string[] };
 
     /**
      * Filter request by applying filters
@@ -71,7 +71,7 @@ export interface OdooNodeParameters {
 
     /**
      */
-    readonly opportunityId?: string | string;
+    readonly opportunityId?: string;
 
     /**
      * Default: {}
@@ -84,15 +84,15 @@ export interface OdooNodeParameters {
 
     /**
      */
-    readonly contactId?: string | string;
+    readonly contactId?: string;
 
     /**
      */
-    readonly memo?: string | string;
+    readonly memo?: string;
 
     /**
      */
-    readonly noteId?: string | string;
+    readonly noteId?: string;
 
 
 }

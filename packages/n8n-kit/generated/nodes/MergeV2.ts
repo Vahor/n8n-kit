@@ -35,7 +35,7 @@ export interface MergeV2NodeParameters {
     /**
      * Default: "both"
      */
-    readonly outputDataFrom?: "both" | "input1" | "input2" | "both" | "input1" | "input2";
+    readonly outputDataFrom?: "both" | "input1" | "input2";
 
     /**
      * Default: "waitForBoth"

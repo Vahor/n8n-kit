@@ -18,7 +18,7 @@ export interface ConvertToFileNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string | string | string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Default: {}
@@ -28,7 +28,7 @@ export interface ConvertToFileNodeParameters {
     /**
      * The name of the input field that contains the base64 string to convert to a file. Use dot-notation for deep fields (e.g. 'level1.level2.currentKey').
      */
-    readonly sourceProperty?: string | string;
+    readonly sourceProperty?: string;
 
     /**
      * Default: "once"

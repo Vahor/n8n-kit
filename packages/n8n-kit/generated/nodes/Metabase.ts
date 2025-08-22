@@ -18,7 +18,7 @@ export interface MetabaseNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "get" | "getAll" | "resultData" | "get" | "getAll" | "addNewDatasource" | "getAll" | "getFields" | "get" | "getAll";
+    readonly operation?: "get" | "getAll" | "resultData" | "get" | "getAll" | "addNewDatasource" | "getAll" | "getFields";
 
     /**
      */

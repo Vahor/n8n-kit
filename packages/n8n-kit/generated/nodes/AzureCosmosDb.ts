@@ -34,43 +34,43 @@ export interface AzureCosmosDbNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "indexingPolicy"?: string, "maxThroughput"?: number, "offerThroughput"?: number } | { "partitionKey"?: string } | { "partitionKey"?: string } | { "partitionKey"?: string };
+    readonly additionalFields?: { "indexingPolicy"?: string, "maxThroughput"?: number, "offerThroughput"?: number } | { "partitionKey"?: string };
 
     /**
      * Select the container you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly container?: any | any | any | any | any | any | any | any;
+    readonly container?: any;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean | boolean | boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * The item contents as a JSON object
      * Default: "{\n\t\"id\": \"replace_with_new_document_id\"\n}"
      */
-    readonly customProperties?: string | string;
+    readonly customProperties?: string;
 
     /**
      * Select the item to be deleted
      * Default: {"mode":"list","value":""}
      */
-    readonly item?: any | any | any;
+    readonly item?: any;
 
     /**
      * The SQL query to execute. Use $1, $2, $3, etc., to reference the 'Query Parameters' set in the options below.

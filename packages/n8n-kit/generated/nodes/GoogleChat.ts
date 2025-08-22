@@ -23,7 +23,7 @@ export interface GoogleChatNodeParameters {
     /**
      * Default: "get"
      */
-    readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "sendAndWait" | "update" | "get" | "getAll";
+    readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "sendAndWait" | "update";
 
     /**
      * Member to be retrieved in the form "spaces/*/members/*"
@@ -35,24 +35,24 @@ export interface GoogleChatNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSpaces"}
      */
-    readonly spaceId?: string | string | string | string;
+    readonly spaceId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"maxValue":1000}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Whether to pass the message object as JSON
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -61,7 +61,7 @@ export interface GoogleChatNodeParameters {
 
     /**
      */
-    readonly jsonNotice?: string | string;
+    readonly jsonNotice?: string;
 
     /**
      * Message input as JSON Object or JSON String
@@ -77,7 +77,7 @@ export interface GoogleChatNodeParameters {
     /**
      * Resource name of the message to be deleted, in the form "spaces//messages/"
      */
-    readonly messageId?: string | string | string;
+    readonly messageId?: string;
 
     /**
      * Default: {}

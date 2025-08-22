@@ -22,7 +22,7 @@ export interface MicrosoftOneDriveNodeParameters {
 
     /**
      */
-    readonly fileId?: string | string | string | string | string;
+    readonly fileId?: string;
 
     /**
      * Default: {}
@@ -38,32 +38,32 @@ export interface MicrosoftOneDriveNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * ID of the file
      */
-    readonly itemId?: string | string;
+    readonly itemId?: string;
 
     /**
      * New name for file
      */
-    readonly newName?: string | string;
+    readonly newName?: string;
 
     /**
      * The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.
      */
-    readonly query?: string | string;
+    readonly query?: string;
 
     /**
      * The type of sharing link to create
      */
-    readonly type?: "view" | "edit" | "embed" | "view" | "edit" | "embed";
+    readonly type?: "view" | "edit" | "embed";
 
     /**
      * The type of sharing link to create
      */
-    readonly scope?: "anonymous" | "organization" | "anonymous" | "organization";
+    readonly scope?: "anonymous" | "organization";
 
     /**
      * The name the file should be saved as
@@ -97,7 +97,7 @@ export interface MicrosoftOneDriveNodeParameters {
 
     /**
      */
-    readonly folderId?: string | string;
+    readonly folderId?: string;
 
 
 }

@@ -18,7 +18,7 @@ export interface ExtractFromFileNodeParameters {
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Default: {}

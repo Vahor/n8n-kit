@@ -24,7 +24,7 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
     /**
      * Whether to watch for the created file in a given folder, rather than the entire OneDrive
      */
-    readonly watchFolder?: boolean | boolean;
+    readonly watchFolder?: boolean;
 
     /**
      * How to select which file to watch
@@ -42,12 +42,12 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
      * The folder to operate on. The 'By URL' option only accepts URLs that start with 'https://onedrive.live.com'.
      * Default: {"mode":"id","value":"","cachedResultName":""}
      */
-    readonly folderId?: any | any;
+    readonly folderId?: any;
 
     /**
      * Default: {}
      */
-    readonly options?: { "folderChild"?: boolean } | { "folderChild"?: boolean };
+    readonly options?: { "folderChild"?: boolean };
 
 
 }

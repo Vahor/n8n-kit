@@ -18,7 +18,7 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Default: "requesterId"
@@ -53,7 +53,7 @@ export interface FreshdeskNodeParameters {
 
     /**
      */
-    readonly ticketId?: string | string | string;
+    readonly ticketId?: string;
 
     /**
      * Default: {}
@@ -84,7 +84,7 @@ export interface FreshdeskNodeParameters {
 
     /**
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      * Default: {}

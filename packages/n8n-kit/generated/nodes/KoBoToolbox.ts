@@ -24,19 +24,19 @@ export interface KoBoToolboxNodeParameters {
      * Form ID (e.g. aSAvYreNzVEkrWg5Gdcvg). Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadForms"}
      */
-    readonly formId?: string | string | string | string;
+    readonly formId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 1000
      * Type options: {"maxValue":3000}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -105,7 +105,7 @@ export interface KoBoToolboxNodeParameters {
      * Name of the binary property to write the file into
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Whether to download the file content into a binary property

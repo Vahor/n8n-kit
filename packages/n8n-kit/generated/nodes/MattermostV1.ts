@@ -24,7 +24,7 @@ export interface MattermostV1NodeParameters {
      * The Mattermost Team. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
-    readonly teamId?: string | string | string | string;
+    readonly teamId?: string;
 
     /**
      * The non-unique UI name for the channel
@@ -46,7 +46,7 @@ export interface MattermostV1NodeParameters {
      * The ID of the channel to soft delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChannels"}
      */
-    readonly channelId?: string | string | string | string | string | string | string;
+    readonly channelId?: string;
 
     /**
      * By default the response only contain the ID of the user. If this option gets activated, it will resolve the user automatically.
@@ -58,20 +58,20 @@ export interface MattermostV1NodeParameters {
      * Whether to return all results or only up to a given limit
      * Default: true
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * The ID of the user to invite into channel. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userId?: string | string | string | string | string;
+    readonly userId?: string;
 
     /**
      * The search term for Channels in a Team
@@ -81,12 +81,12 @@ export interface MattermostV1NodeParameters {
     /**
      * ID of the post to delete
      */
-    readonly postId?: string | string | string | string;
+    readonly postId?: string;
 
     /**
      * The text to send
      */
-    readonly message?: string | string;
+    readonly message?: string;
 
     /**
      * The attachment to add
@@ -104,7 +104,7 @@ export interface MattermostV1NodeParameters {
     /**
      * Emoji to use for this reaction
      */
-    readonly emojiName?: string | string;
+    readonly emojiName?: string;
 
     /**
      */
@@ -120,7 +120,7 @@ export interface MattermostV1NodeParameters {
 
     /**
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * The password used for email authentication

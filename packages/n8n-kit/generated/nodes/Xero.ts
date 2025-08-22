@@ -18,13 +18,13 @@ export interface XeroNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "get" | "getAll" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTenants"}
      */
-    readonly organizationId?: string | string | string | string | string | string | string | string;
+    readonly organizationId?: string;
 
     /**
      * Full name of contact/organisation
@@ -38,19 +38,19 @@ export interface XeroNodeParameters {
 
     /**
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -76,7 +76,7 @@ export interface XeroNodeParameters {
 
     /**
      */
-    readonly invoiceId?: string | string;
+    readonly invoiceId?: string;
 
 
 }

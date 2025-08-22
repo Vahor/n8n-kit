@@ -44,11 +44,11 @@ export interface ItemListsV3NodeParameters {
 
     /**
      */
-    readonly fieldsToExclude?: string | string;
+    readonly fieldsToExclude?: string;
 
     /**
      */
-    readonly fieldsToInclude?: string | string;
+    readonly fieldsToInclude?: string;
 
     /**
      * Default: {}
@@ -113,7 +113,7 @@ export interface ItemListsV3NodeParameters {
     /**
      * The name of the input fields that you want to split the summary by
      */
-    readonly fieldsToSplitBy?: string | string;
+    readonly fieldsToSplitBy?: string;
 
 
 }

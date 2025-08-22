@@ -22,40 +22,40 @@ export interface AutomizyNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * The email address of the contact
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getLists"}
      */
-    readonly listId?: string | string | string | string | string;
+    readonly listId?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: string[] } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string };
+    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: string[] } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string };
 
     /**
      * Can be ID or email
      */
-    readonly contactId?: string | string;
+    readonly contactId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -64,7 +64,7 @@ export interface AutomizyNodeParameters {
 
     /**
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
 
 }

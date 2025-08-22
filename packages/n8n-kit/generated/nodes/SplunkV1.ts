@@ -27,19 +27,19 @@ export interface SplunkV1NodeParameters {
     /**
      * ID of the search configuration to delete
      */
-    readonly searchConfigurationId?: string | string;
+    readonly searchConfigurationId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -59,7 +59,7 @@ export interface SplunkV1NodeParameters {
     /**
      * ID of the search job to delete
      */
-    readonly searchJobId?: string | string | string;
+    readonly searchJobId?: string;
 
     /**
      * Default: {}
@@ -86,7 +86,7 @@ export interface SplunkV1NodeParameters {
     /**
      * ID of the user to delete
      */
-    readonly userId?: string | string | string;
+    readonly userId?: string;
 
     /**
      * Default: {}

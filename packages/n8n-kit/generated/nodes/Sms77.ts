@@ -18,7 +18,7 @@ export interface Sms77NodeParameters {
     /**
      * Default: "send"
      */
-    readonly operation?: "send" | "send";
+    readonly operation?: "send";
 
     /**
      * The caller ID displayed in the receivers display. Max 16 numeric or 11 alphanumeric characters.

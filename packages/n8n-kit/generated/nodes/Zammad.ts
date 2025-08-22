@@ -23,16 +23,16 @@ export interface ZammadNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getSelf" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getSelf" | "update";
 
     /**
      */
-    readonly name?: string | string;
+    readonly name?: string;
 
     /**
      * Group to update. Specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      */
-    readonly id?: string | string | string | string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Default: {}
@@ -47,14 +47,14 @@ export interface ZammadNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Title of the ticket to create

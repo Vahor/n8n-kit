@@ -24,24 +24,24 @@ export interface OnfleetNodeParameters {
     /**
      * The ID of the admin object for lookup
      */
-    readonly id?: string | string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 64
      * Type options: {"minValue":1,"maxValue":64}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * The administrator's name
      */
-    readonly name?: string | string | string | string | string;
+    readonly name?: string;
 
     /**
      * The administrator's email address
@@ -121,7 +121,7 @@ export interface OnfleetNodeParameters {
     /**
      * Default: {}
      */
-    readonly destination?: { "destinationProperties": any } | { "destinationProperties": any };
+    readonly destination?: { "destinationProperties": any };
 
     /**
      * The variable that is used for looking up a recipient
@@ -132,7 +132,7 @@ export interface OnfleetNodeParameters {
     /**
      * The phone of the recipient for lookup
      */
-    readonly phone?: string | string;
+    readonly phone?: string;
 
     /**
      * The recipient's complete name

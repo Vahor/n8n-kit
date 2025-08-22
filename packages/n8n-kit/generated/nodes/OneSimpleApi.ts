@@ -23,18 +23,18 @@ export interface OneSimpleApiNodeParameters {
     /**
      * Link to webpage to convert
      */
-    readonly link?: string | string | string | string | string;
+    readonly link?: string;
 
     /**
      * Whether to download the PDF or return a link to it
      */
-    readonly download?: boolean | boolean | boolean;
+    readonly download?: boolean;
 
     /**
      * The name of the output field to put the binary file data in
      * Default: "data"
      */
-    readonly output?: string | string | string;
+    readonly output?: string;
 
     /**
      * Default: {}

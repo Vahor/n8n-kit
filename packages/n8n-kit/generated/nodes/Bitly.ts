@@ -38,11 +38,11 @@ export interface BitlyNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly deeplink?: { "deeplinkUi": any } | { "deeplinkUi": any };
+    readonly deeplink?: { "deeplinkUi": any };
 
     /**
      */
-    readonly id?: string | string;
+    readonly id?: string;
 
     /**
      * Default: {}

@@ -27,12 +27,12 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * The name to display in the address book for the group
      */
-    readonly displayName?: string | string;
+    readonly displayName?: string;
 
     /**
      * The mail alias for the group. Only enter the local-part without the domain.
      */
-    readonly mailNickname?: string | string;
+    readonly mailNickname?: string;
 
     /**
      * Whether the group is mail-enabled
@@ -57,19 +57,19 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any | any | any | any | any;
+    readonly group?: any;
 
     /**
      * Default: "simple"
      */
-    readonly output?: "simple" | "raw" | "fields" | "simple" | "raw" | "fields" | "simple" | "raw" | "fields" | "simple" | "raw" | "fields";
+    readonly output?: "simple" | "raw" | "fields";
 
     /**
      * The fields to add to the output
      * Default: []
      * Type options: {"loadOptionsMethod":"getGroupProperties"}
      */
-    readonly fields?: string[] | string[] | string[] | string[];
+    readonly fields?: string[];
 
     /**
      * Default: {}
@@ -79,19 +79,19 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * <a href="https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter">Query parameter</a> to filter results by
      */
-    readonly filter?: string | string;
+    readonly filter?: string;
 
     /**
      * Default: {}
@@ -101,7 +101,7 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any | any | any | any | any;
+    readonly user?: any;
 
     /**
      * Whether the account is enabled

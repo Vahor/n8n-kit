@@ -29,17 +29,17 @@ export interface PostgresV1NodeParameters {
      * Name of the schema the table belongs to
      * Default: "public"
      */
-    readonly schema?: string | string;
+    readonly schema?: string;
 
     /**
      * Name of the table in which to insert data to
      */
-    readonly table?: string | string;
+    readonly table?: string;
 
     /**
      * Comma-separated list of the properties which should used as columns for the new rows. You can use type casting with colons (:) like id:int.
      */
-    readonly columns?: string | string;
+    readonly columns?: string;
 
     /**
      * Comma-separated list of the properties which decides which rows in the database should be updated. Normally that would be "id".

@@ -33,19 +33,19 @@ export interface AutopilotNodeParameters {
     /**
      * Can be ID or email
      */
-    readonly contactId?: string | string | string | string;
+    readonly contactId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * List ID. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

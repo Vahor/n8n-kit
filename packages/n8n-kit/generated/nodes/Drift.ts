@@ -38,7 +38,7 @@ export interface DriftNodeParameters {
     /**
      * Unique identifier for the contact
      */
-    readonly contactId?: string | string | string;
+    readonly contactId?: string;
 
     /**
      * Default: {}

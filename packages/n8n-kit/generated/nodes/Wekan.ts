@@ -18,12 +18,12 @@ export interface WekanNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "delete" | "get" | "update" | "create" | "delete" | "get" | "getAll";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "delete" | "get" | "update";
 
     /**
      * The title of the board
      */
-    readonly title?: string | string | string | string;
+    readonly title?: string;
 
     /**
      * The user ID in Wekan. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -39,7 +39,7 @@ export interface WekanNodeParameters {
     /**
      * The ID of the board to delete
      */
-    readonly boardId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly boardId?: string;
 
     /**
      * The ID of the user that boards are attached. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -50,38 +50,38 @@ export interface WekanNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":200}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * The ID of the list to create card in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getLists","loadOptionsDependsOn":["boardId"]}
      */
-    readonly listId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly listId?: string;
 
     /**
      * The swimlane ID of the new card. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getSwimlanes","loadOptionsDependsOn":["boardId"]}
      */
-    readonly swimlaneId?: string | string;
+    readonly swimlaneId?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly authorId?: string | string;
+    readonly authorId?: string;
 
     /**
      * The ID of the card to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getCards","loadOptionsDependsOn":["boardId","listId"]}
      */
-    readonly cardId?: string | string | string | string | string | string | string | string | string | string | string | string | string | string;
+    readonly cardId?: string;
 
     /**
      */
@@ -101,7 +101,7 @@ export interface WekanNodeParameters {
      * The ID of the comment to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getComments","loadOptionsDependsOn":["boardId","cardId"]}
      */
-    readonly commentId?: string | string;
+    readonly commentId?: string;
 
     /**
      * Items to be added to the checklist
@@ -114,13 +114,13 @@ export interface WekanNodeParameters {
      * The ID of the checklist to delete. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChecklists","loadOptionsDependsOn":["boardId","cardId"]}
      */
-    readonly checklistId?: string | string | string | string | string;
+    readonly checklistId?: string;
 
     /**
      * The ID of the checklistItem item to get. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getChecklistItems","loadOptionsDependsOn":["boardId","cardId","checklistId"]}
      */
-    readonly checklistItemId?: string | string | string;
+    readonly checklistItemId?: string;
 
 
 }

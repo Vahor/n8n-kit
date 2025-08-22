@@ -18,7 +18,7 @@ export interface PaddleNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "getAll" | "update" | "getAll" | "reschedule" | "get" | "getAll" | "getAll" | "getAll";
+    readonly operation?: "create" | "getAll" | "update" | "getAll" | "reschedule" | "get" | "getAll" | "getAll";
 
     /**
      * Either product (valid for specified products or subscription plans) or checkout (valid for any checkout)
@@ -44,7 +44,7 @@ export interface PaddleNodeParameters {
      * Default: 1
      * Type options: {"minValue":1}
      */
-    readonly discountAmount?: number | number;
+    readonly discountAmount?: number;
 
     /**
      * The currency must match the balance currency specified in your account
@@ -54,13 +54,13 @@ export interface PaddleNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean | boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Attributes in JSON form
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: string | string | string | string;
+    readonly additionalFieldsJson?: string;
 
     /**
      * Default: {}
@@ -75,14 +75,14 @@ export interface PaddleNodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Either flat or percentage

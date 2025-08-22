@@ -23,12 +23,12 @@ export interface ElasticsearchNodeParameters {
     /**
      * ID of the index containing the document to delete
      */
-    readonly indexId?: string | string | string | string | string | string | string | string;
+    readonly indexId?: string;
 
     /**
      * ID of the document to delete
      */
-    readonly documentId?: string | string | string;
+    readonly documentId?: string;
 
     /**
      * Default: {}
@@ -39,12 +39,12 @@ export interface ElasticsearchNodeParameters {
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      */
@@ -55,24 +55,24 @@ export interface ElasticsearchNodeParameters {
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * Whether to insert the input data this node receives in the new row
      * Default: "defineBelow"
      */
-    readonly dataToSend?: "defineBelow" | "autoMapInputData" | "defineBelow" | "autoMapInputData";
+    readonly dataToSend?: "defineBelow" | "autoMapInputData";
 
     /**
      * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
      */
-    readonly inputsToIgnore?: string | string;
+    readonly inputsToIgnore?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any } | { "fieldValues": any };
+    readonly fieldsUi?: { "fieldValues": any };
 
     /**
      * Default: {}

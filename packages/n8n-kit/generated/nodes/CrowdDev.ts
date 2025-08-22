@@ -18,7 +18,7 @@ export interface CrowdDevNodeParameters {
     /**
      * Default: "createWithMember"
      */
-    readonly operation?: "createWithMember" | "createForMember" | "createOrUpdate" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "destroy" | "find" | "list" | "update";
+    readonly operation?: "createWithMember" | "createForMember" | "createOrUpdate" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "destroy" | "find" | "list" | "update";
 
     /**
      * Default: {}
@@ -61,7 +61,7 @@ export interface CrowdDevNodeParameters {
     /**
      * Platform on which the activity took place
      */
-    readonly platform?: string | string;
+    readonly platform?: string;
 
     /**
      * The ID of the activity in the platform (e.g. the ID of the message in Discord)
@@ -76,7 +76,7 @@ export interface CrowdDevNodeParameters {
     /**
      * The ID of the member
      */
-    readonly id?: string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * The body of the note

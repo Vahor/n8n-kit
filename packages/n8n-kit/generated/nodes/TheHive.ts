@@ -20,44 +20,44 @@ export interface TheHiveNodeParameters {
      * Default: "create"
      * Type options: {"loadOptionsMethod":"loadAlertOptions"}
      */
-    readonly operation?: string | string | string | string | "create" | "executeResponder" | "getAll" | "get";
+    readonly operation?: string | "create" | "executeResponder" | "getAll" | "get";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Title of the alert
      */
-    readonly id?: string | string | string | string | string;
+    readonly id?: string;
 
     /**
      */
-    readonly caseId?: string | string | string;
+    readonly caseId?: string;
 
     /**
      * Title of the alert
      */
-    readonly title?: string | string | string;
+    readonly title?: string;
 
     /**
      * Description of the alert
      */
-    readonly description?: string | string;
+    readonly description?: string;
 
     /**
      * Severity of the alert. Default=Medium.
      * Default: 2
      */
-    readonly severity?: "1" | "2" | "3" | "1" | "2" | "3";
+    readonly severity?: "1" | "2" | "3";
 
     /**
      * Date and time when the alert was raised default=now
@@ -67,19 +67,19 @@ export interface TheHiveNodeParameters {
     /**
      * Case Tags
      */
-    readonly tags?: string | string;
+    readonly tags?: string;
 
     /**
      * Traffict Light Protocol (TLP). Default=Amber.
      * Default: 2
      */
-    readonly tlp?: "0" | "1" | "2" | "3" | "0" | "1" | "2" | "3" | "0" | "1" | "2" | "3";
+    readonly tlp?: "0" | "1" | "2" | "3";
 
     /**
      * Status of the alert
      * Default: "New"
      */
-    readonly status?: "New" | "Updated" | "Ignored" | "Imported" | "Ok" | "Deleted" | "Cancel" | "Completed" | "InProgress" | "Waiting" | "Ok" | "Deleted";
+    readonly status?: "New" | "Updated" | "Ignored" | "Imported" | "Ok" | "Deleted" | "Cancel" | "Completed" | "InProgress" | "Waiting";
 
     /**
      * Type of the alert
@@ -113,12 +113,12 @@ export interface TheHiveNodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["id"],"loadOptionsMethod":"loadResponders"}
      */
-    readonly responder?: string | string | string | string | string;
+    readonly responder?: string;
 
     /**
      * Default: true
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * Default: {}
@@ -133,7 +133,7 @@ export interface TheHiveNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "sort"?: string } | { "includeSimilar"?: boolean } | { "tags"?: string } | { "sort"?: string } | { "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "endDate"?: string, "summary"?: string, "metrics"?: string } | { "sort"?: string } | { "description"?: string, "endDate"?: string, "owner"?: string, "startDate"?: string } | { "sort"?: string } | { "attachmentValues"?: { "attachmentValues": any } };
+    readonly options?: { "sort"?: string } | { "includeSimilar"?: boolean } | { "tags"?: string } | { "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "endDate"?: string, "summary"?: string, "metrics"?: string } | { "description"?: string, "endDate"?: string, "owner"?: string, "startDate"?: string } | { "attachmentValues"?: { "attachmentValues": any } };
 
     /**
      * Default: {}
@@ -159,12 +159,12 @@ export interface TheHiveNodeParameters {
     /**
      * Description of the observable in the context of the case
      */
-    readonly message?: string | string;
+    readonly message?: string;
 
     /**
      * Date and time of the begin of the case default=now
      */
-    readonly startDate?: string | string | string;
+    readonly startDate?: string;
 
     /**
      * Whether the observable is an IOC (Indicator of compromise)
@@ -190,7 +190,7 @@ export interface TheHiveNodeParameters {
     /**
      * Flag of the case default=false
      */
-    readonly flag?: boolean | boolean;
+    readonly flag?: boolean;
 
     /**
      * ID of the task

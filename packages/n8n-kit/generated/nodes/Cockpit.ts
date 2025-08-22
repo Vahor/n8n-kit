@@ -50,20 +50,20 @@ export interface CockpitNodeParameters {
     /**
      * Whether new entry fields should be set via the value-key pair UI or JSON
      */
-    readonly jsonDataFields?: boolean | boolean;
+    readonly jsonDataFields?: boolean;
 
     /**
      * Entry data to send as JSON
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly dataFieldsJson?: string | string;
+    readonly dataFieldsJson?: string;
 
     /**
      * Entry data to send
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataFieldsUi?: { "field": any } | { "field": any };
+    readonly dataFieldsUi?: { "field": any };
 
     /**
      * Name of the form to operate on

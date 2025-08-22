@@ -28,7 +28,7 @@ export interface TwitterV1NodeParameters {
     /**
      * The text of your Direct Message. URL encode as necessary. Max length of 10,000 characters.
      */
-    readonly text?: string | string;
+    readonly text?: string;
 
     /**
      * Default: {}
@@ -38,7 +38,7 @@ export interface TwitterV1NodeParameters {
     /**
      * The ID of the tweet to delete
      */
-    readonly tweetId?: string | string | string;
+    readonly tweetId?: string;
 
     /**
      * A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href="https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators">here</a>.

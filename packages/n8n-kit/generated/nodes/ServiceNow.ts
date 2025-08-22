@@ -24,18 +24,18 @@ export interface ServiceNowNodeParameters {
     /**
      * Default: "upload"
      */
-    readonly operation?: "upload" | "delete" | "get" | "getAll" | "getAll" | "getAll" | "getAll" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "getAll" | "getAll";
+    readonly operation?: "upload" | "delete" | "get" | "getAll" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getTables"}
      */
-    readonly tableName?: string | string | string | string | string;
+    readonly tableName?: string;
 
     /**
      * Sys_id of the record in the table specified in Table Name that you want to attach the file to
      */
-    readonly id?: string | string | string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * Name of the binary property that contains the data to upload
@@ -46,24 +46,24 @@ export interface ServiceNowNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "file_name"?: string } | { "queryFilter"?: string } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" };
+    readonly options?: { "file_name"?: string } | { "queryFilter"?: string } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: string[], "sysparm_display_value"?: "false" | "all" | "true" };
 
     /**
      * Sys_id value of the attachment to delete
      */
-    readonly attachmentId?: string | string;
+    readonly attachmentId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number | number | number | number | number | number | number;
+    readonly limit?: number;
 
     /**
      */
@@ -78,7 +78,7 @@ export interface ServiceNowNodeParameters {
     /**
      * Short description of the incident
      */
-    readonly short_description?: string | string;
+    readonly short_description?: string;
 
     /**
      * Default: {}
@@ -93,18 +93,18 @@ export interface ServiceNowNodeParameters {
     /**
      * Default: "columns"
      */
-    readonly dataToSend?: "mapInput" | "columns" | "nothing" | "mapInput" | "columns" | "nothing";
+    readonly dataToSend?: "mapInput" | "columns" | "nothing";
 
     /**
      * List of input properties to avoid sending, separated by commas. Leave empty to send all inputs.
      */
-    readonly inputsToIgnore?: string | string;
+    readonly inputsToIgnore?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSend?: { "field": any } | { "field": any };
+    readonly fieldsToSend?: { "field": any };
 
     /**
      * Unique identifier of the user

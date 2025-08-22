@@ -27,33 +27,33 @@ export interface MicrosoftExcelV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly workbook?: any | any | any | any | any | any | any | any | any | any | any | any | any | any | any | any;
+    readonly workbook?: any;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly worksheet?: any | any | any | any | any | any | any | any | any | any | any | any | any;
+    readonly worksheet?: any;
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly table?: any | any | any | any | any | any;
+    readonly table?: any;
 
     /**
      * Default: "define"
      */
-    readonly dataMode?: "autoMap" | "define" | "raw" | "autoMap" | "define" | "raw" | "autoMap" | "define" | "raw" | "autoMap" | "define";
+    readonly dataMode?: "autoMap" | "define" | "raw" | "autoMap" | "define";
 
     /**
      * Raw values for the specified range as array of string arrays in JSON format
      */
-    readonly data?: string | string | string;
+    readonly data?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsUi?: { "values": any } | { "values": any } | { "values": any } | { "values": any };
+    readonly fieldsUi?: { "values": any };
 
     /**
      * Default: {}
@@ -68,7 +68,7 @@ export interface MicrosoftExcelV2NodeParameters {
     /**
      * The range of cells that will be converted to a table
      */
-    readonly range?: string | string | string | string | string | string;
+    readonly range?: string;
 
     /**
      * Whether the range has column labels. When this property set to false Excel will automatically generate header shifting the data down by one row.
@@ -79,30 +79,30 @@ export interface MicrosoftExcelV2NodeParameters {
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number | number;
+    readonly limit?: number;
 
     /**
      * Whether the data should be returned RAW instead of parsed into keys according to their header
      */
-    readonly rawData?: boolean | boolean;
+    readonly rawData?: boolean;
 
     /**
      * The name of the property into which to write the RAW data
      * Default: "data"
      */
-    readonly dataProperty?: string | string;
+    readonly dataProperty?: string;
 
     /**
      * Default: {}
      */
-    readonly filters?: { "fields"?: string } | { "fields"?: string, "column"?: string[] } | { "fields"?: string } | { "fields"?: string };
+    readonly filters?: { "fields"?: string } | { "fields"?: string, "column"?: string[] };
 
     /**
      * The name of the column in which to look for value
@@ -126,7 +126,7 @@ export interface MicrosoftExcelV2NodeParameters {
 
     /**
      */
-    readonly useRange?: boolean | boolean | boolean | boolean;
+    readonly useRange?: boolean;
 
     /**
      * Relative to selected 'Range', first row index is 0
@@ -145,11 +145,11 @@ export interface MicrosoftExcelV2NodeParameters {
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsDependsOn":["worksheet.value","workbook.value","range"],"loadOptionsMethod":"getWorksheetColumnRow"}
      */
-    readonly columnToMatchOn?: string | string;
+    readonly columnToMatchOn?: string;
 
     /**
      */
-    readonly valueToMatchOn?: string | string;
+    readonly valueToMatchOn?: string;
 
 
 }

@@ -19,7 +19,7 @@ export interface CryptoNodeParameters {
      * The hash type to use
      * Default: "MD5"
      */
-    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512" | "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
+    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
     /**
      * Whether the data to hashed should be taken from binary field
@@ -35,18 +35,18 @@ export interface CryptoNodeParameters {
     /**
      * The value that should be hashed
      */
-    readonly value?: string | string | string;
+    readonly value?: string;
 
     /**
      * Name of the property to which to write the hash
      * Default: "data"
      */
-    readonly dataPropertyName?: string | string | string | string;
+    readonly dataPropertyName?: string;
 
     /**
      * Default: "hex"
      */
-    readonly encoding?: "base64" | "hex" | "base64" | "hex" | "base64" | "hex";
+    readonly encoding?: "base64" | "hex";
 
     /**
      * Type options: {"password":true}

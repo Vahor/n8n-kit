@@ -30,7 +30,7 @@ export interface ZulipNodeParameters {
     /**
      * The content of the message
      */
-    readonly content?: string | string;
+    readonly content?: string;
 
     /**
      * The destination stream, or a comma-separated list containing the usernames (emails) of the recipients. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -47,7 +47,7 @@ export interface ZulipNodeParameters {
     /**
      * Unique identifier for the message
      */
-    readonly messageId?: string | string | string;
+    readonly messageId?: string;
 
     /**
      * Default: {}
@@ -61,13 +61,13 @@ export interface ZulipNodeParameters {
 
     /**
      */
-    readonly jsonParameters?: boolean | boolean;
+    readonly jsonParameters?: boolean;
 
     /**
      * JSON format parameters for stream creation
      * Type options: {"alwaysOpenEditWindow":true}
      */
-    readonly additionalFieldsJson?: string | string;
+    readonly additionalFieldsJson?: string;
 
     /**
      * A list of dictionaries containing the the key name and value specifying the name of the stream to subscribe. If the stream does not exist a new stream is created.
@@ -84,7 +84,7 @@ export interface ZulipNodeParameters {
     /**
      * ID of stream to update
      */
-    readonly streamId?: string | string;
+    readonly streamId?: string;
 
     /**
      * The email address of the new user
@@ -110,7 +110,7 @@ export interface ZulipNodeParameters {
     /**
      * The ID of user to get
      */
-    readonly userId?: string | string | string;
+    readonly userId?: string;
 
 
 }

@@ -23,7 +23,7 @@ export interface LdapNodeParameters {
      * The distinguished name of the entry to compare
      * Type options: {"alwaysOpenEditWindow":false}
      */
-    readonly dn?: string | string | string | string | string | string;
+    readonly dn?: string;
 
     /**
      * The ID of the attribute to compare

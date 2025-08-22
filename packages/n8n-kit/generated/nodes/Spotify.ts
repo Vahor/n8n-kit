@@ -23,12 +23,12 @@ export interface SpotifyNodeParameters {
     /**
      * Enter a playlist, artist, or album URI or ID
      */
-    readonly id?: string | string | string | string | string | string;
+    readonly id?: string;
 
     /**
      * The keyword term to search for
      */
-    readonly query?: string | string | string | string;
+    readonly query?: string;
 
     /**
      * Top tracks in which country? Enter the postal abbreviation
@@ -61,7 +61,7 @@ export interface SpotifyNodeParameters {
      * Default: 50
      * Type options: {"minValue":1,"maxValue":100}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * The volume percentage to set

@@ -39,7 +39,7 @@ export interface PagerDutyNodeParameters {
     /**
      * The email address of a valid user associated with the account making the request
      */
-    readonly email?: string | string | string;
+    readonly email?: string;
 
     /**
      * Default: {}
@@ -50,24 +50,24 @@ export interface PagerDutyNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly conferenceBridgeUi?: { "conferenceBridgeValues": any } | { "conferenceBridgeValues": any };
+    readonly conferenceBridgeUi?: { "conferenceBridgeValues": any };
 
     /**
      * Unique identifier for the incident
      */
-    readonly incidentId?: string | string | string | string;
+    readonly incidentId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}

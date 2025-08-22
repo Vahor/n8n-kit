@@ -18,7 +18,7 @@ export interface WooCommerceNodeParameters {
     /**
      * Default: "create"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -32,19 +32,19 @@ export interface WooCommerceNodeParameters {
     /**
      * ID of the customer to delete
      */
-    readonly customerId?: string | string | string;
+    readonly customerId?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 50
      * Type options: {"minValue":1}
      */
-    readonly limit?: number | number | number;
+    readonly limit?: number;
 
     /**
      * Default: {}
@@ -66,25 +66,25 @@ export interface WooCommerceNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly dimensionsUi?: { "dimensionsValues": any } | { "dimensionsValues": any };
+    readonly dimensionsUi?: { "dimensionsValues": any };
 
     /**
      * Product Image
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly imagesUi?: { "imagesValues": any } | { "imagesValues": any };
+    readonly imagesUi?: { "imagesValues": any };
 
     /**
      * Meta data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly metadataUi?: { "metadataValues": any } | { "metadataValues": any } | { "metadataValues": any } | { "metadataValues": any };
+    readonly metadataUi?: { "metadataValues": any };
 
     /**
      */
-    readonly productId?: string | string | string;
+    readonly productId?: string;
 
     /**
      * Default: {}
@@ -96,46 +96,46 @@ export interface WooCommerceNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly billingUi?: { "billingValues": any } | { "billingValues": any };
+    readonly billingUi?: { "billingValues": any };
 
     /**
      * Coupons line data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly couponLinesUi?: { "couponLinesValues": any } | { "couponLinesValues": any };
+    readonly couponLinesUi?: { "couponLinesValues": any };
 
     /**
      * Fee line data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly feeLinesUi?: { "feeLinesValues": any } | { "feeLinesValues": any };
+    readonly feeLinesUi?: { "feeLinesValues": any };
 
     /**
      * Line item data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly lineItemsUi?: { "lineItemsValues": any } | { "lineItemsValues": any };
+    readonly lineItemsUi?: { "lineItemsValues": any };
 
     /**
      * Shipping address
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly shippingUi?: { "shippingValues": any } | { "shippingValues": any };
+    readonly shippingUi?: { "shippingValues": any };
 
     /**
      * Shipping line data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly shippingLinesUi?: { "shippingLinesValues": any } | { "shippingLinesValues": any };
+    readonly shippingLinesUi?: { "shippingLinesValues": any };
 
     /**
      */
-    readonly orderId?: string | string | string;
+    readonly orderId?: string;
 
 
 }

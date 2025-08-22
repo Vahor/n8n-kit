@@ -18,36 +18,36 @@ export interface RedisNodeParameters {
     /**
      * Name of the key to delete from Redis
      */
-    readonly key?: string | string | string | string;
+    readonly key?: string;
 
     /**
      * Name of the property to write received data to. Supports dot-notation. Example: "data.person[0].name".
      * Default: "propertyName"
      */
-    readonly propertyName?: string | string;
+    readonly propertyName?: string;
 
     /**
      * The type of the key to get
      * Default: "automatic"
      */
-    readonly keyType?: "automatic" | "hash" | "list" | "sets" | "string" | "automatic" | "hash" | "list" | "sets" | "string";
+    readonly keyType?: "automatic" | "hash" | "list" | "sets" | "string";
 
     /**
      * Default: {}
      */
-    readonly options?: { "dotNotation"?: boolean } | { "dotNotation"?: boolean };
+    readonly options?: { "dotNotation"?: boolean };
 
     /**
      * Whether to set a timeout on key
      */
-    readonly expire?: boolean | boolean;
+    readonly expire?: boolean;
 
     /**
      * Number of seconds before key expiration
      * Default: 60
      * Type options: {"minValue":1}
      */
-    readonly ttl?: number | number;
+    readonly ttl?: number;
 
     /**
      * The key pattern for the keys to return
@@ -79,7 +79,7 @@ export interface RedisNodeParameters {
     /**
      * Data to publish
      */
-    readonly messageData?: string | string;
+    readonly messageData?: string;
 
     /**
      * Name of the list in Redis

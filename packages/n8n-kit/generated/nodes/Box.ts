@@ -22,39 +22,39 @@ export interface BoxNodeParameters {
 
     /**
      */
-    readonly fileId?: string | string | string | string | string;
+    readonly fileId?: string;
 
     /**
      * The ID of folder to copy the file to. If not defined will be copied to the root folder.
      */
-    readonly parentId?: string | string | string;
+    readonly parentId?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "fields"?: string, "name"?: string, "version"?: string } | { "fields"?: string } | { "contet_types"?: string, "createdRangeUi"?: { "createdRangeValuesUi": any }, "direction"?: "ASC" | "DESC", "fields"?: string, "file_extensions"?: string, "ancestor_folder_ids"?: string, "scope"?: "user_content" | "enterprise_content", "size_range"?: string, "sort"?: "relevance" | "modified_at", "trash_content"?: "non_trashed_only" | "trashed_only", "updatedRangeUi"?: { "updatedRangeValuesUi": any }, "owner_user_ids"?: string } | { "contet_types"?: string, "createdRangeUi"?: { "createdRangeValuesUi": any }, "direction"?: "ASC" | "DESC", "fields"?: string, "file_extensions"?: string, "ancestor_folder_ids"?: string, "scope"?: "user_content" | "enterprise_content", "size_range"?: string, "sort"?: "relevance" | "modified_at", "trash_content"?: "non_trashed_only" | "trashed_only", "updatedRangeUi"?: { "updatedRangeValuesUi": any }, "owner_user_ids"?: string };
+    readonly additionalFields?: { "fields"?: string, "name"?: string, "version"?: string } | { "fields"?: string } | { "contet_types"?: string, "createdRangeUi"?: { "createdRangeValuesUi": any }, "direction"?: "ASC" | "DESC", "fields"?: string, "file_extensions"?: string, "ancestor_folder_ids"?: string, "scope"?: "user_content" | "enterprise_content", "size_range"?: string, "sort"?: "relevance" | "modified_at", "trash_content"?: "non_trashed_only" | "trashed_only", "updatedRangeUi"?: { "updatedRangeValuesUi": any }, "owner_user_ids"?: string };
 
     /**
      * Default: "data"
      */
-    readonly binaryPropertyName?: string | string;
+    readonly binaryPropertyName?: string;
 
     /**
      * The string to search for. This query is matched against item names, descriptions, text content of files, and various other fields of the different item types.
      */
-    readonly query?: string | string;
+    readonly query?: string;
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
      * Default: 100
      * Type options: {"minValue":1,"maxValue":500}
      */
-    readonly limit?: number | number;
+    readonly limit?: number;
 
     /**
      * The type of object the file will be shared with
@@ -65,33 +65,33 @@ export interface BoxNodeParameters {
      * Whether identify the user by email or ID
      * Default: true
      */
-    readonly useEmail?: boolean | boolean;
+    readonly useEmail?: boolean;
 
     /**
      * The user's email address to share the file with
      */
-    readonly email?: string | string;
+    readonly email?: string;
 
     /**
      * The user's ID to share the file with
      */
-    readonly userId?: string | string;
+    readonly userId?: string;
 
     /**
      * The group's ID to share the file with
      */
-    readonly groupId?: string | string;
+    readonly groupId?: string;
 
     /**
      * The level of access granted
      * Default: "editor"
      */
-    readonly role?: "coOwner" | "editor" | "previewer" | "previewerUploader" | "uploader" | "viewer" | "viewerUploader" | "coOwner" | "editor" | "previewer" | "previewerUploader" | "uploader" | "viewer" | "viewerUploader";
+    readonly role?: "coOwner" | "editor" | "previewer" | "previewerUploader" | "uploader" | "viewer" | "viewerUploader";
 
     /**
      * Default: {}
      */
-    readonly options?: { "can_view_path"?: boolean, "expires_at"?: string, "fields"?: string, "notify"?: boolean } | { "access"?: "collaborators" | "open", "fields"?: string } | { "can_view_path"?: boolean, "expires_at"?: string, "fields"?: string, "notify"?: boolean };
+    readonly options?: { "can_view_path"?: boolean, "expires_at"?: string, "fields"?: string, "notify"?: boolean } | { "access"?: "collaborators" | "open", "fields"?: string };
 
     /**
      * The name the file should be saved as
@@ -115,7 +115,7 @@ export interface BoxNodeParameters {
 
     /**
      */
-    readonly folderId?: string | string | string | string;
+    readonly folderId?: string;
 
     /**
      * Whether to delete a folder that is not empty by recursively deleting the folder and all of its content

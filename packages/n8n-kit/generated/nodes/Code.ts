@@ -24,17 +24,17 @@ export interface CodeNodeParameters {
      * JavaScript code to execute.<br><br>Tip: You can use luxon vars like <code>$today</code> for dates and <code>$jmespath</code> for querying JSON structures. <a href="https://docs.n8n.io/nodes/n8n-nodes-base.function">Learn more</a>.
      * Type options: {"editor":"codeNodeEditor","editorLanguage":"javaScript"}
      */
-    readonly jsCode?: string | string | string | string;
+    readonly jsCode?: string;
 
     /**
      */
-    readonly notice?: string | string | string;
+    readonly notice?: string;
 
     /**
      * Python code to execute.<br><br>Tip: You can use built-in methods and variables like <code>_today</code> for dates and <code>_jmespath</code> for querying JSON structures. <a href="https://docs.n8n.io/code/builtin/">Learn more</a>.
      * Type options: {"editor":"codeNodeEditor","editorLanguage":"python"}
      */
-    readonly pythonCode?: string | string;
+    readonly pythonCode?: string;
 
 
 }

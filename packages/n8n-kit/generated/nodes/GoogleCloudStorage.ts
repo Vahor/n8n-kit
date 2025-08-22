@@ -18,7 +18,7 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: "getAll"
      */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      */
@@ -26,7 +26,7 @@ export interface GoogleCloudStorageNodeParameters {
 
     /**
      */
-    readonly bucketName?: string | string;
+    readonly bucketName?: string;
 
     /**
      */
@@ -35,12 +35,12 @@ export interface GoogleCloudStorageNodeParameters {
     /**
      * Default: "noAcl"
      */
-    readonly projection?: "full" | "noAcl" | "full" | "noAcl";
+    readonly projection?: "full" | "noAcl";
 
     /**
      * Whether to return all results or only up to a given limit
      */
-    readonly returnAll?: boolean | boolean;
+    readonly returnAll?: boolean;
 
     /**
      * Default: {}

@@ -45,13 +45,13 @@ export interface GoogleDocsNodeParameters {
     /**
      * The ID in the document URL (or just paste the whole URL)
      */
-    readonly documentURL?: string | string;
+    readonly documentURL?: string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simple?: boolean | boolean;
+    readonly simple?: boolean;
 
     /**
      * Actions applied to update the document
