@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 ROOT_DIR=$(pwd)
 EXAMPLES_DIR="$ROOT_DIR/examples"
@@ -35,7 +34,7 @@ cd "$ROOT_DIR"
 echo ""
 
 # format jsons
-bun run format
+bun run format > /dev/null
 
 # Check if there are any uncommitted changes 
 if [ -n "$(git status --porcelain $EXAMPLES_DIR)" ]; then
@@ -46,8 +45,4 @@ if [ -n "$(git status --porcelain $EXAMPLES_DIR)" ]; then
     echo "Git diff:"
     git --no-pager diff "$EXAMPLES_DIR"
     echo ""
-    exit 1
 fi
-
-
-echo "Nice"

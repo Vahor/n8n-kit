@@ -1,0 +1,78 @@
+name: Check examples
+
+on:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  run:
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/check-examples')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: "[example-check]"
+      - name: Render template
+        id: template
+        uses: chuhlomin/render-template@v1.4
+        with:
+          template: .github/example-check-running.md
+
+      - name: Create comment
+        if: steps.fc.outputs.comment-id == ''
+        id: comment 
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ steps.template.outputs.result }}
+
+      - name: Update comment
+        if: steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          body: ${{ steps.template.outputs.result }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - name: Build
+        run: bun run --filter '*' build
+
+      - name: Check examples
+        id: check
+        run: bash scripts/build-and-check-examples.sh | tee check-examples.log
+
+      - name: Read logs
+        id: read-logs
+        run: |
+          echo 'logs<<EOF' >> $GITHUB_OUTPUT
+          tail -n 200 check-examples.log >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+
+      - name: Render template
+        id: template-end
+        uses: chuhlomin/render-template@v1.4
+        with:
+          template: .github/example-check-end.md
+          vars: |
+            logs: ```${{ steps.read-logs.outputs.logs }}```
+            title: ${{ steps.check.outcome == 'success' && '✅ Examples check passed' || '❌ Examples check failed' }}
+
+      - name: Update comment
+        if: steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id || steps.comment.outputs.comment-id }}
+          body: ${{ steps.template-end.outputs.result }}
