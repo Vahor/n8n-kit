@@ -29,14 +29,18 @@ jobs:
         run: bun run --filter '*' build
 
 
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1.5.3
         with:
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
-          publish: bunx @changesets/cli publish
           commitMode: github-api
+          publish: bun run ci:publish
+          version: bun run ci:version
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESET_PAT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
