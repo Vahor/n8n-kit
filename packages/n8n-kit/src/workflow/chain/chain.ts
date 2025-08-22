@@ -151,6 +151,7 @@ export class Chain<
 		} else {
 			next = _next;
 		}
+		console.log(`Adding next ${next.id} to ${this.id}`);
 
 		for (const endState of this.endStates) {
 			endState.addNext(next);

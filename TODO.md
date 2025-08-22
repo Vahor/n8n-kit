@@ -6,7 +6,6 @@
 - Add more tests ( and type tests)
 - Call to subworkflow with correct input parameters.
 - Add a way to deploy from the terminal (needs API KEY, an app is a list of things to deploy)
-- I don't really like the `unlinkedNodes` property name.
 
 - Add CONTRIBUTING.md
 

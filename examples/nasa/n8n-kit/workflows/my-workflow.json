@@ -3,10 +3,23 @@
 	"name": "NASA Example",
 	"nodes": [
 		{
+			"id": "note",
+			"name": "note",
+			"type": "n8n-nodes-base.stickyNote",
+			"position": [300, 60],
+			"typeVersion": 1,
+			"parameters": {
+				"content": "## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
+				"height": 120,
+				"width": 600,
+				"color": 1
+			}
+		},
+		{
 			"id": "schedule-trigger",
 			"name": "Schedule trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
-			"position": [55, 170],
+			"position": [300, 295],
 			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
@@ -25,7 +38,7 @@
 			"id": "nasa",
 			"name": "nasa",
 			"type": "n8n-nodes-base.nasa",
-			"position": [245, 170],
+			"position": [735, 295],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "donkiSolarFlare",
@@ -37,7 +50,7 @@
 			"id": "if",
 			"name": "if",
 			"type": "n8n-nodes-base.if",
-			"position": [435, 170],
+			"position": [925, 295],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -66,7 +79,7 @@
 			"id": "PostBin(true)",
 			"name": "PostBin(true)",
 			"type": "n8n-nodes-base.postBin",
-			"position": [625, 55],
+			"position": [1115, 180],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "request",
@@ -79,26 +92,13 @@
 			"id": "PostBin(false)",
 			"name": "PostBin(false)",
 			"type": "n8n-nodes-base.postBin",
-			"position": [625, 285],
+			"position": [1115, 410],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "request",
 				"binId": "1741914338605-0907339996192",
 				"binContent": "=There was a solar flare of class {{ $json.classType }}",
 				"operation": "send"
-			}
-		},
-		{
-			"id": "note",
-			"name": "note",
-			"type": "n8n-nodes-base.stickyNote",
-			"position": [0, 0],
-			"typeVersion": 1,
-			"parameters": {
-				"content": "## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
-				"height": 120,
-				"width": 600,
-				"color": 1
 			}
 		}
 	],

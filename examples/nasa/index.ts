@@ -19,7 +19,7 @@ const nasaCredentials = Credentials.byId("nasa-credentials", {
 const workflow = new Workflow("my-workflow", {
 	active: true,
 	name: "NASA Example",
-	unlinkedNodes: [
+	definition: [
 		new StickyNote("note", {
 			position: [0, 0],
 			content:
@@ -27,60 +27,61 @@ const workflow = new Workflow("my-workflow", {
 			height: 120,
 			width: 600,
 		}),
-	],
-	definition: Chain.start(
-		new ScheduleTrigger("schedule-trigger", {
-			name: "Schedule trigger",
-			interval: [
-				{
-					field: "weeks",
-					triggerAtDay: [1],
-					triggerAtHour: 9,
-					weeksInterval: 1,
-				},
-			],
-		}),
-	)
-		.next(
-			new Nasa("nasa", {
-				credentials: nasaCredentials,
-				resource: "donkiSolarFlare",
-				additionalFields: {
-					startDate: expr`{{ $today.minus(1, 'day') }}`,
-				},
-			}),
-		)
-		.next(({ $ }) =>
-			new If("if", {
-				combinator: "and",
-				conditions: [
+
+		Chain.start(
+			new ScheduleTrigger("schedule-trigger", {
+				name: "Schedule trigger",
+				interval: [
 					{
-						operator: {
-							type: "string",
-							operation: "contains",
-						},
-						leftValue: $("json.classType").toExpression(),
-						rightValue: "C",
+						field: "weeks",
+						triggerAtDay: [1],
+						triggerAtHour: 9,
+						weeksInterval: 1,
 					},
 				],
-			})
-				.true(
-					new PostBin("PostBin(true)", {
-						resource: "request",
-						binId: "1741914338605-0907339996192",
-						binContent: expr`There was a solar flare of class ${$("json.classType")}`,
-						operation: "send",
-					}),
-				)
-				.false(
-					new PostBin("PostBin(false)", {
-						resource: "request",
-						binId: "1741914338605-0907339996192",
-						binContent: expr`There was a solar flare of class ${$("json.classType")}`,
-						operation: "send",
-					}),
-				),
-		),
+			}),
+		)
+			.next(
+				new Nasa("nasa", {
+					credentials: nasaCredentials,
+					resource: "donkiSolarFlare",
+					additionalFields: {
+						startDate: expr`{{ $today.minus(1, 'day') }}`,
+					},
+				}),
+			)
+			.next(({ $ }) =>
+				new If("if", {
+					combinator: "and",
+					conditions: [
+						{
+							operator: {
+								type: "string",
+								operation: "contains",
+							},
+							leftValue: $("json.classType").toExpression(),
+							rightValue: "C",
+						},
+					],
+				})
+					.true(
+						new PostBin("PostBin(true)", {
+							resource: "request",
+							binId: "1741914338605-0907339996192",
+							binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+							operation: "send",
+						}),
+					)
+					.false(
+						new PostBin("PostBin(false)", {
+							resource: "request",
+							binId: "1741914338605-0907339996192",
+							binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+							operation: "send",
+						}),
+					),
+			),
+	],
 });
 
 const app = new App();

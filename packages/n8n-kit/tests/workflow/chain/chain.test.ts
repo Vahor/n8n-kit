@@ -53,7 +53,7 @@ describe("Chain", () => {
 				jsCode: "return { hello: 'c' };",
 			});
 			const wf = {
-				addUnlinkedNode: () => {},
+				addToDynamicalyAddedNodes: () => {},
 			} as any;
 			const AA = new Group(
 				wf,
@@ -80,13 +80,13 @@ describe("Chain", () => {
 			expectTypeOf<Context["json"]>().toEqualTypeOf<{ hello: "c" }>();
 		});
 
-		test("can loop elements", () => {
+		test("can loop elements in if", () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new If("c", { conditions: [] });
 			const D = new NoOp("d");
 
-			const chain = Chain.start(A).next(B).next(C.true(D));
+			const chain = Chain.start(A).next(B).next(C.true(A).false(D));
 
 			const workflow = new Workflow("test", {
 				definition: chain,
@@ -94,6 +94,19 @@ describe("Chain", () => {
 
 			const result = workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c", "d"]);
+		});
+
+		test("can loop elements", () => {
+			const A = new NoOp("a");
+			const B = new NoOp("b");
+			const chain = Chain.start(A).next(B).next(A);
+
+			const workflow = new Workflow("test", {
+				definition: chain,
+			});
+
+			const result = workflow.build();
+			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b"]);
 		});
 
 		test("can connect to merge", () => {

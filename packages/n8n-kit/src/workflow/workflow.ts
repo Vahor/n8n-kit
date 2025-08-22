@@ -2,23 +2,27 @@ import type { Type } from "arktype";
 import { prefix } from "../constants";
 import { BaseNode } from "../nodes/node";
 import { shortHash, validateIdentifier } from "../utils/slugify";
-import type { Chain, ChainContext } from "./chain/chain";
+import type { State } from "./chain";
+import { Chain } from "./chain/chain";
 import { Group } from "./group";
 import { calculateLayout } from "./layout";
 import type { Tag } from "./tag";
 
-interface WorkflowProps<
-	Input extends Type,
-	Output extends Type,
-	C_CC extends ChainContext,
-> {
+type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
+	| T
+	| ((workflow: Workflow<Input, Output>) => T)
+	| Array<T>
+	| ((workflow: Workflow<Input, Output>) => Array<T>);
+
+interface WorkflowProps<Input extends Type, Output extends Type> {
 	name?: string;
 	inputSchema?: Input;
 	outputSchema?: Output;
-	definition:
-		| Chain<C_CC, any>
-		| ((workflow: Workflow<Input, Output>) => Chain<C_CC, any>);
-	unlinkedNodes?: BaseNode<any, any>[];
+	definition: WorkflowDefinitionProvider<
+		Input,
+		Output,
+		Chain<any, any> | BaseNode<any, any>
+	>;
 	tags?: Tag[] | undefined;
 	active?: boolean;
 	description?: string;
@@ -60,11 +64,7 @@ interface WorkflowProps<
 	};
 }
 
-export class Workflow<
-	Input extends Type = any,
-	Output extends Type = any,
-	C_CC extends ChainContext = any,
-> {
+export class Workflow<Input extends Type = any, Output extends Type = any> {
 	public readonly id: string;
 	public readonly hashId: string;
 	private readonly tags: Tag[];
@@ -75,24 +75,20 @@ export class Workflow<
 	/**
 	 * @internal
 	 */
-	public isValid = false;
-	/**
-	 * @internal
-	 */
-	public "~cachedDefinition"?: Chain<C_CC, any>;
+	public "~cachedDefinition"?: Array<Chain<any, any> | BaseNode<any, any>>;
+	private dynamicalyAddedNodes: BaseNode<any, any>[] = [];
 
 	public constructor(
 		id: string,
-		public readonly props: WorkflowProps<Input, Output, C_CC>,
+		public readonly props: WorkflowProps<Input, Output>,
 	) {
 		this.hashId = shortHash(id, 24 - prefix.length);
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
 	}
 
-	public addUnlinkedNode(node: BaseNode<any, any>) {
-		this.props.unlinkedNodes ??= [];
-		this.props.unlinkedNodes.push(node);
+	public addToDynamicalyAddedNodes(node: BaseNode<any, any>) {
+		this.dynamicalyAddedNodes.push(node);
 	}
 
 	public getName() {
@@ -100,24 +96,45 @@ export class Workflow<
 	}
 
 	public getDefinition() {
-		// TODO: validate calls getDefinition, and builds also calls getDefinition. So if validate changes stuffs like parents, it won't be saved unless we cache the result;
-		if (typeof this.props.definition === "function") {
-			if (this["~cachedDefinition"]) {
-				return this["~cachedDefinition"];
-			}
-			this["~cachedDefinition"] = this.props.definition(this);
+		if (this["~cachedDefinition"]) {
 			return this["~cachedDefinition"];
 		}
-		this["~cachedDefinition"] = this.props.definition;
+
+		// TODO: validate calls getDefinition, and builds also calls getDefinition. So if validate changes stuffs like parents, it won't be saved unless we cache the result;
+		if (typeof this.props.definition === "function") {
+			let definition = this.props.definition(this);
+			if (!Array.isArray(definition)) {
+				definition = [definition];
+			}
+			this["~cachedDefinition"] = definition;
+			return this["~cachedDefinition"];
+		}
+		if (!Array.isArray(this.props.definition)) {
+			this["~cachedDefinition"] = [this.props.definition];
+		} else {
+			this["~cachedDefinition"] = this.props.definition;
+		}
 		return this["~cachedDefinition"];
 	}
 
-	public build() {
-		const nodes = this.getDefinition()
-			.toList()
-			.filter((state): state is BaseNode => state instanceof BaseNode);
+	public getNodes() {
+		const nodes = [
+			...new Set(
+				this.getDefinition()
+					.flatMap((chain) =>
+						chain instanceof Chain ? chain.toList() : [chain as State],
+					)
+					.filter((state): state is BaseNode => state instanceof BaseNode),
+			),
+		];
+		return nodes;
+	}
 
-		const groups = (this.props.unlinkedNodes ?? []).filter(
+	public build() {
+		const nodes = this.getNodes();
+
+		// Groups are added in dynamicalyAddedNodes
+		const groups = (this.dynamicalyAddedNodes ?? []).filter(
 			(node): node is Group<any> => node instanceof Group,
 		);
 
@@ -150,7 +167,7 @@ export class Workflow<
 			name: this.getName(),
 			nodes: [
 				...nodes.map((node) => node.toNode()),
-				...(this.props.unlinkedNodes?.map((node) => node.toNode()) ?? []),
+				...(this.dynamicalyAddedNodes.map((node) => node.toNode()) ?? []),
 			],
 			connections: connections,
 			settings: this.props.settings ?? {},
@@ -196,13 +213,11 @@ export class Workflow<
 	}
 
 	public "~validate"(): void {
-		const nodes = this.getDefinition()
-			.toList()
-			.filter((state): state is BaseNode => state instanceof BaseNode);
+		const nodes = this.getNodes();
 
 		// check that ids are unique
 		const ids = new Set<string>();
-		const allNodes = [...nodes, ...(this.props.unlinkedNodes ?? [])];
+		const allNodes = [...nodes, ...this.dynamicalyAddedNodes];
 		for (const node of allNodes) {
 			if (ids.has(node.id)) {
 				throw new Error(`Node with id ${node.id} already exists`);
@@ -210,7 +225,7 @@ export class Workflow<
 			ids.add(node.id);
 		}
 
-		const groups = (this.props.unlinkedNodes ?? []).filter(
+		const groups = this.dynamicalyAddedNodes.filter(
 			(node): node is Group<any> => node instanceof Group,
 		);
 
@@ -227,19 +242,17 @@ export class Workflow<
 			validateNested(node);
 		}
 
-		for (const node of this.props.unlinkedNodes ?? []) {
+		for (const node of this.dynamicalyAddedNodes) {
 			validateNested(node);
 		}
 
-		for (const node of this.props.unlinkedNodes ?? []) {
+		for (const node of this.dynamicalyAddedNodes) {
 			if (!node.position) {
 				throw new Error(
-					`Node '${node.getPath()}' does not have a position. Position is required for unlinked nodes.`,
+					`Node '${node.getPath()}' does not have a position. Position is required for dynamicaly added nodes.`,
 				);
 			}
 		}
-
-		this.isValid = true;
 	}
 }
 

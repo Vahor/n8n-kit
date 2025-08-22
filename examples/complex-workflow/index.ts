@@ -11,6 +11,8 @@ import {
 	Workflow,
 } from "@vahor/n8n-kit";
 
+// This workflow does not have a real use case, it's just to test weird things
+
 const handleErrorMessageChain = <Id extends string>(
 	workflow: Workflow,
 	id: Id,

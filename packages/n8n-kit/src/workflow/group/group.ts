@@ -26,7 +26,7 @@ export class Group<
 			width: 0,
 			height: 0,
 		});
-		workflow.addUnlinkedNode(this);
+		workflow.addToDynamicalyAddedNodes(this);
 		this.endStates = [this];
 	}
 

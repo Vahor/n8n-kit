@@ -25,6 +25,12 @@
         "@vahor/n8n-kit": "workspace:*",
       },
     },
+    "examples/multiple-sources": {
+      "name": "example-multiple-sources",
+      "dependencies": {
+        "@vahor/n8n-kit": "workspace:*",
+      },
+    },
     "examples/nasa": {
       "name": "example-nasa",
       "dependencies": {
@@ -944,6 +950,8 @@
     "example-complex-workflow": ["example-complex-workflow@workspace:examples/complex-workflow"],
 
     "example-merge": ["example-merge@workspace:examples/code-merge"],
+
+    "example-multiple-sources": ["example-multiple-sources@workspace:examples/multiple-sources"],
 
     "example-nasa": ["example-nasa@workspace:examples/nasa"],
 

@@ -26,28 +26,10 @@ Find more examples in the [examples folder](https://github.com/Vahor/n8n-kit/tre
 ![Example workflow](https://github.com/Vahor/n8n-kit/blob/main/examples/nasa/output.png?raw=true)
 
 ```ts
-import {
-	App,
-	Chain,
-	Credentials,
-	expr,
-	If,
-	Nasa,
-	PostBin,
-	ScheduleTrigger,
-	StickyNote,
-	Workflow,
-} from "@vahor/n8n-kit";
-
-const nasaCredentials = Credentials.byId("nasa-credentials", {
-	name: "nasaApi",
-	id: "yTwI5ccVwfGll1Kf",
-});
-
 const workflow = new Workflow("my-workflow", {
 	active: true,
 	name: "NASA Example",
-	unlinkedNodes: [
+	definition: [
 		new StickyNote("note", {
 			position: [0, 0],
 			content:
@@ -55,60 +37,61 @@ const workflow = new Workflow("my-workflow", {
 			height: 120,
 			width: 600,
 		}),
-	],
-	definition: Chain.start(
-		new ScheduleTrigger("schedule-trigger", {
-			name: "Schedule trigger",
-			interval: [
-				{
-					field: "weeks",
-					triggerAtDay: [1],
-					triggerAtHour: 9,
-					weeksInterval: 1,
-				},
-			],
-		}),
-	)
-		.next(
-			new Nasa("nasa", {
-				credentials: nasaCredentials,
-				resource: "donkiSolarFlare",
-				additionalFields: {
-					startDate: expr`{{ $today.minus(1, 'day') }}`, // In the future there will be a better way to write functions calls
-				},
-			}),
-		)
-		.next(({ $ }) =>
-			new If("if", {
-				combinator: "and",
-				conditions: [
+
+		Chain.start(
+			new ScheduleTrigger("schedule-trigger", {
+				name: "Schedule trigger",
+				interval: [
 					{
-						operator: {
-							type: "string",
-							operation: "contains",
-						},
-						leftValue: $("json.classType").toExpression(),
-						rightValue: "C",
+						field: "weeks",
+						triggerAtDay: [1],
+						triggerAtHour: 9,
+						weeksInterval: 1,
 					},
 				],
-			})
-				.true(
-					new PostBin("PostBin(true)", {
-						resource: "request",
-						binId: "1741914338605-0907339996192",
-						binContent: expr`There was a solar flare of class ${$("json.classType")}`,
-						operation: "send",
-					}),
-				)
-				.false(
-					new PostBin("PostBin(false)", {
-						resource: "request",
-						binId: "1741914338605-0907339996192",
-						binContent: expr`There was a solar flare of class ${$("json.classType")}`,
-						operation: "send",
-					}),
-				),
-		),
+			}),
+		)
+			.next(
+				new Nasa("nasa", {
+					credentials: nasaCredentials,
+					resource: "donkiSolarFlare",
+					additionalFields: {
+						startDate: expr`{{ $today.minus(1, 'day') }}`,
+					},
+				}),
+			)
+			.next(({ $ }) =>
+				new If("if", {
+					combinator: "and",
+					conditions: [
+						{
+							operator: {
+								type: "string",
+								operation: "contains",
+							},
+							leftValue: $("json.classType").toExpression(),
+							rightValue: "C",
+						},
+					],
+				})
+					.true(
+						new PostBin("PostBin(true)", {
+							resource: "request",
+							binId: "1741914338605-0907339996192",
+							binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+							operation: "send",
+						}),
+					)
+					.false(
+						new PostBin("PostBin(false)", {
+							resource: "request",
+							binId: "1741914338605-0907339996192",
+							binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+							operation: "send",
+						}),
+					),
+			),
+	],
 });
 
 const app = new App();
@@ -122,8 +105,7 @@ export { app };
 
 Currently only a few nodes are implemented.
 
-Each workflow has a `definition` property, which is a chain of nodes.
-A `unlinkedNodes` property can be used to add nodes that are not part of the chain (e.g. a sticky note).
+Each workflow has a `definition` property, which is a list of nodes or chain of nodes.
 
 A chain is a list of nodes, with a starting node chained by `next` calls.
 
