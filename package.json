@@ -41,7 +41,7 @@
 		"build": "bun run build.ts",
 		"format": "bunx @biomejs/biome check ./ --write",
 		"typecheck": "tsc --noEmit --declaration",
-		"ci:version": "bun update && bunx @changesets/cli version",
+		"ci:version": "bunx @changesets/cli version && bun update",
 		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun run build && bun publish || true); done && changeset tag"
 	},
 	"engines": {

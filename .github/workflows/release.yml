@@ -40,7 +40,5 @@ jobs:
           version: bun run ci:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_ENV: production
           NPM_CONFIG_PROVENANCE: true
           HUSKY: 0
