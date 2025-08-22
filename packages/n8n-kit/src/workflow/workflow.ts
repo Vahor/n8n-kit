@@ -2,7 +2,7 @@ import type { Type } from "arktype";
 import { prefix } from "../constants";
 import { BaseNode } from "../nodes/node";
 import { shortHash, validateIdentifier } from "../utils/slugify";
-import type { State } from "./chain";
+import { Placeholder, type State } from "./chain";
 import { Chain } from "./chain/chain";
 import { Group } from "./group";
 import { calculateLayout } from "./layout";
@@ -145,7 +145,16 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		const connections: Record<string, { main: Connection[][] }> = {};
 		for (const node of nodes) {
 			if (node instanceof Group) continue;
-			for (const endState of node.listOutgoing()) {
+			for (let endState of node.listOutgoing()) {
+				if (endState instanceof Placeholder) {
+					const _endState = endState;
+					endState = nodes.find((n) => n.id === endState.id)!;
+					if (!endState) {
+						throw new Error(`Placeholder ${_endState.id} not found`);
+					}
+				}
+				if (!(endState instanceof BaseNode)) continue;
+
 				connections[node.getName()] ??= { main: [] };
 				const nodeConnection = connections[node.getName()]!;
 				const connectionOptions = node["~getConnectionOptions"](endState.id);
@@ -155,7 +164,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 				}
 
 				nodeConnection.main[connectionOptions.from]!.push({
-					node: endState.id,
+					node: endState.getName(),
 					type: "main",
 					index: connectionOptions.to,
 				});
