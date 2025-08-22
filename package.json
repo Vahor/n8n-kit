@@ -35,15 +35,13 @@
 		"@types/bun": "^1.2.20",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.5",
-		"pkg-pr-new": "^0.0.55",
-		"tsdown": "catalog:",
-		"typescript": "catalog:"
+		"pkg-pr-new": "^0.0.55"
 	},
 	"scripts": {
-		"prepare": "husky",
 		"build": "bun run build.ts",
 		"format": "bunx @biomejs/biome check ./ --write",
 		"typecheck": "tsc --noEmit --declaration",
+		"ci:version": "bun update && bunx @changesets/cli version",
 		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun run build && bun publish || true); done && changeset tag"
 	},
 	"engines": {

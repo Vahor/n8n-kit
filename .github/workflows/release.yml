@@ -37,6 +37,7 @@ jobs:
           commit: "chore(release): version packages"
           title: "chore(release): version packages"
           publish: bun run ci:publish
+          version: bun run ci:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
