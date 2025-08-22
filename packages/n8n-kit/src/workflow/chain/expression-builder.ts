@@ -125,9 +125,6 @@ export class ExpressionBuilder<
 	public call(methodName: string, ...args: any[]): ExpressionBuilder<T, Path> {
 		const params = args
 			.map((arg) => {
-				if (typeof arg === "string") {
-					return `'${arg.replace(/'/g, "\\'")}'`;
-				}
 				if (typeof arg === "function") {
 					return arg.toString();
 				}

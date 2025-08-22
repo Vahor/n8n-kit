@@ -89,7 +89,7 @@
 		"prebuild": "bun run generate:entrypoint",
 		"build": "bunx tsdown",
 		"dev": "bunx tsdown --watch",
-		"generate": "bun run generate:entrypoint && bun run generate:types",
+		"generate": "bun run generate:entrypoint && bun run generate:nodes && bun run generate:credentials",
 		"generate:entrypoint": "bun run scripts/generate-entrypoint.ts",
 		"generate:nodes": "bun run scripts/generate-nodes.ts",
 		"generate:credentials": "bun run scripts/generate-credentials.ts",

@@ -99,7 +99,7 @@ describe("ExpressionBuilder", () => {
 		test("call arbitrary method with parameters", () => {
 			const builder = $("json['a.b.c']").call("keys", "a", "b");
 			const format = builder.format();
-			expect(format).toEqual(`$json['a.b.c'].keys('a', 'b')`);
+			expect(format).toEqual(`$json['a.b.c'].keys("a", "b")`);
 		});
 
 		test("chaining method calls", () => {
@@ -109,7 +109,7 @@ describe("ExpressionBuilder", () => {
 				.call("join", ", ");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$json['a.b.c'].keys().map((key) => key.toUpperCase()).join(', ')`,
+				`$json['a.b.c'].keys().map((key) => key.toUpperCase()).join(", ")`,
 			);
 		});
 	});

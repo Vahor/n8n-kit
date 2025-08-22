@@ -27,6 +27,7 @@ export class Group<
 			height: 0,
 		});
 		workflow.addUnlinkedNode(this);
+		this.endStates = [this];
 	}
 
 	override "~validate"(): void {
