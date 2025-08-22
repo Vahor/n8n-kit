@@ -14,34 +14,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Find Comment
-        uses: peter-evans/find-comment@v3
-        id: fc
-        continue-on-error: true
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          comment-author: ${{ github.event.comment.user.login }}
-          body-includes: "[example-check]"
-      - name: Render template
-        id: template
-        uses: chuhlomin/render-template@v1.4
-        with:
-          template: .github/example-check-running.md
+      - name: Post starting comment
+        uses: actions/github-script@v6
+        env:
+          MESSAGE: |
+            Check Example job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
-      - name: Create comment
-        if: steps.fc.outputs.comment-id == ''
-        id: comment 
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body: ${{ steps.template.outputs.result }}
+            Please wait.
 
-      - name: Update comment
-        if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v4
         with:
-          comment-id: ${{ steps.fc.outputs.comment-id }}
-          body: ${{ steps.template.outputs.result }}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          result-encoding: string
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.MESSAGE
+            })
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,28 +42,40 @@ jobs:
         run: bun run --filter '*' build
 
       - name: Check examples
-        id: check
-        run: bash scripts/build-and-check-examples.sh | tee check-examples.log
+        run: bash scripts/build-and-check-examples.sh
 
-      - name: Read logs
-        id: read-logs
-        run: |
-          echo 'logs<<EOF' >> $GITHUB_OUTPUT
-          tail -n 200 check-examples.log >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
-
-      - name: Render template
-        id: template-end
-        uses: chuhlomin/render-template@v1.4
+      - name: Post success comment
+        if: ${{ success() }}
+        uses: actions/github-script@v6
+        env:
+          MESSAGE: |
+            Check examples job succeeded.
+            Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
         with:
-          template: .github/example-check-end.md
-          vars: |
-            logs: ```${{ steps.read-logs.outputs.logs }}```
-            title: ${{ steps.check.outcome == 'success' && '✅ Examples check passed' || '❌ Examples check failed' }}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          result-encoding: string
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.MESSAGE
+            })
 
-      - name: Update comment
-        if: steps.fc.outputs.comment-id != ''
-        uses: peter-evans/create-or-update-comment@v4
+      - name: Post failure comment
+        if: ${{ failure() }}
+        uses: actions/github-script@v6
+        env:
+          MESSAGE: |
+            Check examples job failed.
+            Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
         with:
-          comment-id: ${{ steps.fc.outputs.comment-id || steps.comment.outputs.comment-id }}
-          body: ${{ steps.template-end.outputs.result }}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          result-encoding: string
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.MESSAGE
+            })
