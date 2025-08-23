@@ -1,37 +1,40 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/code/Code.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Code/Code.node.ts' node
 
 export const name = "code" as const;
-export const description = "LangChain Code Node" as const;
-export const version = 1 as const;
+export const description = "Run custom JavaScript or Python code" as const;
+export const version = 2 as const;
 
 /**
- * LangChain Code Node
+ * Run custom JavaScript or Python code
  */
 export interface CodeNodeParameters {
 
     /**
-     * Default: {}
+     * Default: "runOnceForAllItems"
      */
-    readonly code?: { "execute": any, "supplyData": any };
+    readonly mode?: "runOnceForAllItems" | "runOnceForEachItem";
+
+    /**
+     * Default: "javaScript"
+     */
+    readonly language?: "javaScript" | "python" | any;
+
+    /**
+     * JavaScript code to execute.<br><br>Tip: You can use luxon vars like <code>$today</code> for dates and <code>$jmespath</code> for querying JSON structures. <a href="https://docs.n8n.io/nodes/n8n-nodes-base.function">Learn more</a>.
+     * Type options: {"editor":"codeNodeEditor","editorLanguage":"javaScript"}
+     */
+    readonly jsCode?: string;
 
     /**
      */
     readonly notice?: string;
 
     /**
-     * The input to add
-     * Default: {}
-     * Type options: {"multipleValues":true,"sortable":true}
+     * Python code to execute.<br><br>Tip: You can use built-in methods and variables like <code>_today</code> for dates and <code>_jmespath</code> for querying JSON structures. <a href="https://docs.n8n.io/code/builtin/">Learn more</a>.
+     * Type options: {"editor":"codeNodeEditor","editorLanguage":"python"}
      */
-    readonly inputs?: { "input": any };
-
-    /**
-     * The output to add
-     * Default: {}
-     * Type options: {"multipleValues":true,"sortable":true}
-     */
-    readonly outputs?: { "output": any };
+    readonly pythonCode?: string;
 
 
 }

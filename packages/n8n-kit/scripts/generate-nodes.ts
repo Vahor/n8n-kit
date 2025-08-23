@@ -7,7 +7,7 @@ import { toTypescriptType } from "./shared";
 const allNodes = globSync(
 	[
 		"../vendor/n8n/packages/nodes-base/nodes/**/**/*.node.ts",
-		// "../vendor/n8n/packages/@n8n/nodes-langchain/**/**/*.node.ts",
+		"../vendor/n8n/packages/@n8n/nodes-langchain/**/**/*.node.ts",
 	],
 	{
 		cwd: path.resolve(__dirname),
@@ -102,8 +102,12 @@ const generateTypescriptNodeOutput = async (
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
-	if (!node.includes("LmChatAzureOpenAi.node")) continue;
-	const nodeName = node.split("/").pop()?.split(".")[0]!;
+	// if (!node.includes("LmChatAzureOpenAi.node")) continue;
+	const isLangChainNode = node.includes("@n8n/nodes-langchain");
+	let nodeName = node.split("/").pop()?.split(".")[0]!;
+	if (isLangChainNode) {
+		nodeName = `${nodeName}AI`;
+	}
 	const nodePathWithoutStartingSlash = node.split("vendor")[1];
 
 	try {

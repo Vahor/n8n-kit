@@ -1,163 +1,84 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/' node
+// Generated from '/n8n/packages/nodes-base/nodes/OpenAi/OpenAi.node.ts' node
 
 export const name = "openAi" as const;
-export const description = "Message an assistant or GPT, analyze images, generate audio, etc." as const;
-export const version = 1.8 as const;
+export const description = "Consume Open AI" as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
 
 /**
- * Message an assistant or GPT, analyze images, generate audio, etc.
+ * Consume Open AI
  */
 export interface OpenAiNodeParameters {
 
     /**
+     */
+    readonly oldVersionNotice?: string;
+
+    /**
      * Default: "text"
      */
-    readonly resource?: "assistant" | "text" | "image" | "audio" | "file";
+    readonly resource?: "chat" | "image" | "text";
 
     /**
-     * Default: "message"
+     * Default: "complete"
      */
-    readonly operation?: "create" | "deleteAssistant" | "list" | "message" | "update" | "generate" | "transcribe" | "translate" | "deleteFile" | "list" | "upload" | "analyze" | "generate" | "message" | "classify";
+    readonly operation?: "complete" | "create" | "complete" | "edit" | "moderate";
 
     /**
-     * Default: {"mode":"list","value":""}
+     * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
+     * Default: "gpt-3.5-turbo"
+     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('gpt-') && !$responseItem.id.startsWith('gpt-4-vision') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly modelId?: any;
+    readonly model?: string | "code-davinci-edit-001" | "text-davinci-edit-001" | "text-moderation-stable" | "text-moderation-latest";
 
     /**
-     * The name of the assistant. The maximum length is 256 characters.
+     * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
+     * Default: "gpt-3.5-turbo"
+     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('gpt-') && !$responseItem.id.startsWith('gpt-4-vision') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly name?: string;
-
-    /**
-     * The description of the assistant. The maximum length is 512 characters.
-     */
-    readonly description?: string;
-
-    /**
-     * The system instructions that the assistant uses. The maximum length is 32768 characters.
-     * Type options: {"rows":2}
-     */
-    readonly instructions?: string;
-
-    /**
-     * Whether to enable the code interpreter that allows the assistants to write and run Python code in a sandboxed execution environment, find more <a href="https://platform.openai.com/docs/assistants/tools/code-interpreter" target="_blank">here</a>
-     */
-    readonly codeInterpreter?: boolean;
-
-    /**
-     * Whether to augments the assistant with knowledge from outside its model, such as proprietary product information or documents, find more <a href="https://platform.openai.com/docs/assistants/tools/knowledge-retrieval" target="_blank">here</a>
-     */
-    readonly knowledgeRetrieval?: boolean;
-
-    /**
-     * The files to be used by the assistant, there can be a maximum of 20 files attached to the assistant. You can use expression to pass file IDs as an array or comma-separated string.
-     * Default: []
-     * Type options: {"loadOptionsMethod":"getFiles"}
-     */
-    readonly file_ids?: any[];
-
-    /**
-     */
-    readonly noticeTools?: string;
+    readonly chatModel?: string;
 
     /**
      * Default: {}
+     * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly options?: { "temperature"?: number, "topP"?: number, "failIfExists"?: boolean } | { "baseURL"?: string, "maxRetries"?: number, "timeout"?: number, "preserveOriginalTools"?: boolean } | { "codeInterpreter"?: boolean, "description"?: string, "file_ids"?: any[], "instructions"?: string, "knowledgeRetrieval"?: boolean, "modelId"?: any, "name"?: string, "removeCustomTools"?: boolean, "temperature"?: number, "topP"?: number } | { "response_format"?: "mp3" | "opus" | "aac" | "flac", "speed"?: number, "binaryPropertyOutput"?: string } | { "language"?: string, "temperature"?: number } | { "temperature"?: number } | { "purpose"?: "assistants" | "fine-tune" } | { "purpose"?: "any" | "assistants" | "fine-tune" } | { "n"?: number, "dalleQuality"?: "hd" | "standard", "quality"?: "high" | "medium" | "low", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792" | "1024x1024" | "1024x1536" | "1536x1024", "style"?: "natural" | "vivid", "returnImageUrls"?: boolean, "binaryPropertyOutput"?: string } | { "detail"?: "auto" | "low" | "high", "maxTokens"?: number } | { "useStableModel"?: boolean } | { "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number, "reasoning_effort"?: "low" | "medium" | "high", "maxToolsIterations"?: number };
-
-    /**
-     * Assistant to respond to the message. You can add, modify or remove assistants in the <a href="https://platform.openai.com/playground?mode=assistant" target="_blank">playground</a>.
-     * Default: {"mode":"list","value":""}
-     */
-    readonly assistantId?: any;
-
-    /**
-     * Default: "auto"
-     */
-    readonly prompt?: "auto" | "define" | string;
-
-    /**
-     * Type options: {"rows":2}
-     */
-    readonly text?: string;
-
-    /**
-     * Default: "connector"
-     */
-    readonly memory?: "connector" | "threadId";
-
-    /**
-     * The ID of the thread to continue, a new thread will be created if not specified
-     */
-    readonly threadId?: string;
+    readonly prompt?: { "messages": any } | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
      * Default: true
      */
-    readonly simplify?: boolean;
+    readonly simplifyOutput?: boolean;
 
     /**
-     * Default: " "
+     * Additional options to add
+     * Default: {}
      */
-    readonly fileSizeLimitNotice?: string;
+    readonly options?: { "echo"?: boolean, "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number } | { "n"?: number, "quality"?: "hd" | "standard", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792", "style"?: "natural" | "vivid" };
 
     /**
-     * Default: "tts-1"
+     * The model to use for image generation
+     * Default: "dall-e-2"
+     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('dall-') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly model?: "tts-1" | "tts-1-hd" | "dall-e-2" | "dall-e-3" | "gpt-image-1";
+    readonly imageModel?: string;
 
     /**
-     * The text to generate audio for. The maximum length is 4096 characters.
-     * Type options: {"rows":2}
+     * The format in which to return the image(s)
+     * Default: "binaryData"
+     */
+    readonly responseFormat?: "binaryData" | "imageUrl";
+
+    /**
+     * The input text to be edited
      */
     readonly input?: string;
 
     /**
-     * The voice to use when generating the audio
-     * Default: "alloy"
+     * The instruction that tells the model how to edit the input text
      */
-    readonly voice?: "alloy" | "echo" | "fable" | "nova" | "onyx" | "shimmer";
-
-    /**
-     * Name of the binary property which contains the audio file in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm
-     * Default: "data"
-     */
-    readonly binaryPropertyName?: string;
-
-    /**
-     * Default: {"mode":"list","value":""}
-     */
-    readonly fileId?: any;
-
-    /**
-     * Default: "url"
-     */
-    readonly inputType?: "url" | "base64";
-
-    /**
-     * URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma
-     */
-    readonly imageUrls?: string;
-
-    /**
-     * Default: {"values":[{"content":""}]}
-     * Type options: {"sortable":true,"multipleValues":true}
-     */
-    readonly messages?: { "values": any };
-
-    /**
-     * Whether to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106.
-     */
-    readonly jsonOutput?: boolean;
-
-    /**
-     * Default: "hide"
-     */
-    readonly hideTools?: any;
+    readonly instruction?: string;
 
 
 }
