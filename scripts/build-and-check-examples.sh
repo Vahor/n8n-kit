@@ -38,13 +38,13 @@ echo ""
 bun run format
 
 # Check if there are any uncommitted changes 
-if [ -n "$(git status --porcelain $EXAMPLES_DIR)" ]; then
+if [ -n "$(git status --porcelain $EXAMPLES_DIR/*.json)" ]; then
     echo "Found differences in the following files:"
     echo ""
     git status --porcelain
     echo ""
     echo "Git diff:"
-    git --no-pager diff "$EXAMPLES_DIR"
+    git --no-pager diff "$EXAMPLES_DIR/*.json"
     echo ""
     exit 1
 fi

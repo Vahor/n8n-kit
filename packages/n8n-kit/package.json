@@ -44,14 +44,24 @@
 				"default": "./dist/workflow/index.cjs"
 			}
 		},
-		"./generated": {
+		"./credentials/generated": {
 			"import": {
-				"types": "./dist/generated.d.cts",
-				"default": "./dist/generated.mjs"
+				"types": "./dist/credentials/generated.d.cts",
+				"default": "./dist/credentials/generated.mjs"
 			},
 			"require": {
-				"types": "./dist/generated.d.cts",
-				"default": "./dist/generated.cjs"
+				"types": "./dist/credentials/generated.d.cts",
+				"default": "./dist/credentials/generated.cjs"
+			}
+		},
+		"./nodes/generated": {
+			"import": {
+				"types": "./dist/nodes/generated.d.cts",
+				"default": "./dist/nodes/generated.mjs"
+			},
+			"require": {
+				"types": "./dist/nodes/generated.d.cts",
+				"default": "./dist/nodes/generated.cjs"
 			}
 		},
 		"./logger": {
