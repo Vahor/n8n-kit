@@ -1,5 +1,9 @@
 import type { Type } from "arktype";
-import { name, type SetV2NodeParameters, version } from "generated/nodes/SetV2";
+import {
+	name,
+	type SetV2NodeParameters,
+	version,
+} from "../generated/nodes/SetV2";
 import type { IsNever } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import { Node, type NodeProps } from "./node";

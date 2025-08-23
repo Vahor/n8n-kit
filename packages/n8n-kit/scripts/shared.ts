@@ -37,9 +37,9 @@ export const toTypescriptType = (
 					// @ts-expect-error: TODO: fix this
 					.map((opt) => `"${opt.value}"`)
 					.join(" | ");
-				return `(${values})[]` || "string[]";
+				if (values) return `(${values})[]`;
 			}
-			return "string[]";
+			return "any[]";
 
 		case "fixedCollection":
 			if (property.options && Array.isArray(property.options)) {

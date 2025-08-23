@@ -6,6 +6,7 @@ import {
 	StickyNote,
 	Workflow,
 } from "@vahor/n8n-kit";
+import { GmailTrigger } from "@vahor/n8n-kit/generated";
 
 // 	https://n8n.io/workflows/2753-rag-chatbot-for-company-documents-using-google-drive-and-gemini/
 
@@ -32,8 +33,10 @@ const workflow = new Workflow("my-workflow", {
 		}),
 
 		Chain.start(
-			new NoOp("gdrive-file-created", {
+			new GmailTrigger("gdrive-file-created", {
 				name: "Google Drive File Created",
+				googleApiCredentials: "",
+				gmailApiCredentials: "",
 			}),
 		).next(new Placeholder("download-from-drive")),
 

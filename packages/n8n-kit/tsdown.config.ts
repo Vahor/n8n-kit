@@ -4,6 +4,7 @@ export const input = [
 	"src/index.ts",
 	"src/logger.ts",
 	"src/workflow/index.ts",
+	"src/generated.ts",
 	"src/nodes/index.ts",
 ];
 
@@ -12,7 +13,7 @@ export default defineConfig({
 	platform: "node",
 	entry: input,
 	clean: true,
-	unbundle: false, // TODO: issue when two files have the same name
+	unbundle: true,
 	dts: {
 		sourcemap: false,
 		tsconfig: "./tsconfig.build.json",

@@ -4,12 +4,12 @@ import {
 	Chain,
 	Group,
 	If,
-	NoOp,
 	type,
 	Webhook,
 	WebhookResponse,
 	Workflow,
 } from "@vahor/n8n-kit";
+import { NoOp } from "@vahor/n8n-kit/generated";
 
 // This workflow does not have a real use case, it's just to test weird things
 

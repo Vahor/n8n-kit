@@ -3,7 +3,7 @@ import {
 	type ExecuteWorkflowTriggerNodeParameters,
 	name,
 	version,
-} from "generated/nodes/ExecuteWorkflowTrigger";
+} from "../generated/nodes/ExecuteWorkflowTrigger";
 import type { Workflow } from "../workflow";
 import { Node, type NodeProps } from "./node";
 

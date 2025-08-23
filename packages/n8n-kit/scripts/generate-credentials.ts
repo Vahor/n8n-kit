@@ -40,7 +40,7 @@ const generateEntrypoint = async () => {
 	code.line();
 
 	code.closeFile("index.ts");
-	await code.save("generated/credentials");
+	await code.save("src/generated/credentials");
 };
 
 const generateTypescriptCredentialsOutput = async (
@@ -94,8 +94,23 @@ const generateTypescriptCredentialsOutput = async (
 	code.line();
 
 	code.closeFile(outputFile);
-	await code.save("generated/credentials");
+	await code.save("src/generated/credentials");
 };
+
+const writeMapping = async () => {
+	const code = new CodeMaker();
+	const outputFile = "__mapping.ts";
+	code.openFile(outputFile);
+
+	for (const [key, value] of mapping.entries()) {
+		code.line(`export const ${key} = "${value}" as const;`);
+	}
+
+	code.closeFile(outputFile);
+	await code.save("src/generated/credentials");
+};
+
+const mapping: Map<string, string> = new Map();
 
 const count = allNodes.length;
 let current = 0;
@@ -119,6 +134,7 @@ for (const node of allNodes) {
 		instance.__nodename = nodeName;
 
 		await generateTypescriptCredentialsOutput(instance, `${nodeName}.ts`);
+		mapping.set(instance.name, nodeName);
 
 		current++;
 	} catch (e) {
@@ -129,3 +145,4 @@ for (const node of allNodes) {
 console.log();
 console.log(count - current, "nodes failed to parse");
 await generateEntrypoint();
+await writeMapping();

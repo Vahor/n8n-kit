@@ -3,7 +3,7 @@ import {
 	name,
 	version,
 	type WebhookNodeParameters,
-} from "generated/nodes/Webhook";
+} from "../generated/nodes/Webhook";
 import type { IsNever, RequireFields } from "../utils/types";
 import { Node, type NodeProps } from "./node";
 
@@ -26,7 +26,8 @@ type GetOutputSchemaField<
 	: F extends keyof P["outputSchema"]
 		? IsNever<P["outputSchema"][F]> extends true
 			? never
-			: P["outputSchema"][F]["infer"]
+			: // @ts-expect-error: shh it's fine
+				P["outputSchema"][F]["infer"]
 		: never;
 
 export class Webhook<L extends string, P extends WebhookProps> extends Node<

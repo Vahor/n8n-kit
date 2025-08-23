@@ -23,7 +23,7 @@ export const DEFAULT_NODE_SIZE: Required<NodeSize> = {
 };
 
 export type NodeProps = {
-	name?: string;
+	label?: string;
 };
 
 export abstract class BaseNode<
@@ -35,23 +35,20 @@ export abstract class BaseNode<
 	protected abstract readonly type: string;
 	protected abstract typeVersion: number;
 
-	public name?: string;
+	public label?: string;
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
 	public groupIds: string[] = [];
 
 	abstract getParameters(): object;
-	public getCredentials():
-		| Credentials<any>
-		| Array<Credentials<any>>
-		| undefined {
+	public getCredentials(): Array<Credentials<any> | undefined> | undefined {
 		return undefined;
 	}
 
 	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
-		this.name = props?.name;
+		this.label = props?.label;
 	}
 
 	public "~setParent"(parent: Workflow) {
@@ -76,16 +73,17 @@ export abstract class BaseNode<
 		return `${parentId}/${this.id}`;
 	}
 
-	public getName() {
-		return this.name ?? this.id;
+	public getLabel() {
+		return this.label ?? this.id;
 	}
 
 	private credentialsToNode() {
-		let credentials = this.getCredentials();
+		const credentials = this.getCredentials();
 		if (!credentials) return undefined;
-		if (!Array.isArray(credentials)) credentials = [credentials];
 		return Object.fromEntries(
-			credentials.map((cred) => [cred.name, { id: cred.n8nCredentialsId }]),
+			credentials
+				.filter(Boolean)
+				.map((cred) => [cred!.name, { id: cred!.n8nCredentialsId }]),
 		);
 	}
 
@@ -94,7 +92,7 @@ export abstract class BaseNode<
 		const { name: _, ...rest } = this.getParameters() as Record<string, any>;
 		return {
 			id: this.id,
-			name: this.getName(),
+			name: this.getLabel(),
 			type: this.type,
 			position: this.position,
 			typeVersion: this.typeVersion,

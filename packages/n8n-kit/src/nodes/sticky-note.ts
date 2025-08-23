@@ -1,4 +1,4 @@
-import { name, version } from "generated/nodes/StickyNote";
+import { name, version } from "../generated/nodes/StickyNote";
 
 import { NO_END_STATES } from "../workflow/chain/chain";
 import type { INextable } from "../workflow/chain/types";

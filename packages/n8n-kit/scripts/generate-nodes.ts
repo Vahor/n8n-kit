@@ -5,8 +5,10 @@ import { globSync } from "tinyglobby";
 import { toTypescriptType } from "./shared";
 
 const allNodes = globSync(
-	// "../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
-	"../vendor/n8n/packages/nodes-base/nodes/**/**/*.node.ts",
+	[
+		"../vendor/n8n/packages/nodes-base/nodes/**/**/*.node.ts",
+		// "../vendor/n8n/packages/@n8n/nodes-langchain/**/**/*.node.ts",
+	],
 	{
 		cwd: path.resolve(__dirname),
 	},
@@ -29,6 +31,11 @@ const generateTypescriptNodeOutput = async (
 	code.line(
 		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : (result.version ?? 0)} as const;`,
 	);
+	if (result.credentials) {
+		code.line(
+			`export const credentials = ${JSON.stringify(result.credentials)} as const;`,
+		);
+	}
 	code.line();
 
 	code.line(`/**`);
@@ -89,12 +96,13 @@ const generateTypescriptNodeOutput = async (
 	code.line();
 
 	code.closeFile(outputFile);
-	await code.save("generated/nodes");
+	await code.save("src/generated/nodes");
 };
 
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
+	if (!node.includes("LmChatAzureOpenAi.node")) continue;
 	const nodeName = node.split("/").pop()?.split(".")[0]!;
 	const nodePathWithoutStartingSlash = node.split("vendor")[1];
 

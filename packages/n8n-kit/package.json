@@ -44,6 +44,16 @@
 				"default": "./dist/workflow/index.cjs"
 			}
 		},
+		"./generated": {
+			"import": {
+				"types": "./dist/generated.d.cts",
+				"default": "./dist/generated.mjs"
+			},
+			"require": {
+				"types": "./dist/generated.d.cts",
+				"default": "./dist/generated.cjs"
+			}
+		},
 		"./logger": {
 			"import": {
 				"types": "./dist/logger.d.cts",
@@ -88,9 +98,10 @@
 		"prebuild": "bun run generate:entrypoint",
 		"build": "bunx tsdown",
 		"dev": "bunx tsdown --watch",
-		"generate": "bun run generate:entrypoint && bun run generate:nodes && bun run generate:credentials",
+		"generate": "bun run generate:entrypoint && bun run generate:nodes && bun run generate:credentials && bun run generate:nodes-impl",
 		"generate:entrypoint": "bun run scripts/generate-entrypoint.ts",
 		"generate:nodes": "bun run scripts/generate-nodes.ts",
+		"generate:nodes-impl": "bun run scripts/generate-nodes-impl.ts",
 		"generate:credentials": "bun run scripts/generate-credentials.ts",
 		"typecheck": "tsc --project tsconfig.check.json"
 	},

@@ -1,6 +1,5 @@
-import { name, version } from "generated/nodes/ScheduleTrigger";
-
 import type { Rule } from "n8n-nodes-base/nodes/Schedule/SchedulerInterface";
+import { name, version } from "../generated/nodes/ScheduleTrigger";
 import { Node, type NodeProps } from "./node";
 
 interface ScheduleTriggerBaseProps extends Rule {}
@@ -35,7 +34,7 @@ export class ScheduleTrigger<L extends string> extends Node<
 	}
 
 	override getParameters() {
-		const { name: _, ...rest } = this.props;
+		const { label: _, ...rest } = this.props;
 		return {
 			rule: rest,
 		};

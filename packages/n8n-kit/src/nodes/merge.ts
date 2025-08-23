@@ -1,26 +1,8 @@
-import {
-	type MergeV3NodeParameters,
-	name,
-	version,
-} from "generated/nodes/MergeV3";
-import { Node, type NodeProps } from "./node";
+import { MergeV3, type MergeV3Props } from "../generated";
 
-interface MergeBaseProps extends MergeV3NodeParameters {}
-
-export interface MergeProps extends NodeProps, MergeBaseProps {}
-
-export class Merge<L extends string> extends Node<L, {}> {
-	protected override type = `n8n-nodes-base.${name}` as const;
-	protected override typeVersion = version;
-
-	constructor(
-		id: L,
-		public readonly props: MergeProps,
-	) {
+// A simple alias for MergeV3
+export class Merge<L extends string> extends MergeV3<L> {
+	constructor(id: L, props: MergeV3Props) {
 		super(id, props);
-	}
-
-	override getParameters() {
-		return this.props;
 	}
 }

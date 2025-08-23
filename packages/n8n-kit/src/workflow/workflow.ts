@@ -155,8 +155,8 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 				}
 				if (!(endState instanceof BaseNode)) continue;
 
-				connections[node.getName()] ??= { main: [] };
-				const nodeConnection = connections[node.getName()]!;
+				connections[node.getLabel()] ??= { main: [] };
+				const nodeConnection = connections[node.getLabel()]!;
 				const connectionOptions = node["~getConnectionOptions"](endState.id);
 
 				if (!nodeConnection.main[connectionOptions.from]) {
@@ -164,7 +164,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 				}
 
 				nodeConnection.main[connectionOptions.from]!.push({
-					node: endState.getName(),
+					node: endState.getLabel(),
 					type: "main",
 					index: connectionOptions.to,
 				});

@@ -1,4 +1,4 @@
-import { version } from "generated/nodes/IfV2";
+import { version } from "../generated/nodes/IfV2";
 import type { IsNullable } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import { Chain } from "../workflow/chain/chain";

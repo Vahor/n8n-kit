@@ -1,5 +1,9 @@
 import type { Type } from "arktype";
-import { type CodeNodeParameters, name, version } from "generated/nodes/Code";
+import {
+	type CodeNodeParameters,
+	name,
+	version,
+} from "../generated/nodes/Code";
 import type { IsNever } from "../utils/types";
 import { Node, type NodeProps } from "./node";
 

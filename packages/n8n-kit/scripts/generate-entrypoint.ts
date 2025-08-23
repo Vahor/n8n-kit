@@ -29,3 +29,5 @@ const buildEntrypoint = async (forFolder: string) => {
 };
 
 await buildEntrypoint("src/nodes");
+await buildEntrypoint("src/generated/nodes-impl");
+await buildEntrypoint("src/generated/nodes");

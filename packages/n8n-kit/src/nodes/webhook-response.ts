@@ -2,7 +2,7 @@ import {
 	name,
 	type RespondToWebhookNodeParameters,
 	version,
-} from "generated/nodes/RespondToWebhook";
+} from "../generated/nodes/RespondToWebhook";
 import { ExpressionBuilder, recursiveExpression } from "../workflow";
 import { Node, type NodeProps } from "./node";
 
