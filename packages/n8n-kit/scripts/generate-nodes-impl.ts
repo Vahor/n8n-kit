@@ -85,6 +85,7 @@ const generateTypescriptNodeOutput = async (
 		`export class ${result.nodeName}<L extends string> extends Node<L> {`,
 	);
 	code.indent();
+	// TODO: langchain nodes
 	code.line(`protected type = "n8n-nodes-base.${result.name}" as const;`);
 	code.line(`protected typeVersion = ${result.version} as const;`);
 	code.line();
@@ -151,6 +152,7 @@ if (allNodesTypes.length === 0) {
 }
 for (const nodePath of allNodesTypes) {
 	const nodeName = nodePath.split("/").pop()?.split(".")[0]!;
+	if (nodeName === "index") continue;
 
 	try {
 		delete require.cache[nodePath];

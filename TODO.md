@@ -15,6 +15,10 @@ in with-group example
 
 - Remove commands that are not implemented. And simply add them in an issue (list, diff)
 
+- Diff that ignore position, ids, _rl, credentials names, cachedResultName, cachedResultUrl etc.
+
+- Deploy that ignore position (--merge mode) . If only the position changed, we should not deploy anything, that's only a layout change maybe the user changed something manually. Maybe a default value to true
+
 ## Tests to add:
 
 - Propagate types for if nodes
@@ -30,6 +34,8 @@ in with-group example
 	- "@vahor/n8n-kit/nodes" contains nodes that have been manually implemented, with types.
 	- "@vahor/n8n-kit/nodes/generated" contains nodes that have been automatically generated, without output types. A node can be present in both folders.
 	- "@vahor/n8n-kit/credentials/generated" contains credentials that have been automatically generated.
+
+- ExpressionBuilder is here to help but we can still use string values directly.
 
 
 #### n8n-cli

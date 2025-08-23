@@ -1,6 +1,18 @@
-import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
+import {
+	App,
+	Chain,
+	Credentials,
+	expr,
+	Placeholder,
+	Workflow,
+} from "@vahor/n8n-kit";
 import { StickyNote } from "@vahor/n8n-kit/nodes";
-import { GmailTrigger, NoOp } from "@vahor/n8n-kit/nodes/generated";
+import {
+	GoogleDriveTrigger,
+	GoogleDriveV2,
+	NoOp,
+	VectorStorePineconeAI,
+} from "@vahor/n8n-kit/nodes/generated";
 
 // 	https://n8n.io/workflows/2753-rag-chatbot-for-company-documents-using-google-drive-and-gemini/
 
@@ -10,6 +22,10 @@ const googleApiCredentials = Credentials.byId({
 });
 const gmailApiCredentials = Credentials.byId({
 	name: "gmailOAuth2",
+	id: "some-id",
+});
+const googleDriveApiCredentials = Credentials.byId({
+	name: "googleDriveOAuth2Api",
 	id: "some-id",
 });
 
@@ -36,25 +52,63 @@ const workflow = new Workflow("my-workflow", {
 		}),
 
 		Chain.start(
-			new GmailTrigger("gdrive-file-created", {
+			new GoogleDriveTrigger("gdrive-file-created", {
 				label: "Google Drive File Created",
-				googleApiCredentials: googleApiCredentials,
-				gmailOAuth2Credentials: gmailApiCredentials,
+				googleDriveOAuth2ApiCredentials: googleDriveApiCredentials,
+				event: "fileCreated",
+				triggerOn: "specificFolder",
+				options: {
+					fileType: "all",
+				},
+				pollTimes: {
+					item: [
+						{
+							mode: "everyMinute",
+						},
+					],
+				},
+				folderToWatch: {
+					value: "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
+					mode: "list", // TODO: not sure if mode is required
+				},
 			}),
 		).next(new Placeholder("download-from-drive")),
 
 		Chain.start(
-			new NoOp("gdrive-file-updated", {
+			new GoogleDriveTrigger("gdrive-file-updated", {
 				label: "Google Drive File Updated",
+				googleDriveOAuth2ApiCredentials: googleDriveApiCredentials,
+				event: "fileUpdated",
+				triggerOn: "specificFolder",
+				pollTimes: {
+					item: [
+						{
+							mode: "everyMinute",
+						},
+					],
+				},
+				folderToWatch: {
+					value: "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
+					mode: "list", // TODO: not sure if mode is required
+				},
 			}),
 		)
 			.next(
-				new NoOp("download-from-drive", {
+				new GoogleDriveV2("download-from-drive", {
 					label: "Download File From Google Drive",
+					googleDriveOAuth2ApiCredentials: googleDriveApiCredentials,
+					operation: "download",
+					fileId: {
+						mode: "id", // TODO: not sure if mode is required
+						value: "={{ $json.id }}",
+					},
+					options: {
+						fileName: "={{ $json.name }}",
+					},
 				}),
 			)
 			.next(
-				new NoOp("upload-to-pinecone", {
+				new VectorStorePineconeAI("upload-to-pinecone", {
 					label: "Pinecone Vector Store",
 				}),
 			),

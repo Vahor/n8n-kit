@@ -113,13 +113,22 @@ const generateTypescriptNodeOutput = async (
 
 const count = allNodes.length;
 let current = 0;
+
+const baseNodes = allNodes.filter(
+	(node) => !node.includes("@n8n/nodes-langchain"),
+);
+const langChainNodeAlreadyExistInBaseNode = (node: string) => {
+	return baseNodes.some((baseNode) => baseNode.includes(node));
+};
+
 for (const node of allNodes) {
 	const isLangChainNode = node.includes("@n8n/nodes-langchain");
 	let nodeName = node.split("/").pop()?.split(".")[0]!;
-	if (isLangChainNode) {
+	const nodePathWithoutStartingSlash = node.split("vendor")[1];
+
+	if (isLangChainNode && langChainNodeAlreadyExistInBaseNode(nodeName)) {
 		nodeName = `${nodeName}AI`;
 	}
-	const nodePathWithoutStartingSlash = node.split("vendor")[1];
 
 	try {
 		delete require.cache[node];
@@ -148,6 +157,11 @@ for (const node of allNodes) {
 		const description = instance.description;
 		description.__filepath = nodePathWithoutStartingSlash;
 		description.__nodename = nodeName;
+
+		if (description.version === undefined || description.name === undefined) {
+			console.error(`No version or name for ${nodePathWithoutStartingSlash}`);
+			continue;
+		}
 
 		await generateTypescriptNodeOutput(description, `${nodeName}.ts`);
 		current++;

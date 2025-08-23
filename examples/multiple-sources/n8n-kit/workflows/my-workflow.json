@@ -30,30 +30,81 @@
 		{
 			"id": "gdrive-file-created",
 			"name": "Google Drive File Created",
-			"type": "n8n-nodes-base.gmailTrigger",
+			"type": "n8n-nodes-base.googleDriveTrigger",
 			"position": [210, 1015],
-			"typeVersion": 1.3,
-			"parameters": {},
+			"typeVersion": 1,
+			"parameters": {
+				"event": "fileCreated",
+				"triggerOn": "specificFolder",
+				"options": {
+					"fileType": "all"
+				},
+				"pollTimes": {
+					"item": [
+						{
+							"mode": "everyMinute"
+						}
+					]
+				},
+				"folderToWatch": {
+					"value": "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
+					"mode": "list"
+				}
+			},
 			"credentials": {
-				"googleApi": { "id": "some-id" },
-				"gmailOAuth2": { "id": "some-id" }
+				"googleDriveOAuth2Api": {
+					"id": "some-id"
+				}
 			}
 		},
 		{
 			"id": "gdrive-file-updated",
 			"name": "Google Drive File Updated",
-			"type": "n8n-nodes-base.noOp",
+			"type": "n8n-nodes-base.googleDriveTrigger",
 			"position": [210, 1245],
 			"typeVersion": 1,
-			"parameters": {}
+			"parameters": {
+				"event": "fileUpdated",
+				"triggerOn": "specificFolder",
+				"pollTimes": {
+					"item": [
+						{
+							"mode": "everyMinute"
+						}
+					]
+				},
+				"folderToWatch": {
+					"value": "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
+					"mode": "list"
+				}
+			},
+			"credentials": {
+				"googleDriveOAuth2Api": {
+					"id": "some-id"
+				}
+			}
 		},
 		{
 			"id": "download-from-drive",
 			"name": "Download File From Google Drive",
-			"type": "n8n-nodes-base.noOp",
+			"type": "n8n-nodes-base.googleDrive",
 			"position": [555, 1130],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 3,
+			"parameters": {
+				"operation": "download",
+				"fileId": {
+					"mode": "id",
+					"value": "={{ $json.id }}"
+				},
+				"options": {
+					"fileName": "={{ $json.name }}"
+				}
+			},
+			"credentials": {
+				"googleDriveOAuth2Api": {
+					"id": "some-id"
+				}
+			}
 		},
 		{
 			"id": "upload-to-pinecone",
@@ -69,7 +120,10 @@
 			"type": "n8n-nodes-base.stickyNote",
 			"position": [420, 660],
 			"typeVersion": 1,
-			"parameters": { "content": "## Chat with company documents", "color": 1 }
+			"parameters": {
+				"content": "## Chat with company documents",
+				"color": 1
+			}
 		},
 		{
 			"id": "chat-message-received",
@@ -113,15 +167,33 @@
 		},
 		"Download File From Google Drive": {
 			"main": [
-				[{ "node": "Pinecone Vector Store", "type": "main", "index": 0 }]
+				[
+					{
+						"node": "Pinecone Vector Store",
+						"type": "main",
+						"index": 0
+					}
+				]
 			]
 		},
 		"When chat message received": {
-			"main": [[{ "node": "AI Agent", "type": "main", "index": 0 }]]
+			"main": [
+				[
+					{
+						"node": "AI Agent",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
 		}
 	},
 	"settings": {},
 	"staticData": {},
 	"active": true,
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [
+		{
+			"name": "@vahor/n8n-iJFYtqyGWaroz"
+		}
+	]
 }
