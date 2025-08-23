@@ -16,6 +16,7 @@ export interface RssFeedReadTriggerNodeParameters {
      */
     readonly feedUrl: string;
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

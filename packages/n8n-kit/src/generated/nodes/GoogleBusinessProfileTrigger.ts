@@ -28,6 +28,7 @@ export interface GoogleBusinessProfileTriggerNodeParameters {
      */
     readonly location?: any;
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

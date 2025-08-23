@@ -19,6 +19,7 @@ export interface ClockifyTriggerNodeParameters {
 
     readonly watchField: "0";
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

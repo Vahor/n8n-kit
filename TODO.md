@@ -13,6 +13,8 @@
 - Type '"inside group 2"' is not assignable to type '"When clicking ‘Test workflow’" | "inside group 1" | "inside group 1 - 2"'. Did you mean '"inside group 1"'? [2820]
 in with-group example
 
+- Remove commands that are not implemented. And simply add them in an issue (list, diff)
+
 ## Tests to add:
 
 - Propagate types for if nodes

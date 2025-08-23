@@ -30,6 +30,7 @@ export interface NotionTriggerNodeParameters {
      */
     readonly simple?: boolean;
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

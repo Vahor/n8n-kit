@@ -44,6 +44,7 @@ export interface GoogleSheetsTriggerNodeParameters {
      */
     readonly options?: { "columnsToWatch"?: any[], "dataLocationOnSheet"?: { "values": any }, "valueRender"?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", "dateTimeRenderOption"?: "SERIAL_NUMBER" | "FORMATTED_STRING" };
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

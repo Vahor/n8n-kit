@@ -37,6 +37,7 @@ export interface MicrosoftOutlookTriggerNodeParameters {
      */
     readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean };
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

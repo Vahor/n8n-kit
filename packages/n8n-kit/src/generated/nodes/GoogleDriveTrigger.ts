@@ -48,6 +48,7 @@ export interface GoogleDriveTriggerNodeParameters {
      */
     readonly options?: { "fileType"?: "all" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.video" };
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

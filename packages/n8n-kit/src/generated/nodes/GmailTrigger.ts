@@ -37,6 +37,7 @@ export interface GmailTriggerNodeParameters {
      */
     readonly options?: { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean };
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

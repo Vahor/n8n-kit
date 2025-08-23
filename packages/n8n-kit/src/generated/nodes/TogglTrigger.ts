@@ -16,6 +16,7 @@ export interface TogglTriggerNodeParameters {
      */
     readonly event: "newTimeEntry";
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

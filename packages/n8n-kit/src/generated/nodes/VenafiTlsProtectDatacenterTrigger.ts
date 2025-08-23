@@ -16,6 +16,7 @@ export interface VenafiTlsProtectDatacenterTriggerNodeParameters {
      */
     readonly triggerOn: "certificateExpired";
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

@@ -24,6 +24,7 @@ export interface GoogleCalendarTriggerNodeParameters {
      */
     readonly options?: { "matchTerm"?: string };
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

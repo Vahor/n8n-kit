@@ -47,6 +47,7 @@ export interface AirtableTriggerNodeParameters {
      */
     readonly additionalFields?: { "fields"?: string, "formula"?: string, "viewId"?: string };
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

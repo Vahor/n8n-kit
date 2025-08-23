@@ -95,6 +95,14 @@ const generateTypescriptNodeOutput = async (
 		);
 		code.line();
 	}
+
+	if (result.polling) {
+		// TODO: make a shared type ?
+		code.line(
+			`readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };`,
+		);
+	}
+
 	code.unindent();
 	code.line(`}`);
 	code.line();

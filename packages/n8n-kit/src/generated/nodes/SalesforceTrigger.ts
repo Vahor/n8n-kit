@@ -22,6 +22,7 @@ export interface SalesforceTriggerNodeParameters {
      */
     readonly customObject?: string;
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 

@@ -28,6 +28,7 @@ export interface SeaTableTriggerV1NodeParameters {
      */
     readonly simple?: boolean;
 
+    readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 
 }
 
