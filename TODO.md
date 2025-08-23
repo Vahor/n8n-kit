@@ -38,7 +38,7 @@ interface VectorStorePineconeNodeParameters {
 
 #### n8n-kit
 
-- Support 617+ nodes
+- Support 623+ nodes
 
 - We have multiple exports
 	- "@vahor/n8n-kit" contains chain, workflow and app.

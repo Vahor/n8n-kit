@@ -27,7 +27,7 @@ export class LmOpenHuggingFaceInference<L extends string> extends Node<L> {
         return [this.props!.huggingFaceApiCredentials];
     }
 
-    public aiLanguageModel(next: IChainable): this {
+    public toAiLanguageModel(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_languageModel" });
         return this;
     }

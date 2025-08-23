@@ -33,7 +33,7 @@ export class MemoryManager<L extends string> extends Node<L> {
         return this;
     }
 
-    public (next: IChainable): this {
+    public to(next: IChainable): this {
         super.addNext(next.startState, { type: "main" });
         return this;
     }

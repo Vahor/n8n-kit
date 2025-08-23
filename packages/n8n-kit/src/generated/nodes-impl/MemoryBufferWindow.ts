@@ -20,7 +20,7 @@ export class MemoryBufferWindow<L extends string> extends Node<L> {
         super(id, props);
     }
 
-    public aiMemory(next: IChainable): this {
+    public toAiMemory(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_memory" });
         return this;
     }

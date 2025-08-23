@@ -27,7 +27,7 @@ export class DocumentGithubLoader<L extends string> extends Node<L> {
         return [this.props!.githubApiCredentials];
     }
 
-    public aiDocument(next: IChainable): this {
+    public toAiDocument(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_document" });
         return this;
     }

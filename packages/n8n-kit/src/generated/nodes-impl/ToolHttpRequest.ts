@@ -20,7 +20,7 @@ export class ToolHttpRequest<L extends string> extends Node<L> {
         super(id, props);
     }
 
-    public aiTool(next: IChainable): this {
+    public toAiTool(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_tool" });
         return this;
     }

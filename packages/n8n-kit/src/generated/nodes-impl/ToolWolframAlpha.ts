@@ -27,7 +27,7 @@ export class ToolWolframAlpha<L extends string> extends Node<L> {
         return [this.props!.wolframAlphaApiCredentials];
     }
 
-    public aiTool(next: IChainable): this {
+    public toAiTool(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_tool" });
         return this;
     }

@@ -52,6 +52,9 @@ const generateTypescriptNodeOutput = async (
 	code.line(`// see scripts/generate-nodes-impl.ts`);
 	code.line();
 
+	if (result.inputs === undefined) {
+		console.log(result);
+	}
 	const hasInputs =
 		Object.keys(result.inputs).filter((o) => o !== "main").length > 0;
 
@@ -145,7 +148,7 @@ const generateTypescriptNodeOutput = async (
 	for (const [outputName, outputType] of Object.entries(result.outputs)) {
 		if (outputName === "main") continue;
 		code.openBlock(
-			`public ${code.toCamelCase(outputName)}(next: IChainable): this`,
+			`public to${capitalize(code.toCamelCase(outputName))}(next: IChainable): this`,
 		);
 		code.line(`super.addNext(next.startState, { type: "${outputType}" });`);
 		code.line(`return this;`);
@@ -167,6 +170,10 @@ if (allNodesTypes.length === 0) {
 }
 for (const nodePath of allNodesTypes) {
 	const nodeName = nodePath.split("/").pop()?.split(".")[0]!;
+	if (nodeName === "index") {
+		current++;
+		continue;
+	}
 
 	try {
 		delete require.cache[nodePath];

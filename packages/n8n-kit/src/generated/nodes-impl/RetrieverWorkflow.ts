@@ -20,7 +20,7 @@ export class RetrieverWorkflow<L extends string> extends Node<L> {
         super(id, props);
     }
 
-    public retriever(next: IChainable): this {
+    public toRetriever(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_retriever" });
         return this;
     }

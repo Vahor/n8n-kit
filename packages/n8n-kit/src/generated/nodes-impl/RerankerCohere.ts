@@ -27,7 +27,7 @@ export class RerankerCohere<L extends string> extends Node<L> {
         return [this.props!.cohereApiCredentials];
     }
 
-    public aiReranker(next: IChainable): this {
+    public toAiReranker(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_reranker" });
         return this;
     }

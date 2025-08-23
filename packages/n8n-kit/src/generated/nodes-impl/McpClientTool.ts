@@ -29,7 +29,7 @@ export class McpClientTool<L extends string> extends Node<L> {
         return [this.props!.httpBearerAuthCredentials, this.props!.httpHeaderAuthCredentials];
     }
 
-    public tools(next: IChainable): this {
+    public toTools(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_tool" });
         return this;
     }

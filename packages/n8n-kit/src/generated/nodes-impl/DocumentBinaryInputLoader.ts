@@ -4,21 +4,21 @@
 import type { IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
-import type { DocumentJsonInputLoaderNodeParameters } from "../nodes/DocumentJsonInputLoader";
+import type { DocumentBinaryInputLoaderNodeParameters } from "../nodes/DocumentBinaryInputLoader";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface DocumentJsonInputLoaderProps extends NodeProps {
-    readonly parameters: DocumentJsonInputLoaderNodeParameters;
+export interface DocumentBinaryInputLoaderProps extends NodeProps {
+    readonly parameters: DocumentBinaryInputLoaderNodeParameters;
 }
 
 /**
- * Use JSON data from a previous step in the workflow
+ * Use binary data from a previous step in the workflow
  */
-export class DocumentJsonInputLoader<L extends string> extends Node<L> {
-    protected type = "@n8n/n8n-nodes-langchain.documentJsonInputLoader" as const;
+export class DocumentBinaryInputLoader<L extends string> extends Node<L> {
+    protected type = "@n8n/n8n-nodes-langchain.documentBinaryInputLoader" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: DocumentJsonInputLoaderProps) {
+    constructor(id: L, override props?: DocumentBinaryInputLoaderProps) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

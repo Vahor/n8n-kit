@@ -33,7 +33,7 @@ export class RetrieverContextualCompression<L extends string> extends Node<L> {
         return this;
     }
 
-    public retriever(next: IChainable): this {
+    public toRetriever(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_retriever" });
         return this;
     }

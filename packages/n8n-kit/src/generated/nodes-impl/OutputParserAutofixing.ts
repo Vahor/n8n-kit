@@ -33,7 +33,7 @@ export class OutputParserAutofixing<L extends string> extends Node<L> {
         return this;
     }
 
-    public aiOutputParser(next: IChainable): this {
+    public toAiOutputParser(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_outputParser" });
         return this;
     }

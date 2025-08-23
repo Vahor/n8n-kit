@@ -27,7 +27,7 @@ export class LmChatVercelAiGateway<L extends string> extends Node<L> {
         return [this.props!.vercelAiGatewayApiCredentials];
     }
 
-    public aiLanguageModel(next: IChainable): this {
+    public toAiLanguageModel(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_languageModel" });
         return this;
     }

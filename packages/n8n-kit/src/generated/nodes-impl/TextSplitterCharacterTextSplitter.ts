@@ -20,7 +20,7 @@ export class TextSplitterCharacterTextSplitter<L extends string> extends Node<L>
         super(id, props);
     }
 
-    public aiTextSplitter(next: IChainable): this {
+    public toAiTextSplitter(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_textSplitter" });
         return this;
     }

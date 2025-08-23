@@ -28,7 +28,7 @@ export class RetrieverVectorStore<L extends string> extends Node<L> {
         return this;
     }
 
-    public aiRetriever(next: IChainable): this {
+    public toAiRetriever(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_retriever" });
         return this;
     }

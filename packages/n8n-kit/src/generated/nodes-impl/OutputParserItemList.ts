@@ -20,7 +20,7 @@ export class OutputParserItemList<L extends string> extends Node<L> {
         super(id, props);
     }
 
-    public aiOutputParser(next: IChainable): this {
+    public toAiOutputParser(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_outputParser" });
         return this;
     }

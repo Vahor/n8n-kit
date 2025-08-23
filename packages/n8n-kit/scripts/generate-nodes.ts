@@ -155,6 +155,10 @@ for (const nodePath of allNodes.sort((a, b) =>
 )) {
 	let nodeName = getNodeName(nodePath);
 	const nodePathWithoutStartingSlash = nodePath.split("vendor")[1];
+	if (nodeName === "index") {
+		current++;
+		continue;
+	}
 
 	if (
 		isLangChainNode(nodePath) &&

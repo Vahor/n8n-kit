@@ -27,7 +27,7 @@ export class MemoryXata<L extends string> extends Node<L> {
         return [this.props!.xataApiCredentials];
     }
 
-    public aiMemory(next: IChainable): this {
+    public toAiMemory(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_memory" });
         return this;
     }

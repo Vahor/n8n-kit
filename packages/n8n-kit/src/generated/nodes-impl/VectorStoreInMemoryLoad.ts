@@ -28,7 +28,7 @@ export class VectorStoreInMemoryLoad<L extends string> extends Node<L> {
         return this;
     }
 
-    public aiVectorStore(next: IChainable): this {
+    public toAiVectorStore(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_vectorStore" });
         return this;
     }

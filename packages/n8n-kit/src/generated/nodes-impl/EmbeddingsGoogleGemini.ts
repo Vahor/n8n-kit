@@ -27,7 +27,7 @@ export class EmbeddingsGoogleGemini<L extends string> extends Node<L> {
         return [this.props!.googlePalmApiCredentials];
     }
 
-    public aiEmbedding(next: IChainable): this {
+    public toAiEmbedding(next: IChainable): this {
         super.addNext(next.startState, { type: "ai_embedding" });
         return this;
     }
