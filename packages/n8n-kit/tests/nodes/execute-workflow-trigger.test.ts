@@ -1,6 +1,7 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { type } from "arktype";
-import { Chain, ExecuteWorkflowTrigger, NoOp, Workflow } from "../../src";
+import { Chain, Workflow } from "../../src";
+import { ExecuteWorkflowTrigger, NoOp } from "../../src/nodes";
 
 describe("ExecuteWorkflowTrigger", () => {
 	test("it works", () => {
