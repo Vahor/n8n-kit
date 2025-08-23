@@ -13,6 +13,9 @@ export interface TravisCiProps extends NodeProps {
 
 }
 
+/**
+ * Consume TravisCI API
+ */
 export class TravisCi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.travisCi" as const;

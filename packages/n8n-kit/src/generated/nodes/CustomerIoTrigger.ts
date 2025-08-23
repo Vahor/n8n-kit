@@ -5,10 +5,8 @@ export const description = "Starts the workflow on a Customer.io update (Beta)" 
 export const type = "n8n-nodes-base.customerIoTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"customerIoApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow on a Customer.io update (Beta)
- */
 export interface CustomerIoTriggerNodeParameters {
 
     /**

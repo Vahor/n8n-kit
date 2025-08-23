@@ -4,10 +4,8 @@
 export const description = "Execute another workflow" as const;
 export const type = "n8n-nodes-base.executeWorkflow" as const;
 export const version = 1.2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Execute another workflow
- */
 export interface ExecuteWorkflowNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface KoBoToolboxTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Process KoBoToolbox submissions
+ */
 export class KoBoToolboxTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.koBoToolboxTrigger" as const;

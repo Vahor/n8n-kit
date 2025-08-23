@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Figma events occur" as cons
 export const type = "n8n-nodes-base.figmaTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"figmaApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Figma events occur
- */
 export interface FigmaTriggerNodeParameters {
 
     /**

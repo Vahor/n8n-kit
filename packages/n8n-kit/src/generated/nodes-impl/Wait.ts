@@ -17,6 +17,9 @@ export interface WaitProps extends NodeProps {
 
 }
 
+/**
+ * Wait before continue with execution
+ */
 export class Wait<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wait" as const;

@@ -5,10 +5,8 @@ export const description = "Use HuggingFace Inference Embeddings" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsHuggingFaceInference" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"huggingFaceApi","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use HuggingFace Inference Embeddings
- */
 export interface EmbeddingsHuggingFaceInferenceNodeParameters {
 
     /**

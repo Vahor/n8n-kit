@@ -10,6 +10,9 @@ export interface ReadWriteFileProps extends NodeProps {
 
 }
 
+/**
+ * Read or write files from the computer that runs n8n
+ */
 export class ReadWriteFile<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.readWriteFile" as const;

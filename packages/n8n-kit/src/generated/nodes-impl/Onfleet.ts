@@ -13,6 +13,9 @@ export interface OnfleetProps extends NodeProps {
 
 }
 
+/**
+ * Consume Onfleet API
+ */
 export class Onfleet<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.onfleet" as const;

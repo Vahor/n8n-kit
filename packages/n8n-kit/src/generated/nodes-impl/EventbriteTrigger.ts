@@ -15,6 +15,9 @@ export interface EventbriteTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Eventbrite events via webhooks
+ */
 export class EventbriteTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.eventbriteTrigger" as const;

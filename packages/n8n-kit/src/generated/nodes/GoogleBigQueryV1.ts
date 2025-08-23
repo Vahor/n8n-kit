@@ -5,10 +5,8 @@ export const description = "Consume Google BigQuery API" as const;
 export const type = "n8n-nodes-base.googleBigQuery" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBigQueryOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Google BigQuery API
- */
 export interface GoogleBigQueryV1NodeParameters {
 
     readonly oldVersionNotice?: string;

@@ -13,6 +13,9 @@ export interface MarketstackProps extends NodeProps {
 
 }
 
+/**
+ * Consume Marketstack API
+ */
 export class Marketstack<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.marketstack" as const;

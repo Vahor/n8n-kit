@@ -13,6 +13,9 @@ export interface LmChatAwsBedrockProps extends NodeProps {
 
 }
 
+/**
+ * Language Model AWS Bedrock
+ */
 export class LmChatAwsBedrock<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatAwsBedrock" as const;

@@ -13,6 +13,9 @@ export interface TogglTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Toggl events occur
+ */
 export class TogglTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.togglTrigger" as const;

@@ -13,6 +13,9 @@ export interface MemoryMongoDbChatProps extends NodeProps {
 
 }
 
+/**
+ * Stores the chat history in MongoDB collection.
+ */
 export class MemoryMongoDbChat<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.memoryMongoDbChat" as const;

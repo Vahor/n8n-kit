@@ -4,10 +4,8 @@
 export const description = "Writes a binary file to disk" as const;
 export const type = "n8n-nodes-base.writeBinaryFile" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Writes a binary file to disk
- */
 export interface WriteBinaryFileNodeParameters {
 
     /**

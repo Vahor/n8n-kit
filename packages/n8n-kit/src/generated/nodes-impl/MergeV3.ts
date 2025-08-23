@@ -10,6 +10,9 @@ export interface MergeV3Props extends NodeProps {
 
 }
 
+/**
+ * Merges data of multiple streams once data from both is available
+ */
 export class MergeV3<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.merge" as const;

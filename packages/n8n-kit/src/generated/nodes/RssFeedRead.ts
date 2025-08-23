@@ -4,10 +4,8 @@
 export const description = "Reads data from an RSS Feed" as const;
 export const type = "n8n-nodes-base.rssFeedRead" as const;
 export const version = 1.2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Reads data from an RSS Feed
- */
 export interface RssFeedReadNodeParameters {
 
     /**

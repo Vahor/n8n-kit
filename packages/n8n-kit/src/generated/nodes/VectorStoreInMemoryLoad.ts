@@ -4,10 +4,8 @@
 export const description = "Load embedded data from an in-memory vector store" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryLoad" as const;
 export const version = 1 as const;
+export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
-/**
- * Load embedded data from an in-memory vector store
- */
 export interface VectorStoreInMemoryLoadNodeParameters {
 
     /**

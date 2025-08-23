@@ -13,6 +13,9 @@ export interface PeekalinkProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Peekalink API
+ */
 export class Peekalink<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.peekalink" as const;

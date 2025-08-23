@@ -5,10 +5,8 @@ export const description = "Consume Segment API" as const;
 export const type = "n8n-nodes-base.segment" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"segmentApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Segment API
- */
 export interface SegmentNodeParameters {
 
     /**

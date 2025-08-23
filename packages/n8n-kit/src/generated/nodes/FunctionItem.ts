@@ -4,10 +4,8 @@
 export const description = "Run custom function code which gets executed once per item" as const;
 export const type = "n8n-nodes-base.functionItem" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Run custom function code which gets executed once per item
- */
 export interface FunctionItemNodeParameters {
 
     readonly notice?: string;

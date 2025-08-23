@@ -10,6 +10,9 @@ export interface ItemListsV2Props extends NodeProps {
 
 }
 
+/**
+ * Helper for working with lists of items and transforming arrays
+ */
 export class ItemListsV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.itemLists" as const;

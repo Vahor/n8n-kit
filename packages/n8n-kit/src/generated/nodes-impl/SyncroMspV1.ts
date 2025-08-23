@@ -13,6 +13,9 @@ export interface SyncroMspV1Props extends NodeProps {
 
 }
 
+/**
+ * Gets data from SyncroMSP
+ */
 export class SyncroMspV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.syncroMsp" as const;

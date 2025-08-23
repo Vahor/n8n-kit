@@ -5,10 +5,8 @@ export const description = "Work with your data in Milvus Vector Store" as const
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreMilvus" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"milvusApi","required":true}] as const;
+export const outputs = {} as const;
 
-/**
- * Work with your data in Milvus Vector Store
- */
 export interface VectorStoreMilvusNodeParameters {
 
     /**

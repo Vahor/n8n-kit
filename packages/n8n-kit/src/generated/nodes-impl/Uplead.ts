@@ -13,6 +13,9 @@ export interface UpleadProps extends NodeProps {
 
 }
 
+/**
+ * Consume Uplead API
+ */
 export class Uplead<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.uplead" as const;

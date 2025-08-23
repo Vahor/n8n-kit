@@ -13,6 +13,9 @@ export interface LmChatVercelAiGatewayProps extends NodeProps {
 
 }
 
+/**
+ * For advanced usage with an AI chain via Vercel AI Gateway
+ */
 export class LmChatVercelAiGateway<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatVercelAiGateway" as const;

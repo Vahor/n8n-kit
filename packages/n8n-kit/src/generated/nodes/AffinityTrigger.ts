@@ -5,10 +5,8 @@ export const description = "Handle Affinity events via webhooks" as const;
 export const type = "n8n-nodes-base.affinityTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"affinityApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Affinity events via webhooks
- */
 export interface AffinityTriggerNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Consume Medium API" as const;
 export const type = "n8n-nodes-base.medium" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mediumApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"mediumOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Medium API
- */
 export interface MediumNodeParameters {
 
     /**

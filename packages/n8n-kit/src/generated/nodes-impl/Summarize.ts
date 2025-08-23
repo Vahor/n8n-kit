@@ -10,6 +10,9 @@ export interface SummarizeProps extends NodeProps {
 
 }
 
+/**
+ * Sum, count, max, etc. across items
+ */
 export class Summarize<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.summarize" as const;

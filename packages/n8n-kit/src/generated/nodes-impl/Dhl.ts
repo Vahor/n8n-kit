@@ -13,6 +13,9 @@ export interface DhlProps extends NodeProps {
 
 }
 
+/**
+ * Consume DHL API
+ */
 export class Dhl<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.dhl" as const;

@@ -13,6 +13,9 @@ export interface FacebookTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Facebook events occur
+ */
 export class FacebookTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.facebookTrigger" as const;

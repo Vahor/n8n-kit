@@ -5,10 +5,8 @@ export const description = "Consume Mandrill API" as const;
 export const type = "n8n-nodes-base.mandrill" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mandrillApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Mandrill API
- */
 export interface MandrillNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface NotionV1Props extends NodeProps {
 
 }
 
+/**
+ * Consume Notion API
+ */
 export class NotionV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.notion" as const;

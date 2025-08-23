@@ -5,10 +5,8 @@ export const description = "Consume Mistral AI API" as const;
 export const type = "n8n-nodes-base.mistralAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mistralCloudApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Mistral AI API
- */
 export interface MistralAiNodeParameters {
 
     /**

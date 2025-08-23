@@ -15,6 +15,9 @@ export interface PipedriveProps extends NodeProps {
 
 }
 
+/**
+ * Create and edit data in Pipedrive
+ */
 export class Pipedrive<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.pipedrive" as const;

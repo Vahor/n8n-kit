@@ -13,6 +13,9 @@ export interface AwsSesProps extends NodeProps {
 
 }
 
+/**
+ * Sends data to AWS SES
+ */
 export class AwsSes<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsSes" as const;

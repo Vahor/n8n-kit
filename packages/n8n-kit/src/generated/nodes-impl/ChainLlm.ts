@@ -10,6 +10,9 @@ export interface ChainLlmProps extends NodeProps {
 
 }
 
+/**
+ * A simple chain to prompt a large language model
+ */
 export class ChainLlm<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.chainLlm" as const;

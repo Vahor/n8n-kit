@@ -17,6 +17,9 @@ export interface SentryIoProps extends NodeProps {
 
 }
 
+/**
+ * Consume Sentry.io API
+ */
 export class SentryIo<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.sentryIo" as const;

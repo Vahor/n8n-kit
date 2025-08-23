@@ -4,10 +4,8 @@
 export const description = "Use JSON data from a previous step in the workflow" as const;
 export const type = "@n8n/n8n-nodes-langchain.documentJsonInputLoader" as const;
 export const version = 1 as const;
+export const outputs = {"ai_document":"ai_document"} as const;
 
-/**
- * Use JSON data from a previous step in the workflow
- */
 export interface DocumentJsonInputLoaderNodeParameters {
 
     /**

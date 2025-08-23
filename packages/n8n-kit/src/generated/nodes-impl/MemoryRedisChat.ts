@@ -13,6 +13,9 @@ export interface MemoryRedisChatProps extends NodeProps {
 
 }
 
+/**
+ * Stores the chat history in Redis.
+ */
 export class MemoryRedisChat<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.memoryRedisChat" as const;

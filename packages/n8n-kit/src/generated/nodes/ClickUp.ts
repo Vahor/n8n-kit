@@ -5,10 +5,8 @@ export const description = "Consume ClickUp API (Beta)" as const;
 export const type = "n8n-nodes-base.clickUp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"clickUpApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"clickUpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume ClickUp API (Beta)
- */
 export interface ClickUpNodeParameters {
 
     /**

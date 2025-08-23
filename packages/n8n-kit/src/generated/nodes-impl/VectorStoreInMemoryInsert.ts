@@ -10,6 +10,9 @@ export interface VectorStoreInMemoryInsertProps extends NodeProps {
 
 }
 
+/**
+ * Insert data into an in-memory vector store
+ */
 export class VectorStoreInMemoryInsert<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryInsert" as const;

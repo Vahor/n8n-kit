@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Venafi events occur" as con
 export const type = "n8n-nodes-base.venafiTlsProtectCloudTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"venafiTlsProtectCloudApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Venafi events occur
- */
 export interface VenafiTlsProtectCloudTriggerNodeParameters {
 
     /**

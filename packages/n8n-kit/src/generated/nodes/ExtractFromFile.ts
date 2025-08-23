@@ -4,10 +4,8 @@
 export const description = "Convert binary data to JSON" as const;
 export const type = "n8n-nodes-base.extractFromFile" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Convert binary data to JSON
- */
 export interface ExtractFromFileNodeParameters {
 
     /**

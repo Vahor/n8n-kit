@@ -13,6 +13,9 @@ export interface XeroProps extends NodeProps {
 
 }
 
+/**
+ * Consume Xero API
+ */
 export class Xero<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.xero" as const;

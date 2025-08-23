@@ -5,10 +5,8 @@ export const description = "Gets current and future weather information" as cons
 export const type = "n8n-nodes-base.openWeatherMap" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"openWeatherMapApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Gets current and future weather information
- */
 export interface OpenWeatherMapNodeParameters {
 
     /**

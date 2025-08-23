@@ -10,6 +10,9 @@ export interface SetV2Props extends NodeProps {
 
 }
 
+/**
+ * Modify, add, or remove item fields
+ */
 export class SetV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.set" as const;

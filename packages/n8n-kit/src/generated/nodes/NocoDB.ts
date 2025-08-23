@@ -5,10 +5,8 @@ export const description = "Read, update, write and delete data from NocoDB" as 
 export const type = "n8n-nodes-base.nocoDb" as const;
 export const version = 3 as const;
 export const credentials = [{"name":"nocoDb","required":true,"displayOptions":{"show":{"authentication":["nocoDb"]}}},{"name":"nocoDbApiToken","required":true,"displayOptions":{"show":{"authentication":["nocoDbApiToken"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Read, update, write and delete data from NocoDB
- */
 export interface NocoDBNodeParameters {
 
     /**

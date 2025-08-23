@@ -4,10 +4,8 @@
 export const description = "Executes a command on the host" as const;
 export const type = "n8n-nodes-base.executeCommand" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Executes a command on the host
- */
 export interface ExecuteCommandNodeParameters {
 
     /**

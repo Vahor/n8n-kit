@@ -15,6 +15,9 @@ export interface NocoDBProps extends NodeProps {
 
 }
 
+/**
+ * Read, update, write and delete data from NocoDB
+ */
 export class NocoDB<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.nocoDb" as const;

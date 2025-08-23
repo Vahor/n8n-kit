@@ -13,6 +13,9 @@ export interface EmbeddingsGoogleVertexProps extends NodeProps {
 
 }
 
+/**
+ * Use Google Vertex Embeddings
+ */
 export class EmbeddingsGoogleVertex<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.embeddingsGoogleVertex" as const;

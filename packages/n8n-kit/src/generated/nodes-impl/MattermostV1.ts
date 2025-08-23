@@ -13,6 +13,9 @@ export interface MattermostV1Props extends NodeProps {
 
 }
 
+/**
+ * Sends data to Mattermost
+ */
 export class MattermostV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mattermost" as const;

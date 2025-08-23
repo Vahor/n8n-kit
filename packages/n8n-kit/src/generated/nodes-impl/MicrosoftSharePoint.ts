@@ -13,6 +13,9 @@ export interface MicrosoftSharePointProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Microsoft SharePoint API
+ */
 export class MicrosoftSharePoint<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftSharePoint" as const;

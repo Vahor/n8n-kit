@@ -5,10 +5,8 @@ export const description = "Trigger LoneScale Workflow" as const;
 export const type = "n8n-nodes-base.loneScaleTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"loneScaleApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Trigger LoneScale Workflow
- */
 export interface LoneScaleTriggerNodeParameters {
 
     /**

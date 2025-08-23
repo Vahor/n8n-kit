@@ -5,10 +5,8 @@ export const description = "Handle Mautic events via webhooks" as const;
 export const type = "n8n-nodes-base.mauticTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mauticApi","required":true,"displayOptions":{"show":{"authentication":["credentials"]}}},{"name":"mauticOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Mautic events via webhooks
- */
 export interface MauticTriggerNodeParameters {
 
     /**

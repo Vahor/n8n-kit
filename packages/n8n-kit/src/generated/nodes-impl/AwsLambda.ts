@@ -13,6 +13,9 @@ export interface AwsLambdaProps extends NodeProps {
 
 }
 
+/**
+ * Invoke functions on AWS Lambda
+ */
 export class AwsLambda<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsLambda" as const;

@@ -5,10 +5,8 @@ export const description = "Sends an Email" as const;
 export const type = "n8n-nodes-base.emailSend" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"smtp","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends an Email
- */
 export interface EmailSendV1NodeParameters {
 
     /**

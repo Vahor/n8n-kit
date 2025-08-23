@@ -5,10 +5,8 @@ export const description = "Consume GitHub API" as const;
 export const type = "n8n-nodes-base.github" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"githubApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"githubOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume GitHub API
- */
 export interface GithubNodeParameters {
 
     /**

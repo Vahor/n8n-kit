@@ -17,6 +17,9 @@ export interface JiraProps extends NodeProps {
 
 }
 
+/**
+ * Consume Jira Software API
+ */
 export class Jira<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.jira" as const;

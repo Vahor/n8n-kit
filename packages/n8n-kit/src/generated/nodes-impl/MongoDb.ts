@@ -13,6 +13,9 @@ export interface MongoDbProps extends NodeProps {
 
 }
 
+/**
+ * Find, insert and update documents in MongoDB
+ */
 export class MongoDb<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mongoDb" as const;

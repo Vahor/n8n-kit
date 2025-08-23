@@ -10,6 +10,9 @@ export interface RetrieverVectorStoreProps extends NodeProps {
 
 }
 
+/**
+ * Use a Vector Store as Retriever
+ */
 export class RetrieverVectorStore<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.retrieverVectorStore" as const;

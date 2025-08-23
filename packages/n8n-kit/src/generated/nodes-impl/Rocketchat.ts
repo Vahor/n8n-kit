@@ -13,6 +13,9 @@ export interface RocketchatProps extends NodeProps {
 
 }
 
+/**
+ * Consume RocketChat API
+ */
 export class Rocketchat<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.rocketchat" as const;

@@ -13,6 +13,9 @@ export interface MatrixProps extends NodeProps {
 
 }
 
+/**
+ * Consume Matrix API
+ */
 export class Matrix<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.matrix" as const;

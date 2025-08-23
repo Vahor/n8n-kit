@@ -13,6 +13,9 @@ export interface LmChatOpenRouterProps extends NodeProps {
 
 }
 
+/**
+ * For advanced usage with an AI chain
+ */
 export class LmChatOpenRouter<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatOpenRouter" as const;

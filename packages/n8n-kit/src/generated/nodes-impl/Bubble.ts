@@ -13,6 +13,9 @@ export interface BubbleProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Bubble Data API
+ */
 export class Bubble<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.bubble" as const;

@@ -5,10 +5,8 @@ export const description = "Starts the workflow when MailerLite events occur" as
 export const type = "n8n-nodes-base.mailerLiteTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailerLiteApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when MailerLite events occur
- */
 export interface MailerLiteTriggerV1NodeParameters {
 
     /**

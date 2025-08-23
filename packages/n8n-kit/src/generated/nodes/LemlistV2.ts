@@ -5,10 +5,8 @@ export const description = "Consume the Lemlist API" as const;
 export const type = "n8n-nodes-base.lemlist" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"lemlistApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Lemlist API
- */
 export interface LemlistV2NodeParameters {
 
     /**

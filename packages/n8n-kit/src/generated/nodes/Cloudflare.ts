@@ -5,10 +5,8 @@ export const description = "Consume Cloudflare API" as const;
 export const type = "n8n-nodes-base.cloudflare" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cloudflareApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Cloudflare API
- */
 export interface CloudflareNodeParameters {
 
     /**

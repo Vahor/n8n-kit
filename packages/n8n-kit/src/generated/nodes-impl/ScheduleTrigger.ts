@@ -10,6 +10,9 @@ export interface ScheduleTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Triggers the workflow on a given schedule
+ */
 export class ScheduleTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.scheduleTrigger" as const;

@@ -13,6 +13,9 @@ export interface VenafiTlsProtectDatacenterProps extends NodeProps {
 
 }
 
+/**
+ * Consume Venafi TLS Protect Datacenter
+ */
 export class VenafiTlsProtectDatacenter<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.venafiTlsProtectDatacenter" as const;

@@ -5,10 +5,8 @@ export const description = "Consume Zoom API" as const;
 export const type = "n8n-nodes-base.zoom" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zoomApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"zoomOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Zoom API
- */
 export interface ZoomNodeParameters {
 
     /**

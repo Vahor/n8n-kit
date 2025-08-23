@@ -13,6 +13,9 @@ export interface MicrosoftTeamsV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume Microsoft Teams API
+ */
 export class MicrosoftTeamsV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftTeams" as const;

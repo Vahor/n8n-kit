@@ -10,6 +10,9 @@ export interface ICalendarProps extends NodeProps {
 
 }
 
+/**
+ * Create iCalendar file
+ */
 export class ICalendar<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.iCal" as const;

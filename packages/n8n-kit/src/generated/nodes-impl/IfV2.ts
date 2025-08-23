@@ -10,6 +10,9 @@ export interface IfV2Props extends NodeProps {
 
 }
 
+/**
+ * Route items to different branches (true/false)
+ */
 export class IfV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.if" as const;

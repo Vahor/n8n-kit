@@ -13,6 +13,9 @@ export interface WebflowV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume the Webflow API
+ */
 export class WebflowV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.webflow" as const;

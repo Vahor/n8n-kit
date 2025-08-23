@@ -13,6 +13,9 @@ export interface ClearbitProps extends NodeProps {
 
 }
 
+/**
+ * Consume Clearbit API
+ */
 export class Clearbit<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.clearbit" as const;

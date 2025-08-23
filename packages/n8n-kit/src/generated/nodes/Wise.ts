@@ -5,10 +5,8 @@ export const description = "Consume the Wise API" as const;
 export const type = "n8n-nodes-base.wise" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"wiseApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Wise API
- */
 export interface WiseNodeParameters {
 
     /**

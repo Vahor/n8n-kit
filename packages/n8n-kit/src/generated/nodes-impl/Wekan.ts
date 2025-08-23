@@ -13,6 +13,9 @@ export interface WekanProps extends NodeProps {
 
 }
 
+/**
+ * Consume Wekan API
+ */
 export class Wekan<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wekan" as const;

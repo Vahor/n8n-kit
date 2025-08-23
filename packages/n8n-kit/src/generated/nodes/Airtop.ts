@@ -5,10 +5,8 @@ export const description = "Scrape and control any site with Airtop" as const;
 export const type = "n8n-nodes-base.airtop" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"airtopApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Scrape and control any site with Airtop
- */
 export interface AirtopNodeParameters {
 
     /**

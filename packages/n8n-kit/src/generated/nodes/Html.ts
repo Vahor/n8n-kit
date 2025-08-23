@@ -4,10 +4,8 @@
 export const description = "Work with HTML" as const;
 export const type = "n8n-nodes-base.html" as const;
 export const version = 1.2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Work with HTML
- */
 export interface HtmlNodeParameters {
 
     /**

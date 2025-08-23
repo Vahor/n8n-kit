@@ -13,6 +13,9 @@ export interface ClockifyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Clockify REST API
+ */
 export class Clockify<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.clockify" as const;

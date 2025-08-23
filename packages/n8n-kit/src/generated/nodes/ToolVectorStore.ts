@@ -4,10 +4,8 @@
 export const description = "Answer questions with a vector store" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolVectorStore" as const;
 export const version = 1.1 as const;
+export const outputs = {"ai_tool":"ai_tool"} as const;
 
-/**
- * Answer questions with a vector store
- */
 export interface ToolVectorStoreNodeParameters {
 
     /**

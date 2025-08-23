@@ -4,10 +4,8 @@
 export const description = "Remove items matching a condition" as const;
 export const type = "n8n-nodes-base.filter" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Remove items matching a condition
- */
 export interface FilterV1NodeParameters {
 
     /**

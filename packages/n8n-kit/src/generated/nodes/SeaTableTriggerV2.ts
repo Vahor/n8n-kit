@@ -5,10 +5,8 @@ export const description = "Starts the workflow when SeaTable events occur" as c
 export const type = "n8n-nodes-base.seaTableTrigger" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"seaTableApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when SeaTable events occur
- */
 export interface SeaTableTriggerV2NodeParameters {
 
     /**

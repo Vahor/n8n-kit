@@ -4,10 +4,8 @@
 export const description = "Change items order" as const;
 export const type = "n8n-nodes-base.sort" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Change items order
- */
 export interface SortNodeParameters {
 
     /**

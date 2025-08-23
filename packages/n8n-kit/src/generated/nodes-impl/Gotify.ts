@@ -13,6 +13,9 @@ export interface GotifyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Gotify API
+ */
 export class Gotify<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.gotify" as const;

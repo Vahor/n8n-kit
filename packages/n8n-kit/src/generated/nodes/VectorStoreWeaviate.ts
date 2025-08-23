@@ -5,10 +5,8 @@ export const description = "Work with your data in a Weaviate Cluster" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreWeaviate" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"weaviateApi","required":true}] as const;
+export const outputs = {} as const;
 
-/**
- * Work with your data in a Weaviate Cluster
- */
 export interface VectorStoreWeaviateNodeParameters {
 
     /**

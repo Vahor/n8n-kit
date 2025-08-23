@@ -13,6 +13,9 @@ export interface WooCommerceProps extends NodeProps {
 
 }
 
+/**
+ * Consume WooCommerce API
+ */
 export class WooCommerce<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wooCommerce" as const;

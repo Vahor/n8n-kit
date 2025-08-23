@@ -13,6 +13,9 @@ export interface CloudflareProps extends NodeProps {
 
 }
 
+/**
+ * Consume Cloudflare API
+ */
 export class Cloudflare<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.cloudflare" as const;

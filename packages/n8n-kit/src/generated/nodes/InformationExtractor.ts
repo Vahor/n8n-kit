@@ -4,10 +4,8 @@
 export const description = "Extract information from text in a structured format" as const;
 export const type = "@n8n/n8n-nodes-langchain.informationExtractor" as const;
 export const version = 1.2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Extract information from text in a structured format
- */
 export interface InformationExtractorNodeParameters {
 
     /**

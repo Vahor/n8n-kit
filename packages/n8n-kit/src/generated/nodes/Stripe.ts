@@ -5,10 +5,8 @@ export const description = "Consume the Stripe API" as const;
 export const type = "n8n-nodes-base.stripe" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"stripeApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Stripe API
- */
 export interface StripeNodeParameters {
 
     /**

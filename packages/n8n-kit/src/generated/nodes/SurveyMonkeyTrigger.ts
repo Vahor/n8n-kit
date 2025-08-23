@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Survey Monkey events occur"
 export const type = "n8n-nodes-base.surveyMonkeyTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"surveyMonkeyApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"surveyMonkeyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Survey Monkey events occur
- */
 export interface SurveyMonkeyTriggerNodeParameters {
 
     /**

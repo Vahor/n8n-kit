@@ -17,6 +17,9 @@ export interface ShopifyTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Shopify events via webhooks
+ */
 export class ShopifyTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.shopifyTrigger" as const;

@@ -15,6 +15,9 @@ export interface MondayComProps extends NodeProps {
 
 }
 
+/**
+ * Consume Monday.com API
+ */
 export class MondayCom<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mondayCom" as const;

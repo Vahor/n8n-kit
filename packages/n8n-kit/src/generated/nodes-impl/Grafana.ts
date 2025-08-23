@@ -13,6 +13,9 @@ export interface GrafanaProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Grafana API
+ */
 export class Grafana<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.grafana" as const;

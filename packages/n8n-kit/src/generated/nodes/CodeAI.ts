@@ -4,10 +4,8 @@
 export const description = "LangChain Code Node" as const;
 export const type = "@n8n/n8n-nodes-langchain.code" as const;
 export const version = 1 as const;
+export const outputs = {} as const;
 
-/**
- * LangChain Code Node
- */
 export interface CodeAINodeParameters {
 
     /**

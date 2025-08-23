@@ -5,10 +5,8 @@ export const description = "Consume the Freshworks CRM API" as const;
 export const type = "n8n-nodes-base.freshworksCrm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"freshworksCrmApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Freshworks CRM API
- */
 export interface FreshworksCrmNodeParameters {
 
     /**

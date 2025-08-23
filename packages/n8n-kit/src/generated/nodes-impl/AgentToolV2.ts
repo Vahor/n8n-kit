@@ -10,6 +10,9 @@ export interface AgentToolV2Props extends NodeProps {
 
 }
 
+/**
+ * Generates an action plan and executes it. Can use external tools.
+ */
 export class AgentToolV2<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.agentTool" as const;

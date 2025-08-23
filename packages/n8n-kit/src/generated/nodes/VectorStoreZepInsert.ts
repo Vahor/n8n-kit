@@ -5,10 +5,8 @@ export const description = "Insert data into Zep Vector Store index" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreZepInsert" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Insert data into Zep Vector Store index
- */
 export interface VectorStoreZepInsertNodeParameters {
 
     readonly deprecationNotice?: string;

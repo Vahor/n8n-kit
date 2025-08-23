@@ -13,6 +13,9 @@ export interface ElasticsearchProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Elasticsearch API
+ */
 export class Elasticsearch<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.elasticsearch" as const;

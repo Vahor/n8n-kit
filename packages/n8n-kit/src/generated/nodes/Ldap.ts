@@ -5,10 +5,8 @@ export const description = "Interact with LDAP servers" as const;
 export const type = "n8n-nodes-base.ldap" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ldap","required":true,"testedBy":"ldapConnectionTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Interact with LDAP servers
- */
 export interface LdapNodeParameters {
 
     /**

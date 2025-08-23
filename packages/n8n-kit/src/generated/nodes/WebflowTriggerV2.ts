@@ -5,10 +5,8 @@ export const description = "Handle Webflow events via webhooks" as const;
 export const type = "n8n-nodes-base.webflowTrigger" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"webflowOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Webflow events via webhooks
- */
 export interface WebflowTriggerV2NodeParameters {
 
     /**

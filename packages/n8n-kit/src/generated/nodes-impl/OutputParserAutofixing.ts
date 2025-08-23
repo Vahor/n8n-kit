@@ -10,6 +10,9 @@ export interface OutputParserAutofixingProps extends NodeProps {
 
 }
 
+/**
+ * Deprecated, use structured output parser
+ */
 export class OutputParserAutofixing<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.outputParserAutofixing" as const;

@@ -10,6 +10,9 @@ export interface FilterV1Props extends NodeProps {
 
 }
 
+/**
+ * Remove items matching a condition
+ */
 export class FilterV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.filter" as const;

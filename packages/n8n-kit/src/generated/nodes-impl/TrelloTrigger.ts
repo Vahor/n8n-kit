@@ -13,6 +13,9 @@ export interface TrelloTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Trello events occur
+ */
 export class TrelloTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.trelloTrigger" as const;

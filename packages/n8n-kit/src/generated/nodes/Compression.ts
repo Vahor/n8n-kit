@@ -4,10 +4,8 @@
 export const description = "Compress and decompress files" as const;
 export const type = "n8n-nodes-base.compression" as const;
 export const version = 1.1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Compress and decompress files
- */
 export interface CompressionNodeParameters {
 
     /**

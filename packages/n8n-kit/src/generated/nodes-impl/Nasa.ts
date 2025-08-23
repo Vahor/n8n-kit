@@ -13,6 +13,9 @@ export interface NasaProps extends NodeProps {
 
 }
 
+/**
+ * Retrieve data from the NASA API
+ */
 export class Nasa<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.nasa" as const;

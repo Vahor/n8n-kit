@@ -13,6 +13,9 @@ export interface EmailReadImapV2Props extends NodeProps {
 
 }
 
+/**
+ * Triggers the workflow when a new email is received
+ */
 export class EmailReadImapV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.emailReadImap" as const;

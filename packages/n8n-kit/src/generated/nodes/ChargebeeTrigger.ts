@@ -4,10 +4,8 @@
 export const description = "Starts the workflow when Chargebee events occur" as const;
 export const type = "n8n-nodes-base.chargebeeTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Chargebee events occur
- */
 export interface ChargebeeTriggerNodeParameters {
 
     /**

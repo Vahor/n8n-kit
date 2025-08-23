@@ -13,6 +13,9 @@ export interface TapfiliateProps extends NodeProps {
 
 }
 
+/**
+ * Consume Tapfiliate API
+ */
 export class Tapfiliate<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.tapfiliate" as const;

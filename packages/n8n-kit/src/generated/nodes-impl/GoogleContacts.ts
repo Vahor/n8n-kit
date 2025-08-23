@@ -13,6 +13,9 @@ export interface GoogleContactsProps extends NodeProps {
 
 }
 
+/**
+ * Consume Google Contacts API
+ */
 export class GoogleContacts<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleContacts" as const;

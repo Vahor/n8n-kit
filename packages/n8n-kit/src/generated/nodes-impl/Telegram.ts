@@ -13,6 +13,9 @@ export interface TelegramProps extends NodeProps {
 
 }
 
+/**
+ * Sends data to Telegram
+ */
 export class Telegram<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.telegram" as const;

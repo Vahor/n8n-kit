@@ -5,10 +5,8 @@ export const description = "Consume Ghost API" as const;
 export const type = "n8n-nodes-base.ghost" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ghostAdminApi","required":true,"displayOptions":{"show":{"source":["adminApi"]}}},{"name":"ghostContentApi","required":true,"displayOptions":{"show":{"source":["contentApi"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Ghost API
- */
 export interface GhostNodeParameters {
 
     /**

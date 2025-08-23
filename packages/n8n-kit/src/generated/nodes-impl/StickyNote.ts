@@ -10,6 +10,9 @@ export interface StickyNoteProps extends NodeProps {
 
 }
 
+/**
+ * Make your workflow easier to understand
+ */
 export class StickyNote<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.stickyNote" as const;

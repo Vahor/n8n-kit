@@ -5,10 +5,8 @@ export const description = "Consume Jira Software API" as const;
 export const type = "n8n-nodes-base.jira" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Jira Software API
- */
 export interface JiraNodeParameters {
 
     /**

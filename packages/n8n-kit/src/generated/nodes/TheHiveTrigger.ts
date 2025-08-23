@@ -4,10 +4,8 @@
 export const description = "Starts the workflow when TheHive events occur" as const;
 export const type = "n8n-nodes-base.theHiveTrigger" as const;
 export const version = 2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when TheHive events occur
- */
 export interface TheHiveTriggerNodeParameters {
 
     readonly notice?: string;

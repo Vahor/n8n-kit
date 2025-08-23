@@ -13,6 +13,9 @@ export interface OktaProps extends NodeProps {
 
 }
 
+/**
+ * Use the Okta API
+ */
 export class Okta<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.okta" as const;

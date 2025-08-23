@@ -13,6 +13,9 @@ export interface MicrosoftToDoProps extends NodeProps {
 
 }
 
+/**
+ * Consume Microsoft To Do API.
+ */
 export class MicrosoftToDo<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftToDo" as const;

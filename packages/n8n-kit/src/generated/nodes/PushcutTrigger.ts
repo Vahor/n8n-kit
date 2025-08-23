@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Pushcut events occur" as co
 export const type = "n8n-nodes-base.pushcutTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pushcutApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Pushcut events occur
- */
 export interface PushcutTriggerNodeParameters {
 
     /**

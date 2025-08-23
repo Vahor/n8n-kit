@@ -13,6 +13,9 @@ export interface GoogleAdsProps extends NodeProps {
 
 }
 
+/**
+ * Use the Google Ads API
+ */
 export class GoogleAds<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleAds" as const;

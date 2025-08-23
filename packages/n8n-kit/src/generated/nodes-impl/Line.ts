@@ -13,6 +13,9 @@ export interface LineProps extends NodeProps {
 
 }
 
+/**
+ * Consume Line API
+ */
 export class Line<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.line" as const;

@@ -13,6 +13,9 @@ export interface LmChatCohereProps extends NodeProps {
 
 }
 
+/**
+ * For advanced usage with an AI chain
+ */
 export class LmChatCohere<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatCohere" as const;

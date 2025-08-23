@@ -5,10 +5,8 @@ export const description = "Interact with Google Firebase - Realtime Database AP
 export const type = "n8n-nodes-base.googleFirebaseRealtimeDatabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleFirebaseRealtimeDatabaseOAuth2Api"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Interact with Google Firebase - Realtime Database API
- */
 export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
 
     /**

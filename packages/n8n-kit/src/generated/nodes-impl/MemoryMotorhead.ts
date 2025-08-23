@@ -13,6 +13,9 @@ export interface MemoryMotorheadProps extends NodeProps {
 
 }
 
+/**
+ * Use Motorhead Memory
+ */
 export class MemoryMotorhead<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.memoryMotorhead" as const;

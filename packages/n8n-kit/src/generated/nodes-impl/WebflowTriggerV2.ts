@@ -13,6 +13,9 @@ export interface WebflowTriggerV2Props extends NodeProps {
 
 }
 
+/**
+ * Handle Webflow events via webhooks
+ */
 export class WebflowTriggerV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.webflowTrigger" as const;

@@ -5,10 +5,8 @@ export const description = "Consume the Bubble Data API" as const;
 export const type = "n8n-nodes-base.bubble" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bubbleApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Bubble Data API
- */
 export interface BubbleNodeParameters {
 
     /**

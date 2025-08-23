@@ -13,6 +13,9 @@ export interface ToolWolframAlphaProps extends NodeProps {
 
 }
 
+/**
+ * Connects to WolframAlpha's computational intelligence engine.
+ */
 export class ToolWolframAlpha<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolWolframAlpha" as const;

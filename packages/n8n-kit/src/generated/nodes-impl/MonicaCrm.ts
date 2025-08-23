@@ -13,6 +13,9 @@ export interface MonicaCrmProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Monica CRM API
+ */
 export class MonicaCrm<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.monicaCrm" as const;

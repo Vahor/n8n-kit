@@ -13,6 +13,9 @@ export interface DemioProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Demio API
+ */
 export class Demio<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.demio" as const;

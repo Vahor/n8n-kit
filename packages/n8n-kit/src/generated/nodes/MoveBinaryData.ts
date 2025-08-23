@@ -4,10 +4,8 @@
 export const description = "Move data between binary and JSON properties" as const;
 export const type = "n8n-nodes-base.moveBinaryData" as const;
 export const version = 1.1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Move data between binary and JSON properties
- */
 export interface MoveBinaryDataNodeParameters {
 
     /**

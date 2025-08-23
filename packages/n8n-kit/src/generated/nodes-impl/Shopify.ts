@@ -17,6 +17,9 @@ export interface ShopifyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Shopify API
+ */
 export class Shopify<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.shopify" as const;

@@ -14,6 +14,27 @@ const allNodes = globSync(
 	},
 );
 
+const parseConnectionsTypes = (
+	result: INodeTypeDescription,
+	type: "inputs" | "outputs",
+) => {
+	const r = {};
+	const connections = result[type];
+	if (typeof connections === "string") {
+		// TODO: check if it's useful (ex: VectorStorePinecone)
+		return r;
+	} else {
+		for (const connection of connections) {
+			if (typeof connection === "string") {
+				r[connection] = connection;
+			} else {
+				r[connection.displayName] = connection.type;
+			}
+		}
+	}
+	return r;
+};
+
 const generateTypescriptNodeOutput = async (
 	result: INodeTypeDescription & { __filepath: string; __nodename: string },
 	outputFile: string,
@@ -39,11 +60,13 @@ const generateTypescriptNodeOutput = async (
 			`export const credentials = ${JSON.stringify(result.credentials)} as const;`,
 		);
 	}
+
+	code.line(
+		`export const outputs = ${JSON.stringify(parseConnectionsTypes(result, "outputs"))} as const;`,
+	);
+
 	code.line();
 
-	code.line(`/**`);
-	code.line(` * ${result.description}`);
-	code.line(` */`);
 	code.line(`export interface ${result.__nodename}NodeParameters {`);
 	code.indent();
 

@@ -13,6 +13,9 @@ export interface AwsCognitoProps extends NodeProps {
 
 }
 
+/**
+ * Sends data to AWS Cognito
+ */
 export class AwsCognito<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsCognito" as const;

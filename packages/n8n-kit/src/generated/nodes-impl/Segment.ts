@@ -13,6 +13,9 @@ export interface SegmentProps extends NodeProps {
 
 }
 
+/**
+ * Consume Segment API
+ */
 export class Segment<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.segment" as const;

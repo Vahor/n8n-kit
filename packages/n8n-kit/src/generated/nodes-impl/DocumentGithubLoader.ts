@@ -13,6 +13,9 @@ export interface DocumentGithubLoaderProps extends NodeProps {
 
 }
 
+/**
+ * Use GitHub data as input to this chain
+ */
 export class DocumentGithubLoader<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.documentGithubLoader" as const;

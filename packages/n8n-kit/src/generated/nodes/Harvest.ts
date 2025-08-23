@@ -5,10 +5,8 @@ export const description = "Access data on Harvest" as const;
 export const type = "n8n-nodes-base.harvest" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"harvestApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"harvestOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Access data on Harvest
- */
 export interface HarvestNodeParameters {
 
     /**

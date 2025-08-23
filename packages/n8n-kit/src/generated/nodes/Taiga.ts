@@ -5,10 +5,8 @@ export const description = "Consume Taiga API" as const;
 export const type = "n8n-nodes-base.taiga" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"taigaApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Taiga API
- */
 export interface TaigaNodeParameters {
 
     /**

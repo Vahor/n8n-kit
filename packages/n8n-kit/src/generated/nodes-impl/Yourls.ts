@@ -13,6 +13,9 @@ export interface YourlsProps extends NodeProps {
 
 }
 
+/**
+ * Consume Yourls API
+ */
 export class Yourls<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.yourls" as const;

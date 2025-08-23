@@ -5,10 +5,8 @@ export const description = "Triggers workflows in n8n based on events from Micro
 export const type = "n8n-nodes-base.microsoftTeamsTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Triggers workflows in n8n based on events from Microsoft Teams, such as new messages or team updates, using specified configurations.
- */
 export interface MicrosoftTeamsTriggerNodeParameters {
 
     /**

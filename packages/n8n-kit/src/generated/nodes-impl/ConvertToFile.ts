@@ -10,6 +10,9 @@ export interface ConvertToFileProps extends NodeProps {
 
 }
 
+/**
+ * Convert JSON data to binary data
+ */
 export class ConvertToFile<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.convertToFile" as const;

@@ -15,6 +15,9 @@ export interface TypeformTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow on a Typeform form submission
+ */
 export class TypeformTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.typeformTrigger" as const;

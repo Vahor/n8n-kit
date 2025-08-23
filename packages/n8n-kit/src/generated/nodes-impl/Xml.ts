@@ -10,6 +10,9 @@ export interface XmlProps extends NodeProps {
 
 }
 
+/**
+ * Convert data from and to XML
+ */
 export class Xml<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.xml" as const;

@@ -13,6 +13,9 @@ export interface AwsSnsProps extends NodeProps {
 
 }
 
+/**
+ * Sends data to AWS SNS
+ */
 export class AwsSns<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsSns" as const;

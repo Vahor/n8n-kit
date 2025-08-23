@@ -5,10 +5,8 @@ export const description = "Consume Microsoft Dynamics CRM API" as const;
 export const type = "n8n-nodes-base.microsoftDynamicsCrm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftDynamicsOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Microsoft Dynamics CRM API
- */
 export interface MicrosoftDynamicsCrmNodeParameters {
 
     /**

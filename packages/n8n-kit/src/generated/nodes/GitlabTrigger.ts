@@ -5,10 +5,8 @@ export const description = "Starts the workflow when GitLab events occur" as con
 export const type = "n8n-nodes-base.gitlabTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gitlabApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gitlabOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when GitLab events occur
- */
 export interface GitlabTriggerNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface KeapTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Infusionsoft events occur
+ */
 export class KeapTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.keapTrigger" as const;

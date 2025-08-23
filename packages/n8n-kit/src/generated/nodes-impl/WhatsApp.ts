@@ -13,6 +13,9 @@ export interface WhatsAppProps extends NodeProps {
 
 }
 
+/**
+ * Access WhatsApp API
+ */
 export class WhatsApp<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.whatsApp" as const;

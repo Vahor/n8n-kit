@@ -10,6 +10,9 @@ export interface ExecutionDataProps extends NodeProps {
 
 }
 
+/**
+ * Add execution data for search
+ */
 export class ExecutionData<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.executionData" as const;

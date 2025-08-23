@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Facebook events occur" as c
 export const type = "n8n-nodes-base.facebookTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"facebookGraphAppApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Facebook events occur
- */
 export interface FacebookTriggerNodeParameters {
 
     /**

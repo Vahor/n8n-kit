@@ -10,6 +10,9 @@ export interface AiTransformProps extends NodeProps {
 
 }
 
+/**
+ * Modify data based on instructions written in plain english
+ */
 export class AiTransform<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.aiTransform" as const;

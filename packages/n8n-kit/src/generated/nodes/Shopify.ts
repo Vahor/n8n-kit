@@ -5,10 +5,8 @@ export const description = "Consume Shopify API" as const;
 export const type = "n8n-nodes-base.shopify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"shopifyApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"shopifyAccessTokenApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"shopifyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Shopify API
- */
 export interface ShopifyNodeParameters {
 
     readonly apiVersion?: string;

@@ -13,6 +13,9 @@ export interface PayPalTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle PayPal events via webhooks
+ */
 export class PayPalTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.payPalTrigger" as const;

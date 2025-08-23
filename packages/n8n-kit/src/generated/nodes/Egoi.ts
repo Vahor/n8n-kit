@@ -5,10 +5,8 @@ export const description = "Consume E-goi API" as const;
 export const type = "n8n-nodes-base.egoi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"egoiApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume E-goi API
- */
 export interface EgoiNodeParameters {
 
     /**

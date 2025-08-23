@@ -5,10 +5,8 @@ export const description = "Consume Microsoft Outlook API" as const;
 export const type = "n8n-nodes-base.microsoftOutlook" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Microsoft Outlook API
- */
 export interface MicrosoftOutlookV2NodeParameters {
 
     /**
@@ -123,12 +121,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-23T20:16:46.888+02:00"
+     * Default: "2025-08-23T21:40:11.951+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-23T20:46:46.888+02:00"
+     * Default: "2025-08-23T22:10:11.951+02:00"
      */
     readonly endDateTime?: string;
 

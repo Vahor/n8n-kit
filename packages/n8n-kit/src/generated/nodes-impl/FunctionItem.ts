@@ -10,6 +10,9 @@ export interface FunctionItemProps extends NodeProps {
 
 }
 
+/**
+ * Run custom function code which gets executed once per item
+ */
 export class FunctionItem<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.functionItem" as const;

@@ -13,6 +13,9 @@ export interface SalesmateProps extends NodeProps {
 
 }
 
+/**
+ * Consume Salesmate API
+ */
 export class Salesmate<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.salesmate" as const;

@@ -10,6 +10,9 @@ export interface LimitProps extends NodeProps {
 
 }
 
+/**
+ * Restrict the number of items
+ */
 export class Limit<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.limit" as const;

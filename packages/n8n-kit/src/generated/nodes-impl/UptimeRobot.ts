@@ -13,6 +13,9 @@ export interface UptimeRobotProps extends NodeProps {
 
 }
 
+/**
+ * Consume UptimeRobot API
+ */
 export class UptimeRobot<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.uptimeRobot" as const;

@@ -13,6 +13,9 @@ export interface BambooHrProps extends NodeProps {
 
 }
 
+/**
+ * Consume BambooHR API
+ */
 export class BambooHr<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.bambooHr" as const;

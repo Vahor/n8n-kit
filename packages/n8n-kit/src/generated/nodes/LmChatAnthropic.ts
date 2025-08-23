@@ -5,10 +5,8 @@ export const description = "Language Model Anthropic" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatAnthropic" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"anthropicApi","required":true}] as const;
+export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
-/**
- * Language Model Anthropic
- */
 export interface LmChatAnthropicNodeParameters {
 
     /**

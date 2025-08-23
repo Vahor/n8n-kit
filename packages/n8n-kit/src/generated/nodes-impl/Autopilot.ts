@@ -13,6 +13,9 @@ export interface AutopilotProps extends NodeProps {
 
 }
 
+/**
+ * Consume Autopilot API
+ */
 export class Autopilot<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.autopilot" as const;

@@ -13,6 +13,9 @@ export interface ERPNextProps extends NodeProps {
 
 }
 
+/**
+ * Consume ERPNext API
+ */
 export class ERPNext<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.erpNext" as const;

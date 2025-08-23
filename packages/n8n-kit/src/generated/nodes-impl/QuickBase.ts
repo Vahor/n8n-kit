@@ -13,6 +13,9 @@ export interface QuickBaseProps extends NodeProps {
 
 }
 
+/**
+ * Integrate with the Quick Base RESTful API
+ */
 export class QuickBase<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.quickbase" as const;

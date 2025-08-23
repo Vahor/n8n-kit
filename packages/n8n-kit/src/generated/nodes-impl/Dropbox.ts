@@ -15,6 +15,9 @@ export interface DropboxProps extends NodeProps {
 
 }
 
+/**
+ * Access data on Dropbox
+ */
 export class Dropbox<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.dropbox" as const;

@@ -5,10 +5,8 @@ export const description = "Handle Eventbrite events via webhooks" as const;
 export const type = "n8n-nodes-base.eventbriteTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"eventbriteApi","required":true,"displayOptions":{"show":{"authentication":["privateKey"]}}},{"name":"eventbriteOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Eventbrite events via webhooks
- */
 export interface EventbriteTriggerNodeParameters {
 
     /**

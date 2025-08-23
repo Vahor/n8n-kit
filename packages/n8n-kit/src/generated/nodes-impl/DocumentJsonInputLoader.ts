@@ -10,6 +10,9 @@ export interface DocumentJsonInputLoaderProps extends NodeProps {
 
 }
 
+/**
+ * Use JSON data from a previous step in the workflow
+ */
 export class DocumentJsonInputLoader<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.documentJsonInputLoader" as const;

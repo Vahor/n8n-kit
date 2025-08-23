@@ -15,6 +15,9 @@ export interface GitlabTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when GitLab events occur
+ */
 export class GitlabTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.gitlabTrigger" as const;

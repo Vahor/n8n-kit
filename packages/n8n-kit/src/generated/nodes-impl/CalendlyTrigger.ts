@@ -15,6 +15,9 @@ export interface CalendlyTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Calendly events occur
+ */
 export class CalendlyTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.calendlyTrigger" as const;

@@ -13,6 +13,9 @@ export interface MailerLiteTriggerV2Props extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when MailerLite events occur
+ */
 export class MailerLiteTriggerV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mailerLiteTrigger" as const;

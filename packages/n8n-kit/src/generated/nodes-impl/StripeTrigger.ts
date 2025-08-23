@@ -13,6 +13,9 @@ export interface StripeTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Stripe events via webhooks
+ */
 export class StripeTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.stripeTrigger" as const;

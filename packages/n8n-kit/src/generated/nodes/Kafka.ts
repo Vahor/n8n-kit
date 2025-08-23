@@ -5,10 +5,8 @@ export const description = "Sends messages to a Kafka topic" as const;
 export const type = "n8n-nodes-base.kafka" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"kafka","required":true,"testedBy":"kafkaConnectionTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends messages to a Kafka topic
- */
 export interface KafkaNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface ActiveCampaignProps extends NodeProps {
 
 }
 
+/**
+ * Create and edit data in ActiveCampaign
+ */
 export class ActiveCampaign<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.activeCampaign" as const;

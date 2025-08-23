@@ -5,10 +5,8 @@ export const description = "Create iCalendar file" as const;
 export const type = "n8n-nodes-base.iCal" as const;
 export const version = 1 as const;
 export const credentials = [] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Create iCalendar file
- */
 export interface ICalendarNodeParameters {
 
     /**

@@ -10,6 +10,9 @@ export interface HtmlExtractProps extends NodeProps {
 
 }
 
+/**
+ * Extracts data from HTML
+ */
 export class HtmlExtract<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.htmlExtract" as const;

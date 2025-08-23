@@ -5,10 +5,8 @@ export const description = "Consume Zulip API" as const;
 export const type = "n8n-nodes-base.zulip" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zulipApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Zulip API
- */
 export interface ZulipNodeParameters {
 
     /**

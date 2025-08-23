@@ -4,10 +4,8 @@
 export const description = "Triggers the workflow at a specific time" as const;
 export const type = "n8n-nodes-base.cron" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Triggers the workflow at a specific time
- */
 export interface CronNodeParameters {
 
     readonly notice?: string;

@@ -10,6 +10,9 @@ export interface RssFeedReadProps extends NodeProps {
 
 }
 
+/**
+ * Reads data from an RSS Feed
+ */
 export class RssFeedRead<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.rssFeedRead" as const;

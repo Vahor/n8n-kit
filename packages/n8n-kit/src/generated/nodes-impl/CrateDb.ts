@@ -13,6 +13,9 @@ export interface CrateDbProps extends NodeProps {
 
 }
 
+/**
+ * Add and update data in CrateDB
+ */
 export class CrateDb<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.crateDb" as const;

@@ -13,6 +13,9 @@ export interface DiscourseProps extends NodeProps {
 
 }
 
+/**
+ * Consume Discourse API
+ */
 export class Discourse<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.discourse" as const;

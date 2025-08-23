@@ -13,6 +13,9 @@ export interface GoogleSheetsTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Google Sheets events occur
+ */
 export class GoogleSheetsTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleSheetsTrigger" as const;

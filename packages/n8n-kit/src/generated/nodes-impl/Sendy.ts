@@ -13,6 +13,9 @@ export interface SendyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Sendy API
+ */
 export class Sendy<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.sendy" as const;

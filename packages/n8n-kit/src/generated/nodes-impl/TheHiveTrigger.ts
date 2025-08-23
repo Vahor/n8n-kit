@@ -10,6 +10,9 @@ export interface TheHiveTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when TheHive events occur
+ */
 export class TheHiveTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.theHiveTrigger" as const;

@@ -15,6 +15,9 @@ export interface GithubTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Github events occur
+ */
 export class GithubTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.githubTrigger" as const;

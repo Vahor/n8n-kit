@@ -4,10 +4,8 @@
 export const description = "Turn a list inside item(s) into separate items" as const;
 export const type = "n8n-nodes-base.splitOut" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Turn a list inside item(s) into separate items
- */
 export interface SplitOutNodeParameters {
 
     /**

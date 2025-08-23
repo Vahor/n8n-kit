@@ -10,6 +10,9 @@ export interface InformationExtractorProps extends NodeProps {
 
 }
 
+/**
+ * Extract information from text in a structured format
+ */
 export class InformationExtractor<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.informationExtractor" as const;

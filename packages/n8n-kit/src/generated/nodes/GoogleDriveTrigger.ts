@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Google Drive events occur" 
 export const type = "n8n-nodes-base.googleDriveTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Google Drive events occur
- */
 export interface GoogleDriveTriggerNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface OnfleetTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Onfleet events occur
+ */
 export class OnfleetTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.onfleetTrigger" as const;

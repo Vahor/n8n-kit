@@ -5,10 +5,8 @@ export const description = "Consume the APITemplate.io API" as const;
 export const type = "n8n-nodes-base.apiTemplateIo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"apiTemplateIoApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the APITemplate.io API
- */
 export interface ApiTemplateIoNodeParameters {
 
     /**

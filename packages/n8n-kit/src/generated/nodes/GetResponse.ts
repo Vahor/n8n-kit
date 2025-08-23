@@ -5,10 +5,8 @@ export const description = "Consume GetResponse API" as const;
 export const type = "n8n-nodes-base.getResponse" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"getResponseApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"getResponseOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume GetResponse API
- */
 export interface GetResponseNodeParameters {
 
     /**

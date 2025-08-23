@@ -17,6 +17,9 @@ export interface AirtableV1Props extends NodeProps {
 
 }
 
+/**
+ * Read, update, write and delete data from Airtable
+ */
 export class AirtableV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.airtable" as const;

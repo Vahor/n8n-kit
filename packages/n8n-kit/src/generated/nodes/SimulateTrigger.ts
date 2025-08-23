@@ -4,10 +4,8 @@
 export const description = "Simulate a trigger node" as const;
 export const type = "n8n-nodes-base.simulateTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Simulate a trigger node
- */
 export interface SimulateTriggerNodeParameters {
 
     /**

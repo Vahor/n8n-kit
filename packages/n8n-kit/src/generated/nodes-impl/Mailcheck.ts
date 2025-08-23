@@ -13,6 +13,9 @@ export interface MailcheckProps extends NodeProps {
 
 }
 
+/**
+ * Consume Mailcheck API
+ */
 export class Mailcheck<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mailcheck" as const;

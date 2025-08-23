@@ -13,6 +13,9 @@ export interface ActiveCampaignTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle ActiveCampaign events via webhooks
+ */
 export class ActiveCampaignTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.activeCampaignTrigger" as const;

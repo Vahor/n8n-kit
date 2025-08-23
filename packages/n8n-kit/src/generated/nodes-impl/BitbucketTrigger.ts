@@ -13,6 +13,9 @@ export interface BitbucketTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Bitbucket events via webhooks
+ */
 export class BitbucketTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.bitbucketTrigger" as const;

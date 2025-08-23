@@ -13,6 +13,9 @@ export interface UnleashedSoftwareProps extends NodeProps {
 
 }
 
+/**
+ * Consume Unleashed Software API
+ */
 export class UnleashedSoftware<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.unleashedSoftware" as const;

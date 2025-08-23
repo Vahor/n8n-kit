@@ -10,6 +10,9 @@ export interface ErrorTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Triggers the workflow when another workflow has an error
+ */
 export class ErrorTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.errorTrigger" as const;

@@ -13,6 +13,9 @@ export interface BoxProps extends NodeProps {
 
 }
 
+/**
+ * Consume Box API
+ */
 export class Box<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.box" as const;

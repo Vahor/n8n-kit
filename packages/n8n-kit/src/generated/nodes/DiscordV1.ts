@@ -4,10 +4,8 @@
 export const description = "Sends data to Discord" as const;
 export const type = "n8n-nodes-base.discord" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends data to Discord
- */
 export interface DiscordV1NodeParameters {
 
     readonly oldVersionNotice?: string;

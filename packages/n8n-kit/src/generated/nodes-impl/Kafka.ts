@@ -13,6 +13,9 @@ export interface KafkaProps extends NodeProps {
 
 }
 
+/**
+ * Sends messages to a Kafka topic
+ */
 export class Kafka<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.kafka" as const;

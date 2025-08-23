@@ -10,6 +10,9 @@ export interface FunctionProps extends NodeProps {
 
 }
 
+/**
+ * Run custom function code which gets executed once and allows you to add, remove, change and replace items
+ */
 export class Function<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.function" as const;

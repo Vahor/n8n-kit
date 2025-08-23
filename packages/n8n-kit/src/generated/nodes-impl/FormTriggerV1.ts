@@ -10,6 +10,9 @@ export interface FormTriggerV1Props extends NodeProps {
 
 }
 
+/**
+ * Generate webforms in n8n and pass their responses to the workflow
+ */
 export class FormTriggerV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.formTrigger" as const;

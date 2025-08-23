@@ -5,10 +5,8 @@ export const description = "Read, write, and delete data in Stackby" as const;
 export const type = "n8n-nodes-base.stackby" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"stackbyApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Read, write, and delete data in Stackby
- */
 export interface StackbyNodeParameters {
 
     /**

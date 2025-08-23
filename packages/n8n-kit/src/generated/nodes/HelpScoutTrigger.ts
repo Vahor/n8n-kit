@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Help Scout events occur" as
 export const type = "n8n-nodes-base.helpScoutTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"helpScoutOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Help Scout events occur
- */
 export interface HelpScoutTriggerNodeParameters {
 
     /**

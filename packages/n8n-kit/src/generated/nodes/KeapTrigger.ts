@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Infusionsoft events occur" 
 export const type = "n8n-nodes-base.keapTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"keapOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Infusionsoft events occur
- */
 export interface KeapTriggerNodeParameters {
 
     /**

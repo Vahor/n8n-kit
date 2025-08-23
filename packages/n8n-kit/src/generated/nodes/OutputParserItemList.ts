@@ -4,10 +4,8 @@
 export const description = "Return the results as separate items" as const;
 export const type = "@n8n/n8n-nodes-langchain.outputParserItemList" as const;
 export const version = 1 as const;
+export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
-/**
- * Return the results as separate items
- */
 export interface OutputParserItemListNodeParameters {
 
     /**

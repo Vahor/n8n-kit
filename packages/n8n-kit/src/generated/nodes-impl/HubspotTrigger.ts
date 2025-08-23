@@ -13,6 +13,9 @@ export interface HubspotTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when HubSpot events occur
+ */
 export class HubspotTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.hubspotTrigger" as const;

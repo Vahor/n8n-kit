@@ -10,6 +10,9 @@ export interface ModelSelectorProps extends NodeProps {
 
 }
 
+/**
+ * Use this node to select one of the connected models to this node based on workflow data
+ */
 export class ModelSelector<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.modelSelector" as const;

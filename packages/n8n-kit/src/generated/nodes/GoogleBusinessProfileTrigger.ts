@@ -5,10 +5,8 @@ export const description = "Fetches reviews from Google Business Profile and sta
 export const type = "n8n-nodes-base.googleBusinessProfileTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleBusinessProfileOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Fetches reviews from Google Business Profile and starts the workflow on specified polling intervals.
- */
 export interface GoogleBusinessProfileTriggerNodeParameters {
 
     /**

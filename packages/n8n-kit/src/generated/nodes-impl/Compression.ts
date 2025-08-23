@@ -10,6 +10,9 @@ export interface CompressionProps extends NodeProps {
 
 }
 
+/**
+ * Compress and decompress files
+ */
 export class Compression<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.compression" as const;

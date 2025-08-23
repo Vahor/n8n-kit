@@ -15,6 +15,9 @@ export interface MailchimpTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Mailchimp events via webhooks
+ */
 export class MailchimpTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mailchimpTrigger" as const;

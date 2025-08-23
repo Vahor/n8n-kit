@@ -10,6 +10,9 @@ export interface ToolThinkProps extends NodeProps {
 
 }
 
+/**
+ * Invite the AI agent to do some thinking
+ */
 export class ToolThink<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolThink" as const;

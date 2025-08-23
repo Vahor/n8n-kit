@@ -13,6 +13,9 @@ export interface RaindropProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Raindrop API
+ */
 export class Raindrop<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.raindrop" as const;

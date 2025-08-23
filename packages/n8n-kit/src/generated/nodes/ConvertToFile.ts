@@ -4,10 +4,8 @@
 export const description = "Convert JSON data to binary data" as const;
 export const type = "n8n-nodes-base.convertToFile" as const;
 export const version = 1.1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Convert JSON data to binary data
- */
 export interface ConvertToFileNodeParameters {
 
     /**

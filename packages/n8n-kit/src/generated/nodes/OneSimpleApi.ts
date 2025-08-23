@@ -5,10 +5,8 @@ export const description = "A toolbox of no-code utilities" as const;
 export const type = "n8n-nodes-base.oneSimpleApi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"oneSimpleApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * A toolbox of no-code utilities
- */
 export interface OneSimpleApiNodeParameters {
 
     /**

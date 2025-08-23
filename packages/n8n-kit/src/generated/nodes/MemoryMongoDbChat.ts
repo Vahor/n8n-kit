@@ -5,10 +5,8 @@ export const description = "Stores the chat history in MongoDB collection." as c
 export const type = "@n8n/n8n-nodes-langchain.memoryMongoDbChat" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mongoDb","required":true}] as const;
+export const outputs = {"ai_memory":"ai_memory"} as const;
 
-/**
- * Stores the chat history in MongoDB collection.
- */
 export interface MemoryMongoDbChatNodeParameters {
 
     /**

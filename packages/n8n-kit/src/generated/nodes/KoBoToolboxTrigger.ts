@@ -5,10 +5,8 @@ export const description = "Process KoBoToolbox submissions" as const;
 export const type = "n8n-nodes-base.koBoToolboxTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"koBoToolboxApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Process KoBoToolbox submissions
- */
 export interface KoBoToolboxTriggerNodeParameters {
 
     /**

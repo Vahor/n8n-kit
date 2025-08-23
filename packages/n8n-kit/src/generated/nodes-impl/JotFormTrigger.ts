@@ -13,6 +13,9 @@ export interface JotFormTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle JotForm events via webhooks
+ */
 export class JotFormTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.jotFormTrigger" as const;

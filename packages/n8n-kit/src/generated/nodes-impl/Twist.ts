@@ -13,6 +13,9 @@ export interface TwistProps extends NodeProps {
 
 }
 
+/**
+ * Consume Twist API
+ */
 export class Twist<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.twist" as const;

@@ -13,6 +13,9 @@ export interface PostHogProps extends NodeProps {
 
 }
 
+/**
+ * Consume PostHog API
+ */
 export class PostHog<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.postHog" as const;

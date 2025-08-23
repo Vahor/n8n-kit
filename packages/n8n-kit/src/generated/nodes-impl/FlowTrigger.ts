@@ -13,6 +13,9 @@ export interface FlowTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Flow events via webhooks
+ */
 export class FlowTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.flowTrigger" as const;

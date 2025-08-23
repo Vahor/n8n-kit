@@ -5,10 +5,8 @@ export const description = "Consume Todoist API" as const;
 export const type = "n8n-nodes-base.todoist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"todoistApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"todoistOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Todoist API
- */
 export interface TodoistV1NodeParameters {
 
     /**

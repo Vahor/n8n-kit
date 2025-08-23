@@ -5,10 +5,8 @@ export const description = "Consume the Elasticsearch API" as const;
 export const type = "n8n-nodes-base.elasticsearch" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"elasticsearchApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Elasticsearch API
- */
 export interface ElasticsearchNodeParameters {
 
     /**

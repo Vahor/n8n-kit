@@ -4,10 +4,8 @@
 export const description = "Merges data of multiple streams once data from both is available" as const;
 export const type = "n8n-nodes-base.merge" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Merges data of multiple streams once data from both is available
- */
 export interface MergeV1NodeParameters {
 
     readonly oldVersionNotice?: string;

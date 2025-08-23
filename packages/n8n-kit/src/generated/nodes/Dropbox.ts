@@ -5,10 +5,8 @@ export const description = "Access data on Dropbox" as const;
 export const type = "n8n-nodes-base.dropbox" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"dropboxApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"dropboxOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Access data on Dropbox
- */
 export interface DropboxNodeParameters {
 
     /**

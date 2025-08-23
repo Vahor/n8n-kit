@@ -13,6 +13,9 @@ export interface TwilioProps extends NodeProps {
 
 }
 
+/**
+ * Send SMS and WhatsApp messages or make phone calls
+ */
 export class Twilio<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.twilio" as const;

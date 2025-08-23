@@ -10,6 +10,9 @@ export interface CronProps extends NodeProps {
 
 }
 
+/**
+ * Triggers the workflow at a specific time
+ */
 export class Cron<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.cron" as const;

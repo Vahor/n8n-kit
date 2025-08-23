@@ -5,10 +5,8 @@ export const description = "Consume Google Cloud Natural Language API" as const;
 export const type = "n8n-nodes-base.googleCloudNaturalLanguage" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleCloudNaturalLanguageOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Google Cloud Natural Language API
- */
 export interface GoogleCloudNaturalLanguageNodeParameters {
 
     /**

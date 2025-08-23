@@ -5,10 +5,8 @@ export const description = "Consume Mailer Lite API" as const;
 export const type = "n8n-nodes-base.mailerLite" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"mailerLiteApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Mailer Lite API
- */
 export interface MailerLiteV2NodeParameters {
 
     /**

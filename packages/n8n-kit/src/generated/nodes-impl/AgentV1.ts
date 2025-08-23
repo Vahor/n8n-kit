@@ -15,6 +15,9 @@ export interface AgentV1Props extends NodeProps {
 
 }
 
+/**
+ * Generates an action plan and executes it. Can use external tools.
+ */
 export class AgentV1<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;

@@ -4,10 +4,8 @@
 export const description = "Route items to different branches (true/false)" as const;
 export const type = "n8n-nodes-base.if" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Route items to different branches (true/false)
- */
 export interface IfV1NodeParameters {
 
     /**

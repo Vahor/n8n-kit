@@ -13,6 +13,9 @@ export interface WorkableTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Workable events occur
+ */
 export class WorkableTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.workableTrigger" as const;

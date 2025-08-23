@@ -13,6 +13,9 @@ export interface GitProps extends NodeProps {
 
 }
 
+/**
+ * Control git.
+ */
 export class Git<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.git" as const;

@@ -10,6 +10,9 @@ export interface TextClassifierProps extends NodeProps {
 
 }
 
+/**
+ * Classify your text into distinct categories
+ */
 export class TextClassifier<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.textClassifier" as const;

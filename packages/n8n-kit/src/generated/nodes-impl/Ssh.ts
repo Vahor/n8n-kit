@@ -15,6 +15,9 @@ export interface SshProps extends NodeProps {
 
 }
 
+/**
+ * Execute commands via SSH
+ */
 export class Ssh<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.ssh" as const;

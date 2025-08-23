@@ -13,6 +13,9 @@ export interface BrandfetchProps extends NodeProps {
 
 }
 
+/**
+ * Consume Brandfetch API
+ */
 export class Brandfetch<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.Brandfetch" as const;

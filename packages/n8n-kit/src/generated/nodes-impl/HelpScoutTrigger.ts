@@ -13,6 +13,9 @@ export interface HelpScoutTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Help Scout events occur
+ */
 export class HelpScoutTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.helpScoutTrigger" as const;

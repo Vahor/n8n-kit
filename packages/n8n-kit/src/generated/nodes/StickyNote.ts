@@ -4,10 +4,8 @@
 export const description = "Make your workflow easier to understand" as const;
 export const type = "n8n-nodes-base.stickyNote" as const;
 export const version = 1 as const;
+export const outputs = {} as const;
 
-/**
- * Make your workflow easier to understand
- */
 export interface StickyNoteNodeParameters {
 
     /**

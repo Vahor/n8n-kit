@@ -10,6 +10,9 @@ export interface ChainSummarizationV2Props extends NodeProps {
 
 }
 
+/**
+ * Transforms text into a concise summary
+ */
 export class ChainSummarizationV2<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.chainSummarization" as const;

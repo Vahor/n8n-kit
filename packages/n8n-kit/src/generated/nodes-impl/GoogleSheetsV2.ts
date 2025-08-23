@@ -15,6 +15,9 @@ export interface GoogleSheetsV2Props extends NodeProps {
 
 }
 
+/**
+ * Read, update and write data to Google Sheets
+ */
 export class GoogleSheetsV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleSheets" as const;

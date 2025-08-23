@@ -13,6 +13,9 @@ export interface SplunkV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume the Splunk Enterprise API
+ */
 export class SplunkV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.splunk" as const;

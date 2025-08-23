@@ -4,10 +4,8 @@
 export const description = "Handle events and perform actions on your n8n instance" as const;
 export const type = "n8n-nodes-base.n8nTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle events and perform actions on your n8n instance
- */
 export interface N8nTriggerNodeParameters {
 
     /**

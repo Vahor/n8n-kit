@@ -5,10 +5,8 @@ export const description = "Convert data between Markdown and HTML" as const;
 export const type = "n8n-nodes-base.markdown" as const;
 export const version = 1 as const;
 export const credentials = [] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Convert data between Markdown and HTML
- */
 export interface MarkdownNodeParameters {
 
     /**

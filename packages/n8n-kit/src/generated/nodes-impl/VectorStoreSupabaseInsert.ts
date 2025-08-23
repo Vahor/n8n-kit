@@ -13,6 +13,9 @@ export interface VectorStoreSupabaseInsertProps extends NodeProps {
 
 }
 
+/**
+ * Insert data into Supabase Vector Store index [https://supabase.com/docs/guides/ai/langchain]
+ */
 export class VectorStoreSupabaseInsert<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreSupabaseInsert" as const;

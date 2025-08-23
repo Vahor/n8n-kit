@@ -5,10 +5,8 @@ export const description = "Utilizes Assistant API from Open AI." as const;
 export const type = "@n8n/n8n-nodes-langchain.openAiAssistant" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Utilizes Assistant API from Open AI.
- */
 export interface OpenAiAssistantNodeParameters {
 
     /**

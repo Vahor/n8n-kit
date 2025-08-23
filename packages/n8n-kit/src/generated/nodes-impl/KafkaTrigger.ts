@@ -13,6 +13,9 @@ export interface KafkaTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Consume messages from a Kafka topic
+ */
 export class KafkaTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.kafkaTrigger" as const;

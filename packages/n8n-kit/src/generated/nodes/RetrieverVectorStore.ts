@@ -4,10 +4,8 @@
 export const description = "Use a Vector Store as Retriever" as const;
 export const type = "@n8n/n8n-nodes-langchain.retrieverVectorStore" as const;
 export const version = 1 as const;
+export const outputs = {"ai_retriever":"ai_retriever"} as const;
 
-/**
- * Use a Vector Store as Retriever
- */
 export interface RetrieverVectorStoreNodeParameters {
 
     /**

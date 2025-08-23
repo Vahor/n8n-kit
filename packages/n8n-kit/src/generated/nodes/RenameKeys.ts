@@ -4,10 +4,8 @@
 export const description = "Update item field names" as const;
 export const type = "n8n-nodes-base.renameKeys" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Update item field names
- */
 export interface RenameKeysNodeParameters {
 
     /**

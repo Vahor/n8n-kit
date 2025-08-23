@@ -13,6 +13,9 @@ export interface TaigaProps extends NodeProps {
 
 }
 
+/**
+ * Consume Taiga API
+ */
 export class Taiga<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.taiga" as const;

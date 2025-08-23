@@ -13,6 +13,9 @@ export interface VeroProps extends NodeProps {
 
 }
 
+/**
+ * Consume Vero API
+ */
 export class Vero<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.vero" as const;

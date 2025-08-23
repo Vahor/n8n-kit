@@ -13,6 +13,9 @@ export interface PostgresV1Props extends NodeProps {
 
 }
 
+/**
+ * Get, add and update data in Postgres
+ */
 export class PostgresV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.postgres" as const;

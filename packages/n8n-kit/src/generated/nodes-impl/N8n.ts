@@ -13,6 +13,9 @@ export interface N8nProps extends NodeProps {
 
 }
 
+/**
+ * Handle events and perform actions on your n8n instance
+ */
 export class N8n<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.n8n" as const;

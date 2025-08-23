@@ -13,6 +13,9 @@ export interface TwakeProps extends NodeProps {
 
 }
 
+/**
+ * Consume Twake API
+ */
 export class Twake<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.twake" as const;

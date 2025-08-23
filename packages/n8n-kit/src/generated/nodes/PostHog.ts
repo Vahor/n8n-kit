@@ -5,10 +5,8 @@ export const description = "Consume PostHog API" as const;
 export const type = "n8n-nodes-base.postHog" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"postHogApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume PostHog API
- */
 export interface PostHogNodeParameters {
 
     /**

@@ -4,10 +4,8 @@
 export const description = "Enhances document similarity search by contextual compression." as const;
 export const type = "@n8n/n8n-nodes-langchain.retrieverContextualCompression" as const;
 export const version = 1 as const;
+export const outputs = {"Retriever":"ai_retriever"} as const;
 
-/**
- * Enhances document similarity search by contextual compression.
- */
 export interface RetrieverContextualCompressionNodeParameters {
 
 

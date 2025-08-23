@@ -10,6 +10,9 @@ export interface ToolWorkflowV1Props extends NodeProps {
 
 }
 
+/**
+ * Uses another n8n workflow as a tool. Allows packaging any n8n node(s) as a tool.
+ */
 export class ToolWorkflowV1<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolWorkflow" as const;

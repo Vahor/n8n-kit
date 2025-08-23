@@ -13,6 +13,9 @@ export interface LemlistTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Lemlist events via webhooks
+ */
 export class LemlistTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.lemlistTrigger" as const;

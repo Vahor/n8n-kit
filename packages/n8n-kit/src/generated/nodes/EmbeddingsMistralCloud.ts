@@ -5,10 +5,8 @@ export const description = "Use Embeddings Mistral Cloud" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsMistralCloud" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mistralCloudApi","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use Embeddings Mistral Cloud
- */
 export interface EmbeddingsMistralCloudNodeParameters {
 
     /**

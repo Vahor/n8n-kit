@@ -5,10 +5,8 @@ export const description = "Sends an email via Mailgun" as const;
 export const type = "n8n-nodes-base.mailgun" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailgunApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends an email via Mailgun
- */
 export interface MailgunNodeParameters {
 
     /**

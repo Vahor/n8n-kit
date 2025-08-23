@@ -15,6 +15,9 @@ export interface GithubProps extends NodeProps {
 
 }
 
+/**
+ * Consume GitHub API
+ */
 export class Github<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.github" as const;

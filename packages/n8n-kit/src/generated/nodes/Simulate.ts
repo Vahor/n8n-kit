@@ -4,10 +4,8 @@
 export const description = "Simulate a node" as const;
 export const type = "n8n-nodes-base.simulate" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Simulate a node
- */
 export interface SimulateNodeParameters {
 
     /**

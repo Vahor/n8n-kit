@@ -4,10 +4,8 @@
 export const description = "Reads a PDF and extracts its content" as const;
 export const type = "n8n-nodes-base.readPDF" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Reads a PDF and extracts its content
- */
 export interface ReadPDFNodeParameters {
 
     /**

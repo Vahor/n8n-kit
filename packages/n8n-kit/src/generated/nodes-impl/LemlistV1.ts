@@ -13,6 +13,9 @@ export interface LemlistV1Props extends NodeProps {
 
 }
 
+/**
+ * Consume the Lemlist API
+ */
 export class LemlistV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.lemlist" as const;

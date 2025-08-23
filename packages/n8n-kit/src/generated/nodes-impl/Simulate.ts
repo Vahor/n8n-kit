@@ -10,6 +10,9 @@ export interface SimulateProps extends NodeProps {
 
 }
 
+/**
+ * Simulate a node
+ */
 export class Simulate<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.simulate" as const;

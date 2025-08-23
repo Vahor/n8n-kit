@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Google Sheets events occur"
 export const type = "n8n-nodes-base.googleSheetsTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleSheetsTriggerOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["triggerOAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Google Sheets events occur
- */
 export interface GoogleSheetsTriggerNodeParameters {
 
     /**

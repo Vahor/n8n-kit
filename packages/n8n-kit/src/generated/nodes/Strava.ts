@@ -5,10 +5,8 @@ export const description = "Consume Strava API" as const;
 export const type = "n8n-nodes-base.strava" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Strava API
- */
 export interface StravaNodeParameters {
 
     /**

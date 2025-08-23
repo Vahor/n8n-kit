@@ -4,10 +4,8 @@
 export const description = "Run custom function code which gets executed once and allows you to add, remove, change and replace items" as const;
 export const type = "n8n-nodes-base.function" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Run custom function code which gets executed once and allows you to add, remove, change and replace items
- */
 export interface FunctionNodeParameters {
 
     readonly notice?: string;

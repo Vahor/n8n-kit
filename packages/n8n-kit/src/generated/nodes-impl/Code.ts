@@ -10,6 +10,9 @@ export interface CodeProps extends NodeProps {
 
 }
 
+/**
+ * Run custom JavaScript or Python code
+ */
 export class Code<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.code" as const;

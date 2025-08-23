@@ -15,6 +15,9 @@ export interface GoogleTranslateProps extends NodeProps {
 
 }
 
+/**
+ * Translate data using Google Translate
+ */
 export class GoogleTranslate<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleTranslate" as const;

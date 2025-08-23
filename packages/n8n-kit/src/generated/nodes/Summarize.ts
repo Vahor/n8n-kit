@@ -4,10 +4,8 @@
 export const description = "Sum, count, max, etc. across items" as const;
 export const type = "n8n-nodes-base.summarize" as const;
 export const version = 1.1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sum, count, max, etc. across items
- */
 export interface SummarizeNodeParameters {
 
     /**

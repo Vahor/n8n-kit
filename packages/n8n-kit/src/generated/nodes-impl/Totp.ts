@@ -13,6 +13,9 @@ export interface TotpProps extends NodeProps {
 
 }
 
+/**
+ * Generate a time-based one-time password
+ */
 export class Totp<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.totp" as const;

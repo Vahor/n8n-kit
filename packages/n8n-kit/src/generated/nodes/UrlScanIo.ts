@@ -5,10 +5,8 @@ export const description = "Provides various utilities for monitoring websites l
 export const type = "n8n-nodes-base.urlScanIo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"urlScanIoApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Provides various utilities for monitoring websites like health checks or screenshots
- */
 export interface UrlScanIoNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface PayPalProps extends NodeProps {
 
 }
 
+/**
+ * Consume PayPal API
+ */
 export class PayPal<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.payPal" as const;

@@ -15,6 +15,9 @@ export interface GoogleFirebaseCloudFirestoreProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Google Firebase - Cloud Firestore API
+ */
 export class GoogleFirebaseCloudFirestore<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleFirebaseCloudFirestore" as const;

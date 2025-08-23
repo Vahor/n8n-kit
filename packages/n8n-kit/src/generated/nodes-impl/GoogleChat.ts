@@ -15,6 +15,9 @@ export interface GoogleChatProps extends NodeProps {
 
 }
 
+/**
+ * Consume Google Chat API
+ */
 export class GoogleChat<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleChat" as const;

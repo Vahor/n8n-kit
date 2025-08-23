@@ -5,10 +5,8 @@ export const description = "Consume YouTube API" as const;
 export const type = "n8n-nodes-base.youTube" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"youTubeOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume YouTube API
- */
 export interface YouTubeNodeParameters {
 
     /**

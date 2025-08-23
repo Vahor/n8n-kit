@@ -4,10 +4,8 @@
 export const description = "Reads and writes data from a spreadsheet file like CSV, XLS, ODS, etc" as const;
 export const type = "n8n-nodes-base.spreadsheetFile" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Reads and writes data from a spreadsheet file like CSV, XLS, ODS, etc
- */
 export interface SpreadsheetFileV1NodeParameters {
 
     readonly oldVersionNotice?: string;

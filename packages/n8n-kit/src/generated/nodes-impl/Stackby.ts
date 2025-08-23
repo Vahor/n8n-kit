@@ -13,6 +13,9 @@ export interface StackbyProps extends NodeProps {
 
 }
 
+/**
+ * Read, write, and delete data in Stackby
+ */
 export class Stackby<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.stackby" as const;

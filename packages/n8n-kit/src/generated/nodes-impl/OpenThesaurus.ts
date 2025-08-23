@@ -10,6 +10,9 @@ export interface OpenThesaurusProps extends NodeProps {
 
 }
 
+/**
+ * Get synonmns for German words using the OpenThesaurus API
+ */
 export class OpenThesaurus<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.openThesaurus" as const;

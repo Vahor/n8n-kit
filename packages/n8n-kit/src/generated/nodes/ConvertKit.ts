@@ -5,10 +5,8 @@ export const description = "Consume ConvertKit API" as const;
 export const type = "n8n-nodes-base.convertKit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"convertKitApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume ConvertKit API
- */
 export interface ConvertKitNodeParameters {
 
     /**

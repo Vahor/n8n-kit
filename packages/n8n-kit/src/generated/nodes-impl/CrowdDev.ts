@@ -13,6 +13,9 @@ export interface CrowdDevProps extends NodeProps {
 
 }
 
+/**
+ * crowd.dev is an open-source suite of community and data tools built to unlock community-led growth for your organization.
+ */
 export class CrowdDev<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.crowdDev" as const;

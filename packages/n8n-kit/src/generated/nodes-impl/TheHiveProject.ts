@@ -13,6 +13,9 @@ export interface TheHiveProjectProps extends NodeProps {
 
 }
 
+/**
+ * Consume TheHive 5 API
+ */
 export class TheHiveProject<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.theHiveProject" as const;

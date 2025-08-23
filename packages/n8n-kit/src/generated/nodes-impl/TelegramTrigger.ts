@@ -13,6 +13,9 @@ export interface TelegramTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow on a Telegram update
+ */
 export class TelegramTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.telegramTrigger" as const;

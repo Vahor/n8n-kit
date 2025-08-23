@@ -13,6 +13,9 @@ export interface TaigaTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Taiga events via webhook
+ */
 export class TaigaTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.taigaTrigger" as const;

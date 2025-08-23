@@ -13,6 +13,9 @@ export interface ClockifyTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Listens to Clockify events
+ */
 export class ClockifyTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.clockifyTrigger" as const;

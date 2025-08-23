@@ -13,6 +13,9 @@ export interface LmCohereProps extends NodeProps {
 
 }
 
+/**
+ * Language Model Cohere
+ */
 export class LmCohere<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmCohere" as const;

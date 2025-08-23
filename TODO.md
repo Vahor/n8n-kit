@@ -19,6 +19,17 @@ in with-group example
 
 - Deploy that ignore position (--merge mode) . If only the position changed, we should not deploy anything, that's only a layout change maybe the user changed something manually. Maybe a default value to true
 
+- generate type for 
+```
+interface VectorStorePineconeNodeParameters {
+  /**
+   * Type options: {"calloutAction":{"label":"RAG starter template","type":"openSampleWorkflowTemplate","templateId":"rag-starter-template"}}
+   */
+  readonly ragStarterCallout?: any;
+```
+
+
+
 ## Tests to add:
 
 - Propagate types for if nodes

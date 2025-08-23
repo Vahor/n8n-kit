@@ -13,6 +13,9 @@ export interface JwtProps extends NodeProps {
 
 }
 
+/**
+ * JWT
+ */
 export class Jwt<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.jwt" as const;

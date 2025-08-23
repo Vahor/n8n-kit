@@ -5,10 +5,8 @@ export const description = "Handle PayPal events via webhooks" as const;
 export const type = "n8n-nodes-base.payPalTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"payPalApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle PayPal events via webhooks
- */
 export interface PayPalTriggerNodeParameters {
 
     /**

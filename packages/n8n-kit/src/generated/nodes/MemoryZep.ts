@@ -5,10 +5,8 @@ export const description = "Use Zep Memory" as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryZep" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
+export const outputs = {"ai_memory":"ai_memory"} as const;
 
-/**
- * Use Zep Memory
- */
 export interface MemoryZepNodeParameters {
 
     readonly deprecationNotice?: string;

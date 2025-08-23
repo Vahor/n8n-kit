@@ -13,6 +13,9 @@ export interface SnowflakeProps extends NodeProps {
 
 }
 
+/**
+ * Get, add and update data in Snowflake
+ */
 export class Snowflake<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.snowflake" as const;

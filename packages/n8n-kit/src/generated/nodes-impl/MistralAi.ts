@@ -13,6 +13,9 @@ export interface MistralAiProps extends NodeProps {
 
 }
 
+/**
+ * Consume Mistral AI API
+ */
 export class MistralAi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mistralAi" as const;

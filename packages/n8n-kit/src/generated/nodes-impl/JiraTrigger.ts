@@ -19,6 +19,9 @@ export interface JiraTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Jira events occur
+ */
 export class JiraTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.jiraTrigger" as const;

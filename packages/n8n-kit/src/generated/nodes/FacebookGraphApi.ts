@@ -5,10 +5,8 @@ export const description = "Interacts with Facebook using the Graph API" as cons
 export const type = "n8n-nodes-base.facebookGraphApi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"facebookGraphApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Interacts with Facebook using the Graph API
- */
 export interface FacebookGraphApiNodeParameters {
 
     /**

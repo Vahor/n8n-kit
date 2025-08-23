@@ -13,6 +13,9 @@ export interface RundeckProps extends NodeProps {
 
 }
 
+/**
+ * Manage Rundeck API
+ */
 export class Rundeck<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.rundeck" as const;

@@ -13,6 +13,9 @@ export interface FlowProps extends NodeProps {
 
 }
 
+/**
+ * Consume Flow API
+ */
 export class Flow<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.flow" as const;

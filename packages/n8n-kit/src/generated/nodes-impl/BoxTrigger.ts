@@ -13,6 +13,9 @@ export interface BoxTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Box events occur
+ */
 export class BoxTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.boxTrigger" as const;

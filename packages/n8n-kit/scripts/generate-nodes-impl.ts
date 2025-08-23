@@ -81,6 +81,9 @@ const generateTypescriptNodeOutput = async (
 
 	// class
 
+	code.line(`/**`);
+	code.line(` * ${result.description}`);
+	code.line(` */`);
 	code.line(
 		`export class ${result.nodeName}<L extends string> extends Node<L> {`,
 	);

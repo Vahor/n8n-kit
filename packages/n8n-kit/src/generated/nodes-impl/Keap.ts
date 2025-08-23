@@ -13,6 +13,9 @@ export interface KeapProps extends NodeProps {
 
 }
 
+/**
+ * Consume Keap API
+ */
 export class Keap<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.keap" as const;

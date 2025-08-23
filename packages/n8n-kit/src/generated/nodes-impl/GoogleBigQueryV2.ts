@@ -15,6 +15,9 @@ export interface GoogleBigQueryV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume Google BigQuery API
+ */
 export class GoogleBigQueryV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleBigQuery" as const;

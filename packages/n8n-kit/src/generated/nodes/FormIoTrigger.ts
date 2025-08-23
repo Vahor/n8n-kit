@@ -5,10 +5,8 @@ export const description = "Handle form.io events via webhooks" as const;
 export const type = "n8n-nodes-base.formIoTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"formIoApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle form.io events via webhooks
- */
 export interface FormIoTriggerNodeParameters {
 
     /**

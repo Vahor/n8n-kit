@@ -13,6 +13,9 @@ export interface WiseTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Wise events via webhooks
+ */
 export class WiseTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wiseTrigger" as const;

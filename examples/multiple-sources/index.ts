@@ -3,7 +3,7 @@ import { NoOp, StickyNote } from "@vahor/n8n-kit/nodes";
 import {
 	GoogleDriveTrigger,
 	GoogleDriveV2,
-	VectorStorePinecone,
+	VectorStorePineconeInsert,
 } from "@vahor/n8n-kit/nodes/generated";
 
 // 	https://n8n.io/workflows/2753-rag-chatbot-for-company-documents-using-google-drive-and-gemini/
@@ -114,7 +114,7 @@ const workflow = new Workflow("my-workflow", {
 				}),
 			)
 			.next(
-				new VectorStorePinecone("upload-to-pinecone", {
+				new VectorStorePineconeInsert("upload-to-pinecone", {
 					label: "Pinecone Vector Store",
 					pineconeApiCredentials: pineconeApiCredentials,
 					parameters: {

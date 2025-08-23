@@ -15,6 +15,9 @@ export interface MediumProps extends NodeProps {
 
 }
 
+/**
+ * Consume Medium API
+ */
 export class Medium<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.medium" as const;

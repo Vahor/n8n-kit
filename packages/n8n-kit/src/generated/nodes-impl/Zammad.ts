@@ -15,6 +15,9 @@ export interface ZammadProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Zammad API
+ */
 export class Zammad<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.zammad" as const;

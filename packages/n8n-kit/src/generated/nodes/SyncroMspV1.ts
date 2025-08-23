@@ -5,10 +5,8 @@ export const description = "Gets data from SyncroMSP" as const;
 export const type = "n8n-nodes-base.syncroMsp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"syncroMspApi","required":true,"testedBy":"syncroMspApiCredentialTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Gets data from SyncroMSP
- */
 export interface SyncroMspV1NodeParameters {
 
     /**

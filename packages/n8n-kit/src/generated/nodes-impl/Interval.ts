@@ -10,6 +10,9 @@ export interface IntervalProps extends NodeProps {
 
 }
 
+/**
+ * Triggers the workflow in a given interval
+ */
 export class Interval<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.interval" as const;

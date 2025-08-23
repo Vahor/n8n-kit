@@ -15,6 +15,9 @@ export interface LinearProps extends NodeProps {
 
 }
 
+/**
+ * Consume Linear API
+ */
 export class Linear<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.linear" as const;

@@ -13,6 +13,9 @@ export interface InvoiceNinjaTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Invoice Ninja events occur
+ */
 export class InvoiceNinjaTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.invoiceNinjaTrigger" as const;

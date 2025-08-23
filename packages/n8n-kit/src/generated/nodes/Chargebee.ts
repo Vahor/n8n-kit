@@ -5,10 +5,8 @@ export const description = "Retrieve data from Chargebee API" as const;
 export const type = "n8n-nodes-base.chargebee" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"chargebeeApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Retrieve data from Chargebee API
- */
 export interface ChargebeeNodeParameters {
 
     /**

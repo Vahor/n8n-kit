@@ -5,10 +5,8 @@ export const description = "Consume SIGNL4 API" as const;
 export const type = "n8n-nodes-base.signl4" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"signl4Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume SIGNL4 API
- */
 export interface Signl4NodeParameters {
 
     /**

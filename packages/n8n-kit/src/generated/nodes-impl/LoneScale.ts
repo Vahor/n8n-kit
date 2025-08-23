@@ -13,6 +13,9 @@ export interface LoneScaleProps extends NodeProps {
 
 }
 
+/**
+ * Create List, add / delete items
+ */
 export class LoneScale<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.loneScale" as const;

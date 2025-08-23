@@ -15,6 +15,9 @@ export interface BeeminderProps extends NodeProps {
 
 }
 
+/**
+ * Consume Beeminder API
+ */
 export class Beeminder<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.beeminder" as const;

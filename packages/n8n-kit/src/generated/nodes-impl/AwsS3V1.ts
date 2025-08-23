@@ -13,6 +13,9 @@ export interface AwsS3V1Props extends NodeProps {
 
 }
 
+/**
+ * Sends data to AWS S3
+ */
 export class AwsS3V1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsS3" as const;

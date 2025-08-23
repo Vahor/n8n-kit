@@ -13,6 +13,9 @@ export interface DisqusProps extends NodeProps {
 
 }
 
+/**
+ * Access data on Disqus
+ */
 export class Disqus<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.disqus" as const;

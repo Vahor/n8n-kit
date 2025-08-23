@@ -10,6 +10,9 @@ export interface SwitchV3Props extends NodeProps {
 
 }
 
+/**
+ * Route items depending on defined expression or rules
+ */
 export class SwitchV3<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.switch" as const;

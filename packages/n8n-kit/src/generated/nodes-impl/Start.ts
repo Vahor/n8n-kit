@@ -10,6 +10,9 @@ export interface StartProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow execution from this node
+ */
 export class Start<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.start" as const;

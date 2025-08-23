@@ -4,10 +4,8 @@
 export const description = "Triggers the workflow when Server-Sent Events occur" as const;
 export const type = "n8n-nodes-base.sseTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Triggers the workflow when Server-Sent Events occur
- */
 export interface SseTriggerNodeParameters {
 
     /**

@@ -15,6 +15,9 @@ export interface LinkedInProps extends NodeProps {
 
 }
 
+/**
+ * Consume LinkedIn API
+ */
 export class LinkedIn<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.linkedIn" as const;

@@ -5,10 +5,8 @@ export const description = "Consume the Webflow API" as const;
 export const type = "n8n-nodes-base.webflow" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"webflowOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Webflow API
- */
 export interface WebflowV2NodeParameters {
 
     /**

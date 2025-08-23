@@ -4,10 +4,8 @@
 export const description = "Uses another n8n workflow as a tool. Allows packaging any n8n node(s) as a tool." as const;
 export const type = "@n8n/n8n-nodes-langchain.toolWorkflow" as const;
 export const version = 1.3 as const;
+export const outputs = {"ai_tool":"ai_tool"} as const;
 
-/**
- * Uses another n8n workflow as a tool. Allows packaging any n8n node(s) as a tool.
- */
 export interface ToolWorkflowV1NodeParameters {
 
     /**

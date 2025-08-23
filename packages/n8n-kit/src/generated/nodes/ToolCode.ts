@@ -4,10 +4,8 @@
 export const description = "Write a tool in JS or Python" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolCode" as const;
 export const version = 1.3 as const;
+export const outputs = {"ai_tool":"ai_tool"} as const;
 
-/**
- * Write a tool in JS or Python
- */
 export interface ToolCodeNodeParameters {
 
     /**

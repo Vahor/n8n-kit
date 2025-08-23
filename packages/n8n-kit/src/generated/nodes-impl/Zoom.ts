@@ -15,6 +15,9 @@ export interface ZoomProps extends NodeProps {
 
 }
 
+/**
+ * Consume Zoom API
+ */
 export class Zoom<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.zoom" as const;

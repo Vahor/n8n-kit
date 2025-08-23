@@ -5,10 +5,8 @@ export const description = "Consume the GoToWebinar API" as const;
 export const type = "n8n-nodes-base.goToWebinar" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"goToWebinarOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the GoToWebinar API
- */
 export interface GoToWebinarNodeParameters {
 
     /**

@@ -4,10 +4,8 @@
 export const description = "Use an n8n Workflow as Retriever" as const;
 export const type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;
 export const version = 1.1 as const;
+export const outputs = {"Retriever":"ai_retriever"} as const;
 
-/**
- * Use an n8n Workflow as Retriever
- */
 export interface RetrieverWorkflowNodeParameters {
 
     readonly executeNotice?: string;

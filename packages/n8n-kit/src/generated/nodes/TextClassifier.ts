@@ -4,10 +4,8 @@
 export const description = "Classify your text into distinct categories" as const;
 export const type = "@n8n/n8n-nodes-langchain.textClassifier" as const;
 export const version = 1.1 as const;
+export const outputs = {} as const;
 
-/**
- * Classify your text into distinct categories
- */
 export interface TextClassifierNodeParameters {
 
     /**

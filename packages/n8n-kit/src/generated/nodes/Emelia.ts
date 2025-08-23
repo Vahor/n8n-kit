@@ -5,10 +5,8 @@ export const description = "Consume the Emelia API" as const;
 export const type = "n8n-nodes-base.emelia" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emeliaApiTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Emelia API
- */
 export interface EmeliaNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface MoceanProps extends NodeProps {
 
 }
 
+/**
+ * Send SMS and voice messages via Mocean
+ */
 export class Mocean<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mocean" as const;

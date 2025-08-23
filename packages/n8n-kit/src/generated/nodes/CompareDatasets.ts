@@ -4,10 +4,8 @@
 export const description = "Compare two inputs for changes" as const;
 export const type = "n8n-nodes-base.compareDatasets" as const;
 export const version = 2.3 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Compare two inputs for changes
- */
 export interface CompareDatasetsNodeParameters {
 
     readonly infoBox?: string;

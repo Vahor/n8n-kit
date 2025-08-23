@@ -13,6 +13,9 @@ export interface ElasticSecurityProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Elastic Security API
+ */
 export class ElasticSecurity<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.elasticSecurity" as const;

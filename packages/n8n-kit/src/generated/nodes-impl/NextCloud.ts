@@ -15,6 +15,9 @@ export interface NextCloudProps extends NodeProps {
 
 }
 
+/**
+ * Access data on Nextcloud
+ */
 export class NextCloud<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.nextCloud" as const;

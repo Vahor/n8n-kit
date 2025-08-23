@@ -13,6 +13,9 @@ export interface CustomerIoTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow on a Customer.io update (Beta)
+ */
 export class CustomerIoTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.customerIoTrigger" as const;

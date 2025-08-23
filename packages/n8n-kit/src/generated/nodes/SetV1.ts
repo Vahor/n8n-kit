@@ -4,10 +4,8 @@
 export const description = "Sets values on items and optionally remove other values" as const;
 export const type = "n8n-nodes-base.set" as const;
 export const version = 2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sets values on items and optionally remove other values
- */
 export interface SetV1NodeParameters {
 
     /**

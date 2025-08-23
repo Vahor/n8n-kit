@@ -10,6 +10,9 @@ export interface TextSplitterTokenSplitterProps extends NodeProps {
 
 }
 
+/**
+ * Split text into chunks by tokens
+ */
 export class TextSplitterTokenSplitter<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter" as const;

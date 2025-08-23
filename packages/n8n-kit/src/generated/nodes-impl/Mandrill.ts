@@ -13,6 +13,9 @@ export interface MandrillProps extends NodeProps {
 
 }
 
+/**
+ * Consume Mandrill API
+ */
 export class Mandrill<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mandrill" as const;

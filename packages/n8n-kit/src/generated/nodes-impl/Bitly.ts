@@ -15,6 +15,9 @@ export interface BitlyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Bitly API
+ */
 export class Bitly<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.bitly" as const;

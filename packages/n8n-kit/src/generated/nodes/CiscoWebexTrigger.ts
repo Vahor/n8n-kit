@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Cisco Webex events occur." 
 export const type = "n8n-nodes-base.ciscoWebexTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ciscoWebexOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Cisco Webex events occur.
- */
 export interface CiscoWebexTriggerNodeParameters {
 
     /**

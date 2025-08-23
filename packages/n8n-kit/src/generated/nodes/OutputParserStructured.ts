@@ -4,10 +4,8 @@
 export const description = "Return data in a defined JSON format" as const;
 export const type = "@n8n/n8n-nodes-langchain.outputParserStructured" as const;
 export const version = 1.3 as const;
+export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
-/**
- * Return data in a defined JSON format
- */
 export interface OutputParserStructuredNodeParameters {
 
     /**

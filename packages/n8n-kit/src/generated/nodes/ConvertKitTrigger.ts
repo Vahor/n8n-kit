@@ -5,10 +5,8 @@ export const description = "Handle ConvertKit events via webhooks" as const;
 export const type = "n8n-nodes-base.convertKitTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"convertKitApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle ConvertKit events via webhooks
- */
 export interface ConvertKitTriggerNodeParameters {
 
     /**

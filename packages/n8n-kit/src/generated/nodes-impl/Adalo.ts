@@ -13,6 +13,9 @@ export interface AdaloProps extends NodeProps {
 
 }
 
+/**
+ * Consume Adalo API
+ */
 export class Adalo<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.adalo" as const;

@@ -15,6 +15,9 @@ export interface GetResponseProps extends NodeProps {
 
 }
 
+/**
+ * Consume GetResponse API
+ */
 export class GetResponse<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.getResponse" as const;

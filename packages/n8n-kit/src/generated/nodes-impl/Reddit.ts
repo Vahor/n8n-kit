@@ -13,6 +13,9 @@ export interface RedditProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Reddit API
+ */
 export class Reddit<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.reddit" as const;

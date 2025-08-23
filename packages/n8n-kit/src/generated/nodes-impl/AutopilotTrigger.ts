@@ -13,6 +13,9 @@ export interface AutopilotTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Autopilot events via webhooks
+ */
 export class AutopilotTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.autopilotTrigger" as const;

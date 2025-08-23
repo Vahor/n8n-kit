@@ -10,6 +10,9 @@ export interface HtmlProps extends NodeProps {
 
 }
 
+/**
+ * Work with HTML
+ */
 export class Html<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.html" as const;

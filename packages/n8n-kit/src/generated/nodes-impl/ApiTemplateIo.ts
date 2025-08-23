@@ -13,6 +13,9 @@ export interface ApiTemplateIoProps extends NodeProps {
 
 }
 
+/**
+ * Consume the APITemplate.io API
+ */
 export class ApiTemplateIo<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.apiTemplateIo" as const;

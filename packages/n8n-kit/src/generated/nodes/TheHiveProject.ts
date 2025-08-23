@@ -5,10 +5,8 @@ export const description = "Consume TheHive 5 API" as const;
 export const type = "n8n-nodes-base.theHiveProject" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"theHiveProjectApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume TheHive 5 API
- */
 export interface TheHiveProjectNodeParameters {
 
     /**

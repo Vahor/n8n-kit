@@ -15,6 +15,9 @@ export interface GoogleDocsProps extends NodeProps {
 
 }
 
+/**
+ * Consume Google Docs API.
+ */
 export class GoogleDocs<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleDocs" as const;

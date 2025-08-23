@@ -4,10 +4,8 @@
 export const description = "Route items depending on defined expression or rules" as const;
 export const type = "n8n-nodes-base.switch" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Route items depending on defined expression or rules
- */
 export interface SwitchV1NodeParameters {
 
     /**

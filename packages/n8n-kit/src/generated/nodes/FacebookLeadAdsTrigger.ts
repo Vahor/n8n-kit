@@ -5,10 +5,8 @@ export const description = "Handle Facebook Lead Ads events via webhooks" as con
 export const type = "n8n-nodes-base.facebookLeadAdsTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"facebookLeadAdsOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Facebook Lead Ads events via webhooks
- */
 export interface FacebookLeadAdsTriggerNodeParameters {
 
     readonly facebookLeadAdsNotice?: string;

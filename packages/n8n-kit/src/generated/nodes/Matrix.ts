@@ -5,10 +5,8 @@ export const description = "Consume Matrix API" as const;
 export const type = "n8n-nodes-base.matrix" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"matrixApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Matrix API
- */
 export interface MatrixNodeParameters {
 
     /**

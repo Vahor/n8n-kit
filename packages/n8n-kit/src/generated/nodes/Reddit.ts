@@ -5,10 +5,8 @@ export const description = "Consume the Reddit API" as const;
 export const type = "n8n-nodes-base.reddit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"redditOAuth2Api","required":true,"displayOptions":{"show":{"resource":["postComment","post","profile"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Reddit API
- */
 export interface RedditNodeParameters {
 
     /**

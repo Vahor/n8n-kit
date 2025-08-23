@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Trello events occur" as con
 export const type = "n8n-nodes-base.trelloTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"trelloApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Trello events occur
- */
 export interface TrelloTriggerNodeParameters {
 
     /**

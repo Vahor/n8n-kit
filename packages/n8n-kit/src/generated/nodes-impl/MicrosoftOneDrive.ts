@@ -13,6 +13,9 @@ export interface MicrosoftOneDriveProps extends NodeProps {
 
 }
 
+/**
+ * Consume Microsoft OneDrive API
+ */
 export class MicrosoftOneDrive<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftOneDrive" as const;

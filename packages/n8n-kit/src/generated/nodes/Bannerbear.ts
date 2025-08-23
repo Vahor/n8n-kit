@@ -5,10 +5,8 @@ export const description = "Consume Bannerbear API" as const;
 export const type = "n8n-nodes-base.bannerbear" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bannerbearApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Bannerbear API
- */
 export interface BannerbearNodeParameters {
 
     /**

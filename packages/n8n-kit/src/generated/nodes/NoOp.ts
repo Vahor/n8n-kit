@@ -4,10 +4,8 @@
 export const description = "No Operation" as const;
 export const type = "n8n-nodes-base.noOp" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * No Operation
- */
 export interface NoOpNodeParameters {
 
 

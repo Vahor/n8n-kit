@@ -15,6 +15,9 @@ export interface SalesforceProps extends NodeProps {
 
 }
 
+/**
+ * Consume Salesforce API
+ */
 export class Salesforce<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.salesforce" as const;

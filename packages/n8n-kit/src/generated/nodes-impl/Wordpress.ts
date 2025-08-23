@@ -13,6 +13,9 @@ export interface WordpressProps extends NodeProps {
 
 }
 
+/**
+ * Consume Wordpress API
+ */
 export class Wordpress<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wordpress" as const;

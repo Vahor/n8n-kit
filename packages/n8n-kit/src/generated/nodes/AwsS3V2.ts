@@ -5,10 +5,8 @@ export const description = "Sends data to AWS S3" as const;
 export const type = "n8n-nodes-base.awsS3" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends data to AWS S3
- */
 export interface AwsS3V2NodeParameters {
 
     /**

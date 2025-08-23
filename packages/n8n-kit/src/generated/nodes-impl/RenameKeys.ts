@@ -10,6 +10,9 @@ export interface RenameKeysProps extends NodeProps {
 
 }
 
+/**
+ * Update item field names
+ */
 export class RenameKeys<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.renameKeys" as const;

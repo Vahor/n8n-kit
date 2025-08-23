@@ -5,10 +5,8 @@ export const description = "Interact with Gong API" as const;
 export const type = "n8n-nodes-base.gong" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gongApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gongOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Interact with Gong API
- */
 export interface GongNodeParameters {
 
     /**

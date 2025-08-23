@@ -13,6 +13,9 @@ export interface EmbeddingsAwsBedrockProps extends NodeProps {
 
 }
 
+/**
+ * Use Embeddings AWS Bedrock
+ */
 export class EmbeddingsAwsBedrock<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.embeddingsAwsBedrock" as const;

@@ -5,10 +5,8 @@ export const description = "Consume Mindee API" as const;
 export const type = "n8n-nodes-base.mindee" as const;
 export const version = 3 as const;
 export const credentials = [{"name":"mindeeReceiptApi","required":true,"displayOptions":{"show":{"resource":["receipt"]}}},{"name":"mindeeInvoiceApi","required":true,"displayOptions":{"show":{"resource":["invoice"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Mindee API
- */
 export interface MindeeNodeParameters {
 
     /**

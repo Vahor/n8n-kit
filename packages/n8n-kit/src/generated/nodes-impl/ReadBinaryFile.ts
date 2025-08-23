@@ -10,6 +10,9 @@ export interface ReadBinaryFileProps extends NodeProps {
 
 }
 
+/**
+ * Reads a binary file from disk
+ */
 export class ReadBinaryFile<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.readBinaryFile" as const;

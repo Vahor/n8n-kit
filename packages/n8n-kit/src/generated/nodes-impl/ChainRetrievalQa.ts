@@ -10,6 +10,9 @@ export interface ChainRetrievalQaProps extends NodeProps {
 
 }
 
+/**
+ * Answer questions about retrieved documents
+ */
 export class ChainRetrievalQa<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.chainRetrievalQa" as const;

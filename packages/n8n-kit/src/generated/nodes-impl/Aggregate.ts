@@ -10,6 +10,9 @@ export interface AggregateProps extends NodeProps {
 
 }
 
+/**
+ * Combine a field from many items into a list in a single item
+ */
 export class Aggregate<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.aggregate" as const;

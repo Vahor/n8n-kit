@@ -5,10 +5,8 @@ export const description = "Insert data into Supabase Vector Store index [https:
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreSupabaseInsert" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"supabaseApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Insert data into Supabase Vector Store index [https://supabase.com/docs/guides/ai/langchain]
- */
 export interface VectorStoreSupabaseInsertNodeParameters {
 
     readonly setupNotice?: string;

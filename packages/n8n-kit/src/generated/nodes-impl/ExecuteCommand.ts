@@ -10,6 +10,9 @@ export interface ExecuteCommandProps extends NodeProps {
 
 }
 
+/**
+ * Executes a command on the host
+ */
 export class ExecuteCommand<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.executeCommand" as const;

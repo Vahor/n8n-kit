@@ -13,6 +13,9 @@ export interface MicrosoftDynamicsCrmProps extends NodeProps {
 
 }
 
+/**
+ * Consume Microsoft Dynamics CRM API
+ */
 export class MicrosoftDynamicsCrm<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftDynamicsCrm" as const;

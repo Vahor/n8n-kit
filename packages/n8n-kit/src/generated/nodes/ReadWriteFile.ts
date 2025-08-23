@@ -4,10 +4,8 @@
 export const description = "Read or write files from the computer that runs n8n" as const;
 export const type = "n8n-nodes-base.readWriteFile" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Read or write files from the computer that runs n8n
- */
 export interface ReadWriteFileNodeParameters {
 
     readonly info?: string;

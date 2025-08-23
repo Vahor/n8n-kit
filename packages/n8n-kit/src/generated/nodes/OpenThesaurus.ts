@@ -4,10 +4,8 @@
 export const description = "Get synonmns for German words using the OpenThesaurus API" as const;
 export const type = "n8n-nodes-base.openThesaurus" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Get synonmns for German words using the OpenThesaurus API
- */
 export interface OpenThesaurusNodeParameters {
 
     /**

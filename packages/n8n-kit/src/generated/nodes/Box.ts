@@ -5,10 +5,8 @@ export const description = "Consume Box API" as const;
 export const type = "n8n-nodes-base.box" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"boxOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Box API
- */
 export interface BoxNodeParameters {
 
     /**

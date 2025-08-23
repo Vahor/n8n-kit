@@ -5,10 +5,8 @@ export const description = "Send SMS and make text-to-speech calls" as const;
 export const type = "n8n-nodes-base.sms77" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"sms77Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Send SMS and make text-to-speech calls
- */
 export interface Sms77NodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface PushoverProps extends NodeProps {
 
 }
 
+/**
+ * Consume Pushover API
+ */
 export class Pushover<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.pushover" as const;

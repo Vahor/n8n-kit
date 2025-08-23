@@ -5,10 +5,8 @@ export const description = "Language Model Ollama" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmOllama" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ollamaApi","required":true}] as const;
+export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
-/**
- * Language Model Ollama
- */
 export interface LmOllamaNodeParameters {
 
     /**

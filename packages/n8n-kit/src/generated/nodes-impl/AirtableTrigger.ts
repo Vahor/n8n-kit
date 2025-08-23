@@ -17,6 +17,9 @@ export interface AirtableTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Airtable events occur
+ */
 export class AirtableTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.airtableTrigger" as const;

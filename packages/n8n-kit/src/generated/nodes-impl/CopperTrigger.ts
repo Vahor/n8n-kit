@@ -13,6 +13,9 @@ export interface CopperTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Copper events via webhooks
+ */
 export class CopperTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.copperTrigger" as const;

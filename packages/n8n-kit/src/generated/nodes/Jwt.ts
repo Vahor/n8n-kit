@@ -5,10 +5,8 @@ export const description = "JWT" as const;
 export const type = "n8n-nodes-base.jwt" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jwtAuth","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * JWT
- */
 export interface JwtNodeParameters {
 
     /**

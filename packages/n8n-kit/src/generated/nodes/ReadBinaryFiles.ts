@@ -4,10 +4,8 @@
 export const description = "Reads binary files from disk" as const;
 export const type = "n8n-nodes-base.readBinaryFiles" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Reads binary files from disk
- */
 export interface ReadBinaryFilesNodeParameters {
 
     /**

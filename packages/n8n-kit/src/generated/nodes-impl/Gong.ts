@@ -15,6 +15,9 @@ export interface GongProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Gong API
+ */
 export class Gong<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.gong" as const;

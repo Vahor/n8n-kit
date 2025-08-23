@@ -10,6 +10,9 @@ export interface RemoveDuplicatesV1Props extends NodeProps {
 
 }
 
+/**
+ * Delete items with matching field values
+ */
 export class RemoveDuplicatesV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.removeDuplicates" as const;

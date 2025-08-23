@@ -13,6 +13,9 @@ export interface ToolSerpApiProps extends NodeProps {
 
 }
 
+/**
+ * Search in Google using SerpAPI
+ */
 export class ToolSerpApi<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolSerpApi" as const;

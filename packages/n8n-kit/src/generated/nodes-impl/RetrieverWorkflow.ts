@@ -10,6 +10,9 @@ export interface RetrieverWorkflowProps extends NodeProps {
 
 }
 
+/**
+ * Use an n8n Workflow as Retriever
+ */
 export class RetrieverWorkflow<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;

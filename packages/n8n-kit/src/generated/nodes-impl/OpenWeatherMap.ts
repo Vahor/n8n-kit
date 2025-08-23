@@ -13,6 +13,9 @@ export interface OpenWeatherMapProps extends NodeProps {
 
 }
 
+/**
+ * Gets current and future weather information
+ */
 export class OpenWeatherMap<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.openWeatherMap" as const;

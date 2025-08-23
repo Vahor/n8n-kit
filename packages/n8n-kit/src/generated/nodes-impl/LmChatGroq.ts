@@ -13,6 +13,9 @@ export interface LmChatGroqProps extends NodeProps {
 
 }
 
+/**
+ * Language Model Groq
+ */
 export class LmChatGroq<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatGroq" as const;

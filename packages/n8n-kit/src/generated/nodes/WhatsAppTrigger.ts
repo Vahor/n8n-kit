@@ -5,10 +5,8 @@ export const description = "Handle WhatsApp events via webhooks" as const;
 export const type = "n8n-nodes-base.whatsAppTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"whatsAppTriggerApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle WhatsApp events via webhooks
- */
 export interface WhatsAppTriggerNodeParameters {
 
     readonly whatsAppNotice?: string;

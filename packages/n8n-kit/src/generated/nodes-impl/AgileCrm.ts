@@ -13,6 +13,9 @@ export interface AgileCrmProps extends NodeProps {
 
 }
 
+/**
+ * Consume Agile CRM API
+ */
 export class AgileCrm<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.agileCrm" as const;

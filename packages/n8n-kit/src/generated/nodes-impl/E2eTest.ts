@@ -10,6 +10,9 @@ export interface E2eTestProps extends NodeProps {
 
 }
 
+/**
+ * Dummy node used for e2e testing
+ */
 export class E2eTest<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.e2eTest" as const;

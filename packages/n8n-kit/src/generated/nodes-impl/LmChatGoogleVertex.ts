@@ -13,6 +13,9 @@ export interface LmChatGoogleVertexProps extends NodeProps {
 
 }
 
+/**
+ * Chat Model Google Vertex
+ */
 export class LmChatGoogleVertex<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatGoogleVertex" as const;

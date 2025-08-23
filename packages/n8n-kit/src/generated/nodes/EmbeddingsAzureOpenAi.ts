@@ -5,10 +5,8 @@ export const description = "Use Embeddings Azure OpenAI" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsAzureOpenAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"azureOpenAiApi","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use Embeddings Azure OpenAI
- */
 export interface EmbeddingsAzureOpenAiNodeParameters {
 
     /**

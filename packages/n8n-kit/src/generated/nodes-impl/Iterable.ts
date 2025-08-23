@@ -13,6 +13,9 @@ export interface IterableProps extends NodeProps {
 
 }
 
+/**
+ * Consume Iterable API
+ */
 export class Iterable<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.iterable" as const;

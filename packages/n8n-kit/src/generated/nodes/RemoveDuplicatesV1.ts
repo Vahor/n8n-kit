@@ -4,10 +4,8 @@
 export const description = "Delete items with matching field values" as const;
 export const type = "n8n-nodes-base.removeDuplicates" as const;
 export const version = 1.1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Delete items with matching field values
- */
 export interface RemoveDuplicatesV1NodeParameters {
 
     /**

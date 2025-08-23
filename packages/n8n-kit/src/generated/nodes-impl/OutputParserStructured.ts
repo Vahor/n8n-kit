@@ -10,6 +10,9 @@ export interface OutputParserStructuredProps extends NodeProps {
 
 }
 
+/**
+ * Return data in a defined JSON format
+ */
 export class OutputParserStructured<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.outputParserStructured" as const;

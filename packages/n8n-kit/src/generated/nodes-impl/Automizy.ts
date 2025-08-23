@@ -13,6 +13,9 @@ export interface AutomizyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Automizy API
+ */
 export class Automizy<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.automizy" as const;

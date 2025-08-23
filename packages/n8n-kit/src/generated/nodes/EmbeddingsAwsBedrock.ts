@@ -5,10 +5,8 @@ export const description = "Use Embeddings AWS Bedrock" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsAwsBedrock" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use Embeddings AWS Bedrock
- */
 export interface EmbeddingsAwsBedrockNodeParameters {
 
     /**

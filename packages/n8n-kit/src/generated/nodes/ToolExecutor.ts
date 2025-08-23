@@ -4,10 +4,8 @@
 export const description = "Node to execute tools without an AI Agent" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolExecutor" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Node to execute tools without an AI Agent
- */
 export interface ToolExecutorNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Consume SendGrid API" as const;
 export const type = "n8n-nodes-base.sendGrid" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"sendGridApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume SendGrid API
- */
 export interface SendGridNodeParameters {
 
     /**

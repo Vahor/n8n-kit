@@ -13,6 +13,9 @@ export interface NetlifyProps extends NodeProps {
 
 }
 
+/**
+ * Consume Netlify API
+ */
 export class Netlify<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.netlify" as const;

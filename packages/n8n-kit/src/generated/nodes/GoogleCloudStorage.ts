@@ -5,10 +5,8 @@ export const description = "Use the Google Cloud Storage API" as const;
 export const type = "n8n-nodes-base.googleCloudStorage" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleCloudStorageOAuth2Api","required":true,"testedBy":{"request":{"method":"GET","url":"/b/"}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Use the Google Cloud Storage API
- */
 export interface GoogleCloudStorageNodeParameters {
 
     /**

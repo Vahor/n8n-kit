@@ -13,6 +13,9 @@ export interface AwsSqsProps extends NodeProps {
 
 }
 
+/**
+ * Sends messages to AWS SQS
+ */
 export class AwsSqs<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsSqs" as const;

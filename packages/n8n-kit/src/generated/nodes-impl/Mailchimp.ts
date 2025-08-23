@@ -15,6 +15,9 @@ export interface MailchimpProps extends NodeProps {
 
 }
 
+/**
+ * Consume Mailchimp API
+ */
 export class Mailchimp<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mailchimp" as const;

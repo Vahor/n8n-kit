@@ -5,10 +5,8 @@ export const description = "Read, update, write and delete data from Airtable" a
 export const type = "n8n-nodes-base.airtable" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Read, update, write and delete data from Airtable
- */
 export interface AirtableV2NodeParameters {
 
     /**

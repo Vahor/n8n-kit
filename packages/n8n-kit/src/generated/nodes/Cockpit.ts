@@ -5,10 +5,8 @@ export const description = "Consume Cockpit API" as const;
 export const type = "n8n-nodes-base.cockpit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cockpitApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Cockpit API
- */
 export interface CockpitNodeParameters {
 
     /**

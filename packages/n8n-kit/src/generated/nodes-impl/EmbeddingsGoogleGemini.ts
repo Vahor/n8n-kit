@@ -13,6 +13,9 @@ export interface EmbeddingsGoogleGeminiProps extends NodeProps {
 
 }
 
+/**
+ * Use Google Gemini Embeddings
+ */
 export class EmbeddingsGoogleGemini<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini" as const;

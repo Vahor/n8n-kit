@@ -10,6 +10,9 @@ export interface SplitInBatchesV3Props extends NodeProps {
 
 }
 
+/**
+ * Split data into batches and iterate over each batch
+ */
 export class SplitInBatchesV3<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.splitInBatches" as const;

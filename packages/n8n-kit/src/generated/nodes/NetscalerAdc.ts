@@ -5,10 +5,8 @@ export const description = "Consume Netscaler ADC API" as const;
 export const type = "n8n-nodes-base.citrixAdc" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"citrixAdcApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Netscaler ADC API
- */
 export interface NetscalerAdcNodeParameters {
 
     /**

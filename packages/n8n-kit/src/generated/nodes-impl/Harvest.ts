@@ -15,6 +15,9 @@ export interface HarvestProps extends NodeProps {
 
 }
 
+/**
+ * Access data on Harvest
+ */
 export class Harvest<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.harvest" as const;

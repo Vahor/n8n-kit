@@ -13,6 +13,9 @@ export interface WiseProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Wise API
+ */
 export class Wise<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wise" as const;

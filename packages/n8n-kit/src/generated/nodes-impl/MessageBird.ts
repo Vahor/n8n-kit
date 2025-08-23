@@ -13,6 +13,9 @@ export interface MessageBirdProps extends NodeProps {
 
 }
 
+/**
+ * Sends SMS via MessageBird
+ */
 export class MessageBird<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.messageBird" as const;

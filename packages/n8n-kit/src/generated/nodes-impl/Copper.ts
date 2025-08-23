@@ -13,6 +13,9 @@ export interface CopperProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Copper API
+ */
 export class Copper<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.copper" as const;

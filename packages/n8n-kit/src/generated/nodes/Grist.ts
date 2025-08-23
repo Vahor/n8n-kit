@@ -5,10 +5,8 @@ export const description = "Consume the Grist API" as const;
 export const type = "n8n-nodes-base.grist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gristApi","required":true,"testedBy":"gristApiTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Grist API
- */
 export interface GristNodeParameters {
 
     /**

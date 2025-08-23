@@ -10,6 +10,9 @@ export interface SimulateTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Simulate a trigger node
+ */
 export class SimulateTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.simulateTrigger" as const;

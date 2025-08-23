@@ -13,6 +13,9 @@ export interface WhatsAppTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle WhatsApp events via webhooks
+ */
 export class WhatsAppTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.whatsAppTrigger" as const;

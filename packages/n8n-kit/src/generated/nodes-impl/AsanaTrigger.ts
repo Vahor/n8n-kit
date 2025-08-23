@@ -15,6 +15,9 @@ export interface AsanaTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Asana events occur.
+ */
 export class AsanaTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.asanaTrigger" as const;

@@ -13,6 +13,9 @@ export interface VenafiTlsProtectCloudTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Venafi events occur
+ */
 export class VenafiTlsProtectCloudTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.venafiTlsProtectCloudTrigger" as const;

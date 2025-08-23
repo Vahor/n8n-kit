@@ -4,10 +4,8 @@
 export const description = "Allows you to manipulate date and time values" as const;
 export const type = "n8n-nodes-base.dateTime" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Allows you to manipulate date and time values
- */
 export interface DateTimeV1NodeParameters {
 
     readonly noticeDateTime?: string;

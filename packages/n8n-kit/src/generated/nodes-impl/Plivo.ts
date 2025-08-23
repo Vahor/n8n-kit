@@ -13,6 +13,9 @@ export interface PlivoProps extends NodeProps {
 
 }
 
+/**
+ * Send SMS/MMS messages or make phone calls
+ */
 export class Plivo<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.plivo" as const;

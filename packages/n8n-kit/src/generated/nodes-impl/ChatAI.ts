@@ -10,6 +10,9 @@ export interface ChatAIProps extends NodeProps {
 
 }
 
+/**
+ * Send a message to a chat
+ */
 export class ChatAI<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.chat" as const;

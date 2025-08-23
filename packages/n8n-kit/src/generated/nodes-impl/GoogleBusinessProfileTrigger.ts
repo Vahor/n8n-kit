@@ -13,6 +13,9 @@ export interface GoogleBusinessProfileTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Fetches reviews from Google Business Profile and starts the workflow on specified polling intervals.
+ */
 export class GoogleBusinessProfileTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleBusinessProfileTrigger" as const;

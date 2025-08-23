@@ -13,6 +13,9 @@ export interface MicrosoftOneDriveTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Trigger for Microsoft OneDrive API.
+ */
 export class MicrosoftOneDriveTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;

@@ -5,10 +5,8 @@ export const description = "Consume TravisCI API" as const;
 export const type = "n8n-nodes-base.travisCi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"travisCiApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume TravisCI API
- */
 export interface TravisCiNodeParameters {
 
     /**

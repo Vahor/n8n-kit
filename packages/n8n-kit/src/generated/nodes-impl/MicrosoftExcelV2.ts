@@ -13,6 +13,9 @@ export interface MicrosoftExcelV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume Microsoft Excel API
+ */
 export class MicrosoftExcelV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftExcel" as const;

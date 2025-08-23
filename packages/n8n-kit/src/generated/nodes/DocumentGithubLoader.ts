@@ -5,10 +5,8 @@ export const description = "Use GitHub data as input to this chain" as const;
 export const type = "@n8n/n8n-nodes-langchain.documentGithubLoader" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"githubApi","required":true}] as const;
+export const outputs = {"ai_document":"ai_document"} as const;
 
-/**
- * Use GitHub data as input to this chain
- */
 export interface DocumentGithubLoaderNodeParameters {
 
     /**

@@ -4,10 +4,8 @@
 export const description = "Throw an error in the workflow" as const;
 export const type = "n8n-nodes-base.stopAndError" as const;
 export const version = 1 as const;
+export const outputs = {} as const;
 
-/**
- * Throw an error in the workflow
- */
 export interface StopAndErrorNodeParameters {
 
     /**

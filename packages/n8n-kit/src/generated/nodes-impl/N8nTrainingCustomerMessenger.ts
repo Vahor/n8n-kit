@@ -10,6 +10,9 @@ export interface N8nTrainingCustomerMessengerProps extends NodeProps {
 
 }
 
+/**
+ * Dummy node used for n8n training
+ */
 export class N8nTrainingCustomerMessenger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.n8nTrainingCustomerMessenger" as const;

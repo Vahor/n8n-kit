@@ -4,10 +4,8 @@
 export const description = "Stores in n8n memory, so no credentials required" as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryBufferWindow" as const;
 export const version = 1.3 as const;
+export const outputs = {"ai_memory":"ai_memory"} as const;
 
-/**
- * Stores in n8n memory, so no credentials required
- */
 export interface MemoryBufferWindowNodeParameters {
 
     /**

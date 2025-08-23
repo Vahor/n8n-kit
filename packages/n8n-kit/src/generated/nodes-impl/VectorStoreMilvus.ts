@@ -13,6 +13,9 @@ export interface VectorStoreMilvusProps extends NodeProps {
 
 }
 
+/**
+ * Work with your data in Milvus Vector Store
+ */
 export class VectorStoreMilvus<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreMilvus" as const;

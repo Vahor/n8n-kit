@@ -5,10 +5,8 @@ export const description = "Push messages to MQTT" as const;
 export const type = "n8n-nodes-base.mqtt" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mqtt","required":true,"testedBy":"mqttConnectionTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Push messages to MQTT
- */
 export interface MqttNodeParameters {
 
     /**

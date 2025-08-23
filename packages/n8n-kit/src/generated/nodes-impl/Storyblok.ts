@@ -15,6 +15,9 @@ export interface StoryblokProps extends NodeProps {
 
 }
 
+/**
+ * Consume Storyblok API
+ */
 export class Storyblok<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.storyblok" as const;

@@ -15,6 +15,9 @@ export interface FtpProps extends NodeProps {
 
 }
 
+/**
+ * Transfer files via FTP or SFTP
+ */
 export class Ftp<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.ftp" as const;

@@ -13,6 +13,9 @@ export interface GoogleTasksProps extends NodeProps {
 
 }
 
+/**
+ * Consume Google Tasks API
+ */
 export class GoogleTasks<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleTasks" as const;

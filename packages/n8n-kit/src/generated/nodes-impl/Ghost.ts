@@ -15,6 +15,9 @@ export interface GhostProps extends NodeProps {
 
 }
 
+/**
+ * Consume Ghost API
+ */
 export class Ghost<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.ghost" as const;

@@ -13,6 +13,9 @@ export interface MailerLiteV1Props extends NodeProps {
 
 }
 
+/**
+ * Consume Mailer Lite API
+ */
 export class MailerLiteV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mailerLite" as const;

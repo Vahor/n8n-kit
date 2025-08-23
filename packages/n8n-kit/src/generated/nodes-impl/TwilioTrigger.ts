@@ -13,6 +13,9 @@ export interface TwilioTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow on a Twilio update
+ */
 export class TwilioTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.twilioTrigger" as const;

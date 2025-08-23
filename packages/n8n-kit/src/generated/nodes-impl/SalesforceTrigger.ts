@@ -13,6 +13,9 @@ export interface SalesforceTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Fetches data from Salesforce and starts the workflow on specified polling intervals.
+ */
 export class SalesforceTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.salesforceTrigger" as const;

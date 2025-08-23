@@ -10,6 +10,9 @@ export interface DebugHelperProps extends NodeProps {
 
 }
 
+/**
+ * Causes problems intentionally and generates useful data for debugging
+ */
 export class DebugHelper<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.debugHelper" as const;

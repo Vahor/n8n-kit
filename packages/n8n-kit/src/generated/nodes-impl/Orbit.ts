@@ -13,6 +13,9 @@ export interface OrbitProps extends NodeProps {
 
 }
 
+/**
+ * Consume Orbit API
+ */
 export class Orbit<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.orbit" as const;

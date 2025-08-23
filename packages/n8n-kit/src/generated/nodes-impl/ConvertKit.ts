@@ -13,6 +13,9 @@ export interface ConvertKitProps extends NodeProps {
 
 }
 
+/**
+ * Consume ConvertKit API
+ */
 export class ConvertKit<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.convertKit" as const;

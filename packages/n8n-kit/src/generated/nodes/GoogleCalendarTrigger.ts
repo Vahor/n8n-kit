@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Google Calendar events occu
 export const type = "n8n-nodes-base.googleCalendarTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleCalendarOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Google Calendar events occur
- */
 export interface GoogleCalendarTriggerNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "For advanced usage with an AI chain via Vercel AI Ga
 export const type = "@n8n/n8n-nodes-langchain.lmChatVercelAiGateway" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"vercelAiGatewayApi","required":true}] as const;
+export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
-/**
- * For advanced usage with an AI chain via Vercel AI Gateway
- */
 export interface LmChatVercelAiGatewayNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Consume the Google Slides API" as const;
 export const type = "n8n-nodes-base.googleSlides" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleSlidesOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Google Slides API
- */
 export interface GoogleSlidesNodeParameters {
 
     /**

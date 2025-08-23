@@ -13,6 +13,9 @@ export interface MicrosoftGraphSecurityProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Microsoft Graph Security API
+ */
 export class MicrosoftGraphSecurity<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftGraphSecurity" as const;

@@ -4,10 +4,8 @@
 export const description = "Split text into chunks by characters recursively, recommended for most use cases" as const;
 export const type = "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter" as const;
 export const version = 1 as const;
+export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
-/**
- * Split text into chunks by characters recursively, recommended for most use cases
- */
 export interface TextSplitterRecursiveCharacterTextSplitterNodeParameters {
 
     /**

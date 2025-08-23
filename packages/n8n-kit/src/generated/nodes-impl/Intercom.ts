@@ -13,6 +13,9 @@ export interface IntercomProps extends NodeProps {
 
 }
 
+/**
+ * Consume Intercom API
+ */
 export class Intercom<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.intercom" as const;

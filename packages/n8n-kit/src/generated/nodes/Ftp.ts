@@ -5,10 +5,8 @@ export const description = "Transfer files via FTP or SFTP" as const;
 export const type = "n8n-nodes-base.ftp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ftp","required":true,"displayOptions":{"show":{"protocol":["ftp"]}},"testedBy":"ftpConnectionTest"},{"name":"sftp","required":true,"displayOptions":{"show":{"protocol":["sftp"]}},"testedBy":"sftpConnectionTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Transfer files via FTP or SFTP
- */
 export interface FtpNodeParameters {
 
     /**

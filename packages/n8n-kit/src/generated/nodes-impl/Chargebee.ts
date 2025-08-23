@@ -13,6 +13,9 @@ export interface ChargebeeProps extends NodeProps {
 
 }
 
+/**
+ * Retrieve data from Chargebee API
+ */
 export class Chargebee<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.chargebee" as const;

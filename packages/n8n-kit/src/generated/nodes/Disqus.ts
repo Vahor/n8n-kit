@@ -5,10 +5,8 @@ export const description = "Access data on Disqus" as const;
 export const type = "n8n-nodes-base.disqus" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"disqusApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Access data on Disqus
- */
 export interface DisqusNodeParameters {
 
     /**

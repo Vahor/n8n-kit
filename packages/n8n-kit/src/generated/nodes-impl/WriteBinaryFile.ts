@@ -10,6 +10,9 @@ export interface WriteBinaryFileProps extends NodeProps {
 
 }
 
+/**
+ * Writes a binary file to disk
+ */
 export class WriteBinaryFile<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.writeBinaryFile" as const;

@@ -5,10 +5,8 @@ export const description = "Sends data to AWS Rekognition" as const;
 export const type = "n8n-nodes-base.awsRekognition" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends data to AWS Rekognition
- */
 export interface AwsRekognitionNodeParameters {
 
     /**

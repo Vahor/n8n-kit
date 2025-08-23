@@ -13,6 +13,9 @@ export interface OneSimpleApiProps extends NodeProps {
 
 }
 
+/**
+ * A toolbox of no-code utilities
+ */
 export class OneSimpleApi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.oneSimpleApi" as const;

@@ -13,6 +13,9 @@ export interface LmChatGoogleGeminiProps extends NodeProps {
 
 }
 
+/**
+ * Chat Model Google Gemini
+ */
 export class LmChatGoogleGemini<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmChatGoogleGemini" as const;

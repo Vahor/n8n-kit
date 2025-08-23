@@ -10,6 +10,9 @@ export interface VectorStoreInMemoryLoadProps extends NodeProps {
 
 }
 
+/**
+ * Load embedded data from an in-memory vector store
+ */
 export class VectorStoreInMemoryLoad<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryLoad" as const;

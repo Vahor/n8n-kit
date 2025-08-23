@@ -10,6 +10,9 @@ export interface ToolCodeProps extends NodeProps {
 
 }
 
+/**
+ * Write a tool in JS or Python
+ */
 export class ToolCode<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolCode" as const;

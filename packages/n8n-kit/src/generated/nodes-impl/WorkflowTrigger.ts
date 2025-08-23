@@ -10,6 +10,9 @@ export interface WorkflowTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Triggers based on various lifecycle events, like when a workflow is activated
+ */
 export class WorkflowTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.workflowTrigger" as const;

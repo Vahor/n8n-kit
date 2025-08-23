@@ -13,6 +13,9 @@ export interface VectorStorePineconeInsertProps extends NodeProps {
 
 }
 
+/**
+ * undefined
+ */
 export class VectorStorePineconeInsert<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStorePineconeInsert" as const;

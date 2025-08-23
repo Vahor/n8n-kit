@@ -10,6 +10,9 @@ export interface N8nTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle events and perform actions on your n8n instance
+ */
 export class N8nTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.n8nTrigger" as const;

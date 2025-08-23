@@ -13,6 +13,9 @@ export interface SlackTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Slack events via webhooks
+ */
 export class SlackTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.slackTrigger" as const;

@@ -13,6 +13,9 @@ export interface LmOpenHuggingFaceInferenceProps extends NodeProps {
 
 }
 
+/**
+ * Language Model HuggingFaceInference
+ */
 export class LmOpenHuggingFaceInference<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference" as const;

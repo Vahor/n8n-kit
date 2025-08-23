@@ -4,10 +4,8 @@
 export const description = "Insert data into an in-memory vector store" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryInsert" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Insert data into an in-memory vector store
- */
 export interface VectorStoreInMemoryInsertNodeParameters {
 
     readonly notice?: string;

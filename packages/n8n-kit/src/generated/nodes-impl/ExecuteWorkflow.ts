@@ -10,6 +10,9 @@ export interface ExecuteWorkflowProps extends NodeProps {
 
 }
 
+/**
+ * Execute another workflow
+ */
 export class ExecuteWorkflow<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.executeWorkflow" as const;

@@ -4,10 +4,8 @@
 export const description = "Convert data from and to XML" as const;
 export const type = "n8n-nodes-base.xml" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Convert data from and to XML
- */
 export interface XmlNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Use Ollama Embeddings" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsOllama" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ollamaApi","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use Ollama Embeddings
- */
 export interface EmbeddingsOllamaNodeParameters {
 
     /**

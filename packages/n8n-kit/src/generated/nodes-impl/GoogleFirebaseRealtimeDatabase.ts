@@ -13,6 +13,9 @@ export interface GoogleFirebaseRealtimeDatabaseProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Google Firebase - Realtime Database API
+ */
 export class GoogleFirebaseRealtimeDatabase<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleFirebaseRealtimeDatabase" as const;

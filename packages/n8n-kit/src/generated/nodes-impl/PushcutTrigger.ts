@@ -13,6 +13,9 @@ export interface PushcutTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Pushcut events occur
+ */
 export class PushcutTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.pushcutTrigger" as const;

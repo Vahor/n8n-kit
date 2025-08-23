@@ -5,10 +5,8 @@ export const description = "Consume LingvaNex API" as const;
 export const type = "n8n-nodes-base.lingvaNex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"lingvaNexApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume LingvaNex API
- */
 export interface LingvaNexNodeParameters {
 
     /**

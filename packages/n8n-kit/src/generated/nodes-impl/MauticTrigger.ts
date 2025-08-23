@@ -15,6 +15,9 @@ export interface MauticTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Mautic events via webhooks
+ */
 export class MauticTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mauticTrigger" as const;

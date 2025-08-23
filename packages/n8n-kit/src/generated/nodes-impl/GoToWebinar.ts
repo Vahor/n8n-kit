@@ -13,6 +13,9 @@ export interface GoToWebinarProps extends NodeProps {
 
 }
 
+/**
+ * Consume the GoToWebinar API
+ */
 export class GoToWebinar<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.goToWebinar" as const;

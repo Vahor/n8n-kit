@@ -5,10 +5,8 @@ export const description = "Consume the Freshservice API" as const;
 export const type = "n8n-nodes-base.freshservice" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"freshserviceApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Freshservice API
- */
 export interface FreshserviceNodeParameters {
 
     /**

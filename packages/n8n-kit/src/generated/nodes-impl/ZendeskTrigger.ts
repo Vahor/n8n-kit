@@ -15,6 +15,9 @@ export interface ZendeskTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Zendesk events via webhooks
+ */
 export class ZendeskTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.zendeskTrigger" as const;

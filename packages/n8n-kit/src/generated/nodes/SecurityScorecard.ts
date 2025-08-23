@@ -5,10 +5,8 @@ export const description = "Consume SecurityScorecard API" as const;
 export const type = "n8n-nodes-base.securityScorecard" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"securityScorecardApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume SecurityScorecard API
- */
 export interface SecurityScorecardNodeParameters {
 
     /**

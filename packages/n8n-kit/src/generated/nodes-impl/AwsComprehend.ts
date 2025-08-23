@@ -13,6 +13,9 @@ export interface AwsComprehendProps extends NodeProps {
 
 }
 
+/**
+ * Sends data to Amazon Comprehend
+ */
 export class AwsComprehend<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.awsComprehend" as const;

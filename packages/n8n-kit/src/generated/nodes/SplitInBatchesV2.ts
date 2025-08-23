@@ -4,10 +4,8 @@
 export const description = "Split data into batches and iterate over each batch" as const;
 export const type = "n8n-nodes-base.splitInBatches" as const;
 export const version = 2 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Split data into batches and iterate over each batch
- */
 export interface SplitInBatchesV2NodeParameters {
 
     readonly splitInBatchesNotice?: string;

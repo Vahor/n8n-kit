@@ -10,6 +10,9 @@ export interface EditImageProps extends NodeProps {
 
 }
 
+/**
+ * Edits an image like blur, resize or adding border and text
+ */
 export class EditImage<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.editImage" as const;

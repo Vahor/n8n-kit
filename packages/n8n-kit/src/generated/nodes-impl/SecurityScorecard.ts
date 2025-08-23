@@ -13,6 +13,9 @@ export interface SecurityScorecardProps extends NodeProps {
 
 }
 
+/**
+ * Consume SecurityScorecard API
+ */
 export class SecurityScorecard<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.securityScorecard" as const;

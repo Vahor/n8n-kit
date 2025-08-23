@@ -13,6 +13,9 @@ export interface MicrosoftOutlookTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Fetches emails from Microsoft Outlook and starts the workflow on specified polling intervals.
+ */
 export class MicrosoftOutlookTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftOutlookTrigger" as const;

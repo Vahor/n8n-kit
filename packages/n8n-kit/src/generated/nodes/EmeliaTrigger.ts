@@ -5,10 +5,8 @@ export const description = "Handle Emelia campaign activity events via webhooks"
 export const type = "n8n-nodes-base.emeliaTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emeliaApiTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Emelia campaign activity events via webhooks
- */
 export interface EmeliaTriggerNodeParameters {
 
     /**

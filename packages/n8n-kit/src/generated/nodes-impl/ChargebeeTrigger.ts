@@ -10,6 +10,9 @@ export interface ChargebeeTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Chargebee events occur
+ */
 export class ChargebeeTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.chargebeeTrigger" as const;

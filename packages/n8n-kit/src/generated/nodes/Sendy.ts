@@ -5,10 +5,8 @@ export const description = "Consume Sendy API" as const;
 export const type = "n8n-nodes-base.sendy" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"sendyApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Sendy API
- */
 export interface SendyNodeParameters {
 
     /**

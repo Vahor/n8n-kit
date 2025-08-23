@@ -5,10 +5,8 @@ export const description = "Consume BambooHR API" as const;
 export const type = "n8n-nodes-base.bambooHr" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bambooHrApi","required":true,"testedBy":"bambooHrApiCredentialTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume BambooHR API
- */
 export interface BambooHrNodeParameters {
 
     /**

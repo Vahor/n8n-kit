@@ -10,6 +10,9 @@ export interface MemoryBufferWindowProps extends NodeProps {
 
 }
 
+/**
+ * Stores in n8n memory, so no credentials required
+ */
 export class MemoryBufferWindow<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.memoryBufferWindow" as const;

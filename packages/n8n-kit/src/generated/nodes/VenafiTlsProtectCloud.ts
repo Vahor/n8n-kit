@@ -5,10 +5,8 @@ export const description = "Consume Venafi TLS Protect Cloud API" as const;
 export const type = "n8n-nodes-base.venafiTlsProtectCloud" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"venafiTlsProtectCloudApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Venafi TLS Protect Cloud API
- */
 export interface VenafiTlsProtectCloudNodeParameters {
 
     /**

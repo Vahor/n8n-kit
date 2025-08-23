@@ -5,10 +5,8 @@ export const description = "Consume Google Tasks API" as const;
 export const type = "n8n-nodes-base.googleTasks" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleTasksOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Google Tasks API
- */
 export interface GoogleTasksNodeParameters {
 
     /**

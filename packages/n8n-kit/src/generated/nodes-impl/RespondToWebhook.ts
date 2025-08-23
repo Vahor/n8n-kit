@@ -13,6 +13,9 @@ export interface RespondToWebhookProps extends NodeProps {
 
 }
 
+/**
+ * Returns data for Webhook
+ */
 export class RespondToWebhook<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.respondToWebhook" as const;

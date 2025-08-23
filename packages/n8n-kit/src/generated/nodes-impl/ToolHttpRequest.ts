@@ -10,6 +10,9 @@ export interface ToolHttpRequestProps extends NodeProps {
 
 }
 
+/**
+ * Makes an HTTP request and returns the response data
+ */
 export class ToolHttpRequest<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolHttpRequest" as const;

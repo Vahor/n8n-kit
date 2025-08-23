@@ -13,6 +13,9 @@ export interface FacebookLeadAdsTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Facebook Lead Ads events via webhooks
+ */
 export class FacebookLeadAdsTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.facebookLeadAdsTrigger" as const;

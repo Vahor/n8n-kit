@@ -10,6 +10,9 @@ export interface HackerNewsProps extends NodeProps {
 
 }
 
+/**
+ * Consume Hacker News API
+ */
 export class HackerNews<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.hackerNews" as const;

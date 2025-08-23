@@ -13,6 +13,9 @@ export interface SupabaseProps extends NodeProps {
 
 }
 
+/**
+ * Add, get, delete and update data in a table
+ */
 export class Supabase<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.supabase" as const;

@@ -5,10 +5,8 @@ export const description = "Translate data using Google Translate" as const;
 export const type = "n8n-nodes-base.googleTranslate" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleTranslateOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Translate data using Google Translate
- */
 export interface GoogleTranslateNodeParameters {
 
     /**

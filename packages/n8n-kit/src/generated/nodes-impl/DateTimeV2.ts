@@ -10,6 +10,9 @@ export interface DateTimeV2Props extends NodeProps {
 
 }
 
+/**
+ * Manipulate date and time values
+ */
 export class DateTimeV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.dateTime" as const;

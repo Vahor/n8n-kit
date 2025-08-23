@@ -13,6 +13,9 @@ export interface NetlifyTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle netlify events via webhooks
+ */
 export class NetlifyTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.netlifyTrigger" as const;

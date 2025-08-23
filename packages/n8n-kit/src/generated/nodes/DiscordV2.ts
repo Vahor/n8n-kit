@@ -5,10 +5,8 @@ export const description = "Sends data to Discord" as const;
 export const type = "n8n-nodes-base.discord" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"discordBotApi","required":true,"displayOptions":{"show":{"authentication":["botToken"]}}},{"name":"discordOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"discordWebhookApi","displayOptions":{"show":{"authentication":["webhook"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends data to Discord
- */
 export interface DiscordV2NodeParameters {
 
     /**

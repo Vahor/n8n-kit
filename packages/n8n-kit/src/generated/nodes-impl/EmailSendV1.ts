@@ -13,6 +13,9 @@ export interface EmailSendV1Props extends NodeProps {
 
 }
 
+/**
+ * Sends an Email
+ */
 export class EmailSendV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.emailSend" as const;

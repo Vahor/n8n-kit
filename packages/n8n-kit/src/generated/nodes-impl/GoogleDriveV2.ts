@@ -15,6 +15,9 @@ export interface GoogleDriveV2Props extends NodeProps {
 
 }
 
+/**
+ * Access data on Google Drive
+ */
 export class GoogleDriveV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleDrive" as const;

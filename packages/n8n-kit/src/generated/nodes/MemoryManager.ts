@@ -4,10 +4,8 @@
 export const description = "Manage chat messages memory and use it in the workflow" as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryManager" as const;
 export const version = 1.1 as const;
+export const outputs = {"":"main"} as const;
 
-/**
- * Manage chat messages memory and use it in the workflow
- */
 export interface MemoryManagerNodeParameters {
 
     /**

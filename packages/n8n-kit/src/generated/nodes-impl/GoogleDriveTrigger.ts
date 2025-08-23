@@ -15,6 +15,9 @@ export interface GoogleDriveTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Google Drive events occur
+ */
 export class GoogleDriveTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleDriveTrigger" as const;

@@ -13,6 +13,9 @@ export interface VectorStoreZepLoadProps extends NodeProps {
 
 }
 
+/**
+ * Load data from Zep Vector Store index
+ */
 export class VectorStoreZepLoad<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreZepLoad" as const;

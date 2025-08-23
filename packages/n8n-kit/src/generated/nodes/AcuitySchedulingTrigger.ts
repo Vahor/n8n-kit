@@ -5,10 +5,8 @@ export const description = "Handle Acuity Scheduling events via webhooks" as con
 export const type = "n8n-nodes-base.acuitySchedulingTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"acuitySchedulingApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"acuitySchedulingOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Acuity Scheduling events via webhooks
- */
 export interface AcuitySchedulingTriggerNodeParameters {
 
     /**

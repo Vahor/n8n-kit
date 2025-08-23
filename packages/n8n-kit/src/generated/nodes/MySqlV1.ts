@@ -5,10 +5,8 @@ export const description = "Get, add and update data in MySQL" as const;
 export const type = "n8n-nodes-base.mySql" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Get, add and update data in MySQL
- */
 export interface MySqlV1NodeParameters {
 
     readonly oldVersionNotice?: string;

@@ -13,6 +13,9 @@ export interface EmailSendV2Props extends NodeProps {
 
 }
 
+/**
+ * Sends an email using SMTP protocol
+ */
 export class EmailSendV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.emailSend" as const;

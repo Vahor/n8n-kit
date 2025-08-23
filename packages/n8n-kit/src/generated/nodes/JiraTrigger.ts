@@ -5,10 +5,8 @@ export const description = "Starts the workflow when Jira events occur" as const
 export const type = "n8n-nodes-base.jiraTrigger" as const;
 export const version = 1.1 as const;
 export const credentials = [{"displayName":"Credentials to Connect to Jira","name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"displayName":"Credentials to Connect to Jira","name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"displayName":"Credentials to Connect to Jira","name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}},{"name":"httpQueryAuth","displayName":"Credentials to Authenticate Webhook","displayOptions":{"show":{"authenticateWebhook":[true]}}},{"name":"httpQueryAuth","displayName":"Credentials to Authenticate Webhook","displayOptions":{"show":{"incomingAuthentication":["queryAuth"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Starts the workflow when Jira events occur
- */
 export interface JiraTriggerNodeParameters {
 
     /**

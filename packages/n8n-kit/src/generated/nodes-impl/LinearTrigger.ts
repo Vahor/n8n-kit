@@ -15,6 +15,9 @@ export interface LinearTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Linear events occur
+ */
 export class LinearTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.linearTrigger" as const;

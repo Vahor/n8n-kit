@@ -5,10 +5,8 @@ export const description = "Consume Twist API" as const;
 export const type = "n8n-nodes-base.twist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"twistOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Twist API
- */
 export interface TwistNodeParameters {
 
     /**

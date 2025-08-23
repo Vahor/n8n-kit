@@ -13,6 +13,9 @@ export interface RedisProps extends NodeProps {
 
 }
 
+/**
+ * Get, send and update data in Redis
+ */
 export class Redis<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.redis" as const;

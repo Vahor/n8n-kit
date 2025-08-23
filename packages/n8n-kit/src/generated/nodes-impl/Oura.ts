@@ -13,6 +13,9 @@ export interface OuraProps extends NodeProps {
 
 }
 
+/**
+ * Consume Oura API
+ */
 export class Oura<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.oura" as const;

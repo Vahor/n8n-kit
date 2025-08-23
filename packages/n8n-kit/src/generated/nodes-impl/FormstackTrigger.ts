@@ -15,6 +15,9 @@ export interface FormstackTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow on a Formstack form submission.
+ */
 export class FormstackTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.formstackTrigger" as const;

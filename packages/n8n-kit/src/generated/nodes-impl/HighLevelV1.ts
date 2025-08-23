@@ -13,6 +13,9 @@ export interface HighLevelV1Props extends NodeProps {
 
 }
 
+/**
+ * Consume HighLevel API v1
+ */
 export class HighLevelV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.highLevel" as const;

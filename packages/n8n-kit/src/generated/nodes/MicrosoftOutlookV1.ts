@@ -5,10 +5,8 @@ export const description = "Consume Microsoft Outlook API" as const;
 export const type = "n8n-nodes-base.microsoftOutlook" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Microsoft Outlook API
- */
 export interface MicrosoftOutlookV1NodeParameters {
 
     readonly oldVersionNotice?: string;

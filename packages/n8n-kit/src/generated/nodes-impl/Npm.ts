@@ -13,6 +13,9 @@ export interface NpmProps extends NodeProps {
 
 }
 
+/**
+ * Consume NPM registry API
+ */
 export class Npm<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.npm" as const;

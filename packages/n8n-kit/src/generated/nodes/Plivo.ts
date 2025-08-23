@@ -5,10 +5,8 @@ export const description = "Send SMS/MMS messages or make phone calls" as const;
 export const type = "n8n-nodes-base.plivo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"plivoApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Send SMS/MMS messages or make phone calls
- */
 export interface PlivoNodeParameters {
 
     /**

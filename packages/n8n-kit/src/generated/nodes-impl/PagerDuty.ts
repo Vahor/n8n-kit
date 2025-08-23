@@ -15,6 +15,9 @@ export interface PagerDutyProps extends NodeProps {
 
 }
 
+/**
+ * Consume PagerDuty API
+ */
 export class PagerDuty<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.pagerDuty" as const;

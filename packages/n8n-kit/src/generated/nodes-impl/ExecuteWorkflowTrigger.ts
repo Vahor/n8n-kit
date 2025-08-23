@@ -10,6 +10,9 @@ export interface ExecuteWorkflowTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.
+ */
 export class ExecuteWorkflowTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.executeWorkflowTrigger" as const;

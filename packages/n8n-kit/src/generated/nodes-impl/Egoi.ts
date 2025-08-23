@@ -13,6 +13,9 @@ export interface EgoiProps extends NodeProps {
 
 }
 
+/**
+ * Consume E-goi API
+ */
 export class Egoi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.egoi" as const;

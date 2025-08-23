@@ -13,6 +13,9 @@ export interface RedisTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Subscribe to redis channel
+ */
 export class RedisTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.redisTrigger" as const;

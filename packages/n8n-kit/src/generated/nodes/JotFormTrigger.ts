@@ -5,10 +5,8 @@ export const description = "Handle JotForm events via webhooks" as const;
 export const type = "n8n-nodes-base.jotFormTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jotFormApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle JotForm events via webhooks
- */
 export interface JotFormTriggerNodeParameters {
 
     /**

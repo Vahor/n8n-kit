@@ -13,6 +13,9 @@ export interface TwitterV1Props extends NodeProps {
 
 }
 
+/**
+ * Consume Twitter API
+ */
 export class TwitterV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.twitter" as const;

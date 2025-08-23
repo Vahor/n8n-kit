@@ -13,6 +13,9 @@ export interface JenkinsProps extends NodeProps {
 
 }
 
+/**
+ * Consume Jenkins API
+ */
 export class Jenkins<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.jenkins" as const;

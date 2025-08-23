@@ -4,10 +4,8 @@
 export const description = "Combine a field from many items into a list in a single item" as const;
 export const type = "n8n-nodes-base.aggregate" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Combine a field from many items into a list in a single item
- */
 export interface AggregateNodeParameters {
 
     /**

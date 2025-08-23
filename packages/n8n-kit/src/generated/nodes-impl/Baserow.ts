@@ -13,6 +13,9 @@ export interface BaserowProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Baserow API
+ */
 export class Baserow<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.baserow" as const;

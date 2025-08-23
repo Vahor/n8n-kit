@@ -10,6 +10,9 @@ export interface SentimentAnalysisProps extends NodeProps {
 
 }
 
+/**
+ * Analyze the sentiment of your text
+ */
 export class SentimentAnalysis<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.sentimentAnalysis" as const;

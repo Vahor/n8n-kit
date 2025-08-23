@@ -13,6 +13,9 @@ export interface MispProps extends NodeProps {
 
 }
 
+/**
+ * Consume the MISP API
+ */
 export class Misp<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.misp" as const;

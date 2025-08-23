@@ -5,10 +5,8 @@ export const description = "Handle Cal.com events via webhooks" as const;
 export const type = "n8n-nodes-base.calTrigger" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"calApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Cal.com events via webhooks
- */
 export interface CalTriggerNodeParameters {
 
     /**

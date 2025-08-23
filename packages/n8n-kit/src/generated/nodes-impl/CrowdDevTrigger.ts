@@ -13,6 +13,9 @@ export interface CrowdDevTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when crowd.dev events occur.
+ */
 export class CrowdDevTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.crowdDevTrigger" as const;

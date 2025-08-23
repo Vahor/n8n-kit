@@ -13,6 +13,9 @@ export interface HumanticAiProps extends NodeProps {
 
 }
 
+/**
+ * Consume Humantic AI API
+ */
 export class HumanticAi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.humanticAi" as const;

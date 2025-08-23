@@ -5,10 +5,8 @@ export const description = "Load data from Supabase Vector Store index" as const
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreSupabaseLoad" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"supabaseApi","required":true}] as const;
+export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
-/**
- * Load data from Supabase Vector Store index
- */
 export interface VectorStoreSupabaseLoadNodeParameters {
 
     /**

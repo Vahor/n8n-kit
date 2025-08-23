@@ -5,10 +5,8 @@ export const description = "Connects to WolframAlpha's computational intelligenc
 export const type = "@n8n/n8n-nodes-langchain.toolWolframAlpha" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"wolframAlphaApi","required":true}] as const;
+export const outputs = {"ai_tool":"ai_tool"} as const;
 
-/**
- * Connects to WolframAlpha's computational intelligence engine.
- */
 export interface ToolWolframAlphaNodeParameters {
 
     /**

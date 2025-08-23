@@ -13,6 +13,9 @@ export interface QuestDbProps extends NodeProps {
 
 }
 
+/**
+ * Get, add and update data in QuestDB
+ */
 export class QuestDb<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.questDb" as const;

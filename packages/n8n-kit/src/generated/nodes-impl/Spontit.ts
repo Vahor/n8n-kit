@@ -13,6 +13,9 @@ export interface SpontitProps extends NodeProps {
 
 }
 
+/**
+ * Consume Spontit API
+ */
 export class Spontit<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.spontit" as const;

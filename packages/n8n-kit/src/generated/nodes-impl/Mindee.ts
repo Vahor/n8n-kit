@@ -15,6 +15,9 @@ export interface MindeeProps extends NodeProps {
 
 }
 
+/**
+ * Consume Mindee API
+ */
 export class Mindee<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mindee" as const;

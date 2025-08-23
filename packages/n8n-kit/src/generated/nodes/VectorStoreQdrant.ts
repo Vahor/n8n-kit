@@ -5,10 +5,8 @@ export const description = "Work with your data in a Qdrant collection" as const
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreQdrant" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"qdrantApi","required":true}] as const;
+export const outputs = {} as const;
 
-/**
- * Work with your data in a Qdrant collection
- */
 export interface VectorStoreQdrantNodeParameters {
 
     /**

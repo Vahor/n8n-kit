@@ -5,10 +5,8 @@ export const description = "Consume ERPNext API" as const;
 export const type = "n8n-nodes-base.erpNext" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"erpNextApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume ERPNext API
- */
 export interface ERPNextNodeParameters {
 
     /**

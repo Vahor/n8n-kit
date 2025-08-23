@@ -5,10 +5,8 @@ export const description = "Use the Okta API" as const;
 export const type = "n8n-nodes-base.okta" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"oktaApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Use the Okta API
- */
 export interface OktaNodeParameters {
 
     /**

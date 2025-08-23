@@ -13,6 +13,9 @@ export interface OpenAiProps extends NodeProps {
 
 }
 
+/**
+ * Consume Open AI
+ */
 export class OpenAi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.openAi" as const;

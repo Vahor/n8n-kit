@@ -5,10 +5,8 @@ export const description = "Use Cohere Embeddings" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsCohere" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cohereApi","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use Cohere Embeddings
- */
 export interface EmbeddingsCohereNodeParameters {
 
     /**

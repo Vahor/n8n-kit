@@ -4,10 +4,8 @@
 export const description = "Modify, add, or remove item fields" as const;
 export const type = "n8n-nodes-base.set" as const;
 export const version = 3.4 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Modify, add, or remove item fields
- */
 export interface SetV2NodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Consume Google Contacts API" as const;
 export const type = "n8n-nodes-base.googleContacts" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleContactsOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Google Contacts API
- */
 export interface GoogleContactsNodeParameters {
 
     /**

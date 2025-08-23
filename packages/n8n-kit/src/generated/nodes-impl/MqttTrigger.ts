@@ -13,6 +13,9 @@ export interface MqttTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Listens to MQTT events
+ */
 export class MqttTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mqttTrigger" as const;

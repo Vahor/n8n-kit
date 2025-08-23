@@ -13,6 +13,9 @@ export interface GoogleGeminiProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Google Gemini AI models
+ */
 export class GoogleGemini<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.googleGemini" as const;

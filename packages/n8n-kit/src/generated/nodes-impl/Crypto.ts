@@ -10,6 +10,9 @@ export interface CryptoProps extends NodeProps {
 
 }
 
+/**
+ * Provide cryptographic utilities
+ */
 export class Crypto<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.crypto" as const;

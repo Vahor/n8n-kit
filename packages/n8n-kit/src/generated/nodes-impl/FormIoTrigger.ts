@@ -13,6 +13,9 @@ export interface FormIoTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle form.io events via webhooks
+ */
 export class FormIoTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.formIoTrigger" as const;

@@ -15,6 +15,9 @@ export interface McpClientToolProps extends NodeProps {
 
 }
 
+/**
+ * Connect tools from an MCP Server
+ */
 export class McpClientTool<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;

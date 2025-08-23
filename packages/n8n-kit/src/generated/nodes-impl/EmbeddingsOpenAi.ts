@@ -13,6 +13,9 @@ export interface EmbeddingsOpenAiProps extends NodeProps {
 
 }
 
+/**
+ * Use Embeddings OpenAI
+ */
 export class EmbeddingsOpenAi<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.embeddingsOpenAi" as const;

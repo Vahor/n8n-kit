@@ -5,10 +5,8 @@ export const description = "Consume Agile CRM API" as const;
 export const type = "n8n-nodes-base.agileCrm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"agileCrmApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Agile CRM API
- */
 export interface AgileCrmNodeParameters {
 
     /**

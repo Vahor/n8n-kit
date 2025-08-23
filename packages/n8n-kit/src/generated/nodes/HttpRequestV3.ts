@@ -5,10 +5,8 @@ export const description = "Makes an HTTP request and returns the response data"
 export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 4.2 as const;
 export const credentials = [{"name":"httpSslAuth","required":true,"displayOptions":{"show":{"provideSslCertificates":[true]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Makes an HTTP request and returns the response data
- */
 export interface HttpRequestV3NodeParameters {
 
     /**

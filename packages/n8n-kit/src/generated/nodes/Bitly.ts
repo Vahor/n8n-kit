@@ -5,10 +5,8 @@ export const description = "Consume Bitly API" as const;
 export const type = "n8n-nodes-base.bitly" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bitlyApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"bitlyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Bitly API
- */
 export interface BitlyNodeParameters {
 
     /**

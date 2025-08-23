@@ -5,10 +5,8 @@ export const description = "Load data from Zep Vector Store index" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreZepLoad" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
+export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
-/**
- * Load data from Zep Vector Store index
- */
 export interface VectorStoreZepLoadNodeParameters {
 
     readonly deprecationNotice?: string;

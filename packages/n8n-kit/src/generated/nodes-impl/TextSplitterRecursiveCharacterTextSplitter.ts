@@ -10,6 +10,9 @@ export interface TextSplitterRecursiveCharacterTextSplitterProps extends NodePro
 
 }
 
+/**
+ * Split text into chunks by characters recursively, recommended for most use cases
+ */
 export class TextSplitterRecursiveCharacterTextSplitter<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter" as const;

@@ -4,10 +4,8 @@
 export const description = "Create a chart via QuickChart" as const;
 export const type = "n8n-nodes-base.quickChart" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Create a chart via QuickChart
- */
 export interface QuickChartNodeParameters {
 
     /**

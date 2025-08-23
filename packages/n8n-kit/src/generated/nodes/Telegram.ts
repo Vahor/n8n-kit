@@ -5,10 +5,8 @@ export const description = "Sends data to Telegram" as const;
 export const type = "n8n-nodes-base.telegram" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Sends data to Telegram
- */
 export interface TelegramNodeParameters {
 
     /**

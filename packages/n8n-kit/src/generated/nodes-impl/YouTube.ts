@@ -13,6 +13,9 @@ export interface YouTubeProps extends NodeProps {
 
 }
 
+/**
+ * Consume YouTube API
+ */
 export class YouTube<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.youTube" as const;

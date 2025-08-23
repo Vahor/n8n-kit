@@ -4,10 +4,8 @@
 export const description = "Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows." as const;
 export const type = "n8n-nodes-base.executeWorkflowTrigger" as const;
 export const version = 1.1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.
- */
 export interface ExecuteWorkflowTriggerNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Use Google Vertex Embeddings" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsGoogleVertex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true}] as const;
+export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
-/**
- * Use Google Vertex Embeddings
- */
 export interface EmbeddingsGoogleVertexNodeParameters {
 
     /**

@@ -10,6 +10,9 @@ export interface StopAndErrorProps extends NodeProps {
 
 }
 
+/**
+ * Throw an error in the workflow
+ */
 export class StopAndError<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.stopAndError" as const;

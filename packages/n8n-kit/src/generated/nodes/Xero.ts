@@ -5,10 +5,8 @@ export const description = "Consume Xero API" as const;
 export const type = "n8n-nodes-base.xero" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"xeroOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Xero API
- */
 export interface XeroNodeParameters {
 
     /**

@@ -13,6 +13,9 @@ export interface CiscoWebexTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Cisco Webex events occur.
+ */
 export class CiscoWebexTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.ciscoWebexTrigger" as const;

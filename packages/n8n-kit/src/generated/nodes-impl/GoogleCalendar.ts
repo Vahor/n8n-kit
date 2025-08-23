@@ -13,6 +13,9 @@ export interface GoogleCalendarProps extends NodeProps {
 
 }
 
+/**
+ * Consume Google Calendar API
+ */
 export class GoogleCalendar<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googleCalendar" as const;

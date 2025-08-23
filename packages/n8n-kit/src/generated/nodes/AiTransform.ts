@@ -4,10 +4,8 @@
 export const description = "Modify data based on instructions written in plain english" as const;
 export const type = "n8n-nodes-base.aiTransform" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Modify data based on instructions written in plain english
- */
 export interface AiTransformNodeParameters {
 
     /**

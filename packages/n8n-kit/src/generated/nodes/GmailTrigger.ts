@@ -5,10 +5,8 @@ export const description = "Fetches emails from Gmail and starts the workflow on
 export const type = "n8n-nodes-base.gmailTrigger" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Fetches emails from Gmail and starts the workflow on specified polling intervals.
- */
 export interface GmailTriggerNodeParameters {
 
     /**

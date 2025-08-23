@@ -5,10 +5,8 @@ export const description = "Consume Pushcut API" as const;
 export const type = "n8n-nodes-base.pushcut" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pushcutApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Pushcut API
- */
 export interface PushcutNodeParameters {
 
     /**

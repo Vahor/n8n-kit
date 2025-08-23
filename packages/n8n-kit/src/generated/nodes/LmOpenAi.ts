@@ -5,10 +5,8 @@ export const description = "For advanced usage with an AI chain" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmOpenAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
+export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
-/**
- * For advanced usage with an AI chain
- */
 export interface LmOpenAiNodeParameters {
 
     readonly deprecated?: string;

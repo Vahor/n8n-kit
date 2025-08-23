@@ -5,10 +5,8 @@ export const description = "Consume Beeminder API" as const;
 export const type = "n8n-nodes-base.beeminder" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"beeminderApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"beeminderOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Beeminder API
- */
 export interface BeeminderNodeParameters {
 
     /**

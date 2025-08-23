@@ -5,10 +5,8 @@ export const description = "Consume Coda API" as const;
 export const type = "n8n-nodes-base.coda" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"codaApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Coda API
- */
 export interface CodaNodeParameters {
 
     /**

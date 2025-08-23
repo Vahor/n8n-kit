@@ -5,10 +5,8 @@ export const description = "Add, get, delete and update data in a table" as cons
 export const type = "n8n-nodes-base.supabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"supabaseApi","required":true,"testedBy":"supabaseApiCredentialTest"}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Add, get, delete and update data in a table
- */
 export interface SupabaseNodeParameters {
 
     /**

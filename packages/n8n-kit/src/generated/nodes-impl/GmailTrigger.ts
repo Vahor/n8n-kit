@@ -15,6 +15,9 @@ export interface GmailTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Fetches emails from Gmail and starts the workflow on specified polling intervals.
+ */
 export class GmailTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.gmailTrigger" as const;

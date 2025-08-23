@@ -13,6 +13,9 @@ export interface Msg91Props extends NodeProps {
 
 }
 
+/**
+ * Sends transactional SMS via MSG91
+ */
 export class Msg91<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.msg91" as const;

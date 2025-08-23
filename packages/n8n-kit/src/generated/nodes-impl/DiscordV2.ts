@@ -17,6 +17,9 @@ export interface DiscordV2Props extends NodeProps {
 
 }
 
+/**
+ * Sends data to Discord
+ */
 export class DiscordV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.discord" as const;

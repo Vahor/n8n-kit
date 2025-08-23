@@ -15,6 +15,9 @@ export interface AzureStorageProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Azure Storage API
+ */
 export class AzureStorage<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.azureStorage" as const;

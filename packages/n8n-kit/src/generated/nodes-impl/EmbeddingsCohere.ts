@@ -13,6 +13,9 @@ export interface EmbeddingsCohereProps extends NodeProps {
 
 }
 
+/**
+ * Use Cohere Embeddings
+ */
 export class EmbeddingsCohere<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.embeddingsCohere" as const;

@@ -13,6 +13,9 @@ export interface FreshserviceProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Freshservice API
+ */
 export class Freshservice<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.freshservice" as const;

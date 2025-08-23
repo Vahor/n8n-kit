@@ -4,10 +4,8 @@
 export const description = "Dummy node used for n8n training" as const;
 export const type = "n8n-nodes-base.n8nTrainingCustomerMessenger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Dummy node used for n8n training
- */
 export interface N8nTrainingCustomerMessengerNodeParameters {
 
     readonly customerId?: string;

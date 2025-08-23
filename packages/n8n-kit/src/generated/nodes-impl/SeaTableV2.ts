@@ -13,6 +13,9 @@ export interface SeaTableV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume the SeaTable API
+ */
 export class SeaTableV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.seaTable" as const;

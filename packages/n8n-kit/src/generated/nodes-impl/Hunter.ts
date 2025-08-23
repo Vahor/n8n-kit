@@ -13,6 +13,9 @@ export interface HunterProps extends NodeProps {
 
 }
 
+/**
+ * Consume Hunter API
+ */
 export class Hunter<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.hunter" as const;

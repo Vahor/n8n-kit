@@ -5,10 +5,8 @@ export const description = "Consume the Bitwarden API" as const;
 export const type = "n8n-nodes-base.bitwarden" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bitwardenApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume the Bitwarden API
- */
 export interface BitwardenNodeParameters {
 
     /**

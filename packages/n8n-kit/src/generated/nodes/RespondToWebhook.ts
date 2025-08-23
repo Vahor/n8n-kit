@@ -5,10 +5,8 @@ export const description = "Returns data for Webhook" as const;
 export const type = "n8n-nodes-base.respondToWebhook" as const;
 export const version = 1.5 as const;
 export const credentials = [{"name":"jwtAuth","required":true,"displayOptions":{"show":{"respondWith":["jwt"]}}}] as const;
+export const outputs = {} as const;
 
-/**
- * Returns data for Webhook
- */
 export interface RespondToWebhookNodeParameters {
 
     /**

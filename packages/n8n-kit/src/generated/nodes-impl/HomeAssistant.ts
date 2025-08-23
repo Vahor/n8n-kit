@@ -13,6 +13,9 @@ export interface HomeAssistantProps extends NodeProps {
 
 }
 
+/**
+ * Consume Home Assistant API
+ */
 export class HomeAssistant<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.homeAssistant" as const;

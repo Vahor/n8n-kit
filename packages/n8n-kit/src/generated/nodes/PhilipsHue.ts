@@ -5,10 +5,8 @@ export const description = "Consume Philips Hue API" as const;
 export const type = "n8n-nodes-base.philipsHue" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"philipsHueOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Philips Hue API
- */
 export interface PhilipsHueNodeParameters {
 
     /**

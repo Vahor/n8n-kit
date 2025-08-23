@@ -10,6 +10,9 @@ export interface CodeAIProps extends NodeProps {
 
 }
 
+/**
+ * LangChain Code Node
+ */
 export class CodeAI<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.code" as const;

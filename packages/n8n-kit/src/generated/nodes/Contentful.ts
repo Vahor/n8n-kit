@@ -5,10 +5,8 @@ export const description = "Consume Contentful API" as const;
 export const type = "n8n-nodes-base.contentful" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"contentfulApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Contentful API
- */
 export interface ContentfulNodeParameters {
 
     /**

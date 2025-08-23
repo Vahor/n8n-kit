@@ -5,10 +5,8 @@ export const description = "Consume Yourls API" as const;
 export const type = "n8n-nodes-base.yourls" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"yourlsApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Yourls API
- */
 export interface YourlsNodeParameters {
 
     /**

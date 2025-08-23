@@ -10,6 +10,9 @@ export interface QuickChartProps extends NodeProps {
 
 }
 
+/**
+ * Create a chart via QuickChart
+ */
 export class QuickChart<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.quickChart" as const;

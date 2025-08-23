@@ -10,6 +10,9 @@ export interface ToolWikipediaProps extends NodeProps {
 
 }
 
+/**
+ * Search in Wikipedia
+ */
 export class ToolWikipedia<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolWikipedia" as const;

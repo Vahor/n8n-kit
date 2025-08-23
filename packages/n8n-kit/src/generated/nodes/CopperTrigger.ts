@@ -5,10 +5,8 @@ export const description = "Handle Copper events via webhooks" as const;
 export const type = "n8n-nodes-base.copperTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"copperApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Handle Copper events via webhooks
- */
 export interface CopperTriggerNodeParameters {
 
     /**

@@ -5,10 +5,8 @@ export const description = "Generates an action plan and executes it. Can use ex
 export const type = "@n8n/n8n-nodes-langchain.agent" as const;
 export const version = 1.9 as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest","displayOptions":{"show":{"agent":["sqlAgent"],"/dataSource":["mysql"]}}},{"name":"postgres","required":true,"displayOptions":{"show":{"agent":["sqlAgent"],"/dataSource":["postgres"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Generates an action plan and executes it. Can use external tools.
- */
 export interface AgentV1NodeParameters {
 
     readonly aiAgentStarterCallout?: any;

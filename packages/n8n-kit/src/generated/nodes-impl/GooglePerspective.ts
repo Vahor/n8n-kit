@@ -13,6 +13,9 @@ export interface GooglePerspectiveProps extends NodeProps {
 
 }
 
+/**
+ * Consume Google Perspective API
+ */
 export class GooglePerspective<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.googlePerspective" as const;

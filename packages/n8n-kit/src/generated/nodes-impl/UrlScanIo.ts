@@ -13,6 +13,9 @@ export interface UrlScanIoProps extends NodeProps {
 
 }
 
+/**
+ * Provides various utilities for monitoring websites like health checks or screenshots
+ */
 export class UrlScanIo<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.urlScanIo" as const;

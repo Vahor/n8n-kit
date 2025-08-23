@@ -10,6 +10,9 @@ export interface SpreadsheetFileV1Props extends NodeProps {
 
 }
 
+/**
+ * Reads and writes data from a spreadsheet file like CSV, XLS, ODS, etc
+ */
 export class SpreadsheetFileV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.spreadsheetFile" as const;

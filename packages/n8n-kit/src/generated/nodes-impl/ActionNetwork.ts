@@ -13,6 +13,9 @@ export interface ActionNetworkProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Action Network API
+ */
 export class ActionNetwork<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.actionNetwork" as const;

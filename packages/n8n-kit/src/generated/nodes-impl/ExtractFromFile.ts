@@ -10,6 +10,9 @@ export interface ExtractFromFileProps extends NodeProps {
 
 }
 
+/**
+ * Convert binary data to JSON
+ */
 export class ExtractFromFile<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.extractFromFile" as const;

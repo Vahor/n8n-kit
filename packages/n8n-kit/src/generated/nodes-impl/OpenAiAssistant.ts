@@ -13,6 +13,9 @@ export interface OpenAiAssistantProps extends NodeProps {
 
 }
 
+/**
+ * Utilizes Assistant API from Open AI.
+ */
 export class OpenAiAssistant<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.openAiAssistant" as const;

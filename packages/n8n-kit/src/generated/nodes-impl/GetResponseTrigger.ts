@@ -15,6 +15,9 @@ export interface GetResponseTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when GetResponse events occur
+ */
 export class GetResponseTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.getResponseTrigger" as const;

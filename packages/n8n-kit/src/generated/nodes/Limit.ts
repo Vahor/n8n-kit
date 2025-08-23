@@ -4,10 +4,8 @@
 export const description = "Restrict the number of items" as const;
 export const type = "n8n-nodes-base.limit" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Restrict the number of items
- */
 export interface LimitNodeParameters {
 
     /**

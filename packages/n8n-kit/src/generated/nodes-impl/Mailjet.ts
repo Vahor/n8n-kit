@@ -15,6 +15,9 @@ export interface MailjetProps extends NodeProps {
 
 }
 
+/**
+ * Consume Mailjet API
+ */
 export class Mailjet<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.mailjet" as const;

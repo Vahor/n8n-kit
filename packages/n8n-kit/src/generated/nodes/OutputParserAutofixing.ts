@@ -4,10 +4,8 @@
 export const description = "Deprecated, use structured output parser" as const;
 export const type = "@n8n/n8n-nodes-langchain.outputParserAutofixing" as const;
 export const version = 1 as const;
+export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
-/**
- * Deprecated, use structured output parser
- */
 export interface OutputParserAutofixingNodeParameters {
 
     readonly info?: string;

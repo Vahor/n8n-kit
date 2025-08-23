@@ -5,10 +5,8 @@ export const description = "Integrate with the Quick Base RESTful API" as const;
 export const type = "n8n-nodes-base.quickbase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"quickbaseApi","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Integrate with the Quick Base RESTful API
- */
 export interface QuickBaseNodeParameters {
 
     /**

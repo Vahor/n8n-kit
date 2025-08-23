@@ -13,6 +13,9 @@ export interface LdapProps extends NodeProps {
 
 }
 
+/**
+ * Interact with LDAP servers
+ */
 export class Ldap<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.ldap" as const;

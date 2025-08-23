@@ -15,6 +15,9 @@ export interface AsanaProps extends NodeProps {
 
 }
 
+/**
+ * Consume Asana REST API
+ */
 export class Asana<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.asana" as const;

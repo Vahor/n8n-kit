@@ -5,10 +5,8 @@ export const description = "Access public song data via the Spotify API" as cons
 export const type = "n8n-nodes-base.spotify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"spotifyOAuth2Api","required":true}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Access public song data via the Spotify API
- */
 export interface SpotifyNodeParameters {
 
     /**

@@ -10,6 +10,9 @@ export interface VectorStoreInMemoryProps extends NodeProps {
 
 }
 
+/**
+ * The easiest way to experiment with vector stores, without external setup.
+ */
 export class VectorStoreInMemory<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemory" as const;

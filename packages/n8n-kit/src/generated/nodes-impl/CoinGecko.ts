@@ -10,6 +10,9 @@ export interface CoinGeckoProps extends NodeProps {
 
 }
 
+/**
+ * Consume CoinGecko API
+ */
 export class CoinGecko<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.coinGecko" as const;

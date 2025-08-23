@@ -10,6 +10,9 @@ export interface CompareDatasetsProps extends NodeProps {
 
 }
 
+/**
+ * Compare two inputs for changes
+ */
 export class CompareDatasets<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.compareDatasets" as const;

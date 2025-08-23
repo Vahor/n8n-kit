@@ -13,6 +13,9 @@ export interface GristProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Grist API
+ */
 export class Grist<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.grist" as const;

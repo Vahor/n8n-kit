@@ -13,6 +13,9 @@ export interface CalTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Cal.com events via webhooks
+ */
 export class CalTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.calTrigger" as const;

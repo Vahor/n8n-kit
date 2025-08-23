@@ -13,6 +13,9 @@ export interface StripeProps extends NodeProps {
 
 }
 
+/**
+ * Consume the Stripe API
+ */
 export class Stripe<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.stripe" as const;

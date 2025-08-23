@@ -5,10 +5,8 @@ export const description = "Chat Model Google Vertex" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatGoogleVertex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true}] as const;
+export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
-/**
- * Chat Model Google Vertex
- */
 export interface LmChatGoogleVertexNodeParameters {
 
     /**

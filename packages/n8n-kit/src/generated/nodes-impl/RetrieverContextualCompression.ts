@@ -10,6 +10,9 @@ export interface RetrieverContextualCompressionProps extends NodeProps {
 
 }
 
+/**
+ * Enhances document similarity search by contextual compression.
+ */
 export class RetrieverContextualCompression<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.retrieverContextualCompression" as const;

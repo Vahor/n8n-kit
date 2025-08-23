@@ -5,10 +5,8 @@ export const description = "Makes a GraphQL request and returns the received dat
 export const type = "n8n-nodes-base.graphql" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpCustomAuth","required":true,"displayOptions":{"show":{"authentication":["customAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["digestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["queryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Makes a GraphQL request and returns the received data
- */
 export interface GraphQLNodeParameters {
 
     /**

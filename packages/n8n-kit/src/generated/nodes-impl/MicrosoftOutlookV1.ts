@@ -13,6 +13,9 @@ export interface MicrosoftOutlookV1Props extends NodeProps {
 
 }
 
+/**
+ * Consume Microsoft Outlook API
+ */
 export class MicrosoftOutlookV1<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.microsoftOutlook" as const;

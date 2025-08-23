@@ -13,6 +13,9 @@ export interface VonageProps extends NodeProps {
 
 }
 
+/**
+ * Consume Vonage API
+ */
 export class Vonage<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.vonage" as const;

@@ -13,6 +13,9 @@ export interface CortexProps extends NodeProps {
 
 }
 
+/**
+ * Apply the Cortex analyzer/responder on the given entity
+ */
 export class Cortex<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.cortex" as const;

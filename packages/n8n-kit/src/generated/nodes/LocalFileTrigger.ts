@@ -4,10 +4,8 @@
 export const description = "Triggers a workflow on file system changes" as const;
 export const type = "n8n-nodes-base.localFileTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Triggers a workflow on file system changes
- */
 export interface LocalFileTriggerNodeParameters {
 
     readonly triggerOn?: "file" | "folder";

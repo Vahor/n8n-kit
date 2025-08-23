@@ -13,6 +13,9 @@ export interface HttpRequestV3Props extends NodeProps {
 
 }
 
+/**
+ * Makes an HTTP request and returns the response data
+ */
 export class HttpRequestV3<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.httpRequest" as const;

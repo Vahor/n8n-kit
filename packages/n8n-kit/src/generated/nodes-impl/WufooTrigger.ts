@@ -13,6 +13,9 @@ export interface WufooTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle Wufoo events via webhooks
+ */
 export class WufooTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wufooTrigger" as const;

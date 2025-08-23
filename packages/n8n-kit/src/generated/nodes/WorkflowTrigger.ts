@@ -4,10 +4,8 @@
 export const description = "Triggers based on various lifecycle events, like when a workflow is activated" as const;
 export const type = "n8n-nodes-base.workflowTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Triggers based on various lifecycle events, like when a workflow is activated
- */
 export interface WorkflowTriggerNodeParameters {
 
     readonly oldVersionNotice?: string;

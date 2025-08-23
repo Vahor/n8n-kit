@@ -4,10 +4,8 @@
 export const description = "Send a message to a chat" as const;
 export const type = "@n8n/n8n-nodes-langchain.chat" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Send a message to a chat
- */
 export interface ChatAINodeParameters {
 
     readonly generalNotice?: string;

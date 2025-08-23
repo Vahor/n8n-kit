@@ -4,10 +4,8 @@
 export const description = "Analyze the sentiment of your text" as const;
 export const type = "@n8n/n8n-nodes-langchain.sentimentAnalysis" as const;
 export const version = 1.1 as const;
+export const outputs = {} as const;
 
-/**
- * Analyze the sentiment of your text
- */
 export interface SentimentAnalysisNodeParameters {
 
     /**

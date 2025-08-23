@@ -13,6 +13,9 @@ export interface PhilipsHueProps extends NodeProps {
 
 }
 
+/**
+ * Consume Philips Hue API
+ */
 export class PhilipsHue<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.philipsHue" as const;

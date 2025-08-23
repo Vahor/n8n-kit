@@ -5,10 +5,8 @@ export const description = "Consume Monday.com API" as const;
 export const type = "n8n-nodes-base.mondayCom" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mondayComApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"mondayComOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Consume Monday.com API
- */
 export interface MondayComNodeParameters {
 
     /**

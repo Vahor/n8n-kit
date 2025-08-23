@@ -10,6 +10,9 @@ export interface ManualChatTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Runs the flow on new manual chat message
+ */
 export class ManualChatTrigger<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.manualChatTrigger" as const;

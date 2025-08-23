@@ -13,6 +13,9 @@ export interface JinaAiProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Jina AI API
+ */
 export class JinaAi<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.jinaAi" as const;

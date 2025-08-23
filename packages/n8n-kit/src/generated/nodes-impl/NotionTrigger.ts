@@ -13,6 +13,9 @@ export interface NotionTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Notion events occur
+ */
 export class NotionTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.notionTrigger" as const;

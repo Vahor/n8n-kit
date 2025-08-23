@@ -13,6 +13,9 @@ export interface AirtopProps extends NodeProps {
 
 }
 
+/**
+ * Scrape and control any site with Airtop
+ */
 export class Airtop<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.airtop" as const;

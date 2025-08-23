@@ -17,6 +17,9 @@ export interface HubspotV2Props extends NodeProps {
 
 }
 
+/**
+ * Consume HubSpot API
+ */
 export class HubspotV2<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.hubspot" as const;

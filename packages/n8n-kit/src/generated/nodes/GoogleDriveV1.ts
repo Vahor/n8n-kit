@@ -5,10 +5,8 @@ export const description = "Access data on Google Drive" as const;
 export const type = "n8n-nodes-base.googleDrive" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Access data on Google Drive
- */
 export interface GoogleDriveV1NodeParameters {
 
     readonly oldVersionNotice?: string;

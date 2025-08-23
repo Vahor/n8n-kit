@@ -13,6 +13,9 @@ export interface RerankerCohereProps extends NodeProps {
 
 }
 
+/**
+ * Use Cohere Reranker to reorder documents after retrieval from a vector store by relevance to the given query.
+ */
 export class RerankerCohere<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.rerankerCohere" as const;

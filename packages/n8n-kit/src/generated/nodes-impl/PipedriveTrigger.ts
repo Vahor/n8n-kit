@@ -17,6 +17,9 @@ export interface PipedriveTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Starts the workflow when Pipedrive events occur
+ */
 export class PipedriveTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.pipedriveTrigger" as const;

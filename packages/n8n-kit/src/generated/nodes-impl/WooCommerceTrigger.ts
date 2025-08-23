@@ -13,6 +13,9 @@ export interface WooCommerceTriggerProps extends NodeProps {
 
 }
 
+/**
+ * Handle WooCommerce events via webhooks
+ */
 export class WooCommerceTrigger<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.wooCommerceTrigger" as const;

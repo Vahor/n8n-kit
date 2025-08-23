@@ -10,6 +10,9 @@ export interface ToolVectorStoreProps extends NodeProps {
 
 }
 
+/**
+ * Answer questions with a vector store
+ */
 export class ToolVectorStore<L extends string> extends Node<L> {
 
     protected type = "@n8n/n8n-nodes-langchain.toolVectorStore" as const;

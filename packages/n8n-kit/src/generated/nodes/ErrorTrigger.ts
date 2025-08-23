@@ -4,10 +4,8 @@
 export const description = "Triggers the workflow when another workflow has an error" as const;
 export const type = "n8n-nodes-base.errorTrigger" as const;
 export const version = 1 as const;
+export const outputs = {"main":"main"} as const;
 
-/**
- * Triggers the workflow when another workflow has an error
- */
 export interface ErrorTriggerNodeParameters {
 
     readonly notice?: string;

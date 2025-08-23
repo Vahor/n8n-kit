@@ -13,6 +13,9 @@ export interface CodaProps extends NodeProps {
 
 }
 
+/**
+ * Consume Coda API
+ */
 export class Coda<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.coda" as const;

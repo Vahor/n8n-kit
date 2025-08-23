@@ -10,6 +10,9 @@ export interface SplitOutProps extends NodeProps {
 
 }
 
+/**
+ * Turn a list inside item(s) into separate items
+ */
 export class SplitOut<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.splitOut" as const;

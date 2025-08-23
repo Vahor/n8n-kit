@@ -13,6 +13,9 @@ export interface AzureCosmosDbProps extends NodeProps {
 
 }
 
+/**
+ * Interact with Azure Cosmos DB API
+ */
 export class AzureCosmosDb<L extends string> extends Node<L> {
 
     protected type = "n8n-nodes-base.azureCosmosDb" as const;
