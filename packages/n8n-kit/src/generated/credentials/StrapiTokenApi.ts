@@ -26,6 +26,4 @@ export interface StrapiTokenApiCredentials {
 
     readonly __name: "strapiTokenApi";
 
-
 }
-

@@ -25,6 +25,4 @@ export interface AgileCrmApiCredentials {
 
     readonly __name: "agileCrmApi";
 
-
 }
-

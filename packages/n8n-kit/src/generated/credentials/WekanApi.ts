@@ -29,6 +29,4 @@ export interface WekanApiCredentials {
 
     readonly __name: "wekanApi";
 
-
 }
-

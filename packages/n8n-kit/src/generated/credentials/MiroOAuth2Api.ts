@@ -39,6 +39,4 @@ export interface MiroOAuth2ApiCredentials {
 
     readonly __name: "miroOAuth2Api";
 
-
 }
-

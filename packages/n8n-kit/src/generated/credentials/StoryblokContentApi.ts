@@ -16,6 +16,4 @@ export interface StoryblokContentApiCredentials {
 
     readonly __name: "storyblokContentApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface ApiTemplateIoApiCredentials {
 
     readonly __name: "apiTemplateIoApi";
 
-
 }
-

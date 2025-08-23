@@ -20,6 +20,4 @@ export interface BambooHrApiCredentials {
 
     readonly __name: "bambooHrApi";
 
-
 }
-

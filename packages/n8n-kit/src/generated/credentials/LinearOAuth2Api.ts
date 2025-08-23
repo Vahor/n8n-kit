@@ -51,6 +51,4 @@ export interface LinearOAuth2ApiCredentials {
 
     readonly __name: "linearOAuth2Api";
 
-
 }
-

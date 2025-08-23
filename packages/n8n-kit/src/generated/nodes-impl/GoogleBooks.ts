@@ -40,4 +40,3 @@ export class GoogleBooks<L extends string> extends Node<L> {
 
 
 }
-

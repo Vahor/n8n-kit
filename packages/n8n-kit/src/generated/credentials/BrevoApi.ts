@@ -16,6 +16,4 @@ export interface BrevoApiCredentials {
 
     readonly __name: "sendInBlueApi";
 
-
 }
-

@@ -26,6 +26,4 @@ export interface TrelloApiCredentials {
 
     readonly __name: "trelloApi";
 
-
 }
-

@@ -38,4 +38,3 @@ export class Snowflake<L extends string> extends Node<L> {
 
 
 }
-

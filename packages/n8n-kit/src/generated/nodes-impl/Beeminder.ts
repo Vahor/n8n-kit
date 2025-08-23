@@ -40,4 +40,3 @@ export class Beeminder<L extends string> extends Node<L> {
 
 
 }
-

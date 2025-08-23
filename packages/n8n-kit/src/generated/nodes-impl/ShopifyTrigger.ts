@@ -42,4 +42,3 @@ export class ShopifyTrigger<L extends string> extends Node<L> {
 
 
 }
-

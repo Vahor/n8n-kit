@@ -42,4 +42,3 @@ export class Jira<L extends string> extends Node<L> {
 
 
 }
-

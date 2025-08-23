@@ -38,4 +38,3 @@ export class PostgresTrigger<L extends string> extends Node<L> {
 
 
 }
-

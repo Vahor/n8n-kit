@@ -38,4 +38,3 @@ export class MessageBird<L extends string> extends Node<L> {
 
 
 }
-

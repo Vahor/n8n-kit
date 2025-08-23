@@ -21,6 +21,4 @@ export interface CohereApiCredentials {
 
     readonly __name: "cohereApi";
 
-
 }
-

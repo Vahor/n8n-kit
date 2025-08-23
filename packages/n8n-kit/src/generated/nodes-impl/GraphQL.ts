@@ -50,4 +50,3 @@ export class GraphQL<L extends string> extends Node<L> {
 
 
 }
-

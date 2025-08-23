@@ -100,6 +100,4 @@ export interface MySqlCredentials {
 
     readonly __name: "mySql";
 
-
 }
-

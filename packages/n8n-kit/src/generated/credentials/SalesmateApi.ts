@@ -20,6 +20,4 @@ export interface SalesmateApiCredentials {
 
     readonly __name: "salesmateApi";
 
-
 }
-

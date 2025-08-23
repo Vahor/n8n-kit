@@ -40,6 +40,4 @@ export interface AcuitySchedulingOAuth2ApiCredentials {
 
     readonly __name: "acuitySchedulingOAuth2Api";
 
-
 }
-

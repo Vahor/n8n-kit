@@ -16,6 +16,4 @@ export interface CiscoMerakiApiCredentials {
 
     readonly __name: "ciscoMerakiApi";
 
-
 }
-

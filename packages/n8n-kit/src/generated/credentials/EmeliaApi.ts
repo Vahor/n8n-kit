@@ -16,6 +16,4 @@ export interface EmeliaApiCredentials {
 
     readonly __name: "emeliaApi";
 
-
 }
-

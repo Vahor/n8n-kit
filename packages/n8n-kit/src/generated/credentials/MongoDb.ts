@@ -69,6 +69,4 @@ export interface MongoDbCredentials {
 
     readonly __name: "mongoDb";
 
-
 }
-

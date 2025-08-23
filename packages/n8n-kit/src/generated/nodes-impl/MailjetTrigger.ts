@@ -38,4 +38,3 @@ export class MailjetTrigger<L extends string> extends Node<L> {
 
 
 }
-

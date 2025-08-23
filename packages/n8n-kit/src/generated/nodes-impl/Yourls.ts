@@ -38,4 +38,3 @@ export class Yourls<L extends string> extends Node<L> {
 
 
 }
-

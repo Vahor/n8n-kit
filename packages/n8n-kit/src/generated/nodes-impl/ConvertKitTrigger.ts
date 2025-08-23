@@ -38,4 +38,3 @@ export class ConvertKitTrigger<L extends string> extends Node<L> {
 
 
 }
-

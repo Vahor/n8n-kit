@@ -38,4 +38,3 @@ export class Peekalink<L extends string> extends Node<L> {
 
 
 }
-

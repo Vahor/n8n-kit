@@ -38,4 +38,3 @@ export class Wekan<L extends string> extends Node<L> {
 
 
 }
-

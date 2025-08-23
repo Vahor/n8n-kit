@@ -16,6 +16,4 @@ export interface DiscordWebhookApiCredentials {
 
     readonly __name: "discordWebhookApi";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface ImpervaWafApiCredentials {
 
     readonly __name: "impervaWafApi";
 
-
 }
-

@@ -21,6 +21,4 @@ export interface OpenRouterApiCredentials {
 
     readonly __name: "openRouterApi";
 
-
 }
-

@@ -28,4 +28,3 @@ export class EditImage<L extends string> extends Node<L> {
 
 
 }
-

@@ -40,4 +40,3 @@ export class Zammad<L extends string> extends Node<L> {
 
 
 }
-

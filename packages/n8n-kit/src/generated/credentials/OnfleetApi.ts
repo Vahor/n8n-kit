@@ -16,6 +16,4 @@ export interface OnfleetApiCredentials {
 
     readonly __name: "onfleetApi";
 
-
 }
-

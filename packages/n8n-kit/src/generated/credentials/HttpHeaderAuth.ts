@@ -24,6 +24,4 @@ export interface HttpHeaderAuthCredentials {
 
     readonly __name: "httpHeaderAuth";
 
-
 }
-

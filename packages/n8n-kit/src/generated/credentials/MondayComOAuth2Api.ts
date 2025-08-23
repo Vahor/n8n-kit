@@ -40,6 +40,4 @@ export interface MondayComOAuth2ApiCredentials {
 
     readonly __name: "mondayComOAuth2Api";
 
-
 }
-

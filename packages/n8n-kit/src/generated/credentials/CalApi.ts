@@ -21,6 +21,4 @@ export interface CalApiCredentials {
 
     readonly __name: "calApi";
 
-
 }
-

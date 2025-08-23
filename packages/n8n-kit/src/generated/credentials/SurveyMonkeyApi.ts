@@ -34,6 +34,4 @@ export interface SurveyMonkeyApiCredentials {
 
     readonly __name: "surveyMonkeyApi";
 
-
 }
-

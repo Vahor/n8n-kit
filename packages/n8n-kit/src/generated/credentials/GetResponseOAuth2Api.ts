@@ -39,6 +39,4 @@ export interface GetResponseOAuth2ApiCredentials {
 
     readonly __name: "getResponseOAuth2Api";
 
-
 }
-

@@ -17,6 +17,4 @@ export interface HarvestApiCredentials {
 
     readonly __name: "harvestApi";
 
-
 }
-

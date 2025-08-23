@@ -25,6 +25,4 @@ export interface BaserowApiCredentials {
 
     readonly __name: "baserowApi";
 
-
 }
-

@@ -28,6 +28,4 @@ export interface FileMakerCredentials {
 
     readonly __name: "fileMaker";
 
-
 }
-

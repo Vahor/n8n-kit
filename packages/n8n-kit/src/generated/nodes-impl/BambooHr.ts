@@ -38,4 +38,3 @@ export class BambooHr<L extends string> extends Node<L> {
 
 
 }
-

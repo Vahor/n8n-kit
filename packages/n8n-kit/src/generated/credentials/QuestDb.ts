@@ -42,6 +42,4 @@ export interface QuestDbCredentials {
 
     readonly __name: "questDb";
 
-
 }
-

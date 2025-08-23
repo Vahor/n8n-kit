@@ -16,6 +16,4 @@ export interface GoogleCloudStorageOAuth2ApiCredentials {
 
     readonly __name: "googleCloudStorageOAuth2Api";
 
-
 }
-

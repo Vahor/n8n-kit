@@ -16,6 +16,4 @@ export interface ClearbitApiCredentials {
 
     readonly __name: "clearbitApi";
 
-
 }
-

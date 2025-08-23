@@ -24,6 +24,4 @@ export interface ServiceNowBasicApiCredentials {
 
     readonly __name: "serviceNowBasicApi";
 
-
 }
-

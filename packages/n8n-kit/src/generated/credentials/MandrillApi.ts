@@ -16,6 +16,4 @@ export interface MandrillApiCredentials {
 
     readonly __name: "mandrillApi";
 
-
 }
-

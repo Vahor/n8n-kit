@@ -40,4 +40,3 @@ export class ClickUp<L extends string> extends Node<L> {
 
 
 }
-

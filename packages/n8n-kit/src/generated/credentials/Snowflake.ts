@@ -68,6 +68,4 @@ export interface SnowflakeCredentials {
 
     readonly __name: "snowflake";
 
-
 }
-

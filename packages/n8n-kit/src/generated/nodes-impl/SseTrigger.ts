@@ -28,4 +28,3 @@ export class SseTrigger<L extends string> extends Node<L> {
 
 
 }
-

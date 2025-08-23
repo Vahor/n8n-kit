@@ -28,4 +28,3 @@ export class CoinGecko<L extends string> extends Node<L> {
 
 
 }
-

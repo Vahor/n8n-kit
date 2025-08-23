@@ -20,6 +20,4 @@ export interface SpontitApiCredentials {
 
     readonly __name: "spontitApi";
 
-
 }
-

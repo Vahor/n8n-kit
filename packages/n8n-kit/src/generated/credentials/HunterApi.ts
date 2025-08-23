@@ -16,6 +16,4 @@ export interface HunterApiCredentials {
 
     readonly __name: "hunterApi";
 
-
 }
-

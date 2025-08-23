@@ -29,6 +29,4 @@ export interface ZammadBasicAuthApiCredentials {
 
     readonly __name: "zammadBasicAuthApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface GSuiteAdminOAuth2ApiCredentials {
 
     readonly __name: "gSuiteAdminOAuth2Api";
 
-
 }
-

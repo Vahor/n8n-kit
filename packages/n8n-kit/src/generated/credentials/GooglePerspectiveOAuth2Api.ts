@@ -16,6 +16,4 @@ export interface GooglePerspectiveOAuth2ApiCredentials {
 
     readonly __name: "googlePerspectiveOAuth2Api";
 
-
 }
-

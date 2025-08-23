@@ -38,4 +38,3 @@ export class GoogleAds<L extends string> extends Node<L> {
 
 
 }
-

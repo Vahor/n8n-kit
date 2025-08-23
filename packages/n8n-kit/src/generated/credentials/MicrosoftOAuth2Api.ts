@@ -36,6 +36,4 @@ export interface MicrosoftOAuth2ApiCredentials {
 
     readonly __name: "microsoftOAuth2Api";
 
-
 }
-

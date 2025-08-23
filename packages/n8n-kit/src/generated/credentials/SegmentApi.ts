@@ -16,6 +16,4 @@ export interface SegmentApiCredentials {
 
     readonly __name: "segmentApi";
 
-
 }
-

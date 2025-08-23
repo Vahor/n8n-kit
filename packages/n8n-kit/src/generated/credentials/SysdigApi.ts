@@ -16,6 +16,4 @@ export interface SysdigApiCredentials {
 
     readonly __name: "sysdigApi";
 
-
 }
-

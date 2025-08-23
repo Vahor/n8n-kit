@@ -20,6 +20,4 @@ export interface RundeckApiCredentials {
 
     readonly __name: "rundeckApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface DynatraceApiCredentials {
 
     readonly __name: "dynatraceApi";
 
-
 }
-

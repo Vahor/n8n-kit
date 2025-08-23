@@ -21,6 +21,4 @@ export interface MistApiCredentials {
 
     readonly __name: "mistApi";
 
-
 }
-

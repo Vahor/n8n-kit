@@ -37,6 +37,4 @@ export interface JwtAuthCredentials {
 
     readonly __name: "jwtAuth";
 
-
 }
-

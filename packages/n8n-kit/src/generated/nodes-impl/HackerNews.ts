@@ -28,4 +28,3 @@ export class HackerNews<L extends string> extends Node<L> {
 
 
 }
-

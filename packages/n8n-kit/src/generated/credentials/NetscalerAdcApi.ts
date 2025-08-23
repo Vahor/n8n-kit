@@ -24,6 +24,4 @@ export interface NetscalerAdcApiCredentials {
 
     readonly __name: "citrixAdcApi";
 
-
 }
-

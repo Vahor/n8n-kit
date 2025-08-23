@@ -38,4 +38,3 @@ export class GoogleFirebaseRealtimeDatabase<L extends string> extends Node<L> {
 
 
 }
-

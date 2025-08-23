@@ -28,6 +28,4 @@ export interface ContentfulApiCredentials {
 
     readonly __name: "contentfulApi";
 
-
 }
-

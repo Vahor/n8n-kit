@@ -16,6 +16,4 @@ export interface GroqApiCredentials {
 
     readonly __name: "groqApi";
 
-
 }
-

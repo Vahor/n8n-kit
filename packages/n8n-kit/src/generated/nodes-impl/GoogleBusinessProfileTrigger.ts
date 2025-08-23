@@ -38,4 +38,3 @@ export class GoogleBusinessProfileTrigger<L extends string> extends Node<L> {
 
 
 }
-

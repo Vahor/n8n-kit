@@ -38,4 +38,3 @@ export class TogglTrigger<L extends string> extends Node<L> {
 
 
 }
-

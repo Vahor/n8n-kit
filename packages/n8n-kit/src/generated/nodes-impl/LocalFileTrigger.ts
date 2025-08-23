@@ -28,4 +28,3 @@ export class LocalFileTrigger<L extends string> extends Node<L> {
 
 
 }
-

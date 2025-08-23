@@ -38,4 +38,3 @@ export class GoogleCalendarTrigger<L extends string> extends Node<L> {
 
 
 }
-

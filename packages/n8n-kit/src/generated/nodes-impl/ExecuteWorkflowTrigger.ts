@@ -28,4 +28,3 @@ export class ExecuteWorkflowTrigger<L extends string> extends Node<L> {
 
 
 }
-

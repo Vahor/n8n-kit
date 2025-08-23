@@ -38,4 +38,3 @@ export class HelpScout<L extends string> extends Node<L> {
 
 
 }
-

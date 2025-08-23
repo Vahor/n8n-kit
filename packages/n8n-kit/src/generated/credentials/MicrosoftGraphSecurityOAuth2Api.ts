@@ -16,6 +16,4 @@ export interface MicrosoftGraphSecurityOAuth2ApiCredentials {
 
     readonly __name: "microsoftGraphSecurityOAuth2Api";
 
-
 }
-

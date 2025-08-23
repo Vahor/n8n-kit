@@ -21,6 +21,4 @@ export interface GoogleFirebaseRealtimeDatabaseOAuth2ApiCredentials {
 
     readonly __name: "googleFirebaseRealtimeDatabaseOAuth2Api";
 
-
 }
-

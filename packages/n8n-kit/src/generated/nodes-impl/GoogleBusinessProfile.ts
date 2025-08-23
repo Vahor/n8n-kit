@@ -38,4 +38,3 @@ export class GoogleBusinessProfile<L extends string> extends Node<L> {
 
 
 }
-

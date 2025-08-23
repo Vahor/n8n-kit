@@ -16,6 +16,4 @@ export interface SerpApiCredentials {
 
     readonly __name: "serpApi";
 
-
 }
-

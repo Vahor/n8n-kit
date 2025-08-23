@@ -16,6 +16,4 @@ export interface HybridAnalysisApiCredentials {
 
     readonly __name: "hybridAnalysisApi";
 
-
 }
-

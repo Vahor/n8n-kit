@@ -25,6 +25,4 @@ export interface ZendeskApiCredentials {
 
     readonly __name: "zendeskApi";
 
-
 }
-

@@ -38,4 +38,3 @@ export class Vonage<L extends string> extends Node<L> {
 
 
 }
-

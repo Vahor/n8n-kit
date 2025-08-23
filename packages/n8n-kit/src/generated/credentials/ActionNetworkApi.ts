@@ -16,6 +16,4 @@ export interface ActionNetworkApiCredentials {
 
     readonly __name: "actionNetworkApi";
 
-
 }
-

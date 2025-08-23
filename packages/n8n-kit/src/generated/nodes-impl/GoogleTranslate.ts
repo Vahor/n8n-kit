@@ -40,4 +40,3 @@ export class GoogleTranslate<L extends string> extends Node<L> {
 
 
 }
-

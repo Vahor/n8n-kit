@@ -20,6 +20,4 @@ export interface CopperApiCredentials {
 
     readonly __name: "copperApi";
 
-
 }
-

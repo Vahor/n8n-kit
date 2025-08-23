@@ -38,4 +38,3 @@ export class SeaTableV1<L extends string> extends Node<L> {
 
 
 }
-

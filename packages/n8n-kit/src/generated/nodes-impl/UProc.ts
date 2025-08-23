@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { UprocApiCredentials } from "../credentials/UProcApi.ts";
+import type { UProcApiCredentials } from "../credentials/UProcApi.ts";
 import type { Credentials } from "../../credentials";
 import type { UProcNodeParameters } from "../nodes/UProc";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface UProcProps extends NodeProps, UProcNodeParameters {
 
-    readonly uprocApiCredentials: Credentials<UprocApiCredentials>;
+    readonly uprocApiCredentials: Credentials<UProcApiCredentials>;
 
 }
 
@@ -38,4 +38,3 @@ export class UProc<L extends string> extends Node<L> {
 
 
 }
-

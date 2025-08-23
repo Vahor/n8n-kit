@@ -20,6 +20,4 @@ export interface GoogleDriveOAuth2ApiCredentials {
 
     readonly __name: "googleDriveOAuth2Api";
 
-
 }
-

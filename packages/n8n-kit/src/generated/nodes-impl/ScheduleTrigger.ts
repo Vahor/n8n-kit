@@ -28,4 +28,3 @@ export class ScheduleTrigger<L extends string> extends Node<L> {
 
 
 }
-

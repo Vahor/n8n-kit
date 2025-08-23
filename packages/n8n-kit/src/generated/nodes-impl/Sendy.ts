@@ -38,4 +38,3 @@ export class Sendy<L extends string> extends Node<L> {
 
 
 }
-

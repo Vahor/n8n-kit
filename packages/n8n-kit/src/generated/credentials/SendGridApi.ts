@@ -16,6 +16,4 @@ export interface SendGridApiCredentials {
 
     readonly __name: "sendGridApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface GoogleBigQueryOAuth2ApiCredentials {
 
     readonly __name: "googleBigQueryOAuth2Api";
 
-
 }
-

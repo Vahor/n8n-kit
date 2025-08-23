@@ -38,4 +38,3 @@ export class ClockifyTrigger<L extends string> extends Node<L> {
 
 
 }
-

@@ -40,4 +40,3 @@ export class Mailchimp<L extends string> extends Node<L> {
 
 
 }
-

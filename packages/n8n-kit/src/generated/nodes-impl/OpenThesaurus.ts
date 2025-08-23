@@ -28,4 +28,3 @@ export class OpenThesaurus<L extends string> extends Node<L> {
 
 
 }
-

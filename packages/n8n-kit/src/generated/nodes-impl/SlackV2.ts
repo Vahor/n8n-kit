@@ -40,4 +40,3 @@ export class SlackV2<L extends string> extends Node<L> {
 
 
 }
-

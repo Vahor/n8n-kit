@@ -16,6 +16,4 @@ export interface AutopilotApiCredentials {
 
     readonly __name: "autopilotApi";
 
-
 }
-

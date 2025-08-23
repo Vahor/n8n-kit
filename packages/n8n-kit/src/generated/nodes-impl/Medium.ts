@@ -40,4 +40,3 @@ export class Medium<L extends string> extends Node<L> {
 
 
 }
-

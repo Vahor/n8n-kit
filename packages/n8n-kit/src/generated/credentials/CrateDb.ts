@@ -41,6 +41,4 @@ export interface CrateDbCredentials {
 
     readonly __name: "crateDb";
 
-
 }
-

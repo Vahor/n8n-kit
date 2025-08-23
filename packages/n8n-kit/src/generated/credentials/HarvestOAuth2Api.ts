@@ -40,6 +40,4 @@ export interface HarvestOAuth2ApiCredentials {
 
     readonly __name: "harvestOAuth2Api";
 
-
 }
-

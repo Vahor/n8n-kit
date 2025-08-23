@@ -27,6 +27,4 @@ export interface DatadogApiCredentials {
 
     readonly __name: "datadogApi";
 
-
 }
-

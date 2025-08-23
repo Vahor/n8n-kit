@@ -46,6 +46,4 @@ export interface HaloPSAApiCredentials {
 
     readonly __name: "haloPSAApi";
 
-
 }
-

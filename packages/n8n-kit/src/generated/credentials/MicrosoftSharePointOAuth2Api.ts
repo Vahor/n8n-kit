@@ -20,6 +20,4 @@ export interface MicrosoftSharePointOAuth2ApiCredentials {
 
     readonly __name: "microsoftSharePointOAuth2Api";
 
-
 }
-

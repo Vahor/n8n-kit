@@ -18,6 +18,8 @@ type TypeData = {
 		required: boolean;
 		name: string;
 		displayOptions?: { show?: any };
+		__matchingCredentialsFile: string;
+		__matchingCredentialsFileName: string;
 	}[];
 };
 
@@ -47,9 +49,8 @@ const generateTypescriptNodeOutput = async (
 	code.line();
 
 	for (const cred of result.credentials) {
-		const credentialsFile = getMatchingCredentialsFile(cred.name);
 		code.line(
-			`import type { ${cred.name}Credentials } from "${credentialsFile}";`,
+			`import type { ${cred.__matchingCredentialsFileName}Credentials } from "${cred.__matchingCredentialsFile}";`,
 		);
 	}
 	if (result.credentials.length > 0) {
@@ -71,7 +72,7 @@ const generateTypescriptNodeOutput = async (
 	for (const cred of result.credentials) {
 		const credName = code.toCamelCase(cred.name);
 		code.line(
-			`readonly ${credName}Credentials${!cred.required ? "?" : ""}: Credentials<${cred.name}Credentials>;`,
+			`readonly ${credName}Credentials${!cred.required ? "?" : ""}: Credentials<${cred.__matchingCredentialsFileName}Credentials>;`,
 		);
 	}
 	code.unindent();
@@ -137,14 +138,9 @@ const generateTypescriptNodeOutput = async (
 
 	code.unindent();
 	code.line(`}`);
-	code.line();
 
 	code.closeFile(outputFile);
 	await code.save("src/generated/nodes-impl");
-};
-
-const capitalize = (s: string) => {
-	return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
 const count = allNodesTypes.length;
@@ -180,10 +176,19 @@ for (const nodePath of allNodesTypes) {
 			description: file.description,
 			version: file.version,
 			credentials:
-				allCredentials.map((cred: TypeData["credentials"][0]) => ({
-					required: cred.required,
-					name: capitalize(cred.name),
-				})) ?? [],
+				allCredentials.map((cred: TypeData["credentials"][0]) => {
+					const matchingCredentialsFile = getMatchingCredentialsFile(cred.name);
+					const matchingCredentialsFileName = matchingCredentialsFile
+						.split("/")
+						.pop()
+						?.split(".")[0]!;
+
+					return {
+						...cred,
+						__matchingCredentialsFile: matchingCredentialsFile,
+						__matchingCredentialsFileName: matchingCredentialsFileName,
+					};
+				}) ?? [],
 		} as TypeData;
 
 		await generateTypescriptNodeOutput(typeData, `${nodeName}.ts`);

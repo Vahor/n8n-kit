@@ -45,6 +45,4 @@ export interface SalesforceOAuth2ApiCredentials {
 
     readonly __name: "salesforceOAuth2Api";
 
-
 }
-

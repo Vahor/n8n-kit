@@ -16,6 +16,4 @@ export interface JinaAiApiCredentials {
 
     readonly __name: "jinaAiApi";
 
-
 }
-

@@ -44,6 +44,4 @@ export interface TwitterOAuth2ApiCredentials {
 
     readonly __name: "twitterOAuth2Api";
 
-
 }
-

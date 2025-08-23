@@ -21,6 +21,4 @@ export interface DeepLApiCredentials {
 
     readonly __name: "deepLApi";
 
-
 }
-

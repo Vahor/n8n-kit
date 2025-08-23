@@ -29,6 +29,4 @@ export interface ElasticsearchApiCredentials {
 
     readonly __name: "elasticsearchApi";
 
-
 }
-

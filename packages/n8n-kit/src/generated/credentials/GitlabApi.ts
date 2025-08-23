@@ -21,6 +21,4 @@ export interface GitlabApiCredentials {
 
     readonly __name: "gitlabApi";
 
-
 }
-

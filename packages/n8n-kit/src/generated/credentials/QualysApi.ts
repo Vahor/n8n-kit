@@ -26,6 +26,4 @@ export interface QualysApiCredentials {
 
     readonly __name: "qualysApi";
 
-
 }
-

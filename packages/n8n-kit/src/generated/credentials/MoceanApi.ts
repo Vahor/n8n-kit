@@ -21,6 +21,4 @@ export interface MoceanApiCredentials {
 
     readonly __name: "moceanApi";
 
-
 }
-

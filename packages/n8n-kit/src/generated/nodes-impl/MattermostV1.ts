@@ -38,4 +38,3 @@ export class MattermostV1<L extends string> extends Node<L> {
 
 
 }
-

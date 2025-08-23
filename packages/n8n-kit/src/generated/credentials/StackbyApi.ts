@@ -16,6 +16,4 @@ export interface StackbyApiCredentials {
 
     readonly __name: "stackbyApi";
 
-
 }
-

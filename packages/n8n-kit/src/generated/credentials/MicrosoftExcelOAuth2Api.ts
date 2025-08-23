@@ -16,6 +16,4 @@ export interface MicrosoftExcelOAuth2ApiCredentials {
 
     readonly __name: "microsoftExcelOAuth2Api";
 
-
 }
-

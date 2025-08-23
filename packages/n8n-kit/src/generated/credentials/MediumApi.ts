@@ -16,6 +16,4 @@ export interface MediumApiCredentials {
 
     readonly __name: "mediumApi";
 
-
 }
-

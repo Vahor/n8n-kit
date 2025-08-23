@@ -28,4 +28,3 @@ export class QuickChart<L extends string> extends Node<L> {
 
 
 }
-

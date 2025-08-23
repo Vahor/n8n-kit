@@ -16,6 +16,4 @@ export interface QRadarApiCredentials {
 
     readonly __name: "qRadarApi";
 
-
 }
-

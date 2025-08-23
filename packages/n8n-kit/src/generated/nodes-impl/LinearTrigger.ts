@@ -40,4 +40,3 @@ export class LinearTrigger<L extends string> extends Node<L> {
 
 
 }
-

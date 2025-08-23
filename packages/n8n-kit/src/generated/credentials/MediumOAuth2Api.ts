@@ -49,6 +49,4 @@ export interface MediumOAuth2ApiCredentials {
 
     readonly __name: "mediumOAuth2Api";
 
-
 }
-

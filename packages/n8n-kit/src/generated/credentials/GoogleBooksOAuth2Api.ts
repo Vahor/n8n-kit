@@ -16,6 +16,4 @@ export interface GoogleBooksOAuth2ApiCredentials {
 
     readonly __name: "googleBooksOAuth2Api";
 
-
 }
-

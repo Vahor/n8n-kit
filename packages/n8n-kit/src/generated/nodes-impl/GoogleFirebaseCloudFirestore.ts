@@ -40,4 +40,3 @@ export class GoogleFirebaseCloudFirestore<L extends string> extends Node<L> {
 
 
 }
-

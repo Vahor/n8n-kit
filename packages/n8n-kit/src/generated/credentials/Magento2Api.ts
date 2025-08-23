@@ -20,6 +20,4 @@ export interface Magento2ApiCredentials {
 
     readonly __name: "magento2Api";
 
-
 }
-

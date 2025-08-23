@@ -16,6 +16,4 @@ export interface MondayComApiCredentials {
 
     readonly __name: "mondayComApi";
 
-
 }
-

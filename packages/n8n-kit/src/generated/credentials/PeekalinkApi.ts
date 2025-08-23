@@ -16,6 +16,4 @@ export interface PeekalinkApiCredentials {
 
     readonly __name: "peekalinkApi";
 
-
 }
-

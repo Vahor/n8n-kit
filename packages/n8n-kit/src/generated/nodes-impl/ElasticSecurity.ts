@@ -38,4 +38,3 @@ export class ElasticSecurity<L extends string> extends Node<L> {
 
 
 }
-

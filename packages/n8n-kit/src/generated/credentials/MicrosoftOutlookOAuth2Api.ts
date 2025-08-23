@@ -25,6 +25,4 @@ export interface MicrosoftOutlookOAuth2ApiCredentials {
 
     readonly __name: "microsoftOutlookOAuth2Api";
 
-
 }
-

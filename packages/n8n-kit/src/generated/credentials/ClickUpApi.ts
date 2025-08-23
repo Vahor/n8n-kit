@@ -16,6 +16,4 @@ export interface ClickUpApiCredentials {
 
     readonly __name: "clickUpApi";
 
-
 }
-

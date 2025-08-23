@@ -56,6 +56,4 @@ export interface DiscordOAuth2ApiCredentials {
 
     readonly __name: "discordOAuth2Api";
 
-
 }
-

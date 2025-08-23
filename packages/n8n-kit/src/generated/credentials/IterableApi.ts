@@ -21,6 +21,4 @@ export interface IterableApiCredentials {
 
     readonly __name: "iterableApi";
 
-
 }
-

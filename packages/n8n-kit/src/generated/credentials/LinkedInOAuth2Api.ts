@@ -53,6 +53,4 @@ export interface LinkedInOAuth2ApiCredentials {
 
     readonly __name: "linkedInOAuth2Api";
 
-
 }
-

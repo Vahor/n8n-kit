@@ -25,6 +25,4 @@ export interface MilvusApiCredentials {
 
     readonly __name: "milvusApi";
 
-
 }
-

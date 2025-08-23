@@ -16,6 +16,4 @@ export interface OpenWeatherMapApiCredentials {
 
     readonly __name: "openWeatherMapApi";
 
-
 }
-

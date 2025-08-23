@@ -43,6 +43,4 @@ export interface MauticOAuth2ApiCredentials {
 
     readonly __name: "mauticOAuth2Api";
 
-
 }
-

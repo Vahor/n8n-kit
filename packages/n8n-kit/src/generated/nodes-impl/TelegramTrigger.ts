@@ -38,4 +38,3 @@ export class TelegramTrigger<L extends string> extends Node<L> {
 
 
 }
-

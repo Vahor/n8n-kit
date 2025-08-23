@@ -16,6 +16,4 @@ export interface HuggingFaceApiCredentials {
 
     readonly __name: "huggingFaceApi";
 
-
 }
-

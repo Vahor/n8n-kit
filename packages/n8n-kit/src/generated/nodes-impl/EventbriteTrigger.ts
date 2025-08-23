@@ -40,4 +40,3 @@ export class EventbriteTrigger<L extends string> extends Node<L> {
 
 
 }
-

@@ -38,4 +38,3 @@ export class MistralAi<L extends string> extends Node<L> {
 
 
 }
-

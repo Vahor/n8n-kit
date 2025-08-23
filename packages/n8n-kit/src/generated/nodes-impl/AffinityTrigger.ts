@@ -38,4 +38,3 @@ export class AffinityTrigger<L extends string> extends Node<L> {
 
 
 }
-

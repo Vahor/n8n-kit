@@ -20,6 +20,4 @@ export interface WorkableApiCredentials {
 
     readonly __name: "workableApi";
 
-
 }
-

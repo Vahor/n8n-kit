@@ -38,4 +38,3 @@ export class EmailReadImapV1<L extends string> extends Node<L> {
 
 
 }
-

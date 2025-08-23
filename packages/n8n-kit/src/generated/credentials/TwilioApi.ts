@@ -35,6 +35,4 @@ export interface TwilioApiCredentials {
 
     readonly __name: "twilioApi";
 
-
 }
-

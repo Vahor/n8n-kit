@@ -42,4 +42,3 @@ export class Wait<L extends string> extends Node<L> {
 
 
 }
-

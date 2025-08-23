@@ -20,6 +20,4 @@ export interface Rapid7InsightVmApiCredentials {
 
     readonly __name: "rapid7InsightVmApi";
 
-
 }
-

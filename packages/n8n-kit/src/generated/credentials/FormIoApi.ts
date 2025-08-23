@@ -29,6 +29,4 @@ export interface FormIoApiCredentials {
 
     readonly __name: "formIoApi";
 
-
 }
-

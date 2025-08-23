@@ -16,6 +16,4 @@ export interface PushcutApiCredentials {
 
     readonly __name: "pushcutApi";
 
-
 }
-

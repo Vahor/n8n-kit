@@ -40,4 +40,3 @@ export class Gong<L extends string> extends Node<L> {
 
 
 }
-

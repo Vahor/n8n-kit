@@ -16,6 +16,4 @@ export interface OpenCTIApiCredentials {
 
     readonly __name: "openCtiApi";
 
-
 }
-

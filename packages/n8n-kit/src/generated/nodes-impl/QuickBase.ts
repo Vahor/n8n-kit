@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { QuickbaseApiCredentials } from "../credentials/QuickBaseApi.ts";
+import type { QuickBaseApiCredentials } from "../credentials/QuickBaseApi.ts";
 import type { Credentials } from "../../credentials";
 import type { QuickBaseNodeParameters } from "../nodes/QuickBase";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface QuickBaseProps extends NodeProps, QuickBaseNodeParameters {
 
-    readonly quickbaseApiCredentials: Credentials<QuickbaseApiCredentials>;
+    readonly quickbaseApiCredentials: Credentials<QuickBaseApiCredentials>;
 
 }
 
@@ -38,4 +38,3 @@ export class QuickBase<L extends string> extends Node<L> {
 
 
 }
-

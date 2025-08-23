@@ -16,6 +16,4 @@ export interface MessageBirdApiCredentials {
 
     readonly __name: "messageBirdApi";
 
-
 }
-

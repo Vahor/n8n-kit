@@ -40,6 +40,4 @@ export interface SurveyMonkeyOAuth2ApiCredentials {
 
     readonly __name: "surveyMonkeyOAuth2Api";
 
-
 }
-

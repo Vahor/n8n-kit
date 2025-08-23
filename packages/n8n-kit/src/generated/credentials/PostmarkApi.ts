@@ -16,6 +16,4 @@ export interface PostmarkApiCredentials {
 
     readonly __name: "postmarkApi";
 
-
 }
-

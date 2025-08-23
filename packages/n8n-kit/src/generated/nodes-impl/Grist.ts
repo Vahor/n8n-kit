@@ -38,4 +38,3 @@ export class Grist<L extends string> extends Node<L> {
 
 
 }
-

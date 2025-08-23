@@ -39,6 +39,4 @@ export interface EventbriteOAuth2ApiCredentials {
 
     readonly __name: "eventbriteOAuth2Api";
 
-
 }
-

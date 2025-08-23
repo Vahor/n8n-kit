@@ -38,4 +38,3 @@ export class Wise<L extends string> extends Node<L> {
 
 
 }
-

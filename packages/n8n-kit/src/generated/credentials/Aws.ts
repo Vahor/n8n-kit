@@ -74,6 +74,4 @@ export interface AwsCredentials {
 
     readonly __name: "aws";
 
-
 }
-

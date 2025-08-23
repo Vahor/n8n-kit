@@ -38,4 +38,3 @@ export class NotionTrigger<L extends string> extends Node<L> {
 
 
 }
-

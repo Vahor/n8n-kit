@@ -38,4 +38,3 @@ export class Totp<L extends string> extends Node<L> {
 
 
 }
-

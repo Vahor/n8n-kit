@@ -38,4 +38,3 @@ export class SeaTableTriggerV2<L extends string> extends Node<L> {
 
 
 }
-

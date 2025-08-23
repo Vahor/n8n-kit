@@ -16,6 +16,4 @@ export interface BannerbearApiCredentials {
 
     readonly __name: "bannerbearApi";
 
-
 }
-

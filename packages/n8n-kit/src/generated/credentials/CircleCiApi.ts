@@ -16,6 +16,4 @@ export interface CircleCiApiCredentials {
 
     readonly __name: "circleCiApi";
 
-
 }
-

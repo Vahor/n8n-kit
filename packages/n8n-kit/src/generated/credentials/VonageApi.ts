@@ -21,6 +21,4 @@ export interface VonageApiCredentials {
 
     readonly __name: "vonageApi";
 
-
 }
-

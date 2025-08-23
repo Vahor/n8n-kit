@@ -24,6 +24,4 @@ export interface NextCloudApiCredentials {
 
     readonly __name: "nextCloudApi";
 
-
 }
-

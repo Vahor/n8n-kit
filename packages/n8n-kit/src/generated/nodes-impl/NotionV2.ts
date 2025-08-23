@@ -38,4 +38,3 @@ export class NotionV2<L extends string> extends Node<L> {
 
 
 }
-

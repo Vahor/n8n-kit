@@ -38,4 +38,3 @@ export class TimescaleDb<L extends string> extends Node<L> {
 
 
 }
-

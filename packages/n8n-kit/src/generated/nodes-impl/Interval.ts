@@ -28,4 +28,3 @@ export class Interval<L extends string> extends Node<L> {
 
 
 }
-

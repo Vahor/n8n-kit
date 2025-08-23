@@ -16,6 +16,4 @@ export interface GoogleFirebaseCloudFirestoreOAuth2ApiCredentials {
 
     readonly __name: "googleFirebaseCloudFirestoreOAuth2Api";
 
-
 }
-

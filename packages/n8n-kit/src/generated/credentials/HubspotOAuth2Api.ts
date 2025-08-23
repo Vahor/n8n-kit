@@ -41,6 +41,4 @@ export interface HubspotOAuth2ApiCredentials {
 
     readonly __name: "hubspotOAuth2Api";
 
-
 }
-

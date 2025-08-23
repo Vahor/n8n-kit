@@ -38,4 +38,3 @@ export class AwsTextract<L extends string> extends Node<L> {
 
 
 }
-

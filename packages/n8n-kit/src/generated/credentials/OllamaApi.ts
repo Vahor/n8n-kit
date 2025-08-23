@@ -21,6 +21,4 @@ export interface OllamaApiCredentials {
 
     readonly __name: "ollamaApi";
 
-
 }
-

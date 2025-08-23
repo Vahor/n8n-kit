@@ -31,6 +31,4 @@ export interface ShopifyApiCredentials {
 
     readonly __name: "shopifyApi";
 
-
 }
-

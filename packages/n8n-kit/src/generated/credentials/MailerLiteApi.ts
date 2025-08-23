@@ -22,6 +22,4 @@ export interface MailerLiteApiCredentials {
 
     readonly __name: "mailerLiteApi";
 
-
 }
-

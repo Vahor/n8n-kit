@@ -20,6 +20,4 @@ export interface MicrosoftTeamsOAuth2ApiCredentials {
 
     readonly __name: "microsoftTeamsOAuth2Api";
 
-
 }
-

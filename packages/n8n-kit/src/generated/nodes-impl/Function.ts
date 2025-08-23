@@ -28,4 +28,3 @@ export class Function<L extends string> extends Node<L> {
 
 
 }
-

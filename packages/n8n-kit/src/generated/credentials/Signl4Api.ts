@@ -17,6 +17,4 @@ export interface Signl4ApiCredentials {
 
     readonly __name: "signl4Api";
 
-
 }
-

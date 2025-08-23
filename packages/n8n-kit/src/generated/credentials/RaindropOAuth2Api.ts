@@ -39,6 +39,4 @@ export interface RaindropOAuth2ApiCredentials {
 
     readonly __name: "raindropOAuth2Api";
 
-
 }
-

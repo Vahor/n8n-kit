@@ -30,6 +30,4 @@ export interface Auth0ManagementApiCredentials {
 
     readonly __name: "auth0ManagementApi";
 
-
 }
-

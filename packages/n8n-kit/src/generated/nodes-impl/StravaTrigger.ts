@@ -38,4 +38,3 @@ export class StravaTrigger<L extends string> extends Node<L> {
 
 
 }
-

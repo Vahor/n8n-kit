@@ -17,6 +17,4 @@ export interface FacebookGraphAppApiCredentials {
 
     readonly __name: "facebookGraphAppApi";
 
-
 }
-

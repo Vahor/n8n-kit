@@ -21,6 +21,4 @@ export interface PostHogApiCredentials {
 
     readonly __name: "postHogApi";
 
-
 }
-

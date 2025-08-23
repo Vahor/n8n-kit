@@ -45,6 +45,4 @@ export interface QuickBooksOAuth2ApiCredentials {
 
     readonly __name: "quickBooksOAuth2Api";
 
-
 }
-

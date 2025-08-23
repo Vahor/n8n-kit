@@ -24,6 +24,4 @@ export interface JenkinsApiCredentials {
 
     readonly __name: "jenkinsApi";
 
-
 }
-

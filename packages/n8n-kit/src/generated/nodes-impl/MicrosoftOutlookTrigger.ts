@@ -38,4 +38,3 @@ export class MicrosoftOutlookTrigger<L extends string> extends Node<L> {
 
 
 }
-

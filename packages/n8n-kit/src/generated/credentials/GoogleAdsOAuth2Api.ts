@@ -21,6 +21,4 @@ export interface GoogleAdsOAuth2ApiCredentials {
 
     readonly __name: "googleAdsOAuth2Api";
 
-
 }
-

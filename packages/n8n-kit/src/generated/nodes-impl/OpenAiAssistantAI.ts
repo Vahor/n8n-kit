@@ -38,4 +38,3 @@ export class OpenAiAssistantAI<L extends string> extends Node<L> {
 
 
 }
-

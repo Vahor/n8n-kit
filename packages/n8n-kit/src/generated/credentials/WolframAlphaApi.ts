@@ -16,6 +16,4 @@ export interface WolframAlphaApiCredentials {
 
     readonly __name: "wolframAlphaApi";
 
-
 }
-

@@ -17,6 +17,4 @@ export interface DisqusApiCredentials {
 
     readonly __name: "disqusApi";
 
-
 }
-

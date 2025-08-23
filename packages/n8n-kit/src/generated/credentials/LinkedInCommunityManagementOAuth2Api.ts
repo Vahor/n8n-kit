@@ -40,6 +40,4 @@ export interface LinkedInCommunityManagementOAuth2ApiCredentials {
 
     readonly __name: "linkedInCommunityManagementOAuth2Api";
 
-
 }
-

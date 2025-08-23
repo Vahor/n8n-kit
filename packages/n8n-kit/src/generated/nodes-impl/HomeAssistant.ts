@@ -38,4 +38,3 @@ export class HomeAssistant<L extends string> extends Node<L> {
 
 
 }
-

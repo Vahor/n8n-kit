@@ -38,4 +38,3 @@ export class GoToWebinar<L extends string> extends Node<L> {
 
 
 }
-

@@ -16,6 +16,4 @@ export interface GoogleTranslateOAuth2ApiCredentials {
 
     readonly __name: "googleTranslateOAuth2Api";
 
-
 }
-

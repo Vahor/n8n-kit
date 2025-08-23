@@ -28,4 +28,3 @@ export class Summarize<L extends string> extends Node<L> {
 
 
 }
-

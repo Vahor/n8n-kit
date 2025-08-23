@@ -29,6 +29,4 @@ export interface SshPasswordCredentials {
 
     readonly __name: "sshPassword";
 
-
 }
-

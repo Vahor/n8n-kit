@@ -28,4 +28,3 @@ export class SimulateTrigger<L extends string> extends Node<L> {
 
 
 }
-

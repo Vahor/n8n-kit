@@ -40,4 +40,3 @@ export class ClickUpTrigger<L extends string> extends Node<L> {
 
 
 }
-

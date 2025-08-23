@@ -39,6 +39,4 @@ export interface ImapCredentials {
 
     readonly __name: "imap";
 
-
 }
-

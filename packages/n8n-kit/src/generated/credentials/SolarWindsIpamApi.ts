@@ -27,6 +27,4 @@ export interface SolarWindsIpamApiCredentials {
 
     readonly __name: "solarWindsIpamApi";
 
-
 }
-

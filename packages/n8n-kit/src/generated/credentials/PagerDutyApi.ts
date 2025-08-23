@@ -16,6 +16,4 @@ export interface PagerDutyApiCredentials {
 
     readonly __name: "pagerDutyApi";
 
-
 }
-

@@ -25,6 +25,4 @@ export interface MotorheadApiCredentials {
 
     readonly __name: "motorheadApi";
 
-
 }
-

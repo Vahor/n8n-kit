@@ -17,6 +17,4 @@ export interface AirtopApiCredentials {
 
     readonly __name: "airtopApi";
 
-
 }
-

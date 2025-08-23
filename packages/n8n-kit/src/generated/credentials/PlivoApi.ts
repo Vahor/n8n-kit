@@ -20,6 +20,4 @@ export interface PlivoApiCredentials {
 
     readonly __name: "plivoApi";
 
-
 }
-

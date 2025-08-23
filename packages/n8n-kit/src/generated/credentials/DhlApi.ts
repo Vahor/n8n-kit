@@ -16,6 +16,4 @@ export interface DhlApiCredentials {
 
     readonly __name: "dhlApi";
 
-
 }
-

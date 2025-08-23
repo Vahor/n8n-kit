@@ -38,4 +38,3 @@ export class Git<L extends string> extends Node<L> {
 
 
 }
-

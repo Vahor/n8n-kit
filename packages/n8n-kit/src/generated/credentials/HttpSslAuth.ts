@@ -33,6 +33,4 @@ export interface HttpSslAuthCredentials {
 
     readonly __name: "httpSslAuth";
 
-
 }
-

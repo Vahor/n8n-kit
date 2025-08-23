@@ -28,4 +28,3 @@ export class InformationExtractorAI<L extends string> extends Node<L> {
 
 
 }
-

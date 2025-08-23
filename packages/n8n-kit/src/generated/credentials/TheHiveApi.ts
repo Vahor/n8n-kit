@@ -31,6 +31,4 @@ export interface TheHiveApiCredentials {
 
     readonly __name: "theHiveApi";
 
-
 }
-

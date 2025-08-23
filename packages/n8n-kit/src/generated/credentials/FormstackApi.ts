@@ -16,6 +16,4 @@ export interface FormstackApiCredentials {
 
     readonly __name: "formstackApi";
 
-
 }
-

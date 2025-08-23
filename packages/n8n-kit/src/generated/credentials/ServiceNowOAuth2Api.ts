@@ -45,6 +45,4 @@ export interface ServiceNowOAuth2ApiCredentials {
 
     readonly __name: "serviceNowOAuth2Api";
 
-
 }
-

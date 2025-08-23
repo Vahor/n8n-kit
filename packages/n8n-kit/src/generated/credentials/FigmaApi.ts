@@ -16,6 +16,4 @@ export interface FigmaApiCredentials {
 
     readonly __name: "figmaApi";
 
-
 }
-

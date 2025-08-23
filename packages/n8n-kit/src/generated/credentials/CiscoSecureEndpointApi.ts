@@ -25,6 +25,4 @@ export interface CiscoSecureEndpointApiCredentials {
 
     readonly __name: "ciscoSecureEndpointApi";
 
-
 }
-

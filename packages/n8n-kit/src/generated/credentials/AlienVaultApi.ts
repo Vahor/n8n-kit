@@ -16,6 +16,4 @@ export interface AlienVaultApiCredentials {
 
     readonly __name: "alienVaultApi";
 
-
 }
-

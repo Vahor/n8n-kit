@@ -28,4 +28,3 @@ export class N8nTrigger<L extends string> extends Node<L> {
 
 
 }
-

@@ -28,4 +28,3 @@ export class Xml<L extends string> extends Node<L> {
 
 
 }
-

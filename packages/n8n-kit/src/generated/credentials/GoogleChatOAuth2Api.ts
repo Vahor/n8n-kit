@@ -16,6 +16,4 @@ export interface GoogleChatOAuth2ApiCredentials {
 
     readonly __name: "googleChatOAuth2Api";
 
-
 }
-

@@ -40,4 +40,3 @@ export class Mautic<L extends string> extends Node<L> {
 
 
 }
-

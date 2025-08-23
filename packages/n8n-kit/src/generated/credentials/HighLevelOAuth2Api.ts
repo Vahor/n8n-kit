@@ -43,6 +43,4 @@ export interface HighLevelOAuth2ApiCredentials {
 
     readonly __name: "highLevelOAuth2Api";
 
-
 }
-

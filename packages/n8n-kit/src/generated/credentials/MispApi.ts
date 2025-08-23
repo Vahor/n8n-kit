@@ -25,6 +25,4 @@ export interface MispApiCredentials {
 
     readonly __name: "mispApi";
 
-
 }
-

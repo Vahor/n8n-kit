@@ -16,6 +16,4 @@ export interface PushoverApiCredentials {
 
     readonly __name: "pushoverApi";
 
-
 }
-

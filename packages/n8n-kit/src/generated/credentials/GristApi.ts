@@ -31,6 +31,4 @@ export interface GristApiCredentials {
 
     readonly __name: "gristApi";
 
-
 }
-

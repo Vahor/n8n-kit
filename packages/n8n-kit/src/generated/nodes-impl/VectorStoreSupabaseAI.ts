@@ -38,4 +38,3 @@ export class VectorStoreSupabaseAI<L extends string> extends Node<L> {
 
 
 }
-

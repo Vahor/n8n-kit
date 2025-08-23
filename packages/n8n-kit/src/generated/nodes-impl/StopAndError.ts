@@ -28,4 +28,3 @@ export class StopAndError<L extends string> extends Node<L> {
 
 
 }
-

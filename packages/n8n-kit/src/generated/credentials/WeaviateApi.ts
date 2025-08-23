@@ -62,6 +62,4 @@ export interface WeaviateApiCredentials {
 
     readonly __name: "weaviateApi";
 
-
 }
-

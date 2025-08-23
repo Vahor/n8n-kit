@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
-import type { GmailOAuth2Credentials } from "../credentials/GmailOAuth2Api.ts";
+import type { GmailOAuth2ApiCredentials } from "../credentials/GmailOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GmailV2NodeParameters } from "../nodes/GmailV2";
 import { Node, type NodeProps } from "../../nodes";
@@ -10,7 +10,7 @@ import { Node, type NodeProps } from "../../nodes";
 export interface GmailV2Props extends NodeProps, GmailV2NodeParameters {
 
     readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
-    readonly gmailOAuth2Credentials?: Credentials<GmailOAuth2Credentials>;
+    readonly gmailOAuth2Credentials?: Credentials<GmailOAuth2ApiCredentials>;
 
 }
 
@@ -40,4 +40,3 @@ export class GmailV2<L extends string> extends Node<L> {
 
 
 }
-

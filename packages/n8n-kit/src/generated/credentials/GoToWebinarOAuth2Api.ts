@@ -39,6 +39,4 @@ export interface GoToWebinarOAuth2ApiCredentials {
 
     readonly __name: "goToWebinarOAuth2Api";
 
-
 }
-

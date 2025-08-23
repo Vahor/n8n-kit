@@ -38,4 +38,3 @@ export class JinaAi<L extends string> extends Node<L> {
 
 
 }
-

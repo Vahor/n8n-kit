@@ -29,6 +29,4 @@ export interface BitwardenApiCredentials {
 
     readonly __name: "bitwardenApi";
 
-
 }
-

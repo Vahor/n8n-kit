@@ -38,4 +38,3 @@ export class Mailcheck<L extends string> extends Node<L> {
 
 
 }
-

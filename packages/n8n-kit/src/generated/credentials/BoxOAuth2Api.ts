@@ -39,6 +39,4 @@ export interface BoxOAuth2ApiCredentials {
 
     readonly __name: "boxOAuth2Api";
 
-
 }
-

@@ -38,4 +38,3 @@ export class Automizy<L extends string> extends Node<L> {
 
 
 }
-

@@ -16,6 +16,4 @@ export interface TapfiliateApiCredentials {
 
     readonly __name: "tapfiliateApi";
 
-
 }
-

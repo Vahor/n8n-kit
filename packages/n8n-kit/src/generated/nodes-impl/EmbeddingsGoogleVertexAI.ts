@@ -38,4 +38,3 @@ export class EmbeddingsGoogleVertexAI<L extends string> extends Node<L> {
 
 
 }
-

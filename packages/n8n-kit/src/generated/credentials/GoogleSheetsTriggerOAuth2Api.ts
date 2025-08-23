@@ -20,6 +20,4 @@ export interface GoogleSheetsTriggerOAuth2ApiCredentials {
 
     readonly __name: "googleSheetsTriggerOAuth2Api";
 
-
 }
-

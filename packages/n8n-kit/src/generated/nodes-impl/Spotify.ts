@@ -38,4 +38,3 @@ export class Spotify<L extends string> extends Node<L> {
 
 
 }
-

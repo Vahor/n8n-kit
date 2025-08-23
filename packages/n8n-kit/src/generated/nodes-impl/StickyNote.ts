@@ -28,4 +28,3 @@ export class StickyNote<L extends string> extends Node<L> {
 
 
 }
-

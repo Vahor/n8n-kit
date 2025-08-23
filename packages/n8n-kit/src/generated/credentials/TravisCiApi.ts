@@ -16,6 +16,4 @@ export interface TravisCiApiCredentials {
 
     readonly __name: "travisCiApi";
 
-
 }
-

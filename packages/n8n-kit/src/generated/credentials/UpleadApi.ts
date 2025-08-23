@@ -16,6 +16,4 @@ export interface UpleadApiCredentials {
 
     readonly __name: "upleadApi";
 
-
 }
-

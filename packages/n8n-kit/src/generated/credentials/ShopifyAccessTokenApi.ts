@@ -27,6 +27,4 @@ export interface ShopifyAccessTokenApiCredentials {
 
     readonly __name: "shopifyAccessTokenApi";
 
-
 }
-

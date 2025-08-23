@@ -21,6 +21,4 @@ export interface FreshserviceApiCredentials {
 
     readonly __name: "freshserviceApi";
 
-
 }
-

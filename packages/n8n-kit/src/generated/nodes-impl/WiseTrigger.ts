@@ -38,4 +38,3 @@ export class WiseTrigger<L extends string> extends Node<L> {
 
 
 }
-

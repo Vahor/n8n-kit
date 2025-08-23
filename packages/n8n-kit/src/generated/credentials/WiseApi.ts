@@ -27,6 +27,4 @@ export interface WiseApiCredentials {
 
     readonly __name: "wiseApi";
 
-
 }
-

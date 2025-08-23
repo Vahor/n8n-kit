@@ -38,4 +38,3 @@ export class AwsIam<L extends string> extends Node<L> {
 
 
 }
-

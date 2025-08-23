@@ -21,6 +21,4 @@ export interface KoBoToolboxApiCredentials {
 
     readonly __name: "koBoToolboxApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface RecordedFutureApiCredentials {
 
     readonly __name: "recordedFutureApi";
 
-
 }
-

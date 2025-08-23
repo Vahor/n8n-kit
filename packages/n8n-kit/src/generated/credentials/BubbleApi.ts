@@ -34,6 +34,4 @@ export interface BubbleApiCredentials {
 
     readonly __name: "bubbleApi";
 
-
 }
-

@@ -38,4 +38,3 @@ export class MicrosoftTeamsTrigger<L extends string> extends Node<L> {
 
 
 }
-

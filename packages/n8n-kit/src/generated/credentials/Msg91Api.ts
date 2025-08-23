@@ -16,6 +16,4 @@ export interface Msg91ApiCredentials {
 
     readonly __name: "msg91Api";
 
-
 }
-

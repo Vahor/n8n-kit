@@ -38,4 +38,3 @@ export class Spontit<L extends string> extends Node<L> {
 
 
 }
-

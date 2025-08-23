@@ -16,6 +16,4 @@ export interface FilescanApiCredentials {
 
     readonly __name: "filescanApi";
 
-
 }
-

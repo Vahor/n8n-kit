@@ -38,4 +38,3 @@ export class VenafiTlsProtectDatacenterTrigger<L extends string> extends Node<L>
 
 
 }
-

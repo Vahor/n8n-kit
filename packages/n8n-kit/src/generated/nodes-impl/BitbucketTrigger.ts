@@ -38,4 +38,3 @@ export class BitbucketTrigger<L extends string> extends Node<L> {
 
 
 }
-

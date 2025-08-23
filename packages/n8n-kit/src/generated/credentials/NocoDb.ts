@@ -20,6 +20,4 @@ export interface NocoDbCredentials {
 
     readonly __name: "nocoDb";
 
-
 }
-

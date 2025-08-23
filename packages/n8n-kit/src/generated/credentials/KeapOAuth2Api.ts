@@ -40,6 +40,4 @@ export interface KeapOAuth2ApiCredentials {
 
     readonly __name: "keapOAuth2Api";
 
-
 }
-

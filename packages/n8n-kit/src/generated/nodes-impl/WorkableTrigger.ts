@@ -38,4 +38,3 @@ export class WorkableTrigger<L extends string> extends Node<L> {
 
 
 }
-

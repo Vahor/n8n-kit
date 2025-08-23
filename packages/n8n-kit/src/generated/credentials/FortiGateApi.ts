@@ -16,6 +16,4 @@ export interface FortiGateApiCredentials {
 
     readonly __name: "fortiGateApi";
 
-
 }
-

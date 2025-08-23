@@ -43,6 +43,4 @@ export interface SmtpCredentials {
 
     readonly __name: "smtp";
 
-
 }
-

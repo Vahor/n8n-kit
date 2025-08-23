@@ -29,6 +29,4 @@ export interface MetabaseApiCredentials {
 
     readonly __name: "metabaseApi";
 
-
 }
-

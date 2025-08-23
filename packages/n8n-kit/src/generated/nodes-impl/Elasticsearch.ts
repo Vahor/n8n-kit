@@ -38,4 +38,3 @@ export class Elasticsearch<L extends string> extends Node<L> {
 
 
 }
-

@@ -41,6 +41,4 @@ export interface ZohoOAuth2ApiCredentials {
 
     readonly __name: "zohoOAuth2Api";
 
-
 }
-

@@ -38,4 +38,3 @@ export class Kitemaker<L extends string> extends Node<L> {
 
 
 }
-

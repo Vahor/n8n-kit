@@ -38,4 +38,3 @@ export class Freshdesk<L extends string> extends Node<L> {
 
 
 }
-

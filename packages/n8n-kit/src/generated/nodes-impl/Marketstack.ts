@@ -38,4 +38,3 @@ export class Marketstack<L extends string> extends Node<L> {
 
 
 }
-

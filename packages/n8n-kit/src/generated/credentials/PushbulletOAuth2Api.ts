@@ -39,6 +39,4 @@ export interface PushbulletOAuth2ApiCredentials {
 
     readonly __name: "pushbulletOAuth2Api";
 
-
 }
-

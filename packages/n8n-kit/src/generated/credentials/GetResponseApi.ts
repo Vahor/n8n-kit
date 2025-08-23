@@ -16,6 +16,4 @@ export interface GetResponseApiCredentials {
 
     readonly __name: "getResponseApi";
 
-
 }
-

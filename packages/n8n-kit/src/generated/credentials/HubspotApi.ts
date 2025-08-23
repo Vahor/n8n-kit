@@ -20,6 +20,4 @@ export interface HubspotApiCredentials {
 
     readonly __name: "hubspotApi";
 
-
 }
-

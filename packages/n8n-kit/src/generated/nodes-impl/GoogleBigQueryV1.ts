@@ -40,4 +40,3 @@ export class GoogleBigQueryV1<L extends string> extends Node<L> {
 
 
 }
-

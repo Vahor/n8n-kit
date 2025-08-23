@@ -40,4 +40,3 @@ export class MondayCom<L extends string> extends Node<L> {
 
 
 }
-

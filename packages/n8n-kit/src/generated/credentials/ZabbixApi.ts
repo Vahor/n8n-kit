@@ -20,6 +20,4 @@ export interface ZabbixApiCredentials {
 
     readonly __name: "zabbixApi";
 
-
 }
-

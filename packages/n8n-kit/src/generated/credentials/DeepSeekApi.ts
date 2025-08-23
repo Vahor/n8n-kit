@@ -21,6 +21,4 @@ export interface DeepSeekApiCredentials {
 
     readonly __name: "deepSeekApi";
 
-
 }
-

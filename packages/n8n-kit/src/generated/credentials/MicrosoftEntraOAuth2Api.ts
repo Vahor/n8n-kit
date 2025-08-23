@@ -31,6 +31,4 @@ export interface MicrosoftEntraOAuth2ApiCredentials {
 
     readonly __name: "microsoftEntraOAuth2Api";
 
-
 }
-

@@ -24,6 +24,4 @@ export interface ZulipApiCredentials {
 
     readonly __name: "zulipApi";
 
-
 }
-

@@ -40,4 +40,3 @@ export class MauticTrigger<L extends string> extends Node<L> {
 
 
 }
-

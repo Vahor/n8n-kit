@@ -21,6 +21,4 @@ export interface GooglePalmApiCredentials {
 
     readonly __name: "googlePalmApi";
 
-
 }
-

@@ -38,4 +38,3 @@ export class EmeliaTrigger<L extends string> extends Node<L> {
 
 
 }
-

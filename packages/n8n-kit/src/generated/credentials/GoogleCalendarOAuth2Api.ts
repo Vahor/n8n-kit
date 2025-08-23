@@ -16,6 +16,4 @@ export interface GoogleCalendarOAuth2ApiCredentials {
 
     readonly __name: "googleCalendarOAuth2Api";
 
-
 }
-

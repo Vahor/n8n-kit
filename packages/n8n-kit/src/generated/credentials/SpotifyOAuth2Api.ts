@@ -45,6 +45,4 @@ export interface SpotifyOAuth2ApiCredentials {
 
     readonly __name: "spotifyOAuth2Api";
 
-
 }
-

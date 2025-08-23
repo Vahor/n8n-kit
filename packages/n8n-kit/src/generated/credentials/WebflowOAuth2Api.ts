@@ -47,6 +47,4 @@ export interface WebflowOAuth2ApiCredentials {
 
     readonly __name: "webflowOAuth2Api";
 
-
 }
-

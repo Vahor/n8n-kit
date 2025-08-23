@@ -40,6 +40,4 @@ export interface SentryIoOAuth2ApiCredentials {
 
     readonly __name: "sentryIoOAuth2Api";
 
-
 }
-

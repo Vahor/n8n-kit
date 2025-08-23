@@ -16,6 +16,4 @@ export interface YouTubeOAuth2ApiCredentials {
 
     readonly __name: "youTubeOAuth2Api";
 
-
 }
-

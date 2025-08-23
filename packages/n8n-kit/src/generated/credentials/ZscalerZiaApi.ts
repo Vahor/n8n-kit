@@ -34,6 +34,4 @@ export interface ZscalerZiaApiCredentials {
 
     readonly __name: "zscalerZiaApi";
 
-
 }
-

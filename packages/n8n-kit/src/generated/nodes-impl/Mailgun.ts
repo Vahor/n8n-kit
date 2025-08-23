@@ -38,4 +38,3 @@ export class Mailgun<L extends string> extends Node<L> {
 
 
 }
-

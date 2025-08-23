@@ -38,4 +38,3 @@ export class FacebookLeadAdsTrigger<L extends string> extends Node<L> {
 
 
 }
-

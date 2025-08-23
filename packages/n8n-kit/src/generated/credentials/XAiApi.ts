@@ -21,6 +21,4 @@ export interface XAiApiCredentials {
 
     readonly __name: "xAiApi";
 
-
 }
-

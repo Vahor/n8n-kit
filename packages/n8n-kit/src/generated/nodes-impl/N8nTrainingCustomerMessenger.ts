@@ -28,4 +28,3 @@ export class N8nTrainingCustomerMessenger<L extends string> extends Node<L> {
 
 
 }
-

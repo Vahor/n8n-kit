@@ -45,6 +45,4 @@ export interface SlackOAuth2ApiCredentials {
 
     readonly __name: "slackOAuth2Api";
 
-
 }
-

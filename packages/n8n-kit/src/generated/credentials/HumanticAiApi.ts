@@ -16,6 +16,4 @@ export interface HumanticAiApiCredentials {
 
     readonly __name: "humanticAiApi";
 
-
 }
-

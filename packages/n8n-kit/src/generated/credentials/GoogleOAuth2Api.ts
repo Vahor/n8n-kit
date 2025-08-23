@@ -36,6 +36,4 @@ export interface GoogleOAuth2ApiCredentials {
 
     readonly __name: "googleOAuth2Api";
 
-
 }
-

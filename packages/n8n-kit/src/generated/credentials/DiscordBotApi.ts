@@ -16,6 +16,4 @@ export interface DiscordBotApiCredentials {
 
     readonly __name: "discordBotApi";
 
-
 }
-

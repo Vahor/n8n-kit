@@ -28,4 +28,3 @@ export class ManualTrigger<L extends string> extends Node<L> {
 
 
 }
-

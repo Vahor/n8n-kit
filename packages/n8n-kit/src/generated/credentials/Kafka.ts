@@ -44,6 +44,4 @@ export interface KafkaCredentials {
 
     readonly __name: "kafka";
 
-
 }
-

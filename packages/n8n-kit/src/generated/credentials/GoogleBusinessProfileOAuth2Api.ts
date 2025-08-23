@@ -20,6 +20,4 @@ export interface GoogleBusinessProfileOAuth2ApiCredentials {
 
     readonly __name: "googleBusinessProfileOAuth2Api";
 
-
 }
-

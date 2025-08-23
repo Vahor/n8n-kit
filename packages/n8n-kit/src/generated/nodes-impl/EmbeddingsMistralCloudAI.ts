@@ -38,4 +38,3 @@ export class EmbeddingsMistralCloudAI<L extends string> extends Node<L> {
 
 
 }
-

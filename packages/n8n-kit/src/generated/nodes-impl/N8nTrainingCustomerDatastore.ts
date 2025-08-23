@@ -28,4 +28,3 @@ export class N8nTrainingCustomerDatastore<L extends string> extends Node<L> {
 
 
 }
-

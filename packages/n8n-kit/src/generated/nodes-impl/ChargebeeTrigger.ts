@@ -28,4 +28,3 @@ export class ChargebeeTrigger<L extends string> extends Node<L> {
 
 
 }
-

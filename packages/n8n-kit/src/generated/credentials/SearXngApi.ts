@@ -15,6 +15,4 @@ export interface SearXngApiCredentials {
 
     readonly __name: "searXngApi";
 
-
 }
-

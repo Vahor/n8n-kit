@@ -16,6 +16,4 @@ export interface AffinityApiCredentials {
 
     readonly __name: "affinityApi";
 
-
 }
-

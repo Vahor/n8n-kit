@@ -38,4 +38,3 @@ export class PostmarkTrigger<L extends string> extends Node<L> {
 
 
 }
-

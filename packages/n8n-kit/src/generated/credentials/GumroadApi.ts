@@ -16,6 +16,4 @@ export interface GumroadApiCredentials {
 
     readonly __name: "gumroadApi";
 
-
 }
-

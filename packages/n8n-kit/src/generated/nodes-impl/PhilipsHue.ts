@@ -38,4 +38,3 @@ export class PhilipsHue<L extends string> extends Node<L> {
 
 
 }
-

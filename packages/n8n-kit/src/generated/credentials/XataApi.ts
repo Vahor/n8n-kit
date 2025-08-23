@@ -25,6 +25,4 @@ export interface XataApiCredentials {
 
     readonly __name: "xataApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface NetlifyApiCredentials {
 
     readonly __name: "netlifyApi";
 
-
 }
-

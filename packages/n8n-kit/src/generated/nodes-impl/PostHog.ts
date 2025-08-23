@@ -38,4 +38,3 @@ export class PostHog<L extends string> extends Node<L> {
 
 
 }
-

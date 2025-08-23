@@ -17,6 +17,4 @@ export interface DriftApiCredentials {
 
     readonly __name: "driftApi";
 
-
 }
-

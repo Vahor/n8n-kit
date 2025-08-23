@@ -16,6 +16,4 @@ export interface HighLevelApiCredentials {
 
     readonly __name: "highLevelApi";
 
-
 }
-

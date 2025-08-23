@@ -39,6 +39,4 @@ export interface ClickUpOAuth2ApiCredentials {
 
     readonly __name: "clickUpOAuth2Api";
 
-
 }
-

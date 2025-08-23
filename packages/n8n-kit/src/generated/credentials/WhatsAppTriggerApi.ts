@@ -20,6 +20,4 @@ export interface WhatsAppTriggerApiCredentials {
 
     readonly __name: "whatsAppTriggerApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface OuraApiCredentials {
 
     readonly __name: "ouraApi";
 
-
 }
-

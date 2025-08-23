@@ -40,6 +40,4 @@ export interface PagerDutyOAuth2ApiCredentials {
 
     readonly __name: "pagerDutyOAuth2Api";
 
-
 }
-

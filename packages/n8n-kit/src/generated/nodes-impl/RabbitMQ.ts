@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { RabbitmqCredentials } from "../credentials/RabbitMQ.ts";
+import type { RabbitMQCredentials } from "../credentials/RabbitMQ.ts";
 import type { Credentials } from "../../credentials";
 import type { RabbitMQNodeParameters } from "../nodes/RabbitMQ";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface RabbitMQProps extends NodeProps, RabbitMQNodeParameters {
 
-    readonly rabbitmqCredentials: Credentials<RabbitmqCredentials>;
+    readonly rabbitmqCredentials: Credentials<RabbitMQCredentials>;
 
 }
 
@@ -38,4 +38,3 @@ export class RabbitMQ<L extends string> extends Node<L> {
 
 
 }
-

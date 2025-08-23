@@ -42,6 +42,4 @@ export interface ERPNextApiCredentials {
 
     readonly __name: "erpNextApi";
 
-
 }
-

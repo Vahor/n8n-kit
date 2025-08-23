@@ -16,6 +16,4 @@ export interface UptimeRobotApiCredentials {
 
     readonly __name: "uptimeRobotApi";
 
-
 }
-

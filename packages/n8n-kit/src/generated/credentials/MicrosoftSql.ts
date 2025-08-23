@@ -68,6 +68,4 @@ export interface MicrosoftSqlCredentials {
 
     readonly __name: "microsoftSql";
 
-
 }
-

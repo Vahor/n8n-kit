@@ -38,4 +38,3 @@ export class Xero<L extends string> extends Node<L> {
 
 
 }
-

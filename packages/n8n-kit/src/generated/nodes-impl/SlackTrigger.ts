@@ -38,4 +38,3 @@ export class SlackTrigger<L extends string> extends Node<L> {
 
 
 }
-

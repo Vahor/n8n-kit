@@ -38,4 +38,3 @@ export class NetlifyTrigger<L extends string> extends Node<L> {
 
 
 }
-

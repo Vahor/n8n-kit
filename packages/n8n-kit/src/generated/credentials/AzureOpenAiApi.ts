@@ -29,6 +29,4 @@ export interface AzureOpenAiApiCredentials {
 
     readonly __name: "azureOpenAiApi";
 
-
 }
-

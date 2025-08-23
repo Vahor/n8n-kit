@@ -16,6 +16,4 @@ export interface BitlyApiCredentials {
 
     readonly __name: "bitlyApi";
 
-
 }
-

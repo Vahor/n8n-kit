@@ -26,6 +26,4 @@ export interface MailjetEmailApiCredentials {
 
     readonly __name: "mailjetEmailApi";
 
-
 }
-

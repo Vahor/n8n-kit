@@ -38,6 +38,4 @@ export interface OAuth1ApiCredentials {
 
     readonly __name: "oAuth1Api";
 
-
 }
-

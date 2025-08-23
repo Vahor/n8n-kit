@@ -38,4 +38,3 @@ export class InvoiceNinja<L extends string> extends Node<L> {
 
 
 }
-

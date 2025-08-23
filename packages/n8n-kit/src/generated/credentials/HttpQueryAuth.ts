@@ -20,6 +20,4 @@ export interface HttpQueryAuthCredentials {
 
     readonly __name: "httpQueryAuth";
 
-
 }
-

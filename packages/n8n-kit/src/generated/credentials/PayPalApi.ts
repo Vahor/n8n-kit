@@ -25,6 +25,4 @@ export interface PayPalApiCredentials {
 
     readonly __name: "payPalApi";
 
-
 }
-

@@ -38,4 +38,3 @@ export class AwsRekognition<L extends string> extends Node<L> {
 
 
 }
-

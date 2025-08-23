@@ -45,6 +45,4 @@ export interface GitlabOAuth2ApiCredentials {
 
     readonly __name: "gitlabOAuth2Api";
 
-
 }
-

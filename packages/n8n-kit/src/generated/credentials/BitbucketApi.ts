@@ -20,6 +20,4 @@ export interface BitbucketApiCredentials {
 
     readonly __name: "bitbucketApi";
 
-
 }
-

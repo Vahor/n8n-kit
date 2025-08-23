@@ -24,6 +24,4 @@ export interface KibanaApiCredentials {
 
     readonly __name: "kibanaApi";
 
-
 }
-

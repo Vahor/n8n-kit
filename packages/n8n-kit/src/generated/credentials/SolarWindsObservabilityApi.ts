@@ -20,6 +20,4 @@ export interface SolarWindsObservabilityApiCredentials {
 
     readonly __name: "solarWindsObservabilityApi";
 
-
 }
-

@@ -27,6 +27,4 @@ export interface MicrosoftAzureCosmosDbSharedKeyApiCredentials {
 
     readonly __name: "microsoftAzureCosmosDbSharedKeyApi";
 
-
 }
-

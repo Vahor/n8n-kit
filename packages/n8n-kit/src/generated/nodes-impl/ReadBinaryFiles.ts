@@ -28,4 +28,3 @@ export class ReadBinaryFiles<L extends string> extends Node<L> {
 
 
 }
-

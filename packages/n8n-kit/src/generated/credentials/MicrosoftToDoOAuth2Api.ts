@@ -16,6 +16,4 @@ export interface MicrosoftToDoOAuth2ApiCredentials {
 
     readonly __name: "microsoftToDoOAuth2Api";
 
-
 }
-

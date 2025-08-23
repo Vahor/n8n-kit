@@ -16,6 +16,4 @@ export interface ConvertKitApiCredentials {
 
     readonly __name: "convertKitApi";
 
-
 }
-

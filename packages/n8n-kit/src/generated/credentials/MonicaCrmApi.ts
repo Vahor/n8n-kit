@@ -25,6 +25,4 @@ export interface MonicaCrmApiCredentials {
 
     readonly __name: "monicaCrmApi";
 
-
 }
-

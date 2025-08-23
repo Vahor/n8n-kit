@@ -75,6 +75,7 @@ const generateTypescriptNodeOutput = async (
 			property.description,
 			property.default && `Default: ${JSON.stringify(property.default)}`,
 			property.typeOptions &&
+				Object.keys(property.typeOptions).length > 0 &&
 				`Type options: ${JSON.stringify(property.typeOptions)}`,
 		].filter(Boolean) as string[];
 

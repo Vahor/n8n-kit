@@ -38,4 +38,3 @@ export class Contentful<L extends string> extends Node<L> {
 
 
 }
-

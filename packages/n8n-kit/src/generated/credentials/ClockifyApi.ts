@@ -16,6 +16,4 @@ export interface ClockifyApiCredentials {
 
     readonly __name: "clockifyApi";
 
-
 }
-

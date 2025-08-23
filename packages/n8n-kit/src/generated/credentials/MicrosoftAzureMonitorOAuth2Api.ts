@@ -50,6 +50,4 @@ export interface MicrosoftAzureMonitorOAuth2ApiCredentials {
 
     readonly __name: "microsoftAzureMonitorOAuth2Api";
 
-
 }
-

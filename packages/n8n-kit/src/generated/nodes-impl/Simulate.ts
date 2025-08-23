@@ -28,4 +28,3 @@ export class Simulate<L extends string> extends Node<L> {
 
 
 }
-

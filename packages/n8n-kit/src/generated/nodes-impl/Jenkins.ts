@@ -38,4 +38,3 @@ export class Jenkins<L extends string> extends Node<L> {
 
 
 }
-

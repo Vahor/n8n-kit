@@ -38,4 +38,3 @@ export class WooCommerceTrigger<L extends string> extends Node<L> {
 
 
 }
-

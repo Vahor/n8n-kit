@@ -45,6 +45,4 @@ export interface GongOAuth2ApiCredentials {
 
     readonly __name: "gongOAuth2Api";
 
-
 }
-

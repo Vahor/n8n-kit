@@ -42,4 +42,3 @@ export class PipedriveTrigger<L extends string> extends Node<L> {
 
 
 }
-

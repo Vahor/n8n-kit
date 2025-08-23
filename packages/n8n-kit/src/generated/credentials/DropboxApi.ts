@@ -21,6 +21,4 @@ export interface DropboxApiCredentials {
 
     readonly __name: "dropboxApi";
 
-
 }
-

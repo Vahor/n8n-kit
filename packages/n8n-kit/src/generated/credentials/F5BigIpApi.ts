@@ -20,6 +20,4 @@ export interface F5BigIpApiCredentials {
 
     readonly __name: "f5BigIpApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface IntercomApiCredentials {
 
     readonly __name: "intercomApi";
 
-
 }
-

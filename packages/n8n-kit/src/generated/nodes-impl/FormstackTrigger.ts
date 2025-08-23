@@ -40,4 +40,3 @@ export class FormstackTrigger<L extends string> extends Node<L> {
 
 
 }
-

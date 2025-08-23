@@ -40,6 +40,4 @@ export interface TodoistOAuth2ApiCredentials {
 
     readonly __name: "todoistOAuth2Api";
 
-
 }
-

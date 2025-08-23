@@ -38,4 +38,3 @@ export class TrelloTrigger<L extends string> extends Node<L> {
 
 
 }
-

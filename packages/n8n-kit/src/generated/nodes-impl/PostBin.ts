@@ -28,4 +28,3 @@ export class PostBin<L extends string> extends Node<L> {
 
 
 }
-

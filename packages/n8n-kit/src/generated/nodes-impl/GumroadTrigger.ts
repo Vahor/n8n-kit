@@ -38,4 +38,3 @@ export class GumroadTrigger<L extends string> extends Node<L> {
 
 
 }
-

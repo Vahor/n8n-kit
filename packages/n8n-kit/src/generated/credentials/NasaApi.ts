@@ -16,6 +16,4 @@ export interface NasaApiCredentials {
 
     readonly __name: "nasaApi";
 
-
 }
-

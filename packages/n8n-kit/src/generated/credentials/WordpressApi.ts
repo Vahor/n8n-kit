@@ -29,6 +29,4 @@ export interface WordpressApiCredentials {
 
     readonly __name: "wordpressApi";
 
-
 }
-

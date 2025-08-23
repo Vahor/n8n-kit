@@ -16,6 +16,4 @@ export interface GmailOAuth2ApiCredentials {
 
     readonly __name: "gmailOAuth2";
 
-
 }
-

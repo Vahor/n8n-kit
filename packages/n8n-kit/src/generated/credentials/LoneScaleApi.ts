@@ -16,6 +16,4 @@ export interface LoneScaleApiCredentials {
 
     readonly __name: "loneScaleApi";
 
-
 }
-

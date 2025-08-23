@@ -22,6 +22,4 @@ export interface N8nApiCredentials {
 
     readonly __name: "n8nApi";
 
-
 }
-

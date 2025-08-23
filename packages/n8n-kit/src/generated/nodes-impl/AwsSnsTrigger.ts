@@ -38,4 +38,3 @@ export class AwsSnsTrigger<L extends string> extends Node<L> {
 
 
 }
-

@@ -20,6 +20,4 @@ export interface QuickBaseApiCredentials {
 
     readonly __name: "quickbaseApi";
 
-
 }
-

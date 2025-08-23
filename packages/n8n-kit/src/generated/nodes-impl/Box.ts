@@ -38,4 +38,3 @@ export class Box<L extends string> extends Node<L> {
 
 
 }
-

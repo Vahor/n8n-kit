@@ -16,6 +16,4 @@ export interface DropcontactApiCredentials {
 
     readonly __name: "dropcontactApi";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface CarbonBlackApiCredentials {
 
     readonly __name: "carbonBlackApi";
 
-
 }
-

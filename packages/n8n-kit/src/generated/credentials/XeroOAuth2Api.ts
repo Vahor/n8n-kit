@@ -40,6 +40,4 @@ export interface XeroOAuth2ApiCredentials {
 
     readonly __name: "xeroOAuth2Api";
 
-
 }
-

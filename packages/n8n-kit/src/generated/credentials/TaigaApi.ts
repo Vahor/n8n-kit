@@ -29,6 +29,4 @@ export interface TaigaApiCredentials {
 
     readonly __name: "taigaApi";
 
-
 }
-

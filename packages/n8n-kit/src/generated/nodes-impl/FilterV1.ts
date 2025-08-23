@@ -28,4 +28,3 @@ export class FilterV1<L extends string> extends Node<L> {
 
 
 }
-

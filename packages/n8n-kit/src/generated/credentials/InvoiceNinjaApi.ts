@@ -25,6 +25,4 @@ export interface InvoiceNinjaApiCredentials {
 
     readonly __name: "invoiceNinjaApi";
 
-
 }
-

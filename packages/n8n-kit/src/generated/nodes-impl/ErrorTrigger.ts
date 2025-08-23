@@ -28,4 +28,3 @@ export class ErrorTrigger<L extends string> extends Node<L> {
 
 
 }
-

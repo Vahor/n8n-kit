@@ -16,6 +16,4 @@ export interface MindeeInvoiceApiCredentials {
 
     readonly __name: "mindeeInvoiceApi";
 
-
 }
-

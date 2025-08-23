@@ -57,6 +57,4 @@ export interface ZendeskOAuth2ApiCredentials {
 
     readonly __name: "zendeskOAuth2Api";
 
-
 }
-

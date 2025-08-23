@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { ErpNextApiCredentials } from "../credentials/ERPNextApi.ts";
+import type { ERPNextApiCredentials } from "../credentials/ERPNextApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ERPNextNodeParameters } from "../nodes/ERPNext";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface ERPNextProps extends NodeProps, ERPNextNodeParameters {
 
-    readonly erpNextApiCredentials: Credentials<ErpNextApiCredentials>;
+    readonly erpNextApiCredentials: Credentials<ERPNextApiCredentials>;
 
 }
 
@@ -38,4 +38,3 @@ export class ERPNext<L extends string> extends Node<L> {
 
 
 }
-

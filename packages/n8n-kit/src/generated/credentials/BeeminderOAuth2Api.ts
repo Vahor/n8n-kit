@@ -40,6 +40,4 @@ export interface BeeminderOAuth2ApiCredentials {
 
     readonly __name: "beeminderOAuth2Api";
 
-
 }
-

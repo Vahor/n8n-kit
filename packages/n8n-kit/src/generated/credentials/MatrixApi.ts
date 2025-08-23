@@ -21,6 +21,4 @@ export interface MatrixApiCredentials {
 
     readonly __name: "matrixApi";
 
-
 }
-

@@ -28,4 +28,3 @@ export class Start<L extends string> extends Node<L> {
 
 
 }
-

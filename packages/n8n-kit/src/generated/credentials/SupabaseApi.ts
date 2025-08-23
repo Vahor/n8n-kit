@@ -20,6 +20,4 @@ export interface SupabaseApiCredentials {
 
     readonly __name: "supabaseApi";
 
-
 }
-

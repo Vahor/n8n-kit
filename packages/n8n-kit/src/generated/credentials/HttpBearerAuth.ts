@@ -20,6 +20,4 @@ export interface HttpBearerAuthCredentials {
 
     readonly __name: "httpBearerAuth";
 
-
 }
-

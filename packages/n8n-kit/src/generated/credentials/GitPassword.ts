@@ -22,6 +22,4 @@ export interface GitPasswordCredentials {
 
     readonly __name: "gitPassword";
 
-
 }
-

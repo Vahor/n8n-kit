@@ -22,6 +22,4 @@ export interface TotpApiCredentials {
 
     readonly __name: "totpApi";
 
-
 }
-

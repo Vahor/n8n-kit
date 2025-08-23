@@ -22,6 +22,4 @@ export interface JotFormApiCredentials {
 
     readonly __name: "jotFormApi";
 
-
 }
-

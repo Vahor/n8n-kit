@@ -19,6 +19,4 @@ export interface YourlsApiCredentials {
 
     readonly __name: "yourlsApi";
 
-
 }
-

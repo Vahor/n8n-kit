@@ -16,6 +16,4 @@ export interface GoogleCloudNaturalLanguageOAuth2ApiCredentials {
 
     readonly __name: "googleCloudNaturalLanguageOAuth2Api";
 
-
 }
-

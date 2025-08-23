@@ -49,6 +49,4 @@ export interface BitlyOAuth2ApiCredentials {
 
     readonly __name: "bitlyOAuth2Api";
 
-
 }
-

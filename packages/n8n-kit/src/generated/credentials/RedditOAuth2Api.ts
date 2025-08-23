@@ -41,6 +41,4 @@ export interface RedditOAuth2ApiCredentials {
 
     readonly __name: "redditOAuth2Api";
 
-
 }
-

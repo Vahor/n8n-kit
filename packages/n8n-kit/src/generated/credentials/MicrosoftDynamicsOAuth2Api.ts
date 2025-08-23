@@ -25,6 +25,4 @@ export interface MicrosoftDynamicsOAuth2ApiCredentials {
 
     readonly __name: "microsoftDynamicsOAuth2Api";
 
-
 }
-

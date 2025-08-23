@@ -16,6 +16,4 @@ export interface BrandfetchApiCredentials {
 
     readonly __name: "brandfetchApi";
 
-
 }
-

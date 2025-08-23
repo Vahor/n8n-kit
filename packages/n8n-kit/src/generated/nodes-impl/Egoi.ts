@@ -38,4 +38,3 @@ export class Egoi<L extends string> extends Node<L> {
 
 
 }
-

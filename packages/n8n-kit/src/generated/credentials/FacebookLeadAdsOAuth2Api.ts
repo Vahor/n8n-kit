@@ -40,6 +40,4 @@ export interface FacebookLeadAdsOAuth2ApiCredentials {
 
     readonly __name: "facebookLeadAdsOAuth2Api";
 
-
 }
-

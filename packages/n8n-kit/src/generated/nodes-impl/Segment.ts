@@ -38,4 +38,3 @@ export class Segment<L extends string> extends Node<L> {
 
 
 }
-

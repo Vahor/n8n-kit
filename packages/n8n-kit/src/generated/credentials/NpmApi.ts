@@ -21,6 +21,4 @@ export interface NpmApiCredentials {
 
     readonly __name: "npmApi";
 
-
 }
-

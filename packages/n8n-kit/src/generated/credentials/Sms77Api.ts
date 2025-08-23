@@ -16,6 +16,4 @@ export interface Sms77ApiCredentials {
 
     readonly __name: "sms77Api";
 
-
 }
-

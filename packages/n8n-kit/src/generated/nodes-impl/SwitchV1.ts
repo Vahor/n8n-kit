@@ -28,4 +28,3 @@ export class SwitchV1<L extends string> extends Node<L> {
 
 
 }
-

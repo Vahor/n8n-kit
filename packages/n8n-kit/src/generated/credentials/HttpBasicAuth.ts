@@ -20,6 +20,4 @@ export interface HttpBasicAuthCredentials {
 
     readonly __name: "httpBasicAuth";
 
-
 }
-

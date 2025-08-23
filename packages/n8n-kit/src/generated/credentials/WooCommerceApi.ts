@@ -30,6 +30,4 @@ export interface WooCommerceApiCredentials {
 
     readonly __name: "wooCommerceApi";
 
-
 }
-

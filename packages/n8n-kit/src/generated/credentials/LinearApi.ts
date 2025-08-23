@@ -16,6 +16,4 @@ export interface LinearApiCredentials {
 
     readonly __name: "linearApi";
 
-
 }
-

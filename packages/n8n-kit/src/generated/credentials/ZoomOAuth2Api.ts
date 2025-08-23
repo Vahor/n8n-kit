@@ -39,6 +39,4 @@ export interface ZoomOAuth2ApiCredentials {
 
     readonly __name: "zoomOAuth2Api";
 
-
 }
-

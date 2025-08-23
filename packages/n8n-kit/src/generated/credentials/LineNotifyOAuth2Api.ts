@@ -40,6 +40,4 @@ export interface LineNotifyOAuth2ApiCredentials {
 
     readonly __name: "lineNotifyOAuth2Api";
 
-
 }
-

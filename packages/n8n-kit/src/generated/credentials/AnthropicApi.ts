@@ -22,6 +22,4 @@ export interface AnthropicApiCredentials {
 
     readonly __name: "anthropicApi";
 
-
 }
-

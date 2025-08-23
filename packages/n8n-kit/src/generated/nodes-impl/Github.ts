@@ -40,4 +40,3 @@ export class Github<L extends string> extends Node<L> {
 
 
 }
-

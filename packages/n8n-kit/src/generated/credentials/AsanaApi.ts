@@ -16,6 +16,4 @@ export interface AsanaApiCredentials {
 
     readonly __name: "asanaApi";
 
-
 }
-

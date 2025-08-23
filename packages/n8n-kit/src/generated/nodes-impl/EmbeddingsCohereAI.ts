@@ -38,4 +38,3 @@ export class EmbeddingsCohereAI<L extends string> extends Node<L> {
 
 
 }
-

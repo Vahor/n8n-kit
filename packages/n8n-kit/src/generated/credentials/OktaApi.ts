@@ -21,6 +21,4 @@ export interface OktaApiCredentials {
 
     readonly __name: "oktaApi";
 
-
 }
-

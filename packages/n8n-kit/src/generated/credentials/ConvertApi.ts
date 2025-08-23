@@ -16,6 +16,4 @@ export interface ConvertApiCredentials {
 
     readonly __name: "convertApi";
 
-
 }
-

@@ -38,4 +38,3 @@ export class Twist<L extends string> extends Node<L> {
 
 
 }
-

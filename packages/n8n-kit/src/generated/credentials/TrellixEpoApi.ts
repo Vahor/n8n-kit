@@ -20,6 +20,4 @@ export interface TrellixEpoApiCredentials {
 
     readonly __name: "trellixEpoApi";
 
-
 }
-

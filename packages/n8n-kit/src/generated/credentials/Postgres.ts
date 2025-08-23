@@ -91,6 +91,4 @@ export interface PostgresCredentials {
 
     readonly __name: "postgres";
 
-
 }
-

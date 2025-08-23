@@ -38,4 +38,3 @@ export class Hunter<L extends string> extends Node<L> {
 
 
 }
-

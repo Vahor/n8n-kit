@@ -28,6 +28,4 @@ export interface OdooApiCredentials {
 
     readonly __name: "odooApi";
 
-
 }
-

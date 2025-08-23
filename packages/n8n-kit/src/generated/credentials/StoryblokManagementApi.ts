@@ -16,6 +16,4 @@ export interface StoryblokManagementApiCredentials {
 
     readonly __name: "storyblokManagementApi";
 
-
 }
-

@@ -29,6 +29,4 @@ export interface CrowdStrikeOAuth2ApiCredentials {
 
     readonly __name: "crowdStrikeOAuth2Api";
 
-
 }
-

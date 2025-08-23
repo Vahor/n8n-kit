@@ -16,6 +16,4 @@ export interface VirusTotalApiCredentials {
 
     readonly __name: "virusTotalApi";
 
-
 }
-

@@ -21,6 +21,4 @@ export interface MarketstackApiCredentials {
 
     readonly __name: "marketstackApi";
 
-
 }
-

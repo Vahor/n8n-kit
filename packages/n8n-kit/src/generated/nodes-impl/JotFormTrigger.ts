@@ -38,4 +38,3 @@ export class JotFormTrigger<L extends string> extends Node<L> {
 
 
 }
-

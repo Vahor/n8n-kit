@@ -20,6 +20,4 @@ export interface AirtableTokenApiCredentials {
 
     readonly __name: "airtableTokenApi";
 
-
 }
-

@@ -27,6 +27,4 @@ export interface AzureStorageSharedKeyApiCredentials {
 
     readonly __name: "azureStorageSharedKeyApi";
 
-
 }
-

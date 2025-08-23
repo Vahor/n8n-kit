@@ -38,4 +38,3 @@ export class MongoDb<L extends string> extends Node<L> {
 
 
 }
-

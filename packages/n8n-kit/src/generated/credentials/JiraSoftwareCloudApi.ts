@@ -24,6 +24,4 @@ export interface JiraSoftwareCloudApiCredentials {
 
     readonly __name: "jiraSoftwareCloudApi";
 
-
 }
-

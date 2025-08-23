@@ -26,6 +26,4 @@ export interface GongApiCredentials {
 
     readonly __name: "gongApi";
 
-
 }
-

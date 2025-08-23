@@ -76,6 +76,4 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
 
     readonly __name: "azureEntraCognitiveServicesOAuth2Api";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface SyncroMspApiCredentials {
 
     readonly __name: "syncroMspApi";
 
-
 }
-

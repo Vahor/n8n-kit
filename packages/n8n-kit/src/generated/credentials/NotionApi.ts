@@ -16,6 +16,4 @@ export interface NotionApiCredentials {
 
     readonly __name: "notionApi";
 
-
 }
-

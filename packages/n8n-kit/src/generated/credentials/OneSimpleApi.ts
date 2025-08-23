@@ -16,6 +16,4 @@ export interface OneSimpleApiCredentials {
 
     readonly __name: "oneSimpleApi";
 
-
 }
-

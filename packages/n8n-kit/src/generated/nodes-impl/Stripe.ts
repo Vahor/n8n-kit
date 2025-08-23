@@ -38,4 +38,3 @@ export class Stripe<L extends string> extends Node<L> {
 
 
 }
-

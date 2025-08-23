@@ -20,6 +20,4 @@ export interface FlowApiCredentials {
 
     readonly __name: "flowApi";
 
-
 }
-

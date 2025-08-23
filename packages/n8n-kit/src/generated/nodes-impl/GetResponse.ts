@@ -40,4 +40,3 @@ export class GetResponse<L extends string> extends Node<L> {
 
 
 }
-

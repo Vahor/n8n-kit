@@ -20,6 +20,4 @@ export interface OrbitApiCredentials {
 
     readonly __name: "orbitApi";
 
-
 }
-

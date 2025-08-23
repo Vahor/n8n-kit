@@ -40,4 +40,3 @@ export class TypeformTrigger<L extends string> extends Node<L> {
 
 
 }
-

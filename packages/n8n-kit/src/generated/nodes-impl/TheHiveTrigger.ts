@@ -28,4 +28,3 @@ export class TheHiveTrigger<L extends string> extends Node<L> {
 
 
 }
-

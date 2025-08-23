@@ -68,6 +68,4 @@ export interface RabbitMQCredentials {
 
     readonly __name: "rabbitmq";
 
-
 }
-

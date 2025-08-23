@@ -38,4 +38,3 @@ export class SplunkV1<L extends string> extends Node<L> {
 
 
 }
-

@@ -40,6 +40,4 @@ export interface TwistOAuth2ApiCredentials {
 
     readonly __name: "twistOAuth2Api";
 
-
 }
-

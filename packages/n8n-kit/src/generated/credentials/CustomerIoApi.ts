@@ -34,6 +34,4 @@ export interface CustomerIoApiCredentials {
 
     readonly __name: "customerIoApi";
 
-
 }
-

@@ -60,6 +60,4 @@ export interface OAuth2ApiCredentials {
 
     readonly __name: "oAuth2Api";
 
-
 }
-

@@ -26,6 +26,4 @@ export interface SplunkApiCredentials {
 
     readonly __name: "splunkApi";
 
-
 }
-

@@ -46,6 +46,4 @@ export interface GithubOAuth2ApiCredentials {
 
     readonly __name: "githubOAuth2Api";
 
-
 }
-

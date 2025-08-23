@@ -25,6 +25,4 @@ export interface DfirIrisApiCredentials {
 
     readonly __name: "dfirIrisApi";
 
-
 }
-

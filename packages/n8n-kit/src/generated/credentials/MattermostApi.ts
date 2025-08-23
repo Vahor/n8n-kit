@@ -25,6 +25,4 @@ export interface MattermostApiCredentials {
 
     readonly __name: "mattermostApi";
 
-
 }
-

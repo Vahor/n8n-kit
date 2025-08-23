@@ -38,4 +38,3 @@ export class FlowTrigger<L extends string> extends Node<L> {
 
 
 }
-

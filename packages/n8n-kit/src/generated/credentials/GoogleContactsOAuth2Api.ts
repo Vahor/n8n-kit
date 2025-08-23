@@ -16,6 +16,4 @@ export interface GoogleContactsOAuth2ApiCredentials {
 
     readonly __name: "googleContactsOAuth2Api";
 
-
 }
-

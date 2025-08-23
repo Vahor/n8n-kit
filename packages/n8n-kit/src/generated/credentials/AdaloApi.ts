@@ -22,6 +22,4 @@ export interface AdaloApiCredentials {
 
     readonly __name: "adaloApi";
 
-
 }
-

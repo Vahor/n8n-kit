@@ -20,6 +20,4 @@ export interface NocoDbApiTokenCredentials {
 
     readonly __name: "nocoDbApiToken";
 
-
 }
-

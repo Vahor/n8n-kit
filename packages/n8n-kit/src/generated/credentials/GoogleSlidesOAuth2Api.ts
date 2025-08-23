@@ -16,6 +16,4 @@ export interface GoogleSlidesOAuth2ApiCredentials {
 
     readonly __name: "googleSlidesOAuth2Api";
 
-
 }
-

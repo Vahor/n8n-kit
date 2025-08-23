@@ -38,4 +38,3 @@ export class Paddle<L extends string> extends Node<L> {
 
 
 }
-

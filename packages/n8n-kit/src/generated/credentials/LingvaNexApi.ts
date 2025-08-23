@@ -16,6 +16,4 @@ export interface LingvaNexApiCredentials {
 
     readonly __name: "lingvaNexApi";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface AcuitySchedulingApiCredentials {
 
     readonly __name: "acuitySchedulingApi";
 
-
 }
-

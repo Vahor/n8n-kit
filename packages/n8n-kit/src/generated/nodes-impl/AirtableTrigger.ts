@@ -42,4 +42,3 @@ export class AirtableTrigger<L extends string> extends Node<L> {
 
 
 }
-

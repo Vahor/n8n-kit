@@ -38,4 +38,3 @@ export class HubspotTrigger<L extends string> extends Node<L> {
 
 
 }
-

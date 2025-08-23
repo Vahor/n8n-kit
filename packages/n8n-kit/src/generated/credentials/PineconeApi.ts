@@ -16,6 +16,4 @@ export interface PineconeApiCredentials {
 
     readonly __name: "pineconeApi";
 
-
 }
-

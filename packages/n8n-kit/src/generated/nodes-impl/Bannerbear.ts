@@ -38,4 +38,3 @@ export class Bannerbear<L extends string> extends Node<L> {
 
 
 }
-

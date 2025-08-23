@@ -25,6 +25,4 @@ export interface AzureStorageOAuth2ApiCredentials {
 
     readonly __name: "azureStorageOAuth2Api";
 
-
 }
-

@@ -21,6 +21,4 @@ export interface CortexApiCredentials {
 
     readonly __name: "cortexApi";
 
-
 }
-

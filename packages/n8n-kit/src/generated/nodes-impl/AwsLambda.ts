@@ -38,4 +38,3 @@ export class AwsLambda<L extends string> extends Node<L> {
 
 
 }
-

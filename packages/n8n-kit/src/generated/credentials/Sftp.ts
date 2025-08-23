@@ -41,6 +41,4 @@ export interface SftpCredentials {
 
     readonly __name: "sftp";
 
-
 }
-

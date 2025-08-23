@@ -105,12 +105,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-23T16:39:04.939+02:00"
+     * Default: "2025-08-23T16:50:10.857+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-23T17:09:04.939+02:00"
+     * Default: "2025-08-23T17:20:10.857+02:00"
      */
     readonly endDateTime?: string;
 

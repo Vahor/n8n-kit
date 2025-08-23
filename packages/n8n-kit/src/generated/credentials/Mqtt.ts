@@ -78,6 +78,4 @@ export interface MqttCredentials {
 
     readonly __name: "mqtt";
 
-
 }
-

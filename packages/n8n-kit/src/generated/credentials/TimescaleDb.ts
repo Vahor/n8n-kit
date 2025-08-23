@@ -46,6 +46,4 @@ export interface TimescaleDbCredentials {
 
     readonly __name: "timescaleDb";
 
-
 }
-

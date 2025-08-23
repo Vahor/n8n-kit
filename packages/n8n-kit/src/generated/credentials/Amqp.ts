@@ -33,6 +33,4 @@ export interface AmqpCredentials {
 
     readonly __name: "amqp";
 
-
 }
-

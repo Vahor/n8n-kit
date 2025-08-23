@@ -40,4 +40,3 @@ export class GitlabTrigger<L extends string> extends Node<L> {
 
 
 }
-

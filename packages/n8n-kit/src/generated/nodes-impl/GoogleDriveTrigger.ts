@@ -40,4 +40,3 @@ export class GoogleDriveTrigger<L extends string> extends Node<L> {
 
 
 }
-

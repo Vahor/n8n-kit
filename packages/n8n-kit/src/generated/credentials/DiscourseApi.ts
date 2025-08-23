@@ -24,6 +24,4 @@ export interface DiscourseApiCredentials {
 
     readonly __name: "discourseApi";
 
-
 }
-

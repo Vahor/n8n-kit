@@ -28,4 +28,3 @@ export class Aggregate<L extends string> extends Node<L> {
 
 
 }
-

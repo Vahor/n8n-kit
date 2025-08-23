@@ -21,6 +21,4 @@ export interface FreshworksCrmApiCredentials {
 
     readonly __name: "freshworksCrmApi";
 
-
 }
-

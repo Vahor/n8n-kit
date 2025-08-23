@@ -28,4 +28,3 @@ export class ICalendar<L extends string> extends Node<L> {
 
 
 }
-

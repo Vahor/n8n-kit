@@ -40,4 +40,3 @@ export class GoogleSlides<L extends string> extends Node<L> {
 
 
 }
-

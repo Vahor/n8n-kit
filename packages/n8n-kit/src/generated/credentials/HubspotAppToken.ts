@@ -16,6 +16,4 @@ export interface HubspotAppTokenCredentials {
 
     readonly __name: "hubspotAppToken";
 
-
 }
-

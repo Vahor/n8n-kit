@@ -44,4 +44,3 @@ export class JiraTrigger<L extends string> extends Node<L> {
 
 
 }
-

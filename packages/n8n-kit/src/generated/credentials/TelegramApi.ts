@@ -23,6 +23,4 @@ export interface TelegramApiCredentials {
 
     readonly __name: "telegramApi";
 
-
 }
-

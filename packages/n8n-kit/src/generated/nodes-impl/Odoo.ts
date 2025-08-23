@@ -38,4 +38,3 @@ export class Odoo<L extends string> extends Node<L> {
 
 
 }
-

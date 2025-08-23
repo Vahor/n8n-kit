@@ -38,6 +38,4 @@ export interface S3Credentials {
 
     readonly __name: "s3";
 
-
 }
-

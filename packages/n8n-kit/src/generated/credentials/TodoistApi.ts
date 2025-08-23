@@ -16,6 +16,4 @@ export interface TodoistApiCredentials {
 
     readonly __name: "todoistApi";
 
-
 }
-

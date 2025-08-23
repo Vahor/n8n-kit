@@ -20,6 +20,4 @@ export interface UProcApiCredentials {
 
     readonly __name: "uprocApi";
 
-
 }
-

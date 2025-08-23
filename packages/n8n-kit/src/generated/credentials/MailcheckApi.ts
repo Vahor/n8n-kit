@@ -16,6 +16,4 @@ export interface MailcheckApiCredentials {
 
     readonly __name: "mailcheckApi";
 
-
 }
-

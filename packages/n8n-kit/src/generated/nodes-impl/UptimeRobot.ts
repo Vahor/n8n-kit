@@ -38,4 +38,3 @@ export class UptimeRobot<L extends string> extends Node<L> {
 
 
 }
-

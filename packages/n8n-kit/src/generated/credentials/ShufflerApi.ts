@@ -16,6 +16,4 @@ export interface ShufflerApiCredentials {
 
     readonly __name: "shufflerApi";
 
-
 }
-

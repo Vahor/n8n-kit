@@ -38,4 +38,3 @@ export class Salesmate<L extends string> extends Node<L> {
 
 
 }
-

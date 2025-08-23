@@ -16,6 +16,4 @@ export interface TypeformApiCredentials {
 
     readonly __name: "typeformApi";
 
-
 }
-

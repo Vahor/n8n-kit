@@ -20,6 +20,4 @@ export interface JiraSoftwareServerPatApiCredentials {
 
     readonly __name: "jiraSoftwareServerPatApi";
 
-
 }
-

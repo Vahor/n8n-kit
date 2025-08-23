@@ -40,4 +40,3 @@ export class Mindee<L extends string> extends Node<L> {
 
 
 }
-

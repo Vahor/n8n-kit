@@ -16,6 +16,4 @@ export interface StripeApiCredentials {
 
     readonly __name: "stripeApi";
 
-
 }
-

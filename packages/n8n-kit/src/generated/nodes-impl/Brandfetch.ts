@@ -38,4 +38,3 @@ export class Brandfetch<L extends string> extends Node<L> {
 
 
 }
-

@@ -20,6 +20,4 @@ export interface ActiveCampaignApiCredentials {
 
     readonly __name: "activeCampaignApi";
 
-
 }
-

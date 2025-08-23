@@ -20,6 +20,4 @@ export interface TogglApiCredentials {
 
     readonly __name: "togglApi";
 
-
 }
-

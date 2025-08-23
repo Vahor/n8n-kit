@@ -16,6 +16,4 @@ export interface UrlScanIoApiCredentials {
 
     readonly __name: "urlScanIoApi";
 
-
 }
-

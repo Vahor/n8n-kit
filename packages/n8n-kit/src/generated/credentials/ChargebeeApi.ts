@@ -20,6 +20,4 @@ export interface ChargebeeApiCredentials {
 
     readonly __name: "chargebeeApi";
 
-
 }
-

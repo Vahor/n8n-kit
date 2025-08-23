@@ -29,6 +29,4 @@ export interface HomeAssistantApiCredentials {
 
     readonly __name: "homeAssistantApi";
 
-
 }
-

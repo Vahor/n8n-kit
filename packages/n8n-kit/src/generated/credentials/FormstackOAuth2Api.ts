@@ -39,6 +39,4 @@ export interface FormstackOAuth2ApiCredentials {
 
     readonly __name: "formstackOAuth2Api";
 
-
 }
-

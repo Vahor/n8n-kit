@@ -16,6 +16,4 @@ export interface TwakeCloudApiCredentials {
 
     readonly __name: "twakeCloudApi";
 
-
 }
-

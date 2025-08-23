@@ -38,4 +38,3 @@ export class LemlistTrigger<L extends string> extends Node<L> {
 
 
 }
-

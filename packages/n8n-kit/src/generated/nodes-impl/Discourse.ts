@@ -38,4 +38,3 @@ export class Discourse<L extends string> extends Node<L> {
 
 
 }
-

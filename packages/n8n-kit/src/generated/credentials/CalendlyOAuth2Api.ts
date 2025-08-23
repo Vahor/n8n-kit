@@ -39,6 +39,4 @@ export interface CalendlyOAuth2ApiCredentials {
 
     readonly __name: "calendlyOAuth2Api";
 
-
 }
-

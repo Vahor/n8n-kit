@@ -40,4 +40,3 @@ export class MailchimpTrigger<L extends string> extends Node<L> {
 
 
 }
-

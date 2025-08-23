@@ -38,4 +38,3 @@ export class HelpScoutTrigger<L extends string> extends Node<L> {
 
 
 }
-

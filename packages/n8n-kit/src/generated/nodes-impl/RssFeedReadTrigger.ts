@@ -28,4 +28,3 @@ export class RssFeedReadTrigger<L extends string> extends Node<L> {
 
 
 }
-

@@ -16,6 +16,4 @@ export interface SekoiaApiCredentials {
 
     readonly __name: "sekoiaApi";
 
-
 }
-

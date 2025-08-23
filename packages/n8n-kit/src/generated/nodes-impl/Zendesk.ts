@@ -40,4 +40,3 @@ export class Zendesk<L extends string> extends Node<L> {
 
 
 }
-

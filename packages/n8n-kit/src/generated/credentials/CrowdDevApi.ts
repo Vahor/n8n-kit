@@ -30,6 +30,4 @@ export interface CrowdDevApiCredentials {
 
     readonly __name: "crowdDevApi";
 
-
 }
-

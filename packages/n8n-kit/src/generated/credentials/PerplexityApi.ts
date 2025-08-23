@@ -17,6 +17,4 @@ export interface PerplexityApiCredentials {
 
     readonly __name: "perplexityApi";
 
-
 }
-

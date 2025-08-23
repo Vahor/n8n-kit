@@ -20,6 +20,4 @@ export interface CockpitApiCredentials {
 
     readonly __name: "cockpitApi";
 
-
 }
-

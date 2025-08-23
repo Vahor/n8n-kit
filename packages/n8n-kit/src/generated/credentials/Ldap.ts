@@ -54,6 +54,4 @@ export interface LdapCredentials {
 
     readonly __name: "ldap";
 
-
 }
-

@@ -38,4 +38,3 @@ export class CrowdDevTrigger<L extends string> extends Node<L> {
 
 
 }
-

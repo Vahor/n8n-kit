@@ -38,4 +38,3 @@ export class TaigaTrigger<L extends string> extends Node<L> {
 
 
 }
-

@@ -38,4 +38,3 @@ export class Redis<L extends string> extends Node<L> {
 
 
 }
-

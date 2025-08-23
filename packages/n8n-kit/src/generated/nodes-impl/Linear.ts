@@ -40,4 +40,3 @@ export class Linear<L extends string> extends Node<L> {
 
 
 }
-

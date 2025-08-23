@@ -40,4 +40,3 @@ export class Harvest<L extends string> extends Node<L> {
 
 
 }
-

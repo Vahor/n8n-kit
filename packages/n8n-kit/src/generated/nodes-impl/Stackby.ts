@@ -38,4 +38,3 @@ export class Stackby<L extends string> extends Node<L> {
 
 
 }
-

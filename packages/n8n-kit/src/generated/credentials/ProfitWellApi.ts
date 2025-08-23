@@ -17,6 +17,4 @@ export interface ProfitWellApiCredentials {
 
     readonly __name: "profitWellApi";
 
-
 }
-

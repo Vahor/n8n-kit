@@ -35,6 +35,4 @@ export interface SshPrivateKeyCredentials {
 
     readonly __name: "sshPrivateKey";
 
-
 }
-

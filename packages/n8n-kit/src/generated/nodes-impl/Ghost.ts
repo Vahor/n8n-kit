@@ -40,4 +40,3 @@ export class Ghost<L extends string> extends Node<L> {
 
 
 }
-

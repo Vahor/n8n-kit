@@ -38,4 +38,3 @@ export class EmbeddingsAzureOpenAiAI<L extends string> extends Node<L> {
 
 
 }
-

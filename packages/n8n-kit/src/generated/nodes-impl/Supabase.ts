@@ -38,4 +38,3 @@ export class Supabase<L extends string> extends Node<L> {
 
 
 }
-

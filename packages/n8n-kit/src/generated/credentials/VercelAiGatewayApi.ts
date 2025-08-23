@@ -23,6 +23,4 @@ export interface VercelAiGatewayApiCredentials {
 
     readonly __name: "vercelAiGatewayApi";
 
-
 }
-

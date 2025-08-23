@@ -16,6 +16,4 @@ export interface EgoiApiCredentials {
 
     readonly __name: "egoiApi";
 
-
 }
-

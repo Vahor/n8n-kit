@@ -40,4 +40,3 @@ export class TodoistV1<L extends string> extends Node<L> {
 
 
 }
-

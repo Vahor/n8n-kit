@@ -39,6 +39,4 @@ export interface PipedriveOAuth2ApiCredentials {
 
     readonly __name: "pipedriveOAuth2Api";
 
-
 }
-

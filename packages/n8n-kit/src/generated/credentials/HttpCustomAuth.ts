@@ -16,6 +16,4 @@ export interface HttpCustomAuthCredentials {
 
     readonly __name: "httpCustomAuth";
 
-
 }
-

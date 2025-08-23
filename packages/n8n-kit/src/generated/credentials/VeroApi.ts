@@ -16,6 +16,4 @@ export interface VeroApiCredentials {
 
     readonly __name: "veroApi";
 
-
 }
-

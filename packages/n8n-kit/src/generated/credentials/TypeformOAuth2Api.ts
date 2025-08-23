@@ -40,6 +40,4 @@ export interface TypeformOAuth2ApiCredentials {
 
     readonly __name: "typeformOAuth2Api";
 
-
 }
-

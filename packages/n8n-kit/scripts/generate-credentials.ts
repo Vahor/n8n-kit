@@ -89,11 +89,9 @@ const generateTypescriptCredentialsOutput = async (
 	}
 
 	code.line(`readonly __name: "${result.name}";`);
-	code.line();
 
 	code.unindent();
 	code.line(`}`);
-	code.line();
 
 	code.closeFile(outputFile);
 	await code.save("src/generated/credentials");

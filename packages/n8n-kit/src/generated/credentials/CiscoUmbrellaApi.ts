@@ -26,6 +26,4 @@ export interface CiscoUmbrellaApiCredentials {
 
     readonly __name: "ciscoUmbrellaApi";
 
-
 }
-

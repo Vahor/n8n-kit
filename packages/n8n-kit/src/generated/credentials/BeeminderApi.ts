@@ -16,6 +16,4 @@ export interface BeeminderApiCredentials {
 
     readonly __name: "beeminderApi";
 
-
 }
-

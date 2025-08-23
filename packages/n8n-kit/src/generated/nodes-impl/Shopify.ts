@@ -42,4 +42,3 @@ export class Shopify<L extends string> extends Node<L> {
 
 
 }
-

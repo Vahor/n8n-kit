@@ -20,6 +20,4 @@ export interface AutomizyApiCredentials {
 
     readonly __name: "automizyApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface MailchimpApiCredentials {
 
     readonly __name: "mailchimpApi";
 
-
 }
-

@@ -38,6 +38,4 @@ export interface RedisCredentials {
 
     readonly __name: "redis";
 
-
 }
-

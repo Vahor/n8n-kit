@@ -39,6 +39,4 @@ export interface NotionOAuth2ApiCredentials {
 
     readonly __name: "notionOAuth2Api";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface ZoomApiCredentials {
 
     readonly __name: "zoomApi";
 
-
 }
-

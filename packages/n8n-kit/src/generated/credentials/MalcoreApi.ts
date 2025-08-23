@@ -16,6 +16,4 @@ export interface MalcoreApiCredentials {
 
     readonly __name: "malcoreApi";
 
-
 }
-

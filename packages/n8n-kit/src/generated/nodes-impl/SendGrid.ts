@@ -38,4 +38,3 @@ export class SendGrid<L extends string> extends Node<L> {
 
 
 }
-

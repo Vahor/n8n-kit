@@ -38,4 +38,3 @@ export class SecurityScorecard<L extends string> extends Node<L> {
 
 
 }
-

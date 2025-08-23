@@ -16,6 +16,4 @@ export interface SecurityScorecardApiCredentials {
 
     readonly __name: "securityScorecardApi";
 
-
 }
-

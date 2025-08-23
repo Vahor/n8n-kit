@@ -38,4 +38,3 @@ export class GooglePerspective<L extends string> extends Node<L> {
 
 
 }
-

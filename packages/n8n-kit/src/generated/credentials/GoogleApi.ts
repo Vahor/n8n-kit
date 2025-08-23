@@ -50,6 +50,4 @@ export interface GoogleApiCredentials {
 
     readonly __name: "googleApi";
 
-
 }
-

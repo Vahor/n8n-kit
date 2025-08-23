@@ -30,6 +30,4 @@ export interface ZepApiCredentials {
 
     readonly __name: "zepApi";
 
-
 }
-

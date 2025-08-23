@@ -16,6 +16,4 @@ export interface EventbriteApiCredentials {
 
     readonly __name: "eventbriteApi";
 
-
 }
-

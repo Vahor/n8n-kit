@@ -16,6 +16,4 @@ export interface LemlistApiCredentials {
 
     readonly __name: "lemlistApi";
 
-
 }
-

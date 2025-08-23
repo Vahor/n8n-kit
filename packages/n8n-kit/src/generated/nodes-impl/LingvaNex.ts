@@ -38,4 +38,3 @@ export class LingvaNex<L extends string> extends Node<L> {
 
 
 }
-

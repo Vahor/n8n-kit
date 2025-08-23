@@ -38,4 +38,3 @@ export class OnfleetTrigger<L extends string> extends Node<L> {
 
 
 }
-

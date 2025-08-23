@@ -44,6 +44,4 @@ export interface PhilipsHueOAuth2ApiCredentials {
 
     readonly __name: "philipsHueOAuth2Api";
 
-
 }
-

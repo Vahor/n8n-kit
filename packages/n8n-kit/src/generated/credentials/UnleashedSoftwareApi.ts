@@ -20,6 +20,4 @@ export interface UnleashedSoftwareApiCredentials {
 
     readonly __name: "unleashedSoftwareApi";
 
-
 }
-

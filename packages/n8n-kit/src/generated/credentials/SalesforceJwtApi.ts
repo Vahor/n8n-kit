@@ -31,6 +31,4 @@ export interface SalesforceJwtApiCredentials {
 
     readonly __name: "salesforceJwtApi";
 
-
 }
-

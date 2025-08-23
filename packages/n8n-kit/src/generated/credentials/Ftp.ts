@@ -29,6 +29,4 @@ export interface FtpCredentials {
 
     readonly __name: "ftp";
 
-
 }
-

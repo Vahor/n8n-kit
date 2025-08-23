@@ -38,4 +38,3 @@ export class Bubble<L extends string> extends Node<L> {
 
 
 }
-

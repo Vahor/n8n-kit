@@ -28,4 +28,3 @@ export class Markdown<L extends string> extends Node<L> {
 
 
 }
-

@@ -16,6 +16,4 @@ export interface MistralCloudApiCredentials {
 
     readonly __name: "mistralCloudApi";
 
-
 }
-

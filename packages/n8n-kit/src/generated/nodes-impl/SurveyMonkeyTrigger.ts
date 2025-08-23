@@ -40,4 +40,3 @@ export class SurveyMonkeyTrigger<L extends string> extends Node<L> {
 
 
 }
-

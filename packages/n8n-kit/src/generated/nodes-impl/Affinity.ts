@@ -38,4 +38,3 @@ export class Affinity<L extends string> extends Node<L> {
 
 
 }
-

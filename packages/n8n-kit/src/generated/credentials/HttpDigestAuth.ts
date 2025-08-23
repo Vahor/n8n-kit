@@ -20,6 +20,4 @@ export interface HttpDigestAuthCredentials {
 
     readonly __name: "httpDigestAuth";
 
-
 }
-

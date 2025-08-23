@@ -40,4 +40,3 @@ export class NextCloud<L extends string> extends Node<L> {
 
 
 }
-

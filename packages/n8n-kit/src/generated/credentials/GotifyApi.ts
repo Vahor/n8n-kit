@@ -33,6 +33,4 @@ export interface GotifyApiCredentials {
 
     readonly __name: "gotifyApi";
 
-
 }
-

@@ -35,6 +35,4 @@ export interface ElasticSecurityApiCredentials {
 
     readonly __name: "elasticSecurityApi";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface WhatsAppApiCredentials {
 
     readonly __name: "whatsAppApi";
 
-
 }
-

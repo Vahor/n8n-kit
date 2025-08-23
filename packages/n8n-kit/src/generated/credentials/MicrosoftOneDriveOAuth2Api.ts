@@ -16,6 +16,4 @@ export interface MicrosoftOneDriveOAuth2ApiCredentials {
 
     readonly __name: "microsoftOneDriveOAuth2Api";
 
-
 }
-

@@ -21,6 +21,4 @@ export interface VenafiTlsProtectCloudApiCredentials {
 
     readonly __name: "venafiTlsProtectCloudApi";
 
-
 }
-

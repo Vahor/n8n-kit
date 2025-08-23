@@ -26,6 +26,4 @@ export interface MailgunApiCredentials {
 
     readonly __name: "mailgunApi";
 
-
 }
-

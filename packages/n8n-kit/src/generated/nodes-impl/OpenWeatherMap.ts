@@ -38,4 +38,3 @@ export class OpenWeatherMap<L extends string> extends Node<L> {
 
 
 }
-

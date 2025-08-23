@@ -27,6 +27,4 @@ export interface OpenAiApiCredentials {
 
     readonly __name: "openAiApi";
 
-
 }
-

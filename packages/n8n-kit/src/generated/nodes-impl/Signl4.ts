@@ -38,4 +38,3 @@ export class Signl4<L extends string> extends Node<L> {
 
 
 }
-

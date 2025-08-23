@@ -40,6 +40,4 @@ export interface StravaOAuth2ApiCredentials {
 
     readonly __name: "stravaOAuth2Api";
 
-
 }
-

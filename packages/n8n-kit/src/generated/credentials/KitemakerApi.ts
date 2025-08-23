@@ -16,6 +16,4 @@ export interface KitemakerApiCredentials {
 
     readonly __name: "kitemakerApi";
 
-
 }
-

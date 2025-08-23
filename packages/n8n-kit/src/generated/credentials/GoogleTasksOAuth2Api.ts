@@ -16,6 +16,4 @@ export interface GoogleTasksOAuth2ApiCredentials {
 
     readonly __name: "googleTasksOAuth2Api";
 
-
 }
-

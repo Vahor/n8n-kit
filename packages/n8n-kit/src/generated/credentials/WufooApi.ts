@@ -20,6 +20,4 @@ export interface WufooApiCredentials {
 
     readonly __name: "wufooApi";
 
-
 }
-

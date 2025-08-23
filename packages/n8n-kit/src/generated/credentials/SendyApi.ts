@@ -20,6 +20,4 @@ export interface SendyApiCredentials {
 
     readonly __name: "sendyApi";
 
-
 }
-

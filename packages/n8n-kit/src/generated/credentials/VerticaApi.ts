@@ -27,6 +27,4 @@ export interface VerticaApiCredentials {
 
     readonly __name: "verticaApi";
 
-
 }
-

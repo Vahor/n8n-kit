@@ -38,4 +38,3 @@ export class N8n<L extends string> extends Node<L> {
 
 
 }
-

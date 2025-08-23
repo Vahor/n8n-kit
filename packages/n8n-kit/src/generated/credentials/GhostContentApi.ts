@@ -20,6 +20,4 @@ export interface GhostContentApiCredentials {
 
     readonly __name: "ghostContentApi";
 
-
 }
-

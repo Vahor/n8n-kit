@@ -38,4 +38,3 @@ export class CrowdDev<L extends string> extends Node<L> {
 
 
 }
-

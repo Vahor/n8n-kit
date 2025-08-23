@@ -39,6 +39,4 @@ export interface HelpScoutOAuth2ApiCredentials {
 
     readonly __name: "helpScoutOAuth2Api";
 
-
 }
-

@@ -38,4 +38,3 @@ export class PushcutTrigger<L extends string> extends Node<L> {
 
 
 }
-

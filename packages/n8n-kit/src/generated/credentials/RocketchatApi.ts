@@ -24,6 +24,4 @@ export interface RocketchatApiCredentials {
 
     readonly __name: "rocketchatApi";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface SentryIoServerApiCredentials {
 
     readonly __name: "sentryIoServerApi";
 
-
 }
-

@@ -20,6 +20,4 @@ export interface QdrantApiCredentials {
 
     readonly __name: "qdrantApi";
 
-
 }
-

@@ -24,6 +24,4 @@ export interface TwakeServerApiCredentials {
 
     readonly __name: "twakeServerApi";
 
-
 }
-

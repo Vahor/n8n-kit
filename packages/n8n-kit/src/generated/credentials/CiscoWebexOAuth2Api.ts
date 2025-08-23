@@ -40,6 +40,4 @@ export interface CiscoWebexOAuth2ApiCredentials {
 
     readonly __name: "ciscoWebexOAuth2Api";
 
-
 }
-

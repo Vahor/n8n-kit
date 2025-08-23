@@ -38,4 +38,3 @@ export class Line<L extends string> extends Node<L> {
 
 
 }
-

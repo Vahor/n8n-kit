@@ -38,4 +38,3 @@ export class KoBoToolboxTrigger<L extends string> extends Node<L> {
 
 
 }
-

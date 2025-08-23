@@ -31,6 +31,4 @@ export interface SeaTableApiCredentials {
 
     readonly __name: "seaTableApi";
 
-
 }
-

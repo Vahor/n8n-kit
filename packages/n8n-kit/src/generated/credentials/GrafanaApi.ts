@@ -21,6 +21,4 @@ export interface GrafanaApiCredentials {
 
     readonly __name: "grafanaApi";
 
-
 }
-

@@ -16,6 +16,4 @@ export interface CodaApiCredentials {
 
     readonly __name: "codaApi";
 
-
 }
-

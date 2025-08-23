@@ -28,4 +28,3 @@ export class MergeV1<L extends string> extends Node<L> {
 
 
 }
-

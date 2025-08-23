@@ -38,4 +38,3 @@ export class LoneScaleTrigger<L extends string> extends Node<L> {
 
 
 }
-

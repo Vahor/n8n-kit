@@ -23,6 +23,4 @@ export interface PaddleApiCredentials {
 
     readonly __name: "paddleApi";
 
-
 }
-

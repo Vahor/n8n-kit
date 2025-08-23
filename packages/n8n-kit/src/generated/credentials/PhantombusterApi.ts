@@ -16,6 +16,4 @@ export interface PhantombusterApiCredentials {
 
     readonly __name: "phantombusterApi";
 
-
 }
-
