@@ -80,6 +80,7 @@
 			"position": [820, 1140],
 			"typeVersion": 1,
 			"parameters": {
+				"mode": "insert",
 				"pineconeIndex": { "value": "company-files", "mode": "list" }
 			},
 			"credentials": { "pineconeApi": { "id": "some-id" } }
@@ -88,18 +89,30 @@
 			"id": "embeddings-google-gemini",
 			"name": "Embeddings Google Gemini",
 			"type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
-			"position": [1080, 1020],
+			"position": [1140, 1020],
 			"typeVersion": 1,
 			"parameters": { "modelName": "models/text-embedding-004" },
 			"credentials": { "googlePalmApi": { "id": "some-id" } }
 		},
 		{
 			"id": "document-to-vector-store",
-			"name": "document-to-vector-store",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1080, 1260],
+			"name": "Default Data Loader",
+			"type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+			"position": [1140, 1260],
+			"typeVersion": 1.1,
+			"parameters": {
+				"textSplittingMode": "custom",
+				"dataType": "binary",
+				"binaryMode": "specificField"
+			}
+		},
+		{
+			"id": "text-splitter",
+			"name": "Recursive Character Text Splitter",
+			"type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+			"position": [1400, 1260],
 			"typeVersion": 1,
-			"parameters": {}
+			"parameters": { "chunkOverlap": 100 }
 		},
 		{
 			"id": "note-chat-to-ai-agent",
@@ -165,9 +178,20 @@
 				]
 			]
 		},
-		"document-to-vector-store": {
+		"Default Data Loader": {
 			"ai_document": [
 				[{ "node": "Pinecone Vector Store", "type": "ai_document", "index": 0 }]
+			]
+		},
+		"Recursive Character Text Splitter": {
+			"ai_textSplitter": [
+				[
+					{
+						"node": "Default Data Loader",
+						"type": "ai_textSplitter",
+						"index": 0
+					}
+				]
 			]
 		},
 		"When chat message received": {

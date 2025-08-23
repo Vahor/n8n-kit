@@ -44,8 +44,6 @@ export function calculateLayout(
 		if (node instanceof Group) {
 			g.setNode(node.id, {
 				label: node.getLabel(),
-				// width: DEFAULT_NODE_SIZE.width * 3, // Suppose multiple nodes in a group
-				// height: DEFAULT_NODE_SIZE.height,
 			});
 			continue;
 		}
@@ -77,9 +75,6 @@ export function calculateLayout(
 		const dagreNode = g.node(nodeId);
 		const node = nodes.find((n) => n.id === nodeId);
 		if (node && dagreNode && node.position === undefined) {
-			// Hardcoded for now
-			console.log(dagreNode);
-
 			node.position = [dagreNode.x, dagreNode.y];
 		}
 	});

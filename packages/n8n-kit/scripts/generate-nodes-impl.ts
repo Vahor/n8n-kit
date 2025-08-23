@@ -134,12 +134,19 @@ const generateTypescriptNodeOutput = async (
 
 	for (const [inputName, inputType] of Object.entries(result.inputs)) {
 		if (inputName === "main") continue;
-		code.openBlock(
-			`public with${capitalize(code.toCamelCase(inputName))}(next: State): this`,
-		);
-		code.line(
-			`super.addNext(next.startState, { type: "${inputType}", direction: "input" });`,
-		);
+		if (inputName === "custom") {
+			code.openBlock(`public withCustom(type: string, next: State): this`);
+			code.line(
+				`super.addNext(next.startState, { type, direction: "input" });`,
+			);
+		} else {
+			code.openBlock(
+				`public with${capitalize(code.toCamelCase(inputName))}(next: State): this`,
+			);
+			code.line(
+				`super.addNext(next.startState, { type: "${inputType}", direction: "input" });`,
+			);
+		}
 		code.line(`return this;`);
 		code.closeBlock();
 		code.line();

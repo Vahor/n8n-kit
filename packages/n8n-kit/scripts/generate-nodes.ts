@@ -21,7 +21,8 @@ const parseConnectionsTypes = (
 	const r = {};
 	const connections = result[type];
 	if (typeof connections === "string") {
-		// TODO: check if it's useful (ex: VectorStorePinecone)
+		// HACK: impossible to parse so we add a custom type and let the user choose
+		r.custom = "custom";
 		return r;
 	} else {
 		for (const connection of connections) {

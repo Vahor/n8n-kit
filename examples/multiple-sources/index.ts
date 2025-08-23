@@ -1,9 +1,11 @@
 import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
 import { NoOp, StickyNote } from "@vahor/n8n-kit/nodes";
 import {
+	DocumentDefaultDataLoader,
 	EmbeddingsGoogleGemini,
 	GoogleDriveTrigger,
 	GoogleDriveV2,
+	TextSplitterRecursiveCharacterTextSplitter,
 	VectorStorePineconeInsert,
 } from "@vahor/n8n-kit/nodes/generated";
 
@@ -123,6 +125,7 @@ const workflow = new Workflow("my-workflow", {
 					label: "Pinecone Vector Store",
 					pineconeApiCredentials: pineconeApiCredentials,
 					parameters: {
+						mode: "insert",
 						pineconeIndex: {
 							value: "company-files",
 							mode: "list",
@@ -138,7 +141,30 @@ const workflow = new Workflow("my-workflow", {
 							},
 						}),
 					)
-					.withDocument(new NoOp("document-to-vector-store")),
+					.withDocument(
+						new DocumentDefaultDataLoader("document-to-vector-store", {
+							label: "Default Data Loader",
+							parameters: {
+								textSplittingMode: "custom", // Needed as we are using 1.1 and expected is in 1 : https://github.com/n8n-io/n8n/commit/40850c95b680a54f16fe8133ff7b801008879df2
+								dataType: "binary",
+								binaryMode: "specificField",
+							},
+						})
+							// Here the code gen was not able to parse the custom type, but it allowed us to use a .withCustom() method
+							// so we use it here. The connection type is ai_textSplitter
+							.withCustom(
+								"ai_textSplitter",
+								new TextSplitterRecursiveCharacterTextSplitter(
+									"text-splitter",
+									{
+										label: "Recursive Character Text Splitter",
+										parameters: {
+											chunkOverlap: 100,
+										},
+									},
+								),
+							),
+					),
 			),
 
 		// chat to ai-agent
