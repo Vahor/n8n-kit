@@ -29,7 +29,10 @@ export interface GongNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly call?: any;
+    readonly call?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
 
     /**
      * Default: {}
@@ -51,12 +54,18 @@ export interface GongNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "fromDateTime"?: string, "toDateTime"?: string, "workspaceId"?: string, "callIds"?: string, "primaryUserIds"?: any } | { "createdFromDateTime"?: string, "createdToDateTime"?: string, "userIds"?: string };
+    readonly filters?: { "fromDateTime"?: string, "toDateTime"?: string, "workspaceId"?: string, "callIds"?: string, "primaryUserIds"?: {
+	value: string,
+	mode: "list" | "id",
+} } | { "createdFromDateTime"?: string, "createdToDateTime"?: string, "userIds"?: string };
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: {
+	value: string,
+	mode: "list" | "id",
+};
 
 
 }

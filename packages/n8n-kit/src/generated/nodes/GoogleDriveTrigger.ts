@@ -21,7 +21,10 @@ export interface GoogleDriveTriggerNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly fileToWatch?: any;
+    readonly fileToWatch?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * When to trigger this node
@@ -32,7 +35,10 @@ export interface GoogleDriveTriggerNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly folderToWatch?: any;
+    readonly folderToWatch?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     readonly asas?: string;
 

@@ -30,7 +30,13 @@ export interface SlackV2NodeParameters {
      * The Slack channel to archive
      * Default: {"mode":"list","value":""}
      */
-    readonly channelId?: any | string;
+    readonly channelId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+} | string | {
+	value: string,
+	mode: "list" | "id" | "name" | "url",
+};
 
     /**
      * Whether to create a Public or a Private Slack channel. <a href="https://slack.com/help/articles/360017938993-What-is-a-channel">More info</a>.
@@ -105,7 +111,13 @@ export interface SlackV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: {
+	value: string,
+	mode: "list" | "id" | "username",
+} | {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to send a simple text message, or use Slack’s Blocks UI builder for more sophisticated messages that include form fields, sections and more

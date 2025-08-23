@@ -54,7 +54,10 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any;
+    readonly group?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: "simple"
@@ -98,7 +101,10 @@ export interface MicrosoftEntraNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether the account is enabled

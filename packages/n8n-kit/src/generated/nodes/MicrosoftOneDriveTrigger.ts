@@ -37,13 +37,19 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
      * The file to operate on. The 'By URL' option only accepts URLs that start with 'https://onedrive.live.com'.
      * Default: {"mode":"id","value":""}
      */
-    readonly fileId?: any;
+    readonly fileId?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * The folder to operate on. The 'By URL' option only accepts URLs that start with 'https://onedrive.live.com'.
      * Default: {"mode":"id","value":"","cachedResultName":""}
      */
-    readonly folderId?: any;
+    readonly folderId?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * Default: {}

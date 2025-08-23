@@ -14,7 +14,10 @@ export interface AwsSnsTriggerNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly topic?: any;
+    readonly topic?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
 
 }

@@ -24,7 +24,10 @@ export interface OpenAiAINodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly modelId?: any;
+    readonly modelId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The name of the assistant. The maximum length is 256 characters.
@@ -64,13 +67,19 @@ export interface OpenAiAINodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "temperature"?: number, "topP"?: number, "failIfExists"?: boolean } | { "baseURL"?: string, "maxRetries"?: number, "timeout"?: number, "preserveOriginalTools"?: boolean } | { "codeInterpreter"?: boolean, "description"?: string, "file_ids"?: any[], "instructions"?: string, "knowledgeRetrieval"?: boolean, "modelId"?: any, "name"?: string, "removeCustomTools"?: boolean, "temperature"?: number, "topP"?: number } | { "response_format"?: "mp3" | "opus" | "aac" | "flac", "speed"?: number, "binaryPropertyOutput"?: string } | { "language"?: string, "temperature"?: number } | { "temperature"?: number } | { "purpose"?: "assistants" | "fine-tune" } | { "purpose"?: "any" | "assistants" | "fine-tune" } | { "n"?: number, "dalleQuality"?: "hd" | "standard", "quality"?: "high" | "medium" | "low", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792" | "1024x1024" | "1024x1536" | "1536x1024", "style"?: "natural" | "vivid", "returnImageUrls"?: boolean, "binaryPropertyOutput"?: string } | { "detail"?: "auto" | "low" | "high", "maxTokens"?: number } | { "useStableModel"?: boolean } | { "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number, "reasoning_effort"?: "low" | "medium" | "high", "maxToolsIterations"?: number };
+    readonly options?: { "temperature"?: number, "topP"?: number, "failIfExists"?: boolean } | { "baseURL"?: string, "maxRetries"?: number, "timeout"?: number, "preserveOriginalTools"?: boolean } | { "codeInterpreter"?: boolean, "description"?: string, "file_ids"?: any[], "instructions"?: string, "knowledgeRetrieval"?: boolean, "modelId"?: {
+	value: string,
+	mode: "list" | "id",
+}, "name"?: string, "removeCustomTools"?: boolean, "temperature"?: number, "topP"?: number } | { "response_format"?: "mp3" | "opus" | "aac" | "flac", "speed"?: number, "binaryPropertyOutput"?: string } | { "language"?: string, "temperature"?: number } | { "temperature"?: number } | { "purpose"?: "assistants" | "fine-tune" } | { "purpose"?: "any" | "assistants" | "fine-tune" } | { "n"?: number, "dalleQuality"?: "hd" | "standard", "quality"?: "high" | "medium" | "low", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792" | "1024x1024" | "1024x1536" | "1536x1024", "style"?: "natural" | "vivid", "returnImageUrls"?: boolean, "binaryPropertyOutput"?: string } | { "detail"?: "auto" | "low" | "high", "maxTokens"?: number } | { "useStableModel"?: boolean } | { "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number, "reasoning_effort"?: "low" | "medium" | "high", "maxToolsIterations"?: number };
 
     /**
      * Assistant to respond to the message. You can add, modify or remove assistants in the <a href="https://platform.openai.com/playground?mode=assistant" target="_blank">playground</a>.
      * Default: {"mode":"list","value":""}
      */
-    readonly assistantId?: any;
+    readonly assistantId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: "auto"
@@ -129,7 +138,10 @@ export interface OpenAiAINodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly fileId?: any;
+    readonly fileId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: "url"

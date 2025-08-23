@@ -25,7 +25,10 @@ export interface MySqlV2NodeParameters {
      * The table you want to work on
      * Default: {"mode":"list","value":""}
      */
-    readonly table?: any;
+    readonly table?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * Default: "truncate"

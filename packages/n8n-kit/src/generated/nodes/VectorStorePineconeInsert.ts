@@ -14,7 +14,10 @@ export interface VectorStorePineconeInsertNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly pineconeIndex?: any;
+    readonly pineconeIndex?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     readonly pineconeNamespace?: string;
 

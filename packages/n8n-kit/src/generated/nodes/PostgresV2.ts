@@ -25,13 +25,19 @@ export interface PostgresV2NodeParameters {
      * The schema that contains the table you want to work on
      * Default: {"mode":"list","value":"public"}
      */
-    readonly schema?: any;
+    readonly schema?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * The table you want to work on
      * Default: {"mode":"list","value":""}
      */
-    readonly table?: any;
+    readonly table?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * Default: "truncate"

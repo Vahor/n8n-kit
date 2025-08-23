@@ -40,7 +40,10 @@ export interface VectorStoreQdrantNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly qdrantCollection?: any;
+    readonly qdrantCollection?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch

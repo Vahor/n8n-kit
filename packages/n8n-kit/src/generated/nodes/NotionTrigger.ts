@@ -22,7 +22,10 @@ export interface NotionTriggerNodeParameters {
      * The Notion Database to operate on
      * Default: {"mode":"list","value":""}
      */
-    readonly databaseId?: any;
+    readonly databaseId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Whether to return a simplified version of the response instead of the raw data

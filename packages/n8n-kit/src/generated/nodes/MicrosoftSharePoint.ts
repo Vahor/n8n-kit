@@ -25,19 +25,28 @@ export interface MicrosoftSharePointNodeParameters {
      * Select the site to retrieve folders from
      * Default: {"mode":"list","value":""}
      */
-    readonly site?: any;
+    readonly site?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Select the folder to download the file from
      * Default: {"mode":"list","value":""}
      */
-    readonly folder?: any;
+    readonly folder?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Select the file to download
      * Default: {"mode":"list","value":""}
      */
-    readonly file?: any;
+    readonly file?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * If not specified, the original file name will be used
@@ -58,7 +67,10 @@ export interface MicrosoftSharePointNodeParameters {
      * Select the list you want to create an item in
      * Default: {"mode":"list","value":""}
      */
-    readonly list?: any;
+    readonly list?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     readonly noticeUnsupportedFields?: string;
 
@@ -72,7 +84,10 @@ export interface MicrosoftSharePointNodeParameters {
      * Select the item you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly item?: any;
+    readonly item?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: true

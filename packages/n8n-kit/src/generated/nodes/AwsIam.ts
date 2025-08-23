@@ -25,13 +25,19 @@ export interface AwsIamNodeParameters {
      * Select the user you want to add to the group
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: {
+	value: string,
+	mode: "list" | "userName",
+};
 
     /**
      * Select the group you want to add the user to
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any;
+    readonly group?: {
+	value: string,
+	mode: "list" | "groupName",
+};
 
     /**
      * The username of the new user to create

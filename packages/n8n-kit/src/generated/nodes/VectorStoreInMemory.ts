@@ -40,7 +40,10 @@ export interface VectorStoreInMemoryNodeParameters {
      * The key to use to store the vector memory in the workflow data. The key will be prefixed with the workflow ID to avoid collisions.
      * Default: "vector_store_key"
      */
-    readonly memoryKey?: string | any;
+    readonly memoryKey?: string | {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch

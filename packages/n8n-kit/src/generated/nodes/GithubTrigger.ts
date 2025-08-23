@@ -21,12 +21,18 @@ export interface GithubTriggerNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly owner?: any;
+    readonly owner?: {
+	value: string,
+	mode: "list" | "url" | "name",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly repository?: any;
+    readonly repository?: {
+	value: string,
+	mode: "list" | "url" | "name",
+};
 
     /**
      * The events to listen to

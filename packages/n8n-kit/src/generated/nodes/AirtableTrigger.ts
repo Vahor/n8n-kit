@@ -20,12 +20,18 @@ export interface AirtableTriggerNodeParameters {
      * The Airtable Base in which to operate on
      * Default: {"mode":"url","value":""}
      */
-    readonly baseId?: any;
+    readonly baseId?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * Default: {"mode":"url","value":""}
      */
-    readonly tableId?: any;
+    readonly tableId?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * A Created Time or Last Modified Time field that will be used to sort records. If you do not have a Created Time or Last Modified Time field in your schema, please create one, because without this field trigger will not work correctly.

@@ -15,7 +15,10 @@ export interface GoogleCalendarTriggerNodeParameters {
      * Google Calendar to operate on
      * Default: {"mode":"list","value":""}
      */
-    readonly calendarId?: any;
+    readonly calendarId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     readonly triggerOn?: "eventCancelled" | "eventCreated" | "eventEnded" | "eventStarted" | "eventUpdated";
 

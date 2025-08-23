@@ -31,24 +31,36 @@ export interface GithubNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly owner?: any;
+    readonly owner?: {
+	value: string,
+	mode: "list" | "url" | "name",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly repository?: any;
+    readonly repository?: {
+	value: string,
+	mode: "list" | "url" | "name",
+};
 
     /**
      * The workflow to dispatch
      * Default: {"mode":"list","value":""}
      */
-    readonly workflowId?: any;
+    readonly workflowId?: {
+	value: string,
+	mode: "list" | "filename" | "name",
+};
 
     /**
      * The git reference for the workflow dispatch (branch or tag name)
      * Default: "main"
      */
-    readonly ref?: string | any;
+    readonly ref?: string | {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * JSON object with input parameters for the workflow

@@ -40,7 +40,10 @@ export interface VectorStoreWeaviateNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly weaviateCollection?: any;
+    readonly weaviateCollection?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch

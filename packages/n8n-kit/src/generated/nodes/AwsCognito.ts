@@ -25,7 +25,10 @@ export interface AwsCognitoNodeParameters {
      * Select the user pool to use
      * Default: {"mode":"list","value":""}
      */
-    readonly userPool?: any;
+    readonly userPool?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The name of the new group to create
@@ -41,7 +44,10 @@ export interface AwsCognitoNodeParameters {
      * Select the group you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly group?: any;
+    readonly group?: {
+	value: string,
+	mode: "list" | "groupName",
+};
 
     /**
      * Whether to include a list of users in the group
@@ -69,7 +75,10 @@ export interface AwsCognitoNodeParameters {
      * Select the user you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly user?: any;
+    readonly user?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to return a simplified version of the response instead of the raw data

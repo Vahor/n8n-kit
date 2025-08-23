@@ -31,7 +31,10 @@ export interface GoogleAnalyticsV2NodeParameters {
      * The Property of Google Analytics
      * Default: {"mode":"list","value":""}
      */
-    readonly propertyId?: any;
+    readonly propertyId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: "last7days"
@@ -89,7 +92,10 @@ export interface GoogleAnalyticsV2NodeParameters {
      * The View of Google Analytics
      * Default: {"mode":"list","value":""}
      */
-    readonly viewId?: any | string;
+    readonly viewId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+} | string;
 
     /**
      * Metrics in the request

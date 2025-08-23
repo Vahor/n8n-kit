@@ -26,17 +26,26 @@ export interface MicrosoftExcelV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly workbook?: any;
+    readonly workbook?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly worksheet?: any;
+    readonly worksheet?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly table?: any;
+    readonly table?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: "define"

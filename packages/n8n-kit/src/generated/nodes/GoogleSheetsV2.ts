@@ -34,13 +34,19 @@ export interface GoogleSheetsV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly documentId?: any;
+    readonly documentId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["documentId.value"]}
      */
-    readonly sheetName?: any;
+    readonly sheetName?: {
+	value: string,
+	mode: "list" | "url" | "id" | "name",
+};
 
     /**
      * Whether to insert the input data this node receives in the new row

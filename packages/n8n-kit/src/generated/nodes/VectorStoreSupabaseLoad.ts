@@ -14,7 +14,10 @@ export interface VectorStoreSupabaseLoadNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly tableName?: any;
+    readonly tableName?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Name of the query to use for matching documents

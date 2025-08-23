@@ -40,7 +40,10 @@ export interface VectorStorePineconeNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly pineconeIndex?: any;
+    readonly pineconeIndex?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch

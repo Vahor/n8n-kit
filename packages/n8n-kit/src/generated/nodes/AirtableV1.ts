@@ -29,12 +29,18 @@ export interface AirtableV1NodeParameters {
      * The Airtable Base in which to operate on
      * Default: {"mode":"url","value":""}
      */
-    readonly application?: any;
+    readonly application?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * Default: {"mode":"url","value":""}
      */
-    readonly table?: any;
+    readonly table?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * Whether all fields should be sent to Airtable or only specific ones

@@ -30,17 +30,26 @@ export interface GoogleBigQueryV2NodeParameters {
      * Projects to which you have been granted any project role
      * Default: {"mode":"list","value":""}
      */
-    readonly projectId?: any;
+    readonly projectId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly datasetId?: any;
+    readonly datasetId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly tableId?: any;
+    readonly tableId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * SQL query to execute, you can find more information <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax" target="_blank">here</a>. Standard SQL syntax used by default, but you can also use Legacy SQL syntax by using optinon 'Use Legacy SQL'.

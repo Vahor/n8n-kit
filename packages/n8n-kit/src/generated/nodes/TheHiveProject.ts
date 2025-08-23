@@ -36,12 +36,21 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly alertId?: any;
+    readonly alertId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly id?: any;
+    readonly id?: {
+	value: string,
+	mode: "list" | "url" | "id",
+} | {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -87,7 +96,10 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly caseId?: any;
+    readonly caseId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -133,7 +145,10 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly commentId?: any;
+    readonly commentId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to search for comments in all alerts and cases or in a specific case or alert
@@ -144,12 +159,18 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly logId?: any;
+    readonly logId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly taskId?: any;
+    readonly taskId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -186,7 +207,10 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly observableId?: any;
+    readonly observableId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -219,7 +243,10 @@ export interface TheHiveProjectNodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["caseId"]}
      */
-    readonly pageId?: any;
+    readonly pageId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to search in knowledge base or only in the selected case

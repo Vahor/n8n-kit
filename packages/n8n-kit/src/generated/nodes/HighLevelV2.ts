@@ -36,14 +36,20 @@ export interface HighLevelV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "notes"?: string, "tags"?: string, "timezone"?: any, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "tags"?: string, "stageId"?: string } | { "assignedTo"?: string, "body"?: string } | { "endTime"?: string, "title"?: string, "appointmentStatus"?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", "assignedUserId"?: string, "address"?: string, "ignoreDateRange"?: boolean, "toNotify"?: boolean } | { "timezone"?: string, "userId"?: string, "userIds"?: { "userIds"?: string }, "enableLookBusy"?: boolean };
+    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "notes"?: string, "tags"?: string, "timezone"?: {
+	value: string,
+	mode: "list" | "id",
+}, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "tags"?: string, "stageId"?: string } | { "assignedTo"?: string, "body"?: string } | { "endTime"?: string, "title"?: string, "appointmentStatus"?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", "assignedUserId"?: string, "address"?: string, "ignoreDateRange"?: boolean, "toNotify"?: boolean } | { "timezone"?: string, "userId"?: string, "userIds"?: { "userIds"?: string }, "enableLookBusy"?: boolean };
 
     readonly contactId?: string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: any, "website"?: string } | { "assignedTo"?: string, "monetaryValue"?: number, "name"?: string, "pipelineId"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned" } | { "assignedTo"?: string, "completed"?: boolean, "body"?: string, "dueDate"?: string, "title"?: string };
+    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: {
+	value: string,
+	mode: "list" | "id",
+}, "website"?: string } | { "assignedTo"?: string, "monetaryValue"?: number, "name"?: string, "pipelineId"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned" } | { "assignedTo"?: string, "completed"?: boolean, "body"?: string, "dueDate"?: string, "title"?: string };
 
     /**
      * Whether to return all results or only up to a given limit

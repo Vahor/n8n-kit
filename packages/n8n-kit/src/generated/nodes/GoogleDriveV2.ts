@@ -45,7 +45,10 @@ export interface GoogleDriveV2NodeParameters {
      * The shared drive to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly driveId?: any;
+    readonly driveId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -63,7 +66,10 @@ export interface GoogleDriveV2NodeParameters {
      * The file to copy
      * Default: {"mode":"list","value":""}
      */
-    readonly fileId?: any;
+    readonly fileId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Whether to copy the file in the same folder as the original file
@@ -75,7 +81,10 @@ export interface GoogleDriveV2NodeParameters {
      * The folder where to save the copied file
      * Default: {"mode":"list","value":"root","cachedResultName":"/ (Root folder)"}
      */
-    readonly folderId?: any;
+    readonly folderId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * The text to create the file with
@@ -119,13 +128,22 @@ export interface GoogleDriveV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly filter?: { "driveId"?: any, "folderId"?: any, "whatToSearch"?: "all" | "files" | "folders", "fileTypes"?: ("*" | "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.folder" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.sites" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video")[] | ("*" | "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.sites" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video")[], "includeTrashed"?: boolean };
+    readonly filter?: { "driveId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+}, "folderId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+}, "whatToSearch"?: "all" | "files" | "folders", "fileTypes"?: ("*" | "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.folder" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.sites" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video")[] | ("*" | "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.sites" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video")[], "includeTrashed"?: boolean };
 
     /**
      * The folder to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly folderNoRootId?: any;
+    readonly folderNoRootId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
 
 }

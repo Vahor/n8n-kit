@@ -27,7 +27,10 @@ export interface E2eTestNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly rlc?: any;
+    readonly rlc?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}

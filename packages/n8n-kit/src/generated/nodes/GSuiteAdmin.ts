@@ -25,7 +25,10 @@ export interface GSuiteAdminNodeParameters {
      * Select the device you want to retrieve
      * Default: {"mode":"list","value":""}
      */
-    readonly deviceId?: any;
+    readonly deviceId?: {
+	value: string,
+	mode: "list" | "deviceId",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -76,7 +79,13 @@ export interface GSuiteAdminNodeParameters {
      * Select the group to perform the operation on
      * Default: {"mode":"list","value":""}
      */
-    readonly groupId?: any;
+    readonly groupId?: {
+	value: string,
+	mode: "list" | "GroupId",
+} | {
+	value: string,
+	mode: "list" | "groupId",
+};
 
     /**
      * The group's display name
@@ -102,7 +111,10 @@ export interface GSuiteAdminNodeParameters {
      * Select the user to perform the operation on
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any;
+    readonly userId?: {
+	value: string,
+	mode: "list" | "userEmail" | "userId",
+};
 
     readonly firstName?: string;
 

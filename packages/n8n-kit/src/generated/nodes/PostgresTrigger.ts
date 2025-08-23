@@ -19,12 +19,18 @@ export interface PostgresTriggerNodeParameters {
     /**
      * Default: {"mode":"list","value":"public"}
      */
-    readonly schema?: any;
+    readonly schema?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly tableName?: any;
+    readonly tableName?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * Name of the channel to listen to

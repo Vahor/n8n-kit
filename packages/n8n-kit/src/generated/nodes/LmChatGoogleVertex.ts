@@ -20,7 +20,10 @@ export interface LmChatGoogleVertexNodeParameters {
      * Select or enter your Google Cloud project ID
      * Default: {"mode":"list","value":""}
      */
-    readonly projectId?: any;
+    readonly projectId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The model which will generate the completion. <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models">Learn more</a>.

@@ -25,7 +25,10 @@ export interface OktaNodeParameters {
      * The user you want to operate on. Choose from the list, or specify an ID.
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any;
+    readonly userId?: {
+	value: string,
+	mode: "list" | "login" | "id",
+};
 
     readonly firstName?: string;
 

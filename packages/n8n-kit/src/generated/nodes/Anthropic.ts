@@ -24,7 +24,10 @@ export interface AnthropicNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly modelId?: any;
+    readonly modelId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: "What's in this document?"

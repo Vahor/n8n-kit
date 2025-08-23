@@ -61,7 +61,10 @@ export interface N8nNodeParameters {
     /**
      * Default: {}
      */
-    readonly filters?: { "workflowId"?: any, "status"?: "error" | "success" | "waiting" } | { "activeWorkflows"?: boolean, "tags"?: string, "name"?: string, "projectId"?: string, "excludePinnedData"?: boolean };
+    readonly filters?: { "workflowId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+}, "status"?: "error" | "success" | "waiting" } | { "activeWorkflows"?: boolean, "tags"?: string, "name"?: string, "projectId"?: string, "excludePinnedData"?: boolean };
 
     /**
      * Default: {}
@@ -72,7 +75,10 @@ export interface N8nNodeParameters {
      * Workflow to filter the executions by
      * Default: {"mode":"list","value":""}
      */
-    readonly workflowId?: any;
+    readonly workflowId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href="https://docs.n8n.io/api/api-reference/#tag/Workflow/paths/~1workflows/post">documentation</a>.

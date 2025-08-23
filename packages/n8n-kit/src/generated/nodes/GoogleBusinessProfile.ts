@@ -25,13 +25,19 @@ export interface GoogleBusinessProfileNodeParameters {
      * The Google Business Profile account
      * Default: {"mode":"list","value":""}
      */
-    readonly account?: any;
+    readonly account?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * The specific location or business associated with the account
      * Default: {"mode":"list","value":""}
      */
-    readonly location?: any;
+    readonly location?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * The type of post to create (standard, event, offer, or alert)
@@ -84,7 +90,10 @@ export interface GoogleBusinessProfileNodeParameters {
      * Select the post to retrieve its details
      * Default: {"mode":"list","value":""}
      */
-    readonly post?: any;
+    readonly post?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -104,7 +113,10 @@ export interface GoogleBusinessProfileNodeParameters {
      * Select the review to retrieve its details
      * Default: {"mode":"list","value":""}
      */
-    readonly review?: any;
+    readonly review?: {
+	value: string,
+	mode: "list" | "id" | "name",
+};
 
     /**
      * The body of the reply (up to 4096 characters)

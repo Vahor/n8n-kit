@@ -40,7 +40,10 @@ export interface VectorStoreSupabaseNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly tableName?: any;
+    readonly tableName?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch

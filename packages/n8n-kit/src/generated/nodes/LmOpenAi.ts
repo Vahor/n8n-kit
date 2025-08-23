@@ -17,7 +17,10 @@ export interface LmOpenAiNodeParameters {
      * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
      * Default: {"mode":"list","value":"gpt-3.5-turbo-instruct"}
      */
-    readonly model?: any;
+    readonly model?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     readonly notice?: string;
 

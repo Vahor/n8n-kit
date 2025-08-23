@@ -29,26 +29,53 @@ export interface JiraNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly project?: any;
+    readonly project?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly issueType?: any;
+    readonly issueType?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     readonly summary?: string;
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assignee"?: any, "description"?: string, "componentIds"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: any, "reporter"?: any, "updateHistory"?: boolean } | { "expand"?: string, "fields"?: string, "fieldsByKey"?: boolean, "properties"?: string, "updateHistory"?: boolean } | { "htmlBody"?: string, "subject"?: string, "textBody"?: string } | { "expand"?: string, "transitionId"?: string, "skipRemoteOnlyCondition"?: boolean } | { "password"?: string, "notification"?: boolean } | { "expand"?: ("groups" | "applicationRoles")[] };
+    readonly additionalFields?: { "assignee"?: {
+	value: string,
+	mode: "list" | "id",
+}, "description"?: string, "componentIds"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: {
+	value: string,
+	mode: "list" | "id",
+}, "reporter"?: {
+	value: string,
+	mode: "list" | "id",
+}, "updateHistory"?: boolean } | { "expand"?: string, "fields"?: string, "fieldsByKey"?: boolean, "properties"?: string, "updateHistory"?: boolean } | { "htmlBody"?: string, "subject"?: string, "textBody"?: string } | { "expand"?: string, "transitionId"?: string, "skipRemoteOnlyCondition"?: boolean } | { "password"?: string, "notification"?: boolean } | { "expand"?: ("groups" | "applicationRoles")[] };
 
     readonly issueKey?: string;
 
     /**
      * Default: {}
      */
-    readonly updateFields?: { "assignee"?: any, "description"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "issueType"?: string, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: any, "reporter"?: any, "summary"?: string, "statusId"?: any };
+    readonly updateFields?: { "assignee"?: {
+	value: string,
+	mode: "list" | "id",
+}, "description"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "issueType"?: string, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: {
+	value: string,
+	mode: "list" | "id",
+}, "reporter"?: {
+	value: string,
+	mode: "list" | "id",
+}, "summary"?: string, "statusId"?: {
+	value: string,
+	mode: "list" | "id",
+} };
 
     readonly deleteSubtasks?: boolean;
 

@@ -34,7 +34,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly calendarId?: any;
+    readonly calendarId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -56,7 +59,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "color"?: "lightBlue" | "lightBrown" | "lightGray" | "lightGreen" | "lightOrange" | "lightPink" | "lightRed" | "lightTeal" | "lightYellow", "isDefaultCalendar"?: boolean, "name"?: string } | { "bccRecipients"?: string, "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "isReadReceiptRequested"?: boolean, "replyTo"?: string, "subject"?: string, "toRecipients"?: string } | { "bccRecipients"?: string, "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "folderId"?: any, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string };
+    readonly updateFields?: { "color"?: "lightBlue" | "lightBrown" | "lightGray" | "lightGreen" | "lightOrange" | "lightPink" | "lightRed" | "lightTeal" | "lightYellow", "isDefaultCalendar"?: boolean, "name"?: string } | { "bccRecipients"?: string, "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "isReadReceiptRequested"?: boolean, "replyTo"?: string, "subject"?: string, "toRecipients"?: string } | { "bccRecipients"?: string, "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "folderId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+}, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string };
 
     readonly givenName?: string;
 
@@ -65,7 +71,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly contactId?: any;
+    readonly contactId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: "simple"
@@ -92,12 +101,21 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly draftId?: any;
+    readonly draftId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {}
      */
-    readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean } | { "folderId"?: any } | { "fields"?: ("childFolderCount" | "displayName" | "isHidden" | "parentFolderId" | "totalItemCount" | "unreadItemCount")[] } | { "fields"?: ("childFolderCount" | "displayName" | "isHidden" | "parentFolderId" | "totalItemCount" | "unreadItemCount")[], "includeChildFolders"?: boolean, "folderId"?: any } | { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean, "getMimeContent"?: { "values": any } } | { "saveAsDraft"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "fileName"?: string } | { "fields"?: ("contentType" | "isInline" | "lastModifiedDateTime" | "name" | "size")[] };
+    readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean } | { "folderId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+} } | { "fields"?: ("childFolderCount" | "displayName" | "isHidden" | "parentFolderId" | "totalItemCount" | "unreadItemCount")[] } | { "fields"?: ("childFolderCount" | "displayName" | "isHidden" | "parentFolderId" | "totalItemCount" | "unreadItemCount")[], "includeChildFolders"?: boolean, "folderId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+} } | { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean, "getMimeContent"?: { "values": any } } | { "saveAsDraft"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "fileName"?: string } | { "fields"?: ("contentType" | "isInline" | "lastModifiedDateTime" | "name" | "size")[] };
 
     /**
      * Comma-separated list of email addresses of recipients
@@ -105,12 +123,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-23T19:28:51.675+02:00"
+     * Default: "2025-08-23T20:16:46.888+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-23T19:58:51.675+02:00"
+     * Default: "2025-08-23T20:46:46.888+02:00"
      */
     readonly endDateTime?: string;
 
@@ -118,7 +136,10 @@ export interface MicrosoftOutlookV2NodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["calendarId.value"]}
      */
-    readonly eventId?: any;
+    readonly eventId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: true
@@ -133,7 +154,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly folderId?: any;
+    readonly folderId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     readonly filtersNotice?: string;
 
@@ -145,7 +169,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly messageId?: any;
+    readonly messageId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to reply to the sender only or to the entire list of recipients
@@ -199,7 +226,10 @@ export interface MicrosoftOutlookV2NodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["messageId.value"]}
      */
-    readonly attachmentId?: any;
+    readonly attachmentId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
 
 }

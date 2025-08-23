@@ -29,13 +29,19 @@ export interface AirtableV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly base?: any;
+    readonly base?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["base.value"]}
      */
-    readonly table?: any;
+    readonly table?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mappingMode":"defineBelow","value":null}
@@ -46,7 +52,10 @@ export interface AirtableV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "downloadFields"?: any[] } | { "downloadFields"?: any[], "fields"?: any[], "view"?: any } | { "permissionLevel"?: ("comment" | "create" | "edit" | "none" | "read")[] };
+    readonly options?: { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "downloadFields"?: any[] } | { "downloadFields"?: any[], "fields"?: any[], "view"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+} } | { "permissionLevel"?: ("comment" | "create" | "edit" | "none" | "read")[] };
 
     /**
      * ID of the record to delete. <a href="https://support.airtable.com/docs/record-id" target="_blank">More info</a>.

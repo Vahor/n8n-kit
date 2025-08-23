@@ -21,7 +21,10 @@ export interface LmChatOpenAiNodeParameters {
      * Default: "gpt-4o-mini"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"={{ $parameter.options?.baseURL?.split(\"/\").slice(-1).pop() || $credentials?.url?.split(\"/\").slice(-1).pop() || \"v1\" }}/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{\n\t\t\t\t\t\t\t\t\t\t\t\t($parameter.options?.baseURL && !$parameter.options?.baseURL?.startsWith('https://api.openai.com/')) ||\n\t\t\t\t\t\t\t\t\t\t\t\t($credentials?.url && !$credentials.url.startsWith('https://api.openai.com/')) ||\n\t\t\t\t\t\t\t\t\t\t\t\t$responseItem.id.startsWith('ft:') ||\n\t\t\t\t\t\t\t\t\t\t\t\t$responseItem.id.startsWith('o1') ||\n\t\t\t\t\t\t\t\t\t\t\t\t$responseItem.id.startsWith('o3') ||\n\t\t\t\t\t\t\t\t\t\t\t\t($responseItem.id.startsWith('gpt-') && !$responseItem.id.includes('instruct'))\n\t\t\t\t\t\t\t\t\t\t\t}}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly model?: string | any;
+    readonly model?: string | {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Additional options to add

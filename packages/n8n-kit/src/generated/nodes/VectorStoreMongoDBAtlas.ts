@@ -40,7 +40,10 @@ export interface VectorStoreMongoDBAtlasNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly mongoCollection?: any;
+    readonly mongoCollection?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * The field with the embedding array

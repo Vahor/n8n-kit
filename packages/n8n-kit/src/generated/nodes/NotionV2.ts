@@ -29,7 +29,10 @@ export interface NotionV2NodeParameters {
      * The Notion Block to append blocks to
      * Default: {"mode":"url","value":""}
      */
-    readonly blockId?: any;
+    readonly blockId?: {
+	value: string,
+	mode: "url" | "id",
+};
 
     /**
      * Default: {}
@@ -60,7 +63,10 @@ export interface NotionV2NodeParameters {
      * The Notion Database to get
      * Default: {"mode":"list","value":""}
      */
-    readonly databaseId?: any;
+    readonly databaseId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
@@ -93,7 +99,10 @@ export interface NotionV2NodeParameters {
      * The Notion Database Page to update
      * Default: {"mode":"url","value":""}
      */
-    readonly pageId?: any | string;
+    readonly pageId?: {
+	value: string,
+	mode: "url" | "id",
+} | string;
 
     /**
      * Default: "none"

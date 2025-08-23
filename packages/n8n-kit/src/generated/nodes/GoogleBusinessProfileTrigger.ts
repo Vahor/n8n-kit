@@ -20,13 +20,19 @@ export interface GoogleBusinessProfileTriggerNodeParameters {
      * The Google Business Profile account
      * Default: {"mode":"list","value":""}
      */
-    readonly account?: any;
+    readonly account?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     /**
      * The specific location or business associated with the account
      * Default: {"mode":"list","value":""}
      */
-    readonly location?: any;
+    readonly location?: {
+	value: string,
+	mode: "list" | "name",
+};
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 

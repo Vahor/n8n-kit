@@ -95,6 +95,13 @@ export const toTypescriptType = (
 			}
 			return "any[]";
 
+		case "resourceLocator":
+			return `
+{
+	value: string,
+	mode: ${property.modes!.map((mode) => `"${mode.name}"`).join(" | ")},
+}`.trim();
+
 		default:
 			return mapPropertyType(property.type);
 	}

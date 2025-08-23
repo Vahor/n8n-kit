@@ -26,7 +26,10 @@ export interface AwsSnsNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly topic?: any;
+    readonly topic?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Subject when the message is delivered to email endpoints

@@ -25,7 +25,10 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Select the team from the list, by URL, or by ID (the ID is the "groupId" parameter in the URL you get from "Get a link to the team")
      * Default: {"mode":"list","value":""}
      */
-    readonly teamId?: any;
+    readonly teamId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * The name of the new channel you want to create
@@ -35,14 +38,20 @@ export interface MicrosoftTeamsV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "description"?: string } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "assignedTo"?: any, "dueDateTime"?: string, "percentComplete"?: number };
+    readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "description"?: string } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "assignedTo"?: {
+	value: string,
+	mode: "list" | "id",
+}, "dueDateTime"?: string, "percentComplete"?: number };
 
     /**
      * Select the channel from the list, by URL, or by ID (the ID is the "threadId" in the URL)
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["teamId.value"]}
      */
-    readonly channelId?: any;
+    readonly channelId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -72,7 +81,10 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Select the chat from the list, by URL, or by ID (find the chat ID after "conversations/" in the URL)
      * Default: {"mode":"list","value":""}
      */
-    readonly chatId?: any;
+    readonly chatId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The ID of the message to retrieve
@@ -110,21 +122,30 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupSource"]}
      */
-    readonly groupId?: any;
+    readonly groupId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The plan for the task to belong to
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupId.value"]}
      */
-    readonly planId?: any;
+    readonly planId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The bucket for the task to belong to
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["planId.value"]}
      */
-    readonly bucketId?: any;
+    readonly bucketId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Title of the task
@@ -145,7 +166,19 @@ export interface MicrosoftTeamsV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "assignedTo"?: any, "bucketId"?: any, "dueDateTime"?: string, "groupId"?: any, "percentComplete"?: number, "planId"?: any, "title"?: string };
+    readonly updateFields?: { "assignedTo"?: {
+	value: string,
+	mode: "list" | "id",
+}, "bucketId"?: {
+	value: string,
+	mode: "list" | "id",
+}, "dueDateTime"?: string, "groupId"?: {
+	value: string,
+	mode: "list" | "id",
+}, "percentComplete"?: number, "planId"?: {
+	value: string,
+	mode: "list" | "id",
+}, "title"?: string };
 
 
 }

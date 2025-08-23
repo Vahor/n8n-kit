@@ -24,7 +24,10 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly searchJobId?: any;
+    readonly searchJobId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The name of the report
@@ -34,7 +37,10 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly reportId?: any;
+    readonly reportId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -89,7 +95,10 @@ export interface SplunkV2NodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any;
+    readonly userId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {}

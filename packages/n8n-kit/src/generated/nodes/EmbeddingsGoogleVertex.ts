@@ -20,7 +20,10 @@ export interface EmbeddingsGoogleVertexNodeParameters {
      * Select or enter your Google Cloud project ID
      * Default: {"mode":"list","value":""}
      */
-    readonly projectId?: any;
+    readonly projectId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The model which will generate the embeddings. <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings-api">Learn more</a>.

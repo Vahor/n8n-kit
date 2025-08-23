@@ -26,7 +26,10 @@ export interface MicrosoftTeamsTriggerNodeParameters {
      * Select a team from the list, enter an ID or a URL
      * Default: {"mode":"list","value":""}
      */
-    readonly teamId?: any;
+    readonly teamId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
 
     /**
      * Whether to watch for the event in all the available channels
@@ -37,7 +40,10 @@ export interface MicrosoftTeamsTriggerNodeParameters {
      * Select a channel from the list, enter an ID or a URL
      * Default: {"mode":"list","value":""}
      */
-    readonly channelId?: any;
+    readonly channelId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
 
     /**
      * Whether to watch for the event in all the available chats
@@ -48,7 +54,10 @@ export interface MicrosoftTeamsTriggerNodeParameters {
      * Select a chat from the list, enter an ID or a URL
      * Default: {"mode":"list","value":""}
      */
-    readonly chatId?: any;
+    readonly chatId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
 
 
 }

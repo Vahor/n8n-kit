@@ -41,7 +41,10 @@ export interface AzureCosmosDbNodeParameters {
      * Select the container you want to delete
      * Default: {"mode":"list","value":""}
      */
-    readonly container?: any;
+    readonly container?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
@@ -71,7 +74,10 @@ export interface AzureCosmosDbNodeParameters {
      * Select the item to be deleted
      * Default: {"mode":"list","value":""}
      */
-    readonly item?: any;
+    readonly item?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The SQL query to execute. Use $1, $2, $3, etc., to reference the 'Query Parameters' set in the options below.

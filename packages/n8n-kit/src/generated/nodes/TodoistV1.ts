@@ -32,7 +32,10 @@ export interface TodoistV1NodeParameters {
      * The project you want to operate on. Choose from the list, or specify an ID.
      * Default: {"mode":"list","value":""}
      */
-    readonly project?: any;
+    readonly project?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Section to which you want move the task. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

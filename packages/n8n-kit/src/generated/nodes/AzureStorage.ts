@@ -30,7 +30,10 @@ export interface AzureStorageNodeParameters {
      * Container to create or replace a blob in
      * Default: {"mode":"list","value":""}
      */
-    readonly container?: any;
+    readonly container?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The name of the new or existing blob
@@ -62,7 +65,10 @@ export interface AzureStorageNodeParameters {
      * Blob to be deleted
      * Default: {"mode":"list","value":""}
      */
-    readonly blob?: any;
+    readonly blob?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit

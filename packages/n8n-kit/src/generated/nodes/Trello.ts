@@ -25,7 +25,10 @@ export interface TrelloNodeParameters {
      * The ID of the card
      * Default: {"mode":"list","value":""}
      */
-    readonly cardId?: any;
+    readonly cardId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * The URL of the attachment to add
@@ -40,7 +43,10 @@ export interface TrelloNodeParameters {
     /**
      * The ID of the attachment to delete
      */
-    readonly id?: string | any;
+    readonly id?: string | {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * The name of the board
@@ -114,7 +120,10 @@ export interface TrelloNodeParameters {
      * The ID of the board
      * Default: {"mode":"list","value":""}
      */
-    readonly boardId?: any;
+    readonly boardId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * The color for the label

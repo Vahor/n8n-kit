@@ -30,7 +30,10 @@ export interface GoogleCalendarNodeParameters {
      * Google Calendar to operate on
      * Default: {"mode":"list","value":""}
      */
-    readonly calendar?: any;
+    readonly calendar?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Start of the interval
@@ -45,7 +48,16 @@ export interface GoogleCalendarNodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "outputFormat"?: "availability" | "bookedSlots" | "raw", "timezone"?: any } | { "sendUpdates"?: "all" | "externalOnly" | "none" } | { "maxAttendees"?: number, "returnNextInstance"?: boolean, "timeZone"?: any } | { "timeMin"?: string, "timeMax"?: string, "singleEvents"?: boolean, "fields"?: string, "iCalUID"?: string, "maxAttendees"?: number, "orderBy"?: "startTime" | "updated", "query"?: string, "recurringEventHandling"?: "expand" | "first" | "next", "showDeleted"?: boolean, "showHiddenInvitations"?: boolean, "timeZone"?: any, "updatedMin"?: string };
+    readonly options?: { "outputFormat"?: "availability" | "bookedSlots" | "raw", "timezone"?: {
+	value: string,
+	mode: "list" | "id",
+} } | { "sendUpdates"?: "all" | "externalOnly" | "none" } | { "maxAttendees"?: number, "returnNextInstance"?: boolean, "timeZone"?: {
+	value: string,
+	mode: "list" | "id",
+} } | { "timeMin"?: string, "timeMax"?: string, "singleEvents"?: boolean, "fields"?: string, "iCalUID"?: string, "maxAttendees"?: number, "orderBy"?: "startTime" | "updated", "query"?: string, "recurringEventHandling"?: "expand" | "first" | "next", "showDeleted"?: boolean, "showHiddenInvitations"?: boolean, "timeZone"?: {
+	value: string,
+	mode: "list" | "id",
+}, "updatedMin"?: string };
 
     /**
      * Start time of the event

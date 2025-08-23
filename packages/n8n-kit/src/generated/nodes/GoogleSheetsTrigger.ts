@@ -19,13 +19,19 @@ export interface GoogleSheetsTriggerNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly documentId?: any;
+    readonly documentId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["documentId.value"]}
      */
-    readonly sheetName?: any;
+    readonly sheetName?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * It will be triggered also by newly created columns (if the 'Columns to Watch' option is not set)

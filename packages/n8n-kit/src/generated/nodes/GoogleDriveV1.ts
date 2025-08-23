@@ -32,7 +32,10 @@ export interface GoogleDriveV1NodeParameters {
      * The ID of the file
      * Default: {"mode":"list","value":""}
      */
-    readonly fileId?: any;
+    readonly fileId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Default: "data"
@@ -110,7 +113,10 @@ export interface GoogleDriveV1NodeParameters {
      * The ID of the drive
      * Default: {"mode":"list","value":""}
      */
-    readonly driveId?: any;
+    readonly driveId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit

@@ -32,7 +32,10 @@ export interface SlackTriggerNodeParameters {
      * The Slack channel to listen to events from. Applies to events: Bot/App mention, File Shared, New Message Posted on Channel, Reaction Added.
      * Default: {"mode":"list","value":""}
      */
-    readonly channelId?: any;
+    readonly channelId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
 
     /**
      * Whether to download the files and add it to the output

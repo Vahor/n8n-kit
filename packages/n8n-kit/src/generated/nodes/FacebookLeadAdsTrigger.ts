@@ -22,13 +22,19 @@ export interface FacebookLeadAdsTriggerNodeParameters {
      * The page linked to the form for retrieving new leads
      * Default: {"mode":"list","value":""}
      */
-    readonly page?: any;
+    readonly page?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The form to monitor for fetching lead details upon submission
      * Default: {"mode":"list","value":""}
      */
-    readonly form?: any;
+    readonly form?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Default: {}

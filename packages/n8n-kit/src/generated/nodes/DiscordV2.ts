@@ -30,13 +30,19 @@ export interface DiscordV2NodeParameters {
      * Select the server (guild) that your bot is connected to
      * Default: {"mode":"list","value":""}
      */
-    readonly guildId?: any;
+    readonly guildId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Select the channel by name, URL, or ID
      * Default: {"mode":"list","value":""}
      */
-    readonly channelId?: any;
+    readonly channelId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
 
     /**
      * Whether to return all results or only up to a given limit
@@ -53,7 +59,10 @@ export interface DiscordV2NodeParameters {
     /**
      * Default: {}
      */
-    readonly options?: { "simplify"?: boolean } | { "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "message_reference"?: string, "tts"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "nsfw"?: boolean, "bitrate"?: number, "categoryId"?: any, "position"?: number, "rate_limit_per_user"?: number, "topic"?: string, "user_limit"?: number } | { "filter"?: ("0" | "2" | "4")[] } | { "avatar_url"?: string, "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "tts"?: boolean, "username"?: string, "wait"?: boolean };
+    readonly options?: { "simplify"?: boolean } | { "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "message_reference"?: string, "tts"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "nsfw"?: boolean, "bitrate"?: number, "categoryId"?: {
+	value: string,
+	mode: "list" | "url" | "id",
+}, "position"?: number, "rate_limit_per_user"?: number, "topic"?: string, "user_limit"?: number } | { "filter"?: ("0" | "2" | "4")[] } | { "avatar_url"?: string, "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "tts"?: boolean, "username"?: string, "wait"?: boolean };
 
     /**
      * The ID of the message
@@ -75,7 +84,10 @@ export interface DiscordV2NodeParameters {
      * Select the user you want to assign a role to
      * Default: {"mode":"list","value":""}
      */
-    readonly userId?: any;
+    readonly userId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * The content of the message (up to 2000 characters)

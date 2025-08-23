@@ -40,7 +40,10 @@ export interface VectorStoreMilvusNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly milvusCollection?: any;
+    readonly milvusCollection?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch
