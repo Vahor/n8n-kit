@@ -129,9 +129,9 @@ const entryNode = Chain.start(
 	}),
 );
 
-const workflow = new Workflow("complex-workflow", {
+const workflow = new Workflow("weird-workflow", {
 	active: true,
-	name: "Complex Workflow",
+	name: "Weird Workflow",
 	definition: (workflow) =>
 		entryNode.next(({ $ }) =>
 			checkValidEntityId({ $, workflow }).true(
