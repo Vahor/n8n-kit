@@ -121,9 +121,17 @@ const langChainNodeAlreadyExistInBaseNode = (node: string) => {
 	return baseNodes.some((baseNode) => baseNode.includes(node));
 };
 
-for (const node of allNodes) {
+const getNodeName = (nodePath: string) => {
+	return nodePath.split("/").pop()?.split(".")[0]!;
+};
+
+const versionsCache = {};
+
+for (const node of allNodes.sort((a, b) =>
+	getNodeName(a).localeCompare(getNodeName(b)),
+)) {
 	const isLangChainNode = node.includes("@n8n/nodes-langchain");
-	let nodeName = node.split("/").pop()?.split(".")[0]!;
+	let nodeName = getNodeName(node);
 	const nodePathWithoutStartingSlash = node.split("vendor")[1];
 
 	if (isLangChainNode && langChainNodeAlreadyExistInBaseNode(nodeName)) {
@@ -137,7 +145,7 @@ for (const node of allNodes) {
 			(v) => typeof v === "function",
 		);
 		if (!firstClassExport) {
-			// console.error(`No class export for ${nodePathWithoutStartingSlash}`);
+			console.error(`No class export for ${nodePathWithoutStartingSlash}`);
 			continue;
 		}
 		// @ts-expect-error: it works
@@ -145,6 +153,9 @@ for (const node of allNodes) {
 
 		if (instance.nodeVersions != null) {
 			// We expect to find a .v2.node.ts file later
+			for (const [version, node] of Object.entries(instance.nodeVersions)) {
+				versionsCache[`${nodeName}V${version}`] = node;
+			}
 			current++;
 			continue;
 		}
@@ -159,8 +170,20 @@ for (const node of allNodes) {
 		description.__nodename = nodeName;
 
 		if (description.version === undefined || description.name === undefined) {
-			console.error(`No version or name for ${nodePathWithoutStartingSlash}`);
-			continue;
+			const nodeNameWithoutVersion = nodeName.split("V")[0];
+			const currentVersion = Array.isArray(description.version)
+				? description.version.at(-1)
+				: description.version;
+			const cacheKey = `${nodeNameWithoutVersion}V${currentVersion}`;
+			const fromCache = versionsCache[cacheKey];
+			if (!fromCache) {
+				console.error(`No version or name for ${nodeName} and not in cache`);
+				continue;
+			}
+			delete versionsCache[cacheKey];
+			description.version = fromCache.description.version;
+			description.name = fromCache.description.name;
+			description.description ??= fromCache.description.description;
 		}
 
 		await generateTypescriptNodeOutput(description, `${nodeName}.ts`);

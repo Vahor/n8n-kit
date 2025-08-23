@@ -36,26 +36,14 @@
 			"parameters": {
 				"event": "fileCreated",
 				"triggerOn": "specificFolder",
-				"options": {
-					"fileType": "all"
-				},
-				"pollTimes": {
-					"item": [
-						{
-							"mode": "everyMinute"
-						}
-					]
-				},
+				"options": { "fileType": "all" },
+				"pollTimes": { "item": [{ "mode": "everyMinute" }] },
 				"folderToWatch": {
 					"value": "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
 					"mode": "list"
 				}
 			},
-			"credentials": {
-				"googleDriveOAuth2Api": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
 		},
 		{
 			"id": "gdrive-file-updated",
@@ -66,23 +54,13 @@
 			"parameters": {
 				"event": "fileUpdated",
 				"triggerOn": "specificFolder",
-				"pollTimes": {
-					"item": [
-						{
-							"mode": "everyMinute"
-						}
-					]
-				},
+				"pollTimes": { "item": [{ "mode": "everyMinute" }] },
 				"folderToWatch": {
 					"value": "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
 					"mode": "list"
 				}
 			},
-			"credentials": {
-				"googleDriveOAuth2Api": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
 		},
 		{
 			"id": "download-from-drive",
@@ -92,27 +70,19 @@
 			"typeVersion": 3,
 			"parameters": {
 				"operation": "download",
-				"fileId": {
-					"mode": "id",
-					"value": "={{ $json.id }}"
-				},
-				"options": {
-					"fileName": "={{ $json.name }}"
-				}
+				"fileId": { "mode": "id", "value": "={{ $json.id }}" },
+				"options": { "fileName": "={{ $json.name }}" }
 			},
-			"credentials": {
-				"googleDriveOAuth2Api": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
 		},
 		{
 			"id": "upload-to-pinecone",
 			"name": "Pinecone Vector Store",
-			"type": "n8n-nodes-base.noOp",
+			"type": "n8n-nodes-base.vectorStorePinecone",
 			"position": [745, 1130],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1.3,
+			"parameters": {},
+			"credentials": {}
 		},
 		{
 			"id": "note-chat-to-ai-agent",
@@ -120,10 +90,7 @@
 			"type": "n8n-nodes-base.stickyNote",
 			"position": [420, 660],
 			"typeVersion": 1,
-			"parameters": {
-				"content": "## Chat with company documents",
-				"color": 1
-			}
+			"parameters": { "content": "## Chat with company documents", "color": 1 }
 		},
 		{
 			"id": "chat-message-received",
@@ -167,33 +134,15 @@
 		},
 		"Download File From Google Drive": {
 			"main": [
-				[
-					{
-						"node": "Pinecone Vector Store",
-						"type": "main",
-						"index": 0
-					}
-				]
+				[{ "node": "Pinecone Vector Store", "type": "main", "index": 0 }]
 			]
 		},
 		"When chat message received": {
-			"main": [
-				[
-					{
-						"node": "AI Agent",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
+			"main": [[{ "node": "AI Agent", "type": "main", "index": 0 }]]
 		}
 	},
 	"settings": {},
 	"staticData": {},
 	"active": true,
-	"tags": [
-		{
-			"name": "@vahor/n8n-iJFYtqyGWaroz"
-		}
-	]
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }

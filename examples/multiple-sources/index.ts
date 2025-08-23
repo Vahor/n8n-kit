@@ -1,11 +1,4 @@
-import {
-	App,
-	Chain,
-	Credentials,
-	expr,
-	Placeholder,
-	Workflow,
-} from "@vahor/n8n-kit";
+import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
 import { StickyNote } from "@vahor/n8n-kit/nodes";
 import {
 	GoogleDriveTrigger,
@@ -16,14 +9,14 @@ import {
 
 // 	https://n8n.io/workflows/2753-rag-chatbot-for-company-documents-using-google-drive-and-gemini/
 
-const googleApiCredentials = Credentials.byId({
-	name: "googleApi",
-	id: "some-id",
-});
-const gmailApiCredentials = Credentials.byId({
-	name: "gmailOAuth2",
-	id: "some-id",
-});
+// const googleApiCredentials = Credentials.byId({
+// 	name: "googleApi",
+// 	id: "some-id",
+// });
+// const gmailApiCredentials = Credentials.byId({
+// 	name: "gmailOAuth2",
+// 	id: "some-id",
+// });
 const googleDriveApiCredentials = Credentials.byId({
 	name: "googleDriveOAuth2Api",
 	id: "some-id",
