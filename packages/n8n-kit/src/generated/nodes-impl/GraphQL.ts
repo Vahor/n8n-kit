@@ -37,14 +37,14 @@ export class GraphQL<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GraphQLNodeParameters, "httpBasicAuthCredentials | httpCustomAuthCredentials | httpDigestAuthCredentials | httpHeaderAuthCredentials | httpQueryAuthCredentials | oAuth1ApiCredentials | oAuth2ApiCredentials"> {
 
-        const { httpBasicAuthCredentials:_0, httpCustomAuthCredentials:_1, httpDigestAuthCredentials:_2, httpHeaderAuthCredentials:_3, httpQueryAuthCredentials:_4, oAuth1ApiCredentials:_5, oAuth2ApiCredentials:_6, ...rest } = this.props;
+        const { httpBasicAuthCredentials:_0, httpCustomAuthCredentials:_1, httpDigestAuthCredentials:_2, httpHeaderAuthCredentials:_3, httpQueryAuthCredentials:_4, oAuth1ApiCredentials:_5, oAuth2ApiCredentials:_6, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.httpBasicAuthCredentials, this.props.httpCustomAuthCredentials, this.props.httpDigestAuthCredentials, this.props.httpHeaderAuthCredentials, this.props.httpQueryAuthCredentials, this.props.oAuth1ApiCredentials, this.props.oAuth2ApiCredentials];
+        return [this.props?.httpBasicAuthCredentials, this.props?.httpCustomAuthCredentials, this.props?.httpDigestAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.httpQueryAuthCredentials, this.props?.oAuth1ApiCredentials, this.props?.oAuth2ApiCredentials];
 
     }
 

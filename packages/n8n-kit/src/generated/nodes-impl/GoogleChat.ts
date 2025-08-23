@@ -27,14 +27,14 @@ export class GoogleChat<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GoogleChatNodeParameters, "googleApiCredentials | googleChatOAuth2ApiCredentials"> {
 
-        const { googleApiCredentials:_0, googleChatOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { googleApiCredentials:_0, googleChatOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.googleApiCredentials, this.props.googleChatOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleChatOAuth2ApiCredentials];
 
     }
 

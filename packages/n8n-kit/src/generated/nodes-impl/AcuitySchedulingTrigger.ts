@@ -27,14 +27,14 @@ export class AcuitySchedulingTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<AcuitySchedulingTriggerNodeParameters, "acuitySchedulingApiCredentials | acuitySchedulingOAuth2ApiCredentials"> {
 
-        const { acuitySchedulingApiCredentials:_0, acuitySchedulingOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { acuitySchedulingApiCredentials:_0, acuitySchedulingOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.acuitySchedulingApiCredentials, this.props.acuitySchedulingOAuth2ApiCredentials];
+        return [this.props?.acuitySchedulingApiCredentials, this.props?.acuitySchedulingOAuth2ApiCredentials];
 
     }
 

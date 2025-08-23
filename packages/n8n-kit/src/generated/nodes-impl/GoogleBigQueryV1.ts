@@ -27,14 +27,14 @@ export class GoogleBigQueryV1<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GoogleBigQueryV1NodeParameters, "googleApiCredentials | googleBigQueryOAuth2ApiCredentials"> {
 
-        const { googleApiCredentials:_0, googleBigQueryOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { googleApiCredentials:_0, googleBigQueryOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.googleApiCredentials, this.props.googleBigQueryOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleBigQueryOAuth2ApiCredentials];
 
     }
 

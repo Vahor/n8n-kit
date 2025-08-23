@@ -46,7 +46,7 @@
 			"id": "group-1",
 			"name": "group-1",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [350, 80],
+			"position": [700, 70],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 1",

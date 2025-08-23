@@ -27,14 +27,14 @@ export class LinearTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<LinearTriggerNodeParameters, "linearApiCredentials | linearOAuth2ApiCredentials"> {
 
-        const { linearApiCredentials:_0, linearOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { linearApiCredentials:_0, linearOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.linearApiCredentials, this.props.linearOAuth2ApiCredentials];
+        return [this.props?.linearApiCredentials, this.props?.linearOAuth2ApiCredentials];
 
     }
 

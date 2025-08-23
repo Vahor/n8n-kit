@@ -27,14 +27,14 @@ export class Ghost<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GhostNodeParameters, "ghostAdminApiCredentials | ghostContentApiCredentials"> {
 
-        const { ghostAdminApiCredentials:_0, ghostContentApiCredentials:_1, ...rest } = this.props;
+        const { ghostAdminApiCredentials:_0, ghostContentApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.ghostAdminApiCredentials, this.props.ghostContentApiCredentials];
+        return [this.props?.ghostAdminApiCredentials, this.props?.ghostContentApiCredentials];
 
     }
 

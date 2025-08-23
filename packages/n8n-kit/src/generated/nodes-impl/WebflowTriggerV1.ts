@@ -27,14 +27,14 @@ export class WebflowTriggerV1<L extends string> extends Node<L> {
 
     override getParameters() : Omit<WebflowTriggerV1NodeParameters, "webflowApiCredentials | webflowOAuth2ApiCredentials"> {
 
-        const { webflowApiCredentials:_0, webflowOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { webflowApiCredentials:_0, webflowOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.webflowApiCredentials, this.props.webflowOAuth2ApiCredentials];
+        return [this.props?.webflowApiCredentials, this.props?.webflowOAuth2ApiCredentials];
 
     }
 

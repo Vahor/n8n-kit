@@ -29,14 +29,14 @@ export class SentryIo<L extends string> extends Node<L> {
 
     override getParameters() : Omit<SentryIoNodeParameters, "sentryIoOAuth2ApiCredentials | sentryIoApiCredentials | sentryIoServerApiCredentials"> {
 
-        const { sentryIoOAuth2ApiCredentials:_0, sentryIoApiCredentials:_1, sentryIoServerApiCredentials:_2, ...rest } = this.props;
+        const { sentryIoOAuth2ApiCredentials:_0, sentryIoApiCredentials:_1, sentryIoServerApiCredentials:_2, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.sentryIoOAuth2ApiCredentials, this.props.sentryIoApiCredentials, this.props.sentryIoServerApiCredentials];
+        return [this.props?.sentryIoOAuth2ApiCredentials, this.props?.sentryIoApiCredentials, this.props?.sentryIoServerApiCredentials];
 
     }
 

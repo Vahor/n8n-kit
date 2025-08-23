@@ -109,7 +109,7 @@ const generateTypescriptNodeOutput = async (
 		);
 		code.indent();
 		code.line(
-			`const { ${creds.map((c, i) => `${c}:_${i}`).join(", ")}, ...rest } = this.props;`,
+			`const { ${creds.map((c, i) => `${c}:_${i}`).join(", ")}, ...rest } = this.props${isPropsOptional ? " ?? {}" : ""};`,
 		);
 		code.line(`return rest;`);
 	} else {
@@ -129,7 +129,7 @@ const generateTypescriptNodeOutput = async (
 		code.line(`override getCredentials() {`);
 		code.indent();
 		code.line(
-			`return [${credsArray.map((c) => `this.props.${c}Credentials`).join(", ")}];`,
+			`return [${credsArray.map((c) => `this.props${isPropsOptional ? "?" : ""}.${c}Credentials`).join(", ")}];`,
 		);
 		code.unindent();
 		code.line(`}`);

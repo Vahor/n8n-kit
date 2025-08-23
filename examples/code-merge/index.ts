@@ -1,11 +1,6 @@
-import {
-	App,
-	Chain,
-	Code,
-	ManualTrigger,
-	Merge,
-	Workflow,
-} from "@vahor/n8n-kit";
+import { App, Chain, Workflow } from "@vahor/n8n-kit";
+import { Merge } from "@vahor/n8n-kit/nodes";
+import { Code, ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
 // https://n8n.io/workflows/655-merge-greetings-with-the-users-based-on-the-language/
 

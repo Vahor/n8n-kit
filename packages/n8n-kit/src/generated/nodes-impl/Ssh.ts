@@ -27,14 +27,14 @@ export class Ssh<L extends string> extends Node<L> {
 
     override getParameters() : Omit<SshNodeParameters, "sshPasswordCredentials | sshPrivateKeyCredentials"> {
 
-        const { sshPasswordCredentials:_0, sshPrivateKeyCredentials:_1, ...rest } = this.props;
+        const { sshPasswordCredentials:_0, sshPrivateKeyCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.sshPasswordCredentials, this.props.sshPrivateKeyCredentials];
+        return [this.props?.sshPasswordCredentials, this.props?.sshPrivateKeyCredentials];
 
     }
 

@@ -3,13 +3,11 @@ import {
 	App,
 	Chain,
 	Group,
-	If,
 	type,
-	Webhook,
-	WebhookResponse,
 	Workflow,
 } from "@vahor/n8n-kit";
-import { NoOp } from "@vahor/n8n-kit/generated";
+import { If, Webhook, WebhookResponse } from "@vahor/n8n-kit/nodes";
+import { NoOp } from "@vahor/n8n-kit/nodes/generated";
 
 // This workflow does not have a real use case, it's just to test weird things
 
@@ -113,7 +111,7 @@ const checkValidExecutionType = ({
 
 const entryNode = Chain.start(
 	new Webhook("webhook", {
-		name: "Webhook",
+		label: "Webhook",
 		httpMethod: "POST",
 		path: "abc",
 		responseMode: "responseNode",

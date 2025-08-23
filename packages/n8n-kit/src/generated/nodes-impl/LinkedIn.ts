@@ -27,14 +27,14 @@ export class LinkedIn<L extends string> extends Node<L> {
 
     override getParameters() : Omit<LinkedInNodeParameters, "linkedInOAuth2ApiCredentials | linkedInCommunityManagementOAuth2ApiCredentials"> {
 
-        const { linkedInOAuth2ApiCredentials:_0, linkedInCommunityManagementOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { linkedInOAuth2ApiCredentials:_0, linkedInCommunityManagementOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.linkedInOAuth2ApiCredentials, this.props.linkedInCommunityManagementOAuth2ApiCredentials];
+        return [this.props?.linkedInOAuth2ApiCredentials, this.props?.linkedInCommunityManagementOAuth2ApiCredentials];
 
     }
 

@@ -27,14 +27,14 @@ export class AgentV1AI<L extends string> extends Node<L> {
 
     override getParameters() : Omit<AgentV1AINodeParameters, "mySqlCredentials | postgresCredentials"> {
 
-        const { mySqlCredentials:_0, postgresCredentials:_1, ...rest } = this.props;
+        const { mySqlCredentials:_0, postgresCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.mySqlCredentials, this.props.postgresCredentials];
+        return [this.props?.mySqlCredentials, this.props?.postgresCredentials];
 
     }
 

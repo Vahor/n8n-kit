@@ -1,5 +1,5 @@
 import { version } from "../generated/nodes/IfV2";
-import type { IsNullable } from "../utils/types";
+import type { ErrorMessage, IsNullable } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import { Chain } from "../workflow/chain/chain";
 import type {
@@ -55,9 +55,6 @@ interface IfBaseProps {
 
 export interface IfProps extends IfBaseProps, NodeProps {}
 
-type trueAlreayUsedError = "true() is already used";
-type falseAlreayUsedError = "false() is already used";
-
 export class If<
 	L extends string,
 	True extends IContext | null = null,
@@ -108,7 +105,7 @@ export class If<
 	public true<C extends IContext>(
 		next: IsNullable<True> extends true
 			? IChainable<any, C>
-			: trueAlreayUsedError,
+			: ErrorMessage<"true() node is already set">,
 		connectionOptions?: Omit<ConnectionOptions, "from">,
 	): If<L, C, False> {
 		if (typeof next === "string") throw new Error(next);
@@ -119,7 +116,7 @@ export class If<
 	public false<C extends IContext>(
 		next: IsNullable<False> extends true
 			? IChainable<any, C>
-			: falseAlreayUsedError,
+			: ErrorMessage<"false() node is already set">,
 		connectionOptions?: Omit<ConnectionOptions, "from">,
 	): If<L, True, C> {
 		if (typeof next === "string") throw new Error(next);

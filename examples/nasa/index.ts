@@ -1,17 +1,8 @@
-import {
-	App,
-	Chain,
-	Credentials,
-	expr,
-	If,
-	Nasa,
-	PostBin,
-	ScheduleTrigger,
-	StickyNote,
-	Workflow,
-} from "@vahor/n8n-kit";
+import { App, Chain, Credentials, expr, Workflow } from "@vahor/n8n-kit";
+import { If, Nasa, ScheduleTrigger, StickyNote } from "@vahor/n8n-kit/nodes";
+import { PostBin } from "@vahor/n8n-kit/nodes/generated";
 
-const nasaCredentials = Credentials.byId("nasa-credentials", {
+const nasaCredentials = Credentials.byId({
 	name: "nasaApi",
 	id: "yTwI5ccVwfGll1Kf",
 });
@@ -30,7 +21,7 @@ const workflow = new Workflow("my-workflow", {
 
 		Chain.start(
 			new ScheduleTrigger("schedule-trigger", {
-				name: "Schedule trigger",
+				label: "Schedule trigger",
 				interval: [
 					{
 						field: "weeks",
@@ -43,7 +34,7 @@ const workflow = new Workflow("my-workflow", {
 		)
 			.next(
 				new Nasa("nasa", {
-					credentials: nasaCredentials,
+					nasaApiCredentials: nasaCredentials,
 					resource: "donkiSolarFlare",
 					additionalFields: {
 						startDate: expr`{{ $today.minus(1, 'day') }}`,

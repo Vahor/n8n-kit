@@ -29,14 +29,14 @@ export class PipedriveTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<PipedriveTriggerNodeParameters, "pipedriveApiCredentials | pipedriveOAuth2ApiCredentials | httpBasicAuthCredentials"> {
 
-        const { pipedriveApiCredentials:_0, pipedriveOAuth2ApiCredentials:_1, httpBasicAuthCredentials:_2, ...rest } = this.props;
+        const { pipedriveApiCredentials:_0, pipedriveOAuth2ApiCredentials:_1, httpBasicAuthCredentials:_2, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.pipedriveApiCredentials, this.props.pipedriveOAuth2ApiCredentials, this.props.httpBasicAuthCredentials];
+        return [this.props?.pipedriveApiCredentials, this.props?.pipedriveOAuth2ApiCredentials, this.props?.httpBasicAuthCredentials];
 
     }
 

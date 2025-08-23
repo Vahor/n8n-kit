@@ -27,14 +27,14 @@ export class TypeformTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<TypeformTriggerNodeParameters, "typeformApiCredentials | typeformOAuth2ApiCredentials"> {
 
-        const { typeformApiCredentials:_0, typeformOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { typeformApiCredentials:_0, typeformOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.typeformApiCredentials, this.props.typeformOAuth2ApiCredentials];
+        return [this.props?.typeformApiCredentials, this.props?.typeformOAuth2ApiCredentials];
 
     }
 

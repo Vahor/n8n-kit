@@ -27,14 +27,14 @@ export class Storyblok<L extends string> extends Node<L> {
 
     override getParameters() : Omit<StoryblokNodeParameters, "storyblokContentApiCredentials | storyblokManagementApiCredentials"> {
 
-        const { storyblokContentApiCredentials:_0, storyblokManagementApiCredentials:_1, ...rest } = this.props;
+        const { storyblokContentApiCredentials:_0, storyblokManagementApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.storyblokContentApiCredentials, this.props.storyblokManagementApiCredentials];
+        return [this.props?.storyblokContentApiCredentials, this.props?.storyblokManagementApiCredentials];
 
     }
 

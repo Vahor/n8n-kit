@@ -27,14 +27,14 @@ export class NocoDB<L extends string> extends Node<L> {
 
     override getParameters() : Omit<NocoDBNodeParameters, "nocoDbCredentials | nocoDbApiTokenCredentials"> {
 
-        const { nocoDbCredentials:_0, nocoDbApiTokenCredentials:_1, ...rest } = this.props;
+        const { nocoDbCredentials:_0, nocoDbApiTokenCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.nocoDbCredentials, this.props.nocoDbApiTokenCredentials];
+        return [this.props?.nocoDbCredentials, this.props?.nocoDbApiTokenCredentials];
 
     }
 

@@ -2,7 +2,7 @@ import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import { globSync } from "tinyglobby";
 
-const buildEntrypoint = async (forFolder: string) => {
+const buildEntrypoint = async (forFolder: string, append: string[] = []) => {
 	const matchs = globSync(`../${forFolder}/**/*.ts`, {
 		cwd: path.resolve(__dirname),
 	}).sort();
@@ -17,11 +17,18 @@ const buildEntrypoint = async (forFolder: string) => {
 
 	for (const match of matchs) {
 		const relativePath = match.replace(`../${forFolder}/`, "");
-		if (relativePath === "index.ts") {
+		if (relativePath === "index.ts" || relativePath === "generated.ts") {
 			continue;
 		}
 		const withoutExtension = relativePath.replace(/\.ts$/, "");
 		code.line(`export * from "./${withoutExtension}";`);
+	}
+
+	if (append.length > 0) {
+		code.line();
+		for (const txt of append) {
+			code.line(txt);
+		}
 	}
 
 	code.closeFile(entrypointPath);

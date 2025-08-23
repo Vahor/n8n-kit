@@ -27,14 +27,14 @@ export class Zammad<L extends string> extends Node<L> {
 
     override getParameters() : Omit<ZammadNodeParameters, "zammadBasicAuthApiCredentials | zammadTokenAuthApiCredentials"> {
 
-        const { zammadBasicAuthApiCredentials:_0, zammadTokenAuthApiCredentials:_1, ...rest } = this.props;
+        const { zammadBasicAuthApiCredentials:_0, zammadTokenAuthApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.zammadBasicAuthApiCredentials, this.props.zammadTokenAuthApiCredentials];
+        return [this.props?.zammadBasicAuthApiCredentials, this.props?.zammadTokenAuthApiCredentials];
 
     }
 

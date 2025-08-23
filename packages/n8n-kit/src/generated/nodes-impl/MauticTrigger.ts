@@ -27,14 +27,14 @@ export class MauticTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<MauticTriggerNodeParameters, "mauticApiCredentials | mauticOAuth2ApiCredentials"> {
 
-        const { mauticApiCredentials:_0, mauticOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { mauticApiCredentials:_0, mauticOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.mauticApiCredentials, this.props.mauticOAuth2ApiCredentials];
+        return [this.props?.mauticApiCredentials, this.props?.mauticOAuth2ApiCredentials];
 
     }
 

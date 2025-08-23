@@ -27,14 +27,14 @@ export class GoogleSheetsV1<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GoogleSheetsV1NodeParameters, "googleApiCredentials | googleSheetsOAuth2ApiCredentials"> {
 
-        const { googleApiCredentials:_0, googleSheetsOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { googleApiCredentials:_0, googleSheetsOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.googleApiCredentials, this.props.googleSheetsOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleSheetsOAuth2ApiCredentials];
 
     }
 

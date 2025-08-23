@@ -27,14 +27,14 @@ export class GoogleBooks<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GoogleBooksNodeParameters, "googleApiCredentials | googleBooksOAuth2ApiCredentials"> {
 
-        const { googleApiCredentials:_0, googleBooksOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { googleApiCredentials:_0, googleBooksOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.googleApiCredentials, this.props.googleBooksOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleBooksOAuth2ApiCredentials];
 
     }
 

@@ -1,14 +1,10 @@
+import { App, Chain, expr, type, Workflow } from "@vahor/n8n-kit";
 import {
-	App,
-	Chain,
 	Code,
 	ExecuteWorkflow,
 	ExecuteWorkflowTrigger,
-	expr,
-	ManualTrigger,
-	type,
-	Workflow,
-} from "@vahor/n8n-kit";
+} from "@vahor/n8n-kit/nodes";
+import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
 const reusableWorkflow = new Workflow("reusable-workflow", {
 	name: "Reusable workflow",

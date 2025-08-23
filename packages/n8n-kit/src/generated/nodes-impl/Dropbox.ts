@@ -27,14 +27,14 @@ export class Dropbox<L extends string> extends Node<L> {
 
     override getParameters() : Omit<DropboxNodeParameters, "dropboxApiCredentials | dropboxOAuth2ApiCredentials"> {
 
-        const { dropboxApiCredentials:_0, dropboxOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { dropboxApiCredentials:_0, dropboxOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.dropboxApiCredentials, this.props.dropboxOAuth2ApiCredentials];
+        return [this.props?.dropboxApiCredentials, this.props?.dropboxOAuth2ApiCredentials];
 
     }
 

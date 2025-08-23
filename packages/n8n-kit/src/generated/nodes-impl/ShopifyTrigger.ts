@@ -29,14 +29,14 @@ export class ShopifyTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<ShopifyTriggerNodeParameters, "shopifyApiCredentials | shopifyAccessTokenApiCredentials | shopifyOAuth2ApiCredentials"> {
 
-        const { shopifyApiCredentials:_0, shopifyAccessTokenApiCredentials:_1, shopifyOAuth2ApiCredentials:_2, ...rest } = this.props;
+        const { shopifyApiCredentials:_0, shopifyAccessTokenApiCredentials:_1, shopifyOAuth2ApiCredentials:_2, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.shopifyApiCredentials, this.props.shopifyAccessTokenApiCredentials, this.props.shopifyOAuth2ApiCredentials];
+        return [this.props?.shopifyApiCredentials, this.props?.shopifyAccessTokenApiCredentials, this.props?.shopifyOAuth2ApiCredentials];
 
     }
 

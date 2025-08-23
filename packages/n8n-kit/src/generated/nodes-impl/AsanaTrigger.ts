@@ -27,14 +27,14 @@ export class AsanaTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<AsanaTriggerNodeParameters, "asanaApiCredentials | asanaOAuth2ApiCredentials"> {
 
-        const { asanaApiCredentials:_0, asanaOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { asanaApiCredentials:_0, asanaOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.asanaApiCredentials, this.props.asanaOAuth2ApiCredentials];
+        return [this.props?.asanaApiCredentials, this.props?.asanaOAuth2ApiCredentials];
 
     }
 

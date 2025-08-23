@@ -29,14 +29,14 @@ export class HubspotV2<L extends string> extends Node<L> {
 
     override getParameters() : Omit<HubspotV2NodeParameters, "hubspotApiCredentials | hubspotAppTokenCredentials | hubspotOAuth2ApiCredentials"> {
 
-        const { hubspotApiCredentials:_0, hubspotAppTokenCredentials:_1, hubspotOAuth2ApiCredentials:_2, ...rest } = this.props;
+        const { hubspotApiCredentials:_0, hubspotAppTokenCredentials:_1, hubspotOAuth2ApiCredentials:_2, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.hubspotApiCredentials, this.props.hubspotAppTokenCredentials, this.props.hubspotOAuth2ApiCredentials];
+        return [this.props?.hubspotApiCredentials, this.props?.hubspotAppTokenCredentials, this.props?.hubspotOAuth2ApiCredentials];
 
     }
 

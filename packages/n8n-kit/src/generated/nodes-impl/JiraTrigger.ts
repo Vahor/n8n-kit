@@ -31,14 +31,14 @@ export class JiraTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<JiraTriggerNodeParameters, "jiraSoftwareCloudApiCredentials | jiraSoftwareServerApiCredentials | jiraSoftwareServerPatApiCredentials | httpQueryAuthCredentials"> {
 
-        const { jiraSoftwareCloudApiCredentials:_0, jiraSoftwareServerApiCredentials:_1, jiraSoftwareServerPatApiCredentials:_2, httpQueryAuthCredentials:_3, ...rest } = this.props;
+        const { jiraSoftwareCloudApiCredentials:_0, jiraSoftwareServerApiCredentials:_1, jiraSoftwareServerPatApiCredentials:_2, httpQueryAuthCredentials:_3, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.jiraSoftwareCloudApiCredentials, this.props.jiraSoftwareServerApiCredentials, this.props.jiraSoftwareServerPatApiCredentials, this.props.httpQueryAuthCredentials];
+        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials, this.props?.httpQueryAuthCredentials];
 
     }
 

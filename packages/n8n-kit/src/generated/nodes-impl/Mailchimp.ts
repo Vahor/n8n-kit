@@ -27,14 +27,14 @@ export class Mailchimp<L extends string> extends Node<L> {
 
     override getParameters() : Omit<MailchimpNodeParameters, "mailchimpApiCredentials | mailchimpOAuth2ApiCredentials"> {
 
-        const { mailchimpApiCredentials:_0, mailchimpOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { mailchimpApiCredentials:_0, mailchimpOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.mailchimpApiCredentials, this.props.mailchimpOAuth2ApiCredentials];
+        return [this.props?.mailchimpApiCredentials, this.props?.mailchimpOAuth2ApiCredentials];
 
     }
 

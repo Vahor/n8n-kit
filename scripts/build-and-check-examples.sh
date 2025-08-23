@@ -44,7 +44,7 @@ if [ -n "$(git status --porcelain $EXAMPLES_DIR/*.json)" ]; then
     git status --porcelain
     echo ""
     echo "Git diff:"
-    git --no-pager diff "$EXAMPLES_DIR/*.json"
+    git --no-pager diff "@{upstream}" -- "$EXAMPLES_DIR/*.json" 
     echo ""
     exit 1
 fi

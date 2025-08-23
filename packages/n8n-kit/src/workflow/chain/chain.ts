@@ -1,4 +1,10 @@
-import type { AnyString, IsAny, IsNever, Prettify } from "../../utils/types";
+import type {
+	AnyString,
+	ErrorMessage,
+	IsAny,
+	IsNever,
+	Prettify,
+} from "../../utils/types";
 import { Group } from "../group";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import { State } from "./state";
@@ -51,9 +57,6 @@ type ChainableProvider<N extends IChainable, CC extends ChainContext> =
 type MultipleChainableProvider<N extends IChainable, CC extends ChainContext> =
 	| Array<N>
 	| ((params: { $: ExpressionBuilderProvider<CC> }) => Array<N>);
-
-type nextAfterMultipleError =
-	"Cannot use next() after multiple(), use connect() instead";
 
 /**
  * A collection of states to chain onto
@@ -132,7 +135,7 @@ export class Chain<
 	 */
 	public next<N extends IChainable>(
 		_next: EndsInMultiple extends true
-			? nextAfterMultipleError
+			? ErrorMessage<"Cannot use next() after multiple(), use connect() instead">
 			: ChainableProvider<N, CC>,
 	): Chain<
 		AddIChainableToChainContext<N, CC>,
@@ -151,7 +154,6 @@ export class Chain<
 		} else {
 			next = _next;
 		}
-		console.log(`Adding next ${next.id} to ${this.id}`);
 
 		for (const endState of this.endStates) {
 			endState.addNext(next);

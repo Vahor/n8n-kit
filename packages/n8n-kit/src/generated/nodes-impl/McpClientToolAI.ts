@@ -27,14 +27,14 @@ export class McpClientToolAI<L extends string> extends Node<L> {
 
     override getParameters() : Omit<McpClientToolAINodeParameters, "httpBearerAuthCredentials | httpHeaderAuthCredentials"> {
 
-        const { httpBearerAuthCredentials:_0, httpHeaderAuthCredentials:_1, ...rest } = this.props;
+        const { httpBearerAuthCredentials:_0, httpHeaderAuthCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.httpBearerAuthCredentials, this.props.httpHeaderAuthCredentials];
+        return [this.props?.httpBearerAuthCredentials, this.props?.httpHeaderAuthCredentials];
 
     }
 

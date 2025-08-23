@@ -83,13 +83,13 @@ export abstract class BaseNode<
 		return Object.fromEntries(
 			credentials
 				.filter(Boolean)
-				.map((cred) => [cred!.name, { id: cred!.n8nCredentialsId }]),
+				.map((cred) => [cred!.type, { id: cred!.n8nCredentialsId }]),
 		);
 	}
 
 	toNode() {
 		// Often getParameters() returns this.props. So we want to remove the props from the parameters
-		const { name: _, ...rest } = this.getParameters() as Record<string, any>;
+		const { label: _, ...rest } = this.getParameters() as Record<string, any>;
 		return {
 			id: this.id,
 			name: this.getLabel(),

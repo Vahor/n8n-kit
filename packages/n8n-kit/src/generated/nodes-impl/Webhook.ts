@@ -29,14 +29,14 @@ export class Webhook<L extends string> extends Node<L> {
 
     override getParameters() : Omit<WebhookNodeParameters, "httpBasicAuthCredentials | httpHeaderAuthCredentials | jwtAuthCredentials"> {
 
-        const { httpBasicAuthCredentials:_0, httpHeaderAuthCredentials:_1, jwtAuthCredentials:_2, ...rest } = this.props;
+        const { httpBasicAuthCredentials:_0, httpHeaderAuthCredentials:_1, jwtAuthCredentials:_2, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.httpBasicAuthCredentials, this.props.httpHeaderAuthCredentials, this.props.jwtAuthCredentials];
+        return [this.props?.httpBasicAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.jwtAuthCredentials];
 
     }
 

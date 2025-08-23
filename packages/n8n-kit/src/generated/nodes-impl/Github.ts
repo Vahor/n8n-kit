@@ -27,14 +27,14 @@ export class Github<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GithubNodeParameters, "githubApiCredentials | githubOAuth2ApiCredentials"> {
 
-        const { githubApiCredentials:_0, githubOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { githubApiCredentials:_0, githubOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.githubApiCredentials, this.props.githubOAuth2ApiCredentials];
+        return [this.props?.githubApiCredentials, this.props?.githubOAuth2ApiCredentials];
 
     }
 

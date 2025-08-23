@@ -27,14 +27,14 @@ export class AirtableV2<L extends string> extends Node<L> {
 
     override getParameters() : Omit<AirtableV2NodeParameters, "airtableTokenApiCredentials | airtableOAuth2ApiCredentials"> {
 
-        const { airtableTokenApiCredentials:_0, airtableOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { airtableTokenApiCredentials:_0, airtableOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.airtableTokenApiCredentials, this.props.airtableOAuth2ApiCredentials];
+        return [this.props?.airtableTokenApiCredentials, this.props?.airtableOAuth2ApiCredentials];
 
     }
 

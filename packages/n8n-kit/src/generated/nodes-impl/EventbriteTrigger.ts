@@ -27,14 +27,14 @@ export class EventbriteTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<EventbriteTriggerNodeParameters, "eventbriteApiCredentials | eventbriteOAuth2ApiCredentials"> {
 
-        const { eventbriteApiCredentials:_0, eventbriteOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { eventbriteApiCredentials:_0, eventbriteOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.eventbriteApiCredentials, this.props.eventbriteOAuth2ApiCredentials];
+        return [this.props?.eventbriteApiCredentials, this.props?.eventbriteOAuth2ApiCredentials];
 
     }
 

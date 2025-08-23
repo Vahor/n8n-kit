@@ -27,14 +27,14 @@ export class Zoom<L extends string> extends Node<L> {
 
     override getParameters() : Omit<ZoomNodeParameters, "zoomApiCredentials | zoomOAuth2ApiCredentials"> {
 
-        const { zoomApiCredentials:_0, zoomOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { zoomApiCredentials:_0, zoomOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.zoomApiCredentials, this.props.zoomOAuth2ApiCredentials];
+        return [this.props?.zoomApiCredentials, this.props?.zoomOAuth2ApiCredentials];
 
     }
 

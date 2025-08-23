@@ -27,14 +27,14 @@ export class FormstackTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<FormstackTriggerNodeParameters, "formstackApiCredentials | formstackOAuth2ApiCredentials"> {
 
-        const { formstackApiCredentials:_0, formstackOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { formstackApiCredentials:_0, formstackOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.formstackApiCredentials, this.props.formstackOAuth2ApiCredentials];
+        return [this.props?.formstackApiCredentials, this.props?.formstackOAuth2ApiCredentials];
 
     }
 

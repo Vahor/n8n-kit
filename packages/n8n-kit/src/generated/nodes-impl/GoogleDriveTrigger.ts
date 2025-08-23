@@ -27,14 +27,14 @@ export class GoogleDriveTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GoogleDriveTriggerNodeParameters, "googleApiCredentials | googleDriveOAuth2ApiCredentials"> {
 
-        const { googleApiCredentials:_0, googleDriveOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { googleApiCredentials:_0, googleDriveOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.googleApiCredentials, this.props.googleDriveOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleDriveOAuth2ApiCredentials];
 
     }
 

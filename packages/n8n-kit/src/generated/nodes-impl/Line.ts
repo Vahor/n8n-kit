@@ -25,14 +25,14 @@ export class Line<L extends string> extends Node<L> {
 
     override getParameters() : Omit<LineNodeParameters, "lineNotifyOAuth2ApiCredentials"> {
 
-        const { lineNotifyOAuth2ApiCredentials:_0, ...rest } = this.props;
+        const { lineNotifyOAuth2ApiCredentials:_0, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.lineNotifyOAuth2ApiCredentials];
+        return [this.props?.lineNotifyOAuth2ApiCredentials];
 
     }
 

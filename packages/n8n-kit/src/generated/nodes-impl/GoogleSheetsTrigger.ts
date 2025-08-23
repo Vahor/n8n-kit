@@ -25,14 +25,14 @@ export class GoogleSheetsTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GoogleSheetsTriggerNodeParameters, "googleSheetsTriggerOAuth2ApiCredentials"> {
 
-        const { googleSheetsTriggerOAuth2ApiCredentials:_0, ...rest } = this.props;
+        const { googleSheetsTriggerOAuth2ApiCredentials:_0, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.googleSheetsTriggerOAuth2ApiCredentials];
+        return [this.props?.googleSheetsTriggerOAuth2ApiCredentials];
 
     }
 

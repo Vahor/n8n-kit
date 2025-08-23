@@ -27,14 +27,14 @@ export class Mailjet<L extends string> extends Node<L> {
 
     override getParameters() : Omit<MailjetNodeParameters, "mailjetEmailApiCredentials | mailjetSmsApiCredentials"> {
 
-        const { mailjetEmailApiCredentials:_0, mailjetSmsApiCredentials:_1, ...rest } = this.props;
+        const { mailjetEmailApiCredentials:_0, mailjetSmsApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.mailjetEmailApiCredentials, this.props.mailjetSmsApiCredentials];
+        return [this.props?.mailjetEmailApiCredentials, this.props?.mailjetSmsApiCredentials];
 
     }
 

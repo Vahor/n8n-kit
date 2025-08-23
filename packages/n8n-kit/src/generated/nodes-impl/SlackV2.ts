@@ -27,14 +27,14 @@ export class SlackV2<L extends string> extends Node<L> {
 
     override getParameters() : Omit<SlackV2NodeParameters, "slackApiCredentials | slackOAuth2ApiCredentials"> {
 
-        const { slackApiCredentials:_0, slackOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { slackApiCredentials:_0, slackOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.slackApiCredentials, this.props.slackOAuth2ApiCredentials];
+        return [this.props?.slackApiCredentials, this.props?.slackOAuth2ApiCredentials];
 
     }
 

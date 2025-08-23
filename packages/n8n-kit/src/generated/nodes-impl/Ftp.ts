@@ -27,14 +27,14 @@ export class Ftp<L extends string> extends Node<L> {
 
     override getParameters() : Omit<FtpNodeParameters, "ftpCredentials | sftpCredentials"> {
 
-        const { ftpCredentials:_0, sftpCredentials:_1, ...rest } = this.props;
+        const { ftpCredentials:_0, sftpCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.ftpCredentials, this.props.sftpCredentials];
+        return [this.props?.ftpCredentials, this.props?.sftpCredentials];
 
     }
 

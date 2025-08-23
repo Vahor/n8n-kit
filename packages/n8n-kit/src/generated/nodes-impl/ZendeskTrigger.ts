@@ -27,14 +27,14 @@ export class ZendeskTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<ZendeskTriggerNodeParameters, "zendeskApiCredentials | zendeskOAuth2ApiCredentials"> {
 
-        const { zendeskApiCredentials:_0, zendeskOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { zendeskApiCredentials:_0, zendeskOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.zendeskApiCredentials, this.props.zendeskOAuth2ApiCredentials];
+        return [this.props?.zendeskApiCredentials, this.props?.zendeskOAuth2ApiCredentials];
 
     }
 

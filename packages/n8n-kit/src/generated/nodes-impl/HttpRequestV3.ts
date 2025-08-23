@@ -25,14 +25,14 @@ export class HttpRequestV3<L extends string> extends Node<L> {
 
     override getParameters() : Omit<HttpRequestV3NodeParameters, "httpSslAuthCredentials"> {
 
-        const { httpSslAuthCredentials:_0, ...rest } = this.props;
+        const { httpSslAuthCredentials:_0, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.httpSslAuthCredentials];
+        return [this.props?.httpSslAuthCredentials];
 
     }
 

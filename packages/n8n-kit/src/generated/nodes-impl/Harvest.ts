@@ -27,14 +27,14 @@ export class Harvest<L extends string> extends Node<L> {
 
     override getParameters() : Omit<HarvestNodeParameters, "harvestApiCredentials | harvestOAuth2ApiCredentials"> {
 
-        const { harvestApiCredentials:_0, harvestOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { harvestApiCredentials:_0, harvestOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.harvestApiCredentials, this.props.harvestOAuth2ApiCredentials];
+        return [this.props?.harvestApiCredentials, this.props?.harvestOAuth2ApiCredentials];
 
     }
 

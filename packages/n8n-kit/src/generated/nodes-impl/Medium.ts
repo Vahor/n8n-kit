@@ -27,14 +27,14 @@ export class Medium<L extends string> extends Node<L> {
 
     override getParameters() : Omit<MediumNodeParameters, "mediumApiCredentials | mediumOAuth2ApiCredentials"> {
 
-        const { mediumApiCredentials:_0, mediumOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { mediumApiCredentials:_0, mediumOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.mediumApiCredentials, this.props.mediumOAuth2ApiCredentials];
+        return [this.props?.mediumApiCredentials, this.props?.mediumOAuth2ApiCredentials];
 
     }
 

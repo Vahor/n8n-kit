@@ -27,14 +27,14 @@ export class ServiceNow<L extends string> extends Node<L> {
 
     override getParameters() : Omit<ServiceNowNodeParameters, "serviceNowOAuth2ApiCredentials | serviceNowBasicApiCredentials"> {
 
-        const { serviceNowOAuth2ApiCredentials:_0, serviceNowBasicApiCredentials:_1, ...rest } = this.props;
+        const { serviceNowOAuth2ApiCredentials:_0, serviceNowBasicApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.serviceNowOAuth2ApiCredentials, this.props.serviceNowBasicApiCredentials];
+        return [this.props?.serviceNowOAuth2ApiCredentials, this.props?.serviceNowBasicApiCredentials];
 
     }
 

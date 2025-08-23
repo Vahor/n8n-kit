@@ -1,14 +1,17 @@
-import {
-	App,
-	Chain,
-	NoOp,
-	Placeholder,
-	StickyNote,
-	Workflow,
-} from "@vahor/n8n-kit";
-import { GmailTrigger } from "@vahor/n8n-kit/generated";
+import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
+import { StickyNote } from "@vahor/n8n-kit/nodes";
+import { GmailTrigger, NoOp } from "@vahor/n8n-kit/nodes/generated";
 
 // 	https://n8n.io/workflows/2753-rag-chatbot-for-company-documents-using-google-drive-and-gemini/
+
+const googleApiCredentials = Credentials.byId({
+	name: "googleApi",
+	id: "some-id",
+});
+const gmailApiCredentials = Credentials.byId({
+	name: "gmailOAuth2",
+	id: "some-id",
+});
 
 const workflow = new Workflow("my-workflow", {
 	active: true,
@@ -34,25 +37,25 @@ const workflow = new Workflow("my-workflow", {
 
 		Chain.start(
 			new GmailTrigger("gdrive-file-created", {
-				name: "Google Drive File Created",
-				googleApiCredentials: "",
-				gmailApiCredentials: "",
+				label: "Google Drive File Created",
+				googleApiCredentials: googleApiCredentials,
+				gmailOAuth2Credentials: gmailApiCredentials,
 			}),
 		).next(new Placeholder("download-from-drive")),
 
 		Chain.start(
 			new NoOp("gdrive-file-updated", {
-				name: "Google Drive File Updated",
+				label: "Google Drive File Updated",
 			}),
 		)
 			.next(
 				new NoOp("download-from-drive", {
-					name: "Download File From Google Drive",
+					label: "Download File From Google Drive",
 				}),
 			)
 			.next(
 				new NoOp("upload-to-pinecone", {
-					name: "Pinecone Vector Store",
+					label: "Pinecone Vector Store",
 				}),
 			),
 
@@ -64,11 +67,11 @@ const workflow = new Workflow("my-workflow", {
 		}),
 		Chain.start(
 			new NoOp("chat-message-received", {
-				name: "When chat message received",
+				label: "When chat message received",
 			}),
 		).next(
 			new NoOp("ai-agent", {
-				name: "AI Agent",
+				label: "AI Agent",
 			}),
 		),
 	],

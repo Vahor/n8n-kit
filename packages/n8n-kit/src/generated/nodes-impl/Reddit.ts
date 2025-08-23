@@ -25,14 +25,14 @@ export class Reddit<L extends string> extends Node<L> {
 
     override getParameters() : Omit<RedditNodeParameters, "redditOAuth2ApiCredentials"> {
 
-        const { redditOAuth2ApiCredentials:_0, ...rest } = this.props;
+        const { redditOAuth2ApiCredentials:_0, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.redditOAuth2ApiCredentials];
+        return [this.props?.redditOAuth2ApiCredentials];
 
     }
 

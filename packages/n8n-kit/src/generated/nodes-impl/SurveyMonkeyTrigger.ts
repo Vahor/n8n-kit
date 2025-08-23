@@ -27,14 +27,14 @@ export class SurveyMonkeyTrigger<L extends string> extends Node<L> {
 
     override getParameters() : Omit<SurveyMonkeyTriggerNodeParameters, "surveyMonkeyApiCredentials | surveyMonkeyOAuth2ApiCredentials"> {
 
-        const { surveyMonkeyApiCredentials:_0, surveyMonkeyOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { surveyMonkeyApiCredentials:_0, surveyMonkeyOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.surveyMonkeyApiCredentials, this.props.surveyMonkeyOAuth2ApiCredentials];
+        return [this.props?.surveyMonkeyApiCredentials, this.props?.surveyMonkeyOAuth2ApiCredentials];
 
     }
 

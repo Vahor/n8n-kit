@@ -27,14 +27,14 @@ export class Mindee<L extends string> extends Node<L> {
 
     override getParameters() : Omit<MindeeNodeParameters, "mindeeReceiptApiCredentials | mindeeInvoiceApiCredentials"> {
 
-        const { mindeeReceiptApiCredentials:_0, mindeeInvoiceApiCredentials:_1, ...rest } = this.props;
+        const { mindeeReceiptApiCredentials:_0, mindeeInvoiceApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.mindeeReceiptApiCredentials, this.props.mindeeInvoiceApiCredentials];
+        return [this.props?.mindeeReceiptApiCredentials, this.props?.mindeeInvoiceApiCredentials];
 
     }
 

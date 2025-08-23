@@ -27,14 +27,14 @@ export class Bitly<L extends string> extends Node<L> {
 
     override getParameters() : Omit<BitlyNodeParameters, "bitlyApiCredentials | bitlyOAuth2ApiCredentials"> {
 
-        const { bitlyApiCredentials:_0, bitlyOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { bitlyApiCredentials:_0, bitlyOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.bitlyApiCredentials, this.props.bitlyOAuth2ApiCredentials];
+        return [this.props?.bitlyApiCredentials, this.props?.bitlyOAuth2ApiCredentials];
 
     }
 

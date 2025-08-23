@@ -27,14 +27,14 @@ export class GetResponse<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GetResponseNodeParameters, "getResponseApiCredentials | getResponseOAuth2ApiCredentials"> {
 
-        const { getResponseApiCredentials:_0, getResponseOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { getResponseApiCredentials:_0, getResponseOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.getResponseApiCredentials, this.props.getResponseOAuth2ApiCredentials];
+        return [this.props?.getResponseApiCredentials, this.props?.getResponseOAuth2ApiCredentials];
 
     }
 

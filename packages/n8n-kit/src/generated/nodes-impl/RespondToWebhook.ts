@@ -25,14 +25,14 @@ export class RespondToWebhook<L extends string> extends Node<L> {
 
     override getParameters() : Omit<RespondToWebhookNodeParameters, "jwtAuthCredentials"> {
 
-        const { jwtAuthCredentials:_0, ...rest } = this.props;
+        const { jwtAuthCredentials:_0, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.jwtAuthCredentials];
+        return [this.props?.jwtAuthCredentials];
 
     }
 

@@ -27,14 +27,14 @@ export class Gitlab<L extends string> extends Node<L> {
 
     override getParameters() : Omit<GitlabNodeParameters, "gitlabApiCredentials | gitlabOAuth2ApiCredentials"> {
 
-        const { gitlabApiCredentials:_0, gitlabOAuth2ApiCredentials:_1, ...rest } = this.props;
+        const { gitlabApiCredentials:_0, gitlabOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
         return rest;
 
     }
 
     override getCredentials() {
 
-        return [this.props.gitlabApiCredentials, this.props.gitlabOAuth2ApiCredentials];
+        return [this.props?.gitlabApiCredentials, this.props?.gitlabOAuth2ApiCredentials];
 
     }
 
