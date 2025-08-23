@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IChainable } from "../../workflow/chain/types";
 import type { SwitchV2NodeParameters } from "../nodes/SwitchV2";
 import { Node, type NodeProps } from "../../nodes";
 
@@ -17,6 +18,11 @@ export class SwitchV2<L extends string> extends Node<L> {
 
     constructor(id: L, override props?: SwitchV2Props) {
         super(id, props);
+    }
+
+    public toCustom(next: IChainable): this {
+        super.addNext(next.startState, { type: "custom" });
+        return this;
     }
 
 }

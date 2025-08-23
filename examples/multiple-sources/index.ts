@@ -7,7 +7,11 @@ import {
 	EmbeddingsGoogleGemini,
 	GoogleDriveTrigger,
 	GoogleDriveV2,
+	LmChatGoogleGemini,
+	MemoryBufferWindow,
 	TextSplitterRecursiveCharacterTextSplitter,
+	ToolVectorStore,
+	VectorStorePinecone,
 	VectorStorePineconeInsert,
 } from "@vahor/n8n-kit/nodes/generated";
 
@@ -33,6 +37,11 @@ const googlePalmApiCredentials = Credentials.byId({
 	name: "googlePalmApi",
 	id: "some-id",
 });
+
+const pineconeIndex = {
+	value: "company-files",
+	mode: "list",
+} as const;
 
 const workflow = new Workflow("my-workflow", {
 	active: true,
@@ -127,11 +136,8 @@ const workflow = new Workflow("my-workflow", {
 					label: "Pinecone Vector Store",
 					pineconeApiCredentials: pineconeApiCredentials,
 					parameters: {
-						mode: "insert",
-						pineconeIndex: {
-							value: "company-files",
-							mode: "list",
-						},
+						mode: "insert", // TODO: should be allowed
+						pineconeIndex,
 					},
 				})
 					.withEmbedding(
@@ -191,7 +197,64 @@ const workflow = new Workflow("my-workflow", {
 							'You are a helpful HR assistant designed to answer employee questions based on company policies.\n\nRetrieve relevant information from the provided internal documents and provide a concise, accurate, and informative answer to the employee\'s question.\n\nUse the tool called "company_documents_tool" to retrieve any information from the company\'s documents.\n\nIf the answer cannot be found in the provided documents, respond with "I cannot find the answer in the available resources."',
 					},
 				},
-			}),
+			})
+				.withCustom(
+					"ai_languageModel",
+					new LmChatGoogleGemini("google-gemini", {
+						label: "Google Gemini Chat Model",
+						googlePalmApiCredentials,
+						parameters: {
+							modelName: "models/gemini-2.0-flash-exp",
+						},
+					}),
+				)
+				.withCustom(
+					"ai_memory",
+					new MemoryBufferWindow("memory-buffer-window", {
+						label: "Window Buffer Memory",
+						parameters: {},
+					}),
+				)
+				.withCustom(
+					"ai_tool",
+					new ToolVectorStore("vector-store-tool", {
+						label: "Vector Store Tool",
+						parameters: {
+							name: "company_documents_tool",
+							description: "Retrieve information from any company documents",
+						},
+					})
+						.withVectorStore(
+							new VectorStorePinecone("pinecone-vector-store-retrieval", {
+								label: "Pinecone Vector Store (Retrieval)",
+								pineconeApiCredentials: pineconeApiCredentials,
+								parameters: {
+									pineconeIndex,
+								},
+							}).withCustom(
+								"ai_embedding",
+								new EmbeddingsGoogleGemini(
+									"embeddings-google-gemini-retrieval",
+									{
+										label: "Embeddings Google Gemini (Retrieval)",
+										googlePalmApiCredentials,
+										parameters: {
+											modelName: "models/text-embedding-004",
+										},
+									},
+								),
+							),
+						)
+						.withModel(
+							new LmChatGoogleGemini("google-gemini-retrieval", {
+								label: "Google Gemini Chat Model (Retrieval)",
+								googlePalmApiCredentials,
+								parameters: {
+									modelName: "models/gemini-2.0-flash-exp",
+								},
+							}),
+						),
+				),
 		),
 	],
 });

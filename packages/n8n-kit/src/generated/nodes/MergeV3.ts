@@ -4,7 +4,7 @@
 export const description = "Merges data of multiple streams once data from both is available" as const;
 export const type = "n8n-nodes-base.merge" as const;
 export const version = 3.2 as const;
-export const inputs = {} as const;
+export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MergeV3NodeParameters {

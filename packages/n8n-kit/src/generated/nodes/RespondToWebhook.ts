@@ -6,7 +6,7 @@ export const type = "n8n-nodes-base.respondToWebhook" as const;
 export const version = 1.5 as const;
 export const credentials = [{"name":"jwtAuth","required":true,"displayOptions":{"show":{"respondWith":["jwt"]}}}] as const;
 export const inputs = {"main":"main"} as const;
-export const outputs = {} as const;
+export const outputs = {"custom":"custom"} as const;
 
 export interface RespondToWebhookNodeParameters {
     /**

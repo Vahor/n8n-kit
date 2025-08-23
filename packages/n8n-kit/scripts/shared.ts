@@ -118,3 +118,16 @@ export const getNodeName = (nodePath: string) => {
 export const capitalize = (str: string) => {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 };
+
+export const validCustomType = [
+	"ai_textSplitter",
+	"ai_embedding",
+	"ai_document",
+	"ai_languageModel",
+	"ai_memory",
+	"ai_tool",
+	"ai_outputParser",
+];
+export const validCustomTypeAsStringUnion = validCustomType
+	.map((type) => `"${type}"`)
+	.join(" | ");

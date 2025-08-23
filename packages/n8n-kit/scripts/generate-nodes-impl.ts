@@ -1,7 +1,7 @@
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import { globSync } from "tinyglobby";
-import { capitalize } from "./shared";
+import { capitalize, validCustomTypeAsStringUnion } from "./shared";
 
 const allNodesTypes = globSync("../src/generated/nodes/**/*.ts", {
 	cwd: path.resolve(__dirname),
@@ -135,7 +135,9 @@ const generateTypescriptNodeOutput = async (
 	for (const [inputName, inputType] of Object.entries(result.inputs)) {
 		if (inputName === "main") continue;
 		if (inputName === "custom") {
-			code.openBlock(`public withCustom(type: string, next: State): this`);
+			code.openBlock(
+				`public withCustom(type: ${validCustomTypeAsStringUnion}, next: State): this`,
+			);
 			code.line(
 				`super.addNext(next.startState, { type, direction: "input" });`,
 			);

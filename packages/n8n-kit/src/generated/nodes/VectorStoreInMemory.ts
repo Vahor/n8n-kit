@@ -4,8 +4,8 @@
 export const description = "The easiest way to experiment with vector stores, without external setup." as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreInMemory" as const;
 export const version = 1.3 as const;
-export const inputs = {} as const;
-export const outputs = {} as const;
+export const inputs = {"custom":"custom"} as const;
+export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreInMemoryNodeParameters {
     /**

@@ -5,7 +5,7 @@ export const description = "Interact with Google Gemini AI models" as const;
 export const type = "@n8n/n8n-nodes-langchain.googleGemini" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;
-export const inputs = {} as const;
+export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleGeminiNodeParameters {

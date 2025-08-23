@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { TextClassifierNodeParameters } from "../nodes/TextClassifier";
@@ -29,6 +30,11 @@ export class TextClassifier<L extends string> extends Node<L> {
 
     public withModel(next: State): this {
         super.addNext(next.startState, { type: "ai_languageModel", direction: "input" });
+        return this;
+    }
+
+    public toCustom(next: IChainable): this {
+        super.addNext(next.startState, { type: "custom" });
         return this;
     }
 

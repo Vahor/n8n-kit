@@ -40,12 +40,12 @@ export interface GoogleAnalyticsV2NodeParameters {
     readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
     /**
-     * Default: "2025-08-15T00:00:00.000+02:00"
+     * Default: "2025-08-16T00:00:00.000+02:00"
      */
     readonly startDate?: string;
 
     /**
-     * Default: "2025-08-22T00:00:00.000+02:00"
+     * Default: "2025-08-23T00:00:00.000+02:00"
      */
     readonly endDate?: string;
 

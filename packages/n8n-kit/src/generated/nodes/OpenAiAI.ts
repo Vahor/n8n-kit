@@ -5,7 +5,7 @@ export const description = "Message an assistant or GPT, analyze images, generat
 export const type = "@n8n/n8n-nodes-langchain.openAi" as const;
 export const version = 1.8 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
-export const inputs = {} as const;
+export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenAiAINodeParameters {

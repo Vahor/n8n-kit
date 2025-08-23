@@ -5,6 +5,7 @@ import type { HttpBasicAuthCredentials } from "../credentials/HttpBasicAuth.ts";
 import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts";
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IChainable } from "../../workflow/chain/types";
 import type { WebhookNodeParameters } from "../nodes/Webhook";
 import { Node, type NodeProps } from "../../nodes";
 
@@ -28,6 +29,11 @@ export class Webhook<L extends string> extends Node<L> {
 
     override getCredentials() {
         return [this.props!.httpBasicAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.jwtAuthCredentials];
+    }
+
+    public toCustom(next: IChainable): this {
+        super.addNext(next.startState, { type: "custom" });
+        return this;
     }
 
 }

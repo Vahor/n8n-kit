@@ -3,6 +3,7 @@
 
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IChainable } from "../../workflow/chain/types";
 import type { RespondToWebhookNodeParameters } from "../nodes/RespondToWebhook";
 import { Node, type NodeProps } from "../../nodes";
 
@@ -24,6 +25,11 @@ export class RespondToWebhook<L extends string> extends Node<L> {
 
     override getCredentials() {
         return [this.props!.jwtAuthCredentials];
+    }
+
+    public toCustom(next: IChainable): this {
+        super.addNext(next.startState, { type: "custom" });
+        return this;
     }
 
 }
