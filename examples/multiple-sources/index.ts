@@ -1,6 +1,8 @@
 import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
-import { NoOp, StickyNote } from "@vahor/n8n-kit/nodes";
+import { StickyNote } from "@vahor/n8n-kit/nodes";
 import {
+	AgentV1,
+	ChatTrigger,
 	DocumentDefaultDataLoader,
 	EmbeddingsGoogleGemini,
 	GoogleDriveTrigger,
@@ -176,12 +178,19 @@ const workflow = new Workflow("my-workflow", {
 			},
 		}),
 		Chain.start(
-			new NoOp("chat-message-received", {
+			new ChatTrigger("chat-message-received", {
 				label: "When chat message received",
+				parameters: {},
 			}),
 		).next(
-			new NoOp("ai-agent", {
+			new AgentV1("ai-agent", {
 				label: "AI Agent",
+				parameters: {
+					options: {
+						systemMessage:
+							'You are a helpful HR assistant designed to answer employee questions based on company policies.\n\nRetrieve relevant information from the provided internal documents and provide a concise, accurate, and informative answer to the employee\'s question.\n\nUse the tool called "company_documents_tool" to retrieve any information from the company\'s documents.\n\nIf the answer cannot be found in the provided documents, respond with "I cannot find the answer in the available resources."',
+					},
+				},
 			}),
 		),
 	],
