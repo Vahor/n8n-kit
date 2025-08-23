@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Gmail/v2/GmailV2.node.ts' node
 
-export const name = "gmail" as const;
 export const description = "Consume the Gmail API" as const;
+export const type = "n8n-nodes-base.gmail" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

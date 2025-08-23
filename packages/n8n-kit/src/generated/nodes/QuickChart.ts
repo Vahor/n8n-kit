@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/QuickChart/QuickChart.node.ts' node
 
-export const name = "quickChart" as const;
 export const description = "Create a chart via QuickChart" as const;
+export const type = "n8n-nodes-base.quickChart" as const;
 export const version = 1 as const;
 
 /**
@@ -36,13 +36,13 @@ export interface QuickChartNodeParameters {
     /**
      * Data to use for the dataset, documentation and examples <a href="https://quickchart.io/documentation/chart-types/" target="_blank">here</a>
      */
-    readonly data: string;
+    readonly data?: string;
 
     /**
      * The binary data will be displayed in the Output panel on the right, under the Binary tab
      * Default: "data"
      */
-    readonly output: string;
+    readonly output?: string;
 
     /**
      * Default: {}

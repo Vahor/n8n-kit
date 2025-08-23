@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Teams/MicrosoftTeamsTrigger.node.ts' node
 
-export const name = "microsoftTeamsTrigger" as const;
 export const description = "Triggers workflows in n8n based on events from Microsoft Teams, such as new messages or team updates, using specified configurations." as const;
+export const type = "n8n-nodes-base.microsoftTeamsTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const;
 

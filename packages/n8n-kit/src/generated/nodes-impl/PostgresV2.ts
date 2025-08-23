@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { PostgresV2NodeParameters } from "../nodes/PostgresV2";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface PostgresV2Props extends NodeProps, PostgresV2NodeParameters {
+export interface PostgresV2Props extends NodeProps {
 
+    readonly parameters: PostgresV2NodeParameters;
     readonly postgresCredentials: Credentials<PostgresCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class PostgresV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.postgres" as const;
     protected typeVersion = 2.6 as const;
 
-    constructor(id: L, public readonly props: PostgresV2Props) {
+    constructor(id: L, override props: PostgresV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<PostgresV2NodeParameters, "postgresCredentials"> {
-
-        const { postgresCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.postgresCredentials];
+        return [this.props!.postgresCredentials];
 
     }
 

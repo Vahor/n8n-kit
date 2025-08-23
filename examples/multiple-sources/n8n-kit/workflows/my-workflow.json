@@ -11,8 +11,7 @@
 			"parameters": {
 				"content": "## Set up steps\n\n1. Google Cloud Project and Vertex AI API:\n* Create a Google Cloud project.\n* Enable the Vertex AI API for your project.\n2. Google AI API Key:\n* Obtain a Google AI API key from Google AI Studio.\n3. Pinecone Account:\n* Create a free account on the Pinecone website.\nObtain your API key from your Pinecone dashboard.\n* Create an index named company-files in your Pinecone project.\n4. Google Drive:\n* Create a dedicated folder in your Google Drive where company documents will be stored.\n5. Credentials in n8n: Configure credentials in your n8n environment for:\n* Google Drive OAuth2\n* Google Gemini(PaLM) Api (using your Google AI API key)\n* Pinecone API (using your Pinecone API key)\n5. Import the Workflow:\n* Import this workflow into your n8n instance.\n6. Configure the Workflow:\n* Update both Google Drive Trigger nodes to watch the specific folder you created in your Google Drive.\n* Configure the Pinecone Vector Store nodes to use your company-files index.",
 				"height": 720,
-				"width": 420,
-				"color": 1
+				"width": 420
 			}
 		},
 		{
@@ -23,8 +22,7 @@
 			"typeVersion": 1,
 			"parameters": {
 				"content": "## Add documents to vector store when updating or creating new documents in Google Drive",
-				"width": 420,
-				"color": 1
+				"width": 420
 			}
 		},
 		{
@@ -78,11 +76,13 @@
 		{
 			"id": "upload-to-pinecone",
 			"name": "Pinecone Vector Store",
-			"type": "n8n-nodes-base.vectorStorePinecone",
+			"type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
 			"position": [745, 1130],
 			"typeVersion": 1.3,
-			"parameters": {},
-			"credentials": {}
+			"parameters": {
+				"pineconeIndex": { "value": "company-files", "mode": "list" }
+			},
+			"credentials": { "pineconeApi": { "id": "some-id" } }
 		},
 		{
 			"id": "note-chat-to-ai-agent",
@@ -90,7 +90,7 @@
 			"type": "n8n-nodes-base.stickyNote",
 			"position": [420, 660],
 			"typeVersion": 1,
-			"parameters": { "content": "## Chat with company documents", "color": 1 }
+			"parameters": { "content": "## Chat with company documents" }
 		},
 		{
 			"id": "chat-message-received",

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/code/Code.node.ts' node
 
-export const name = "code" as const;
 export const description = "LangChain Code Node" as const;
+export const type = "@n8n/n8n-nodes-langchain.code" as const;
 export const version = 1 as const;
 
 /**

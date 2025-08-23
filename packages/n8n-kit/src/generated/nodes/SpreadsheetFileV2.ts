@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/SpreadsheetFile/v2/SpreadsheetFileV2.node.ts' node
 
-export const name = "spreadsheetFile" as const;
 export const description = "Reads and writes data from a spreadsheet file like CSV, XLS, ODS, etc" as const;
+export const type = "n8n-nodes-base.spreadsheetFile" as const;
 export const version = 2 as const;
 
 /**

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { GoogleAnalyticsV1NodeParameters } from "../nodes/GoogleAnalyticsV1";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GoogleAnalyticsV1Props extends NodeProps, GoogleAnalyticsV1NodeParameters {
+export interface GoogleAnalyticsV1Props extends NodeProps {
 
+    readonly parameters: GoogleAnalyticsV1NodeParameters;
     readonly googleAnalyticsOAuth2Credentials: Credentials<GoogleAnalyticsOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class GoogleAnalyticsV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleAnalytics" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: GoogleAnalyticsV1Props) {
+    constructor(id: L, override props: GoogleAnalyticsV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GoogleAnalyticsV1NodeParameters, "googleAnalyticsOAuth2Credentials"> {
-
-        const { googleAnalyticsOAuth2Credentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.googleAnalyticsOAuth2Credentials];
+        return [this.props!.googleAnalyticsOAuth2Credentials];
 
     }
 

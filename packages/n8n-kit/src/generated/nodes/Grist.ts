@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Grist/Grist.node.ts' node
 
-export const name = "grist" as const;
 export const description = "Consume the Grist API" as const;
+export const type = "n8n-nodes-base.grist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gristApi","required":true,"testedBy":"gristApiTest"}] as const;
 
@@ -19,12 +19,12 @@ export interface GristNodeParameters {
     /**
      * In your document, click your profile icon, then Document Settings, then copy the value under "This document's ID"
      */
-    readonly docId: string;
+    readonly docId?: string;
 
     /**
      * ID of table to operate on. If unsure, look at the Code View.
      */
-    readonly tableId: string;
+    readonly tableId?: string;
 
     /**
      * ID of the row to delete, or comma-separated list of row IDs to delete

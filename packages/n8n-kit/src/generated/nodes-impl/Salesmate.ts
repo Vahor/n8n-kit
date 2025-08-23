@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { SalesmateNodeParameters } from "../nodes/Salesmate";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SalesmateProps extends NodeProps, SalesmateNodeParameters {
+export interface SalesmateProps extends NodeProps {
 
+    readonly parameters: SalesmateNodeParameters;
     readonly salesmateApiCredentials: Credentials<SalesmateApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Salesmate<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.salesmate" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: SalesmateProps) {
+    constructor(id: L, override props: SalesmateProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<SalesmateNodeParameters, "salesmateApiCredentials"> {
-
-        const { salesmateApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.salesmateApiCredentials];
+        return [this.props!.salesmateApiCredentials];
 
     }
 

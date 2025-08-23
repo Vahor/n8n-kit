@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Teams/v2/MicrosoftTeamsV2.node.ts' node
 
-export const name = "microsoftTeams" as const;
 export const description = "Consume Microsoft Teams API" as const;
+export const type = "n8n-nodes-base.microsoftTeams" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const;
 

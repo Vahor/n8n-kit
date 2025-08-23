@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { MicrosoftOneDriveTriggerNodeParameters } from "../nodes/MicrosoftOneDriveTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MicrosoftOneDriveTriggerProps extends NodeProps, MicrosoftOneDriveTriggerNodeParameters {
+export interface MicrosoftOneDriveTriggerProps extends NodeProps {
 
+    readonly parameters: MicrosoftOneDriveTriggerNodeParameters;
     readonly microsoftOneDriveOAuth2ApiCredentials: Credentials<MicrosoftOneDriveOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class MicrosoftOneDriveTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: MicrosoftOneDriveTriggerProps) {
+    constructor(id: L, override props: MicrosoftOneDriveTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<MicrosoftOneDriveTriggerNodeParameters, "microsoftOneDriveOAuth2ApiCredentials"> {
-
-        const { microsoftOneDriveOAuth2ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.microsoftOneDriveOAuth2ApiCredentials];
+        return [this.props!.microsoftOneDriveOAuth2ApiCredentials];
 
     }
 

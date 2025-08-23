@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Supabase/Supabase.node.ts' node
 
-export const name = "supabase" as const;
 export const description = "Add, get, delete and update data in a table" as const;
+export const type = "n8n-nodes-base.supabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"supabaseApi","required":true,"testedBy":"supabaseApiCredentialTest"}] as const;
 

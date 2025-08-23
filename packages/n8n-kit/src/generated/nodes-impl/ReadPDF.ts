@@ -4,8 +4,9 @@
 import type { ReadPDFNodeParameters } from "../nodes/ReadPDF";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ReadPDFProps extends NodeProps, ReadPDFNodeParameters {
+export interface ReadPDFProps extends NodeProps {
 
+    readonly parameters: ReadPDFNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class ReadPDF<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.readPDF" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ReadPDFProps) {
+    constructor(id: L, override props?: ReadPDFProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ReadPDFNodeParameters {
-
-        return this.props ?? {};
 
     }
 

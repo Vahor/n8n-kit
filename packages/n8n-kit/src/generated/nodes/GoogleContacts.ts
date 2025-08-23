@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Contacts/GoogleContacts.node.ts' node
 
-export const name = "googleContacts" as const;
 export const description = "Consume Google Contacts API" as const;
+export const type = "n8n-nodes-base.googleContacts" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleContactsOAuth2Api","required":true}] as const;
 

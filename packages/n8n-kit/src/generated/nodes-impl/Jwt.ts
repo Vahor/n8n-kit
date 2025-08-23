@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { JwtNodeParameters } from "../nodes/Jwt";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface JwtProps extends NodeProps, JwtNodeParameters {
+export interface JwtProps extends NodeProps {
 
+    readonly parameters: JwtNodeParameters;
     readonly jwtAuthCredentials: Credentials<JwtAuthCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Jwt<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.jwt" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: JwtProps) {
+    constructor(id: L, override props: JwtProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<JwtNodeParameters, "jwtAuthCredentials"> {
-
-        const { jwtAuthCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.jwtAuthCredentials];
+        return [this.props!.jwtAuthCredentials];
 
     }
 

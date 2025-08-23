@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/UrlScanIo/UrlScanIo.node.ts' node
 
-export const name = "urlScanIo" as const;
 export const description = "Provides various utilities for monitoring websites like health checks or screenshots" as const;
+export const type = "n8n-nodes-base.urlScanIo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"urlScanIoApi","required":true}] as const;
 

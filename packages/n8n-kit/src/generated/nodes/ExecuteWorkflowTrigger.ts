@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflowTrigger/ExecuteWorkflowTrigger.node.ts' node
 
-export const name = "executeWorkflowTrigger" as const;
 export const description = "Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows." as const;
+export const type = "n8n-nodes-base.executeWorkflowTrigger" as const;
 export const version = 1.1 as const;
 
 /**

@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { GhostNodeParameters } from "../nodes/Ghost";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GhostProps extends NodeProps, GhostNodeParameters {
+export interface GhostProps extends NodeProps {
 
+    readonly parameters: GhostNodeParameters;
     readonly ghostAdminApiCredentials?: Credentials<GhostAdminApiCredentials>;
     readonly ghostContentApiCredentials?: Credentials<GhostContentApiCredentials>;
 
@@ -19,22 +20,15 @@ export class Ghost<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.ghost" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GhostProps) {
+    constructor(id: L, override props?: GhostProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GhostNodeParameters, "ghostAdminApiCredentials | ghostContentApiCredentials"> {
-
-        const { ghostAdminApiCredentials:_0, ghostContentApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.ghostAdminApiCredentials, this.props?.ghostContentApiCredentials];
+        return [this.props!.ghostAdminApiCredentials, this.props!.ghostContentApiCredentials];
 
     }
 

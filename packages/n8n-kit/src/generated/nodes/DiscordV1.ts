@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Discord/v1/DiscordV1.node.ts' node
 
-export const name = "discord" as const;
 export const description = "Sends data to Discord" as const;
+export const type = "n8n-nodes-base.discord" as const;
 export const version = 1 as const;
 
 /**
@@ -12,7 +12,7 @@ export interface DiscordV1NodeParameters {
 
     readonly oldVersionNotice?: string;
 
-    readonly webhookUri: string;
+    readonly webhookUri?: string;
 
     /**
      * Type options: {"maxValue":2000}

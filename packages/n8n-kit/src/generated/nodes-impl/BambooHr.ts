@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { BambooHrNodeParameters } from "../nodes/BambooHr";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface BambooHrProps extends NodeProps, BambooHrNodeParameters {
+export interface BambooHrProps extends NodeProps {
 
+    readonly parameters: BambooHrNodeParameters;
     readonly bambooHrApiCredentials: Credentials<BambooHrApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class BambooHr<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.bambooHr" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: BambooHrProps) {
+    constructor(id: L, override props: BambooHrProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<BambooHrNodeParameters, "bambooHrApiCredentials"> {
-
-        const { bambooHrApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.bambooHrApiCredentials];
+        return [this.props!.bambooHrApiCredentials];
 
     }
 

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { MailjetTriggerNodeParameters } from "../nodes/MailjetTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MailjetTriggerProps extends NodeProps, MailjetTriggerNodeParameters {
+export interface MailjetTriggerProps extends NodeProps {
 
+    readonly parameters: MailjetTriggerNodeParameters;
     readonly mailjetEmailApiCredentials: Credentials<MailjetEmailApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class MailjetTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mailjetTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: MailjetTriggerProps) {
+    constructor(id: L, override props: MailjetTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<MailjetTriggerNodeParameters, "mailjetEmailApiCredentials"> {
-
-        const { mailjetEmailApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.mailjetEmailApiCredentials];
+        return [this.props!.mailjetEmailApiCredentials];
 
     }
 

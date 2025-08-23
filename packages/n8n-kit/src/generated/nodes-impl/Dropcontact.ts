@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { DropcontactNodeParameters } from "../nodes/Dropcontact";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface DropcontactProps extends NodeProps, DropcontactNodeParameters {
+export interface DropcontactProps extends NodeProps {
 
+    readonly parameters: DropcontactNodeParameters;
     readonly dropcontactApiCredentials: Credentials<DropcontactApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Dropcontact<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.dropcontact" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: DropcontactProps) {
+    constructor(id: L, override props: DropcontactProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<DropcontactNodeParameters, "dropcontactApiCredentials"> {
-
-        const { dropcontactApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.dropcontactApiCredentials];
+        return [this.props!.dropcontactApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/' node
 
-export const name = "openAi" as const;
 export const description = "Message an assistant or GPT, analyze images, generate audio, etc." as const;
+export const type = "@n8n/n8n-nodes-langchain.openAi" as const;
 export const version = 1.8 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
 

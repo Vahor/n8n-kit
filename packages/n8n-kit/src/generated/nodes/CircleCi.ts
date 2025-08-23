@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/CircleCi/CircleCi.node.ts' node
 
-export const name = "circleCi" as const;
 export const description = "Consume CircleCI API" as const;
+export const type = "n8n-nodes-base.circleCi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"circleCiApi","required":true}] as const;
 

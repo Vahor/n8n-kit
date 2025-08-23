@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Set/v1/SetV1.node.ts' node
 
-export const name = "set" as const;
 export const description = "Sets values on items and optionally remove other values" as const;
+export const type = "n8n-nodes-base.set" as const;
 export const version = 2 as const;
 
 /**

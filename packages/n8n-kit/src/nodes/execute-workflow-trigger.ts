@@ -1,38 +1,35 @@
 import type { Type } from "arktype";
 import {
 	type ExecuteWorkflowTriggerNodeParameters,
-	name,
+	type,
 	version,
 } from "../generated/nodes/ExecuteWorkflowTrigger";
 import type { Workflow } from "../workflow";
 import { Node, type NodeProps } from "./node";
 
-interface ExecuteWorkflowTriggerBaseProps
-	extends Omit<ExecuteWorkflowTriggerNodeParameters, "workflowInputs"> {}
-
-export interface ExecuteWorkflowTriggerProps
-	extends NodeProps,
-		ExecuteWorkflowTriggerBaseProps {}
+export interface ExecuteWorkflowTriggerProps extends NodeProps {
+	parameters?: Omit<ExecuteWorkflowTriggerNodeParameters, "workflowInputs">;
+}
 
 export class ExecuteWorkflowTrigger<
 	L extends string,
 	Input extends Type,
 > extends Node<L, Input["infer"]> {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	public constructor(
 		private readonly workflow: Workflow<Input, any>,
 		id: L,
-		public readonly props: ExecuteWorkflowTriggerProps,
+		override props: ExecuteWorkflowTriggerProps,
 	) {
 		super(id, props);
 	}
 
 	public buildWorkflowInputsSchema() {
 		if (
-			this.props.inputSource === undefined ||
-			this.props.inputSource === "workflowInputs"
+			this.props.parameters?.inputSource === undefined ||
+			this.props.parameters.inputSource === "workflowInputs"
 		) {
 			const workflowInputSchema = this.workflow.getInputSchema();
 			if (!workflowInputSchema) {
@@ -63,7 +60,7 @@ export class ExecuteWorkflowTrigger<
 
 	override getParameters() {
 		return {
-			...this.props,
+			...this.props.parameters,
 			workflowInputs: this.buildWorkflowInputsSchema(),
 		};
 	}

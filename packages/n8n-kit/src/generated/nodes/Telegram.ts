@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Telegram/Telegram.node.ts' node
 
-export const name = "telegram" as const;
 export const description = "Sends data to Telegram" as const;
+export const type = "n8n-nodes-base.telegram" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const;
 

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { CrowdDevNodeParameters } from "../nodes/CrowdDev";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface CrowdDevProps extends NodeProps, CrowdDevNodeParameters {
+export interface CrowdDevProps extends NodeProps {
 
+    readonly parameters: CrowdDevNodeParameters;
     readonly crowdDevApiCredentials: Credentials<CrowdDevApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class CrowdDev<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.crowdDev" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: CrowdDevProps) {
+    constructor(id: L, override props: CrowdDevProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<CrowdDevNodeParameters, "crowdDevApiCredentials"> {
-
-        const { crowdDevApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.crowdDevApiCredentials];
+        return [this.props!.crowdDevApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Mandrill/Mandrill.node.ts' node
 
-export const name = "mandrill" as const;
 export const description = "Consume Mandrill API" as const;
+export const type = "n8n-nodes-base.mandrill" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mandrillApi","required":true}] as const;
 

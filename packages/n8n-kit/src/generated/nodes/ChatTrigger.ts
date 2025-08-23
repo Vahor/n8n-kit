@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/trigger/ChatTrigger/ChatTrigger.node.ts' node
 
-export const name = "chatTrigger" as const;
 export const description = "Runs the workflow when an n8n generated webchat is submitted" as const;
+export const type = "@n8n/n8n-nodes-langchain.chatTrigger" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
 

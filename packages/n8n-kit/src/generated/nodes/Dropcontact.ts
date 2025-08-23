@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Dropcontact/Dropcontact.node.ts' node
 
-export const name = "dropcontact" as const;
 export const description = "Find B2B emails and enrich contacts" as const;
+export const type = "n8n-nodes-base.dropcontact" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"dropcontactApi","required":true}] as const;
 
@@ -14,12 +14,12 @@ export interface DropcontactNodeParameters {
     /**
      * Default: "contact"
      */
-    readonly resource: "contact";
+    readonly resource?: "contact";
 
     /**
      * Default: "enrich"
      */
-    readonly operation: "enrich" | "fetchRequest";
+    readonly operation?: "enrich" | "fetchRequest";
 
     readonly requestId?: string;
 

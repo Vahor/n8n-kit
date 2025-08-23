@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreQdrant/VectorStoreQdrant.node.ts' node
 
-export const name = "vectorStoreQdrant" as const;
 export const description = "Work with your data in a Qdrant collection" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreQdrant" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"qdrantApi","required":true}] as const;
 
@@ -40,7 +40,7 @@ export interface VectorStoreQdrantNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly qdrantCollection: any;
+    readonly qdrantCollection?: any;
 
     /**
      * Number of documents to embed in a single batch

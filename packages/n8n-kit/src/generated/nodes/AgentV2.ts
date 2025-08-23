@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/agents/Agent/V2/AgentV2.node.ts' node
 
-export const name = "agent" as const;
 export const description = "Generates an action plan and executes it. Can use external tools." as const;
+export const type = "@n8n/n8n-nodes-langchain.agent" as const;
 export const version = 2.2 as const;
 
 /**

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HttpRequest/V3/HttpRequestV3.node.ts' node
 
-export const name = "httpRequest" as const;
 export const description = "Makes an HTTP request and returns the response data" as const;
+export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 4.2 as const;
 export const credentials = [{"name":"httpSslAuth","required":true,"displayOptions":{"show":{"provideSslCertificates":[true]}}}] as const;
 
@@ -27,7 +27,7 @@ export interface HttpRequestV3NodeParameters {
     /**
      * The URL to make the request to
      */
-    readonly url: string;
+    readonly url?: string;
 
     /**
      * Default: "none"

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/If/V2/IfV2.node.ts' node
 
-export const name = "if" as const;
 export const description = "Route items to different branches (true/false)" as const;
+export const type = "n8n-nodes-base.if" as const;
 export const version = 2.2 as const;
 
 /**

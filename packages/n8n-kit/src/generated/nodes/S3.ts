@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/S3/S3.node.ts' node
 
-export const name = "s3" as const;
 export const description = "Sends data to any S3-compatible service" as const;
+export const type = "n8n-nodes-base.s3" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"s3","required":true}] as const;
 

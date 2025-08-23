@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/memory/MemoryManager/MemoryManager.node.ts' node
 
-export const name = "memoryManager" as const;
 export const description = "Manage chat messages memory and use it in the workflow" as const;
+export const type = "@n8n/n8n-nodes-langchain.memoryManager" as const;
 export const version = 1.1 as const;
 
 /**

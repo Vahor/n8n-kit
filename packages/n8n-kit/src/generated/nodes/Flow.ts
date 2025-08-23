@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Flow/Flow.node.ts' node
 
-export const name = "flow" as const;
 export const description = "Consume Flow API" as const;
+export const type = "n8n-nodes-base.flow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"flowApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/OneDrive/MicrosoftOneDriveTrigger.node.ts' node
 
-export const name = "microsoftOneDriveTrigger" as const;
 export const description = "Trigger for Microsoft OneDrive API." as const;
+export const type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const;
 

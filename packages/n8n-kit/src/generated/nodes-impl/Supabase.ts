@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { SupabaseNodeParameters } from "../nodes/Supabase";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SupabaseProps extends NodeProps, SupabaseNodeParameters {
+export interface SupabaseProps extends NodeProps {
 
+    readonly parameters: SupabaseNodeParameters;
     readonly supabaseApiCredentials: Credentials<SupabaseApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Supabase<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.supabase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: SupabaseProps) {
+    constructor(id: L, override props: SupabaseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<SupabaseNodeParameters, "supabaseApiCredentials"> {
-
-        const { supabaseApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.supabaseApiCredentials];
+        return [this.props!.supabaseApiCredentials];
 
     }
 

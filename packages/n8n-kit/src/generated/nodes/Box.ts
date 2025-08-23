@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Box/Box.node.ts' node
 
-export const name = "box" as const;
 export const description = "Consume Box API" as const;
+export const type = "n8n-nodes-base.box" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"boxOAuth2Api","required":true}] as const;
 

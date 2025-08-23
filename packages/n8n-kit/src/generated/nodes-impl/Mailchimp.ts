@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { MailchimpNodeParameters } from "../nodes/Mailchimp";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MailchimpProps extends NodeProps, MailchimpNodeParameters {
+export interface MailchimpProps extends NodeProps {
 
+    readonly parameters: MailchimpNodeParameters;
     readonly mailchimpApiCredentials?: Credentials<MailchimpApiCredentials>;
     readonly mailchimpOAuth2ApiCredentials?: Credentials<MailchimpOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class Mailchimp<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mailchimp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MailchimpProps) {
+    constructor(id: L, override props?: MailchimpProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<MailchimpNodeParameters, "mailchimpApiCredentials | mailchimpOAuth2ApiCredentials"> {
-
-        const { mailchimpApiCredentials:_0, mailchimpOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.mailchimpApiCredentials, this.props?.mailchimpOAuth2ApiCredentials];
+        return [this.props!.mailchimpApiCredentials, this.props!.mailchimpOAuth2ApiCredentials];
 
     }
 

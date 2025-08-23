@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MessageBird/MessageBird.node.ts' node
 
-export const name = "messageBird" as const;
 export const description = "Sends SMS via MessageBird" as const;
+export const type = "n8n-nodes-base.messageBird" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"messageBirdApi","required":true}] as const;
 

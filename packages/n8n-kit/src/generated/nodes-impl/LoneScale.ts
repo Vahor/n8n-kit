@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { LoneScaleNodeParameters } from "../nodes/LoneScale";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LoneScaleProps extends NodeProps, LoneScaleNodeParameters {
+export interface LoneScaleProps extends NodeProps {
 
+    readonly parameters: LoneScaleNodeParameters;
     readonly loneScaleApiCredentials: Credentials<LoneScaleApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class LoneScale<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.loneScale" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LoneScaleProps) {
+    constructor(id: L, override props: LoneScaleProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<LoneScaleNodeParameters, "loneScaleApiCredentials"> {
-
-        const { loneScaleApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.loneScaleApiCredentials];
+        return [this.props!.loneScaleApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Freshservice/Freshservice.node.ts' node
 
-export const name = "freshservice" as const;
 export const description = "Consume the Freshservice API" as const;
+export const type = "n8n-nodes-base.freshservice" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"freshserviceApi","required":true}] as const;
 

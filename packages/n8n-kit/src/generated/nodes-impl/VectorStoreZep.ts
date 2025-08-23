@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { VectorStoreZepNodeParameters } from "../nodes/VectorStoreZep";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface VectorStoreZepProps extends NodeProps, VectorStoreZepNodeParameters {
+export interface VectorStoreZepProps extends NodeProps {
 
+    readonly parameters: VectorStoreZepNodeParameters;
     readonly zepApiCredentials: Credentials<ZepApiCredentials>;
 
 }
 
 export class VectorStoreZep<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.vectorStoreZep" as const;
+    protected type = "@n8n/n8n-nodes-langchain.vectorStoreZep" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, public readonly props: VectorStoreZepProps) {
+    constructor(id: L, override props: VectorStoreZepProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<VectorStoreZepNodeParameters, "zepApiCredentials"> {
-
-        const { zepApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.zepApiCredentials];
+        return [this.props!.zepApiCredentials];
 
     }
 

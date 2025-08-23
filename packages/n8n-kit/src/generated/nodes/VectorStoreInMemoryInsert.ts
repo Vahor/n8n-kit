@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreInMemoryInsert/VectorStoreInMemoryInsert.node.ts' node
 
-export const name = "vectorStoreInMemoryInsert" as const;
 export const description = "Insert data into an in-memory vector store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryInsert" as const;
 export const version = 1 as const;
 
 /**

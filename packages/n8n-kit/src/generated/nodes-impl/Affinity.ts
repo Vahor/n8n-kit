@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { AffinityNodeParameters } from "../nodes/Affinity";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface AffinityProps extends NodeProps, AffinityNodeParameters {
+export interface AffinityProps extends NodeProps {
 
+    readonly parameters: AffinityNodeParameters;
     readonly affinityApiCredentials: Credentials<AffinityApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Affinity<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.affinity" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: AffinityProps) {
+    constructor(id: L, override props: AffinityProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<AffinityNodeParameters, "affinityApiCredentials"> {
-
-        const { affinityApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.affinityApiCredentials];
+        return [this.props!.affinityApiCredentials];
 
     }
 

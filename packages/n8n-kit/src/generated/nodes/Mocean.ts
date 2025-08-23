@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Mocean/Mocean.node.ts' node
 
-export const name = "mocean" as const;
 export const description = "Send SMS and voice messages via Mocean" as const;
+export const type = "n8n-nodes-base.mocean" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"moceanApi","required":true,"testedBy":"moceanApiTest"}] as const;
 

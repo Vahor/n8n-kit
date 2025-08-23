@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Contentful/Contentful.node.ts' node
 
-export const name = "contentful" as const;
 export const description = "Consume Contentful API" as const;
+export const type = "n8n-nodes-base.contentful" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"contentfulApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/EditImage/EditImage.node.ts' node
 
-export const name = "editImage" as const;
 export const description = "Edits an image like blur, resize or adding border and text" as const;
+export const type = "n8n-nodes-base.editImage" as const;
 export const version = 1 as const;
 
 /**

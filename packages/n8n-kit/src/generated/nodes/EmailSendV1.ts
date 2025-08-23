@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/EmailSend/v1/EmailSendV1.node.ts' node
 
-export const name = "emailSend" as const;
 export const description = "Sends an Email" as const;
+export const type = "n8n-nodes-base.emailSend" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"smtp","required":true}] as const;
 
@@ -14,12 +14,12 @@ export interface EmailSendV1NodeParameters {
     /**
      * Email address of the sender optional with name
      */
-    readonly fromEmail: string;
+    readonly fromEmail?: string;
 
     /**
      * Email address of the recipient
      */
-    readonly toEmail: string;
+    readonly toEmail?: string;
 
     /**
      * Email address of CC recipient

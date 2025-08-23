@@ -4,8 +4,9 @@
 import type { SetV2NodeParameters } from "../nodes/SetV2";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SetV2Props extends NodeProps, SetV2NodeParameters {
+export interface SetV2Props extends NodeProps {
 
+    readonly parameters: SetV2NodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class SetV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.set" as const;
     protected typeVersion = 3.4 as const;
 
-    constructor(id: L, public readonly props?: SetV2Props) {
+    constructor(id: L, override props?: SetV2Props) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : SetV2NodeParameters {
-
-        return this.props ?? {};
 
     }
 

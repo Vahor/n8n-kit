@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Msg91/Msg91.node.ts' node
 
-export const name = "msg91" as const;
 export const description = "Sends transactional SMS via MSG91" as const;
+export const type = "n8n-nodes-base.msg91" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"msg91Api","required":true}] as const;
 

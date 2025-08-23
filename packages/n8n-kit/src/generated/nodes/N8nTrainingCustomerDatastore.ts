@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/N8nTrainingCustomerDatastore/N8nTrainingCustomerDatastore.node.ts' node
 
-export const name = "n8nTrainingCustomerDatastore" as const;
 export const description = "Dummy node used for n8n training" as const;
+export const type = "n8n-nodes-base.n8nTrainingCustomerDatastore" as const;
 export const version = 1 as const;
 
 /**

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { GrafanaNodeParameters } from "../nodes/Grafana";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GrafanaProps extends NodeProps, GrafanaNodeParameters {
+export interface GrafanaProps extends NodeProps {
 
+    readonly parameters: GrafanaNodeParameters;
     readonly grafanaApiCredentials: Credentials<GrafanaApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Grafana<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.grafana" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: GrafanaProps) {
+    constructor(id: L, override props: GrafanaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GrafanaNodeParameters, "grafanaApiCredentials"> {
-
-        const { grafanaApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.grafanaApiCredentials];
+        return [this.props!.grafanaApiCredentials];
 
     }
 

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { SalesforceTriggerNodeParameters } from "../nodes/SalesforceTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SalesforceTriggerProps extends NodeProps, SalesforceTriggerNodeParameters {
+export interface SalesforceTriggerProps extends NodeProps {
 
+    readonly parameters: SalesforceTriggerNodeParameters;
     readonly salesforceOAuth2ApiCredentials: Credentials<SalesforceOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class SalesforceTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.salesforceTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: SalesforceTriggerProps) {
+    constructor(id: L, override props: SalesforceTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<SalesforceTriggerNodeParameters, "salesforceOAuth2ApiCredentials"> {
-
-        const { salesforceOAuth2ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.salesforceOAuth2ApiCredentials];
+        return [this.props!.salesforceOAuth2ApiCredentials];
 
     }
 

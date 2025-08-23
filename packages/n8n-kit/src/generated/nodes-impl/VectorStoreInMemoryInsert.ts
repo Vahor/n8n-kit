@@ -4,25 +4,20 @@
 import type { VectorStoreInMemoryInsertNodeParameters } from "../nodes/VectorStoreInMemoryInsert";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface VectorStoreInMemoryInsertProps extends NodeProps, VectorStoreInMemoryInsertNodeParameters {
+export interface VectorStoreInMemoryInsertProps extends NodeProps {
 
+    readonly parameters: VectorStoreInMemoryInsertNodeParameters;
 
 }
 
 export class VectorStoreInMemoryInsert<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.vectorStoreInMemoryInsert" as const;
+    protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryInsert" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: VectorStoreInMemoryInsertProps) {
+    constructor(id: L, override props?: VectorStoreInMemoryInsertProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : VectorStoreInMemoryInsertNodeParameters {
-
-        return this.props ?? {};
 
     }
 

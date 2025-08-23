@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/ConvertKit/ConvertKit.node.ts' node
 
-export const name = "convertKit" as const;
 export const description = "Consume ConvertKit API" as const;
+export const type = "n8n-nodes-base.convertKit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"convertKitApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/StickyNote/StickyNote.node.ts' node
 
-export const name = "stickyNote" as const;
 export const description = "Make your workflow easier to understand" as const;
+export const type = "n8n-nodes-base.stickyNote" as const;
 export const version = 1 as const;
 
 /**
@@ -18,17 +18,17 @@ export interface StickyNoteNodeParameters {
     /**
      * Default: 160
      */
-    readonly height: number;
+    readonly height?: number;
 
     /**
      * Default: 240
      */
-    readonly width: number;
+    readonly width?: number;
 
     /**
      * Default: 1
      */
-    readonly color: number;
+    readonly color?: number;
 
 
 }

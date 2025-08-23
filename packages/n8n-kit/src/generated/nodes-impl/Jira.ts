@@ -8,8 +8,9 @@ import type { Credentials } from "../../credentials";
 import type { JiraNodeParameters } from "../nodes/Jira";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface JiraProps extends NodeProps, JiraNodeParameters {
+export interface JiraProps extends NodeProps {
 
+    readonly parameters: JiraNodeParameters;
     readonly jiraSoftwareCloudApiCredentials?: Credentials<JiraSoftwareCloudApiCredentials>;
     readonly jiraSoftwareServerApiCredentials?: Credentials<JiraSoftwareServerApiCredentials>;
     readonly jiraSoftwareServerPatApiCredentials?: Credentials<JiraSoftwareServerPatApiCredentials>;
@@ -21,22 +22,15 @@ export class Jira<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.jira" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: JiraProps) {
+    constructor(id: L, override props?: JiraProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<JiraNodeParameters, "jiraSoftwareCloudApiCredentials | jiraSoftwareServerApiCredentials | jiraSoftwareServerPatApiCredentials"> {
-
-        const { jiraSoftwareCloudApiCredentials:_0, jiraSoftwareServerApiCredentials:_1, jiraSoftwareServerPatApiCredentials:_2, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials];
+        return [this.props!.jiraSoftwareCloudApiCredentials, this.props!.jiraSoftwareServerApiCredentials, this.props!.jiraSoftwareServerPatApiCredentials];
 
     }
 

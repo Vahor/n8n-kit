@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Gitlab/Gitlab.node.ts' node
 
-export const name = "gitlab" as const;
 export const description = "Retrieve data from GitLab API" as const;
+export const type = "n8n-nodes-base.gitlab" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gitlabApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gitlabOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -29,12 +29,12 @@ export interface GitlabNodeParameters {
     /**
      * User, group or namespace of the project
      */
-    readonly owner: string;
+    readonly owner?: string;
 
     /**
      * The name of the project
      */
-    readonly repository: string;
+    readonly repository?: string;
 
     /**
      * The title of the issue

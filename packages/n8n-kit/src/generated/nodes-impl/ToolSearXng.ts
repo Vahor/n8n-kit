@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { ToolSearXngNodeParameters } from "../nodes/ToolSearXng";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ToolSearXngProps extends NodeProps, ToolSearXngNodeParameters {
+export interface ToolSearXngProps extends NodeProps {
 
+    readonly parameters: ToolSearXngNodeParameters;
     readonly searXngApiCredentials: Credentials<SearXngApiCredentials>;
 
 }
 
 export class ToolSearXng<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.toolSearXng" as const;
+    protected type = "@n8n/n8n-nodes-langchain.toolSearXng" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ToolSearXngProps) {
+    constructor(id: L, override props: ToolSearXngProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<ToolSearXngNodeParameters, "searXngApiCredentials"> {
-
-        const { searXngApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.searXngApiCredentials];
+        return [this.props!.searXngApiCredentials];
 
     }
 

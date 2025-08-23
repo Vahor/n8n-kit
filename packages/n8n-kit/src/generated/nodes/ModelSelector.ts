@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/ModelSelector/ModelSelector.node.ts' node
 
-export const name = "modelSelector" as const;
 export const description = "Use this node to select one of the connected models to this node based on workflow data" as const;
+export const type = "@n8n/n8n-nodes-langchain.modelSelector" as const;
 export const version = 1 as const;
 
 /**

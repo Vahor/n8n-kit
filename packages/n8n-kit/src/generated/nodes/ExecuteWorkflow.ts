@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/ExecuteWorkflow/ExecuteWorkflow/ExecuteWorkflow.node.ts' node
 
-export const name = "executeWorkflow" as const;
 export const description = "Execute another workflow" as const;
+export const type = "n8n-nodes-base.executeWorkflow" as const;
 export const version = 1.2 as const;
 
 /**

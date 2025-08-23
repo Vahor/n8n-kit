@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { PagerDutyNodeParameters } from "../nodes/PagerDuty";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface PagerDutyProps extends NodeProps, PagerDutyNodeParameters {
+export interface PagerDutyProps extends NodeProps {
 
+    readonly parameters: PagerDutyNodeParameters;
     readonly pagerDutyApiCredentials?: Credentials<PagerDutyApiCredentials>;
     readonly pagerDutyOAuth2ApiCredentials?: Credentials<PagerDutyOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class PagerDuty<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.pagerDuty" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PagerDutyProps) {
+    constructor(id: L, override props?: PagerDutyProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<PagerDutyNodeParameters, "pagerDutyApiCredentials | pagerDutyOAuth2ApiCredentials"> {
-
-        const { pagerDutyApiCredentials:_0, pagerDutyOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.pagerDutyApiCredentials, this.props?.pagerDutyOAuth2ApiCredentials];
+        return [this.props!.pagerDutyApiCredentials, this.props!.pagerDutyOAuth2ApiCredentials];
 
     }
 

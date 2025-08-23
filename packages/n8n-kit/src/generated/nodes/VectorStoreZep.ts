@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreZep/VectorStoreZep.node.ts' node
 
-export const name = "vectorStoreZep" as const;
 export const description = "Work with your data in Zep Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreZep" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
 
@@ -39,7 +39,7 @@ export interface VectorStoreZepNodeParameters {
 
     readonly deprecationNotice?: string;
 
-    readonly collectionName: string;
+    readonly collectionName?: string;
 
     /**
      * Number of documents to embed in a single batch

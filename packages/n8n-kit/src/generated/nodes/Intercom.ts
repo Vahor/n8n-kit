@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Intercom/Intercom.node.ts' node
 
-export const name = "intercom" as const;
 export const description = "Consume Intercom API" as const;
+export const type = "n8n-nodes-base.intercom" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"intercomApi","required":true}] as const;
 

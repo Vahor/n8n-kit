@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/memory/MemoryMongoDbChat/MemoryMongoDbChat.node.ts' node
 
-export const name = "memoryMongoDbChat" as const;
 export const description = "Stores the chat history in MongoDB collection." as const;
+export const type = "@n8n/n8n-nodes-langchain.memoryMongoDbChat" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mongoDb","required":true}] as const;
 

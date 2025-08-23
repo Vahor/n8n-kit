@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Emelia/Emelia.node.ts' node
 
-export const name = "emelia" as const;
 export const description = "Consume the Emelia API" as const;
+export const type = "n8n-nodes-base.emelia" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"emeliaApi","required":true,"testedBy":"emeliaApiTest"}] as const;
 
@@ -14,7 +14,7 @@ export interface EmeliaNodeParameters {
     /**
      * Default: "campaign"
      */
-    readonly resource: "campaign" | "contactList";
+    readonly resource?: "campaign" | "contactList";
 
     /**
      * Default: "get"

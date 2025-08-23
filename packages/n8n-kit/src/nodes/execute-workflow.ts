@@ -1,23 +1,21 @@
 import type { Type } from "arktype";
 import {
 	type ExecuteWorkflowNodeParameters,
-	name,
+	type,
 	version,
 } from "../generated/nodes/ExecuteWorkflow";
 import type { Workflow } from "../workflow";
 import { Node, type NodeProps } from "./node";
 
-interface ExecuteWorkflowBaseProps
-	extends Omit<
+export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
+	extends NodeProps {
+	parameters: Omit<
 		ExecuteWorkflowNodeParameters,
 		"workflowId" | "source" | "workflowInputs"
-	> {}
-
-export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
-	extends NodeProps,
-		ExecuteWorkflowBaseProps {
-	workflow: Workflow<Input, Output>;
-	workflowInputs: Input["infer"];
+	> & {
+		workflow: Workflow<Input, Output>;
+		workflowInputs: Input["infer"];
+	};
 }
 
 export class ExecuteWorkflow<
@@ -25,27 +23,26 @@ export class ExecuteWorkflow<
 	Input extends Type,
 	Output extends Type,
 > extends Node<L, Output["infer"]> {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	public constructor(
 		id: L,
-		public readonly props: ExecuteWorkflowProps<Input, Output>,
+		override props: ExecuteWorkflowProps<Input, Output>,
 	) {
 		super(id, props);
 	}
 
 	override getParameters() {
 		return {
-			...this.props,
-			// nice thank you typescript
-			workflow: undefined as undefined,
+			...this.props.parameters,
+			// remove workflow from output as it's onlu used for the workflowId
+			workflow: undefined,
 			workflowId: {
-				value: this.props.workflow.id,
+				value: this.props.parameters.workflow.id,
 				mode: "list",
-				cachedResultName: this.props.workflow.id,
+				cachedResultName: this.props.parameters.workflow.id,
 			},
-			workflowInputs: this.props.workflowInputs,
 			source: "database",
 		};
 	}

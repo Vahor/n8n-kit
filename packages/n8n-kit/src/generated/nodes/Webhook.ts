@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Webhook/Webhook.node.ts' node
 
-export const name = "webhook" as const;
 export const description = "Starts the workflow when a webhook is called" as const;
+export const type = "n8n-nodes-base.webhook" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"authentication":["jwtAuth"]}}}] as const;
 

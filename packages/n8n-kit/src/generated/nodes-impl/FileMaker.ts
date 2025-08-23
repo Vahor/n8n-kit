@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { FileMakerNodeParameters } from "../nodes/FileMaker";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface FileMakerProps extends NodeProps, FileMakerNodeParameters {
+export interface FileMakerProps extends NodeProps {
 
+    readonly parameters: FileMakerNodeParameters;
     readonly fileMakerCredentials: Credentials<FileMakerCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class FileMaker<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.filemaker" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: FileMakerProps) {
+    constructor(id: L, override props: FileMakerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<FileMakerNodeParameters, "fileMakerCredentials"> {
-
-        const { fileMakerCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.fileMakerCredentials];
+        return [this.props!.fileMakerCredentials];
 
     }
 

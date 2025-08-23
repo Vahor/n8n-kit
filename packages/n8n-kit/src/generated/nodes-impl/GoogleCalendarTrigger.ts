@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { GoogleCalendarTriggerNodeParameters } from "../nodes/GoogleCalendarTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GoogleCalendarTriggerProps extends NodeProps, GoogleCalendarTriggerNodeParameters {
+export interface GoogleCalendarTriggerProps extends NodeProps {
 
+    readonly parameters: GoogleCalendarTriggerNodeParameters;
     readonly googleCalendarOAuth2ApiCredentials: Credentials<GoogleCalendarOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class GoogleCalendarTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleCalendarTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: GoogleCalendarTriggerProps) {
+    constructor(id: L, override props: GoogleCalendarTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GoogleCalendarTriggerNodeParameters, "googleCalendarOAuth2ApiCredentials"> {
-
-        const { googleCalendarOAuth2ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.googleCalendarOAuth2ApiCredentials];
+        return [this.props!.googleCalendarOAuth2ApiCredentials];
 
     }
 

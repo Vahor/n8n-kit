@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Baserow/Baserow.node.ts' node
 
-export const name = "baserow" as const;
 export const description = "Consume the Baserow API" as const;
+export const type = "n8n-nodes-base.baserow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"baserowApi","required":true}] as const;
 
@@ -25,13 +25,13 @@ export interface BaserowNodeParameters {
      * Database to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getDatabaseIds"}
      */
-    readonly databaseId: string;
+    readonly databaseId?: string;
 
     /**
      * Table to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsDependsOn":["databaseId"],"loadOptionsMethod":"getTableIds"}
      */
-    readonly tableId: string;
+    readonly tableId?: string;
 
     /**
      * ID of the row to return

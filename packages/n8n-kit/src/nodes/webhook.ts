@@ -1,6 +1,6 @@
 import type { Type } from "arktype";
 import {
-	name,
+	type,
 	version,
 	type WebhookNodeParameters,
 } from "../generated/nodes/Webhook";
@@ -26,8 +26,7 @@ type GetOutputSchemaField<
 	: F extends keyof P["outputSchema"]
 		? IsNever<P["outputSchema"][F]> extends true
 			? never
-			: // @ts-expect-error: shh it's fine
-				P["outputSchema"][F]["infer"]
+			: P["outputSchema"][F]["infer"]
 		: never;
 
 export class Webhook<L extends string, P extends WebhookProps> extends Node<
@@ -39,12 +38,12 @@ export class Webhook<L extends string, P extends WebhookProps> extends Node<
 		body: GetOutputSchemaField<P, "body">;
 	}
 > {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	constructor(
 		id: L,
-		public readonly props: P,
+		override props: P,
 	) {
 		super(id, props);
 	}

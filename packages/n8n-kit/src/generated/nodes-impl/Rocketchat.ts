@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { RocketchatNodeParameters } from "../nodes/Rocketchat";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface RocketchatProps extends NodeProps, RocketchatNodeParameters {
+export interface RocketchatProps extends NodeProps {
 
+    readonly parameters: RocketchatNodeParameters;
     readonly rocketchatApiCredentials: Credentials<RocketchatApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Rocketchat<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.rocketchat" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: RocketchatProps) {
+    constructor(id: L, override props: RocketchatProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<RocketchatNodeParameters, "rocketchatApiCredentials"> {
-
-        const { rocketchatApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.rocketchatApiCredentials];
+        return [this.props!.rocketchatApiCredentials];
 
     }
 

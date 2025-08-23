@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Aws/Comprehend/AwsComprehend.node.ts' node
 
-export const name = "awsComprehend" as const;
 export const description = "Sends data to Amazon Comprehend" as const;
+export const type = "n8n-nodes-base.awsComprehend" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Snowflake/Snowflake.node.ts' node
 
-export const name = "snowflake" as const;
 export const description = "Get, add and update data in Snowflake" as const;
+export const type = "n8n-nodes-base.snowflake" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"snowflake","required":true}] as const;
 

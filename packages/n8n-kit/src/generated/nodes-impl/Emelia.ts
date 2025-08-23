@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { EmeliaNodeParameters } from "../nodes/Emelia";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface EmeliaProps extends NodeProps, EmeliaNodeParameters {
+export interface EmeliaProps extends NodeProps {
 
+    readonly parameters: EmeliaNodeParameters;
     readonly emeliaApiCredentials: Credentials<EmeliaApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Emelia<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.emelia" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: EmeliaProps) {
+    constructor(id: L, override props: EmeliaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<EmeliaNodeParameters, "emeliaApiCredentials"> {
-
-        const { emeliaApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.emeliaApiCredentials];
+        return [this.props!.emeliaApiCredentials];
 
     }
 

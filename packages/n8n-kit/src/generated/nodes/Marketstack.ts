@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Marketstack/Marketstack.node.ts' node
 
-export const name = "marketstack" as const;
 export const description = "Consume Marketstack API" as const;
+export const type = "n8n-nodes-base.marketstack" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"marketstackApi","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface MarketstackNodeParameters {
     /**
      * Default: "endOfDayData"
      */
-    readonly resource: "endOfDayData" | "exchange" | "ticker";
+    readonly resource?: "endOfDayData" | "exchange" | "ticker";
 
     /**
      * Default: "getAll"

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/BigQuery/v1/GoogleBigQueryV1.node.ts' node
 
-export const name = "googleBigQuery" as const;
 export const description = "Consume Google BigQuery API" as const;
+export const type = "n8n-nodes-base.googleBigQuery" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBigQueryOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

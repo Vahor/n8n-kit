@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Compression/Compression.node.ts' node
 
-export const name = "compression" as const;
 export const description = "Compress and decompress files" as const;
+export const type = "n8n-nodes-base.compression" as const;
 export const version = 1.1 as const;
 
 /**

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { CalTriggerNodeParameters } from "../nodes/CalTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface CalTriggerProps extends NodeProps, CalTriggerNodeParameters {
+export interface CalTriggerProps extends NodeProps {
 
+    readonly parameters: CalTriggerNodeParameters;
     readonly calApiCredentials: Credentials<CalApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class CalTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.calTrigger" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props: CalTriggerProps) {
+    constructor(id: L, override props: CalTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<CalTriggerNodeParameters, "calApiCredentials"> {
-
-        const { calApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.calApiCredentials];
+        return [this.props!.calApiCredentials];
 
     }
 

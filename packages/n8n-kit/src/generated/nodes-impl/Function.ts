@@ -4,8 +4,9 @@
 import type { FunctionNodeParameters } from "../nodes/Function";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface FunctionProps extends NodeProps, FunctionNodeParameters {
+export interface FunctionProps extends NodeProps {
 
+    readonly parameters: FunctionNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class Function<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.function" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: FunctionProps) {
+    constructor(id: L, override props?: FunctionProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : FunctionNodeParameters {
-
-        return this.props ?? {};
 
     }
 

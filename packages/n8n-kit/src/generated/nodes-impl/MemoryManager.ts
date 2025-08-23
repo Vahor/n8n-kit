@@ -4,25 +4,20 @@
 import type { MemoryManagerNodeParameters } from "../nodes/MemoryManager";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MemoryManagerProps extends NodeProps, MemoryManagerNodeParameters {
+export interface MemoryManagerProps extends NodeProps {
 
+    readonly parameters: MemoryManagerNodeParameters;
 
 }
 
 export class MemoryManager<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.memoryManager" as const;
+    protected type = "@n8n/n8n-nodes-langchain.memoryManager" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: MemoryManagerProps) {
+    constructor(id: L, override props?: MemoryManagerProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : MemoryManagerNodeParameters {
-
-        return this.props ?? {};
 
     }
 

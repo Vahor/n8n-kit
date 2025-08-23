@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreMilvus/VectorStoreMilvus.node.ts' node
 
-export const name = "vectorStoreMilvus" as const;
 export const description = "Work with your data in Milvus Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreMilvus" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"milvusApi","required":true}] as const;
 
@@ -40,7 +40,7 @@ export interface VectorStoreMilvusNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly milvusCollection: any;
+    readonly milvusCollection?: any;
 
     /**
      * Number of documents to embed in a single batch

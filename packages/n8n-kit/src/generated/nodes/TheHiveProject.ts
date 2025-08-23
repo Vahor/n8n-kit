@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/TheHiveProject/TheHiveProject.node.ts' node
 
-export const name = "theHiveProject" as const;
 export const description = "Consume TheHive 5 API" as const;
+export const type = "n8n-nodes-base.theHiveProject" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"theHiveProjectApi","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface TheHiveProjectNodeParameters {
     /**
      * Default: "alert"
      */
-    readonly resource: "alert" | "case" | "comment" | "observable" | "page" | "query" | "task" | "log";
+    readonly resource?: "alert" | "case" | "comment" | "observable" | "page" | "query" | "task" | "log";
 
     /**
      * Default: "create"

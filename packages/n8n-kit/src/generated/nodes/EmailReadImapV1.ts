@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/EmailReadImap/v1/EmailReadImapV1.node.ts' node
 
-export const name = "emailReadImap" as const;
 export const description = "Triggers the workflow when a new email is received" as const;
+export const type = "n8n-nodes-base.emailReadImap" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"imap","required":true,"testedBy":"imapConnectionTest"}] as const;
 

@@ -13,31 +13,39 @@ const workflow = new Workflow("my-workflow", {
 	definition: [
 		new StickyNote("note", {
 			position: [0, 0],
-			content:
-				"## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
-			height: 120,
-			width: 600,
+			parameters: {
+				content:
+					"## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
+				height: 120,
+				width: 600,
+			},
 		}),
 
 		Chain.start(
 			new ScheduleTrigger("schedule-trigger", {
 				label: "Schedule trigger",
-				interval: [
-					{
-						field: "weeks",
-						triggerAtDay: [1],
-						triggerAtHour: 9,
-						weeksInterval: 1,
+				parameters: {
+					rule: {
+						interval: [
+							{
+								field: "weeks",
+								triggerAtDay: [1],
+								triggerAtHour: 9,
+								weeksInterval: 1,
+							},
+						],
 					},
-				],
+				},
 			}),
 		)
 			.next(
 				new Nasa("nasa", {
 					nasaApiCredentials: nasaCredentials,
-					resource: "donkiSolarFlare",
-					additionalFields: {
-						startDate: expr`{{ $today.minus(1, 'day') }}`,
+					parameters: {
+						resource: "donkiSolarFlare",
+						additionalFields: {
+							startDate: expr`{{ $today.minus(1, 'day') }}`,
+						},
 					},
 				}),
 			)
@@ -57,18 +65,22 @@ const workflow = new Workflow("my-workflow", {
 				})
 					.true(
 						new PostBin("PostBin(true)", {
-							resource: "request",
-							binId: "1741914338605-0907339996192",
-							binContent: expr`There was a solar flare of class ${$("json.classType")}`,
-							operation: "send",
+							parameters: {
+								resource: "request",
+								binId: "1741914338605-0907339996192",
+								binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+								operation: "send",
+							},
 						}),
 					)
 					.false(
 						new PostBin("PostBin(false)", {
-							resource: "request",
-							binId: "1741914338605-0907339996192",
-							binContent: expr`There was a solar flare of class ${$("json.classType")}`,
-							operation: "send",
+							parameters: {
+								resource: "request",
+								binId: "1741914338605-0907339996192",
+								binContent: expr`There was a solar flare of class ${$("json.classType")}`,
+								operation: "send",
+							},
 						}),
 					),
 			),

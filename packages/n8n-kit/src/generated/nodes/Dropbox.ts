@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Dropbox/Dropbox.node.ts' node
 
-export const name = "dropbox" as const;
 export const description = "Access data on Dropbox" as const;
+export const type = "n8n-nodes-base.dropbox" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"dropboxApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"dropboxOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

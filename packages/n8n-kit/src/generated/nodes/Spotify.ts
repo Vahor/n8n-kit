@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Spotify/Spotify.node.ts' node
 
-export const name = "spotify" as const;
 export const description = "Access public song data via the Spotify API" as const;
+export const type = "n8n-nodes-base.spotify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"spotifyOAuth2Api","required":true}] as const;
 

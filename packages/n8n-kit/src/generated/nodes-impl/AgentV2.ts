@@ -4,25 +4,20 @@
 import type { AgentV2NodeParameters } from "../nodes/AgentV2";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface AgentV2Props extends NodeProps, AgentV2NodeParameters {
+export interface AgentV2Props extends NodeProps {
 
+    readonly parameters: AgentV2NodeParameters;
 
 }
 
 export class AgentV2<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.agent" as const;
+    protected type = "@n8n/n8n-nodes-langchain.agent" as const;
     protected typeVersion = 2.2 as const;
 
-    constructor(id: L, public readonly props?: AgentV2Props) {
+    constructor(id: L, override props?: AgentV2Props) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : AgentV2NodeParameters {
-
-        return this.props ?? {};
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Beeminder/Beeminder.node.ts' node
 
-export const name = "beeminder" as const;
 export const description = "Consume Beeminder API" as const;
+export const type = "n8n-nodes-base.beeminder" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"beeminderApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"beeminderOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -19,7 +19,7 @@ export interface BeeminderNodeParameters {
     /**
      * Default: "datapoint"
      */
-    readonly resource: "charge" | "datapoint" | "goal" | "user";
+    readonly resource?: "charge" | "datapoint" | "goal" | "user";
 
     /**
      * Default: "create"

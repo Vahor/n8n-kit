@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/WhatsApp/WhatsApp.node.ts' node
 
-export const name = "whatsApp" as const;
 export const description = "Access WhatsApp API" as const;
+export const type = "n8n-nodes-base.whatsApp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"whatsAppApi","required":true}] as const;
 

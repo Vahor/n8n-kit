@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { UrlScanIoNodeParameters } from "../nodes/UrlScanIo";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface UrlScanIoProps extends NodeProps, UrlScanIoNodeParameters {
+export interface UrlScanIoProps extends NodeProps {
 
+    readonly parameters: UrlScanIoNodeParameters;
     readonly urlScanIoApiCredentials: Credentials<UrlScanIoApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class UrlScanIo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.urlScanIo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: UrlScanIoProps) {
+    constructor(id: L, override props: UrlScanIoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<UrlScanIoNodeParameters, "urlScanIoApiCredentials"> {
-
-        const { urlScanIoApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.urlScanIoApiCredentials];
+        return [this.props!.urlScanIoApiCredentials];
 
     }
 

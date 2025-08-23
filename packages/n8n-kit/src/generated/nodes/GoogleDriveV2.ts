@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Drive/v2/GoogleDriveV2.node.ts' node
 
-export const name = "googleDrive" as const;
 export const description = "Access data on Google Drive" as const;
+export const type = "n8n-nodes-base.googleDrive" as const;
 export const version = 3 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/text_splitters/TextSplitterRecursiveCharacterTextSplitter/TextSplitterRecursiveCharacterTextSplitter.node.ts' node
 
-export const name = "textSplitterRecursiveCharacterTextSplitter" as const;
 export const description = "Split text into chunks by characters recursively, recommended for most use cases" as const;
+export const type = "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter" as const;
 export const version = 1 as const;
 
 /**

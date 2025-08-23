@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreInMemoryLoad/VectorStoreInMemoryLoad.node.ts' node
 
-export const name = "vectorStoreInMemoryLoad" as const;
 export const description = "Load embedded data from an in-memory vector store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryLoad" as const;
 export const version = 1 as const;
 
 /**

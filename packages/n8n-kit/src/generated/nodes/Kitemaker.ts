@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Kitemaker/Kitemaker.node.ts' node
 
-export const name = "kitemaker" as const;
 export const description = "Consume the Kitemaker GraphQL API" as const;
+export const type = "n8n-nodes-base.kitemaker" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"kitemakerApi","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface KitemakerNodeParameters {
     /**
      * Default: "workItem"
      */
-    readonly resource: "organization" | "space" | "user" | "workItem";
+    readonly resource?: "organization" | "space" | "user" | "workItem";
 
     /**
      * Default: "get"

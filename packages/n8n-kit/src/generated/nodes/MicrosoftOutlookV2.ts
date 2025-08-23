@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Outlook/v2/MicrosoftOutlookV2.node.ts' node
 
-export const name = "microsoftOutlook" as const;
 export const description = "Consume Microsoft Outlook API" as const;
+export const type = "n8n-nodes-base.microsoftOutlook" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
 
@@ -105,12 +105,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-23T18:36:35.268+02:00"
+     * Default: "2025-08-23T19:28:51.675+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-23T19:06:35.268+02:00"
+     * Default: "2025-08-23T19:58:51.675+02:00"
      */
     readonly endDateTime?: string;
 

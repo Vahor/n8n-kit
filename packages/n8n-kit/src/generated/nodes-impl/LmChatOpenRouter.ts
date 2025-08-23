@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { LmChatOpenRouterNodeParameters } from "../nodes/LmChatOpenRouter";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LmChatOpenRouterProps extends NodeProps, LmChatOpenRouterNodeParameters {
+export interface LmChatOpenRouterProps extends NodeProps {
 
+    readonly parameters: LmChatOpenRouterNodeParameters;
     readonly openRouterApiCredentials: Credentials<OpenRouterApiCredentials>;
 
 }
 
 export class LmChatOpenRouter<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.lmChatOpenRouter" as const;
+    protected type = "@n8n/n8n-nodes-langchain.lmChatOpenRouter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LmChatOpenRouterProps) {
+    constructor(id: L, override props: LmChatOpenRouterProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<LmChatOpenRouterNodeParameters, "openRouterApiCredentials"> {
-
-        const { openRouterApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.openRouterApiCredentials];
+        return [this.props!.openRouterApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/chains/ChainLLM/ChainLlm.node.ts' node
 
-export const name = "chainLlm" as const;
 export const description = "A simple chain to prompt a large language model" as const;
+export const type = "@n8n/n8n-nodes-langchain.chainLlm" as const;
 export const version = 1.7 as const;
 export const credentials = [] as const;
 

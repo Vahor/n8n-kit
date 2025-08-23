@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/E2eTest/E2eTest.node.ts' node
 
-export const name = "e2eTest" as const;
 export const description = "Dummy node used for e2e testing" as const;
+export const type = "n8n-nodes-base.e2eTest" as const;
 export const version = 1 as const;
 
 /**

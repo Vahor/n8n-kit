@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Metabase/Metabase.node.ts' node
 
-export const name = "metabase" as const;
 export const description = "Use the Metabase API" as const;
+export const type = "n8n-nodes-base.metabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"metabaseApi","required":true}] as const;
 

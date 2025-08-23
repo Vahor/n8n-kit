@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Bubble/Bubble.node.ts' node
 
-export const name = "bubble" as const;
 export const description = "Consume the Bubble Data API" as const;
+export const type = "n8n-nodes-base.bubble" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bubbleApi","required":true}] as const;
 

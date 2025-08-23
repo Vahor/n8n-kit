@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Mailjet/Mailjet.node.ts' node
 
-export const name = "mailjet" as const;
 export const description = "Consume Mailjet API" as const;
+export const type = "n8n-nodes-base.mailjet" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailjetEmailApi","required":true,"displayOptions":{"show":{"resource":["email"]}}},{"name":"mailjetSmsApi","required":true,"displayOptions":{"show":{"resource":["sms"]}}}] as const;
 

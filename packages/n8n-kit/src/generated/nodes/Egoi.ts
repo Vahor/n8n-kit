@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Egoi/Egoi.node.ts' node
 
-export const name = "egoi" as const;
 export const description = "Consume E-goi API" as const;
+export const type = "n8n-nodes-base.egoi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"egoiApi","required":true}] as const;
 
@@ -14,12 +14,12 @@ export interface EgoiNodeParameters {
     /**
      * Default: "contact"
      */
-    readonly resource: "contact";
+    readonly resource?: "contact";
 
     /**
      * Default: "create"
      */
-    readonly operation: "create" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "get" | "getAll" | "update";
 
     /**
      * ID of list to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

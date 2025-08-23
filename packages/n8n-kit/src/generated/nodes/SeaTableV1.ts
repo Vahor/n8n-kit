@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/SeaTable/v1/SeaTableV1.node.ts' node
 
-export const name = "seaTable" as const;
 export const description = "Consume the SeaTable API" as const;
+export const type = "n8n-nodes-base.seaTable" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"seaTableApi","required":true}] as const;
 
@@ -26,7 +26,7 @@ export interface SeaTableV1NodeParameters {
      * The name of SeaTable table to access. Choose from the list, or specify the name using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTableNames"}
      */
-    readonly tableName: string;
+    readonly tableName?: string;
 
     /**
      * The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

@@ -4,25 +4,20 @@
 import type { ToolVectorStoreNodeParameters } from "../nodes/ToolVectorStore";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ToolVectorStoreProps extends NodeProps, ToolVectorStoreNodeParameters {
+export interface ToolVectorStoreProps extends NodeProps {
 
+    readonly parameters: ToolVectorStoreNodeParameters;
 
 }
 
 export class ToolVectorStore<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.toolVectorStore" as const;
+    protected type = "@n8n/n8n-nodes-langchain.toolVectorStore" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: ToolVectorStoreProps) {
+    constructor(id: L, override props?: ToolVectorStoreProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ToolVectorStoreNodeParameters {
-
-        return this.props ?? {};
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Signl4/Signl4.node.ts' node
 
-export const name = "signl4" as const;
 export const description = "Consume SIGNL4 API" as const;
+export const type = "n8n-nodes-base.signl4" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"signl4Api","required":true}] as const;
 

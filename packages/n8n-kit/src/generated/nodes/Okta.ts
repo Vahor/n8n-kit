@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Okta/Okta.node.ts' node
 
-export const name = "okta" as const;
 export const description = "Use the Okta API" as const;
+export const type = "n8n-nodes-base.okta" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"oktaApi","required":true}] as const;
 

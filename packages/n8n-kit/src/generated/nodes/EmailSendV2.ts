@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/EmailSend/v2/EmailSendV2.node.ts' node
 
-export const name = "emailSend" as const;
 export const description = "Sends an email using SMTP protocol" as const;
+export const type = "n8n-nodes-base.emailSend" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"smtp","required":true,"testedBy":"smtpConnectionTest"}] as const;
 

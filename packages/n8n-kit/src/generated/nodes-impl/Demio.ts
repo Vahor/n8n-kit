@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { DemioNodeParameters } from "../nodes/Demio";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface DemioProps extends NodeProps, DemioNodeParameters {
+export interface DemioProps extends NodeProps {
 
+    readonly parameters: DemioNodeParameters;
     readonly demioApiCredentials: Credentials<DemioApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Demio<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.demio" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: DemioProps) {
+    constructor(id: L, override props: DemioProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<DemioNodeParameters, "demioApiCredentials"> {
-
-        const { demioApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.demioApiCredentials];
+        return [this.props!.demioApiCredentials];
 
     }
 

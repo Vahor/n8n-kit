@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { MarketstackNodeParameters } from "../nodes/Marketstack";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MarketstackProps extends NodeProps, MarketstackNodeParameters {
+export interface MarketstackProps extends NodeProps {
 
+    readonly parameters: MarketstackNodeParameters;
     readonly marketstackApiCredentials: Credentials<MarketstackApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Marketstack<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.marketstack" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: MarketstackProps) {
+    constructor(id: L, override props: MarketstackProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<MarketstackNodeParameters, "marketstackApiCredentials"> {
-
-        const { marketstackApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.marketstackApiCredentials];
+        return [this.props!.marketstackApiCredentials];
 
     }
 

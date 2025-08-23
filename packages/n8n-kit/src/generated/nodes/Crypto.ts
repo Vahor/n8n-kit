@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Crypto/Crypto.node.ts' node
 
-export const name = "crypto" as const;
 export const description = "Provide cryptographic utilities" as const;
+export const type = "n8n-nodes-base.crypto" as const;
 export const version = 1 as const;
 
 /**

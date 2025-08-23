@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Automizy/Automizy.node.ts' node
 
-export const name = "automizy" as const;
 export const description = "Consume Automizy API" as const;
+export const type = "n8n-nodes-base.automizy" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"automizyApi","required":true}] as const;
 

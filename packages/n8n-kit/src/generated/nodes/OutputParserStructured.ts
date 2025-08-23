@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/output_parser/OutputParserStructured/OutputParserStructured.node.ts' node
 
-export const name = "outputParserStructured" as const;
 export const description = "Return data in a defined JSON format" as const;
+export const type = "@n8n/n8n-nodes-langchain.outputParserStructured" as const;
 export const version = 1.3 as const;
 
 /**

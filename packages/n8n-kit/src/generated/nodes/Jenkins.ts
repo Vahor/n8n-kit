@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Jenkins/Jenkins.node.ts' node
 
-export const name = "jenkins" as const;
 export const description = "Consume Jenkins API" as const;
+export const type = "n8n-nodes-base.jenkins" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jenkinsApi","required":true,"testedBy":"jenkinApiCredentialTest"}] as const;
 

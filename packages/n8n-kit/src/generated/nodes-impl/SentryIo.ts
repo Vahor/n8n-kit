@@ -8,8 +8,9 @@ import type { Credentials } from "../../credentials";
 import type { SentryIoNodeParameters } from "../nodes/SentryIo";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SentryIoProps extends NodeProps, SentryIoNodeParameters {
+export interface SentryIoProps extends NodeProps {
 
+    readonly parameters: SentryIoNodeParameters;
     readonly sentryIoOAuth2ApiCredentials?: Credentials<SentryIoOAuth2ApiCredentials>;
     readonly sentryIoApiCredentials?: Credentials<SentryIoApiCredentials>;
     readonly sentryIoServerApiCredentials?: Credentials<SentryIoServerApiCredentials>;
@@ -21,22 +22,15 @@ export class SentryIo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.sentryIo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SentryIoProps) {
+    constructor(id: L, override props?: SentryIoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<SentryIoNodeParameters, "sentryIoOAuth2ApiCredentials | sentryIoApiCredentials | sentryIoServerApiCredentials"> {
-
-        const { sentryIoOAuth2ApiCredentials:_0, sentryIoApiCredentials:_1, sentryIoServerApiCredentials:_2, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.sentryIoOAuth2ApiCredentials, this.props?.sentryIoApiCredentials, this.props?.sentryIoServerApiCredentials];
+        return [this.props!.sentryIoOAuth2ApiCredentials, this.props!.sentryIoApiCredentials, this.props!.sentryIoServerApiCredentials];
 
     }
 

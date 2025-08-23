@@ -8,8 +8,9 @@ import type { Credentials } from "../../credentials";
 import type { ShopifyTriggerNodeParameters } from "../nodes/ShopifyTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ShopifyTriggerProps extends NodeProps, ShopifyTriggerNodeParameters {
+export interface ShopifyTriggerProps extends NodeProps {
 
+    readonly parameters: ShopifyTriggerNodeParameters;
     readonly shopifyApiCredentials?: Credentials<ShopifyApiCredentials>;
     readonly shopifyAccessTokenApiCredentials?: Credentials<ShopifyAccessTokenApiCredentials>;
     readonly shopifyOAuth2ApiCredentials?: Credentials<ShopifyOAuth2ApiCredentials>;
@@ -21,22 +22,15 @@ export class ShopifyTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.shopifyTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ShopifyTriggerProps) {
+    constructor(id: L, override props?: ShopifyTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<ShopifyTriggerNodeParameters, "shopifyApiCredentials | shopifyAccessTokenApiCredentials | shopifyOAuth2ApiCredentials"> {
-
-        const { shopifyApiCredentials:_0, shopifyAccessTokenApiCredentials:_1, shopifyOAuth2ApiCredentials:_2, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.shopifyApiCredentials, this.props?.shopifyAccessTokenApiCredentials, this.props?.shopifyOAuth2ApiCredentials];
+        return [this.props!.shopifyApiCredentials, this.props!.shopifyAccessTokenApiCredentials, this.props!.shopifyOAuth2ApiCredentials];
 
     }
 

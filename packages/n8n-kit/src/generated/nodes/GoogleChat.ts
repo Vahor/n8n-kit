@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Chat/GoogleChat.node.ts' node
 
-export const name = "googleChat" as const;
 export const description = "Consume Google Chat API" as const;
+export const type = "n8n-nodes-base.googleChat" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true,"testedBy":"testGoogleTokenAuth","displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleChatOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -19,7 +19,7 @@ export interface GoogleChatNodeParameters {
     /**
      * Default: "message"
      */
-    readonly resource: "member" | "message" | "space";
+    readonly resource?: "member" | "message" | "space";
 
     /**
      * Default: "get"
@@ -27,7 +27,7 @@ export interface GoogleChatNodeParameters {
     readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "sendAndWait" | "update";
 
     /**
-     * Member to be retrieved in the form "spaces/*/members/*"
+     * Member to be retrieved in the form "spaces/*<space>/members/*"
      */
     readonly memberId?: string;
 

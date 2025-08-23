@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { SurveyMonkeyTriggerNodeParameters } from "../nodes/SurveyMonkeyTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SurveyMonkeyTriggerProps extends NodeProps, SurveyMonkeyTriggerNodeParameters {
+export interface SurveyMonkeyTriggerProps extends NodeProps {
 
+    readonly parameters: SurveyMonkeyTriggerNodeParameters;
     readonly surveyMonkeyApiCredentials?: Credentials<SurveyMonkeyApiCredentials>;
     readonly surveyMonkeyOAuth2ApiCredentials?: Credentials<SurveyMonkeyOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class SurveyMonkeyTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.surveyMonkeyTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SurveyMonkeyTriggerProps) {
+    constructor(id: L, override props?: SurveyMonkeyTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<SurveyMonkeyTriggerNodeParameters, "surveyMonkeyApiCredentials | surveyMonkeyOAuth2ApiCredentials"> {
-
-        const { surveyMonkeyApiCredentials:_0, surveyMonkeyOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.surveyMonkeyApiCredentials, this.props?.surveyMonkeyOAuth2ApiCredentials];
+        return [this.props!.surveyMonkeyApiCredentials, this.props!.surveyMonkeyOAuth2ApiCredentials];
 
     }
 

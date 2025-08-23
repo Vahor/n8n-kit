@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MailerLite/v1/MailerLiteV1.node.ts' node
 
-export const name = "mailerLite" as const;
 export const description = "Consume Mailer Lite API" as const;
+export const type = "n8n-nodes-base.mailerLite" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailerLiteApi","required":true}] as const;
 

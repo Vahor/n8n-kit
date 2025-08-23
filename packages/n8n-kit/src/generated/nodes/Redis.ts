@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Redis/Redis.node.ts' node
 
-export const name = "redis" as const;
 export const description = "Get, send and update data in Redis" as const;
+export const type = "n8n-nodes-base.redis" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"redis","required":true,"testedBy":"redisConnectionTest"}] as const;
 

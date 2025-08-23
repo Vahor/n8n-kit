@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/ToDo/MicrosoftToDo.node.ts' node
 
-export const name = "microsoftToDo" as const;
 export const description = "Consume Microsoft To Do API." as const;
+export const type = "n8n-nodes-base.microsoftToDo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftToDoOAuth2Api","required":true}] as const;
 

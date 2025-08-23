@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Function/Function.node.ts' node
 
-export const name = "function" as const;
 export const description = "Run custom function code which gets executed once and allows you to add, remove, change and replace items" as const;
+export const type = "n8n-nodes-base.function" as const;
 export const version = 1 as const;
 
 /**

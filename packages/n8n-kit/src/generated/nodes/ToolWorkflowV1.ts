@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/tools/ToolWorkflow/v1/ToolWorkflowV1.node.ts' node
 
-export const name = "toolWorkflow" as const;
 export const description = "Uses another n8n workflow as a tool. Allows packaging any n8n node(s) as a tool." as const;
+export const type = "@n8n/n8n-nodes-langchain.toolWorkflow" as const;
 export const version = 1.3 as const;
 
 /**

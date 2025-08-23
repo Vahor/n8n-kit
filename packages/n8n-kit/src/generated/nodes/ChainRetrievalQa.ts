@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/chains/ChainRetrievalQA/ChainRetrievalQa.node.ts' node
 
-export const name = "chainRetrievalQa" as const;
 export const description = "Answer questions about retrieved documents" as const;
+export const type = "@n8n/n8n-nodes-langchain.chainRetrievalQa" as const;
 export const version = 1.6 as const;
 export const credentials = [] as const;
 

@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { ToolSerpApiNodeParameters } from "../nodes/ToolSerpApi";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ToolSerpApiProps extends NodeProps, ToolSerpApiNodeParameters {
+export interface ToolSerpApiProps extends NodeProps {
 
+    readonly parameters: ToolSerpApiNodeParameters;
     readonly serpApiCredentials: Credentials<SerpApiCredentials>;
 
 }
 
 export class ToolSerpApi<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.toolSerpApi" as const;
+    protected type = "@n8n/n8n-nodes-langchain.toolSerpApi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ToolSerpApiProps) {
+    constructor(id: L, override props: ToolSerpApiProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<ToolSerpApiNodeParameters, "serpApiCredentials"> {
-
-        const { serpApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.serpApiCredentials];
+        return [this.props!.serpApiCredentials];
 
     }
 

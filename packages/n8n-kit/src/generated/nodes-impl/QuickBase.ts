@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { QuickBaseNodeParameters } from "../nodes/QuickBase";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface QuickBaseProps extends NodeProps, QuickBaseNodeParameters {
+export interface QuickBaseProps extends NodeProps {
 
+    readonly parameters: QuickBaseNodeParameters;
     readonly quickbaseApiCredentials: Credentials<QuickBaseApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class QuickBase<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.quickbase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: QuickBaseProps) {
+    constructor(id: L, override props: QuickBaseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<QuickBaseNodeParameters, "quickbaseApiCredentials"> {
-
-        const { quickbaseApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.quickbaseApiCredentials];
+        return [this.props!.quickbaseApiCredentials];
 
     }
 

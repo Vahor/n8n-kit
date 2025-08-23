@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Excel/v1/MicrosoftExcelV1.node.ts' node
 
-export const name = "microsoftExcel" as const;
 export const description = "Consume Microsoft Excel API" as const;
+export const type = "n8n-nodes-base.microsoftExcel" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] as const;
 

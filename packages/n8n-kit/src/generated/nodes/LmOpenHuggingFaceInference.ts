@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/llms/LMOpenHuggingFaceInference/LmOpenHuggingFaceInference.node.ts' node
 
-export const name = "lmOpenHuggingFaceInference" as const;
 export const description = "Language Model HuggingFaceInference" as const;
+export const type = "@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"huggingFaceApi","required":true}] as const;
 

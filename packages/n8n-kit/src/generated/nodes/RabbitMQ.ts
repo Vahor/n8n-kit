@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/RabbitMQ/RabbitMQ.node.ts' node
 
-export const name = "rabbitmq" as const;
 export const description = "Sends messages to a RabbitMQ topic" as const;
+export const type = "n8n-nodes-base.rabbitmq" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"rabbitmq","required":true,"testedBy":"rabbitmqConnectionTest"}] as const;
 

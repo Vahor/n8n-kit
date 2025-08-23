@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { MandrillNodeParameters } from "../nodes/Mandrill";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MandrillProps extends NodeProps, MandrillNodeParameters {
+export interface MandrillProps extends NodeProps {
 
+    readonly parameters: MandrillNodeParameters;
     readonly mandrillApiCredentials: Credentials<MandrillApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Mandrill<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mandrill" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: MandrillProps) {
+    constructor(id: L, override props: MandrillProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<MandrillNodeParameters, "mandrillApiCredentials"> {
-
-        const { mandrillApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.mandrillApiCredentials];
+        return [this.props!.mandrillApiCredentials];
 
     }
 

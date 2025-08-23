@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { QuickBooksNodeParameters } from "../nodes/QuickBooks";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface QuickBooksProps extends NodeProps, QuickBooksNodeParameters {
+export interface QuickBooksProps extends NodeProps {
 
+    readonly parameters: QuickBooksNodeParameters;
     readonly quickBooksOAuth2ApiCredentials: Credentials<QuickBooksOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class QuickBooks<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.quickbooks" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: QuickBooksProps) {
+    constructor(id: L, override props: QuickBooksProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<QuickBooksNodeParameters, "quickBooksOAuth2ApiCredentials"> {
-
-        const { quickBooksOAuth2ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.quickBooksOAuth2ApiCredentials];
+        return [this.props!.quickBooksOAuth2ApiCredentials];
 
     }
 

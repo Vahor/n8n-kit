@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { BubbleNodeParameters } from "../nodes/Bubble";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface BubbleProps extends NodeProps, BubbleNodeParameters {
+export interface BubbleProps extends NodeProps {
 
+    readonly parameters: BubbleNodeParameters;
     readonly bubbleApiCredentials: Credentials<BubbleApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Bubble<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.bubble" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: BubbleProps) {
+    constructor(id: L, override props: BubbleProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<BubbleNodeParameters, "bubbleApiCredentials"> {
-
-        const { bubbleApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.bubbleApiCredentials];
+        return [this.props!.bubbleApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Cortex/Cortex.node.ts' node
 
-export const name = "cortex" as const;
 export const description = "Apply the Cortex analyzer/responder on the given entity" as const;
+export const type = "n8n-nodes-base.cortex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cortexApi","required":true}] as const;
 
@@ -15,7 +15,7 @@ export interface CortexNodeParameters {
      * Choose a resource
      * Default: "analyzer"
      */
-    readonly resource: "analyzer" | "job" | "responder";
+    readonly resource?: "analyzer" | "job" | "responder";
 
     /**
      * Choose an operation

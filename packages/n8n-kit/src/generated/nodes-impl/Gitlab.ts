@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { GitlabNodeParameters } from "../nodes/Gitlab";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GitlabProps extends NodeProps, GitlabNodeParameters {
+export interface GitlabProps extends NodeProps {
 
+    readonly parameters: GitlabNodeParameters;
     readonly gitlabApiCredentials?: Credentials<GitlabApiCredentials>;
     readonly gitlabOAuth2ApiCredentials?: Credentials<GitlabOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class Gitlab<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.gitlab" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GitlabProps) {
+    constructor(id: L, override props?: GitlabProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GitlabNodeParameters, "gitlabApiCredentials | gitlabOAuth2ApiCredentials"> {
-
-        const { gitlabApiCredentials:_0, gitlabOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.gitlabApiCredentials, this.props?.gitlabOAuth2ApiCredentials];
+        return [this.props!.gitlabApiCredentials, this.props!.gitlabOAuth2ApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Chargebee/Chargebee.node.ts' node
 
-export const name = "chargebee" as const;
 export const description = "Retrieve data from Chargebee API" as const;
+export const type = "n8n-nodes-base.chargebee" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"chargebeeApi","required":true}] as const;
 

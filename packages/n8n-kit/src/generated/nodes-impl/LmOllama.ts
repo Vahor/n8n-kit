@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { LmOllamaNodeParameters } from "../nodes/LmOllama";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LmOllamaProps extends NodeProps, LmOllamaNodeParameters {
+export interface LmOllamaProps extends NodeProps {
 
+    readonly parameters: LmOllamaNodeParameters;
     readonly ollamaApiCredentials: Credentials<OllamaApiCredentials>;
 
 }
 
 export class LmOllama<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.lmOllama" as const;
+    protected type = "@n8n/n8n-nodes-langchain.lmOllama" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LmOllamaProps) {
+    constructor(id: L, override props: LmOllamaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<LmOllamaNodeParameters, "ollamaApiCredentials"> {
-
-        const { ollamaApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.ollamaApiCredentials];
+        return [this.props!.ollamaApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Bannerbear/Bannerbear.node.ts' node
 
-export const name = "bannerbear" as const;
 export const description = "Consume Bannerbear API" as const;
+export const type = "n8n-nodes-base.bannerbear" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bannerbearApi","required":true}] as const;
 

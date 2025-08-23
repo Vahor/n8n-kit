@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/NextCloud/NextCloud.node.ts' node
 
-export const name = "nextCloud" as const;
 export const description = "Access data on Nextcloud" as const;
+export const type = "n8n-nodes-base.nextCloud" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"nextCloudApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"nextCloudOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

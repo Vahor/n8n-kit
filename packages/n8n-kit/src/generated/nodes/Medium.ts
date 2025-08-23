@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Medium/Medium.node.ts' node
 
-export const name = "medium" as const;
 export const description = "Consume Medium API" as const;
+export const type = "n8n-nodes-base.medium" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mediumApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"mediumOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/SurveyMonkey/SurveyMonkeyTrigger.node.ts' node
 
-export const name = "surveyMonkeyTrigger" as const;
 export const description = "Starts the workflow when Survey Monkey events occur" as const;
+export const type = "n8n-nodes-base.surveyMonkeyTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"surveyMonkeyApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"surveyMonkeyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -16,7 +16,7 @@ export interface SurveyMonkeyTriggerNodeParameters {
      */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    readonly objectType: "collector" | "survey";
+    readonly objectType?: "collector" | "survey";
 
     readonly event?: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated";
 

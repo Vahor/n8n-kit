@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Strava/StravaTrigger.node.ts' node
 
-export const name = "stravaTrigger" as const;
 export const description = "Starts the workflow when Strava events occur" as const;
+export const type = "n8n-nodes-base.stravaTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const;
 

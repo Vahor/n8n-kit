@@ -11,9 +11,10 @@ const allCredentials = globSync("../src/generated/credentials/**/*.ts", {
 
 type TypeData = {
 	nodeName: string;
-	name: string;
+	type: string;
 	description: string;
 	version: number;
+	__filepath: string;
 	credentials: {
 		required: boolean;
 		name: string;
@@ -65,10 +66,9 @@ const generateTypescriptNodeOutput = async (
 	code.line();
 
 	// interface
-	code.line(
-		`export interface ${result.nodeName}Props extends NodeProps, ${result.nodeName}NodeParameters {`,
-	);
+	code.line(`export interface ${result.nodeName}Props extends NodeProps {`);
 	code.indent();
+	code.line(`readonly parameters: ${result.nodeName}NodeParameters;`);
 	for (const cred of result.credentials) {
 		const credName = code.toCamelCase(cred.name);
 		code.line(
@@ -85,39 +85,17 @@ const generateTypescriptNodeOutput = async (
 		`export class ${result.nodeName}<L extends string> extends Node<L> {`,
 	);
 	code.indent();
-	// TODO: langchain nodes
-	code.line(`protected type = "n8n-nodes-base.${result.name}" as const;`);
+
+	code.line(`protected type = "${result.type}" as const;`);
 	code.line(`protected typeVersion = ${result.version} as const;`);
 	code.line();
 
-	const isPropsOptional = !result.credentials.some((cred) => cred.required);
+	const hasRequiredProps = result.credentials.some((cred) => cred.required);
 	code.line(
-		`constructor(id: L, public readonly props${isPropsOptional ? "?" : ""}: ${result.nodeName}Props) {`,
+		`constructor(id: L, override props${hasRequiredProps ? "" : "?"}: ${result.nodeName}Props) {`,
 	);
 	code.indent();
 	code.line(`super(id, props);`);
-	code.unindent();
-	code.line(`}`);
-	code.line();
-
-	// getParameters
-	const creds = result.credentials.map(
-		(cred) => `${code.toCamelCase(cred.name)}Credentials`,
-	);
-	if (result.credentials.length > 0) {
-		code.line(
-			`override getParameters() : Omit<${result.nodeName}NodeParameters, "${creds.join(" | ")}"> {`,
-		);
-		code.indent();
-		code.line(
-			`const { ${creds.map((c, i) => `${c}:_${i}`).join(", ")}, ...rest } = this.props${isPropsOptional ? " ?? {}" : ""};`,
-		);
-		code.line(`return rest;`);
-	} else {
-		code.line(`override getParameters() : ${result.nodeName}NodeParameters {`);
-		code.indent();
-		code.line(`return this.props ?? {};`);
-	}
 	code.unindent();
 	code.line(`}`);
 	code.line();
@@ -130,7 +108,7 @@ const generateTypescriptNodeOutput = async (
 		code.line(`override getCredentials() {`);
 		code.indent();
 		code.line(
-			`return [${credsArray.map((c) => `this.props${isPropsOptional ? "?" : ""}.${c}Credentials`).join(", ")}];`,
+			`return [${credsArray.map((c) => `this.props!.${c}Credentials`).join(", ")}];`,
 		);
 		code.unindent();
 		code.line(`}`);
@@ -174,9 +152,10 @@ for (const nodePath of allNodesTypes) {
 
 		const typeData = {
 			nodeName: nodeName,
-			name: file.name,
+			type: file.type,
 			description: file.description,
 			version: file.version,
+			__filepath: nodePath,
 			credentials:
 				allCredentials.map((cred: TypeData["credentials"][0]) => {
 					const matchingCredentialsFile = getMatchingCredentialsFile(cred.name);

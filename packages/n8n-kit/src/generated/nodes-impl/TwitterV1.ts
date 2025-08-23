@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { TwitterV1NodeParameters } from "../nodes/TwitterV1";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface TwitterV1Props extends NodeProps, TwitterV1NodeParameters {
+export interface TwitterV1Props extends NodeProps {
 
+    readonly parameters: TwitterV1NodeParameters;
     readonly twitterOAuth1ApiCredentials: Credentials<TwitterOAuth1ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class TwitterV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.twitter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: TwitterV1Props) {
+    constructor(id: L, override props: TwitterV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<TwitterV1NodeParameters, "twitterOAuth1ApiCredentials"> {
-
-        const { twitterOAuth1ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.twitterOAuth1ApiCredentials];
+        return [this.props!.twitterOAuth1ApiCredentials];
 
     }
 

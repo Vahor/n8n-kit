@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/LoneScale/LoneScale.node.ts' node
 
-export const name = "loneScale" as const;
 export const description = "Create List, add / delete items" as const;
+export const type = "n8n-nodes-base.loneScale" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"loneScaleApi","required":true}] as const;
 
@@ -15,7 +15,7 @@ export interface LoneScaleNodeParameters {
      * Create a new list
      * Default: "list"
      */
-    readonly resource: "list" | "item";
+    readonly resource?: "list" | "item";
 
     /**
      * Default: "create"

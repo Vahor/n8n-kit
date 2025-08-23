@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStorePinecone/VectorStorePinecone.node.ts' node
 
-export const name = "vectorStorePinecone" as const;
 export const description = "Work with your data in Pinecone Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStorePinecone" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"pineconeApi","required":true}] as const;
 
@@ -40,7 +40,7 @@ export interface VectorStorePineconeNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly pineconeIndex: any;
+    readonly pineconeIndex?: any;
 
     /**
      * Number of documents to embed in a single batch

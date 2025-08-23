@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Transform/RemoveDuplicates/v1/RemoveDuplicatesV1.node.ts' node
 
-export const name = "removeDuplicates" as const;
 export const description = "Delete items with matching field values" as const;
+export const type = "n8n-nodes-base.removeDuplicates" as const;
 export const version = 1.1 as const;
 
 /**

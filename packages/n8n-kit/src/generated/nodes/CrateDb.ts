@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/CrateDb/CrateDb.node.ts' node
 
-export const name = "crateDb" as const;
 export const description = "Add and update data in CrateDB" as const;
+export const type = "n8n-nodes-base.crateDb" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"crateDb","required":true}] as const;
 

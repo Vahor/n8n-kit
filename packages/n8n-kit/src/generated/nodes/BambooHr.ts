@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/BambooHr/BambooHr.node.ts' node
 
-export const name = "bambooHr" as const;
 export const description = "Consume BambooHR API" as const;
+export const type = "n8n-nodes-base.bambooHr" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bambooHrApi","required":true,"testedBy":"bambooHrApiCredentialTest"}] as const;
 

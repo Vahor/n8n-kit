@@ -2,7 +2,7 @@ import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import type { INodeProperties, INodeTypeDescription } from "n8n-workflow";
 import { globSync } from "tinyglobby";
-import { toTypescriptType } from "./shared";
+import { getNodeName, isLangChainNode, toTypescriptType } from "./shared";
 
 const allNodes = globSync(
 	[
@@ -26,8 +26,11 @@ const generateTypescriptNodeOutput = async (
 	code.line(`// Generated from '${result.__filepath}' node`);
 	code.line();
 
-	code.line(`export const name = "${result.name}" as const;`);
 	code.line(`export const description = "${result.description}" as const;`);
+	const prefix = isLangChainNode(result.__filepath)
+		? "@n8n/n8n-nodes-langchain"
+		: "n8n-nodes-base";
+	code.line(`export const type = "${prefix}.${result.name}" as const;`);
 	code.line(
 		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : (result.version ?? 0)} as const;`,
 	);
@@ -62,17 +65,18 @@ const generateTypescriptNodeOutput = async (
 			__versionsOfProperty: [property],
 		};
 
-		if (!property.required) {
-			visitedProperties[property.name].required = false;
-		}
-		if (property.displayOptions?.show != null) {
+		if (
+			!property.required ||
+			property.default != null ||
+			property.displayOptions?.show != null
+		) {
 			visitedProperties[property.name].required = false;
 		}
 	}
 
 	for (const property of Object.values(visitedProperties)) {
 		const comments = [
-			property.description,
+			property.description?.replaceAll("*/", "*<space>/"),
 			property.default && `Default: ${JSON.stringify(property.default)}`,
 			property.typeOptions &&
 				Object.keys(property.typeOptions).length > 0 &&
@@ -121,26 +125,24 @@ const langChainNodeAlreadyExistInBaseNode = (node: string) => {
 	return baseNodes.some((baseNode) => baseNode.includes(node));
 };
 
-const getNodeName = (nodePath: string) => {
-	return nodePath.split("/").pop()?.split(".")[0]!;
-};
-
 const versionsCache = {};
 
-for (const node of allNodes.sort((a, b) =>
+for (const nodePath of allNodes.sort((a, b) =>
 	getNodeName(a).localeCompare(getNodeName(b)),
 )) {
-	const isLangChainNode = node.includes("@n8n/nodes-langchain");
-	let nodeName = getNodeName(node);
-	const nodePathWithoutStartingSlash = node.split("vendor")[1];
+	let nodeName = getNodeName(nodePath);
+	const nodePathWithoutStartingSlash = nodePath.split("vendor")[1];
 
-	if (isLangChainNode && langChainNodeAlreadyExistInBaseNode(nodeName)) {
+	if (
+		isLangChainNode(nodePath) &&
+		langChainNodeAlreadyExistInBaseNode(nodeName)
+	) {
 		nodeName = `${nodeName}AI`;
 	}
 
 	try {
-		delete require.cache[node];
-		const file = await import(node);
+		delete require.cache[nodePath];
+		const file = await import(nodePath);
 		const firstClassExport = Object.values(file).find(
 			(v) => typeof v === "function",
 		);
@@ -190,7 +192,7 @@ for (const node of allNodes.sort((a, b) =>
 		current++;
 	} catch (e) {
 		console.error(e);
-		console.error(node);
+		console.error(nodePath);
 	}
 	process.stdout.write(`\r${current}/${count}`);
 }

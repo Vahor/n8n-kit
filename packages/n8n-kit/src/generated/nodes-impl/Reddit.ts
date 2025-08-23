@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { RedditNodeParameters } from "../nodes/Reddit";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface RedditProps extends NodeProps, RedditNodeParameters {
+export interface RedditProps extends NodeProps {
 
+    readonly parameters: RedditNodeParameters;
     readonly redditOAuth2ApiCredentials?: Credentials<RedditOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Reddit<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.reddit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: RedditProps) {
+    constructor(id: L, override props?: RedditProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<RedditNodeParameters, "redditOAuth2ApiCredentials"> {
-
-        const { redditOAuth2ApiCredentials:_0, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.redditOAuth2ApiCredentials];
+        return [this.props!.redditOAuth2ApiCredentials];
 
     }
 

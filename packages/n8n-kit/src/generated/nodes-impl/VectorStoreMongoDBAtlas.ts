@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { VectorStoreMongoDBAtlasNodeParameters } from "../nodes/VectorStoreMongoDBAtlas";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface VectorStoreMongoDBAtlasProps extends NodeProps, VectorStoreMongoDBAtlasNodeParameters {
+export interface VectorStoreMongoDBAtlasProps extends NodeProps {
 
+    readonly parameters: VectorStoreMongoDBAtlasNodeParameters;
     readonly mongoDbCredentials: Credentials<MongoDbCredentials>;
 
 }
 
 export class VectorStoreMongoDBAtlas<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.vectorStoreMongoDBAtlas" as const;
+    protected type = "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, public readonly props: VectorStoreMongoDBAtlasProps) {
+    constructor(id: L, override props: VectorStoreMongoDBAtlasProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<VectorStoreMongoDBAtlasNodeParameters, "mongoDbCredentials"> {
-
-        const { mongoDbCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.mongoDbCredentials];
+        return [this.props!.mongoDbCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/BusinessProfile/GoogleBusinessProfile.node.ts' node
 
-export const name = "googleBusinessProfile" as const;
 export const description = "Consume Google Business Profile API" as const;
+export const type = "n8n-nodes-base.googleBusinessProfile" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleBusinessProfileOAuth2Api","required":true}] as const;
 

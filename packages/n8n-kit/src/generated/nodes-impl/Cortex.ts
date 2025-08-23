@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { CortexNodeParameters } from "../nodes/Cortex";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface CortexProps extends NodeProps, CortexNodeParameters {
+export interface CortexProps extends NodeProps {
 
+    readonly parameters: CortexNodeParameters;
     readonly cortexApiCredentials: Credentials<CortexApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Cortex<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.cortex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: CortexProps) {
+    constructor(id: L, override props: CortexProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<CortexNodeParameters, "cortexApiCredentials"> {
-
-        const { cortexApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.cortexApiCredentials];
+        return [this.props!.cortexApiCredentials];
 
     }
 

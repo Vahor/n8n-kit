@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Slack/V2/SlackV2.node.ts' node
 
-export const name = "slack" as const;
 export const description = "Consume Slack API" as const;
+export const type = "n8n-nodes-base.slack" as const;
 export const version = 2.3 as const;
 export const credentials = [{"name":"slackApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"slackOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { WebflowTriggerV2NodeParameters } from "../nodes/WebflowTriggerV2";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface WebflowTriggerV2Props extends NodeProps, WebflowTriggerV2NodeParameters {
+export interface WebflowTriggerV2Props extends NodeProps {
 
+    readonly parameters: WebflowTriggerV2NodeParameters;
     readonly webflowOAuth2ApiCredentials: Credentials<WebflowOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class WebflowTriggerV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.webflowTrigger" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props: WebflowTriggerV2Props) {
+    constructor(id: L, override props: WebflowTriggerV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<WebflowTriggerV2NodeParameters, "webflowOAuth2ApiCredentials"> {
-
-        const { webflowOAuth2ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.webflowOAuth2ApiCredentials];
+        return [this.props!.webflowOAuth2ApiCredentials];
 
     }
 

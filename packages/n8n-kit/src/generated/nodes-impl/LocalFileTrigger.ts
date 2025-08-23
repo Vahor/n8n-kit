@@ -4,8 +4,9 @@
 import type { LocalFileTriggerNodeParameters } from "../nodes/LocalFileTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LocalFileTriggerProps extends NodeProps, LocalFileTriggerNodeParameters {
+export interface LocalFileTriggerProps extends NodeProps {
 
+    readonly parameters: LocalFileTriggerNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class LocalFileTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.localFileTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: LocalFileTriggerProps) {
+    constructor(id: L, override props?: LocalFileTriggerProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : LocalFileTriggerNodeParameters {
-
-        return this.props ?? {};
 
     }
 

@@ -4,8 +4,9 @@
 import type { CronNodeParameters } from "../nodes/Cron";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface CronProps extends NodeProps, CronNodeParameters {
+export interface CronProps extends NodeProps {
 
+    readonly parameters: CronNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class Cron<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.cron" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CronProps) {
+    constructor(id: L, override props?: CronProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : CronNodeParameters {
-
-        return this.props ?? {};
 
     }
 

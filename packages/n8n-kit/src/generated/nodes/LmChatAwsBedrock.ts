@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/llms/LmChatAwsBedrock/LmChatAwsBedrock.node.ts' node
 
-export const name = "lmChatAwsBedrock" as const;
 export const description = "Language Model AWS Bedrock" as const;
+export const type = "@n8n/n8n-nodes-langchain.lmChatAwsBedrock" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

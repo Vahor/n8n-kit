@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Git/Git.node.ts' node
 
-export const name = "git" as const;
 export const description = "Control git." as const;
+export const type = "n8n-nodes-base.git" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gitPassword","required":true,"displayOptions":{"show":{"authentication":["gitPassword"]}}}] as const;
 
@@ -25,7 +25,7 @@ export interface GitNodeParameters {
     /**
      * Local path of the git repository to operate on
      */
-    readonly repositoryPath: string;
+    readonly repositoryPath?: string;
 
     /**
      * Comma-separated list of paths (absolute or relative to Repository Path) of files or folders to add

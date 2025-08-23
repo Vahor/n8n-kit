@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/agents/Agent/V1/AgentV1.node.ts' node
 
-export const name = "agent" as const;
 export const description = "Generates an action plan and executes it. Can use external tools." as const;
+export const type = "@n8n/n8n-nodes-langchain.agent" as const;
 export const version = 1.9 as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest","displayOptions":{"show":{"agent":["sqlAgent"],"/dataSource":["mysql"]}}},{"name":"postgres","required":true,"displayOptions":{"show":{"agent":["sqlAgent"],"/dataSource":["postgres"]}}}] as const;
 

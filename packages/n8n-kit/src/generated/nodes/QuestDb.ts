@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/QuestDb/QuestDb.node.ts' node
 
-export const name = "questDb" as const;
 export const description = "Get, add and update data in QuestDB" as const;
+export const type = "n8n-nodes-base.questDb" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"questDb","required":true}] as const;
 

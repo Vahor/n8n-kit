@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Jwt/Jwt.node.ts' node
 
-export const name = "jwt" as const;
 export const description = "JWT" as const;
+export const type = "n8n-nodes-base.jwt" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jwtAuth","required":true}] as const;
 

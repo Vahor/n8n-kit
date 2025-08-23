@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/llms/LMCohere/LmCohere.node.ts' node
 
-export const name = "lmCohere" as const;
 export const description = "Language Model Cohere" as const;
+export const type = "@n8n/n8n-nodes-langchain.lmCohere" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cohereApi","required":true}] as const;
 

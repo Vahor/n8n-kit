@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/CoinGecko/CoinGecko.node.ts' node
 
-export const name = "coinGecko" as const;
 export const description = "Consume CoinGecko API" as const;
+export const type = "n8n-nodes-base.coinGecko" as const;
 export const version = 1 as const;
 
 /**

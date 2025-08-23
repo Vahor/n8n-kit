@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HighLevel/v2/HighLevelV2.node.ts' node
 
-export const name = "highLevel" as const;
 export const description = "Consume HighLevel API v2" as const;
+export const type = "n8n-nodes-base.highLevel" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"highLevelOAuth2Api","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface HighLevelV2NodeParameters {
     /**
      * Default: "contact"
      */
-    readonly resource: "contact" | "opportunity" | "task" | "calendar";
+    readonly resource?: "contact" | "opportunity" | "task" | "calendar";
 
     /**
      * Default: "create"

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Lemlist/v1/LemlistV1.node.ts' node
 
-export const name = "lemlist" as const;
 export const description = "Consume the Lemlist API" as const;
+export const type = "n8n-nodes-base.lemlist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"lemlistApi","required":true}] as const;
 

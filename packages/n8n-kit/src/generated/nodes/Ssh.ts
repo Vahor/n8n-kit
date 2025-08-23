@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Ssh/Ssh.node.ts' node
 
-export const name = "ssh" as const;
 export const description = "Execute commands via SSH" as const;
+export const type = "n8n-nodes-base.ssh" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"sshPassword","required":true,"testedBy":"sshConnectionTest","displayOptions":{"show":{"authentication":["password"]}}},{"name":"sshPrivateKey","required":true,"testedBy":"sshConnectionTest","displayOptions":{"show":{"authentication":["privateKey"]}}}] as const;
 

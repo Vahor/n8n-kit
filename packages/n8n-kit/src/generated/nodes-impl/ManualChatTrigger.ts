@@ -4,25 +4,20 @@
 import type { ManualChatTriggerNodeParameters } from "../nodes/ManualChatTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ManualChatTriggerProps extends NodeProps, ManualChatTriggerNodeParameters {
+export interface ManualChatTriggerProps extends NodeProps {
 
+    readonly parameters: ManualChatTriggerNodeParameters;
 
 }
 
 export class ManualChatTrigger<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.manualChatTrigger" as const;
+    protected type = "@n8n/n8n-nodes-langchain.manualChatTrigger" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: ManualChatTriggerProps) {
+    constructor(id: L, override props?: ManualChatTriggerProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ManualChatTriggerNodeParameters {
-
-        return this.props ?? {};
 
     }
 

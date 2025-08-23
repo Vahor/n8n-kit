@@ -4,25 +4,20 @@
 import type { TextClassifierNodeParameters } from "../nodes/TextClassifier";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface TextClassifierProps extends NodeProps, TextClassifierNodeParameters {
+export interface TextClassifierProps extends NodeProps {
 
+    readonly parameters: TextClassifierNodeParameters;
 
 }
 
 export class TextClassifier<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.textClassifier" as const;
+    protected type = "@n8n/n8n-nodes-langchain.textClassifier" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: TextClassifierProps) {
+    constructor(id: L, override props?: TextClassifierProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : TextClassifierNodeParameters {
-
-        return this.props ?? {};
 
     }
 

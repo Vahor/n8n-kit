@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Bitbucket/BitbucketTrigger.node.ts' node
 
-export const name = "bitbucketTrigger" as const;
 export const description = "Handle Bitbucket events via webhooks" as const;
+export const type = "n8n-nodes-base.bitbucketTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bitbucketApi","required":true,"testedBy":"bitbucketApiTest"}] as const;
 
@@ -14,7 +14,7 @@ export interface BitbucketTriggerNodeParameters {
     /**
      * Default: "workspace"
      */
-    readonly resource: "repository" | "workspace";
+    readonly resource?: "repository" | "workspace";
 
     /**
      * The repository of which to listen to the events. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

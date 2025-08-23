@@ -4,8 +4,9 @@
 import type { SplitOutNodeParameters } from "../nodes/SplitOut";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SplitOutProps extends NodeProps, SplitOutNodeParameters {
+export interface SplitOutProps extends NodeProps {
 
+    readonly parameters: SplitOutNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class SplitOut<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.splitOut" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SplitOutProps) {
+    constructor(id: L, override props?: SplitOutProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : SplitOutNodeParameters {
-
-        return this.props ?? {};
 
     }
 

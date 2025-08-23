@@ -4,8 +4,9 @@
 import type { LimitNodeParameters } from "../nodes/Limit";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LimitProps extends NodeProps, LimitNodeParameters {
+export interface LimitProps extends NodeProps {
 
+    readonly parameters: LimitNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class Limit<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.limit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: LimitProps) {
+    constructor(id: L, override props?: LimitProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : LimitNodeParameters {
-
-        return this.props ?? {};
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/TheHive/TheHiveTrigger.node.ts' node
 
-export const name = "theHiveTrigger" as const;
 export const description = "Starts the workflow when TheHive events occur" as const;
+export const type = "n8n-nodes-base.theHiveTrigger" as const;
 export const version = 2 as const;
 
 /**

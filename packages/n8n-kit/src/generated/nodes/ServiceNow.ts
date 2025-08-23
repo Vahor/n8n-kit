@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/ServiceNow/ServiceNow.node.ts' node
 
-export const name = "serviceNow" as const;
 export const description = "Consume ServiceNow API" as const;
+export const type = "n8n-nodes-base.serviceNow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"serviceNowOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"serviceNowBasicApi","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
 

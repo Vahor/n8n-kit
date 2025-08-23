@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { UProcNodeParameters } from "../nodes/UProc";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface UProcProps extends NodeProps, UProcNodeParameters {
+export interface UProcProps extends NodeProps {
 
+    readonly parameters: UProcNodeParameters;
     readonly uprocApiCredentials: Credentials<UProcApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class UProc<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.uproc" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: UProcProps) {
+    constructor(id: L, override props: UProcProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<UProcNodeParameters, "uprocApiCredentials"> {
-
-        const { uprocApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.uprocApiCredentials];
+        return [this.props!.uprocApiCredentials];
 
     }
 

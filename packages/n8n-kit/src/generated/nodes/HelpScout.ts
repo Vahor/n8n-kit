@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HelpScout/HelpScout.node.ts' node
 
-export const name = "helpScout" as const;
 export const description = "Consume Help Scout API" as const;
+export const type = "n8n-nodes-base.helpScout" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"helpScoutOAuth2Api","required":true}] as const;
 

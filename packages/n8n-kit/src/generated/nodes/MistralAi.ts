@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MistralAI/MistralAi.node.ts' node
 
-export const name = "mistralAi" as const;
 export const description = "Consume Mistral AI API" as const;
+export const type = "n8n-nodes-base.mistralAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mistralCloudApi","required":true}] as const;
 

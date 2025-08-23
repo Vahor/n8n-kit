@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/PayPal/PayPalTrigger.node.ts' node
 
-export const name = "payPalTrigger" as const;
 export const description = "Handle PayPal events via webhooks" as const;
+export const type = "n8n-nodes-base.payPalTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"payPalApi","required":true}] as const;
 
@@ -16,7 +16,7 @@ export interface PayPalTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getEvents"}
      */
-    readonly events: any[];
+    readonly events?: any[];
 
 
 }

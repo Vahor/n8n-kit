@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Slack/SlackTrigger.node.ts' node
 
-export const name = "slackTrigger" as const;
 export const description = "Handle Slack events via webhooks" as const;
+export const type = "n8n-nodes-base.slackTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"slackApi","required":true}] as const;
 

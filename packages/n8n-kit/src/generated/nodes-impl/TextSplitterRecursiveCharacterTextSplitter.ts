@@ -4,25 +4,20 @@
 import type { TextSplitterRecursiveCharacterTextSplitterNodeParameters } from "../nodes/TextSplitterRecursiveCharacterTextSplitter";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface TextSplitterRecursiveCharacterTextSplitterProps extends NodeProps, TextSplitterRecursiveCharacterTextSplitterNodeParameters {
+export interface TextSplitterRecursiveCharacterTextSplitterProps extends NodeProps {
 
+    readonly parameters: TextSplitterRecursiveCharacterTextSplitterNodeParameters;
 
 }
 
 export class TextSplitterRecursiveCharacterTextSplitter<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.textSplitterRecursiveCharacterTextSplitter" as const;
+    protected type = "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TextSplitterRecursiveCharacterTextSplitterProps) {
+    constructor(id: L, override props?: TextSplitterRecursiveCharacterTextSplitterProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : TextSplitterRecursiveCharacterTextSplitterNodeParameters {
-
-        return this.props ?? {};
 
     }
 

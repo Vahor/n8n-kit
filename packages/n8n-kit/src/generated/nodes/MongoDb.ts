@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MongoDb/MongoDb.node.ts' node
 
-export const name = "mongoDb" as const;
 export const description = "Find, insert and update documents in MongoDB" as const;
+export const type = "n8n-nodes-base.mongoDb" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"mongoDb","required":true,"testedBy":"mongoDbCredentialTest"}] as const;
 
@@ -24,7 +24,7 @@ export interface MongoDbNodeParameters {
     /**
      * MongoDB Collection
      */
-    readonly collection: string;
+    readonly collection?: string;
 
     /**
      * MongoDB aggregation pipeline query in JSON format

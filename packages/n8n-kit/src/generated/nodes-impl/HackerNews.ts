@@ -4,8 +4,9 @@
 import type { HackerNewsNodeParameters } from "../nodes/HackerNews";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface HackerNewsProps extends NodeProps, HackerNewsNodeParameters {
+export interface HackerNewsProps extends NodeProps {
 
+    readonly parameters: HackerNewsNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class HackerNews<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.hackerNews" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: HackerNewsProps) {
+    constructor(id: L, override props?: HackerNewsProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : HackerNewsNodeParameters {
-
-        return this.props ?? {};
 
     }
 

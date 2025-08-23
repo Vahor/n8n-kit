@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Code/Code.node.ts' node
 
-export const name = "code" as const;
 export const description = "Run custom JavaScript or Python code" as const;
+export const type = "n8n-nodes-base.code" as const;
 export const version = 2 as const;
 
 /**

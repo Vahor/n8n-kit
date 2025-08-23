@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { AnthropicNodeParameters } from "../nodes/Anthropic";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface AnthropicProps extends NodeProps, AnthropicNodeParameters {
+export interface AnthropicProps extends NodeProps {
 
+    readonly parameters: AnthropicNodeParameters;
     readonly anthropicApiCredentials: Credentials<AnthropicApiCredentials>;
 
 }
 
 export class Anthropic<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.anthropic" as const;
+    protected type = "@n8n/n8n-nodes-langchain.anthropic" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: AnthropicProps) {
+    constructor(id: L, override props: AnthropicProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<AnthropicNodeParameters, "anthropicApiCredentials"> {
-
-        const { anthropicApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.anthropicApiCredentials];
+        return [this.props!.anthropicApiCredentials];
 
     }
 

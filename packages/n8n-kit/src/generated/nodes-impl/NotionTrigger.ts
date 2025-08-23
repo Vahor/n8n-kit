@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { NotionTriggerNodeParameters } from "../nodes/NotionTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface NotionTriggerProps extends NodeProps, NotionTriggerNodeParameters {
+export interface NotionTriggerProps extends NodeProps {
 
+    readonly parameters: NotionTriggerNodeParameters;
     readonly notionApiCredentials: Credentials<NotionApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class NotionTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.notionTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: NotionTriggerProps) {
+    constructor(id: L, override props: NotionTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<NotionTriggerNodeParameters, "notionApiCredentials"> {
-
-        const { notionApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.notionApiCredentials];
+        return [this.props!.notionApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Switch/V3/SwitchV3.node.ts' node
 
-export const name = "switch" as const;
 export const description = "Route items depending on defined expression or rules" as const;
+export const type = "n8n-nodes-base.switch" as const;
 export const version = 3.2 as const;
 
 /**

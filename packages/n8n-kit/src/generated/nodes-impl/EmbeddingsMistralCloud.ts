@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { EmbeddingsMistralCloudNodeParameters } from "../nodes/EmbeddingsMistralCloud";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface EmbeddingsMistralCloudProps extends NodeProps, EmbeddingsMistralCloudNodeParameters {
+export interface EmbeddingsMistralCloudProps extends NodeProps {
 
+    readonly parameters: EmbeddingsMistralCloudNodeParameters;
     readonly mistralCloudApiCredentials: Credentials<MistralCloudApiCredentials>;
 
 }
 
 export class EmbeddingsMistralCloud<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.embeddingsMistralCloud" as const;
+    protected type = "@n8n/n8n-nodes-langchain.embeddingsMistralCloud" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: EmbeddingsMistralCloudProps) {
+    constructor(id: L, override props: EmbeddingsMistralCloudProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<EmbeddingsMistralCloudNodeParameters, "mistralCloudApiCredentials"> {
-
-        const { mistralCloudApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.mistralCloudApiCredentials];
+        return [this.props!.mistralCloudApiCredentials];
 
     }
 

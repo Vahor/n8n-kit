@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/retrievers/RetrieverWorkflow/RetrieverWorkflow.node.ts' node
 
-export const name = "retrieverWorkflow" as const;
 export const description = "Use an n8n Workflow as Retriever" as const;
+export const type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;
 export const version = 1.1 as const;
 
 /**

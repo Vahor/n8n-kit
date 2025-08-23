@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Asana/Asana.node.ts' node
 
-export const name = "asana" as const;
 export const description = "Consume Asana REST API" as const;
+export const type = "n8n-nodes-base.asana" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"asanaApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}},"testedBy":{"request":{"method":"GET","url":"/users/me"}}},{"name":"asanaOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Bitly/Bitly.node.ts' node
 
-export const name = "bitly" as const;
 export const description = "Consume Bitly API" as const;
+export const type = "n8n-nodes-base.bitly" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bitlyApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"bitlyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

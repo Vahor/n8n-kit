@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Airtable/v1/AirtableV1.node.ts' node
 
-export const name = "airtable" as const;
 export const description = "Read, update, write and delete data from Airtable" as const;
+export const type = "n8n-nodes-base.airtable" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"airtableApi","required":true,"displayOptions":{"show":{"authentication":["airtableApi"]}}},{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const;
 
@@ -29,12 +29,12 @@ export interface AirtableV1NodeParameters {
      * The Airtable Base in which to operate on
      * Default: {"mode":"url","value":""}
      */
-    readonly application: any;
+    readonly application?: any;
 
     /**
      * Default: {"mode":"url","value":""}
      */
-    readonly table: any;
+    readonly table?: any;
 
     /**
      * Whether all fields should be sent to Airtable or only specific ones

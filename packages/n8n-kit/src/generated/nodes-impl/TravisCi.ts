@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { TravisCiNodeParameters } from "../nodes/TravisCi";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface TravisCiProps extends NodeProps, TravisCiNodeParameters {
+export interface TravisCiProps extends NodeProps {
 
+    readonly parameters: TravisCiNodeParameters;
     readonly travisCiApiCredentials: Credentials<TravisCiApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class TravisCi<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.travisCi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: TravisCiProps) {
+    constructor(id: L, override props: TravisCiProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<TravisCiNodeParameters, "travisCiApiCredentials"> {
-
-        const { travisCiApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.travisCiApiCredentials];
+        return [this.props!.travisCiApiCredentials];
 
     }
 

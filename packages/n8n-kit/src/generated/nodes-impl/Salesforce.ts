@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { SalesforceNodeParameters } from "../nodes/Salesforce";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SalesforceProps extends NodeProps, SalesforceNodeParameters {
+export interface SalesforceProps extends NodeProps {
 
+    readonly parameters: SalesforceNodeParameters;
     readonly salesforceOAuth2ApiCredentials?: Credentials<SalesforceOAuth2ApiCredentials>;
     readonly salesforceJwtApiCredentials?: Credentials<SalesforceJwtApiCredentials>;
 
@@ -19,22 +20,15 @@ export class Salesforce<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.salesforce" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SalesforceProps) {
+    constructor(id: L, override props?: SalesforceProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<SalesforceNodeParameters, "salesforceOAuth2ApiCredentials | salesforceJwtApiCredentials"> {
-
-        const { salesforceOAuth2ApiCredentials:_0, salesforceJwtApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.salesforceOAuth2ApiCredentials, this.props?.salesforceJwtApiCredentials];
+        return [this.props!.salesforceOAuth2ApiCredentials, this.props!.salesforceJwtApiCredentials];
 
     }
 

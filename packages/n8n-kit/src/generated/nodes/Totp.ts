@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Totp/Totp.node.ts' node
 
-export const name = "totp" as const;
 export const description = "Generate a time-based one-time password" as const;
+export const type = "n8n-nodes-base.totp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"totpApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Drive/GoogleDriveTrigger.node.ts' node
 
-export const name = "googleDriveTrigger" as const;
 export const description = "Starts the workflow when Google Drive events occur" as const;
+export const type = "n8n-nodes-base.googleDriveTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -16,7 +16,7 @@ export interface GoogleDriveTriggerNodeParameters {
      */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    readonly triggerOn: "specificFile" | "specificFolder";
+    readonly triggerOn?: "specificFile" | "specificFolder";
 
     /**
      * Default: {"mode":"list","value":""}

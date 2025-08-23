@@ -4,8 +4,9 @@
 import type { EditImageNodeParameters } from "../nodes/EditImage";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface EditImageProps extends NodeProps, EditImageNodeParameters {
+export interface EditImageProps extends NodeProps {
 
+    readonly parameters: EditImageNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class EditImage<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.editImage" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: EditImageProps) {
+    constructor(id: L, override props?: EditImageProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : EditImageNodeParameters {
-
-        return this.props ?? {};
 
     }
 

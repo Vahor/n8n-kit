@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HttpRequest/V2/HttpRequestV2.node.ts' node
 
-export const name = "httpRequest" as const;
 export const description = "Makes an HTTP request and returns the response data" as const;
+export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["httpBasicAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["httpDigestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["httpHeaderAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["httpQueryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1Api"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2Api"]}}}] as const;
 
@@ -14,7 +14,7 @@ export interface HttpRequestV2NodeParameters {
     /**
      * Default: "none"
      */
-    readonly authentication: "none" | "predefinedCredentialType" | "genericCredentialType";
+    readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
     readonly nodeCredentialType?: any;
 
@@ -29,7 +29,7 @@ export interface HttpRequestV2NodeParameters {
     /**
      * The URL to make the request to
      */
-    readonly url: string;
+    readonly url?: string;
 
     /**
      * Whether to download the response even if SSL certificate validation is not possible

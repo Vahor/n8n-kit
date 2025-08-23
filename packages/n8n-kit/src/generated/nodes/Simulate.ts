@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Simulate/Simulate.node.ts' node
 
-export const name = "simulate" as const;
 export const description = "Simulate a node" as const;
+export const type = "n8n-nodes-base.simulate" as const;
 export const version = 1 as const;
 
 /**

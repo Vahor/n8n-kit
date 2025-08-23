@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/InvoiceNinja/InvoiceNinja.node.ts' node
 
-export const name = "invoiceNinja" as const;
 export const description = "Consume Invoice Ninja API" as const;
+export const type = "n8n-nodes-base.invoiceNinja" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"invoiceNinjaApi","required":true}] as const;
 

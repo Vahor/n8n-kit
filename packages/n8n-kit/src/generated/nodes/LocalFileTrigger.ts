@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/LocalFileTrigger/LocalFileTrigger.node.ts' node
 
-export const name = "localFileTrigger" as const;
 export const description = "Triggers a workflow on file system changes" as const;
+export const type = "n8n-nodes-base.localFileTrigger" as const;
 export const version = 1 as const;
 
 /**
@@ -10,7 +10,7 @@ export const version = 1 as const;
  */
 export interface LocalFileTriggerNodeParameters {
 
-    readonly triggerOn: "file" | "folder";
+    readonly triggerOn?: "file" | "folder";
 
     readonly path?: string;
 

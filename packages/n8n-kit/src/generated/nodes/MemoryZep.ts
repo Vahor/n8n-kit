@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/memory/MemoryZep/MemoryZep.node.ts' node
 
-export const name = "memoryZep" as const;
 export const description = "Use Zep Memory" as const;
+export const type = "@n8n/n8n-nodes-langchain.memoryZep" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
 

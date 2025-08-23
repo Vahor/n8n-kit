@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Adalo/Adalo.node.ts' node
 
-export const name = "adalo" as const;
 export const description = "Consume Adalo API" as const;
+export const type = "n8n-nodes-base.adalo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"adaloApi","required":true}] as const;
 

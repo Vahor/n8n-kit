@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/YouTube/YouTube.node.ts' node
 
-export const name = "youTube" as const;
 export const description = "Consume YouTube API" as const;
+export const type = "n8n-nodes-base.youTube" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"youTubeOAuth2Api","required":true}] as const;
 

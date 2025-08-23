@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Aws/AwsSns.node.ts' node
 
-export const name = "awsSns" as const;
 export const description = "Sends data to AWS SNS" as const;
+export const type = "n8n-nodes-base.awsSns" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

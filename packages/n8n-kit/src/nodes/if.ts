@@ -1,4 +1,4 @@
-import { version } from "../generated/nodes/IfV2";
+import { type, version } from "../generated/nodes/IfV2";
 import type { ErrorMessage, IsNullable } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import { Chain } from "../workflow/chain/chain";
@@ -60,14 +60,14 @@ export class If<
 	True extends IContext | null = null,
 	False extends IContext | null = null,
 > extends BaseNode<L> {
-	protected override type = `n8n-nodes-base.if` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	public readonly endStates: INextable[] = [];
 
 	constructor(
 		id: L,
-		public readonly props: IfProps,
+		override props: IfProps,
 	) {
 		super(id, props);
 	}

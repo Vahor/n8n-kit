@@ -99,3 +99,11 @@ export const toTypescriptType = (
 			return mapPropertyType(property.type);
 	}
 };
+
+export const isLangChainNode = (nodePath: string) => {
+	return nodePath.includes("@n8n/nodes-langchain");
+};
+
+export const getNodeName = (nodePath: string) => {
+	return nodePath.split("/").pop()?.split(".")[0]!;
+};

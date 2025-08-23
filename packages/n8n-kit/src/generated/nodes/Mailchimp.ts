@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Mailchimp/Mailchimp.node.ts' node
 
-export const name = "mailchimp" as const;
 export const description = "Consume Mailchimp API" as const;
+export const type = "n8n-nodes-base.mailchimp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailchimpApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"mailchimpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -19,7 +19,7 @@ export interface MailchimpNodeParameters {
     /**
      * Default: "member"
      */
-    readonly resource: "campaign" | "listGroup" | "member" | "memberTag";
+    readonly resource?: "campaign" | "listGroup" | "member" | "memberTag";
 
     /**
      * Default: "create"

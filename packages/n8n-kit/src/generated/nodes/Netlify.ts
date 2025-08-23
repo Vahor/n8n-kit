@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Netlify/Netlify.node.ts' node
 
-export const name = "netlify" as const;
 export const description = "Consume Netlify API" as const;
+export const type = "n8n-nodes-base.netlify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"netlifyApi","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface NetlifyNodeParameters {
     /**
      * Default: "deploy"
      */
-    readonly resource: "deploy" | "site";
+    readonly resource?: "deploy" | "site";
 
     /**
      * Default: "getAll"

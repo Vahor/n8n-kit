@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Xero/Xero.node.ts' node
 
-export const name = "xero" as const;
 export const description = "Consume Xero API" as const;
+export const type = "n8n-nodes-base.xero" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"xeroOAuth2Api","required":true}] as const;
 

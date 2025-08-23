@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/FreshworksCrm/FreshworksCrm.node.ts' node
 
-export const name = "freshworksCrm" as const;
 export const description = "Consume the Freshworks CRM API" as const;
+export const type = "n8n-nodes-base.freshworksCrm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"freshworksCrmApi","required":true}] as const;
 

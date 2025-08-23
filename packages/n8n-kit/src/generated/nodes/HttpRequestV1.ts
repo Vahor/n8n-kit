@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HttpRequest/V1/HttpRequestV1.node.ts' node
 
-export const name = "httpRequest" as const;
 export const description = "Makes an HTTP request and returns the response data" as const;
+export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["digestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["queryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -26,7 +26,7 @@ export interface HttpRequestV1NodeParameters {
     /**
      * The URL to make the request to
      */
-    readonly url: string;
+    readonly url?: string;
 
     /**
      * Whether to download the response even if SSL certificate validation is not possible

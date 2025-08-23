@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { PipedriveNodeParameters } from "../nodes/Pipedrive";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface PipedriveProps extends NodeProps, PipedriveNodeParameters {
+export interface PipedriveProps extends NodeProps {
 
+    readonly parameters: PipedriveNodeParameters;
     readonly pipedriveApiCredentials?: Credentials<PipedriveApiCredentials>;
     readonly pipedriveOAuth2ApiCredentials?: Credentials<PipedriveOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class Pipedrive<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.pipedrive" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PipedriveProps) {
+    constructor(id: L, override props?: PipedriveProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<PipedriveNodeParameters, "pipedriveApiCredentials | pipedriveOAuth2ApiCredentials"> {
-
-        const { pipedriveApiCredentials:_0, pipedriveOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.pipedriveApiCredentials, this.props?.pipedriveOAuth2ApiCredentials];
+        return [this.props!.pipedriveApiCredentials, this.props!.pipedriveOAuth2ApiCredentials];
 
     }
 

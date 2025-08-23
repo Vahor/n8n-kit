@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreMongoDBAtlas/VectorStoreMongoDBAtlas.node.ts' node
 
-export const name = "vectorStoreMongoDBAtlas" as const;
 export const description = "Work with your data in MongoDB Atlas Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"mongoDb","required":true}] as const;
 
@@ -40,24 +40,24 @@ export interface VectorStoreMongoDBAtlasNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly mongoCollection: any;
+    readonly mongoCollection?: any;
 
     /**
      * The field with the embedding array
      * Default: "embedding"
      */
-    readonly embedding: string;
+    readonly embedding?: string;
 
     /**
      * The text field of the raw data
      * Default: "text"
      */
-    readonly metadata_field: string;
+    readonly metadata_field?: string;
 
     /**
      * The name of the vector index
      */
-    readonly vectorIndexName: string;
+    readonly vectorIndexName?: string;
 
     /**
      * Number of documents to embed in a single batch

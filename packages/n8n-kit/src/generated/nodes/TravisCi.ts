@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/TravisCi/TravisCi.node.ts' node
 
-export const name = "travisCi" as const;
 export const description = "Consume TravisCI API" as const;
+export const type = "n8n-nodes-base.travisCi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"travisCiApi","required":true}] as const;
 

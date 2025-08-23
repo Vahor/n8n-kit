@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Copper/Copper.node.ts' node
 
-export const name = "copper" as const;
 export const description = "Consume the Copper API" as const;
+export const type = "n8n-nodes-base.copper" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"copperApi","required":true}] as const;
 

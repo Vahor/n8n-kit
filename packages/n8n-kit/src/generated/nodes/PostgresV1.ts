@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Postgres/v1/PostgresV1.node.ts' node
 
-export const name = "postgres" as const;
 export const description = "Get, add and update data in Postgres" as const;
+export const type = "n8n-nodes-base.postgres" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"postgres","required":true,"testedBy":"postgresConnectionTest"}] as const;
 

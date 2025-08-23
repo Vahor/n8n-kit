@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { LmChatGroqNodeParameters } from "../nodes/LmChatGroq";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LmChatGroqProps extends NodeProps, LmChatGroqNodeParameters {
+export interface LmChatGroqProps extends NodeProps {
 
+    readonly parameters: LmChatGroqNodeParameters;
     readonly groqApiCredentials: Credentials<GroqApiCredentials>;
 
 }
 
 export class LmChatGroq<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.lmChatGroq" as const;
+    protected type = "@n8n/n8n-nodes-langchain.lmChatGroq" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LmChatGroqProps) {
+    constructor(id: L, override props: LmChatGroqProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<LmChatGroqNodeParameters, "groqApiCredentials"> {
-
-        const { groqApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.groqApiCredentials];
+        return [this.props!.groqApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Aws/SQS/AwsSqs.node.ts' node
 
-export const name = "awsSqs" as const;
 export const description = "Sends messages to AWS SQS" as const;
+export const type = "n8n-nodes-base.awsSqs" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

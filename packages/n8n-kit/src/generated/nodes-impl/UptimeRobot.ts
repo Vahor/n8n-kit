@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { UptimeRobotNodeParameters } from "../nodes/UptimeRobot";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface UptimeRobotProps extends NodeProps, UptimeRobotNodeParameters {
+export interface UptimeRobotProps extends NodeProps {
 
+    readonly parameters: UptimeRobotNodeParameters;
     readonly uptimeRobotApiCredentials: Credentials<UptimeRobotApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class UptimeRobot<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.uptimeRobot" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: UptimeRobotProps) {
+    constructor(id: L, override props: UptimeRobotProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<UptimeRobotNodeParameters, "uptimeRobotApiCredentials"> {
-
-        const { uptimeRobotApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.uptimeRobotApiCredentials];
+        return [this.props!.uptimeRobotApiCredentials];
 
     }
 

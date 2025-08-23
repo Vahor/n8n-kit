@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/StopAndError/StopAndError.node.ts' node
 
-export const name = "stopAndError" as const;
 export const description = "Throw an error in the workflow" as const;
+export const type = "n8n-nodes-base.stopAndError" as const;
 export const version = 1 as const;
 
 /**

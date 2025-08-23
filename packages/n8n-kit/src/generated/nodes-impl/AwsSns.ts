@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { AwsSnsNodeParameters } from "../nodes/AwsSns";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface AwsSnsProps extends NodeProps, AwsSnsNodeParameters {
+export interface AwsSnsProps extends NodeProps {
 
+    readonly parameters: AwsSnsNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class AwsSns<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsSns" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: AwsSnsProps) {
+    constructor(id: L, override props: AwsSnsProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<AwsSnsNodeParameters, "awsCredentials"> {
-
-        const { awsCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.awsCredentials];
+        return [this.props!.awsCredentials];
 
     }
 

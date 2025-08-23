@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { LmChatVercelAiGatewayNodeParameters } from "../nodes/LmChatVercelAiGateway";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LmChatVercelAiGatewayProps extends NodeProps, LmChatVercelAiGatewayNodeParameters {
+export interface LmChatVercelAiGatewayProps extends NodeProps {
 
+    readonly parameters: LmChatVercelAiGatewayNodeParameters;
     readonly vercelAiGatewayApiCredentials: Credentials<VercelAiGatewayApiCredentials>;
 
 }
 
 export class LmChatVercelAiGateway<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.lmChatVercelAiGateway" as const;
+    protected type = "@n8n/n8n-nodes-langchain.lmChatVercelAiGateway" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LmChatVercelAiGatewayProps) {
+    constructor(id: L, override props: LmChatVercelAiGatewayProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<LmChatVercelAiGatewayNodeParameters, "vercelAiGatewayApiCredentials"> {
-
-        const { vercelAiGatewayApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.vercelAiGatewayApiCredentials];
+        return [this.props!.vercelAiGatewayApiCredentials];
 
     }
 

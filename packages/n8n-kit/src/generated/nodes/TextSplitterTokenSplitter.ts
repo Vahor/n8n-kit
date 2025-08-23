@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/text_splitters/TextSplitterTokenSplitter/TextSplitterTokenSplitter.node.ts' node
 
-export const name = "textSplitterTokenSplitter" as const;
 export const description = "Split text into chunks by tokens" as const;
+export const type = "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter" as const;
 export const version = 1 as const;
 
 /**

@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { HarvestNodeParameters } from "../nodes/Harvest";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface HarvestProps extends NodeProps, HarvestNodeParameters {
+export interface HarvestProps extends NodeProps {
 
+    readonly parameters: HarvestNodeParameters;
     readonly harvestApiCredentials?: Credentials<HarvestApiCredentials>;
     readonly harvestOAuth2ApiCredentials?: Credentials<HarvestOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class Harvest<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.harvest" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: HarvestProps) {
+    constructor(id: L, override props?: HarvestProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<HarvestNodeParameters, "harvestApiCredentials | harvestOAuth2ApiCredentials"> {
-
-        const { harvestApiCredentials:_0, harvestOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.harvestApiCredentials, this.props?.harvestOAuth2ApiCredentials];
+        return [this.props!.harvestApiCredentials, this.props!.harvestOAuth2ApiCredentials];
 
     }
 

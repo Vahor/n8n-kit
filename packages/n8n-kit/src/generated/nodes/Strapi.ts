@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Strapi/Strapi.node.ts' node
 
-export const name = "strapi" as const;
 export const description = "Consume Strapi API" as const;
+export const type = "n8n-nodes-base.strapi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"strapiApi","required":true,"testedBy":"strapiApiTest","displayOptions":{"show":{"authentication":["password"]}}},{"name":"strapiTokenApi","required":true,"displayOptions":{"show":{"authentication":["token"]}}}] as const;
 

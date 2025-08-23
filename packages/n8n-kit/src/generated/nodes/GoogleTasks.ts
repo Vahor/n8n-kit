@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Task/GoogleTasks.node.ts' node
 
-export const name = "googleTasks" as const;
 export const description = "Consume Google Tasks API" as const;
+export const type = "n8n-nodes-base.googleTasks" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleTasksOAuth2Api","required":true}] as const;
 

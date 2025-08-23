@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Calendar/GoogleCalendar.node.ts' node
 
-export const name = "googleCalendar" as const;
 export const description = "Consume Google Calendar API" as const;
+export const type = "n8n-nodes-base.googleCalendar" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"googleCalendarOAuth2Api","required":true}] as const;
 

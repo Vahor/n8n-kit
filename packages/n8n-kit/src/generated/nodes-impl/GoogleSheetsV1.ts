@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { GoogleSheetsV1NodeParameters } from "../nodes/GoogleSheetsV1";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GoogleSheetsV1Props extends NodeProps, GoogleSheetsV1NodeParameters {
+export interface GoogleSheetsV1Props extends NodeProps {
 
+    readonly parameters: GoogleSheetsV1NodeParameters;
     readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
     readonly googleSheetsOAuth2ApiCredentials?: Credentials<GoogleSheetsOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class GoogleSheetsV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleSheets" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props?: GoogleSheetsV1Props) {
+    constructor(id: L, override props?: GoogleSheetsV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GoogleSheetsV1NodeParameters, "googleApiCredentials | googleSheetsOAuth2ApiCredentials"> {
-
-        const { googleApiCredentials:_0, googleSheetsOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.googleApiCredentials, this.props?.googleSheetsOAuth2ApiCredentials];
+        return [this.props!.googleApiCredentials, this.props!.googleSheetsOAuth2ApiCredentials];
 
     }
 

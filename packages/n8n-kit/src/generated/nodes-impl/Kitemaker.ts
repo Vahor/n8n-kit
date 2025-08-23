@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { KitemakerNodeParameters } from "../nodes/Kitemaker";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface KitemakerProps extends NodeProps, KitemakerNodeParameters {
+export interface KitemakerProps extends NodeProps {
 
+    readonly parameters: KitemakerNodeParameters;
     readonly kitemakerApiCredentials: Credentials<KitemakerApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Kitemaker<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.kitemaker" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: KitemakerProps) {
+    constructor(id: L, override props: KitemakerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<KitemakerNodeParameters, "kitemakerApiCredentials"> {
-
-        const { kitemakerApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.kitemakerApiCredentials];
+        return [this.props!.kitemakerApiCredentials];
 
     }
 

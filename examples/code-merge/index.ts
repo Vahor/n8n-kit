@@ -9,7 +9,8 @@ const workflow = new Workflow("merge-example", {
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.multiple([
 			new Code("Sample data (name + language)", {
-				jsCode: `
+				parameters: {
+					jsCode: `
 return [
   {
     json: {
@@ -31,9 +32,11 @@ return [
   }
 ];
 `,
+				},
 			}),
 			new Code("Sample data (greeting + language)", {
-				jsCode: `
+				parameters: {
+					jsCode: `
 return [
   {
     json: {
@@ -49,13 +52,16 @@ return [
   }
 ];
 `,
+				},
 			}),
 		])
 		.connect(
 			["Sample data (name + language)", "Sample data (greeting + language)"],
 			new Merge("Merge (name + language + greeting)", {
-				mode: "combine",
-				fieldsToMatchString: "language",
+				parameters: {
+					mode: "combine",
+					fieldsToMatchString: "language",
+				},
 			}),
 			{ "Sample data (greeting + language)": { to: 1 } },
 		),

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/CustomerIo/CustomerIo.node.ts' node
 
-export const name = "customerIo" as const;
 export const description = "Consume Customer.io API" as const;
+export const type = "n8n-nodes-base.customerIo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"customerIoApi","required":true}] as const;
 

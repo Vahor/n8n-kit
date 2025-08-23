@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Twilio/Twilio.node.ts' node
 
-export const name = "twilio" as const;
 export const description = "Send SMS and WhatsApp messages or make phone calls" as const;
+export const type = "n8n-nodes-base.twilio" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"twilioApi","required":true}] as const;
 

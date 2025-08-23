@@ -4,25 +4,20 @@
 import type { SentimentAnalysisNodeParameters } from "../nodes/SentimentAnalysis";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface SentimentAnalysisProps extends NodeProps, SentimentAnalysisNodeParameters {
+export interface SentimentAnalysisProps extends NodeProps {
 
+    readonly parameters: SentimentAnalysisNodeParameters;
 
 }
 
 export class SentimentAnalysis<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.sentimentAnalysis" as const;
+    protected type = "@n8n/n8n-nodes-langchain.sentimentAnalysis" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: SentimentAnalysisProps) {
+    constructor(id: L, override props?: SentimentAnalysisProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : SentimentAnalysisNodeParameters {
-
-        return this.props ?? {};
 
     }
 

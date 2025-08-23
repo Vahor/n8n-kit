@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Translate/GoogleTranslate.node.ts' node
 
-export const name = "googleTranslate" as const;
 export const description = "Translate data using Google Translate" as const;
+export const type = "n8n-nodes-base.googleTranslate" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleTranslateOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

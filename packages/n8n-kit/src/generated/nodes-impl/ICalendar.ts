@@ -4,8 +4,9 @@
 import type { ICalendarNodeParameters } from "../nodes/ICalendar";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ICalendarProps extends NodeProps, ICalendarNodeParameters {
+export interface ICalendarProps extends NodeProps {
 
+    readonly parameters: ICalendarNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class ICalendar<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.iCal" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ICalendarProps) {
+    constructor(id: L, override props?: ICalendarProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ICalendarNodeParameters {
-
-        return this.props ?? {};
 
     }
 

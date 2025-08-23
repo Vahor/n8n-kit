@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { GoogleSheetsTriggerNodeParameters } from "../nodes/GoogleSheetsTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GoogleSheetsTriggerProps extends NodeProps, GoogleSheetsTriggerNodeParameters {
+export interface GoogleSheetsTriggerProps extends NodeProps {
 
+    readonly parameters: GoogleSheetsTriggerNodeParameters;
     readonly googleSheetsTriggerOAuth2ApiCredentials?: Credentials<GoogleSheetsTriggerOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class GoogleSheetsTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleSheetsTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GoogleSheetsTriggerProps) {
+    constructor(id: L, override props?: GoogleSheetsTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GoogleSheetsTriggerNodeParameters, "googleSheetsTriggerOAuth2ApiCredentials"> {
-
-        const { googleSheetsTriggerOAuth2ApiCredentials:_0, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.googleSheetsTriggerOAuth2ApiCredentials];
+        return [this.props!.googleSheetsTriggerOAuth2ApiCredentials];
 
     }
 

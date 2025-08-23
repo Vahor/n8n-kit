@@ -4,25 +4,20 @@
 import type { ChatAINodeParameters } from "../nodes/ChatAI";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ChatAIProps extends NodeProps, ChatAINodeParameters {
+export interface ChatAIProps extends NodeProps {
 
+    readonly parameters: ChatAINodeParameters;
 
 }
 
 export class ChatAI<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.chat" as const;
+    protected type = "@n8n/n8n-nodes-langchain.chat" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ChatAIProps) {
+    constructor(id: L, override props?: ChatAIProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ChatAINodeParameters {
-
-        return this.props ?? {};
 
     }
 

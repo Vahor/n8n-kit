@@ -9,6 +9,7 @@
 			"position": [55, 270],
 			"typeVersion": 2.1,
 			"parameters": {
+				"label": "Webhook",
 				"httpMethod": "POST",
 				"path": "abc",
 				"responseMode": "responseNode"
@@ -141,10 +142,9 @@
 			"position": [700, 340],
 			"typeVersion": 1,
 			"parameters": {
-				"content": "Handle error message",
-				"height": 220,
+				"parameters": { "content": "Handle error message", "color": "RED" },
 				"width": 570,
-				"color": 3
+				"height": 220
 			}
 		},
 		{
@@ -154,10 +154,9 @@
 			"position": [700, 340],
 			"typeVersion": 1,
 			"parameters": {
-				"content": "Handle error message",
-				"height": 220,
+				"parameters": { "content": "Handle error message", "color": "RED" },
 				"width": 570,
-				"color": 3
+				"height": 220
 			}
 		},
 		{
@@ -167,10 +166,9 @@
 			"position": [700, 340],
 			"typeVersion": 1,
 			"parameters": {
-				"content": "Check valid execution type",
-				"height": 230,
+				"parameters": { "content": "Check valid execution type" },
 				"width": 920,
-				"color": 1
+				"height": 230
 			}
 		}
 	],

@@ -4,25 +4,20 @@
 import type { ModelSelectorNodeParameters } from "../nodes/ModelSelector";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ModelSelectorProps extends NodeProps, ModelSelectorNodeParameters {
+export interface ModelSelectorProps extends NodeProps {
 
+    readonly parameters: ModelSelectorNodeParameters;
 
 }
 
 export class ModelSelector<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.modelSelector" as const;
+    protected type = "@n8n/n8n-nodes-langchain.modelSelector" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ModelSelectorProps) {
+    constructor(id: L, override props?: ModelSelectorProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ModelSelectorNodeParameters {
-
-        return this.props ?? {};
 
     }
 

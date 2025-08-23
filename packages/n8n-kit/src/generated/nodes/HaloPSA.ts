@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HaloPSA/HaloPSA.node.ts' node
 
-export const name = "haloPSA" as const;
 export const description = "Consume HaloPSA API" as const;
+export const type = "n8n-nodes-base.haloPSA" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"haloPSAApi","required":true,"testedBy":"haloPSAApiCredentialTest"}] as const;
 
@@ -14,7 +14,7 @@ export interface HaloPSANodeParameters {
     /**
      * Default: "client"
      */
-    readonly resource: "client" | "site" | "ticket" | "user";
+    readonly resource?: "client" | "site" | "ticket" | "user";
 
     /**
      * Default: "create"

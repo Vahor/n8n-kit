@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/SeaTable/v2/SeaTableV2.node.ts' node
 
-export const name = "seaTable" as const;
 export const description = "Consume the SeaTable API" as const;
+export const type = "n8n-nodes-base.seaTable" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"seaTableApi","required":true}] as const;
 

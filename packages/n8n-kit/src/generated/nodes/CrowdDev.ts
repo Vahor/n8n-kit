@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/CrowdDev/CrowdDev.node.ts' node
 
-export const name = "crowdDev" as const;
 export const description = "crowd.dev is an open-source suite of community and data tools built to unlock community-led growth for your organization." as const;
+export const type = "n8n-nodes-base.crowdDev" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"crowdDevApi","required":true}] as const;
 

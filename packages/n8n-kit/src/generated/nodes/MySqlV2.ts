@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MySql/v2/MySqlV2.node.ts' node
 
-export const name = "mySql" as const;
 export const description = "Get, add and update data in MySQL" as const;
+export const type = "n8n-nodes-base.mySql" as const;
 export const version = 2.5 as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest"}] as const;
 
@@ -25,7 +25,7 @@ export interface MySqlV2NodeParameters {
      * The table you want to work on
      * Default: {"mode":"list","value":""}
      */
-    readonly table: any;
+    readonly table?: any;
 
     /**
      * Default: "truncate"

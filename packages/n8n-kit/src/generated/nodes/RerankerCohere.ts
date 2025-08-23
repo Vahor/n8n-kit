@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/rerankers/RerankerCohere/RerankerCohere.node.ts' node
 
-export const name = "rerankerCohere" as const;
 export const description = "Use Cohere Reranker to reorder documents after retrieval from a vector store by relevance to the given query." as const;
+export const type = "@n8n/n8n-nodes-langchain.rerankerCohere" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cohereApi","required":true}] as const;
 

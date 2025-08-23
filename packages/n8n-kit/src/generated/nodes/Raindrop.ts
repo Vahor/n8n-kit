@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Raindrop/Raindrop.node.ts' node
 
-export const name = "raindrop" as const;
 export const description = "Consume the Raindrop API" as const;
+export const type = "n8n-nodes-base.raindrop" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"raindropOAuth2Api","required":true}] as const;
 

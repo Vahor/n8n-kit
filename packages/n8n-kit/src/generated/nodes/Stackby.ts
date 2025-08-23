@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Stackby/Stackby.node.ts' node
 
-export const name = "stackby" as const;
 export const description = "Read, write, and delete data in Stackby" as const;
+export const type = "n8n-nodes-base.stackby" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"stackbyApi","required":true}] as const;
 
@@ -19,12 +19,12 @@ export interface StackbyNodeParameters {
     /**
      * The ID of the stack to access
      */
-    readonly stackId: string;
+    readonly stackId?: string;
 
     /**
      * Enter Table Name
      */
-    readonly table: string;
+    readonly table?: string;
 
     /**
      * ID of the record to return

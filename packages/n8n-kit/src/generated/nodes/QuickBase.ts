@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/QuickBase/QuickBase.node.ts' node
 
-export const name = "quickbase" as const;
 export const description = "Integrate with the Quick Base RESTful API" as const;
+export const type = "n8n-nodes-base.quickbase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"quickbaseApi","required":true}] as const;
 

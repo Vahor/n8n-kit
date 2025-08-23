@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { LmOpenHuggingFaceInferenceNodeParameters } from "../nodes/LmOpenHuggingFaceInference";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface LmOpenHuggingFaceInferenceProps extends NodeProps, LmOpenHuggingFaceInferenceNodeParameters {
+export interface LmOpenHuggingFaceInferenceProps extends NodeProps {
 
+    readonly parameters: LmOpenHuggingFaceInferenceNodeParameters;
     readonly huggingFaceApiCredentials: Credentials<HuggingFaceApiCredentials>;
 
 }
 
 export class LmOpenHuggingFaceInference<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.lmOpenHuggingFaceInference" as const;
+    protected type = "@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LmOpenHuggingFaceInferenceProps) {
+    constructor(id: L, override props: LmOpenHuggingFaceInferenceProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<LmOpenHuggingFaceInferenceNodeParameters, "huggingFaceApiCredentials"> {
-
-        const { huggingFaceApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.huggingFaceApiCredentials];
+        return [this.props!.huggingFaceApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Vero/Vero.node.ts' node
 
-export const name = "vero" as const;
 export const description = "Consume Vero API" as const;
+export const type = "n8n-nodes-base.vero" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"veroApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Pipedrive/PipedriveTrigger.node.ts' node
 
-export const name = "pipedriveTrigger" as const;
 export const description = "Starts the workflow when Pipedrive events occur" as const;
+export const type = "n8n-nodes-base.pipedriveTrigger" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"pipedriveApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"pipedriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}}] as const;
 

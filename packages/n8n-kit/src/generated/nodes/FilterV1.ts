@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Filter/V1/FilterV1.node.ts' node
 
-export const name = "filter" as const;
 export const description = "Remove items matching a condition" as const;
+export const type = "n8n-nodes-base.filter" as const;
 export const version = 1 as const;
 
 /**

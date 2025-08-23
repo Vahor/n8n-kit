@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreWeaviate/VectorStoreWeaviate.node.ts' node
 
-export const name = "vectorStoreWeaviate" as const;
 export const description = "Work with your data in a Weaviate Cluster" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreWeaviate" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"weaviateApi","required":true}] as const;
 
@@ -40,7 +40,7 @@ export interface VectorStoreWeaviateNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly weaviateCollection: any;
+    readonly weaviateCollection?: any;
 
     /**
      * Number of documents to embed in a single batch

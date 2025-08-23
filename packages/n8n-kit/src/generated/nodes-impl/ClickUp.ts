@@ -7,8 +7,9 @@ import type { Credentials } from "../../credentials";
 import type { ClickUpNodeParameters } from "../nodes/ClickUp";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ClickUpProps extends NodeProps, ClickUpNodeParameters {
+export interface ClickUpProps extends NodeProps {
 
+    readonly parameters: ClickUpNodeParameters;
     readonly clickUpApiCredentials?: Credentials<ClickUpApiCredentials>;
     readonly clickUpOAuth2ApiCredentials?: Credentials<ClickUpOAuth2ApiCredentials>;
 
@@ -19,22 +20,15 @@ export class ClickUp<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.clickUp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ClickUpProps) {
+    constructor(id: L, override props?: ClickUpProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<ClickUpNodeParameters, "clickUpApiCredentials | clickUpOAuth2ApiCredentials"> {
-
-        const { clickUpApiCredentials:_0, clickUpOAuth2ApiCredentials:_1, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.clickUpApiCredentials, this.props?.clickUpOAuth2ApiCredentials];
+        return [this.props!.clickUpApiCredentials, this.props!.clickUpOAuth2ApiCredentials];
 
     }
 

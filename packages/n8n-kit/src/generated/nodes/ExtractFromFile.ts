@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Files/ExtractFromFile/ExtractFromFile.node.ts' node
 
-export const name = "extractFromFile" as const;
 export const description = "Convert binary data to JSON" as const;
+export const type = "n8n-nodes-base.extractFromFile" as const;
 export const version = 1 as const;
 
 /**

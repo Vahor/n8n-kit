@@ -4,25 +4,20 @@
 import type { OutputParserStructuredNodeParameters } from "../nodes/OutputParserStructured";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface OutputParserStructuredProps extends NodeProps, OutputParserStructuredNodeParameters {
+export interface OutputParserStructuredProps extends NodeProps {
 
+    readonly parameters: OutputParserStructuredNodeParameters;
 
 }
 
 export class OutputParserStructured<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.outputParserStructured" as const;
+    protected type = "@n8n/n8n-nodes-langchain.outputParserStructured" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, public readonly props?: OutputParserStructuredProps) {
+    constructor(id: L, override props?: OutputParserStructuredProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : OutputParserStructuredNodeParameters {
-
-        return this.props ?? {};
 
     }
 

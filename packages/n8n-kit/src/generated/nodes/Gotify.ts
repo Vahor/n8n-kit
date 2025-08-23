@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Gotify/Gotify.node.ts' node
 
-export const name = "gotify" as const;
 export const description = "Consume Gotify API" as const;
+export const type = "n8n-nodes-base.gotify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gotifyApi","required":true}] as const;
 

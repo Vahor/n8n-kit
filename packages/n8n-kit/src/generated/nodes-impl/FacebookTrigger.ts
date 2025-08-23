@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { FacebookTriggerNodeParameters } from "../nodes/FacebookTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface FacebookTriggerProps extends NodeProps, FacebookTriggerNodeParameters {
+export interface FacebookTriggerProps extends NodeProps {
 
+    readonly parameters: FacebookTriggerNodeParameters;
     readonly facebookGraphAppApiCredentials: Credentials<FacebookGraphAppApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class FacebookTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.facebookTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: FacebookTriggerProps) {
+    constructor(id: L, override props: FacebookTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<FacebookTriggerNodeParameters, "facebookGraphAppApiCredentials"> {
-
-        const { facebookGraphAppApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.facebookGraphAppApiCredentials];
+        return [this.props!.facebookGraphAppApiCredentials];
 
     }
 

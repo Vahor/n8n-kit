@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Airtable/v2/AirtableV2.node.ts' node
 
-export const name = "airtable" as const;
 export const description = "Read, update, write and delete data from Airtable" as const;
+export const type = "n8n-nodes-base.airtable" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Sheet/v2/GoogleSheetsV2.node.ts' node
 
-export const name = "googleSheets" as const;
 export const description = "Read, update and write data to Google Sheets" as const;
+export const type = "n8n-nodes-base.googleSheets" as const;
 export const version = 4.7 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}},"testedBy":"googleApiCredentialTest"},{"name":"googleSheetsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

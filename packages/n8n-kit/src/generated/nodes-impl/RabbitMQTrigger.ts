@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { RabbitMQTriggerNodeParameters } from "../nodes/RabbitMQTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface RabbitMQTriggerProps extends NodeProps, RabbitMQTriggerNodeParameters {
+export interface RabbitMQTriggerProps extends NodeProps {
 
+    readonly parameters: RabbitMQTriggerNodeParameters;
     readonly rabbitmqCredentials: Credentials<RabbitMQCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class RabbitMQTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.rabbitmqTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: RabbitMQTriggerProps) {
+    constructor(id: L, override props: RabbitMQTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<RabbitMQTriggerNodeParameters, "rabbitmqCredentials"> {
-
-        const { rabbitmqCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.rabbitmqCredentials];
+        return [this.props!.rabbitmqCredentials];
 
     }
 

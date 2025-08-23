@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { VectorStorePineconeInsertNodeParameters } from "../nodes/VectorStorePineconeInsert";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface VectorStorePineconeInsertProps extends NodeProps, VectorStorePineconeInsertNodeParameters {
+export interface VectorStorePineconeInsertProps extends NodeProps {
 
+    readonly parameters: VectorStorePineconeInsertNodeParameters;
     readonly pineconeApiCredentials: Credentials<PineconeApiCredentials>;
 
 }
 
 export class VectorStorePineconeInsert<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.vectorStorePineconeInsert" as const;
+    protected type = "@n8n/n8n-nodes-langchain.vectorStorePineconeInsert" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: VectorStorePineconeInsertProps) {
+    constructor(id: L, override props: VectorStorePineconeInsertProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<VectorStorePineconeInsertNodeParameters, "pineconeApiCredentials"> {
-
-        const { pineconeApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.pineconeApiCredentials];
+        return [this.props!.pineconeApiCredentials];
 
     }
 

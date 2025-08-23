@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Transform/Limit/Limit.node.ts' node
 
-export const name = "limit" as const;
 export const description = "Restrict the number of items" as const;
+export const type = "n8n-nodes-base.limit" as const;
 export const version = 1 as const;
 
 /**

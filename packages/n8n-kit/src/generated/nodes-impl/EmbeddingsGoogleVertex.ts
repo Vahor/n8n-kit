@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { EmbeddingsGoogleVertexNodeParameters } from "../nodes/EmbeddingsGoogleVertex";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface EmbeddingsGoogleVertexProps extends NodeProps, EmbeddingsGoogleVertexNodeParameters {
+export interface EmbeddingsGoogleVertexProps extends NodeProps {
 
+    readonly parameters: EmbeddingsGoogleVertexNodeParameters;
     readonly googleApiCredentials: Credentials<GoogleApiCredentials>;
 
 }
 
 export class EmbeddingsGoogleVertex<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.embeddingsGoogleVertex" as const;
+    protected type = "@n8n/n8n-nodes-langchain.embeddingsGoogleVertex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: EmbeddingsGoogleVertexProps) {
+    constructor(id: L, override props: EmbeddingsGoogleVertexProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<EmbeddingsGoogleVertexNodeParameters, "googleApiCredentials"> {
-
-        const { googleApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.googleApiCredentials];
+        return [this.props!.googleApiCredentials];
 
     }
 

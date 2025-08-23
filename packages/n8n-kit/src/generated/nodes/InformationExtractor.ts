@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/chains/InformationExtractor/InformationExtractor.node.ts' node
 
-export const name = "informationExtractor" as const;
 export const description = "Extract information from text in a structured format" as const;
+export const type = "@n8n/n8n-nodes-langchain.informationExtractor" as const;
 export const version = 1.2 as const;
 
 /**

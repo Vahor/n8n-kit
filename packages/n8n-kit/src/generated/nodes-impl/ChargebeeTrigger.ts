@@ -4,8 +4,9 @@
 import type { ChargebeeTriggerNodeParameters } from "../nodes/ChargebeeTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ChargebeeTriggerProps extends NodeProps, ChargebeeTriggerNodeParameters {
+export interface ChargebeeTriggerProps extends NodeProps {
 
+    readonly parameters: ChargebeeTriggerNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class ChargebeeTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.chargebeeTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ChargebeeTriggerProps) {
+    constructor(id: L, override props?: ChargebeeTriggerProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ChargebeeTriggerNodeParameters {
-
-        return this.props ?? {};
 
     }
 

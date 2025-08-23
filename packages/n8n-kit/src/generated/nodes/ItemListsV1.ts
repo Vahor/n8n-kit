@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/ItemLists/V1/ItemListsV1.node.ts' node
 
-export const name = "itemLists" as const;
 export const description = "Helper for working with lists of items and transforming arrays" as const;
+export const type = "n8n-nodes-base.itemLists" as const;
 export const version = 1 as const;
 export const credentials = [] as const;
 

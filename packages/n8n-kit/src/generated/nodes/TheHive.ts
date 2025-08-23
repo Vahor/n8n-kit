@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/TheHive/TheHive.node.ts' node
 
-export const name = "theHive" as const;
 export const description = "Consume TheHive API" as const;
+export const type = "n8n-nodes-base.theHive" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"theHiveApi","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface TheHiveNodeParameters {
     /**
      * Default: "alert"
      */
-    readonly resource: "alert" | "case" | "log" | "observable" | "task";
+    readonly resource?: "alert" | "case" | "log" | "observable" | "task";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

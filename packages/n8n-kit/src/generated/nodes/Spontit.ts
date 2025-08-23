@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Spontit/Spontit.node.ts' node
 
-export const name = "spontit" as const;
 export const description = "Consume Spontit API" as const;
+export const type = "n8n-nodes-base.spontit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"spontitApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/tools/ToolSerpApi/ToolSerpApi.node.ts' node
 
-export const name = "toolSerpApi" as const;
 export const description = "Search in Google using SerpAPI" as const;
+export const type = "@n8n/n8n-nodes-langchain.toolSerpApi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"serpApi","required":true}] as const;
 

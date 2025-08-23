@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Todoist/v1/TodoistV1.node.ts' node
 
-export const name = "todoist" as const;
 export const description = "Consume Todoist API" as const;
+export const type = "n8n-nodes-base.todoist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"todoistApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"todoistOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 
@@ -19,7 +19,7 @@ export interface TodoistV1NodeParameters {
     /**
      * Default: "task"
      */
-    readonly resource: "task";
+    readonly resource?: "task";
 
     /**
      * Default: "create"

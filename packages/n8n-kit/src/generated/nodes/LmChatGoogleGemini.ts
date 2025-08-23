@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/llms/LmChatGoogleGemini/LmChatGoogleGemini.node.ts' node
 
-export const name = "lmChatGoogleGemini" as const;
 export const description = "Chat Model Google Gemini" as const;
+export const type = "@n8n/n8n-nodes-langchain.lmChatGoogleGemini" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;
 

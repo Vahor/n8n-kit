@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Zulip/Zulip.node.ts' node
 
-export const name = "zulip" as const;
 export const description = "Consume Zulip API" as const;
+export const type = "n8n-nodes-base.zulip" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zulipApi","required":true}] as const;
 

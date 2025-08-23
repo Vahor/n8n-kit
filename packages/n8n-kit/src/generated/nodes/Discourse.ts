@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Discourse/Discourse.node.ts' node
 
-export const name = "discourse" as const;
 export const description = "Consume Discourse API" as const;
+export const type = "n8n-nodes-base.discourse" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"discourseApi","required":true}] as const;
 

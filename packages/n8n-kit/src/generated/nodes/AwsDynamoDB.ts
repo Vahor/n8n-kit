@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Aws/DynamoDB/AwsDynamoDB.node.ts' node
 
-export const name = "awsDynamoDb" as const;
 export const description = "Consume the AWS DynamoDB API" as const;
+export const type = "n8n-nodes-base.awsDynamoDb" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

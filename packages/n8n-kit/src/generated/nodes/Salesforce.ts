@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Salesforce/Salesforce.node.ts' node
 
-export const name = "salesforce" as const;
 export const description = "Consume Salesforce API" as const;
+export const type = "n8n-nodes-base.salesforce" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"salesforceOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"salesforceJwtApi","required":true,"displayOptions":{"show":{"authentication":["jwt"]}}}] as const;
 

@@ -6,33 +6,27 @@ import type { Credentials } from "../../credentials";
 import type { VectorStoreSupabaseNodeParameters } from "../nodes/VectorStoreSupabase";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface VectorStoreSupabaseProps extends NodeProps, VectorStoreSupabaseNodeParameters {
+export interface VectorStoreSupabaseProps extends NodeProps {
 
+    readonly parameters: VectorStoreSupabaseNodeParameters;
     readonly supabaseApiCredentials: Credentials<SupabaseApiCredentials>;
 
 }
 
 export class VectorStoreSupabase<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.vectorStoreSupabase" as const;
+    protected type = "@n8n/n8n-nodes-langchain.vectorStoreSupabase" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, public readonly props: VectorStoreSupabaseProps) {
+    constructor(id: L, override props: VectorStoreSupabaseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<VectorStoreSupabaseNodeParameters, "supabaseApiCredentials"> {
-
-        const { supabaseApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.supabaseApiCredentials];
+        return [this.props!.supabaseApiCredentials];
 
     }
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/TimescaleDb/TimescaleDb.node.ts' node
 
-export const name = "timescaleDb" as const;
 export const description = "Add and update data in TimescaleDB" as const;
+export const type = "n8n-nodes-base.timescaleDb" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"timescaleDb","required":true}] as const;
 

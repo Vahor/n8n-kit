@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { FlowNodeParameters } from "../nodes/Flow";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface FlowProps extends NodeProps, FlowNodeParameters {
+export interface FlowProps extends NodeProps {
 
+    readonly parameters: FlowNodeParameters;
     readonly flowApiCredentials: Credentials<FlowApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Flow<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.flow" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: FlowProps) {
+    constructor(id: L, override props: FlowProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<FlowNodeParameters, "flowApiCredentials"> {
-
-        const { flowApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.flowApiCredentials];
+        return [this.props!.flowApiCredentials];
 
     }
 

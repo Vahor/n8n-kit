@@ -4,25 +4,20 @@
 import type { RetrieverWorkflowNodeParameters } from "../nodes/RetrieverWorkflow";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface RetrieverWorkflowProps extends NodeProps, RetrieverWorkflowNodeParameters {
+export interface RetrieverWorkflowProps extends NodeProps {
 
+    readonly parameters: RetrieverWorkflowNodeParameters;
 
 }
 
 export class RetrieverWorkflow<L extends string> extends Node<L> {
 
-    protected type = "n8n-nodes-base.retrieverWorkflow" as const;
+    protected type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: RetrieverWorkflowProps) {
+    constructor(id: L, override props?: RetrieverWorkflowProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : RetrieverWorkflowNodeParameters {
-
-        return this.props ?? {};
 
     }
 

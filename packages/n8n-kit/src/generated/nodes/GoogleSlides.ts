@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Slides/GoogleSlides.node.ts' node
 
-export const name = "googleSlides" as const;
 export const description = "Consume the Google Slides API" as const;
+export const type = "n8n-nodes-base.googleSlides" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleSlidesOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { RundeckNodeParameters } from "../nodes/Rundeck";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface RundeckProps extends NodeProps, RundeckNodeParameters {
+export interface RundeckProps extends NodeProps {
 
+    readonly parameters: RundeckNodeParameters;
     readonly rundeckApiCredentials: Credentials<RundeckApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Rundeck<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.rundeck" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: RundeckProps) {
+    constructor(id: L, override props: RundeckProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<RundeckNodeParameters, "rundeckApiCredentials"> {
-
-        const { rundeckApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.rundeckApiCredentials];
+        return [this.props!.rundeckApiCredentials];
 
     }
 

@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { AwsDynamoDBNodeParameters } from "../nodes/AwsDynamoDB";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface AwsDynamoDBProps extends NodeProps, AwsDynamoDBNodeParameters {
+export interface AwsDynamoDBProps extends NodeProps {
 
+    readonly parameters: AwsDynamoDBNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class AwsDynamoDB<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsDynamoDb" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: AwsDynamoDBProps) {
+    constructor(id: L, override props: AwsDynamoDBProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<AwsDynamoDBNodeParameters, "awsCredentials"> {
-
-        const { awsCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.awsCredentials];
+        return [this.props!.awsCredentials];
 
     }
 

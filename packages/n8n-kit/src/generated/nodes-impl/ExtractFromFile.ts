@@ -4,8 +4,9 @@
 import type { ExtractFromFileNodeParameters } from "../nodes/ExtractFromFile";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ExtractFromFileProps extends NodeProps, ExtractFromFileNodeParameters {
+export interface ExtractFromFileProps extends NodeProps {
 
+    readonly parameters: ExtractFromFileNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class ExtractFromFile<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.extractFromFile" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ExtractFromFileProps) {
+    constructor(id: L, override props?: ExtractFromFileProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ExtractFromFileNodeParameters {
-
-        return this.props ?? {};
 
     }
 

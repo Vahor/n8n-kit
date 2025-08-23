@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Html/Html.node.ts' node
 
-export const name = "html" as const;
 export const description = "Work with HTML" as const;
+export const type = "n8n-nodes-base.html" as const;
 export const version = 1.2 as const;
 
 /**

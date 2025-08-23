@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreSupabase/VectorStoreSupabase.node.ts' node
 
-export const name = "vectorStoreSupabase" as const;
 export const description = "Work with your data in Supabase Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreSupabase" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"supabaseApi","required":true}] as const;
 
@@ -40,7 +40,7 @@ export interface VectorStoreSupabaseNodeParameters {
     /**
      * Default: {"mode":"list","value":""}
      */
-    readonly tableName: any;
+    readonly tableName?: any;
 
     /**
      * Number of documents to embed in a single batch

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/SyncroMSP/v1/SyncroMspV1.node.ts' node
 
-export const name = "syncroMsp" as const;
 export const description = "Gets data from SyncroMSP" as const;
+export const type = "n8n-nodes-base.syncroMsp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"syncroMspApi","required":true,"testedBy":"syncroMspApiCredentialTest"}] as const;
 

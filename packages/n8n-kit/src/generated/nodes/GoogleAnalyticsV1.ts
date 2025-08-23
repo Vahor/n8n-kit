@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Google/Analytics/v1/GoogleAnalyticsV1.node.ts' node
 
-export const name = "googleAnalytics" as const;
 export const description = "Use the Google Analytics API" as const;
+export const type = "n8n-nodes-base.googleAnalytics" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleAnalyticsOAuth2","required":true}] as const;
 

@@ -4,8 +4,9 @@
 import type { ManualTriggerNodeParameters } from "../nodes/ManualTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ManualTriggerProps extends NodeProps, ManualTriggerNodeParameters {
+export interface ManualTriggerProps extends NodeProps {
 
+    readonly parameters: ManualTriggerNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class ManualTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.manualTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ManualTriggerProps) {
+    constructor(id: L, override props?: ManualTriggerProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ManualTriggerNodeParameters {
-
-        return this.props ?? {};
 
     }
 

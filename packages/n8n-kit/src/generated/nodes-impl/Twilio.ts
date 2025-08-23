@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { TwilioNodeParameters } from "../nodes/Twilio";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface TwilioProps extends NodeProps, TwilioNodeParameters {
+export interface TwilioProps extends NodeProps {
 
+    readonly parameters: TwilioNodeParameters;
     readonly twilioApiCredentials: Credentials<TwilioApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Twilio<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.twilio" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: TwilioProps) {
+    constructor(id: L, override props: TwilioProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<TwilioNodeParameters, "twilioApiCredentials"> {
-
-        const { twilioApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.twilioApiCredentials];
+        return [this.props!.twilioApiCredentials];
 
     }
 

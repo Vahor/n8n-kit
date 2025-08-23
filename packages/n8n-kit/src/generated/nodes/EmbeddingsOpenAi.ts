@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/embeddings/EmbeddingsOpenAI/EmbeddingsOpenAi.node.ts' node
 
-export const name = "embeddingsOpenAi" as const;
 export const description = "Use Embeddings OpenAI" as const;
+export const type = "@n8n/n8n-nodes-langchain.embeddingsOpenAi" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
 

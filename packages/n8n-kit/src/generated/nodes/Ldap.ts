@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Ldap/Ldap.node.ts' node
 
-export const name = "ldap" as const;
 export const description = "Interact with LDAP servers" as const;
+export const type = "n8n-nodes-base.ldap" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ldap","required":true,"testedBy":"ldapConnectionTest"}] as const;
 

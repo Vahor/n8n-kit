@@ -12,8 +12,9 @@ import type { Credentials } from "../../credentials";
 import type { GraphQLNodeParameters } from "../nodes/GraphQL";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface GraphQLProps extends NodeProps, GraphQLNodeParameters {
+export interface GraphQLProps extends NodeProps {
 
+    readonly parameters: GraphQLNodeParameters;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
     readonly httpCustomAuthCredentials?: Credentials<HttpCustomAuthCredentials>;
     readonly httpDigestAuthCredentials?: Credentials<HttpDigestAuthCredentials>;
@@ -29,22 +30,15 @@ export class GraphQL<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.graphql" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: GraphQLProps) {
+    constructor(id: L, override props?: GraphQLProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<GraphQLNodeParameters, "httpBasicAuthCredentials | httpCustomAuthCredentials | httpDigestAuthCredentials | httpHeaderAuthCredentials | httpQueryAuthCredentials | oAuth1ApiCredentials | oAuth2ApiCredentials"> {
-
-        const { httpBasicAuthCredentials:_0, httpCustomAuthCredentials:_1, httpDigestAuthCredentials:_2, httpHeaderAuthCredentials:_3, httpQueryAuthCredentials:_4, oAuth1ApiCredentials:_5, oAuth2ApiCredentials:_6, ...rest } = this.props ?? {};
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props?.httpBasicAuthCredentials, this.props?.httpCustomAuthCredentials, this.props?.httpDigestAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.httpQueryAuthCredentials, this.props?.oAuth1ApiCredentials, this.props?.oAuth2ApiCredentials];
+        return [this.props!.httpBasicAuthCredentials, this.props!.httpCustomAuthCredentials, this.props!.httpDigestAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.httpQueryAuthCredentials, this.props!.oAuth1ApiCredentials, this.props!.oAuth2ApiCredentials];
 
     }
 

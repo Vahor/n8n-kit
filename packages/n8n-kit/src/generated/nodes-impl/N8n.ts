@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { N8nNodeParameters } from "../nodes/N8n";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface N8nProps extends NodeProps, N8nNodeParameters {
+export interface N8nProps extends NodeProps {
 
+    readonly parameters: N8nNodeParameters;
     readonly n8NApiCredentials: Credentials<N8nApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class N8n<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.n8n" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: N8nProps) {
+    constructor(id: L, override props: N8nProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<N8nNodeParameters, "n8NApiCredentials"> {
-
-        const { n8NApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.n8NApiCredentials];
+        return [this.props!.n8NApiCredentials];
 
     }
 

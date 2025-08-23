@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/LingvaNex/LingvaNex.node.ts' node
 
-export const name = "lingvaNex" as const;
 export const description = "Consume LingvaNex API" as const;
+export const type = "n8n-nodes-base.lingvaNex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"lingvaNexApi","required":true}] as const;
 

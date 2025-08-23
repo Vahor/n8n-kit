@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Transform/Aggregate/Aggregate.node.ts' node
 
-export const name = "aggregate" as const;
 export const description = "Combine a field from many items into a list in a single item" as const;
+export const type = "n8n-nodes-base.aggregate" as const;
 export const version = 1 as const;
 
 /**

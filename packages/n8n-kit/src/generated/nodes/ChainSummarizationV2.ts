@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/chains/ChainSummarization/V2/ChainSummarizationV2.node.ts' node
 
-export const name = "chainSummarization" as const;
 export const description = "Transforms text into a concise summary" as const;
+export const type = "@n8n/n8n-nodes-langchain.chainSummarization" as const;
 export const version = 2.1 as const;
 export const credentials = [] as const;
 

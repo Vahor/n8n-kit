@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Keap/Keap.node.ts' node
 
-export const name = "keap" as const;
 export const description = "Consume Keap API" as const;
+export const type = "n8n-nodes-base.keap" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"keapOAuth2Api","required":true}] as const;
 

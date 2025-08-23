@@ -2,7 +2,14 @@ import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import { globSync } from "tinyglobby";
 
-const buildEntrypoint = async (forFolder: string, append: string[] = []) => {
+const starExport = `*`;
+const buildEntrypoint = async (
+	forFolder: string,
+	options?: {
+		toExport?: (withoutExtension: string) => string;
+		append?: string[];
+	},
+) => {
 	const matchs = globSync(`../${forFolder}/**/*.ts`, {
 		cwd: path.resolve(__dirname),
 	}).sort();
@@ -21,12 +28,15 @@ const buildEntrypoint = async (forFolder: string, append: string[] = []) => {
 			continue;
 		}
 		const withoutExtension = relativePath.replace(/\.ts$/, "");
-		code.line(`export * from "./${withoutExtension}";`);
+		const toExport = options?.toExport
+			? options.toExport(withoutExtension)
+			: starExport;
+		code.line(`export ${toExport} from "./${withoutExtension}";`);
 	}
 
-	if (append.length > 0) {
+	if (options?.append && options.append.length > 0) {
 		code.line();
-		for (const txt of append) {
+		for (const txt of options.append) {
 			code.line(txt);
 		}
 	}
@@ -37,4 +47,6 @@ const buildEntrypoint = async (forFolder: string, append: string[] = []) => {
 
 await buildEntrypoint("src/nodes");
 await buildEntrypoint("src/generated/nodes-impl");
-await buildEntrypoint("src/generated/nodes");
+await buildEntrypoint("src/generated/nodes", {
+	toExport: (withoutExtension) => `type { ${withoutExtension}NodeParameters }`,
+});

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/RssFeedRead/RssFeedRead.node.ts' node
 
-export const name = "rssFeedRead" as const;
 export const description = "Reads data from an RSS Feed" as const;
+export const type = "n8n-nodes-base.rssFeedRead" as const;
 export const version = 1.2 as const;
 
 /**
@@ -13,7 +13,7 @@ export interface RssFeedReadNodeParameters {
     /**
      * URL of the RSS feed
      */
-    readonly url: string;
+    readonly url?: string;
 
     /**
      * Default: {}

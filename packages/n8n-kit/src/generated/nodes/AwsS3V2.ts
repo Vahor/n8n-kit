@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Aws/S3/V2/AwsS3V2.node.ts' node
 
-export const name = "awsS3" as const;
 export const description = "Sends data to AWS S3" as const;
+export const type = "n8n-nodes-base.awsS3" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

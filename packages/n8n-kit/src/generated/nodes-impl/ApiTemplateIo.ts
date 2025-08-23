@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { ApiTemplateIoNodeParameters } from "../nodes/ApiTemplateIo";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ApiTemplateIoProps extends NodeProps, ApiTemplateIoNodeParameters {
+export interface ApiTemplateIoProps extends NodeProps {
 
+    readonly parameters: ApiTemplateIoNodeParameters;
     readonly apiTemplateIoApiCredentials: Credentials<ApiTemplateIoApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class ApiTemplateIo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.apiTemplateIo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ApiTemplateIoProps) {
+    constructor(id: L, override props: ApiTemplateIoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<ApiTemplateIoNodeParameters, "apiTemplateIoApiCredentials"> {
-
-        const { apiTemplateIoApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.apiTemplateIoApiCredentials];
+        return [this.props!.apiTemplateIoApiCredentials];
 
     }
 

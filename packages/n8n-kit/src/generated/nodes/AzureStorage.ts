@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Storage/AzureStorage.node.ts' node
 
-export const name = "azureStorage" as const;
 export const description = "Interact with Azure Storage API" as const;
+export const type = "n8n-nodes-base.azureStorage" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"azureStorageOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"azureStorageSharedKeyApi","required":true,"displayOptions":{"show":{"authentication":["sharedKey"]}}}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Hunter/Hunter.node.ts' node
 
-export const name = "hunter" as const;
 export const description = "Consume Hunter API" as const;
+export const type = "n8n-nodes-base.hunter" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"hunterApi","required":true}] as const;
 

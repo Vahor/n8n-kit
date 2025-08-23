@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Pushover/Pushover.node.ts' node
 
-export const name = "pushover" as const;
 export const description = "Consume Pushover API" as const;
+export const type = "n8n-nodes-base.pushover" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pushoverApi","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/PostHog/PostHog.node.ts' node
 
-export const name = "postHog" as const;
 export const description = "Consume PostHog API" as const;
+export const type = "n8n-nodes-base.postHog" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"postHogApi","required":true}] as const;
 

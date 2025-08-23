@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { PushbulletNodeParameters } from "../nodes/Pushbullet";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface PushbulletProps extends NodeProps, PushbulletNodeParameters {
+export interface PushbulletProps extends NodeProps {
 
+    readonly parameters: PushbulletNodeParameters;
     readonly pushbulletOAuth2ApiCredentials: Credentials<PushbulletOAuth2ApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Pushbullet<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.pushbullet" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: PushbulletProps) {
+    constructor(id: L, override props: PushbulletProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<PushbulletNodeParameters, "pushbulletOAuth2ApiCredentials"> {
-
-        const { pushbulletOAuth2ApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.pushbulletOAuth2ApiCredentials];
+        return [this.props!.pushbulletOAuth2ApiCredentials];
 
     }
 

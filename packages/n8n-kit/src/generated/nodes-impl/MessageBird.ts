@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { MessageBirdNodeParameters } from "../nodes/MessageBird";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface MessageBirdProps extends NodeProps, MessageBirdNodeParameters {
+export interface MessageBirdProps extends NodeProps {
 
+    readonly parameters: MessageBirdNodeParameters;
     readonly messageBirdApiCredentials: Credentials<MessageBirdApiCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class MessageBird<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.messageBird" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: MessageBirdProps) {
+    constructor(id: L, override props: MessageBirdProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<MessageBirdNodeParameters, "messageBirdApiCredentials"> {
-
-        const { messageBirdApiCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.messageBirdApiCredentials];
+        return [this.props!.messageBirdApiCredentials];
 
     }
 

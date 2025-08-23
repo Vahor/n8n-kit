@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/RespondToWebhook/RespondToWebhook.node.ts' node
 
-export const name = "respondToWebhook" as const;
 export const description = "Returns data for Webhook" as const;
+export const type = "n8n-nodes-base.respondToWebhook" as const;
 export const version = 1.5 as const;
 export const credentials = [{"name":"jwtAuth","required":true,"displayOptions":{"show":{"respondWith":["jwt"]}}}] as const;
 

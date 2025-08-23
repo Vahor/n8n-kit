@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MoveBinaryData/MoveBinaryData.node.ts' node
 
-export const name = "moveBinaryData" as const;
 export const description = "Move data between binary and JSON properties" as const;
+export const type = "n8n-nodes-base.moveBinaryData" as const;
 export const version = 1.1 as const;
 
 /**

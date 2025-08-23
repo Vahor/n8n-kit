@@ -1,12 +1,12 @@
 import type { Rule } from "n8n-nodes-base/nodes/Schedule/SchedulerInterface";
-import { name, version } from "../generated/nodes/ScheduleTrigger";
+import { type, version } from "../generated/nodes/ScheduleTrigger";
 import { Node, type NodeProps } from "./node";
 
-interface ScheduleTriggerBaseProps extends Rule {}
-
-export interface ScheduleTriggerProps
-	extends ScheduleTriggerBaseProps,
-		NodeProps {}
+export interface ScheduleTriggerProps extends NodeProps {
+	parameters: {
+		rule: Rule;
+	};
+}
 
 export class ScheduleTrigger<L extends string> extends Node<
 	L,
@@ -23,20 +23,13 @@ export class ScheduleTrigger<L extends string> extends Node<
 		Timezone: string;
 	}
 > {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	constructor(
 		id: L,
-		private readonly props: ScheduleTriggerProps,
+		override props: ScheduleTriggerProps,
 	) {
 		super(id, props);
-	}
-
-	override getParameters() {
-		const { label: _, ...rest } = this.props;
-		return {
-			rule: rest,
-		};
 	}
 }

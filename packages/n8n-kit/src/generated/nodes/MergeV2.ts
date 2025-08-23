@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Merge/v2/MergeV2.node.ts' node
 
-export const name = "merge" as const;
 export const description = "Merges data of multiple streams once data from both is available" as const;
+export const type = "n8n-nodes-base.merge" as const;
 export const version = 2.1 as const;
 
 /**

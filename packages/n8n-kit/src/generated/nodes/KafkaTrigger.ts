@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Kafka/KafkaTrigger.node.ts' node
 
-export const name = "kafkaTrigger" as const;
 export const description = "Consume messages from a Kafka topic" as const;
+export const type = "n8n-nodes-base.kafkaTrigger" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"kafka","required":true}] as const;
 
@@ -14,12 +14,12 @@ export interface KafkaTriggerNodeParameters {
     /**
      * Name of the queue of topic to consume from
      */
-    readonly topic: string;
+    readonly topic?: string;
 
     /**
      * ID of the consumer group
      */
-    readonly groupId: string;
+    readonly groupId?: string;
 
     /**
      * Whether to use Confluent Schema Registry

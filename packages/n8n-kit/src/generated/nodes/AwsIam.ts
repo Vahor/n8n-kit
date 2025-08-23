@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Aws/IAM/AwsIam.node.ts' node
 
-export const name = "awsIam" as const;
 export const description = "Interacts with Amazon IAM" as const;
+export const type = "n8n-nodes-base.awsIam" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
 

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Cloudflare/Cloudflare.node.ts' node
 
-export const name = "cloudflare" as const;
 export const description = "Consume Cloudflare API" as const;
+export const type = "n8n-nodes-base.cloudflare" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cloudflareApi","required":true}] as const;
 

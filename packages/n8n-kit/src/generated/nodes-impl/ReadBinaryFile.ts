@@ -4,8 +4,9 @@
 import type { ReadBinaryFileNodeParameters } from "../nodes/ReadBinaryFile";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface ReadBinaryFileProps extends NodeProps, ReadBinaryFileNodeParameters {
+export interface ReadBinaryFileProps extends NodeProps {
 
+    readonly parameters: ReadBinaryFileNodeParameters;
 
 }
 
@@ -14,15 +15,9 @@ export class ReadBinaryFile<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.readBinaryFile" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ReadBinaryFileProps) {
+    constructor(id: L, override props?: ReadBinaryFileProps) {
 
         super(id, props);
-
-    }
-
-    override getParameters() : ReadBinaryFileNodeParameters {
-
-        return this.props ?? {};
 
     }
 

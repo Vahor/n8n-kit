@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Brandfetch/Brandfetch.node.ts' node
 
-export const name = "Brandfetch" as const;
 export const description = "Consume Brandfetch API" as const;
+export const type = "n8n-nodes-base.Brandfetch" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"brandfetchApi","required":true}] as const;
 
@@ -19,7 +19,7 @@ export interface BrandfetchNodeParameters {
     /**
      * The domain name of the company
      */
-    readonly domain: string;
+    readonly domain?: string;
 
     /**
      * Name of the binary property to which to write the data of the read file

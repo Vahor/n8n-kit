@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/tools/ToolHttpRequest/ToolHttpRequest.node.ts' node
 
-export const name = "toolHttpRequest" as const;
 export const description = "Makes an HTTP request and returns the response data" as const;
+export const type = "@n8n/n8n-nodes-langchain.toolHttpRequest" as const;
 export const version = 1.1 as const;
 export const credentials = [] as const;
 
@@ -29,7 +29,7 @@ export interface ToolHttpRequestNodeParameters {
 
     readonly placeholderNotice?: string;
 
-    readonly url: string;
+    readonly url?: string;
 
     /**
      * Select the type of authentication to use if needed, authentication would be done by n8n and your credentials will not be shared with the LLM

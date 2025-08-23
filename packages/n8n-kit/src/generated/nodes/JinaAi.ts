@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/JinaAI/JinaAi.node.ts' node
 
-export const name = "jinaAi" as const;
 export const description = "Interact with Jina AI API" as const;
+export const type = "n8n-nodes-base.jinaAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jinaAiApi","required":true}] as const;
 

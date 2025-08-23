@@ -26,19 +26,23 @@ const workflow = new Workflow("workflow-trigger", {
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.next(
 			new ExecuteWorkflow("call-reusable-workflow", {
-				workflow: reusableWorkflow,
-				workflowInputs: {
-					a: "hello",
-					b: 1,
-					c: 2,
-					d: "world",
+				parameters: {
+					workflow: reusableWorkflow,
+					workflowInputs: {
+						a: "hello",
+						b: 1,
+						c: 2,
+						d: "world",
+					},
 				},
 			}),
 		)
 		.next(
 			({ $ }) =>
 				new Code("log-result", {
-					jsCode: expr`console.log(${$("call-reusable-workflow.hello")});`,
+					parameters: {
+						jsCode: expr`console.log(${$("call-reusable-workflow.hello")});`,
+					},
 				}),
 		),
 });

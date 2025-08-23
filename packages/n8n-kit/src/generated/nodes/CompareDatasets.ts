@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/CompareDatasets/CompareDatasets.node.ts' node
 
-export const name = "compareDatasets" as const;
 export const description = "Compare two inputs for changes" as const;
+export const type = "n8n-nodes-base.compareDatasets" as const;
 export const version = 2.3 as const;
 
 /**

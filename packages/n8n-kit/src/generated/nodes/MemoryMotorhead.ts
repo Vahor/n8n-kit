@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/memory/MemoryMotorhead/MemoryMotorhead.node.ts' node
 
-export const name = "memoryMotorhead" as const;
 export const description = "Use Motorhead Memory" as const;
+export const type = "@n8n/n8n-nodes-langchain.memoryMotorhead" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"motorheadApi","required":true}] as const;
 

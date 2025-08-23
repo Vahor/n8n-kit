@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Trello/Trello.node.ts' node
 
-export const name = "trello" as const;
 export const description = "Create, change and delete boards and cards" as const;
+export const type = "n8n-nodes-base.trello" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"trelloApi","required":true}] as const;
 

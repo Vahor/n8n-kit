@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Freshdesk/Freshdesk.node.ts' node
 
-export const name = "freshdesk" as const;
 export const description = "Consume Freshdesk API" as const;
+export const type = "n8n-nodes-base.freshdesk" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"freshdeskApi","required":true}] as const;
 
@@ -14,7 +14,7 @@ export interface FreshdeskNodeParameters {
     /**
      * Default: "ticket"
      */
-    readonly resource: "contact" | "ticket";
+    readonly resource?: "contact" | "ticket";
 
     /**
      * Default: "create"

@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Mailgun/Mailgun.node.ts' node
 
-export const name = "mailgun" as const;
 export const description = "Sends an email via Mailgun" as const;
+export const type = "n8n-nodes-base.mailgun" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailgunApi","required":true}] as const;
 
@@ -14,12 +14,12 @@ export interface MailgunNodeParameters {
     /**
      * Email address of the sender optional with name
      */
-    readonly fromEmail: string;
+    readonly fromEmail?: string;
 
     /**
      * Email address of the recipient. Multiple ones can be separated by comma.
      */
-    readonly toEmail: string;
+    readonly toEmail?: string;
 
     /**
      * Cc Email address of the recipient. Multiple ones can be separated by comma.

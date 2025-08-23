@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/ICalendar/ICalendar.node.ts' node
 
-export const name = "iCal" as const;
 export const description = "Create iCalendar file" as const;
+export const type = "n8n-nodes-base.iCal" as const;
 export const version = 1 as const;
 export const credentials = [] as const;
 
@@ -21,12 +21,12 @@ export interface ICalendarNodeParameters {
     /**
      * Date and time at which the event begins. (For all-day events, the time will be ignored.).
      */
-    readonly start: string;
+    readonly start?: string;
 
     /**
      * Date and time at which the event ends. (For all-day events, the time will be ignored.).
      */
-    readonly end: string;
+    readonly end?: string;
 
     /**
      * Whether the event lasts all day or not
@@ -37,7 +37,7 @@ export interface ICalendarNodeParameters {
      * The field that your iCalendar file will be available under in the output
      * Default: "data"
      */
-    readonly binaryPropertyName: string;
+    readonly binaryPropertyName?: string;
 
     /**
      * Default: {}

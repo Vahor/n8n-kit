@@ -1,8 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/document_loaders/DocumentJSONInputLoader/DocumentJsonInputLoader.node.ts' node
 
-export const name = "documentJsonInputLoader" as const;
 export const description = "Use JSON data from a previous step in the workflow" as const;
+export const type = "@n8n/n8n-nodes-langchain.documentJsonInputLoader" as const;
 export const version = 1 as const;
 
 /**

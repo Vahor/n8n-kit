@@ -6,8 +6,9 @@ import type { Credentials } from "../../credentials";
 import type { KafkaNodeParameters } from "../nodes/Kafka";
 import { Node, type NodeProps } from "../../nodes";
 
-export interface KafkaProps extends NodeProps, KafkaNodeParameters {
+export interface KafkaProps extends NodeProps {
 
+    readonly parameters: KafkaNodeParameters;
     readonly kafkaCredentials: Credentials<KafkaCredentials>;
 
 }
@@ -17,22 +18,15 @@ export class Kafka<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.kafka" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: KafkaProps) {
+    constructor(id: L, override props: KafkaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() : Omit<KafkaNodeParameters, "kafkaCredentials"> {
-
-        const { kafkaCredentials:_0, ...rest } = this.props;
-        return rest;
-
-    }
-
     override getCredentials() {
 
-        return [this.props.kafkaCredentials];
+        return [this.props!.kafkaCredentials];
 
     }
 
