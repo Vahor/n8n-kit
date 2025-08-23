@@ -37,8 +37,6 @@ export interface JinaAiNodeParameters {
      */
     readonly options?: { "outputFormat"?: "html" | "" | "markdown" | "screenshot" | "text", "targetSelector"?: string, "excludeSelector"?: string, "enableImageCaptioning"?: boolean, "waitForSelector"?: string } | { "outputFormat"?: "html" | "" | "markdown" | "screenshot" | "text", "siteFilter"?: string, "pageNumber"?: number } | { "maxReturnedSources"?: number, "prioritizeSources"?: string, "excludeSources"?: string, "siteFilter"?: string };
 
-    /**
-     */
     readonly searchQuery?: string;
 
     /**

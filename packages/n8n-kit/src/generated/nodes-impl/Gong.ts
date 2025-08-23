@@ -25,7 +25,7 @@ export class Gong<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GongNodeParameters, "gongApiCredentials | gongOAuth2ApiCredentials"> {
 
         const { gongApiCredentials:_0, gongOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

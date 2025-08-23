@@ -14,13 +14,13 @@ export class MoveBinaryData<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.moveBinaryData" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props: MoveBinaryDataProps) {
+    constructor(id: L, public readonly props?: MoveBinaryDataProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : MoveBinaryDataNodeParameters {
 
         return this.props ?? {};
 

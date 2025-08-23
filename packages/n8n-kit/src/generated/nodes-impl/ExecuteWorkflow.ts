@@ -14,13 +14,13 @@ export class ExecuteWorkflow<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.executeWorkflow" as const;
     protected typeVersion = 1.2 as const;
 
-    constructor(id: L, public readonly props: ExecuteWorkflowProps) {
+    constructor(id: L, public readonly props?: ExecuteWorkflowProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ExecuteWorkflowNodeParameters {
 
         return this.props ?? {};
 

@@ -11,8 +11,6 @@ export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}
  */
 export interface MicrosoftOutlookV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**
@@ -25,8 +23,6 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "send" | "update" | "delete" | "get" | "getAll" | "getMime" | "move" | "reply" | "send" | "update" | "add" | "download" | "get" | "getAll" | "create" | "delete" | "get" | "getChildren" | "getAll" | "getAll";
 
-    /**
-     */
     readonly messageId?: string;
 
     /**
@@ -87,8 +83,6 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly folderId?: string;
 
-    /**
-     */
     readonly attachmentId?: string;
 
     /**

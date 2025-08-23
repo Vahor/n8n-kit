@@ -17,13 +17,13 @@ export class WooCommerce<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.wooCommerce" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: WooCommerceProps) {
+    constructor(id: L, public readonly props: WooCommerceProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WooCommerceNodeParameters, "wooCommerceApiCredentials"> {
 
         const { wooCommerceApiCredentials:_0, ...rest } = this.props;
         return rest;

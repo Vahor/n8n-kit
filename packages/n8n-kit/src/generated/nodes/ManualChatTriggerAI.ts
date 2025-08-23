@@ -10,8 +10,6 @@ export const version = 1.1 as const;
  */
 export interface ManualChatTriggerAINodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**

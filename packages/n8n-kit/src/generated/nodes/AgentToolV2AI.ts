@@ -22,20 +22,12 @@ export interface AgentToolV2AINodeParameters {
      */
     readonly text: string;
 
-    /**
-     */
     readonly hasOutputParser?: boolean;
 
-    /**
-     */
     readonly notice?: string;
 
-    /**
-     */
     readonly needsFallback?: boolean;
 
-    /**
-     */
     readonly fallbackNotice?: string;
 
     /**

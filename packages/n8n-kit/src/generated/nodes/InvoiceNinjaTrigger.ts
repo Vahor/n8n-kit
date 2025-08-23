@@ -16,8 +16,6 @@ export interface InvoiceNinjaTriggerNodeParameters {
      */
     readonly apiVersion?: "v4" | "v5";
 
-    /**
-     */
     readonly event: "create_client" | "create_invoice" | "create_payment" | "create_quote" | "create_vendor";
 
 

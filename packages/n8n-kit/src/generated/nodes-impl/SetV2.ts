@@ -14,13 +14,13 @@ export class SetV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.set" as const;
     protected typeVersion = 3.4 as const;
 
-    constructor(id: L, public readonly props: SetV2Props) {
+    constructor(id: L, public readonly props?: SetV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : SetV2NodeParameters {
 
         return this.props ?? {};
 

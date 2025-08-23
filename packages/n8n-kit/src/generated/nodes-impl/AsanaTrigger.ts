@@ -25,7 +25,7 @@ export class AsanaTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AsanaTriggerNodeParameters, "asanaApiCredentials | asanaOAuth2ApiCredentials"> {
 
         const { asanaApiCredentials:_0, asanaOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

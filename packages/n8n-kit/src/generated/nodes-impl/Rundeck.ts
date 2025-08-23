@@ -17,13 +17,13 @@ export class Rundeck<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.rundeck" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: RundeckProps) {
+    constructor(id: L, public readonly props: RundeckProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<RundeckNodeParameters, "rundeckApiCredentials"> {
 
         const { rundeckApiCredentials:_0, ...rest } = this.props;
         return rest;

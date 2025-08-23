@@ -25,7 +25,7 @@ export class GmailTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GmailTriggerNodeParameters, "googleApiCredentials | gmailOAuth2Credentials"> {
 
         const { googleApiCredentials:_0, gmailOAuth2Credentials:_1, ...rest } = this.props;
         return rest;

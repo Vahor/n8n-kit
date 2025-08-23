@@ -16,8 +16,6 @@ export interface NotionTriggerNodeParameters {
      */
     readonly event: "pageAddedToDatabase" | "pagedUpdatedInDatabase";
 
-    /**
-     */
     readonly notionNotice?: string;
 
     /**

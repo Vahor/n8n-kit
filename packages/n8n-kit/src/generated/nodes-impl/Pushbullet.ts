@@ -17,13 +17,13 @@ export class Pushbullet<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.pushbullet" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PushbulletProps) {
+    constructor(id: L, public readonly props: PushbulletProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PushbulletNodeParameters, "pushbulletOAuth2ApiCredentials"> {
 
         const { pushbulletOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -23,7 +23,7 @@ export class GoogleFirebaseRealtimeDatabase<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleFirebaseRealtimeDatabaseNodeParameters, "googleFirebaseRealtimeDatabaseOAuth2ApiCredentials"> {
 
         const { googleFirebaseRealtimeDatabaseOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

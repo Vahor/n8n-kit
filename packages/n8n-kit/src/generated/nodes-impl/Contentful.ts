@@ -17,13 +17,13 @@ export class Contentful<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.contentful" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ContentfulProps) {
+    constructor(id: L, public readonly props: ContentfulProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ContentfulNodeParameters, "contentfulApiCredentials"> {
 
         const { contentfulApiCredentials:_0, ...rest } = this.props;
         return rest;

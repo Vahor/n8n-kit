@@ -17,13 +17,13 @@ export class CustomerIoTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.customerIoTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CustomerIoTriggerProps) {
+    constructor(id: L, public readonly props: CustomerIoTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CustomerIoTriggerNodeParameters, "customerIoApiCredentials"> {
 
         const { customerIoApiCredentials:_0, ...rest } = this.props;
         return rest;

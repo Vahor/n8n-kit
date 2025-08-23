@@ -38,8 +38,6 @@ export interface DemioNodeParameters {
      */
     readonly filters?: { "type"?: "automated" | "past" | "upcoming" } | { "status"?: "attended" | "banned" | "completed" | "did-not-attend" | "left-early" };
 
-    /**
-     */
     readonly eventId?: string;
 
     /**

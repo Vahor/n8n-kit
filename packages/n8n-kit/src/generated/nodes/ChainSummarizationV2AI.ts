@@ -11,8 +11,6 @@ export const credentials = [] as const;
  */
 export interface ChainSummarizationV2AINodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**

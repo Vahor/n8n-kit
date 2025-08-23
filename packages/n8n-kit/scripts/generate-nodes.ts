@@ -71,17 +71,20 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	for (const property of Object.values(visitedProperties)) {
-		code.line(`/**`);
-		if (property.description) {
-			code.line(` * ${property.description}`);
+		const comments = [
+			property.description,
+			property.default && `Default: ${JSON.stringify(property.default)}`,
+			property.typeOptions &&
+				`Type options: ${JSON.stringify(property.typeOptions)}`,
+		].filter(Boolean) as string[];
+
+		if (comments.length > 0) {
+			code.line(`/**`);
+			for (const comment of comments) {
+				code.line(` * ${comment}`);
+			}
+			code.line(` */`);
 		}
-		if (property.default) {
-			code.line(` * Default: ${JSON.stringify(property.default)}`);
-		}
-		if (property.typeOptions) {
-			code.line(` * Type options: ${JSON.stringify(property.typeOptions)}`);
-		}
-		code.line(` */`);
 		// There will be duplicates but theses are ok (like "GET" | "GET")
 		const typeUnion = [
 			...new Set(property.__versionsOfProperty.map((p) => toTypescriptType(p))),
@@ -102,7 +105,6 @@ const generateTypescriptNodeOutput = async (
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
-	// if (!node.includes("LmChatAzureOpenAi.node")) continue;
 	const isLangChainNode = node.includes("@n8n/nodes-langchain");
 	let nodeName = node.split("/").pop()?.split(".")[0]!;
 	if (isLangChainNode) {

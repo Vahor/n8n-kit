@@ -58,12 +58,8 @@ export interface MicrosoftOutlookV2NodeParameters {
      */
     readonly updateFields?: { "color"?: "lightBlue" | "lightBrown" | "lightGray" | "lightGreen" | "lightOrange" | "lightPink" | "lightRed" | "lightTeal" | "lightYellow", "isDefaultCalendar"?: boolean, "name"?: string } | { "bccRecipients"?: string, "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "isReadReceiptRequested"?: boolean, "replyTo"?: string, "subject"?: string, "toRecipients"?: string } | { "bccRecipients"?: string, "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "folderId"?: any, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string };
 
-    /**
-     */
     readonly givenName?: string;
 
-    /**
-     */
     readonly surname?: string;
 
     /**
@@ -109,12 +105,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-23T16:26:20.763+02:00"
+     * Default: "2025-08-23T16:39:04.939+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-23T16:56:20.763+02:00"
+     * Default: "2025-08-23T17:09:04.939+02:00"
      */
     readonly endDateTime?: string;
 
@@ -139,8 +135,6 @@ export interface MicrosoftOutlookV2NodeParameters {
      */
     readonly folderId?: any;
 
-    /**
-     */
     readonly filtersNotice?: string;
 
     /**

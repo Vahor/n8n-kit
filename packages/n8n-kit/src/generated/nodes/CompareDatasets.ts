@@ -10,8 +10,6 @@ export const version = 2.3 as const;
  */
 export interface CompareDatasetsNodeParameters {
 
-    /**
-     */
     readonly infoBox?: string;
 
     /**
@@ -35,8 +33,6 @@ export interface CompareDatasetsNodeParameters {
      */
     readonly preferWhenMix?: "input1" | "input2";
 
-    /**
-     */
     readonly exceptWhenMix?: string;
 
     /**

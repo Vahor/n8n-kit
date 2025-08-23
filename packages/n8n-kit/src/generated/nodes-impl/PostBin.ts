@@ -14,13 +14,13 @@ export class PostBin<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.postBin" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: PostBinProps) {
+    constructor(id: L, public readonly props?: PostBinProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : PostBinNodeParameters {
 
         return this.props ?? {};
 

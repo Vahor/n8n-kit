@@ -88,7 +88,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(`protected typeVersion = ${result.version} as const;`);
 	code.line();
 
-	const isPropsOptional = result.credentials.length > 0;
+	const isPropsOptional = !result.credentials.some((cred) => cred.required);
 	code.line(
 		`constructor(id: L, public readonly props${isPropsOptional ? "?" : ""}: ${result.nodeName}Props) {`,
 	);
@@ -99,15 +99,21 @@ const generateTypescriptNodeOutput = async (
 	code.line();
 
 	// getParameters
-	code.line(`override getParameters() {`);
-	code.indent();
+	const creds = result.credentials.map(
+		(cred) => `${code.toCamelCase(cred.name)}Credentials`,
+	);
 	if (result.credentials.length > 0) {
-		const creds = result.credentials.map((cred) => code.toCamelCase(cred.name));
 		code.line(
-			`const { ${creds.map((c, i) => `${c}Credentials:_${i}`).join(", ")}, ...rest } = this.props;`,
+			`override getParameters() : Omit<${result.nodeName}NodeParameters, "${creds.join(" | ")}"> {`,
+		);
+		code.indent();
+		code.line(
+			`const { ${creds.map((c, i) => `${c}:_${i}`).join(", ")}, ...rest } = this.props;`,
 		);
 		code.line(`return rest;`);
 	} else {
+		code.line(`override getParameters() : ${result.nodeName}NodeParameters {`);
+		code.indent();
 		code.line(`return this.props ?? {};`);
 	}
 	code.unindent();

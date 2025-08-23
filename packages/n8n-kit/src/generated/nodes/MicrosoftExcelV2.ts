@@ -11,8 +11,6 @@ export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] 
  */
 export interface MicrosoftExcelV2NodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**
@@ -125,8 +123,6 @@ export interface MicrosoftExcelV2NodeParameters {
      */
     readonly applyTo?: "All" | "Formats" | "Contents";
 
-    /**
-     */
     readonly useRange?: boolean;
 
     /**
@@ -148,8 +144,6 @@ export interface MicrosoftExcelV2NodeParameters {
      */
     readonly columnToMatchOn?: string;
 
-    /**
-     */
     readonly valueToMatchOn?: string;
 
 

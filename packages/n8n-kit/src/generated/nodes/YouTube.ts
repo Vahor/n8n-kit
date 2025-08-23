@@ -69,16 +69,10 @@ export interface YouTubeNodeParameters {
      */
     readonly title?: string;
 
-    /**
-     */
     readonly playlistId?: string;
 
-    /**
-     */
     readonly videoId?: string;
 
-    /**
-     */
     readonly playlistItemId?: string;
 
     /**
@@ -93,8 +87,6 @@ export interface YouTubeNodeParameters {
      */
     readonly categoryId?: string;
 
-    /**
-     */
     readonly rating?: "dislike" | "like" | "none";
 
 

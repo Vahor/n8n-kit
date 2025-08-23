@@ -17,13 +17,13 @@ export class HomeAssistant<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.homeAssistant" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: HomeAssistantProps) {
+    constructor(id: L, public readonly props: HomeAssistantProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HomeAssistantNodeParameters, "homeAssistantApiCredentials"> {
 
         const { homeAssistantApiCredentials:_0, ...rest } = this.props;
         return rest;

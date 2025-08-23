@@ -16,8 +16,6 @@ export interface PeekalinkNodeParameters {
      */
     readonly operation?: "isAvailable" | "preview";
 
-    /**
-     */
     readonly url: string;
 
 

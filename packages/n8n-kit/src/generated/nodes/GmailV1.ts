@@ -11,8 +11,6 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  */
 export interface GmailV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**
@@ -30,12 +28,8 @@ export interface GmailV1NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "delete" | "get" | "getAll" | "reply" | "send" | "add" | "remove";
 
-    /**
-     */
     readonly messageId?: string;
 
-    /**
-     */
     readonly subject?: string;
 
     /**
@@ -92,8 +86,6 @@ export interface GmailV1NodeParameters {
      */
     readonly messageListVisibility?: "hide" | "show";
 
-    /**
-     */
     readonly threadId?: string;
 
     /**

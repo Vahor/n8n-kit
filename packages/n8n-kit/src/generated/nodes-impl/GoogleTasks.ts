@@ -17,13 +17,13 @@ export class GoogleTasks<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleTasks" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GoogleTasksProps) {
+    constructor(id: L, public readonly props: GoogleTasksProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleTasksNodeParameters, "googleTasksOAuth2ApiCredentials"> {
 
         const { googleTasksOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

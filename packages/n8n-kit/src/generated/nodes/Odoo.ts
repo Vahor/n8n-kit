@@ -33,8 +33,6 @@ export interface OdooNodeParameters {
      */
     readonly fieldsToCreateOrUpdate?: { "fields": any };
 
-    /**
-     */
     readonly customResourceId?: string;
 
     /**
@@ -61,8 +59,6 @@ export interface OdooNodeParameters {
      */
     readonly filterRequest?: { "filter": any };
 
-    /**
-     */
     readonly opportunityName?: string;
 
     /**
@@ -70,8 +66,6 @@ export interface OdooNodeParameters {
      */
     readonly additionalFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "phone"?: string, "vat"?: string, "website"?: string };
 
-    /**
-     */
     readonly opportunityId?: string;
 
     /**
@@ -79,20 +73,12 @@ export interface OdooNodeParameters {
      */
     readonly updateFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "name"?: string, "phone"?: string, "vat"?: string, "website"?: string };
 
-    /**
-     */
     readonly contactName?: string;
 
-    /**
-     */
     readonly contactId?: string;
 
-    /**
-     */
     readonly memo?: string;
 
-    /**
-     */
     readonly noteId?: string;
 
 

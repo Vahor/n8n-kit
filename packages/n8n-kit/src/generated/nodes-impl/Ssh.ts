@@ -25,7 +25,7 @@ export class Ssh<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SshNodeParameters, "sshPasswordCredentials | sshPrivateKeyCredentials"> {
 
         const { sshPasswordCredentials:_0, sshPrivateKeyCredentials:_1, ...rest } = this.props;
         return rest;

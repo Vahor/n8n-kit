@@ -15,8 +15,6 @@ export interface DateTimeV2NodeParameters {
      */
     readonly operation?: "addToDate" | "extractDate" | "formatDate" | "getCurrentDate" | "getTimeBetweenDates" | "roundDate" | "subtractFromDate";
 
-    /**
-     */
     readonly notice?: string;
 
     /**
@@ -63,8 +61,6 @@ export interface DateTimeV2NodeParameters {
      */
     readonly format?: "custom" | "MM/dd/yyyy" | "yyyy/MM/dd" | "MMMM dd yyyy" | "MM-dd-yyyy" | "yyyy-MM-dd" | "X" | "x";
 
-    /**
-     */
     readonly customFormat?: string;
 
     /**
@@ -82,12 +78,8 @@ export interface DateTimeV2NodeParameters {
      */
     readonly to?: "month";
 
-    /**
-     */
     readonly startDate?: string;
 
-    /**
-     */
     readonly endDate?: string;
 
     /**

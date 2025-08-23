@@ -17,13 +17,13 @@ export class Matrix<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.matrix" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MatrixProps) {
+    constructor(id: L, public readonly props: MatrixProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MatrixNodeParameters, "matrixApiCredentials"> {
 
         const { matrixApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -17,13 +17,13 @@ export class ERPNext<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.erpNext" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ERPNextProps) {
+    constructor(id: L, public readonly props: ERPNextProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ERPNextNodeParameters, "erpNextApiCredentials"> {
 
         const { erpNextApiCredentials:_0, ...rest } = this.props;
         return rest;

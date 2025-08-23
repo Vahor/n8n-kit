@@ -26,16 +26,10 @@ export interface ClickUpNodeParameters {
      */
     readonly operation?: "create" | "delete" | "update" | "create" | "delete" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update" | "add" | "remove" | "create" | "delete" | "get" | "getAll" | "member" | "setCustomField" | "update" | "create" | "delete" | "create" | "delete" | "get" | "getAll" | "start" | "stop" | "update" | "add" | "getAll" | "remove" | "create" | "customFields" | "delete" | "get" | "getAll" | "member" | "update";
 
-    /**
-     */
     readonly task?: string;
 
-    /**
-     */
     readonly name?: string;
 
-    /**
-     */
     readonly checklist?: string;
 
     /**
@@ -48,28 +42,16 @@ export interface ClickUpNodeParameters {
      */
     readonly additionalFields?: { "assignee"?: string } | { "assignee"?: string, "notifyAll"?: boolean } | { "color"?: any, "description"?: string, "dueDate"?: string, "multipleOwners"?: boolean, "owners"?: string } | { "listIds"?: string, "owners"?: string, "stepsStart"?: number, "stepsEnd"?: number, "taskIds"?: string, "unit"?: string } | { "custom_task_ids"?: boolean, "team_id"?: string } | { "assignees"?: any[], "customFieldsJson"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "startDate"?: string, "startDateTime"?: boolean, "status"?: string, "tags"?: any[], "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "tags"?: any[] } | { "billable"?: boolean, "description"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "priority"?: number, "status"?: string };
 
-    /**
-     */
     readonly checklistItem?: string;
 
-    /**
-     */
     readonly commentOn?: "list" | "task" | "view";
 
-    /**
-     */
     readonly id?: string;
 
-    /**
-     */
     readonly commentText?: string;
 
-    /**
-     */
     readonly comment?: string;
 
-    /**
-     */
     readonly commentsOn?: "list" | "task" | "view";
 
     /**
@@ -102,28 +84,16 @@ export interface ClickUpNodeParameters {
      */
     readonly filters?: { "archived"?: boolean } | { "archived"?: boolean, "assignees"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "dateCreatedGt"?: string, "dateCreatedLt"?: string, "dateUpdatedGt"?: string, "dateUpdatedLt"?: string, "dueDateGt"?: string, "dueDateLt"?: string, "includeClosed"?: boolean, "orderBy"?: "id" | "created" | "updated" | "dueDate", "statuses"?: any[], "subtasks"?: boolean, "tags"?: any[] } | { "end_date"?: string, "start_date"?: string };
 
-    /**
-     */
     readonly goal?: string;
 
-    /**
-     */
     readonly type?: "automatic" | "boolean" | "currency" | "number" | "percentage";
 
-    /**
-     */
     readonly keyResult?: string;
 
-    /**
-     */
     readonly taskId?: string;
 
-    /**
-     */
     readonly tagName?: string;
 
-    /**
-     */
     readonly listId?: string;
 
     /**
@@ -147,8 +117,6 @@ export interface ClickUpNodeParameters {
      */
     readonly returnAll?: boolean;
 
-    /**
-     */
     readonly folderless?: boolean;
 
     /**
@@ -182,8 +150,6 @@ export interface ClickUpNodeParameters {
      */
     readonly value?: string;
 
-    /**
-     */
     readonly dependsOnTask?: string;
 
     /**
@@ -191,12 +157,8 @@ export interface ClickUpNodeParameters {
      */
     readonly running?: boolean;
 
-    /**
-     */
     readonly timeEntry?: string;
 
-    /**
-     */
     readonly start?: string;
 
     /**
@@ -204,12 +166,8 @@ export interface ClickUpNodeParameters {
      */
     readonly duration?: number;
 
-    /**
-     */
     readonly archived?: boolean;
 
-    /**
-     */
     readonly timeEntryIds?: string;
 
     /**

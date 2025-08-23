@@ -11,16 +11,10 @@ export const credentials = [{"name":"zepApi","required":true}] as const;
  */
 export interface VectorStoreZepInsertAINodeParameters {
 
-    /**
-     */
     readonly deprecationNotice?: string;
 
-    /**
-     */
     readonly collectionName: string;
 
-    /**
-     */
     readonly notice?: string;
 
     /**

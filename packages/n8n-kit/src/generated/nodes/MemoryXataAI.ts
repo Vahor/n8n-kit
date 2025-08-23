@@ -16,8 +16,6 @@ export interface MemoryXataAINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly sessionId?: string;
 
     /**

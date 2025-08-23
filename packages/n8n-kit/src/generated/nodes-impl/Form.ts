@@ -14,13 +14,13 @@ export class Form<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.form" as const;
     protected typeVersion = 2.3 as const;
 
-    constructor(id: L, public readonly props: FormProps) {
+    constructor(id: L, public readonly props?: FormProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : FormNodeParameters {
 
         return this.props ?? {};
 

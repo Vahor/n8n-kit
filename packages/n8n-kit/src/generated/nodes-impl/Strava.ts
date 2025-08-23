@@ -17,13 +17,13 @@ export class Strava<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.strava" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: StravaProps) {
+    constructor(id: L, public readonly props: StravaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<StravaNodeParameters, "stravaOAuth2ApiCredentials"> {
 
         const { stravaOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

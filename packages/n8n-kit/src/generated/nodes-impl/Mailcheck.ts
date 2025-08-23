@@ -17,13 +17,13 @@ export class Mailcheck<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mailcheck" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MailcheckProps) {
+    constructor(id: L, public readonly props: MailcheckProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MailcheckNodeParameters, "mailcheckApiCredentials"> {
 
         const { mailcheckApiCredentials:_0, ...rest } = this.props;
         return rest;

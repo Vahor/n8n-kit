@@ -26,8 +26,6 @@ export interface VeroNodeParameters {
      */
     readonly id?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -58,8 +56,6 @@ export interface VeroNodeParameters {
      */
     readonly tags?: string;
 
-    /**
-     */
     readonly email?: string;
 
     /**

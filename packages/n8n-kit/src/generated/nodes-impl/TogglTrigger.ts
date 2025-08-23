@@ -17,13 +17,13 @@ export class TogglTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.togglTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TogglTriggerProps) {
+    constructor(id: L, public readonly props: TogglTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TogglTriggerNodeParameters, "togglApiCredentials"> {
 
         const { togglApiCredentials:_0, ...rest } = this.props;
         return rest;

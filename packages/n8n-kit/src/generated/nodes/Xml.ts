@@ -16,8 +16,6 @@ export interface XmlNodeParameters {
      */
     readonly mode?: "jsonToxml" | "xmlToJson";
 
-    /**
-     */
     readonly xmlNotice?: string;
 
     /**

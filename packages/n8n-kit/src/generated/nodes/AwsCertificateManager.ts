@@ -26,12 +26,8 @@ export interface AwsCertificateManagerNodeParameters {
      */
     readonly certificateArn?: string;
 
-    /**
-     */
     readonly bucketName?: string;
 
-    /**
-     */
     readonly certificateKey?: string;
 
     /**

@@ -17,13 +17,13 @@ export class UptimeRobot<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.uptimeRobot" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: UptimeRobotProps) {
+    constructor(id: L, public readonly props: UptimeRobotProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<UptimeRobotNodeParameters, "uptimeRobotApiCredentials"> {
 
         const { uptimeRobotApiCredentials:_0, ...rest } = this.props;
         return rest;

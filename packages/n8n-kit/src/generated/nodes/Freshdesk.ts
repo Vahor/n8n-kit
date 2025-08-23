@@ -52,8 +52,6 @@ export interface FreshdeskNodeParameters {
      */
     readonly options?: { "agent"?: string, "ccEmails"?: string, "company"?: string, "description"?: string, "dueBy"?: string, "emailConfigId"?: number, "frDueBy"?: string, "group"?: string, "name"?: string, "product"?: string, "subject"?: string, "tags"?: string, "type"?: "Feature Request" | "Incident" | "Problem" | "Question" | "Refund" } | { "companyId"?: string, "include"?: ("company" | "description" | "requester" | "stats")[], "order"?: "asc" | "desc", "orderBy"?: "createdAt" | "dueBy" | "updatedAt", "requesterEmail"?: string, "requesterId"?: string, "updatedSince"?: string };
 
-    /**
-     */
     readonly ticketId?: string;
 
     /**
@@ -83,8 +81,6 @@ export interface FreshdeskNodeParameters {
      */
     readonly email?: string;
 
-    /**
-     */
     readonly contactId?: string;
 
     /**

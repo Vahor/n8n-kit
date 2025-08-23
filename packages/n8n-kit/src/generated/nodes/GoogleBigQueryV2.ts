@@ -59,8 +59,6 @@ export interface GoogleBigQueryV2NodeParameters {
      */
     readonly dataMode?: "autoMap" | "define";
 
-    /**
-     */
     readonly info?: string;
 
     /**

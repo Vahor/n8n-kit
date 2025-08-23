@@ -17,13 +17,13 @@ export class HelpScoutTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.helpScoutTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: HelpScoutTriggerProps) {
+    constructor(id: L, public readonly props: HelpScoutTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HelpScoutTriggerNodeParameters, "helpScoutOAuth2ApiCredentials"> {
 
         const { helpScoutOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

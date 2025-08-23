@@ -37,12 +37,8 @@ export interface FtpNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     */
     readonly oldPath?: string;
 
-    /**
-     */
     readonly newPath?: string;
 
     /**

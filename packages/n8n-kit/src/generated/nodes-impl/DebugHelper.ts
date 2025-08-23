@@ -14,13 +14,13 @@ export class DebugHelper<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.debugHelper" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: DebugHelperProps) {
+    constructor(id: L, public readonly props?: DebugHelperProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : DebugHelperNodeParameters {
 
         return this.props ?? {};
 

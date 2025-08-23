@@ -14,13 +14,13 @@ export class IfV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.undefined" as const;
     protected typeVersion = 2.2 as const;
 
-    constructor(id: L, public readonly props: IfV2Props) {
+    constructor(id: L, public readonly props?: IfV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : IfV2NodeParameters {
 
         return this.props ?? {};
 

@@ -14,13 +14,13 @@ export class Interval<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.interval" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: IntervalProps) {
+    constructor(id: L, public readonly props?: IntervalProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : IntervalNodeParameters {
 
         return this.props ?? {};
 

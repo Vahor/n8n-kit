@@ -31,8 +31,6 @@ export interface RocketchatNodeParameters {
      */
     readonly text?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

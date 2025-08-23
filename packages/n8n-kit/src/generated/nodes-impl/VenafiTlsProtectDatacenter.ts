@@ -17,13 +17,13 @@ export class VenafiTlsProtectDatacenter<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.venafiTlsProtectDatacenter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: VenafiTlsProtectDatacenterProps) {
+    constructor(id: L, public readonly props: VenafiTlsProtectDatacenterProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<VenafiTlsProtectDatacenterNodeParameters, "venafiTlsProtectDatacenterApiCredentials"> {
 
         const { venafiTlsProtectDatacenterApiCredentials:_0, ...rest } = this.props;
         return rest;

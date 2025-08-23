@@ -21,12 +21,8 @@ export interface FreshserviceNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "get" | "getAll";
 
-    /**
-     */
     readonly email?: string;
 
-    /**
-     */
     readonly firstName?: string;
 
     /**
@@ -68,8 +64,6 @@ export interface FreshserviceNodeParameters {
      */
     readonly updateFields?: { "address"?: string, "background_information"?: string, "department_ids"?: any[], "email"?: string, "first_name"?: string, "job_title"?: string, "language"?: "en" | "ar" | "ca" | "cs" | "cy-GB" | "da" | "de" | "es" | "es-LA" | "et" | "fi" | "fr" | "he" | "hu" | "id" | "it" | "ja-JP" | "ko" | "LV" | "nb-NO" | "nl" | "pl" | "pt" | "pt-BR" | "pt-PT" | "ru-RU" | "sk" | "sk-SK" | "sl" | "sv-SE" | "th" | "tr" | "UK" | "vi" | "zh-CN" | "zh-TW", "last_name"?: string, "location_id"?: string, "member_of"?: any[], "mobile_phone_number"?: string, "observer_of"?: any[], "scoreboard_level_id"?: "1" | "2" | "3" | "4" | "5" | "6", "time_format"?: "12h" | "24h", "work_phone_number"?: string } | { "description"?: string, "escalate_to"?: string, "members"?: any[], "name"?: string, "observers"?: any[], "unassigned_for"?: "1d" | "1h" | "12h" | "2d" | "2h" | "3d" | "30m" | "8h" } | { "additional_emails"?: string, "body_html"?: string, "departments"?: any[], "title"?: string, "visibility"?: "agents_only" | "grouped_visibility" | "everyone" } | { "description"?: string, "name"?: string } | { "agent_id"?: string, "change_type"?: "1" | "2" | "3" | "4", "department_id"?: string, "description"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "priority"?: "1" | "2" | "3" | "4", "requester_id"?: string, "risk"?: "1" | "2" | "3" | "4", "status"?: "1" | "2" | "3" | "4" | "5" | "6", "subject"?: string } | { "description"?: string, "domains"?: string, "name"?: string } | { "name"?: string, "address"?: { "addressFields": any } } | { "agent_id"?: string, "department_id"?: string, "description"?: string, "due_by"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "priority"?: "1" | "2" | "3" | "4", "requester_id"?: string, "status"?: "1" | "2" | "3", "subject"?: string } | { "asset_type_id"?: string, "description"?: string, "manufacturer"?: string, "mode_of_procurement"?: "Buy" | "Lease" | "Both", "name"?: string, "status"?: "In Production" | "In Pipeline" | "Retired" } | { "department_id"?: string, "description"?: string, "group_id"?: string, "priority"?: "1" | "2" | "3" | "4", "release_type"?: "1" | "2" | "3" | "4", "status"?: "1" | "2" | "3" | "4" | "5", "subject"?: string } | { "address"?: string, "background_information"?: string, "department_ids"?: any[], "first_name"?: string, "job_title"?: string, "language"?: "en" | "ar" | "ca" | "cs" | "cy-GB" | "da" | "de" | "es" | "es-LA" | "et" | "fi" | "fr" | "he" | "hu" | "id" | "it" | "ja-JP" | "ko" | "LV" | "nb-NO" | "nl" | "pl" | "pt" | "pt-BR" | "pt-PT" | "ru-RU" | "sk" | "sk-SK" | "sl" | "sv-SE" | "th" | "tr" | "UK" | "vi" | "zh-CN" | "zh-TW", "last_name"?: string, "location_id"?: string, "mobile_phone_number"?: string, "primary_email"?: string, "secondary_emails"?: string, "time_format"?: "12h" | "24h", "work_phone_number"?: string } | { "application_type"?: "desktop" | "mobile" | "saas", "description"?: string, "name"?: string, "notes"?: string, "status"?: "disabled" | "ignored" | "needs review" | "restricted" } | { "department_id"?: string, "description"?: string, "email"?: string, "group_id"?: string, "impact"?: "1" | "2" | "3", "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3" | "4", "status"?: "2" | "3" | "4" | "5", "subject"?: string };
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -82,8 +76,6 @@ export interface FreshserviceNodeParameters {
      */
     readonly agentRoleId?: string;
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -117,16 +109,10 @@ export interface FreshserviceNodeParameters {
      */
     readonly requesterId?: string;
 
-    /**
-     */
     readonly subject?: string;
 
-    /**
-     */
     readonly plannedStartDate?: string;
 
-    /**
-     */
     readonly plannedEndDate?: string;
 
     /**
@@ -179,8 +165,6 @@ export interface FreshserviceNodeParameters {
      */
     readonly releaseId?: string;
 
-    /**
-     */
     readonly primaryEmail?: string;
 
     /**

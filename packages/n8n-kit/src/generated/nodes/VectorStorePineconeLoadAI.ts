@@ -16,8 +16,6 @@ export interface VectorStorePineconeLoadAINodeParameters {
      */
     readonly pineconeIndex: any;
 
-    /**
-     */
     readonly pineconeNamespace?: string;
 
     /**

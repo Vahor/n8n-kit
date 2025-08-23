@@ -20,8 +20,6 @@ export interface TextSplitterRecursiveCharacterTextSplitterAINodeParameters {
      */
     readonly chunkSize?: number;
 
-    /**
-     */
     readonly chunkOverlap?: number;
 
     /**

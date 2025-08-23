@@ -17,13 +17,13 @@ export class AffinityTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.affinityTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AffinityTriggerProps) {
+    constructor(id: L, public readonly props: AffinityTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AffinityTriggerNodeParameters, "affinityApiCredentials"> {
 
         const { affinityApiCredentials:_0, ...rest } = this.props;
         return rest;

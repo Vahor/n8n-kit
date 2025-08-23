@@ -17,13 +17,13 @@ export class Jwt<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.jwt" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: JwtProps) {
+    constructor(id: L, public readonly props: JwtProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<JwtNodeParameters, "jwtAuthCredentials"> {
 
         const { jwtAuthCredentials:_0, ...rest } = this.props;
         return rest;

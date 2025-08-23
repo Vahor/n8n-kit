@@ -17,13 +17,13 @@ export class GumroadTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.gumroadTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GumroadTriggerProps) {
+    constructor(id: L, public readonly props: GumroadTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GumroadTriggerNodeParameters, "gumroadApiCredentials"> {
 
         const { gumroadApiCredentials:_0, ...rest } = this.props;
         return rest;

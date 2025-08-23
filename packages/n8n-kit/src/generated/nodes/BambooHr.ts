@@ -26,12 +26,8 @@ export interface BambooHrNodeParameters {
      */
     readonly synced?: boolean;
 
-    /**
-     */
     readonly firstName?: string;
 
-    /**
-     */
     readonly lastName?: string;
 
     /**
@@ -40,8 +36,6 @@ export interface BambooHrNodeParameters {
      */
     readonly address?: { "value": any };
 
-    /**
-     */
     readonly dateOfBirth?: string;
 
     /**
@@ -56,20 +50,12 @@ export interface BambooHrNodeParameters {
      */
     readonly division?: string;
 
-    /**
-     */
     readonly employeeNumber?: string;
 
-    /**
-     */
     readonly exempt?: "exempt" | "non-exempt";
 
-    /**
-     */
     readonly gender?: "female" | "male";
 
-    /**
-     */
     readonly hireDate?: string;
 
     /**
@@ -78,16 +64,10 @@ export interface BambooHrNodeParameters {
      */
     readonly location?: string;
 
-    /**
-     */
     readonly maritalStatus?: "single" | "married" | "domesticPartnership";
 
-    /**
-     */
     readonly mobilePhone?: string;
 
-    /**
-     */
     readonly paidPer?: "hour" | "day" | "week" | "month" | "quater" | "year";
 
     /**
@@ -96,12 +76,8 @@ export interface BambooHrNodeParameters {
      */
     readonly payRate?: { "value": any };
 
-    /**
-     */
     readonly payType?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly";
 
-    /**
-     */
     readonly preferredName?: string;
 
     /**
@@ -114,8 +90,6 @@ export interface BambooHrNodeParameters {
      */
     readonly additionalFields?: { "address"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string };
 
-    /**
-     */
     readonly employeeId?: string;
 
     /**
@@ -163,8 +137,6 @@ export interface BambooHrNodeParameters {
      */
     readonly simplifyOutput?: boolean;
 
-    /**
-     */
     readonly categoryId?: string;
 
     /**

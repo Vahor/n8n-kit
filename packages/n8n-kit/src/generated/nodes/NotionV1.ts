@@ -11,8 +11,6 @@ export const credentials = [{"name":"notionApi","required":true}] as const;
  */
 export interface NotionV1NodeParameters {
 
-    /**
-     */
     readonly notionNotice?: string;
 
     /**
@@ -49,8 +47,6 @@ export interface NotionV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly fetchNestedBlocks?: boolean;
 
     /**
@@ -113,16 +109,10 @@ export interface NotionV1NodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    /**
-     */
     readonly jsonNotice?: string;
 
-    /**
-     */
     readonly filterJson?: string;
 
-    /**
-     */
     readonly userId?: string;
 
 

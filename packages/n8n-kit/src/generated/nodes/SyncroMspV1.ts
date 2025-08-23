@@ -43,8 +43,6 @@ export interface SyncroMspV1NodeParameters {
      */
     readonly customerId?: string;
 
-    /**
-     */
     readonly email?: string;
 
     /**
@@ -57,8 +55,6 @@ export interface SyncroMspV1NodeParameters {
      */
     readonly updateFields?: { "address"?: { "addressFields": any }, "businessName"?: string, "email"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastName"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string } | { "assetId"?: string, "contactId"?: string, "customerId"?: string, "dueDate"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", "subject"?: string } | { "address"?: { "addressFields": any }, "customerId"?: string, "email"?: string, "name"?: string, "notes"?: string, "phone"?: string };
 
-    /**
-     */
     readonly subject?: string;
 
     /**
@@ -76,12 +72,8 @@ export interface SyncroMspV1NodeParameters {
      */
     readonly alertId?: string;
 
-    /**
-     */
     readonly assetId?: string;
 
-    /**
-     */
     readonly description?: string;
 
     /**

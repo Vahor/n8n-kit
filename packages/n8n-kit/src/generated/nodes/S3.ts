@@ -11,8 +11,6 @@ export const credentials = [{"name":"s3","required":true}] as const;
  */
 export interface S3NodeParameters {
 
-    /**
-     */
     readonly s3StandardNotice?: string;
 
     /**
@@ -47,16 +45,10 @@ export interface S3NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly bucketName?: string;
 
-    /**
-     */
     readonly folderName?: string;
 
-    /**
-     */
     readonly folderKey?: string;
 
     /**
@@ -74,8 +66,6 @@ export interface S3NodeParameters {
      */
     readonly destinationPath?: string;
 
-    /**
-     */
     readonly fileName?: string;
 
     /**
@@ -101,8 +91,6 @@ export interface S3NodeParameters {
      */
     readonly tagsUi?: { "tagsValues": any };
 
-    /**
-     */
     readonly fileKey?: string;
 
 

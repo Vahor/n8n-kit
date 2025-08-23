@@ -17,13 +17,13 @@ export class Mandrill<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mandrill" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MandrillProps) {
+    constructor(id: L, public readonly props: MandrillProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MandrillNodeParameters, "mandrillApiCredentials"> {
 
         const { mandrillApiCredentials:_0, ...rest } = this.props;
         return rest;

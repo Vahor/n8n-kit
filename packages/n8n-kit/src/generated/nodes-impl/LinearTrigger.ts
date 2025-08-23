@@ -25,7 +25,7 @@ export class LinearTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<LinearTriggerNodeParameters, "linearApiCredentials | linearOAuth2ApiCredentials"> {
 
         const { linearApiCredentials:_0, linearOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

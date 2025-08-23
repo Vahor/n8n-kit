@@ -25,7 +25,7 @@ export class GoogleSheetsV2<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleSheetsV2NodeParameters, "googleApiCredentials | googleSheetsOAuth2ApiCredentials"> {
 
         const { googleApiCredentials:_0, googleSheetsOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

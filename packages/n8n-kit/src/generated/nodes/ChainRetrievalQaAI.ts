@@ -11,8 +11,6 @@ export const credentials = [] as const;
  */
 export interface ChainRetrievalQaAINodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**

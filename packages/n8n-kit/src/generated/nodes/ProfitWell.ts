@@ -21,8 +21,6 @@ export interface ProfitWellNodeParameters {
      */
     readonly operation?: "getSetting" | "get";
 
-    /**
-     */
     readonly type?: "daily" | "monthly";
 
     /**

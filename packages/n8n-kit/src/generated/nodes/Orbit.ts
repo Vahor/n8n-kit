@@ -11,8 +11,6 @@ export const credentials = [{"name":"orbitApi","required":true}] as const;
  */
 export interface OrbitNodeParameters {
 
-    /**
-     */
     readonly deprecated?: string;
 
     /**
@@ -32,12 +30,8 @@ export interface OrbitNodeParameters {
      */
     readonly workspaceId?: string;
 
-    /**
-     */
     readonly memberId?: string;
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -77,8 +71,6 @@ export interface OrbitNodeParameters {
      */
     readonly source?: "discourse" | "email" | "github" | "twitter";
 
-    /**
-     */
     readonly searchBy?: "username" | "id";
 
     /**
@@ -96,8 +88,6 @@ export interface OrbitNodeParameters {
      */
     readonly email?: string;
 
-    /**
-     */
     readonly host?: string;
 
     /**
@@ -112,16 +102,10 @@ export interface OrbitNodeParameters {
      */
     readonly identityUi?: { "identityValue": any };
 
-    /**
-     */
     readonly note?: string;
 
-    /**
-     */
     readonly resolveMember?: boolean;
 
-    /**
-     */
     readonly noteId?: string;
 
     /**
@@ -129,8 +113,6 @@ export interface OrbitNodeParameters {
      */
     readonly url?: string;
 
-    /**
-     */
     readonly postId?: string;
 
 

@@ -17,13 +17,13 @@ export class BambooHr<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.bambooHr" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BambooHrProps) {
+    constructor(id: L, public readonly props: BambooHrProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BambooHrNodeParameters, "bambooHrApiCredentials"> {
 
         const { bambooHrApiCredentials:_0, ...rest } = this.props;
         return rest;

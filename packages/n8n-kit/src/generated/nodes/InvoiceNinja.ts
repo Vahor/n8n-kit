@@ -49,8 +49,6 @@ export interface InvoiceNinjaNodeParameters {
      */
     readonly shippingAddressUi?: { "shippingAddressValue": any };
 
-    /**
-     */
     readonly clientId?: string;
 
     /**
@@ -76,8 +74,6 @@ export interface InvoiceNinjaNodeParameters {
      */
     readonly invoiceItemsUi?: { "invoiceItemsValues": any };
 
-    /**
-     */
     readonly invoiceId?: string;
 
     /**
@@ -86,8 +82,6 @@ export interface InvoiceNinjaNodeParameters {
      */
     readonly timeLogsUi?: { "timeLogsValues": any };
 
-    /**
-     */
     readonly taskId?: string;
 
     /**
@@ -101,20 +95,12 @@ export interface InvoiceNinjaNodeParameters {
      */
     readonly amount?: number;
 
-    /**
-     */
     readonly paymentId?: string;
 
-    /**
-     */
     readonly expenseId?: string;
 
-    /**
-     */
     readonly quoteId?: string;
 
-    /**
-     */
     readonly bankTransactionId?: string;
 
 

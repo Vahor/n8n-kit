@@ -16,8 +16,6 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly enableResponseOutput?: boolean;
 
-    /**
-     */
     readonly generalNotice?: string;
 
     /**
@@ -26,12 +24,8 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly respondWith?: "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text";
 
-    /**
-     */
     readonly credentials?: any;
 
-    /**
-     */
     readonly webhookNotice?: string;
 
     /**
@@ -64,8 +58,6 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly inputFieldName?: string;
 
-    /**
-     */
     readonly contentTypeNotice?: string;
 
     /**

@@ -17,13 +17,13 @@ export class StripeTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.stripeTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: StripeTriggerProps) {
+    constructor(id: L, public readonly props: StripeTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<StripeTriggerNodeParameters, "stripeApiCredentials"> {
 
         const { stripeApiCredentials:_0, ...rest } = this.props;
         return rest;

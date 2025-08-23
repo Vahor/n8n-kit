@@ -21,12 +21,8 @@ export interface ChatTriggerAINodeParameters {
      */
     readonly mode?: "hostedChat" | "webhook";
 
-    /**
-     */
     readonly hostedChatNotice?: string;
 
-    /**
-     */
     readonly embeddedChatNotice?: string;
 
     /**

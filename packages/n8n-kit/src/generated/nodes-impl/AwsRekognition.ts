@@ -17,13 +17,13 @@ export class AwsRekognition<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsRekognition" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsRekognitionProps) {
+    constructor(id: L, public readonly props: AwsRekognitionProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsRekognitionNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

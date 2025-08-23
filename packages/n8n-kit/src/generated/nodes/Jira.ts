@@ -36,8 +36,6 @@ export interface JiraNodeParameters {
      */
     readonly issueType?: any;
 
-    /**
-     */
     readonly summary?: string;
 
     /**
@@ -45,8 +43,6 @@ export interface JiraNodeParameters {
      */
     readonly additionalFields?: { "assignee"?: any, "description"?: string, "componentIds"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: any, "reporter"?: any, "updateHistory"?: boolean } | { "expand"?: string, "fields"?: string, "fieldsByKey"?: boolean, "properties"?: string, "updateHistory"?: boolean } | { "htmlBody"?: string, "subject"?: string, "textBody"?: string } | { "expand"?: string, "transitionId"?: string, "skipRemoteOnlyCondition"?: boolean } | { "password"?: string, "notification"?: boolean } | { "expand"?: ("groups" | "applicationRoles")[] };
 
-    /**
-     */
     readonly issueKey?: string;
 
     /**
@@ -54,8 +50,6 @@ export interface JiraNodeParameters {
      */
     readonly updateFields?: { "assignee"?: any, "description"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "issueType"?: string, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: any, "reporter"?: any, "summary"?: string, "statusId"?: any };
 
-    /**
-     */
     readonly deleteSubtasks?: boolean;
 
     /**
@@ -80,8 +74,6 @@ export interface JiraNodeParameters {
      */
     readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean } | { "expand"?: "renderedBody" } | { "expand"?: "renderedBody", "orderBy"?: "+created" | "-created" };
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -120,8 +112,6 @@ export interface JiraNodeParameters {
      */
     readonly attachmentId?: string;
 
-    /**
-     */
     readonly download?: boolean;
 
     /**
@@ -144,16 +134,10 @@ export interface JiraNodeParameters {
      */
     readonly commentId?: string;
 
-    /**
-     */
     readonly username?: string;
 
-    /**
-     */
     readonly emailAddress?: string;
 
-    /**
-     */
     readonly displayName?: string;
 
     /**

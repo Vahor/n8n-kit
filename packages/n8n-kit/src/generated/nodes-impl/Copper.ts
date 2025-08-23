@@ -17,13 +17,13 @@ export class Copper<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.copper" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CopperProps) {
+    constructor(id: L, public readonly props: CopperProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CopperNodeParameters, "copperApiCredentials"> {
 
         const { copperApiCredentials:_0, ...rest } = this.props;
         return rest;

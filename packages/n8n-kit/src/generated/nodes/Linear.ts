@@ -26,12 +26,8 @@ export interface LinearNodeParameters {
      */
     readonly operation?: "addComment" | "addLink" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly issueId?: string;
 
-    /**
-     */
     readonly comment?: string;
 
     /**
@@ -45,8 +41,6 @@ export interface LinearNodeParameters {
      */
     readonly teamId?: string;
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -66,8 +60,6 @@ export interface LinearNodeParameters {
      */
     readonly updateFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "3" | "0", "stateId"?: string, "teamId"?: string, "title"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string, "teamId"?: string, "title"?: string };
 
-    /**
-     */
     readonly link?: string;
 
 

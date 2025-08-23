@@ -62,16 +62,10 @@ export interface OneSimpleApiNodeParameters {
      */
     readonly value?: string;
 
-    /**
-     */
     readonly fromCurrency?: string;
 
-    /**
-     */
     readonly toCurrency?: string;
 
-    /**
-     */
     readonly emailAddress?: string;
 
 

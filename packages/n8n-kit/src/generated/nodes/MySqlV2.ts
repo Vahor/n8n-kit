@@ -62,8 +62,6 @@ export interface MySqlV2NodeParameters {
      */
     readonly dataMode?: "autoMapInputData" | "defineBelow";
 
-    /**
-     */
     readonly notice?: string;
 
     /**

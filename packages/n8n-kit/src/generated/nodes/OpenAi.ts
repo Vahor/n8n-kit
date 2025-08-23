@@ -11,8 +11,6 @@ export const credentials = [{"name":"openAiApi","required":true}] as const;
  */
 export interface OpenAiNodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

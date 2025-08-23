@@ -17,13 +17,13 @@ export class Twist<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.twist" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TwistProps) {
+    constructor(id: L, public readonly props: TwistProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TwistNodeParameters, "twistOAuth2ApiCredentials"> {
 
         const { twistOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

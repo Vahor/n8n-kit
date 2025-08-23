@@ -17,13 +17,13 @@ export class KoBoToolbox<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.koBoToolbox" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: KoBoToolboxProps) {
+    constructor(id: L, public readonly props: KoBoToolboxProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<KoBoToolboxNodeParameters, "koBoToolboxApiCredentials"> {
 
         const { koBoToolboxApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -17,13 +17,13 @@ export class StravaTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.stravaTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: StravaTriggerProps) {
+    constructor(id: L, public readonly props: StravaTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<StravaTriggerNodeParameters, "stravaOAuth2ApiCredentials"> {
 
         const { stravaOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

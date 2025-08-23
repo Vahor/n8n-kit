@@ -31,8 +31,6 @@ export interface ZendeskNodeParameters {
      */
     readonly description?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -46,8 +44,6 @@ export interface ZendeskNodeParameters {
      */
     readonly additionalFieldsJson?: string;
 
-    /**
-     */
     readonly id?: string;
 
     /**
@@ -83,8 +79,6 @@ export interface ZendeskNodeParameters {
      */
     readonly options?: { "group"?: string, "query"?: string, "sortBy"?: "created_at" | "priority" | "status" | "ticket_type" | "updated_at", "sortOrder"?: "asc" | "desc", "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved" };
 
-    /**
-     */
     readonly ticketFieldId?: string;
 
     /**

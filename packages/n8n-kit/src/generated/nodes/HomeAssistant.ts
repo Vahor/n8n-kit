@@ -84,8 +84,6 @@ export interface HomeAssistantNodeParameters {
      */
     readonly entityId?: string;
 
-    /**
-     */
     readonly state?: string;
 
     /**

@@ -27,7 +27,7 @@ export class HubspotV1<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HubspotV1NodeParameters, "hubspotApiCredentials | hubspotAppTokenCredentials | hubspotOAuth2ApiCredentials"> {
 
         const { hubspotApiCredentials:_0, hubspotAppTokenCredentials:_1, hubspotOAuth2ApiCredentials:_2, ...rest } = this.props;
         return rest;

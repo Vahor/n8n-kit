@@ -14,13 +14,13 @@ export class CompareDatasets<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.compareDatasets" as const;
     protected typeVersion = 2.3 as const;
 
-    constructor(id: L, public readonly props: CompareDatasetsProps) {
+    constructor(id: L, public readonly props?: CompareDatasetsProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : CompareDatasetsNodeParameters {
 
         return this.props ?? {};
 

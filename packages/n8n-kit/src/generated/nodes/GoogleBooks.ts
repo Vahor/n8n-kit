@@ -26,8 +26,6 @@ export interface GoogleBooksNodeParameters {
      */
     readonly operation?: "get" | "getAll" | "add" | "clear" | "getAll" | "move" | "remove";
 
-    /**
-     */
     readonly myLibrary?: boolean;
 
     /**

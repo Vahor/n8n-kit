@@ -31,8 +31,6 @@ export interface MicrosoftDynamicsCrmNodeParameters {
      */
     readonly additionalFields?: { "accountcategorycode"?: string, "accountratingcode"?: string, "addresses"?: { "address": any }, "businesstypecode"?: string, "customersizecode"?: string, "customertypecode"?: string, "description"?: string, "emailaddress1"?: string, "emailaddress2"?: string, "emailaddress3"?: string, "fax"?: string, "ftpsiteurl"?: string, "industrycode"?: string, "name"?: string, "creditlimit"?: number, "numberofemployees"?: number, "paymenttermscode"?: string, "preferredappointmentdaycode"?: string, "preferredappointmenttimecode"?: string, "preferredcontactmethodcode"?: string, "primarysatoriid"?: string, "primarytwitterid"?: string, "revenue"?: number, "sharesoutstanding"?: number, "shippingmethodcode"?: string, "sic"?: string, "stageid"?: string, "stockexchange"?: string, "telephone1"?: string, "telephone2"?: string, "telephone3"?: string, "territorycode"?: string, "tickersymbol"?: string, "websiteurl"?: string, "yominame"?: string };
 
-    /**
-     */
     readonly accountId?: string;
 
     /**

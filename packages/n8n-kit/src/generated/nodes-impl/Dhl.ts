@@ -17,13 +17,13 @@ export class Dhl<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.dhl" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: DhlProps) {
+    constructor(id: L, public readonly props: DhlProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<DhlNodeParameters, "dhlApiCredentials"> {
 
         const { dhlApiCredentials:_0, ...rest } = this.props;
         return rest;

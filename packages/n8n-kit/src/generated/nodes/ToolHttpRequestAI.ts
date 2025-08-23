@@ -27,12 +27,8 @@ export interface ToolHttpRequestAINodeParameters {
      */
     readonly method?: "DELETE" | "GET" | "PATCH" | "POST" | "PUT";
 
-    /**
-     */
     readonly placeholderNotice?: string;
 
-    /**
-     */
     readonly url: string;
 
     /**
@@ -41,16 +37,10 @@ export interface ToolHttpRequestAINodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    /**
-     */
     readonly nodeCredentialType?: any;
 
-    /**
-     */
     readonly googleApiWarning?: string;
 
-    /**
-     */
     readonly genericAuthType?: any;
 
     /**
@@ -164,8 +154,6 @@ export interface ToolHttpRequestAINodeParameters {
      */
     readonly elementsToOmit?: string;
 
-    /**
-     */
     readonly truncateResponse?: boolean;
 
     /**

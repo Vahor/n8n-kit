@@ -36,8 +36,6 @@ export interface IterableNodeParameters {
      */
     readonly identifier?: "email" | "userId";
 
-    /**
-     */
     readonly value?: string;
 
     /**

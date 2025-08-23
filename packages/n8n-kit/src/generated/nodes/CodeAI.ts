@@ -15,8 +15,6 @@ export interface CodeAINodeParameters {
      */
     readonly code?: { "execute": any, "supplyData": any };
 
-    /**
-     */
     readonly notice?: string;
 
     /**

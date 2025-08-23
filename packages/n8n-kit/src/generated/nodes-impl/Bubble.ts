@@ -17,13 +17,13 @@ export class Bubble<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.bubble" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BubbleProps) {
+    constructor(id: L, public readonly props: BubbleProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BubbleNodeParameters, "bubbleApiCredentials"> {
 
         const { bubbleApiCredentials:_0, ...rest } = this.props;
         return rest;

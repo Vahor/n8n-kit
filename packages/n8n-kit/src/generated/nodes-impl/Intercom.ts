@@ -17,13 +17,13 @@ export class Intercom<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.intercom" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: IntercomProps) {
+    constructor(id: L, public readonly props: IntercomProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<IntercomNodeParameters, "intercomApiCredentials"> {
 
         const { intercomApiCredentials:_0, ...rest } = this.props;
         return rest;

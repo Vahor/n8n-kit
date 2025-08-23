@@ -17,13 +17,13 @@ export class PostgresV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.postgres" as const;
     protected typeVersion = 2.6 as const;
 
-    constructor(id: L, public readonly props?: PostgresV2Props) {
+    constructor(id: L, public readonly props: PostgresV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PostgresV2NodeParameters, "postgresCredentials"> {
 
         const { postgresCredentials:_0, ...rest } = this.props;
         return rest;

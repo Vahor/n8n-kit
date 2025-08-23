@@ -21,16 +21,10 @@ export interface GoogleCloudStorageNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly projectId?: string;
 
-    /**
-     */
     readonly bucketName?: string;
 
-    /**
-     */
     readonly prefix?: string;
 
     /**
@@ -58,8 +52,6 @@ export interface GoogleCloudStorageNodeParameters {
      */
     readonly createBody?: { "acl"?: string, "billing"?: string, "cors"?: string, "customPlacementConfig"?: string, "dataLocations"?: string, "defaultEventBasedHold"?: boolean, "defaultObjectAcl"?: string, "encryption"?: string, "iamConfiguration"?: string, "labels"?: string, "lifecycle"?: string, "location"?: string, "logging"?: string, "retentionPolicy"?: string, "rpo"?: string, "storageClass"?: string, "versioning"?: string, "website"?: string };
 
-    /**
-     */
     readonly objectName?: string;
 
     /**

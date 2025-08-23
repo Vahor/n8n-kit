@@ -89,12 +89,8 @@ export interface KoBoToolboxNodeParameters {
      */
     readonly filterType?: "none" | "json";
 
-    /**
-     */
     readonly jsonNotice?: string;
 
-    /**
-     */
     readonly filterJson?: string;
 
     /**

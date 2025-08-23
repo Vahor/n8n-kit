@@ -25,7 +25,7 @@ export class Drift<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<DriftNodeParameters, "driftApiCredentials | driftOAuth2ApiCredentials"> {
 
         const { driftApiCredentials:_0, driftOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

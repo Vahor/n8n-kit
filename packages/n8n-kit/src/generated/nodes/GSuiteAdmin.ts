@@ -104,12 +104,8 @@ export interface GSuiteAdminNodeParameters {
      */
     readonly userId?: any;
 
-    /**
-     */
     readonly firstName?: string;
 
-    /**
-     */
     readonly lastName?: string;
 
     /**

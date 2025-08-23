@@ -14,13 +14,13 @@ export class N8nTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.n8nTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: N8nTriggerProps) {
+    constructor(id: L, public readonly props?: N8nTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : N8nTriggerNodeParameters {
 
         return this.props ?? {};
 

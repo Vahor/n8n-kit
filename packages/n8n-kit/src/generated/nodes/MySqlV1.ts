@@ -11,8 +11,6 @@ export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlCon
  */
 export interface MySqlV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

@@ -11,8 +11,6 @@ export const credentials = [{"name":"googleAnalyticsOAuth2","required":true}] as
  */
 export interface GoogleAnalyticsV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

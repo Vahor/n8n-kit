@@ -21,8 +21,6 @@ export interface MetabaseNodeParameters {
      */
     readonly operation?: "get" | "getAll" | "resultData" | "get" | "getAll" | "addNewDatasource" | "getAll" | "getFields";
 
-    /**
-     */
     readonly questionId?: string;
 
     /**
@@ -30,12 +28,8 @@ export interface MetabaseNodeParameters {
      */
     readonly format?: "csv" | "json" | "xlsx";
 
-    /**
-     */
     readonly metricId?: string;
 
-    /**
-     */
     readonly databaseId?: string;
 
     /**
@@ -43,12 +37,8 @@ export interface MetabaseNodeParameters {
      */
     readonly engine?: "h2" | "mongo" | "mysql" | "postgres" | "redshift" | "sqlite";
 
-    /**
-     */
     readonly host?: string;
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -56,8 +46,6 @@ export interface MetabaseNodeParameters {
      */
     readonly port?: number;
 
-    /**
-     */
     readonly user?: string;
 
     /**
@@ -65,12 +53,8 @@ export interface MetabaseNodeParameters {
      */
     readonly password?: string;
 
-    /**
-     */
     readonly dbName?: string;
 
-    /**
-     */
     readonly filePath?: string;
 
     /**
@@ -84,8 +68,6 @@ export interface MetabaseNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     */
     readonly alertId?: string;
 
 

@@ -23,7 +23,7 @@ export class FormTriggerV2<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<FormTriggerV2NodeParameters, "httpBasicAuthCredentials"> {
 
         const { httpBasicAuthCredentials:_0, ...rest } = this.props;
         return rest;

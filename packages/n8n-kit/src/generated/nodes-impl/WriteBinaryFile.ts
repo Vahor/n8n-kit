@@ -14,13 +14,13 @@ export class WriteBinaryFile<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.writeBinaryFile" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: WriteBinaryFileProps) {
+    constructor(id: L, public readonly props?: WriteBinaryFileProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : WriteBinaryFileNodeParameters {
 
         return this.props ?? {};
 

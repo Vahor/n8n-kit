@@ -38,8 +38,6 @@ export interface McpClientToolAINodeParameters {
      */
     readonly authentication?: "bearerAuth" | "headerAuth" | "none";
 
-    /**
-     */
     readonly credentials?: any;
 
     /**

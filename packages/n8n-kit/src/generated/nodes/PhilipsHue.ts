@@ -21,8 +21,6 @@ export interface PhilipsHueNodeParameters {
      */
     readonly operation?: "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly lightId?: string;
 
     /**

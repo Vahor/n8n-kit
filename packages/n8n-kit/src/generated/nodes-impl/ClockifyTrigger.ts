@@ -17,13 +17,13 @@ export class ClockifyTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.clockifyTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ClockifyTriggerProps) {
+    constructor(id: L, public readonly props: ClockifyTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ClockifyTriggerNodeParameters, "clockifyApiCredentials"> {
 
         const { clockifyApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -25,7 +25,7 @@ export class PagerDuty<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PagerDutyNodeParameters, "pagerDutyApiCredentials | pagerDutyOAuth2ApiCredentials"> {
 
         const { pagerDutyApiCredentials:_0, pagerDutyOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

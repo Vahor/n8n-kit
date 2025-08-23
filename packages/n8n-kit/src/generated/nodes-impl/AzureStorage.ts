@@ -25,7 +25,7 @@ export class AzureStorage<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AzureStorageNodeParameters, "azureStorageOAuth2ApiCredentials | azureStorageSharedKeyApiCredentials"> {
 
         const { azureStorageOAuth2ApiCredentials:_0, azureStorageSharedKeyApiCredentials:_1, ...rest } = this.props;
         return rest;

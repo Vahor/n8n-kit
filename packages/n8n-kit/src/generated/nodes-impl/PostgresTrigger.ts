@@ -17,13 +17,13 @@ export class PostgresTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.postgresTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PostgresTriggerProps) {
+    constructor(id: L, public readonly props: PostgresTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PostgresTriggerNodeParameters, "postgresCredentials"> {
 
         const { postgresCredentials:_0, ...rest } = this.props;
         return rest;

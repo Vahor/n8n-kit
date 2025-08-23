@@ -11,8 +11,6 @@ export const credentials = [{"name":"shopifyApi","required":true,"displayOptions
  */
 export interface ShopifyNodeParameters {
 
-    /**
-     */
     readonly apiVersion?: string;
 
     /**
@@ -41,8 +39,6 @@ export interface ShopifyNodeParameters {
      */
     readonly limeItemsUi?: { "lineItemValues": any };
 
-    /**
-     */
     readonly orderId?: string;
 
     /**
@@ -72,8 +68,6 @@ export interface ShopifyNodeParameters {
      */
     readonly title?: string;
 
-    /**
-     */
     readonly productId?: string;
 
 

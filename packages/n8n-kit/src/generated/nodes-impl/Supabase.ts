@@ -17,13 +17,13 @@ export class Supabase<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.supabase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SupabaseProps) {
+    constructor(id: L, public readonly props: SupabaseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SupabaseNodeParameters, "supabaseApiCredentials"> {
 
         const { supabaseApiCredentials:_0, ...rest } = this.props;
         return rest;

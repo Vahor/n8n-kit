@@ -17,8 +17,6 @@ export interface WiseTriggerNodeParameters {
      */
     readonly profileId: string;
 
-    /**
-     */
     readonly event: "balanceCredit" | "balanceUpdate" | "transferActiveCases" | "tranferStateChange";
 
 

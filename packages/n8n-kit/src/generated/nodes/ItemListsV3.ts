@@ -43,12 +43,8 @@ export interface ItemListsV3NodeParameters {
      */
     readonly include?: "allFields" | "specifiedFields" | "allFieldsExcept" | "noOtherFields" | "allOtherFields" | "selectedOtherFields";
 
-    /**
-     */
     readonly fieldsToExclude?: string;
 
-    /**
-     */
     readonly fieldsToInclude?: string;
 
     /**

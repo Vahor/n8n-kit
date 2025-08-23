@@ -17,13 +17,13 @@ export class MicrosoftExcelV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftExcel" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftExcelV1Props) {
+    constructor(id: L, public readonly props: MicrosoftExcelV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftExcelV1NodeParameters, "microsoftExcelOAuth2ApiCredentials"> {
 
         const { microsoftExcelOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

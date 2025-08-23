@@ -14,13 +14,13 @@ export class SseTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.sseTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: SseTriggerProps) {
+    constructor(id: L, public readonly props?: SseTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : SseTriggerNodeParameters {
 
         return this.props ?? {};
 

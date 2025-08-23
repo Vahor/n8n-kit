@@ -89,12 +89,8 @@ export interface CiscoWebexNodeParameters {
      */
     readonly specifyPersonBy?: "email" | "id";
 
-    /**
-     */
     readonly toPersonId?: string;
 
-    /**
-     */
     readonly toPersonEmail?: string;
 
     /**

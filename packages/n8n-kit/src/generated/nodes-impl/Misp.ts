@@ -17,13 +17,13 @@ export class Misp<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.misp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MispProps) {
+    constructor(id: L, public readonly props: MispProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MispNodeParameters, "mispApiCredentials"> {
 
         const { mispApiCredentials:_0, ...rest } = this.props;
         return rest;

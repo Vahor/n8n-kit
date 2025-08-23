@@ -42,12 +42,8 @@ export interface N8nNodeParameters {
      */
     readonly data?: string;
 
-    /**
-     */
     readonly credentialId?: string;
 
-    /**
-     */
     readonly executionId?: string;
 
     /**

@@ -21,8 +21,6 @@ export interface BoxNodeParameters {
      */
     readonly operation?: "copy" | "delete" | "download" | "get" | "search" | "share" | "upload" | "create" | "delete" | "get" | "search" | "share" | "update";
 
-    /**
-     */
     readonly fileId?: string;
 
     /**
@@ -114,8 +112,6 @@ export interface BoxNodeParameters {
      */
     readonly name?: string;
 
-    /**
-     */
     readonly folderId?: string;
 
     /**

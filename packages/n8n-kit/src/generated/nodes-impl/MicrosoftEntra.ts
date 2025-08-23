@@ -17,13 +17,13 @@ export class MicrosoftEntra<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftEntra" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftEntraProps) {
+    constructor(id: L, public readonly props: MicrosoftEntraProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftEntraNodeParameters, "microsoftEntraOAuth2ApiCredentials"> {
 
         const { microsoftEntraOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

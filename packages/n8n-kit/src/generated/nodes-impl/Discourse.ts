@@ -17,13 +17,13 @@ export class Discourse<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.discourse" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: DiscourseProps) {
+    constructor(id: L, public readonly props: DiscourseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<DiscourseNodeParameters, "discourseApiCredentials"> {
 
         const { discourseApiCredentials:_0, ...rest } = this.props;
         return rest;

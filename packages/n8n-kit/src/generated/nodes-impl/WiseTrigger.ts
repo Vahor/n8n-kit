@@ -17,13 +17,13 @@ export class WiseTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.wiseTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: WiseTriggerProps) {
+    constructor(id: L, public readonly props: WiseTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WiseTriggerNodeParameters, "wiseApiCredentials"> {
 
         const { wiseApiCredentials:_0, ...rest } = this.props;
         return rest;

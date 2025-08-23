@@ -16,8 +16,6 @@ export interface CiscoWebexTriggerNodeParameters {
      */
     readonly resource: "all" | "attachmentAction" | "meeting" | "membership" | "message" | "recording" | "room";
 
-    /**
-     */
     readonly event?: "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "started" | "ended" | "all" | "created" | "deleted" | "updated" | "created" | "updated" | "deleted" | "all";
 
     /**

@@ -11,8 +11,6 @@ export const credentials = [{"name":"slackApi","required":true,"displayOptions":
  */
 export interface SlackV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**
@@ -121,8 +119,6 @@ export interface SlackV1NodeParameters {
      */
     readonly text?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -177,8 +173,6 @@ export interface SlackV1NodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     */
     readonly fileId?: string;
 
     /**

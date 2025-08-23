@@ -17,13 +17,13 @@ export class Airtop<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.airtop" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AirtopProps) {
+    constructor(id: L, public readonly props: AirtopProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AirtopNodeParameters, "airtopApiCredentials"> {
 
         const { airtopApiCredentials:_0, ...rest } = this.props;
         return rest;

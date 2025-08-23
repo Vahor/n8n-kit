@@ -34,8 +34,6 @@ export interface SeaTableV1NodeParameters {
      */
     readonly tableId?: string;
 
-    /**
-     */
     readonly rowId?: string;
 
     /**

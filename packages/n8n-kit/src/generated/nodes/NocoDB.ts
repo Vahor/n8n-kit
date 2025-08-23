@@ -55,8 +55,6 @@ export interface NocoDBNodeParameters {
      */
     readonly primaryKey?: "id" | "ncRecordId" | "custom";
 
-    /**
-     */
     readonly customPrimaryKey?: string;
 
     /**
@@ -97,8 +95,6 @@ export interface NocoDBNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     */
     readonly info?: string;
 
     /**

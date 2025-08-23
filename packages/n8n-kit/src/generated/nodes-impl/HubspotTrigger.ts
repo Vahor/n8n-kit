@@ -17,13 +17,13 @@ export class HubspotTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.hubspotTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: HubspotTriggerProps) {
+    constructor(id: L, public readonly props: HubspotTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HubspotTriggerNodeParameters, "hubspotDeveloperApiCredentials"> {
 
         const { hubspotDeveloperApiCredentials:_0, ...rest } = this.props;
         return rest;

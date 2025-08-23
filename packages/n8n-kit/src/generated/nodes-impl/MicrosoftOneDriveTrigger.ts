@@ -17,13 +17,13 @@ export class MicrosoftOneDriveTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftOneDriveTriggerProps) {
+    constructor(id: L, public readonly props: MicrosoftOneDriveTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftOneDriveTriggerNodeParameters, "microsoftOneDriveOAuth2ApiCredentials"> {
 
         const { microsoftOneDriveOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

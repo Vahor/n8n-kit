@@ -17,13 +17,13 @@ export class OpenAi<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.openAi" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: OpenAiProps) {
+    constructor(id: L, public readonly props: OpenAiProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<OpenAiNodeParameters, "openAiApiCredentials"> {
 
         const { openAiApiCredentials:_0, ...rest } = this.props;
         return rest;

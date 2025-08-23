@@ -33,8 +33,6 @@ export interface ContentfulNodeParameters {
      */
     readonly environmentId?: string;
 
-    /**
-     */
     readonly contentTypeId?: string;
 
     /**
@@ -54,12 +52,8 @@ export interface ContentfulNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly entryId?: string;
 
-    /**
-     */
     readonly assetId?: string;
 
 

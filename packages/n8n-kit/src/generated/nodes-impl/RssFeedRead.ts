@@ -14,13 +14,13 @@ export class RssFeedRead<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.rssFeedRead" as const;
     protected typeVersion = 1.2 as const;
 
-    constructor(id: L, public readonly props: RssFeedReadProps) {
+    constructor(id: L, public readonly props?: RssFeedReadProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : RssFeedReadNodeParameters {
 
         return this.props ?? {};
 

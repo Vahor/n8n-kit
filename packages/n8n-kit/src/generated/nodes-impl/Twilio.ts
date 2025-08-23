@@ -17,13 +17,13 @@ export class Twilio<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.twilio" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TwilioProps) {
+    constructor(id: L, public readonly props: TwilioProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TwilioNodeParameters, "twilioApiCredentials"> {
 
         const { twilioApiCredentials:_0, ...rest } = this.props;
         return rest;

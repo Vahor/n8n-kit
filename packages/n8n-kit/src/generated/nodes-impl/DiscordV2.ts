@@ -27,7 +27,7 @@ export class DiscordV2<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<DiscordV2NodeParameters, "discordBotApiCredentials | discordOAuth2ApiCredentials | discordWebhookApiCredentials"> {
 
         const { discordBotApiCredentials:_0, discordOAuth2ApiCredentials:_1, discordWebhookApiCredentials:_2, ...rest } = this.props;
         return rest;

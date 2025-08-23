@@ -16,8 +16,6 @@ export interface RabbitMQNodeParameters {
      */
     readonly operation?: any | "sendMessage" | "deleteMessage";
 
-    /**
-     */
     readonly deleteMessage?: string;
 
     /**

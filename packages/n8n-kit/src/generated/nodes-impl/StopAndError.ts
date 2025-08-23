@@ -14,13 +14,13 @@ export class StopAndError<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.stopAndError" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: StopAndErrorProps) {
+    constructor(id: L, public readonly props?: StopAndErrorProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : StopAndErrorNodeParameters {
 
         return this.props ?? {};
 

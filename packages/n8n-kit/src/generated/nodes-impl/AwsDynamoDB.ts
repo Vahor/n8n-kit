@@ -17,13 +17,13 @@ export class AwsDynamoDB<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsDynamoDb" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsDynamoDBProps) {
+    constructor(id: L, public readonly props: AwsDynamoDBProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsDynamoDBNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

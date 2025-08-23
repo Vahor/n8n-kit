@@ -45,16 +45,10 @@ export interface LemlistV2NodeParameters {
      */
     readonly campaignId?: string;
 
-    /**
-     */
     readonly startDate?: string;
 
-    /**
-     */
     readonly endDate?: string;
 
-    /**
-     */
     readonly timezone?: string;
 
     /**
@@ -62,24 +56,14 @@ export interface LemlistV2NodeParameters {
      */
     readonly enrichId?: string;
 
-    /**
-     */
     readonly leadId?: string;
 
-    /**
-     */
     readonly findEmail?: boolean;
 
-    /**
-     */
     readonly verifyEmail?: boolean;
 
-    /**
-     */
     readonly linkedinEnrichment?: boolean;
 
-    /**
-     */
     readonly findPhone?: boolean;
 
     /**

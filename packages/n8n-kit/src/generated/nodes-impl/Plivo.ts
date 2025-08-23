@@ -17,13 +17,13 @@ export class Plivo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.plivo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PlivoProps) {
+    constructor(id: L, public readonly props: PlivoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PlivoNodeParameters, "plivoApiCredentials"> {
 
         const { plivoApiCredentials:_0, ...rest } = this.props;
         return rest;

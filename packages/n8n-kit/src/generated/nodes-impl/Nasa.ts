@@ -17,13 +17,13 @@ export class Nasa<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.nasa" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: NasaProps) {
+    constructor(id: L, public readonly props: NasaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<NasaNodeParameters, "nasaApiCredentials"> {
 
         const { nasaApiCredentials:_0, ...rest } = this.props;
         return rest;

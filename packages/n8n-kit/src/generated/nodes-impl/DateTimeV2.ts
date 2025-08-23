@@ -14,13 +14,13 @@ export class DateTimeV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.undefined" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props: DateTimeV2Props) {
+    constructor(id: L, public readonly props?: DateTimeV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : DateTimeV2NodeParameters {
 
         return this.props ?? {};
 

@@ -16,8 +16,6 @@ export interface DocumentGithubLoaderAINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly repository?: string;
 
     /**

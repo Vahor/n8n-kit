@@ -17,13 +17,13 @@ export class CiscoWebexTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.ciscoWebexTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CiscoWebexTriggerProps) {
+    constructor(id: L, public readonly props: CiscoWebexTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CiscoWebexTriggerNodeParameters, "ciscoWebexOAuth2ApiCredentials"> {
 
         const { ciscoWebexOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

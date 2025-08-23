@@ -11,8 +11,6 @@ export const credentials = [{"name":"whatsAppTriggerApi","required":true}] as co
  */
 export interface WhatsAppTriggerNodeParameters {
 
-    /**
-     */
     readonly whatsAppNotice?: string;
 
     /**

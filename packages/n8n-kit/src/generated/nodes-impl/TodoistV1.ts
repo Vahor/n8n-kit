@@ -25,7 +25,7 @@ export class TodoistV1<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TodoistV1NodeParameters, "todoistApiCredentials | todoistOAuth2ApiCredentials"> {
 
         const { todoistApiCredentials:_0, todoistOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

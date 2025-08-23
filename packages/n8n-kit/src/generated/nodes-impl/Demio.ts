@@ -17,13 +17,13 @@ export class Demio<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.demio" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: DemioProps) {
+    constructor(id: L, public readonly props: DemioProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<DemioNodeParameters, "demioApiCredentials"> {
 
         const { demioApiCredentials:_0, ...rest } = this.props;
         return rest;

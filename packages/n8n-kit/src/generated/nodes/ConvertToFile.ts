@@ -35,8 +35,6 @@ export interface ConvertToFileNodeParameters {
      */
     readonly mode?: "once" | "each";
 
-    /**
-     */
     readonly title?: string;
 
     /**

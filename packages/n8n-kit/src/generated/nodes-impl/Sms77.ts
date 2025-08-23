@@ -17,13 +17,13 @@ export class Sms77<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.sms77" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: Sms77Props) {
+    constructor(id: L, public readonly props: Sms77Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<Sms77NodeParameters, "sms77ApiCredentials"> {
 
         const { sms77ApiCredentials:_0, ...rest } = this.props;
         return rest;

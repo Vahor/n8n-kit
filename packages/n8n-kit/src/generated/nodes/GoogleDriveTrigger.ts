@@ -16,8 +16,6 @@ export interface GoogleDriveTriggerNodeParameters {
      */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     */
     readonly triggerOn: "specificFile" | "specificFolder";
 
     /**
@@ -36,8 +34,6 @@ export interface GoogleDriveTriggerNodeParameters {
      */
     readonly folderToWatch?: any;
 
-    /**
-     */
     readonly asas?: string;
 
     /**

@@ -14,13 +14,13 @@ export class StickyNote<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.stickyNote" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: StickyNoteProps) {
+    constructor(id: L, public readonly props?: StickyNoteProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : StickyNoteNodeParameters {
 
         return this.props ?? {};
 

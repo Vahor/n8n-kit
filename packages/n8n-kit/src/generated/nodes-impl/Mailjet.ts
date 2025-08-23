@@ -25,7 +25,7 @@ export class Mailjet<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MailjetNodeParameters, "mailjetEmailApiCredentials | mailjetSmsApiCredentials"> {
 
         const { mailjetEmailApiCredentials:_0, mailjetSmsApiCredentials:_1, ...rest } = this.props;
         return rest;

@@ -21,8 +21,6 @@ export interface MicrosoftOneDriveNodeParameters {
      */
     readonly operation?: "copy" | "delete" | "download" | "get" | "rename" | "search" | "share" | "upload" | "create" | "delete" | "getChildren" | "rename" | "search" | "share";
 
-    /**
-     */
     readonly fileId?: string;
 
     /**
@@ -96,8 +94,6 @@ export interface MicrosoftOneDriveNodeParameters {
      */
     readonly options?: { "parentFolderId"?: string };
 
-    /**
-     */
     readonly folderId?: string;
 
 

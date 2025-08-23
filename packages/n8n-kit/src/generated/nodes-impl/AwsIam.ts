@@ -17,13 +17,13 @@ export class AwsIam<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsIam" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsIamProps) {
+    constructor(id: L, public readonly props: AwsIamProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsIamNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

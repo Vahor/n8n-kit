@@ -14,13 +14,13 @@ export class ChargebeeTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.chargebeeTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ChargebeeTriggerProps) {
+    constructor(id: L, public readonly props?: ChargebeeTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ChargebeeTriggerNodeParameters {
 
         return this.props ?? {};
 

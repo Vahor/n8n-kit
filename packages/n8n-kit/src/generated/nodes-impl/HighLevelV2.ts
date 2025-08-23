@@ -17,13 +17,13 @@ export class HighLevelV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.highLevel" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props?: HighLevelV2Props) {
+    constructor(id: L, public readonly props: HighLevelV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HighLevelV2NodeParameters, "highLevelOAuth2ApiCredentials"> {
 
         const { highLevelOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -14,13 +14,13 @@ export class E2eTest<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.e2eTest" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: E2eTestProps) {
+    constructor(id: L, public readonly props?: E2eTestProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : E2eTestNodeParameters {
 
         return this.props ?? {};
 

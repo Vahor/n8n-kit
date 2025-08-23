@@ -26,8 +26,6 @@ export interface HubspotV1NodeParameters {
      */
     readonly operation?: "upsert" | "delete" | "get" | "getAll" | "getRecentlyCreatedUpdated" | "search" | "add" | "remove" | "create" | "delete" | "get" | "getAll" | "getRecentlyCreated" | "getRecentlyModified" | "searchByDomain" | "update" | "create" | "delete" | "get" | "getAll" | "getRecentlyCreated" | "getRecentlyModified" | "search" | "update" | "create" | "delete" | "get" | "getAll" | "getFields" | "submit" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly email?: string;
 
     /**
@@ -75,16 +73,10 @@ export interface HubspotV1NodeParameters {
      */
     readonly by?: "id" | "email";
 
-    /**
-     */
     readonly id?: string;
 
-    /**
-     */
     readonly listId?: string;
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -118,8 +110,6 @@ export interface HubspotV1NodeParameters {
      */
     readonly dealId?: string;
 
-    /**
-     */
     readonly type?: "call" | "email" | "meeting" | "task";
 
     /**

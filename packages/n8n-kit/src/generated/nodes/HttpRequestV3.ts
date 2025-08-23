@@ -16,8 +16,6 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly preBuiltAgentsCalloutHttpRequest?: any;
 
-    /**
-     */
     readonly curlImport?: any;
 
     /**
@@ -36,28 +34,16 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    /**
-     */
     readonly nodeCredentialType?: any;
 
-    /**
-     */
     readonly googleApiWarning?: string;
 
-    /**
-     */
     readonly genericAuthType?: any;
 
-    /**
-     */
     readonly provideSslCertificates?: boolean;
 
-    /**
-     */
     readonly provideSslCertificatesNotice?: string;
 
-    /**
-     */
     readonly sslCertificate?: any;
 
     /**
@@ -76,8 +62,6 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly queryParameters?: { "parameters": any };
 
-    /**
-     */
     readonly jsonQuery?: string;
 
     /**
@@ -96,8 +80,6 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly headerParameters?: { "parameters": any };
 
-    /**
-     */
     readonly jsonHeaders?: string;
 
     /**
@@ -123,12 +105,8 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly bodyParameters?: { "parameters": any };
 
-    /**
-     */
     readonly jsonBody?: string;
 
-    /**
-     */
     readonly body?: string;
 
     /**
@@ -136,8 +114,6 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly inputDataFieldName?: string;
 
-    /**
-     */
     readonly rawContentType?: string;
 
     /**
@@ -187,8 +163,6 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly elementsToOmit?: string;
 
-    /**
-     */
     readonly truncateResponse?: boolean;
 
     /**
@@ -197,8 +171,6 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly maxLength?: number;
 
-    /**
-     */
     readonly infoMessage?: string;
 
 

@@ -14,13 +14,13 @@ export class Function<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.function" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: FunctionProps) {
+    constructor(id: L, public readonly props?: FunctionProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : FunctionNodeParameters {
 
         return this.props ?? {};
 

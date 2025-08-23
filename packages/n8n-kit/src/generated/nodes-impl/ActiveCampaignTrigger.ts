@@ -17,13 +17,13 @@ export class ActiveCampaignTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.activeCampaignTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ActiveCampaignTriggerProps) {
+    constructor(id: L, public readonly props: ActiveCampaignTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ActiveCampaignTriggerNodeParameters, "activeCampaignApiCredentials"> {
 
         const { activeCampaignApiCredentials:_0, ...rest } = this.props;
         return rest;

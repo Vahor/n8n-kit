@@ -17,13 +17,13 @@ export class Spotify<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.spotify" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SpotifyProps) {
+    constructor(id: L, public readonly props: SpotifyProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SpotifyNodeParameters, "spotifyOAuth2ApiCredentials"> {
 
         const { spotifyOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -25,7 +25,7 @@ export class ServiceNow<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ServiceNowNodeParameters, "serviceNowOAuth2ApiCredentials | serviceNowBasicApiCredentials"> {
 
         const { serviceNowOAuth2ApiCredentials:_0, serviceNowBasicApiCredentials:_1, ...rest } = this.props;
         return rest;

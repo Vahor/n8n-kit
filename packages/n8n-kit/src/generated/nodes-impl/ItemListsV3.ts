@@ -14,13 +14,13 @@ export class ItemListsV3<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.itemLists" as const;
     protected typeVersion = 3.1 as const;
 
-    constructor(id: L, public readonly props: ItemListsV3Props) {
+    constructor(id: L, public readonly props?: ItemListsV3Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ItemListsV3NodeParameters {
 
         return this.props ?? {};
 

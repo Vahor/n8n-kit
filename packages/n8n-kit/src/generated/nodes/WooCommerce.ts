@@ -21,8 +21,6 @@ export interface WooCommerceNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly email?: string;
 
     /**
@@ -83,8 +81,6 @@ export interface WooCommerceNodeParameters {
      */
     readonly metadataUi?: { "metadataValues": any };
 
-    /**
-     */
     readonly productId?: string;
 
     /**
@@ -134,8 +130,6 @@ export interface WooCommerceNodeParameters {
      */
     readonly shippingLinesUi?: { "shippingLinesValues": any };
 
-    /**
-     */
     readonly orderId?: string;
 
 

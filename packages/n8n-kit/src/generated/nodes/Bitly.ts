@@ -26,8 +26,6 @@ export interface BitlyNodeParameters {
      */
     readonly operation?: "create" | "get" | "update";
 
-    /**
-     */
     readonly longUrl?: string;
 
     /**
@@ -41,8 +39,6 @@ export interface BitlyNodeParameters {
      */
     readonly deeplink?: { "deeplinkUi": any };
 
-    /**
-     */
     readonly id?: string;
 
     /**

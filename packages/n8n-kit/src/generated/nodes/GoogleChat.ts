@@ -60,8 +60,6 @@ export interface GoogleChatNodeParameters {
      */
     readonly messageUi?: { "text"?: string };
 
-    /**
-     */
     readonly jsonNotice?: string;
 
     /**

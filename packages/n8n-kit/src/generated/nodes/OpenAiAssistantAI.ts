@@ -16,8 +16,6 @@ export interface OpenAiAssistantAINodeParameters {
      */
     readonly mode?: "new" | "existing";
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -49,8 +47,6 @@ export interface OpenAiAssistantAINodeParameters {
      */
     readonly nativeTools?: ("code_interpreter" | "retrieval")[];
 
-    /**
-     */
     readonly noticeTools?: string;
 
     /**

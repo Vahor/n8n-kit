@@ -16,8 +16,6 @@ export interface AiTransformNodeParameters {
      */
     readonly instructions?: any;
 
-    /**
-     */
     readonly codeGeneratedForPrompt?: any;
 
     /**

@@ -16,8 +16,6 @@ export interface FigmaTriggerNodeParameters {
      */
     readonly teamId: string;
 
-    /**
-     */
     readonly triggerOn: "fileComment" | "fileDelete" | "fileUpdate" | "fileVersionUpdate" | "libraryPublish";
 
 

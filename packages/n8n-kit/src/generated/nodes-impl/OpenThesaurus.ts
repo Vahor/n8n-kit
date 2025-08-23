@@ -14,13 +14,13 @@ export class OpenThesaurus<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.openThesaurus" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: OpenThesaurusProps) {
+    constructor(id: L, public readonly props?: OpenThesaurusProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : OpenThesaurusNodeParameters {
 
         return this.props ?? {};
 

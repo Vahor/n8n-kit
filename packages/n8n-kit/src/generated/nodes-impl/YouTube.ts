@@ -17,13 +17,13 @@ export class YouTube<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.youTube" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: YouTubeProps) {
+    constructor(id: L, public readonly props: YouTubeProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<YouTubeNodeParameters, "youTubeOAuth2ApiCredentials"> {
 
         const { youTubeOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

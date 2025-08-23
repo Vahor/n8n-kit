@@ -17,13 +17,13 @@ export class Cortex<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.cortex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CortexProps) {
+    constructor(id: L, public readonly props: CortexProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CortexNodeParameters, "cortexApiCredentials"> {
 
         const { cortexApiCredentials:_0, ...rest } = this.props;
         return rest;

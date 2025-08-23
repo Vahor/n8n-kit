@@ -17,13 +17,13 @@ export class ZohoCrm<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.zohoCrm" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ZohoCrmProps) {
+    constructor(id: L, public readonly props: ZohoCrmProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ZohoCrmNodeParameters, "zohoOAuth2ApiCredentials"> {
 
         const { zohoOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

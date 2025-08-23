@@ -17,13 +17,13 @@ export class CopperTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.copperTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CopperTriggerProps) {
+    constructor(id: L, public readonly props: CopperTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CopperTriggerNodeParameters, "copperApiCredentials"> {
 
         const { copperApiCredentials:_0, ...rest } = this.props;
         return rest;

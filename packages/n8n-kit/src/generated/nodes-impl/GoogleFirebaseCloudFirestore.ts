@@ -25,7 +25,7 @@ export class GoogleFirebaseCloudFirestore<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleFirebaseCloudFirestoreNodeParameters, "googleFirebaseCloudFirestoreOAuth2ApiCredentials | googleApiCredentials"> {
 
         const { googleFirebaseCloudFirestoreOAuth2ApiCredentials:_0, googleApiCredentials:_1, ...rest } = this.props;
         return rest;

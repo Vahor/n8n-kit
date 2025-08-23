@@ -16,12 +16,8 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly authentication: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    /**
-     */
     readonly nodeCredentialType?: any;
 
-    /**
-     */
     readonly genericAuthType?: any;
 
     /**
@@ -109,8 +105,6 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly queryParametersUi?: { "parameter": any };
 
-    /**
-     */
     readonly infoMessage?: string;
 
 

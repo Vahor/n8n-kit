@@ -59,8 +59,6 @@ export interface HelpScoutNodeParameters {
      */
     readonly threadsUi?: { "threadsValues": any };
 
-    /**
-     */
     readonly conversationId?: string;
 
     /**
@@ -115,8 +113,6 @@ export interface HelpScoutNodeParameters {
      */
     readonly websitesUi?: { "websitesValues": any };
 
-    /**
-     */
     readonly customerId?: string;
 
     /**

@@ -25,7 +25,7 @@ export class GoogleTranslate<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleTranslateNodeParameters, "googleApiCredentials | googleTranslateOAuth2ApiCredentials"> {
 
         const { googleApiCredentials:_0, googleTranslateOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

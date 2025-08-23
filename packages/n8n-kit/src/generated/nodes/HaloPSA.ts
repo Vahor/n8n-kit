@@ -31,8 +31,6 @@ export interface HaloPSANodeParameters {
      */
     readonly additionalFields?: { "inactive"?: "false" | "true", "notes"?: string, "is_vip"?: boolean, "website"?: string } | { "agent_id"?: string, "startdate"?: string, "targetdate"?: string } | { "maincontact_name"?: string, "notes"?: string, "phonenumber"?: string } | { "emailaddress"?: string, "notes"?: string, "password"?: string, "surname"?: string, "inactive"?: boolean };
 
-    /**
-     */
     readonly clientId?: string;
 
     /**
@@ -69,16 +67,10 @@ export interface HaloPSANodeParameters {
      */
     readonly ticketType?: string;
 
-    /**
-     */
     readonly summary?: string;
 
-    /**
-     */
     readonly details?: string;
 
-    /**
-     */
     readonly ticketId?: string;
 
     /**
@@ -91,8 +83,6 @@ export interface HaloPSANodeParameters {
      */
     readonly selectOption?: boolean;
 
-    /**
-     */
     readonly siteId?: string;
 
     /**
@@ -100,8 +90,6 @@ export interface HaloPSANodeParameters {
      */
     readonly userName?: string;
 
-    /**
-     */
     readonly userId?: string;
 
 

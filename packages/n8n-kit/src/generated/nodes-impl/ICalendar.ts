@@ -14,13 +14,13 @@ export class ICalendar<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.iCal" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ICalendarProps) {
+    constructor(id: L, public readonly props?: ICalendarProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ICalendarNodeParameters {
 
         return this.props ?? {};
 

@@ -17,13 +17,13 @@ export class Tapfiliate<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.tapfiliate" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TapfiliateProps) {
+    constructor(id: L, public readonly props: TapfiliateProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TapfiliateNodeParameters, "tapfiliateApiCredentials"> {
 
         const { tapfiliateApiCredentials:_0, ...rest } = this.props;
         return rest;

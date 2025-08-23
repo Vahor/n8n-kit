@@ -17,13 +17,13 @@ export class FreshworksCrm<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.freshworksCrm" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: FreshworksCrmProps) {
+    constructor(id: L, public readonly props: FreshworksCrmProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<FreshworksCrmNodeParameters, "freshworksCrmApiCredentials"> {
 
         const { freshworksCrmApiCredentials:_0, ...rest } = this.props;
         return rest;

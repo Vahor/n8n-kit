@@ -60,8 +60,6 @@ export interface MicrosoftSharePointNodeParameters {
      */
     readonly list?: any;
 
-    /**
-     */
     readonly noticeUnsupportedFields?: string;
 
     /**

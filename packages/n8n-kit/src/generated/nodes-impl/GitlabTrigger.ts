@@ -25,7 +25,7 @@ export class GitlabTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GitlabTriggerNodeParameters, "gitlabApiCredentials | gitlabOAuth2ApiCredentials"> {
 
         const { gitlabApiCredentials:_0, gitlabOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

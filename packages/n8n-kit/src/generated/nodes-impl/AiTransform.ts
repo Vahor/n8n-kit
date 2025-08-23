@@ -14,13 +14,13 @@ export class AiTransform<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.aiTransform" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: AiTransformProps) {
+    constructor(id: L, public readonly props?: AiTransformProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : AiTransformNodeParameters {
 
         return this.props ?? {};
 

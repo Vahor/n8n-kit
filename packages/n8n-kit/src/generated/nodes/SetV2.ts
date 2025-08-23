@@ -15,8 +15,6 @@ export interface SetV2NodeParameters {
      */
     readonly mode?: "manual" | "raw";
 
-    /**
-     */
     readonly duplicateItem?: boolean;
 
     /**
@@ -25,8 +23,6 @@ export interface SetV2NodeParameters {
      */
     readonly duplicateCount?: number;
 
-    /**
-     */
     readonly duplicateWarning?: string;
 
     /**

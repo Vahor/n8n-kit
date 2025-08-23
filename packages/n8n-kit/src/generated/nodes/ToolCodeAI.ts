@@ -15,12 +15,8 @@ export interface ToolCodeAINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly noticeTemplateExample?: string;
 
-    /**
-     */
     readonly name?: string;
 
     /**

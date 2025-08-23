@@ -25,7 +25,7 @@ export class Linear<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<LinearNodeParameters, "linearApiCredentials | linearOAuth2ApiCredentials"> {
 
         const { linearApiCredentials:_0, linearOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

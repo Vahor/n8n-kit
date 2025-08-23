@@ -17,13 +17,13 @@ export class RabbitMQTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.rabbitmqTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: RabbitMQTriggerProps) {
+    constructor(id: L, public readonly props: RabbitMQTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<RabbitMQTriggerNodeParameters, "rabbitmqCredentials"> {
 
         const { rabbitmqCredentials:_0, ...rest } = this.props;
         return rest;

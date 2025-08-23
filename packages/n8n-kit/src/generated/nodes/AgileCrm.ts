@@ -59,12 +59,8 @@ export interface AgileCrmNodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    /**
-     */
     readonly jsonNotice?: string;
 
-    /**
-     */
     readonly filterJson?: string;
 
     /**
@@ -72,8 +68,6 @@ export interface AgileCrmNodeParameters {
      */
     readonly options?: { "sort"?: { "sort": any } };
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

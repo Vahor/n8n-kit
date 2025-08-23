@@ -17,13 +17,13 @@ export class GoogleBusinessProfile<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleBusinessProfile" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GoogleBusinessProfileProps) {
+    constructor(id: L, public readonly props: GoogleBusinessProfileProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleBusinessProfileNodeParameters, "googleBusinessProfileOAuth2ApiCredentials"> {
 
         const { googleBusinessProfileOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

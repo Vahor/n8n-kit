@@ -22,8 +22,6 @@ export interface HtmlNodeParameters {
      */
     readonly html?: string;
 
-    /**
-     */
     readonly notice?: string;
 
     /**

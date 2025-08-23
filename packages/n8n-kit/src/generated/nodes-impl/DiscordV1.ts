@@ -14,13 +14,13 @@ export class DiscordV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.discord" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: DiscordV1Props) {
+    constructor(id: L, public readonly props?: DiscordV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : DiscordV1NodeParameters {
 
         return this.props ?? {};
 

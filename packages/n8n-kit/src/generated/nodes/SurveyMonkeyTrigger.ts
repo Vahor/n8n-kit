@@ -16,12 +16,8 @@ export interface SurveyMonkeyTriggerNodeParameters {
      */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     */
     readonly objectType: "collector" | "survey";
 
-    /**
-     */
     readonly event?: "collector_created" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated" | "survey_created" | "survey_deleted" | "survey_updated" | "collector_deleted" | "collector_updated" | "response_completed" | "response_created" | "response_deleted" | "response_disqualified" | "response_overquota" | "response_updated";
 
     /**

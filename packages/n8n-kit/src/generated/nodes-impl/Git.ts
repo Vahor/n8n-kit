@@ -23,7 +23,7 @@ export class Git<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GitNodeParameters, "gitPasswordCredentials"> {
 
         const { gitPasswordCredentials:_0, ...rest } = this.props;
         return rest;

@@ -25,7 +25,7 @@ export class Zammad<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ZammadNodeParameters, "zammadBasicAuthApiCredentials | zammadTokenAuthApiCredentials"> {
 
         const { zammadBasicAuthApiCredentials:_0, zammadTokenAuthApiCredentials:_1, ...rest } = this.props;
         return rest;

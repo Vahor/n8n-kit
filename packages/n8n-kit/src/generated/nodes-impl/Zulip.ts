@@ -17,13 +17,13 @@ export class Zulip<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.zulip" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ZulipProps) {
+    constructor(id: L, public readonly props: ZulipProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ZulipNodeParameters, "zulipApiCredentials"> {
 
         const { zulipApiCredentials:_0, ...rest } = this.props;
         return rest;

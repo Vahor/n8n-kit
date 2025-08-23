@@ -17,8 +17,6 @@ export interface SimulateNodeParameters {
      */
     readonly icon?: string;
 
-    /**
-     */
     readonly subtitle?: string;
 
     /**

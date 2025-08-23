@@ -17,13 +17,13 @@ export class WebflowTriggerV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.webflowTrigger" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props?: WebflowTriggerV2Props) {
+    constructor(id: L, public readonly props: WebflowTriggerV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WebflowTriggerV2NodeParameters, "webflowOAuth2ApiCredentials"> {
 
         const { webflowOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

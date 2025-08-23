@@ -10,8 +10,6 @@ export const version = 3 as const;
  */
 export interface SplitInBatchesV3NodeParameters {
 
-    /**
-     */
     readonly splitInBatchesNotice?: string;
 
     /**

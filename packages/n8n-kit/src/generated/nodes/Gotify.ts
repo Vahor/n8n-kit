@@ -36,8 +36,6 @@ export interface GotifyNodeParameters {
      */
     readonly options?: { "contentType"?: "text/plain" | "text/markdown" };
 
-    /**
-     */
     readonly messageId?: string;
 
     /**

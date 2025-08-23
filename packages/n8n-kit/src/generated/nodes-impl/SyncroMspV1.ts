@@ -17,13 +17,13 @@ export class SyncroMspV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.syncroMsp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SyncroMspV1Props) {
+    constructor(id: L, public readonly props: SyncroMspV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SyncroMspV1NodeParameters, "syncroMspApiCredentials"> {
 
         const { syncroMspApiCredentials:_0, ...rest } = this.props;
         return rest;

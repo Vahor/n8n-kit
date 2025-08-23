@@ -17,13 +17,13 @@ export class Snowflake<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.snowflake" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SnowflakeProps) {
+    constructor(id: L, public readonly props: SnowflakeProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SnowflakeNodeParameters, "snowflakeCredentials"> {
 
         const { snowflakeCredentials:_0, ...rest } = this.props;
         return rest;

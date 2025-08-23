@@ -14,13 +14,13 @@ export class ExecuteCommand<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.executeCommand" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ExecuteCommandProps) {
+    constructor(id: L, public readonly props?: ExecuteCommandProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ExecuteCommandNodeParameters {
 
         return this.props ?? {};
 

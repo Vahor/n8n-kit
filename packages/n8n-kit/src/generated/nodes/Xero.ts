@@ -37,8 +37,6 @@ export interface XeroNodeParameters {
      */
     readonly additionalFields?: { "accountNumber"?: string, "addressesUi"?: { "addressesValues": any }, "bankAccountDetails"?: string, "contactNumber"?: string, "contactStatus"?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", "defaultCurrency"?: string, "emailAddress"?: string, "firstName"?: string, "lastName"?: string, "phonesUi"?: { "phonesValues": any }, "purchasesDefaultAccountCode"?: string, "salesDefaultAccountCode"?: string, "skypeUserName"?: string, "taxNumber"?: string, "xeroNetworkKey"?: string } | { "brandingThemeId"?: string, "currency"?: string, "currencyRate"?: string, "date"?: string, "dueDate"?: string, "expectedPaymentDate"?: string, "invoiceNumber"?: string, "lineAmountType"?: "Exclusive" | "Inclusive" | "NoTax", "plannedPaymentDate"?: string, "reference"?: string, "sendToContact"?: boolean, "status"?: "DRAFT" | "SUBMITTED" | "AUTHORISED", "url"?: string };
 
-    /**
-     */
     readonly contactId?: string;
 
     /**
@@ -75,8 +73,6 @@ export interface XeroNodeParameters {
      */
     readonly lineItemsUi?: { "lineItemsValues": any };
 
-    /**
-     */
     readonly invoiceId?: string;
 
 

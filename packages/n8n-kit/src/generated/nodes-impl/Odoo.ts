@@ -17,13 +17,13 @@ export class Odoo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.odoo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: OdooProps) {
+    constructor(id: L, public readonly props: OdooProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<OdooNodeParameters, "odooApiCredentials"> {
 
         const { odooApiCredentials:_0, ...rest } = this.props;
         return rest;

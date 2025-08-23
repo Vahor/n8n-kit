@@ -16,8 +16,6 @@ export interface LinearTriggerNodeParameters {
      */
     readonly authentication?: "apiToken" | "oAuth2";
 
-    /**
-     */
     readonly notice?: string;
 
     /**

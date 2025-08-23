@@ -17,13 +17,13 @@ export class CalTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.calTrigger" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props?: CalTriggerProps) {
+    constructor(id: L, public readonly props: CalTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CalTriggerNodeParameters, "calApiCredentials"> {
 
         const { calApiCredentials:_0, ...rest } = this.props;
         return rest;

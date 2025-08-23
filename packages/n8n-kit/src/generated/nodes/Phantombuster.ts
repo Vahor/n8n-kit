@@ -50,8 +50,6 @@ export interface PhantombusterNodeParameters {
      */
     readonly additionalFields?: { "prevContainerId"?: string, "prevStatus"?: "finished" | "lauch error" | "never launched" | "running" | "starting" | "unknown", "prevRuntimeEventIndex"?: number } | { "argumentsJson"?: string, "argumentsUi"?: { "argumentValues": any }, "bonusArgumentUi"?: { "bonusArgumentValue": any }, "bonusArgumentJson"?: string, "manualLaunch"?: boolean, "maxInstanceCount"?: number, "saveArgument"?: string };
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
 

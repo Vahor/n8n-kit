@@ -17,13 +17,13 @@ export class CrateDb<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.crateDb" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CrateDbProps) {
+    constructor(id: L, public readonly props: CrateDbProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CrateDbNodeParameters, "crateDbCredentials"> {
 
         const { crateDbCredentials:_0, ...rest } = this.props;
         return rest;

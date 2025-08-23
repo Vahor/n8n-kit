@@ -14,13 +14,13 @@ export class ErrorTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.errorTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ErrorTriggerProps) {
+    constructor(id: L, public readonly props?: ErrorTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ErrorTriggerNodeParameters {
 
         return this.props ?? {};
 

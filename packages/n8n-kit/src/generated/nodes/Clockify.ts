@@ -45,8 +45,6 @@ export interface ClockifyNodeParameters {
      */
     readonly name?: string;
 
-    /**
-     */
     readonly clientId?: string;
 
     /**
@@ -59,12 +57,8 @@ export interface ClockifyNodeParameters {
      */
     readonly updateFields?: { "address"?: string, "archived"?: boolean } | { "billable"?: boolean, "color"?: any, "clientId"?: string, "estimateUi"?: { "estimateValues": any }, "isPublic"?: boolean, "name"?: string, "note"?: string } | { "archived"?: boolean, "name"?: string } | { "assigneeIds"?: any[], "estimate"?: string, "name"?: string, "status"?: "ACTIVE" | "DONE" } | { "billable"?: boolean, "customFieldsUi"?: { "customFieldsValues": any }, "description"?: string, "end"?: string, "projectId"?: string, "start"?: string, "tagIds"?: any[], "taskId"?: string };
 
-    /**
-     */
     readonly projectId?: string;
 
-    /**
-     */
     readonly tagId?: string;
 
     /**
@@ -77,12 +71,8 @@ export interface ClockifyNodeParameters {
      */
     readonly filters?: { "is-active"?: boolean, "name"?: string, "sort-column"?: "NAME", "sort-order"?: "ASCENDING" | "DESCENDING" };
 
-    /**
-     */
     readonly start?: string;
 
-    /**
-     */
     readonly timeEntryId?: string;
 
 

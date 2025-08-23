@@ -77,12 +77,8 @@ export interface QuickBooksNodeParameters {
      */
     readonly customerId?: string;
 
-    /**
-     */
     readonly FamilyName?: string;
 
-    /**
-     */
     readonly GivenName?: string;
 
     /**

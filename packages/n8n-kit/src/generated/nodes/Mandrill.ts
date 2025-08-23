@@ -37,8 +37,6 @@ export interface MandrillNodeParameters {
      */
     readonly toEmail?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

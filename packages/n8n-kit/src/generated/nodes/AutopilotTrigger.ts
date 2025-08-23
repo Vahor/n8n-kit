@@ -11,8 +11,6 @@ export const credentials = [{"name":"autopilotApi","required":true}] as const;
  */
 export interface AutopilotTriggerNodeParameters {
 
-    /**
-     */
     readonly event: "contactAdded" | "contactAddedToList" | "contactEnteredSegment" | "contactLeftSegment" | "contactRemovedFromList" | "contactUnsubscribed" | "contactUpdated";
 
 

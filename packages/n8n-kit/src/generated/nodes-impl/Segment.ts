@@ -17,13 +17,13 @@ export class Segment<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.segment" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SegmentProps) {
+    constructor(id: L, public readonly props: SegmentProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SegmentNodeParameters, "segmentApiCredentials"> {
 
         const { segmentApiCredentials:_0, ...rest } = this.props;
         return rest;

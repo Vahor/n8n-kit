@@ -22,8 +22,6 @@ export interface JenkinsNodeParameters {
      */
     readonly operation?: "copy" | "create" | "trigger" | "triggerParams" | "cancelQuietDown" | "quietDown" | "restart" | "safeRestart" | "safeExit" | "exit" | "getAll";
 
-    /**
-     */
     readonly triggerParamsNotice?: string;
 
     /**
@@ -49,8 +47,6 @@ export interface JenkinsNodeParameters {
      */
     readonly xml?: string;
 
-    /**
-     */
     readonly createNotice?: string;
 
     /**
@@ -58,8 +54,6 @@ export interface JenkinsNodeParameters {
      */
     readonly reason?: string;
 
-    /**
-     */
     readonly instanceNotice?: string;
 
     /**

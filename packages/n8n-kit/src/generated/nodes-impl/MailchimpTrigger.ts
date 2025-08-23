@@ -25,7 +25,7 @@ export class MailchimpTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MailchimpTriggerNodeParameters, "mailchimpApiCredentials | mailchimpOAuth2ApiCredentials"> {
 
         const { mailchimpApiCredentials:_0, mailchimpOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

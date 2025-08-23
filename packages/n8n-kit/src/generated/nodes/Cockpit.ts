@@ -44,8 +44,6 @@ export interface CockpitNodeParameters {
      */
     readonly options?: { "fields"?: string, "filter"?: string, "language"?: string, "populate"?: boolean, "rawData"?: boolean, "skip"?: number, "sort"?: string };
 
-    /**
-     */
     readonly id?: string;
 
     /**

@@ -17,13 +17,13 @@ export class MongoDb<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mongoDb" as const;
     protected typeVersion = 1.2 as const;
 
-    constructor(id: L, public readonly props?: MongoDbProps) {
+    constructor(id: L, public readonly props: MongoDbProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MongoDbNodeParameters, "mongoDbCredentials"> {
 
         const { mongoDbCredentials:_0, ...rest } = this.props;
         return rest;

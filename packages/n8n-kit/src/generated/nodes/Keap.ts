@@ -21,8 +21,6 @@ export interface KeapNodeParameters {
      */
     readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "create" | "get" | "delete" | "getAll" | "create" | "delete" | "get" | "getAll" | "createRecord" | "getAll" | "send" | "delete" | "getAll" | "upload";
 
-    /**
-     */
     readonly companyName?: string;
 
     /**
@@ -83,8 +81,6 @@ export interface KeapNodeParameters {
      */
     readonly socialAccountsUi?: { "socialAccountsValues": any };
 
-    /**
-     */
     readonly contactId?: string;
 
     /**
@@ -93,8 +89,6 @@ export interface KeapNodeParameters {
      */
     readonly userId?: string;
 
-    /**
-     */
     readonly noteId?: string;
 
     /**
@@ -109,16 +103,10 @@ export interface KeapNodeParameters {
      */
     readonly tagIds?: any[] | string;
 
-    /**
-     */
     readonly orderDate?: string;
 
-    /**
-     */
     readonly orderTitle?: string;
 
-    /**
-     */
     readonly orderType?: "offline" | "online";
 
     /**
@@ -133,24 +121,14 @@ export interface KeapNodeParameters {
      */
     readonly orderItemsUi?: { "orderItemsValues": any };
 
-    /**
-     */
     readonly orderId?: string;
 
-    /**
-     */
     readonly productName?: string;
 
-    /**
-     */
     readonly productId?: string;
 
-    /**
-     */
     readonly sentToAddress?: string;
 
-    /**
-     */
     readonly sentFromAddress?: string;
 
     /**
@@ -180,8 +158,6 @@ export interface KeapNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     */
     readonly fileAssociation?: "company" | "contact" | "user";
 
     /**
@@ -194,12 +170,8 @@ export interface KeapNodeParameters {
      */
     readonly fileData?: string;
 
-    /**
-     */
     readonly isPublic?: boolean;
 
-    /**
-     */
     readonly fileId?: string;
 
 

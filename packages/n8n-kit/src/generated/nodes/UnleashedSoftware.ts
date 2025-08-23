@@ -38,8 +38,6 @@ export interface UnleashedSoftwareNodeParameters {
      */
     readonly filters?: { "customerId"?: string, "customerCode"?: string, "endDate"?: string, "modifiedSince"?: string, "orderNumber"?: string, "orderStatus"?: ("Backordered" | "Completed" | "Deleted" | "Parked" | "Placed")[], "startDate"?: string } | { "asAtDate"?: string, "IsAssembled"?: boolean, "modifiedSince"?: string, "orderBy"?: string, "productId"?: string, "warehouseCode"?: string, "warehouseName"?: string };
 
-    /**
-     */
     readonly productId?: string;
 
 

@@ -11,8 +11,6 @@ export const credentials = [{"name":"supabaseApi","required":true}] as const;
  */
 export interface VectorStoreSupabaseInsertAINodeParameters {
 
-    /**
-     */
     readonly setupNotice?: string;
 
     /**
@@ -26,8 +24,6 @@ export interface VectorStoreSupabaseInsertAINodeParameters {
      */
     readonly queryName: string;
 
-    /**
-     */
     readonly notice?: string;
 
 

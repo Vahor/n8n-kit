@@ -17,13 +17,13 @@ export class Yourls<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.yourls" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: YourlsProps) {
+    constructor(id: L, public readonly props: YourlsProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<YourlsNodeParameters, "yourlsApiCredentials"> {
 
         const { yourlsApiCredentials:_0, ...rest } = this.props;
         return rest;

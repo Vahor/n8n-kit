@@ -23,7 +23,7 @@ export class Npm<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<NpmNodeParameters, "npmApiCredentials"> {
 
         const { npmApiCredentials:_0, ...rest } = this.props;
         return rest;

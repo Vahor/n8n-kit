@@ -121,8 +121,6 @@ export interface StripeNodeParameters {
      */
     readonly filters?: { "email"?: string };
 
-    /**
-     */
     readonly number?: string;
 
     /**

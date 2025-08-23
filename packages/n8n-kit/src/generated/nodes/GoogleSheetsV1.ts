@@ -11,8 +11,6 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  */
 export interface GoogleSheetsV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

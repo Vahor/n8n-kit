@@ -27,8 +27,6 @@ export interface KafkaNodeParameters {
      */
     readonly message?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

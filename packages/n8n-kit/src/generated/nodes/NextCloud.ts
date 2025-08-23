@@ -41,8 +41,6 @@ export interface NextCloudNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     */
     readonly binaryDataUpload?: boolean;
 
     /**

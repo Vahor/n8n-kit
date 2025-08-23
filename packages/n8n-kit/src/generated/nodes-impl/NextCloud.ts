@@ -25,7 +25,7 @@ export class NextCloud<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<NextCloudNodeParameters, "nextCloudApiCredentials | nextCloudOAuth2ApiCredentials"> {
 
         const { nextCloudApiCredentials:_0, nextCloudOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

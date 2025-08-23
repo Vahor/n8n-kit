@@ -17,13 +17,13 @@ export class KafkaTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.kafkaTrigger" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: KafkaTriggerProps) {
+    constructor(id: L, public readonly props: KafkaTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<KafkaTriggerNodeParameters, "kafkaCredentials"> {
 
         const { kafkaCredentials:_0, ...rest } = this.props;
         return rest;

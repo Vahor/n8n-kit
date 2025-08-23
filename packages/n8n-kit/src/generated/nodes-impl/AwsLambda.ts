@@ -17,13 +17,13 @@ export class AwsLambda<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsLambda" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsLambdaProps) {
+    constructor(id: L, public readonly props: AwsLambdaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsLambdaNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

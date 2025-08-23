@@ -17,13 +17,13 @@ export class TheHiveProject<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.theHiveProject" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TheHiveProjectProps) {
+    constructor(id: L, public readonly props: TheHiveProjectProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TheHiveProjectNodeParameters, "theHiveProjectApiCredentials"> {
 
         const { theHiveProjectApiCredentials:_0, ...rest } = this.props;
         return rest;

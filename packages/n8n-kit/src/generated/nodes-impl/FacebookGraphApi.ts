@@ -17,13 +17,13 @@ export class FacebookGraphApi<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.facebookGraphApi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: FacebookGraphApiProps) {
+    constructor(id: L, public readonly props: FacebookGraphApiProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<FacebookGraphApiNodeParameters, "facebookGraphApiCredentials"> {
 
         const { facebookGraphApiCredentials:_0, ...rest } = this.props;
         return rest;

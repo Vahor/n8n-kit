@@ -98,8 +98,6 @@ export interface GoogleBusinessProfileNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly notice?: string;
 
     /**

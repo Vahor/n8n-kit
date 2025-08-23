@@ -14,13 +14,13 @@ export class Crypto<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.crypto" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: CryptoProps) {
+    constructor(id: L, public readonly props?: CryptoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : CryptoNodeParameters {
 
         return this.props ?? {};
 

@@ -20,8 +20,6 @@ export interface TextSplitterTokenSplitterAINodeParameters {
      */
     readonly chunkSize?: number;
 
-    /**
-     */
     readonly chunkOverlap?: number;
 
 

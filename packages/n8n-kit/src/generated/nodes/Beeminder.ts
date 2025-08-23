@@ -82,8 +82,6 @@ export interface BeeminderNodeParameters {
      */
     readonly value?: number;
 
-    /**
-     */
     readonly datapointId?: string;
 
     /**

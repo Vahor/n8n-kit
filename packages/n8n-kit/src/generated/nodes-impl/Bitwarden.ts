@@ -17,13 +17,13 @@ export class Bitwarden<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.bitwarden" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BitwardenProps) {
+    constructor(id: L, public readonly props: BitwardenProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BitwardenNodeParameters, "bitwardenApiCredentials"> {
 
         const { bitwardenApiCredentials:_0, ...rest } = this.props;
         return rest;

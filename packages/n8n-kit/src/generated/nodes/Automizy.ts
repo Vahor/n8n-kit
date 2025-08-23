@@ -11,8 +11,6 @@ export const credentials = [{"name":"automizyApi","required":true}] as const;
  */
 export interface AutomizyNodeParameters {
 
-    /**
-     */
     readonly deprecated?: string;
 
     /**
@@ -63,8 +61,6 @@ export interface AutomizyNodeParameters {
      */
     readonly updateFields?: { "addTags"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "removeTags"?: any[], "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: any[] };
 
-    /**
-     */
     readonly name?: string;
 
 

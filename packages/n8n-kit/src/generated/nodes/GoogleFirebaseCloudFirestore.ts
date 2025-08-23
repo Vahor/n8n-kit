@@ -43,8 +43,6 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      */
     readonly collection?: string;
 
-    /**
-     */
     readonly documentId?: string;
 
     /**

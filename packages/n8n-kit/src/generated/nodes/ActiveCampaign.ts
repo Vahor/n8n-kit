@@ -66,8 +66,6 @@ export interface ActiveCampaignNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     */
     readonly contactId?: number;
 
     /**
@@ -75,8 +73,6 @@ export interface ActiveCampaignNodeParameters {
      */
     readonly contactTagId?: number;
 
-    /**
-     */
     readonly listId?: number;
 
     /**
@@ -89,12 +85,8 @@ export interface ActiveCampaignNodeParameters {
      */
     readonly filters?: { "search"?: string };
 
-    /**
-     */
     readonly account?: number;
 
-    /**
-     */
     readonly contact?: number;
 
     /**

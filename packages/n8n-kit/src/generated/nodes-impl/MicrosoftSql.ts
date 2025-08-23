@@ -17,13 +17,13 @@ export class MicrosoftSql<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftSql" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftSqlProps) {
+    constructor(id: L, public readonly props: MicrosoftSqlProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftSqlNodeParameters, "microsoftSqlCredentials"> {
 
         const { microsoftSqlCredentials:_0, ...rest } = this.props;
         return rest;

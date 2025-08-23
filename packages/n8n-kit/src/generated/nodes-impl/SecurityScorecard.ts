@@ -17,13 +17,13 @@ export class SecurityScorecard<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.securityScorecard" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SecurityScorecardProps) {
+    constructor(id: L, public readonly props: SecurityScorecardProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SecurityScorecardNodeParameters, "securityScorecardApiCredentials"> {
 
         const { securityScorecardApiCredentials:_0, ...rest } = this.props;
         return rest;

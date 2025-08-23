@@ -17,13 +17,13 @@ export class CrowdDevTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.crowdDevTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CrowdDevTriggerProps) {
+    constructor(id: L, public readonly props: CrowdDevTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CrowdDevTriggerNodeParameters, "crowdDevApiCredentials"> {
 
         const { crowdDevApiCredentials:_0, ...rest } = this.props;
         return rest;

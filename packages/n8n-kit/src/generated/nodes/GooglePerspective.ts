@@ -16,8 +16,6 @@ export interface GooglePerspectiveNodeParameters {
      */
     readonly operation?: "analyzeComment";
 
-    /**
-     */
     readonly text?: string;
 
     /**

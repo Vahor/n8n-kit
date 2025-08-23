@@ -17,13 +17,13 @@ export class Xero<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.xero" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: XeroProps) {
+    constructor(id: L, public readonly props: XeroProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<XeroNodeParameters, "xeroOAuth2ApiCredentials"> {
 
         const { xeroOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

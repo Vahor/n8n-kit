@@ -5,8 +5,10 @@ import { globSync } from "tinyglobby";
 import { toTypescriptType } from "./shared";
 
 const allNodes = globSync(
-	// "../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
-	"../vendor/n8n/packages/nodes-base/credentials/**/**/*.credentials.ts",
+	[
+		"../vendor/n8n/packages/nodes-base/credentials/**/**/*.credentials.ts",
+		"../vendor/n8n/packages/@n8n/nodes-langchain/**/**/*.credentials.ts",
+	],
 	{
 		cwd: path.resolve(__dirname),
 	},
@@ -97,21 +99,6 @@ const generateTypescriptCredentialsOutput = async (
 	await code.save("src/generated/credentials");
 };
 
-const writeMapping = async () => {
-	const code = new CodeMaker();
-	const outputFile = "__mapping.ts";
-	code.openFile(outputFile);
-
-	for (const [key, value] of mapping.entries()) {
-		code.line(`export const ${key} = "${value}" as const;`);
-	}
-
-	code.closeFile(outputFile);
-	await code.save("src/generated/credentials");
-};
-
-const mapping: Map<string, string> = new Map();
-
 const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
@@ -134,7 +121,6 @@ for (const node of allNodes) {
 		instance.__nodename = nodeName;
 
 		await generateTypescriptCredentialsOutput(instance, `${nodeName}.ts`);
-		mapping.set(instance.name, nodeName);
 
 		current++;
 	} catch (e) {
@@ -145,4 +131,3 @@ for (const node of allNodes) {
 console.log();
 console.log(count - current, "nodes failed to parse");
 await generateEntrypoint();
-await writeMapping();

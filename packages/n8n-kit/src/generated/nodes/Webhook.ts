@@ -39,12 +39,8 @@ export interface WebhookNodeParameters {
      */
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "responseNode" | "streaming";
 
-    /**
-     */
     readonly webhookNotice?: string;
 
-    /**
-     */
     readonly webhookStreamingNotice?: string;
 
     /**
@@ -66,8 +62,6 @@ export interface WebhookNodeParameters {
      */
     readonly responseBinaryPropertyName?: string;
 
-    /**
-     */
     readonly contentTypeNotice?: string;
 
     /**

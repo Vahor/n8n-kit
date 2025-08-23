@@ -74,8 +74,6 @@ export interface GoogleCalendarNodeParameters {
      */
     readonly remindersUi?: { "remindersValues": any };
 
-    /**
-     */
     readonly eventId?: string;
 
     /**
@@ -100,8 +98,6 @@ export interface GoogleCalendarNodeParameters {
      */
     readonly updateFields?: { "allday"?: "yes" | "no", "attendeesUi"?: { "values": any }, "attendees"?: string, "color"?: string, "description"?: string, "end"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: string, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "start"?: string, "summary"?: string, "visibility"?: "confidential" | "default" | "public" | "private" };
 
-    /**
-     */
     readonly useN8nTimeZone?: string;
 
 

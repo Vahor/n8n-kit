@@ -172,8 +172,6 @@ export interface SalesforceNodeParameters {
      */
     readonly taskId?: string;
 
-    /**
-     */
     readonly parentId?: string;
 
     /**

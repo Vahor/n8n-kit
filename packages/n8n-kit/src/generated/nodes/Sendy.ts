@@ -56,8 +56,6 @@ export interface SendyNodeParameters {
      */
     readonly sendCampaign?: boolean;
 
-    /**
-     */
     readonly brandId?: string;
 
     /**

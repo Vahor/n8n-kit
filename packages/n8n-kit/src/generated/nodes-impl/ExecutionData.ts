@@ -14,13 +14,13 @@ export class ExecutionData<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.executionData" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props: ExecutionDataProps) {
+    constructor(id: L, public readonly props?: ExecutionDataProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ExecutionDataNodeParameters {
 
         return this.props ?? {};
 

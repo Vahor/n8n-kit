@@ -15,8 +15,6 @@ export interface TextSplitterCharacterTextSplitterAINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly separator?: string;
 
     /**
@@ -24,8 +22,6 @@ export interface TextSplitterCharacterTextSplitterAINodeParameters {
      */
     readonly chunkSize?: number;
 
-    /**
-     */
     readonly chunkOverlap?: number;
 
 

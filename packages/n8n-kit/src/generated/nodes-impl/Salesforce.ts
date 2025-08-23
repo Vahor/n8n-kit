@@ -25,7 +25,7 @@ export class Salesforce<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SalesforceNodeParameters, "salesforceOAuth2ApiCredentials | salesforceJwtApiCredentials"> {
 
         const { salesforceOAuth2ApiCredentials:_0, salesforceJwtApiCredentials:_1, ...rest } = this.props;
         return rest;

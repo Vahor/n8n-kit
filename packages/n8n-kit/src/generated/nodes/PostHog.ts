@@ -41,8 +41,6 @@ export interface PostHogNodeParameters {
      */
     readonly eventName?: string;
 
-    /**
-     */
     readonly name?: string;
 
 

@@ -17,13 +17,13 @@ export class N8n<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.n8n" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: N8nProps) {
+    constructor(id: L, public readonly props: N8nProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<N8nNodeParameters, "n8NApiCredentials"> {
 
         const { n8NApiCredentials:_0, ...rest } = this.props;
         return rest;

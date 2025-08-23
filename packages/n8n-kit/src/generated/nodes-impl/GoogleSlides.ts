@@ -25,7 +25,7 @@ export class GoogleSlides<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleSlidesNodeParameters, "googleApiCredentials | googleSlidesOAuth2ApiCredentials"> {
 
         const { googleApiCredentials:_0, googleSlidesOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

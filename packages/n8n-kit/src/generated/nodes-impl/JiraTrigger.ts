@@ -29,7 +29,7 @@ export class JiraTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<JiraTriggerNodeParameters, "jiraSoftwareCloudApiCredentials | jiraSoftwareServerApiCredentials | jiraSoftwareServerPatApiCredentials | httpQueryAuthCredentials"> {
 
         const { jiraSoftwareCloudApiCredentials:_0, jiraSoftwareServerApiCredentials:_1, jiraSoftwareServerPatApiCredentials:_2, httpQueryAuthCredentials:_3, ...rest } = this.props;
         return rest;

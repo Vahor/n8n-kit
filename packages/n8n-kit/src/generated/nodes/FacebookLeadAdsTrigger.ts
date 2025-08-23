@@ -11,8 +11,6 @@ export const credentials = [{"name":"facebookLeadAdsOAuth2Api","required":true}]
  */
 export interface FacebookLeadAdsTriggerNodeParameters {
 
-    /**
-     */
     readonly facebookLeadAdsNotice?: string;
 
     /**

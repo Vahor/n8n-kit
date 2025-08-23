@@ -15,8 +15,6 @@ export interface E2eTestNodeParameters {
      */
     readonly operation?: "remoteOptions" | "resourceLocator" | "resourceMapper";
 
-    /**
-     */
     readonly fieldId?: string;
 
     /**
@@ -37,8 +35,6 @@ export interface E2eTestNodeParameters {
      */
     readonly resourceMapper?: any;
 
-    /**
-     */
     readonly otherField?: string;
 
 

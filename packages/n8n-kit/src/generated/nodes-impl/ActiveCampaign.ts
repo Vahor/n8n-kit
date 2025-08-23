@@ -17,13 +17,13 @@ export class ActiveCampaign<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.activeCampaign" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ActiveCampaignProps) {
+    constructor(id: L, public readonly props: ActiveCampaignProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ActiveCampaignNodeParameters, "activeCampaignApiCredentials"> {
 
         const { activeCampaignApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -16,8 +16,6 @@ export interface MemoryMotorheadAINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly sessionId?: string;
 
     /**

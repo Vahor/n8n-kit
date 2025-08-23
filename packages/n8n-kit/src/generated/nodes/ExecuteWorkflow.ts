@@ -15,8 +15,6 @@ export interface ExecuteWorkflowNodeParameters {
      */
     readonly operation?: any;
 
-    /**
-     */
     readonly outdatedVersionWarning?: string;
 
     /**
@@ -47,8 +45,6 @@ export interface ExecuteWorkflowNodeParameters {
      */
     readonly workflowUrl?: string;
 
-    /**
-     */
     readonly executeWorkflowNotice?: string;
 
     /**

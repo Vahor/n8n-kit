@@ -27,7 +27,7 @@ export class AirtableV1<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AirtableV1NodeParameters, "airtableApiCredentials | airtableTokenApiCredentials | airtableOAuth2ApiCredentials"> {
 
         const { airtableApiCredentials:_0, airtableTokenApiCredentials:_1, airtableOAuth2ApiCredentials:_2, ...rest } = this.props;
         return rest;

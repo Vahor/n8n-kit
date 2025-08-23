@@ -33,8 +33,6 @@ export interface ApiTemplateIoNodeParameters {
      */
     readonly pdfTemplateId?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -47,12 +45,8 @@ export interface ApiTemplateIoNodeParameters {
      */
     readonly binaryProperty?: string;
 
-    /**
-     */
     readonly overridesJson?: string;
 
-    /**
-     */
     readonly propertiesJson?: string;
 
     /**

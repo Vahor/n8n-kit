@@ -25,7 +25,7 @@ export class Storyblok<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<StoryblokNodeParameters, "storyblokContentApiCredentials | storyblokManagementApiCredentials"> {
 
         const { storyblokContentApiCredentials:_0, storyblokManagementApiCredentials:_1, ...rest } = this.props;
         return rest;

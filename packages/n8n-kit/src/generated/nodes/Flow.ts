@@ -36,8 +36,6 @@ export interface FlowNodeParameters {
      */
     readonly additionalFields?: { "ownerid"?: string, "listID"?: string, "startsOn"?: string, "dueOn"?: string, "mirrorParentSubscribers"?: boolean, "mirrorParentTags"?: boolean, "noteContent"?: string, "noteMimeType"?: "text/plain" | "text/x-markdown" | "text/html", "parentId"?: string, "positionList"?: number, "positionUpcoming"?: number, "position"?: number, "sectionId"?: string, "tags"?: string };
 
-    /**
-     */
     readonly taskId?: string;
 
     /**

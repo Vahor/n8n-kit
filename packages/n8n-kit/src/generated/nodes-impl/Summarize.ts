@@ -14,13 +14,13 @@ export class Summarize<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.summarize" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props: SummarizeProps) {
+    constructor(id: L, public readonly props?: SummarizeProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : SummarizeNodeParameters {
 
         return this.props ?? {};
 

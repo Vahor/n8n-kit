@@ -17,13 +17,13 @@ export class Totp<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.totp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TotpProps) {
+    constructor(id: L, public readonly props: TotpProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TotpNodeParameters, "totpApiCredentials"> {
 
         const { totpApiCredentials:_0, ...rest } = this.props;
         return rest;

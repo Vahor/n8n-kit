@@ -11,8 +11,6 @@ export const credentials = [{"name":"splunkApi","required":true}] as const;
  */
 export interface SplunkV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

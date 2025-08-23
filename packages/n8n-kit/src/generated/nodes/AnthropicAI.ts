@@ -86,8 +86,6 @@ export interface AnthropicAINodeParameters {
      */
     readonly imageUrls?: string;
 
-    /**
-     */
     readonly experimentalNotice?: string;
 
     /**

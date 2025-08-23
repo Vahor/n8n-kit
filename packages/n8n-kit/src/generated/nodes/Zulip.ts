@@ -60,8 +60,6 @@ export interface ZulipNodeParameters {
      */
     readonly dataBinaryProperty?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

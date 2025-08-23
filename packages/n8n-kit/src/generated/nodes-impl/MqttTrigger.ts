@@ -17,13 +17,13 @@ export class MqttTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mqttTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MqttTriggerProps) {
+    constructor(id: L, public readonly props: MqttTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MqttTriggerNodeParameters, "mqttCredentials"> {
 
         const { mqttCredentials:_0, ...rest } = this.props;
         return rest;

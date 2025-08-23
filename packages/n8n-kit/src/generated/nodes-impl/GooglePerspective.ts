@@ -17,13 +17,13 @@ export class GooglePerspective<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googlePerspective" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GooglePerspectiveProps) {
+    constructor(id: L, public readonly props: GooglePerspectiveProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GooglePerspectiveNodeParameters, "googlePerspectiveOAuth2ApiCredentials"> {
 
         const { googlePerspectiveOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

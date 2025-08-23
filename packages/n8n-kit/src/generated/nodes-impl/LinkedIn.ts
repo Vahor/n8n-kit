@@ -25,7 +25,7 @@ export class LinkedIn<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<LinkedInNodeParameters, "linkedInOAuth2ApiCredentials | linkedInCommunityManagementOAuth2ApiCredentials"> {
 
         const { linkedInOAuth2ApiCredentials:_0, linkedInCommunityManagementOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { MistralCloudApiCredentials } from "../credentials/MistralCloudApi";
+import type { MistralCloudApiCredentials } from "../credentials/MistralCloudApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MistralAiNodeParameters } from "../nodes/MistralAi";
 import { Node, type NodeProps } from "../../nodes";
@@ -23,7 +23,7 @@ export class MistralAi<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MistralAiNodeParameters, "mistralCloudApiCredentials"> {
 
         const { mistralCloudApiCredentials:_0, ...rest } = this.props;
         return rest;

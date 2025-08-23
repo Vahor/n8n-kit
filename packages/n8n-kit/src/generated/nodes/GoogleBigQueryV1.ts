@@ -11,8 +11,6 @@ export const credentials = [{"name":"googleApi","required":true,"displayOptions"
  */
 export interface GoogleBigQueryV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

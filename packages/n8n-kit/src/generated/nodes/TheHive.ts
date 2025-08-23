@@ -40,8 +40,6 @@ export interface TheHiveNodeParameters {
      */
     readonly id?: string;
 
-    /**
-     */
     readonly caseId?: string;
 
     /**
@@ -147,8 +145,6 @@ export interface TheHiveNodeParameters {
      */
     readonly dataType?: string;
 
-    /**
-     */
     readonly data?: string;
 
     /**
@@ -184,8 +180,6 @@ export interface TheHiveNodeParameters {
      */
     readonly analyzers?: any[];
 
-    /**
-     */
     readonly owner?: string;
 
     /**

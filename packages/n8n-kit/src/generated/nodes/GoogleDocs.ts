@@ -39,8 +39,6 @@ export interface GoogleDocsNodeParameters {
      */
     readonly folderId?: string;
 
-    /**
-     */
     readonly title?: string;
 
     /**

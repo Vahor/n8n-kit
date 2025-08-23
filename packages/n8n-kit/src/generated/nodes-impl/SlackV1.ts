@@ -25,7 +25,7 @@ export class SlackV1<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SlackV1NodeParameters, "slackApiCredentials | slackOAuth2ApiCredentials"> {
 
         const { slackApiCredentials:_0, slackOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

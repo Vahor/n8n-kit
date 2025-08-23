@@ -14,13 +14,13 @@ export class ExtractFromFile<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.extractFromFile" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ExtractFromFileProps) {
+    constructor(id: L, public readonly props?: ExtractFromFileProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ExtractFromFileNodeParameters {
 
         return this.props ?? {};
 

@@ -17,13 +17,13 @@ export class FacebookLeadAdsTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.facebookLeadAdsTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: FacebookLeadAdsTriggerProps) {
+    constructor(id: L, public readonly props: FacebookLeadAdsTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<FacebookLeadAdsTriggerNodeParameters, "facebookLeadAdsOAuth2ApiCredentials"> {
 
         const { facebookLeadAdsOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

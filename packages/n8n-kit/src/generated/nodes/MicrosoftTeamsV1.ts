@@ -11,8 +11,6 @@ export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] 
  */
 export interface MicrosoftTeamsV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**
@@ -81,8 +79,6 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly chatId?: string;
 
-    /**
-     */
     readonly messageId?: string;
 
     /**
@@ -118,8 +114,6 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly additionalFields?: { "assignedTo"?: string, "dueDateTime"?: string, "labels"?: any[], "percentComplete"?: number };
 
-    /**
-     */
     readonly taskId?: string;
 
     /**

@@ -17,13 +17,13 @@ export class VenafiTlsProtectCloudTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.venafiTlsProtectCloudTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: VenafiTlsProtectCloudTriggerProps) {
+    constructor(id: L, public readonly props: VenafiTlsProtectCloudTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<VenafiTlsProtectCloudTriggerNodeParameters, "venafiTlsProtectCloudApiCredentials"> {
 
         const { venafiTlsProtectCloudApiCredentials:_0, ...rest } = this.props;
         return rest;

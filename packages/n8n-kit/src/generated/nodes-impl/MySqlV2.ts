@@ -17,13 +17,13 @@ export class MySqlV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mySql" as const;
     protected typeVersion = 2.5 as const;
 
-    constructor(id: L, public readonly props?: MySqlV2Props) {
+    constructor(id: L, public readonly props: MySqlV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MySqlV2NodeParameters, "mySqlCredentials"> {
 
         const { mySqlCredentials:_0, ...rest } = this.props;
         return rest;

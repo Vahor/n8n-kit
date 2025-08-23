@@ -17,13 +17,13 @@ export class Adalo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.adalo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AdaloProps) {
+    constructor(id: L, public readonly props: AdaloProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AdaloNodeParameters, "adaloApiCredentials"> {
 
         const { adaloApiCredentials:_0, ...rest } = this.props;
         return rest;

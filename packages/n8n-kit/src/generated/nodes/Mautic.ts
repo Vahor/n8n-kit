@@ -64,8 +64,6 @@ export interface MauticNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -73,12 +71,8 @@ export interface MauticNodeParameters {
      */
     readonly email?: string;
 
-    /**
-     */
     readonly firstName?: string;
 
-    /**
-     */
     readonly lastName?: string;
 
     /**
@@ -87,12 +81,8 @@ export interface MauticNodeParameters {
      */
     readonly company?: string;
 
-    /**
-     */
     readonly position?: string;
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -100,8 +90,6 @@ export interface MauticNodeParameters {
      */
     readonly bodyJson?: string;
 
-    /**
-     */
     readonly contactId?: string;
 
     /**
@@ -114,8 +102,6 @@ export interface MauticNodeParameters {
      */
     readonly channel?: "email" | "sms";
 
-    /**
-     */
     readonly points?: number;
 
     /**

@@ -86,8 +86,6 @@ export interface MatrixNodeParameters {
      */
     readonly otherOptions?: { "filter"?: string };
 
-    /**
-     */
     readonly roomName?: string;
 
     /**
@@ -95,12 +93,8 @@ export interface MatrixNodeParameters {
      */
     readonly preset?: "private_chat" | "public_chat";
 
-    /**
-     */
     readonly roomAlias?: string;
 
-    /**
-     */
     readonly roomIdOrAlias?: string;
 
     /**

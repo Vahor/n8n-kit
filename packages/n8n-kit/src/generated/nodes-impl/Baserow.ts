@@ -17,13 +17,13 @@ export class Baserow<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.baserow" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BaserowProps) {
+    constructor(id: L, public readonly props: BaserowProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BaserowNodeParameters, "baserowApiCredentials"> {
 
         const { baserowApiCredentials:_0, ...rest } = this.props;
         return rest;

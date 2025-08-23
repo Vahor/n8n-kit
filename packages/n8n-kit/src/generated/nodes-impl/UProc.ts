@@ -17,13 +17,13 @@ export class UProc<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.uproc" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: UProcProps) {
+    constructor(id: L, public readonly props: UProcProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<UProcNodeParameters, "uprocApiCredentials"> {
 
         const { uprocApiCredentials:_0, ...rest } = this.props;
         return rest;

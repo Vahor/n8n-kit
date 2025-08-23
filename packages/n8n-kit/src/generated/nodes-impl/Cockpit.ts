@@ -17,13 +17,13 @@ export class Cockpit<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.cockpit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CockpitProps) {
+    constructor(id: L, public readonly props: CockpitProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CockpitNodeParameters, "cockpitApiCredentials"> {
 
         const { cockpitApiCredentials:_0, ...rest } = this.props;
         return rest;

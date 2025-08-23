@@ -17,13 +17,13 @@ export class Iterable<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.iterable" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: IterableProps) {
+    constructor(id: L, public readonly props: IterableProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<IterableNodeParameters, "iterableApiCredentials"> {
 
         const { iterableApiCredentials:_0, ...rest } = this.props;
         return rest;

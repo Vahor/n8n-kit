@@ -25,7 +25,7 @@ export class CalendlyTrigger<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CalendlyTriggerNodeParameters, "calendlyApiCredentials | calendlyOAuth2ApiCredentials"> {
 
         const { calendlyApiCredentials:_0, calendlyOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

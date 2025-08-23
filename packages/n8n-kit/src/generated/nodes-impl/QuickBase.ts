@@ -17,13 +17,13 @@ export class QuickBase<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.quickbase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: QuickBaseProps) {
+    constructor(id: L, public readonly props: QuickBaseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<QuickBaseNodeParameters, "quickbaseApiCredentials"> {
 
         const { quickbaseApiCredentials:_0, ...rest } = this.props;
         return rest;

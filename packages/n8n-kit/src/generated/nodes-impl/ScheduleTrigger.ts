@@ -14,13 +14,13 @@ export class ScheduleTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.scheduleTrigger" as const;
     protected typeVersion = 1.2 as const;
 
-    constructor(id: L, public readonly props: ScheduleTriggerProps) {
+    constructor(id: L, public readonly props?: ScheduleTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ScheduleTriggerNodeParameters {
 
         return this.props ?? {};
 

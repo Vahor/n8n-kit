@@ -21,8 +21,6 @@ export interface SegmentNodeParameters {
      */
     readonly operation?: "add" | "create" | "event" | "page";
 
-    /**
-     */
     readonly userId?: string;
 
     /**

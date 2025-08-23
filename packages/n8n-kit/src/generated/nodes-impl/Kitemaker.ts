@@ -17,13 +17,13 @@ export class Kitemaker<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.kitemaker" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: KitemakerProps) {
+    constructor(id: L, public readonly props: KitemakerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<KitemakerNodeParameters, "kitemakerApiCredentials"> {
 
         const { kitemakerApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -11,8 +11,6 @@ export const credentials = [] as const;
  */
 export interface ChainLlmAINodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**
@@ -31,12 +29,8 @@ export interface ChainLlmAINodeParameters {
      */
     readonly text?: string;
 
-    /**
-     */
     readonly hasOutputParser?: boolean;
 
-    /**
-     */
     readonly needsFallback?: boolean;
 
     /**
@@ -51,8 +45,6 @@ export interface ChainLlmAINodeParameters {
      */
     readonly batching?: { "batchSize"?: number, "delayBetweenBatches"?: number };
 
-    /**
-     */
     readonly fallbackNotice?: string;
 
 

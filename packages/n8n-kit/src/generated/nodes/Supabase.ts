@@ -55,12 +55,8 @@ export interface SupabaseNodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    /**
-     */
     readonly jsonNotice?: string;
 
-    /**
-     */
     readonly filterString?: string;
 
     /**

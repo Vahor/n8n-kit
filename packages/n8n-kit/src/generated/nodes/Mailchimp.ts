@@ -42,8 +42,6 @@ export interface MailchimpNodeParameters {
      */
     readonly status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed";
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

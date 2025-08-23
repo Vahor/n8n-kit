@@ -17,13 +17,13 @@ export class Wekan<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.wekan" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: WekanProps) {
+    constructor(id: L, public readonly props: WekanProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WekanNodeParameters, "wekanApiCredentials"> {
 
         const { wekanApiCredentials:_0, ...rest } = this.props;
         return rest;

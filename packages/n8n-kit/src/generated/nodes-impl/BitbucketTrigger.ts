@@ -17,13 +17,13 @@ export class BitbucketTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.bitbucketTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BitbucketTriggerProps) {
+    constructor(id: L, public readonly props: BitbucketTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BitbucketTriggerNodeParameters, "bitbucketApiCredentials"> {
 
         const { bitbucketApiCredentials:_0, ...rest } = this.props;
         return rest;

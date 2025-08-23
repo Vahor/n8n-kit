@@ -17,13 +17,13 @@ export class Hunter<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.hunter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: HunterProps) {
+    constructor(id: L, public readonly props: HunterProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HunterNodeParameters, "hunterApiCredentials"> {
 
         const { hunterApiCredentials:_0, ...rest } = this.props;
         return rest;

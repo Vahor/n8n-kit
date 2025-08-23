@@ -26,8 +26,6 @@ export interface GetResponseNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly email?: string;
 
     /**

@@ -17,13 +17,13 @@ export class GoogleAnalyticsV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleAnalytics" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GoogleAnalyticsV1Props) {
+    constructor(id: L, public readonly props: GoogleAnalyticsV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleAnalyticsV1NodeParameters, "googleAnalyticsOAuth2Credentials"> {
 
         const { googleAnalyticsOAuth2Credentials:_0, ...rest } = this.props;
         return rest;

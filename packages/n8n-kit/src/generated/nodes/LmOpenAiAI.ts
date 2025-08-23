@@ -11,8 +11,6 @@ export const credentials = [{"name":"openAiApi","required":true}] as const;
  */
 export interface LmOpenAiAINodeParameters {
 
-    /**
-     */
     readonly deprecated?: string;
 
     /**
@@ -21,8 +19,6 @@ export interface LmOpenAiAINodeParameters {
      */
     readonly model: any;
 
-    /**
-     */
     readonly notice?: string;
 
     /**

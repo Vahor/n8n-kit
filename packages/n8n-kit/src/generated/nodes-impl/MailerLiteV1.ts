@@ -17,13 +17,13 @@ export class MailerLiteV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mailerLite" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MailerLiteV1Props) {
+    constructor(id: L, public readonly props: MailerLiteV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MailerLiteV1NodeParameters, "mailerLiteApiCredentials"> {
 
         const { mailerLiteApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -17,13 +17,13 @@ export class BoxTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.boxTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BoxTriggerProps) {
+    constructor(id: L, public readonly props: BoxTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BoxTriggerNodeParameters, "boxOAuth2ApiCredentials"> {
 
         const { boxOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

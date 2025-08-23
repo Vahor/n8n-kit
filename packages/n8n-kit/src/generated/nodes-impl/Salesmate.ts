@@ -17,13 +17,13 @@ export class Salesmate<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.salesmate" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SalesmateProps) {
+    constructor(id: L, public readonly props: SalesmateProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SalesmateNodeParameters, "salesmateApiCredentials"> {
 
         const { salesmateApiCredentials:_0, ...rest } = this.props;
         return rest;

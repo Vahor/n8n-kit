@@ -17,13 +17,13 @@ export class MicrosoftToDo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftToDo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftToDoProps) {
+    constructor(id: L, public readonly props: MicrosoftToDoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftToDoNodeParameters, "microsoftToDoOAuth2ApiCredentials"> {
 
         const { microsoftToDoOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

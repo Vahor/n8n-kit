@@ -32,12 +32,8 @@ export interface AggregateNodeParameters {
      */
     readonly include?: "allFields" | "specifiedFields" | "allFieldsExcept";
 
-    /**
-     */
     readonly fieldsToExclude?: string;
 
-    /**
-     */
     readonly fieldsToInclude?: string;
 
     /**

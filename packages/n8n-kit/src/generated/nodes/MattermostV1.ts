@@ -107,20 +107,12 @@ export interface MattermostV1NodeParameters {
      */
     readonly emojiName?: string;
 
-    /**
-     */
     readonly username?: string;
 
-    /**
-     */
     readonly authService?: "email" | "gitlab" | "google" | "ldap" | "office365" | "saml";
 
-    /**
-     */
     readonly authData?: string;
 
-    /**
-     */
     readonly email?: string;
 
     /**

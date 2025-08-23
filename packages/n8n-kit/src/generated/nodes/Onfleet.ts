@@ -59,8 +59,6 @@ export interface OnfleetNodeParameters {
      */
     readonly updateFields?: { "name"?: string, "phone"?: string, "isReadOnly"?: boolean } | { "destination"?: { "destinationProperties": any }, "name"?: string, "teams"?: any[] } | { "recipientName"?: string, "notes"?: string, "recipientPhone"?: string, "skipSMSNotifications"?: boolean } | { "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "notes"?: string, "pickupTask"?: boolean, "quantity"?: number, "serviceTime"?: number } | { "managers"?: any[], "hub"?: string, "name"?: string, "enableSelfAssignment"?: boolean, "workers"?: any[] } | { "capacity"?: number, "displayName"?: string, "name"?: string, "teams"?: any[] };
 
-    /**
-     */
     readonly containerType?: "organizations" | "teams" | "workers";
 
     /**
@@ -68,8 +66,6 @@ export interface OnfleetNodeParameters {
      */
     readonly containerId?: string;
 
-    /**
-     */
     readonly type?: "-1" | "0" | "1";
 
     /**

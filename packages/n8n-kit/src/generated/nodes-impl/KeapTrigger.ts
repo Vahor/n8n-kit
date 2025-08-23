@@ -17,13 +17,13 @@ export class KeapTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.keapTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: KeapTriggerProps) {
+    constructor(id: L, public readonly props: KeapTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<KeapTriggerNodeParameters, "keapOAuth2ApiCredentials"> {
 
         const { keapOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

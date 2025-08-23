@@ -17,13 +17,13 @@ export class GoogleCloudStorage<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleCloudStorage" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GoogleCloudStorageProps) {
+    constructor(id: L, public readonly props: GoogleCloudStorageProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleCloudStorageNodeParameters, "googleCloudStorageOAuth2ApiCredentials"> {
 
         const { googleCloudStorageOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

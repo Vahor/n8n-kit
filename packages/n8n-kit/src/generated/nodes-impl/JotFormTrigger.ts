@@ -17,13 +17,13 @@ export class JotFormTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.jotFormTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: JotFormTriggerProps) {
+    constructor(id: L, public readonly props: JotFormTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<JotFormTriggerNodeParameters, "jotFormApiCredentials"> {
 
         const { jotFormApiCredentials:_0, ...rest } = this.props;
         return rest;

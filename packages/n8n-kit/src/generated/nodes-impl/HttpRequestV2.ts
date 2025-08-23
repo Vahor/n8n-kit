@@ -33,7 +33,7 @@ export class HttpRequestV2<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<HttpRequestV2NodeParameters, "httpBasicAuthCredentials | httpDigestAuthCredentials | httpHeaderAuthCredentials | httpQueryAuthCredentials | oAuth1ApiCredentials | oAuth2ApiCredentials"> {
 
         const { httpBasicAuthCredentials:_0, httpDigestAuthCredentials:_1, httpHeaderAuthCredentials:_2, httpQueryAuthCredentials:_3, oAuth1ApiCredentials:_4, oAuth2ApiCredentials:_5, ...rest } = this.props;
         return rest;

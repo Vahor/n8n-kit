@@ -14,13 +14,13 @@ export class FormTriggerV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.formTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: FormTriggerV1Props) {
+    constructor(id: L, public readonly props?: FormTriggerV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : FormTriggerV1NodeParameters {
 
         return this.props ?? {};
 

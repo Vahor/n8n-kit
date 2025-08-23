@@ -14,13 +14,13 @@ export class Sort<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.sort" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: SortProps) {
+    constructor(id: L, public readonly props?: SortProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : SortNodeParameters {
 
         return this.props ?? {};
 

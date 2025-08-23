@@ -21,8 +21,6 @@ export interface DhlNodeParameters {
      */
     readonly operation?: "get";
 
-    /**
-     */
     readonly trackingNumber: string;
 
     /**

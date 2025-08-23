@@ -25,7 +25,7 @@ export class MondayCom<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MondayComNodeParameters, "mondayComApiCredentials | mondayComOAuth2ApiCredentials"> {
 
         const { mondayComApiCredentials:_0, mondayComOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

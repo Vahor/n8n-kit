@@ -27,8 +27,6 @@ export interface MicrosoftToDoNodeParameters {
      */
     readonly taskListId?: string;
 
-    /**
-     */
     readonly taskId?: string;
 
     /**
@@ -46,8 +44,6 @@ export interface MicrosoftToDoNodeParameters {
      */
     readonly additionalFields?: { "externalId"?: string, "webUrl"?: string } | { "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred" };
 
-    /**
-     */
     readonly linkedResourceId?: string;
 
     /**

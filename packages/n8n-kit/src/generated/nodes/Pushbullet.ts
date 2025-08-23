@@ -57,8 +57,6 @@ export interface PushbulletNodeParameters {
      */
     readonly value?: string;
 
-    /**
-     */
     readonly pushId?: string;
 
     /**

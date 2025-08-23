@@ -11,8 +11,6 @@ export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlCon
  */
 export interface AgentV1AINodeParameters {
 
-    /**
-     */
     readonly aiAgentStarterCallout?: any;
 
     /**
@@ -20,8 +18,6 @@ export interface AgentV1AINodeParameters {
      */
     readonly preBuiltAgentsCallout?: any;
 
-    /**
-     */
     readonly deprecated?: string;
 
     /**
@@ -40,12 +36,8 @@ export interface AgentV1AINodeParameters {
      */
     readonly text?: string;
 
-    /**
-     */
     readonly notice?: string;
 
-    /**
-     */
     readonly hasOutputParser?: boolean;
 
     /**
@@ -59,12 +51,8 @@ export interface AgentV1AINodeParameters {
      */
     readonly dataSource?: "mysql" | "postgres" | "sqlite";
 
-    /**
-     */
     readonly credentials?: any;
 
-    /**
-     */
     readonly sqLiteFileNotice?: string;
 
     /**

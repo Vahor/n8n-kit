@@ -26,8 +26,6 @@ export interface TodoistV1NodeParameters {
      */
     readonly operation?: "close" | "create" | "delete" | "get" | "getAll" | "move" | "reopen" | "update";
 
-    /**
-     */
     readonly taskId?: string;
 
     /**

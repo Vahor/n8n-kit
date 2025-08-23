@@ -11,8 +11,6 @@ export const credentials = [{"name":"workableApi","required":true}] as const;
  */
 export interface WorkableTriggerNodeParameters {
 
-    /**
-     */
     readonly triggerOn: "candidateCreated" | "candidateMoved";
 
     /**

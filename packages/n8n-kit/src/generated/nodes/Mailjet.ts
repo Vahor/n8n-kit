@@ -46,8 +46,6 @@ export interface MailjetNodeParameters {
      */
     readonly html?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

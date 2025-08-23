@@ -17,13 +17,13 @@ export class Netlify<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.netlify" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: NetlifyProps) {
+    constructor(id: L, public readonly props: NetlifyProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<NetlifyNodeParameters, "netlifyApiCredentials"> {
 
         const { netlifyApiCredentials:_0, ...rest } = this.props;
         return rest;

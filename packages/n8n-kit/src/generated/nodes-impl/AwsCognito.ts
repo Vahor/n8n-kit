@@ -17,13 +17,13 @@ export class AwsCognito<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsCognito" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsCognitoProps) {
+    constructor(id: L, public readonly props: AwsCognitoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsCognitoNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

@@ -17,8 +17,6 @@ export interface SimulateTriggerNodeParameters {
      */
     readonly icon?: string;
 
-    /**
-     */
     readonly subtitle?: string;
 
     /**

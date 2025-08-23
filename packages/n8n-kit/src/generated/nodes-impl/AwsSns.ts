@@ -17,13 +17,13 @@ export class AwsSns<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsSns" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsSnsProps) {
+    constructor(id: L, public readonly props: AwsSnsProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsSnsNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

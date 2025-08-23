@@ -59,8 +59,6 @@ export interface OpenAiAINodeParameters {
      */
     readonly file_ids?: any[];
 
-    /**
-     */
     readonly noticeTools?: string;
 
     /**

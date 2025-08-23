@@ -32,8 +32,6 @@ export interface CustomerIoNodeParameters {
      */
     readonly period?: "hours" | "days" | "weeks" | "months";
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

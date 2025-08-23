@@ -17,13 +17,13 @@ export class Telegram<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.telegram" as const;
     protected typeVersion = 1.2 as const;
 
-    constructor(id: L, public readonly props?: TelegramProps) {
+    constructor(id: L, public readonly props: TelegramProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TelegramNodeParameters, "telegramApiCredentials"> {
 
         const { telegramApiCredentials:_0, ...rest } = this.props;
         return rest;

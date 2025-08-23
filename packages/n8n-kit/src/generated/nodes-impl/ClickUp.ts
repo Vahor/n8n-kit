@@ -25,7 +25,7 @@ export class ClickUp<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ClickUpNodeParameters, "clickUpApiCredentials | clickUpOAuth2ApiCredentials"> {
 
         const { clickUpApiCredentials:_0, clickUpOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

@@ -21,8 +21,6 @@ export interface SalesmateNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -41,8 +39,6 @@ export interface SalesmateNodeParameters {
      */
     readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "description"?: string, "tags"?: string } | { "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
-    /**
-     */
     readonly id?: string;
 
     /**
@@ -62,8 +58,6 @@ export interface SalesmateNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -82,8 +76,6 @@ export interface SalesmateNodeParameters {
      */
     readonly filters?: { "filtersUi": any };
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -97,8 +89,6 @@ export interface SalesmateNodeParameters {
      */
     readonly primaryContact?: string;
 
-    /**
-     */
     readonly pipeline?: "Sales";
 
     /**
@@ -106,12 +96,8 @@ export interface SalesmateNodeParameters {
      */
     readonly status?: "Open" | "Close" | "Lost";
 
-    /**
-     */
     readonly stage?: "New (Untouched)" | "Contacted" | "Qualified" | "In Negotiation" | "Proposal Presented";
 
-    /**
-     */
     readonly currency?: string;
 
 

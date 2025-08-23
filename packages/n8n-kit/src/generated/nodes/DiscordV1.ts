@@ -10,12 +10,8 @@ export const version = 1 as const;
  */
 export interface DiscordV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
-    /**
-     */
     readonly webhookUri: string;
 
     /**

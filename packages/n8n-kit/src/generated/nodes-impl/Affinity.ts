@@ -17,13 +17,13 @@ export class Affinity<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.affinity" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AffinityProps) {
+    constructor(id: L, public readonly props: AffinityProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AffinityNodeParameters, "affinityApiCredentials"> {
 
         const { affinityApiCredentials:_0, ...rest } = this.props;
         return rest;

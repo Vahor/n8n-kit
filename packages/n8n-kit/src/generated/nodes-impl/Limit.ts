@@ -14,13 +14,13 @@ export class Limit<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.limit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: LimitProps) {
+    constructor(id: L, public readonly props?: LimitProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : LimitNodeParameters {
 
         return this.props ?? {};
 

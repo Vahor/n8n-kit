@@ -17,13 +17,13 @@ export class NetlifyTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.netlifyTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: NetlifyTriggerProps) {
+    constructor(id: L, public readonly props: NetlifyTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<NetlifyTriggerNodeParameters, "netlifyApiCredentials"> {
 
         const { netlifyApiCredentials:_0, ...rest } = this.props;
         return rest;

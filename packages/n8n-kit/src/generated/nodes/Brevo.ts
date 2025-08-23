@@ -143,8 +143,6 @@ export interface BrevoNodeParameters {
      */
     readonly upsertAttributes?: { "upsertAttributesValues": any };
 
-    /**
-     */
     readonly sendHTML?: boolean;
 
     /**
@@ -162,12 +160,8 @@ export interface BrevoNodeParameters {
      */
     readonly htmlContent?: string;
 
-    /**
-     */
     readonly sender?: string;
 
-    /**
-     */
     readonly receipients?: string;
 
     /**

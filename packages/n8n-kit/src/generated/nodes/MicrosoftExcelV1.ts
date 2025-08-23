@@ -11,8 +11,6 @@ export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] 
  */
 export interface MicrosoftExcelV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

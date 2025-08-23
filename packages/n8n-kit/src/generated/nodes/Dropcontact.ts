@@ -21,12 +21,8 @@ export interface DropcontactNodeParameters {
      */
     readonly operation: "enrich" | "fetchRequest";
 
-    /**
-     */
     readonly requestId?: string;
 
-    /**
-     */
     readonly email?: string;
 
     /**

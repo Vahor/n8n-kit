@@ -17,13 +17,13 @@ export class PhilipsHue<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.philipsHue" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PhilipsHueProps) {
+    constructor(id: L, public readonly props: PhilipsHueProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PhilipsHueNodeParameters, "philipsHueOAuth2ApiCredentials"> {
 
         const { philipsHueOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

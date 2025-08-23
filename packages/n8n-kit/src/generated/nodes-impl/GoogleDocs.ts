@@ -25,7 +25,7 @@ export class GoogleDocs<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleDocsNodeParameters, "googleApiCredentials | googleDocsOAuth2ApiCredentials"> {
 
         const { googleApiCredentials:_0, googleDocsOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

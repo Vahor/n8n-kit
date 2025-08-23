@@ -59,12 +59,8 @@ export interface MondayComNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly title?: string;
 
-    /**
-     */
     readonly columnType?: "checkbox" | "country" | "date" | "dropdown" | "email" | "hour" | "Link" | "longText" | "numbers" | "people" | "person" | "phone" | "rating" | "status" | "tags" | "team" | "text" | "timeline" | "timezone" | "week" | "worldClock";
 
     /**

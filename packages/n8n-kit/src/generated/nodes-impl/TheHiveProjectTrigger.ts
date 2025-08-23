@@ -14,13 +14,13 @@ export class TheHiveProjectTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.theHiveProjectTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: TheHiveProjectTriggerProps) {
+    constructor(id: L, public readonly props?: TheHiveProjectTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : TheHiveProjectTriggerNodeParameters {
 
         return this.props ?? {};
 

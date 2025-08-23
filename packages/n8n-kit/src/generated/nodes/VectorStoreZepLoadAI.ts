@@ -11,12 +11,8 @@ export const credentials = [{"name":"zepApi","required":true}] as const;
  */
 export interface VectorStoreZepLoadAINodeParameters {
 
-    /**
-     */
     readonly deprecationNotice?: string;
 
-    /**
-     */
     readonly collectionName: string;
 
     /**

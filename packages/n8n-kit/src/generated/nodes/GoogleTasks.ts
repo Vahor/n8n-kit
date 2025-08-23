@@ -37,8 +37,6 @@ export interface GoogleTasksNodeParameters {
      */
     readonly additionalFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "parent"?: string, "previous"?: string, "status"?: "needsAction" | "completed" } | { "completedMax"?: string, "completedMin"?: string, "dueMin"?: string, "dueMax"?: string, "showCompleted"?: boolean, "showDeleted"?: boolean, "showHidden"?: boolean, "updatedMin"?: string };
 
-    /**
-     */
     readonly taskId?: string;
 
     /**

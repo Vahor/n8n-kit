@@ -11,8 +11,6 @@ export const credentials = [{"name":"githubApi","required":true,"displayOptions"
  */
 export interface GithubTriggerNodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**

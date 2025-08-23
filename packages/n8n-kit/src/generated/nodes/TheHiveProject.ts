@@ -175,8 +175,6 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly dataType?: string;
 
-    /**
-     */
     readonly data?: string;
 
     /**
@@ -208,12 +206,8 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly location?: "case" | "knowledgeBase";
 
-    /**
-     */
     readonly title?: string;
 
-    /**
-     */
     readonly category?: string;
 
     /**

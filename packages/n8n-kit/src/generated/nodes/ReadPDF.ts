@@ -16,8 +16,6 @@ export interface ReadPDFNodeParameters {
      */
     readonly binaryPropertyName: string;
 
-    /**
-     */
     readonly encrypted: boolean;
 
     /**

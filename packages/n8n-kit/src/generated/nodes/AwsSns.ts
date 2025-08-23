@@ -16,8 +16,6 @@ export interface AwsSnsNodeParameters {
      */
     readonly operation?: "create" | "delete" | "publish";
 
-    /**
-     */
     readonly name?: string;
 
     /**

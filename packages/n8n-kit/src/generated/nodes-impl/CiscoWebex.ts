@@ -17,13 +17,13 @@ export class CiscoWebex<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.ciscoWebex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CiscoWebexProps) {
+    constructor(id: L, public readonly props: CiscoWebexProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CiscoWebexNodeParameters, "ciscoWebexOAuth2ApiCredentials"> {
 
         const { ciscoWebexOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

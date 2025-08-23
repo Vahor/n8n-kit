@@ -16,8 +16,6 @@ export interface ICalendarNodeParameters {
      */
     readonly operation?: "createEventFile";
 
-    /**
-     */
     readonly title?: string;
 
     /**

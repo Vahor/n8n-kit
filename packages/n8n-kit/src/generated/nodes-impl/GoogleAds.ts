@@ -17,13 +17,13 @@ export class GoogleAds<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleAds" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GoogleAdsProps) {
+    constructor(id: L, public readonly props: GoogleAdsProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleAdsNodeParameters, "googleAdsOAuth2ApiCredentials"> {
 
         const { googleAdsOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -11,8 +11,6 @@ export const credentials = [{"name":"zepApi","required":true}] as const;
  */
 export interface MemoryZepAINodeParameters {
 
-    /**
-     */
     readonly deprecationNotice?: string;
 
     /**
@@ -20,12 +18,8 @@ export interface MemoryZepAINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly supportedVersions?: string;
 
-    /**
-     */
     readonly sessionId?: string;
 
     /**

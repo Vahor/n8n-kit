@@ -26,8 +26,6 @@ export interface HubspotV2NodeParameters {
      */
     readonly operation?: "upsert" | "delete" | "get" | "getAll" | "getRecentlyCreatedUpdated" | "search" | "add" | "remove" | "create" | "delete" | "get" | "getAll" | "getRecentlyCreatedUpdated" | "searchByDomain" | "update" | "create" | "delete" | "get" | "getAll" | "getRecentlyCreatedUpdated" | "search" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly email?: string;
 
     /**
@@ -70,16 +68,10 @@ export interface HubspotV2NodeParameters {
      */
     readonly by?: "id" | "email";
 
-    /**
-     */
     readonly id?: number;
 
-    /**
-     */
     readonly listId?: number;
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -113,8 +105,6 @@ export interface HubspotV2NodeParameters {
      */
     readonly filters?: { "includePropertyVersions"?: boolean, "propertiesCollection"?: { "propertiesValues": any } } | { "includeAssociations"?: boolean, "properties"?: any[], "propertiesWithHistory"?: any[], "propertiesCollection"?: { "propertiesValues": any } } | { "since"?: string, "includePropertyVersions"?: boolean };
 
-    /**
-     */
     readonly type?: "call" | "email" | "meeting" | "task";
 
     /**
@@ -139,8 +129,6 @@ export interface HubspotV2NodeParameters {
      */
     readonly stageId?: string;
 
-    /**
-     */
     readonly ticketName?: string;
 
     /**

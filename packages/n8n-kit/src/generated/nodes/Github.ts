@@ -26,8 +26,6 @@ export interface GithubNodeParameters {
      */
     readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
 
-    /**
-     */
     readonly webhookNotice?: string;
 
     /**
@@ -78,8 +76,6 @@ export interface GithubNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     */
     readonly commitMessage?: string;
 
     /**
@@ -145,8 +141,6 @@ export interface GithubNodeParameters {
      */
     readonly additionalFields?: { "name"?: string, "body"?: string, "draft"?: boolean, "prerelease"?: boolean, "target_commitish"?: string } | { "body"?: string, "draft"?: boolean, "name"?: string, "prerelease"?: boolean, "tag_name"?: string, "target_commitish"?: string } | { "commitId"?: string };
 
-    /**
-     */
     readonly release_id?: string;
 
     /**

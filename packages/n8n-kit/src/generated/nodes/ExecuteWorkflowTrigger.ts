@@ -15,12 +15,8 @@ export interface ExecuteWorkflowTriggerNodeParameters {
      */
     readonly events?: any;
 
-    /**
-     */
     readonly notice?: string;
 
-    /**
-     */
     readonly outdatedVersionWarning?: string;
 
     /**
@@ -28,8 +24,6 @@ export interface ExecuteWorkflowTriggerNodeParameters {
      */
     readonly inputSource?: "workflowInputs" | "jsonExample" | "passthrough";
 
-    /**
-     */
     readonly jsonExample_notice?: string;
 
     /**

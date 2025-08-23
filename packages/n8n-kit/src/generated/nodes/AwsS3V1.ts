@@ -43,16 +43,10 @@ export interface AwsS3V1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly bucketName?: string;
 
-    /**
-     */
     readonly folderName?: string;
 
-    /**
-     */
     readonly folderKey?: string;
 
     /**
@@ -70,8 +64,6 @@ export interface AwsS3V1NodeParameters {
      */
     readonly destinationPath?: string;
 
-    /**
-     */
     readonly fileName?: string;
 
     /**
@@ -97,8 +89,6 @@ export interface AwsS3V1NodeParameters {
      */
     readonly tagsUi?: { "tagsValues": any };
 
-    /**
-     */
     readonly fileKey?: string;
 
 

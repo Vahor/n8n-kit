@@ -17,13 +17,13 @@ export class Phantombuster<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.phantombuster" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PhantombusterProps) {
+    constructor(id: L, public readonly props: PhantombusterProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PhantombusterNodeParameters, "phantombusterApiCredentials"> {
 
         const { phantombusterApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -17,13 +17,13 @@ export class SalesforceTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.salesforceTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SalesforceTriggerProps) {
+    constructor(id: L, public readonly props: SalesforceTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SalesforceTriggerNodeParameters, "salesforceOAuth2ApiCredentials"> {
 
         const { salesforceOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

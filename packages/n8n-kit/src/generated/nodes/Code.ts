@@ -26,8 +26,6 @@ export interface CodeNodeParameters {
      */
     readonly jsCode?: string;
 
-    /**
-     */
     readonly notice?: string;
 
     /**

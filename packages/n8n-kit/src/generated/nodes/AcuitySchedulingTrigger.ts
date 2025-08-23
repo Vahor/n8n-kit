@@ -16,8 +16,6 @@ export interface AcuitySchedulingTriggerNodeParameters {
      */
     readonly authentication?: "apiKey" | "oAuth2";
 
-    /**
-     */
     readonly event: "appointment.canceled" | "appointment.changed" | "appointment.rescheduled" | "appointment.scheduled" | "order.completed";
 
     /**

@@ -27,8 +27,6 @@ export interface TaigaNodeParameters {
      */
     readonly projectId?: string;
 
-    /**
-     */
     readonly subject?: string;
 
     /**

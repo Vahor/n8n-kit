@@ -17,13 +17,13 @@ export class Twake<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.twake" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TwakeProps) {
+    constructor(id: L, public readonly props: TwakeProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TwakeNodeParameters, "twakeCloudApiCredentials"> {
 
         const { twakeCloudApiCredentials:_0, ...rest } = this.props;
         return rest;

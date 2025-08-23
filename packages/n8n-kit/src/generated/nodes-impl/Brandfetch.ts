@@ -17,13 +17,13 @@ export class Brandfetch<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.Brandfetch" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BrandfetchProps) {
+    constructor(id: L, public readonly props: BrandfetchProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BrandfetchNodeParameters, "brandfetchApiCredentials"> {
 
         const { brandfetchApiCredentials:_0, ...rest } = this.props;
         return rest;

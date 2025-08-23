@@ -17,13 +17,13 @@ export class Vonage<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.vonage" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: VonageProps) {
+    constructor(id: L, public readonly props: VonageProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<VonageNodeParameters, "vonageApiCredentials"> {
 
         const { vonageApiCredentials:_0, ...rest } = this.props;
         return rest;

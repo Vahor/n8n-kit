@@ -47,8 +47,6 @@ export interface ElasticsearchNodeParameters {
      */
     readonly returnAll?: boolean;
 
-    /**
-     */
     readonly paginateNotice?: string;
 
     /**

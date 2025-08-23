@@ -10,12 +10,8 @@ export const version = 1 as const;
  */
 export interface LocalFileTriggerNodeParameters {
 
-    /**
-     */
     readonly triggerOn: "file" | "folder";
 
-    /**
-     */
     readonly path?: string;
 
     /**

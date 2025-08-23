@@ -17,8 +17,6 @@ export interface ClockifyTriggerNodeParameters {
      */
     readonly workspaceId: string;
 
-    /**
-     */
     readonly watchField: "0";
 
 

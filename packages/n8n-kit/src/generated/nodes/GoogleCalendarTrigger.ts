@@ -17,8 +17,6 @@ export interface GoogleCalendarTriggerNodeParameters {
      */
     readonly calendarId: any;
 
-    /**
-     */
     readonly triggerOn: "eventCancelled" | "eventCreated" | "eventEnded" | "eventStarted" | "eventUpdated";
 
     /**

@@ -17,13 +17,13 @@ export class CustomerIo<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.customerIo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: CustomerIoProps) {
+    constructor(id: L, public readonly props: CustomerIoProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CustomerIoNodeParameters, "customerIoApiCredentials"> {
 
         const { customerIoApiCredentials:_0, ...rest } = this.props;
         return rest;

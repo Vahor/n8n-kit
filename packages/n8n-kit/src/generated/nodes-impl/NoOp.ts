@@ -14,13 +14,13 @@ export class NoOp<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.noOp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: NoOpProps) {
+    constructor(id: L, public readonly props?: NoOpProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : NoOpNodeParameters {
 
         return this.props ?? {};
 

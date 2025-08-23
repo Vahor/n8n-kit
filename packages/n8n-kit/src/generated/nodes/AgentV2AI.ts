@@ -10,8 +10,6 @@ export const version = 2.2 as const;
  */
 export interface AgentV2AINodeParameters {
 
-    /**
-     */
     readonly aiAgentStarterCallout?: any;
 
     /**
@@ -30,20 +28,12 @@ export interface AgentV2AINodeParameters {
      */
     readonly text?: string;
 
-    /**
-     */
     readonly hasOutputParser?: boolean;
 
-    /**
-     */
     readonly notice?: string;
 
-    /**
-     */
     readonly needsFallback?: boolean;
 
-    /**
-     */
     readonly fallbackNotice?: string;
 
     /**

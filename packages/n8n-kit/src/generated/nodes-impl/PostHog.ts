@@ -17,13 +17,13 @@ export class PostHog<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.postHog" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PostHogProps) {
+    constructor(id: L, public readonly props: PostHogProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PostHogNodeParameters, "postHogApiCredentials"> {
 
         const { postHogApiCredentials:_0, ...rest } = this.props;
         return rest;

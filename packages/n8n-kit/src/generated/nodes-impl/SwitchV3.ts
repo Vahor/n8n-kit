@@ -14,13 +14,13 @@ export class SwitchV3<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.undefined" as const;
     protected typeVersion = 3.2 as const;
 
-    constructor(id: L, public readonly props: SwitchV3Props) {
+    constructor(id: L, public readonly props?: SwitchV3Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : SwitchV3NodeParameters {
 
         return this.props ?? {};
 

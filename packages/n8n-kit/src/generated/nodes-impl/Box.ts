@@ -17,13 +17,13 @@ export class Box<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.box" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: BoxProps) {
+    constructor(id: L, public readonly props: BoxProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BoxNodeParameters, "boxOAuth2ApiCredentials"> {
 
         const { boxOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

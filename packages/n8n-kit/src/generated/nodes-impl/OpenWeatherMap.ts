@@ -17,13 +17,13 @@ export class OpenWeatherMap<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.openWeatherMap" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: OpenWeatherMapProps) {
+    constructor(id: L, public readonly props: OpenWeatherMapProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<OpenWeatherMapNodeParameters, "openWeatherMapApiCredentials"> {
 
         const { openWeatherMapApiCredentials:_0, ...rest } = this.props;
         return rest;

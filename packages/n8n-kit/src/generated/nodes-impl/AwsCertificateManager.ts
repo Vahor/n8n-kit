@@ -17,13 +17,13 @@ export class AwsCertificateManager<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsCertificateManager" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsCertificateManagerProps) {
+    constructor(id: L, public readonly props: AwsCertificateManagerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsCertificateManagerNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

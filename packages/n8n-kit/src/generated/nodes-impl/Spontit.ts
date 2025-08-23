@@ -17,13 +17,13 @@ export class Spontit<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.spontit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SpontitProps) {
+    constructor(id: L, public readonly props: SpontitProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SpontitNodeParameters, "spontitApiCredentials"> {
 
         const { spontitApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -49,8 +49,6 @@ export interface BubbleNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

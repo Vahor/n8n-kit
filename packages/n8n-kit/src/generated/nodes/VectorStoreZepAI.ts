@@ -37,12 +37,8 @@ export interface VectorStoreZepAINodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     */
     readonly deprecationNotice?: string;
 
-    /**
-     */
     readonly collectionName: string;
 
     /**

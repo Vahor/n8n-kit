@@ -17,13 +17,13 @@ export class InvoiceNinja<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.invoiceNinja" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props?: InvoiceNinjaProps) {
+    constructor(id: L, public readonly props: InvoiceNinjaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<InvoiceNinjaNodeParameters, "invoiceNinjaApiCredentials"> {
 
         const { invoiceNinjaApiCredentials:_0, ...rest } = this.props;
         return rest;

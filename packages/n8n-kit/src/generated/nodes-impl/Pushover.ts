@@ -17,13 +17,13 @@ export class Pushover<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.pushover" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PushoverProps) {
+    constructor(id: L, public readonly props: PushoverProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PushoverNodeParameters, "pushoverApiCredentials"> {
 
         const { pushoverApiCredentials:_0, ...rest } = this.props;
         return rest;

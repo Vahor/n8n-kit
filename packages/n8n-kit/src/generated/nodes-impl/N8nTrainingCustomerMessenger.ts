@@ -14,13 +14,13 @@ export class N8nTrainingCustomerMessenger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.n8nTrainingCustomerMessenger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: N8nTrainingCustomerMessengerProps) {
+    constructor(id: L, public readonly props?: N8nTrainingCustomerMessengerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : N8nTrainingCustomerMessengerNodeParameters {
 
         return this.props ?? {};
 

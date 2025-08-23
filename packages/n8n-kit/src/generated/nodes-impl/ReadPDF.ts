@@ -14,13 +14,13 @@ export class ReadPDF<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.readPDF" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ReadPDFProps) {
+    constructor(id: L, public readonly props?: ReadPDFProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ReadPDFNodeParameters {
 
         return this.props ?? {};
 

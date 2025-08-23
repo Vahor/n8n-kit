@@ -17,13 +17,13 @@ export class MicrosoftTeamsV1<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftTeams" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftTeamsV1Props) {
+    constructor(id: L, public readonly props: MicrosoftTeamsV1Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftTeamsV1NodeParameters, "microsoftTeamsOAuth2ApiCredentials"> {
 
         const { microsoftTeamsOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

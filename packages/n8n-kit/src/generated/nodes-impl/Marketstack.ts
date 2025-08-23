@@ -17,13 +17,13 @@ export class Marketstack<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.marketstack" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MarketstackProps) {
+    constructor(id: L, public readonly props: MarketstackProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MarketstackNodeParameters, "marketstackApiCredentials"> {
 
         const { marketstackApiCredentials:_0, ...rest } = this.props;
         return rest;

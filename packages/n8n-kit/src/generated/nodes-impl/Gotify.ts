@@ -17,13 +17,13 @@ export class Gotify<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.gotify" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GotifyProps) {
+    constructor(id: L, public readonly props: GotifyProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GotifyNodeParameters, "gotifyApiCredentials"> {
 
         const { gotifyApiCredentials:_0, ...rest } = this.props;
         return rest;

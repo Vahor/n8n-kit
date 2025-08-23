@@ -17,13 +17,13 @@ export class EmeliaTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.emeliaTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: EmeliaTriggerProps) {
+    constructor(id: L, public readonly props: EmeliaTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<EmeliaTriggerNodeParameters, "emeliaApiCredentials"> {
 
         const { emeliaApiCredentials:_0, ...rest } = this.props;
         return rest;

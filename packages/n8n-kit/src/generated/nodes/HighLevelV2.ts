@@ -21,8 +21,6 @@ export interface HighLevelV2NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "bookAppointment" | "getFreeSlots";
 
-    /**
-     */
     readonly contactCreateNotice?: string;
 
     /**
@@ -40,8 +38,6 @@ export interface HighLevelV2NodeParameters {
      */
     readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "notes"?: string, "tags"?: string, "timezone"?: any, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "tags"?: string, "stageId"?: string } | { "assignedTo"?: string, "body"?: string } | { "endTime"?: string, "title"?: string, "appointmentStatus"?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", "assignedUserId"?: string, "address"?: string, "ignoreDateRange"?: boolean, "toNotify"?: boolean } | { "timezone"?: string, "userId"?: string, "userIds"?: { "userIds"?: string }, "enableLookBusy"?: boolean };
 
-    /**
-     */
     readonly contactId?: string;
 
     /**
@@ -77,8 +73,6 @@ export interface HighLevelV2NodeParameters {
      */
     readonly pipelineId?: string;
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -86,32 +80,18 @@ export interface HighLevelV2NodeParameters {
      */
     readonly status?: "open" | "won" | "lost" | "abandoned";
 
-    /**
-     */
     readonly opportunityId?: string;
 
-    /**
-     */
     readonly title?: string;
 
-    /**
-     */
     readonly dueDate?: string;
 
-    /**
-     */
     readonly completed?: boolean;
 
-    /**
-     */
     readonly taskId?: string;
 
-    /**
-     */
     readonly calendarId?: string;
 
-    /**
-     */
     readonly locationId?: string;
 
     /**

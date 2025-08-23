@@ -17,13 +17,13 @@ export class LoneScale<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.loneScale" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: LoneScaleProps) {
+    constructor(id: L, public readonly props: LoneScaleProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<LoneScaleNodeParameters, "loneScaleApiCredentials"> {
 
         const { loneScaleApiCredentials:_0, ...rest } = this.props;
         return rest;

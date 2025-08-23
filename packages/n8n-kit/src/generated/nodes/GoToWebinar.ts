@@ -105,8 +105,6 @@ export interface GoToWebinarNodeParameters {
      */
     readonly additionalFields?: { "fullAddress"?: { "details": any }, "industry"?: string, "jobTitle"?: string, "multiChoiceResponses"?: { "details": any }, "numberOfEmployees"?: string, "organization"?: string, "phone"?: string, "purchasingRole"?: string, "purchasingTimeFrame"?: string, "questionsAndComments"?: string, "resendConfirmation"?: boolean, "simpleResponses"?: { "details": any }, "source"?: string } | { "times": { "timesProperties": any }, "webinarKey"?: string } | { "description"?: string, "experienceType"?: "CLASSIC" | "BROADCAST" | "SIMULIVE", "isOnDemand"?: boolean, "isPasswordProtected"?: boolean, "timezone"?: string, "type"?: "single_session" | "series" | "sequence" } | { "sendCancellationEmails"?: boolean } | { "times": { "timesProperties": any } };
 
-    /**
-     */
     readonly subject?: string;
 
     /**
@@ -115,8 +113,6 @@ export interface GoToWebinarNodeParameters {
      */
     readonly times?: { "timesProperties": any };
 
-    /**
-     */
     readonly notifyParticipants?: boolean;
 
     /**

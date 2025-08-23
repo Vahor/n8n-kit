@@ -17,13 +17,13 @@ export class Keap<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.keap" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: KeapProps) {
+    constructor(id: L, public readonly props: KeapProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<KeapNodeParameters, "keapOAuth2ApiCredentials"> {
 
         const { keapOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

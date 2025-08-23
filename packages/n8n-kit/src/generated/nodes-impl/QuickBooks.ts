@@ -17,13 +17,13 @@ export class QuickBooks<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.quickbooks" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: QuickBooksProps) {
+    constructor(id: L, public readonly props: QuickBooksProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<QuickBooksNodeParameters, "quickBooksOAuth2ApiCredentials"> {
 
         const { quickBooksOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

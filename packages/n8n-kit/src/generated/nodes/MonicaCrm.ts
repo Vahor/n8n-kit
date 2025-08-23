@@ -89,8 +89,6 @@ export interface MonicaCrmNodeParameters {
      */
     readonly callId?: string;
 
-    /**
-     */
     readonly firstName?: string;
 
     /**

@@ -31,8 +31,6 @@ export interface MispNodeParameters {
      */
     readonly type?: "text" | "url" | "comment";
 
-    /**
-     */
     readonly value?: string;
 
     /**
@@ -91,16 +89,10 @@ export interface MispNodeParameters {
      */
     readonly tagId?: string;
 
-    /**
-     */
     readonly name?: string;
 
-    /**
-     */
     readonly provider?: string;
 
-    /**
-     */
     readonly url?: string;
 
     /**
@@ -123,8 +115,6 @@ export interface MispNodeParameters {
      */
     readonly organisationId?: string;
 
-    /**
-     */
     readonly email?: string;
 
     /**

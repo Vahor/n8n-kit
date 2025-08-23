@@ -17,13 +17,13 @@ export class DeepL<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.deepL" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: DeepLProps) {
+    constructor(id: L, public readonly props: DeepLProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<DeepLNodeParameters, "deepLApiCredentials"> {
 
         const { deepLApiCredentials:_0, ...rest } = this.props;
         return rest;

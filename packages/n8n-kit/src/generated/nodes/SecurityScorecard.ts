@@ -64,16 +64,10 @@ export interface SecurityScorecardNodeParameters {
      */
     readonly industry?: "food" | "healthcare" | "manofacturing" | "retail" | "technology";
 
-    /**
-     */
     readonly email?: string;
 
-    /**
-     */
     readonly firstName?: string;
 
-    /**
-     */
     readonly lastName?: string;
 
     /**
@@ -86,8 +80,6 @@ export interface SecurityScorecardNodeParameters {
      */
     readonly additionalFields?: { "days_to_resolve_issue"?: number, "domain"?: string, "grade_to_maintain"?: string, "is_organization_point_of_contact"?: boolean, "issue_desc"?: string, "issue_title"?: string, "issue_type"?: string, "sendme_copy"?: boolean, "target_url"?: string };
 
-    /**
-     */
     readonly portfolioId?: string;
 
     /**
@@ -95,8 +87,6 @@ export interface SecurityScorecardNodeParameters {
      */
     readonly name?: string;
 
-    /**
-     */
     readonly description?: string;
 
     /**
@@ -119,8 +109,6 @@ export interface SecurityScorecardNodeParameters {
      */
     readonly branding?: "securityscorecard" | "company_and_securityscorecard" | "company";
 
-    /**
-     */
     readonly date?: string;
 
     /**

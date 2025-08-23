@@ -17,13 +17,13 @@ export class TravisCi<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.travisCi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: TravisCiProps) {
+    constructor(id: L, public readonly props: TravisCiProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<TravisCiNodeParameters, "travisCiApiCredentials"> {
 
         const { travisCiApiCredentials:_0, ...rest } = this.props;
         return rest;

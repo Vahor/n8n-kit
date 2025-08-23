@@ -16,8 +16,6 @@ export interface FacebookTriggerNodeParameters {
      */
     readonly appId: string;
 
-    /**
-     */
     readonly whatsappBusinessAccountNotice?: string;
 
     /**

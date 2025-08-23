@@ -17,13 +17,13 @@ export class RedisTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.redisTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: RedisTriggerProps) {
+    constructor(id: L, public readonly props: RedisTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<RedisTriggerNodeParameters, "redisCredentials"> {
 
         const { redisCredentials:_0, ...rest } = this.props;
         return rest;

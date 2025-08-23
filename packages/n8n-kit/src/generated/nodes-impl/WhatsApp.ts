@@ -17,13 +17,13 @@ export class WhatsApp<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.whatsApp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: WhatsAppProps) {
+    constructor(id: L, public readonly props: WhatsAppProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WhatsAppNodeParameters, "whatsAppApiCredentials"> {
 
         const { whatsAppApiCredentials:_0, ...rest } = this.props;
         return rest;

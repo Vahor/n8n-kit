@@ -17,13 +17,13 @@ export class ConvertKit<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.convertKit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ConvertKitProps) {
+    constructor(id: L, public readonly props: ConvertKitProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ConvertKitNodeParameters, "convertKitApiCredentials"> {
 
         const { convertKitApiCredentials:_0, ...rest } = this.props;
         return rest;

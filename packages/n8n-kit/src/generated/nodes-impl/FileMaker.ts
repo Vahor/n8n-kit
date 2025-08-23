@@ -17,13 +17,13 @@ export class FileMaker<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.filemaker" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: FileMakerProps) {
+    constructor(id: L, public readonly props: FileMakerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<FileMakerNodeParameters, "fileMakerCredentials"> {
 
         const { fileMakerCredentials:_0, ...rest } = this.props;
         return rest;

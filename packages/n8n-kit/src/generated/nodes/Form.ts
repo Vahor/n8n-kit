@@ -10,8 +10,6 @@ export const version = 2.3 as const;
  */
 export interface FormNodeParameters {
 
-    /**
-     */
     readonly triggerNotice?: string;
 
     /**
@@ -75,12 +73,8 @@ export interface FormNodeParameters {
      */
     readonly respondWith?: "text" | "redirect" | "showText" | "returnBinary";
 
-    /**
-     */
     readonly redirectUrl?: string;
 
-    /**
-     */
     readonly completionTitle?: string;
 
     /**

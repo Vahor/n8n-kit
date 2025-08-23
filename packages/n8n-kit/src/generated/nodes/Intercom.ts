@@ -69,8 +69,6 @@ export interface IntercomNodeParameters {
      */
     readonly idValue?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**
@@ -91,8 +89,6 @@ export interface IntercomNodeParameters {
      */
     readonly customAttributesUi?: { "customAttributesValues": any };
 
-    /**
-     */
     readonly deleteBy?: "id" | "userId";
 
     /**
@@ -100,8 +96,6 @@ export interface IntercomNodeParameters {
      */
     readonly email?: string;
 
-    /**
-     */
     readonly listBy?: "id" | "companyId";
 
     /**

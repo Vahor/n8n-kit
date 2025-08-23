@@ -16,12 +16,8 @@ export interface AirtableV1NodeParameters {
      */
     readonly authentication?: "airtableTokenApi" | "airtableOAuth2Api" | "airtableApi";
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
-    /**
-     */
     readonly deprecated?: string;
 
     /**

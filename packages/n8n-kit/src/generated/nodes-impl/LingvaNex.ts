@@ -17,13 +17,13 @@ export class LingvaNex<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.lingvaNex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: LingvaNexProps) {
+    constructor(id: L, public readonly props: LingvaNexProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<LingvaNexNodeParameters, "lingvaNexApiCredentials"> {
 
         const { lingvaNexApiCredentials:_0, ...rest } = this.props;
         return rest;

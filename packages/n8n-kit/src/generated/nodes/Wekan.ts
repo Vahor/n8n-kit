@@ -84,8 +84,6 @@ export interface WekanNodeParameters {
      */
     readonly cardId?: string;
 
-    /**
-     */
     readonly fromObject?: "list" | "swimlane";
 
     /**

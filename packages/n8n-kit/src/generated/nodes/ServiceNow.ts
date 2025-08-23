@@ -66,8 +66,6 @@ export interface ServiceNowNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     */
     readonly download?: boolean;
 
     /**

@@ -17,13 +17,13 @@ export class AwsComprehend<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.awsComprehend" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: AwsComprehendProps) {
+    constructor(id: L, public readonly props: AwsComprehendProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<AwsComprehendNodeParameters, "awsCredentials"> {
 
         const { awsCredentials:_0, ...rest } = this.props;
         return rest;

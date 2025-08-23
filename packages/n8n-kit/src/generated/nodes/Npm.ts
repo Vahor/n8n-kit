@@ -21,8 +21,6 @@ export interface NpmNodeParameters {
      */
     readonly operation?: "getMetadata" | "getVersions" | "search" | "getMany" | "update";
 
-    /**
-     */
     readonly packageName?: string;
 
     /**

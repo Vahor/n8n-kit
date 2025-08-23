@@ -159,8 +159,6 @@ export interface GitlabNodeParameters {
      */
     readonly fileContent?: string;
 
-    /**
-     */
     readonly commitMessage?: string;
 
     /**

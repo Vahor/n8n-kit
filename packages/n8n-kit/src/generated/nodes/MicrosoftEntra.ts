@@ -21,8 +21,6 @@ export interface MicrosoftEntraNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "addGroup" | "create" | "delete" | "get" | "getAll" | "removeGroup" | "update";
 
-    /**
-     */
     readonly groupType?: "Unified" | "";
 
     /**
@@ -40,8 +38,6 @@ export interface MicrosoftEntraNodeParameters {
      */
     readonly mailEnabled?: boolean;
 
-    /**
-     */
     readonly membershipType?: "" | "DynamicMembership";
 
     /**

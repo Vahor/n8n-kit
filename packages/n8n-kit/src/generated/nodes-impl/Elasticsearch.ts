@@ -17,13 +17,13 @@ export class Elasticsearch<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.elasticsearch" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ElasticsearchProps) {
+    constructor(id: L, public readonly props: ElasticsearchProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ElasticsearchNodeParameters, "elasticsearchApiCredentials"> {
 
         const { elasticsearchApiCredentials:_0, ...rest } = this.props;
         return rest;

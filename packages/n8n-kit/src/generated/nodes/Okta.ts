@@ -27,20 +27,12 @@ export interface OktaNodeParameters {
      */
     readonly userId?: any;
 
-    /**
-     */
     readonly firstName?: string;
 
-    /**
-     */
     readonly lastName?: string;
 
-    /**
-     */
     readonly login?: string;
 
-    /**
-     */
     readonly email?: string;
 
     /**
@@ -59,8 +51,6 @@ export interface OktaNodeParameters {
      */
     readonly getUpdateFields?: { "city"?: string, "costCenter"?: string, "countryCode"?: string, "department"?: string, "displayName"?: string, "division"?: string, "email"?: string, "employeeNumber"?: string, "firstName"?: string, "honorificPrefix"?: string, "honorificSuffix"?: string, "lastName"?: string, "locale"?: string, "manager"?: string, "managerId"?: string, "middleName"?: string, "mobilePhone"?: string, "nickName"?: string, "organization"?: string, "password"?: string, "postalAddress"?: string, "preferredLanguage"?: string, "primaryPhone"?: string, "profileUrl"?: string, "recoveryQuestionAnswer"?: string, "recoveryQuestionQuestion"?: string, "secondEmail"?: string, "state"?: string, "streetAddress"?: string, "timezone"?: string, "title"?: string, "userType"?: string, "login"?: string, "zipCode"?: string };
 
-    /**
-     */
     readonly searchQuery?: string;
 
     /**

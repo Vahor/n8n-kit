@@ -17,13 +17,13 @@ export class GoogleCalendar<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.googleCalendar" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, public readonly props?: GoogleCalendarProps) {
+    constructor(id: L, public readonly props: GoogleCalendarProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GoogleCalendarNodeParameters, "googleCalendarOAuth2ApiCredentials"> {
 
         const { googleCalendarOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

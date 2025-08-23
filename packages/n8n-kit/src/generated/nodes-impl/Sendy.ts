@@ -17,13 +17,13 @@ export class Sendy<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.sendy" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: SendyProps) {
+    constructor(id: L, public readonly props: SendyProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SendyNodeParameters, "sendyApiCredentials"> {
 
         const { sendyApiCredentials:_0, ...rest } = this.props;
         return rest;

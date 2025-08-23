@@ -41,7 +41,7 @@ export abstract class BaseNode<
 
 	public groupIds: string[] = [];
 
-	abstract getParameters(): object;
+	abstract getParameters(): any;
 	public getCredentials(): Array<Credentials<any> | undefined> | undefined {
 		return undefined;
 	}

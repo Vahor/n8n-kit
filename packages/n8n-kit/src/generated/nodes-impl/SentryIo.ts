@@ -27,7 +27,7 @@ export class SentryIo<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<SentryIoNodeParameters, "sentryIoOAuth2ApiCredentials | sentryIoApiCredentials | sentryIoServerApiCredentials"> {
 
         const { sentryIoOAuth2ApiCredentials:_0, sentryIoApiCredentials:_1, sentryIoServerApiCredentials:_2, ...rest } = this.props;
         return rest;

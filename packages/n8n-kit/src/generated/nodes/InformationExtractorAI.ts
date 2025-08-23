@@ -29,8 +29,6 @@ export interface InformationExtractorAINodeParameters {
      */
     readonly jsonSchemaExample?: string;
 
-    /**
-     */
     readonly notice?: string;
 
     /**

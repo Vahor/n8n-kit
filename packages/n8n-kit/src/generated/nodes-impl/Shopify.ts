@@ -27,7 +27,7 @@ export class Shopify<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ShopifyNodeParameters, "shopifyApiCredentials | shopifyAccessTokenApiCredentials | shopifyOAuth2ApiCredentials"> {
 
         const { shopifyApiCredentials:_0, shopifyAccessTokenApiCredentials:_1, shopifyOAuth2ApiCredentials:_2, ...rest } = this.props;
         return rest;

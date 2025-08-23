@@ -17,13 +17,13 @@ export class Raindrop<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.raindrop" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: RaindropProps) {
+    constructor(id: L, public readonly props: RaindropProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<RaindropNodeParameters, "raindropOAuth2ApiCredentials"> {
 
         const { raindropOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

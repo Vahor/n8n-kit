@@ -83,8 +83,6 @@ export interface AwsSesNodeParameters {
      */
     readonly isBodyHtml?: boolean;
 
-    /**
-     */
     readonly subject?: string;
 
     /**

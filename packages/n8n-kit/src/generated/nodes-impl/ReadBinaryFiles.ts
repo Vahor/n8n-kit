@@ -14,13 +14,13 @@ export class ReadBinaryFiles<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.readBinaryFiles" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props: ReadBinaryFilesProps) {
+    constructor(id: L, public readonly props?: ReadBinaryFilesProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : ReadBinaryFilesNodeParameters {
 
         return this.props ?? {};
 

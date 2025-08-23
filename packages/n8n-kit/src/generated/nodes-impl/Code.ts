@@ -14,13 +14,13 @@ export class Code<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.code" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props: CodeProps) {
+    constructor(id: L, public readonly props?: CodeProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : CodeNodeParameters {
 
         return this.props ?? {};
 

@@ -26,8 +26,6 @@ export interface PayPalNodeParameters {
      */
     readonly senderBatchId?: string;
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

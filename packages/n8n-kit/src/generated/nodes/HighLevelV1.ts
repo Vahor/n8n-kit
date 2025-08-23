@@ -21,8 +21,6 @@ export interface HighLevelV1NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     */
     readonly contactCreateNotice?: string;
 
     /**
@@ -40,8 +38,6 @@ export interface HighLevelV1NodeParameters {
      */
     readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "name"?: string, "tags"?: string } | { "assignedTo"?: string, "description"?: string, "status"?: "incompleted" | "completed" };
 
-    /**
-     */
     readonly contactId?: string;
 
     /**
@@ -88,8 +84,6 @@ export interface HighLevelV1NodeParameters {
      */
     readonly contactIdentifier?: string;
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -97,16 +91,10 @@ export interface HighLevelV1NodeParameters {
      */
     readonly status?: "open" | "won" | "lost" | "abandoned";
 
-    /**
-     */
     readonly opportunityId?: string;
 
-    /**
-     */
     readonly dueDate?: string;
 
-    /**
-     */
     readonly taskId?: string;
 
 

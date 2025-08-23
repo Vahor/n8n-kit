@@ -25,7 +25,7 @@ export class Mautic<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MauticNodeParameters, "mauticApiCredentials | mauticOAuth2ApiCredentials"> {
 
         const { mauticApiCredentials:_0, mauticOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

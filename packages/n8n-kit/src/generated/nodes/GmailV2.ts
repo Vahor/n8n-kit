@@ -31,16 +31,10 @@ export interface GmailV2NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "addLabels" | "delete" | "get" | "getAll" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "addLabels" | "delete" | "get" | "getAll" | "removeLabels" | "reply" | "trash" | "untrash";
 
-    /**
-     */
     readonly messageId?: string;
 
-    /**
-     */
     readonly subject?: string;
 
-    /**
-     */
     readonly threadNotice?: string;
 
     /**
@@ -48,8 +42,6 @@ export interface GmailV2NodeParameters {
      */
     readonly emailType?: "html" | "text" | "text" | "html";
 
-    /**
-     */
     readonly message?: string;
 
     /**
@@ -90,8 +82,6 @@ export interface GmailV2NodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     */
     readonly filtersNotice?: string;
 
     /**

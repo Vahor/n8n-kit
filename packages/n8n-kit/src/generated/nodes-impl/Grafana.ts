@@ -17,13 +17,13 @@ export class Grafana<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.grafana" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GrafanaProps) {
+    constructor(id: L, public readonly props: GrafanaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GrafanaNodeParameters, "grafanaApiCredentials"> {
 
         const { grafanaApiCredentials:_0, ...rest } = this.props;
         return rest;

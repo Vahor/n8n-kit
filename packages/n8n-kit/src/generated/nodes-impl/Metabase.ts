@@ -17,13 +17,13 @@ export class Metabase<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.metabase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MetabaseProps) {
+    constructor(id: L, public readonly props: MetabaseProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MetabaseNodeParameters, "metabaseApiCredentials"> {
 
         const { metabaseApiCredentials:_0, ...rest } = this.props;
         return rest;

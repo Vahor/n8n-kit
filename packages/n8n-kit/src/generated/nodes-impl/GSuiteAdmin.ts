@@ -17,13 +17,13 @@ export class GSuiteAdmin<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.gSuiteAdmin" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: GSuiteAdminProps) {
+    constructor(id: L, public readonly props: GSuiteAdminProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GSuiteAdminNodeParameters, "gSuiteAdminOAuth2ApiCredentials"> {
 
         const { gSuiteAdminOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

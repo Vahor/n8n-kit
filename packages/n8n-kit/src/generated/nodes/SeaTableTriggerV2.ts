@@ -39,8 +39,6 @@ export interface SeaTableTriggerV2NodeParameters {
      */
     readonly options?: { "simple"?: boolean, "convert"?: boolean };
 
-    /**
-     */
     readonly notice?: string;
 
 

@@ -25,7 +25,7 @@ export class Mindee<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MindeeNodeParameters, "mindeeReceiptApiCredentials | mindeeInvoiceApiCredentials"> {
 
         const { mindeeReceiptApiCredentials:_0, mindeeInvoiceApiCredentials:_1, ...rest } = this.props;
         return rest;

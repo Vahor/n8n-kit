@@ -386,6 +386,29 @@ import type { GooglePerspectiveOAuth2ApiCredentials } from "./GooglePerspectiveO
 import type { MonicaCrmApiCredentials } from "./MonicaCrmApi.ts";
 import type { S3Credentials } from "./S3.ts";
 import type { BitlyApiCredentials } from "./BitlyApi.ts";
+import type { SearXngApiCredentials } from "./SearXngApi.ts";
+import type { GroqApiCredentials } from "./GroqApi.ts";
+import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
+import type { VercelAiGatewayApiCredentials } from "./VercelAiGatewayApi.ts";
+import type { XataApiCredentials } from "./XataApi.ts";
+import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
+import type { OpenRouterApiCredentials } from "./OpenRouterApi.ts";
+import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
+import type { ZepApiCredentials } from "./ZepApi.ts";
+import type { CohereApiCredentials } from "./CohereApi.ts";
+import type { AzureEntraCognitiveServicesOAuth2ApiCredentials } from "./AzureEntraCognitiveServicesOAuth2Api.ts";
+import type { AnthropicApiCredentials } from "./AnthropicApi.ts";
+import type { WeaviateApiCredentials } from "./WeaviateApi.ts";
+import type { MilvusApiCredentials } from "./MilvusApi.ts";
+import type { PineconeApiCredentials } from "./PineconeApi.ts";
+import type { WolframAlphaApiCredentials } from "./WolframAlphaApi.ts";
+import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
+import type { AzureOpenAiApiCredentials } from "./AzureOpenAiApi.ts";
+import type { SerpApiCredentials } from "./SerpApi.ts";
+import type { XAiApiCredentials } from "./XAiApi.ts";
+import type { OllamaApiCredentials } from "./OllamaApi.ts";
+import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
+import type { QdrantApiCredentials } from "./QdrantApi.ts";
 
 export type N8nCredentialsUnion =
 
@@ -774,5 +797,28 @@ export type N8nCredentialsUnion =
     | MonicaCrmApiCredentials
     | S3Credentials
     | BitlyApiCredentials
+    | SearXngApiCredentials
+    | GroqApiCredentials
+    | DeepSeekApiCredentials
+    | VercelAiGatewayApiCredentials
+    | XataApiCredentials
+    | GooglePalmApiCredentials
+    | OpenRouterApiCredentials
+    | MotorheadApiCredentials
+    | ZepApiCredentials
+    | CohereApiCredentials
+    | AzureEntraCognitiveServicesOAuth2ApiCredentials
+    | AnthropicApiCredentials
+    | WeaviateApiCredentials
+    | MilvusApiCredentials
+    | PineconeApiCredentials
+    | WolframAlphaApiCredentials
+    | HuggingFaceApiCredentials
+    | AzureOpenAiApiCredentials
+    | SerpApiCredentials
+    | XAiApiCredentials
+    | OllamaApiCredentials
+    | MistralCloudApiCredentials
+    | QdrantApiCredentials
 
 

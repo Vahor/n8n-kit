@@ -11,8 +11,6 @@ export const credentials = [{"name":"postgres","required":true,"testedBy":"postg
  */
 export interface PostgresV1NodeParameters {
 
-    /**
-     */
     readonly oldVersionNotice?: string;
 
     /**

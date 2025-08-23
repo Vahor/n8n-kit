@@ -185,16 +185,10 @@ export interface FreshworksCrmNodeParameters {
      */
     readonly searchField?: "email" | "name" | "customField";
 
-    /**
-     */
     readonly customFieldName?: string;
 
-    /**
-     */
     readonly customFieldValue?: string;
 
-    /**
-     */
     readonly fieldValue?: string;
 
     /**

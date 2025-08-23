@@ -25,7 +25,7 @@ export class GmailV1<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GmailV1NodeParameters, "googleApiCredentials | gmailOAuth2Credentials"> {
 
         const { googleApiCredentials:_0, gmailOAuth2Credentials:_1, ...rest } = this.props;
         return rest;

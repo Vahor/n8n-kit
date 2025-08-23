@@ -27,7 +27,7 @@ export class Webhook<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WebhookNodeParameters, "httpBasicAuthCredentials | httpHeaderAuthCredentials | jwtAuthCredentials"> {
 
         const { httpBasicAuthCredentials:_0, httpHeaderAuthCredentials:_1, jwtAuthCredentials:_2, ...rest } = this.props;
         return rest;

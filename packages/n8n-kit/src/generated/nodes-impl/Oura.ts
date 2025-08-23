@@ -17,13 +17,13 @@ export class Oura<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.oura" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: OuraProps) {
+    constructor(id: L, public readonly props: OuraProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<OuraNodeParameters, "ouraApiCredentials"> {
 
         const { ouraApiCredentials:_0, ...rest } = this.props;
         return rest;

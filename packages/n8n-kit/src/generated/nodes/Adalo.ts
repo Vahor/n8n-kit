@@ -26,8 +26,6 @@ export interface AdaloNodeParameters {
      */
     readonly collectionId?: string;
 
-    /**
-     */
     readonly rowId?: string;
 
     /**

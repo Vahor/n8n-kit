@@ -17,13 +17,13 @@ export class MicrosoftTeamsTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftTeamsTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftTeamsTriggerProps) {
+    constructor(id: L, public readonly props: MicrosoftTeamsTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftTeamsTriggerNodeParameters, "microsoftTeamsOAuth2ApiCredentials"> {
 
         const { microsoftTeamsOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

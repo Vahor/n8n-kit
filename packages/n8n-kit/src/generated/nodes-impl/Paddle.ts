@@ -17,13 +17,13 @@ export class Paddle<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.paddle" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: PaddleProps) {
+    constructor(id: L, public readonly props: PaddleProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<PaddleNodeParameters, "paddleApiCredentials"> {
 
         const { paddleApiCredentials:_0, ...rest } = this.props;
         return rest;

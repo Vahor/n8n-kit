@@ -14,13 +14,13 @@ export class RemoveDuplicatesV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.removeDuplicates" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props: RemoveDuplicatesV2Props) {
+    constructor(id: L, public readonly props?: RemoveDuplicatesV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : RemoveDuplicatesV2NodeParameters {
 
         return this.props ?? {};
 

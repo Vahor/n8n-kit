@@ -44,8 +44,6 @@ export interface SeaTableV2NodeParameters {
      */
     readonly apply_default?: boolean;
 
-    /**
-     */
     readonly notice?: string;
 
     /**
@@ -120,8 +118,6 @@ export interface SeaTableV2NodeParameters {
      */
     readonly dataPropertyName?: string;
 
-    /**
-     */
     readonly assetPath?: string;
 
 

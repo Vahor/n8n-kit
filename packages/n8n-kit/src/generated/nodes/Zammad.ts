@@ -26,8 +26,6 @@ export interface ZammadNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getSelf" | "update";
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -79,16 +77,10 @@ export interface ZammadNodeParameters {
      */
     readonly article?: { "articleDetails": any };
 
-    /**
-     */
     readonly firstname?: string;
 
-    /**
-     */
     readonly lastname?: string;
 
-    /**
-     */
     readonly query?: string;
 
     /**

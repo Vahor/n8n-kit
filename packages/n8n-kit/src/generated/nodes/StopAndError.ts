@@ -16,8 +16,6 @@ export interface StopAndErrorNodeParameters {
      */
     readonly errorType?: "errorMessage" | "errorObject";
 
-    /**
-     */
     readonly errorMessage?: string;
 
     /**

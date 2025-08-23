@@ -17,13 +17,13 @@ export class Coda<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.coda" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, public readonly props?: CodaProps) {
+    constructor(id: L, public readonly props: CodaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<CodaNodeParameters, "codaApiCredentials"> {
 
         const { codaApiCredentials:_0, ...rest } = this.props;
         return rest;

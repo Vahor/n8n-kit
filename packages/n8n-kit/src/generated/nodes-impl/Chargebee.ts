@@ -17,13 +17,13 @@ export class Chargebee<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.chargebee" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: ChargebeeProps) {
+    constructor(id: L, public readonly props: ChargebeeProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<ChargebeeNodeParameters, "chargebeeApiCredentials"> {
 
         const { chargebeeApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -16,8 +16,6 @@ export interface LdapNodeParameters {
      */
     readonly operation?: "compare" | "create" | "delete" | "rename" | "search" | "update";
 
-    /**
-     */
     readonly nodeDebug?: boolean;
 
     /**

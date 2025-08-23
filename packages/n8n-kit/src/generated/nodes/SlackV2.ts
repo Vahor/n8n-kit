@@ -93,8 +93,6 @@ export interface SlackV2NodeParameters {
      */
     readonly purpose?: string;
 
-    /**
-     */
     readonly topic?: string;
 
     /**
@@ -102,8 +100,6 @@ export interface SlackV2NodeParameters {
      */
     readonly timestamp?: number;
 
-    /**
-     */
     readonly select?: "channel" | "user";
 
     /**
@@ -128,8 +124,6 @@ export interface SlackV2NodeParameters {
      */
     readonly blocksUi?: string;
 
-    /**
-     */
     readonly noticeAttachments?: string;
 
     /**
@@ -207,8 +201,6 @@ export interface SlackV2NodeParameters {
      */
     readonly binaryData?: boolean;
 
-    /**
-     */
     readonly fileContent?: string;
 
     /**

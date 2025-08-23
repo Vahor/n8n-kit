@@ -21,8 +21,6 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly operation?: "delete" | "download" | "get" | "getMany" | "renew" | "create" | "get" | "getMany";
 
-    /**
-     */
     readonly certificateId?: string;
 
     /**
@@ -35,16 +33,10 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly keystoreType?: "JKS" | "PKCS12" | "PEM";
 
-    /**
-     */
     readonly certificateLabel?: string;
 
-    /**
-     */
     readonly privateKeyPassphrase?: string;
 
-    /**
-     */
     readonly keystorePassphrase?: string;
 
     /**
@@ -81,8 +73,6 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly applicationId?: string;
 
-    /**
-     */
     readonly existingCertificateId?: string;
 
     /**
@@ -91,12 +81,8 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly certificateIssuingTemplateId?: string;
 
-    /**
-     */
     readonly certificateSigningRequest?: string;
 
-    /**
-     */
     readonly generateCsr?: boolean;
 
     /**
@@ -110,8 +96,6 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly additionalFields?: { "keyType"?: "EC" | "RSA", "keyCurve"?: "ED25519" | "P256" | "P384" | "P521" | "UNKNOWN", "keyLength"?: number, "organization"?: string, "organizationalUnits"?: string, "locality"?: string, "state"?: string, "country"?: string, "SubjectAltNamesUi"?: { "SubjectAltNamesValues": any } };
 
-    /**
-     */
     readonly certificateRequestId?: string;
 
 

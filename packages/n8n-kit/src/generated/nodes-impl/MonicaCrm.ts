@@ -17,13 +17,13 @@ export class MonicaCrm<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.monicaCrm" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MonicaCrmProps) {
+    constructor(id: L, public readonly props: MonicaCrmProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MonicaCrmNodeParameters, "monicaCrmApiCredentials"> {
 
         const { monicaCrmApiCredentials:_0, ...rest } = this.props;
         return rest;

@@ -17,13 +17,13 @@ export class Msg91<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.msg91" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: Msg91Props) {
+    constructor(id: L, public readonly props: Msg91Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<Msg91NodeParameters, "msg91ApiCredentials"> {
 
         const { msg91ApiCredentials:_0, ...rest } = this.props;
         return rest;

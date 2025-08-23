@@ -17,13 +17,13 @@ export class WooCommerceTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.wooCommerceTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: WooCommerceTriggerProps) {
+    constructor(id: L, public readonly props: WooCommerceTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<WooCommerceTriggerNodeParameters, "wooCommerceApiCredentials"> {
 
         const { wooCommerceApiCredentials:_0, ...rest } = this.props;
         return rest;

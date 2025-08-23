@@ -17,13 +17,13 @@ export class Kafka<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.kafka" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: KafkaProps) {
+    constructor(id: L, public readonly props: KafkaProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<KafkaNodeParameters, "kafkaCredentials"> {
 
         const { kafkaCredentials:_0, ...rest } = this.props;
         return rest;

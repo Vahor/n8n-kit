@@ -25,7 +25,7 @@ export class Beeminder<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<BeeminderNodeParameters, "beeminderApiCredentials | beeminderOAuth2ApiCredentials"> {
 
         const { beeminderApiCredentials:_0, beeminderOAuth2ApiCredentials:_1, ...rest } = this.props;
         return rest;

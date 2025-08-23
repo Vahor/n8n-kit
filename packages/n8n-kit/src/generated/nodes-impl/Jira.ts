@@ -27,7 +27,7 @@ export class Jira<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<JiraNodeParameters, "jiraSoftwareCloudApiCredentials | jiraSoftwareServerApiCredentials | jiraSoftwareServerPatApiCredentials"> {
 
         const { jiraSoftwareCloudApiCredentials:_0, jiraSoftwareServerApiCredentials:_1, jiraSoftwareServerPatApiCredentials:_2, ...rest } = this.props;
         return rest;

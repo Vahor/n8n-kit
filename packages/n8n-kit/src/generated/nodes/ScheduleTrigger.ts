@@ -10,8 +10,6 @@ export const version = 1.2 as const;
  */
 export interface ScheduleTriggerNodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**

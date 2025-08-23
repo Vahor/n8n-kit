@@ -73,8 +73,6 @@ export interface CortexNodeParameters {
      */
     readonly jsonObject?: boolean;
 
-    /**
-     */
     readonly objectData?: string;
 
     /**

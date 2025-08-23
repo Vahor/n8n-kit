@@ -53,8 +53,6 @@ export interface PaddleNodeParameters {
      */
     readonly currency?: "ARS" | "AUD" | "BRL" | "CAD" | "CHF" | "CNY" | "CZK" | "DKK" | "EUR" | "GBP" | "HKD" | "HUF" | "INR" | "JPY" | "KRW" | "MXN" | "NOK" | "NZD" | "PLN" | "RUB" | "SEK" | "SGD" | "THB" | "TWD" | "USD" | "ZAR";
 
-    /**
-     */
     readonly jsonParameters?: boolean;
 
     /**

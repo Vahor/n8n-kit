@@ -17,13 +17,13 @@ export class MailjetTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.mailjetTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MailjetTriggerProps) {
+    constructor(id: L, public readonly props: MailjetTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MailjetTriggerNodeParameters, "mailjetEmailApiCredentials"> {
 
         const { mailjetEmailApiCredentials:_0, ...rest } = this.props;
         return rest;

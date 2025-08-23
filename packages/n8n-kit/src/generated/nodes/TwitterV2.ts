@@ -44,12 +44,8 @@ export interface TwitterV2NodeParameters {
      */
     readonly list?: any;
 
-    /**
-     */
     readonly noticeLocation?: string;
 
-    /**
-     */
     readonly noticeAttachments?: string;
 
     /**

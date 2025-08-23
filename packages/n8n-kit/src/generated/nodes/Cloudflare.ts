@@ -32,8 +32,6 @@ export interface CloudflareNodeParameters {
      */
     readonly certificate?: string;
 
-    /**
-     */
     readonly privateKey?: string;
 
     /**
@@ -53,8 +51,6 @@ export interface CloudflareNodeParameters {
      */
     readonly filters?: { "status"?: "active" | "expired" | "deleted" | "pending" };
 
-    /**
-     */
     readonly certificateId?: string;
 
 

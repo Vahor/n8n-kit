@@ -14,13 +14,13 @@ export class FilterV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.undefined" as const;
     protected typeVersion = 2.2 as const;
 
-    constructor(id: L, public readonly props: FilterV2Props) {
+    constructor(id: L, public readonly props?: FilterV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : FilterV2NodeParameters {
 
         return this.props ?? {};
 

@@ -46,12 +46,8 @@ export interface Magento2NodeParameters {
      */
     readonly customerId?: string;
 
-    /**
-     */
     readonly firstName?: string;
 
-    /**
-     */
     readonly lastName?: string;
 
     /**
@@ -93,12 +89,8 @@ export interface Magento2NodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    /**
-     */
     readonly jsonNotice?: string;
 
-    /**
-     */
     readonly filterJson?: string;
 
     /**
@@ -106,8 +98,6 @@ export interface Magento2NodeParameters {
      */
     readonly options?: { "sort"?: { "sort": any } };
 
-    /**
-     */
     readonly orderId?: string;
 
     /**
@@ -115,8 +105,6 @@ export interface Magento2NodeParameters {
      */
     readonly sku?: string;
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -125,8 +113,6 @@ export interface Magento2NodeParameters {
      */
     readonly attributeSetId?: string;
 
-    /**
-     */
     readonly price?: number;
 
 

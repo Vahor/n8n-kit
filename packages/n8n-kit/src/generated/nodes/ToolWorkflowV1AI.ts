@@ -15,12 +15,8 @@ export interface ToolWorkflowV1AINodeParameters {
      */
     readonly notice?: string;
 
-    /**
-     */
     readonly noticeTemplateExample?: string;
 
-    /**
-     */
     readonly name?: string;
 
     /**
@@ -28,8 +24,6 @@ export interface ToolWorkflowV1AINodeParameters {
      */
     readonly description?: string;
 
-    /**
-     */
     readonly executeNotice?: string;
 
     /**

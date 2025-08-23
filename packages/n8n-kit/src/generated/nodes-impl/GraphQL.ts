@@ -35,7 +35,7 @@ export class GraphQL<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<GraphQLNodeParameters, "httpBasicAuthCredentials | httpCustomAuthCredentials | httpDigestAuthCredentials | httpHeaderAuthCredentials | httpQueryAuthCredentials | oAuth1ApiCredentials | oAuth2ApiCredentials"> {
 
         const { httpBasicAuthCredentials:_0, httpCustomAuthCredentials:_1, httpDigestAuthCredentials:_2, httpHeaderAuthCredentials:_3, httpQueryAuthCredentials:_4, oAuth1ApiCredentials:_5, oAuth2ApiCredentials:_6, ...rest } = this.props;
         return rest;

@@ -10,8 +10,6 @@ export const version = 1 as const;
  */
 export interface N8nTrainingCustomerMessengerNodeParameters {
 
-    /**
-     */
     readonly customerId: string;
 
     /**

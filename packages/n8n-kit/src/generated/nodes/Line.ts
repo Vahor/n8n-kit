@@ -11,8 +11,6 @@ export const credentials = [{"name":"lineNotifyOAuth2Api","required":true,"displ
  */
 export interface LineNodeParameters {
 
-    /**
-     */
     readonly notice?: string;
 
     /**
@@ -25,8 +23,6 @@ export interface LineNodeParameters {
      */
     readonly operation?: "send";
 
-    /**
-     */
     readonly message?: string;
 
     /**

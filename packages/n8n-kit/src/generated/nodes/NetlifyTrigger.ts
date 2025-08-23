@@ -17,8 +17,6 @@ export interface NetlifyTriggerNodeParameters {
      */
     readonly siteId: string;
 
-    /**
-     */
     readonly event: "deployBuilding" | "deployFailed" | "deployCreated" | "submissionCreated";
 
     /**

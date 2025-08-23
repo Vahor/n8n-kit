@@ -17,13 +17,13 @@ export class MicrosoftOutlookTrigger<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.microsoftOutlookTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, public readonly props?: MicrosoftOutlookTriggerProps) {
+    constructor(id: L, public readonly props: MicrosoftOutlookTriggerProps) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<MicrosoftOutlookTriggerNodeParameters, "microsoftOutlookOAuth2ApiCredentials"> {
 
         const { microsoftOutlookOAuth2ApiCredentials:_0, ...rest } = this.props;
         return rest;

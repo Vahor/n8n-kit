@@ -17,13 +17,13 @@ export class EmailSendV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.emailSend" as const;
     protected typeVersion = 2.1 as const;
 
-    constructor(id: L, public readonly props?: EmailSendV2Props) {
+    constructor(id: L, public readonly props: EmailSendV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<EmailSendV2NodeParameters, "smtpCredentials"> {
 
         const { smtpCredentials:_0, ...rest } = this.props;
         return rest;

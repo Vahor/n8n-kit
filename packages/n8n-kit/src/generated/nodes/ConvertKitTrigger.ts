@@ -33,8 +33,6 @@ export interface ConvertKitTriggerNodeParameters {
      */
     readonly link?: string;
 
-    /**
-     */
     readonly productId?: string;
 
     /**

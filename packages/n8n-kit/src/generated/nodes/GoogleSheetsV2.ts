@@ -48,8 +48,6 @@ export interface GoogleSheetsV2NodeParameters {
      */
     readonly dataMode?: "autoMapInputData" | "defineBelow" | "nothing";
 
-    /**
-     */
     readonly autoMapNotice?: string;
 
     /**
@@ -75,8 +73,6 @@ export interface GoogleSheetsV2NodeParameters {
      */
     readonly clear?: "wholeSheet" | "specificRows" | "specificColumns" | "specificRange";
 
-    /**
-     */
     readonly keepFirstRow?: boolean;
 
     /**
@@ -140,8 +136,6 @@ export interface GoogleSheetsV2NodeParameters {
      */
     readonly columnToMatchOn?: string;
 
-    /**
-     */
     readonly valueToMatchOn?: string;
 
     /**

@@ -27,8 +27,6 @@ export interface NetlifyNodeParameters {
      */
     readonly siteId?: string;
 
-    /**
-     */
     readonly deployId?: string;
 
     /**

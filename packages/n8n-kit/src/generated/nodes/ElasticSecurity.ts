@@ -21,8 +21,6 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "getStatus" | "update" | "add" | "get" | "getAll" | "remove" | "update" | "add" | "remove" | "create";
 
-    /**
-     */
     readonly title?: string;
 
     /**
@@ -86,8 +84,6 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly additionalFields?: { "description"?: string, "owner"?: string, "syncAlerts"?: boolean } | { "owner"?: string };
 
-    /**
-     */
     readonly caseId?: string;
 
     /**
@@ -117,8 +113,6 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly updateFields?: { "description"?: string, "status"?: "closed" | "open" | "in-progress", "syncAlerts"?: boolean, "title"?: string, "version"?: string };
 
-    /**
-     */
     readonly comment?: string;
 
     /**

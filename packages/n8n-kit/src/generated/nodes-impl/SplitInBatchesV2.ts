@@ -14,13 +14,13 @@ export class SplitInBatchesV2<L extends string> extends Node<L> {
     protected type = "n8n-nodes-base.splitInBatches" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, public readonly props: SplitInBatchesV2Props) {
+    constructor(id: L, public readonly props?: SplitInBatchesV2Props) {
 
         super(id, props);
 
     }
 
-    override getParameters() {
+    override getParameters() : SplitInBatchesV2NodeParameters {
 
         return this.props ?? {};
 

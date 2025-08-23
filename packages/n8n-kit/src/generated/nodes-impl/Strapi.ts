@@ -25,7 +25,7 @@ export class Strapi<L extends string> extends Node<L> {
 
     }
 
-    override getParameters() {
+    override getParameters() : Omit<StrapiNodeParameters, "strapiApiCredentials | strapiTokenApiCredentials"> {
 
         const { strapiApiCredentials:_0, strapiTokenApiCredentials:_1, ...rest } = this.props;
         return rest;
