@@ -8,14 +8,11 @@ export const name = "azureEntraCognitiveServicesOAuth2Api" as const;
  * documentationUrl: azureEntraCognitiveServicesOAuth2Api
  */
 export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
     readonly "grantType"?: any;
 
-    /**
-     */
     readonly "resourceName": string;
 
     /**
@@ -23,8 +20,6 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
      */
     readonly "apiVersion": string;
 
-    /**
-     */
     readonly "endpoint"?: string;
 
     /**
@@ -75,5 +70,4 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "azureEntraCognitiveServicesOAuth2Api";
-
 }

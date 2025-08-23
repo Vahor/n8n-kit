@@ -5,10 +5,10 @@ export const description = "Generate webforms in n8n and pass their responses to
 export const type = "n8n-nodes-base.formTrigger" as const;
 export const version = 2.3 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormTriggerV2NodeParameters {
-
     /**
      * Default: "none"
      */
@@ -51,6 +51,4 @@ export interface FormTriggerV2NodeParameters {
      */
     readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean, "customCss"?: string };
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Translate data using DeepL" as const;
 export const type = "n8n-nodes-base.deepL" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"deepLApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DeepLNodeParameters {
-
     /**
      * Default: "language"
      */
@@ -35,6 +35,4 @@ export interface DeepLNodeParameters {
      */
     readonly additionalFields?: { "sourceLang"?: string, "splitSentences"?: "nonewlines" | "0" | "1", "preserveFormatting"?: "0" | "1", "formality"?: "more" | "less" | "default" };
 
-
 }
-

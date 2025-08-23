@@ -8,7 +8,6 @@ export const name = "keapOAuth2Api" as const;
  * documentationUrl: keap
  */
 export interface KeapOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface KeapOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface KeapOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "keapOAuth2Api";
-
 }

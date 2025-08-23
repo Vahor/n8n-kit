@@ -5,10 +5,10 @@ export const description = "Consume the Action Network API" as const;
 export const type = "n8n-nodes-base.actionNetwork" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"actionNetworkApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ActionNetworkNodeParameters {
-
     /**
      * Default: "attendance"
      */
@@ -105,6 +105,4 @@ export interface ActionNetworkNodeParameters {
      */
     readonly taggingId?: string;
 
-
 }
-

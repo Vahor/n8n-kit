@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Invoice Ninja events occur"
 export const type = "n8n-nodes-base.invoiceNinjaTrigger" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"invoiceNinjaApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface InvoiceNinjaTriggerNodeParameters {
-
     /**
      * Default: "v4"
      */
@@ -16,6 +16,4 @@ export interface InvoiceNinjaTriggerNodeParameters {
 
     readonly event?: "create_client" | "create_invoice" | "create_payment" | "create_quote" | "create_vendor";
 
-
 }
-

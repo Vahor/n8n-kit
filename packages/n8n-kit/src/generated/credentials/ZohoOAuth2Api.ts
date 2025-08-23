@@ -8,7 +8,6 @@ export const name = "zohoOAuth2Api" as const;
  * documentationUrl: zoho
  */
 export interface ZohoOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -40,5 +39,4 @@ export interface ZohoOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "zohoOAuth2Api";
-
 }

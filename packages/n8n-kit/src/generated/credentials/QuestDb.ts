@@ -8,7 +8,6 @@ export const name = "questDb" as const;
  * documentationUrl: questDb
  */
 export interface QuestDbCredentials {
-
     /**
      * Default: "localhost"
      */
@@ -41,5 +40,4 @@ export interface QuestDbCredentials {
     readonly "port"?: number;
 
     readonly __name: "questDb";
-
 }

@@ -8,7 +8,6 @@ export const name = "stravaOAuth2Api" as const;
  * documentationUrl: strava
  */
 export interface StravaOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface StravaOAuth2ApiCredentials {
      */
     readonly "scope": any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface StravaOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "stravaOAuth2Api";
-
 }

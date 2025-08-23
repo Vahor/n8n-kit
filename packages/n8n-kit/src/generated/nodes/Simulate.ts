@@ -4,10 +4,10 @@
 export const description = "Simulate a node" as const;
 export const type = "n8n-nodes-base.simulate" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SimulateNodeParameters {
-
     /**
      * Select a type of node to show corresponding icon
      * Default: "n8n-nodes-base.noOp"
@@ -42,6 +42,4 @@ export interface SimulateNodeParameters {
      */
     readonly executionDuration?: number;
 
-
 }
-

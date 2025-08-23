@@ -5,10 +5,10 @@ export const description = "Language Model Ollama" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatOllama" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ollamaApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatOllamaNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -27,6 +27,4 @@ export interface LmChatOllamaNodeParameters {
      */
     readonly options?: { "temperature"?: number, "topK"?: number, "topP"?: number, "frequencyPenalty"?: number, "keepAlive"?: string, "lowVram"?: boolean, "mainGpu"?: number, "numBatch"?: number, "numCtx"?: number, "numGpu"?: number, "numPredict"?: number, "numThread"?: number, "penalizeNewline"?: boolean, "presencePenalty"?: number, "repeatPenalty"?: number, "useMLock"?: boolean, "useMMap"?: boolean, "vocabOnly"?: boolean, "format"?: "default" | "json" };
 
-
 }
-

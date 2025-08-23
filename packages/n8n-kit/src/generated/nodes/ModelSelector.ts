@@ -4,10 +4,10 @@
 export const description = "Use this node to select one of the connected models to this node based on workflow data" as const;
 export const type = "@n8n/n8n-nodes-langchain.modelSelector" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface ModelSelectorNodeParameters {
-
     /**
      * The number of data inputs you want to merge. The node waits for all connected inputs to be executed.
      * Default: 2
@@ -21,6 +21,4 @@ export interface ModelSelectorNodeParameters {
      */
     readonly rules?: { "rule": any };
 
-
 }
-

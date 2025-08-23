@@ -8,7 +8,6 @@ export const name = "ldap" as const;
  * documentationUrl: ldap
  */
 export interface LdapCredentials {
-
     /**
      * IP or domain of the LDAP server
      */
@@ -53,5 +52,4 @@ export interface LdapCredentials {
     readonly "timeout"?: number;
 
     readonly __name: "ldap";
-
 }

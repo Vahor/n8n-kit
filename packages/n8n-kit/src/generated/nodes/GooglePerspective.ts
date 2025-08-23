@@ -5,10 +5,10 @@ export const description = "Consume Google Perspective API" as const;
 export const type = "n8n-nodes-base.googlePerspective" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googlePerspectiveOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GooglePerspectiveNodeParameters {
-
     /**
      * Default: "analyzeComment"
      */
@@ -27,6 +27,4 @@ export interface GooglePerspectiveNodeParameters {
      */
     readonly options?: { "languages"?: string };
 
-
 }
-

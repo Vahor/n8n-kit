@@ -8,7 +8,6 @@ export const name = "twistOAuth2Api" as const;
  * documentationUrl: twist
  */
 export interface TwistOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface TwistOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface TwistOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "twistOAuth2Api";
-
 }

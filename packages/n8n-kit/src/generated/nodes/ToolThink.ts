@@ -4,10 +4,10 @@
 export const description = "Invite the AI agent to do some thinking" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolThink" as const;
 export const version = 1.1 as const;
+export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolThinkNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -20,6 +20,4 @@ export interface ToolThinkNodeParameters {
      */
     readonly description?: string;
 
-
 }
-

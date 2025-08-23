@@ -8,9 +8,6 @@ export const name = "wordpressApi" as const;
  * documentationUrl: wordpress
  */
 export interface WordpressApiCredentials {
-
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface WordpressApiCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -28,5 +23,4 @@ export interface WordpressApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "wordpressApi";
-
 }

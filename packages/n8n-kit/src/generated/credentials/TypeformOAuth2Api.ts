@@ -8,7 +8,6 @@ export const name = "typeformOAuth2Api" as const;
  * documentationUrl: typeform
  */
 export interface TypeformOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface TypeformOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface TypeformOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "typeformOAuth2Api";
-
 }

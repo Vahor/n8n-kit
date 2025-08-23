@@ -8,7 +8,6 @@ export const name = "googleOAuth2Api" as const;
  * documentationUrl: google/oauth-generic
  */
 export interface GoogleOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -35,5 +34,4 @@ export interface GoogleOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "googleOAuth2Api";
-
 }

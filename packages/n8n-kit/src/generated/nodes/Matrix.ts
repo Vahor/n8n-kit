@@ -5,10 +5,10 @@ export const description = "Consume Matrix API" as const;
 export const type = "n8n-nodes-base.matrix" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"matrixApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MatrixNodeParameters {
-
     /**
      * Default: "message"
      */
@@ -111,6 +111,4 @@ export interface MatrixNodeParameters {
      */
     readonly filters?: { "notMembership"?: "" | "ban" | "invite" | "join" | "leave", "membership"?: "" | "ban" | "invite" | "join" | "leave" };
 
-
 }
-

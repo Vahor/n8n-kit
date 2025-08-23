@@ -8,9 +8,6 @@ export const name = "amqp" as const;
  * documentationUrl: amqp
  */
 export interface AmqpCredentials {
-
-    /**
-     */
     readonly "hostname"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface AmqpCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -27,10 +22,7 @@ export interface AmqpCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     */
     readonly "transportType"?: string;
 
     readonly __name: "amqp";
-
 }

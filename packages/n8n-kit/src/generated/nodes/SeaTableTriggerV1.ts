@@ -5,10 +5,10 @@ export const description = "Starts the workflow when SeaTable events occur" as c
 export const type = "n8n-nodes-base.seaTableTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"seaTableApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SeaTableTriggerV1NodeParameters {
-
     /**
      * The name of SeaTable table to access. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getTableNames"}
@@ -27,6 +27,4 @@ export interface SeaTableTriggerV1NodeParameters {
     readonly simple?: boolean;
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
-
 }
-

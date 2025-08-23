@@ -4,10 +4,10 @@
 export const description = "Make your workflow easier to understand" as const;
 export const type = "n8n-nodes-base.stickyNote" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {} as const;
 
 export interface StickyNoteNodeParameters {
-
     /**
      * Default: "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)"
      */
@@ -28,6 +28,4 @@ export interface StickyNoteNodeParameters {
      */
     readonly color?: number;
 
-
 }
-

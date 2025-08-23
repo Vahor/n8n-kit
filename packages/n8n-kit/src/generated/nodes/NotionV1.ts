@@ -5,10 +5,10 @@ export const description = "Consume Notion API" as const;
 export const type = "n8n-nodes-base.notion" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"notionApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionV1NodeParameters {
-
     readonly notionNotice?: string;
 
     /**
@@ -122,6 +122,4 @@ export interface NotionV1NodeParameters {
 
     readonly userId?: string;
 
-
 }
-

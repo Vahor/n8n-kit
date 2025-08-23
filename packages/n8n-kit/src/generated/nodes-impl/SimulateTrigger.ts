@@ -5,24 +5,18 @@ import type { SimulateTriggerNodeParameters } from "../nodes/SimulateTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface SimulateTriggerProps extends NodeProps {
-
     readonly parameters: SimulateTriggerNodeParameters;
-
 }
 
 /**
  * Simulate a trigger node
  */
 export class SimulateTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.simulateTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: SimulateTriggerProps) {
-
         super(id, props);
-
     }
-
 
 }

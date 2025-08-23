@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Google Sheets events occur"
 export const type = "n8n-nodes-base.googleSheetsTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleSheetsTriggerOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["triggerOAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsTriggerNodeParameters {
-
     /**
      * Default: "triggerOAuth2"
      */
@@ -49,6 +49,4 @@ export interface GoogleSheetsTriggerNodeParameters {
     readonly options?: { "columnsToWatch"?: any[], "dataLocationOnSheet"?: { "values": any }, "valueRender"?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", "dateTimeRenderOption"?: "SERIAL_NUMBER" | "FORMATTED_STRING" };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
-
 }
-

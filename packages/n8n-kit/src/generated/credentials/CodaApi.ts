@@ -8,12 +8,10 @@ export const name = "codaApi" as const;
  * documentationUrl: coda
  */
 export interface CodaApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "codaApi";
-
 }

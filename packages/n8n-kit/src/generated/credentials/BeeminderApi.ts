@@ -8,12 +8,10 @@ export const name = "beeminderApi" as const;
  * documentationUrl: beeminder
  */
 export interface BeeminderApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "authToken"?: string;
 
     readonly __name: "beeminderApi";
-
 }

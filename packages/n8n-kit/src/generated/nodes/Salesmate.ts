@@ -5,10 +5,10 @@ export const description = "Consume Salesmate API" as const;
 export const type = "n8n-nodes-base.salesmate" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"salesmateApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SalesmateNodeParameters {
-
     /**
      * Default: "activity"
      */
@@ -98,6 +98,4 @@ export interface SalesmateNodeParameters {
 
     readonly currency?: string;
 
-
 }
-

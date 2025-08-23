@@ -8,12 +8,10 @@ export const name = "peekalinkApi" as const;
  * documentationUrl: peekalink
  */
 export interface PeekalinkApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "peekalinkApi";
-
 }

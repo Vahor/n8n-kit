@@ -8,7 +8,6 @@ export const name = "dfirIrisApi" as const;
  * documentationUrl: dfiriris
  */
 export interface DfirIrisApiCredentials {
-
     /**
      * The API endpoints are reachable on the same Address and port as the web interface.
      */
@@ -19,10 +18,7 @@ export interface DfirIrisApiCredentials {
      */
     readonly "apiKey": string;
 
-    /**
-     */
     readonly "skipSslCertificateValidation"?: boolean;
 
     readonly __name: "dfirIrisApi";
-
 }

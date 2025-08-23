@@ -5,10 +5,10 @@ export const description = "Consume HighLevel API v2" as const;
 export const type = "n8n-nodes-base.highLevel" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"highLevelOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HighLevelV2NodeParameters {
-
     /**
      * Default: "contact"
      */
@@ -113,6 +113,4 @@ export interface HighLevelV2NodeParameters {
      */
     readonly endDate?: number;
 
-
 }
-

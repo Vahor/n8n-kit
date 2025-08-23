@@ -8,9 +8,6 @@ export const name = "impervaWafApi" as const;
  * documentationUrl: impervawaf
  */
 export interface ImpervaWafApiCredentials {
-
-    /**
-     */
     readonly "apiID": string;
 
     /**
@@ -19,5 +16,4 @@ export interface ImpervaWafApiCredentials {
     readonly "apiKey": string;
 
     readonly __name: "impervaWafApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Sends data to AWS Certificate Manager" as const;
 export const type = "n8n-nodes-base.awsCertificateManager" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsCertificateManagerNodeParameters {
-
     /**
      * Default: "certificate"
      */
@@ -45,6 +45,4 @@ export interface AwsCertificateManagerNodeParameters {
      */
     readonly options?: { "certificateStatuses"?: ("EXPIRED" | "FAILED" | "INACTIVE" | "ISSUED" | "PENDING_VALIDATION" | "REVOKED" | "VALIDATION_TIMED_OUT")[], "extendedKeyUsage"?: ("ANY" | "CODE_SIGNING" | "CUSTOM" | "EMAIL_PROTECTION" | "IPSEC_END_SYSTEM" | "IPSEC_TUNNEL" | "IPSEC_USER" | "NONE" | "OCSP_SIGNING" | "TIME_STAMPING" | "TLS_WEB_CLIENT_AUTHENTICATION" | "TLS_WEB_SERVER_AUTHENTICATION")[], "keyTypes"?: ("EC_prime256v1" | "EC_secp384r1" | "EC_secp521r1" | "RSA_1024" | "RSA_2048" | "RSA_4096")[], "keyUsage"?: ("ANY" | "CERTIFICATE_SIGNING" | "CRL_SIGNING" | "CUSTOM" | "DATA_ENCIPHERMENT" | "DECIPHER_ONLY" | "DIGITAL_SIGNATURE" | "ENCIPHER_ONLY" | "KEY_AGREEMENT" | "KEY_ENCIPHERMENT" | "NON_REPUDIATION")[] };
 
-
 }
-

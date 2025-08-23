@@ -8,7 +8,6 @@ export const name = "boxOAuth2Api" as const;
  * documentationUrl: box
  */
 export interface BoxOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface BoxOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface BoxOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "boxOAuth2Api";
-
 }

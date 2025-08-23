@@ -29,98 +29,77 @@
 			"id": "gdrive-file-created",
 			"name": "Google Drive File Created",
 			"type": "n8n-nodes-base.googleDriveTrigger",
-			"position": [210, 1015],
+			"position": [210, 1020],
 			"typeVersion": 1,
 			"parameters": {
 				"event": "fileCreated",
 				"triggerOn": "specificFolder",
-				"options": {
-					"fileType": "all"
-				},
-				"pollTimes": {
-					"item": [
-						{
-							"mode": "everyMinute"
-						}
-					]
-				},
+				"options": { "fileType": "all" },
+				"pollTimes": { "item": [{ "mode": "everyMinute" }] },
 				"folderToWatch": {
 					"value": "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
 					"mode": "list"
 				}
 			},
-			"credentials": {
-				"googleDriveOAuth2Api": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
 		},
 		{
 			"id": "gdrive-file-updated",
 			"name": "Google Drive File Updated",
 			"type": "n8n-nodes-base.googleDriveTrigger",
-			"position": [210, 1245],
+			"position": [210, 1260],
 			"typeVersion": 1,
 			"parameters": {
 				"event": "fileUpdated",
 				"triggerOn": "specificFolder",
-				"pollTimes": {
-					"item": [
-						{
-							"mode": "everyMinute"
-						}
-					]
-				},
+				"pollTimes": { "item": [{ "mode": "everyMinute" }] },
 				"folderToWatch": {
 					"value": "1evDIoHePhjw_LgVFZXSZyK1sZm2GHp9W",
 					"mode": "list"
 				}
 			},
-			"credentials": {
-				"googleDriveOAuth2Api": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
 		},
 		{
 			"id": "download-from-drive",
 			"name": "Download File From Google Drive",
 			"type": "n8n-nodes-base.googleDrive",
-			"position": [555, 1130],
+			"position": [560, 1140],
 			"typeVersion": 3,
 			"parameters": {
 				"operation": "download",
-				"fileId": {
-					"mode": "id",
-					"value": "={{ $json.id }}"
-				},
-				"options": {
-					"fileName": "={{ $json.name }}"
-				}
+				"fileId": { "mode": "id", "value": "={{ $json.id }}" },
+				"options": { "fileName": "={{ $json.name }}" }
 			},
-			"credentials": {
-				"googleDriveOAuth2Api": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
 		},
 		{
 			"id": "upload-to-pinecone",
 			"name": "Pinecone Vector Store",
 			"type": "@n8n/n8n-nodes-langchain.vectorStorePineconeInsert",
-			"position": [745, 1130],
+			"position": [820, 1140],
 			"typeVersion": 1,
 			"parameters": {
-				"pineconeIndex": {
-					"value": "company-files",
-					"mode": "list"
-				}
+				"pineconeIndex": { "value": "company-files", "mode": "list" }
 			},
-			"credentials": {
-				"pineconeApi": {
-					"id": "some-id"
-				}
-			}
+			"credentials": { "pineconeApi": { "id": "some-id" } }
+		},
+		{
+			"id": "embeddings-google-gemini",
+			"name": "Embeddings Google Gemini",
+			"type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+			"position": [1080, 1020],
+			"typeVersion": 1,
+			"parameters": { "modelName": "models/text-embedding-004" },
+			"credentials": { "googlePalmApi": { "id": "some-id" } }
+		},
+		{
+			"id": "document-to-vector-store",
+			"name": "document-to-vector-store",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1080, 1260],
+			"typeVersion": 1,
+			"parameters": {}
 		},
 		{
 			"id": "note-chat-to-ai-agent",
@@ -128,15 +107,13 @@
 			"type": "n8n-nodes-base.stickyNote",
 			"position": [420, 660],
 			"typeVersion": 1,
-			"parameters": {
-				"content": "## Chat with company documents"
-			}
+			"parameters": { "content": "## Chat with company documents" }
 		},
 		{
 			"id": "chat-message-received",
 			"name": "When chat message received",
 			"type": "n8n-nodes-base.noOp",
-			"position": [210, 1595],
+			"position": [210, 1620],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -144,7 +121,7 @@
 			"id": "ai-agent",
 			"name": "AI Agent",
 			"type": "n8n-nodes-base.noOp",
-			"position": [555, 1595],
+			"position": [560, 1620],
 			"typeVersion": 1,
 			"parameters": {}
 		}
@@ -174,33 +151,31 @@
 		},
 		"Download File From Google Drive": {
 			"main": [
+				[{ "node": "Pinecone Vector Store", "type": "main", "index": 0 }]
+			]
+		},
+		"Embeddings Google Gemini": {
+			"ai_embedding": [
 				[
 					{
 						"node": "Pinecone Vector Store",
-						"type": "main",
+						"type": "ai_embedding",
 						"index": 0
 					}
 				]
 			]
 		},
-		"When chat message received": {
-			"main": [
-				[
-					{
-						"node": "AI Agent",
-						"type": "main",
-						"index": 0
-					}
-				]
+		"document-to-vector-store": {
+			"ai_document": [
+				[{ "node": "Pinecone Vector Store", "type": "ai_document", "index": 0 }]
 			]
+		},
+		"When chat message received": {
+			"main": [[{ "node": "AI Agent", "type": "main", "index": 0 }]]
 		}
 	},
 	"settings": {},
 	"staticData": {},
 	"active": true,
-	"tags": [
-		{
-			"name": "@vahor/n8n-iJFYtqyGWaroz"
-		}
-	]
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }

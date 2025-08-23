@@ -5,10 +5,10 @@ export const description = "Consume the Peekalink API" as const;
 export const type = "n8n-nodes-base.peekalink" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"peekalinkApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PeekalinkNodeParameters {
-
     /**
      * Default: "preview"
      */
@@ -16,6 +16,4 @@ export interface PeekalinkNodeParameters {
 
     readonly url?: string;
 
-
 }
-

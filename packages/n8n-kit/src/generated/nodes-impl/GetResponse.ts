@@ -8,32 +8,24 @@ import type { GetResponseNodeParameters } from "../nodes/GetResponse";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GetResponseProps extends NodeProps {
-
     readonly parameters: GetResponseNodeParameters;
     readonly getResponseApiCredentials?: Credentials<GetResponseApiCredentials>;
     readonly getResponseOAuth2ApiCredentials?: Credentials<GetResponseOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume GetResponse API
  */
 export class GetResponse<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.getResponse" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: GetResponseProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.getResponseApiCredentials, this.props!.getResponseOAuth2ApiCredentials];
-
     }
-
 
 }

@@ -8,7 +8,6 @@ export const name = "vonageApi" as const;
  * documentationUrl: vonage
  */
 export interface VonageApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface VonageApiCredentials {
     readonly "apiSecret"?: string;
 
     readonly __name: "vonageApi";
-
 }

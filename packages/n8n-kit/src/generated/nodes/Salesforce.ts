@@ -5,10 +5,10 @@ export const description = "Consume Salesforce API" as const;
 export const type = "n8n-nodes-base.salesforce" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"salesforceOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"salesforceJwtApi","required":true,"displayOptions":{"show":{"authentication":["jwt"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SalesforceNodeParameters {
-
     /**
      * OAuth Authorization Flow
      * Default: "oAuth2"
@@ -204,6 +204,4 @@ export interface SalesforceNodeParameters {
      */
     readonly variablesUi?: { "variablesValues": any };
 
-
 }
-

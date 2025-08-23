@@ -8,7 +8,6 @@ export const name = "snowflake" as const;
  * documentationUrl: snowflake
  */
 export interface SnowflakeCredentials {
-
     /**
      * Enter the name of your Snowflake account
      */
@@ -30,8 +29,6 @@ export interface SnowflakeCredentials {
      */
     readonly "authentication"?: "password" | "keyPair";
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -67,5 +64,4 @@ export interface SnowflakeCredentials {
     readonly "clientSessionKeepAlive"?: boolean;
 
     readonly __name: "snowflake";
-
 }

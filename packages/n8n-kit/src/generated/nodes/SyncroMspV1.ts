@@ -5,10 +5,10 @@ export const description = "Gets data from SyncroMSP" as const;
 export const type = "n8n-nodes-base.syncroMsp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"syncroMspApi","required":true,"testedBy":"syncroMspApiCredentialTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SyncroMspV1NodeParameters {
-
     /**
      * Default: "contact"
      */
@@ -79,6 +79,4 @@ export interface SyncroMspV1NodeParameters {
      */
     readonly muteFor?: "1-hour" | "1-day" | "2-days" | "1-week" | "2-weeks" | "1-month" | "forever";
 
-
 }
-

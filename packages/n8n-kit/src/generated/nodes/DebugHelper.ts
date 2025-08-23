@@ -5,10 +5,10 @@ export const description = "Causes problems intentionally and generates useful d
 export const type = "n8n-nodes-base.debugHelper" as const;
 export const version = 1 as const;
 export const credentials = [] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DebugHelperNodeParameters {
-
     /**
      * Default: "throwError"
      */
@@ -64,6 +64,4 @@ export interface DebugHelperNodeParameters {
      */
     readonly randomDataSingleArray?: boolean;
 
-
 }
-

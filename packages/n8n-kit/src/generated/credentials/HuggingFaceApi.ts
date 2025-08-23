@@ -8,12 +8,10 @@ export const name = "huggingFaceApi" as const;
  * documentationUrl: huggingface
  */
 export interface HuggingFaceApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "huggingFaceApi";
-
 }

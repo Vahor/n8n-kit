@@ -5,10 +5,10 @@ export const description = "Wait before continue with execution" as const;
 export const type = "n8n-nodes-base.wait" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["jwtAuth"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WaitNodeParameters {
-
     /**
      * Determines the waiting mode to use before the workflow continues
      * Default: "timeInterval"
@@ -125,6 +125,4 @@ export interface WaitNodeParameters {
      */
     readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any }, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "webhookSuffix"?: string };
 
-
 }
-

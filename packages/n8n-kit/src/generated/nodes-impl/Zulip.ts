@@ -7,31 +7,23 @@ import type { ZulipNodeParameters } from "../nodes/Zulip";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface ZulipProps extends NodeProps {
-
     readonly parameters: ZulipNodeParameters;
     readonly zulipApiCredentials: Credentials<ZulipApiCredentials>;
-
 }
 
 /**
  * Consume Zulip API
  */
 export class Zulip<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.zulip" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: ZulipProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.zulipApiCredentials];
-
     }
-
 
 }

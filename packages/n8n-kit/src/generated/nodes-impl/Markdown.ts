@@ -5,24 +5,18 @@ import type { MarkdownNodeParameters } from "../nodes/Markdown";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MarkdownProps extends NodeProps {
-
     readonly parameters: MarkdownNodeParameters;
-
 }
 
 /**
  * Convert data between Markdown and HTML
  */
 export class Markdown<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.markdown" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: MarkdownProps) {
-
         super(id, props);
-
     }
-
 
 }

@@ -8,7 +8,6 @@ export const name = "elasticSecurityApi" as const;
  * documentationUrl: elasticSecurity
  */
 export interface ElasticSecurityApiCredentials {
-
     /**
      * Referred to as Kibana 'endpoint' in the Elastic deployment dashboard
      */
@@ -19,8 +18,6 @@ export interface ElasticSecurityApiCredentials {
      */
     readonly "type"?: "apiKey" | "basicAuth";
 
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -34,5 +31,4 @@ export interface ElasticSecurityApiCredentials {
     readonly "apiKey": string;
 
     readonly __name: "elasticSecurityApi";
-
 }

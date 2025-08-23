@@ -8,9 +8,6 @@ export const name = "flowApi" as const;
  * documentationUrl: flow
  */
 export interface FlowApiCredentials {
-
-    /**
-     */
     readonly "organizationId"?: number;
 
     /**
@@ -19,5 +16,4 @@ export interface FlowApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "flowApi";
-
 }

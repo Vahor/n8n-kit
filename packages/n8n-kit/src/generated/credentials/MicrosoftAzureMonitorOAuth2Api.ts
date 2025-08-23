@@ -8,14 +8,11 @@ export const name = "microsoftAzureMonitorOAuth2Api" as const;
  * documentationUrl: microsoftazuremonitor
  */
 export interface MicrosoftAzureMonitorOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
     readonly "grantType"?: "authorizationCode" | "clientCredentials";
 
-    /**
-     */
     readonly "tenantId": string;
 
     /**
@@ -49,5 +46,4 @@ export interface MicrosoftAzureMonitorOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "microsoftAzureMonitorOAuth2Api";
-
 }

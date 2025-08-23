@@ -8,7 +8,6 @@ export const name = "getResponseOAuth2Api" as const;
  * documentationUrl: getresponse
  */
 export interface GetResponseOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface GetResponseOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface GetResponseOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "getResponseOAuth2Api";
-
 }

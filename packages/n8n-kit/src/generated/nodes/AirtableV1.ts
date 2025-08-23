@@ -5,10 +5,10 @@ export const description = "Read, update, write and delete data from Airtable" a
 export const type = "n8n-nodes-base.airtable" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"airtableApi","required":true,"displayOptions":{"show":{"authentication":["airtableApi"]}}},{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AirtableV1NodeParameters {
-
     /**
      * Default: "airtableApi"
      */
@@ -98,6 +98,4 @@ export interface AirtableV1NodeParameters {
      */
     readonly options?: { "bulkSize"?: number, "ignoreFields"?: string, "typecast"?: boolean };
 
-
 }
-

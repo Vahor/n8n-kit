@@ -8,9 +8,6 @@ export const name = "airtableApi" as const;
  * documentationUrl: airtable
  */
 export interface AirtableApiCredentials {
-
-    /**
-     */
     readonly "deprecated"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface AirtableApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "airtableApi";
-
 }

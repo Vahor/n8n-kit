@@ -8,7 +8,6 @@ export const name = "crateDb" as const;
  * documentationUrl: crateDb
  */
 export interface CrateDbCredentials {
-
     /**
      * Default: "localhost"
      */
@@ -40,5 +39,4 @@ export interface CrateDbCredentials {
     readonly "port"?: number;
 
     readonly __name: "crateDb";
-
 }

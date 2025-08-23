@@ -8,12 +8,10 @@ export const name = "humanticAiApi" as const;
  * documentationUrl: humanticAi
  */
 export interface HumanticAiApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "humanticAiApi";
-
 }

@@ -12,7 +12,6 @@ import type { HttpRequestV2NodeParameters } from "../nodes/HttpRequestV2";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface HttpRequestV2Props extends NodeProps {
-
     readonly parameters: HttpRequestV2NodeParameters;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
     readonly httpDigestAuthCredentials?: Credentials<HttpDigestAuthCredentials>;
@@ -20,28 +19,21 @@ export interface HttpRequestV2Props extends NodeProps {
     readonly httpQueryAuthCredentials?: Credentials<HttpQueryAuthCredentials>;
     readonly oAuth1ApiCredentials?: Credentials<OAuth1ApiCredentials>;
     readonly oAuth2ApiCredentials?: Credentials<OAuth2ApiCredentials>;
-
 }
 
 /**
  * Makes an HTTP request and returns the response data
  */
 export class HttpRequestV2<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.httpRequest" as const;
     protected typeVersion = 2 as const;
 
     constructor(id: L, override props?: HttpRequestV2Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.httpBasicAuthCredentials, this.props!.httpDigestAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.httpQueryAuthCredentials, this.props!.oAuth1ApiCredentials, this.props!.oAuth2ApiCredentials];
-
     }
-
 
 }

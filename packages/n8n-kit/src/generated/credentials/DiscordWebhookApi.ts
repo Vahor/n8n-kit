@@ -8,12 +8,10 @@ export const name = "discordWebhookApi" as const;
  * documentationUrl: discord
  */
 export interface DiscordWebhookApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "webhookUri": string;
 
     readonly __name: "discordWebhookApi";
-
 }

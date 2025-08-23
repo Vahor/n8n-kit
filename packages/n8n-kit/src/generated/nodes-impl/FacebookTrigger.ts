@@ -7,31 +7,23 @@ import type { FacebookTriggerNodeParameters } from "../nodes/FacebookTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface FacebookTriggerProps extends NodeProps {
-
     readonly parameters: FacebookTriggerNodeParameters;
     readonly facebookGraphAppApiCredentials: Credentials<FacebookGraphAppApiCredentials>;
-
 }
 
 /**
  * Starts the workflow when Facebook events occur
  */
 export class FacebookTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.facebookTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: FacebookTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.facebookGraphAppApiCredentials];
-
     }
-
 
 }

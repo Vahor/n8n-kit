@@ -8,7 +8,6 @@ export const name = "zendeskOAuth2Api" as const;
  * documentationUrl: zendesk
  */
 export interface ZendeskOAuth2ApiCredentials {
-
     /**
      * The subdomain of your Zendesk work environment
      */
@@ -31,8 +30,6 @@ export interface ZendeskOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -56,5 +53,4 @@ export interface ZendeskOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "zendeskOAuth2Api";
-
 }

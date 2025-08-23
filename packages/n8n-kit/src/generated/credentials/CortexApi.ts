@@ -8,7 +8,6 @@ export const name = "cortexApi" as const;
  * documentationUrl: cortex
  */
 export interface CortexApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface CortexApiCredentials {
     readonly "host"?: string;
 
     readonly __name: "cortexApi";
-
 }

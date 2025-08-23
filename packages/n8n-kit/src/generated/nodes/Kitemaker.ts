@@ -5,10 +5,10 @@ export const description = "Consume the Kitemaker GraphQL API" as const;
 export const type = "n8n-nodes-base.kitemaker" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"kitemakerApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface KitemakerNodeParameters {
-
     /**
      * Default: "workItem"
      */
@@ -65,6 +65,4 @@ export interface KitemakerNodeParameters {
      */
     readonly updateFields?: { "description"?: string, "effort"?: "SMALL" | "MEDIUM" | "LARGE", "impact"?: "SMALL" | "MEDIUM" | "LARGE", "statusId"?: string, "title"?: string };
 
-
 }
-

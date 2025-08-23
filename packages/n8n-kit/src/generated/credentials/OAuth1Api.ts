@@ -8,13 +8,8 @@ export const name = "oAuth1Api" as const;
  * documentationUrl: httpRequest
  */
 export interface OAuth1ApiCredentials {
-
-    /**
-     */
     readonly "authUrl": string;
 
-    /**
-     */
     readonly "accessTokenUrl": string;
 
     /**
@@ -27,8 +22,6 @@ export interface OAuth1ApiCredentials {
      */
     readonly "consumerSecret": string;
 
-    /**
-     */
     readonly "requestTokenUrl": string;
 
     /**
@@ -37,5 +30,4 @@ export interface OAuth1ApiCredentials {
     readonly "signatureMethod": "HMAC-SHA1" | "HMAC-SHA256" | "HMAC-SHA512";
 
     readonly __name: "oAuth1Api";
-
 }

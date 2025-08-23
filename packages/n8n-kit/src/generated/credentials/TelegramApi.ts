@@ -8,7 +8,6 @@ export const name = "telegramApi" as const;
  * documentationUrl: telegram
  */
 export interface TelegramApiCredentials {
-
     /**
      * Chat with the <a href="https://telegram.me/botfather">bot father</a> to obtain the access token
      * Type options: {"password":true}
@@ -22,5 +21,4 @@ export interface TelegramApiCredentials {
     readonly "baseUrl"?: string;
 
     readonly __name: "telegramApi";
-
 }

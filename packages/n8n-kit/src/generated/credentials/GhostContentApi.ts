@@ -8,9 +8,6 @@ export const name = "ghostContentApi" as const;
  * documentationUrl: ghost
  */
 export interface GhostContentApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface GhostContentApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "ghostContentApi";
-
 }

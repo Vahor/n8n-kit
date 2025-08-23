@@ -5,10 +5,10 @@ export const description = "Makes an HTTP request and returns the response data"
 export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpDigestAuth","required":true,"displayOptions":{"show":{"authentication":["digestAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"httpQueryAuth","required":true,"displayOptions":{"show":{"authentication":["queryAuth"]}}},{"name":"oAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HttpRequestV1NodeParameters {
-
     /**
      * The way to authenticate
      * Default: "none"
@@ -102,6 +102,4 @@ export interface HttpRequestV1NodeParameters {
 
     readonly infoMessage?: string;
 
-
 }
-

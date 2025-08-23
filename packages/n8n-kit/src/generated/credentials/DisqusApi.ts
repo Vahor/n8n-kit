@@ -8,7 +8,6 @@ export const name = "disqusApi" as const;
  * documentationUrl: disqus
  */
 export interface DisqusApiCredentials {
-
     /**
      * Visit your account details page, and grab the Access Token. See <a href="https://disqus.com/api/docs/auth/">Disqus auth</a>.
      * Type options: {"password":true}
@@ -16,5 +15,4 @@ export interface DisqusApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "disqusApi";
-
 }

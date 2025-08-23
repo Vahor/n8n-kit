@@ -7,31 +7,23 @@ import type { WiseNodeParameters } from "../nodes/Wise";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface WiseProps extends NodeProps {
-
     readonly parameters: WiseNodeParameters;
     readonly wiseApiCredentials: Credentials<WiseApiCredentials>;
-
 }
 
 /**
  * Consume the Wise API
  */
 export class Wise<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.wise" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: WiseProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.wiseApiCredentials];
-
     }
-
 
 }

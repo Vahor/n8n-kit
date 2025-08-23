@@ -8,14 +8,11 @@ export const name = "ciscoSecureEndpointApi" as const;
  * documentationUrl: ciscosecureendpoint
  */
 export interface CiscoSecureEndpointApiCredentials {
-
     /**
      * Default: "amp"
      */
     readonly "region"?: "apjc.amp" | "eu.amp" | "amp";
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -24,5 +21,4 @@ export interface CiscoSecureEndpointApiCredentials {
     readonly "clientSecret": string;
 
     readonly __name: "ciscoSecureEndpointApi";
-
 }

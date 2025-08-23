@@ -5,10 +5,10 @@ export const description = "Answer questions about retrieved documents" as const
 export const type = "@n8n/n8n-nodes-langchain.chainRetrievalQa" as const;
 export const version = 1.6 as const;
 export const credentials = [] as const;
+export const inputs = {"main":"main","Model":"ai_languageModel","Retriever":"ai_retriever"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChainRetrievalQaNodeParameters {
-
     readonly notice?: string;
 
     /**
@@ -32,6 +32,4 @@ export interface ChainRetrievalQaNodeParameters {
      */
     readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
-
 }
-

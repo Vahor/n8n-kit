@@ -7,31 +7,23 @@ import type { EmailSendV1NodeParameters } from "../nodes/EmailSendV1";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface EmailSendV1Props extends NodeProps {
-
     readonly parameters: EmailSendV1NodeParameters;
     readonly smtpCredentials: Credentials<SmtpCredentials>;
-
 }
 
 /**
  * Sends an Email
  */
 export class EmailSendV1<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.emailSend" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: EmailSendV1Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.smtpCredentials];
-
     }
-
 
 }

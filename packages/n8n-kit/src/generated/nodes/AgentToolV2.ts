@@ -4,10 +4,10 @@
 export const description = "Generates an action plan and executes it. Can use external tools." as const;
 export const type = "@n8n/n8n-nodes-langchain.agentTool" as const;
 export const version = 2.2 as const;
+export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface AgentToolV2NodeParameters {
-
     /**
      * Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often
      * Default: "AI Agent that can call other tools"
@@ -33,6 +33,4 @@ export interface AgentToolV2NodeParameters {
      */
     readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
-
 }
-

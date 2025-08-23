@@ -5,10 +5,10 @@ export const description = "Insert data into Pinecone Vector Store index" as con
 export const type = "@n8n/n8n-nodes-langchain.vectorStorePineconeInsert" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pineconeApi","required":true}] as const;
+export const inputs = {"main":"main","Document":"ai_document","Embedding":"ai_embedding"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VectorStorePineconeInsertNodeParameters {
-
     /**
      * Default: {"mode":"list","value":""}
      */
@@ -26,6 +26,4 @@ export interface VectorStorePineconeInsertNodeParameters {
      */
     readonly clearNamespace?: boolean;
 
-
 }
-

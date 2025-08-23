@@ -4,10 +4,10 @@
 export const description = "Execute another workflow" as const;
 export const type = "n8n-nodes-base.executeWorkflow" as const;
 export const version = 1.2 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ExecuteWorkflowNodeParameters {
-
     /**
      * Default: "call_workflow"
      */
@@ -61,6 +61,4 @@ export interface ExecuteWorkflowNodeParameters {
      */
     readonly options?: { "waitForSubWorkflow"?: boolean };
 
-
 }
-

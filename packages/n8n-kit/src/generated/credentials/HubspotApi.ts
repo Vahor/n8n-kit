@@ -8,9 +8,6 @@ export const name = "hubspotApi" as const;
  * documentationUrl: hubspot
  */
 export interface HubspotApiCredentials {
-
-    /**
-     */
     readonly "notice"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface HubspotApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "hubspotApi";
-
 }

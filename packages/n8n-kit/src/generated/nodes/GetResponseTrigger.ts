@@ -5,10 +5,10 @@ export const description = "Starts the workflow when GetResponse events occur" a
 export const type = "n8n-nodes-base.getResponseTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"getResponseApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"getResponseOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GetResponseTriggerNodeParameters {
-
     /**
      * Default: "apiKey"
      */
@@ -31,6 +31,4 @@ export interface GetResponseTriggerNodeParameters {
      */
     readonly options?: { "delete"?: boolean };
 
-
 }
-

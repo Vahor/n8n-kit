@@ -8,7 +8,6 @@ export const name = "profitWellApi" as const;
  * documentationUrl: profitWell
  */
 export interface ProfitWellApiCredentials {
-
     /**
      * Your Private Token
      * Type options: {"password":true}
@@ -16,5 +15,4 @@ export interface ProfitWellApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "profitWellApi";
-
 }

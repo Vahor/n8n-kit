@@ -7,31 +7,23 @@ import type { MattermostV1NodeParameters } from "../nodes/MattermostV1";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MattermostV1Props extends NodeProps {
-
     readonly parameters: MattermostV1NodeParameters;
     readonly mattermostApiCredentials: Credentials<MattermostApiCredentials>;
-
 }
 
 /**
  * Sends data to Mattermost
  */
 export class MattermostV1<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.mattermost" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MattermostV1Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.mattermostApiCredentials];
-
     }
-
 
 }

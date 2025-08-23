@@ -8,9 +8,6 @@ export const name = "magento2Api" as const;
  * documentationUrl: magento2
  */
 export interface Magento2ApiCredentials {
-
-    /**
-     */
     readonly "host"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface Magento2ApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "magento2Api";
-
 }

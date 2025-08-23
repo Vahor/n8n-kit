@@ -5,10 +5,10 @@ export const description = "Consume Marketstack API" as const;
 export const type = "n8n-nodes-base.marketstack" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"marketstackApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MarketstackNodeParameters {
-
     /**
      * Default: "endOfDayData"
      */
@@ -51,6 +51,4 @@ export interface MarketstackNodeParameters {
      */
     readonly symbol?: string;
 
-
 }
-

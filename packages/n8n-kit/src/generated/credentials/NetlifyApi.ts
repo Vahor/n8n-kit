@@ -8,12 +8,10 @@ export const name = "netlifyApi" as const;
  * documentationUrl: netlify
  */
 export interface NetlifyApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "netlifyApi";
-
 }

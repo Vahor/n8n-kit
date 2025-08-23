@@ -5,10 +5,10 @@ export const description = "Consume the Elasticsearch API" as const;
 export const type = "n8n-nodes-base.elasticsearch" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"elasticsearchApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ElasticsearchNodeParameters {
-
     /**
      * Default: "document"
      */
@@ -76,6 +76,4 @@ export interface ElasticsearchNodeParameters {
      */
     readonly additionalFields?: { "documentId"?: string, "routing"?: string, "timeout"?: string } | { "aliases"?: string, "include_type_name"?: boolean, "mappings"?: string, "master_timeout"?: string, "settings"?: string, "timeout"?: string, "wait_for_active_shards"?: string } | { "allow_no_indices"?: boolean, "expand_wildcards"?: "all" | "closed" | "hidden" | "none" | "open", "flat_settings"?: boolean, "ignore_unavailable"?: boolean, "include_defaults"?: boolean, "local"?: boolean, "master_timeout"?: string };
 
-
 }
-

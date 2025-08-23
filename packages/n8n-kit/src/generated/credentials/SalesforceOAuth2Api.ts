@@ -8,7 +8,6 @@ export const name = "salesforceOAuth2Api" as const;
  * documentationUrl: salesforce
  */
 export interface SalesforceOAuth2ApiCredentials {
-
     /**
      * Default: "pkce"
      */
@@ -34,8 +33,6 @@ export interface SalesforceOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -44,5 +41,4 @@ export interface SalesforceOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "salesforceOAuth2Api";
-
 }

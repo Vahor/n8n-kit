@@ -8,12 +8,10 @@ export const name = "pipedriveApi" as const;
  * documentationUrl: pipedrive
  */
 export interface PipedriveApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiToken"?: string;
 
     readonly __name: "pipedriveApi";
-
 }

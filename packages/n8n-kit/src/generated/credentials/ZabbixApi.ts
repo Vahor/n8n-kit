@@ -8,9 +8,6 @@ export const name = "zabbixApi" as const;
  * documentationUrl: zabbix
  */
 export interface ZabbixApiCredentials {
-
-    /**
-     */
     readonly "url": string;
 
     /**
@@ -19,5 +16,4 @@ export interface ZabbixApiCredentials {
     readonly "apiToken": string;
 
     readonly __name: "zabbixApi";
-
 }

@@ -8,9 +8,6 @@ export const name = "rocketchatApi" as const;
  * documentationUrl: rocketchat
  */
 export interface RocketchatApiCredentials {
-
-    /**
-     */
     readonly "userId"?: string;
 
     /**
@@ -18,10 +15,7 @@ export interface RocketchatApiCredentials {
      */
     readonly "authKey"?: string;
 
-    /**
-     */
     readonly "domain"?: string;
 
     readonly __name: "rocketchatApi";
-
 }

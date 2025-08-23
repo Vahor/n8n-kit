@@ -5,10 +5,10 @@ export const description = "Consume Gotify API" as const;
 export const type = "n8n-nodes-base.gotify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gotifyApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GotifyNodeParameters {
-
     /**
      * Default: "message"
      */
@@ -48,6 +48,4 @@ export interface GotifyNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

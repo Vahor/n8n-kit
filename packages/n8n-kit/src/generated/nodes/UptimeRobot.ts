@@ -5,10 +5,10 @@ export const description = "Consume UptimeRobot API" as const;
 export const type = "n8n-nodes-base.uptimeRobot" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"uptimeRobotApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface UptimeRobotNodeParameters {
-
     /**
      * Default: "account"
      */
@@ -95,6 +95,4 @@ export interface UptimeRobotNodeParameters {
      */
     readonly additionalFields?: { "custom_domain"?: string, "password"?: string, "sort"?: "1" | "2" | "3" | "4" };
 
-
 }
-

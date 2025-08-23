@@ -5,10 +5,10 @@ export const description = "Sends data to AWS SNS" as const;
 export const type = "n8n-nodes-base.awsSns" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsSnsNodeParameters {
-
     /**
      * Default: "publish"
      */
@@ -39,6 +39,4 @@ export interface AwsSnsNodeParameters {
      */
     readonly message?: string;
 
-
 }
-

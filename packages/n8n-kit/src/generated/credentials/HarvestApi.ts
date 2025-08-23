@@ -8,7 +8,6 @@ export const name = "harvestApi" as const;
  * documentationUrl: harvest
  */
 export interface HarvestApiCredentials {
-
     /**
      * Visit your account details page, and grab the Access Token. See <a href="https://help.getharvest.com/api-v2/authentication-api/authentication/authentication/">Harvest Personal Access Tokens</a>.
      * Type options: {"password":true}
@@ -16,5 +15,4 @@ export interface HarvestApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "harvestApi";
-
 }

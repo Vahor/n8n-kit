@@ -5,10 +5,10 @@ export const description = "Consume Google Tasks API" as const;
 export const type = "n8n-nodes-base.googleTasks" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleTasksOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleTasksNodeParameters {
-
     /**
      * Default: "task"
      */
@@ -54,6 +54,4 @@ export interface GoogleTasksNodeParameters {
      */
     readonly updateFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "title"?: string };
 
-
 }
-

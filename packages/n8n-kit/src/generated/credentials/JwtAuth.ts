@@ -8,7 +8,6 @@ export const name = "jwtAuth" as const;
  * documentationUrl: jwt
  */
 export interface JwtAuthCredentials {
-
     /**
      * Choose either the secret passphrase or PEM encoded public keys
      * Default: "passphrase"
@@ -36,5 +35,4 @@ export interface JwtAuthCredentials {
     readonly "algorithm"?: "HS256" | "HS384" | "HS512" | "RS256" | "RS384" | "RS512" | "ES256" | "ES384" | "ES512" | "PS256" | "PS384" | "PS512" | "none";
 
     readonly __name: "jwtAuth";
-
 }

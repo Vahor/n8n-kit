@@ -8,14 +8,11 @@ export const name = "milvusApi" as const;
  * documentationUrl: milvus
  */
 export interface MilvusApiCredentials {
-
     /**
      * Default: "http://localhost:19530"
      */
     readonly "baseUrl": string;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -24,5 +21,4 @@ export interface MilvusApiCredentials {
     readonly "password"?: string;
 
     readonly __name: "milvusApi";
-
 }

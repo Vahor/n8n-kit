@@ -5,10 +5,10 @@ export const description = "Access data on Google Drive" as const;
 export const type = "n8n-nodes-base.googleDrive" as const;
 export const version = 3 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleDriveV2NodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"Knowledge store agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"knowledge_store_agent_with_google_drive"}}
      */
@@ -143,6 +143,4 @@ export interface GoogleDriveV2NodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-
 }
-

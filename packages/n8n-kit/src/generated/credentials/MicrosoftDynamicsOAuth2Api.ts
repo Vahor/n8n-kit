@@ -8,9 +8,6 @@ export const name = "microsoftDynamicsOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftDynamicsOAuth2ApiCredentials {
-
-    /**
-     */
     readonly "subdomain": string;
 
     /**
@@ -24,5 +21,4 @@ export interface MicrosoftDynamicsOAuth2ApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "microsoftDynamicsOAuth2Api";
-
 }

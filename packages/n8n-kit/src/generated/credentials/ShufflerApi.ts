@@ -8,12 +8,10 @@ export const name = "shufflerApi" as const;
  * documentationUrl: shuffler
  */
 export interface ShufflerApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "shufflerApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Consume Zoom API" as const;
 export const type = "n8n-nodes-base.zoom" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zoomApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"zoomOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZoomNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -61,6 +61,4 @@ export interface ZoomNodeParameters {
      */
     readonly updateFields?: { "agenda"?: string, "duration"?: number, "password"?: string, "scheduleFor"?: string, "settings"?: { "audio"?: "both" | "telephony" | "voip", "alternativeHosts"?: string, "autoRecording"?: "local" | "cloud" | "none", "cnMeeting"?: boolean, "inMeeting"?: boolean, "hostVideo"?: boolean, "joinBeforeHost"?: boolean, "muteUponEntry"?: boolean, "participantVideo"?: boolean, "registrationType"?: "1" | "2" | "3", "watermark"?: boolean }, "startTime"?: string, "timeZone"?: string, "topic"?: string, "type"?: "1" | "2" | "3" | "8" };
 
-
 }
-

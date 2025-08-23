@@ -5,10 +5,10 @@ export const description = "Use the Metabase API" as const;
 export const type = "n8n-nodes-base.metabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"metabaseApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MetabaseNodeParameters {
-
     /**
      * Default: "questions"
      */
@@ -68,6 +68,4 @@ export interface MetabaseNodeParameters {
 
     readonly alertId?: string;
 
-
 }
-

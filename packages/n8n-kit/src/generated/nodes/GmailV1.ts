@@ -5,10 +5,10 @@ export const description = "Consume the Gmail API" as const;
 export const type = "n8n-nodes-base.gmail" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GmailV1NodeParameters {
-
     readonly oldVersionNotice?: string;
 
     /**
@@ -100,6 +100,4 @@ export interface GmailV1NodeParameters {
      */
     readonly labelIds?: any[];
 
-
 }
-

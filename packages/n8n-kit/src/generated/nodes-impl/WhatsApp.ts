@@ -7,31 +7,23 @@ import type { WhatsAppNodeParameters } from "../nodes/WhatsApp";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface WhatsAppProps extends NodeProps {
-
     readonly parameters: WhatsAppNodeParameters;
     readonly whatsAppApiCredentials: Credentials<WhatsAppApiCredentials>;
-
 }
 
 /**
  * Access WhatsApp API
  */
 export class WhatsApp<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.whatsApp" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: WhatsAppProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.whatsAppApiCredentials];
-
     }
-
 
 }

@@ -4,10 +4,10 @@
 export const description = "Manipulate date and time values" as const;
 export const type = "n8n-nodes-base.dateTime" as const;
 export const version = 2 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DateTimeV2NodeParameters {
-
     /**
      * Default: "getCurrentDate"
      */
@@ -90,6 +90,4 @@ export interface DateTimeV2NodeParameters {
      */
     readonly part?: "year" | "month" | "week" | "day" | "hour" | "minute" | "second";
 
-
 }
-

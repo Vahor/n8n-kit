@@ -5,10 +5,10 @@ export const description = "Retrieve data from the FileMaker data API" as const;
 export const type = "n8n-nodes-base.filemaker" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"fileMaker","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FileMakerNodeParameters {
-
     /**
      * Default: "record"
      */
@@ -145,6 +145,4 @@ export interface FileMakerNodeParameters {
      */
     readonly scriptParam?: string;
 
-
 }
-

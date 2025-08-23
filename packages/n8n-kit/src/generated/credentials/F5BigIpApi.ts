@@ -8,9 +8,6 @@ export const name = "f5BigIpApi" as const;
  * documentationUrl: f5bigip
  */
 export interface F5BigIpApiCredentials {
-
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -19,5 +16,4 @@ export interface F5BigIpApiCredentials {
     readonly "password": string;
 
     readonly __name: "f5BigIpApi";
-
 }

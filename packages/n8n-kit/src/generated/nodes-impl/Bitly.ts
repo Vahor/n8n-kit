@@ -8,32 +8,24 @@ import type { BitlyNodeParameters } from "../nodes/Bitly";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface BitlyProps extends NodeProps {
-
     readonly parameters: BitlyNodeParameters;
     readonly bitlyApiCredentials?: Credentials<BitlyApiCredentials>;
     readonly bitlyOAuth2ApiCredentials?: Credentials<BitlyOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Bitly API
  */
 export class Bitly<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.bitly" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: BitlyProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.bitlyApiCredentials, this.props!.bitlyOAuth2ApiCredentials];
-
     }
-
 
 }

@@ -8,7 +8,6 @@ export const name = "jotFormApi" as const;
  * documentationUrl: jotForm
  */
 export interface JotFormApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -21,5 +20,4 @@ export interface JotFormApiCredentials {
     readonly "apiDomain"?: "api.jotform.com" | "eu-api.jotform.com" | "hipaa-api.jotform.com";
 
     readonly __name: "jotFormApi";
-
 }

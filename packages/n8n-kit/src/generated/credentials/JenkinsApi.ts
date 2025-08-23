@@ -8,9 +8,6 @@ export const name = "jenkinsApi" as const;
  * documentationUrl: jenkins
  */
 export interface JenkinsApiCredentials {
-
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -18,10 +15,7 @@ export interface JenkinsApiCredentials {
      */
     readonly "apiKey"?: string;
 
-    /**
-     */
     readonly "baseUrl"?: string;
 
     readonly __name: "jenkinsApi";
-
 }

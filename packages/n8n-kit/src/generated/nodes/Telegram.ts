@@ -5,10 +5,10 @@ export const description = "Sends data to Telegram" as const;
 export const type = "n8n-nodes-base.telegram" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TelegramNodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"Voice assistant agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"voice_assistant_agent_with_telegram_and_gcal"}}
      */
@@ -204,6 +204,4 @@ export interface TelegramNodeParameters {
      */
     readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
-
 }
-

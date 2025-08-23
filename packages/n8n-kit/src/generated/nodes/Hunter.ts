@@ -5,10 +5,10 @@ export const description = "Consume Hunter API" as const;
 export const type = "n8n-nodes-base.hunter" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"hunterApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HunterNodeParameters {
-
     /**
      * Operation to consume
      * Default: "domainSearch"
@@ -58,6 +58,4 @@ export interface HunterNodeParameters {
      */
     readonly email?: string;
 
-
 }
-

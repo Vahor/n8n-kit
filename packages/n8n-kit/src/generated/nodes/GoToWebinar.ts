@@ -5,10 +5,10 @@ export const description = "Consume the GoToWebinar API" as const;
 export const type = "n8n-nodes-base.goToWebinar" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"goToWebinarOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoToWebinarNodeParameters {
-
     /**
      * Default: "attendee"
      */
@@ -118,6 +118,4 @@ export interface GoToWebinarNodeParameters {
      */
     readonly updateFields?: { "description"?: string, "experienceType"?: "CLASSIC" | "BROADCAST" | "SIMULIVE", "isOnDemand"?: boolean, "isPasswordProtected"?: boolean, "times"?: { "timesProperties": any }, "subject"?: string, "timezone"?: string, "type"?: "single_session" | "series" | "sequence" };
 
-
 }
-

@@ -8,9 +8,6 @@ export const name = "s3" as const;
  * documentationUrl: s3
  */
 export interface S3Credentials {
-
-    /**
-     */
     readonly "endpoint"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface S3Credentials {
      */
     readonly "region"?: string;
 
-    /**
-     */
     readonly "accessKeyId"?: string;
 
     /**
@@ -27,8 +22,6 @@ export interface S3Credentials {
      */
     readonly "secretAccessKey"?: string;
 
-    /**
-     */
     readonly "forcePathStyle"?: boolean;
 
     /**
@@ -37,5 +30,4 @@ export interface S3Credentials {
     readonly "ignoreSSLIssues"?: boolean;
 
     readonly __name: "s3";
-
 }

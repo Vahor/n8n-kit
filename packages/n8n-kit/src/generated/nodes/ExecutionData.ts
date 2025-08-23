@@ -4,10 +4,10 @@
 export const description = "Add execution data for search" as const;
 export const type = "n8n-nodes-base.executionData" as const;
 export const version = 1.1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ExecutionDataNodeParameters {
-
     readonly notice?: string;
 
     /**
@@ -21,6 +21,4 @@ export interface ExecutionDataNodeParameters {
      */
     readonly dataToSave?: { "values": any };
 
-
 }
-

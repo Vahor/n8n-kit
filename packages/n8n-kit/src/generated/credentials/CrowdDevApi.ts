@@ -8,14 +8,11 @@ export const name = "crowdDevApi" as const;
  * documentationUrl: crowddev
  */
 export interface CrowdDevApiCredentials {
-
     /**
      * Default: "https://app.crowd.dev"
      */
     readonly "url"?: string;
 
-    /**
-     */
     readonly "tenantId"?: string;
 
     /**
@@ -29,5 +26,4 @@ export interface CrowdDevApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "crowdDevApi";
-
 }

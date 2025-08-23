@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Linear events occur" as con
 export const type = "n8n-nodes-base.linearTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"linearApi","required":true,"testedBy":"linearApiTest","displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"linearOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinearTriggerNodeParameters {
-
     /**
      * Default: "apiToken"
      */
@@ -27,6 +27,4 @@ export interface LinearTriggerNodeParameters {
      */
     readonly resources?: ("reaction" | "cycle" | "issue" | "comment" | "issueLabel" | "project")[];
 
-
 }
-

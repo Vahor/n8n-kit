@@ -1,6 +1,7 @@
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import { globSync } from "tinyglobby";
+import { capitalize } from "./shared";
 
 const allNodesTypes = globSync("../src/generated/nodes/**/*.ts", {
 	cwd: path.resolve(__dirname),
@@ -14,6 +15,8 @@ type TypeData = {
 	type: string;
 	description: string;
 	version: number;
+	inputs: Record<string, string>;
+	outputs: Record<string, string>;
 	__filepath: string;
 	credentials: {
 		required: boolean;
@@ -49,6 +52,9 @@ const generateTypescriptNodeOutput = async (
 	code.line(`// see scripts/generate-nodes-impl.ts`);
 	code.line();
 
+	const hasInputs =
+		Object.keys(result.inputs).filter((o) => o !== "main").length > 0;
+
 	for (const cred of result.credentials) {
 		code.line(
 			`import type { ${cred.__matchingCredentialsFileName}Credentials } from "${cred.__matchingCredentialsFile}";`,
@@ -56,6 +62,13 @@ const generateTypescriptNodeOutput = async (
 	}
 	if (result.credentials.length > 0) {
 		code.line(`import type { Credentials } from "../../credentials";`);
+	}
+	if (Object.keys(result.outputs).filter((o) => o !== "main").length > 0) {
+		code.line(`import type { IChainable } from "../../workflow/chain/types";`);
+	}
+	if (hasInputs) {
+		code.line(`import type { State } from "../../workflow/chain/state";`);
+		code.line(`import { DEFAULT_NODE_SIZE } from "../../nodes/node";`);
 	}
 
 	code.line(
@@ -66,8 +79,7 @@ const generateTypescriptNodeOutput = async (
 	code.line();
 
 	// interface
-	code.line(`export interface ${result.nodeName}Props extends NodeProps {`);
-	code.indent();
+	code.openBlock(`export interface ${result.nodeName}Props extends NodeProps`);
 	code.line(`readonly parameters: ${result.nodeName}NodeParameters;`);
 	for (const cred of result.credentials) {
 		const credName = code.toCamelCase(cred.name);
@@ -75,8 +87,7 @@ const generateTypescriptNodeOutput = async (
 			`readonly ${credName}Credentials${!cred.required ? "?" : ""}: Credentials<${cred.__matchingCredentialsFileName}Credentials>;`,
 		);
 	}
-	code.unindent();
-	code.line(`}`);
+	code.closeBlock();
 	code.line();
 
 	// class
@@ -84,23 +95,25 @@ const generateTypescriptNodeOutput = async (
 	code.line(`/**`);
 	code.line(` * ${result.description}`);
 	code.line(` */`);
-	code.line(
-		`export class ${result.nodeName}<L extends string> extends Node<L> {`,
+	code.openBlock(
+		`export class ${result.nodeName}<L extends string> extends Node<L>`,
 	);
-	code.indent();
 
 	code.line(`protected type = "${result.type}" as const;`);
 	code.line(`protected typeVersion = ${result.version} as const;`);
 	code.line();
 
 	const hasRequiredProps = result.credentials.some((cred) => cred.required);
-	code.line(
-		`constructor(id: L, override props${hasRequiredProps ? "" : "?"}: ${result.nodeName}Props) {`,
+	code.openBlock(
+		`constructor(id: L, override props${hasRequiredProps ? "" : "?"}: ${result.nodeName}Props)`,
 	);
-	code.indent();
 	code.line(`super(id, props);`);
-	code.unindent();
-	code.line(`}`);
+	if (hasInputs) {
+		code.line(
+			`this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };`,
+		);
+	}
+	code.closeBlock();
 	code.line();
 
 	// getCredentials
@@ -108,18 +121,39 @@ const generateTypescriptNodeOutput = async (
 		const credsArray = result.credentials.map((cred) =>
 			code.toCamelCase(cred.name),
 		);
-		code.line(`override getCredentials() {`);
-		code.indent();
+		code.openBlock(`override getCredentials()`);
 		code.line(
 			`return [${credsArray.map((c) => `this.props!.${c}Credentials`).join(", ")}];`,
 		);
-		code.unindent();
-		code.line(`}`);
+		code.closeBlock();
 		code.line();
 	}
 
-	code.unindent();
-	code.line(`}`);
+	for (const [inputName, inputType] of Object.entries(result.inputs)) {
+		if (inputName === "main") continue;
+		code.openBlock(
+			`public with${capitalize(code.toCamelCase(inputName))}(next: State): this`,
+		);
+		code.line(
+			`super.addNext(next.startState, { type: "${inputType}", direction: "input" });`,
+		);
+		code.line(`return this;`);
+		code.closeBlock();
+		code.line();
+	}
+
+	for (const [outputName, outputType] of Object.entries(result.outputs)) {
+		if (outputName === "main") continue;
+		code.openBlock(
+			`public ${code.toCamelCase(outputName)}(next: IChainable): this`,
+		);
+		code.line(`super.addNext(next.startState, { type: "${outputType}" });`);
+		code.line(`return this;`);
+		code.closeBlock();
+		code.line();
+	}
+
+	code.closeBlock();
 
 	code.closeFile(outputFile);
 	await code.save("src/generated/nodes-impl");
@@ -133,7 +167,6 @@ if (allNodesTypes.length === 0) {
 }
 for (const nodePath of allNodesTypes) {
 	const nodeName = nodePath.split("/").pop()?.split(".")[0]!;
-	if (nodeName === "index") continue;
 
 	try {
 		delete require.cache[nodePath];
@@ -157,6 +190,8 @@ for (const nodePath of allNodesTypes) {
 			nodeName: nodeName,
 			type: file.type,
 			description: file.description,
+			outputs: file.outputs,
+			inputs: file.inputs,
 			version: file.version,
 			__filepath: nodePath,
 			credentials:
@@ -173,7 +208,7 @@ for (const nodePath of allNodesTypes) {
 						__matchingCredentialsFileName: matchingCredentialsFileName,
 					};
 				}) ?? [],
-		} as TypeData;
+		} as const satisfies TypeData;
 
 		await generateTypescriptNodeOutput(typeData, `${nodeName}.ts`);
 

@@ -8,7 +8,6 @@ export const name = "matrixApi" as const;
  * documentationUrl: matrix
  */
 export interface MatrixApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface MatrixApiCredentials {
     readonly "homeserverUrl"?: string;
 
     readonly __name: "matrixApi";
-
 }

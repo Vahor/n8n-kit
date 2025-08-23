@@ -5,10 +5,10 @@ export const description = "Consume ERPNext API" as const;
 export const type = "n8n-nodes-base.erpNext" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"erpNextApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ERPNextNodeParameters {
-
     /**
      * Default: "document"
      */
@@ -53,6 +53,4 @@ export interface ERPNextNodeParameters {
      */
     readonly documentName?: string;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Interact with the Perplexity API to generate AI resp
 export const type = "n8n-nodes-base.perplexity" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"perplexityApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PerplexityNodeParameters {
-
     /**
      * Default: "chat"
      */
@@ -42,6 +42,4 @@ export interface PerplexityNodeParameters {
      */
     readonly options?: { "frequencyPenalty"?: number, "maxTokens"?: number, "temperature"?: number, "topK"?: number, "topP"?: number, "presencePenalty"?: number, "returnImages"?: boolean, "returnRelatedQuestions"?: boolean, "searchDomainFilter"?: string, "searchRecency"?: "day" | "hour" | "month" | "week" };
 
-
 }
-

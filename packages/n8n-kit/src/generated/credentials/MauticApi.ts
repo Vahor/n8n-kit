@@ -8,13 +8,8 @@ export const name = "mauticApi" as const;
  * documentationUrl: mautic
  */
 export interface MauticApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -23,5 +18,4 @@ export interface MauticApiCredentials {
     readonly "password"?: string;
 
     readonly __name: "mauticApi";
-
 }

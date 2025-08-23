@@ -5,10 +5,10 @@ export const description = "Consume ServiceNow API" as const;
 export const type = "n8n-nodes-base.serviceNow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"serviceNowOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"serviceNowBasicApi","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ServiceNowNodeParameters {
-
     /**
      * Authentication method to use
      * Default: "oAuth2"
@@ -114,6 +114,4 @@ export interface ServiceNowNodeParameters {
      */
     readonly user_name?: string;
 
-
 }
-

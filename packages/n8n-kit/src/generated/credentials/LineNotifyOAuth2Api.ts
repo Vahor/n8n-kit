@@ -8,7 +8,6 @@ export const name = "lineNotifyOAuth2Api" as const;
  * documentationUrl: line
  */
 export interface LineNotifyOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface LineNotifyOAuth2ApiCredentials {
      */
     readonly "scope": any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface LineNotifyOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "lineNotifyOAuth2Api";
-
 }

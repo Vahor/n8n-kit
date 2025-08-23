@@ -8,7 +8,6 @@ export const name = "mailjetEmailApi" as const;
  * documentationUrl: mailjet
  */
 export interface MailjetEmailApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -25,5 +24,4 @@ export interface MailjetEmailApiCredentials {
     readonly "sandboxMode"?: boolean;
 
     readonly __name: "mailjetEmailApi";
-
 }

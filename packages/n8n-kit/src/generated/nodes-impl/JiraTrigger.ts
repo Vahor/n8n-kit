@@ -10,34 +10,26 @@ import type { JiraTriggerNodeParameters } from "../nodes/JiraTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface JiraTriggerProps extends NodeProps {
-
     readonly parameters: JiraTriggerNodeParameters;
     readonly jiraSoftwareCloudApiCredentials?: Credentials<JiraSoftwareCloudApiCredentials>;
     readonly jiraSoftwareServerApiCredentials?: Credentials<JiraSoftwareServerApiCredentials>;
     readonly jiraSoftwareServerPatApiCredentials?: Credentials<JiraSoftwareServerPatApiCredentials>;
     readonly httpQueryAuthCredentials?: Credentials<HttpQueryAuthCredentials>;
-
 }
 
 /**
  * Starts the workflow when Jira events occur
  */
 export class JiraTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.jiraTrigger" as const;
     protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props?: JiraTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.jiraSoftwareCloudApiCredentials, this.props!.jiraSoftwareServerApiCredentials, this.props!.jiraSoftwareServerPatApiCredentials, this.props!.httpQueryAuthCredentials];
-
     }
-
 
 }

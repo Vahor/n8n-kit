@@ -5,10 +5,10 @@ export const description = "Create iCalendar file" as const;
 export const type = "n8n-nodes-base.iCal" as const;
 export const version = 1 as const;
 export const credentials = [] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ICalendarNodeParameters {
-
     /**
      * Default: "createEventFile"
      */
@@ -42,6 +42,4 @@ export interface ICalendarNodeParameters {
      */
     readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string, "useWorkflowTimezone"?: boolean };
 
-
 }
-

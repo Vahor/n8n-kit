@@ -5,10 +5,10 @@ export const description = "Consume Humantic AI API" as const;
 export const type = "n8n-nodes-base.humanticAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"humanticAiApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HumanticAiNodeParameters {
-
     /**
      * Default: "profile"
      */
@@ -44,6 +44,4 @@ export interface HumanticAiNodeParameters {
      */
     readonly text?: string;
 
-
 }
-

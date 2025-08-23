@@ -8,7 +8,6 @@ export const name = "mongoDb" as const;
  * documentationUrl: mongoDb
  */
 export interface MongoDbCredentials {
-
     /**
      * Default: "values"
      */
@@ -29,8 +28,6 @@ export interface MongoDbCredentials {
      */
     readonly "database"?: string;
 
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -43,8 +40,6 @@ export interface MongoDbCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "tls"?: boolean;
 
     /**
@@ -68,5 +63,4 @@ export interface MongoDbCredentials {
     readonly "passphrase"?: string;
 
     readonly __name: "mongoDb";
-
 }

@@ -8,14 +8,11 @@ export const name = "mqtt" as const;
  * documentationUrl: mqtt
  */
 export interface MqttCredentials {
-
     /**
      * Default: "mqtt"
      */
     readonly "protocol"?: "mqtt" | "mqtts" | "ws";
 
-    /**
-     */
     readonly "host"?: string;
 
     /**
@@ -23,8 +20,6 @@ export interface MqttCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -43,8 +38,6 @@ export interface MqttCredentials {
      */
     readonly "clientId"?: string;
 
-    /**
-     */
     readonly "ssl"?: boolean;
 
     /**
@@ -77,5 +70,4 @@ export interface MqttCredentials {
     readonly "key"?: string;
 
     readonly __name: "mqtt";
-
 }

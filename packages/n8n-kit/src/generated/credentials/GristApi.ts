@@ -8,7 +8,6 @@ export const name = "gristApi" as const;
  * documentationUrl: grist
  */
 export interface GristApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -30,5 +29,4 @@ export interface GristApiCredentials {
     readonly "selfHostedUrl": string;
 
     readonly __name: "gristApi";
-
 }

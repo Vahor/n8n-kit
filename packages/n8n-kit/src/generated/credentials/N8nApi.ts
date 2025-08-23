@@ -8,7 +8,6 @@ export const name = "n8nApi" as const;
  * documentationUrl: https://docs.n8n.io/api/authentication/
  */
 export interface N8nApiCredentials {
-
     /**
      * The API key for the n8n instance
      * Type options: {"password":true}
@@ -21,5 +20,4 @@ export interface N8nApiCredentials {
     readonly "baseUrl"?: string;
 
     readonly __name: "n8nApi";
-
 }

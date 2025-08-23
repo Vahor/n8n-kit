@@ -5,10 +5,10 @@ export const description = "Listens to Postgres messages" as const;
 export const type = "n8n-nodes-base.postgresTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"postgres","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostgresTriggerNodeParameters {
-
     /**
      * Default: "createTrigger"
      */
@@ -50,6 +50,4 @@ export interface PostgresTriggerNodeParameters {
      */
     readonly options?: { "connectionTimeout"?: number, "delayClosingIdleConnection"?: number };
 
-
 }
-

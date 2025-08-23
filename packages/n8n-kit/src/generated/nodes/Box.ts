@@ -5,10 +5,10 @@ export const description = "Consume Box API" as const;
 export const type = "n8n-nodes-base.box" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"boxOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BoxNodeParameters {
-
     /**
      * Default: "file"
      */
@@ -122,6 +122,4 @@ export interface BoxNodeParameters {
      */
     readonly updateFields?: { "can_non_owners_invite"?: boolean, "can_non_owners_view_collaborators"?: boolean, "description"?: string, "fields"?: string, "is_collaboration_restricted_to_enterprise"?: boolean, "name"?: string, "parentId"?: string, "shared_link"?: { "access"?: "collaborators" | "company" | "open", "password"?: string, "permissions"?: { "can_download"?: boolean, "unshared_at"?: string, "vanity_name"?: string }, "tags"?: string } };
 
-
 }
-

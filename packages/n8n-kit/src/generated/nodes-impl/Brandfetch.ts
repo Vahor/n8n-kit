@@ -7,31 +7,23 @@ import type { BrandfetchNodeParameters } from "../nodes/Brandfetch";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface BrandfetchProps extends NodeProps {
-
     readonly parameters: BrandfetchNodeParameters;
     readonly brandfetchApiCredentials: Credentials<BrandfetchApiCredentials>;
-
 }
 
 /**
  * Consume Brandfetch API
  */
 export class Brandfetch<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.Brandfetch" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: BrandfetchProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.brandfetchApiCredentials];
-
     }
-
 
 }

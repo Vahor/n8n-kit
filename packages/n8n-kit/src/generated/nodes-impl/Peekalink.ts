@@ -7,31 +7,23 @@ import type { PeekalinkNodeParameters } from "../nodes/Peekalink";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface PeekalinkProps extends NodeProps {
-
     readonly parameters: PeekalinkNodeParameters;
     readonly peekalinkApiCredentials: Credentials<PeekalinkApiCredentials>;
-
 }
 
 /**
  * Consume the Peekalink API
  */
 export class Peekalink<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.peekalink" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: PeekalinkProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.peekalinkApiCredentials];
-
     }
-
 
 }

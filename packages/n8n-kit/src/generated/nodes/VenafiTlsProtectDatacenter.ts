@@ -5,10 +5,10 @@ export const description = "Consume Venafi TLS Protect Datacenter" as const;
 export const type = "n8n-nodes-base.venafiTlsProtectDatacenter" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"venafiTlsProtectDatacenterApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VenafiTlsProtectDatacenterNodeParameters {
-
     /**
      * Default: "certificate"
      */
@@ -81,6 +81,4 @@ export interface VenafiTlsProtectDatacenterNodeParameters {
      */
     readonly policyDn?: string;
 
-
 }
-

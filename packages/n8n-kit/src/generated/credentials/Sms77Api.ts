@@ -8,12 +8,10 @@ export const name = "sms77Api" as const;
  * documentationUrl: sms77
  */
 export interface Sms77ApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "sms77Api";
-
 }

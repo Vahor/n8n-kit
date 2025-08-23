@@ -5,10 +5,10 @@ export const description = "Consume the Gmail API" as const;
 export const type = "n8n-nodes-base.gmail" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"gmailOAuth2","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GmailV2NodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"Email triage agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"email_triage_agent_with_gmail"}}
      */
@@ -126,6 +126,4 @@ export interface GmailV2NodeParameters {
      */
     readonly threadId?: string;
 
-
 }
-

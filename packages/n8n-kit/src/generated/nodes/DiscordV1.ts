@@ -4,10 +4,10 @@
 export const description = "Sends data to Discord" as const;
 export const type = "n8n-nodes-base.discord" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DiscordV1NodeParameters {
-
     readonly oldVersionNotice?: string;
 
     readonly webhookUri?: string;
@@ -22,6 +22,4 @@ export interface DiscordV1NodeParameters {
      */
     readonly options?: { "allowedMentions"?: string, "attachments"?: string, "avatarUrl"?: string, "components"?: string, "embeds"?: string, "flags"?: number, "payloadJson"?: string, "username"?: string, "tts"?: boolean };
 
-
 }
-

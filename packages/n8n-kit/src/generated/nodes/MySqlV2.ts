@@ -5,10 +5,10 @@ export const description = "Get, add and update data in MySQL" as const;
 export const type = "n8n-nodes-base.mySql" as const;
 export const version = 2.5 as const;
 export const credentials = [{"name":"mySql","required":true,"testedBy":"mysqlConnectionTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MySqlV2NodeParameters {
-
     /**
      * Default: "database"
      */
@@ -100,6 +100,4 @@ export interface MySqlV2NodeParameters {
      */
     readonly valueToMatchOn?: string;
 
-
 }
-

@@ -8,7 +8,6 @@ export const name = "postgres" as const;
  * documentationUrl: postgres
  */
 export interface PostgresCredentials {
-
     /**
      * Default: "localhost"
      */
@@ -50,8 +49,6 @@ export interface PostgresCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "sshTunnel"?: boolean;
 
     /**
@@ -90,5 +87,4 @@ export interface PostgresCredentials {
     readonly "passphrase"?: string;
 
     readonly __name: "postgres";
-
 }

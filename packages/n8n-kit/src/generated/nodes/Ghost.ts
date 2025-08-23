@@ -5,10 +5,10 @@ export const description = "Consume Ghost API" as const;
 export const type = "n8n-nodes-base.ghost" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ghostAdminApi","required":true,"displayOptions":{"show":{"source":["adminApi"]}}},{"name":"ghostContentApi","required":true,"displayOptions":{"show":{"source":["contentApi"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GhostNodeParameters {
-
     /**
      * Pick where your data comes from, Content or Admin API
      * Default: "contentApi"
@@ -84,6 +84,4 @@ export interface GhostNodeParameters {
      */
     readonly updateFields?: { "authors"?: any[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: any[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
 
-
 }
-

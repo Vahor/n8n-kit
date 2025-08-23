@@ -35,6 +35,8 @@ export abstract class State<
 		return {
 			from: connectionOptions?.from ?? 0,
 			to: connectionOptions?.to ?? 0,
+			type: connectionOptions?.type ?? "main",
+			direction: connectionOptions?.direction ?? "output",
 		};
 	}
 

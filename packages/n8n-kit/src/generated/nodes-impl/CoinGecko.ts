@@ -5,24 +5,18 @@ import type { CoinGeckoNodeParameters } from "../nodes/CoinGecko";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface CoinGeckoProps extends NodeProps {
-
     readonly parameters: CoinGeckoNodeParameters;
-
 }
 
 /**
  * Consume CoinGecko API
  */
 export class CoinGecko<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.coinGecko" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: CoinGeckoProps) {
-
         super(id, props);
-
     }
-
 
 }

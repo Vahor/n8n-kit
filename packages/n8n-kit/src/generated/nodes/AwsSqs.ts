@@ -5,10 +5,10 @@ export const description = "Sends messages to AWS SQS" as const;
 export const type = "n8n-nodes-base.awsSqs" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsSqsNodeParameters {
-
     /**
      * Default: "sendMessage"
      */
@@ -46,6 +46,4 @@ export interface AwsSqsNodeParameters {
      */
     readonly options?: { "delaySeconds"?: number, "messageAttributes"?: { "binary": any, "number": any, "string": any }, "messageDeduplicationId"?: string };
 
-
 }
-

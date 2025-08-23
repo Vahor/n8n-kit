@@ -5,10 +5,10 @@ export const description = "Consume Strava API" as const;
 export const type = "n8n-nodes-base.strava" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StravaNodeParameters {
-
     /**
      * Default: "activity"
      */
@@ -79,6 +79,4 @@ export interface StravaNodeParameters {
      */
     readonly keys?: ("altitude" | "cadence" | "distance" | "grade_smooth" | "heartrate" | "latlng" | "moving" | "temp" | "time" | "velocity_smooth" | "watts")[];
 
-
 }
-

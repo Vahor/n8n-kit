@@ -8,7 +8,6 @@ export const name = "npmApi" as const;
  * documentationUrl: npm
  */
 export interface NpmApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface NpmApiCredentials {
     readonly "registryUrl"?: string;
 
     readonly __name: "npmApi";
-
 }

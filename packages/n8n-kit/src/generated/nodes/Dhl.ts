@@ -5,10 +5,10 @@ export const description = "Consume DHL API" as const;
 export const type = "n8n-nodes-base.dhl" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"dhlApi","required":true,"testedBy":"dhlApiCredentialTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DhlNodeParameters {
-
     /**
      * Default: "shipment"
      */
@@ -26,6 +26,4 @@ export interface DhlNodeParameters {
      */
     readonly options?: { "recipientPostalCode"?: string };
 
-
 }
-

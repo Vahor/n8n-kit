@@ -4,10 +4,10 @@
 export const description = "Answer questions with a vector store" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolVectorStore" as const;
 export const version = 1.1 as const;
+export const inputs = {"Vector Store":"ai_vectorStore","Model":"ai_languageModel"} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolVectorStoreNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -30,6 +30,4 @@ export interface ToolVectorStoreNodeParameters {
      */
     readonly topK?: number;
 
-
 }
-

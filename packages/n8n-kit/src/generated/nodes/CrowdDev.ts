@@ -5,10 +5,10 @@ export const description = "crowd.dev is an open-source suite of community and d
 export const type = "n8n-nodes-base.crowdDev" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"crowdDevApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CrowdDevNodeParameters {
-
     /**
      * Default: "activity"
      */
@@ -99,6 +99,4 @@ export interface CrowdDevNodeParameters {
      */
     readonly url?: string;
 
-
 }
-

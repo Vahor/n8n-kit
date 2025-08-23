@@ -8,32 +8,24 @@ import type { GithubNodeParameters } from "../nodes/Github";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GithubProps extends NodeProps {
-
     readonly parameters: GithubNodeParameters;
     readonly githubApiCredentials?: Credentials<GithubApiCredentials>;
     readonly githubOAuth2ApiCredentials?: Credentials<GithubOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume GitHub API
  */
 export class Github<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.github" as const;
     protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props?: GithubProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.githubApiCredentials, this.props!.githubOAuth2ApiCredentials];
-
     }
-
 
 }

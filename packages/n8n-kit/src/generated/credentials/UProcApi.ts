@@ -8,9 +8,6 @@ export const name = "uprocApi" as const;
  * documentationUrl: uProc
  */
 export interface UProcApiCredentials {
-
-    /**
-     */
     readonly "email"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface UProcApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "uprocApi";
-
 }

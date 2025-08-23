@@ -8,7 +8,6 @@ export const name = "openAiApi" as const;
  * documentationUrl: openAi
  */
 export interface OpenAiApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -26,5 +25,4 @@ export interface OpenAiApiCredentials {
     readonly "url"?: string;
 
     readonly __name: "openAiApi";
-
 }

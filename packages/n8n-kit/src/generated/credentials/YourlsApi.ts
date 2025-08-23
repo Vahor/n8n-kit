@@ -8,15 +8,9 @@ export const name = "yourlsApi" as const;
  * documentationUrl: yourls
  */
 export interface YourlsApiCredentials {
-
-    /**
-     */
     readonly "signature"?: string;
 
-    /**
-     */
     readonly "url"?: string;
 
     readonly __name: "yourlsApi";
-
 }

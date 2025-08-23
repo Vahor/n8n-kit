@@ -5,10 +5,10 @@ export const description = "Runs the workflow when an n8n generated webchat is s
 export const type = "@n8n/n8n-nodes-langchain.chatTrigger" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChatTriggerNodeParameters {
-
     /**
      * Whether the chat should be publicly available or only accessible through the manual chat interface
      */
@@ -41,6 +41,4 @@ export interface ChatTriggerNodeParameters {
      */
     readonly options?: { "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string } | { "allowedOrigins"?: string, "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "inputPlaceholder"?: string, "loadPreviousSession"?: "notSupported" | "memory" | "manually", "showWelcomeScreen"?: boolean, "getStarted"?: string, "subtitle"?: string, "title"?: string, "customCss"?: string, "responseMode"?: "lastNode" | "responseNode" } | { "allowedOrigins"?: string, "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "inputPlaceholder"?: string, "loadPreviousSession"?: "notSupported" | "memory" | "manually", "showWelcomeScreen"?: boolean, "getStarted"?: string, "subtitle"?: string, "title"?: string, "customCss"?: string, "responseMode"?: "lastNode" | "responseNode" | "streaming" } | { "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "responseMode"?: "lastNode" | "responseNodes" } | { "allowedOrigins"?: string, "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "inputPlaceholder"?: string, "loadPreviousSession"?: "notSupported" | "memory" | "manually", "showWelcomeScreen"?: boolean, "getStarted"?: string, "subtitle"?: string, "title"?: string, "customCss"?: string, "responseMode"?: "lastNode" | "streaming" | "responseNode" | "lastNode" | "streaming" | "responseNodes" };
 
-
 }
-

@@ -8,9 +8,6 @@ export const name = "zoomApi" as const;
  * documentationUrl: zoom
  */
 export interface ZoomApiCredentials {
-
-    /**
-     */
     readonly "notice"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface ZoomApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "zoomApi";
-
 }

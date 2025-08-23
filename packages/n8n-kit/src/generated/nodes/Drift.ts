@@ -5,10 +5,10 @@ export const description = "Consume Drift API" as const;
 export const type = "n8n-nodes-base.drift" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"driftApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"driftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DriftNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -44,6 +44,4 @@ export interface DriftNodeParameters {
      */
     readonly updateFields?: { "email"?: string, "name"?: string, "phone"?: string };
 
-
 }
-

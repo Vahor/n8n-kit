@@ -7,31 +7,23 @@ import type { GoogleCalendarTriggerNodeParameters } from "../nodes/GoogleCalenda
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GoogleCalendarTriggerProps extends NodeProps {
-
     readonly parameters: GoogleCalendarTriggerNodeParameters;
     readonly googleCalendarOAuth2ApiCredentials: Credentials<GoogleCalendarOAuth2ApiCredentials>;
-
 }
 
 /**
  * Starts the workflow when Google Calendar events occur
  */
 export class GoogleCalendarTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.googleCalendarTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: GoogleCalendarTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.googleCalendarOAuth2ApiCredentials];
-
     }
-
 
 }

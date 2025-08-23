@@ -8,7 +8,6 @@ export const name = "microsoftOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -35,5 +34,4 @@ export interface MicrosoftOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "microsoftOAuth2Api";
-
 }

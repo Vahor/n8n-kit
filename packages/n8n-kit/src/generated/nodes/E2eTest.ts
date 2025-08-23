@@ -4,10 +4,10 @@
 export const description = "Dummy node used for e2e testing" as const;
 export const type = "n8n-nodes-base.e2eTest" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface E2eTestNodeParameters {
-
     /**
      * Default: "remoteOptions"
      */
@@ -38,6 +38,4 @@ export interface E2eTestNodeParameters {
 
     readonly otherField?: string;
 
-
 }
-

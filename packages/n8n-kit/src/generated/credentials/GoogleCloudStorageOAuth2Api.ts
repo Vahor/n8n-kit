@@ -8,12 +8,10 @@ export const name = "googleCloudStorageOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleCloudStorageOAuth2ApiCredentials {
-
     /**
      * Default: "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-platform.read-only https://www.googleapis.com/auth/devstorage.full_control https://www.googleapis.com/auth/devstorage.read_only https://www.googleapis.com/auth/devstorage.read_write"
      */
     readonly "scope"?: any;
 
     readonly __name: "googleCloudStorageOAuth2Api";
-
 }

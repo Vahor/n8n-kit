@@ -8,16 +8,12 @@ export const name = "wufooApi" as const;
  * documentationUrl: wufoo
  */
 export interface WufooApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
-    /**
-     */
     readonly "subdomain"?: string;
 
     readonly __name: "wufooApi";
-
 }

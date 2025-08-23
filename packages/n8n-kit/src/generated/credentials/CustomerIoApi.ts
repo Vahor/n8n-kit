@@ -8,7 +8,6 @@ export const name = "customerIoApi" as const;
  * documentationUrl: customerIo
  */
 export interface CustomerIoApiCredentials {
-
     /**
      * Required for tracking API
      * Type options: {"password":true}
@@ -33,5 +32,4 @@ export interface CustomerIoApiCredentials {
     readonly "appApiKey"?: string;
 
     readonly __name: "customerIoApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Consume the Baserow API" as const;
 export const type = "n8n-nodes-base.baserow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"baserowApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BaserowNodeParameters {
-
     /**
      * Default: "row"
      */
@@ -70,6 +70,4 @@ export interface BaserowNodeParameters {
      */
     readonly additionalOptions?: { "filters"?: { "fields": any }, "filterType"?: "AND" | "OR", "search"?: string, "order"?: { "fields": any } };
 
-
 }
-

@@ -7,31 +7,23 @@ import type { VectorStoreMilvusNodeParameters } from "../nodes/VectorStoreMilvus
 import { Node, type NodeProps } from "../../nodes";
 
 export interface VectorStoreMilvusProps extends NodeProps {
-
     readonly parameters: VectorStoreMilvusNodeParameters;
     readonly milvusApiCredentials: Credentials<MilvusApiCredentials>;
-
 }
 
 /**
  * Work with your data in Milvus Vector Store
  */
 export class VectorStoreMilvus<L extends string> extends Node<L> {
-
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreMilvus" as const;
     protected typeVersion = 1.3 as const;
 
     constructor(id: L, override props: VectorStoreMilvusProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.milvusApiCredentials];
-
     }
-
 
 }

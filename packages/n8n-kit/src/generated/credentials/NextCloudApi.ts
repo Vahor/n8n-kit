@@ -8,13 +8,8 @@ export const name = "nextCloudApi" as const;
  * documentationUrl: nextCloud
  */
 export interface NextCloudApiCredentials {
-
-    /**
-     */
     readonly "webDavUrl"?: string;
 
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -23,5 +18,4 @@ export interface NextCloudApiCredentials {
     readonly "password"?: string;
 
     readonly __name: "nextCloudApi";
-
 }

@@ -8,12 +8,10 @@ export const name = "sysdigApi" as const;
  * documentationUrl: sysdig
  */
 export interface SysdigApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "sysdigApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Cisco Webex events occur." 
 export const type = "n8n-nodes-base.ciscoWebexTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ciscoWebexOAuth2Api","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CiscoWebexTriggerNodeParameters {
-
     /**
      * Default: "meeting"
      */
@@ -27,6 +27,4 @@ export interface CiscoWebexTriggerNodeParameters {
      */
     readonly filters?: { "hasFiles"?: boolean, "isLocked"?: boolean, "isModerator"?: boolean, "mentionedPeople"?: string, "messageId"?: string, "ownedBy"?: string, "personEmail"?: string, "personId"?: string, "roomId"?: string, "roomType"?: "direct" | "group", "type"?: "direct" | "group" };
 
-
 }
-

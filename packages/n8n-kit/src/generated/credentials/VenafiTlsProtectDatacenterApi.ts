@@ -8,17 +8,10 @@ export const name = "venafiTlsProtectDatacenterApi" as const;
  * documentationUrl: venafitlsprotectdatacenter
  */
 export interface VenafiTlsProtectDatacenterApiCredentials {
-
-    /**
-     */
     readonly "domain"?: string;
 
-    /**
-     */
     readonly "clientId"?: string;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -42,5 +35,4 @@ export interface VenafiTlsProtectDatacenterApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "venafiTlsProtectDatacenterApi";
-
 }

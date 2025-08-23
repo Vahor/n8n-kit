@@ -4,10 +4,10 @@
 export const description = "Dummy node used for n8n training" as const;
 export const type = "n8n-nodes-base.n8nTrainingCustomerDatastore" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface N8nTrainingCustomerDatastoreNodeParameters {
-
     /**
      * Default: "getOnePerson"
      */
@@ -25,6 +25,4 @@ export interface N8nTrainingCustomerDatastoreNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

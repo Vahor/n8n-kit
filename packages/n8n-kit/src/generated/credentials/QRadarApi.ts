@@ -8,12 +8,10 @@ export const name = "qRadarApi" as const;
  * documentationUrl: qradar
  */
 export interface QRadarApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "qRadarApi";
-
 }

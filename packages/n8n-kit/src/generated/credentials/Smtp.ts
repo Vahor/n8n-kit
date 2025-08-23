@@ -8,9 +8,6 @@ export const name = "smtp" as const;
  * documentationUrl: sendemail
  */
 export interface SmtpCredentials {
-
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface SmtpCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     */
     readonly "host"?: string;
 
     /**
@@ -32,8 +27,6 @@ export interface SmtpCredentials {
      */
     readonly "secure"?: boolean;
 
-    /**
-     */
     readonly "disableStartTls"?: boolean;
 
     /**
@@ -42,5 +35,4 @@ export interface SmtpCredentials {
     readonly "hostName"?: string;
 
     readonly __name: "smtp";
-
 }

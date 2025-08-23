@@ -8,9 +8,6 @@ export const name = "bitwardenApi" as const;
  * documentationUrl: bitwarden
  */
 export interface BitwardenApiCredentials {
-
-    /**
-     */
     readonly "clientId"?: string;
 
     /**
@@ -23,10 +20,7 @@ export interface BitwardenApiCredentials {
      */
     readonly "environment"?: "cloudHosted" | "selfHosted";
 
-    /**
-     */
     readonly "domain"?: string;
 
     readonly __name: "bitwardenApi";
-
 }

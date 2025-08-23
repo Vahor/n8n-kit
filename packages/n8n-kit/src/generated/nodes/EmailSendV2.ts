@@ -5,10 +5,10 @@ export const description = "Sends an email using SMTP protocol" as const;
 export const type = "n8n-nodes-base.emailSend" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"smtp","required":true,"testedBy":"smtpConnectionTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EmailSendV2NodeParameters {
-
     /**
      * Default: "email"
      */
@@ -88,6 +88,4 @@ export interface EmailSendV2NodeParameters {
      */
     readonly approvalOptions?: { "values": any };
 
-
 }
-

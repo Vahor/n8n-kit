@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Strava events occur" as con
 export const type = "n8n-nodes-base.stravaTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"stravaOAuth2Api","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StravaTriggerNodeParameters {
-
     /**
      * Default: "*"
      */
@@ -30,6 +30,4 @@ export interface StravaTriggerNodeParameters {
      */
     readonly options?: { "deleteIfExist"?: boolean };
 
-
 }
-

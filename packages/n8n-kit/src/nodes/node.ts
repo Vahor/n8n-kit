@@ -18,8 +18,8 @@ export interface NodeSize {
 }
 
 export const DEFAULT_NODE_SIZE: Required<NodeSize> = {
-	width: 110,
-	height: 110,
+	width: 120,
+	height: 120,
 };
 
 export type NodeProps = {

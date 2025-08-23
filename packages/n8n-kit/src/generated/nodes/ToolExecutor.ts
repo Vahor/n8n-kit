@@ -4,10 +4,10 @@
 export const description = "Node to execute tools without an AI Agent" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolExecutor" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main","ai_tool":"ai_tool"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ToolExecutorNodeParameters {
-
     /**
      * Parameters to pass to the tool as JSON or string
      * Default: "{}"
@@ -19,6 +19,4 @@ export interface ToolExecutorNodeParameters {
      */
     readonly toolName?: string;
 
-
 }
-

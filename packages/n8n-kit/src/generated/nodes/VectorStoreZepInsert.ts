@@ -5,10 +5,10 @@ export const description = "Insert data into Zep Vector Store index" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreZepInsert" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
+export const inputs = {"main":"main","Document":"ai_document","Embedding":"ai_embedding"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VectorStoreZepInsertNodeParameters {
-
     readonly deprecationNotice?: string;
 
     readonly collectionName?: string;
@@ -20,6 +20,4 @@ export interface VectorStoreZepInsertNodeParameters {
      */
     readonly options?: { "embeddingDimensions"?: number, "isAutoEmbedded"?: boolean };
 
-
 }
-

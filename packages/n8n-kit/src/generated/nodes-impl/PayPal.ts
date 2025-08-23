@@ -7,31 +7,23 @@ import type { PayPalNodeParameters } from "../nodes/PayPal";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface PayPalProps extends NodeProps {
-
     readonly parameters: PayPalNodeParameters;
     readonly payPalApiCredentials: Credentials<PayPalApiCredentials>;
-
 }
 
 /**
  * Consume PayPal API
  */
 export class PayPal<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.payPal" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: PayPalProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.payPalApiCredentials];
-
     }
-
 
 }

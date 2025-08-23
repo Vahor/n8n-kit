@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Onfleet events occur" as co
 export const type = "n8n-nodes-base.onfleetTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"onfleetApi","required":true,"testedBy":"onfleetApiTest"}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OnfleetTriggerNodeParameters {
-
     /**
      * Default: []
      */
@@ -19,6 +19,4 @@ export interface OnfleetTriggerNodeParameters {
      */
     readonly additionalFields?: { "name"?: string };
 
-
 }
-

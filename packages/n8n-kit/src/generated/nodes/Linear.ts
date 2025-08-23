@@ -5,10 +5,10 @@ export const description = "Consume Linear API" as const;
 export const type = "n8n-nodes-base.linear" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"linearApi","required":true,"testedBy":"linearApiTest","displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"linearOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinearNodeParameters {
-
     /**
      * Default: "apiToken"
      */
@@ -60,6 +60,4 @@ export interface LinearNodeParameters {
 
     readonly link?: string;
 
-
 }
-

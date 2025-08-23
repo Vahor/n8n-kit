@@ -5,24 +5,18 @@ import type { DebugHelperNodeParameters } from "../nodes/DebugHelper";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface DebugHelperProps extends NodeProps {
-
     readonly parameters: DebugHelperNodeParameters;
-
 }
 
 /**
  * Causes problems intentionally and generates useful data for debugging
  */
 export class DebugHelper<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.debugHelper" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: DebugHelperProps) {
-
         super(id, props);
-
     }
-
 
 }

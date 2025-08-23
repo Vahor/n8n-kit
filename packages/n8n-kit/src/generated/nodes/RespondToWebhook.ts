@@ -5,10 +5,10 @@ export const description = "Returns data for Webhook" as const;
 export const type = "n8n-nodes-base.respondToWebhook" as const;
 export const version = 1.5 as const;
 export const credentials = [{"name":"jwtAuth","required":true,"displayOptions":{"show":{"respondWith":["jwt"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {} as const;
 
 export interface RespondToWebhookNodeParameters {
-
     /**
      * Whether to provide an additional output branch with the response sent to the webhook
      */
@@ -63,6 +63,4 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly options?: { "responseCode"?: number, "responseHeaders"?: { "entries": any }, "responseKey"?: string, "enableStreaming"?: boolean };
 
-
 }
-

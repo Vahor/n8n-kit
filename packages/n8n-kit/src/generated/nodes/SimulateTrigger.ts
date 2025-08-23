@@ -4,10 +4,10 @@
 export const description = "Simulate a trigger node" as const;
 export const type = "n8n-nodes-base.simulateTrigger" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SimulateTriggerNodeParameters {
-
     /**
      * Select a type of node to show corresponding icon
      * Default: "n8n-nodes-base.manualTrigger"
@@ -30,6 +30,4 @@ export interface SimulateTriggerNodeParameters {
      */
     readonly executionDuration?: number;
 
-
 }
-

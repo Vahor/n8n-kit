@@ -5,10 +5,10 @@ export const description = "Consume Wordpress API" as const;
 export const type = "n8n-nodes-base.wordpress" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"wordpressApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WordpressNodeParameters {
-
     /**
      * Default: "post"
      */
@@ -102,6 +102,4 @@ export interface WordpressNodeParameters {
      */
     readonly reassign?: string;
 
-
 }
-

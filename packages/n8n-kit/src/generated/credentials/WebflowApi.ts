@@ -8,12 +8,10 @@ export const name = "webflowApi" as const;
  * documentationUrl: webflow
  */
 export interface WebflowApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "webflowApi";
-
 }

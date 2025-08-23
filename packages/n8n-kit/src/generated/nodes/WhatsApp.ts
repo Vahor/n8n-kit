@@ -5,10 +5,10 @@ export const description = "Access WhatsApp API" as const;
 export const type = "n8n-nodes-base.whatsApp" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"whatsAppApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WhatsAppNodeParameters {
-
     /**
      * Default: "message"
      */
@@ -153,6 +153,4 @@ export interface WhatsAppNodeParameters {
      */
     readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
-
 }
-

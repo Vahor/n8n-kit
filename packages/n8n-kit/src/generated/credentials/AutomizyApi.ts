@@ -8,9 +8,6 @@ export const name = "automizyApi" as const;
  * documentationUrl: automizy
  */
 export interface AutomizyApiCredentials {
-
-    /**
-     */
     readonly "deprecated"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface AutomizyApiCredentials {
     readonly "apiToken"?: string;
 
     readonly __name: "automizyApi";
-
 }

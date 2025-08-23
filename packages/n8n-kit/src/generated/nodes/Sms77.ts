@@ -5,10 +5,10 @@ export const description = "Send SMS and make text-to-speech calls" as const;
 export const type = "n8n-nodes-base.sms77" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"sms77Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface Sms77NodeParameters {
-
     /**
      * Default: "sms"
      */
@@ -39,6 +39,4 @@ export interface Sms77NodeParameters {
      */
     readonly options?: { "delay"?: string, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number } | { "from"?: string };
 
-
 }
-

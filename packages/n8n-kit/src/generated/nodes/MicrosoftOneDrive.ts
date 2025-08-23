@@ -5,10 +5,10 @@ export const description = "Consume Microsoft OneDrive API" as const;
 export const type = "n8n-nodes-base.microsoftOneDrive" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOneDriveNodeParameters {
-
     /**
      * Default: "file"
      */
@@ -94,6 +94,4 @@ export interface MicrosoftOneDriveNodeParameters {
 
     readonly folderId?: string;
 
-
 }
-

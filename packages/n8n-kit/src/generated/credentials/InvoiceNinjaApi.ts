@@ -8,9 +8,6 @@ export const name = "invoiceNinjaApi" as const;
  * documentationUrl: invoiceNinja
  */
 export interface InvoiceNinjaApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -24,5 +21,4 @@ export interface InvoiceNinjaApiCredentials {
     readonly "secret"?: string;
 
     readonly __name: "invoiceNinjaApi";
-
 }

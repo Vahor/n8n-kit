@@ -8,7 +8,6 @@ export const name = "googlePalmApi" as const;
  * documentationUrl: google
  */
 export interface GooglePalmApiCredentials {
-
     /**
      * Default: "https://generativelanguage.googleapis.com"
      */
@@ -20,5 +19,4 @@ export interface GooglePalmApiCredentials {
     readonly "apiKey": string;
 
     readonly __name: "googlePalmApi";
-
 }

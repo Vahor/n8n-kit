@@ -7,31 +7,23 @@ import type { PlivoNodeParameters } from "../nodes/Plivo";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface PlivoProps extends NodeProps {
-
     readonly parameters: PlivoNodeParameters;
     readonly plivoApiCredentials: Credentials<PlivoApiCredentials>;
-
 }
 
 /**
  * Send SMS/MMS messages or make phone calls
  */
 export class Plivo<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.plivo" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: PlivoProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.plivoApiCredentials];
-
     }
-
 
 }

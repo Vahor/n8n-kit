@@ -5,10 +5,10 @@ export const description = "Consume Mailjet API" as const;
 export const type = "n8n-nodes-base.mailjet" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailjetEmailApi","required":true,"displayOptions":{"show":{"resource":["email"]}}},{"name":"mailjetSmsApi","required":true,"displayOptions":{"show":{"resource":["sms"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailjetNodeParameters {
-
     /**
      * Default: "email"
      */
@@ -78,6 +78,4 @@ export interface MailjetNodeParameters {
      */
     readonly to?: string;
 
-
 }
-

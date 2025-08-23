@@ -5,10 +5,10 @@ export const description = "Handle Mailchimp events via webhooks" as const;
 export const type = "n8n-nodes-base.mailchimpTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailchimpApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"mailchimpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailchimpTriggerNodeParameters {
-
     /**
      * Default: "apiKey"
      */
@@ -32,6 +32,4 @@ export interface MailchimpTriggerNodeParameters {
      */
     readonly sources?: ("user" | "admin" | "api")[];
 
-
 }
-

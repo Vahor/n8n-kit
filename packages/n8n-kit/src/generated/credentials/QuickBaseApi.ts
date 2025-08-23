@@ -8,9 +8,6 @@ export const name = "quickbaseApi" as const;
  * documentationUrl: quickbase
  */
 export interface QuickBaseApiCredentials {
-
-    /**
-     */
     readonly "hostname": string;
 
     /**
@@ -19,5 +16,4 @@ export interface QuickBaseApiCredentials {
     readonly "userToken": string;
 
     readonly __name: "quickbaseApi";
-
 }

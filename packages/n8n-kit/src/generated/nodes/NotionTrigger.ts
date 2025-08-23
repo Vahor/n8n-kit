@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Notion events occur" as con
 export const type = "n8n-nodes-base.notionTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"notionApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionTriggerNodeParameters {
-
     /**
      * Default: "pageAddedToDatabase"
      */
@@ -32,6 +32,4 @@ export interface NotionTriggerNodeParameters {
     readonly simple?: boolean;
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
-
 }
-

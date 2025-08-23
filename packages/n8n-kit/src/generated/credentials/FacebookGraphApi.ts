@@ -8,12 +8,10 @@ export const name = "facebookGraphApi" as const;
  * documentationUrl: facebookgraph
  */
 export interface FacebookGraphApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "facebookGraphApi";
-
 }

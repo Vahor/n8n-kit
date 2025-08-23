@@ -7,31 +7,23 @@ import type { GoogleBusinessProfileNodeParameters } from "../nodes/GoogleBusines
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GoogleBusinessProfileProps extends NodeProps {
-
     readonly parameters: GoogleBusinessProfileNodeParameters;
     readonly googleBusinessProfileOAuth2ApiCredentials: Credentials<GoogleBusinessProfileOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Google Business Profile API
  */
 export class GoogleBusinessProfile<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.googleBusinessProfile" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: GoogleBusinessProfileProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.googleBusinessProfileOAuth2ApiCredentials];
-
     }
-
 
 }

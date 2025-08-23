@@ -5,10 +5,10 @@ export const description = "Consume the Monica CRM API" as const;
 export const type = "n8n-nodes-base.monicaCrm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"monicaCrmApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MonicaCrmNodeParameters {
-
     /**
      * Default: "contact"
      */
@@ -212,6 +212,4 @@ export interface MonicaCrmNodeParameters {
      */
     readonly taskId?: string;
 
-
 }
-

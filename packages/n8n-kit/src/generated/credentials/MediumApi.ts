@@ -8,12 +8,10 @@ export const name = "mediumApi" as const;
  * documentationUrl: medium
  */
 export interface MediumApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "mediumApi";
-
 }

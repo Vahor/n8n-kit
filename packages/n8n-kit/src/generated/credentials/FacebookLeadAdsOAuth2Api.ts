@@ -8,7 +8,6 @@ export const name = "facebookLeadAdsOAuth2Api" as const;
  * documentationUrl: facebookleadads
  */
 export interface FacebookLeadAdsOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface FacebookLeadAdsOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface FacebookLeadAdsOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "facebookLeadAdsOAuth2Api";
-
 }

@@ -8,12 +8,10 @@ export const name = "highLevelApi" as const;
  * documentationUrl: highLevel
  */
 export interface HighLevelApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "highLevelApi";
-
 }

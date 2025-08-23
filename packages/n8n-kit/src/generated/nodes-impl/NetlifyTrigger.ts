@@ -7,31 +7,23 @@ import type { NetlifyTriggerNodeParameters } from "../nodes/NetlifyTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface NetlifyTriggerProps extends NodeProps {
-
     readonly parameters: NetlifyTriggerNodeParameters;
     readonly netlifyApiCredentials: Credentials<NetlifyApiCredentials>;
-
 }
 
 /**
  * Handle netlify events via webhooks
  */
 export class NetlifyTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.netlifyTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: NetlifyTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.netlifyApiCredentials];
-
     }
-
 
 }

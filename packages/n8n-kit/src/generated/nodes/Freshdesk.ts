@@ -5,10 +5,10 @@ export const description = "Consume Freshdesk API" as const;
 export const type = "n8n-nodes-base.freshdesk" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"freshdeskApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FreshdeskNodeParameters {
-
     /**
      * Default: "ticket"
      */
@@ -91,6 +91,4 @@ export interface FreshdeskNodeParameters {
      */
     readonly filters?: { "company_id"?: number, "email"?: string, "mobile"?: string, "phone"?: string, "state"?: "blocked" | "deleted" | "unverified" | "verified", "updated_since"?: string };
 
-
 }
-

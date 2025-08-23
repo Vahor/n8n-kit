@@ -8,14 +8,11 @@ export const name = "twilioApi" as const;
  * documentationUrl: twilio
  */
 export interface TwilioApiCredentials {
-
     /**
      * Default: "authToken"
      */
     readonly "authType"?: "authToken" | "apiKey";
 
-    /**
-     */
     readonly "accountSid"?: string;
 
     /**
@@ -34,5 +31,4 @@ export interface TwilioApiCredentials {
     readonly "apiKeySecret"?: string;
 
     readonly __name: "twilioApi";
-
 }

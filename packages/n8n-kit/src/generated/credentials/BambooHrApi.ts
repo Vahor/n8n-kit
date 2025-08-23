@@ -8,9 +8,6 @@ export const name = "bambooHrApi" as const;
  * documentationUrl: bambooHr
  */
 export interface BambooHrApiCredentials {
-
-    /**
-     */
     readonly "subdomain"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface BambooHrApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "bambooHrApi";
-
 }

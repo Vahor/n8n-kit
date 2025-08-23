@@ -8,12 +8,10 @@ export const name = "stripeApi" as const;
  * documentationUrl: stripe
  */
 export interface StripeApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "secretKey"?: string;
 
     readonly __name: "stripeApi";
-
 }

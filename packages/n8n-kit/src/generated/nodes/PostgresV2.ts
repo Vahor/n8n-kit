@@ -5,10 +5,10 @@ export const description = "Get, add and update data in Postgres" as const;
 export const type = "n8n-nodes-base.postgres" as const;
 export const version = 2.6 as const;
 export const credentials = [{"name":"postgres","required":true,"testedBy":"postgresConnectionTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostgresV2NodeParameters {
-
     /**
      * Default: "database"
      */
@@ -120,6 +120,4 @@ export interface PostgresV2NodeParameters {
      */
     readonly valueToMatchOn?: string;
 
-
 }
-

@@ -8,7 +8,6 @@ export const name = "azureStorageSharedKeyApi" as const;
  * documentationUrl: azurestorage
  */
 export interface AzureStorageSharedKeyApiCredentials {
-
     /**
      * Account name
      */
@@ -26,5 +25,4 @@ export interface AzureStorageSharedKeyApiCredentials {
     readonly "baseUrl"?: any;
 
     readonly __name: "azureStorageSharedKeyApi";
-
 }

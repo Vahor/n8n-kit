@@ -5,10 +5,10 @@ export const description = "Retrieve data from GitLab API" as const;
 export const type = "n8n-nodes-base.gitlab" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gitlabApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gitlabOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GitlabNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -164,6 +164,4 @@ export interface GitlabNodeParameters {
      */
     readonly branch?: string;
 
-
 }
-

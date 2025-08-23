@@ -4,10 +4,10 @@
 export const description = "Change items order" as const;
 export const type = "n8n-nodes-base.sort" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SortNodeParameters {
-
     /**
      * The type of sorting to perform
      * Default: "simple"
@@ -33,6 +33,4 @@ export interface SortNodeParameters {
      */
     readonly options?: { "disableDotNotation"?: boolean };
 
-
 }
-

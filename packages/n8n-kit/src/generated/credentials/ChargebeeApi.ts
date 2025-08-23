@@ -8,9 +8,6 @@ export const name = "chargebeeApi" as const;
  * documentationUrl: chargebee
  */
 export interface ChargebeeApiCredentials {
-
-    /**
-     */
     readonly "accountName"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface ChargebeeApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "chargebeeApi";
-
 }

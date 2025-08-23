@@ -5,10 +5,10 @@ export const description = "Consume Google Calendar API" as const;
 export const type = "n8n-nodes-base.googleCalendar" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"googleCalendarOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleCalendarNodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"Voice assistant agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"voice_assistant_agent_with_telegram_and_gcal"}}
      */
@@ -110,6 +110,4 @@ export interface GoogleCalendarNodeParameters {
 
     readonly useN8nTimeZone?: string;
 
-
 }
-

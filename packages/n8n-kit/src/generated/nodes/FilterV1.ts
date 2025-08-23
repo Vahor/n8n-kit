@@ -4,10 +4,10 @@
 export const description = "Remove items matching a condition" as const;
 export const type = "n8n-nodes-base.filter" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FilterV1NodeParameters {
-
     /**
      * The type of values to compare
      * Default: {}
@@ -21,6 +21,4 @@ export interface FilterV1NodeParameters {
      */
     readonly combineConditions?: "AND" | "OR";
 
-
 }
-

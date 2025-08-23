@@ -8,9 +8,6 @@ export const name = "sftp" as const;
  * documentationUrl: ftp
  */
 export interface SftpCredentials {
-
-    /**
-     */
     readonly "host": string;
 
     /**
@@ -18,8 +15,6 @@ export interface SftpCredentials {
      */
     readonly "port": number;
 
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -40,5 +35,4 @@ export interface SftpCredentials {
     readonly "passphrase"?: string;
 
     readonly __name: "sftp";
-
 }

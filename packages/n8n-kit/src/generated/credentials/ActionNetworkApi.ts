@@ -8,12 +8,10 @@ export const name = "actionNetworkApi" as const;
  * documentationUrl: actionNetwork
  */
 export interface ActionNetworkApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "actionNetworkApi";
-
 }

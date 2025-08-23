@@ -8,9 +8,6 @@ export const name = "serviceNowOAuth2Api" as const;
  * documentationUrl: serviceNow
  */
 export interface ServiceNowOAuth2ApiCredentials {
-
-    /**
-     */
     readonly "subdomain": string;
 
     /**
@@ -44,5 +41,4 @@ export interface ServiceNowOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "serviceNowOAuth2Api";
-
 }

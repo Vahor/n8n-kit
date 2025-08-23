@@ -8,7 +8,6 @@ export const name = "koBoToolboxApi" as const;
  * documentationUrl: koBoToolbox
  */
 export interface KoBoToolboxApiCredentials {
-
     /**
      * Default: "https://kf.kobotoolbox.org/"
      */
@@ -20,5 +19,4 @@ export interface KoBoToolboxApiCredentials {
     readonly "token"?: string;
 
     readonly __name: "koBoToolboxApi";
-
 }

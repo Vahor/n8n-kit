@@ -7,31 +7,23 @@ import type { LingvaNexNodeParameters } from "../nodes/LingvaNex";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface LingvaNexProps extends NodeProps {
-
     readonly parameters: LingvaNexNodeParameters;
     readonly lingvaNexApiCredentials: Credentials<LingvaNexApiCredentials>;
-
 }
 
 /**
  * Consume LingvaNex API
  */
 export class LingvaNex<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.lingvaNex" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: LingvaNexProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.lingvaNexApiCredentials];
-
     }
-
 
 }

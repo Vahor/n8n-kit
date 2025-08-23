@@ -8,7 +8,6 @@ export const name = "linkedInOAuth2Api" as const;
  * documentationUrl: linkedIn
  */
 export interface LinkedInOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -36,8 +35,6 @@ export interface LinkedInOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -52,5 +49,4 @@ export interface LinkedInOAuth2ApiCredentials {
     readonly "legacy"?: boolean;
 
     readonly __name: "linkedInOAuth2Api";
-
 }

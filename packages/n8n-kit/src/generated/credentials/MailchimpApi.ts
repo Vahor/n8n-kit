@@ -8,12 +8,10 @@ export const name = "mailchimpApi" as const;
  * documentationUrl: mailchimp
  */
 export interface MailchimpApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "mailchimpApi";
-
 }

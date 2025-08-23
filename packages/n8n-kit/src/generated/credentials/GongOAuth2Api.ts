@@ -8,7 +8,6 @@ export const name = "gongOAuth2Api" as const;
  * documentationUrl: gong
  */
 export interface GongOAuth2ApiCredentials {
-
     /**
      * Default: "https://api.gong.io"
      */
@@ -34,8 +33,6 @@ export interface GongOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -44,5 +41,4 @@ export interface GongOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "gongOAuth2Api";
-
 }

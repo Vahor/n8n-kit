@@ -8,9 +8,6 @@ export const name = "unleashedSoftwareApi" as const;
  * documentationUrl: unleashedSoftware
  */
 export interface UnleashedSoftwareApiCredentials {
-
-    /**
-     */
     readonly "apiId"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface UnleashedSoftwareApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "unleashedSoftwareApi";
-
 }

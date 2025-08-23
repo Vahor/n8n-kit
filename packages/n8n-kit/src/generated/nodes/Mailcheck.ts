@@ -5,10 +5,10 @@ export const description = "Consume Mailcheck API" as const;
 export const type = "n8n-nodes-base.mailcheck" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mailcheckApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailcheckNodeParameters {
-
     /**
      * Default: "email"
      */
@@ -24,6 +24,4 @@ export interface MailcheckNodeParameters {
      */
     readonly email?: string;
 
-
 }
-

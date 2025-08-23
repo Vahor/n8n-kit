@@ -5,10 +5,10 @@ export const description = "Connect tools from an MCP Server" as const;
 export const type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"httpBearerAuth","required":true,"displayOptions":{"show":{"authentication":["bearerAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"Tools":"ai_tool"} as const;
 
 export interface McpClientToolNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -64,6 +64,4 @@ export interface McpClientToolNodeParameters {
      */
     readonly options?: { "timeout"?: number };
 
-
 }
-

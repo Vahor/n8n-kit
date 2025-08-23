@@ -5,10 +5,10 @@ export const description = "Consume Storyblok API" as const;
 export const type = "n8n-nodes-base.storyblok" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"storyblokContentApi","required":true,"displayOptions":{"show":{"source":["contentApi"]}}},{"name":"storyblokManagementApi","required":true,"displayOptions":{"show":{"source":["managementApi"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StoryblokNodeParameters {
-
     /**
      * Pick where your data comes from, Content or Management API
      * Default: "contentApi"
@@ -63,6 +63,4 @@ export interface StoryblokNodeParameters {
      */
     readonly options?: { "releaseId"?: string, "language"?: string };
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Access data on Dropbox" as const;
 export const type = "n8n-nodes-base.dropbox" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"dropboxApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"dropboxOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DropboxNodeParameters {
-
     /**
      * Means of authenticating with the service
      * Default: "accessToken"
@@ -84,6 +84,4 @@ export interface DropboxNodeParameters {
      */
     readonly filters?: { "file_categories"?: ("audio" | "document" | "paper" | "folder" | "image" | "other" | "pdf" | "presentation" | "spreadsheet" | "video")[], "file_extensions"?: string, "path"?: string } | { "include_deleted"?: boolean, "include_has_explicit_shared_members"?: boolean, "include_mounted_folders"?: boolean, "include_non_downloadable_files"?: boolean, "recursive"?: boolean };
 
-
 }
-

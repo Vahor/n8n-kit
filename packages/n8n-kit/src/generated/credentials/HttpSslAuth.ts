@@ -8,7 +8,6 @@ export const name = "httpSslAuth" as const;
  * documentationUrl: httpRequest
  */
 export interface HttpSslAuthCredentials {
-
     /**
      * Certificate Authority certificate
      * Type options: {"password":true}
@@ -32,5 +31,4 @@ export interface HttpSslAuthCredentials {
     readonly "passphrase"?: string;
 
     readonly __name: "httpSslAuth";
-
 }

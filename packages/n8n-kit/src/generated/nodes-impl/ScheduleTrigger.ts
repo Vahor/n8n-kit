@@ -5,24 +5,18 @@ import type { ScheduleTriggerNodeParameters } from "../nodes/ScheduleTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface ScheduleTriggerProps extends NodeProps {
-
     readonly parameters: ScheduleTriggerNodeParameters;
-
 }
 
 /**
  * Triggers the workflow on a given schedule
  */
 export class ScheduleTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.scheduleTrigger" as const;
     protected typeVersion = 1.2 as const;
 
     constructor(id: L, override props?: ScheduleTriggerProps) {
-
         super(id, props);
-
     }
-
 
 }

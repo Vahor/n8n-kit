@@ -7,31 +7,23 @@ import type { ApiTemplateIoNodeParameters } from "../nodes/ApiTemplateIo";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface ApiTemplateIoProps extends NodeProps {
-
     readonly parameters: ApiTemplateIoNodeParameters;
     readonly apiTemplateIoApiCredentials: Credentials<ApiTemplateIoApiCredentials>;
-
 }
 
 /**
  * Consume the APITemplate.io API
  */
 export class ApiTemplateIo<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.apiTemplateIo" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: ApiTemplateIoProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.apiTemplateIoApiCredentials];
-
     }
-
 
 }

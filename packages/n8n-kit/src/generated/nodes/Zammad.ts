@@ -5,10 +5,10 @@ export const description = "Consume the Zammad API" as const;
 export const type = "n8n-nodes-base.zammad" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zammadBasicAuthApi","required":true,"testedBy":"zammadBasicAuthApiTest","displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"zammadTokenAuthApi","required":true,"testedBy":"zammadTokenAuthApiTest","displayOptions":{"show":{"authentication":["tokenAuth"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZammadNodeParameters {
-
     /**
      * Default: "tokenAuth"
      */
@@ -86,6 +86,4 @@ export interface ZammadNodeParameters {
      */
     readonly filters?: { "query"?: string, "sortUi"?: { "sortDetails": any } };
 
-
 }
-

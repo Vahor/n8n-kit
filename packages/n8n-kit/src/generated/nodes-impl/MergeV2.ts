@@ -5,24 +5,18 @@ import type { MergeV2NodeParameters } from "../nodes/MergeV2";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MergeV2Props extends NodeProps {
-
     readonly parameters: MergeV2NodeParameters;
-
 }
 
 /**
  * Merges data of multiple streams once data from both is available
  */
 export class MergeV2<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.merge" as const;
     protected typeVersion = 2.1 as const;
 
     constructor(id: L, override props?: MergeV2Props) {
-
         super(id, props);
-
     }
-
 
 }

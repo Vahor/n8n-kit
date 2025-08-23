@@ -5,10 +5,10 @@ export const description = "Consume the Cisco Webex API" as const;
 export const type = "n8n-nodes-base.ciscoWebex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ciscoWebexOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CiscoWebexNodeParameters {
-
     /**
      * Default: "message"
      */
@@ -111,6 +111,4 @@ export interface CiscoWebexNodeParameters {
      */
     readonly markdownText?: string;
 
-
 }
-

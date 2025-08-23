@@ -7,31 +7,23 @@ import type { AffinityTriggerNodeParameters } from "../nodes/AffinityTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface AffinityTriggerProps extends NodeProps {
-
     readonly parameters: AffinityTriggerNodeParameters;
     readonly affinityApiCredentials: Credentials<AffinityApiCredentials>;
-
 }
 
 /**
  * Handle Affinity events via webhooks
  */
 export class AffinityTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.affinityTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: AffinityTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.affinityApiCredentials];
-
     }
-
 
 }

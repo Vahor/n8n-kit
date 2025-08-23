@@ -5,10 +5,10 @@ export const description = "Consume the Grafana API" as const;
 export const type = "n8n-nodes-base.grafana" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"grafanaApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GrafanaNodeParameters {
-
     /**
      * Default: "dashboard"
      */
@@ -78,6 +78,4 @@ export interface GrafanaNodeParameters {
      */
     readonly memberId?: string;
 
-
 }
-

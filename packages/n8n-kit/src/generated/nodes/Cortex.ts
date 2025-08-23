@@ -5,10 +5,10 @@ export const description = "Apply the Cortex analyzer/responder on the given ent
 export const type = "n8n-nodes-base.cortex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cortexApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CortexNodeParameters {
-
     /**
      * Choose a resource
      * Default: "analyzer"
@@ -84,6 +84,4 @@ export interface CortexNodeParameters {
      */
     readonly jobId?: string;
 
-
 }
-

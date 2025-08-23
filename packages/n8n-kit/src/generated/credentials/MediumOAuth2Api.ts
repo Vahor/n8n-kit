@@ -8,7 +8,6 @@ export const name = "mediumOAuth2Api" as const;
  * documentationUrl: medium
  */
 export interface MediumOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface MediumOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -38,8 +35,6 @@ export interface MediumOAuth2ApiCredentials {
      */
     readonly "clientSecret": string;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -48,5 +43,4 @@ export interface MediumOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "mediumOAuth2Api";
-
 }

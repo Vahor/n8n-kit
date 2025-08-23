@@ -5,10 +5,10 @@ export const description = "Work with your data in Supabase Vector Store" as con
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreSupabase" as const;
 export const version = 1.3 as const;
 export const credentials = [{"name":"supabaseApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {} as const;
 
 export interface VectorStoreSupabaseNodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"RAG starter template","type":"openSampleWorkflowTemplate","templateId":"rag-starter-template"}}
      */
@@ -81,6 +81,4 @@ export interface VectorStoreSupabaseNodeParameters {
      */
     readonly id?: string;
 
-
 }
-

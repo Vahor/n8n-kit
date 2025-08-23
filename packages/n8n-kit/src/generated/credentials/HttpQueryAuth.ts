@@ -8,9 +8,6 @@ export const name = "httpQueryAuth" as const;
  * documentationUrl: httpRequest
  */
 export interface HttpQueryAuthCredentials {
-
-    /**
-     */
     readonly "name"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface HttpQueryAuthCredentials {
     readonly "value"?: string;
 
     readonly __name: "httpQueryAuth";
-
 }

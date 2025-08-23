@@ -5,10 +5,10 @@ export const description = "Consume Brandfetch API" as const;
 export const type = "n8n-nodes-base.Brandfetch" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"brandfetchApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BrandfetchNodeParameters {
-
     /**
      * Default: "logo"
      */
@@ -35,6 +35,4 @@ export interface BrandfetchNodeParameters {
      */
     readonly imageFormats?: ("png" | "svg")[];
 
-
 }
-

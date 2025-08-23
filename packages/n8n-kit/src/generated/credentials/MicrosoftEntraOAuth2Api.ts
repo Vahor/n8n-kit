@@ -8,14 +8,11 @@ export const name = "microsoftEntraOAuth2Api" as const;
  * documentationUrl: microsoftentra
  */
 export interface MicrosoftEntraOAuth2ApiCredentials {
-
     /**
      * Define custom scopes
      */
     readonly "customScopes"?: boolean;
 
-    /**
-     */
     readonly "customScopesNotice"?: string;
 
     /**
@@ -30,5 +27,4 @@ export interface MicrosoftEntraOAuth2ApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "microsoftEntraOAuth2Api";
-
 }

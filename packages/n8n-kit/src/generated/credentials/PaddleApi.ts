@@ -8,19 +8,11 @@ export const name = "paddleApi" as const;
  * documentationUrl: paddle
  */
 export interface PaddleApiCredentials {
-
-    /**
-     */
     readonly "vendorAuthCode"?: string;
 
-    /**
-     */
     readonly "vendorId"?: string;
 
-    /**
-     */
     readonly "sandbox"?: boolean;
 
     readonly __name: "paddleApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Asana events occur." as con
 export const type = "n8n-nodes-base.asanaTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"asanaApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"asanaOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AsanaTriggerNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -25,6 +25,4 @@ export interface AsanaTriggerNodeParameters {
      */
     readonly workspace?: string;
 
-
 }
-

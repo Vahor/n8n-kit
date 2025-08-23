@@ -8,32 +8,24 @@ import type { StoryblokNodeParameters } from "../nodes/Storyblok";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface StoryblokProps extends NodeProps {
-
     readonly parameters: StoryblokNodeParameters;
     readonly storyblokContentApiCredentials?: Credentials<StoryblokContentApiCredentials>;
     readonly storyblokManagementApiCredentials?: Credentials<StoryblokManagementApiCredentials>;
-
 }
 
 /**
  * Consume Storyblok API
  */
 export class Storyblok<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.storyblok" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: StoryblokProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.storyblokContentApiCredentials, this.props!.storyblokManagementApiCredentials];
-
     }
-
 
 }

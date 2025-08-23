@@ -5,10 +5,10 @@ export const description = "Consume Google BigQuery API" as const;
 export const type = "n8n-nodes-base.googleBigQuery" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBigQueryOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBigQueryV2NodeParameters {
-
     /**
      * Default: "oAuth2"
      */
@@ -74,6 +74,4 @@ export interface GoogleBigQueryV2NodeParameters {
      */
     readonly fieldsUi?: { "values": any };
 
-
 }
-

@@ -4,10 +4,10 @@
 export const description = "Reads a PDF and extracts its content" as const;
 export const type = "n8n-nodes-base.readPDF" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ReadPDFNodeParameters {
-
     /**
      * Name of the binary property from which to read the PDF file
      * Default: "data"
@@ -22,6 +22,4 @@ export interface ReadPDFNodeParameters {
      */
     readonly password?: string;
 
-
 }
-

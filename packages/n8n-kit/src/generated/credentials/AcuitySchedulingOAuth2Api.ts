@@ -8,7 +8,6 @@ export const name = "acuitySchedulingOAuth2Api" as const;
  * documentationUrl: acuityScheduling
  */
 export interface AcuitySchedulingOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface AcuitySchedulingOAuth2ApiCredentials {
      */
     readonly "scope": any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface AcuitySchedulingOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "acuitySchedulingOAuth2Api";
-
 }

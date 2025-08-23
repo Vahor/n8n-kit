@@ -8,7 +8,6 @@ export const name = "slackOAuth2Api" as const;
  * documentationUrl: slack
  */
 export interface SlackOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -39,10 +38,7 @@ export interface SlackOAuth2ApiCredentials {
      */
     readonly "authentication"?: any;
 
-    /**
-     */
     readonly "notice"?: string;
 
     readonly __name: "slackOAuth2Api";
-
 }

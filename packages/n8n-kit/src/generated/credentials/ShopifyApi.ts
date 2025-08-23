@@ -8,7 +8,6 @@ export const name = "shopifyApi" as const;
  * documentationUrl: shopify
  */
 export interface ShopifyApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -30,5 +29,4 @@ export interface ShopifyApiCredentials {
     readonly "sharedSecret"?: string;
 
     readonly __name: "shopifyApi";
-
 }

@@ -4,10 +4,10 @@
 export const description = "Create a chart via QuickChart" as const;
 export const type = "n8n-nodes-base.quickChart" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface QuickChartNodeParameters {
-
     /**
      * The type of chart to create
      * Default: "bar"
@@ -52,6 +52,4 @@ export interface QuickChartNodeParameters {
      */
     readonly datasetOptions?: { "backgroundColor"?: any, "borderColor"?: any, "fill"?: boolean, "label"?: string, "pointStyle"?: "circle" | "cross" | "crossRot" | "dash" | "line" | "rect" | "rectRot" | "rectRounded" | "star" | "triangle" };
 
-
 }
-

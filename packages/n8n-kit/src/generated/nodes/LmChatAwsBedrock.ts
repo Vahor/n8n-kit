@@ -5,10 +5,10 @@ export const description = "Language Model AWS Bedrock" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatAwsBedrock" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatAwsBedrockNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -32,6 +32,4 @@ export interface LmChatAwsBedrockNodeParameters {
      */
     readonly options?: { "maxTokensToSample"?: number, "temperature"?: number };
 
-
 }
-

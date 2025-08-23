@@ -8,32 +8,24 @@ import type { NocoDBNodeParameters } from "../nodes/NocoDB";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface NocoDBProps extends NodeProps {
-
     readonly parameters: NocoDBNodeParameters;
     readonly nocoDbCredentials?: Credentials<NocoDbCredentials>;
     readonly nocoDbApiTokenCredentials?: Credentials<NocoDbApiTokenCredentials>;
-
 }
 
 /**
  * Read, update, write and delete data from NocoDB
  */
 export class NocoDB<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.nocoDb" as const;
     protected typeVersion = 3 as const;
 
     constructor(id: L, override props?: NocoDBProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.nocoDbCredentials, this.props!.nocoDbApiTokenCredentials];
-
     }
-
 
 }

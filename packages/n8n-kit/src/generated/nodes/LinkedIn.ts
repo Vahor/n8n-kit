@@ -5,10 +5,10 @@ export const description = "Consume LinkedIn API" as const;
 export const type = "n8n-nodes-base.linkedIn" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"linkedInOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["standard"]}}},{"name":"linkedInCommunityManagementOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["communityManagement"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinkedInNodeParameters {
-
     /**
      * Default: "standard"
      */
@@ -61,6 +61,4 @@ export interface LinkedInNodeParameters {
      */
     readonly additionalFields?: { "description"?: string, "originalUrl"?: string, "thumbnailBinaryPropertyName"?: string, "title"?: string, "visibility"?: "CONNECTIONS" | "PUBLIC" };
 
-
 }
-

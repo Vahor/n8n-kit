@@ -4,10 +4,10 @@
 export const description = "Merges data of multiple streams once data from both is available" as const;
 export const type = "n8n-nodes-base.merge" as const;
 export const version = 2.1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MergeV2NodeParameters {
-
     /**
      * How data of branches should be merged
      * Default: "append"
@@ -50,6 +50,4 @@ export interface MergeV2NodeParameters {
      */
     readonly options?: { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first" };
 
-
 }
-

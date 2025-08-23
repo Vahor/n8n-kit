@@ -4,10 +4,10 @@
 export const description = "Provide cryptographic utilities" as const;
 export const type = "n8n-nodes-base.crypto" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CryptoNodeParameters {
-
     /**
      * Default: "hash"
      */
@@ -73,6 +73,4 @@ export interface CryptoNodeParameters {
      */
     readonly stringLength?: number;
 
-
 }
-

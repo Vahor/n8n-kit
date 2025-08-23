@@ -8,7 +8,6 @@ export const name = "auth0ManagementApi" as const;
  * documentationUrl: auth0management
  */
 export interface Auth0ManagementApiCredentials {
-
     /**
      * Type options: {"expirable":true,"password":true}
      */
@@ -19,8 +18,6 @@ export interface Auth0ManagementApiCredentials {
      */
     readonly "domain": string;
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -29,5 +26,4 @@ export interface Auth0ManagementApiCredentials {
     readonly "clientSecret": string;
 
     readonly __name: "auth0ManagementApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Consume Invoice Ninja API" as const;
 export const type = "n8n-nodes-base.invoiceNinja" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"invoiceNinjaApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface InvoiceNinjaNodeParameters {
-
     /**
      * Default: "v4"
      */
@@ -101,6 +101,4 @@ export interface InvoiceNinjaNodeParameters {
 
     readonly bankTransactionId?: string;
 
-
 }
-

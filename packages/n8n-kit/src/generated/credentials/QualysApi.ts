@@ -8,9 +8,6 @@ export const name = "qualysApi" as const;
  * documentationUrl: qualys
  */
 export interface QualysApiCredentials {
-
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -25,5 +22,4 @@ export interface QualysApiCredentials {
     readonly "requestedWith"?: string;
 
     readonly __name: "qualysApi";
-
 }

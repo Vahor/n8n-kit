@@ -8,12 +8,10 @@ export const name = "segmentApi" as const;
  * documentationUrl: segment
  */
 export interface SegmentApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "writekey"?: string;
 
     readonly __name: "segmentApi";
-
 }

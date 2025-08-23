@@ -5,10 +5,10 @@ export const description = "Consume the Wise API" as const;
 export const type = "n8n-nodes-base.wise" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"wiseApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WiseNodeParameters {
-
     /**
      * Default: "account"
      */
@@ -131,6 +131,4 @@ export interface WiseNodeParameters {
      */
     readonly filters?: { "range"?: { "rangeProperties": any }, "sourceCurrency"?: string, "status"?: "bounced_back" | "cancelled" | "charged_back" | "funds_converted" | "funds_refunded" | "incoming_payment_waiting" | "outgoing_payment_sent" | "processing" | "unknown" | "waiting_recipient_input_to_proceed", "targetCurrency"?: string };
 
-
 }
-

@@ -8,7 +8,6 @@ export const name = "clickUpOAuth2Api" as const;
  * documentationUrl: clickUp
  */
 export interface ClickUpOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface ClickUpOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface ClickUpOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "clickUpOAuth2Api";
-
 }

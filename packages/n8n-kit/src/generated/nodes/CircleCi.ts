@@ -5,10 +5,10 @@ export const description = "Consume CircleCI API" as const;
 export const type = "n8n-nodes-base.circleCi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"circleCiApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CircleCiNodeParameters {
-
     /**
      * Default: "pipeline"
      */
@@ -58,6 +58,4 @@ export interface CircleCiNodeParameters {
      */
     readonly additionalFields?: { "branch"?: string, "tag"?: string };
 
-
 }
-

@@ -4,10 +4,10 @@
 export const description = "Route items depending on defined expression or rules" as const;
 export const type = "n8n-nodes-base.switch" as const;
 export const version = 3.2 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {} as const;
 
 export interface SwitchV3NodeParameters {
-
     /**
      * How data should be routed
      * Default: "rules"
@@ -42,6 +42,4 @@ export interface SwitchV3NodeParameters {
      */
     readonly options?: { "fallbackOutput"?: string, "ignoreCase"?: boolean, "looseTypeValidation"?: boolean, "renameFallbackOutput"?: string, "allMatchingOutputs"?: boolean };
 
-
 }
-

@@ -8,7 +8,6 @@ export const name = "freshworksCrmApi" as const;
  * documentationUrl: freshdesk
  */
 export interface FreshworksCrmApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface FreshworksCrmApiCredentials {
     readonly "domain"?: string;
 
     readonly __name: "freshworksCrmApi";
-
 }

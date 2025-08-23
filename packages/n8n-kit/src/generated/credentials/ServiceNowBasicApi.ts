@@ -8,9 +8,6 @@ export const name = "serviceNowBasicApi" as const;
  * documentationUrl: serviceNow
  */
 export interface ServiceNowBasicApiCredentials {
-
-    /**
-     */
     readonly "user": string;
 
     /**
@@ -18,10 +15,7 @@ export interface ServiceNowBasicApiCredentials {
      */
     readonly "password": string;
 
-    /**
-     */
     readonly "subdomain": string;
 
     readonly __name: "serviceNowBasicApi";
-
 }

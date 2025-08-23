@@ -4,10 +4,10 @@
 export const description = "Route items to different branches (true/false)" as const;
 export const type = "n8n-nodes-base.if" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IfV1NodeParameters {
-
     /**
      * The type of values to compare
      * Default: {}
@@ -21,6 +21,4 @@ export interface IfV1NodeParameters {
      */
     readonly combineOperation?: "all" | "any";
 
-
 }
-

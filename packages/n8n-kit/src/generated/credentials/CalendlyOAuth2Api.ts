@@ -8,7 +8,6 @@ export const name = "calendlyOAuth2Api" as const;
  * documentationUrl: calendly
  */
 export interface CalendlyOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,14 +28,9 @@ export interface CalendlyOAuth2ApiCredentials {
      */
     readonly "authentication"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
-    /**
-     */
     readonly "scope"?: any;
 
     readonly __name: "calendlyOAuth2Api";
-
 }

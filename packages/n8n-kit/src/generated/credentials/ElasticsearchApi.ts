@@ -8,9 +8,6 @@ export const name = "elasticsearchApi" as const;
  * documentationUrl: elasticsearch
  */
 export interface ElasticsearchApiCredentials {
-
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -23,10 +20,7 @@ export interface ElasticsearchApiCredentials {
      */
     readonly "baseUrl"?: string;
 
-    /**
-     */
     readonly "ignoreSSLIssues"?: boolean;
 
     readonly __name: "elasticsearchApi";
-
 }

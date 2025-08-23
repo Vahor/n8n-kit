@@ -8,7 +8,6 @@ export const name = "mailchimpOAuth2Api" as const;
  * documentationUrl: mailchimp
  */
 export interface MailchimpOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,12 +28,8 @@ export interface MailchimpOAuth2ApiCredentials {
      */
     readonly "metadataUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -43,5 +38,4 @@ export interface MailchimpOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "mailchimpOAuth2Api";
-
 }

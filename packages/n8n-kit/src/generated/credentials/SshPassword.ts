@@ -8,9 +8,6 @@ export const name = "sshPassword" as const;
  * documentationUrl: ssh
  */
 export interface SshPasswordCredentials {
-
-    /**
-     */
     readonly "host": string;
 
     /**
@@ -18,8 +15,6 @@ export interface SshPasswordCredentials {
      */
     readonly "port": number;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -28,5 +23,4 @@ export interface SshPasswordCredentials {
     readonly "password"?: string;
 
     readonly __name: "sshPassword";
-
 }

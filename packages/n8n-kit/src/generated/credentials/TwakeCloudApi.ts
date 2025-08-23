@@ -8,12 +8,10 @@ export const name = "twakeCloudApi" as const;
  * documentationUrl: twake
  */
 export interface TwakeCloudApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "workspaceKey"?: string;
 
     readonly __name: "twakeCloudApi";
-
 }

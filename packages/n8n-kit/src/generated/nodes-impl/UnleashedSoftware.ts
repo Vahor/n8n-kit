@@ -7,31 +7,23 @@ import type { UnleashedSoftwareNodeParameters } from "../nodes/UnleashedSoftware
 import { Node, type NodeProps } from "../../nodes";
 
 export interface UnleashedSoftwareProps extends NodeProps {
-
     readonly parameters: UnleashedSoftwareNodeParameters;
     readonly unleashedSoftwareApiCredentials: Credentials<UnleashedSoftwareApiCredentials>;
-
 }
 
 /**
  * Consume Unleashed Software API
  */
 export class UnleashedSoftware<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.unleashedSoftware" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: UnleashedSoftwareProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.unleashedSoftwareApiCredentials];
-
     }
-
 
 }

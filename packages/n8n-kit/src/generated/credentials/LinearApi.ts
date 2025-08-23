@@ -8,12 +8,10 @@ export const name = "linearApi" as const;
  * documentationUrl: linear
  */
 export interface LinearApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "linearApi";
-
 }

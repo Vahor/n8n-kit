@@ -5,10 +5,10 @@ export const description = "Read data from Google Books" as const;
 export const type = "n8n-nodes-base.googleBooks" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleBooksOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBooksNodeParameters {
-
     /**
      * Default: "serviceAccount"
      */
@@ -63,6 +63,4 @@ export interface GoogleBooksNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

@@ -8,12 +8,10 @@ export const name = "upleadApi" as const;
  * documentationUrl: uplead
  */
 export interface UpleadApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "upleadApi";
-
 }

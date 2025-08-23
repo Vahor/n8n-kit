@@ -8,9 +8,6 @@ export const name = "orbitApi" as const;
  * documentationUrl: orbit
  */
 export interface OrbitApiCredentials {
-
-    /**
-     */
     readonly "deprecated"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface OrbitApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "orbitApi";
-
 }

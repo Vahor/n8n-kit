@@ -4,10 +4,10 @@
 export const description = "Consume Hacker News API" as const;
 export const type = "n8n-nodes-base.hackerNews" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HackerNewsNodeParameters {
-
     /**
      * Default: "article"
      */
@@ -45,6 +45,4 @@ export interface HackerNewsNodeParameters {
      */
     readonly additionalFields?: { "includeComments"?: boolean } | { "keyword"?: string, "tags"?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
 
-
 }
-

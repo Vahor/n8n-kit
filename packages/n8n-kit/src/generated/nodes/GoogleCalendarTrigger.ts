@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Google Calendar events occu
 export const type = "n8n-nodes-base.googleCalendarTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleCalendarOAuth2Api","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleCalendarTriggerNodeParameters {
-
     /**
      * Google Calendar to operate on
      * Default: {"mode":"list","value":""}
@@ -26,6 +26,4 @@ export interface GoogleCalendarTriggerNodeParameters {
     readonly options?: { "matchTerm"?: string };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
-
 }
-

@@ -8,9 +8,6 @@ export const name = "taigaApi" as const;
  * documentationUrl: taiga
  */
 export interface TaigaApiCredentials {
-
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -23,10 +20,7 @@ export interface TaigaApiCredentials {
      */
     readonly "environment"?: "cloud" | "selfHosted";
 
-    /**
-     */
     readonly "url"?: string;
 
     readonly __name: "taigaApi";
-
 }

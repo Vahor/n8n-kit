@@ -8,7 +8,6 @@ export const name = "harvestOAuth2Api" as const;
  * documentationUrl: harvest
  */
 export interface HarvestOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface HarvestOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface HarvestOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "harvestOAuth2Api";
-
 }

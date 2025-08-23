@@ -4,10 +4,10 @@
 export const description = "Combine a field from many items into a list in a single item" as const;
 export const type = "n8n-nodes-base.aggregate" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AggregateNodeParameters {
-
     /**
      * Default: "aggregateIndividualFields"
      */
@@ -39,6 +39,4 @@ export interface AggregateNodeParameters {
      */
     readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean };
 
-
 }
-

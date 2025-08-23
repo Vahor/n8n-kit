@@ -8,9 +8,6 @@ export const name = "whatsAppTriggerApi" as const;
  * documentationUrl: whatsApp
  */
 export interface WhatsAppTriggerApiCredentials {
-
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -19,5 +16,4 @@ export interface WhatsAppTriggerApiCredentials {
     readonly "clientSecret": string;
 
     readonly __name: "whatsAppTriggerApi";
-
 }

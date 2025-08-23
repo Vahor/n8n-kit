@@ -5,10 +5,10 @@ export const description = "JWT" as const;
 export const type = "n8n-nodes-base.jwt" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jwtAuth","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JwtNodeParameters {
-
     /**
      * Default: "sign"
      */
@@ -42,6 +42,4 @@ export interface JwtNodeParameters {
      */
     readonly options?: { "complete"?: boolean, "ignoreExpiration"?: boolean, "ignoreNotBefore"?: boolean, "clockTolerance"?: number, "kid"?: string, "algorithm"?: "ES256" | "ES384" | "ES512" | "HS256" | "HS384" | "HS512" | "PS256" | "PS384" | "PS512" | "RS256" | "RS384" | "RS512" };
 
-
 }
-

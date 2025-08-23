@@ -8,7 +8,6 @@ export const name = "marketstackApi" as const;
  * documentationUrl: marketstack
  */
 export interface MarketstackApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface MarketstackApiCredentials {
     readonly "useHttps"?: boolean;
 
     readonly __name: "marketstackApi";
-
 }

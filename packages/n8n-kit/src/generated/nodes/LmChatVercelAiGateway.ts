@@ -5,10 +5,10 @@ export const description = "For advanced usage with an AI chain via Vercel AI Ga
 export const type = "@n8n/n8n-nodes-langchain.lmChatVercelAiGateway" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"vercelAiGatewayApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatVercelAiGatewayNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -27,6 +27,4 @@ export interface LmChatVercelAiGatewayNodeParameters {
      */
     readonly options?: { "frequencyPenalty"?: number, "maxTokens"?: number, "responseFormat"?: "text" | "json_object", "presencePenalty"?: number, "temperature"?: number, "timeout"?: number, "maxRetries"?: number, "topP"?: number };
 
-
 }
-

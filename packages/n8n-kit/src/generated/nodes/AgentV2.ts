@@ -4,10 +4,10 @@
 export const description = "Generates an action plan and executes it. Can use external tools." as const;
 export const type = "@n8n/n8n-nodes-langchain.agent" as const;
 export const version = 2.2 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgentV2NodeParameters {
-
     readonly aiAgentStarterCallout?: any;
 
     /**
@@ -39,6 +39,4 @@ export interface AgentV2NodeParameters {
      */
     readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number }, "enableStreaming"?: boolean } | { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
-
 }
-

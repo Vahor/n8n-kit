@@ -5,10 +5,10 @@ export const description = "Consume the Bubble Data API" as const;
 export const type = "n8n-nodes-base.bubble" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bubbleApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BubbleNodeParameters {
-
     /**
      * Default: "object"
      */
@@ -54,6 +54,4 @@ export interface BubbleNodeParameters {
      */
     readonly options?: { "filters"?: { "filter": any }, "filtersJson"?: string, "sort"?: { "sortValue": any } };
 
-
 }
-

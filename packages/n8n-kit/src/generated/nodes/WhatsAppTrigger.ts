@@ -5,10 +5,10 @@ export const description = "Handle WhatsApp events via webhooks" as const;
 export const type = "n8n-nodes-base.whatsAppTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"whatsAppTriggerApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WhatsAppTriggerNodeParameters {
-
     readonly whatsAppNotice?: string;
 
     /**
@@ -21,6 +21,4 @@ export interface WhatsAppTriggerNodeParameters {
      */
     readonly options?: { "messageStatusUpdates"?: ("all" | "deleted" | "delivered" | "failed" | "read" | "sent")[] };
 
-
 }
-

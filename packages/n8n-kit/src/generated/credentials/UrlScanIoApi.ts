@@ -8,12 +8,10 @@ export const name = "urlScanIoApi" as const;
  * documentationUrl: urlScanIo
  */
 export interface UrlScanIoApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "urlScanIoApi";
-
 }

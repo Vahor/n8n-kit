@@ -8,9 +8,6 @@ export const name = "httpHeaderAuth" as const;
  * documentationUrl: httpRequest
  */
 export interface HttpHeaderAuthCredentials {
-
-    /**
-     */
     readonly "name"?: string;
 
     /**
@@ -18,10 +15,7 @@ export interface HttpHeaderAuthCredentials {
      */
     readonly "value"?: string;
 
-    /**
-     */
     readonly "useCustomAuth"?: string;
 
     readonly __name: "httpHeaderAuth";
-
 }

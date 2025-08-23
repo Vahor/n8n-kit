@@ -5,10 +5,10 @@ export const description = "Consume Adalo API" as const;
 export const type = "n8n-nodes-base.adalo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"adaloApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AdaloNodeParameters {
-
     /**
      * Default: "collection"
      */
@@ -56,6 +56,4 @@ export interface AdaloNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

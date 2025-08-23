@@ -5,10 +5,10 @@ export const description = "Consume WooCommerce API" as const;
 export const type = "n8n-nodes-base.wooCommerce" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"wooCommerceApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WooCommerceNodeParameters {
-
     /**
      * Default: "product"
      */
@@ -130,6 +130,4 @@ export interface WooCommerceNodeParameters {
 
     readonly orderId?: string;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Github events occur" as con
 export const type = "n8n-nodes-base.githubTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"githubApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"githubOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GithubTriggerNodeParameters {
-
     readonly notice?: string;
 
     /**
@@ -43,6 +43,4 @@ export interface GithubTriggerNodeParameters {
      */
     readonly options?: { "insecureSSL"?: boolean };
 
-
 }
-

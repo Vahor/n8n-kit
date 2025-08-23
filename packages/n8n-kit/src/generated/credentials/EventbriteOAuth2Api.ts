@@ -8,7 +8,6 @@ export const name = "eventbriteOAuth2Api" as const;
  * documentationUrl: eventbrite
  */
 export interface EventbriteOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface EventbriteOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface EventbriteOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "eventbriteOAuth2Api";
-
 }

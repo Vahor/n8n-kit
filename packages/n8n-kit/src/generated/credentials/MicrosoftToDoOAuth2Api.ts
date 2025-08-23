@@ -8,12 +8,10 @@ export const name = "microsoftToDoOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftToDoOAuth2ApiCredentials {
-
     /**
      * Default: "openid offline_access Tasks.ReadWrite"
      */
     readonly "scope"?: any;
 
     readonly __name: "microsoftToDoOAuth2Api";
-
 }

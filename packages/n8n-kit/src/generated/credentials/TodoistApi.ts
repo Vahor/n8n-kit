@@ -8,12 +8,10 @@ export const name = "todoistApi" as const;
  * documentationUrl: todoist
  */
 export interface TodoistApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "todoistApi";
-
 }

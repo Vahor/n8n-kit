@@ -8,12 +8,10 @@ export const name = "figmaApi" as const;
  * documentationUrl: figma
  */
 export interface FigmaApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "figmaApi";
-
 }

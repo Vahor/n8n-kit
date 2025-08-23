@@ -5,10 +5,10 @@ export const description = "Consume Philips Hue API" as const;
 export const type = "n8n-nodes-base.philipsHue" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"philipsHueOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PhilipsHueNodeParameters {
-
     /**
      * Default: "light"
      */
@@ -44,6 +44,4 @@ export interface PhilipsHueNodeParameters {
      */
     readonly additionalFields?: { "alert"?: "none" | "select" | "lselect", "bri"?: number, "bri_inc"?: number, "ct"?: number, "ct_inc"?: number, "xy"?: string, "xy_inc"?: string, "effect"?: "none" | "colorloop", "hue"?: number, "hue_inc"?: number, "sat"?: number, "sat_inc"?: number, "transitiontime"?: number };
 
-
 }
-

@@ -7,31 +7,23 @@ import type { MandrillNodeParameters } from "../nodes/Mandrill";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MandrillProps extends NodeProps {
-
     readonly parameters: MandrillNodeParameters;
     readonly mandrillApiCredentials: Credentials<MandrillApiCredentials>;
-
 }
 
 /**
  * Consume Mandrill API
  */
 export class Mandrill<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.mandrill" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MandrillProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.mandrillApiCredentials];
-
     }
-
 
 }

@@ -8,11 +8,7 @@ export const name = "searXngApi" as const;
  * documentationUrl: searxng
  */
 export interface SearXngApiCredentials {
-
-    /**
-     */
     readonly "apiUrl": string;
 
     readonly __name: "searXngApi";
-
 }

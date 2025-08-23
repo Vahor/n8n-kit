@@ -8,7 +8,6 @@ export const name = "xAiApi" as const;
  * documentationUrl: xai
  */
 export interface XAiApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface XAiApiCredentials {
     readonly "url"?: any;
 
     readonly __name: "xAiApi";
-
 }

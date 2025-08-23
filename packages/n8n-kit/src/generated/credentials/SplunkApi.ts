@@ -8,7 +8,6 @@ export const name = "splunkApi" as const;
  * documentationUrl: splunk
  */
 export interface SplunkApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -25,5 +24,4 @@ export interface SplunkApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "splunkApi";
-
 }

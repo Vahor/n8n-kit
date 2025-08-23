@@ -8,7 +8,6 @@ export const name = "verticaApi" as const;
  * documentationUrl: vertica
  */
 export interface VerticaApiCredentials {
-
     /**
      * Default: "https://localhost:8443"
      */
@@ -26,5 +25,4 @@ export interface VerticaApiCredentials {
     readonly "password"?: string;
 
     readonly __name: "verticaApi";
-
 }

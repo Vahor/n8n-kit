@@ -5,10 +5,10 @@ export const description = "Handle Bitbucket events via webhooks" as const;
 export const type = "n8n-nodes-base.bitbucketTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bitbucketApi","required":true,"testedBy":"bitbucketApiTest"}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BitbucketTriggerNodeParameters {
-
     /**
      * Default: "workspace"
      */
@@ -33,6 +33,4 @@ export interface BitbucketTriggerNodeParameters {
      */
     readonly repository?: string;
 
-
 }
-

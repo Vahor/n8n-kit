@@ -8,22 +8,15 @@ export const name = "oAuth2Api" as const;
  * documentationUrl: httpRequest
  */
 export interface OAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
     readonly "grantType"?: "authorizationCode" | "clientCredentials" | "pkce";
 
-    /**
-     */
     readonly "authUrl": string;
 
-    /**
-     */
     readonly "accessTokenUrl": string;
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -31,8 +24,6 @@ export interface OAuth2ApiCredentials {
      */
     readonly "clientSecret": string;
 
-    /**
-     */
     readonly "scope"?: string;
 
     /**
@@ -45,8 +36,6 @@ export interface OAuth2ApiCredentials {
      */
     readonly "authentication"?: "body" | "header";
 
-    /**
-     */
     readonly "sendAdditionalBodyProperties"?: boolean;
 
     /**
@@ -54,10 +43,7 @@ export interface OAuth2ApiCredentials {
      */
     readonly "additionalBodyProperties"?: string;
 
-    /**
-     */
     readonly "ignoreSSLIssues"?: boolean;
 
     readonly __name: "oAuth2Api";
-
 }

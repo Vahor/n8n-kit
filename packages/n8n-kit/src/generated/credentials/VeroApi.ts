@@ -8,12 +8,10 @@ export const name = "veroApi" as const;
  * documentationUrl: vero
  */
 export interface VeroApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "authToken"?: string;
 
     readonly __name: "veroApi";
-
 }

@@ -9,33 +9,25 @@ import type { PipedriveTriggerNodeParameters } from "../nodes/PipedriveTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface PipedriveTriggerProps extends NodeProps {
-
     readonly parameters: PipedriveTriggerNodeParameters;
     readonly pipedriveApiCredentials?: Credentials<PipedriveApiCredentials>;
     readonly pipedriveOAuth2ApiCredentials?: Credentials<PipedriveOAuth2ApiCredentials>;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
-
 }
 
 /**
  * Starts the workflow when Pipedrive events occur
  */
 export class PipedriveTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.pipedriveTrigger" as const;
     protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props?: PipedriveTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.pipedriveApiCredentials, this.props!.pipedriveOAuth2ApiCredentials, this.props!.httpBasicAuthCredentials];
-
     }
-
 
 }

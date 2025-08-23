@@ -5,10 +5,10 @@ export const description = "Consume Oura API" as const;
 export const type = "n8n-nodes-base.oura" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"ouraApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OuraNodeParameters {
-
     /**
      * Default: "summary"
      */
@@ -36,6 +36,4 @@ export interface OuraNodeParameters {
      */
     readonly filters?: { "end"?: string, "start"?: string };
 
-
 }
-

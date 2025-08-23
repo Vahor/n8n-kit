@@ -5,10 +5,10 @@ export const description = "Consume Bitly API" as const;
 export const type = "n8n-nodes-base.bitly" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"bitlyApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"bitlyOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BitlyNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -44,6 +44,4 @@ export interface BitlyNodeParameters {
      */
     readonly updateFields?: { "archived"?: boolean, "group"?: string, "longUrl"?: string, "tags"?: any[], "title"?: string };
 
-
 }
-

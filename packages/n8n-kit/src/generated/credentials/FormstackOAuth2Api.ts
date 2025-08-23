@@ -8,7 +8,6 @@ export const name = "formstackOAuth2Api" as const;
  * documentationUrl: formstackTrigger
  */
 export interface FormstackOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface FormstackOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface FormstackOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "formstackOAuth2Api";
-
 }

@@ -7,31 +7,23 @@ import type { WorkableTriggerNodeParameters } from "../nodes/WorkableTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface WorkableTriggerProps extends NodeProps {
-
     readonly parameters: WorkableTriggerNodeParameters;
     readonly workableApiCredentials: Credentials<WorkableApiCredentials>;
-
 }
 
 /**
  * Starts the workflow when Workable events occur
  */
 export class WorkableTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.workableTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: WorkableTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.workableApiCredentials];
-
     }
-
 
 }

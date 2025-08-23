@@ -5,10 +5,10 @@ export const description = "Interact with Azure Storage API" as const;
 export const type = "n8n-nodes-base.azureStorage" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"azureStorageOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"azureStorageSharedKeyApi","required":true,"displayOptions":{"show":{"authentication":["sharedKey"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AzureStorageNodeParameters {
-
     /**
      * Default: "sharedKey"
      */
@@ -85,6 +85,4 @@ export interface AzureStorageNodeParameters {
      */
     readonly containerCreate?: string;
 
-
 }
-

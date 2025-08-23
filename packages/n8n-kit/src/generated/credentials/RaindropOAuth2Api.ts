@@ -8,7 +8,6 @@ export const name = "raindropOAuth2Api" as const;
  * documentationUrl: raindrop
  */
 export interface RaindropOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,8 +23,6 @@ export interface RaindropOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -33,10 +30,7 @@ export interface RaindropOAuth2ApiCredentials {
      */
     readonly "authentication"?: any;
 
-    /**
-     */
     readonly "scope"?: any;
 
     readonly __name: "raindropOAuth2Api";
-
 }

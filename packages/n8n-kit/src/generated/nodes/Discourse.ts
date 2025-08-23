@@ -5,10 +5,10 @@ export const description = "Consume Discourse API" as const;
 export const type = "n8n-nodes-base.discourse" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"discourseApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DiscourseNodeParameters {
-
     /**
      * Default: "post"
      */
@@ -126,6 +126,4 @@ export interface DiscourseNodeParameters {
      */
     readonly usernames?: string;
 
-
 }
-

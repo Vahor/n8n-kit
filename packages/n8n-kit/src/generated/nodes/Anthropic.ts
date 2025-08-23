@@ -5,10 +5,10 @@ export const description = "Interact with Anthropic AI models" as const;
 export const type = "@n8n/n8n-nodes-langchain.anthropic" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"anthropicApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AnthropicNodeParameters {
-
     /**
      * Default: "text"
      */
@@ -118,6 +118,4 @@ export interface AnthropicNodeParameters {
      */
     readonly attachmentsUrls?: string;
 
-
 }
-

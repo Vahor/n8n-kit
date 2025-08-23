@@ -8,9 +8,6 @@ export const name = "wekanApi" as const;
  * documentationUrl: wekan
  */
 export interface WekanApiCredentials {
-
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface WekanApiCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -28,5 +23,4 @@ export interface WekanApiCredentials {
     readonly "token"?: any;
 
     readonly __name: "wekanApi";
-
 }

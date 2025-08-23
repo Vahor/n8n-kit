@@ -8,7 +8,6 @@ export const name = "timescaleDb" as const;
  * documentationUrl: timescaleDb
  */
 export interface TimescaleDbCredentials {
-
     /**
      * Default: "localhost"
      */
@@ -45,5 +44,4 @@ export interface TimescaleDbCredentials {
     readonly "port"?: number;
 
     readonly __name: "timescaleDb";
-
 }

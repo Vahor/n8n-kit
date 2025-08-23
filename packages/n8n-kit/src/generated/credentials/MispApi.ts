@@ -8,14 +8,11 @@ export const name = "mispApi" as const;
  * documentationUrl: misp
  */
 export interface MispApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
-    /**
-     */
     readonly "baseUrl"?: string;
 
     /**
@@ -24,5 +21,4 @@ export interface MispApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "mispApi";
-
 }

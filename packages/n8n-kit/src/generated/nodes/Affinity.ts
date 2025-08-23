@@ -5,10 +5,10 @@ export const description = "Consume Affinity API" as const;
 export const type = "n8n-nodes-base.affinity" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"affinityApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AffinityNodeParameters {
-
     /**
      * Default: "organization"
      */
@@ -98,6 +98,4 @@ export interface AffinityNodeParameters {
      */
     readonly personId?: string;
 
-
 }
-

@@ -7,31 +7,23 @@ import type { OnfleetNodeParameters } from "../nodes/Onfleet";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface OnfleetProps extends NodeProps {
-
     readonly parameters: OnfleetNodeParameters;
     readonly onfleetApiCredentials: Credentials<OnfleetApiCredentials>;
-
 }
 
 /**
  * Consume Onfleet API
  */
 export class Onfleet<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.onfleet" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: OnfleetProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.onfleetApiCredentials];
-
     }
-
 
 }

@@ -8,16 +8,12 @@ export const name = "whatsAppApi" as const;
  * documentationUrl: whatsApp
  */
 export interface WhatsAppApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken": string;
 
-    /**
-     */
     readonly "businessAccountId": string;
 
     readonly __name: "whatsAppApi";
-
 }

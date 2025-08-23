@@ -3,35 +3,33 @@
 
 import type { XataApiCredentials } from "../credentials/XataApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryXataNodeParameters } from "../nodes/MemoryXata";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MemoryXataProps extends NodeProps {
-
     readonly parameters: MemoryXataNodeParameters;
     readonly xataApiCredentials: Credentials<XataApiCredentials>;
-
 }
 
 /**
  * Use Xata Memory
  */
 export class MemoryXata<L extends string> extends Node<L> {
-
     protected type = "@n8n/n8n-nodes-langchain.memoryXata" as const;
     protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: MemoryXataProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.xataApiCredentials];
-
     }
 
+    public aiMemory(next: IChainable): this {
+        super.addNext(next.startState, { type: "ai_memory" });
+        return this;
+    }
 
 }

@@ -5,10 +5,10 @@ export const description = "Consume Intercom API" as const;
 export const type = "n8n-nodes-base.intercom" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"intercomApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IntercomNodeParameters {
-
     /**
      * Default: "user"
      */
@@ -101,6 +101,4 @@ export interface IntercomNodeParameters {
      */
     readonly companyId?: string;
 
-
 }
-

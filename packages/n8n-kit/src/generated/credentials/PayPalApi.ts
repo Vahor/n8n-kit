@@ -8,9 +8,6 @@ export const name = "payPalApi" as const;
  * documentationUrl: payPal
  */
 export interface PayPalApiCredentials {
-
-    /**
-     */
     readonly "clientId"?: string;
 
     /**
@@ -24,5 +21,4 @@ export interface PayPalApiCredentials {
     readonly "env"?: "sanbox" | "live";
 
     readonly __name: "payPalApi";
-
 }

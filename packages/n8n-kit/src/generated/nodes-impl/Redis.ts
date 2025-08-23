@@ -7,31 +7,23 @@ import type { RedisNodeParameters } from "../nodes/Redis";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface RedisProps extends NodeProps {
-
     readonly parameters: RedisNodeParameters;
     readonly redisCredentials: Credentials<RedisCredentials>;
-
 }
 
 /**
  * Get, send and update data in Redis
  */
 export class Redis<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.redis" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: RedisProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.redisCredentials];
-
     }
-
 
 }

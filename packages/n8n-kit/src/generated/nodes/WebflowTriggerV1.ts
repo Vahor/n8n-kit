@@ -5,10 +5,10 @@ export const description = "Handle Webflow events via webhooks" as const;
 export const type = "n8n-nodes-base.webflowTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"webflowApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"webflowOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WebflowTriggerV1NodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -25,6 +25,4 @@ export interface WebflowTriggerV1NodeParameters {
      */
     readonly event?: "collection_item_created" | "collection_item_deleted" | "collection_item_changed" | "ecomm_inventory_changed" | "ecomm_new_order" | "ecomm_order_changed" | "form_submission" | "site_publish";
 
-
 }
-

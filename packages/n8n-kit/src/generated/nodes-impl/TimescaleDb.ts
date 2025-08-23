@@ -7,31 +7,23 @@ import type { TimescaleDbNodeParameters } from "../nodes/TimescaleDb";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface TimescaleDbProps extends NodeProps {
-
     readonly parameters: TimescaleDbNodeParameters;
     readonly timescaleDbCredentials: Credentials<TimescaleDbCredentials>;
-
 }
 
 /**
  * Add and update data in TimescaleDB
  */
 export class TimescaleDb<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.timescaleDb" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: TimescaleDbProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.timescaleDbCredentials];
-
     }
-
 
 }

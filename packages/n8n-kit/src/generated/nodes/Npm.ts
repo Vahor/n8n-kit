@@ -5,10 +5,10 @@ export const description = "Consume NPM registry API" as const;
 export const type = "n8n-nodes-base.npm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"npmApi","required":false}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NpmNodeParameters {
-
     /**
      * Default: "package"
      */
@@ -49,6 +49,4 @@ export interface NpmNodeParameters {
      */
     readonly distTagName?: string;
 
-
 }
-

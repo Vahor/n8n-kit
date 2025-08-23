@@ -4,10 +4,10 @@
 export const description = "Run custom JavaScript or Python code" as const;
 export const type = "n8n-nodes-base.code" as const;
 export const version = 2 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CodeNodeParameters {
-
     /**
      * Default: "runOnceForAllItems"
      */
@@ -32,6 +32,4 @@ export interface CodeNodeParameters {
      */
     readonly pythonCode?: string;
 
-
 }
-

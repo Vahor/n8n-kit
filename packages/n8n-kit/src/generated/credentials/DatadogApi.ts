@@ -8,7 +8,6 @@ export const name = "datadogApi" as const;
  * documentationUrl: datadog
  */
 export interface DatadogApiCredentials {
-
     /**
      * Default: "https://api.datadoghq.com"
      */
@@ -26,5 +25,4 @@ export interface DatadogApiCredentials {
     readonly "appKey"?: string;
 
     readonly __name: "datadogApi";
-
 }

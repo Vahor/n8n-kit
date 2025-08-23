@@ -8,9 +8,6 @@ export const name = "twitterOAuth2Api" as const;
  * documentationUrl: twitter
  */
 export interface TwitterOAuth2ApiCredentials {
-
-    /**
-     */
     readonly "apiPermissions"?: string;
 
     /**
@@ -33,8 +30,6 @@ export interface TwitterOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -43,5 +38,4 @@ export interface TwitterOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "twitterOAuth2Api";
-
 }

@@ -5,10 +5,10 @@ export const description = "Consume Spontit API" as const;
 export const type = "n8n-nodes-base.spontit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"spontitApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SpontitNodeParameters {
-
     /**
      * Default: "push"
      */
@@ -29,6 +29,4 @@ export interface SpontitNodeParameters {
      */
     readonly additionalFields?: { "channelName"?: string, "expirationStamp"?: string, "iOSDeepLink"?: string, "link"?: string, "openInHomeFeed"?: boolean, "openLinkInApp"?: boolean, "pushToEmails"?: string, "pushToFollowers"?: string, "pushToPhoneNumbers"?: string, "schedule"?: string, "subtitle"?: string, "pushTitle"?: string };
 
-
 }
-

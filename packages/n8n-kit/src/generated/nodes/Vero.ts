@@ -5,10 +5,10 @@ export const description = "Consume Vero API" as const;
 export const type = "n8n-nodes-base.vero" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"veroApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VeroNodeParameters {
-
     /**
      * Default: "user"
      */
@@ -74,6 +74,4 @@ export interface VeroNodeParameters {
      */
     readonly extraAttributesJson?: string;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Consume Pushbullet API" as const;
 export const type = "n8n-nodes-base.pushbullet" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pushbulletOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushbulletNodeParameters {
-
     /**
      * Default: "push"
      */
@@ -79,6 +79,4 @@ export interface PushbulletNodeParameters {
      */
     readonly dismissed?: boolean;
 
-
 }
-

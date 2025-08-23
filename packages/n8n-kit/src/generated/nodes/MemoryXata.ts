@@ -5,10 +5,10 @@ export const description = "Use Xata Memory" as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryXata" as const;
 export const version = 1.4 as const;
 export const credentials = [{"name":"xataApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryXataNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -31,6 +31,4 @@ export interface MemoryXataNodeParameters {
      */
     readonly contextWindowLength?: number;
 
-
 }
-

@@ -8,9 +8,6 @@ export const name = "agileCrmApi" as const;
  * documentationUrl: agileCrm
  */
 export interface AgileCrmApiCredentials {
-
-    /**
-     */
     readonly "email"?: string;
 
     /**
@@ -24,5 +21,4 @@ export interface AgileCrmApiCredentials {
     readonly "subdomain"?: string;
 
     readonly __name: "agileCrmApi";
-
 }

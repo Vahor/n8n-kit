@@ -5,10 +5,10 @@ export const description = "Consume PayPal API" as const;
 export const type = "n8n-nodes-base.payPal" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"payPalApi","required":true,"testedBy":"payPalApiTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PayPalNodeParameters {
-
     /**
      * Default: "payout"
      */
@@ -65,6 +65,4 @@ export interface PayPalNodeParameters {
      */
     readonly payoutItemId?: string;
 
-
 }
-

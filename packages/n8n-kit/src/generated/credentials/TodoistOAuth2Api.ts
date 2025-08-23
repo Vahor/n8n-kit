@@ -8,7 +8,6 @@ export const name = "todoistOAuth2Api" as const;
  * documentationUrl: todoist
  */
 export interface TodoistOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface TodoistOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface TodoistOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "todoistOAuth2Api";
-
 }

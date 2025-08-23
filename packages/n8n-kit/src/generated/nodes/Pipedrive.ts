@@ -5,10 +5,10 @@ export const description = "Create and edit data in Pipedrive" as const;
 export const type = "n8n-nodes-base.pipedrive" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pipedriveApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}},"testedBy":{"request":{"method":"GET","url":"/users/me"}}},{"name":"pipedriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PipedriveNodeParameters {
-
     /**
      * Default: "apiToken"
      */
@@ -189,6 +189,4 @@ export interface PipedriveNodeParameters {
      */
     readonly filters?: { "archived_status"?: "archived" | "all" | "not_archived" } | { "firstChar"?: string, "filterId"?: string } | { "filter_id"?: string, "stage_id"?: string, "status"?: "all_not_deleted" | "deleted" | "lost" | "open" | "won", "user_id"?: string };
 
-
 }
-

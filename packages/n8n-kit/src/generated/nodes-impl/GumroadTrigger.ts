@@ -7,31 +7,23 @@ import type { GumroadTriggerNodeParameters } from "../nodes/GumroadTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GumroadTriggerProps extends NodeProps {
-
     readonly parameters: GumroadTriggerNodeParameters;
     readonly gumroadApiCredentials: Credentials<GumroadApiCredentials>;
-
 }
 
 /**
  * Handle Gumroad events via webhooks
  */
 export class GumroadTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.gumroadTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: GumroadTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.gumroadApiCredentials];
-
     }
-
 
 }

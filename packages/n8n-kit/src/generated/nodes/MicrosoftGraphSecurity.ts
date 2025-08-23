@@ -5,10 +5,10 @@ export const description = "Consume the Microsoft Graph Security API" as const;
 export const type = "n8n-nodes-base.microsoftGraphSecurity" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftGraphSecurityOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftGraphSecurityNodeParameters {
-
     /**
      * Default: "secureScore"
      */
@@ -61,6 +61,4 @@ export interface MicrosoftGraphSecurityNodeParameters {
      */
     readonly updateFields?: { "state"?: "Default" | "Ignored" | "ThirdParty" };
 
-
 }
-

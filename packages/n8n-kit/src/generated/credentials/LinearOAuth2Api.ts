@@ -8,7 +8,6 @@ export const name = "linearOAuth2Api" as const;
  * documentationUrl: linear
  */
 export interface LinearOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -50,5 +49,4 @@ export interface LinearOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "linearOAuth2Api";
-
 }

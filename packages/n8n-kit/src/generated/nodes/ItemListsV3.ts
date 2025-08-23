@@ -5,10 +5,10 @@ export const description = "Helper for working with lists of items and transform
 export const type = "n8n-nodes-base.itemLists" as const;
 export const version = 3.1 as const;
 export const credentials = [] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ItemListsV3NodeParameters {
-
     /**
      * Default: "itemList"
      */
@@ -110,6 +110,4 @@ export interface ItemListsV3NodeParameters {
      */
     readonly fieldsToSplitBy?: string;
 
-
 }
-

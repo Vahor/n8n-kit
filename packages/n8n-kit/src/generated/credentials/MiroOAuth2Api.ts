@@ -8,7 +8,6 @@ export const name = "miroOAuth2Api" as const;
  * documentationUrl: miro
  */
 export interface MiroOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface MiroOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope": any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface MiroOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "miroOAuth2Api";
-
 }

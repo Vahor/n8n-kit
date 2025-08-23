@@ -8,13 +8,8 @@ export const name = "zulipApi" as const;
  * documentationUrl: zulip
  */
 export interface ZulipApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
-    /**
-     */
     readonly "email"?: string;
 
     /**
@@ -23,5 +18,4 @@ export interface ZulipApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "zulipApi";
-
 }

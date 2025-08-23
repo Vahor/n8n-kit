@@ -5,10 +5,10 @@ export const description = "Chat Model Google Gemini" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatGoogleGemini" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatGoogleGeminiNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -27,6 +27,4 @@ export interface LmChatGoogleGeminiNodeParameters {
      */
     readonly options?: { "maxOutputTokens"?: number, "temperature"?: number, "topK"?: number, "topP"?: number, "safetySettings"?: { "values": any } };
 
-
 }
-

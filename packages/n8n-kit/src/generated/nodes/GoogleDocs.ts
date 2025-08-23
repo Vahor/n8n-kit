@@ -5,10 +5,10 @@ export const description = "Consume Google Docs API." as const;
 export const type = "n8n-nodes-base.googleDocs" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDocsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleDocsNodeParameters {
-
     /**
      * Default: "serviceAccount"
      */
@@ -62,6 +62,4 @@ export interface GoogleDocsNodeParameters {
      */
     readonly updateFields?: { "writeControlObject": any };
 
-
 }
-

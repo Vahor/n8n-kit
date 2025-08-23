@@ -1,3 +1,4 @@
+import type { AnyString } from "../../utils/types";
 import type { State } from "./state";
 
 export interface ConnectionOptions {
@@ -14,6 +15,19 @@ export interface ConnectionOptions {
 	 * @default 0
 	 */
 	to?: number;
+
+	/**
+	 * @internal
+	 * The type of connection
+	 * @default "main"
+	 */
+	type?: "main" | AnyString;
+
+	/**
+	 * @internal
+	 * @default "output"
+	 */
+	direction?: "input" | "output";
 }
 
 /**

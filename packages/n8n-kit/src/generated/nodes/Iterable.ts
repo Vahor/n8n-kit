@@ -5,10 +5,10 @@ export const description = "Consume Iterable API" as const;
 export const type = "n8n-nodes-base.iterable" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"iterableApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IterableNodeParameters {
-
     /**
      * Default: "user"
      */
@@ -64,6 +64,4 @@ export interface IterableNodeParameters {
      */
     readonly listId?: string;
 
-
 }
-

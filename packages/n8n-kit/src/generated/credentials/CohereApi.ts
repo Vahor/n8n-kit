@@ -8,7 +8,6 @@ export const name = "cohereApi" as const;
  * documentationUrl: cohere
  */
 export interface CohereApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface CohereApiCredentials {
     readonly "url"?: any;
 
     readonly __name: "cohereApi";
-
 }

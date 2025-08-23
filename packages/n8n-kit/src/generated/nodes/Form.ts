@@ -4,10 +4,10 @@
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const type = "n8n-nodes-base.form" as const;
 export const version = 2.3 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormNodeParameters {
-
     readonly triggerNotice?: string;
 
     /**
@@ -92,6 +92,4 @@ export interface FormNodeParameters {
      */
     readonly inputDataFieldName?: string;
 
-
 }
-

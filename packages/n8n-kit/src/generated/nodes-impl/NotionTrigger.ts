@@ -7,31 +7,23 @@ import type { NotionTriggerNodeParameters } from "../nodes/NotionTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface NotionTriggerProps extends NodeProps {
-
     readonly parameters: NotionTriggerNodeParameters;
     readonly notionApiCredentials: Credentials<NotionApiCredentials>;
-
 }
 
 /**
  * Starts the workflow when Notion events occur
  */
 export class NotionTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.notionTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: NotionTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.notionApiCredentials];
-
     }
-
 
 }

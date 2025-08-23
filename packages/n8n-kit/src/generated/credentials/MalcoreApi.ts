@@ -8,12 +8,10 @@ export const name = "malcoreApi" as const;
  * documentationUrl: malcore
  */
 export interface MalcoreApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "malcoreApi";
-
 }

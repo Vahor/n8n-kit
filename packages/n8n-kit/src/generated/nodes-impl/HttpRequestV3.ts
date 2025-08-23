@@ -7,31 +7,23 @@ import type { HttpRequestV3NodeParameters } from "../nodes/HttpRequestV3";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface HttpRequestV3Props extends NodeProps {
-
     readonly parameters: HttpRequestV3NodeParameters;
     readonly httpSslAuthCredentials?: Credentials<HttpSslAuthCredentials>;
-
 }
 
 /**
  * Makes an HTTP request and returns the response data
  */
 export class HttpRequestV3<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.httpRequest" as const;
     protected typeVersion = 4.2 as const;
 
     constructor(id: L, override props?: HttpRequestV3Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.httpSslAuthCredentials];
-
     }
-
 
 }

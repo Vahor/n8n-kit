@@ -8,7 +8,6 @@ export const name = "bitlyOAuth2Api" as const;
  * documentationUrl: bitly
  */
 export interface BitlyOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,8 +23,6 @@ export interface BitlyOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -33,8 +30,6 @@ export interface BitlyOAuth2ApiCredentials {
      */
     readonly "clientSecret": string;
 
-    /**
-     */
     readonly "scope"?: any;
 
     /**
@@ -48,5 +43,4 @@ export interface BitlyOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "bitlyOAuth2Api";
-
 }

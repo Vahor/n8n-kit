@@ -5,10 +5,10 @@ export const description = "Find, insert and update documents in MongoDB" as con
 export const type = "n8n-nodes-base.mongoDb" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"mongoDb","required":true,"testedBy":"mongoDbCredentialTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MongoDbNodeParameters {
-
     /**
      * Default: "document"
      */
@@ -75,6 +75,4 @@ export interface MongoDbNodeParameters {
      */
     readonly indexType?: "vectorSearch" | "search";
 
-
 }
-

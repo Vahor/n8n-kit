@@ -5,10 +5,10 @@ export const description = "Access data on Nextcloud" as const;
 export const type = "n8n-nodes-base.nextCloud" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"nextCloudApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"nextCloudOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NextCloudNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -104,6 +104,4 @@ export interface NextCloudNodeParameters {
      */
     readonly updateFields?: { "field": any };
 
-
 }
-

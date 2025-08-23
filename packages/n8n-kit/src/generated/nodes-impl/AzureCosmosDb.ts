@@ -7,31 +7,23 @@ import type { AzureCosmosDbNodeParameters } from "../nodes/AzureCosmosDb";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface AzureCosmosDbProps extends NodeProps {
-
     readonly parameters: AzureCosmosDbNodeParameters;
     readonly microsoftAzureCosmosDbSharedKeyApiCredentials: Credentials<MicrosoftAzureCosmosDbSharedKeyApiCredentials>;
-
 }
 
 /**
  * Interact with Azure Cosmos DB API
  */
 export class AzureCosmosDb<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.azureCosmosDb" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: AzureCosmosDbProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.microsoftAzureCosmosDbSharedKeyApiCredentials];
-
     }
-
 
 }

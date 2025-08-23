@@ -8,7 +8,6 @@ export const name = "githubOAuth2Api" as const;
  * documentationUrl: github
  */
 export interface GithubOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -35,8 +34,6 @@ export interface GithubOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -45,5 +42,4 @@ export interface GithubOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "githubOAuth2Api";
-
 }

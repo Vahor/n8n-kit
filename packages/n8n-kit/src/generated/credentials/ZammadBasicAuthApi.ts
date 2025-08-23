@@ -8,13 +8,8 @@ export const name = "zammadBasicAuthApi" as const;
  * documentationUrl: zammad
  */
 export interface ZammadBasicAuthApiCredentials {
-
-    /**
-     */
     readonly "baseUrl": string;
 
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -28,5 +23,4 @@ export interface ZammadBasicAuthApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "zammadBasicAuthApi";
-
 }

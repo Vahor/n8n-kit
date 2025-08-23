@@ -8,9 +8,6 @@ export const name = "xataApi" as const;
  * documentationUrl: xata
  */
 export interface XataApiCredentials {
-
-    /**
-     */
     readonly "databaseEndpoint": string;
 
     /**
@@ -24,5 +21,4 @@ export interface XataApiCredentials {
     readonly "apiKey": string;
 
     readonly __name: "xataApi";
-
 }

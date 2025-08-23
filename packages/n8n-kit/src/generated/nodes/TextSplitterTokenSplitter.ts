@@ -4,10 +4,10 @@
 export const description = "Split text into chunks by tokens" as const;
 export const type = "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
 export interface TextSplitterTokenSplitterNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -20,6 +20,4 @@ export interface TextSplitterTokenSplitterNodeParameters {
 
     readonly chunkOverlap?: number;
 
-
 }
-

@@ -4,10 +4,10 @@
 export const description = "The easiest way to experiment with vector stores, without external setup." as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreInMemory" as const;
 export const version = 1.3 as const;
+export const inputs = {} as const;
 export const outputs = {} as const;
 
 export interface VectorStoreInMemoryNodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"RAG starter template","type":"openSampleWorkflowTemplate","templateId":"rag-starter-template"}}
      */
@@ -81,6 +81,4 @@ export interface VectorStoreInMemoryNodeParameters {
      */
     readonly id?: string;
 
-
 }
-

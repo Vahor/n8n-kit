@@ -8,32 +8,24 @@ import type { GoogleChatNodeParameters } from "../nodes/GoogleChat";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GoogleChatProps extends NodeProps {
-
     readonly parameters: GoogleChatNodeParameters;
     readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
     readonly googleChatOAuth2ApiCredentials?: Credentials<GoogleChatOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Google Chat API
  */
 export class GoogleChat<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.googleChat" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: GoogleChatProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.googleApiCredentials, this.props!.googleChatOAuth2ApiCredentials];
-
     }
-
 
 }

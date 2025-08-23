@@ -8,13 +8,8 @@ export const name = "kafka" as const;
  * documentationUrl: kafka
  */
 export interface KafkaCredentials {
-
-    /**
-     */
     readonly "clientId"?: string;
 
-    /**
-     */
     readonly "brokers"?: string;
 
     /**
@@ -22,8 +17,6 @@ export interface KafkaCredentials {
      */
     readonly "ssl"?: boolean;
 
-    /**
-     */
     readonly "authentication"?: boolean;
 
     /**
@@ -43,5 +36,4 @@ export interface KafkaCredentials {
     readonly "saslMechanism"?: "plain" | "scram-sha-256" | "scram-sha-512";
 
     readonly __name: "kafka";
-
 }

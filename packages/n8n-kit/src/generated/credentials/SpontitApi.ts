@@ -8,16 +8,12 @@ export const name = "spontitApi" as const;
  * documentationUrl: spontit
  */
 export interface SpontitApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
-    /**
-     */
     readonly "username"?: string;
 
     readonly __name: "spontitApi";
-
 }

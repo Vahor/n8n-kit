@@ -5,10 +5,10 @@ export const description = "Consume TheHive API" as const;
 export const type = "n8n-nodes-base.theHive" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"theHiveApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TheHiveNodeParameters {
-
     /**
      * Default: "alert"
      */
@@ -190,6 +190,4 @@ export interface TheHiveNodeParameters {
      */
     readonly taskId?: string;
 
-
 }
-

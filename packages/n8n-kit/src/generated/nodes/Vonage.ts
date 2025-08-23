@@ -5,10 +5,10 @@ export const description = "Consume Vonage API" as const;
 export const type = "n8n-nodes-base.vonage" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"vonageApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VonageNodeParameters {
-
     /**
      * Default: "sms"
      */
@@ -39,6 +39,4 @@ export interface VonageNodeParameters {
      */
     readonly additionalFields?: { "account-ref"?: string, "callback"?: string, "client-ref"?: string, "message-class"?: "0" | "1" | "2" | "3", "protocol-id"?: string, "status-report-req"?: boolean, "ttl"?: number };
 
-
 }
-

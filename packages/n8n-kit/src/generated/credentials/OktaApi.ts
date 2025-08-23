@@ -8,9 +8,6 @@ export const name = "oktaApi" as const;
  * documentationUrl: okta
  */
 export interface OktaApiCredentials {
-
-    /**
-     */
     readonly "url": string;
 
     /**
@@ -20,5 +17,4 @@ export interface OktaApiCredentials {
     readonly "accessToken": string;
 
     readonly __name: "oktaApi";
-
 }

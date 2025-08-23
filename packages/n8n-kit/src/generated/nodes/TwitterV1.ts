@@ -5,10 +5,10 @@ export const description = "Consume Twitter API" as const;
 export const type = "n8n-nodes-base.twitter" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"twitterOAuth1Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwitterV1NodeParameters {
-
     /**
      * Default: "tweet"
      */
@@ -56,6 +56,4 @@ export interface TwitterV1NodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

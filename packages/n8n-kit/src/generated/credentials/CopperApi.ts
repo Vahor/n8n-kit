@@ -8,16 +8,12 @@ export const name = "copperApi" as const;
  * documentationUrl: copper
  */
 export interface CopperApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
-    /**
-     */
     readonly "email": string;
 
     readonly __name: "copperApi";
-
 }

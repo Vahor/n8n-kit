@@ -1,6 +1,7 @@
 import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
 import { NoOp, StickyNote } from "@vahor/n8n-kit/nodes";
 import {
+	EmbeddingsGoogleGemini,
 	GoogleDriveTrigger,
 	GoogleDriveV2,
 	VectorStorePineconeInsert,
@@ -22,6 +23,10 @@ const googleDriveApiCredentials = Credentials.byId({
 });
 const pineconeApiCredentials = Credentials.byId({
 	name: "pineconeApi",
+	id: "some-id",
+});
+const googlePalmApiCredentials = Credentials.byId({
+	name: "googlePalmApi",
 	id: "some-id",
 });
 
@@ -123,7 +128,17 @@ const workflow = new Workflow("my-workflow", {
 							mode: "list",
 						},
 					},
-				}),
+				})
+					.withEmbedding(
+						new EmbeddingsGoogleGemini("embeddings-google-gemini", {
+							label: "Embeddings Google Gemini",
+							googlePalmApiCredentials,
+							parameters: {
+								modelName: "models/text-embedding-004",
+							},
+						}),
+					)
+					.withDocument(new NoOp("document-to-vector-store")),
 			),
 
 		// chat to ai-agent

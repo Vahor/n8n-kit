@@ -5,10 +5,10 @@ export const description = "Handle Slack events via webhooks" as const;
 export const type = "n8n-nodes-base.slackTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"slackApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SlackTriggerNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -45,6 +45,4 @@ export interface SlackTriggerNodeParameters {
      */
     readonly options?: { "resolveIds"?: boolean, "userIds"?: any[] };
 
-
 }
-

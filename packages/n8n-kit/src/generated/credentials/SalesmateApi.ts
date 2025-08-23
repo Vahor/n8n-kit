@@ -8,16 +8,12 @@ export const name = "salesmateApi" as const;
  * documentationUrl: salesmate
  */
 export interface SalesmateApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "sessionToken"?: string;
 
-    /**
-     */
     readonly "url"?: string;
 
     readonly __name: "salesmateApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Airtable events occur" as c
 export const type = "n8n-nodes-base.airtableTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"airtableApi","required":true,"displayOptions":{"show":{"authentication":["airtableApi"]}}},{"name":"airtableTokenApi","required":true,"displayOptions":{"show":{"authentication":["airtableTokenApi"]}}},{"name":"airtableOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["airtableOAuth2Api"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AirtableTriggerNodeParameters {
-
     /**
      * Default: "airtableApi"
      */
@@ -52,6 +52,4 @@ export interface AirtableTriggerNodeParameters {
     readonly additionalFields?: { "fields"?: string, "formula"?: string, "viewId"?: string };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
-
 }
-

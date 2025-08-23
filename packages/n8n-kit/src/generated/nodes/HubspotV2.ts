@@ -5,10 +5,10 @@ export const description = "Consume HubSpot API" as const;
 export const type = "n8n-nodes-base.hubspot" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"hubspotApi","required":true,"testedBy":"hubspotApiTest","displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"hubspotAppToken","required":true,"testedBy":"hubspotApiTest","displayOptions":{"show":{"authentication":["appToken"]}}},{"name":"hubspotOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HubspotV2NodeParameters {
-
     /**
      * Default: "apiKey"
      */
@@ -155,6 +155,4 @@ export interface HubspotV2NodeParameters {
 	mode: "list" | "id",
 };
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Trigger for Microsoft OneDrive API." as const;
 export const type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOneDriveTriggerNodeParameters {
-
     /**
      * Default: "fileCreated"
      */
@@ -55,6 +55,4 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
     readonly options?: { "folderChild"?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Interact with Microsoft SharePoint API" as const;
 export const type = "n8n-nodes-base.microsoftSharePoint" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftSharePointOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftSharePointNodeParameters {
-
     /**
      * Default: "file"
      */
@@ -114,6 +114,4 @@ export interface MicrosoftSharePointNodeParameters {
      */
     readonly options?: { "fields"?: ("contentType" | "createdDateTime" | "createdBy" | "fields" | "id" | "lastModifiedDateTime" | "lastModifiedBy" | "parentReference" | "webUrl")[] };
 
-
 }
-

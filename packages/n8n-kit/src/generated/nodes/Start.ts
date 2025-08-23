@@ -4,12 +4,10 @@
 export const description = "Starts the workflow execution from this node" as const;
 export const type = "n8n-nodes-base.start" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StartNodeParameters {
-
     readonly notice?: string;
 
-
 }
-

@@ -8,7 +8,6 @@ export const name = "shopifyOAuth2Api" as const;
  * documentationUrl: shopify
  */
 export interface ShopifyOAuth2ApiCredentials {
-
     /**
      * Only the subdomain without .myshopify.com
      */
@@ -19,8 +18,6 @@ export interface ShopifyOAuth2ApiCredentials {
      */
     readonly "grantType"?: any;
 
-    /**
-     */
     readonly "clientId": string;
 
     /**
@@ -54,5 +51,4 @@ export interface ShopifyOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "shopifyOAuth2Api";
-
 }

@@ -8,12 +8,10 @@ export const name = "storyblokManagementApi" as const;
  * documentationUrl: storyblok
  */
 export interface StoryblokManagementApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "storyblokManagementApi";
-
 }

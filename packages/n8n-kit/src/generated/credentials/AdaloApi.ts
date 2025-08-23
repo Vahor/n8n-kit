@@ -8,7 +8,6 @@ export const name = "adaloApi" as const;
  * documentationUrl: adalo
  */
 export interface AdaloApiCredentials {
-
     /**
      * The Adalo API is available on paid Adalo plans, find more information <a href="https://help.adalo.com/integrations/the-adalo-api" target="_blank">here</a>
      * Type options: {"password":true}
@@ -21,5 +20,4 @@ export interface AdaloApiCredentials {
     readonly "appId"?: string;
 
     readonly __name: "adaloApi";
-
 }

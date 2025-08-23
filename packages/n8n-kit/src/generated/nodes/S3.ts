@@ -5,10 +5,10 @@ export const description = "Sends data to any S3-compatible service" as const;
 export const type = "n8n-nodes-base.s3" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"s3","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface S3NodeParameters {
-
     readonly s3StandardNotice?: string;
 
     /**
@@ -91,6 +91,4 @@ export interface S3NodeParameters {
 
     readonly fileKey?: string;
 
-
 }
-

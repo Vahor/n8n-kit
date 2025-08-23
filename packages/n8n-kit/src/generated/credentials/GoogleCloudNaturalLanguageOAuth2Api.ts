@@ -8,12 +8,10 @@ export const name = "googleCloudNaturalLanguageOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleCloudNaturalLanguageOAuth2ApiCredentials {
-
     /**
      * Default: "https://www.googleapis.com/auth/cloud-language https://www.googleapis.com/auth/cloud-platform"
      */
     readonly "scope"?: any;
 
     readonly __name: "googleCloudNaturalLanguageOAuth2Api";
-
 }

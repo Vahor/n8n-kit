@@ -8,7 +8,6 @@ export const name = "googleApi" as const;
  * documentationUrl: google/service-account
  */
 export interface GoogleApiCredentials {
-
     /**
      * The region where the Google Cloud service is located. This applies only to specific nodes, like the Google Vertex Chat Model
      * Default: "us-central1"
@@ -26,8 +25,6 @@ export interface GoogleApiCredentials {
      */
     readonly "privateKey": string;
 
-    /**
-     */
     readonly "inpersonate"?: boolean;
 
     /**
@@ -35,12 +32,8 @@ export interface GoogleApiCredentials {
      */
     readonly "delegatedEmail"?: string;
 
-    /**
-     */
     readonly "httpNode"?: boolean;
 
-    /**
-     */
     readonly "httpWarning"?: string;
 
     /**
@@ -49,5 +42,4 @@ export interface GoogleApiCredentials {
     readonly "scopes"?: string;
 
     readonly __name: "googleApi";
-
 }

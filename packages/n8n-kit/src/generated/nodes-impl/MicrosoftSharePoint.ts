@@ -7,31 +7,23 @@ import type { MicrosoftSharePointNodeParameters } from "../nodes/MicrosoftShareP
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MicrosoftSharePointProps extends NodeProps {
-
     readonly parameters: MicrosoftSharePointNodeParameters;
     readonly microsoftSharePointOAuth2ApiCredentials: Credentials<MicrosoftSharePointOAuth2ApiCredentials>;
-
 }
 
 /**
  * Interact with Microsoft SharePoint API
  */
 export class MicrosoftSharePoint<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.microsoftSharePoint" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MicrosoftSharePointProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.microsoftSharePointOAuth2ApiCredentials];
-
     }
-
 
 }

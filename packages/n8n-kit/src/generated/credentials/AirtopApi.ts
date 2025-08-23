@@ -8,7 +8,6 @@ export const name = "airtopApi" as const;
  * documentationUrl: airtop
  */
 export interface AirtopApiCredentials {
-
     /**
      * The Airtop API key. You can create one at <a href="https://portal.airtop.ai/api-keys" target="_blank">Airtop</a> for free.
      * Type options: {"password":true}
@@ -16,5 +15,4 @@ export interface AirtopApiCredentials {
     readonly "apiKey": string;
 
     readonly __name: "airtopApi";
-
 }

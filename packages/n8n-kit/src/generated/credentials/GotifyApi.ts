@@ -8,7 +8,6 @@ export const name = "gotifyApi" as const;
  * documentationUrl: gotify
  */
 export interface GotifyApiCredentials {
-
     /**
      * (Optional) Needed for message creation
      * Type options: {"password":true}
@@ -32,5 +31,4 @@ export interface GotifyApiCredentials {
     readonly "ignoreSSLIssues"?: boolean;
 
     readonly __name: "gotifyApi";
-
 }

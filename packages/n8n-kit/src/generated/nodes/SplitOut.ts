@@ -4,10 +4,10 @@
 export const description = "Turn a list inside item(s) into separate items" as const;
 export const type = "n8n-nodes-base.splitOut" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SplitOutNodeParameters {
-
     /**
      * The name of the input fields to break out into separate items. Separate multiple field names by commas. For binary data, use $binary.
      */
@@ -29,6 +29,4 @@ export interface SplitOutNodeParameters {
      */
     readonly options?: { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean };
 
-
 }
-

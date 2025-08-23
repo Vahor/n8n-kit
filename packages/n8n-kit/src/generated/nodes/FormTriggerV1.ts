@@ -4,10 +4,10 @@
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const type = "n8n-nodes-base.formTrigger" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormTriggerV1NodeParameters {
-
     /**
      * The final segment of the form's URL, both for test and production
      */
@@ -41,6 +41,4 @@ export interface FormTriggerV1NodeParameters {
      */
     readonly options?: { "formSubmittedText"?: string };
 
-
 }
-

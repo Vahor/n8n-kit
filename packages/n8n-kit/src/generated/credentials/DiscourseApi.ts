@@ -8,9 +8,6 @@ export const name = "discourseApi" as const;
  * documentationUrl: discourse
  */
 export interface DiscourseApiCredentials {
-
-    /**
-     */
     readonly "url": string;
 
     /**
@@ -18,10 +15,7 @@ export interface DiscourseApiCredentials {
      */
     readonly "apiKey": string;
 
-    /**
-     */
     readonly "username": string;
 
     readonly __name: "discourseApi";
-
 }

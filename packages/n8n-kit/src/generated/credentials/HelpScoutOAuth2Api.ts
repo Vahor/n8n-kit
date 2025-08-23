@@ -8,7 +8,6 @@ export const name = "helpScoutOAuth2Api" as const;
  * documentationUrl: helpScout
  */
 export interface HelpScoutOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface HelpScoutOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface HelpScoutOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "helpScoutOAuth2Api";
-
 }

@@ -8,9 +8,6 @@ export const name = "azureStorageOAuth2Api" as const;
  * documentationUrl: azurestorage
  */
 export interface AzureStorageOAuth2ApiCredentials {
-
-    /**
-     */
     readonly "account"?: string;
 
     /**
@@ -24,5 +21,4 @@ export interface AzureStorageOAuth2ApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "azureStorageOAuth2Api";
-
 }

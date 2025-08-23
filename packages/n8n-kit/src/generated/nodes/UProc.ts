@@ -5,10 +5,10 @@ export const description = "Consume uProc API" as const;
 export const type = "n8n-nodes-base.uproc" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"uprocApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface UProcNodeParameters {
-
     /**
      * Default: "communication"
      */
@@ -735,6 +735,4 @@ export interface UProcNodeParameters {
      */
     readonly additionalOptions?: { "dataWebhook"?: string };
 
-
 }
-

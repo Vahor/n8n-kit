@@ -8,9 +8,6 @@ export const name = "rabbitmq" as const;
  * documentationUrl: rabbitmq
  */
 export interface RabbitMQCredentials {
-
-    /**
-     */
     readonly "hostname"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface RabbitMQCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "username"?: string;
 
     /**
@@ -32,8 +27,6 @@ export interface RabbitMQCredentials {
      */
     readonly "vhost"?: string;
 
-    /**
-     */
     readonly "ssl"?: boolean;
 
     /**
@@ -67,5 +60,4 @@ export interface RabbitMQCredentials {
     readonly "passphrase"?: string;
 
     readonly __name: "rabbitmq";
-
 }

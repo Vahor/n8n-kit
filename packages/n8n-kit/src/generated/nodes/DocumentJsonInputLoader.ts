@@ -4,10 +4,10 @@
 export const description = "Use JSON data from a previous step in the workflow" as const;
 export const type = "@n8n/n8n-nodes-langchain.documentJsonInputLoader" as const;
 export const version = 1 as const;
+export const inputs = {"Text Splitter":"ai_textSplitter"} as const;
 export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentJsonInputLoaderNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -23,6 +23,4 @@ export interface DocumentJsonInputLoaderNodeParameters {
      */
     readonly options?: { "metadata"?: { "metadataValues": any } };
 
-
 }
-

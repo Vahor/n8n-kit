@@ -8,7 +8,6 @@ export const name = "deepSeekApi" as const;
  * documentationUrl: deepseek
  */
 export interface DeepSeekApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface DeepSeekApiCredentials {
     readonly "url"?: any;
 
     readonly __name: "deepSeekApi";
-
 }

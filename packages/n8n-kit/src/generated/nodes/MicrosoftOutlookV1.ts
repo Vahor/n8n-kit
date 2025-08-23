@@ -5,10 +5,10 @@ export const description = "Consume Microsoft Outlook API" as const;
 export const type = "n8n-nodes-base.microsoftOutlook" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOutlookV1NodeParameters {
-
     readonly oldVersionNotice?: string;
 
     /**
@@ -117,6 +117,4 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly updateFields?: { "displayName"?: string, "filterQuery"?: string, "includeNestedFolders"?: boolean, "sourceFolderIds"?: string } | { "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isRead"?: boolean, "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string };
 
-
 }
-

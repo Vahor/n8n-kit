@@ -7,31 +7,23 @@ import type { JinaAiNodeParameters } from "../nodes/JinaAi";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface JinaAiProps extends NodeProps {
-
     readonly parameters: JinaAiNodeParameters;
     readonly jinaAiApiCredentials: Credentials<JinaAiApiCredentials>;
-
 }
 
 /**
  * Interact with Jina AI API
  */
 export class JinaAi<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.jinaAi" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: JinaAiProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.jinaAiApiCredentials];
-
     }
-
 
 }

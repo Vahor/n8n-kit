@@ -8,7 +8,6 @@ export const name = "xeroOAuth2Api" as const;
  * documentationUrl: xero
  */
 export interface XeroOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface XeroOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface XeroOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "xeroOAuth2Api";
-
 }

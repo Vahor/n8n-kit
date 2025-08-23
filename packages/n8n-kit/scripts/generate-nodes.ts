@@ -62,13 +62,15 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	code.line(
+		`export const inputs = ${JSON.stringify(parseConnectionsTypes(result, "inputs"))} as const;`,
+	);
+	code.line(
 		`export const outputs = ${JSON.stringify(parseConnectionsTypes(result, "outputs"))} as const;`,
 	);
 
 	code.line();
 
-	code.line(`export interface ${result.__nodename}NodeParameters {`);
-	code.indent();
+	code.openBlock(`export interface ${result.__nodename}NodeParameters`);
 
 	if (!result.properties) result.properties = [];
 
@@ -130,9 +132,7 @@ const generateTypescriptNodeOutput = async (
 		);
 	}
 
-	code.unindent();
-	code.line(`}`);
-	code.line();
+	code.closeBlock();
 
 	code.closeFile(outputFile);
 	await code.save("src/generated/nodes");

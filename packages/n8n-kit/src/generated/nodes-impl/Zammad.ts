@@ -8,32 +8,24 @@ import type { ZammadNodeParameters } from "../nodes/Zammad";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface ZammadProps extends NodeProps {
-
     readonly parameters: ZammadNodeParameters;
     readonly zammadBasicAuthApiCredentials?: Credentials<ZammadBasicAuthApiCredentials>;
     readonly zammadTokenAuthApiCredentials?: Credentials<ZammadTokenAuthApiCredentials>;
-
 }
 
 /**
  * Consume the Zammad API
  */
 export class Zammad<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.zammad" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: ZammadProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.zammadBasicAuthApiCredentials, this.props!.zammadTokenAuthApiCredentials];
-
     }
-
 
 }

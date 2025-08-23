@@ -8,14 +8,11 @@ export const name = "mauticOAuth2Api" as const;
  * documentationUrl: mautic
  */
 export interface MauticOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
     readonly "grantType"?: any;
 
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -28,12 +25,8 @@ export interface MauticOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl": any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -42,5 +35,4 @@ export interface MauticOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "mauticOAuth2Api";
-
 }

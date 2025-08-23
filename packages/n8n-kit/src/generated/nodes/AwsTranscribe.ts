@@ -5,10 +5,10 @@ export const description = "Sends data to AWS Transcribe" as const;
 export const type = "n8n-nodes-base.awsTranscribe" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"aws","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsTranscribeNodeParameters {
-
     /**
      * Default: "transcriptionJob"
      */
@@ -74,6 +74,4 @@ export interface AwsTranscribeNodeParameters {
      */
     readonly filters?: { "jobNameContains"?: string, "status"?: "COMPLETED" | "FAILED" | "IN_PROGRESS" | "QUEUED" };
 
-
 }
-

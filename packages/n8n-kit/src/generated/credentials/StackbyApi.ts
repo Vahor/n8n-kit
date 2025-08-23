@@ -8,12 +8,10 @@ export const name = "stackbyApi" as const;
  * documentationUrl: stackby
  */
 export interface StackbyApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "stackbyApi";
-
 }

@@ -8,7 +8,6 @@ export const name = "hubspotOAuth2Api" as const;
  * documentationUrl: hubspot
  */
 export interface HubspotOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -40,5 +39,4 @@ export interface HubspotOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "hubspotOAuth2Api";
-
 }

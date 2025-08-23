@@ -8,7 +8,6 @@ export const name = "spotifyOAuth2Api" as const;
  * documentationUrl: spotify
  */
 export interface SpotifyOAuth2ApiCredentials {
-
     /**
      * Default: "https://api.spotify.com/"
      */
@@ -34,8 +33,6 @@ export interface SpotifyOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -44,5 +41,4 @@ export interface SpotifyOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "spotifyOAuth2Api";
-
 }

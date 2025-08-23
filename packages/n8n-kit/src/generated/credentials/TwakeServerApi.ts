@@ -8,13 +8,8 @@ export const name = "twakeServerApi" as const;
  * documentationUrl: twake
  */
 export interface TwakeServerApiCredentials {
-
-    /**
-     */
     readonly "hostUrl"?: string;
 
-    /**
-     */
     readonly "publicId"?: string;
 
     /**
@@ -23,5 +18,4 @@ export interface TwakeServerApiCredentials {
     readonly "privateApiKey"?: string;
 
     readonly __name: "twakeServerApi";
-
 }

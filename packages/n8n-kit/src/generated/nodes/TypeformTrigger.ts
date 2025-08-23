@@ -5,10 +5,10 @@ export const description = "Starts the workflow on a Typeform form submission" a
 export const type = "n8n-nodes-base.typeformTrigger" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"typeformApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}},"testedBy":"testTypeformTokenAuth"},{"name":"typeformOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TypeformTriggerNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -32,6 +32,4 @@ export interface TypeformTriggerNodeParameters {
      */
     readonly onlyAnswers?: boolean;
 
-
 }
-

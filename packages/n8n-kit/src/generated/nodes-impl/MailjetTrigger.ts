@@ -7,31 +7,23 @@ import type { MailjetTriggerNodeParameters } from "../nodes/MailjetTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MailjetTriggerProps extends NodeProps {
-
     readonly parameters: MailjetTriggerNodeParameters;
     readonly mailjetEmailApiCredentials: Credentials<MailjetEmailApiCredentials>;
-
 }
 
 /**
  * Handle Mailjet events via webhooks
  */
 export class MailjetTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.mailjetTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MailjetTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.mailjetEmailApiCredentials];
-
     }
-
 
 }

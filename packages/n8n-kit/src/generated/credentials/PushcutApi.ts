@@ -8,12 +8,10 @@ export const name = "pushcutApi" as const;
  * documentationUrl: pushcut
  */
 export interface PushcutApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "pushcutApi";
-
 }

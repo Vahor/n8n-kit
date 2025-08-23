@@ -8,32 +8,24 @@ import type { AzureStorageNodeParameters } from "../nodes/AzureStorage";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface AzureStorageProps extends NodeProps {
-
     readonly parameters: AzureStorageNodeParameters;
     readonly azureStorageOAuth2ApiCredentials?: Credentials<AzureStorageOAuth2ApiCredentials>;
     readonly azureStorageSharedKeyApiCredentials?: Credentials<AzureStorageSharedKeyApiCredentials>;
-
 }
 
 /**
  * Interact with Azure Storage API
  */
 export class AzureStorage<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.azureStorage" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: AzureStorageProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.azureStorageOAuth2ApiCredentials, this.props!.azureStorageSharedKeyApiCredentials];
-
     }
-
 
 }

@@ -8,9 +8,6 @@ export const name = "sendyApi" as const;
  * documentationUrl: sendy
  */
 export interface SendyApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface SendyApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "sendyApi";
-
 }

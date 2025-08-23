@@ -4,10 +4,10 @@
 export const description = "Triggers the workflow in a given interval" as const;
 export const type = "n8n-nodes-base.interval" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IntervalNodeParameters {
-
     readonly notice?: string;
 
     /**
@@ -23,6 +23,4 @@ export interface IntervalNodeParameters {
      */
     readonly unit?: "seconds" | "minutes" | "hours";
 
-
 }
-

@@ -4,10 +4,10 @@
 export const description = "Triggers a workflow on file system changes" as const;
 export const type = "n8n-nodes-base.localFileTrigger" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LocalFileTriggerNodeParameters {
-
     readonly triggerOn?: "file" | "folder";
 
     readonly path?: string;
@@ -23,6 +23,4 @@ export interface LocalFileTriggerNodeParameters {
      */
     readonly options?: { "awaitWriteFinish"?: boolean, "followSymlinks"?: boolean, "ignored"?: string, "ignoreInitial"?: boolean, "depth"?: "1" | "2" | "3" | "4" | "5" | "0" | "-1", "usePolling"?: boolean, "ignoreMode"?: "match" | "contain" };
 
-
 }
-

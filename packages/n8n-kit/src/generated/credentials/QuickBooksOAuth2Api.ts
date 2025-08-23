@@ -8,7 +8,6 @@ export const name = "quickBooksOAuth2Api" as const;
  * documentationUrl: quickbooks
  */
 export interface QuickBooksOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface QuickBooksOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -44,5 +41,4 @@ export interface QuickBooksOAuth2ApiCredentials {
     readonly "environment"?: "production" | "sandbox";
 
     readonly __name: "quickBooksOAuth2Api";
-
 }

@@ -8,9 +8,6 @@ export const name = "activeCampaignApi" as const;
  * documentationUrl: activeCampaign
  */
 export interface ActiveCampaignApiCredentials {
-
-    /**
-     */
     readonly "apiUrl"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface ActiveCampaignApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "activeCampaignApi";
-
 }

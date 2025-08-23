@@ -8,9 +8,6 @@ export const name = "cockpitApi" as const;
  * documentationUrl: cockpit
  */
 export interface CockpitApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface CockpitApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "cockpitApi";
-
 }

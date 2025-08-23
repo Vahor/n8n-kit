@@ -5,10 +5,10 @@ export const description = "Stores the chat history in Redis." as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryRedisChat" as const;
 export const version = 1.5 as const;
 export const credentials = [{"name":"redis","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryRedisChatNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -35,6 +35,4 @@ export interface MemoryRedisChatNodeParameters {
      */
     readonly contextWindowLength?: number;
 
-
 }
-

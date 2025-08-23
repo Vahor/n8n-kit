@@ -7,31 +7,23 @@ import type { MicrosoftOneDriveTriggerNodeParameters } from "../nodes/MicrosoftO
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MicrosoftOneDriveTriggerProps extends NodeProps {
-
     readonly parameters: MicrosoftOneDriveTriggerNodeParameters;
     readonly microsoftOneDriveOAuth2ApiCredentials: Credentials<MicrosoftOneDriveOAuth2ApiCredentials>;
-
 }
 
 /**
  * Trigger for Microsoft OneDrive API.
  */
 export class MicrosoftOneDriveTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MicrosoftOneDriveTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.microsoftOneDriveOAuth2ApiCredentials];
-
     }
-
 
 }

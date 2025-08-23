@@ -8,7 +8,6 @@ export const name = "discordOAuth2Api" as const;
  * documentationUrl: discord
  */
 export interface DiscordOAuth2ApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -39,8 +38,6 @@ export interface DiscordOAuth2ApiCredentials {
      */
     readonly "customScopes"?: boolean;
 
-    /**
-     */
     readonly "customScopesNotice"?: string;
 
     /**
@@ -55,5 +52,4 @@ export interface DiscordOAuth2ApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "discordOAuth2Api";
-
 }

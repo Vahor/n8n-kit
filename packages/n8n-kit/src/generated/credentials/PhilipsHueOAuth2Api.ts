@@ -8,14 +8,11 @@ export const name = "philipsHueOAuth2Api" as const;
  * documentationUrl: philipsHue
  */
 export interface PhilipsHueOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
     readonly "grantType"?: any;
 
-    /**
-     */
     readonly "appId"?: string;
 
     /**
@@ -33,8 +30,6 @@ export interface PhilipsHueOAuth2ApiCredentials {
      */
     readonly "authQueryParameters"?: any;
 
-    /**
-     */
     readonly "scope"?: any;
 
     /**
@@ -43,5 +38,4 @@ export interface PhilipsHueOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "philipsHueOAuth2Api";
-
 }

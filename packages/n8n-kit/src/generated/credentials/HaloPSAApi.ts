@@ -8,14 +8,11 @@ export const name = "haloPSAApi" as const;
  * documentationUrl: halopsa
  */
 export interface HaloPSAApiCredentials {
-
     /**
      * Default: "onPremise"
      */
     readonly "hostingType"?: "onPremise" | "hostedHalo";
 
-    /**
-     */
     readonly "authUrl": string;
 
     /**
@@ -45,5 +42,4 @@ export interface HaloPSAApiCredentials {
     readonly "scope": any;
 
     readonly __name: "haloPSAApi";
-
 }

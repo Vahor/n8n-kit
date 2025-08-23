@@ -8,9 +8,6 @@ export const name = "rundeckApi" as const;
  * documentationUrl: rundeck
  */
 export interface RundeckApiCredentials {
-
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface RundeckApiCredentials {
     readonly "token"?: string;
 
     readonly __name: "rundeckApi";
-
 }

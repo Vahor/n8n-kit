@@ -5,10 +5,10 @@ export const description = "A simple chain to prompt a large language model" as 
 export const type = "@n8n/n8n-nodes-langchain.chainLlm" as const;
 export const version = 1.7 as const;
 export const credentials = [] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChainLlmNodeParameters {
-
     readonly notice?: string;
 
     /**
@@ -45,6 +45,4 @@ export interface ChainLlmNodeParameters {
 
     readonly fallbackNotice?: string;
 
-
 }
-

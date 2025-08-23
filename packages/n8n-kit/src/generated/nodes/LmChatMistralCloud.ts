@@ -5,10 +5,10 @@ export const description = "For advanced usage with an AI chain" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatMistralCloud" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mistralCloudApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatMistralCloudNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -27,6 +27,4 @@ export interface LmChatMistralCloudNodeParameters {
      */
     readonly options?: { "maxTokens"?: number, "temperature"?: number, "maxRetries"?: number, "topP"?: number, "safeMode"?: boolean, "randomSeed"?: number };
 
-
 }
-

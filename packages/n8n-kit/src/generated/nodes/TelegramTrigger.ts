@@ -5,10 +5,10 @@ export const description = "Starts the workflow on a Telegram update" as const;
 export const type = "n8n-nodes-base.telegramTrigger" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"telegramApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TelegramTriggerNodeParameters {
-
     readonly telegramTriggerNotice?: string;
 
     /**
@@ -23,6 +23,4 @@ export interface TelegramTriggerNodeParameters {
      */
     readonly additionalFields?: { "download"?: boolean, "imageSize"?: "small" | "medium" | "large" | "extraLarge", "chatIds"?: string, "userIds"?: string };
 
-
 }
-

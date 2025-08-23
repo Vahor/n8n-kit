@@ -8,7 +8,6 @@ export const name = "weaviateApi" as const;
  * documentationUrl: https://docs.n8n.io/integrations/builtin/credentials/weaviate/
  */
 export interface WeaviateApiCredentials {
-
     /**
      * Choose whether to connect to a Weaviate Cloud instance or a custom Weaviate instance.
      * Default: "weaviate_cloud"
@@ -61,5 +60,4 @@ export interface WeaviateApiCredentials {
     readonly "custom_connection_grpc_secure": boolean;
 
     readonly __name: "weaviateApi";
-
 }

@@ -5,10 +5,10 @@ export const description = "Consume GetResponse API" as const;
 export const type = "n8n-nodes-base.getResponse" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"getResponseApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"getResponseOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GetResponseNodeParameters {
-
     /**
      * Default: "apiKey"
      */
@@ -64,6 +64,4 @@ export interface GetResponseNodeParameters {
      */
     readonly updateFields?: { "campaignId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "email"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: any[] };
 
-
 }
-

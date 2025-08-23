@@ -5,10 +5,10 @@ export const description = "Retrieve data from the NASA API" as const;
 export const type = "n8n-nodes-base.nasa" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"nasaApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NasaNodeParameters {
-
     /**
      * Default: "astronomyPictureOfTheDay"
      */
@@ -62,6 +62,4 @@ export interface NasaNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

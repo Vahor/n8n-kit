@@ -7,31 +7,23 @@ import type { WekanNodeParameters } from "../nodes/Wekan";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface WekanProps extends NodeProps {
-
     readonly parameters: WekanNodeParameters;
     readonly wekanApiCredentials: Credentials<WekanApiCredentials>;
-
 }
 
 /**
  * Consume Wekan API
  */
 export class Wekan<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.wekan" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: WekanProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.wekanApiCredentials];
-
     }
-
 
 }

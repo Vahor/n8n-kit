@@ -4,10 +4,10 @@
 export const description = "Convert JSON data to binary data" as const;
 export const type = "n8n-nodes-base.convertToFile" as const;
 export const version = 1.1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ConvertToFileNodeParameters {
-
     /**
      * Default: "csv"
      */
@@ -55,6 +55,4 @@ export interface ConvertToFileNodeParameters {
      */
     readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string, "useWorkflowTimezone"?: boolean };
 
-
 }
-

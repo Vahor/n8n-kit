@@ -4,10 +4,10 @@
 export const description = "Sum, count, max, etc. across items" as const;
 export const type = "n8n-nodes-base.summarize" as const;
 export const version = 1.1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SummarizeNodeParameters {
-
     /**
      * Default: {"values":[{"aggregation":"count","field":""}]}
      * Type options: {"multipleValues":true}
@@ -24,6 +24,4 @@ export interface SummarizeNodeParameters {
      */
     readonly options?: { "continueIfFieldNotFound"?: boolean, "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
 
-
 }
-

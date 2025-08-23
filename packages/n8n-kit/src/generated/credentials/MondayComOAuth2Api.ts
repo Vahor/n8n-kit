@@ -8,7 +8,6 @@ export const name = "mondayComOAuth2Api" as const;
  * documentationUrl: mondaycom
  */
 export interface MondayComOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface MondayComOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface MondayComOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "mondayComOAuth2Api";
-
 }

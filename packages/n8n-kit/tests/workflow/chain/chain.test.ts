@@ -1,7 +1,7 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { type } from "arktype";
-import { Code, Group, If, Merge, Workflow } from "../../../src";
-import { NoOp } from "../../../src/nodes/no-op";
+import { Group, Workflow } from "../../../src";
+import { Code, If, Merge, NoOp } from "../../../src/nodes";
 import { Chain } from "../../../src/workflow/chain/chain";
 
 describe("Chain", () => {
@@ -25,9 +25,11 @@ describe("Chain", () => {
 			const B = new If("b", { conditions: [] });
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
+				parameters: {},
 			});
 			const D = new Code("d", {
 				outputSchema: type({ hello: "'d'" }),
+				parameters: {},
 			});
 
 			const chain = Chain.start(A).next(B.true(C).false(D));
@@ -42,15 +44,15 @@ describe("Chain", () => {
 		test("works with groups", () => {
 			const A = new Code("a", {
 				outputSchema: type({ hello: "'a'" }),
-				jsCode: "return { hello: 'a' };",
+				parameters: {},
 			});
 			const B = new Code("b", {
 				outputSchema: type({ hello: "'b'" }),
-				jsCode: "return { hello: 'b' };",
+				parameters: {},
 			});
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
-				jsCode: "return { hello: 'c' };",
+				parameters: {},
 			});
 			const wf = {
 				addToDynamicalyAddedNodes: () => {},
@@ -114,7 +116,7 @@ describe("Chain", () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new Merge("c", {
-				mode: "combine",
+				parameters: { mode: "combine" },
 			});
 			const D = new NoOp("d");
 
@@ -136,12 +138,12 @@ describe("Chain", () => {
 				"start",
 			]);
 			const connections = result.connections;
-			expect(connections.start!.main[0]!.map((c) => c.node)).toEqual([
+			expect(connections.start!.main![0]!.map((c) => c.node)).toEqual([
 				"a",
 				"b",
 			]);
-			expect(connections.a!.main[0]!.map((c) => c.node)).toEqual(["c"]);
-			expect(connections.b!.main[0]!.map((c) => [c.node, c.index])).toEqual([
+			expect(connections.a!.main![0]!.map((c) => c.node)).toEqual(["c"]);
+			expect(connections.b!.main![0]!.map((c) => [c.node, c.index])).toEqual([
 				["c", 1],
 			]);
 		});
@@ -153,11 +155,11 @@ describe("Chain", () => {
 			const B = new NoOp("b");
 			const C = new Code("c", {
 				outputSchema: type({ hello: "1" }),
-				jsCode: "return { hello: 1 };",
+				parameters: {},
 			});
 			const D = new Code("d", {
 				outputSchema: type({ hello: "2" }),
-				jsCode: "return { hello: 2 };",
+				parameters: {},
 			});
 			const E = new NoOp("e");
 
@@ -174,15 +176,15 @@ describe("Chain", () => {
 			const Start = new NoOp("start");
 			const A = new Code("a", {
 				outputSchema: type({ hello: "'a'" }),
-				jsCode: "return { hello: 'a' };",
+				parameters: {},
 			});
 			const B = new Code("b", {
 				outputSchema: type({ hello: "'b'" }),
-				jsCode: "return { hello: 'b' };",
+				parameters: {},
 			});
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
-				jsCode: "return { hello: 'c' };",
+				parameters: {},
 			});
 			const D = new NoOp("d");
 
@@ -208,15 +210,15 @@ describe("Chain", () => {
 				"start",
 			]);
 			const connections = result.connections;
-			expect(connections.start!.main[0]!.map((c) => c.node)).toEqual([
+			expect(connections.start!.main![0]!.map((c) => c.node)).toEqual([
 				"a",
 				"b",
 			]);
-			expect(connections.a!.main[0]!.map((c) => c.node)).toEqual(["d"]);
-			expect(connections.b!.main[0]!.map((c) => [c.node, c.index])).toEqual([
+			expect(connections.a!.main![0]!.map((c) => c.node)).toEqual(["d"]);
+			expect(connections.b!.main![0]!.map((c) => [c.node, c.index])).toEqual([
 				["c", 0],
 			]);
-			expect(connections.c!.main[0]!.map((c) => [c.node, c.index])).toEqual([
+			expect(connections.c!.main![0]!.map((c) => [c.node, c.index])).toEqual([
 				["d", 0],
 			]);
 

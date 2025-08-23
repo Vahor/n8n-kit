@@ -8,9 +8,6 @@ export const name = "acuitySchedulingApi" as const;
  * documentationUrl: acuityScheduling
  */
 export interface AcuitySchedulingApiCredentials {
-
-    /**
-     */
     readonly "userId"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface AcuitySchedulingApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "acuitySchedulingApi";
-
 }

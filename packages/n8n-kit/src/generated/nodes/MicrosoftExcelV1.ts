@@ -5,10 +5,10 @@ export const description = "Consume Microsoft Excel API" as const;
 export const type = "n8n-nodes-base.microsoftExcel" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftExcelV1NodeParameters {
-
     readonly oldVersionNotice?: string;
 
     /**
@@ -106,6 +106,4 @@ export interface MicrosoftExcelV1NodeParameters {
      */
     readonly options?: { "returnAllMatches"?: boolean };
 
-
 }
-

@@ -8,13 +8,8 @@ export const name = "strapiApi" as const;
  * documentationUrl: strapi
  */
 export interface StrapiApiCredentials {
-
-    /**
-     */
     readonly "notice"?: string;
 
-    /**
-     */
     readonly "email"?: string;
 
     /**
@@ -22,8 +17,6 @@ export interface StrapiApiCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -33,5 +26,4 @@ export interface StrapiApiCredentials {
     readonly "apiVersion"?: "v4" | "v3";
 
     readonly __name: "strapiApi";
-
 }

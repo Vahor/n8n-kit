@@ -8,7 +8,6 @@ export const name = "twitterOAuth1Api" as const;
  * documentationUrl: twitter
  */
 export interface TwitterOAuth1ApiCredentials {
-
     /**
      * Default: "https://api.twitter.com/oauth/request_token"
      */
@@ -29,10 +28,7 @@ export interface TwitterOAuth1ApiCredentials {
      */
     readonly "signatureMethod"?: any;
 
-    /**
-     */
     readonly "apiPermissions"?: string;
 
     readonly __name: "twitterOAuth1Api";
-
 }

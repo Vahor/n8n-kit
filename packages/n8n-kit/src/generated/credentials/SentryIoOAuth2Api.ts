@@ -8,7 +8,6 @@ export const name = "sentryIoOAuth2Api" as const;
  * documentationUrl: sentryIo
  */
 export interface SentryIoOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface SentryIoOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface SentryIoOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "sentryIoOAuth2Api";
-
 }

@@ -8,7 +8,6 @@ export const name = "redditOAuth2Api" as const;
  * documentationUrl: reddit
  */
 export interface RedditOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -40,5 +39,4 @@ export interface RedditOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "redditOAuth2Api";
-
 }

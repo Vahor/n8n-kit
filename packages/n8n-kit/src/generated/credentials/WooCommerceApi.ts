@@ -8,7 +8,6 @@ export const name = "wooCommerceApi" as const;
  * documentationUrl: wooCommerce
  */
 export interface WooCommerceApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -19,8 +18,6 @@ export interface WooCommerceApiCredentials {
      */
     readonly "consumerSecret"?: string;
 
-    /**
-     */
     readonly "url"?: string;
 
     /**
@@ -29,5 +26,4 @@ export interface WooCommerceApiCredentials {
     readonly "includeCredentialsInQuery"?: boolean;
 
     readonly __name: "wooCommerceApi";
-
 }

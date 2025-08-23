@@ -8,9 +8,6 @@ export const name = "carbonBlackApi" as const;
  * documentationUrl: carbonblack
  */
 export interface CarbonBlackApiCredentials {
-
-    /**
-     */
     readonly "apiUrl"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface CarbonBlackApiCredentials {
     readonly "accessToken": string;
 
     readonly __name: "carbonBlackApi";
-
 }

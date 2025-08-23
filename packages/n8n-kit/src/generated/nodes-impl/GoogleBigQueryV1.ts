@@ -8,32 +8,24 @@ import type { GoogleBigQueryV1NodeParameters } from "../nodes/GoogleBigQueryV1";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GoogleBigQueryV1Props extends NodeProps {
-
     readonly parameters: GoogleBigQueryV1NodeParameters;
     readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
     readonly googleBigQueryOAuth2ApiCredentials?: Credentials<GoogleBigQueryOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Google BigQuery API
  */
 export class GoogleBigQueryV1<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.googleBigQuery" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: GoogleBigQueryV1Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.googleApiCredentials, this.props!.googleBigQueryOAuth2ApiCredentials];
-
     }
-
 
 }

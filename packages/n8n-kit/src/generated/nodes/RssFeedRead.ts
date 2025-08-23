@@ -4,10 +4,10 @@
 export const description = "Reads data from an RSS Feed" as const;
 export const type = "n8n-nodes-base.rssFeedRead" as const;
 export const version = 1.2 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RssFeedReadNodeParameters {
-
     /**
      * URL of the RSS feed
      */
@@ -18,6 +18,4 @@ export interface RssFeedReadNodeParameters {
      */
     readonly options?: { "customFields"?: string, "ignoreSSL"?: boolean };
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Consume Onfleet API" as const;
 export const type = "n8n-nodes-base.onfleet" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"onfleetApi","required":true,"testedBy":"onfleetApiTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OnfleetNodeParameters {
-
     /**
      * The resource to perform operations on
      * Default: "task"
@@ -199,6 +199,4 @@ export interface OnfleetNodeParameters {
      */
     readonly schedule?: { "scheduleProperties": any };
 
-
 }
-

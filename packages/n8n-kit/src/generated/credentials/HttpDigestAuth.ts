@@ -8,9 +8,6 @@ export const name = "httpDigestAuth" as const;
  * documentationUrl: httpRequest
  */
 export interface HttpDigestAuthCredentials {
-
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface HttpDigestAuthCredentials {
     readonly "password"?: string;
 
     readonly __name: "httpDigestAuth";
-
 }

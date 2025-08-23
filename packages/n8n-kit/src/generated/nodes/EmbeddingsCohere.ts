@@ -5,10 +5,10 @@ export const description = "Use Cohere Embeddings" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsCohere" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cohereApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsCohereNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -20,6 +20,4 @@ export interface EmbeddingsCohereNodeParameters {
      */
     readonly modelName?: "embed-english-light-v2.0" | "embed-english-light-v3.0" | "embed-english-v2.0" | "embed-english-v3.0" | "embed-multilingual-light-v3.0" | "embed-multilingual-v2.0" | "embed-multilingual-v3.0";
 
-
 }
-

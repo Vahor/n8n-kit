@@ -4,10 +4,10 @@
 export const description = "Return the results as separate items" as const;
 export const type = "@n8n/n8n-nodes-langchain.outputParserItemList" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserItemListNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -18,6 +18,4 @@ export interface OutputParserItemListNodeParameters {
      */
     readonly options?: { "numberOfItems"?: number, "separator"?: string };
 
-
 }
-

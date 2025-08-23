@@ -9,33 +9,25 @@ import type { AirtableV1NodeParameters } from "../nodes/AirtableV1";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface AirtableV1Props extends NodeProps {
-
     readonly parameters: AirtableV1NodeParameters;
     readonly airtableApiCredentials?: Credentials<AirtableApiCredentials>;
     readonly airtableTokenApiCredentials?: Credentials<AirtableTokenApiCredentials>;
     readonly airtableOAuth2ApiCredentials?: Credentials<AirtableOAuth2ApiCredentials>;
-
 }
 
 /**
  * Read, update, write and delete data from Airtable
  */
 export class AirtableV1<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.airtable" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: AirtableV1Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.airtableApiCredentials, this.props!.airtableTokenApiCredentials, this.props!.airtableOAuth2ApiCredentials];
-
     }
-
 
 }

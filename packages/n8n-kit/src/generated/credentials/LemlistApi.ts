@@ -8,12 +8,10 @@ export const name = "lemlistApi" as const;
  * documentationUrl: lemlist
  */
 export interface LemlistApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "lemlistApi";
-
 }

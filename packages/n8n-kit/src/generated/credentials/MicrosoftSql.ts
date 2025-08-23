@@ -8,7 +8,6 @@ export const name = "microsoftSql" as const;
  * documentationUrl: microsoftSql
  */
 export interface MicrosoftSqlCredentials {
-
     /**
      * Default: "localhost"
      */
@@ -34,8 +33,6 @@ export interface MicrosoftSqlCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "domain"?: string;
 
     /**
@@ -67,5 +64,4 @@ export interface MicrosoftSqlCredentials {
     readonly "tdsVersion"?: "7_4" | "7_3_B" | "7_3_A" | "7_2" | "7_1";
 
     readonly __name: "microsoftSql";
-
 }

@@ -5,10 +5,10 @@ export const description = "Triggers the workflow when a new email is received" 
 export const type = "n8n-nodes-base.emailReadImap" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"imap","required":true,"testedBy":"imapConnectionTest"}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EmailReadImapV2NodeParameters {
-
     /**
      * Default: "INBOX"
      */
@@ -42,6 +42,4 @@ export interface EmailReadImapV2NodeParameters {
      */
     readonly options?: { "customEmailConfig"?: string, "forceReconnect"?: number, "trackLastMessageId"?: boolean };
 
-
 }
-

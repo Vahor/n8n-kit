@@ -8,7 +8,6 @@ export const name = "gitlabApi" as const;
  * documentationUrl: gitlab
  */
 export interface GitlabApiCredentials {
-
     /**
      * Default: "https://gitlab.com"
      */
@@ -20,5 +19,4 @@ export interface GitlabApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "gitlabApi";
-
 }

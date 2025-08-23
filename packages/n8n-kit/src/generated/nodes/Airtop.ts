@@ -5,10 +5,10 @@ export const description = "Scrape and control any site with Airtop" as const;
 export const type = "n8n-nodes-base.airtop" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"airtopApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AirtopNodeParameters {
-
     /**
      * Default: "session"
      */
@@ -239,6 +239,4 @@ export interface AirtopNodeParameters {
      */
     readonly pressEnterKey?: boolean;
 
-
 }
-

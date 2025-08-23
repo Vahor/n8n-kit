@@ -4,10 +4,10 @@
 export const description = "Get synonmns for German words using the OpenThesaurus API" as const;
 export const type = "n8n-nodes-base.openThesaurus" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenThesaurusNodeParameters {
-
     /**
      * Default: "getSynonyms"
      */
@@ -23,6 +23,4 @@ export interface OpenThesaurusNodeParameters {
      */
     readonly options?: { "baseform"?: boolean, "similar"?: boolean, "startswith"?: boolean, "substring"?: boolean, "substringFromResults"?: number, "substringMaxResults"?: number, "subsynsets"?: boolean, "supersynsets"?: boolean };
 
-
 }
-

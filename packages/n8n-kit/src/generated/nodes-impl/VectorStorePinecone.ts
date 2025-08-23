@@ -7,31 +7,23 @@ import type { VectorStorePineconeNodeParameters } from "../nodes/VectorStorePine
 import { Node, type NodeProps } from "../../nodes";
 
 export interface VectorStorePineconeProps extends NodeProps {
-
     readonly parameters: VectorStorePineconeNodeParameters;
     readonly pineconeApiCredentials: Credentials<PineconeApiCredentials>;
-
 }
 
 /**
- * undefined
+ * Work with your data in Pinecone Vector Store
  */
 export class VectorStorePinecone<L extends string> extends Node<L> {
-
     protected type = "@n8n/n8n-nodes-langchain.vectorStorePinecone" as const;
     protected typeVersion = 1.3 as const;
 
     constructor(id: L, override props: VectorStorePineconeProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.pineconeApiCredentials];
-
     }
-
 
 }

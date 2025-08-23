@@ -141,8 +141,8 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		const layoutNodes = [...nodes, ...groups];
 		calculateLayout(layoutNodes);
 
-		type Connection = { node: string; type: "main"; index: number };
-		const connections: Record<string, { main: Connection[][] }> = {};
+		type Connection = { node: string; type: string; index: number };
+		const connections: Record<string, { [key: string]: Connection[][] }> = {};
 		for (const node of nodes) {
 			if (node instanceof Group) continue;
 			for (let endState of node.listOutgoing()) {
@@ -155,17 +155,23 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 				}
 				if (!(endState instanceof BaseNode)) continue;
 
-				connections[node.getLabel()] ??= { main: [] };
-				const nodeConnection = connections[node.getLabel()]!;
 				const connectionOptions = node["~getConnectionOptions"](endState.id);
+				const connectionType = connectionOptions.type ?? "main";
+				const direction = connectionOptions.direction ?? "output";
 
-				if (!nodeConnection.main[connectionOptions.from]) {
-					nodeConnection.main[connectionOptions.from] = [];
+				const from = direction === "output" ? node : endState;
+				const to = direction === "output" ? endState : node;
+
+				connections[from.getLabel()] ??= { [connectionType]: [] };
+				const nodeConnection = connections[from.getLabel()]!;
+
+				if (!nodeConnection[connectionType]![connectionOptions.from]) {
+					nodeConnection[connectionType]![connectionOptions.from] = [];
 				}
 
-				nodeConnection.main[connectionOptions.from]!.push({
-					node: endState.getLabel(),
-					type: "main",
+				nodeConnection[connectionType]![connectionOptions.from]!.push({
+					node: to.getLabel(),
+					type: connectionType,
 					index: connectionOptions.to,
 				});
 			}

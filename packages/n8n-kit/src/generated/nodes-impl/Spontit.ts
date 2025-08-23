@@ -7,31 +7,23 @@ import type { SpontitNodeParameters } from "../nodes/Spontit";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface SpontitProps extends NodeProps {
-
     readonly parameters: SpontitNodeParameters;
     readonly spontitApiCredentials: Credentials<SpontitApiCredentials>;
-
 }
 
 /**
  * Consume Spontit API
  */
 export class Spontit<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.spontit" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: SpontitProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.spontitApiCredentials];
-
     }
-
 
 }

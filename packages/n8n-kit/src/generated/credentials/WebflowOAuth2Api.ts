@@ -8,7 +8,6 @@ export const name = "webflowOAuth2Api" as const;
  * documentationUrl: webflow
  */
 export interface WebflowOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -46,5 +45,4 @@ export interface WebflowOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "webflowOAuth2Api";
-
 }

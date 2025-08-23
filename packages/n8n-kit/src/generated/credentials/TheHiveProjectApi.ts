@@ -8,7 +8,6 @@ export const name = "theHiveProjectApi" as const;
  * documentationUrl: theHive
  */
 export interface TheHiveProjectApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -25,5 +24,4 @@ export interface TheHiveProjectApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "theHiveProjectApi";
-
 }

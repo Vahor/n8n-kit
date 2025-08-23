@@ -5,10 +5,10 @@ export const description = "Consume Google Contacts API" as const;
 export const type = "n8n-nodes-base.googleContacts" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleContactsOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleContactsNodeParameters {
-
     /**
      * Default: "contact"
      */
@@ -73,6 +73,4 @@ export interface GoogleContactsNodeParameters {
      */
     readonly updateFields?: { "etag"?: string, "familyName"?: string, "givenName"?: string, "addressesUi"?: { "addressesValues": any }, "birthday"?: string, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: any[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
 
-
 }
-

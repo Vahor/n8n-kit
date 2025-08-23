@@ -8,32 +8,24 @@ import type { AsanaNodeParameters } from "../nodes/Asana";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface AsanaProps extends NodeProps {
-
     readonly parameters: AsanaNodeParameters;
     readonly asanaApiCredentials?: Credentials<AsanaApiCredentials>;
     readonly asanaOAuth2ApiCredentials?: Credentials<AsanaOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Asana REST API
  */
 export class Asana<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.asana" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: AsanaProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.asanaApiCredentials, this.props!.asanaOAuth2ApiCredentials];
-
     }
-
 
 }

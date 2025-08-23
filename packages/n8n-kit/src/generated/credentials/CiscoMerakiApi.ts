@@ -8,12 +8,10 @@ export const name = "ciscoMerakiApi" as const;
  * documentationUrl: ciscomeraki
  */
 export interface CiscoMerakiApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "ciscoMerakiApi";
-
 }

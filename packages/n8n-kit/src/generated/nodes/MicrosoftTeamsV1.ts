@@ -5,10 +5,10 @@ export const description = "Consume Microsoft Teams API" as const;
 export const type = "n8n-nodes-base.microsoftTeams" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftTeamsV1NodeParameters {
-
     readonly oldVersionNotice?: string;
 
     /**
@@ -125,6 +125,4 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly memberId?: string;
 
-
 }
-

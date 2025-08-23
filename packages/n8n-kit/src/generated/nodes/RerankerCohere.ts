@@ -5,10 +5,10 @@ export const description = "Use Cohere Reranker to reorder documents after retri
 export const type = "@n8n/n8n-nodes-langchain.rerankerCohere" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"cohereApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_reranker":"ai_reranker"} as const;
 
 export interface RerankerCohereNodeParameters {
-
     /**
      * The model that should be used to rerank the documents. <a href="https://docs.cohere.com/docs/models">Learn more</a>.
      * Default: "rerank-v3.5"
@@ -21,6 +21,4 @@ export interface RerankerCohereNodeParameters {
      */
     readonly topN?: number;
 
-
 }
-

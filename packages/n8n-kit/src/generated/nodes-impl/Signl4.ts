@@ -7,31 +7,23 @@ import type { Signl4NodeParameters } from "../nodes/Signl4";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface Signl4Props extends NodeProps {
-
     readonly parameters: Signl4NodeParameters;
     readonly signl4ApiCredentials: Credentials<Signl4ApiCredentials>;
-
 }
 
 /**
  * Consume SIGNL4 API
  */
 export class Signl4<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.signl4" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: Signl4Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.signl4ApiCredentials];
-
     }
-
 
 }

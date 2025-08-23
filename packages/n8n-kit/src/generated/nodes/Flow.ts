@@ -5,10 +5,10 @@ export const description = "Consume Flow API" as const;
 export const type = "n8n-nodes-base.flow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"flowApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FlowNodeParameters {
-
     /**
      * Default: "task"
      */
@@ -58,6 +58,4 @@ export interface FlowNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

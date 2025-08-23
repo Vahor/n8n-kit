@@ -5,10 +5,10 @@ export const description = "Consume the QuickBooks Online API" as const;
 export const type = "n8n-nodes-base.quickbooks" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"quickBooksOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface QuickBooksNodeParameters {
-
     /**
      * Default: "customer"
      */
@@ -152,6 +152,4 @@ export interface QuickBooksNodeParameters {
      */
     readonly vendorId?: string;
 
-
 }
-

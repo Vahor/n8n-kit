@@ -8,12 +8,10 @@ export const name = "alienVaultApi" as const;
  * documentationUrl: alienvault
  */
 export interface AlienVaultApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken": string;
 
     readonly __name: "alienVaultApi";
-
 }

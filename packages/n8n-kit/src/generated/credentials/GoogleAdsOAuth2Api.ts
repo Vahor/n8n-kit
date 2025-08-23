@@ -8,7 +8,6 @@ export const name = "googleAdsOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleAdsOAuth2ApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface GoogleAdsOAuth2ApiCredentials {
     readonly "scope"?: any;
 
     readonly __name: "googleAdsOAuth2Api";
-
 }

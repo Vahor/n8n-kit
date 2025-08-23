@@ -7,31 +7,23 @@ import type { RabbitMQTriggerNodeParameters } from "../nodes/RabbitMQTrigger";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface RabbitMQTriggerProps extends NodeProps {
-
     readonly parameters: RabbitMQTriggerNodeParameters;
     readonly rabbitmqCredentials: Credentials<RabbitMQCredentials>;
-
 }
 
 /**
  * Listens to RabbitMQ messages
  */
 export class RabbitMQTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.rabbitmqTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: RabbitMQTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.rabbitmqCredentials];
-
     }
-
 
 }

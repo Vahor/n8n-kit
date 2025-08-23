@@ -8,7 +8,6 @@ export const name = "surveyMonkeyApi" as const;
  * documentationUrl: surveyMonkey
  */
 export interface SurveyMonkeyApiCredentials {
-
     /**
      * The access token must have the following scopes:
 			<ul>
@@ -23,8 +22,6 @@ export interface SurveyMonkeyApiCredentials {
      */
     readonly "accessToken"?: string;
 
-    /**
-     */
     readonly "clientId"?: string;
 
     /**
@@ -33,5 +30,4 @@ export interface SurveyMonkeyApiCredentials {
     readonly "clientSecret"?: string;
 
     readonly __name: "surveyMonkeyApi";
-
 }

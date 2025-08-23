@@ -8,7 +8,6 @@ export const name = "driftApi" as const;
  * documentationUrl: drift
  */
 export interface DriftApiCredentials {
-
     /**
      * Visit your account details page, and grab the Access Token. See <a href="https://devdocs.drift.com/docs/quick-start">Drift auth</a>.
      * Type options: {"password":true}
@@ -16,5 +15,4 @@ export interface DriftApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "driftApi";
-
 }

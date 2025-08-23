@@ -4,10 +4,10 @@
 export const description = "Split text into chunks by characters recursively, recommended for most use cases" as const;
 export const type = "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
 export interface TextSplitterRecursiveCharacterTextSplitterNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -26,6 +26,4 @@ export interface TextSplitterRecursiveCharacterTextSplitterNodeParameters {
      */
     readonly options?: { "splitCode"?: "cpp" | "go" | "java" | "js" | "php" | "proto" | "python" | "rst" | "ruby" | "rust" | "scala" | "swift" | "markdown" | "latex" | "html" };
 
-
 }
-

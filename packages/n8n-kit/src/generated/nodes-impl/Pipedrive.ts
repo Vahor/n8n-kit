@@ -8,32 +8,24 @@ import type { PipedriveNodeParameters } from "../nodes/Pipedrive";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface PipedriveProps extends NodeProps {
-
     readonly parameters: PipedriveNodeParameters;
     readonly pipedriveApiCredentials?: Credentials<PipedriveApiCredentials>;
     readonly pipedriveOAuth2ApiCredentials?: Credentials<PipedriveOAuth2ApiCredentials>;
-
 }
 
 /**
  * Create and edit data in Pipedrive
  */
 export class Pipedrive<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.pipedrive" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: PipedriveProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.pipedriveApiCredentials, this.props!.pipedriveOAuth2ApiCredentials];
-
     }
-
 
 }

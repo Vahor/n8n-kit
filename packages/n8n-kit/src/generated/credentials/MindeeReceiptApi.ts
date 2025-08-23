@@ -8,12 +8,10 @@ export const name = "mindeeReceiptApi" as const;
  * documentationUrl: mindee
  */
 export interface MindeeReceiptApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "mindeeReceiptApi";
-
 }

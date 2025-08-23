@@ -8,7 +8,6 @@ export const name = "mySql" as const;
  * documentationUrl: mySql
  */
 export interface MySqlCredentials {
-
     /**
      * Default: "localhost"
      */
@@ -40,8 +39,6 @@ export interface MySqlCredentials {
      */
     readonly "connectTimeout"?: number;
 
-    /**
-     */
     readonly "ssl"?: boolean;
 
     /**
@@ -59,8 +56,6 @@ export interface MySqlCredentials {
      */
     readonly "clientCertificate"?: string;
 
-    /**
-     */
     readonly "sshTunnel"?: boolean;
 
     /**
@@ -99,5 +94,4 @@ export interface MySqlCredentials {
     readonly "passphrase"?: string;
 
     readonly __name: "mySql";
-
 }

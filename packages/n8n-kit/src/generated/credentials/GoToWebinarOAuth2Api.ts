@@ -8,7 +8,6 @@ export const name = "goToWebinarOAuth2Api" as const;
  * documentationUrl: goToWebinar
  */
 export interface GoToWebinarOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,12 +23,8 @@ export interface GoToWebinarOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -38,5 +33,4 @@ export interface GoToWebinarOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "goToWebinarOAuth2Api";
-
 }

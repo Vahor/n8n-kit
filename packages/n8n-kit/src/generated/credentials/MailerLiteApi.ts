@@ -8,7 +8,6 @@ export const name = "mailerLiteApi" as const;
  * documentationUrl: mailerLite
  */
 export interface MailerLiteApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -21,5 +20,4 @@ export interface MailerLiteApiCredentials {
     readonly "classicApi"?: boolean;
 
     readonly __name: "mailerLiteApi";
-
 }

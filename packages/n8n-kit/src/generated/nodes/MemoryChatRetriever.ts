@@ -4,10 +4,10 @@
 export const description = "Retrieve chat messages from memory and use them in the workflow" as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryChatRetriever" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main","Memory":"ai_memory"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MemoryChatRetrieverNodeParameters {
-
     readonly deprecatedNotice?: string;
 
     /**
@@ -16,6 +16,4 @@ export interface MemoryChatRetrieverNodeParameters {
      */
     readonly simplifyOutput?: boolean;
 
-
 }
-

@@ -4,10 +4,10 @@
 export const description = "Edits an image like blur, resize or adding border and text" as const;
 export const type = "n8n-nodes-base.editImage" as const;
 export const version = 1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EditImageNodeParameters {
-
     /**
      * Default: "border"
      */
@@ -196,6 +196,4 @@ export interface EditImageNodeParameters {
      */
     readonly options?: { "fileName"?: string, "font"?: string, "format"?: "bmp" | "gif" | "jpeg" | "png" | "tiff" | "webp", "quality"?: number };
 
-
 }
-

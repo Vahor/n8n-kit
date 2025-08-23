@@ -8,7 +8,6 @@ export const name = "airtableOAuth2Api" as const;
  * documentationUrl: airtable
  */
 export interface AirtableOAuth2ApiCredentials {
-
     /**
      * Default: "pkce"
      */
@@ -29,8 +28,6 @@ export interface AirtableOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface AirtableOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "airtableOAuth2Api";
-
 }

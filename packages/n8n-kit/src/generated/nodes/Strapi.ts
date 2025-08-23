@@ -5,10 +5,10 @@ export const description = "Consume Strapi API" as const;
 export const type = "n8n-nodes-base.strapi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"strapiApi","required":true,"testedBy":"strapiApiTest","displayOptions":{"show":{"authentication":["password"]}}},{"name":"strapiTokenApi","required":true,"displayOptions":{"show":{"authentication":["token"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StrapiNodeParameters {
-
     /**
      * Default: "password"
      */
@@ -62,6 +62,4 @@ export interface StrapiNodeParameters {
      */
     readonly updateKey?: string;
 
-
 }
-

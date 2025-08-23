@@ -8,7 +8,6 @@ export const name = "freshserviceApi" as const;
  * documentationUrl: freshservice
  */
 export interface FreshserviceApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface FreshserviceApiCredentials {
     readonly "domain"?: string;
 
     readonly __name: "freshserviceApi";
-
 }

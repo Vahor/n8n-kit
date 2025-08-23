@@ -8,12 +8,10 @@ export const name = "intercomApi" as const;
  * documentationUrl: intercom
  */
 export interface IntercomApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "intercomApi";
-
 }

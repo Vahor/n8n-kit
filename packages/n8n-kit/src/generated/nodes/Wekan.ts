@@ -5,10 +5,10 @@ export const description = "Consume Wekan API" as const;
 export const type = "n8n-nodes-base.wekan" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"wekanApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WekanNodeParameters {
-
     /**
      * Default: "card"
      */
@@ -119,6 +119,4 @@ export interface WekanNodeParameters {
      */
     readonly checklistItemId?: string;
 
-
 }
-

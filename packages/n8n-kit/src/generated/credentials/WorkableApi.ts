@@ -8,9 +8,6 @@ export const name = "workableApi" as const;
  * documentationUrl: workable
  */
 export interface WorkableApiCredentials {
-
-    /**
-     */
     readonly "subdomain"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface WorkableApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "workableApi";
-
 }

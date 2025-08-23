@@ -8,12 +8,10 @@ export const name = "brandfetchApi" as const;
  * documentationUrl: brandfetch
  */
 export interface BrandfetchApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "brandfetchApi";
-
 }

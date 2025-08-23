@@ -8,32 +8,24 @@ import type { GetResponseTriggerNodeParameters } from "../nodes/GetResponseTrigg
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GetResponseTriggerProps extends NodeProps {
-
     readonly parameters: GetResponseTriggerNodeParameters;
     readonly getResponseApiCredentials?: Credentials<GetResponseApiCredentials>;
     readonly getResponseOAuth2ApiCredentials?: Credentials<GetResponseOAuth2ApiCredentials>;
-
 }
 
 /**
  * Starts the workflow when GetResponse events occur
  */
 export class GetResponseTrigger<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.getResponseTrigger" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: GetResponseTriggerProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.getResponseApiCredentials, this.props!.getResponseOAuth2ApiCredentials];
-
     }
-
 
 }

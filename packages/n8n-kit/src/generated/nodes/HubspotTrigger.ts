@@ -5,10 +5,10 @@ export const description = "Starts the workflow when HubSpot events occur" as co
 export const type = "n8n-nodes-base.hubspotTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"hubspotDeveloperApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HubspotTriggerNodeParameters {
-
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
@@ -20,6 +20,4 @@ export interface HubspotTriggerNodeParameters {
      */
     readonly additionalFields?: { "maxConcurrentRequests"?: number };
 
-
 }
-

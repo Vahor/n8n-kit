@@ -8,7 +8,6 @@ export const name = "microsoftAzureCosmosDbSharedKeyApi" as const;
  * documentationUrl: azurecosmosdb
  */
 export interface MicrosoftAzureCosmosDbSharedKeyApiCredentials {
-
     /**
      * Account name
      */
@@ -26,5 +25,4 @@ export interface MicrosoftAzureCosmosDbSharedKeyApiCredentials {
     readonly "database": string;
 
     readonly __name: "microsoftAzureCosmosDbSharedKeyApi";
-
 }

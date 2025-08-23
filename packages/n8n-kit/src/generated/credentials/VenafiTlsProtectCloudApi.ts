@@ -8,7 +8,6 @@ export const name = "venafiTlsProtectCloudApi" as const;
  * documentationUrl: venafitlsprotectcloud
  */
 export interface VenafiTlsProtectCloudApiCredentials {
-
     /**
      * Default: "cloud"
      */
@@ -20,5 +19,4 @@ export interface VenafiTlsProtectCloudApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "venafiTlsProtectCloudApi";
-
 }

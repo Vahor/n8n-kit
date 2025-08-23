@@ -8,12 +8,10 @@ export const name = "phantombusterApi" as const;
  * documentationUrl: phantombuster
  */
 export interface PhantombusterApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "phantombusterApi";
-
 }

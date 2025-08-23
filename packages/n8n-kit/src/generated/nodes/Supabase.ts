@@ -5,10 +5,10 @@ export const description = "Add, get, delete and update data in a table" as cons
 export const type = "n8n-nodes-base.supabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"supabaseApi","required":true,"testedBy":"supabaseApiCredentialTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SupabaseNodeParameters {
-
     /**
      * Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>)
      */
@@ -85,6 +85,4 @@ export interface SupabaseNodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Consume Orbit API" as const;
 export const type = "n8n-nodes-base.orbit" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"orbitApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OrbitNodeParameters {
-
     readonly deprecated?: string;
 
     /**
@@ -113,6 +113,4 @@ export interface OrbitNodeParameters {
 
     readonly postId?: string;
 
-
 }
-

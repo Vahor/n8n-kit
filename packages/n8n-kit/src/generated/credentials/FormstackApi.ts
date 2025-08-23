@@ -8,12 +8,10 @@ export const name = "formstackApi" as const;
  * documentationUrl: formstackTrigger
  */
 export interface FormstackApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
     readonly __name: "formstackApi";
-
 }

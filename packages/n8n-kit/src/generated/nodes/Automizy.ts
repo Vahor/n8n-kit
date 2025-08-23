@@ -5,10 +5,10 @@ export const description = "Consume Automizy API" as const;
 export const type = "n8n-nodes-base.automizy" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"automizyApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AutomizyNodeParameters {
-
     readonly deprecated?: string;
 
     /**
@@ -61,6 +61,4 @@ export interface AutomizyNodeParameters {
 
     readonly name?: string;
 
-
 }
-

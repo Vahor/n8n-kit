@@ -5,10 +5,10 @@ export const description = "Consume the Lemlist API" as const;
 export const type = "n8n-nodes-base.lemlist" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"lemlistApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LemlistV1NodeParameters {
-
     /**
      * Default: "activity"
      */
@@ -53,6 +53,4 @@ export interface LemlistV1NodeParameters {
      */
     readonly additionalFields?: { "companyName"?: string, "deduplicate"?: boolean, "firstName"?: string, "lastName"?: string, "icebreaker"?: string, "phone"?: string, "picture"?: string, "linkedinUrl"?: string };
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Makes an HTTP request and returns the response data"
 export const type = "@n8n/n8n-nodes-langchain.toolHttpRequest" as const;
 export const version = 1.1 as const;
 export const credentials = [] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolHttpRequestNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -160,6 +160,4 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly maxLength?: number;
 
-
 }
-

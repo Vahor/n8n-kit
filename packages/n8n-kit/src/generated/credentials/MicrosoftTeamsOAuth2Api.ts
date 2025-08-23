@@ -8,16 +8,12 @@ export const name = "microsoftTeamsOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftTeamsOAuth2ApiCredentials {
-
     /**
      * Default: "openid offline_access User.ReadWrite.All Group.ReadWrite.All Chat.ReadWrite ChannelMessage.Read.All"
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "notice"?: string;
 
     readonly __name: "microsoftTeamsOAuth2Api";
-
 }

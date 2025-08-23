@@ -8,12 +8,10 @@ export const name = "groqApi" as const;
  * documentationUrl: groq
  */
 export interface GroqApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey": string;
 
     readonly __name: "groqApi";
-
 }

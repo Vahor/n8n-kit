@@ -5,10 +5,10 @@ export const description = "Handle Stripe events via webhooks" as const;
 export const type = "n8n-nodes-base.stripeTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"stripeApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StripeTriggerNodeParameters {
-
     /**
      * The event to listen to
      * Default: []
@@ -20,6 +20,4 @@ export interface StripeTriggerNodeParameters {
      */
     readonly apiVersion?: string;
 
-
 }
-

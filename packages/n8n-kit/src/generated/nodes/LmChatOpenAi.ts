@@ -5,10 +5,10 @@ export const description = "For advanced usage with an AI chain" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatOpenAi" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatOpenAiNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -30,6 +30,4 @@ export interface LmChatOpenAiNodeParameters {
      */
     readonly options?: { "baseURL"?: string, "frequencyPenalty"?: number, "maxTokens"?: number, "responseFormat"?: "text" | "json_object", "presencePenalty"?: number, "temperature"?: number, "reasoningEffort"?: "low" | "medium" | "high", "timeout"?: number, "maxRetries"?: number, "topP"?: number };
 
-
 }
-

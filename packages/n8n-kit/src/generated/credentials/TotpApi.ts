@@ -8,7 +8,6 @@ export const name = "totpApi" as const;
  * documentationUrl: totp
  */
 export interface TotpApiCredentials {
-
     /**
      * Secret key encoded in the QR code during setup. <a href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format#secret">Learn more</a>.
      * Type options: {"password":true}
@@ -21,5 +20,4 @@ export interface TotpApiCredentials {
     readonly "label": string;
 
     readonly __name: "totpApi";
-
 }

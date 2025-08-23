@@ -5,10 +5,10 @@ export const description = "Consume Zendesk API" as const;
 export const type = "n8n-nodes-base.zendesk" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zendeskApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"zendeskOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZendeskNodeParameters {
-
     /**
      * Default: "apiToken"
      */
@@ -89,6 +89,4 @@ export interface ZendeskNodeParameters {
      */
     readonly filters?: { "role"?: ("end-user" | "agent" | "admin")[] } | { "query"?: string, "external_id"?: string };
 
-
 }
-

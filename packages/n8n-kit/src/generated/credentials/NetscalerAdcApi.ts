@@ -8,13 +8,8 @@ export const name = "citrixAdcApi" as const;
  * documentationUrl: netscaleradc
  */
 export interface NetscalerAdcApiCredentials {
-
-    /**
-     */
     readonly "url": string;
 
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -23,5 +18,4 @@ export interface NetscalerAdcApiCredentials {
     readonly "password": string;
 
     readonly __name: "citrixAdcApi";
-
 }

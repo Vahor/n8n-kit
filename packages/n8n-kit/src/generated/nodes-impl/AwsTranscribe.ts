@@ -7,31 +7,23 @@ import type { AwsTranscribeNodeParameters } from "../nodes/AwsTranscribe";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface AwsTranscribeProps extends NodeProps {
-
     readonly parameters: AwsTranscribeNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
-
 }
 
 /**
  * Sends data to AWS Transcribe
  */
 export class AwsTranscribe<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.awsTranscribe" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: AwsTranscribeProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.awsCredentials];
-
     }
-
 
 }

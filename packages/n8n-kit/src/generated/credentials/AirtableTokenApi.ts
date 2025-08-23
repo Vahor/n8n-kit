@@ -8,16 +8,12 @@ export const name = "airtableTokenApi" as const;
  * documentationUrl: airtable
  */
 export interface AirtableTokenApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "accessToken"?: string;
 
-    /**
-     */
     readonly "notice"?: string;
 
     readonly __name: "airtableTokenApi";
-
 }

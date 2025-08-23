@@ -8,9 +8,6 @@ export const name = "trellixEpoApi" as const;
  * documentationUrl: trellixepo
  */
 export interface TrellixEpoApiCredentials {
-
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -19,5 +16,4 @@ export interface TrellixEpoApiCredentials {
     readonly "password": string;
 
     readonly __name: "trellixEpoApi";
-
 }

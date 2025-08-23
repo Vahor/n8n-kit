@@ -5,10 +5,10 @@ export const description = "Control git." as const;
 export const type = "n8n-nodes-base.git" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"gitPassword","required":true,"displayOptions":{"show":{"authentication":["gitPassword"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GitNodeParameters {
-
     /**
      * The way to authenticate
      * Default: "none"
@@ -72,6 +72,4 @@ export interface GitNodeParameters {
      */
     readonly name?: string;
 
-
 }
-

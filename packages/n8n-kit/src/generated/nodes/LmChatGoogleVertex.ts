@@ -5,10 +5,10 @@ export const description = "Chat Model Google Vertex" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatGoogleVertex" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatGoogleVertexNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -35,6 +35,4 @@ export interface LmChatGoogleVertexNodeParameters {
      */
     readonly options?: { "maxOutputTokens"?: number, "temperature"?: number, "topK"?: number, "topP"?: number, "safetySettings"?: { "values": any } };
 
-
 }
-

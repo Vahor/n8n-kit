@@ -8,9 +8,6 @@ export const name = "httpBasicAuth" as const;
  * documentationUrl: httpRequest
  */
 export interface HttpBasicAuthCredentials {
-
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface HttpBasicAuthCredentials {
     readonly "password"?: string;
 
     readonly __name: "httpBasicAuth";
-
 }

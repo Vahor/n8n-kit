@@ -4,10 +4,10 @@
 export const description = "Extract information from text in a structured format" as const;
 export const type = "@n8n/n8n-nodes-langchain.informationExtractor" as const;
 export const version = 1.2 as const;
+export const inputs = {"":"main","Model":"ai_languageModel"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface InformationExtractorNodeParameters {
-
     /**
      * The text to extract information from
      * Type options: {"rows":2}
@@ -47,6 +47,4 @@ export interface InformationExtractorNodeParameters {
      */
     readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
-
 }
-

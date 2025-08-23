@@ -8,7 +8,6 @@ export const name = "beeminderOAuth2Api" as const;
  * documentationUrl: beeminder
  */
 export interface BeeminderOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -34,10 +33,7 @@ export interface BeeminderOAuth2ApiCredentials {
      */
     readonly "authentication"?: any;
 
-    /**
-     */
     readonly "scope"?: any;
 
     readonly __name: "beeminderOAuth2Api";
-
 }

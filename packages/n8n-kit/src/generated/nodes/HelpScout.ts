@@ -5,10 +5,10 @@ export const description = "Consume Help Scout API" as const;
 export const type = "n8n-nodes-base.helpScout" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"helpScoutOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HelpScoutNodeParameters {
-
     /**
      * Default: "conversation"
      */
@@ -130,6 +130,4 @@ export interface HelpScoutNodeParameters {
      */
     readonly attachmentsUi?: { "attachmentsValues": any, "attachmentsBinary": any };
 
-
 }
-

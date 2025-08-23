@@ -8,12 +8,10 @@ export const name = "mandrillApi" as const;
  * documentationUrl: mandrill
  */
 export interface MandrillApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "mandrillApi";
-
 }

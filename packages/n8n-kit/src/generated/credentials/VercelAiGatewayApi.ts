@@ -8,7 +8,6 @@ export const name = "vercelAiGatewayApi" as const;
  * documentationUrl: vercelaigateway
  */
 export interface VercelAiGatewayApiCredentials {
-
     /**
      * Your credentials for the Vercel AI Gateway
      * Type options: {"password":true}
@@ -22,5 +21,4 @@ export interface VercelAiGatewayApiCredentials {
     readonly "url": string;
 
     readonly __name: "vercelAiGatewayApi";
-
 }

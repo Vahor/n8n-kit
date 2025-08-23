@@ -8,9 +8,6 @@ export const name = "plivoApi" as const;
  * documentationUrl: plivo
  */
 export interface PlivoApiCredentials {
-
-    /**
-     */
     readonly "authId"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface PlivoApiCredentials {
     readonly "authToken"?: string;
 
     readonly __name: "plivoApi";
-
 }

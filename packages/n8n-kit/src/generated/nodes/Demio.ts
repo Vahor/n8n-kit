@@ -5,10 +5,10 @@ export const description = "Consume the Demio API" as const;
 export const type = "n8n-nodes-base.demio" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"demioApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DemioNodeParameters {
-
     /**
      * Default: "event"
      */
@@ -59,6 +59,4 @@ export interface DemioNodeParameters {
      */
     readonly dateId?: string;
 
-
 }
-

@@ -8,7 +8,6 @@ export const name = "grafanaApi" as const;
  * documentationUrl: grafana
  */
 export interface GrafanaApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface GrafanaApiCredentials {
     readonly "baseUrl": string;
 
     readonly __name: "grafanaApi";
-
 }

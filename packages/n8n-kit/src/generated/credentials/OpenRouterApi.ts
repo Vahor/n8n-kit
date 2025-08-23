@@ -8,7 +8,6 @@ export const name = "openRouterApi" as const;
  * documentationUrl: openrouter
  */
 export interface OpenRouterApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface OpenRouterApiCredentials {
     readonly "url"?: any;
 
     readonly __name: "openRouterApi";
-
 }

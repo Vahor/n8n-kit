@@ -5,10 +5,10 @@ export const description = "Interact with Jina AI API" as const;
 export const type = "n8n-nodes-base.jinaAi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jinaAiApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JinaAiNodeParameters {
-
     /**
      * Default: "reader"
      */
@@ -43,6 +43,4 @@ export interface JinaAiNodeParameters {
      */
     readonly researchQuery?: string;
 
-
 }
-

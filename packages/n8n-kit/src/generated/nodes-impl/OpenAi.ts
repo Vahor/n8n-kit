@@ -7,31 +7,23 @@ import type { OpenAiNodeParameters } from "../nodes/OpenAi";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface OpenAiProps extends NodeProps {
-
     readonly parameters: OpenAiNodeParameters;
     readonly openAiApiCredentials: Credentials<OpenAiApiCredentials>;
-
 }
 
 /**
  * Consume Open AI
  */
 export class OpenAi<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.openAi" as const;
     protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props: OpenAiProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.openAiApiCredentials];
-
     }
-
 
 }

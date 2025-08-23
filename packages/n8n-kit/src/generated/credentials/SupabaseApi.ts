@@ -8,9 +8,6 @@ export const name = "supabaseApi" as const;
  * documentationUrl: supabase
  */
 export interface SupabaseApiCredentials {
-
-    /**
-     */
     readonly "host"?: string;
 
     /**
@@ -19,5 +16,4 @@ export interface SupabaseApiCredentials {
     readonly "serviceRole"?: string;
 
     readonly __name: "supabaseApi";
-
 }

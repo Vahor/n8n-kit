@@ -5,10 +5,10 @@ export const description = "Find B2B emails and enrich contacts" as const;
 export const type = "n8n-nodes-base.dropcontact" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"dropcontactApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DropcontactNodeParameters {
-
     /**
      * Default: "contact"
      */
@@ -38,6 +38,4 @@ export interface DropcontactNodeParameters {
      */
     readonly options?: { "waitTime"?: number, "siren"?: boolean, "language"?: "en" | "fr" };
 
-
 }
-

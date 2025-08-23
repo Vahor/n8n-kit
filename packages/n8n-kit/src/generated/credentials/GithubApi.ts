@@ -8,15 +8,12 @@ export const name = "githubApi" as const;
  * documentationUrl: github
  */
 export interface GithubApiCredentials {
-
     /**
      * The server to connect to. Only has to be set if Github Enterprise is used.
      * Default: "https://api.github.com"
      */
     readonly "server"?: string;
 
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -25,5 +22,4 @@ export interface GithubApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "githubApi";
-
 }

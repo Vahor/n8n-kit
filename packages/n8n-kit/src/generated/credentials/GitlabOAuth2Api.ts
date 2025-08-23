@@ -8,7 +8,6 @@ export const name = "gitlabOAuth2Api" as const;
  * documentationUrl: gitlab
  */
 export interface GitlabOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -34,8 +33,6 @@ export interface GitlabOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -44,5 +41,4 @@ export interface GitlabOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "gitlabOAuth2Api";
-
 }

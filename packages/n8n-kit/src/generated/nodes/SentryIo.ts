@@ -5,10 +5,10 @@ export const description = "Consume Sentry.io API" as const;
 export const type = "n8n-nodes-base.sentryIo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"sentryIoOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"],"sentryVersion":["cloud"]}}},{"name":"sentryIoApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"],"sentryVersion":["cloud"]}}},{"name":"sentryIoServerApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"],"sentryVersion":["server"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SentryIoNodeParameters {
-
     /**
      * Default: "cloud"
      */
@@ -118,6 +118,4 @@ export interface SentryIoNodeParameters {
      */
     readonly projects?: any[];
 
-
 }
-

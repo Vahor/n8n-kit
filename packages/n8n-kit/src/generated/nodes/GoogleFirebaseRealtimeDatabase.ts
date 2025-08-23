@@ -5,10 +5,10 @@ export const description = "Interact with Google Firebase - Realtime Database AP
 export const type = "n8n-nodes-base.googleFirebaseRealtimeDatabase" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleFirebaseRealtimeDatabaseOAuth2Api"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
-
     /**
      * As displayed in firebase console URL. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getProjects"}
@@ -30,6 +30,4 @@ export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
      */
     readonly attributes?: string;
 
-
 }
-

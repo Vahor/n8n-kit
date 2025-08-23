@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Pipedrive events occur" as 
 export const type = "n8n-nodes-base.pipedriveTrigger" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"pipedriveApi","required":true,"displayOptions":{"show":{"authentication":["apiToken"]}}},{"name":"pipedriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"incomingAuthentication":["basicAuth"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PipedriveTriggerNodeParameters {
-
     /**
      * Default: "apiToken"
      */
@@ -38,6 +38,4 @@ export interface PipedriveTriggerNodeParameters {
      */
     readonly object?: "activity" | "activityType" | "*" | "deal" | "note" | "organization" | "person" | "pipeline" | "product" | "stage" | "user";
 
-
 }
-

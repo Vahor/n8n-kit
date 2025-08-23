@@ -5,10 +5,10 @@ export const description = "Consume Netlify API" as const;
 export const type = "n8n-nodes-base.netlify" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"netlifyApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NetlifyNodeParameters {
-
     /**
      * Default: "deploy"
      */
@@ -44,6 +44,4 @@ export interface NetlifyNodeParameters {
      */
     readonly additionalFields?: { "branch"?: string, "title"?: string };
 
-
 }
-

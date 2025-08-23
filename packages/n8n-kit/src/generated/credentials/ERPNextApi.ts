@@ -8,7 +8,6 @@ export const name = "erpNextApi" as const;
  * documentationUrl: erpnext
  */
 export interface ERPNextApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -41,5 +40,4 @@ export interface ERPNextApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "erpNextApi";
-
 }

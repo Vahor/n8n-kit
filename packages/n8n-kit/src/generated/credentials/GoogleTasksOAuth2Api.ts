@@ -8,12 +8,10 @@ export const name = "googleTasksOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleTasksOAuth2ApiCredentials {
-
     /**
      * Default: "https://www.googleapis.com/auth/tasks"
      */
     readonly "scope"?: any;
 
     readonly __name: "googleTasksOAuth2Api";
-
 }

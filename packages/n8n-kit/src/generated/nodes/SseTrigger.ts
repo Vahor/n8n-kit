@@ -4,15 +4,13 @@
 export const description = "Triggers the workflow when Server-Sent Events occur" as const;
 export const type = "n8n-nodes-base.sseTrigger" as const;
 export const version = 1 as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SseTriggerNodeParameters {
-
     /**
      * The URL to receive the SSE from
      */
     readonly url?: string;
 
-
 }
-

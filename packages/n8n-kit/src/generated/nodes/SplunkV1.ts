@@ -5,10 +5,10 @@ export const description = "Consume the Splunk Enterprise API" as const;
 export const type = "n8n-nodes-base.splunk" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"splunkApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SplunkV1NodeParameters {
-
     readonly oldVersionNotice?: string;
 
     /**
@@ -90,6 +90,4 @@ export interface SplunkV1NodeParameters {
      */
     readonly updateFields?: { "email"?: string, "realname"?: string, "password"?: string, "roles"?: any[] };
 
-
 }
-

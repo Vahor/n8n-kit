@@ -5,10 +5,10 @@ export const description = "Load data from Zep Vector Store index" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreZepLoad" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zepApi","required":true}] as const;
+export const inputs = {"Embedding":"ai_embedding"} as const;
 export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
 export interface VectorStoreZepLoadNodeParameters {
-
     readonly deprecationNotice?: string;
 
     readonly collectionName?: string;
@@ -18,6 +18,4 @@ export interface VectorStoreZepLoadNodeParameters {
      */
     readonly options?: { "embeddingDimensions"?: number, "metadata"?: { "metadataValues": any } };
 
-
 }
-

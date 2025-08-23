@@ -8,9 +8,6 @@ export const name = "zepApi" as const;
  * documentationUrl: zep
  */
 export interface ZepApiCredentials {
-
-    /**
-     */
     readonly "deprecationNotice"?: string;
 
     /**
@@ -29,5 +26,4 @@ export interface ZepApiCredentials {
     readonly "apiUrl"?: string;
 
     readonly __name: "zepApi";
-
 }

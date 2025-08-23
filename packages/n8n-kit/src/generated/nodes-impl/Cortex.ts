@@ -7,31 +7,23 @@ import type { CortexNodeParameters } from "../nodes/Cortex";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface CortexProps extends NodeProps {
-
     readonly parameters: CortexNodeParameters;
     readonly cortexApiCredentials: Credentials<CortexApiCredentials>;
-
 }
 
 /**
  * Apply the Cortex analyzer/responder on the given entity
  */
 export class Cortex<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.cortex" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: CortexProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.cortexApiCredentials];
-
     }
-
 
 }

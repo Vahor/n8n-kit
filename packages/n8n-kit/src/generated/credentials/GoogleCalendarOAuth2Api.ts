@@ -8,12 +8,10 @@ export const name = "googleCalendarOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleCalendarOAuth2ApiCredentials {
-
     /**
      * Default: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events"
      */
     readonly "scope"?: any;
 
     readonly __name: "googleCalendarOAuth2Api";
-
 }

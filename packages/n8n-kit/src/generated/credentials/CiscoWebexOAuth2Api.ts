@@ -8,7 +8,6 @@ export const name = "ciscoWebexOAuth2Api" as const;
  * documentationUrl: ciscowebex
  */
 export interface CiscoWebexOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -29,8 +28,6 @@ export interface CiscoWebexOAuth2ApiCredentials {
      */
     readonly "scope"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface CiscoWebexOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "ciscoWebexOAuth2Api";
-
 }

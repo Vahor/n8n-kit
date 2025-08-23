@@ -5,10 +5,10 @@ export const description = "Handle Taiga events via webhook" as const;
 export const type = "n8n-nodes-base.taigaTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"taigaApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TaigaTriggerNodeParameters {
-
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Type options: {"loadOptionsMethod":"getUserProjects"}
@@ -27,6 +27,4 @@ export interface TaigaTriggerNodeParameters {
      */
     readonly operations?: ("all" | "create" | "delete" | "change")[];
 
-
 }
-

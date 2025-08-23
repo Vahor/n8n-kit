@@ -7,31 +7,23 @@ import type { MicrosoftDynamicsCrmNodeParameters } from "../nodes/MicrosoftDynam
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MicrosoftDynamicsCrmProps extends NodeProps {
-
     readonly parameters: MicrosoftDynamicsCrmNodeParameters;
     readonly microsoftDynamicsOAuth2ApiCredentials: Credentials<MicrosoftDynamicsOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Microsoft Dynamics CRM API
  */
 export class MicrosoftDynamicsCrm<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.microsoftDynamicsCrm" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MicrosoftDynamicsCrmProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.microsoftDynamicsOAuth2ApiCredentials];
-
     }
-
 
 }

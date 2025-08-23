@@ -5,10 +5,10 @@ export const description = "Consume Mautic API" as const;
 export const type = "n8n-nodes-base.mautic" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"mauticApi","required":true,"displayOptions":{"show":{"authentication":["credentials"]}}},{"name":"mauticOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MauticNodeParameters {
-
     /**
      * Default: "credentials"
      */
@@ -131,6 +131,4 @@ export interface MauticNodeParameters {
      */
     readonly segmentEmailId?: string;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Consume Zoho CRM API" as const;
 export const type = "n8n-nodes-base.zohoCrm" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"zohoOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZohoCrmNodeParameters {
-
     /**
      * Default: "account"
      */
@@ -131,6 +131,4 @@ export interface ZohoCrmNodeParameters {
 
     readonly vendorName?: string;
 
-
 }
-

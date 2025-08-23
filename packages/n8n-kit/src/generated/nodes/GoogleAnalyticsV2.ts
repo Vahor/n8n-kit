@@ -5,10 +5,10 @@ export const description = "Use the Google Analytics API" as const;
 export const type = "n8n-nodes-base.googleAnalytics" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"googleAnalyticsOAuth2","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleAnalyticsV2NodeParameters {
-
     /**
      * Default: "report"
      */
@@ -114,6 +114,4 @@ export interface GoogleAnalyticsV2NodeParameters {
      */
     readonly userId?: string;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Consume Pushover API" as const;
 export const type = "n8n-nodes-base.pushover" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pushoverApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushoverNodeParameters {
-
     /**
      * Default: "message"
      */
@@ -54,6 +54,4 @@ export interface PushoverNodeParameters {
      */
     readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string, "title"?: string, "url"?: string, "url_title"?: string };
 
-
 }
-

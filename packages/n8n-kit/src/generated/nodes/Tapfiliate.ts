@@ -5,10 +5,10 @@ export const description = "Consume Tapfiliate API" as const;
 export const type = "n8n-nodes-base.tapfiliate" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"tapfiliateApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TapfiliateNodeParameters {
-
     /**
      * Default: "affiliate"
      */
@@ -84,6 +84,4 @@ export interface TapfiliateNodeParameters {
      */
     readonly programId?: string;
 
-
 }
-

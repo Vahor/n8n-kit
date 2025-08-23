@@ -5,10 +5,10 @@ export const description = "Consume Xero API" as const;
 export const type = "n8n-nodes-base.xero" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"xeroOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface XeroNodeParameters {
-
     /**
      * Default: "invoice"
      */
@@ -73,6 +73,4 @@ export interface XeroNodeParameters {
 
     readonly invoiceId?: string;
 
-
 }
-

@@ -5,10 +5,10 @@ export const description = "Makes an HTTP request and returns the response data"
 export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 4.2 as const;
 export const credentials = [{"name":"httpSslAuth","required":true,"displayOptions":{"show":{"provideSslCertificates":[true]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HttpRequestV3NodeParameters {
-
     /**
      * Type options: {"calloutAction":{"label":"Joke agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"joke_agent_with_http_tool"}}
      */
@@ -171,6 +171,4 @@ export interface HttpRequestV3NodeParameters {
 
     readonly infoMessage?: string;
 
-
 }
-

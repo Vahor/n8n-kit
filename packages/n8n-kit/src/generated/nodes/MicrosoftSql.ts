@@ -5,10 +5,10 @@ export const description = "Get, add and update data in Microsoft SQL" as const;
 export const type = "n8n-nodes-base.microsoftSql" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"microsoftSql","required":true,"testedBy":"microsoftSqlConnectionTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftSqlNodeParameters {
-
     /**
      * Default: "insert"
      */
@@ -42,6 +42,4 @@ export interface MicrosoftSqlNodeParameters {
      */
     readonly deleteKey?: string;
 
-
 }
-

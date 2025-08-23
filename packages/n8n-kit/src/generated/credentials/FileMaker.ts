@@ -8,17 +8,10 @@ export const name = "fileMaker" as const;
  * documentationUrl: fileMaker
  */
 export interface FileMakerCredentials {
-
-    /**
-     */
     readonly "host"?: string;
 
-    /**
-     */
     readonly "db"?: string;
 
-    /**
-     */
     readonly "login"?: string;
 
     /**
@@ -27,5 +20,4 @@ export interface FileMakerCredentials {
     readonly "password"?: string;
 
     readonly __name: "fileMaker";
-
 }

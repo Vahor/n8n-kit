@@ -5,10 +5,10 @@ export const description = "Consume Odoo API" as const;
 export const type = "n8n-nodes-base.odoo" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"odooApi","required":true,"testedBy":"odooApiTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OdooNodeParameters {
-
     /**
      * Default: "contact"
      */
@@ -79,6 +79,4 @@ export interface OdooNodeParameters {
 
     readonly noteId?: string;
 
-
 }
-

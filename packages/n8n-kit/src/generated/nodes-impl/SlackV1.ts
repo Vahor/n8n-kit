@@ -8,32 +8,24 @@ import type { SlackV1NodeParameters } from "../nodes/SlackV1";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface SlackV1Props extends NodeProps {
-
     readonly parameters: SlackV1NodeParameters;
     readonly slackApiCredentials?: Credentials<SlackApiCredentials>;
     readonly slackOAuth2ApiCredentials?: Credentials<SlackOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Slack API
  */
 export class SlackV1<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.slack" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: SlackV1Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.slackApiCredentials, this.props!.slackOAuth2ApiCredentials];
-
     }
-
 
 }

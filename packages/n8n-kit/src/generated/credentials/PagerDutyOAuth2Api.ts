@@ -8,7 +8,6 @@ export const name = "pagerDutyOAuth2Api" as const;
  * documentationUrl: pagerDuty
  */
 export interface PagerDutyOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -24,8 +23,6 @@ export interface PagerDutyOAuth2ApiCredentials {
      */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -39,5 +36,4 @@ export interface PagerDutyOAuth2ApiCredentials {
     readonly "authentication"?: any;
 
     readonly __name: "pagerDutyOAuth2Api";
-
 }

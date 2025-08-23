@@ -8,9 +8,6 @@ export const name = "imap" as const;
  * documentationUrl: imap
  */
 export interface ImapCredentials {
-
-    /**
-     */
     readonly "user"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface ImapCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     */
     readonly "host"?: string;
 
     /**
@@ -38,5 +33,4 @@ export interface ImapCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "imap";
-
 }

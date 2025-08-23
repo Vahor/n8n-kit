@@ -5,10 +5,10 @@ export const description = "Interacts with Facebook using the Graph API" as cons
 export const type = "n8n-nodes-base.facebookGraphApi" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"facebookGraphApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FacebookGraphApiNodeParameters {
-
     /**
      * The Host URL of the request. Almost all requests are passed to the graph.facebook.com host URL. The single exception is video uploads, which use graph-video.facebook.com.
      * Default: "graph.facebook.com"
@@ -56,6 +56,4 @@ export interface FacebookGraphApiNodeParameters {
      */
     readonly options?: { "fields"?: { "field": any }, "queryParameters"?: { "parameter": any }, "queryParametersJson"?: string };
 
-
 }
-

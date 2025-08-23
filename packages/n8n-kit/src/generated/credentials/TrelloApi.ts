@@ -8,7 +8,6 @@ export const name = "trelloApi" as const;
  * documentationUrl: trello
  */
 export interface TrelloApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -25,5 +24,4 @@ export interface TrelloApiCredentials {
     readonly "oauthSecret"?: any;
 
     readonly __name: "trelloApi";
-
 }

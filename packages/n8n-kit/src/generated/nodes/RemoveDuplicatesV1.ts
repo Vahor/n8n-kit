@@ -4,10 +4,10 @@
 export const description = "Delete items with matching field values" as const;
 export const type = "n8n-nodes-base.removeDuplicates" as const;
 export const version = 1.1 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RemoveDuplicatesV1NodeParameters {
-
     /**
      * The fields of the input items to compare to see if they are the same
      * Default: "allFields"
@@ -29,6 +29,4 @@ export interface RemoveDuplicatesV1NodeParameters {
      */
     readonly options?: { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean };
 
-
 }
-

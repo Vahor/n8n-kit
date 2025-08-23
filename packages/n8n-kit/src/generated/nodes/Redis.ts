@@ -5,10 +5,10 @@ export const description = "Get, send and update data in Redis" as const;
 export const type = "n8n-nodes-base.redis" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"redis","required":true,"testedBy":"redisConnectionTest"}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RedisNodeParameters {
-
     /**
      * Default: "info"
      */
@@ -90,6 +90,4 @@ export interface RedisNodeParameters {
      */
     readonly tail?: boolean;
 
-
 }
-

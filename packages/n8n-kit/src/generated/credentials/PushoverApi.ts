@@ -8,12 +8,10 @@ export const name = "pushoverApi" as const;
  * documentationUrl: pushover
  */
 export interface PushoverApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "pushoverApi";
-
 }

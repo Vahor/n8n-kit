@@ -8,7 +8,6 @@ export const name = "salesforceJwtApi" as const;
  * documentationUrl: salesforce
  */
 export interface SalesforceJwtApiCredentials {
-
     /**
      * Default: "production"
      */
@@ -19,8 +18,6 @@ export interface SalesforceJwtApiCredentials {
      */
     readonly "clientId": string;
 
-    /**
-     */
     readonly "username": string;
 
     /**
@@ -30,5 +27,4 @@ export interface SalesforceJwtApiCredentials {
     readonly "privateKey": string;
 
     readonly __name: "salesforceJwtApi";
-
 }

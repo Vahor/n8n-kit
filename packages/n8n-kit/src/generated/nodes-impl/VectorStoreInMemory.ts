@@ -5,24 +5,18 @@ import type { VectorStoreInMemoryNodeParameters } from "../nodes/VectorStoreInMe
 import { Node, type NodeProps } from "../../nodes";
 
 export interface VectorStoreInMemoryProps extends NodeProps {
-
     readonly parameters: VectorStoreInMemoryNodeParameters;
-
 }
 
 /**
  * The easiest way to experiment with vector stores, without external setup.
  */
 export class VectorStoreInMemory<L extends string> extends Node<L> {
-
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemory" as const;
     protected typeVersion = 1.3 as const;
 
     constructor(id: L, override props?: VectorStoreInMemoryProps) {
-
         super(id, props);
-
     }
-
 
 }

@@ -23,19 +23,27 @@ export function calculateLayout(
 	nodes: BaseNode<any, any>[],
 	options: WorkflowLayoutOptions = {},
 ): void {
-	const g = new dagre.graphlib.Graph({ compound: true, directed: true });
+	const g = new dagre.graphlib.Graph({
+		compound: true,
+		directed: true,
+	});
 
 	g.setGraph({
 		rankdir: options.rankdir || "LR",
+
 		nodesep: options.nodesep || 120, // vertical distance between nodes
 		ranksep: options.ranksep || 80, // horizontal distance between nodes
+
+		// NOTE: I don't really see a difference between these two
+		ranker: "network-simplex",
+		// ranker: "tight-tree",
 	});
 
 	// Add nodes to the graph
 	for (const node of nodes) {
 		if (node instanceof Group) {
 			g.setNode(node.id, {
-				label: "",
+				label: node.getLabel(),
 				// width: DEFAULT_NODE_SIZE.width * 3, // Suppose multiple nodes in a group
 				// height: DEFAULT_NODE_SIZE.height,
 			});
@@ -62,13 +70,16 @@ export function calculateLayout(
 	}
 
 	// Calculate layout
-	dagre.layout(g, {});
+	dagre.layout(g, { disableOptimalOrderHeuristic: true });
 
 	// Apply calculated positions to nodes
 	g.nodes().forEach((nodeId) => {
 		const dagreNode = g.node(nodeId);
 		const node = nodes.find((n) => n.id === nodeId);
 		if (node && dagreNode && node.position === undefined) {
+			// Hardcoded for now
+			console.log(dagreNode);
+
 			node.position = [dagreNode.x, dagreNode.y];
 		}
 	});

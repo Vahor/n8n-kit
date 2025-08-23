@@ -5,10 +5,10 @@ export const description = "Consume Pushcut API" as const;
 export const type = "n8n-nodes-base.pushcut" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"pushcutApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushcutNodeParameters {
-
     /**
      * Default: "notification"
      */
@@ -30,6 +30,4 @@ export interface PushcutNodeParameters {
      */
     readonly additionalFields?: { "devices"?: any[], "input"?: string, "text"?: string, "title"?: string };
 
-
 }
-

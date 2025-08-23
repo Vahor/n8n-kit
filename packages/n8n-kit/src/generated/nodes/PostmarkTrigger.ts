@@ -5,10 +5,10 @@ export const description = "Starts the workflow when Postmark events occur" as c
 export const type = "n8n-nodes-base.postmarkTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"postmarkApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostmarkTriggerNodeParameters {
-
     /**
      * Webhook events that will be enabled for that endpoint
      * Default: []
@@ -25,6 +25,4 @@ export interface PostmarkTriggerNodeParameters {
      */
     readonly includeContent?: boolean;
 
-
 }
-

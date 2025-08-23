@@ -7,31 +7,23 @@ import type { MicrosoftExcelV2NodeParameters } from "../nodes/MicrosoftExcelV2";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MicrosoftExcelV2Props extends NodeProps {
-
     readonly parameters: MicrosoftExcelV2NodeParameters;
     readonly microsoftExcelOAuth2ApiCredentials: Credentials<MicrosoftExcelOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Microsoft Excel API
  */
 export class MicrosoftExcelV2<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.microsoftExcel" as const;
     protected typeVersion = 2.1 as const;
 
     constructor(id: L, override props: MicrosoftExcelV2Props) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.microsoftExcelOAuth2ApiCredentials];
-
     }
-
 
 }

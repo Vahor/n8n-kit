@@ -5,10 +5,10 @@ export const description = "Use Google Gemini Embeddings" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;
+export const inputs = {} as const;
 export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsGoogleGeminiNodeParameters {
-
     /**
      * Type options: {"containerClass":"ndv-connection-hint-notice"}
      */
@@ -21,6 +21,4 @@ export interface EmbeddingsGoogleGeminiNodeParameters {
      */
     readonly modelName?: string;
 
-
 }
-

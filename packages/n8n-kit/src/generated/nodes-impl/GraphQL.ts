@@ -13,7 +13,6 @@ import type { GraphQLNodeParameters } from "../nodes/GraphQL";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface GraphQLProps extends NodeProps {
-
     readonly parameters: GraphQLNodeParameters;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
     readonly httpCustomAuthCredentials?: Credentials<HttpCustomAuthCredentials>;
@@ -22,28 +21,21 @@ export interface GraphQLProps extends NodeProps {
     readonly httpQueryAuthCredentials?: Credentials<HttpQueryAuthCredentials>;
     readonly oAuth1ApiCredentials?: Credentials<OAuth1ApiCredentials>;
     readonly oAuth2ApiCredentials?: Credentials<OAuth2ApiCredentials>;
-
 }
 
 /**
  * Makes a GraphQL request and returns the received data
  */
 export class GraphQL<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.graphql" as const;
     protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props?: GraphQLProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.httpBasicAuthCredentials, this.props!.httpCustomAuthCredentials, this.props!.httpDigestAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.httpQueryAuthCredentials, this.props!.oAuth1ApiCredentials, this.props!.oAuth2ApiCredentials];
-
     }
-
 
 }

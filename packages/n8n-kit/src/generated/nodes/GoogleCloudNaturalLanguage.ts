@@ -5,10 +5,10 @@ export const description = "Consume Google Cloud Natural Language API" as const;
 export const type = "n8n-nodes-base.googleCloudNaturalLanguage" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"googleCloudNaturalLanguageOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleCloudNaturalLanguageNodeParameters {
-
     /**
      * Default: "document"
      */
@@ -40,6 +40,4 @@ export interface GoogleCloudNaturalLanguageNodeParameters {
      */
     readonly options?: { "documentType"?: "HTML" | "PLAIN_TEXT", "encodingType"?: "NONE" | "UTF8" | "UTF16" | "UTF32", "language"?: "ar" | "zh" | "zh-Hant" | "nl" | "en" | "fr" | "de" | "id" | "it" | "ja" | "ko" | "pt" | "es" | "th" | "tr" | "vi" };
 
-
 }
-

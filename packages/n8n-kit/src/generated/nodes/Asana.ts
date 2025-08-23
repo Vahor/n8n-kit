@@ -5,10 +5,10 @@ export const description = "Consume Asana REST API" as const;
 export const type = "n8n-nodes-base.asana" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"asanaApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}},"testedBy":{"request":{"method":"GET","url":"/users/me"}}},{"name":"asanaOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AsanaNodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -136,6 +136,4 @@ export interface AsanaNodeParameters {
      */
     readonly updateFields?: { "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "name"?: string, "notes"?: string, "owner"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "team"?: string };
 
-
 }
-

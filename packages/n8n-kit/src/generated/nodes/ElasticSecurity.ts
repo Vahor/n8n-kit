@@ -5,10 +5,10 @@ export const description = "Consume the Elastic Security API" as const;
 export const type = "n8n-nodes-base.elasticSecurity" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"elasticSecurityApi","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ElasticSecurityNodeParameters {
-
     /**
      * Default: "case"
      */
@@ -184,6 +184,4 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly orgId?: string;
 
-
 }
-

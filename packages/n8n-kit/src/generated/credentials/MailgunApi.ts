@@ -8,15 +8,12 @@ export const name = "mailgunApi" as const;
  * documentationUrl: mailgun
  */
 export interface MailgunApiCredentials {
-
     /**
      * The configured mailgun API domain
      * Default: "api.mailgun.net"
      */
     readonly "apiDomain"?: "api.eu.mailgun.net" | "api.mailgun.net";
 
-    /**
-     */
     readonly "emailDomain"?: string;
 
     /**
@@ -25,5 +22,4 @@ export interface MailgunApiCredentials {
     readonly "apiKey"?: string;
 
     readonly __name: "mailgunApi";
-
 }

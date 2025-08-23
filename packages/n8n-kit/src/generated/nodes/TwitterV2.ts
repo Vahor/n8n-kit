@@ -5,10 +5,10 @@ export const description = "Post, like, and search tweets, send messages, search
 export const type = "n8n-nodes-base.twitter" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"twitterOAuth2Api","required":true}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwitterV2NodeParameters {
-
     /**
      * Default: "tweet"
      */
@@ -98,6 +98,4 @@ export interface TwitterV2NodeParameters {
      */
     readonly me?: boolean;
 
-
 }
-

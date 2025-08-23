@@ -8,7 +8,6 @@ export const name = "slackApi" as const;
  * documentationUrl: slack
  */
 export interface SlackApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,10 +19,7 @@ export interface SlackApiCredentials {
      */
     readonly "signatureSecret"?: string;
 
-    /**
-     */
     readonly "notice"?: string;
 
     readonly __name: "slackApi";
-
 }

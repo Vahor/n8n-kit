@@ -5,10 +5,10 @@ export const description = "Starts the workflow when a webhook is called" as con
 export const type = "n8n-nodes-base.webhook" as const;
 export const version = 2.1 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"authentication":["jwtAuth"]}}}] as const;
+export const inputs = {} as const;
 export const outputs = {} as const;
 
 export interface WebhookNodeParameters {
-
     /**
      * Whether to allow the webhook to listen for multiple HTTP methods
      */
@@ -67,6 +67,4 @@ export interface WebhookNodeParameters {
      */
     readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "responsePropertyName"?: string, "rawBody"?: boolean, "responseCode"?: { "values": any }, "responseContentType"?: string, "responseData"?: string, "responseHeaders"?: { "entries": any } };
 
-
 }
-

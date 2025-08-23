@@ -8,7 +8,6 @@ export const name = "dropboxApi" as const;
  * documentationUrl: dropbox
  */
 export interface DropboxApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -20,5 +19,4 @@ export interface DropboxApiCredentials {
     readonly "accessType"?: "folder" | "full";
 
     readonly __name: "dropboxApi";
-
 }

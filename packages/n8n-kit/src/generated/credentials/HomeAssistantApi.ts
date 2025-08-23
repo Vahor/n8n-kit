@@ -8,9 +8,6 @@ export const name = "homeAssistantApi" as const;
  * documentationUrl: homeAssistant
  */
 export interface HomeAssistantApiCredentials {
-
-    /**
-     */
     readonly "host"?: string;
 
     /**
@@ -18,8 +15,6 @@ export interface HomeAssistantApiCredentials {
      */
     readonly "port"?: number;
 
-    /**
-     */
     readonly "ssl"?: boolean;
 
     /**
@@ -28,5 +23,4 @@ export interface HomeAssistantApiCredentials {
     readonly "accessToken"?: string;
 
     readonly __name: "homeAssistantApi";
-
 }

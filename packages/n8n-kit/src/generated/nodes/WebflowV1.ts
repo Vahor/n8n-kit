@@ -5,10 +5,10 @@ export const description = "Consume the Webflow API" as const;
 export const type = "n8n-nodes-base.webflow" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"webflowApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"webflowOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WebflowV1NodeParameters {
-
     /**
      * Default: "accessToken"
      */
@@ -64,6 +64,4 @@ export interface WebflowV1NodeParameters {
      */
     readonly limit?: number;
 
-
 }
-

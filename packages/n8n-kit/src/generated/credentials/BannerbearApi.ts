@@ -8,12 +8,10 @@ export const name = "bannerbearApi" as const;
  * documentationUrl: bannerbear
  */
 export interface BannerbearApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "bannerbearApi";
-
 }

@@ -8,7 +8,6 @@ export const name = "wiseApi" as const;
  * documentationUrl: wise
  */
 export interface WiseApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
@@ -26,5 +25,4 @@ export interface WiseApiCredentials {
     readonly "privateKey"?: string;
 
     readonly __name: "wiseApi";
-
 }

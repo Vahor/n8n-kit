@@ -4,10 +4,10 @@
 export const description = "Sets values on items and optionally remove other values" as const;
 export const type = "n8n-nodes-base.set" as const;
 export const version = 2 as const;
+export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SetV1NodeParameters {
-
     /**
      * Whether only the values set on this node should be kept and all others removed
      */
@@ -25,6 +25,4 @@ export interface SetV1NodeParameters {
      */
     readonly options?: { "dotNotation"?: boolean };
 
-
 }
-

@@ -7,31 +7,23 @@ import type { MailgunNodeParameters } from "../nodes/Mailgun";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface MailgunProps extends NodeProps {
-
     readonly parameters: MailgunNodeParameters;
     readonly mailgunApiCredentials: Credentials<MailgunApiCredentials>;
-
 }
 
 /**
  * Sends an email via Mailgun
  */
 export class Mailgun<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.mailgun" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: MailgunProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.mailgunApiCredentials];
-
     }
-
 
 }

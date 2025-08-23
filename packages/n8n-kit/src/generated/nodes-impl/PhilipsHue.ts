@@ -7,31 +7,23 @@ import type { PhilipsHueNodeParameters } from "../nodes/PhilipsHue";
 import { Node, type NodeProps } from "../../nodes";
 
 export interface PhilipsHueProps extends NodeProps {
-
     readonly parameters: PhilipsHueNodeParameters;
     readonly philipsHueOAuth2ApiCredentials: Credentials<PhilipsHueOAuth2ApiCredentials>;
-
 }
 
 /**
  * Consume Philips Hue API
  */
 export class PhilipsHue<L extends string> extends Node<L> {
-
     protected type = "n8n-nodes-base.philipsHue" as const;
     protected typeVersion = 1 as const;
 
     constructor(id: L, override props: PhilipsHueProps) {
-
         super(id, props);
-
     }
 
     override getCredentials() {
-
         return [this.props!.philipsHueOAuth2ApiCredentials];
-
     }
-
 
 }

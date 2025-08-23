@@ -8,7 +8,6 @@ export const name = "dropboxOAuth2Api" as const;
  * documentationUrl: dropbox
  */
 export interface DropboxOAuth2ApiCredentials {
-
     /**
      * Default: "authorizationCode"
      */
@@ -45,5 +44,4 @@ export interface DropboxOAuth2ApiCredentials {
     readonly "accessType"?: "folder" | "full";
 
     readonly __name: "dropboxOAuth2Api";
-
 }

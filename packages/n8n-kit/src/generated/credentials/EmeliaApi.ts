@@ -8,12 +8,10 @@ export const name = "emeliaApi" as const;
  * documentationUrl: emelia
  */
 export interface EmeliaApiCredentials {
-
     /**
      * Type options: {"password":true}
      */
     readonly "apiKey"?: string;
 
     readonly __name: "emeliaApi";
-
 }
