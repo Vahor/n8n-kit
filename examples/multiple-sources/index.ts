@@ -12,19 +12,10 @@ import {
 	TextSplitterRecursiveCharacterTextSplitter,
 	ToolVectorStore,
 	VectorStorePinecone,
-	VectorStorePineconeInsert,
 } from "@vahor/n8n-kit/nodes/generated";
 
 // 	https://n8n.io/workflows/2753-rag-chatbot-for-company-documents-using-google-drive-and-gemini/
 
-// const googleApiCredentials = Credentials.byId({
-// 	name: "googleApi",
-// 	id: "some-id",
-// });
-// const gmailApiCredentials = Credentials.byId({
-// 	name: "gmailOAuth2",
-// 	id: "some-id",
-// });
 const googleDriveApiCredentials = Credentials.byId({
 	name: "googleDriveOAuth2Api",
 	id: "some-id",
@@ -132,15 +123,18 @@ const workflow = new Workflow("my-workflow", {
 				}),
 			)
 			.next(
-				new VectorStorePineconeInsert("upload-to-pinecone", {
+				new VectorStorePinecone("upload-to-pinecone", {
 					label: "Pinecone Vector Store",
 					pineconeApiCredentials: pineconeApiCredentials,
 					parameters: {
-						mode: "insert", // TODO: should be allowed
+						mode: "insert",
 						pineconeIndex,
 					},
 				})
-					.withEmbedding(
+					// Here the code gen was not able to parse the custom type, but it allowed us to use a .withCustom() method
+					// so we use it here. The connection type is ai_embedding
+					.withCustom(
+						"ai_embedding",
 						new EmbeddingsGoogleGemini("embeddings-google-gemini", {
 							label: "Embeddings Google Gemini",
 							googlePalmApiCredentials,
@@ -149,7 +143,8 @@ const workflow = new Workflow("my-workflow", {
 							},
 						}),
 					)
-					.withDocument(
+					.withCustom(
+						"ai_document",
 						new DocumentDefaultDataLoader("document-to-vector-store", {
 							label: "Default Data Loader",
 							parameters: {
@@ -157,21 +152,15 @@ const workflow = new Workflow("my-workflow", {
 								dataType: "binary",
 								binaryMode: "specificField",
 							},
-						})
-							// Here the code gen was not able to parse the custom type, but it allowed us to use a .withCustom() method
-							// so we use it here. The connection type is ai_textSplitter
-							.withCustom(
-								"ai_textSplitter",
-								new TextSplitterRecursiveCharacterTextSplitter(
-									"text-splitter",
-									{
-										label: "Recursive Character Text Splitter",
-										parameters: {
-											chunkOverlap: 100,
-										},
-									},
-								),
-							),
+						}).withCustom(
+							"ai_textSplitter",
+							new TextSplitterRecursiveCharacterTextSplitter("text-splitter", {
+								label: "Recursive Character Text Splitter",
+								parameters: {
+									chunkOverlap: 100,
+								},
+							}),
+						),
 					),
 			),
 
@@ -224,6 +213,7 @@ const workflow = new Workflow("my-workflow", {
 							description: "Retrieve information from any company documents",
 						},
 					})
+						// Here it worked so there's no withCustom but directly a withVectorStore
 						.withVectorStore(
 							new VectorStorePinecone("pinecone-vector-store-retrieval", {
 								label: "Pinecone Vector Store (Retrieval)",
