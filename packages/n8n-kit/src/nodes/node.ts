@@ -10,14 +10,14 @@ export type NodePosition = [x: number, y: number];
 
 /**
  * Size of the node in the n8n workflow editor.
- * Only used for the generation of the graph.
+ * @default DEFAULT_NODE_SIZE
  */
 export interface NodeSize {
-	width: number;
-	height: number;
+	width?: number;
+	height?: number;
 }
 
-export const DEFAULT_NODE_SIZE: NodeSize = {
+export const DEFAULT_NODE_SIZE: Required<NodeSize> = {
 	width: 110,
 	height: 110,
 };

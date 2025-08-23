@@ -18,10 +18,8 @@ interface StickyNoteBaseProps {
 	position: NodePosition;
 
 	content: string;
-	// TODO: should be optional, and auto-generated
-	height: number;
-	// TODO: should be optional, and auto-generated
-	width: number;
+	height?: number;
+	width?: number;
 
 	color?: keyof typeof StickyNoteColors;
 }

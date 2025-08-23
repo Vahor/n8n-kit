@@ -68,7 +68,7 @@ export function calculateLayout(
 	g.nodes().forEach((nodeId) => {
 		const dagreNode = g.node(nodeId);
 		const node = nodes.find((n) => n.id === nodeId);
-		if (node && dagreNode) {
+		if (node && dagreNode && node.position === undefined) {
 			node.position = [dagreNode.x, dagreNode.y];
 		}
 	});

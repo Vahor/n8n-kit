@@ -256,7 +256,7 @@
 			"position": [440, -240],
 			"parameters": {
 				"width": 320,
-				"content": "## Add docuemnts to vector store when updating or creating new documents in Google Drive"
+				"content": "## Add documents to vector store when updating or creating new documents in Google Drive"
 			},
 			"typeVersion": 1
 		},
