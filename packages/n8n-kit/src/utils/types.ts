@@ -12,7 +12,11 @@ export type IsRecord<T> = string extends keyof T ? true : false;
 
 export type IsAny<T> = 0 extends 1 & T ? true : false;
 
-export type IsNullable<T> = T extends null ? true : false;
+export type IsNullable<T> = IsNever<T> extends true
+	? false
+	: T extends null
+		? true
+		: false;
 
 export type Primitive =
 	| string
@@ -79,3 +83,18 @@ export type TypeOfField<
 export type Last<T extends any[]> = T extends [...any[], infer _Last]
 	? _Last
 	: never;
+
+// https://github.com/arktypeio/arktype/blob/91f1343ccef00becf81ba65d22aa161c8a29e8fb/ark/util/errors.ts#L44
+/** "Hair Space" character, used  as a non-rendered sentinel for an error message string:
+ *  https://www.compart.com/en/unicode/U+200A
+ */
+export const zeroWidthSpace = " ";
+
+/** "Hair Space" character, used  as a non-rendered sentinel for an error message string:
+ *  https://www.compart.com/en/unicode/U+200A
+ */
+export type ZeroWidthSpace = typeof zeroWidthSpace;
+
+export type ErrorMessage<message extends string = string> =
+	`${message}${ZeroWidthSpace}`;
+// end

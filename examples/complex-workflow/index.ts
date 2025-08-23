@@ -3,13 +3,10 @@ import {
 	App,
 	Chain,
 	Group,
-	If,
-	NoOp,
 	type,
-	Webhook,
-	WebhookResponse,
 	Workflow,
 } from "@vahor/n8n-kit";
+import { If, NoOp, Webhook, WebhookResponse } from "@vahor/n8n-kit/nodes";
 
 // This workflow does not have a real use case, it's just to test weird things
 
@@ -22,15 +19,19 @@ const handleErrorMessageChain = <Id extends string>(
 		workflow,
 		`${id}-handle-error-message-group`,
 		{
-			content: "Handle error message",
-			color: "RED",
+			parameters: {
+				content: "Handle error message",
+				color: "RED",
+			},
 		},
 		Chain.start(new NoOp(id)).multiple([
 			new WebhookResponse(`${id}-response`, {
-				respondWith: "json",
-				responseBody: errorResponse,
-				options: {
-					responseCode: 400,
+				parameters: {
+					respondWith: "json",
+					responseBody: errorResponse,
+					options: {
+						responseCode: 400,
+					},
 				},
 			}),
 		]),
@@ -77,7 +78,9 @@ const checkValidExecutionType = ({
 		workflow,
 		"check-valid-execution-type-group",
 		{
-			content: "Check valid execution type",
+			parameters: {
+				content: "Check valid execution type",
+			},
 			filterNodes: (node) => {
 				return (
 					node.id.startsWith("invalid-execution-type") ||
@@ -113,7 +116,7 @@ const checkValidExecutionType = ({
 
 const entryNode = Chain.start(
 	new Webhook("webhook", {
-		name: "Webhook",
+		label: "Webhook",
 		httpMethod: "POST",
 		path: "abc",
 		responseMode: "responseNode",

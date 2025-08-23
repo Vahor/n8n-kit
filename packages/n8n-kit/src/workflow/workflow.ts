@@ -2,7 +2,7 @@ import type { Type } from "arktype";
 import { prefix } from "../constants";
 import { BaseNode } from "../nodes/node";
 import { shortHash, validateIdentifier } from "../utils/slugify";
-import type { State } from "./chain";
+import { Placeholder, type State } from "./chain";
 import { Chain } from "./chain/chain";
 import { Group } from "./group";
 import { calculateLayout } from "./layout";
@@ -141,22 +141,37 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		const layoutNodes = [...nodes, ...groups];
 		calculateLayout(layoutNodes);
 
-		type Connection = { node: string; type: "main"; index: number };
-		const connections: Record<string, { main: Connection[][] }> = {};
+		type Connection = { node: string; type: string; index: number };
+		const connections: Record<string, { [key: string]: Connection[][] }> = {};
 		for (const node of nodes) {
 			if (node instanceof Group) continue;
-			for (const endState of node.listOutgoing()) {
-				connections[node.getName()] ??= { main: [] };
-				const nodeConnection = connections[node.getName()]!;
-				const connectionOptions = node["~getConnectionOptions"](endState.id);
+			for (let endState of node.listOutgoing()) {
+				if (endState instanceof Placeholder) {
+					const _endState = endState;
+					endState = nodes.find((n) => n.id === endState.id)!;
+					if (!endState) {
+						throw new Error(`Placeholder ${_endState.id} not found`);
+					}
+				}
+				if (!(endState instanceof BaseNode)) continue;
 
-				if (!nodeConnection.main[connectionOptions.from]) {
-					nodeConnection.main[connectionOptions.from] = [];
+				const connectionOptions = node["~getConnectionOptions"](endState.id);
+				const connectionType = connectionOptions.type ?? "main";
+				const direction = connectionOptions.direction ?? "output";
+
+				const from = direction === "output" ? node : endState;
+				const to = direction === "output" ? endState : node;
+
+				connections[from.getLabel()] ??= { [connectionType]: [] };
+				const nodeConnection = connections[from.getLabel()]!;
+
+				if (!nodeConnection[connectionType]![connectionOptions.from]) {
+					nodeConnection[connectionType]![connectionOptions.from] = [];
 				}
 
-				nodeConnection.main[connectionOptions.from]!.push({
-					node: endState.id,
-					type: "main",
+				nodeConnection[connectionType]![connectionOptions.from]!.push({
+					node: to.getLabel(),
+					type: connectionType,
 					index: connectionOptions.to,
 				});
 			}

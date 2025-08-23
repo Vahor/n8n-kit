@@ -1,11 +1,6 @@
-import {
-	App,
-	Chain,
-	Code,
-	ManualTrigger,
-	Merge,
-	Workflow,
-} from "@vahor/n8n-kit";
+import { App, Chain, Workflow } from "@vahor/n8n-kit";
+import { Merge } from "@vahor/n8n-kit/nodes";
+import { Code, ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
 // https://n8n.io/workflows/655-merge-greetings-with-the-users-based-on-the-language/
 
@@ -14,7 +9,8 @@ const workflow = new Workflow("merge-example", {
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.multiple([
 			new Code("Sample data (name + language)", {
-				jsCode: `
+				parameters: {
+					jsCode: `
 return [
   {
     json: {
@@ -36,9 +32,11 @@ return [
   }
 ];
 `,
+				},
 			}),
 			new Code("Sample data (greeting + language)", {
-				jsCode: `
+				parameters: {
+					jsCode: `
 return [
   {
     json: {
@@ -54,13 +52,16 @@ return [
   }
 ];
 `,
+				},
 			}),
 		])
 		.connect(
 			["Sample data (name + language)", "Sample data (greeting + language)"],
 			new Merge("Merge (name + language + greeting)", {
-				mode: "combine",
-				fieldsToMatchString: "language",
+				parameters: {
+					mode: "combine",
+					fieldsToMatchString: "language",
+				},
 			}),
 			{ "Sample data (greeting + language)": { to: 1 } },
 		),

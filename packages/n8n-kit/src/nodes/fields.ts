@@ -1,18 +1,22 @@
 import type { Type } from "arktype";
-import { name, type SetV2NodeParameters, version } from "generated/nodes/SetV2";
+import {
+	type SetV2NodeParameters,
+	type,
+	version,
+} from "../generated/nodes/SetV2";
 import type { IsNever } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import { Node, type NodeProps } from "./node";
 
-interface SetBaseProps extends SetV2NodeParameters {}
-
-export interface SetProps extends NodeProps, SetBaseProps {
-	assignments?: Array<{
-		id?: string;
-		name: string;
-		type: Type;
-		value: ExpressionBuilder<any, any> | string;
-	}>;
+export interface SetProps extends NodeProps {
+	parameters: SetV2NodeParameters & {
+		assignments?: Array<{
+			id?: string;
+			name: string;
+			type: Type;
+			value: ExpressionBuilder<any, any> | string;
+		}>;
+	};
 }
 
 type AssignementsToObject<
@@ -33,16 +37,16 @@ type AssignementsToObject<
 
 export class Fields<L extends string, P extends SetProps> extends Node<
 	L,
-	IsNever<P["assignments"]> extends true
+	IsNever<P["parameters"]["assignments"]> extends true
 		? never
-		: AssignementsToObject<NonNullable<P["assignments"]>>
+		: AssignementsToObject<NonNullable<P["parameters"]["assignments"]>>
 > {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	public constructor(
 		id: L,
-		public readonly props: P,
+		override props: P,
 	) {
 		super(id, props);
 	}
@@ -50,8 +54,8 @@ export class Fields<L extends string, P extends SetProps> extends Node<
 	override "~validate"(): void {
 		super["~validate"]();
 		// if mode is manual, then assignments are required
-		if (this.props.mode === "manual") {
-			const assignments = this.props.assignments;
+		if (this.props.parameters.mode === "manual") {
+			const assignments = this.props.parameters.assignments;
 			if (assignments == null) {
 				throw new Error(`Mode is 'manual' but 'assignments' is undefined.`);
 			}
@@ -65,18 +69,12 @@ export class Fields<L extends string, P extends SetProps> extends Node<
 			}
 		}
 
-		if (this.props.mode === "raw") {
-			if (this.props.fields == null) {
+		if (this.props.parameters.mode === "raw") {
+			if (this.props.parameters.fields == null) {
 				throw new Error(`Mode is 'raw' but 'fields' is undefined.`);
 			}
 
 			throw new Error(`Raw mode is not supported yet.`);
 		}
-	}
-
-	override getParameters() {
-		return {
-			assignments: this.props.assignments,
-		};
 	}
 }

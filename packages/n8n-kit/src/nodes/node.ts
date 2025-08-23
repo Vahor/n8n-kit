@@ -10,20 +10,21 @@ export type NodePosition = [x: number, y: number];
 
 /**
  * Size of the node in the n8n workflow editor.
- * Only used for the generation of the graph.
+ * @default DEFAULT_NODE_SIZE
  */
 export interface NodeSize {
-	width: number;
-	height: number;
+	width?: number;
+	height?: number;
 }
 
-export const DEFAULT_NODE_SIZE: NodeSize = {
-	width: 110,
-	height: 110,
+export const DEFAULT_NODE_SIZE: Required<NodeSize> = {
+	width: 120,
+	height: 120,
 };
 
 export type NodeProps = {
-	name?: string;
+	label?: string;
+	parameters?: unknown;
 };
 
 export abstract class BaseNode<
@@ -35,23 +36,28 @@ export abstract class BaseNode<
 	protected abstract readonly type: string;
 	protected abstract typeVersion: number;
 
-	public name?: string;
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
 	public groupIds: string[] = [];
 
-	abstract getParameters(): object;
-	public getCredentials():
-		| Credentials<any>
-		| Array<Credentials<any>>
-		| undefined {
+	public readonly props?: NodeProps;
+
+	public getParameters() {
+		return this.props?.parameters ?? {};
+	}
+
+	public getCredentials(): Array<Credentials<any> | undefined> | undefined {
 		return undefined;
 	}
 
 	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
-		this.name = props?.name;
+		this.props = props;
+	}
+
+	get label() {
+		return this.props?.label;
 	}
 
 	public "~setParent"(parent: Workflow) {
@@ -76,29 +82,28 @@ export abstract class BaseNode<
 		return `${parentId}/${this.id}`;
 	}
 
-	public getName() {
-		return this.name ?? this.id;
+	public getLabel() {
+		return this.label ?? this.id;
 	}
 
 	private credentialsToNode() {
-		let credentials = this.getCredentials();
+		const credentials = this.getCredentials();
 		if (!credentials) return undefined;
-		if (!Array.isArray(credentials)) credentials = [credentials];
 		return Object.fromEntries(
-			credentials.map((cred) => [cred.name, { id: cred.n8nCredentialsId }]),
+			credentials
+				.filter(Boolean)
+				.map((cred) => [cred!.type, { id: cred!.n8nCredentialsId }]),
 		);
 	}
 
 	toNode() {
-		// Often getParameters() returns this.props. So we want to remove the props from the parameters
-		const { name: _, ...rest } = this.getParameters() as Record<string, any>;
 		return {
 			id: this.id,
-			name: this.getName(),
+			name: this.getLabel(),
 			type: this.type,
 			position: this.position,
 			typeVersion: this.typeVersion,
-			parameters: rest,
+			parameters: this.getParameters(),
 			credentials: this.credentialsToNode(),
 		};
 	}

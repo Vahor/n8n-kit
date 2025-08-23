@@ -1,11 +1,12 @@
-import { BaseNode, type StickyNoteProps } from "../../nodes";
+import { BaseNode, type NodeProps, type StickyNoteProps } from "../../nodes";
 import { StickyNote } from "../../nodes/sticky-note";
 import type { Chain, ChainContext, State } from "../chain";
 import { GROUP_DEFAULT_POSITION } from "../layout";
 import type { Workflow } from "../workflow";
 
 interface GroupProps
-	extends Omit<StickyNoteProps, "position" | "width" | "height"> {
+	extends Omit<NodeProps, "parameters">,
+		Omit<StickyNoteProps["parameters"], "width" | "height"> {
 	filterNodes?: (node: State, index: number) => boolean;
 }
 
@@ -21,10 +22,14 @@ export class Group<
 		public readonly chain: Chain<C_CC, C_Ids>,
 	) {
 		super(id, {
-			..._props,
 			position: GROUP_DEFAULT_POSITION,
-			width: 0,
-			height: 0,
+			parameters: {
+				..._props,
+				// @ts-expect-error: remove filterNodes
+				filterNodes: undefined,
+				width: 0,
+				height: 0,
+			},
 		});
 		workflow.addToDynamicalyAddedNodes(this);
 		this.endStates = [this];

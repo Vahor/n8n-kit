@@ -1,0 +1,29 @@
+// GENERATED FILE, DO NOT EDIT
+// see scripts/generate-nodes-impl.ts
+
+import type { MicrosoftOneDriveOAuth2ApiCredentials } from "../credentials/MicrosoftOneDriveOAuth2Api.ts";
+import type { Credentials } from "../../credentials";
+import type { MicrosoftOneDriveTriggerNodeParameters } from "../nodes/MicrosoftOneDriveTrigger";
+import { Node, type NodeProps } from "../../nodes";
+
+export interface MicrosoftOneDriveTriggerProps extends NodeProps {
+    readonly parameters: MicrosoftOneDriveTriggerNodeParameters;
+    readonly microsoftOneDriveOAuth2ApiCredentials: Credentials<MicrosoftOneDriveOAuth2ApiCredentials>;
+}
+
+/**
+ * Trigger for Microsoft OneDrive API.
+ */
+export class MicrosoftOneDriveTrigger<L extends string> extends Node<L> {
+    protected type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
+    protected typeVersion = 1 as const;
+
+    constructor(id: L, override props: MicrosoftOneDriveTriggerProps) {
+        super(id, props);
+    }
+
+    override getCredentials() {
+        return [this.props!.microsoftOneDriveOAuth2ApiCredentials];
+    }
+
+}

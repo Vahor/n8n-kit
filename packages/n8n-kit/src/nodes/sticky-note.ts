@@ -1,4 +1,8 @@
-import { name, version } from "generated/nodes/StickyNote";
+import {
+	type StickyNoteNodeParameters,
+	type,
+	version,
+} from "../generated/nodes/StickyNote";
 
 import { NO_END_STATES } from "../workflow/chain/chain";
 import type { INextable } from "../workflow/chain/types";
@@ -14,45 +18,41 @@ export const StickyNoteColors = {
 	GRAY: 7,
 };
 
-interface StickyNoteBaseProps {
+export interface StickyNoteProps extends NodeProps {
 	position: NodePosition;
 
-	content: string;
-	// TODO: should be optional, and auto-generated
-	height: number;
-	// TODO: should be optional, and auto-generated
-	width: number;
-
-	color?: keyof typeof StickyNoteColors;
+	parameters: Omit<StickyNoteNodeParameters, "color"> & {
+		color?: keyof typeof StickyNoteColors;
+	};
 }
 
-export interface StickyNoteProps extends StickyNoteBaseProps, NodeProps {}
-
 export class StickyNote extends BaseNode {
-	public override endStates: INextable[] = NO_END_STATES;
+	override endStates: INextable[] = NO_END_STATES;
 
-	protected type = `n8n-nodes-base.${name}` as const;
+	protected type = type;
 	protected typeVersion = version;
 
 	constructor(
 		id: string,
-		public readonly props: StickyNoteProps,
+		override props: StickyNoteProps,
 	) {
-		super(id);
+		super(id, props);
 		this.size = {
-			width: props.width,
-			height: props.height,
+			width: props.parameters.width,
+			height: props.parameters.height,
 		};
 		this.position = props.position;
 	}
 
-	getParameters() {
+	override getParameters() {
 		return {
-			content: this.props.content,
+			...this.props.parameters,
 			height: this.size.height,
 			width: this.size.width,
 
-			color: this.props.color ? StickyNoteColors[this.props.color] : 1,
+			color: this.props.parameters.color
+				? StickyNoteColors[this.props.parameters.color]
+				: undefined,
 		};
 	}
 }

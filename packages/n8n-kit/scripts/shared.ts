@@ -37,9 +37,9 @@ export const toTypescriptType = (
 					// @ts-expect-error: TODO: fix this
 					.map((opt) => `"${opt.value}"`)
 					.join(" | ");
-				return `(${values})[]` || "string[]";
+				if (values) return `(${values})[]`;
 			}
-			return "string[]";
+			return "any[]";
 
 		case "fixedCollection":
 			if (property.options && Array.isArray(property.options)) {
@@ -95,7 +95,39 @@ export const toTypescriptType = (
 			}
 			return "any[]";
 
+		case "resourceLocator":
+			return `
+{
+	value: string,
+	mode: ${property.modes!.map((mode) => `"${mode.name}"`).join(" | ")},
+}`.trim();
+
 		default:
 			return mapPropertyType(property.type);
 	}
 };
+
+export const isLangChainNode = (nodePath: string) => {
+	return nodePath.includes("@n8n/nodes-langchain");
+};
+
+export const getNodeName = (nodePath: string) => {
+	return nodePath.split("/").pop()?.split(".")[0]!;
+};
+
+export const capitalize = (str: string) => {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+export const validCustomType = [
+	"ai_textSplitter",
+	"ai_embedding",
+	"ai_document",
+	"ai_languageModel",
+	"ai_memory",
+	"ai_tool",
+	"ai_outputParser",
+];
+export const validCustomTypeAsStringUnion = validCustomType
+	.map((type) => `"${type}"`)
+	.join(" | ");

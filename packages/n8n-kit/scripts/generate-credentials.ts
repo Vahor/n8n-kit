@@ -5,8 +5,10 @@ import { globSync } from "tinyglobby";
 import { toTypescriptType } from "./shared";
 
 const allNodes = globSync(
-	// "../../../node_modules/n8n-nodes-base/dist/nodes/**/**/*.node.js",
-	"../vendor/n8n/packages/nodes-base/credentials/**/**/*.credentials.ts",
+	[
+		"../vendor/n8n/packages/nodes-base/credentials/**/**/*.credentials.ts",
+		"../vendor/n8n/packages/@n8n/nodes-langchain/**/**/*.credentials.ts",
+	],
 	{
 		cwd: path.resolve(__dirname),
 	},
@@ -40,7 +42,7 @@ const generateEntrypoint = async () => {
 	code.line();
 
 	code.closeFile("index.ts");
-	await code.save("generated/credentials");
+	await code.save("src/generated/credentials");
 };
 
 const generateTypescriptCredentialsOutput = async (
@@ -62,24 +64,28 @@ const generateTypescriptCredentialsOutput = async (
 	code.line(` * displayName: ${result.displayName}`);
 	code.line(` * documentationUrl: ${result.documentationUrl}`);
 	code.line(` */`);
-	code.line(`export interface ${result.__nodename}Credentials {`);
-	code.indent();
+	code.openBlock(`export interface ${result.__nodename}Credentials`);
 
 	const visited = new Set<string>();
 	for (const property of result.properties) {
 		if (visited.has(property.name)) continue;
 		visited.add(property.name);
-		code.line(`/**`);
-		if (property.description) {
-			code.line(` * ${property.description}`);
+		const comments = [
+			property.description?.replaceAll("*/", "*<space>/"),
+			property.default && `Default: ${JSON.stringify(property.default)}`,
+			property.typeOptions &&
+				Object.keys(property.typeOptions).length > 0 &&
+				`Type options: ${JSON.stringify(property.typeOptions)}`,
+		].filter(Boolean) as string[];
+
+		if (comments.length > 0) {
+			code.line(`/**`);
+			for (const comment of comments) {
+				code.line(` * ${comment}`);
+			}
+			code.line(` */`);
 		}
-		if (property.default) {
-			code.line(` * Default: ${JSON.stringify(property.default)}`);
-		}
-		if (property.typeOptions) {
-			code.line(` * Type options: ${JSON.stringify(property.typeOptions)}`);
-		}
-		code.line(` */`);
+
 		code.line(
 			`readonly ${JSON.stringify(property.name)}${property.required ? "" : "?"}: ${toTypescriptType(property)};`,
 		);
@@ -87,14 +93,11 @@ const generateTypescriptCredentialsOutput = async (
 	}
 
 	code.line(`readonly __name: "${result.name}";`);
-	code.line();
 
-	code.unindent();
-	code.line(`}`);
-	code.line();
+	code.closeBlock();
 
 	code.closeFile(outputFile);
-	await code.save("generated/credentials");
+	await code.save("src/generated/credentials");
 };
 
 const count = allNodes.length;

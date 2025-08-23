@@ -1,0 +1,29 @@
+// GENERATED FILE, DO NOT EDIT
+// see scripts/generate-nodes-impl.ts
+
+import type { StravaOAuth2ApiCredentials } from "../credentials/StravaOAuth2Api.ts";
+import type { Credentials } from "../../credentials";
+import type { StravaNodeParameters } from "../nodes/Strava";
+import { Node, type NodeProps } from "../../nodes";
+
+export interface StravaProps extends NodeProps {
+    readonly parameters: StravaNodeParameters;
+    readonly stravaOAuth2ApiCredentials: Credentials<StravaOAuth2ApiCredentials>;
+}
+
+/**
+ * Consume Strava API
+ */
+export class Strava<L extends string> extends Node<L> {
+    protected type = "n8n-nodes-base.strava" as const;
+    protected typeVersion = 1.1 as const;
+
+    constructor(id: L, override props: StravaProps) {
+        super(id, props);
+    }
+
+    override getCredentials() {
+        return [this.props!.stravaOAuth2ApiCredentials];
+    }
+
+}

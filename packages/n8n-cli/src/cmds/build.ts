@@ -11,9 +11,16 @@ import { createFolder, resolvePath } from "../files";
 
 export const command = "build";
 export const description = "Build app and save json files";
-export const builder = (yargs: Argv) => yargs.showHelpOnFail(true);
+export const builder = (yargs: Argv) =>
+	yargs.showHelpOnFail(true).option("indent", {
+		type: "number",
+		describe: "Indent json files",
+		default: 0,
+	});
 
-type Options = GlobalOptions & {};
+type Options = GlobalOptions & {
+	indent: number;
+};
 
 export const loadApplication = async () => {
 	logger.log("Loading application...");
@@ -59,7 +66,7 @@ export const handler = async (options: Options) => {
 		const workflowPath = path.join(workflowsFolder, `${workflow.id}.json`);
 
 		const buildWorkflow = workflow.build();
-		const workflowJson = JSON.stringify(buildWorkflow);
+		const workflowJson = JSON.stringify(buildWorkflow, null, options.indent);
 
 		if (!options.dryRun) {
 			await fs.promises.writeFile(workflowPath, workflowJson);

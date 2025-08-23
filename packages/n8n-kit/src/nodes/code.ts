@@ -1,11 +1,14 @@
 import type { Type } from "arktype";
-import { type CodeNodeParameters, name, version } from "generated/nodes/Code";
+import {
+	type CodeNodeParameters,
+	type,
+	version,
+} from "../generated/nodes/Code";
 import type { IsNever } from "../utils/types";
 import { Node, type NodeProps } from "./node";
 
-interface CodeBaseProps extends CodeNodeParameters {}
-
-export interface CodeProps extends NodeProps, CodeBaseProps {
+export interface CodeProps extends NodeProps {
+	parameters: CodeNodeParameters;
 	outputSchema?: Type;
 }
 
@@ -15,17 +18,13 @@ export class Code<L extends string, P extends CodeProps> extends Node<
 		? never
 		: NonNullable<P["outputSchema"]>["infer"]
 > {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	public constructor(
 		id: L,
-		public readonly props: P,
+		override props: P,
 	) {
 		super(id, props);
-	}
-
-	override getParameters() {
-		return this.props;
 	}
 }

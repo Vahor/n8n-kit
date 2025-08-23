@@ -1,9 +1,9 @@
 import type { Type } from "arktype";
 import {
-	name,
+	type,
 	version,
 	type WebhookNodeParameters,
-} from "generated/nodes/Webhook";
+} from "../generated/nodes/Webhook";
 import type { IsNever, RequireFields } from "../utils/types";
 import { Node, type NodeProps } from "./node";
 
@@ -38,12 +38,12 @@ export class Webhook<L extends string, P extends WebhookProps> extends Node<
 		body: GetOutputSchemaField<P, "body">;
 	}
 > {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	constructor(
 		id: L,
-		public readonly props: P,
+		override props: P,
 	) {
 		super(id, props);
 	}

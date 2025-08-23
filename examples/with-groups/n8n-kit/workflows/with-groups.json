@@ -46,13 +46,13 @@
 			"id": "group-1",
 			"name": "group-1",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [350, 80],
+			"position": [700, 70],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 1",
-				"height": 490,
+				"color": 1,
 				"width": 920,
-				"color": 1
+				"height": 490
 			}
 		},
 		{
@@ -63,9 +63,9 @@
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 2",
-				"height": 230,
+				"color": 3,
 				"width": 570,
-				"color": 3
+				"height": 230
 			}
 		}
 	],

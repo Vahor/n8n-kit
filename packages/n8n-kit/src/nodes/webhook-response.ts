@@ -1,43 +1,40 @@
 import {
-	name,
 	type RespondToWebhookNodeParameters,
+	type,
 	version,
-} from "generated/nodes/RespondToWebhook";
+} from "../generated/nodes/RespondToWebhook";
 import { ExpressionBuilder, recursiveExpression } from "../workflow";
 import { Node, type NodeProps } from "./node";
 
-export interface WebhookResponseProps
-	extends NodeProps,
-		Omit<RespondToWebhookNodeParameters, "responseBody"> {
-	responseBody?: Record<string, any> | ExpressionBuilder | string;
+export interface WebhookResponseProps extends NodeProps {
+	parameters: Omit<RespondToWebhookNodeParameters, "responseBody"> & {
+		responseBody?: Record<string, any> | ExpressionBuilder | string;
+	};
 }
 
 export class WebhookResponse<L extends string> extends Node<L, never> {
-	protected override type = `n8n-nodes-base.${name}` as const;
+	protected override type = type;
 	protected override typeVersion = version;
 
 	constructor(
 		id: L,
-		public readonly props: WebhookResponseProps,
+		override props: WebhookResponseProps,
 	) {
 		super(id, props);
 	}
 
 	override "~validate"(): void {
 		super["~validate"]();
-		if (this.props.responseBody != null) {
-			if (this.props.responseBody instanceof ExpressionBuilder) {
-				this.props.responseBody = this.props.responseBody.toExpression();
+		const responseBody = this.props.parameters.responseBody;
+		if (responseBody != null) {
+			if (responseBody instanceof ExpressionBuilder) {
+				this.props.parameters.responseBody = responseBody.toExpression();
 			}
 
-			if (typeof this.props.responseBody !== "string") {
-				const result = recursiveExpression(this.props.responseBody);
-				this.props.responseBody = `=${JSON.stringify(result, null, 2)}`;
+			if (typeof responseBody !== "string") {
+				const result = recursiveExpression(responseBody);
+				this.props.parameters.responseBody = `=${JSON.stringify(result, null, 2)}`;
 			}
 		}
-	}
-
-	override getParameters() {
-		return this.props;
 	}
 }
