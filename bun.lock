@@ -19,12 +19,6 @@
         "@vahor/n8n-kit": "workspace:*",
       },
     },
-    "examples/complex-workflow": {
-      "name": "example-complex-workflow",
-      "dependencies": {
-        "@vahor/n8n-kit": "workspace:*",
-      },
-    },
     "examples/multiple-sources": {
       "name": "example-multiple-sources",
       "dependencies": {
@@ -33,6 +27,12 @@
     },
     "examples/nasa": {
       "name": "example-nasa",
+      "dependencies": {
+        "@vahor/n8n-kit": "workspace:*",
+      },
+    },
+    "examples/weird-workflow": {
+      "name": "example-weird-workflow",
       "dependencies": {
         "@vahor/n8n-kit": "workspace:*",
       },
@@ -947,13 +947,13 @@
 
     "eventsource": ["eventsource@2.0.2", "", {}, "sha512-IzUmBGPR3+oUG9dUeXynyNmf91/3zUSJg1lCktzKw47OXuhco54U3r9B7O4XX+Rb1Itm9OZ2b0RkTs10bICOxA=="],
 
-    "example-complex-workflow": ["example-complex-workflow@workspace:examples/complex-workflow"],
-
     "example-merge": ["example-merge@workspace:examples/code-merge"],
 
     "example-multiple-sources": ["example-multiple-sources@workspace:examples/multiple-sources"],
 
     "example-nasa": ["example-nasa@workspace:examples/nasa"],
+
+    "example-weird-workflow": ["example-weird-workflow@workspace:examples/weird-workflow"],
 
     "example-with-groups": ["example-with-groups@workspace:examples/with-groups"],
 
