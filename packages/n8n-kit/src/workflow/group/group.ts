@@ -1,5 +1,6 @@
-import { Node, type NodeProps } from "../../nodes/node";
+import type { NodeProps } from "../../nodes/node";
 import { StickyNote, type StickyNoteProps } from "../../nodes/sticky-note";
+import { GROUP_SYMBOL, isNode } from "../../symbols";
 import type { Chain, ChainContext, State } from "../chain";
 import { GROUP_DEFAULT_POSITION } from "../layout";
 import type { Workflow } from "../workflow";
@@ -15,6 +16,8 @@ export class Group<
 	C_CC extends ChainContext = {},
 	C_Ids extends string[] = [],
 > extends StickyNote<LiteralId> {
+	static readonly [GROUP_SYMBOL] = true;
+
 	constructor(
 		workflow: Workflow,
 		id: LiteralId,
@@ -40,7 +43,7 @@ export class Group<
 		for (let i = 0; i < nodes.length; i++) {
 			const node = nodes[i]!;
 			if (this._props.filterNodes?.(node, i) === false) continue;
-			if (node instanceof Node) {
+			if (isNode(node)) {
 				node["~setGroup"](this.id);
 			}
 		}

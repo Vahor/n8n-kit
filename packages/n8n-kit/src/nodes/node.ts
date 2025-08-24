@@ -1,4 +1,5 @@
 import type { Credentials } from "../credentials";
+import { NODE_SYMBOL } from "../symbols";
 import type { Workflow } from "../workflow";
 import { State } from "../workflow/chain/state";
 import type { IContext, INextable } from "../workflow/chain/types";
@@ -32,6 +33,8 @@ export abstract class Node<
 	T extends IContext = never,
 > extends State<LiteralId, T> {
 	protected workflowParent?: Workflow;
+
+	static readonly [NODE_SYMBOL] = true;
 
 	protected abstract readonly type: string;
 	protected abstract typeVersion: number;
