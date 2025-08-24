@@ -5,7 +5,7 @@ Build n8n workflows using TypeScript code with full type safety and IDE support.
 ## Installation
 
 ```sh
-bun install @vahor/n8n-kit
+npm install @vahor/n8n-kit
 ```
 
 ## Features

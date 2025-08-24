@@ -5,7 +5,7 @@ Command-line interface for deploying and managing n8n workflows created with n8n
 ## Installation
 
 ```sh
-bun install @vahor/n8n-kit-cli
+npm install @vahor/n8n-kit-cli
 ```
 
 ## Table of Contents
