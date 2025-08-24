@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface Signl4NodeParameters {
-    /**
-     * Default: "alert"
-     */
+    /** Default: "alert" */
     readonly resource?: "alert";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send" | "resolve";
 
-    /**
-     * A more detailed description for the alert
-     */
+    /** A more detailed description for the alert */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "alertingScenario"?: "single_ack" | "multi_ack", "attachmentsUi"?: { "attachmentsBinary": any }, "externalId"?: string, "filtering"?: boolean, "locationFieldsUi"?: { "locationFieldsValues": any }, "service"?: string, "title"?: string };
 
-    /**
-     * If the event originates from a record in a 3rd party system, use this parameter to pass the unique ID of that record. That ID will be communicated in outbound webhook notifications from SIGNL4, which is great for correlation/synchronization of that record with the alert. If you resolve / close an alert you must use the same External ID as in the original alert.
-     */
+    /** If the event originates from a record in a 3rd party system, use this parameter to pass the unique ID of that record. That ID will be communicated in outbound webhook notifications from SIGNL4, which is great for correlation/synchronization of that record with the alert. If you resolve / close an alert you must use the same External ID as in the original alert. */
     readonly externalId?: string;
 
 }

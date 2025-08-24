@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HelpScoutNodeParameters {
-    /**
-     * Default: "conversation"
-     */
+    /** Default: "conversation" */
     readonly resource?: "conversation" | "customer" | "mailbox" | "thread";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "get" | "getAll" | "properties" | "update" | "get" | "getAll" | "create" | "getAll";
 
     /**
@@ -25,19 +21,13 @@ export interface HelpScoutNodeParameters {
      */
     readonly mailboxId?: string;
 
-    /**
-     * Conversation status
-     */
+    /** Conversation status */
     readonly status?: "active" | "closed" | "pending";
 
-    /**
-     * Conversation’s subject
-     */
+    /** Conversation’s subject */
     readonly subject?: string;
 
-    /**
-     * Conversation type
-     */
+    /** Conversation type */
     readonly type?: "chat" | "email" | "phone" | "chat" | "customer" | "note" | "phone" | "reply";
 
     /**
@@ -46,9 +36,7 @@ export interface HelpScoutNodeParameters {
      */
     readonly resolveData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "assignTo"?: number, "autoReply"?: boolean, "closedAt"?: string, "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "imported"?: boolean, "tags"?: any[], "user"?: number } | { "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string } | { "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "draft"?: boolean, "imported"?: boolean };
 
     /**
@@ -59,9 +47,7 @@ export interface HelpScoutNodeParameters {
 
     readonly conversationId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -71,14 +57,10 @@ export interface HelpScoutNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "assignTo"?: number, "embed"?: "threads", "folder"?: string, "mailbox"?: string, "modifiedSince"?: string, "number"?: number, "query"?: string, "sortField"?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", "sortOrder"?: "asc" | "desc", "status"?: "active" | "all" | "closed" | "open" | "pending" | "spam", "tags"?: any[] } | { "firstName"?: string, "lastName"?: string, "mailbox"?: string, "modifiedSince"?: string, "sortField"?: "score" | "firstName" | "lastName" | "modifiedAt", "sortOrder"?: "asc" | "desc", "query"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly addressUi?: { "addressValue": any };
 
     /**
@@ -113,14 +95,10 @@ export interface HelpScoutNodeParameters {
 
     readonly customerId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string };
 
-    /**
-     * The chat text
-     */
+    /** The chat text */
     readonly text?: string;
 
     /**

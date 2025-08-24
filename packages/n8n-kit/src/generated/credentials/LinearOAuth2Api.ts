@@ -8,44 +8,28 @@ export const name = "linearOAuth2Api" as const;
  * documentationUrl: linear
  */
 export interface LinearOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://linear.app/oauth/authorize"
-     */
+    /** Default: "https://linear.app/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.linear.app/oauth/token"
-     */
+    /** Default: "https://api.linear.app/oauth/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly "actor"?: "user" | "application";
 
-    /**
-     * Grants the "Admin" scope, Needed to create webhooks
-     */
+    /** Grants the "Admin" scope, Needed to create webhooks */
     readonly "includeAdminScope"?: boolean;
 
-    /**
-     * Default: "={{$self[\"includeAdminScope\"] ? \"read write issues:create comments:create admin\" : \"read write issues:create comments:create\"}}"
-     */
+    /** Default: "={{$self[\"includeAdminScope\"] ? \"read write issues:create comments:create admin\" : \"read write issues:create comments:create\"}}" */
     readonly "scope": any;
 
-    /**
-     * Default: "={{\"actor=\"+$self[\"actor\"]}}"
-     */
+    /** Default: "={{\"actor=\"+$self[\"actor\"]}}" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "linearOAuth2Api";

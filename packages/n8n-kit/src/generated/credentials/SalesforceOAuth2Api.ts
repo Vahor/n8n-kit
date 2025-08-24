@@ -8,36 +8,24 @@ export const name = "salesforceOAuth2Api" as const;
  * documentationUrl: salesforce
  */
 export interface SalesforceOAuth2ApiCredentials {
-    /**
-     * Default: "pkce"
-     */
+    /** Default: "pkce" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "production"
-     */
+    /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";
 
-    /**
-     * Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/authorize\" : \"https://login.salesforce.com/services/oauth2/authorize\" }}"
-     */
+    /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/authorize\" : \"https://login.salesforce.com/services/oauth2/authorize\" }}" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/token\" : \"https://login.salesforce.com/services/oauth2/token\" }}"
-     */
+    /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/token\" : \"https://login.salesforce.com/services/oauth2/token\" }}" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "full refresh_token"
-     */
+    /** Default: "full refresh_token" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "salesforceOAuth2Api";

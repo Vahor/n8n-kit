@@ -15,14 +15,10 @@ export interface BoxTriggerNodeParameters {
      */
     readonly events?: ("COLLABORATION.ACCEPTED" | "COLLABORATION.CREATED" | "COLLABORATION.REJECTED" | "COLLABORATION.REMOVED" | "COLLABORATION.UPDATED" | "COMMENT.CREATED" | "COMMENT.DELETED" | "COMMENT.UPDATED" | "FILE.COPIED" | "FILE.DELETED" | "FILE.DOWNLOADED" | "FILE.LOCKED" | "FILE.MOVED" | "FILE.PREVIEWED" | "FILE.RENAMED" | "FILE.RESTORED" | "FILE.TRASHED" | "FILE.UNLOCKED" | "FILE.UPLOADED" | "FOLDER.COPIED" | "FOLDER.CREATED" | "FOLDER.DELETED" | "FOLDER.DOWNLOADED" | "FOLDER.MOVED" | "FOLDER.RENAMED" | "FOLDER.RESTORED" | "FOLDER.TRASHED" | "METADATA_INSTANCE.CREATED" | "METADATA_INSTANCE.DELETED" | "METADATA_INSTANCE.UPDATED" | "SHARED_LINK.CREATED" | "SHARED_LINK.DELETED" | "SHARED_LINK.UPDATED" | "TASK_ASSIGNMENT.CREATED" | "TASK_ASSIGNMENT.UPDATED" | "WEBHOOK.DELETED")[];
 
-    /**
-     * The type of item to trigger a webhook
-     */
+    /** The type of item to trigger a webhook */
     readonly targetType?: "file" | "folder";
 
-    /**
-     * The ID of the item to trigger a webhook
-     */
+    /** The ID of the item to trigger a webhook */
     readonly targetId?: string;
 
 }

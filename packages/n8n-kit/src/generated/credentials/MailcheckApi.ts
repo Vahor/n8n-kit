@@ -8,9 +8,7 @@ export const name = "mailcheckApi" as const;
  * documentationUrl: mailcheck
  */
 export interface MailcheckApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "mailcheckApi";

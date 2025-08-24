@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MqttTriggerNodeParameters {
-    /**
-     * Topics to subscribe to, multiple can be defined with comma. Wildcard characters are supported (+ - for single level and # - for multi level). By default all subscription used QoS=0. To set a different QoS, write the QoS desired after the topic preceded by a colom. For Example: topicA:1,topicB:2
-     */
+    /** Topics to subscribe to, multiple can be defined with comma. Wildcard characters are supported (+ - for single level and # - for multi level). By default all subscription used QoS=0. To set a different QoS, write the QoS desired after the topic preceded by a colom. For Example: topicA:1,topicB:2 */
     readonly topics?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "jsonParseBody"?: boolean, "onlyMessage"?: boolean, "parallelProcessing"?: boolean };
 
 }

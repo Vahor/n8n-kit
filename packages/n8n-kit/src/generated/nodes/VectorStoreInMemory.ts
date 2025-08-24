@@ -8,14 +8,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreInMemoryNodeParameters {
-    /**
-     * Default: "retrieve"
-     */
+    /** Default: "retrieve" */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
 
-    /**
-     * Name of the vector store
-     */
+    /** Name of the vector store */
     readonly toolName?: string;
 
     /**
@@ -39,14 +35,10 @@ export interface VectorStoreInMemoryNodeParameters {
      */
     readonly embeddingBatchSize?: number;
 
-    /**
-     * Whether to clear the store before inserting new data
-     */
+    /** Whether to clear the store before inserting new data */
     readonly clearStore?: boolean;
 
-    /**
-     * Search prompt to retrieve matching documents from the vector store using similarity-based ranking
-     */
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
 
     /**
@@ -61,14 +53,10 @@ export interface VectorStoreInMemoryNodeParameters {
      */
     readonly includeDocumentMetadata?: boolean;
 
-    /**
-     * Whether or not to rerank results
-     */
+    /** Whether or not to rerank results */
     readonly useReranker?: boolean;
 
-    /**
-     * ID of an embedding entry
-     */
+    /** ID of an embedding entry */
     readonly id?: string;
 
 }

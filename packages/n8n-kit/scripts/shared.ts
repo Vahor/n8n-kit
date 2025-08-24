@@ -1,3 +1,4 @@
+import type { CodeMaker } from "codemaker";
 import type { INodeProperties, INodeTypeDescription } from "n8n-workflow";
 
 export const mapPropertyType = (type: string) => {
@@ -133,3 +134,17 @@ export const validCustomType = [
 export const validCustomTypeAsStringUnion = validCustomType
 	.map((type) => `"${type}"`)
 	.join(" | ");
+
+export const renderComments = (code: CodeMaker, comments: string[]) => {
+	if (comments.length > 0) {
+		if (comments.length === 1) {
+			code.line(`/** ${comments[0]} */`);
+		} else {
+			code.line(`/**`);
+			for (const comment of comments) {
+				code.line(` * ${comment}`);
+			}
+			code.line(` */`);
+		}
+	}
+};

@@ -8,9 +8,7 @@ export const name = "nasaApi" as const;
  * documentationUrl: nasa
  */
 export interface NasaApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "api_key"?: string;
 
     readonly __name: "nasaApi";

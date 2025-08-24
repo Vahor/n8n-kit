@@ -8,9 +8,7 @@ export const name = "securityScorecardApi" as const;
  * documentationUrl: securityScorecard
  */
 export interface SecurityScorecardApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "securityScorecardApi";

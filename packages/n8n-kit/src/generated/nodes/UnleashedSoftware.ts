@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface UnleashedSoftwareNodeParameters {
-    /**
-     * Default: "salesOrder"
-     */
+    /** Default: "salesOrder" */
     readonly resource?: "salesOrder" | "stockOnHand";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "getAll" | "get" | "getAll";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -31,9 +25,7 @@ export interface UnleashedSoftwareNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "customerId"?: string, "customerCode"?: string, "endDate"?: string, "modifiedSince"?: string, "orderNumber"?: string, "orderStatus"?: ("Backordered" | "Completed" | "Deleted" | "Parked" | "Placed")[], "startDate"?: string } | { "asAtDate"?: string, "IsAssembled"?: boolean, "modifiedSince"?: string, "orderBy"?: string, "productId"?: string, "warehouseCode"?: string, "warehouseName"?: string };
 
     readonly productId?: string;

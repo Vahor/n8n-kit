@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmOpenHuggingFaceInferenceNodeParameters {
-    /**
-     * Default: "mistralai/Mistral-Nemo-Base-2407"
-     */
+    /** Default: "mistralai/Mistral-Nemo-Base-2407" */
     readonly model?: string;
 
     /**

@@ -9,44 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsRekognitionNodeParameters {
-    /**
-     * Default: "image"
-     */
+    /** Default: "image" */
     readonly resource?: "image";
 
-    /**
-     * Default: "analyze"
-     */
+    /** Default: "analyze" */
     readonly operation?: "analyze";
 
-    /**
-     * Default: "detectFaces"
-     */
+    /** Default: "detectFaces" */
     readonly type?: "detectFaces" | "detectLabels" | "detectModerationLabels" | "detectText" | "recognizeCelebrity";
 
-    /**
-     * Whether the image to analyze should be taken from binary field
-     */
+    /** Whether the image to analyze should be taken from binary field */
     readonly binaryData?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Name of the S3 bucket
-     */
+    /** Name of the S3 bucket */
     readonly bucket?: string;
 
-    /**
-     * S3 object key name
-     */
+    /** S3 object key name */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "regionsOfInterestUi"?: { "regionsOfInterestValues": any }, "version"?: string, "wordFilterUi"?: { "MinBoundingBoxHeight"?: number, "MinBoundingBoxWidth"?: number, "MinConfidence"?: number }, "maxLabels"?: number, "minConfidence"?: number, "attributes"?: ("all" | "default")[] };
 
 }

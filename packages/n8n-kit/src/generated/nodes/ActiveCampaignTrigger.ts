@@ -16,9 +16,7 @@ export interface ActiveCampaignTriggerNodeParameters {
      */
     readonly events?: any[];
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly sources?: ("public" | "admin" | "api" | "system")[];
 
 }

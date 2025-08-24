@@ -8,14 +8,10 @@ export const name = "openRouterApi" as const;
  * documentationUrl: openrouter
  */
 export interface OpenRouterApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
-    /**
-     * Default: "https://openrouter.ai/api/v1"
-     */
+    /** Default: "https://openrouter.ai/api/v1" */
     readonly "url"?: any;
 
     readonly __name: "openRouterApi";

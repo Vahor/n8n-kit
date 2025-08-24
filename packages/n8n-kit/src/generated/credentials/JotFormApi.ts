@@ -8,9 +8,7 @@ export const name = "jotFormApi" as const;
  * documentationUrl: jotForm
  */
 export interface JotFormApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     /**

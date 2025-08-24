@@ -10,9 +10,7 @@ export const name = "httpBasicAuth" as const;
 export interface HttpBasicAuthCredentials {
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "httpBasicAuth";

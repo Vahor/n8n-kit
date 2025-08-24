@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleTasksNodeParameters {
-    /**
-     * Default: "task"
-     */
+    /** Default: "task" */
     readonly resource?: "task";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -25,21 +21,15 @@ export interface GoogleTasksNodeParameters {
      */
     readonly task?: string;
 
-    /**
-     * Title of the task
-     */
+    /** Title of the task */
     readonly title?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "parent"?: string, "previous"?: string, "status"?: "needsAction" | "completed" } | { "completedMax"?: string, "completedMin"?: string, "dueMin"?: string, "dueMax"?: string, "showCompleted"?: boolean, "showDeleted"?: boolean, "showHidden"?: boolean, "updatedMin"?: string };
 
     readonly taskId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,9 +39,7 @@ export interface GoogleTasksNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "completed"?: string, "deleted"?: boolean, "dueDate"?: string, "notes"?: string, "previous"?: string, "status"?: "needsAction" | "completed", "title"?: string };
 
 }

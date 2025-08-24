@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AzureStorageNodeParameters {
-    /**
-     * Default: "sharedKey"
-     */
+    /** Default: "sharedKey" */
     readonly authentication?: "oAuth2" | "sharedKey";
 
-    /**
-     * Default: "container"
-     */
+    /** Default: "container" */
     readonly resource?: "blob" | "container";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll";
 
     /**
@@ -33,14 +27,10 @@ export interface AzureStorageNodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * The name of the new or existing blob
-     */
+    /** The name of the new or existing blob */
     readonly blobCreate?: string;
 
-    /**
-     * Default: "binary"
-     */
+    /** Default: "binary" */
     readonly from?: "binary" | "url";
 
     /**
@@ -49,14 +39,10 @@ export interface AzureStorageNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * URL where to read of the blob contents from
-     */
+    /** URL where to read of the blob contents from */
     readonly url?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "accessTier"?: "Archive" | "Cold" | "Cool" | "Hot", "blobType"?: "BlockBlob" | "PageBlob" | "AppendBlob", "cacheControl"?: string, "contentCrc64"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentMd5"?: string, "contentType"?: string, "encryptionContext"?: string, "encryptionScope"?: string, "expiryOption"?: "Absolute" | "NeverExpire", "expiryTime"?: string, "filename"?: string, "immutabilityPolicyUntilDate"?: string, "immutabilityPolicyMode"?: string, "leaseId"?: string, "legalHold"?: boolean, "metadata"?: { "metadataValues": any }, "origin"?: string, "tags"?: { "tagValues": any } } | { "leaseId"?: string } | { "leaseId"?: string, "origin"?: string, "simplify"?: boolean, "upn"?: boolean } | { "fields"?: ("copy" | "deleted" | "deletedwithversions" | "immutabilitypolicy" | "legalhold" | "metadata" | "permissions" | "snapshots" | "tags" | "uncommittedblobs" | "versions")[], "filter"?: ("deleted" | "files" | "directories")[], "simplify"?: boolean, "upn"?: boolean } | { "accessLevel"?: "blob" | "container" | "", "metadata"?: { "metadataValues": any } } | { "simplify"?: boolean } | { "fields"?: ("metadata" | "deleted" | "system")[], "filter"?: string };
 
     /**
@@ -68,9 +54,7 @@ export interface AzureStorageNodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -80,9 +64,7 @@ export interface AzureStorageNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The name of the new container
-     */
+    /** The name of the new container */
     readonly containerCreate?: string;
 
 }

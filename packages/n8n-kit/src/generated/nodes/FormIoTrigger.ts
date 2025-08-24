@@ -21,9 +21,7 @@ export interface FormIoTriggerNodeParameters {
      */
     readonly formId?: string;
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("create" | "update")[];
 
     /**

@@ -8,9 +8,7 @@ export const name = "msg91Api" as const;
  * documentationUrl: msg91
  */
 export interface Msg91ApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "authkey"?: string;
 
     readonly __name: "msg91Api";

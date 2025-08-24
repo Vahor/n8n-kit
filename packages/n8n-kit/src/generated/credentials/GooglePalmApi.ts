@@ -8,14 +8,10 @@ export const name = "googlePalmApi" as const;
  * documentationUrl: google
  */
 export interface GooglePalmApiCredentials {
-    /**
-     * Default: "https://generativelanguage.googleapis.com"
-     */
+    /** Default: "https://generativelanguage.googleapis.com" */
     readonly "host": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "googlePalmApi";

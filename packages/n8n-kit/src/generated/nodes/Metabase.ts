@@ -9,55 +9,41 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MetabaseNodeParameters {
-    /**
-     * Default: "questions"
-     */
+    /** Default: "questions" */
     readonly resource?: "alerts" | "databases" | "metrics" | "questions";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "get" | "getAll" | "resultData" | "get" | "getAll" | "addNewDatasource" | "getAll" | "getFields";
 
     readonly questionId?: string;
 
-    /**
-     * Default: "csv"
-     */
+    /** Default: "csv" */
     readonly format?: "csv" | "json" | "xlsx";
 
     readonly metricId?: string;
 
     readonly databaseId?: string;
 
-    /**
-     * Default: "postgres"
-     */
+    /** Default: "postgres" */
     readonly engine?: "h2" | "mongo" | "mysql" | "postgres" | "redshift" | "sqlite";
 
     readonly host?: string;
 
     readonly name?: string;
 
-    /**
-     * Default: 5432
-     */
+    /** Default: 5432 */
     readonly port?: number;
 
     readonly user?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly password?: string;
 
     readonly dbName?: string;
 
     readonly filePath?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly fullSync?: boolean;
 
     /**

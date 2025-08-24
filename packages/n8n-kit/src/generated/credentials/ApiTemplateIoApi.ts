@@ -8,9 +8,7 @@ export const name = "apiTemplateIoApi" as const;
  * documentationUrl: apiTemplateIo
  */
 export interface ApiTemplateIoApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "apiTemplateIoApi";

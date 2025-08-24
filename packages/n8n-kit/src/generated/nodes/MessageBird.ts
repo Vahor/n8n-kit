@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MessageBirdNodeParameters {
-    /**
-     * Default: "sms"
-     */
+    /** Default: "sms" */
     readonly resource?: "sms" | "balance";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send" | "get";
 
-    /**
-     * The number from which to send the message
-     */
+    /** The number from which to send the message */
     readonly originator?: string;
 
-    /**
-     * All recipients separated by commas
-     */
+    /** All recipients separated by commas */
     readonly recipients?: string;
 
-    /**
-     * The message to be send
-     */
+    /** The message to be send */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "createdDatetime"?: string, "datacoding"?: "auto" | "plain" | "unicode", "gateway"?: number, "groupIds"?: string, "mclass"?: "1" | "0", "reference"?: string, "reportUrl"?: string, "scheduledDatetime"?: string, "type"?: "binary" | "flash" | "sms", "typeDetails"?: string, "validity"?: number };
 
 }

@@ -10,26 +10,18 @@ export const name = "imap" as const;
 export interface ImapCredentials {
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "host"?: string;
 
-    /**
-     * Default: 993
-     */
+    /** Default: 993 */
     readonly "port"?: number;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly "secure"?: boolean;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "imap";

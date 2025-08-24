@@ -8,9 +8,7 @@ export const inputs = {"":"main","Memory":"ai_memory"} as const;
 export const outputs = {"":"main"} as const;
 
 export interface MemoryManagerNodeParameters {
-    /**
-     * Default: "load"
-     */
+    /** Default: "load" */
     readonly mode?: "load" | "insert" | "delete";
 
     /**
@@ -44,9 +42,7 @@ export interface MemoryManagerNodeParameters {
      */
     readonly simplifyOutput?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "groupMessages"?: boolean };
 
 }

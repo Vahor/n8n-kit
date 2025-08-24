@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface QuickBaseNodeParameters {
-    /**
-     * Default: "record"
-     */
+    /** Default: "record" */
     readonly resource?: "field" | "file" | "record" | "report";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "getAll" | "delete" | "download" | "create" | "upsert" | "delete" | "getAll" | "update" | "get" | "run";
 
-    /**
-     * The table identifier
-     */
+    /** The table identifier */
     readonly tableId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -36,19 +28,13 @@ export interface QuickBaseNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeFieldPerms"?: boolean } | { "fields"?: any[], "useFieldIDs"?: boolean } | { "select"?: any[], "sortByUi"?: { "sortByValues": any }, "where"?: string };
 
-    /**
-     * The unique identifier of the record
-     */
+    /** The unique identifier of the record */
     readonly recordId?: string;
 
-    /**
-     * The unique identifier of the field
-     */
+    /** The unique identifier of the field */
     readonly fieldId?: string;
 
     /**
@@ -57,14 +43,10 @@ export interface QuickBaseNodeParameters {
      */
     readonly versionNumber?: number;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Comma-separated list of the properties which should used as columns for the new rows
-     */
+    /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;
 
     /**
@@ -73,14 +55,10 @@ export interface QuickBaseNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * The filter to delete records. To delete all records specify a filter that will include all records, for example {3.GT.0} where 3 is the ID of the Record ID field.
-     */
+    /** The filter to delete records. To delete all records specify a filter that will include all records, for example {3.GT.0} where 3 is the ID of the Record ID field. */
     readonly where?: string;
 
-    /**
-     * Update can use the key field on the table, or any other supported unique field
-     */
+    /** Update can use the key field on the table, or any other supported unique field */
     readonly updateKey?: string;
 
     /**
@@ -89,9 +67,7 @@ export interface QuickBaseNodeParameters {
      */
     readonly mergeFieldId?: string;
 
-    /**
-     * The identifier of the report, unique to the table
-     */
+    /** The identifier of the report, unique to the table */
     readonly reportId?: string;
 
 }

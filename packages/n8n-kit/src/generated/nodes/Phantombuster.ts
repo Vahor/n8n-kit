@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PhantombusterNodeParameters {
-    /**
-     * Default: "agent"
-     */
+    /** Default: "agent" */
     readonly resource?: "agent";
 
-    /**
-     * Default: "launch"
-     */
+    /** Default: "launch" */
     readonly operation?: "delete" | "get" | "getAll" | "getOutput" | "launch";
 
     /**
@@ -25,9 +21,7 @@ export interface PhantombusterNodeParameters {
      */
     readonly agentId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -43,9 +37,7 @@ export interface PhantombusterNodeParameters {
      */
     readonly resolveData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "prevContainerId"?: string, "prevStatus"?: "finished" | "lauch error" | "never launched" | "running" | "starting" | "unknown", "prevRuntimeEventIndex"?: number } | { "argumentsJson"?: string, "argumentsUi"?: { "argumentValues": any }, "bonusArgumentUi"?: { "bonusArgumentValue": any }, "bonusArgumentJson"?: string, "manualLaunch"?: boolean, "maxInstanceCount"?: number, "saveArgument"?: string };
 
     readonly jsonParameters?: boolean;

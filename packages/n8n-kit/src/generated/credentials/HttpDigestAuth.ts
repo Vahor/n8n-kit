@@ -10,9 +10,7 @@ export const name = "httpDigestAuth" as const;
 export interface HttpDigestAuthCredentials {
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "httpDigestAuth";

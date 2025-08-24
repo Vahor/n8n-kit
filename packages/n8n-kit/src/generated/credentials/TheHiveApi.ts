@@ -8,24 +8,16 @@ export const name = "theHiveApi" as const;
  * documentationUrl: theHive
  */
 export interface TheHiveApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "ApiKey"?: string;
 
-    /**
-     * The URL of TheHive instance
-     */
+    /** The URL of TheHive instance */
     readonly "url"?: string;
 
-    /**
-     * The version of api to be used
-     */
+    /** The version of api to be used */
     readonly "apiVersion"?: "v1" | "";
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "theHiveApi";

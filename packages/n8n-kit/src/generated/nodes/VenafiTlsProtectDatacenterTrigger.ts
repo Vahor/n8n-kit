@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VenafiTlsProtectDatacenterTriggerNodeParameters {
-    /**
-     * Default: "certificateExpired"
-     */
+    /** Default: "certificateExpired" */
     readonly triggerOn?: "certificateExpired";
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

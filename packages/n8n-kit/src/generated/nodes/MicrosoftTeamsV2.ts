@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftTeamsV2NodeParameters {
-    /**
-     * Default: "channel"
-     */
+    /** Default: "channel" */
     readonly resource?: "channel" | "channelMessage" | "chatMessage" | "task";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "deleteChannel" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll" | "sendAndWait" | "create" | "deleteTask" | "get" | "getAll" | "update";
 
     /**
@@ -28,14 +24,10 @@ export interface MicrosoftTeamsV2NodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * The name of the new channel you want to create
-     */
+    /** The name of the new channel you want to create */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "description"?: string } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "assignedTo"?: {
 	value: string,
 	mode: "list" | "id",
@@ -51,9 +43,7 @@ export interface MicrosoftTeamsV2NodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -84,19 +74,13 @@ export interface MicrosoftTeamsV2NodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * The ID of the message to retrieve
-     */
+    /** The ID of the message to retrieve */
     readonly messageId?: string;
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -111,9 +95,7 @@ export interface MicrosoftTeamsV2NodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
     /**
@@ -145,14 +127,10 @@ export interface MicrosoftTeamsV2NodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * Title of the task
-     */
+    /** Title of the task */
     readonly title?: string;
 
-    /**
-     * The ID of the task to delete
-     */
+    /** The ID of the task to delete */
     readonly taskId?: string;
 
     /**
@@ -161,9 +139,7 @@ export interface MicrosoftTeamsV2NodeParameters {
      */
     readonly tasksFor?: "member" | "plan";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "assignedTo"?: {
 	value: string,
 	mode: "list" | "id",

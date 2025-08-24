@@ -8,9 +8,7 @@ export const inputs = {} as const;
 export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
 export interface TextSplitterRecursiveCharacterTextSplitterNodeParameters {
-    /**
-     * Default: 1000
-     */
+    /** Default: 1000 */
     readonly chunkSize?: number;
 
     readonly chunkOverlap?: number;

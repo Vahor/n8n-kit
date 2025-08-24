@@ -9,14 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreWeaviateNodeParameters {
-    /**
-     * Default: "retrieve"
-     */
+    /** Default: "retrieve" */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
 
-    /**
-     * Name of the vector store
-     */
+    /** Name of the vector store */
     readonly toolName?: string;
 
     /**
@@ -25,9 +21,7 @@ export interface VectorStoreWeaviateNodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly weaviateCollection?: {
 	value: string,
 	mode: "list" | "id",
@@ -39,14 +33,10 @@ export interface VectorStoreWeaviateNodeParameters {
      */
     readonly embeddingBatchSize?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "tenant"?: string, "textKey"?: string, "skip_init_checks"?: boolean, "timeout_init"?: number, "timeout_insert"?: number, "timeout_query"?: number, "proxy_grpc"?: string, "clearStore"?: boolean } | { "searchFilterJson"?: string, "metadataKeys"?: string, "tenant"?: string, "textKey"?: string, "skip_init_checks"?: boolean, "timeout_init"?: number, "timeout_insert"?: number, "timeout_query"?: number, "proxy_grpc"?: string };
 
-    /**
-     * Search prompt to retrieve matching documents from the vector store using similarity-based ranking
-     */
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
 
     /**
@@ -61,14 +51,10 @@ export interface VectorStoreWeaviateNodeParameters {
      */
     readonly includeDocumentMetadata?: boolean;
 
-    /**
-     * Whether or not to rerank results
-     */
+    /** Whether or not to rerank results */
     readonly useReranker?: boolean;
 
-    /**
-     * ID of an embedding entry
-     */
+    /** ID of an embedding entry */
     readonly id?: string;
 
 }

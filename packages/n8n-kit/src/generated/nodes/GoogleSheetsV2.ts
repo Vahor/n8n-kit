@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsV2NodeParameters {
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "serviceAccount" | "oAuth2";
 
-    /**
-     * Default: "sheet"
-     */
+    /** Default: "sheet" */
     readonly resource?: "spreadsheet" | "sheet";
 
-    /**
-     * Default: "read"
-     */
+    /** Default: "read" */
     readonly operation?: "appendOrUpdate" | "append" | "clear" | "create" | "remove" | "delete" | "read" | "update" | "create" | "deleteSpreadsheet";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly documentId?: {
 	value: string,
 	mode: "list" | "url" | "id",
@@ -53,9 +45,7 @@ export interface GoogleSheetsV2NodeParameters {
      */
     readonly fieldsUi?: { "fieldValues": any } | { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "useAppend"?: boolean } | { "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: string } | { "dataLocationOnSheet"?: { "values": any }, "outputFormatting"?: { "values": any }, "returnFirstMatch"?: boolean, "returnAllMatches"?: "returnFirstMatch" | "returnAllMatches" } | { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
 
     /**

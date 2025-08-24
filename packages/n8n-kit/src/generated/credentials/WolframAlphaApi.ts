@@ -8,9 +8,7 @@ export const name = "wolframAlphaApi" as const;
  * documentationUrl: wolframalpha
  */
 export interface WolframAlphaApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "appId": string;
 
     readonly __name: "wolframAlphaApi";

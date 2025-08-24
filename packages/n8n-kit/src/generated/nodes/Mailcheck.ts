@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailcheckNodeParameters {
-    /**
-     * Default: "email"
-     */
+    /** Default: "email" */
     readonly resource?: "email";
 
-    /**
-     * Default: "check"
-     */
+    /** Default: "check" */
     readonly operation?: "check";
 
-    /**
-     * Email address to check
-     */
+    /** Email address to check */
     readonly email?: string;
 
 }

@@ -14,14 +14,10 @@ export interface ExecuteWorkflowNodeParameters {
      */
     readonly source?: "database" | "localFile" | "parameter" | "url" | "database" | "parameter";
 
-    /**
-     * Note on using an expression here: if this node is set to run once with all items, they will all be sent to the <em>same</em> workflow. That workflow's ID will be calculated by evaluating the expression for the <strong>first input item</strong>.
-     */
+    /** Note on using an expression here: if this node is set to run once with all items, they will all be sent to the <em>same</em> workflow. That workflow's ID will be calculated by evaluating the expression for the <strong>first input item</strong>. */
     readonly workflowId?: string;
 
-    /**
-     * The path to local JSON workflow file to execute
-     */
+    /** The path to local JSON workflow file to execute */
     readonly workflowPath?: string;
 
     /**
@@ -31,19 +27,13 @@ export interface ExecuteWorkflowNodeParameters {
      */
     readonly workflowJson?: string;
 
-    /**
-     * The URL from which to load the workflow from
-     */
+    /** The URL from which to load the workflow from */
     readonly workflowUrl?: string;
 
-    /**
-     * Default: "once"
-     */
+    /** Default: "once" */
     readonly mode?: "once" | "each";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "waitForSubWorkflow"?: boolean };
 
 }

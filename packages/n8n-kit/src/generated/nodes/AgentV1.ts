@@ -9,14 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgentV1NodeParameters {
-    /**
-     * Default: "conversationalAgent"
-     */
+    /** Default: "conversationalAgent" */
     readonly agent?: "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent" | "toolsAgent" | "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent";
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly promptType?: "auto" | "define";
 
     /**
@@ -27,9 +23,7 @@ export interface AgentV1NodeParameters {
 
     readonly hasOutputParser?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean } | { "humanMessage"?: string, "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean } | { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean } | { "humanMessageTemplate"?: string, "prefix"?: string, "suffixChat"?: string, "suffix"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean } | { "ignoredTables"?: string, "includedSampleRows"?: number, "includedTables"?: string, "prefixPrompt"?: string, "suffixPrompt"?: string, "topK"?: number } | { "humanMessageTemplate"?: string };
 
     /**
@@ -38,14 +32,10 @@ export interface AgentV1NodeParameters {
      */
     readonly dataSource?: "mysql" | "postgres" | "sqlite";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Type options: {"rows":5}
-     */
+    /** Type options: {"rows":5} */
     readonly input?: string;
 
 }

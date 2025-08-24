@@ -8,9 +8,7 @@ export const name = "getResponseApi" as const;
  * documentationUrl: getResponse
  */
 export interface GetResponseApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "getResponseApi";

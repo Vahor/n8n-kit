@@ -8,19 +8,13 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChatAINodeParameters {
-    /**
-     * Type options: {"rows":6}
-     */
+    /** Type options: {"rows":6} */
     readonly message?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly waitUserReply?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "memoryConnection"?: boolean, "limitWaitTime"?: { "values": any } };
 
 }

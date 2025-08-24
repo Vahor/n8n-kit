@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EmeliaNodeParameters {
-    /**
-     * Default: "campaign"
-     */
+    /** Default: "campaign" */
     readonly resource?: "campaign" | "contactList";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "addContact" | "create" | "duplicate" | "get" | "getAll" | "pause" | "start" | "add" | "getAll";
 
     /**
@@ -26,24 +22,16 @@ export interface EmeliaNodeParameters {
      */
     readonly campaignId?: string;
 
-    /**
-     * The email of the contact to add to the campaign
-     */
+    /** The email of the contact to add to the campaign */
     readonly contactEmail?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
 
-    /**
-     * The name of the campaign to create
-     */
+    /** The name of the campaign to create */
     readonly campaignName?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -53,9 +41,7 @@ export interface EmeliaNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "copyContacts"?: boolean, "copyProvider"?: boolean, "copyMails"?: boolean, "copySettings"?: boolean };
 
     /**

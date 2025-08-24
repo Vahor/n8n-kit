@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HubspotV1NodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "appToken" | "oAuth2";
 
-    /**
-     * Default: "deal"
-     */
+    /** Default: "deal" */
     readonly resource?: "company" | "contact" | "contactList" | "deal" | "engagement" | "form" | "ticket";
 
-    /**
-     * Default: "upsert"
-     */
+    /** Default: "upsert" */
     readonly operation?: "upsert" | "delete" | "get" | "getAll" | "getRecentlyCreatedUpdated" | "search" | "add" | "remove" | "create" | "delete" | "get" | "getAll" | "getRecentlyCreated" | "getRecentlyModified" | "searchByDomain" | "update" | "create" | "delete" | "get" | "getAll" | "getRecentlyCreated" | "getRecentlyModified" | "search" | "update" | "create" | "delete" | "get" | "getAll" | "getFields" | "submit" | "create" | "delete" | "get" | "getAll" | "update";
 
     readonly email?: string;
@@ -32,19 +26,13 @@ export interface HubspotV1NodeParameters {
      */
     readonly resolveData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "annualRevenue"?: number, "associatedCompanyId"?: string, "city"?: string, "clickedFacebookAd"?: string, "closeDate"?: string, "companyName"?: string, "companySize"?: string, "contactOwner"?: string, "country"?: string, "customPropertiesUi"?: { "customPropertiesValues": any }, "dateOfBirth"?: string, "degree"?: string, "facebookClickId"?: string, "faxNumber"?: string, "fieldOfStudy"?: string, "firstName"?: string, "gender"?: string, "googleAdClickId"?: string, "graduationDate"?: string, "industry"?: string, "jobFunction"?: string, "jobTitle"?: string, "lastName"?: string, "leadStatus"?: string, "processingContactData"?: string, "lifeCycleStage"?: string, "maritalStatus"?: string, "membershipNote"?: string, "message"?: string, "mobilePhoneNumber"?: string, "numberOfEmployees"?: string, "originalSource"?: string, "phoneNumber"?: string, "properties"?: any[], "postalCode"?: string, "prefferedLanguage"?: string, "relationshipStatus"?: string, "salutation"?: string, "school"?: string, "seniority"?: string, "startDate"?: string, "stateRegion"?: string, "status"?: string, "streetAddress"?: string, "twitterUsername"?: string, "websiteUrl"?: string, "workEmail"?: string } | { "formSubmissionMode"?: "all" | "none" | "newest" | "oldest", "listMemberships"?: boolean, "properties"?: any[], "propertyMode"?: "valueAndHistory" | "valueOnly" } | { "direction"?: "ASCENDING" | "DESCENDING", "properties"?: any[], "query"?: string, "sortBy"?: string } | { "aboutUs"?: string, "annualRevenue"?: number, "city"?: string, "closeDate"?: string, "companyDomainName"?: string, "companyOwner"?: string, "countryRegion"?: string, "customPropertiesUi"?: { "customPropertiesValues": any }, "description"?: string, "facebookFans"?: number, "googlePlusPage"?: string, "industry"?: string, "isPublic"?: boolean, "leadStatus"?: string, "lifecycleStatus"?: string, "linkedinBio"?: string, "linkedInCompanyPage"?: string, "numberOfEmployees"?: number, "originalSourceType"?: string, "phoneNumber"?: string, "postalCode"?: string, "stateRegion"?: string, "streetAddress"?: string, "streetAddress2"?: string, "targetAccount"?: string, "timezone"?: string, "totalMoneyRaised"?: number, "twitterBio"?: string, "twitterFollowers"?: number, "twitterHandle"?: string, "type"?: string, "webTechnologies"?: string, "websiteUrl"?: string, "yearFounded"?: string } | { "includeMergeAudits"?: boolean } | { "amount"?: string, "associatedCompany"?: any[], "associatedVids"?: any[], "closeDate"?: string, "customPropertiesUi"?: { "customPropertiesValues": any }, "description"?: string, "dealName"?: string, "dealType"?: string, "pipeline"?: string } | { "includePropertyVersions"?: boolean } | { "associations"?: { "companyIds"?: string, "contactIds"?: string, "dealIds"?: string, "ownerIds"?: string, "ticketIds"?: string } } | { "skipValidation"?: boolean, "submittedAt"?: string } | { "associatedCompanyIds"?: any[], "associatedContactIds"?: any[], "category"?: string, "closeDate"?: string, "createDate"?: string, "description"?: string, "priority"?: string, "resolution"?: string, "source"?: string, "ticketOwnerId"?: string } | { "includeDeleted"?: boolean, "properties"?: any[], "propertiesWithHistory"?: string } | { "properties"?: any[], "propertiesWithHistory"?: string };
 
-    /**
-     * Unique identifier for a particular contact
-     */
+    /** Unique identifier for a particular contact */
     readonly contactId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -54,9 +42,7 @@ export interface HubspotV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "formSubmissionMode"?: "all" | "none" | "newest" | "oldest", "listMemberships"?: boolean, "properties"?: any[], "propertyMode"?: "valueAndHistory" | "valueOnly" } | { "since"?: string, "includePropertyVersions"?: boolean } | { "includeAssociations"?: boolean, "properties"?: any[], "propertiesWithHistory"?: any[] };
 
     /**
@@ -66,9 +52,7 @@ export interface HubspotV1NodeParameters {
      */
     readonly filterGroupsUi?: { "filterGroupsValues": any };
 
-    /**
-     * Default: "email"
-     */
+    /** Default: "email" */
     readonly by?: "id" | "email";
 
     readonly id?: string;
@@ -77,24 +61,16 @@ export interface HubspotV1NodeParameters {
 
     readonly name?: string;
 
-    /**
-     * Unique identifier for a particular company
-     */
+    /** Unique identifier for a particular company */
     readonly companyId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "aboutUs"?: string, "annualRevenue"?: number, "city"?: string, "closeDate"?: string, "companyDomainName"?: string, "companyOwner"?: string, "countryRegion"?: string, "customPropertiesUi"?: { "customPropertiesValues": any }, "description"?: string, "facebookFans"?: number, "googlePlusPage"?: string, "industry"?: string, "isPublic"?: boolean, "leadStatus"?: string, "lifecycleStatus"?: string, "linkedinBio"?: string, "linkedInCompanyPage"?: string, "name"?: string, "numberOfEmployees"?: number, "originalSourceType"?: string, "phoneNumber"?: string, "postalCode"?: string, "stateRegion"?: string, "streetAddress"?: string, "streetAddress2"?: string, "targetAccount"?: string, "timezone"?: string, "totalMoneyRaised"?: number, "twitterBio"?: string, "twitterFollowers"?: number, "twitterHandle"?: string, "type"?: string, "webTechnologies"?: string, "websiteUrl"?: string, "yearFounded"?: string } | { "amount"?: string, "closeDate"?: string, "customPropertiesUi"?: { "customPropertiesValues": any }, "description"?: string, "dealName"?: string, "stage"?: string, "dealType"?: string, "pipeline"?: string } | { "associatedCompanyIds"?: any[], "associatedContactIds"?: any[], "category"?: string, "closeDate"?: string, "createDate"?: string, "description"?: string, "pipelineId"?: string, "priority"?: string, "resolution"?: string, "source"?: string, "stageId"?: string, "ticketName"?: string, "ticketOwnerId"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeMergeAudits"?: boolean, "properties"?: any[], "propertiesWithHistory"?: string } | { "properties"?: any[] };
 
-    /**
-     * The company's website domain to search for, like n8n.io
-     */
+    /** The company's website domain to search for, like n8n.io */
     readonly domain?: string;
 
     /**
@@ -103,21 +79,15 @@ export interface HubspotV1NodeParameters {
      */
     readonly stage?: string;
 
-    /**
-     * Unique identifier for a particular deal
-     */
+    /** Unique identifier for a particular deal */
     readonly dealId?: string;
 
     readonly type?: "call" | "email" | "meeting" | "task";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly metadata?: { "body"?: string, "forObjectType"?: "COMPANY" | "CONTACT", "status"?: "COMPLETED" | "DEFERRED" | "IN_PROGRESS" | "NOT_STARTED" | "WAITING", "subject"?: string } | { "bcc"?: string, "cc"?: string, "fromEmail"?: string, "firstName"?: string, "lastName"?: string, "html"?: string, "subject"?: string, "toEmail"?: string } | { "body"?: string, "endTime"?: string, "internalMeetingNotes"?: string, "startTime"?: string, "title"?: string } | { "body"?: string, "durationMilliseconds"?: number, "fromNumber"?: string, "recordingUrl"?: string, "status"?: "BUSY" | "CALLING_CRM_USER" | "CANCELED" | "COMPLETED" | "CONNECTING" | "FAILED" | "IN_PROGRESS" | "NO_ANSWER" | "QUEUED" | "RINGING", "toNumber"?: string };
 
-    /**
-     * Unique identifier for a particular engagement
-     */
+    /** Unique identifier for a particular engagement */
     readonly engagementId?: string;
 
     /**
@@ -150,14 +120,10 @@ export interface HubspotV1NodeParameters {
      */
     readonly stageId?: string;
 
-    /**
-     * The ID of the pipeline the ticket is in
-     */
+    /** The ID of the pipeline the ticket is in */
     readonly ticketName?: string;
 
-    /**
-     * Unique identifier for a particular ticket
-     */
+    /** Unique identifier for a particular ticket */
     readonly ticketId?: string;
 
 }

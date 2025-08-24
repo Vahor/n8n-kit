@@ -8,14 +8,10 @@ export const name = "verticaApi" as const;
  * documentationUrl: vertica
  */
 export interface VerticaApiCredentials {
-    /**
-     * Default: "https://localhost:8443"
-     */
+    /** Default: "https://localhost:8443" */
     readonly "url": string;
 
-    /**
-     * The username for accessing the Vertica database.
-     */
+    /** The username for accessing the Vertica database. */
     readonly "username"?: string;
 
     /**

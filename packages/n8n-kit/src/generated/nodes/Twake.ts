@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwakeNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send";
 
     /**
@@ -25,14 +21,10 @@ export interface TwakeNodeParameters {
      */
     readonly channelId?: string;
 
-    /**
-     * Message content
-     */
+    /** Message content */
     readonly content?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "senderIcon"?: string, "senderName"?: string };
 
 }

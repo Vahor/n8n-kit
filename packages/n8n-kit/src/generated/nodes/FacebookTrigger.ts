@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FacebookTriggerNodeParameters {
-    /**
-     * Facebook APP ID
-     */
+    /** Facebook APP ID */
     readonly appId?: string;
 
     /**
@@ -27,9 +25,7 @@ export interface FacebookTriggerNodeParameters {
      */
     readonly fields?: any[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeValues"?: boolean };
 
 }

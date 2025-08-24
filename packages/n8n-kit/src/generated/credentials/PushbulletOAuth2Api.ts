@@ -8,28 +8,20 @@ export const name = "pushbulletOAuth2Api" as const;
  * documentationUrl: pushbullet
  */
 export interface PushbulletOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://www.pushbullet.com/authorize"
-     */
+    /** Default: "https://www.pushbullet.com/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.pushbullet.com/oauth2/token"
-     */
+    /** Default: "https://api.pushbullet.com/oauth2/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "pushbulletOAuth2Api";

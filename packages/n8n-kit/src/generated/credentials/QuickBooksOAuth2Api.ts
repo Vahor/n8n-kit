@@ -8,36 +8,24 @@ export const name = "quickBooksOAuth2Api" as const;
  * documentationUrl: quickbooks
  */
 export interface QuickBooksOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://appcenter.intuit.com/connect/oauth2"
-     */
+    /** Default: "https://appcenter.intuit.com/connect/oauth2" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer"
-     */
+    /** Default: "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "com.intuit.quickbooks.accounting"
-     */
+    /** Default: "com.intuit.quickbooks.accounting" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
-    /**
-     * Default: "production"
-     */
+    /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";
 
     readonly __name: "quickBooksOAuth2Api";

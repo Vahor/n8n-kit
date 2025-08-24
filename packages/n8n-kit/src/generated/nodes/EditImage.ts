@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EditImageNodeParameters {
-    /**
-     * Default: "border"
-     */
+    /** Default: "border" */
     readonly operation?: "blur" | "border" | "composite" | "create" | "crop" | "draw" | "information" | "multiStep" | "resize" | "rotate" | "shear" | "text" | "transparent";
 
     /**
@@ -84,9 +82,7 @@ export interface EditImageNodeParameters {
      */
     readonly endPositionY?: number;
 
-    /**
-     * The radius of the corner to create round corners
-     */
+    /** The radius of the corner to create round corners */
     readonly cornerRadius?: number;
 
     /**
@@ -158,9 +154,7 @@ export interface EditImageNodeParameters {
      */
     readonly borderColor?: string;
 
-    /**
-     * The name of the binary property which contains the data of the image to composite on top of image which is found in Property Name
-     */
+    /** The name of the binary property which contains the data of the image to composite on top of image which is found in Property Name */
     readonly dataPropertyNameComposite?: string;
 
     /**
@@ -181,19 +175,13 @@ export interface EditImageNodeParameters {
      */
     readonly rotate?: number;
 
-    /**
-     * X (horizontal) shear degrees
-     */
+    /** X (horizontal) shear degrees */
     readonly degreesX?: number;
 
-    /**
-     * Y (vertical) shear degrees
-     */
+    /** Y (vertical) shear degrees */
     readonly degreesY?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fileName"?: string, "font"?: string, "format"?: "bmp" | "gif" | "jpeg" | "png" | "tiff" | "webp", "quality"?: number };
 
 }

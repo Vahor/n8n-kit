@@ -11,19 +11,13 @@ export const outputs = {"ai_document":"ai_document"} as const;
 export interface DocumentGithubLoaderNodeParameters {
     readonly repository?: string;
 
-    /**
-     * Default: "main"
-     */
+    /** Default: "main" */
     readonly branch?: string;
 
-    /**
-     * Default: "simple"
-     */
+    /** Default: "simple" */
     readonly textSplittingMode?: "simple" | "custom";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "recursive"?: boolean, "ignorePaths"?: string };
 
 }

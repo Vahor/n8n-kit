@@ -8,36 +8,24 @@ export const name = "gitlabOAuth2Api" as const;
  * documentationUrl: gitlab
  */
 export interface GitlabOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://gitlab.com"
-     */
+    /** Default: "https://gitlab.com" */
     readonly "server"?: string;
 
-    /**
-     * Default: "={{$self[\"server\"]}}/oauth/authorize"
-     */
+    /** Default: "={{$self[\"server\"]}}/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "={{$self[\"server\"]}}/oauth/token"
-     */
+    /** Default: "={{$self[\"server\"]}}/oauth/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "api"
-     */
+    /** Default: "api" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "gitlabOAuth2Api";

@@ -9,26 +9,18 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NpmNodeParameters {
-    /**
-     * Default: "package"
-     */
+    /** Default: "package" */
     readonly resource?: "package" | "distTag";
 
-    /**
-     * Default: "getMetadata"
-     */
+    /** Default: "getMetadata" */
     readonly operation?: "getMetadata" | "getVersions" | "search" | "getMany" | "update";
 
     readonly packageName?: string;
 
-    /**
-     * Default: "latest"
-     */
+    /** Default: "latest" */
     readonly packageVersion?: string;
 
-    /**
-     * The query text used to search for packages
-     */
+    /** The query text used to search for packages */
     readonly query?: string;
 
     /**
@@ -44,9 +36,7 @@ export interface NpmNodeParameters {
      */
     readonly offset?: number;
 
-    /**
-     * Default: "latest"
-     */
+    /** Default: "latest" */
     readonly distTagName?: string;
 
 }

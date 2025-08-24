@@ -8,24 +8,16 @@ export const inputs = {} as const;
 export const outputs = {} as const;
 
 export interface StickyNoteNodeParameters {
-    /**
-     * Default: "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)"
-     */
+    /** Default: "## I'm a note \n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)" */
     readonly content?: string;
 
-    /**
-     * Default: 160
-     */
+    /** Default: 160 */
     readonly height?: number;
 
-    /**
-     * Default: 240
-     */
+    /** Default: 240 */
     readonly width?: number;
 
-    /**
-     * Default: 1
-     */
+    /** Default: 1 */
     readonly color?: number;
 
 }

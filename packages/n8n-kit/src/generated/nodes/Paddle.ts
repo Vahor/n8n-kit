@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PaddleNodeParameters {
-    /**
-     * Default: "coupon"
-     */
+    /** Default: "coupon" */
     readonly resource?: "coupon" | "payment" | "plan" | "product" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getAll" | "update" | "getAll" | "reschedule" | "get" | "getAll" | "getAll";
 
     /**
@@ -59,19 +55,13 @@ export interface PaddleNodeParameters {
      */
     readonly additionalFieldsJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "allowedUses"?: number, "couponCode"?: string, "couponPrefix"?: string, "description"?: string, "expires"?: string, "group"?: string, "numberOfCoupons"?: number, "recurring"?: boolean } | { "allowedUses"?: number, "discount"?: { "discountProperties": any }, "expires"?: string, "newCouponCode"?: string, "newGroup"?: string, "productIds"?: string, "recurring"?: boolean } | { "from"?: string, "to"?: string, "isPaid"?: boolean, "plan"?: string, "subscriptionId"?: number, "state"?: "active" | "past_due" | "paused" | "trialing", "isOneOffCharge"?: boolean } | { "planId"?: string, "subscriptionId"?: string, "state"?: "active" | "past_due" | "paused" | "trialing" };
 
-    /**
-     * The specific product/subscription ID
-     */
+    /** The specific product/subscription ID */
     readonly productId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -87,14 +77,10 @@ export interface PaddleNodeParameters {
      */
     readonly updateBy?: "couponCode" | "group";
 
-    /**
-     * Identify the coupon to update
-     */
+    /** Identify the coupon to update */
     readonly couponCode?: string;
 
-    /**
-     * The name of the group of coupons you want to update
-     */
+    /** The name of the group of coupons you want to update */
     readonly group?: string;
 
     /**
@@ -103,14 +89,10 @@ export interface PaddleNodeParameters {
      */
     readonly paymentId?: string;
 
-    /**
-     * Date you want to move the payment to
-     */
+    /** Date you want to move the payment to */
     readonly date?: string;
 
-    /**
-     * Filter: The subscription plan ID
-     */
+    /** Filter: The subscription plan ID */
     readonly planId?: string;
 
 }

@@ -9,59 +9,37 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TelegramNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "chat" | "callback" | "file" | "message";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "get" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendAndWait" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
 
-    /**
-     * Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot
-     */
+    /** Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot */
     readonly chatId?: string;
 
-    /**
-     * Unique identifier of the message to delete
-     */
+    /** Unique identifier of the message to delete */
     readonly messageId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "disable_notification"?: boolean } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "mimeType"?: string } | { "appendAttribution"?: boolean, "caption"?: string, "disable_notification"?: boolean, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
 
-    /**
-     * Unique identifier of the target user
-     */
+    /** Unique identifier of the target user */
     readonly userId?: string;
 
-    /**
-     * New chat description, 0-255 characters
-     */
+    /** New chat description, 0-255 characters */
     readonly description?: string;
 
-    /**
-     * New chat title, 1-255 characters
-     */
+    /** New chat title, 1-255 characters */
     readonly title?: string;
 
-    /**
-     * Unique identifier for the query to be answered
-     */
+    /** Unique identifier for the query to be answered */
     readonly queryId?: string;
 
-    /**
-     * A JSON-serialized array of results for the inline query
-     */
+    /** A JSON-serialized array of results for the inline query */
     readonly results?: string;
 
-    /**
-     * The ID of the file
-     */
+    /** The ID of the file */
     readonly fileId?: string;
 
     /**
@@ -76,9 +54,7 @@ export interface TelegramNodeParameters {
      */
     readonly messageType?: "inlineMessage" | "message";
 
-    /**
-     * Whether the data to upload should be taken from binary field
-     */
+    /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;
 
     /**
@@ -87,9 +63,7 @@ export interface TelegramNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Unique identifier of the inline message to edit
-     */
+    /** Unique identifier of the inline message to edit */
     readonly inlineMessageId?: string;
 
     /**
@@ -98,9 +72,7 @@ export interface TelegramNodeParameters {
      */
     readonly replyMarkup?: "none" | "inlineKeyboard" | "forceReply" | "inlineKeyboard" | "none" | "replyKeyboard" | "replyKeyboardRemove";
 
-    /**
-     * Animation to send. Pass a file_id to send an animation that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get an animation from the Internet.
-     */
+    /** Animation to send. Pass a file_id to send an animation that exists on the Telegram servers (recommended), an HTTP URL for Telegram to get an animation from the Internet. */
     readonly file?: string;
 
     /**
@@ -128,14 +100,10 @@ export interface TelegramNodeParameters {
      */
     readonly media?: { "media": any };
 
-    /**
-     * Text of the message to be sent
-     */
+    /** Text of the message to be sent */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly forceReply?: { "force_reply"?: boolean, "selective"?: boolean };
 
     /**
@@ -152,29 +120,19 @@ export interface TelegramNodeParameters {
      */
     readonly replyKeyboard?: { "rows": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly replyKeyboardOptions?: { "resize_keyboard"?: boolean, "one_time_keyboard"?: boolean, "selective"?: boolean };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly replyKeyboardRemove?: { "remove_keyboard"?: boolean, "selective"?: boolean };
 
-    /**
-     * Type options: {"rows":4}
-     */
+    /** Type options: {"rows":4} */
     readonly message?: string;
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -189,14 +147,10 @@ export interface TelegramNodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
 }

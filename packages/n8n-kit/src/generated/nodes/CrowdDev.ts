@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CrowdDevNodeParameters {
-    /**
-     * Default: "activity"
-     */
+    /** Default: "activity" */
     readonly resource?: "activity" | "automation" | "member" | "note" | "organization" | "task";
 
-    /**
-     * Default: "createWithMember"
-     */
+    /** Default: "createWithMember" */
     readonly operation?: "createWithMember" | "createForMember" | "createOrUpdate" | "delete" | "find" | "update" | "create" | "delete" | "find" | "update" | "create" | "destroy" | "find" | "list" | "update";
 
     /**
@@ -25,9 +21,7 @@ export interface CrowdDevNodeParameters {
      */
     readonly username?: { "itemChoice": any } | string;
 
-    /**
-     * UI friendly name of the member
-     */
+    /** UI friendly name of the member */
     readonly displayName?: string;
 
     /**
@@ -37,44 +31,28 @@ export interface CrowdDevNodeParameters {
      */
     readonly emails?: { "itemChoice": any };
 
-    /**
-     * Date of joining the community
-     */
+    /** Date of joining the community */
     readonly joinedAt?: string;
 
-    /**
-     * The ID of the member that performed the activity
-     */
+    /** The ID of the member that performed the activity */
     readonly member?: string;
 
-    /**
-     * Type of activity
-     */
+    /** Type of activity */
     readonly type?: string;
 
-    /**
-     * Date and time when the activity took place
-     */
+    /** Date and time when the activity took place */
     readonly timestamp?: string;
 
-    /**
-     * Platform on which the activity took place
-     */
+    /** Platform on which the activity took place */
     readonly platform?: string;
 
-    /**
-     * The ID of the activity in the platform (e.g. the ID of the message in Discord)
-     */
+    /** The ID of the activity in the platform (e.g. the ID of the message in Discord) */
     readonly sourceId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "title"?: string, "body"?: string, "channel"?: string, "sourceParentId"?: string } | { "displayName"?: string, "emails"?: { "itemChoice": any }, "joinedAt"?: string, "organizations"?: { "itemChoice": any }, "tags"?: { "itemChoice": any }, "tasks"?: { "itemChoice": any }, "notes"?: { "itemChoice": any }, "activities"?: { "itemChoice": any } } | { "url"?: string, "description"?: string, "logo"?: string, "employees"?: number, "members"?: { "itemChoice": any } } | { "name"?: string, "body"?: string, "status"?: string, "members"?: { "itemChoice": any }, "activities"?: { "itemChoice": any }, "assigneess"?: string };
 
-    /**
-     * The ID of the member
-     */
+    /** The ID of the member */
     readonly id?: string;
 
     /**
@@ -83,9 +61,7 @@ export interface CrowdDevNodeParameters {
      */
     readonly body?: string;
 
-    /**
-     * The name of the organization
-     */
+    /** The name of the organization */
     readonly name?: string;
 
     /**
@@ -94,9 +70,7 @@ export interface CrowdDevNodeParameters {
      */
     readonly trigger?: "new_activity" | "new_member";
 
-    /**
-     * URL to POST webhook data to
-     */
+    /** URL to POST webhook data to */
     readonly url?: string;
 
 }

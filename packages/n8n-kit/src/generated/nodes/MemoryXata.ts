@@ -11,19 +11,13 @@ export const outputs = {"ai_memory":"ai_memory"} as const;
 export interface MemoryXataNodeParameters {
     readonly sessionId?: string;
 
-    /**
-     * Default: "fromInput"
-     */
+    /** Default: "fromInput" */
     readonly sessionIdType?: "fromInput" | "customKey";
 
-    /**
-     * The key to use to store session ID in the memory
-     */
+    /** The key to use to store session ID in the memory */
     readonly sessionKey?: string;
 
-    /**
-     * Default: 5
-     */
+    /** Default: 5 */
     readonly contextWindowLength?: number;
 
 }

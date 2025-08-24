@@ -8,9 +8,7 @@ export const inputs = {"Model":"ai_languageModel","Output Parser":"ai_outputPars
 export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserAutofixingNodeParameters {
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "prompt"?: string };
 
 }

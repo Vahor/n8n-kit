@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChargebeeNodeParameters {
-    /**
-     * Default: "invoice"
-     */
+    /** Default: "invoice" */
     readonly resource?: "customer" | "invoice" | "subscription";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "list" | "pdfUrl" | "cancel" | "delete";
 
     /**
@@ -39,19 +35,13 @@ export interface ChargebeeNodeParameters {
      */
     readonly filters?: { "date": any, "total": any };
 
-    /**
-     * The ID of the invoice to get
-     */
+    /** The ID of the invoice to get */
     readonly invoiceId?: string;
 
-    /**
-     * The ID of the subscription to cancel
-     */
+    /** The ID of the subscription to cancel */
     readonly subscriptionId?: string;
 
-    /**
-     * Whether it will not cancel it directly in will instead schedule the cancelation for the end of the term
-     */
+    /** Whether it will not cancel it directly in will instead schedule the cancelation for the end of the term */
     readonly endOfTerm?: boolean;
 
 }

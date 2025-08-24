@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GrafanaNodeParameters {
-    /**
-     * Default: "dashboard"
-     */
+    /** Default: "dashboard" */
     readonly resource?: "dashboard" | "team" | "teamMember" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "add" | "getAll" | "remove" | "delete" | "getAll" | "update";
 
-    /**
-     * Title of the dashboard to create
-     */
+    /** Title of the dashboard to create */
     readonly title?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "folderId"?: string } | { "email"?: string };
 
-    /**
-     * Unique alphabetic identifier or URL of the dashboard to delete
-     */
+    /** Unique alphabetic identifier or URL of the dashboard to delete */
     readonly dashboardUidOrUrl?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -46,24 +34,16 @@ export interface GrafanaNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "query"?: string } | { "name"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "folderId"?: string, "title"?: string } | { "email"?: string, "name"?: string } | { "role"?: "Admin" | "Editor" | "Viewer" };
 
-    /**
-     * Name of the team to create
-     */
+    /** Name of the team to create */
     readonly name?: string;
 
-    /**
-     * ID of the team to delete
-     */
+    /** ID of the team to delete */
     readonly teamId?: string;
 
     /**

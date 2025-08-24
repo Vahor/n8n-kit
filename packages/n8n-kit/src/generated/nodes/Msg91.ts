@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface Msg91NodeParameters {
-    /**
-     * Default: "sms"
-     */
+    /** Default: "sms" */
     readonly resource?: "sms";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send";
 
-    /**
-     * The number from which to send the message
-     */
+    /** The number from which to send the message */
     readonly from?: string;
 
-    /**
-     * The number, with coutry code, to which to send the message
-     */
+    /** The number, with coutry code, to which to send the message */
     readonly to?: string;
 
-    /**
-     * The message to send
-     */
+    /** The message to send */
     readonly message?: string;
 
 }

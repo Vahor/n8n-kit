@@ -8,28 +8,20 @@ export const name = "goToWebinarOAuth2Api" as const;
  * documentationUrl: goToWebinar
  */
 export interface GoToWebinarOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://api.getgo.com/oauth/v2/authorize"
-     */
+    /** Default: "https://api.getgo.com/oauth/v2/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://api.getgo.com/oauth/v2/token"
-     */
+    /** Default: "https://api.getgo.com/oauth/v2/token" */
     readonly "accessTokenUrl"?: any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "goToWebinarOAuth2Api";

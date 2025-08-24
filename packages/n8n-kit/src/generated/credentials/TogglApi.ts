@@ -10,9 +10,7 @@ export const name = "togglApi" as const;
 export interface TogglApiCredentials {
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "togglApi";

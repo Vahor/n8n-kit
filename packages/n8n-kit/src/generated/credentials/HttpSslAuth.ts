@@ -14,14 +14,10 @@ export interface HttpSslAuthCredentials {
      */
     readonly "ca"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "cert"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "key"?: string;
 
     /**

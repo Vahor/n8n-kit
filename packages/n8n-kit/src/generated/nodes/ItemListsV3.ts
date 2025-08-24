@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ItemListsV3NodeParameters {
-    /**
-     * Default: "splitOutItems"
-     */
+    /** Default: "splitOutItems" */
     readonly operation?: "concatenateItems" | "limit" | "removeDuplicates" | "sort" | "splitOutItems" | "summarize";
 
-    /**
-     * Default: "aggregateIndividualFields"
-     */
+    /** Default: "aggregateIndividualFields" */
     readonly aggregate?: "aggregateIndividualFields" | "aggregateAllItemData";
 
     /**
@@ -31,18 +27,14 @@ export interface ItemListsV3NodeParameters {
      */
     readonly destinationFieldName?: string;
 
-    /**
-     * Default: "allFields"
-     */
+    /** Default: "allFields" */
     readonly include?: "allFields" | "specifiedFields" | "allFieldsExcept" | "noOtherFields" | "allOtherFields" | "selectedOtherFields";
 
     readonly fieldsToExclude?: string;
 
     readonly fieldsToInclude?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean } | { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean } | { "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean } | { "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
 
     /**
@@ -64,9 +56,7 @@ export interface ItemListsV3NodeParameters {
      */
     readonly compare?: "allFields" | "allFieldsExcept" | "selectedFields";
 
-    /**
-     * Fields in the input to add to the comparison
-     */
+    /** Fields in the input to add to the comparison */
     readonly fieldsToCompare?: string;
 
     /**
@@ -89,9 +79,7 @@ export interface ItemListsV3NodeParameters {
      */
     readonly code?: string;
 
-    /**
-     * The name of the input fields to break out into separate items. Separate multiple field names by commas. For binary data, use $binary.
-     */
+    /** The name of the input fields to break out into separate items. Separate multiple field names by commas. For binary data, use $binary. */
     readonly fieldToSplitOut?: string;
 
     /**
@@ -100,9 +88,7 @@ export interface ItemListsV3NodeParameters {
      */
     readonly fieldsToSummarize?: { "values": any };
 
-    /**
-     * The name of the input fields that you want to split the summary by
-     */
+    /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;
 
 }

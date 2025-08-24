@@ -10,9 +10,7 @@ export const name = "jiraSoftwareServerApi" as const;
 export interface JiraSoftwareServerApiCredentials {
     readonly "email"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "domain"?: string;

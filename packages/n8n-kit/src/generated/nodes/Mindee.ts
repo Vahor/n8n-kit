@@ -15,24 +15,16 @@ export interface MindeeNodeParameters {
      */
     readonly apiVersion?: "1" | "3" | "4";
 
-    /**
-     * Default: "receipt"
-     */
+    /** Default: "receipt" */
     readonly resource?: "invoice" | "receipt";
 
-    /**
-     * Default: "predict"
-     */
+    /** Default: "predict" */
     readonly operation?: "predict";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Whether to return the data exactly in the way it got received from the API
-     */
+    /** Whether to return the data exactly in the way it got received from the API */
     readonly rawData?: boolean;
 
 }

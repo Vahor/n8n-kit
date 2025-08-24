@@ -8,29 +8,19 @@ export const name = "mySql" as const;
  * documentationUrl: mySql
  */
 export interface MySqlCredentials {
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "host"?: string;
 
-    /**
-     * Default: "mysql"
-     */
+    /** Default: "mysql" */
     readonly "database"?: string;
 
-    /**
-     * Default: "mysql"
-     */
+    /** Default: "mysql" */
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Default: 3306
-     */
+    /** Default: 3306 */
     readonly "port"?: number;
 
     /**
@@ -41,56 +31,36 @@ export interface MySqlCredentials {
 
     readonly "ssl"?: boolean;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "caCertificate"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientPrivateKey"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientCertificate"?: string;
 
     readonly "sshTunnel"?: boolean;
 
-    /**
-     * Default: "password"
-     */
+    /** Default: "password" */
     readonly "sshAuthenticateWith"?: "password" | "privateKey";
 
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "sshHost"?: string;
 
-    /**
-     * Default: 22
-     */
+    /** Default: 22 */
     readonly "sshPort"?: number;
 
-    /**
-     * Default: "root"
-     */
+    /** Default: "root" */
     readonly "sshUser"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "sshPassword"?: string;
 
-    /**
-     * Type options: {"rows":4,"password":true}
-     */
+    /** Type options: {"rows":4,"password":true} */
     readonly "privateKey"?: string;
 
-    /**
-     * Passphrase used to create the key, if no passphrase was used leave empty
-     */
+    /** Passphrase used to create the key, if no passphrase was used leave empty */
     readonly "passphrase"?: string;
 
     readonly __name: "mySql";

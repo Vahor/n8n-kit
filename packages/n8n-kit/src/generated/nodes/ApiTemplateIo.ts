@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ApiTemplateIoNodeParameters {
-    /**
-     * Default: "image"
-     */
+    /** Default: "image" */
     readonly resource?: "account" | "image" | "pdf";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get";
 
     /**
@@ -33,14 +29,10 @@ export interface ApiTemplateIoNodeParameters {
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Name of the binary property to which to write the data of the read file
-     */
+    /** Name of the binary property to which to write the data of the read file */
     readonly download?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryProperty?: string;
 
     readonly overridesJson?: string;
@@ -59,9 +51,7 @@ export interface ApiTemplateIoNodeParameters {
      */
     readonly propertiesUi?: { "propertyValues": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fileName"?: string };
 
 }

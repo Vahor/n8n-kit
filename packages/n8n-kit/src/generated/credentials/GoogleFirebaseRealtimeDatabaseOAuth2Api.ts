@@ -8,14 +8,10 @@ export const name = "googleFirebaseRealtimeDatabaseOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleFirebaseRealtimeDatabaseOAuth2ApiCredentials {
-    /**
-     * Default: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/firebase.database https://www.googleapis.com/auth/firebase"
-     */
+    /** Default: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/firebase.database https://www.googleapis.com/auth/firebase" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "firebaseio.com"
-     */
+    /** Default: "firebaseio.com" */
     readonly "region"?: "firebaseio.com" | "europe-west1.firebasedatabase.app" | "asia-southeast1.firebasedatabase.app";
 
     readonly __name: "googleFirebaseRealtimeDatabaseOAuth2Api";

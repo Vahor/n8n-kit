@@ -12,21 +12,15 @@ export interface OAuth1ApiCredentials {
 
     readonly "accessTokenUrl": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "consumerKey": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "consumerSecret": string;
 
     readonly "requestTokenUrl": string;
 
-    /**
-     * Default: "HMAC-SHA1"
-     */
+    /** Default: "HMAC-SHA1" */
     readonly "signatureMethod": "HMAC-SHA1" | "HMAC-SHA256" | "HMAC-SHA512";
 
     readonly __name: "oAuth1Api";

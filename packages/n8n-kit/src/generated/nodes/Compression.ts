@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CompressionNodeParameters {
-    /**
-     * Default: "decompress"
-     */
+    /** Default: "decompress" */
     readonly operation?: "compress" | "decompress";
 
     /**
@@ -19,19 +17,13 @@ export interface CompressionNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Format of the output
-     */
+    /** Format of the output */
     readonly outputFormat?: "gzip" | "zip";
 
-    /**
-     * Name of the output file
-     */
+    /** Name of the output file */
     readonly fileName?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyOutput?: string;
 
     /**

@@ -8,31 +8,21 @@ export const name = "lineNotifyOAuth2Api" as const;
  * documentationUrl: line
  */
 export interface LineNotifyOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://notify-bot.line.me/oauth/authorize"
-     */
+    /** Default: "https://notify-bot.line.me/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://notify-bot.line.me/oauth/token"
-     */
+    /** Default: "https://notify-bot.line.me/oauth/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "notify"
-     */
+    /** Default: "notify" */
     readonly "scope": any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "lineNotifyOAuth2Api";

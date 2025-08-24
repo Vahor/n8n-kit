@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StackbyNodeParameters {
-    /**
-     * Default: "append"
-     */
+    /** Default: "append" */
     readonly operation?: "append" | "delete" | "list" | "read";
 
-    /**
-     * The ID of the stack to access
-     */
+    /** The ID of the stack to access */
     readonly stackId?: string;
 
-    /**
-     * Enter Table Name
-     */
+    /** Enter Table Name */
     readonly table?: string;
 
-    /**
-     * ID of the record to return
-     */
+    /** ID of the record to return */
     readonly id?: string;
 
     /**
@@ -42,14 +34,10 @@ export interface StackbyNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "view"?: string };
 
-    /**
-     * Comma-separated list of the properties which should used as columns for the new rows
-     */
+    /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;
 
 }

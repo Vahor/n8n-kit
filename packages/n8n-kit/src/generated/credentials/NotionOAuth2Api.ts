@@ -8,28 +8,20 @@ export const name = "notionOAuth2Api" as const;
  * documentationUrl: notion
  */
 export interface NotionOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://api.notion.com/v1/oauth/authorize"
-     */
+    /** Default: "https://api.notion.com/v1/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.notion.com/v1/oauth/token"
-     */
+    /** Default: "https://api.notion.com/v1/oauth/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "notionOAuth2Api";

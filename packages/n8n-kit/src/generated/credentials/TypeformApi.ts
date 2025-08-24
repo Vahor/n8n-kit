@@ -8,9 +8,7 @@ export const name = "typeformApi" as const;
  * documentationUrl: typeform
  */
 export interface TypeformApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "typeformApi";

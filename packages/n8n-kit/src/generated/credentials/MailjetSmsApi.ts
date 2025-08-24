@@ -8,9 +8,7 @@ export const name = "mailjetSmsApi" as const;
  * documentationUrl: mailjet
  */
 export interface MailjetSmsApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "token"?: string;
 
     readonly __name: "mailjetSmsApi";

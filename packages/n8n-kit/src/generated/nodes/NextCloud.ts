@@ -9,86 +9,54 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NextCloudNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "file"
-     */
+    /** Default: "file" */
     readonly resource?: "file" | "folder" | "user";
 
-    /**
-     * Default: "upload"
-     */
+    /** Default: "upload" */
     readonly operation?: "copy" | "delete" | "download" | "move" | "share" | "upload" | "copy" | "create" | "delete" | "list" | "move" | "share" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * The path of file or folder to copy. The path should start with "/".
-     */
+    /** The path of file or folder to copy. The path should start with "/". */
     readonly path?: string;
 
-    /**
-     * The destination path of file or folder. The path should start with "/".
-     */
+    /** The destination path of file or folder. The path should start with "/". */
     readonly toPath?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     readonly binaryDataUpload?: boolean;
 
-    /**
-     * The text content of the file to upload
-     */
+    /** The text content of the file to upload */
     readonly fileContent?: string;
 
-    /**
-     * The share permissions to set
-     */
+    /** The share permissions to set */
     readonly shareType?: "7" | "4" | "1" | "3" | "0";
 
-    /**
-     * The ID of the circle to share with
-     */
+    /** The ID of the circle to share with */
     readonly circleId?: string;
 
-    /**
-     * The Email address to share with
-     */
+    /** The Email address to share with */
     readonly email?: string;
 
-    /**
-     * The ID of the group to share with
-     */
+    /** The ID of the group to share with */
     readonly groupId?: string;
 
-    /**
-     * The user to share with
-     */
+    /** The user to share with */
     readonly user?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "password"?: string, "permissions"?: "31" | "4" | "8" | "1" | "2" } | { "search"?: string, "offset"?: number };
 
-    /**
-     * Username the user will have
-     */
+    /** Username the user will have */
     readonly userId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "displayName"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

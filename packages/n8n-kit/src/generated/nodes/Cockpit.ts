@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CockpitNodeParameters {
-    /**
-     * Default: "collection"
-     */
+    /** Default: "collection" */
     readonly resource?: "collection" | "form" | "singleton";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "getAll" | "update" | "submit" | "get";
 
     /**
@@ -25,9 +21,7 @@ export interface CockpitNodeParameters {
      */
     readonly collection?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -37,16 +31,12 @@ export interface CockpitNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fields"?: string, "filter"?: string, "language"?: string, "populate"?: boolean, "rawData"?: boolean, "skip"?: number, "sort"?: string };
 
     readonly id?: string;
 
-    /**
-     * Whether new entry fields should be set via the value-key pair UI or JSON
-     */
+    /** Whether new entry fields should be set via the value-key pair UI or JSON */
     readonly jsonDataFields?: boolean;
 
     /**
@@ -62,9 +52,7 @@ export interface CockpitNodeParameters {
      */
     readonly dataFieldsUi?: { "field": any };
 
-    /**
-     * Name of the form to operate on
-     */
+    /** Name of the form to operate on */
     readonly form?: string;
 
     /**

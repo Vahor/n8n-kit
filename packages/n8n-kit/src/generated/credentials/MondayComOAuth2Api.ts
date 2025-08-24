@@ -8,31 +8,21 @@ export const name = "mondayComOAuth2Api" as const;
  * documentationUrl: mondaycom
  */
 export interface MondayComOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://auth.monday.com/oauth2/authorize"
-     */
+    /** Default: "https://auth.monday.com/oauth2/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://auth.monday.com/oauth2/token"
-     */
+    /** Default: "https://auth.monday.com/oauth2/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "boards:write boards:read"
-     */
+    /** Default: "boards:write boards:read" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "mondayComOAuth2Api";

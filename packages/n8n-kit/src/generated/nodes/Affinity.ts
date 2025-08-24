@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AffinityNodeParameters {
-    /**
-     * Default: "organization"
-     */
+    /** Default: "organization" */
     readonly resource?: "list" | "listEntry" | "organization" | "person";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * The unique ID of the list object to be retrieved
-     */
+    /** The unique ID of the list object to be retrieved */
     readonly listId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -36,54 +28,34 @@ export interface AffinityNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The unique ID of the entity (person, organization, or opportunity) to add to this list
-     */
+    /** The unique ID of the entity (person, organization, or opportunity) to add to this list */
     readonly entityId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "creator_id"?: string } | { "persons"?: any[] } | { "organizations"?: any[] };
 
-    /**
-     * The unique ID of the list entry object to be retrieved
-     */
+    /** The unique ID of the list entry object to be retrieved */
     readonly listEntryId?: string;
 
-    /**
-     * The name of the organization
-     */
+    /** The name of the organization */
     readonly name?: string;
 
-    /**
-     * The domain name of the organization
-     */
+    /** The domain name of the organization */
     readonly domain?: string;
 
-    /**
-     * Unique identifier for the organization
-     */
+    /** Unique identifier for the organization */
     readonly organizationId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "domain"?: string, "name"?: string, "persons"?: any[] } | { "firstName"?: string, "lastName"?: string, "organizations"?: any[] };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "withInteractionDates"?: boolean } | { "term"?: string, "withInteractionDates"?: boolean };
 
-    /**
-     * The first name of the person
-     */
+    /** The first name of the person */
     readonly firstName?: string;
 
-    /**
-     * The last name of the person
-     */
+    /** The last name of the person */
     readonly lastName?: string;
 
     /**
@@ -93,9 +65,7 @@ export interface AffinityNodeParameters {
      */
     readonly emails?: string;
 
-    /**
-     * Unique identifier for the person
-     */
+    /** Unique identifier for the person */
     readonly personId?: string;
 
 }

@@ -8,9 +8,7 @@ export const name = "uptimeRobotApi" as const;
  * documentationUrl: uptimeRobot
  */
 export interface UptimeRobotApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "uptimeRobotApi";

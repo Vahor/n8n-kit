@@ -8,31 +8,21 @@ export const name = "twistOAuth2Api" as const;
  * documentationUrl: twist
  */
 export interface TwistOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://twist.com/oauth/authorize"
-     */
+    /** Default: "https://twist.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://twist.com/oauth/access_token"
-     */
+    /** Default: "https://twist.com/oauth/access_token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "attachments:write,channels:remove,comments:remove,messages:remove,threads:remove,workspaces:read"
-     */
+    /** Default: "attachments:write,channels:remove,comments:remove,messages:remove,threads:remove,workspaces:read" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "twistOAuth2Api";

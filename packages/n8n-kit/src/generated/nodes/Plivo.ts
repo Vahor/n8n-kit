@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PlivoNodeParameters {
-    /**
-     * Default: "sms"
-     */
+    /** Default: "sms" */
     readonly resource?: "call" | "mms" | "sms";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send" | "make";
 
-    /**
-     * Plivo Number to send the SMS from
-     */
+    /** Plivo Number to send the SMS from */
     readonly from?: string;
 
-    /**
-     * Phone number to send the message to
-     */
+    /** Phone number to send the message to */
     readonly to?: string;
 
-    /**
-     * Message to send
-     */
+    /** Message to send */
     readonly message?: string;
 
-    /**
-     * Comma-separated list of media URLs of the files from your file server
-     */
+    /** Comma-separated list of media URLs of the files from your file server */
     readonly media_urls?: string;
 
     /**
@@ -45,9 +33,7 @@ export interface PlivoNodeParameters {
      */
     readonly answer_method?: "GET" | "POST";
 
-    /**
-     * URL to be invoked by Plivo once the call is answered. It should return the XML to handle the call once answered.
-     */
+    /** URL to be invoked by Plivo once the call is answered. It should return the XML to handle the call once answered. */
     readonly answer_url?: string;
 
 }

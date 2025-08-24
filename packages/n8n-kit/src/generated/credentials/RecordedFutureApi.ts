@@ -8,9 +8,7 @@ export const name = "recordedFutureApi" as const;
  * documentationUrl: recordedfuture
  */
 export interface RecordedFutureApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "recordedFutureApi";

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HttpRequestV2NodeParameters {
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
     /**
@@ -20,14 +18,10 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly requestMethod?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT";
 
-    /**
-     * The URL to make the request to
-     */
+    /** The URL to make the request to */
     readonly url?: string;
 
-    /**
-     * Whether to download the response even if SSL certificate validation is not possible
-     */
+    /** Whether to download the response even if SSL certificate validation is not possible */
     readonly allowUnauthorizedCerts?: boolean;
 
     /**
@@ -42,19 +36,13 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly dataPropertyName?: string;
 
-    /**
-     * Whether the query and/or body parameter should be set via the value-key pair UI or JSON/RAW
-     */
+    /** Whether the query and/or body parameter should be set via the value-key pair UI or JSON/RAW */
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "batchInterval"?: number, "batchSize"?: number, "bodyContentType"?: "json" | "raw" | "multipart-form-data" | "form-urlencoded", "fullResponse"?: boolean, "followAllRedirects"?: boolean, "followRedirect"?: boolean, "ignoreResponseCode"?: boolean, "bodyContentCustomMimeType"?: string, "proxy"?: string, "splitIntoItems"?: boolean, "timeout"?: number, "useQueryString"?: boolean };
 
-    /**
-     * Whether binary data should be send as body
-     */
+    /** Whether binary data should be send as body */
     readonly sendBinaryData?: boolean;
 
     /**
@@ -63,9 +51,7 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Body parameters as JSON or RAW
-     */
+    /** Body parameters as JSON or RAW */
     readonly bodyParametersJson?: string;
 
     /**
@@ -75,9 +61,7 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly bodyParametersUi?: { "parameter": any };
 
-    /**
-     * Header parameters as JSON or RAW
-     */
+    /** Header parameters as JSON or RAW */
     readonly headerParametersJson?: string;
 
     /**
@@ -87,9 +71,7 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly headerParametersUi?: { "parameter": any };
 
-    /**
-     * Query parameters as JSON (flat object)
-     */
+    /** Query parameters as JSON (flat object) */
     readonly queryParametersJson?: string;
 
     /**

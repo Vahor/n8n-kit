@@ -9,36 +9,24 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GotifyNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "getAll";
 
-    /**
-     * The message to send, If using Markdown add the Content Type option
-     */
+    /** The message to send, If using Markdown add the Content Type option */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "priority"?: number, "title"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "contentType"?: "text/plain" | "text/markdown" };
 
     readonly messageId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

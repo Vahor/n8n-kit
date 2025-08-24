@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushbulletNodeParameters {
-    /**
-     * Default: "push"
-     */
+    /** Default: "push" */
     readonly resource?: "push";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "getAll" | "update";
 
-    /**
-     * Default: "note"
-     */
+    /** Default: "note" */
     readonly type?: "file" | "link" | "note";
 
-    /**
-     * Title of the push
-     */
+    /** Title of the push */
     readonly title?: string;
 
-    /**
-     * Body of the push
-     */
+    /** Body of the push */
     readonly body?: string;
 
-    /**
-     * URL of the push
-     */
+    /** URL of the push */
     readonly url?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     /**
@@ -50,16 +36,12 @@ export interface PushbulletNodeParameters {
      */
     readonly target?: "channel_tag" | "default" | "device_iden" | "email";
 
-    /**
-     * The value to be set depending on the target selected. For example, if the target selected is email then this field would take the email address of the person you are trying to send the push to.
-     */
+    /** The value to be set depending on the target selected. For example, if the target selected is email then this field would take the email address of the person you are trying to send the push to. */
     readonly value?: string;
 
     readonly pushId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -69,14 +51,10 @@ export interface PushbulletNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "active"?: boolean, "modified_after"?: string };
 
-    /**
-     * Whether to mark a push as having been dismissed by the user, will cause any notifications for the push to be hidden if possible
-     */
+    /** Whether to mark a push as having been dismissed by the user, will cause any notifications for the push to be hidden if possible */
     readonly dismissed?: boolean;
 
 }

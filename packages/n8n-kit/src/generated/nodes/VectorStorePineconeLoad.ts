@@ -9,9 +9,7 @@ export const inputs = {"Embedding":"ai_embedding"} as const;
 export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
 export interface VectorStorePineconeLoadNodeParameters {
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly pineconeIndex?: {
 	value: string,
 	mode: "list" | "id",
@@ -19,9 +17,7 @@ export interface VectorStorePineconeLoadNodeParameters {
 
     readonly pineconeNamespace?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "metadata"?: { "metadataValues": any } };
 
 }

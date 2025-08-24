@@ -9,14 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChainLlmNodeParameters {
-    /**
-     * Default: "={{ $json.input }}"
-     */
+    /** Default: "={{ $json.input }}" */
     readonly prompt?: string;
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly promptType?: "auto" | "define";
 
     /**

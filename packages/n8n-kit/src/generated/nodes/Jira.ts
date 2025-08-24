@@ -9,32 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JiraNodeParameters {
-    /**
-     * Default: "cloud"
-     */
+    /** Default: "cloud" */
     readonly jiraVersion?: "cloud" | "server" | "serverPat";
 
-    /**
-     * Default: "issue"
-     */
+    /** Default: "issue" */
     readonly resource?: "issue" | "issueAttachment" | "issueComment" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "changelog" | "create" | "delete" | "get" | "getAll" | "notify" | "transitions" | "update" | "add" | "get" | "getAll" | "remove" | "add" | "get" | "getAll" | "remove" | "update" | "create" | "delete" | "get";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly project?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly issueType?: {
 	value: string,
 	mode: "list" | "id",
@@ -42,9 +32,7 @@ export interface JiraNodeParameters {
 
     readonly summary?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "assignee"?: {
 	value: string,
 	mode: "list" | "id",
@@ -58,9 +46,7 @@ export interface JiraNodeParameters {
 
     readonly issueKey?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "assignee"?: {
 	value: string,
 	mode: "list" | "id",
@@ -77,14 +63,10 @@ export interface JiraNodeParameters {
 
     readonly deleteSubtasks?: boolean;
 
-    /**
-     * Whether to return a simplified version of the response instead of the raw data
-     */
+    /** Whether to return a simplified version of the response instead of the raw data */
     readonly simplifyOutput?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -94,9 +76,7 @@ export interface JiraNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean } | { "expand"?: "renderedBody" } | { "expand"?: "renderedBody", "orderBy"?: "+created" | "-created" };
 
     readonly jsonParameters?: boolean;
@@ -127,36 +107,24 @@ export interface JiraNodeParameters {
      */
     readonly notificationRecipientsRestrictionsJson?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * The ID of the attachment
-     */
+    /** The ID of the attachment */
     readonly attachmentId?: string;
 
     readonly download?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryProperty?: string;
 
-    /**
-     * Comment's text
-     */
+    /** Comment's text */
     readonly comment?: string;
 
-    /**
-     * The Atlassian Document Format (ADF). Online builder can be found <a href="https://developer.atlassian.com/cloud/jira/platform/apis/document/playground/">here</a>.
-     */
+    /** The Atlassian Document Format (ADF). Online builder can be found <a href="https://developer.atlassian.com/cloud/jira/platform/apis/document/playground/">here</a>. */
     readonly commentJson?: string;
 
-    /**
-     * The ID of the comment
-     */
+    /** The ID of the comment */
     readonly commentId?: string;
 
     readonly username?: string;
@@ -165,9 +133,7 @@ export interface JiraNodeParameters {
 
     readonly displayName?: string;
 
-    /**
-     * Account ID of the user to delete
-     */
+    /** Account ID of the user to delete */
     readonly accountId?: string;
 
 }

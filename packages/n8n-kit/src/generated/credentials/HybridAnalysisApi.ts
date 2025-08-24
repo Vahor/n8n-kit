@@ -8,9 +8,7 @@ export const name = "hybridAnalysisApi" as const;
  * documentationUrl: hybridanalysis
  */
 export interface HybridAnalysisApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "hybridAnalysisApi";

@@ -9,40 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SplunkV2NodeParameters {
-    /**
-     * Default: "search"
-     */
+    /** Default: "search" */
     readonly resource?: "alert" | "report" | "search" | "user";
 
-    /**
-     * Default: "getReport"
-     */
+    /** Default: "getReport" */
     readonly operation?: "getReport" | "getMetrics" | "create" | "deleteReport" | "get" | "getAll" | "create" | "deleteJob" | "get" | "getAll" | "getResult" | "create" | "deleteUser" | "get" | "getAll" | "update";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly searchJobId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * The name of the report
-     */
+    /** The name of the report */
     readonly name?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly reportId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -52,9 +40,7 @@ export interface SplunkV2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "add_orphan_field"?: boolean, "listDefaultActionArgs"?: boolean } | { "add_summary_to_metadata"?: boolean };
 
     /**
@@ -63,19 +49,13 @@ export interface SplunkV2NodeParameters {
      */
     readonly search?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "adhoc_search_level"?: "fast" | "smart" | "verbose", "auto_cancel"?: number, "auto_finalize_ec"?: number, "auto_pause"?: number, "index_earliest"?: string, "earliest_time"?: string, "exec_mode"?: "blocking" | "normal" | "oneshot", "indexedRealtimeOffset"?: number, "index_latest"?: string, "latest_time"?: string, "max_time"?: number, "namespace"?: string, "reduce_freq"?: number, "remote_server_list"?: string, "reuse_max_seconds_ago"?: number, "rf"?: string, "search_mode"?: "normal" | "realtime", "status_buckets"?: number, "timeout"?: number, "workload_pool"?: string } | { "email"?: string, "realname"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly sort?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "keyValueMatch"?: { "keyValuePair": any } };
 
     /**
@@ -85,22 +65,16 @@ export interface SplunkV2NodeParameters {
      */
     readonly roles?: any[];
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly password?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly userId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "email"?: string, "realname"?: string, "password"?: string, "roles"?: any[] };
 
 }

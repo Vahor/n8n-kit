@@ -9,19 +9,13 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CalTriggerNodeParameters {
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("BOOKING_CANCELLED" | "BOOKING_CREATED" | "BOOKING_RESCHEDULED" | "MEETING_ENDED")[];
 
-    /**
-     * Default: 1
-     */
+    /** Default: 1 */
     readonly version?: "1" | "2";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "appId"?: string, "eventTypeId"?: string, "payloadTemplate"?: string };
 
 }

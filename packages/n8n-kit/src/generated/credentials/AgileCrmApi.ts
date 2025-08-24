@@ -10,14 +10,10 @@ export const name = "agileCrmApi" as const;
 export interface AgileCrmApiCredentials {
     readonly "email"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * If the domain is https://example.agilecrm.com "example" would have to be entered
-     */
+    /** If the domain is https://example.agilecrm.com "example" would have to be entered */
     readonly "subdomain"?: string;
 
     readonly __name: "agileCrmApi";

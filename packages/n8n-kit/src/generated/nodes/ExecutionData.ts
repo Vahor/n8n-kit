@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ExecutionDataNodeParameters {
-    /**
-     * Default: "save"
-     */
+    /** Default: "save" */
     readonly operation?: "save";
 
     /**

@@ -9,9 +9,7 @@ export const inputs = {"Embedding":"ai_embedding"} as const;
 export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
 export interface VectorStoreSupabaseLoadNodeParameters {
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly tableName?: {
 	value: string,
 	mode: "list" | "id",
@@ -23,9 +21,7 @@ export interface VectorStoreSupabaseLoadNodeParameters {
      */
     readonly queryName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "metadata"?: { "metadataValues": any } };
 
 }

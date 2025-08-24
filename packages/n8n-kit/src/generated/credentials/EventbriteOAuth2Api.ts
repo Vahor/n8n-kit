@@ -8,28 +8,20 @@ export const name = "eventbriteOAuth2Api" as const;
  * documentationUrl: eventbrite
  */
 export interface EventbriteOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://www.eventbrite.com/oauth/authorize"
-     */
+    /** Default: "https://www.eventbrite.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://www.eventbrite.com/oauth/token"
-     */
+    /** Default: "https://www.eventbrite.com/oauth/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "eventbriteOAuth2Api";

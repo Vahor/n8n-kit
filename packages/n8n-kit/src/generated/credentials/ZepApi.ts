@@ -10,19 +10,13 @@ export const name = "zepApi" as const;
 export interface ZepApiCredentials {
     readonly "deprecationNotice"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Whether you are adding credentials for Zep Cloud instead of Zep Open Source
-     */
+    /** Whether you are adding credentials for Zep Cloud instead of Zep Open Source */
     readonly "cloud"?: boolean;
 
-    /**
-     * Default: "http://localhost:8000"
-     */
+    /** Default: "http://localhost:8000" */
     readonly "apiUrl"?: string;
 
     readonly __name: "zepApi";

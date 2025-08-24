@@ -8,31 +8,21 @@ export const name = "todoistOAuth2Api" as const;
  * documentationUrl: todoist
  */
 export interface TodoistOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://todoist.com/oauth/authorize"
-     */
+    /** Default: "https://todoist.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://todoist.com/oauth/access_token"
-     */
+    /** Default: "https://todoist.com/oauth/access_token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "data:read_write,data:delete"
-     */
+    /** Default: "data:read_write,data:delete" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "todoistOAuth2Api";

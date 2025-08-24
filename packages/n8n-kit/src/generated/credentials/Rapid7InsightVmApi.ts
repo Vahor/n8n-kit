@@ -10,9 +10,7 @@ export const name = "rapid7InsightVmApi" as const;
 export interface Rapid7InsightVmApiCredentials {
     readonly "url": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "rapid7InsightVmApi";

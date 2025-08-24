@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CodaNodeParameters {
-    /**
-     * Default: "table"
-     */
+    /** Default: "table" */
     readonly resource?: "control" | "formula" | "table" | "view";
 
-    /**
-     * Default: "createRow"
-     */
+    /** Default: "createRow" */
     readonly operation?: "createRow" | "deleteRow" | "getAllColumns" | "getAllRows" | "getColumn" | "getRow" | "pushButton" | "get" | "getAll" | "deleteViewRow" | "get" | "getAllViewColumns" | "getAll" | "getAllViewRows" | "pushViewButton" | "updateViewRow";
 
     /**
@@ -31,19 +27,13 @@ export interface CodaNodeParameters {
      */
     readonly tableId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableParsing"?: boolean, "keyColumns"?: string } | { "rawData"?: boolean, "useColumnNames"?: boolean, "valueFormat"?: "simple" | "simpleWithArrays" | "rich" } | { "query"?: string, "rawData"?: boolean, "sortBy"?: "createdAt" | "natural", "useColumnNames"?: boolean, "valueFormat"?: "simple" | "simpleWithArrays" | "rich", "visibleOnly"?: boolean } | { "query"?: string, "useColumnNames"?: boolean, "valueFormat"?: "simple" | "simpleWithArrays" | "rich", "rawData"?: boolean, "sortBy"?: "createdAt" | "natural" } | { "disableParsing"?: boolean };
 
-    /**
-     * ID or name of the row. Names are discouraged because they're easily prone to being changed by users. If you're using a name, be sure to URI-encode it. If there are multiple rows with the same value in the identifying column, an arbitrary one will be selected
-     */
+    /** ID or name of the row. Names are discouraged because they're easily prone to being changed by users. If you're using a name, be sure to URI-encode it. If there are multiple rows with the same value in the identifying column, an arbitrary one will be selected */
     readonly rowId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -59,19 +49,13 @@ export interface CodaNodeParameters {
      */
     readonly columnId?: string;
 
-    /**
-     * The formula to get the row from
-     */
+    /** The formula to get the row from */
     readonly formulaId?: string;
 
-    /**
-     * The control to get the row from
-     */
+    /** The control to get the row from */
     readonly controlId?: string;
 
-    /**
-     * The view to get the row from
-     */
+    /** The view to get the row from */
     readonly viewId?: string;
 
     /**

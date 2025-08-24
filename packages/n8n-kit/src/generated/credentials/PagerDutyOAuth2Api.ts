@@ -8,31 +8,21 @@ export const name = "pagerDutyOAuth2Api" as const;
  * documentationUrl: pagerDuty
  */
 export interface PagerDutyOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://app.pagerduty.com/oauth/authorize"
-     */
+    /** Default: "https://app.pagerduty.com/oauth/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://app.pagerduty.com/oauth/token"
-     */
+    /** Default: "https://app.pagerduty.com/oauth/token" */
     readonly "accessTokenUrl"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "write"
-     */
+    /** Default: "write" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "pagerDutyOAuth2Api";

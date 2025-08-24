@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsCognitoNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "group" | "user" | "userPool";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "addToGroup" | "create" | "delete" | "get" | "getAll" | "removeFromGroup" | "update" | "get";
 
     /**
@@ -28,14 +24,10 @@ export interface AwsCognitoNodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * The name of the new group to create
-     */
+    /** The name of the new group to create */
     readonly newGroupName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string, "precedence"?: number, "arn"?: string } | { "messageAction"?: "RESEND" | "SUPPRESS", "forceAliasCreation"?: boolean, "userAttributes": { "attributes": any }, "desiredDeliveryMediums"?: ("SMS" | "EMAIL")[], "temporaryPasswordOptions"?: string };
 
     /**
@@ -47,14 +39,10 @@ export interface AwsCognitoNodeParameters {
 	mode: "list" | "groupName",
 };
 
-    /**
-     * Whether to include a list of users in the group
-     */
+    /** Whether to include a list of users in the group */
     readonly includeUsers?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -64,9 +52,7 @@ export interface AwsCognitoNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Depending on the user pool settings, this parameter requires the username, the email, or the phone number. No whitespace is allowed.
-     */
+    /** Depending on the user pool settings, this parameter requires the username, the email, or the phone number. No whitespace is allowed. */
     readonly newUserName?: string;
 
     /**
@@ -84,9 +70,7 @@ export interface AwsCognitoNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "filter": any };
 
     /**

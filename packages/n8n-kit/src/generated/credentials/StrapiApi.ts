@@ -12,9 +12,7 @@ export interface StrapiApiCredentials {
 
     readonly "email"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "url"?: string;

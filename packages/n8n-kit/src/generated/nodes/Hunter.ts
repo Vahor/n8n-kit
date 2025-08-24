@@ -15,9 +15,7 @@ export interface HunterNodeParameters {
      */
     readonly operation?: "domainSearch" | "emailFinder" | "emailVerifier";
 
-    /**
-     * Domain name from which you want to find the email addresses. For example, "stripe.com".
-     */
+    /** Domain name from which you want to find the email addresses. For example, "stripe.com". */
     readonly domain?: string;
 
     /**
@@ -26,9 +24,7 @@ export interface HunterNodeParameters {
      */
     readonly onlyEmails?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -38,24 +34,16 @@ export interface HunterNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "type"?: "personal" | "generic", "seniority"?: ("junior" | "senior" | "executive")[], "department"?: ("communication" | "executive" | "finance" | "hr" | "it" | "legal" | "management" | "marketing" | "sales" | "support")[] };
 
-    /**
-     * The person's first name. It doesn't need to be in lowercase.
-     */
+    /** The person's first name. It doesn't need to be in lowercase. */
     readonly firstname?: string;
 
-    /**
-     * The person's last name. It doesn't need to be in lowercase.
-     */
+    /** The person's last name. It doesn't need to be in lowercase. */
     readonly lastname?: string;
 
-    /**
-     * The email address you want to verify
-     */
+    /** The email address you want to verify */
     readonly email?: string;
 
 }

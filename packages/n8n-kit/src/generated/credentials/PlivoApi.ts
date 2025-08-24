@@ -10,9 +10,7 @@ export const name = "plivoApi" as const;
 export interface PlivoApiCredentials {
     readonly "authId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "authToken"?: string;
 
     readonly __name: "plivoApi";

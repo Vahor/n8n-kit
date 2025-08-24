@@ -15,9 +15,7 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     * Default: "GET"
-     */
+    /** Default: "GET" */
     readonly method?: "DELETE" | "GET" | "PATCH" | "POST" | "PUT";
 
     readonly url?: string;
@@ -28,14 +26,10 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    /**
-     * Whether the request has query params or not
-     */
+    /** Whether the request has query params or not */
     readonly sendQuery?: boolean;
 
-    /**
-     * Default: "keypair"
-     */
+    /** Default: "keypair" */
     readonly specifyQuery?: "keypair" | "json" | "model";
 
     /**
@@ -44,19 +38,13 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly parametersQuery?: { "values": any };
 
-    /**
-     * Type options: {"rows":5}
-     */
+    /** Type options: {"rows":5} */
     readonly jsonQuery?: string;
 
-    /**
-     * Whether the request has headers or not
-     */
+    /** Whether the request has headers or not */
     readonly sendHeaders?: boolean;
 
-    /**
-     * Default: "keypair"
-     */
+    /** Default: "keypair" */
     readonly specifyHeaders?: "keypair" | "json" | "model";
 
     /**
@@ -65,19 +53,13 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly parametersHeaders?: { "values": any };
 
-    /**
-     * Type options: {"rows":5}
-     */
+    /** Type options: {"rows":5} */
     readonly jsonHeaders?: string;
 
-    /**
-     * Whether the request has body or not
-     */
+    /** Whether the request has body or not */
     readonly sendBody?: boolean;
 
-    /**
-     * Default: "keypair"
-     */
+    /** Default: "keypair" */
     readonly specifyBody?: "keypair" | "json" | "model";
 
     /**
@@ -86,9 +68,7 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly parametersBody?: { "values": any };
 
-    /**
-     * Type options: {"rows":5}
-     */
+    /** Type options: {"rows":5} */
     readonly jsonBody?: string;
 
     /**
@@ -97,19 +77,13 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly placeholderDefinitions?: { "values": any };
 
-    /**
-     * Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost
-     */
+    /** Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost */
     readonly optimizeResponse?: boolean;
 
-    /**
-     * Default: "json"
-     */
+    /** Default: "json" */
     readonly responseType?: "json" | "html" | "text";
 
-    /**
-     * Specify the name of the field in the response containing the data
-     */
+    /** Specify the name of the field in the response containing the data */
     readonly dataField?: string;
 
     /**
@@ -118,9 +92,7 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly fieldsToInclude?: "all" | "selected" | "except";
 
-    /**
-     * Comma-separated list of the field names. Supports dot notation. You can drag the selected fields from the input panel.
-     */
+    /** Comma-separated list of the field names. Supports dot notation. You can drag the selected fields from the input panel. */
     readonly fields?: string;
 
     /**
@@ -129,14 +101,10 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly cssSelector?: string;
 
-    /**
-     * Whether to return only content of html elements, stripping html tags and attributes
-     */
+    /** Whether to return only content of html elements, stripping html tags and attributes */
     readonly onlyContent?: boolean;
 
-    /**
-     * Comma-separated list of selectors that would be excluded when extracting content
-     */
+    /** Comma-separated list of selectors that would be excluded when extracting content */
     readonly elementsToOmit?: string;
 
     readonly truncateResponse?: boolean;

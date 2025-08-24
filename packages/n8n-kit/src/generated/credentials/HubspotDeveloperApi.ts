@@ -8,41 +8,27 @@ export const name = "hubspotDeveloperApi" as const;
  * documentationUrl: hubspot
  */
 export interface HubspotDeveloperApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://app.hubspot.com/oauth/authorize"
-     */
+    /** Default: "https://app.hubspot.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.hubapi.com/oauth/v1/token"
-     */
+    /** Default: "https://api.hubapi.com/oauth/v1/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "grant_type=authorization_code"
-     */
+    /** Default: "grant_type=authorization_code" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly "appId": string;
 
-    /**
-     * Default: "crm.objects.contacts.read crm.schemas.contacts.read crm.objects.companies.read crm.schemas.companies.read crm.objects.deals.read crm.schemas.deals.read"
-     */
+    /** Default: "crm.objects.contacts.read crm.schemas.contacts.read crm.objects.companies.read crm.schemas.companies.read crm.objects.deals.read crm.schemas.deals.read" */
     readonly "scope"?: any;
 
     readonly __name: "hubspotDeveloperApi";

@@ -9,14 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreMilvusNodeParameters {
-    /**
-     * Default: "retrieve"
-     */
+    /** Default: "retrieve" */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
 
-    /**
-     * Name of the vector store
-     */
+    /** Name of the vector store */
     readonly toolName?: string;
 
     /**
@@ -25,9 +21,7 @@ export interface VectorStoreMilvusNodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly milvusCollection?: {
 	value: string,
 	mode: "list" | "id",
@@ -39,14 +33,10 @@ export interface VectorStoreMilvusNodeParameters {
      */
     readonly embeddingBatchSize?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "clearCollection"?: boolean };
 
-    /**
-     * Search prompt to retrieve matching documents from the vector store using similarity-based ranking
-     */
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
 
     /**
@@ -61,14 +51,10 @@ export interface VectorStoreMilvusNodeParameters {
      */
     readonly includeDocumentMetadata?: boolean;
 
-    /**
-     * Whether or not to rerank results
-     */
+    /** Whether or not to rerank results */
     readonly useReranker?: boolean;
 
-    /**
-     * ID of an embedding entry
-     */
+    /** ID of an embedding entry */
     readonly id?: string;
 
 }

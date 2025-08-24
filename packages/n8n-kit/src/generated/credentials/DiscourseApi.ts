@@ -10,9 +10,7 @@ export const name = "discourseApi" as const;
 export interface DiscourseApiCredentials {
     readonly "url": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly "username": string;

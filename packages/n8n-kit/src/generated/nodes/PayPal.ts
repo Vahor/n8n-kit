@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PayPalNodeParameters {
-    /**
-     * Default: "payout"
-     */
+    /** Default: "payout" */
     readonly resource?: "payout" | "payoutItem";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "cancel" | "get";
 
-    /**
-     * A sender-specified ID number. Tracks the payout in an accounting system.
-     */
+    /** A sender-specified ID number. Tracks the payout in an accounting system. */
     readonly senderBatchId?: string;
 
     readonly jsonParameters?: boolean;
@@ -38,19 +32,13 @@ export interface PayPalNodeParameters {
      */
     readonly itemsJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "emailSubject"?: string, "emailMessage"?: string, "note"?: string };
 
-    /**
-     * The ID of the payout for which to show details
-     */
+    /** The ID of the payout for which to show details */
     readonly payoutBatchId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -60,9 +48,7 @@ export interface PayPalNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The ID of the payout item for which to show details
-     */
+    /** The ID of the payout item for which to show details */
     readonly payoutItemId?: string;
 
 }

@@ -10,9 +10,7 @@ export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 export interface TextSplitterCharacterTextSplitterNodeParameters {
     readonly separator?: string;
 
-    /**
-     * Default: 1000
-     */
+    /** Default: 1000 */
     readonly chunkSize?: number;
 
     readonly chunkOverlap?: number;

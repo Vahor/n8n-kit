@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftExcelV1NodeParameters {
-    /**
-     * Default: "workbook"
-     */
+    /** Default: "workbook" */
     readonly resource?: "table" | "workbook" | "worksheet";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "addWorksheet" | "getAll" | "getAll" | "getContent" | "addRow" | "getColumns" | "getRows" | "lookup";
 
     /**
@@ -25,14 +21,10 @@ export interface MicrosoftExcelV1NodeParameters {
      */
     readonly workbook?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "name"?: string } | { "index"?: number };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -42,9 +34,7 @@ export interface MicrosoftExcelV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "fields"?: string };
 
     /**
@@ -59,9 +49,7 @@ export interface MicrosoftExcelV1NodeParameters {
      */
     readonly range?: string;
 
-    /**
-     * Whether the data should be returned RAW instead of parsed into keys according to their header
-     */
+    /** Whether the data should be returned RAW instead of parsed into keys according to their header */
     readonly rawData?: boolean;
 
     /**
@@ -89,19 +77,13 @@ export interface MicrosoftExcelV1NodeParameters {
      */
     readonly table?: string;
 
-    /**
-     * The name of the column in which to look for value
-     */
+    /** The name of the column in which to look for value */
     readonly lookupColumn?: string;
 
-    /**
-     * The value to look for in column
-     */
+    /** The value to look for in column */
     readonly lookupValue?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "returnAllMatches"?: boolean };
 
 }

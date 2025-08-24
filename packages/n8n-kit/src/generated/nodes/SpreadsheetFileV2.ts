@@ -8,14 +8,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SpreadsheetFileV2NodeParameters {
-    /**
-     * Default: "fromFile"
-     */
+    /** Default: "fromFile" */
     readonly operation?: "fromFile" | "toFile";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     /**
@@ -24,9 +20,7 @@ export interface SpreadsheetFileV2NodeParameters {
      */
     readonly fileFormat?: "autodetect" | "csv" | "html" | "ods" | "rtf" | "xls" | "xlsx" | "csv" | "html" | "ods" | "rtf" | "xls" | "xlsx";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "delimiter"?: string, "encoding"?: "ascii" | "latin1" | "ucs-2" | "ucs2" | "utf-8" | "utf16le" | "utf8", "enableBOM"?: boolean, "relaxQuotes"?: boolean, "headerRow"?: boolean, "includeEmptyCells"?: boolean, "maxRowCount"?: number, "range"?: string, "rawData"?: boolean, "readAsString"?: boolean, "sheetName"?: string, "fromLine"?: number } | { "compression"?: boolean, "fileName"?: string, "headerRow"?: boolean, "sheetName"?: string };
 
 }

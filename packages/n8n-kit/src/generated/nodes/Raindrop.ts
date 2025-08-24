@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RaindropNodeParameters {
-    /**
-     * Default: "collection"
-     */
+    /** Default: "collection" */
     readonly resource?: "bookmark" | "collection" | "tag" | "user";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "delete" | "getAll" | "get";
 
     /**
@@ -25,24 +21,16 @@ export interface RaindropNodeParameters {
      */
     readonly collectionId?: string;
 
-    /**
-     * Link of the bookmark to be created
-     */
+    /** Link of the bookmark to be created */
     readonly link?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string } | { "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "view"?: "list" | "simple" | "grid" | "Masonry" } | { "collectionId"?: string };
 
-    /**
-     * The ID of the bookmark to delete
-     */
+    /** The ID of the bookmark to delete */
     readonly bookmarkId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -52,29 +40,19 @@ export interface RaindropNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "collectionId"?: string, "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string } | { "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "title"?: string, "view"?: "list" | "simple" | "grid" | "Masonry" };
 
-    /**
-     * Title of the collection to create
-     */
+    /** Title of the collection to create */
     readonly title?: string;
 
-    /**
-     * Default: "parent"
-     */
+    /** Default: "parent" */
     readonly type?: "parent" | "children";
 
-    /**
-     * One or more tags to delete. Enter comma-separated values to delete multiple tags.
-     */
+    /** One or more tags to delete. Enter comma-separated values to delete multiple tags. */
     readonly tags?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "collectionId"?: string };
 
     /**
@@ -83,9 +61,7 @@ export interface RaindropNodeParameters {
      */
     readonly self?: boolean;
 
-    /**
-     * The ID of the user to retrieve
-     */
+    /** The ID of the user to retrieve */
     readonly userId?: string;
 
 }

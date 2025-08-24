@@ -8,39 +8,25 @@ export const name = "timescaleDb" as const;
  * documentationUrl: timescaleDb
  */
 export interface TimescaleDbCredentials {
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "host"?: string;
 
-    /**
-     * Default: "postgres"
-     */
+    /** Default: "postgres" */
     readonly "database"?: string;
 
-    /**
-     * Default: "postgres"
-     */
+    /** Default: "postgres" */
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
-    /**
-     * Default: "disable"
-     */
+    /** Default: "disable" */
     readonly "ssl"?: "allow" | "disable" | "require";
 
-    /**
-     * Default: 5432
-     */
+    /** Default: 5432 */
     readonly "port"?: number;
 
     readonly __name: "timescaleDb";

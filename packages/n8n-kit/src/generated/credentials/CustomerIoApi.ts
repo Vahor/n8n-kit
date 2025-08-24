@@ -20,9 +20,7 @@ export interface CustomerIoApiCredentials {
      */
     readonly "region": "track-eu.customer.io" | "track.customer.io";
 
-    /**
-     * Required for tracking API
-     */
+    /** Required for tracking API */
     readonly "trackingSiteId"?: string;
 
     /**

@@ -8,14 +8,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ExecuteWorkflowTriggerNodeParameters {
-    /**
-     * Default: "workflowInputs"
-     */
+    /** Default: "workflowInputs" */
     readonly inputSource?: "workflowInputs" | "jsonExample" | "passthrough";
 
-    /**
-     * Default: "{\n  \"aField\": \"a string\",\n  \"aNumber\": 123,\n  \"thisFieldAcceptsAnyType\": null,\n  \"anArray\": []\n}"
-     */
+    /** Default: "{\n  \"aField\": \"a string\",\n  \"aNumber\": 123,\n  \"thisFieldAcceptsAnyType\": null,\n  \"anArray\": []\n}" */
     readonly jsonExample?: string;
 
     /**

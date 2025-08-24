@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SalesmateNodeParameters {
-    /**
-     * Default: "activity"
-     */
+    /** Default: "activity" */
     readonly resource?: "activity" | "company" | "deal";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     readonly name?: string;
@@ -27,26 +23,18 @@ export interface SalesmateNodeParameters {
      */
     readonly owner?: string;
 
-    /**
-     * Whether the data should include the fields details
-     */
+    /** Whether the data should include the fields details */
     readonly rawData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "description"?: string, "tags"?: string } | { "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
     readonly id?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "description"?: string, "tags"?: string } | { "title"?: string, "type"?: string, "owner"?: string, "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "title"?: string, "owner"?: string, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "currency"?: string, "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -58,14 +46,10 @@ export interface SalesmateNodeParameters {
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
 
-    /**
-     * Type options: {"alwaysOpenEditWindow":true}
-     */
+    /** Type options: {"alwaysOpenEditWindow":true} */
     readonly filtersJson?: string;
 
     /**
@@ -76,9 +60,7 @@ export interface SalesmateNodeParameters {
 
     readonly title?: string;
 
-    /**
-     * This field displays activity type such as call, meeting etc
-     */
+    /** This field displays activity type such as call, meeting etc */
     readonly type?: string;
 
     /**
@@ -89,9 +71,7 @@ export interface SalesmateNodeParameters {
 
     readonly pipeline?: "Sales";
 
-    /**
-     * Default: "Open"
-     */
+    /** Default: "Open" */
     readonly status?: "Open" | "Close" | "Lost";
 
     readonly stage?: "New (Untouched)" | "Contacted" | "Qualified" | "In Negotiation" | "Proposal Presented";

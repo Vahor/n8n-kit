@@ -15,9 +15,7 @@ export interface McpTriggerNodeParameters {
      */
     readonly authentication?: "none" | "bearerAuth" | "headerAuth";
 
-    /**
-     * The base path for this MCP server
-     */
+    /** The base path for this MCP server */
     readonly path?: string;
 
 }

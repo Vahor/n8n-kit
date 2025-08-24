@@ -21,9 +21,7 @@ export interface TheHiveProjectTriggerNodeParameters {
      */
     readonly filters?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "outputOnlyData"?: boolean };
 
 }

@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WebflowV1NodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "item"
-     */
+    /** Default: "item" */
     readonly resource?: "item";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -36,9 +30,7 @@ export interface WebflowV1NodeParameters {
      */
     readonly collectionId?: string;
 
-    /**
-     * Whether the item should be published on the live site
-     */
+    /** Whether the item should be published on the live site */
     readonly live?: boolean;
 
     /**
@@ -47,14 +39,10 @@ export interface WebflowV1NodeParameters {
      */
     readonly fieldsUi?: { "fieldValues": any };
 
-    /**
-     * ID of the item to operate on
-     */
+    /** ID of the item to operate on */
     readonly itemId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoToWebinarNodeParameters {
-    /**
-     * Default: "attendee"
-     */
+    /** Default: "attendee" */
     readonly resource?: "attendee" | "coorganizer" | "panelist" | "registrant" | "session" | "webinar";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "getDetails" | "create" | "delete" | "getAll" | "reinvite" | "create" | "delete" | "get" | "getAll" | "create" | "get" | "getAll" | "update";
 
     /**
@@ -31,19 +27,13 @@ export interface GoToWebinarNodeParameters {
      */
     readonly sessionKey?: string;
 
-    /**
-     * Registrant key of the attendee at the webinar session
-     */
+    /** Registrant key of the attendee at the webinar session */
     readonly registrantKey?: string;
 
-    /**
-     * The details to retrieve for the attendee
-     */
+    /** The details to retrieve for the attendee */
     readonly details?: "polls" | "questions" | "surveyAnswers" | "performance" | "polls" | "questions" | "surveys";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -53,54 +43,34 @@ export interface GoToWebinarNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether the co-organizer has no GoToWebinar account
-     */
+    /** Whether the co-organizer has no GoToWebinar account */
     readonly isExternal?: boolean;
 
-    /**
-     * The co-organizer's organizer key for the webinar
-     */
+    /** The co-organizer's organizer key for the webinar */
     readonly organizerKey?: string;
 
-    /**
-     * The co-organizer's given name
-     */
+    /** The co-organizer's given name */
     readonly givenName?: string;
 
-    /**
-     * The co-organizer's email address
-     */
+    /** The co-organizer's email address */
     readonly email?: string;
 
-    /**
-     * Key of the co-organizer to delete
-     */
+    /** Key of the co-organizer to delete */
     readonly coorganizerKey?: string;
 
-    /**
-     * Name of the panelist to create
-     */
+    /** Name of the panelist to create */
     readonly name?: string;
 
-    /**
-     * Key of the panelist to delete
-     */
+    /** Key of the panelist to delete */
     readonly panelistKey?: string;
 
-    /**
-     * First name of the registrant to create
-     */
+    /** First name of the registrant to create */
     readonly firstName?: string;
 
-    /**
-     * Last name of the registrant to create
-     */
+    /** Last name of the registrant to create */
     readonly lastName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "fullAddress"?: { "details": any }, "industry"?: string, "jobTitle"?: string, "multiChoiceResponses"?: { "details": any }, "numberOfEmployees"?: string, "organization"?: string, "phone"?: string, "purchasingRole"?: string, "purchasingTimeFrame"?: string, "questionsAndComments"?: string, "resendConfirmation"?: boolean, "simpleResponses"?: { "details": any }, "source"?: string } | { "times": { "timesProperties": any }, "webinarKey"?: string } | { "description"?: string, "experienceType"?: "CLASSIC" | "BROADCAST" | "SIMULIVE", "isOnDemand"?: boolean, "isPasswordProtected"?: boolean, "timezone"?: string, "type"?: "single_session" | "series" | "sequence" } | { "sendCancellationEmails"?: boolean } | { "times": { "timesProperties": any } };
 
     readonly subject?: string;
@@ -113,9 +83,7 @@ export interface GoToWebinarNodeParameters {
 
     readonly notifyParticipants?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "description"?: string, "experienceType"?: "CLASSIC" | "BROADCAST" | "SIMULIVE", "isOnDemand"?: boolean, "isPasswordProtected"?: boolean, "times"?: { "timesProperties": any }, "subject"?: string, "timezone"?: string, "type"?: "single_session" | "series" | "sequence" };
 
 }

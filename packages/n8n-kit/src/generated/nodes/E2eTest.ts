@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface E2eTestNodeParameters {
-    /**
-     * Default: "remoteOptions"
-     */
+    /** Default: "remoteOptions" */
     readonly operation?: "remoteOptions" | "resourceLocator" | "resourceMapper";
 
     readonly fieldId?: string;
@@ -22,9 +20,7 @@ export interface E2eTestNodeParameters {
      */
     readonly remoteOptions?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly rlc?: {
 	value: string,
 	mode: "list" | "url" | "id",

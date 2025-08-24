@@ -12,9 +12,7 @@ export interface TwakeServerApiCredentials {
 
     readonly "publicId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "privateApiKey"?: string;
 
     readonly __name: "twakeServerApi";

@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MistralAiNodeParameters {
-    /**
-     * Default: "document"
-     */
+    /** Default: "document" */
     readonly resource?: "document";
 
-    /**
-     * Default: "extractText"
-     */
+    /** Default: "extractText" */
     readonly operation?: "extractText";
 
     /**
@@ -43,14 +39,10 @@ export interface MistralAiNodeParameters {
      */
     readonly binaryProperty?: string;
 
-    /**
-     * URL of the document or image to process
-     */
+    /** URL of the document or image to process */
     readonly url?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "batch"?: boolean, "batchSize": number, "deleteFiles"?: boolean };
 
 }

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RabbitMQNodeParameters {
-    /**
-     * Default: "sendMessage"
-     */
+    /** Default: "sendMessage" */
     readonly operation?: "sendMessage" | "deleteMessage";
 
     /**
@@ -20,14 +18,10 @@ export interface RabbitMQNodeParameters {
      */
     readonly mode?: "queue" | "exchange";
 
-    /**
-     * Name of the queue to publish to
-     */
+    /** Name of the queue to publish to */
     readonly queue?: string;
 
-    /**
-     * Name of the exchange to publish to
-     */
+    /** Name of the exchange to publish to */
     readonly exchange?: string;
 
     /**
@@ -36,9 +30,7 @@ export interface RabbitMQNodeParameters {
      */
     readonly exchangeType?: "direct" | "topic" | "headers" | "fanout";
 
-    /**
-     * The routing key for the message
-     */
+    /** The routing key for the message */
     readonly routingKey?: string;
 
     /**
@@ -47,14 +39,10 @@ export interface RabbitMQNodeParameters {
      */
     readonly sendInputData?: boolean;
 
-    /**
-     * The message to be sent
-     */
+    /** The message to be sent */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "alternateExchange"?: string, "arguments"?: { "argument": any }, "autoDelete"?: boolean, "durable"?: boolean, "exclusive"?: boolean, "headers"?: { "header": any } };
 
 }

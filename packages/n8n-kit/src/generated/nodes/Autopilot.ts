@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AutopilotNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact" | "contactJourney" | "contactList" | "list";
 
-    /**
-     * Default: "upsert"
-     */
+    /** Default: "upsert" */
     readonly operation?: "upsert" | "delete" | "get" | "getAll" | "add" | "add" | "exist" | "getAll" | "remove" | "create" | "getAll";
 
-    /**
-     * Email address of the contact
-     */
+    /** Email address of the contact */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "Company"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "Fax"?: string, "FirstName"?: string, "Industry"?: string, "LastName"?: string, "LeadSource"?: string, "LinkedIn"?: string, "autopilotList"?: string, "MailingCountry"?: string, "MailingPostalCode"?: string, "MailingState"?: string, "MailingStreet"?: string, "MailingCity"?: string, "MobilePhone"?: string, "newEmail"?: string, "notify"?: boolean, "NumberOfEmployees"?: number, "owner_name"?: string, "Phone"?: string, "Salutation"?: string, "autopilotSessionId"?: string, "Status"?: string, "Title"?: string, "unsubscribed"?: boolean, "Website"?: string };
 
-    /**
-     * Can be ID or email
-     */
+    /** Can be ID or email */
     readonly contactId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -58,9 +46,7 @@ export interface AutopilotNodeParameters {
      */
     readonly listId?: string;
 
-    /**
-     * Name of the list to create
-     */
+    /** Name of the list to create */
     readonly name?: string;
 
 }

@@ -8,14 +8,10 @@ export const name = "postHogApi" as const;
  * documentationUrl: postHog
  */
 export interface PostHogApiCredentials {
-    /**
-     * Default: "https://app.posthog.com"
-     */
+    /** Default: "https://app.posthog.com" */
     readonly "url"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "postHogApi";

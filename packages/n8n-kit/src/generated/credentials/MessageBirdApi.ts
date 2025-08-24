@@ -8,9 +8,7 @@ export const name = "messageBirdApi" as const;
  * documentationUrl: messageBird
  */
 export interface MessageBirdApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessKey"?: string;
 
     readonly __name: "messageBirdApi";

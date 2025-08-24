@@ -8,9 +8,7 @@ export const name = "ouraApi" as const;
  * documentationUrl: oura
  */
 export interface OuraApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "ouraApi";

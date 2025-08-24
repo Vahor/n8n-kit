@@ -9,14 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreZepNodeParameters {
-    /**
-     * Default: "retrieve"
-     */
+    /** Default: "retrieve" */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
 
-    /**
-     * Name of the vector store
-     */
+    /** Name of the vector store */
     readonly toolName?: string;
 
     /**
@@ -33,14 +29,10 @@ export interface VectorStoreZepNodeParameters {
      */
     readonly embeddingBatchSize?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "embeddingDimensions"?: number, "isAutoEmbedded"?: boolean } | { "embeddingDimensions"?: number, "metadata"?: { "metadataValues": any } };
 
-    /**
-     * Search prompt to retrieve matching documents from the vector store using similarity-based ranking
-     */
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
 
     /**
@@ -55,14 +47,10 @@ export interface VectorStoreZepNodeParameters {
      */
     readonly includeDocumentMetadata?: boolean;
 
-    /**
-     * Whether or not to rerank results
-     */
+    /** Whether or not to rerank results */
     readonly useReranker?: boolean;
 
-    /**
-     * ID of an embedding entry
-     */
+    /** ID of an embedding entry */
     readonly id?: string;
 
 }

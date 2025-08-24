@@ -15,9 +15,7 @@ export interface ChainSummarizationV1NodeParameters {
      */
     readonly type?: "map_reduce" | "refine" | "stuff";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "combineMapPrompt"?: string, "prompt"?: string, "refinePrompt"?: string, "refineQuestionPrompt"?: string };
 
 }

@@ -8,31 +8,21 @@ export const name = "surveyMonkeyOAuth2Api" as const;
  * documentationUrl: surveyMonkey
  */
 export interface SurveyMonkeyOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://api.surveymonkey.com/oauth/authorize"
-     */
+    /** Default: "https://api.surveymonkey.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.surveymonkey.com/oauth/token"
-     */
+    /** Default: "https://api.surveymonkey.com/oauth/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "surveys_read,collectors_read,responses_read,responses_read_detail,webhooks_write,webhooks_read"
-     */
+    /** Default: "surveys_read,collectors_read,responses_read,responses_read_detail,webhooks_write,webhooks_read" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "surveyMonkeyOAuth2Api";

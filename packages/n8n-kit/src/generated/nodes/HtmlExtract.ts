@@ -14,9 +14,7 @@ export interface HtmlExtractNodeParameters {
      */
     readonly sourceData?: "binary" | "json";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly dataPropertyName?: string;
 
     /**
@@ -25,9 +23,7 @@ export interface HtmlExtractNodeParameters {
      */
     readonly extractionValues?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "trimValues"?: boolean };
 
 }

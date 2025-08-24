@@ -8,24 +8,16 @@ export const name = "calendlyOAuth2Api" as const;
  * documentationUrl: calendly
  */
 export interface CalendlyOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://auth.calendly.com/oauth/authorize"
-     */
+    /** Default: "https://auth.calendly.com/oauth/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://auth.calendly.com/oauth/token"
-     */
+    /** Default: "https://auth.calendly.com/oauth/token" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly "authQueryParameters"?: any;

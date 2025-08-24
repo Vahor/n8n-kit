@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinkedInNodeParameters {
-    /**
-     * Default: "standard"
-     */
+    /** Default: "standard" */
     readonly authentication?: "standard" | "communityManagement";
 
-    /**
-     * Default: "post"
-     */
+    /** Default: "post" */
     readonly resource?: "post";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create";
 
     /**
@@ -36,29 +30,19 @@ export interface LinkedInNodeParameters {
      */
     readonly person?: string;
 
-    /**
-     * URN of Organization as which the post should be posted as
-     */
+    /** URN of Organization as which the post should be posted as */
     readonly organization?: string;
 
-    /**
-     * The primary content of the post
-     */
+    /** The primary content of the post */
     readonly text?: string;
 
-    /**
-     * Default: "NONE"
-     */
+    /** Default: "NONE" */
     readonly shareMediaCategory?: "NONE" | "ARTICLE" | "IMAGE";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string, "originalUrl"?: string, "thumbnailBinaryPropertyName"?: string, "title"?: string, "visibility"?: "CONNECTIONS" | "PUBLIC" };
 
 }

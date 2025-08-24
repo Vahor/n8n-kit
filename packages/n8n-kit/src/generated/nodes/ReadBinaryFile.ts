@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ReadBinaryFileNodeParameters {
-    /**
-     * Path of the file to read
-     */
+    /** Path of the file to read */
     readonly filePath?: string;
 
     /**

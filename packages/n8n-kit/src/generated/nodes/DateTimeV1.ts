@@ -8,14 +8,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DateTimeV1NodeParameters {
-    /**
-     * Default: "format"
-     */
+    /** Default: "format" */
     readonly action?: "calculate" | "format";
 
-    /**
-     * The value that should be converted
-     */
+    /** The value that should be converted */
     readonly value?: string;
 
     /**
@@ -24,24 +20,16 @@ export interface DateTimeV1NodeParameters {
      */
     readonly dataPropertyName?: string;
 
-    /**
-     * Whether a predefined format should be selected or custom format entered
-     */
+    /** Whether a predefined format should be selected or custom format entered */
     readonly custom?: boolean;
 
-    /**
-     * The format to convert the date to
-     */
+    /** The format to convert the date to */
     readonly toFormat?: string | "MM/DD/YYYY" | "YYYY/MM/DD" | "MMMM DD YYYY" | "MM-DD-YYYY" | "YYYY-MM-DD" | "X" | "x";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fromFormat"?: string, "fromTimezone"?: string, "toTimezone"?: string } | { "fromFormat"?: string };
 
-    /**
-     * Default: "add"
-     */
+    /** Default: "add" */
     readonly operation?: "add" | "subtract";
 
     /**

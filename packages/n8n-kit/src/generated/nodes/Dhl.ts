@@ -9,16 +9,12 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DhlNodeParameters {
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get";
 
     readonly trackingNumber?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "recipientPostalCode"?: string };
 
 }

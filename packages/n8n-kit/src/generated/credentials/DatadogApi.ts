@@ -8,14 +8,10 @@ export const name = "datadogApi" as const;
  * documentationUrl: datadog
  */
 export interface DatadogApiCredentials {
-    /**
-     * Default: "https://api.datadoghq.com"
-     */
+    /** Default: "https://api.datadoghq.com" */
     readonly "url": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     /**

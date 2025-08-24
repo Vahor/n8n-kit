@@ -8,9 +8,7 @@ export const name = "gitPassword" as const;
  * documentationUrl: git
  */
 export interface GitPasswordCredentials {
-    /**
-     * The username to authenticate with
-     */
+    /** The username to authenticate with */
     readonly "username"?: string;
 
     /**

@@ -8,9 +8,7 @@ export const name = "ldap" as const;
  * documentationUrl: ldap
  */
 export interface LdapCredentials {
-    /**
-     * IP or domain of the LDAP server
-     */
+    /** IP or domain of the LDAP server */
     readonly "hostname": string;
 
     /**
@@ -19,9 +17,7 @@ export interface LdapCredentials {
      */
     readonly "port"?: string;
 
-    /**
-     * Distinguished Name of the user to connect as
-     */
+    /** Distinguished Name of the user to connect as */
     readonly "bindDN"?: string;
 
     /**
@@ -30,19 +26,13 @@ export interface LdapCredentials {
      */
     readonly "bindPassword"?: string;
 
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly "connectionSecurity"?: "none" | "tls" | "startTls";
 
-    /**
-     * Whether to connect even if SSL/TLS certificate validation is not possible
-     */
+    /** Whether to connect even if SSL/TLS certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
-    /**
-     * Type options: {"alwaysOpenEditWindow":true}
-     */
+    /** Type options: {"alwaysOpenEditWindow":true} */
     readonly "caCertificate"?: string;
 
     /**

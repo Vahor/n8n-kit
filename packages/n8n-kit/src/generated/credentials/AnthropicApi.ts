@@ -8,9 +8,7 @@ export const name = "anthropicApi" as const;
  * documentationUrl: anthropic
  */
 export interface AnthropicApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     /**

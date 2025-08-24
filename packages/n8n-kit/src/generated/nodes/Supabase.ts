@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SupabaseNodeParameters {
-    /**
-     * Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>)
-     */
+    /** Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>) */
     readonly useCustomSchema?: boolean;
 
     /**
@@ -20,14 +18,10 @@ export interface SupabaseNodeParameters {
      */
     readonly schema?: string;
 
-    /**
-     * Default: "row"
-     */
+    /** Default: "row" */
     readonly resource?: "row";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -36,14 +30,10 @@ export interface SupabaseNodeParameters {
      */
     readonly tableId?: string;
 
-    /**
-     * Default: "manual"
-     */
+    /** Default: "manual" */
     readonly filterType?: "manual" | "string" | "none" | "manual" | "string";
 
-    /**
-     * Default: "anyFilter"
-     */
+    /** Default: "anyFilter" */
     readonly matchType?: "anyFilter" | "allFilters";
 
     /**
@@ -55,14 +45,10 @@ export interface SupabaseNodeParameters {
 
     readonly filterString?: string;
 
-    /**
-     * Default: "defineBelow"
-     */
+    /** Default: "defineBelow" */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -71,9 +57,7 @@ export interface SupabaseNodeParameters {
      */
     readonly fieldsUi?: { "fieldValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

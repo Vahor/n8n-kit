@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GooglePerspectiveNodeParameters {
-    /**
-     * Default: "analyzeComment"
-     */
+    /** Default: "analyzeComment" */
     readonly operation?: "analyzeComment";
 
     readonly text?: string;
@@ -22,9 +20,7 @@ export interface GooglePerspectiveNodeParameters {
      */
     readonly requestedAttributesUi?: { "requestedAttributesValues": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "languages"?: string };
 
 }

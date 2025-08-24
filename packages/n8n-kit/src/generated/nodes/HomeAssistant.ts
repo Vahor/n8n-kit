@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HomeAssistantNodeParameters {
-    /**
-     * Default: "config"
-     */
+    /** Default: "config" */
     readonly resource?: "cameraProxy" | "config" | "event" | "log" | "service" | "state" | "template";
 
-    /**
-     * Default: "getScreenshot"
-     */
+    /** Default: "getScreenshot" */
     readonly operation?: "getScreenshot" | "get" | "check" | "create" | "getAll" | "getAll" | "getErroLogs" | "getLogbookEntries" | "call" | "getAll" | "upsert" | "get" | "getAll" | "create";
 
     /**
@@ -25,14 +21,10 @@ export interface HomeAssistantNodeParameters {
      */
     readonly cameraEntityId?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -42,9 +34,7 @@ export interface HomeAssistantNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The Entity ID for which an event will be created
-     */
+    /** The Entity ID for which an event will be created */
     readonly eventType?: string;
 
     /**
@@ -53,9 +43,7 @@ export interface HomeAssistantNodeParameters {
      */
     readonly eventAttributes?: { "attributes": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "endTime"?: string, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: string } | { "endTime"?: string, "entityId"?: string, "startTime"?: string };
 
     /**
@@ -90,9 +78,7 @@ export interface HomeAssistantNodeParameters {
      */
     readonly stateAttributes?: { "attributes": any };
 
-    /**
-     * Render a Home Assistant template. <a href="https://www.home-assistant.io/docs/configuration/templating/">See template docs for more information.</a>.
-     */
+    /** Render a Home Assistant template. <a href="https://www.home-assistant.io/docs/configuration/templating/">See template docs for more information.</a>. */
     readonly template?: string;
 
 }

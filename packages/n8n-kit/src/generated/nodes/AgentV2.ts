@@ -8,9 +8,7 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgentV2NodeParameters {
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly promptType?: "auto" | "define";
 
     /**
@@ -23,9 +21,7 @@ export interface AgentV2NodeParameters {
 
     readonly needsFallback?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number }, "enableStreaming"?: boolean } | { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

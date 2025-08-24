@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ConvertKitNodeParameters {
-    /**
-     * Default: "form"
-     */
+    /** Default: "form" */
     readonly resource?: "customField" | "form" | "sequence" | "tag" | "tagSubscriber";
 
-    /**
-     * Default: "update"
-     */
+    /** Default: "update" */
     readonly operation?: "create" | "delete" | "getAll" | "update" | "addSubscriber" | "getAll" | "getSubscriptions" | "create" | "getAll" | "add" | "getAll" | "delete";
 
-    /**
-     * The ID of your custom field
-     */
+    /** The ID of your custom field */
     readonly id?: string;
 
-    /**
-     * The label of the custom field
-     */
+    /** The label of the custom field */
     readonly label?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -41,19 +31,13 @@ export interface ConvertKitNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The subscriber's email address
-     */
+    /** The subscriber's email address */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" } | { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string, "tags"?: any[] } | { "fields"?: { "field": any }, "firstName"?: string };
 
-    /**
-     * Tag name, multiple can be added separated by comma
-     */
+    /** Tag name, multiple can be added separated by comma */
     readonly name?: string;
 
     /**

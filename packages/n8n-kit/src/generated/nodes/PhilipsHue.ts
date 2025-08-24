@@ -9,21 +9,15 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PhilipsHueNodeParameters {
-    /**
-     * Default: "light"
-     */
+    /** Default: "light" */
     readonly resource?: "light";
 
-    /**
-     * Default: "update"
-     */
+    /** Default: "update" */
     readonly operation?: "delete" | "get" | "getAll" | "update";
 
     readonly lightId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -39,9 +33,7 @@ export interface PhilipsHueNodeParameters {
      */
     readonly on?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "alert"?: "none" | "select" | "lselect", "bri"?: number, "bri_inc"?: number, "ct"?: number, "ct_inc"?: number, "xy"?: string, "xy_inc"?: string, "effect"?: "none" | "colorloop", "hue"?: number, "hue_inc"?: number, "sat"?: number, "sat_inc"?: number, "transitiontime"?: number };
 
 }

@@ -10,9 +10,7 @@ export const name = "httpHeaderAuth" as const;
 export interface HttpHeaderAuthCredentials {
     readonly "name"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "value"?: string;
 
     readonly "useCustomAuth"?: string;

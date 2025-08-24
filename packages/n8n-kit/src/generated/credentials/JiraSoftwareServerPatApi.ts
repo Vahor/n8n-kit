@@ -8,9 +8,7 @@ export const name = "jiraSoftwareServerPatApi" as const;
  * documentationUrl: jira
  */
 export interface JiraSoftwareServerPatApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "personalAccessToken"?: string;
 
     readonly "domain"?: string;

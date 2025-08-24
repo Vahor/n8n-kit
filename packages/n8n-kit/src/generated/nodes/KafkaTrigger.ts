@@ -9,29 +9,19 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface KafkaTriggerNodeParameters {
-    /**
-     * Name of the queue of topic to consume from
-     */
+    /** Name of the queue of topic to consume from */
     readonly topic?: string;
 
-    /**
-     * ID of the consumer group
-     */
+    /** ID of the consumer group */
     readonly groupId?: string;
 
-    /**
-     * Whether to use Confluent Schema Registry
-     */
+    /** Whether to use Confluent Schema Registry */
     readonly useSchemaRegistry?: boolean;
 
-    /**
-     * URL of the schema registry
-     */
+    /** URL of the schema registry */
     readonly schemaRegistryUrl?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "allowAutoTopicCreation"?: boolean, "autoCommitThreshold"?: number, "autoCommitInterval"?: number, "heartbeatInterval"?: number, "maxInFlightRequests"?: number, "fromBeginning"?: boolean, "jsonParseMessage"?: boolean, "parallelProcessing"?: boolean, "onlyMessage"?: boolean, "returnHeaders"?: boolean, "sessionTimeout"?: number };
 
 }

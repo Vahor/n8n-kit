@@ -14,9 +14,7 @@ export interface MergeV2NodeParameters {
      */
     readonly mode?: "append" | "combine" | "chooseBranch";
 
-    /**
-     * Default: "mergeByFields"
-     */
+    /** Default: "mergeByFields" */
     readonly combinationMode?: "mergeByFields" | "mergeByPosition" | "multiplex";
 
     /**
@@ -25,29 +23,19 @@ export interface MergeV2NodeParameters {
      */
     readonly mergeByFields?: { "values": any };
 
-    /**
-     * Default: "keepMatches"
-     */
+    /** Default: "keepMatches" */
     readonly joinMode?: "keepMatches" | "keepNonMatches" | "keepEverything" | "enrichInput1" | "enrichInput2";
 
-    /**
-     * Default: "both"
-     */
+    /** Default: "both" */
     readonly outputDataFrom?: "both" | "input1" | "input2";
 
-    /**
-     * Default: "waitForBoth"
-     */
+    /** Default: "waitForBoth" */
     readonly chooseBranchMode?: "waitForBoth";
 
-    /**
-     * Default: "input1"
-     */
+    /** Default: "input1" */
     readonly output?: "input1" | "input2" | "empty";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first" };
 
 }

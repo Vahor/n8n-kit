@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsTriggerNodeParameters {
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly documentId?: {
 	value: string,
 	mode: "list" | "url" | "id",
@@ -38,9 +36,7 @@ export interface GoogleSheetsTriggerNodeParameters {
      */
     readonly includeInOutput?: "new" | "old" | "both";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "columnsToWatch"?: any[], "dataLocationOnSheet"?: { "values": any }, "valueRender"?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", "dateTimeRenderOption"?: "SERIAL_NUMBER" | "FORMATTED_STRING" };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

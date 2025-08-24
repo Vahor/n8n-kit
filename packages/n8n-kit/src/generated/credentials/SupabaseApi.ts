@@ -10,9 +10,7 @@ export const name = "supabaseApi" as const;
 export interface SupabaseApiCredentials {
     readonly "host"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "serviceRole"?: string;
 
     readonly __name: "supabaseApi";

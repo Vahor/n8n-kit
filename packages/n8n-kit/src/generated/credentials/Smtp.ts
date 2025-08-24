@@ -10,28 +10,20 @@ export const name = "smtp" as const;
 export interface SmtpCredentials {
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "host"?: string;
 
-    /**
-     * Default: 465
-     */
+    /** Default: 465 */
     readonly "port"?: number;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly "secure"?: boolean;
 
     readonly "disableStartTls"?: boolean;
 
-    /**
-     * The hostname of the client, used for identifying to the server
-     */
+    /** The hostname of the client, used for identifying to the server */
     readonly "hostName"?: string;
 
     readonly __name: "smtp";

@@ -14,9 +14,7 @@ export interface QuickChartNodeParameters {
      */
     readonly chartType?: "bar" | "doughnut" | "line" | "pie" | "polarArea";
 
-    /**
-     * Default: "manually"
-     */
+    /** Default: "manually" */
     readonly labelsMode?: "manually" | "array";
 
     /**
@@ -26,14 +24,10 @@ export interface QuickChartNodeParameters {
      */
     readonly labelsUi?: { "labelsValues": any };
 
-    /**
-     * The array of labels to be used in the chart
-     */
+    /** The array of labels to be used in the chart */
     readonly labelsArray?: string;
 
-    /**
-     * Data to use for the dataset, documentation and examples <a href="https://quickchart.io/documentation/chart-types/" target="_blank">here</a>
-     */
+    /** Data to use for the dataset, documentation and examples <a href="https://quickchart.io/documentation/chart-types/" target="_blank">here</a> */
     readonly data?: string;
 
     /**
@@ -42,14 +36,10 @@ export interface QuickChartNodeParameters {
      */
     readonly output?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly chartOptions?: { "backgroundColor"?: string, "devicePixelRatio"?: number, "format"?: "png" | "pdf" | "svg" | "webp", "height"?: number, "horizontal"?: boolean, "width"?: number };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly datasetOptions?: { "backgroundColor"?: string, "borderColor"?: string, "fill"?: boolean, "label"?: string, "pointStyle"?: "circle" | "cross" | "crossRot" | "dash" | "line" | "rect" | "rectRot" | "rectRounded" | "star" | "triangle" };
 
 }

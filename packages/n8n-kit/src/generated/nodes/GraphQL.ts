@@ -21,14 +21,10 @@ export interface GraphQLNodeParameters {
      */
     readonly requestMethod?: "GET" | "POST";
 
-    /**
-     * The GraphQL endpoint
-     */
+    /** The GraphQL endpoint */
     readonly endpoint?: string;
 
-    /**
-     * Whether to download the response even if SSL certificate validation is not possible
-     */
+    /** Whether to download the response even if SSL certificate validation is not possible */
     readonly allowUnauthorizedCerts?: boolean;
 
     /**
@@ -43,14 +39,10 @@ export interface GraphQLNodeParameters {
      */
     readonly query?: string;
 
-    /**
-     * Query variables as JSON object
-     */
+    /** Query variables as JSON object */
     readonly variables?: string;
 
-    /**
-     * Name of operation to execute
-     */
+    /** Name of operation to execute */
     readonly operationName?: string;
 
     /**

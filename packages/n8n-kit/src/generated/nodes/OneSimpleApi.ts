@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OneSimpleApiNodeParameters {
-    /**
-     * Default: "website"
-     */
+    /** Default: "website" */
     readonly resource?: "information" | "socialProfile" | "utility" | "website";
 
-    /**
-     * Default: "pdf"
-     */
+    /** Default: "pdf" */
     readonly operation?: "pdf" | "seo" | "screenshot" | "instagramProfile" | "spotifyArtistProfile" | "exchangeRate" | "imageMetadata" | "expandURL" | "qrCode" | "validateEmail";
 
-    /**
-     * Link to webpage to convert
-     */
+    /** Link to webpage to convert */
     readonly link?: string;
 
-    /**
-     * Whether to download the PDF or return a link to it
-     */
+    /** Whether to download the PDF or return a link to it */
     readonly download?: boolean;
 
     /**
@@ -35,29 +27,19 @@ export interface OneSimpleApiNodeParameters {
      */
     readonly output?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "page"?: "A0" | "A1" | "A2" | "A3" | "A4" | "A5" | "A6" | "Ledger" | "Legal" | "Letter" | "Tabloid", "force"?: boolean } | { "size"?: "Small" | "Medium" | "Large", "format"?: "PNG" | "SVG" } | { "screen"?: "phone" | "phone-landscape" | "retina" | "tablet" | "tablet-landscape", "force"?: boolean, "fullpage"?: boolean } | { "headers"?: boolean };
 
-    /**
-     * The text that should be turned into a QR code - like a website URL
-     */
+    /** The text that should be turned into a QR code - like a website URL */
     readonly message?: string;
 
-    /**
-     * Profile name to get details of
-     */
+    /** Profile name to get details of */
     readonly profileName?: string;
 
-    /**
-     * Artist name to get details for
-     */
+    /** Artist name to get details for */
     readonly artistName?: string;
 
-    /**
-     * Value to convert
-     */
+    /** Value to convert */
     readonly value?: string;
 
     readonly fromCurrency?: string;

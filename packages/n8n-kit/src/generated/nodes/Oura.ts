@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OuraNodeParameters {
-    /**
-     * Default: "summary"
-     */
+    /** Default: "summary" */
     readonly resource?: "profile" | "summary";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getActivity" | "getReadiness" | "getSleep";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -31,9 +25,7 @@ export interface OuraNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "end"?: string, "start"?: string };
 
 }

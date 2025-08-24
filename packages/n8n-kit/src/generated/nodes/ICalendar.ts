@@ -9,26 +9,18 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ICalendarNodeParameters {
-    /**
-     * Default: "createEventFile"
-     */
+    /** Default: "createEventFile" */
     readonly operation?: "createEventFile";
 
     readonly title?: string;
 
-    /**
-     * Date and time at which the event begins. (For all-day events, the time will be ignored.).
-     */
+    /** Date and time at which the event begins. (For all-day events, the time will be ignored.). */
     readonly start?: string;
 
-    /**
-     * Date and time at which the event ends. (For all-day events, the time will be ignored.).
-     */
+    /** Date and time at which the event ends. (For all-day events, the time will be ignored.). */
     readonly end?: string;
 
-    /**
-     * Whether the event lasts all day or not
-     */
+    /** Whether the event lasts all day or not */
     readonly allDay?: boolean;
 
     /**
@@ -37,9 +29,7 @@ export interface ICalendarNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string, "useWorkflowTimezone"?: boolean };
 
 }

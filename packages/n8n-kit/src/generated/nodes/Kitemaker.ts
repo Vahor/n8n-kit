@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface KitemakerNodeParameters {
-    /**
-     * Default: "workItem"
-     */
+    /** Default: "workItem" */
     readonly resource?: "organization" | "space" | "user" | "workItem";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "create" | "get" | "getAll" | "update";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -31,9 +25,7 @@ export interface KitemakerNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Title of the work item to create
-     */
+    /** Title of the work item to create */
     readonly title?: string;
 
     /**
@@ -50,19 +42,13 @@ export interface KitemakerNodeParameters {
      */
     readonly statusId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string, "effort"?: "SMALL" | "MEDIUM" | "LARGE", "impact"?: "SMALL" | "MEDIUM" | "LARGE", "labelIds"?: any[], "memberIds"?: any[] };
 
-    /**
-     * ID of the work item to retrieve
-     */
+    /** ID of the work item to retrieve */
     readonly workItemId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "description"?: string, "effort"?: "SMALL" | "MEDIUM" | "LARGE", "impact"?: "SMALL" | "MEDIUM" | "LARGE", "statusId"?: string, "title"?: string };
 
 }

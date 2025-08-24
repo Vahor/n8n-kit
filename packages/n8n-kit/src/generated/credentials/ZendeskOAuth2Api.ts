@@ -8,14 +8,10 @@ export const name = "zendeskOAuth2Api" as const;
  * documentationUrl: zendesk
  */
 export interface ZendeskOAuth2ApiCredentials {
-    /**
-     * The subdomain of your Zendesk work environment
-     */
+    /** The subdomain of your Zendesk work environment */
     readonly "subdomain": string;
 
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
     /**
@@ -32,24 +28,16 @@ export interface ZendeskOAuth2ApiCredentials {
 
     readonly "clientId": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
-    /**
-     * Default: "read write"
-     */
+    /** Default: "read write" */
     readonly "scope"?: any;
 
-    /**
-     * For some services additional query parameters have to be set which can be defined here
-     */
+    /** For some services additional query parameters have to be set which can be defined here */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "zendeskOAuth2Api";

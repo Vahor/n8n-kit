@@ -8,34 +8,22 @@ export const name = "slackOAuth2Api" as const;
  * documentationUrl: slack
  */
 export interface SlackOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://slack.com/oauth/v2/authorize"
-     */
+    /** Default: "https://slack.com/oauth/v2/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://slack.com/api/oauth.v2.access"
-     */
+    /** Default: "https://slack.com/api/oauth.v2.access" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "chat:write"
-     */
+    /** Default: "chat:write" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "user_scope=channels:read channels:write chat:write files:read files:write groups:read im:read mpim:read reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read"
-     */
+    /** Default: "user_scope=channels:read channels:write chat:write files:read files:write groups:read im:read mpim:read reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly "notice"?: string;

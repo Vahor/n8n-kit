@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AzureCosmosDbNodeParameters {
-    /**
-     * Default: "container"
-     */
+    /** Default: "container" */
     readonly resource?: "container" | "item";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "query" | "update";
 
-    /**
-     * Unique identifier for the new container
-     */
+    /** Unique identifier for the new container */
     readonly containerCreate?: string;
 
     /**
@@ -30,9 +24,7 @@ export interface AzureCosmosDbNodeParameters {
      */
     readonly partitionKey?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "indexingPolicy"?: string, "maxThroughput"?: number, "offerThroughput"?: number } | { "partitionKey"?: string };
 
     /**
@@ -50,9 +42,7 @@ export interface AzureCosmosDbNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

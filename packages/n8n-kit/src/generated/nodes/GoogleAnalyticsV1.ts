@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleAnalyticsV1NodeParameters {
-    /**
-     * Default: "report"
-     */
+    /** Default: "report" */
     readonly resource?: "report" | "userActivity";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "search";
 
     /**
@@ -25,9 +21,7 @@ export interface GoogleAnalyticsV1NodeParameters {
      */
     readonly viewId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -43,14 +37,10 @@ export interface GoogleAnalyticsV1NodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "dateRangesUi"?: { "dateRanges": any }, "dimensionUi"?: { "dimensionValues": any }, "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "metricsUi"?: { "metricValues": any }, "useResourceQuotas"?: boolean } | { "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
 
-    /**
-     * ID of a user
-     */
+    /** ID of a user */
     readonly userId?: string;
 
 }

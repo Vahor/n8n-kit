@@ -20,14 +20,10 @@ export interface MergeV1NodeParameters {
      */
     readonly join?: "inner" | "left" | "outer";
 
-    /**
-     * Name of property which decides which items to merge of input 1
-     */
+    /** Name of property which decides which items to merge of input 1 */
     readonly propertyName1?: string;
 
-    /**
-     * Name of property which decides which items to merge of input 2
-     */
+    /** Name of property which decides which items to merge of input 2 */
     readonly propertyName2?: string;
 
     /**

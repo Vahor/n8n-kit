@@ -10,14 +10,10 @@ export const name = "xataApi" as const;
 export interface XataApiCredentials {
     readonly "databaseEndpoint": string;
 
-    /**
-     * Default: "main"
-     */
+    /** Default: "main" */
     readonly "branch": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "xataApi";

@@ -14,9 +14,7 @@ export interface AdaloApiCredentials {
      */
     readonly "apiKey"?: string;
 
-    /**
-     * You can get App ID from the URL of your app. For example, if your app URL is <strong>https://app.adalo.com/apps/1234567890/screens</strong>, then your App ID is <strong>1234567890</strong>.
-     */
+    /** You can get App ID from the URL of your app. For example, if your app URL is <strong>https://app.adalo.com/apps/1234567890/screens</strong>, then your App ID is <strong>1234567890</strong>. */
     readonly "appId"?: string;
 
     readonly __name: "adaloApi";

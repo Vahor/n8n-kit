@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SecurityScorecardNodeParameters {
-    /**
-     * Default: "company"
-     */
+    /** Default: "company" */
     readonly resource?: "company" | "industry" | "invite" | "portfolio" | "portfolioCompany" | "report";
 
-    /**
-     * Default: "getFactor"
-     */
+    /** Default: "getFactor" */
     readonly operation?: "getFactor" | "getFactorHistorical" | "getHistoricalScore" | "getScorecard" | "getScorePlan" | "getFactor" | "getFactorHistorical" | "getScore" | "create" | "create" | "delete" | "getAll" | "update" | "add" | "getAll" | "remove" | "download" | "generate" | "getAll";
 
-    /**
-     * Primary identifier of a company or scorecard, i.e. domain.
-     */
+    /** Primary identifier of a company or scorecard, i.e. domain. */
     readonly scorecardIdentifier?: string;
 
-    /**
-     * Score target
-     */
+    /** Score target */
     readonly score?: number;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -47,19 +37,13 @@ export interface SecurityScorecardNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "severity"?: string, "severity_in"?: string } | { "grade"?: string, "industry"?: string, "issueType"?: string, "status"?: "active" | "inactive", "vulnerability"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "date_from"?: string, "date_to"?: string, "timing"?: "daily" | "weekly" | "monthly" } | { "from"?: string, "to"?: string } | { "format"?: "csv" | "pdf" } | { "countries"?: string, "format"?: "csv" | "pdf", "ips"?: string, "subdomains"?: string };
 
-    /**
-     * Default: "food"
-     */
+    /** Default: "food" */
     readonly industry?: "food" | "healthcare" | "manofacturing" | "retail" | "technology";
 
     readonly email?: string;
@@ -68,55 +52,37 @@ export interface SecurityScorecardNodeParameters {
 
     readonly lastName?: string;
 
-    /**
-     * Message for the invitee
-     */
+    /** Message for the invitee */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "days_to_resolve_issue"?: number, "domain"?: string, "grade_to_maintain"?: string, "is_organization_point_of_contact"?: boolean, "issue_desc"?: string, "issue_title"?: string, "issue_type"?: string, "sendme_copy"?: boolean, "target_url"?: string };
 
     readonly portfolioId?: string;
 
-    /**
-     * Name of the portfolio
-     */
+    /** Name of the portfolio */
     readonly name?: string;
 
     readonly description?: string;
 
-    /**
-     * Default: "shared"
-     */
+    /** Default: "shared" */
     readonly privacy?: "private" | "shared" | "team";
 
-    /**
-     * Company's domain name
-     */
+    /** Company's domain name */
     readonly domain?: string;
 
-    /**
-     * Default: "detailed"
-     */
+    /** Default: "detailed" */
     readonly report?: "detailed" | "events-json" | "issues" | "partnership" | "summary" | "full-scorecard-json" | "portfolio" | "scorecard-footprint";
 
-    /**
-     * Default: "securityscorecard"
-     */
+    /** Default: "securityscorecard" */
     readonly branding?: "securityscorecard" | "company_and_securityscorecard" | "company";
 
     readonly date?: string;
 
-    /**
-     * URL to a generated report
-     */
+    /** URL to a generated report */
     readonly url?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
 }

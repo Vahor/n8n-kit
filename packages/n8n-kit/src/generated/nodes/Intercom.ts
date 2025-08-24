@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IntercomNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "company" | "lead" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "users";
 
-    /**
-     * The Intercom defined ID representing the Lead
-     */
+    /** The Intercom defined ID representing the Lead */
     readonly id?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -36,19 +28,13 @@ export interface IntercomNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "company_id"?: string, "email"?: string, "segment_id"?: string, "tag_id"?: string } | { "email"?: string, "phone"?: string } | { "segment_id"?: string, "tag_id"?: string };
 
-    /**
-     * The property to select the user by
-     */
+    /** The property to select the user by */
     readonly selectBy?: "id" | "userId" | "email" | "id" | "userId" | "phone" | "companyId" | "id" | "name";
 
-    /**
-     * View by value
-     */
+    /** View by value */
     readonly value?: string;
 
     /**
@@ -57,21 +43,15 @@ export interface IntercomNodeParameters {
      */
     readonly updateBy?: "id" | "email" | "userId" | "userId" | "id";
 
-    /**
-     * Unique string identifier
-     */
+    /** Unique string identifier */
     readonly identifierType?: "userId" | "email";
 
-    /**
-     * Unique string identifier value
-     */
+    /** Unique string identifier value */
     readonly idValue?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "avatar"?: string, "companies"?: any[], "email"?: string, "name"?: string, "phone"?: string, "sessionCount"?: number, "userId"?: string, "unsubscribedFromEmails"?: boolean, "updateLastRequestAt"?: boolean, "utmCampaign"?: string, "utmContent"?: string, "utmMedium"?: string, "utmSource"?: string, "utmTerm"?: string } | { "avatar"?: string, "companies"?: any[], "email"?: string, "name"?: string, "phone"?: string, "unsubscribedFromEmails"?: boolean, "updateLastRequestAt"?: boolean, "utmCampaign"?: string, "utmContent"?: string, "utmMedium"?: string, "utmSource"?: string, "utmTerm"?: string } | { "industry"?: string, "monthlySpend"?: string, "name"?: string, "plan"?: string, "size"?: number, "website"?: string };
 
     /**
@@ -89,16 +69,12 @@ export interface IntercomNodeParameters {
 
     readonly deleteBy?: "id" | "userId";
 
-    /**
-     * The email of the user
-     */
+    /** The email of the user */
     readonly email?: string;
 
     readonly listBy?: "id" | "companyId";
 
-    /**
-     * The company ID you have defined for the company
-     */
+    /** The company ID you have defined for the company */
     readonly companyId?: string;
 
 }

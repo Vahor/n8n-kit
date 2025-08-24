@@ -9,9 +9,7 @@ export const inputs = {"undefined":"main","Tools":"ai_tool"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenAiAssistantNodeParameters {
-    /**
-     * Default: "existing"
-     */
+    /** Default: "existing" */
     readonly mode?: "new" | "existing";
 
     readonly name?: string;
@@ -35,14 +33,10 @@ export interface OpenAiAssistantNodeParameters {
      */
     readonly assistantId?: string;
 
-    /**
-     * Default: "={{ $json.chat_input }}"
-     */
+    /** Default: "={{ $json.chat_input }}" */
     readonly text?: string;
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly nativeTools?: ("code_interpreter" | "retrieval")[];
 
     /**

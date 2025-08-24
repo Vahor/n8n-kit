@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryPostgresChatNodeParameters {
-    /**
-     * Default: "fromInput"
-     */
+    /** Default: "fromInput" */
     readonly sessionIdType?: "fromInput" | "customKey";
 
-    /**
-     * Default: "={{ $json.sessionId }}"
-     */
+    /** Default: "={{ $json.sessionId }}" */
     readonly sessionKey?: string;
 
     /**
@@ -25,9 +21,7 @@ export interface MemoryPostgresChatNodeParameters {
      */
     readonly tableName?: string;
 
-    /**
-     * Default: 5
-     */
+    /** Default: 5 */
     readonly contextWindowLength?: number;
 
 }

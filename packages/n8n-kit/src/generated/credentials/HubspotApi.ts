@@ -10,9 +10,7 @@ export const name = "hubspotApi" as const;
 export interface HubspotApiCredentials {
     readonly "notice"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "hubspotApi";

@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleCloudNaturalLanguageNodeParameters {
-    /**
-     * Default: "document"
-     */
+    /** Default: "document" */
     readonly resource?: "document";
 
-    /**
-     * Default: "analyzeSentiment"
-     */
+    /** Default: "analyzeSentiment" */
     readonly operation?: "analyzeSentiment";
 
     /**
@@ -25,19 +21,13 @@ export interface GoogleCloudNaturalLanguageNodeParameters {
      */
     readonly source?: "content" | "gcsContentUri";
 
-    /**
-     * The content of the input in string format. Cloud audit logging exempt since it is based on user data.
-     */
+    /** The content of the input in string format. Cloud audit logging exempt since it is based on user data. */
     readonly content?: string;
 
-    /**
-     * The Google Cloud Storage URI where the file content is located. This URI must be of the form: <code>gs://bucket_name/object_name</code>. For more details, see <a href="https://cloud.google.com/storage/docs/reference-uris.">reference</a>.
-     */
+    /** The Google Cloud Storage URI where the file content is located. This URI must be of the form: <code>gs://bucket_name/object_name</code>. For more details, see <a href="https://cloud.google.com/storage/docs/reference-uris.">reference</a>. */
     readonly gcsContentUri?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "documentType"?: "HTML" | "PLAIN_TEXT", "encodingType"?: "NONE" | "UTF8" | "UTF16" | "UTF32", "language"?: "ar" | "zh" | "zh-Hant" | "nl" | "en" | "fr" | "de" | "id" | "it" | "ja" | "ko" | "pt" | "es" | "th" | "tr" | "vi" };
 
 }

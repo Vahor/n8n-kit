@@ -14,9 +14,7 @@ export interface RetrieverWorkflowNodeParameters {
      */
     readonly source?: "database" | "parameter";
 
-    /**
-     * The workflow to execute
-     */
+    /** The workflow to execute */
     readonly workflowId?: string;
 
     /**

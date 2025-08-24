@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StravaNodeParameters {
-    /**
-     * Default: "activity"
-     */
+    /** Default: "activity" */
     readonly resource?: "activity";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getComments" | "getKudos" | "getLaps" | "getAll" | "getStreams" | "getZones" | "update";
 
-    /**
-     * The name of the activity
-     */
+    /** The name of the activity */
     readonly name?: string;
 
-    /**
-     * Type of activity. For example - Run, Ride etc.
-     */
+    /** Type of activity. For example - Run, Ride etc. */
     readonly type?: string;
 
     /**
@@ -35,9 +27,7 @@ export interface StravaNodeParameters {
      */
     readonly sport_type?: "AlpineSki" | "BackcountrySki" | "Badminton" | "Canoeing" | "Crossfit" | "EBikeRide" | "Elliptical" | "EMountainBikeRide" | "Golf" | "GravelRide" | "Handcycle" | "HighIntensityIntervalTraining" | "Hike" | "IceSkate" | "InlineSkate" | "Kayaking" | "Kitesurf" | "MountainBikeRide" | "NordicSki" | "Pickleball" | "Pilates" | "Racquetball" | "Ride" | "RockClimbing" | "RollerSki" | "Rowing" | "Run" | "Sail" | "Skateboard" | "Snowboard" | "Snowshoe" | "Soccer" | "Squash" | "StairStepper" | "StandUpPaddling" | "Surfing" | "Swim" | "TableTennis" | "Tennis" | "TrailRun" | "Velomobile" | "VirtualRide" | "VirtualRow" | "VirtualRun" | "Walk" | "WeightTraining" | "Wheelchair" | "Windsurf" | "Workout" | "Yoga";
 
-    /**
-     * ISO 8601 formatted date time
-     */
+    /** ISO 8601 formatted date time */
     readonly startDate?: string;
 
     /**
@@ -46,24 +36,16 @@ export interface StravaNodeParameters {
      */
     readonly elapsedTime?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "commute"?: boolean, "description"?: string, "distance"?: number, "trainer"?: boolean };
 
-    /**
-     * ID or email of activity
-     */
+    /** ID or email of activity */
     readonly activityId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "commute"?: boolean, "description"?: string, "gear_id"?: string, "hide_from_home"?: boolean, "name"?: string, "type"?: string, "sport_type"?: "AlpineSki" | "BackcountrySki" | "Badminton" | "Canoeing" | "Crossfit" | "EBikeRide" | "Elliptical" | "EMountainBikeRide" | "Golf" | "GravelRide" | "Handcycle" | "HighIntensityIntervalTraining" | "Hike" | "IceSkate" | "InlineSkate" | "Kayaking" | "Kitesurf" | "MountainBikeRide" | "NordicSki" | "Pickleball" | "Pilates" | "Racquetball" | "Ride" | "RockClimbing" | "RollerSki" | "Rowing" | "Run" | "Sail" | "Skateboard" | "Snowboard" | "Snowshoe" | "Soccer" | "Squash" | "StairStepper" | "StandUpPaddling" | "Surfing" | "Swim" | "TableTennis" | "Tennis" | "TrailRun" | "Velomobile" | "VirtualRide" | "VirtualRow" | "VirtualRun" | "Walk" | "WeightTraining" | "Wheelchair" | "Windsurf" | "Workout" | "Yoga", "trainer"?: boolean };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

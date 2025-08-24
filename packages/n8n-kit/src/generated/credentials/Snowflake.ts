@@ -8,19 +8,13 @@ export const name = "snowflake" as const;
  * documentationUrl: snowflake
  */
 export interface SnowflakeCredentials {
-    /**
-     * Enter the name of your Snowflake account
-     */
+    /** Enter the name of your Snowflake account */
     readonly "account"?: string;
 
-    /**
-     * Specify the database you want to use after creating the connection
-     */
+    /** Specify the database you want to use after creating the connection */
     readonly "database"?: string;
 
-    /**
-     * The default virtual warehouse to use for the session after connecting. Used for performing queries, loading data, etc.
-     */
+    /** The default virtual warehouse to use for the session after connecting. Used for performing queries, loading data, etc. */
     readonly "warehouse"?: string;
 
     /**
@@ -31,9 +25,7 @@ export interface SnowflakeCredentials {
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     /**
@@ -48,19 +40,13 @@ export interface SnowflakeCredentials {
      */
     readonly "passphrase"?: string;
 
-    /**
-     * Enter the schema you want to use after creating the connection
-     */
+    /** Enter the schema you want to use after creating the connection */
     readonly "schema"?: string;
 
-    /**
-     * Enter the security role you want to use after creating the connection
-     */
+    /** Enter the security role you want to use after creating the connection */
     readonly "role"?: string;
 
-    /**
-     * Whether to keep alive the client session. By default, client connections typically time out approximately 3-4 hours after the most recent query was executed. If the parameter clientSessionKeepAlive is set to true, the client’s connection to the server will be kept alive indefinitely, even if no queries are executed.
-     */
+    /** Whether to keep alive the client session. By default, client connections typically time out approximately 3-4 hours after the most recent query was executed. If the parameter clientSessionKeepAlive is set to true, the client’s connection to the server will be kept alive indefinitely, even if no queries are executed. */
     readonly "clientSessionKeepAlive"?: boolean;
 
     readonly __name: "snowflake";

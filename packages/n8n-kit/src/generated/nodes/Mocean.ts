@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MoceanNodeParameters {
-    /**
-     * Default: "sms"
-     */
+    /** Default: "sms" */
     readonly resource?: "sms" | "voice";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send";
 
-    /**
-     * Number to which to send the message
-     */
+    /** Number to which to send the message */
     readonly from?: string;
 
-    /**
-     * Number from which to send the message
-     */
+    /** Number from which to send the message */
     readonly to?: string;
 
-    /**
-     * Default: "en-US"
-     */
+    /** Default: "en-US" */
     readonly language?: "cmn-CN" | "en-GB" | "en-US" | "ja-JP" | "ko-KR";
 
-    /**
-     * Message to send
-     */
+    /** Message to send */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "dlrUrl"?: string };
 
 }

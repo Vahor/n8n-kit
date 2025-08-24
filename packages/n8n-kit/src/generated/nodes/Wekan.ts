@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WekanNodeParameters {
-    /**
-     * Default: "card"
-     */
+    /** Default: "card" */
     readonly resource?: "board" | "card" | "cardComment" | "checklist" | "checklistItem" | "list";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "delete" | "get" | "update";
 
-    /**
-     * The title of the board
-     */
+    /** The title of the board */
     readonly title?: string;
 
     /**
@@ -30,14 +24,10 @@ export interface WekanNodeParameters {
      */
     readonly owner?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "isActive"?: boolean, "isAdmin"?: boolean, "color"?: "belize" | "midnight" | "nephritis" | "pomegranate" | "pumpkin" | "wisteria", "isCommentOnly"?: boolean, "isNoComments"?: boolean, "permission"?: "private" | "public", "isWorker"?: boolean } | { "assignees"?: any[], "description"?: string, "members"?: any[] };
 
-    /**
-     * The ID of the board to delete
-     */
+    /** The ID of the board to delete */
     readonly boardId?: string;
 
     /**
@@ -46,9 +36,7 @@ export interface WekanNodeParameters {
      */
     readonly IdUser?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -84,14 +72,10 @@ export interface WekanNodeParameters {
 
     readonly fromObject?: "list" | "swimlane";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "authorId"?: string, "assignees"?: any[], "color"?: "black" | "blue" | "crimson" | "darkgreen" | "gold" | "gray" | "green" | "indigo" | "lime" | "magenta" | "mistyrose" | "navy" | "orange" | "paleturquoise" | "peachpuff" | "pink" | "plum" | "purple" | "red" | "saddlebrown" | "silver" | "sky" | "slateblue" | "white" | "yellow", "description"?: string, "dueAt"?: string, "endAt"?: string, "labelIds"?: string, "listId"?: string, "members"?: any[], "isOverTime"?: boolean, "parentId"?: string, "receivedAt"?: string, "sort"?: number, "spentTime"?: number, "startAt"?: string, "swimlaneId"?: string, "title"?: string } | { "title"?: string, "isFinished"?: boolean };
 
-    /**
-     * The comment text
-     */
+    /** The comment text */
     readonly comment?: string;
 
     /**

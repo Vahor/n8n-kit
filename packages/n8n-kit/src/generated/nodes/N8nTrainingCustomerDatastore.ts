@@ -8,14 +8,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface N8nTrainingCustomerDatastoreNodeParameters {
-    /**
-     * Default: "getOnePerson"
-     */
+    /** Default: "getOnePerson" */
     readonly operation?: "getOnePerson" | "getAllPeople";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

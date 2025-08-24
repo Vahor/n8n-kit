@@ -8,14 +8,10 @@ export const name = "mistApi" as const;
  * documentationUrl: mist
  */
 export interface MistApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "token": string;
 
-    /**
-     * Default: "eu"
-     */
+    /** Default: "eu" */
     readonly "region"?: "eu" | "global";
 
     readonly __name: "mistApi";

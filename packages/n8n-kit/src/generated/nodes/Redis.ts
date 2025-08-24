@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RedisNodeParameters {
-    /**
-     * Default: "info"
-     */
+    /** Default: "info" */
     readonly operation?: "delete" | "get" | "incr" | "info" | "keys" | "pop" | "publish" | "push" | "set";
 
-    /**
-     * Name of the key to delete from Redis
-     */
+    /** Name of the key to delete from Redis */
     readonly key?: string;
 
     /**
@@ -31,14 +27,10 @@ export interface RedisNodeParameters {
      */
     readonly keyType?: "automatic" | "hash" | "list" | "sets" | "string";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "dotNotation"?: boolean };
 
-    /**
-     * Whether to set a timeout on key
-     */
+    /** Whether to set a timeout on key */
     readonly expire?: boolean;
 
     /**
@@ -48,9 +40,7 @@ export interface RedisNodeParameters {
      */
     readonly ttl?: number;
 
-    /**
-     * The key pattern for the keys to return
-     */
+    /** The key pattern for the keys to return */
     readonly keyPattern?: string;
 
     /**
@@ -59,9 +49,7 @@ export interface RedisNodeParameters {
      */
     readonly getValues?: boolean;
 
-    /**
-     * The value to write in Redis
-     */
+    /** The value to write in Redis */
     readonly value?: string;
 
     /**
@@ -70,24 +58,16 @@ export interface RedisNodeParameters {
      */
     readonly valueIsJSON?: boolean;
 
-    /**
-     * Channel name
-     */
+    /** Channel name */
     readonly channel?: string;
 
-    /**
-     * Data to publish
-     */
+    /** Data to publish */
     readonly messageData?: string;
 
-    /**
-     * Name of the list in Redis
-     */
+    /** Name of the list in Redis */
     readonly list?: string;
 
-    /**
-     * Whether to push or pop data from the end of the list
-     */
+    /** Whether to push or pop data from the end of the list */
     readonly tail?: boolean;
 
 }

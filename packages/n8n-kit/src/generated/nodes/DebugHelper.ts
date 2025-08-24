@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DebugHelperNodeParameters {
-    /**
-     * Default: "throwError"
-     */
+    /** Default: "throwError" */
     readonly category?: "doNothing" | "throwError" | "oom" | "randomData";
 
-    /**
-     * Default: "NodeApiError"
-     */
+    /** Default: "NodeApiError" */
     readonly throwErrorType?: "NodeApiError" | "NodeOperationError" | "Error";
 
     /**
@@ -31,9 +27,7 @@ export interface DebugHelperNodeParameters {
      */
     readonly memorySizeValue?: number;
 
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly randomDataType?: "address" | "latLong" | "creditCard" | "email" | "ipv4" | "ipv6" | "macAddress" | "nanoid" | "url" | "user" | "uuid" | "semver";
 
     /**
@@ -48,9 +42,7 @@ export interface DebugHelperNodeParameters {
      */
     readonly nanoidLength?: string;
 
-    /**
-     * If set, seed to use for generating the data (same seed will generate the same data)
-     */
+    /** If set, seed to use for generating the data (same seed will generate the same data) */
     readonly randomDataSeed?: string;
 
     /**
@@ -59,9 +51,7 @@ export interface DebugHelperNodeParameters {
      */
     readonly randomDataCount?: number;
 
-    /**
-     * Whether to output a single array instead of multiple items
-     */
+    /** Whether to output a single array instead of multiple items */
     readonly randomDataSingleArray?: boolean;
 
 }

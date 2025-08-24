@@ -15,9 +15,7 @@ export interface EmeliaTriggerNodeParameters {
      */
     readonly campaignId?: string;
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("bounced" | "opened" | "replied" | "sent" | "clicked" | "unsubscribed")[];
 
 }

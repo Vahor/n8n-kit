@@ -12,9 +12,7 @@ export interface NextCloudApiCredentials {
 
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "nextCloudApi";

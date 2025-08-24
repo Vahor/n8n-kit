@@ -8,9 +8,7 @@ export const name = "linkedInOAuth2Api" as const;
  * documentationUrl: linkedIn
  */
 export interface LinkedInOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
     /**
@@ -19,14 +17,10 @@ export interface LinkedInOAuth2ApiCredentials {
      */
     readonly "organizationSupport"?: boolean;
 
-    /**
-     * Default: "https://www.linkedin.com/oauth/v2/authorization"
-     */
+    /** Default: "https://www.linkedin.com/oauth/v2/authorization" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://www.linkedin.com/oauth/v2/accessToken"
-     */
+    /** Default: "https://www.linkedin.com/oauth/v2/accessToken" */
     readonly "accessTokenUrl": any;
 
     /**
@@ -37,9 +31,7 @@ export interface LinkedInOAuth2ApiCredentials {
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     /**

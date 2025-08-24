@@ -9,9 +9,7 @@ export const inputs = {"main":"main","Document":"ai_document","Embedding":"ai_em
 export const outputs = {"main":"main"} as const;
 
 export interface VectorStorePineconeInsertNodeParameters {
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly pineconeIndex?: {
 	value: string,
 	mode: "list" | "id",
@@ -19,9 +17,7 @@ export interface VectorStorePineconeInsertNodeParameters {
 
     readonly pineconeNamespace?: string;
 
-    /**
-     * Whether to clear the namespace before inserting new data
-     */
+    /** Whether to clear the namespace before inserting new data */
     readonly clearNamespace?: boolean;
 
 }

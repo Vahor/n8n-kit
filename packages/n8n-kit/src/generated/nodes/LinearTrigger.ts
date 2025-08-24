@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinearTriggerNodeParameters {
-    /**
-     * Default: "apiToken"
-     */
+    /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
 
     /**
@@ -20,9 +18,7 @@ export interface LinearTriggerNodeParameters {
      */
     readonly teamId?: string;
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly resources?: ("reaction" | "cycle" | "issue" | "comment" | "issueLabel" | "project")[];
 
 }

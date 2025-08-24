@@ -10,34 +10,22 @@ export const name = "serviceNowOAuth2Api" as const;
 export interface ServiceNowOAuth2ApiCredentials {
     readonly "subdomain": string;
 
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "=https://{{$self[\"subdomain\"]}}.service-now.com/oauth_auth.do"
-     */
+    /** Default: "=https://{{$self[\"subdomain\"]}}.service-now.com/oauth_auth.do" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "=https://{{$self[\"subdomain\"]}}.service-now.com/oauth_token.do"
-     */
+    /** Default: "=https://{{$self[\"subdomain\"]}}.service-now.com/oauth_token.do" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "useraccount"
-     */
+    /** Default: "useraccount" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "response_type=code"
-     */
+    /** Default: "response_type=code" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "serviceNowOAuth2Api";

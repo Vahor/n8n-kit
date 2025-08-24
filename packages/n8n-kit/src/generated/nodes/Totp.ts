@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TotpNodeParameters {
-    /**
-     * Default: "generateSecret"
-     */
+    /** Default: "generateSecret" */
     readonly operation?: "generateSecret";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "algorithm"?: "SHA1" | "SHA224" | "SHA256" | "SHA3-224" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512", "digits"?: number, "period"?: number };
 
 }

@@ -8,9 +8,7 @@ export const name = "microsoftExcelOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftExcelOAuth2ApiCredentials {
-    /**
-     * Default: "openid offline_access Files.ReadWrite"
-     */
+    /** Default: "openid offline_access Files.ReadWrite" */
     readonly "scope"?: any;
 
     readonly __name: "microsoftExcelOAuth2Api";

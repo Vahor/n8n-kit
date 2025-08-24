@@ -8,9 +8,7 @@ export const name = "googleFirebaseCloudFirestoreOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleFirebaseCloudFirestoreOAuth2ApiCredentials {
-    /**
-     * Default: "https://www.googleapis.com/auth/datastore https://www.googleapis.com/auth/firebase"
-     */
+    /** Default: "https://www.googleapis.com/auth/datastore https://www.googleapis.com/auth/firebase" */
     readonly "scope"?: any;
 
     readonly __name: "googleFirebaseCloudFirestoreOAuth2Api";

@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CiscoWebexTriggerNodeParameters {
-    /**
-     * Default: "meeting"
-     */
+    /** Default: "meeting" */
     readonly resource?: "all" | "attachmentAction" | "meeting" | "membership" | "message" | "recording" | "room";
 
     readonly event?: "created" | "deleted" | "updated" | "all" | "created" | "deleted" | "updated" | "started" | "ended" | "all" | "created" | "deleted" | "updated" | "created" | "updated" | "deleted" | "all";
@@ -22,9 +20,7 @@ export interface CiscoWebexTriggerNodeParameters {
      */
     readonly resolveData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "hasFiles"?: boolean, "isLocked"?: boolean, "isModerator"?: boolean, "mentionedPeople"?: string, "messageId"?: string, "ownedBy"?: string, "personEmail"?: string, "personId"?: string, "roomId"?: string, "roomType"?: "direct" | "group", "type"?: "direct" | "group" };
 
 }

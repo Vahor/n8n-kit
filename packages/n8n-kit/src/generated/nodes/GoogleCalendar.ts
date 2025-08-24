@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleCalendarNodeParameters {
-    /**
-     * Default: "event"
-     */
+    /** Default: "event" */
     readonly resource?: "calendar" | "event";
 
-    /**
-     * Default: "availability"
-     */
+    /** Default: "availability" */
     readonly operation?: "availability" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -28,19 +24,13 @@ export interface GoogleCalendarNodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * Start of the interval
-     */
+    /** Start of the interval */
     readonly timeMin?: string;
 
-    /**
-     * End of the interval
-     */
+    /** End of the interval */
     readonly timeMax?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "outputFormat"?: "availability" | "bookedSlots" | "raw", "timezone"?: {
 	value: string,
 	mode: "list" | "id",
@@ -52,24 +42,16 @@ export interface GoogleCalendarNodeParameters {
 	mode: "list" | "id",
 }, "updatedMin"?: string };
 
-    /**
-     * Start time of the event
-     */
+    /** Start time of the event */
     readonly start?: string;
 
-    /**
-     * End time of the event
-     */
+    /** End time of the event */
     readonly end?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly useDefaultReminders?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "allday"?: "yes" | "no", "attendees"?: string, "color"?: string, "conferenceDataUi"?: { "conferenceDataValues": any }, "description"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: string, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "summary"?: string, "visibility"?: "confidential" | "default" | "private" | "public" };
 
     /**
@@ -81,9 +63,7 @@ export interface GoogleCalendarNodeParameters {
 
     readonly eventId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -93,14 +73,10 @@ export interface GoogleCalendarNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: "instance"
-     */
+    /** Default: "instance" */
     readonly modifyTarget?: "instance" | "event";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "allday"?: "yes" | "no", "attendeesUi"?: { "values": any }, "attendees"?: string, "color"?: string, "description"?: string, "end"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: string, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "start"?: string, "summary"?: string, "visibility"?: "confidential" | "default" | "public" | "private" };
 
 }

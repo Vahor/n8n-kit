@@ -11,9 +11,7 @@ export const outputs = {"main":"main"} as const;
 export interface VectorStoreZepInsertNodeParameters {
     readonly collectionName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "embeddingDimensions"?: number, "isAutoEmbedded"?: boolean };
 
 }

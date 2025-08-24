@@ -14,14 +14,10 @@ export interface MemoryBufferWindowNodeParameters {
      */
     readonly sessionKey?: string;
 
-    /**
-     * Default: "fromInput"
-     */
+    /** Default: "fromInput" */
     readonly sessionIdType?: "fromInput" | "customKey";
 
-    /**
-     * Default: 5
-     */
+    /** Default: 5 */
     readonly contextWindowLength?: number;
 
 }

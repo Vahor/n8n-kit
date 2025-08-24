@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AcuitySchedulingTriggerNodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "oAuth2";
 
     readonly event?: "appointment.canceled" | "appointment.changed" | "appointment.rescheduled" | "appointment.scheduled" | "order.completed";

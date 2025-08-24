@@ -8,14 +8,10 @@ export const name = "iterableApi" as const;
  * documentationUrl: iterable
  */
 export interface IterableApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Default: "https://api.iterable.com"
-     */
+    /** Default: "https://api.iterable.com" */
     readonly "region"?: "https://api.eu.iterable.com" | "https://api.iterable.com";
 
     readonly __name: "iterableApi";

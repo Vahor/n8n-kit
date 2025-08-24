@@ -9,19 +9,13 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GitlabTriggerNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Owner of the repository
-     */
+    /** Owner of the repository */
     readonly owner?: string;
 
-    /**
-     * The name of the repository
-     */
+    /** The name of the repository */
     readonly repository?: string;
 
     /**

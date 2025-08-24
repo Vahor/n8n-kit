@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NocoDBNodeParameters {
-    /**
-     * Default: "nocoDb"
-     */
+    /** Default: "nocoDb" */
     readonly authentication?: "nocoDbApiToken" | "nocoDb";
 
-    /**
-     * Default: 1
-     */
+    /** Default: 1 */
     readonly version?: "1" | "2" | "3";
 
-    /**
-     * Default: "row"
-     */
+    /** Default: "row" */
     readonly resource?: "row";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -48,21 +40,15 @@ export interface NocoDBNodeParameters {
      */
     readonly table?: string;
 
-    /**
-     * Default: "id"
-     */
+    /** Default: "id" */
     readonly primaryKey?: "id" | "ncRecordId" | "custom";
 
     readonly customPrimaryKey?: string;
 
-    /**
-     * The value of the ID field
-     */
+    /** The value of the ID field */
     readonly id?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -72,19 +58,13 @@ export interface NocoDBNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether the attachment fields define in 'Download Fields' will be downloaded
-     */
+    /** Whether the attachment fields define in 'Download Fields' will be downloaded */
     readonly downloadAttachments?: boolean;
 
-    /**
-     * Name of the fields of type 'attachment' that should be downloaded. Multiple ones can be defined separated by comma. Case sensitive.
-     */
+    /** Name of the fields of type 'attachment' that should be downloaded. Multiple ones can be defined separated by comma. Case sensitive. */
     readonly downloadFieldNames?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "viewId"?: string, "fields"?: string, "sort"?: { "property": any }, "where"?: string };
 
     /**
@@ -93,9 +73,7 @@ export interface NocoDBNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**

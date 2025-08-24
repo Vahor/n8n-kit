@@ -15,24 +15,16 @@ export interface StoryblokNodeParameters {
      */
     readonly source?: "contentApi" | "managementApi";
 
-    /**
-     * Default: "story"
-     */
+    /** Default: "story" */
     readonly resource?: "story";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "delete" | "get" | "getAll" | "publish" | "unpublish";
 
-    /**
-     * The ID or slug of the story to get
-     */
+    /** The ID or slug of the story to get */
     readonly identifier?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -42,9 +34,7 @@ export interface StoryblokNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "starts_with"?: string };
 
     /**
@@ -53,14 +43,10 @@ export interface StoryblokNodeParameters {
      */
     readonly space?: string;
 
-    /**
-     * Numeric ID of the story
-     */
+    /** Numeric ID of the story */
     readonly storyId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "releaseId"?: string, "language"?: string };
 
 }

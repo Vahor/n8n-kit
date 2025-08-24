@@ -9,26 +9,18 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VeroNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "user" | "event";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "addTags" | "alias" | "create" | "delete" | "resubscribe" | "removeTags" | "unsubscribe" | "track";
 
-    /**
-     * The unique identifier of the customer
-     */
+    /** The unique identifier of the customer */
     readonly id?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "email"?: string };
 
     /**
@@ -44,21 +36,15 @@ export interface VeroNodeParameters {
      */
     readonly dataAttributesJson?: string;
 
-    /**
-     * The new unique identifier of the user
-     */
+    /** The new unique identifier of the user */
     readonly newId?: string;
 
-    /**
-     * Tags to add separated by ","
-     */
+    /** Tags to add separated by "," */
     readonly tags?: string;
 
     readonly email?: string;
 
-    /**
-     * The name of the event tracked
-     */
+    /** The name of the event tracked */
     readonly eventName?: string;
 
     /**

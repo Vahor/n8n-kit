@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface N8nNodeParameters {
-    /**
-     * Default: "workflow"
-     */
+    /** Default: "workflow" */
     readonly resource?: "audit" | "credential" | "execution" | "workflow";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "categories"?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], "daysAbandonedWorkflow"?: number };
 
-    /**
-     * Name of the new credential
-     */
+    /** Name of the new credential */
     readonly name?: string;
 
-    /**
-     * The available types depend on nodes installed on the n8n instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'.
-     */
+    /** The available types depend on nodes installed on the n8n instance. Some built-in types include e.g. 'githubApi', 'notionApi', and 'slackApi'. */
     readonly credentialTypeName?: string;
 
     /**
@@ -44,9 +34,7 @@ export interface N8nNodeParameters {
 
     readonly executionId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -56,17 +44,13 @@ export interface N8nNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "workflowId"?: {
 	value: string,
 	mode: "list" | "url" | "id",
 }, "status"?: "error" | "success" | "waiting" } | { "activeWorkflows"?: boolean, "tags"?: string, "name"?: string, "projectId"?: string, "excludePinnedData"?: boolean };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "activeWorkflows"?: boolean };
 
     /**

@@ -14,24 +14,16 @@ export interface VenafiTlsProtectDatacenterApiCredentials {
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly "allowUnauthorizedCerts"?: boolean;
 
-    /**
-     * Type options: {"expirable":true}
-     */
+    /** Type options: {"expirable":true} */
     readonly "token"?: any;
 
-    /**
-     * Default: "certificate:manage"
-     */
+    /** Default: "certificate:manage" */
     readonly "scope"?: any;
 
     readonly __name: "venafiTlsProtectDatacenterApi";

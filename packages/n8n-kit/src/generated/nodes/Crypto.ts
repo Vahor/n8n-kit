@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CryptoNodeParameters {
-    /**
-     * Default: "hash"
-     */
+    /** Default: "hash" */
     readonly action?: "generate" | "hash" | "hmac" | "sign";
 
     /**
@@ -19,9 +17,7 @@ export interface CryptoNodeParameters {
      */
     readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
-    /**
-     * Whether the data to hashed should be taken from binary field
-     */
+    /** Whether the data to hashed should be taken from binary field */
     readonly binaryData?: boolean;
 
     /**
@@ -30,9 +26,7 @@ export interface CryptoNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * The value that should be hashed
-     */
+    /** The value that should be hashed */
     readonly value?: string;
 
     /**
@@ -41,24 +35,16 @@ export interface CryptoNodeParameters {
      */
     readonly dataPropertyName?: string;
 
-    /**
-     * Default: "hex"
-     */
+    /** Default: "hex" */
     readonly encoding?: "base64" | "hex";
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly secret?: string;
 
-    /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-     */
+    /** Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a> */
     readonly algorithm?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "sha512-224" | "sha512-256" | "ripemd160";
 
-    /**
-     * Private key to use when signing the string
-     */
+    /** Private key to use when signing the string */
     readonly privateKey?: string;
 
     /**

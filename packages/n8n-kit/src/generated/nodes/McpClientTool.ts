@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"Tools":"ai_tool"} as const;
 
 export interface McpClientToolNodeParameters {
-    /**
-     * SSE Endpoint of your MCP server
-     */
+    /** SSE Endpoint of your MCP server */
     readonly sseEndpoint?: string;
 
-    /**
-     * Endpoint of your MCP server
-     */
+    /** Endpoint of your MCP server */
     readonly endpointUrl?: string;
 
     /**

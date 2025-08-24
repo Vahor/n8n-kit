@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsV1NodeParameters {
-    /**
-     * Default: "serviceAccount"
-     */
+    /** Default: "serviceAccount" */
     readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "sheet"
-     */
+    /** Default: "sheet" */
     readonly resource?: "spreadsheet" | "sheet";
 
-    /**
-     * Default: "read"
-     */
+    /** Default: "read" */
     readonly operation?: "append" | "clear" | "create" | "upsert" | "delete" | "lookup" | "read" | "remove" | "update" | "create";
 
-    /**
-     * The ID of the Google Spreadsheet. Found as part of the sheet URL https://docs.google.com/spreadsheets/d/{ID}/.
-     */
+    /** The ID of the Google Spreadsheet. Found as part of the sheet URL https://docs.google.com/spreadsheets/d/{ID}/. */
     readonly sheetId?: string;
 
     /**
@@ -42,9 +34,7 @@ export interface GoogleSheetsV1NodeParameters {
      */
     readonly toDelete?: { "columns": any, "rows": any };
 
-    /**
-     * Whether the data should be returned RAW instead of parsed into keys according to their header
-     */
+    /** Whether the data should be returned RAW instead of parsed into keys according to their header */
     readonly rawData?: boolean;
 
     /**
@@ -66,14 +56,10 @@ export interface GoogleSheetsV1NodeParameters {
      */
     readonly keyRow?: number;
 
-    /**
-     * The name of the column in which to look for value
-     */
+    /** The name of the column in which to look for value */
     readonly lookupColumn?: string;
 
-    /**
-     * The value to look for in column
-     */
+    /** The value to look for in column */
     readonly lookupValue?: string;
 
     /**
@@ -82,14 +68,10 @@ export interface GoogleSheetsV1NodeParameters {
      */
     readonly key?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "continue"?: boolean, "returnAllMatches"?: boolean, "usePathForKeyRow"?: boolean, "valueInputMode"?: "RAW" | "USER_ENTERED", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { "gridProperties"?: { "columnCount"?: number, "columnGroupControlAfter"?: boolean, "frozenColumnCount"?: number, "frozenRowCount"?: number, "hideGridlines"?: boolean, "rowCount"?: number, "rowGroupControlAfter"?: boolean }, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: string, "title"?: string };
 
-    /**
-     * The title of the spreadsheet
-     */
+    /** The title of the spreadsheet */
     readonly title?: string;
 
     /**
@@ -104,9 +86,7 @@ export interface GoogleSheetsV1NodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * The ID of the sheet to delete
-     */
+    /** The ID of the sheet to delete */
     readonly id?: string;
 
 }

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsTextractNodeParameters {
-    /**
-     * Default: "analyzeExpense"
-     */
+    /** Default: "analyzeExpense" */
     readonly operation?: "analyzeExpense";
 
     /**

@@ -8,14 +8,10 @@ export const name = "ollamaApi" as const;
  * documentationUrl: ollama
  */
 export interface OllamaApiCredentials {
-    /**
-     * Default: "http://localhost:11434"
-     */
+    /** Default: "http://localhost:11434" */
     readonly "baseUrl": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "ollamaApi";

@@ -10,9 +10,7 @@ export const name = "jenkinsApi" as const;
 export interface JenkinsApiCredentials {
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly "baseUrl"?: string;

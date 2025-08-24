@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MattermostV1NodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "channel" | "message" | "reaction" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "addUser" | "create" | "delete" | "members" | "restore" | "search" | "statistics" | "delete" | "post" | "postEphemeral" | "create" | "delete" | "getAll" | "create" | "deactive" | "getByEmail" | "getById" | "getAll" | "invite";
 
     /**
@@ -25,14 +21,10 @@ export interface MattermostV1NodeParameters {
      */
     readonly teamId?: string;
 
-    /**
-     * The non-unique UI name for the channel
-     */
+    /** The non-unique UI name for the channel */
     readonly displayName?: string;
 
-    /**
-     * The unique handle for the channel, will be present in the channel URL
-     */
+    /** The unique handle for the channel, will be present in the channel URL */
     readonly channel?: string;
 
     /**
@@ -72,19 +64,13 @@ export interface MattermostV1NodeParameters {
      */
     readonly userId?: string;
 
-    /**
-     * The search term for Channels in a Team
-     */
+    /** The search term for Channels in a Team */
     readonly term?: string;
 
-    /**
-     * ID of the post to delete
-     */
+    /** ID of the post to delete */
     readonly postId?: string;
 
-    /**
-     * The text to send
-     */
+    /** The text to send */
     readonly message?: string;
 
     /**
@@ -100,9 +86,7 @@ export interface MattermostV1NodeParameters {
      */
     readonly otherOptions?: { "root_id"?: string };
 
-    /**
-     * Emoji to use for this reaction
-     */
+    /** Emoji to use for this reaction */
     readonly emojiName?: string;
 
     readonly username?: string;
@@ -119,19 +103,13 @@ export interface MattermostV1NodeParameters {
      */
     readonly password?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "first_name"?: string, "last_name"?: string, "locale"?: string, "nickname"?: string, "notificationUi"?: { "notificationValues": any } } | { "inChannel"?: string, "inTeam"?: string, "notInTeam"?: string, "notInChannel"?: string, "sort"?: "createdAt" | "lastActivityAt" | "status" | "username" } | { "since"?: string };
 
-    /**
-     * User's ID
-     */
+    /** User's ID */
     readonly userIds?: string;
 
-    /**
-     * User's email. Multiple emails can be set separated by comma.
-     */
+    /** User's email. Multiple emails can be set separated by comma. */
     readonly emails?: string;
 
 }

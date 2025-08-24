@@ -15,9 +15,7 @@ export interface SeaTableTriggerV1NodeParameters {
      */
     readonly tableName?: string;
 
-    /**
-     * Default: "rowCreated"
-     */
+    /** Default: "rowCreated" */
     readonly event?: "rowCreated";
 
     /**

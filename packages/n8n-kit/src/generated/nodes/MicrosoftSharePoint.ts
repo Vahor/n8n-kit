@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftSharePointNodeParameters {
-    /**
-     * Default: "file"
-     */
+    /** Default: "file" */
     readonly resource?: "file" | "item" | "list";
 
-    /**
-     * Default: "download"
-     */
+    /** Default: "download" */
     readonly operation?: "download" | "update" | "upload" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "get" | "getAll";
 
     /**
@@ -46,19 +42,13 @@ export interface MicrosoftSharePointNodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * If not specified, the original file name will be used
-     */
+    /** If not specified, the original file name will be used */
     readonly fileName?: string;
 
-    /**
-     * Whether to update the file contents
-     */
+    /** Whether to update the file contents */
     readonly changeFileContent?: boolean;
 
-    /**
-     * Find the name of input field containing the binary data to update the file with in the Input panel on the left, in the Binary tab
-     */
+    /** Find the name of input field containing the binary data to update the file with in the Input panel on the left, in the Binary tab */
     readonly fileContents?: string;
 
     /**
@@ -79,19 +69,13 @@ export interface MicrosoftSharePointNodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly simplify?: boolean;
 
-    /**
-     * The formula will be evaluated for each record. <a href="https://learn.microsoft.com/en-us/graph/filter-query-parameter">More info</a>.
-     */
+    /** The formula will be evaluated for each record. <a href="https://learn.microsoft.com/en-us/graph/filter-query-parameter">More info</a>. */
     readonly filter?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -101,9 +85,7 @@ export interface MicrosoftSharePointNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fields"?: ("contentType" | "createdDateTime" | "createdBy" | "fields" | "id" | "lastModifiedDateTime" | "lastModifiedBy" | "parentReference" | "webUrl")[] };
 
 }

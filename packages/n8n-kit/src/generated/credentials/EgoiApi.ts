@@ -8,9 +8,7 @@ export const name = "egoiApi" as const;
  * documentationUrl: egoi
  */
 export interface EgoiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "egoiApi";

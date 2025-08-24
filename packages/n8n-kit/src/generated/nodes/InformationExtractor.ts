@@ -40,9 +40,7 @@ export interface InformationExtractorNodeParameters {
      */
     readonly attributes?: { "attributes": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

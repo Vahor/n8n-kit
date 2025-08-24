@@ -8,14 +8,10 @@ export const name = "openAiApi" as const;
  * documentationUrl: openAi
  */
 export interface OpenAiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
-    /**
-     * For users who belong to multiple organizations, you can set which organization is used for an API request. Usage from these API requests will count against the specified organization's subscription quota.
-     */
+    /** For users who belong to multiple organizations, you can set which organization is used for an API request. Usage from these API requests will count against the specified organization's subscription quota. */
     readonly "organizationId"?: string;
 
     /**

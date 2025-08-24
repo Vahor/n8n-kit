@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MqttNodeParameters {
-    /**
-     * The topic to publish to
-     */
+    /** The topic to publish to */
     readonly topic?: string;
 
     /**
@@ -20,14 +18,10 @@ export interface MqttNodeParameters {
      */
     readonly sendInputData?: boolean;
 
-    /**
-     * The message to publish
-     */
+    /** The message to publish */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "qos"?: "0" | "1" | "2", "retain"?: boolean };
 
 }

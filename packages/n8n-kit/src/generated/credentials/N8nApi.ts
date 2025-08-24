@@ -14,9 +14,7 @@ export interface N8nApiCredentials {
      */
     readonly "apiKey"?: string;
 
-    /**
-     * The API URL of the n8n instance
-     */
+    /** The API URL of the n8n instance */
     readonly "baseUrl"?: string;
 
     readonly __name: "n8nApi";

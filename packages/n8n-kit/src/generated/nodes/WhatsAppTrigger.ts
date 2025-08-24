@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WhatsAppTriggerNodeParameters {
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly updates?: ("account_review_update" | "account_update" | "business_capability_update" | "message_template_quality_update" | "message_template_status_update" | "messages" | "phone_number_name_update" | "phone_number_quality_update" | "security" | "template_category_update")[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "messageStatusUpdates"?: ("all" | "deleted" | "delivered" | "failed" | "read" | "sent")[] };
 
 }

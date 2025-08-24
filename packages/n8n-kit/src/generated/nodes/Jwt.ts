@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JwtNodeParameters {
-    /**
-     * Default: "sign"
-     */
+    /** Default: "sign" */
     readonly operation?: "decode" | "sign" | "verify";
 
-    /**
-     * Whether to use JSON to build the claims
-     */
+    /** Whether to use JSON to build the claims */
     readonly useJson?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly claims?: { "audience"?: string, "expiresIn"?: number, "issuer"?: string, "jwtid"?: string, "notBefore"?: number, "subject"?: string };
 
     /**
@@ -37,9 +31,7 @@ export interface JwtNodeParameters {
      */
     readonly token?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "complete"?: boolean, "ignoreExpiration"?: boolean, "ignoreNotBefore"?: boolean, "clockTolerance"?: number, "kid"?: string, "algorithm"?: "ES256" | "ES384" | "ES512" | "HS256" | "HS384" | "HS512" | "PS256" | "PS384" | "PS512" | "RS256" | "RS384" | "RS512" };
 
 }

@@ -9,28 +9,20 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinearNodeParameters {
-    /**
-     * Default: "apiToken"
-     */
+    /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
 
-    /**
-     * Default: "issue"
-     */
+    /** Default: "issue" */
     readonly resource?: "comment" | "issue";
 
-    /**
-     * Default: "addComment"
-     */
+    /** Default: "addComment" */
     readonly operation?: "addComment" | "addLink" | "create" | "delete" | "get" | "getAll" | "update";
 
     readonly issueId?: string;
 
     readonly comment?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "parentId"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string };
 
     /**
@@ -41,9 +33,7 @@ export interface LinearNodeParameters {
 
     readonly title?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -53,9 +43,7 @@ export interface LinearNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "3" | "0", "stateId"?: string, "teamId"?: string, "title"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string, "teamId"?: string, "title"?: string };
 
     readonly link?: string;

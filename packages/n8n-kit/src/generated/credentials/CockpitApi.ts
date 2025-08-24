@@ -10,9 +10,7 @@ export const name = "cockpitApi" as const;
 export interface CockpitApiCredentials {
     readonly "url"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "cockpitApi";

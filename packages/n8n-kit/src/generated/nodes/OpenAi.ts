@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenAiNodeParameters {
-    /**
-     * Default: "text"
-     */
+    /** Default: "text" */
     readonly resource?: "chat" | "image" | "text";
 
-    /**
-     * Default: "complete"
-     */
+    /** Default: "complete" */
     readonly operation?: "complete" | "create" | "complete" | "edit" | "moderate";
 
     /**
@@ -64,14 +60,10 @@ export interface OpenAiNodeParameters {
      */
     readonly responseFormat?: "binaryData" | "imageUrl";
 
-    /**
-     * The input text to be edited
-     */
+    /** The input text to be edited */
     readonly input?: string;
 
-    /**
-     * The instruction that tells the model how to edit the input text
-     */
+    /** The instruction that tells the model how to edit the input text */
     readonly instruction?: string;
 
 }

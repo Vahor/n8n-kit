@@ -10,9 +10,7 @@ export const name = "zabbixApi" as const;
 export interface ZabbixApiCredentials {
     readonly "url": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken": string;
 
     readonly __name: "zabbixApi";

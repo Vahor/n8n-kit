@@ -8,30 +8,22 @@ export const name = "mauticOAuth2Api" as const;
  * documentationUrl: mautic
  */
 export interface MauticOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
     readonly "url"?: string;
 
-    /**
-     * Default: "={{$self[\"url\"].endsWith(\"/\") ? $self[\"url\"].slice(0, -1) : $self[\"url\"]}}/oauth/v2/authorize"
-     */
+    /** Default: "={{$self[\"url\"].endsWith(\"/\") ? $self[\"url\"].slice(0, -1) : $self[\"url\"]}}/oauth/v2/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "={{$self[\"url\"].endsWith(\"/\") ? $self[\"url\"].slice(0, -1) : $self[\"url\"]}}/oauth/v2/token"
-     */
+    /** Default: "={{$self[\"url\"].endsWith(\"/\") ? $self[\"url\"].slice(0, -1) : $self[\"url\"]}}/oauth/v2/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "mauticOAuth2Api";

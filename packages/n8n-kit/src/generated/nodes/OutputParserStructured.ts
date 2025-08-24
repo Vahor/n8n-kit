@@ -35,14 +35,10 @@ export interface OutputParserStructuredNodeParameters {
      */
     readonly jsonSchema?: string;
 
-    /**
-     * Whether to automatically fix the output when it is not in the correct format. Will cause another LLM call.
-     */
+    /** Whether to automatically fix the output when it is not in the correct format. Will cause another LLM call. */
     readonly autoFix?: boolean;
 
-    /**
-     * Whether to customize the prompt used for retrying the output parsing. If disabled, a default prompt will be used.
-     */
+    /** Whether to customize the prompt used for retrying the output parsing. If disabled, a default prompt will be used. */
     readonly customizeRetryPrompt?: boolean;
 
     /**

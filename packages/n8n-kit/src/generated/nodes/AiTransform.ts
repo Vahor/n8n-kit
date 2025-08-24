@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AiTransformNodeParameters {
-    /**
-     * Type options: {"editor":"jsEditor","editorIsReadOnly":true}
-     */
+    /** Type options: {"editor":"jsEditor","editorIsReadOnly":true} */
     readonly jsCode?: string;
 
 }

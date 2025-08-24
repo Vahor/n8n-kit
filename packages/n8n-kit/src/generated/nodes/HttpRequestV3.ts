@@ -15,26 +15,18 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly method?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT";
 
-    /**
-     * The URL to make the request to
-     */
+    /** The URL to make the request to */
     readonly url?: string;
 
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
     readonly provideSslCertificates?: boolean;
 
-    /**
-     * Whether the request has query params or not
-     */
+    /** Whether the request has query params or not */
     readonly sendQuery?: boolean;
 
-    /**
-     * Default: "keypair"
-     */
+    /** Default: "keypair" */
     readonly specifyQuery?: "keypair" | "json";
 
     /**
@@ -45,14 +37,10 @@ export interface HttpRequestV3NodeParameters {
 
     readonly jsonQuery?: string;
 
-    /**
-     * Whether the request has headers or not
-     */
+    /** Whether the request has headers or not */
     readonly sendHeaders?: boolean;
 
-    /**
-     * Default: "keypair"
-     */
+    /** Default: "keypair" */
     readonly specifyHeaders?: "keypair" | "json";
 
     /**
@@ -63,9 +51,7 @@ export interface HttpRequestV3NodeParameters {
 
     readonly jsonHeaders?: string;
 
-    /**
-     * Whether the request has a body or not
-     */
+    /** Whether the request has a body or not */
     readonly sendBody?: boolean;
 
     /**
@@ -90,31 +76,21 @@ export interface HttpRequestV3NodeParameters {
 
     readonly body?: string;
 
-    /**
-     * The name of the incoming field containing the binary file data to be processed
-     */
+    /** The name of the incoming field containing the binary file data to be processed */
     readonly inputDataFieldName?: string;
 
     readonly rawContentType?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "batching"?: { "batch": any }, "allowUnauthorizedCerts"?: boolean, "queryParameterArrays"?: "repeat" | "brackets" | "indices", "lowercaseHeaders"?: boolean, "redirect"?: { "redirect": any }, "response"?: { "response": any }, "pagination"?: { "pagination": any }, "proxy"?: string, "timeout"?: number };
 
-    /**
-     * Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost
-     */
+    /** Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost */
     readonly optimizeResponse?: boolean;
 
-    /**
-     * Default: "json"
-     */
+    /** Default: "json" */
     readonly responseType?: "json" | "html" | "text";
 
-    /**
-     * Specify the name of the field in the response containing the data
-     */
+    /** Specify the name of the field in the response containing the data */
     readonly dataField?: string;
 
     /**
@@ -123,9 +99,7 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly fieldsToInclude?: "all" | "selected" | "except";
 
-    /**
-     * Comma-separated list of the field names. Supports dot notation. You can drag the selected fields from the input panel.
-     */
+    /** Comma-separated list of the field names. Supports dot notation. You can drag the selected fields from the input panel. */
     readonly fields?: string;
 
     /**
@@ -134,14 +108,10 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly cssSelector?: string;
 
-    /**
-     * Whether to return only content of html elements, stripping html tags and attributes
-     */
+    /** Whether to return only content of html elements, stripping html tags and attributes */
     readonly onlyContent?: boolean;
 
-    /**
-     * Comma-separated list of selectors that would be excluded when extracting content
-     */
+    /** Comma-separated list of selectors that would be excluded when extracting content */
     readonly elementsToOmit?: string;
 
     readonly truncateResponse?: boolean;

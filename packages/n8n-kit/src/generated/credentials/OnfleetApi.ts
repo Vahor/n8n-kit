@@ -8,9 +8,7 @@ export const name = "onfleetApi" as const;
  * documentationUrl: onfleet
  */
 export interface OnfleetApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "onfleetApi";

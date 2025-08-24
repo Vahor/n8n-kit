@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GmailTriggerNodeParameters {
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "messageReceived"
-     */
+    /** Default: "messageReceived" */
     readonly event?: "messageReceived";
 
     /**
@@ -25,14 +21,10 @@ export interface GmailTriggerNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "includeSpamTrash"?: boolean, "includeDrafts"?: boolean, "labelIds"?: any[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "sender"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

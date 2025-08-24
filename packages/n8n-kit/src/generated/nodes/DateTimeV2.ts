@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DateTimeV2NodeParameters {
-    /**
-     * Default: "getCurrentDate"
-     */
+    /** Default: "getCurrentDate" */
     readonly operation?: "addToDate" | "extractDate" | "formatDate" | "getCurrentDate" | "getTimeBetweenDates" | "roundDate" | "subtractFromDate";
 
     /**
@@ -25,14 +23,10 @@ export interface DateTimeV2NodeParameters {
      */
     readonly outputFieldName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeInputFields"?: boolean, "timezone"?: string } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "fromFormat"?: string, "timezone"?: boolean } | { "includeInputFields"?: boolean, "isoString"?: boolean };
 
-    /**
-     * The date that you want to change
-     */
+    /** The date that you want to change */
     readonly magnitude?: string;
 
     /**
@@ -41,14 +35,10 @@ export interface DateTimeV2NodeParameters {
      */
     readonly timeUnit?: "years" | "quarters" | "months" | "weeks" | "days" | "hours" | "minutes" | "seconds" | "milliseconds";
 
-    /**
-     * The number of time units to add to the date
-     */
+    /** The number of time units to add to the date */
     readonly duration?: number;
 
-    /**
-     * The date that you want to format
-     */
+    /** The date that you want to format */
     readonly date?: string;
 
     /**
@@ -59,33 +49,23 @@ export interface DateTimeV2NodeParameters {
 
     readonly customFormat?: string;
 
-    /**
-     * Default: "roundDown"
-     */
+    /** Default: "roundDown" */
     readonly mode?: "roundDown" | "roundUp";
 
-    /**
-     * Default: "month"
-     */
+    /** Default: "month" */
     readonly toNearest?: "year" | "month" | "week" | "day" | "hour" | "minute" | "second";
 
-    /**
-     * Default: "month"
-     */
+    /** Default: "month" */
     readonly to?: "month";
 
     readonly startDate?: string;
 
     readonly endDate?: string;
 
-    /**
-     * Default: ["day"]
-     */
+    /** Default: ["day"] */
     readonly units?: ("year" | "month" | "week" | "day" | "hour" | "minute" | "second" | "millisecond")[];
 
-    /**
-     * Default: "month"
-     */
+    /** Default: "month" */
     readonly part?: "year" | "month" | "week" | "day" | "hour" | "minute" | "second";
 
 }

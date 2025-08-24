@@ -8,14 +8,10 @@ export const name = "motorheadApi" as const;
  * documentationUrl: motorhead
  */
 export interface MotorheadApiCredentials {
-    /**
-     * Default: "https://api.getmetal.io/v1"
-     */
+    /** Default: "https://api.getmetal.io/v1" */
     readonly "host": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly "clientId"?: string;

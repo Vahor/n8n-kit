@@ -8,34 +8,22 @@ export const name = "zohoOAuth2Api" as const;
  * documentationUrl: zoho
  */
 export interface ZohoOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://accounts.zoho.com/oauth/v2/auth"
-     */
+    /** Default: "https://accounts.zoho.com/oauth/v2/auth" */
     readonly "authUrl": "https://accounts.zoho.com/oauth/v2/auth" | "https://accounts.zoho.com.cn/oauth/v2/auth";
 
-    /**
-     * Default: "https://accounts.zoho.com/oauth/v2/token"
-     */
+    /** Default: "https://accounts.zoho.com/oauth/v2/token" */
     readonly "accessTokenUrl": "https://accounts.zoho.com.au/oauth/v2/token" | "https://accounts.zoho.com.cn/oauth/v2/token" | "https://accounts.zoho.eu/oauth/v2/token" | "https://accounts.zoho.in/oauth/v2/token" | "https://accounts.zoho.com/oauth/v2/token";
 
-    /**
-     * Default: "ZohoCRM.modules.ALL,ZohoCRM.settings.all,ZohoCRM.users.all"
-     */
+    /** Default: "ZohoCRM.modules.ALL,ZohoCRM.settings.all,ZohoCRM.users.all" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "access_type=offline"
-     */
+    /** Default: "access_type=offline" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "zohoOAuth2Api";

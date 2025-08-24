@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgileCrmNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "company" | "contact" | "deal";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Unique identifier for a particular contact
-     */
+    /** Unique identifier for a particular contact */
     readonly contactId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -36,19 +28,13 @@ export interface AgileCrmNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly filterType?: "none" | "manual" | "json";
 
-    /**
-     * Default: "anyFilter"
-     */
+    /** Default: "anyFilter" */
     readonly matchType?: "anyFilter" | "allFilters";
 
-    /**
-     * Whether to return a simplified version of the response instead of the raw data
-     */
+    /** Whether to return a simplified version of the response instead of the raw data */
     readonly simple?: boolean;
 
     /**
@@ -59,9 +45,7 @@ export interface AgileCrmNodeParameters {
 
     readonly filterJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "sort"?: { "sort": any } };
 
     readonly jsonParameters?: boolean;
@@ -72,24 +56,16 @@ export interface AgileCrmNodeParameters {
      */
     readonly additionalFieldsJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "addressOptions"?: { "addressProperties": any }, "company"?: string, "emailOptions"?: { "emailProperties": any }, "firstName"?: string, "lastName"?: string, "leadScore"?: number, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "phoneOptions"?: { "phoneProperties": any }, "tags"?: string, "title"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "addressOptions"?: { "addressProperties": any }, "email"?: string, "name"?: string, "phone"?: string, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "tags"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "addressOptions"?: { "addressProperties": any }, "email"?: string, "starValue"?: "0" | "1" | "2" | "3" | "4" | "5", "tags"?: string, "name"?: string, "phone"?: string, "websiteOptions"?: { "websiteProperties": any }, "customProperties"?: { "customProperty": any } } | { "contactIds"?: string, "customData"?: { "customProperty": any } } | { "expectedValue"?: number, "name"?: string, "probability"?: number, "contactIds"?: string, "customData"?: { "customProperty": any } };
 
-    /**
-     * Unique identifier for a particular company
-     */
+    /** Unique identifier for a particular company */
     readonly companyId?: string;
 
-    /**
-     * Unique identifier for a particular deal
-     */
+    /** Unique identifier for a particular deal */
     readonly dealId?: string;
 
-    /**
-     * Closing date of deal
-     */
+    /** Closing date of deal */
     readonly closeDate?: string;
 
     /**
@@ -99,14 +75,10 @@ export interface AgileCrmNodeParameters {
      */
     readonly expectedValue?: number;
 
-    /**
-     * Milestone of deal
-     */
+    /** Milestone of deal */
     readonly milestone?: string;
 
-    /**
-     * Name of deal
-     */
+    /** Name of deal */
     readonly name?: string;
 
     /**

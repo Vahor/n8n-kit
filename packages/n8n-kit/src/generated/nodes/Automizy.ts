@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AutomizyNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact" | "list";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * The email address of the contact
-     */
+    /** The email address of the contact */
     readonly email?: string;
 
     /**
@@ -30,19 +24,13 @@ export interface AutomizyNodeParameters {
      */
     readonly listId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: any[] } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string };
 
-    /**
-     * Can be ID or email
-     */
+    /** Can be ID or email */
     readonly contactId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -52,9 +40,7 @@ export interface AutomizyNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "addTags"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "removeTags"?: any[], "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: any[] };
 
     readonly name?: string;

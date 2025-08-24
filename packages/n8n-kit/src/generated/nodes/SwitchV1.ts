@@ -26,9 +26,7 @@ export interface SwitchV1NodeParameters {
      */
     readonly dataType?: "boolean" | "dateTime" | "number" | "string";
 
-    /**
-     * The value to compare with the first one
-     */
+    /** The value to compare with the first one */
     readonly value1?: boolean | string | number;
 
     /**

@@ -14,26 +14,18 @@ export interface CompareDatasetsNodeParameters {
      */
     readonly mergeByFields?: { "values": any };
 
-    /**
-     * Default: "preferInput2"
-     */
+    /** Default: "preferInput2" */
     readonly resolve?: "preferInput1" | "preferInput2" | "mix" | "includeBoth";
 
-    /**
-     * Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same.
-     */
+    /** Whether to tolerate small type differences when comparing fields. E.g. the number 3 and the string '3' are treated as the same. */
     readonly fuzzyCompare?: boolean;
 
-    /**
-     * Default: "input1"
-     */
+    /** Default: "input1" */
     readonly preferWhenMix?: "input1" | "input2";
 
     readonly exceptWhenMix?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "skipFields"?: string, "fuzzyCompare"?: boolean, "disableDotNotation"?: boolean, "multipleMatches"?: "first" | "all" };
 
 }

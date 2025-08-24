@@ -14,24 +14,16 @@ export interface JwtAuthCredentials {
      */
     readonly "keyType"?: "passphrase" | "pemKey";
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "secret"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "privateKey"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "publicKey"?: string;
 
-    /**
-     * Default: "HS256"
-     */
+    /** Default: "HS256" */
     readonly "algorithm"?: "HS256" | "HS384" | "HS512" | "RS256" | "RS384" | "RS512" | "ES256" | "ES384" | "ES512" | "PS256" | "PS384" | "PS512" | "none";
 
     readonly __name: "jwtAuth";

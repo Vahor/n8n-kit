@@ -9,31 +9,21 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZendeskNodeParameters {
-    /**
-     * Default: "apiToken"
-     */
+    /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
 
-    /**
-     * Default: "ticket"
-     */
+    /** Default: "ticket" */
     readonly resource?: "ticket" | "ticketField" | "user" | "organization";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "recover" | "update" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getOrganizations" | "getRelatedData" | "search" | "update" | "count" | "create" | "delete" | "get" | "getAll" | "getRelatedData" | "update";
 
-    /**
-     * The first comment on the ticket
-     */
+    /** The first comment on the ticket */
     readonly description?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "externalId"?: string, "group"?: string, "recipient"?: string, "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved", "subject"?: string, "tags"?: any[], "type"?: "question" | "incident" | "problem" | "task" } | { "alias"?: string, "custom_role_id"?: number, "details"?: string, "email"?: string, "external_id"?: string, "locale"?: string, "moderator"?: boolean, "notes"?: string, "only_private_comments"?: boolean, "organization_id"?: string, "phone"?: string, "report_csv"?: boolean, "restricted_agent"?: boolean, "role"?: "end-user" | "agent" | "admin", "signature"?: string, "suspended"?: boolean, "tags"?: any[], "ticket_restriction"?: "organization" | "groups" | "assigned" | "requested", "time_zone"?: string, "userFieldsUi"?: { "userFieldValues": any }, "verified"?: boolean } | { "details"?: string, "domain_names"?: string, "notes"?: string, "organizationFieldsUi"?: { "organizationFieldValues": any }, "tags"?: any[] };
 
     /**
@@ -44,9 +34,7 @@ export interface ZendeskNodeParameters {
 
     readonly id?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "assigneeEmail"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "externalId"?: string, "group"?: string, "internalNote"?: string, "publicReply"?: string, "recipient"?: string, "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved", "subject"?: string, "tags"?: any[], "type"?: "question" | "incident" | "problem" | "task" } | { "alias"?: string, "custom_role_id"?: number, "details"?: string, "email"?: string, "external_id"?: string, "locale"?: string, "moderator"?: boolean, "name"?: string, "notes"?: string, "only_private_comments"?: boolean, "organization_id"?: string, "phone"?: string, "report_csv"?: boolean, "restricted_agent"?: boolean, "role"?: "end-user" | "agent" | "admin", "signature"?: string, "suspended"?: boolean, "tags"?: any[], "ticket_restriction"?: "organization" | "groups" | "assigned" | "requested", "time_zone"?: string, "userFieldsUi"?: { "userFieldValues": any }, "verified"?: boolean } | { "details"?: string, "domain_names"?: string, "name"?: string, "notes"?: string, "organizationFieldsUi"?: { "organizationFieldValues": any }, "tags"?: any[] };
 
     /**
@@ -55,14 +43,10 @@ export interface ZendeskNodeParameters {
      */
     readonly updateFieldsJson?: string;
 
-    /**
-     * Default: "regular"
-     */
+    /** Default: "regular" */
     readonly ticketType?: "regular" | "suspended";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -72,21 +56,15 @@ export interface ZendeskNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "group"?: string, "query"?: string, "sortBy"?: "created_at" | "priority" | "status" | "ticket_type" | "updated_at", "sortOrder"?: "asc" | "desc", "status"?: "closed" | "new" | "hold" | "open" | "pending" | "solved" };
 
     readonly ticketFieldId?: string;
 
-    /**
-     * The user's name
-     */
+    /** The user's name */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "role"?: ("end-user" | "agent" | "admin")[] } | { "query"?: string, "external_id"?: string };
 
 }

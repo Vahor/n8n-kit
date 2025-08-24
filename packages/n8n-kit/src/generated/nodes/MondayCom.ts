@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MondayComNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "board"
-     */
+    /** Default: "board" */
     readonly resource?: "board" | "boardColumn" | "boardGroup" | "boardItem";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "archive" | "create" | "get" | "getAll" | "create" | "getAll" | "delete" | "create" | "getAll" | "addUpdate" | "changeColumnValue" | "changeMultipleColumnValues" | "create" | "delete" | "get" | "getByColumnValue" | "getAll" | "move";
 
     /**
@@ -30,24 +24,16 @@ export interface MondayComNodeParameters {
      */
     readonly boardId?: string;
 
-    /**
-     * The board's name
-     */
+    /** The board's name */
     readonly name?: string;
 
-    /**
-     * The board's kind (public / private / share)
-     */
+    /** The board's kind (public / private / share) */
     readonly kind?: "share" | "public" | "private";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "templateId"?: number } | { "defaults"?: string } | { "columnValues"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -67,14 +53,10 @@ export interface MondayComNodeParameters {
      */
     readonly groupId?: string;
 
-    /**
-     * The unique identifier of the item to add update to
-     */
+    /** The unique identifier of the item to add update to */
     readonly itemId?: string;
 
-    /**
-     * The update text to add
-     */
+    /** The update text to add */
     readonly value?: string;
 
     /**
@@ -89,9 +71,7 @@ export interface MondayComNodeParameters {
      */
     readonly columnValues?: string;
 
-    /**
-     * The column value to search items by
-     */
+    /** The column value to search items by */
     readonly columnValue?: string;
 
 }

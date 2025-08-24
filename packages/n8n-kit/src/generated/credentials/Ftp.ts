@@ -10,16 +10,12 @@ export const name = "ftp" as const;
 export interface FtpCredentials {
     readonly "host": string;
 
-    /**
-     * Default: 21
-     */
+    /** Default: 21 */
     readonly "port": number;
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "ftp";

@@ -10,21 +10,15 @@ export const name = "rabbitmq" as const;
 export interface RabbitMQCredentials {
     readonly "hostname"?: string;
 
-    /**
-     * Default: 5672
-     */
+    /** Default: 5672 */
     readonly "port"?: number;
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Default: "/"
-     */
+    /** Default: "/" */
     readonly "vhost"?: string;
 
     readonly "ssl"?: boolean;

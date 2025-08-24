@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailchimpTriggerNodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "oAuth2";
 
     /**

@@ -8,33 +8,23 @@ export const name = "mailchimpOAuth2Api" as const;
  * documentationUrl: mailchimp
  */
 export interface MailchimpOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://login.mailchimp.com/oauth2/authorize"
-     */
+    /** Default: "https://login.mailchimp.com/oauth2/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://login.mailchimp.com/oauth2/token"
-     */
+    /** Default: "https://login.mailchimp.com/oauth2/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "https://login.mailchimp.com/oauth2/metadata"
-     */
+    /** Default: "https://login.mailchimp.com/oauth2/metadata" */
     readonly "metadataUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "mailchimpOAuth2Api";

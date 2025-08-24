@@ -10,14 +10,10 @@ export const outputs = {"ai_tool":"ai_tool"} as const;
 export interface ToolCodeNodeParameters {
     readonly name?: string;
 
-    /**
-     * Type options: {"rows":3}
-     */
+    /** Type options: {"rows":3} */
     readonly description?: string;
 
-    /**
-     * Default: "javaScript"
-     */
+    /** Default: "javaScript" */
     readonly language?: "javaScript" | "python";
 
     /**
@@ -34,9 +30,7 @@ export interface ToolCodeNodeParameters {
      */
     readonly pythonCode?: string;
 
-    /**
-     * Whether to specify the schema for the function. This would require the LLM to provide the input in the correct format and would validate it against the schema.
-     */
+    /** Whether to specify the schema for the function. This would require the LLM to provide the input in the correct format and would validate it against the schema. */
     readonly specifyInputSchema?: boolean;
 
     /**

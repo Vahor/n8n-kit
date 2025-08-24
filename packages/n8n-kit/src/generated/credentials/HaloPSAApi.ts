@@ -8,21 +8,15 @@ export const name = "haloPSAApi" as const;
  * documentationUrl: halopsa
  */
 export interface HaloPSAApiCredentials {
-    /**
-     * Default: "onPremise"
-     */
+    /** Default: "onPremise" */
     readonly "hostingType"?: "onPremise" | "hostedHalo";
 
     readonly "authUrl": string;
 
-    /**
-     * The Resource server is available at your "Halo Web Application URL/api"
-     */
+    /** The Resource server is available at your "Halo Web Application URL/api" */
     readonly "resourceApiUrl": string;
 
-    /**
-     * Must be your application client ID
-     */
+    /** Must be your application client ID */
     readonly "client_id": string;
 
     /**
@@ -31,14 +25,10 @@ export interface HaloPSAApiCredentials {
      */
     readonly "client_secret": string;
 
-    /**
-     * An additional tenant parameter for HaloPSA hosted solution
-     */
+    /** An additional tenant parameter for HaloPSA hosted solution */
     readonly "tenant"?: string;
 
-    /**
-     * Default: "admin edit:tickets edit:customers"
-     */
+    /** Default: "admin edit:tickets edit:customers" */
     readonly "scope": any;
 
     readonly __name: "haloPSAApi";

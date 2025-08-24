@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBusinessProfileTriggerNodeParameters {
-    /**
-     * Default: "reviewAdded"
-     */
+    /** Default: "reviewAdded" */
     readonly event?: "reviewAdded";
 
     /**

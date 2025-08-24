@@ -8,9 +8,7 @@ export const name = "oAuth2Api" as const;
  * documentationUrl: httpRequest
  */
 export interface OAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: "authorizationCode" | "clientCredentials" | "pkce";
 
     readonly "authUrl": string;
@@ -19,28 +17,20 @@ export interface OAuth2ApiCredentials {
 
     readonly "clientId": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
     readonly "scope"?: string;
 
-    /**
-     * For some services additional query parameters have to be set which can be defined here
-     */
+    /** For some services additional query parameters have to be set which can be defined here */
     readonly "authQueryParameters"?: string;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: "body" | "header";
 
     readonly "sendAdditionalBodyProperties"?: boolean;
 
-    /**
-     * Type options: {"rows":5}
-     */
+    /** Type options: {"rows":5} */
     readonly "additionalBodyProperties"?: string;
 
     readonly "ignoreSSLIssues"?: boolean;

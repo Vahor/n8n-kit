@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsTranscribeNodeParameters {
-    /**
-     * Default: "transcriptionJob"
-     */
+    /** Default: "transcriptionJob" */
     readonly resource?: "transcriptionJob";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll";
 
-    /**
-     * The name of the job
-     */
+    /** The name of the job */
     readonly transcriptionJobName?: string;
 
-    /**
-     * The S3 object location of the input media file
-     */
+    /** The S3 object location of the input media file */
     readonly mediaFileUri?: string;
 
-    /**
-     * Whether to set this field to true to enable automatic language identification
-     */
+    /** Whether to set this field to true to enable automatic language identification */
     readonly detectLanguage?: boolean;
 
     /**
@@ -40,9 +30,7 @@ export interface AwsTranscribeNodeParameters {
      */
     readonly languageCode?: "en-US" | "en-GB" | "de-DE" | "en-IN" | "en-IE" | "ru-RU" | "es-ES";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "channelIdentification"?: boolean, "maxAlternatives"?: number, "maxSpeakerLabels"?: number, "vocabularyName"?: string, "vocabularyFilterName"?: string, "vocabularyFilterMethod"?: "remove" | "mask" | "tag" };
 
     /**
@@ -57,9 +45,7 @@ export interface AwsTranscribeNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -69,9 +55,7 @@ export interface AwsTranscribeNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "jobNameContains"?: string, "status"?: "COMPLETED" | "FAILED" | "IN_PROGRESS" | "QUEUED" };
 
 }

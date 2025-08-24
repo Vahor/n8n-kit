@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleDriveV2NodeParameters {
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "file"
-     */
+    /** Default: "file" */
     readonly resource?: "file" | "fileFolder" | "folder" | "drive";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "deleteDrive" | "get" | "list" | "update" | "copy" | "createFromText" | "deleteFile" | "download" | "move" | "share" | "update" | "upload" | "search" | "create" | "deleteFolder" | "share";
 
-    /**
-     * The name of the shared drive to create
-     */
+    /** The name of the shared drive to create */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "capabilities"?: { "canAddChildren"?: boolean, "canChangeCopyRequiresWriterPermissionRestriction"?: boolean, "canChangeDomainUsersOnlyRestriction"?: boolean, "canChangeDriveBackground"?: boolean, "canChangeDriveMembersOnlyRestriction"?: boolean, "canComment"?: boolean, "canCopy"?: boolean, "canDeleteChildren"?: boolean, "canDeleteDrive"?: boolean, "canDownload"?: boolean, "canEdit"?: boolean, "canListChildren"?: boolean, "canManageMembers"?: boolean, "canReadRevisions"?: boolean, "canRename"?: boolean, "canRenameDrive"?: boolean, "canShare"?: boolean, "canTrashChildren"?: boolean }, "colorRgb"?: string, "hidden"?: boolean, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "useDomainAdminAccess"?: boolean } | { "q"?: string, "useDomainAdminAccess"?: boolean } | { "colorRgb"?: string, "name"?: string, "restrictions"?: { "adminManagedRestrictions"?: boolean, "copyRequiresWriterPermission"?: boolean, "domainUsersOnly"?: boolean, "driveMembersOnly"?: boolean } } | { "copyRequiresWriterPermission"?: boolean, "description"?: string } | { "deletePermanently"?: boolean } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "convertToGoogleDocument"?: boolean } | { "binaryPropertyName"?: string, "googleFileConversion"?: { "conversion": any }, "fileName"?: string } | { "emailMessage"?: string, "moveToNewOwnersRoot"?: boolean, "sendNotificationEmail"?: boolean, "transferOwnership"?: boolean, "useDomainAdminAccess"?: boolean } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "trashed"?: boolean, "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "appPropertiesUi"?: { "appPropertyValues": any }, "propertiesUi"?: { "propertyValues": any }, "keepRevisionForever"?: boolean, "ocrLanguage"?: string, "useContentAsIndexableText"?: boolean, "simplifyOutput"?: boolean } | { "fields"?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { "simplifyOutput"?: boolean, "folderColorRgb"?: string };
 
     /**
@@ -43,9 +33,7 @@ export interface GoogleDriveV2NodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -91,9 +79,7 @@ export interface GoogleDriveV2NodeParameters {
      */
     readonly permissionsUi?: { "permissionsValues": any };
 
-    /**
-     * Whether to send a new binary data to update the file
-     */
+    /** Whether to send a new binary data to update the file */
     readonly changeFileContent?: boolean;
 
     /**
@@ -102,9 +88,7 @@ export interface GoogleDriveV2NodeParameters {
      */
     readonly inputDataFieldName?: string;
 
-    /**
-     * If not specified, the file name will not be changed
-     */
+    /** If not specified, the file name will not be changed */
     readonly newUpdatedFileName?: string;
 
     /**
@@ -113,14 +97,10 @@ export interface GoogleDriveV2NodeParameters {
      */
     readonly searchMethod?: "name" | "query";
 
-    /**
-     * The name of the file or folder to search for. Returns also files and folders whose names partially match this search term.
-     */
+    /** The name of the file or folder to search for. Returns also files and folders whose names partially match this search term. */
     readonly queryString?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filter?: { "driveId"?: {
 	value: string,
 	mode: "list" | "url" | "id",

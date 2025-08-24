@@ -10,9 +10,7 @@ export const name = "ghostContentApi" as const;
 export interface GhostContentApiCredentials {
     readonly "url"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "ghostContentApi";

@@ -9,44 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TapfiliateNodeParameters {
-    /**
-     * Default: "affiliate"
-     */
+    /** Default: "affiliate" */
     readonly resource?: "affiliate" | "affiliateMetadata" | "programAffiliate";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "add" | "remove" | "update" | "add" | "approve" | "disapprove" | "get" | "getAll";
 
-    /**
-     * The affiliate’s email
-     */
+    /** The affiliate’s email */
     readonly email?: string;
 
-    /**
-     * The affiliate’s firstname
-     */
+    /** The affiliate’s firstname */
     readonly firstname?: string;
 
-    /**
-     * The affiliate’s lastname
-     */
+    /** The affiliate’s lastname */
     readonly lastname?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "companyName"?: string } | { "approved"?: boolean, "coupon"?: string };
 
-    /**
-     * The ID of the affiliate
-     */
+    /** The ID of the affiliate */
     readonly affiliateId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -56,9 +40,7 @@ export interface TapfiliateNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "affiliate_group_id"?: string, "click_id"?: string, "email"?: string, "parentId"?: string, "referral_code"?: string, "source_id"?: string } | { "affiliate_group_id"?: string, "email"?: string, "parentId"?: string, "source_id"?: string };
 
     /**
@@ -68,14 +50,10 @@ export interface TapfiliateNodeParameters {
      */
     readonly metadataUi?: { "metadataValues": any };
 
-    /**
-     * Name of the metadata key to remove
-     */
+    /** Name of the metadata key to remove */
     readonly key?: string;
 
-    /**
-     * Value to set for the metadata key
-     */
+    /** Value to set for the metadata key */
     readonly value?: string;
 
     /**

@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOneDriveTriggerNodeParameters {
-    /**
-     * Default: "fileCreated"
-     */
+    /** Default: "fileCreated" */
     readonly event?: "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated";
 
     /**
@@ -20,9 +18,7 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Whether to watch for the created file in a given folder, rather than the entire OneDrive
-     */
+    /** Whether to watch for the created file in a given folder, rather than the entire OneDrive */
     readonly watchFolder?: boolean;
 
     /**
@@ -49,9 +45,7 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
 	mode: "url" | "id",
 };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "folderChild"?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

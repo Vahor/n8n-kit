@@ -8,14 +8,10 @@ export const name = "shopifyAccessTokenApi" as const;
  * documentationUrl: shopify
  */
 export interface ShopifyAccessTokenApiCredentials {
-    /**
-     * Only the subdomain without .myshopify.com
-     */
+    /** Only the subdomain without .myshopify.com */
     readonly "shopSubdomain": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken": string;
 
     /**

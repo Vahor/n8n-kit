@@ -8,9 +8,7 @@ export const name = "dhlApi" as const;
  * documentationUrl: dhl
  */
 export interface DhlApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "dhlApi";

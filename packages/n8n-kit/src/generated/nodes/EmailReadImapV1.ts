@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EmailReadImapV1NodeParameters {
-    /**
-     * Default: "INBOX"
-     */
+    /** Default: "INBOX" */
     readonly mailbox?: string;
 
     /**
@@ -20,9 +18,7 @@ export interface EmailReadImapV1NodeParameters {
      */
     readonly postProcessAction?: "read" | "nothing";
 
-    /**
-     * Whether attachments of emails should be downloaded. Only set if needed as it increases processing.
-     */
+    /** Whether attachments of emails should be downloaded. Only set if needed as it increases processing. */
     readonly downloadAttachments?: boolean;
 
     /**
@@ -37,9 +33,7 @@ export interface EmailReadImapV1NodeParameters {
      */
     readonly dataPropertyAttachmentsPrefixName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "customEmailConfig"?: string, "allowUnauthorizedCerts"?: boolean, "forceReconnect"?: number };
 
 }

@@ -8,9 +8,7 @@ export const name = "cloudflareApi" as const;
  * documentationUrl: cloudflare
  */
 export interface CloudflareApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly __name: "cloudflareApi";

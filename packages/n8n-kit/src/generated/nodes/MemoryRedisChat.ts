@@ -15,19 +15,13 @@ export interface MemoryRedisChatNodeParameters {
      */
     readonly sessionKey?: string;
 
-    /**
-     * Default: "fromInput"
-     */
+    /** Default: "fromInput" */
     readonly sessionIdType?: "fromInput" | "customKey";
 
-    /**
-     * For how long the session should be stored in seconds. If set to 0 it will not expire.
-     */
+    /** For how long the session should be stored in seconds. If set to 0 it will not expire. */
     readonly sessionTTL?: number;
 
-    /**
-     * Default: 5
-     */
+    /** Default: 5 */
     readonly contextWindowLength?: number;
 
 }

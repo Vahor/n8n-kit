@@ -8,9 +8,7 @@ export const name = "travisCiApi" as const;
  * documentationUrl: travisCi
  */
 export interface TravisCiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly __name: "travisCiApi";

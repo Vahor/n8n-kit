@@ -10,16 +10,12 @@ export const name = "sftp" as const;
 export interface SftpCredentials {
     readonly "host": string;
 
-    /**
-     * Default: 22
-     */
+    /** Default: 22 */
     readonly "port": number;
 
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     /**

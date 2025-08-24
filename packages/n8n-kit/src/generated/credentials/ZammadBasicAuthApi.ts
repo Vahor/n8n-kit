@@ -12,14 +12,10 @@ export interface ZammadBasicAuthApiCredentials {
 
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "zammadBasicAuthApi";

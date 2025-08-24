@@ -9,44 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwilioNodeParameters {
-    /**
-     * Default: "sms"
-     */
+    /** Default: "sms" */
     readonly resource?: "call" | "sms";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send" | "make";
 
-    /**
-     * The number from which to send the message
-     */
+    /** The number from which to send the message */
     readonly from?: string;
 
-    /**
-     * The number to which to send the message
-     */
+    /** The number to which to send the message */
     readonly to?: string;
 
-    /**
-     * Whether the message should be sent to WhatsApp
-     */
+    /** Whether the message should be sent to WhatsApp */
     readonly toWhatsapp?: boolean;
 
-    /**
-     * The message to send
-     */
+    /** The message to send */
     readonly message?: string;
 
-    /**
-     * Whether to use the <a href="https://www.twilio.com/docs/voice/twiml">Twilio Markup Language</a> in the message
-     */
+    /** Whether to use the <a href="https://www.twilio.com/docs/voice/twiml">Twilio Markup Language</a> in the message */
     readonly twiml?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "statusCallback"?: string };
 
 }

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FileMakerNodeParameters {
-    /**
-     * Default: "record"
-     */
+    /** Default: "record" */
     readonly action?: "create" | "delete" | "duplicate" | "edit" | "find" | "records" | "record" | "performscript";
 
     /**
@@ -20,9 +18,7 @@ export interface FileMakerNodeParameters {
      */
     readonly layout?: string;
 
-    /**
-     * Internal Record ID returned by get (recordid)
-     */
+    /** Internal Record ID returned by get (recordid) */
     readonly recid?: number;
 
     /**
@@ -38,9 +34,7 @@ export interface FileMakerNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether to get portal data as well
-     */
+    /** Whether to get portal data as well */
     readonly getPortals?: boolean;
 
     /**
@@ -62,9 +56,7 @@ export interface FileMakerNodeParameters {
      */
     readonly queries?: { "query": any };
 
-    /**
-     * Whether to sort data
-     */
+    /** Whether to sort data */
     readonly setSort?: boolean;
 
     /**
@@ -74,9 +66,7 @@ export interface FileMakerNodeParameters {
      */
     readonly sortParametersUi?: { "rules": any };
 
-    /**
-     * Whether to define a script to be run before the action specified by the API call and after the subsequent sort
-     */
+    /** Whether to define a script to be run before the action specified by the API call and after the subsequent sort */
     readonly setScriptBefore?: boolean;
 
     /**
@@ -85,14 +75,10 @@ export interface FileMakerNodeParameters {
      */
     readonly scriptBefore?: string;
 
-    /**
-     * A parameter for the FileMaker script
-     */
+    /** A parameter for the FileMaker script */
     readonly scriptBeforeParam?: string;
 
-    /**
-     * Whether to define a script to be run after the action specified by the API call but before the subsequent sort
-     */
+    /** Whether to define a script to be run after the action specified by the API call but before the subsequent sort */
     readonly setScriptSort?: boolean;
 
     /**
@@ -101,14 +87,10 @@ export interface FileMakerNodeParameters {
      */
     readonly scriptSort?: string;
 
-    /**
-     * A parameter for the FileMaker script
-     */
+    /** A parameter for the FileMaker script */
     readonly scriptSortParam?: string;
 
-    /**
-     * Whether to define a script to be run after the action specified by the API call but before the subsequent sort
-     */
+    /** Whether to define a script to be run after the action specified by the API call but before the subsequent sort */
     readonly setScriptAfter?: boolean;
 
     /**
@@ -117,14 +99,10 @@ export interface FileMakerNodeParameters {
      */
     readonly scriptAfter?: string;
 
-    /**
-     * A parameter for the FileMaker script
-     */
+    /** A parameter for the FileMaker script */
     readonly scriptAfterParam?: string;
 
-    /**
-     * The last modification ID. When you use modId, a record is edited only when the modId matches.
-     */
+    /** The last modification ID. When you use modId, a record is edited only when the modId matches. */
     readonly modId?: number;
 
     /**
@@ -140,9 +118,7 @@ export interface FileMakerNodeParameters {
      */
     readonly script?: string;
 
-    /**
-     * A parameter for the FileMaker script
-     */
+    /** A parameter for the FileMaker script */
     readonly scriptParam?: string;
 
 }

@@ -8,14 +8,10 @@ export const name = "googleAdsOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleAdsOAuth2ApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "developerToken": string;
 
-    /**
-     * Default: "https://www.googleapis.com/auth/adwords"
-     */
+    /** Default: "https://www.googleapis.com/auth/adwords" */
     readonly "scope"?: any;
 
     readonly __name: "googleAdsOAuth2Api";

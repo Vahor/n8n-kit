@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GumroadTriggerNodeParameters {
-    /**
-     * The resource is gonna fire the event
-     */
+    /** The resource is gonna fire the event */
     readonly resource?: "cancellation" | "dispute" | "dispute_won" | "refund" | "sale";
 
 }

@@ -8,14 +8,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CodeNodeParameters {
-    /**
-     * Default: "runOnceForAllItems"
-     */
+    /** Default: "runOnceForAllItems" */
     readonly mode?: "runOnceForAllItems" | "runOnceForEachItem";
 
-    /**
-     * Default: "javaScript"
-     */
+    /** Default: "javaScript" */
     readonly language?: "javaScript" | "python";
 
     /**

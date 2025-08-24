@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsAzureOpenAiNodeParameters {
-    /**
-     * The name of the model(deployment) to use
-     */
+    /** The name of the model(deployment) to use */
     readonly model?: string;
 
     /**

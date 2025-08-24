@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOutlookTriggerNodeParameters {
-    /**
-     * Default: "messageReceived"
-     */
+    /** Default: "messageReceived" */
     readonly event?: "messageReceived";
 
-    /**
-     * Default: "simple"
-     */
+    /** Default: "simple" */
     readonly output?: "simple" | "raw" | "fields";
 
     /**
@@ -25,14 +21,10 @@ export interface MicrosoftOutlookTriggerNodeParameters {
      */
     readonly fields?: ("bccRecipients" | "body" | "bodyPreview" | "categories" | "ccRecipients" | "changeKey" | "conversationId" | "createdDateTime" | "flag" | "from" | "hasAttachments" | "importance" | "inferenceClassification" | "internetMessageId" | "isDeliveryReceiptRequested" | "isDraft" | "isRead" | "isReadReceiptRequested" | "lastModifiedDateTime" | "parentFolderId" | "receivedDateTime" | "replyTo" | "sender" | "sentDateTime" | "subject" | "toRecipients" | "webLink")[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "custom"?: string, "hasAttachments"?: boolean, "foldersToExclude"?: any[], "foldersToInclude"?: any[], "readStatus"?: "both" | "unread" | "read", "sender"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

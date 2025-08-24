@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface RespondToWebhookNodeParameters {
-    /**
-     * Whether to provide an additional output branch with the response sent to the webhook
-     */
+    /** Whether to provide an additional output branch with the response sent to the webhook */
     readonly enableResponseOutput?: boolean;
 
     /**
@@ -20,9 +18,7 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly respondWith?: "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text";
 
-    /**
-     * The URL to redirect to
-     */
+    /** The URL to redirect to */
     readonly redirectURL?: string;
 
     /**
@@ -39,9 +35,7 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly payload?: string;
 
-    /**
-     * Default: "automatically"
-     */
+    /** Default: "automatically" */
     readonly responseDataSource?: "automatically" | "set";
 
     /**
@@ -50,9 +44,7 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly inputFieldName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "responseCode"?: number, "responseHeaders"?: { "entries": any }, "responseKey"?: string, "enableStreaming"?: boolean };
 
 }

@@ -10,9 +10,7 @@ export const name = "uprocApi" as const;
 export interface UProcApiCredentials {
     readonly "email"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "uprocApi";

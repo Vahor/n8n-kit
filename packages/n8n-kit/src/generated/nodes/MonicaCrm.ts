@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MonicaCrmNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "activity" | "call" | "contact" | "contactField" | "contactTag" | "conversation" | "conversationMessage" | "journalEntry" | "note" | "reminder" | "tag" | "task";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "update" | "add" | "remove" | "add" | "update";
 
     /**
@@ -25,34 +21,22 @@ export interface MonicaCrmNodeParameters {
      */
     readonly activityTypeId?: string;
 
-    /**
-     * Comma-separated list of IDs of the contacts to associate the activity with
-     */
+    /** Comma-separated list of IDs of the contacts to associate the activity with */
     readonly contacts?: string;
 
-    /**
-     * Date when the activity happened
-     */
+    /** Date when the activity happened */
     readonly happenedAt?: string;
 
-    /**
-     * Brief description of the activity - max 255 characters
-     */
+    /** Brief description of the activity - max 255 characters */
     readonly summary?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string } | { "birthdate"?: string, "deceasedDate"?: string, "isDeceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "isFavorited"?: boolean };
 
-    /**
-     * ID of the activity to delete
-     */
+    /** ID of the activity to delete */
     readonly activityId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -62,29 +46,19 @@ export interface MonicaCrmNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "activity_type_id"?: string, "contacts"?: string, "description"?: string, "happened_at"?: string, "summary"?: string } | { "calledAt"?: string, "contactId"?: string, "content"?: string } | { "birthdate"?: string, "deceased_date"?: string, "first_name"?: string, "gender_id"?: string, "is_deceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "contact_id"?: string, "content"?: string, "written_at"?: string, "written_by_me"?: "true" | "false" } | { "post"?: string, "title"?: string } | { "body"?: string, "contact_id"?: string, "is_favorited"?: boolean } | { "contact_id"?: string, "description"?: string, "frequency_type"?: "one_time" | "week" | "month" | "year", "initial_data"?: string, "frequency_number"?: number, "title"?: string } | { "contactId"?: string, "completed"?: boolean, "description"?: string, "title"?: string };
 
-    /**
-     * ID of the contact to associate the call with
-     */
+    /** ID of the contact to associate the call with */
     readonly contactId?: string;
 
-    /**
-     * Date when the call happened
-     */
+    /** Date when the call happened */
     readonly calledAt?: string;
 
-    /**
-     * Description of the call - max 100,000 characters
-     */
+    /** Description of the call - max 100,000 characters */
     readonly content?: string;
 
-    /**
-     * ID of the call to delete
-     */
+    /** ID of the call to delete */
     readonly callId?: string;
 
     readonly firstName?: string;
@@ -95,9 +69,7 @@ export interface MonicaCrmNodeParameters {
      */
     readonly genderId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "query"?: string, "sort"?: "created_at" | "-created_at" | "updated_at" | "-updated_at" };
 
     /**
@@ -106,14 +78,10 @@ export interface MonicaCrmNodeParameters {
      */
     readonly contactFieldTypeId?: string;
 
-    /**
-     * Content of the contact field - max 255 characters
-     */
+    /** Content of the contact field - max 255 characters */
     readonly data?: string;
 
-    /**
-     * ID of the contactField to delete
-     */
+    /** ID of the contactField to delete */
     readonly contactFieldId?: string;
 
     /**
@@ -130,14 +98,10 @@ export interface MonicaCrmNodeParameters {
      */
     readonly tagsToRemove?: any[];
 
-    /**
-     * ID of the conversation to delete
-     */
+    /** ID of the conversation to delete */
     readonly conversationId?: string;
 
-    /**
-     * Date when the message was written
-     */
+    /** Date when the message was written */
     readonly writtenAt?: string;
 
     /**
@@ -146,34 +110,22 @@ export interface MonicaCrmNodeParameters {
      */
     readonly writtenByMe?: "true" | "false";
 
-    /**
-     * ID of the message to update
-     */
+    /** ID of the message to update */
     readonly messageId?: string;
 
-    /**
-     * Title of the journal entry - max 250 characters
-     */
+    /** Title of the journal entry - max 250 characters */
     readonly title?: string;
 
-    /**
-     * Content of the journal entry - max 100,000 characters
-     */
+    /** Content of the journal entry - max 100,000 characters */
     readonly post?: string;
 
-    /**
-     * ID of the journal entry to delete
-     */
+    /** ID of the journal entry to delete */
     readonly journalId?: string;
 
-    /**
-     * Body of the note - max 100,000 characters
-     */
+    /** Body of the note - max 100,000 characters */
     readonly body?: string;
 
-    /**
-     * ID of the note to delete
-     */
+    /** ID of the note to delete */
     readonly noteId?: string;
 
     /**
@@ -182,34 +134,22 @@ export interface MonicaCrmNodeParameters {
      */
     readonly frequencyType?: "one_time" | "week" | "month" | "year";
 
-    /**
-     * Interval for the reminder
-     */
+    /** Interval for the reminder */
     readonly frequencyNumber?: number;
 
-    /**
-     * Date of the reminder
-     */
+    /** Date of the reminder */
     readonly initialDate?: string;
 
-    /**
-     * ID of the reminder to delete
-     */
+    /** ID of the reminder to delete */
     readonly reminderId?: string;
 
-    /**
-     * Name of the tag - max 250 characters
-     */
+    /** Name of the tag - max 250 characters */
     readonly name?: string;
 
-    /**
-     * ID of the tag to delete
-     */
+    /** ID of the tag to delete */
     readonly tagId?: string;
 
-    /**
-     * ID of the task to delete
-     */
+    /** ID of the task to delete */
     readonly taskId?: string;
 
 }

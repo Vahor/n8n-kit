@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AggregateNodeParameters {
-    /**
-     * Default: "aggregateIndividualFields"
-     */
+    /** Default: "aggregateIndividualFields" */
     readonly aggregate?: "aggregateIndividualFields" | "aggregateAllItemData";
 
     /**
@@ -25,18 +23,14 @@ export interface AggregateNodeParameters {
      */
     readonly destinationFieldName?: string;
 
-    /**
-     * Default: "allFields"
-     */
+    /** Default: "allFields" */
     readonly include?: "allFields" | "specifiedFields" | "allFieldsExcept";
 
     readonly fieldsToExclude?: string;
 
     readonly fieldsToInclude?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean };
 
 }

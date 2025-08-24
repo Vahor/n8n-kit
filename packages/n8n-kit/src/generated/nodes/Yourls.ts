@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface YourlsNodeParameters {
-    /**
-     * Default: "url"
-     */
+    /** Default: "url" */
     readonly resource?: "url";
 
-    /**
-     * Default: "shorten"
-     */
+    /** Default: "shorten" */
     readonly operation?: "expand" | "shorten" | "stats";
 
-    /**
-     * The URL to shorten
-     */
+    /** The URL to shorten */
     readonly url?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "keyword"?: string, "title"?: string };
 
-    /**
-     * The short URL to expand
-     */
+    /** The short URL to expand */
     readonly shortUrl?: string;
 
 }

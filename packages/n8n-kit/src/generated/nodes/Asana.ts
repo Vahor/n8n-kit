@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AsanaNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "task"
-     */
+    /** Default: "task" */
     readonly resource?: "project" | "subtask" | "task" | "taskComment" | "taskProject" | "taskTag" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "move" | "search" | "update" | "add" | "remove" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * The task to operate on
-     */
+    /** The task to operate on */
     readonly taskId?: string;
 
-    /**
-     * The name of the subtask to create
-     */
+    /** The name of the subtask to create */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly otherProperties?: { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "liked"?: boolean, "notes"?: string, "workspace"?: string } | { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "name"?: string, "liked"?: boolean, "notes"?: string, "projects"?: any[] };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -51,9 +37,7 @@ export interface AsanaNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "opt_fields"?: any[], "opt_pretty"?: boolean };
 
     /**
@@ -62,9 +46,7 @@ export interface AsanaNodeParameters {
      */
     readonly workspace?: string;
 
-    /**
-     * The ID of the task to delete
-     */
+    /** The ID of the task to delete */
     readonly id?: string;
 
     /**
@@ -91,14 +73,10 @@ export interface AsanaNodeParameters {
      */
     readonly searchTaskProperties?: { "completed"?: boolean, "text"?: string };
 
-    /**
-     * Whether body is HTML or simple text
-     */
+    /** Whether body is HTML or simple text */
     readonly isTextHtml?: boolean;
 
-    /**
-     * The plain text of the comment to add
-     */
+    /** The plain text of the comment to add */
     readonly text?: string;
 
     /**
@@ -119,9 +97,7 @@ export interface AsanaNodeParameters {
      */
     readonly tag?: string;
 
-    /**
-     * An identifier for the user to get data of. Can be one of an email address,the globally unique identifier for the user, or the keyword me to indicate the current user making the request.
-     */
+    /** An identifier for the user to get data of. Can be one of an email address,the globally unique identifier for the user, or the keyword me to indicate the current user making the request. */
     readonly userId?: string;
 
     /**

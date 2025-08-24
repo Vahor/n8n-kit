@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailchimpNodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "oAuth2";
 
-    /**
-     * Default: "member"
-     */
+    /** Default: "member" */
     readonly resource?: "campaign" | "listGroup" | "member" | "memberTag";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "delete" | "get" | "getAll" | "replicate" | "resend" | "send";
 
     /**
@@ -30,21 +24,15 @@ export interface MailchimpNodeParameters {
      */
     readonly list?: string;
 
-    /**
-     * Email address for a subscriber
-     */
+    /** Email address for a subscriber */
     readonly email?: string;
 
-    /**
-     * Subscriber's current status
-     */
+    /** Subscriber's current status */
     readonly status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed";
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "emailType"?: "html" | "text", "language"?: string, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "tags"?: string, "vip"?: boolean, "timestampOpt"?: string } | { "fields"?: string, "excludeFields"?: string } | { "beforeLastChanged"?: string, "beforeTimestampOpt"?: string, "emailType"?: "html" | "text", "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "sinceLastChanged"?: string } | { "isSyncing"?: boolean } | { "beforeCreateTime"?: string, "beforeSendTime"?: string, "excludeFields"?: any[], "fields"?: any[], "listId"?: string, "sinceCreateTime"?: string, "sinceSendTime"?: string, "sortDirection"?: "ASC" | "DESC", "sortField"?: "create_time" | "send_time", "status"?: "save" | "sending" | "sent" | "schedule" };
 
     /**
@@ -60,14 +48,10 @@ export interface MailchimpNodeParameters {
      */
     readonly mergeFieldsUi?: { "mergeFieldsValues": any };
 
-    /**
-     * Type options: {"alwaysOpenEditWindow":true}
-     */
+    /** Type options: {"alwaysOpenEditWindow":true} */
     readonly mergeFieldsJson?: string;
 
-    /**
-     * Type options: {"alwaysOpenEditWindow":true}
-     */
+    /** Type options: {"alwaysOpenEditWindow":true} */
     readonly locationJson?: string;
 
     /**
@@ -76,14 +60,10 @@ export interface MailchimpNodeParameters {
      */
     readonly groupsUi?: { "groupsValues": any };
 
-    /**
-     * Type options: {"alwaysOpenEditWindow":true}
-     */
+    /** Type options: {"alwaysOpenEditWindow":true} */
     readonly groupJson?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -93,9 +73,7 @@ export interface MailchimpNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "emailType"?: "html" | "text", "groupsUi"?: { "groupsValues": any }, "language"?: string, "mergeFieldsUi"?: { "mergeFieldsValues": any }, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "skipMergeValidation"?: boolean, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "vip"?: boolean, "locationFieldsUi"?: { "locationFieldsValues": any }, "timestampOpt"?: string };
 
     /**
@@ -110,9 +88,7 @@ export interface MailchimpNodeParameters {
      */
     readonly groupCategory?: string;
 
-    /**
-     * List of Campaigns
-     */
+    /** List of Campaigns */
     readonly campaignId?: string;
 
 }

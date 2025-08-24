@@ -9,32 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GithubNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "issue"
-     */
+    /** Default: "issue" */
     readonly resource?: "file" | "issue" | "organization" | "release" | "repository" | "review" | "user" | "workflow";
 
-    /**
-     * Default: "getRepositories"
-     */
+    /** Default: "getRepositories" */
     readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly owner?: {
 	value: string,
 	mode: "list" | "url" | "name",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly repository?: {
 	value: string,
 	mode: "list" | "url" | "name",
@@ -64,24 +54,16 @@ export interface GithubNodeParameters {
      */
     readonly inputs?: string;
 
-    /**
-     * The file path of the file. Has to contain the full path.
-     */
+    /** The file path of the file. Has to contain the full path. */
     readonly filePath?: string;
 
-    /**
-     * Whether the data to upload should be taken from binary field
-     */
+    /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;
 
-    /**
-     * The text content of the file
-     */
+    /** The text content of the file */
     readonly fileContent?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     readonly commitMessage?: string;
@@ -98,9 +80,7 @@ export interface GithubNodeParameters {
      */
     readonly asBinaryProperty?: boolean;
 
-    /**
-     * The title of the issue
-     */
+    /** The title of the issue */
     readonly title?: string;
 
     /**
@@ -121,9 +101,7 @@ export interface GithubNodeParameters {
      */
     readonly assignees?: { "assignee"?: string };
 
-    /**
-     * The number of the issue on which to create the comment on
-     */
+    /** The number of the issue on which to create the comment on */
     readonly issueNumber?: number;
 
     /**
@@ -138,9 +116,7 @@ export interface GithubNodeParameters {
      */
     readonly lockReason?: "off-topic" | "too heated" | "resolved" | "spam";
 
-    /**
-     * The tag of the release
-     */
+    /** The tag of the release */
     readonly releaseTag?: string;
 
     /**
@@ -151,9 +127,7 @@ export interface GithubNodeParameters {
 
     readonly release_id?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -175,14 +149,10 @@ export interface GithubNodeParameters {
      */
     readonly getRepositoryPullRequestsFilters?: { "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "popularity" | "long-running", "direction"?: "asc" | "desc" };
 
-    /**
-     * The number of the pull request
-     */
+    /** The number of the pull request */
     readonly pullRequestNumber?: number;
 
-    /**
-     * ID of the review
-     */
+    /** ID of the review */
     readonly reviewId?: string;
 
     /**
@@ -191,14 +161,10 @@ export interface GithubNodeParameters {
      */
     readonly event?: "approve" | "requestChanges" | "comment" | "pending";
 
-    /**
-     * The GitHub organization that the user is being invited to
-     */
+    /** The GitHub organization that the user is being invited to */
     readonly organization?: string;
 
-    /**
-     * The email address of the invited user
-     */
+    /** The email address of the invited user */
     readonly email?: string;
 
 }

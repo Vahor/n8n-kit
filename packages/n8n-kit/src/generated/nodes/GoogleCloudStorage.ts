@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleCloudStorageNodeParameters {
-    /**
-     * Default: "bucket"
-     */
+    /** Default: "bucket" */
     readonly resource?: "bucket" | "object";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     readonly projectId?: string;
@@ -25,41 +21,27 @@ export interface GoogleCloudStorageNodeParameters {
 
     readonly prefix?: string;
 
-    /**
-     * Default: "noAcl"
-     */
+    /** Default: "noAcl" */
     readonly projection?: "full" | "noAcl";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly getFilters?: { "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly createAcl?: { "predefinedAcl"?: "authenticatedRead" | "private" | "projectPrivate" | "publicRead" | "publicReadWrite", "predefinedDefaultObjectAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly createBody?: { "acl"?: string, "billing"?: string, "cors"?: string, "customPlacementConfig"?: string, "dataLocations"?: string, "defaultEventBasedHold"?: boolean, "defaultObjectAcl"?: string, "encryption"?: string, "iamConfiguration"?: string, "labels"?: string, "lifecycle"?: string, "location"?: string, "logging"?: string, "retentionPolicy"?: string, "rpo"?: string, "storageClass"?: string, "versioning"?: string, "website"?: string };
 
     readonly objectName?: string;
 
-    /**
-     * Default: "full"
-     */
+    /** Default: "full" */
     readonly updateProjection?: "full" | "noAcl";
 
-    /**
-     * Default: "json"
-     */
+    /** Default: "json" */
     readonly alt?: "json" | "media";
 
     /**
@@ -68,19 +50,13 @@ export interface GoogleCloudStorageNodeParameters {
      */
     readonly createFromBinary?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly createBinaryPropertyName?: string;
 
-    /**
-     * Content of the file to be uploaded
-     */
+    /** Content of the file to be uploaded */
     readonly createContent?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     /**
@@ -90,39 +66,25 @@ export interface GoogleCloudStorageNodeParameters {
      */
     readonly maxResults?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly createData?: { "acl"?: string, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "crc32c"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "md5Hash"?: string, "metadata"?: string, "storageClass"?: string, "temporaryHold"?: boolean };
 
-    /**
-     * Default: {"acl":"[]"}
-     */
+    /** Default: {"acl":"[]"} */
     readonly updateData?: { "acl"?: string, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "metadata"?: string, "temporaryHold"?: boolean };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly createQuery?: { "contentEncoding"?: string, "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number, "kmsKeyName"?: string, "predefinedAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly getParameters?: { "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly metagenAndAclQuery?: { "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number, "predefinedAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly encryptionHeaders?: { "X-Goog-Encryption-Algorithm"?: "AES256", "X-Goog-Encryption-Key"?: string, "X-Goog-Encryption-Key-Sha256"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly listFilters?: { "delimiter"?: string, "endOffset"?: string, "includeTrailingDelimiter"?: boolean, "prefix"?: string, "startOffset"?: string, "versions"?: boolean };
 
 }

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LdapNodeParameters {
-    /**
-     * Default: "search"
-     */
+    /** Default: "search" */
     readonly operation?: "compare" | "create" | "delete" | "rename" | "search" | "update";
 
     readonly nodeDebug?: boolean;
@@ -29,14 +27,10 @@ export interface LdapNodeParameters {
      */
     readonly id?: string;
 
-    /**
-     * The value to compare
-     */
+    /** The value to compare */
     readonly value?: string;
 
-    /**
-     * The new distinguished name for the entry
-     */
+    /** The new distinguished name for the entry */
     readonly targetDn?: string;
 
     /**
@@ -46,9 +40,7 @@ export interface LdapNodeParameters {
      */
     readonly attributes?: { "attribute": any } | { "add": any, "replace": any, "delete": any };
 
-    /**
-     * The distinguished name of the subtree to search in
-     */
+    /** The distinguished name of the subtree to search in */
     readonly baseDN?: string;
 
     /**
@@ -71,14 +63,10 @@ export interface LdapNodeParameters {
      */
     readonly attribute?: string;
 
-    /**
-     * Text to search for, Use * for a wildcard
-     */
+    /** Text to search for, Use * for a wildcard */
     readonly searchText?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -88,9 +76,7 @@ export interface LdapNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "attributes"?: any[], "pageSize"?: number, "scope"?: "base" | "one" | "sub" };
 
 }

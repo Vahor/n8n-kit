@@ -9,48 +9,32 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GmailV1NodeParameters {
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "draft"
-     */
+    /** Default: "draft" */
     readonly resource?: "draft" | "label" | "message" | "messageLabel";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "delete" | "get" | "getAll" | "reply" | "send" | "add" | "remove";
 
     readonly messageId?: string;
 
     readonly subject?: string;
 
-    /**
-     * Whether the message should also be included as HTML
-     */
+    /** Whether the message should also be included as HTML */
     readonly includeHtml?: boolean;
 
-    /**
-     * The HTML message body
-     */
+    /** The HTML message body */
     readonly htmlMessage?: string;
 
-    /**
-     * The message body. If HTML formatted, then you have to add and activate the option "HTML content" in the "Additional Options" section.
-     */
+    /** The message body. If HTML formatted, then you have to add and activate the option "HTML content" in the "Additional Options" section. */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "toList"?: string, "ccList"?: string, "bccList"?: string, "attachmentsUi"?: { "attachmentsBinary": any } } | { "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "metadata" | "minimal" | "raw" | "resolved" } | { "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", "includeSpamTrash"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string } | { "format"?: "full" | "metadata" | "minimal" | "raw" | "resolved", "dataPropertyAttachmentsPrefixName"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "format"?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", "includeSpamTrash"?: boolean, "labelIds"?: any[], "q"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -60,14 +44,10 @@ export interface GmailV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Label Name
-     */
+    /** Label Name */
     readonly name?: string;
 
-    /**
-     * The ID of the label
-     */
+    /** The ID of the label */
     readonly labelId?: string;
 
     /**

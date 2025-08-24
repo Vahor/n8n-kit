@@ -9,19 +9,13 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleGeminiNodeParameters {
-    /**
-     * Default: "text"
-     */
+    /** Default: "text" */
     readonly resource?: "audio" | "document" | "file" | "image" | "text" | "video";
 
-    /**
-     * Default: "transcribe"
-     */
+    /** Default: "transcribe" */
     readonly operation?: "analyze" | "transcribe" | "analyze" | "upload" | "analyze" | "generate" | "message" | "analyze" | "generate" | "download";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly modelId?: {
 	value: string,
 	mode: "list" | "id",
@@ -33,14 +27,10 @@ export interface GoogleGeminiNodeParameters {
      */
     readonly text?: string;
 
-    /**
-     * Default: "url"
-     */
+    /** Default: "url" */
     readonly inputType?: "url" | "binary";
 
-    /**
-     * URL(s) of the audio(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the audio(s) to analyze, multiple URLs can be added separated by comma */
     readonly audioUrls?: string;
 
     /**
@@ -55,24 +45,16 @@ export interface GoogleGeminiNodeParameters {
      */
     readonly simplify?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "maxOutputTokens"?: number } | { "startTime"?: string, "endTime"?: string } | { "sampleCount"?: number, "binaryPropertyOutput"?: string } | { "systemMessage"?: string, "codeExecution"?: boolean, "frequencyPenalty"?: number, "maxOutputTokens"?: number, "candidateCount"?: number, "presencePenalty"?: number, "temperature"?: number, "topP"?: number, "topK"?: number, "maxToolsIterations"?: number } | { "binaryPropertyOutput"?: string } | { "sampleCount"?: number, "durationSeconds"?: number, "aspectRatio"?: "16:9" | "9:16", "personGeneration"?: "dont_allow" | "allow_adult" | "allow_all", "binaryPropertyOutput"?: string };
 
-    /**
-     * URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma */
     readonly documentUrls?: string;
 
-    /**
-     * URL of the file to upload
-     */
+    /** URL of the file to upload */
     readonly fileUrl?: string;
 
-    /**
-     * URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma */
     readonly imageUrls?: string;
 
     /**
@@ -87,19 +69,13 @@ export interface GoogleGeminiNodeParameters {
      */
     readonly messages?: { "values": any };
 
-    /**
-     * Whether to attempt to return the response in JSON format
-     */
+    /** Whether to attempt to return the response in JSON format */
     readonly jsonOutput?: boolean;
 
-    /**
-     * URL(s) of the video(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the video(s) to analyze, multiple URLs can be added separated by comma */
     readonly videoUrls?: string;
 
-    /**
-     * The URL from Google Gemini API to download the video from
-     */
+    /** The URL from Google Gemini API to download the video from */
     readonly url?: string;
 
     /**

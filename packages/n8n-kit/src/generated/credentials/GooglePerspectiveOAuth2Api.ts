@@ -8,9 +8,7 @@ export const name = "googlePerspectiveOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GooglePerspectiveOAuth2ApiCredentials {
-    /**
-     * Default: "https://www.googleapis.com/auth/userinfo.email"
-     */
+    /** Default: "https://www.googleapis.com/auth/userinfo.email" */
     readonly "scope"?: any;
 
     readonly __name: "googlePerspectiveOAuth2Api";

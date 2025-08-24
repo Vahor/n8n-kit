@@ -9,28 +9,20 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsCertificateManagerNodeParameters {
-    /**
-     * Default: "certificate"
-     */
+    /** Default: "certificate" */
     readonly resource?: "certificate";
 
-    /**
-     * Default: "renew"
-     */
+    /** Default: "renew" */
     readonly operation?: "delete" | "get" | "getMany" | "getMetadata" | "renew";
 
-    /**
-     * String that contains the ARN of the ACM certificate to be renewed. This must be of the form: arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012.
-     */
+    /** String that contains the ARN of the ACM certificate to be renewed. This must be of the form: arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012. */
     readonly certificateArn?: string;
 
     readonly bucketName?: string;
 
     readonly certificateKey?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -40,9 +32,7 @@ export interface AwsCertificateManagerNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "certificateStatuses"?: ("EXPIRED" | "FAILED" | "INACTIVE" | "ISSUED" | "PENDING_VALIDATION" | "REVOKED" | "VALIDATION_TIMED_OUT")[], "extendedKeyUsage"?: ("ANY" | "CODE_SIGNING" | "CUSTOM" | "EMAIL_PROTECTION" | "IPSEC_END_SYSTEM" | "IPSEC_TUNNEL" | "IPSEC_USER" | "NONE" | "OCSP_SIGNING" | "TIME_STAMPING" | "TLS_WEB_CLIENT_AUTHENTICATION" | "TLS_WEB_SERVER_AUTHENTICATION")[], "keyTypes"?: ("EC_prime256v1" | "EC_secp384r1" | "EC_secp521r1" | "RSA_1024" | "RSA_2048" | "RSA_4096")[], "keyUsage"?: ("ANY" | "CERTIFICATE_SIGNING" | "CRL_SIGNING" | "CUSTOM" | "DATA_ENCIPHERMENT" | "DECIPHER_ONLY" | "DIGITAL_SIGNATURE" | "ENCIPHER_ONLY" | "KEY_AGREEMENT" | "KEY_ENCIPHERMENT" | "NON_REPUDIATION")[] };
 
 }

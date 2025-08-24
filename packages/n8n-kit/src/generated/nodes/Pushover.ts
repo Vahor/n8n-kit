@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushoverNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message";
 
-    /**
-     * Default: "push"
-     */
+    /** Default: "push" */
     readonly operation?: "push";
 
-    /**
-     * The user/group key (not e-mail address) of your user (or you), viewable when logged into the <a href="https://pushover.net/">dashboard</a> (often referred to as <code>USER_KEY</code> in the <a href="https://support.pushover.net/i44-example-code-and-pushover-libraries">libraries</a> and code examples)
-     */
+    /** The user/group key (not e-mail address) of your user (or you), viewable when logged into the <a href="https://pushover.net/">dashboard</a> (often referred to as <code>USER_KEY</code> in the <a href="https://support.pushover.net/i44-example-code-and-pushover-libraries">libraries</a> and code examples) */
     readonly userKey?: string;
 
-    /**
-     * Your message
-     */
+    /** Your message */
     readonly message?: string;
 
     /**
@@ -49,9 +41,7 @@ export interface PushoverNodeParameters {
      */
     readonly expire?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string, "title"?: string, "url"?: string, "url_title"?: string };
 
 }

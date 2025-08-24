@@ -8,26 +8,18 @@ export const name = "elasticSecurityApi" as const;
  * documentationUrl: elasticSecurity
  */
 export interface ElasticSecurityApiCredentials {
-    /**
-     * Referred to as Kibana 'endpoint' in the Elastic deployment dashboard
-     */
+    /** Referred to as Kibana 'endpoint' in the Elastic deployment dashboard */
     readonly "baseUrl": string;
 
-    /**
-     * Default: "basicAuth"
-     */
+    /** Default: "basicAuth" */
     readonly "type"?: "apiKey" | "basicAuth";
 
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "elasticSecurityApi";

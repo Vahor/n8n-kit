@@ -9,49 +9,31 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CiscoWebexNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "meeting" | "message";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Meeting title. The title can be a maximum of 128 characters long.
-     */
+    /** Meeting title. The title can be a maximum of 128 characters long. */
     readonly title?: string;
 
-    /**
-     * Date and time for the start of the meeting. Acceptable <a href="https://datatracker.ietf.org/doc/html/rfc2445"> format</a>.
-     */
+    /** Date and time for the start of the meeting. Acceptable <a href="https://datatracker.ietf.org/doc/html/rfc2445"> format</a>. */
     readonly start?: string;
 
-    /**
-     * Date and time for the end of the meeting. Acceptable <a href="https://datatracker.ietf.org/doc/html/rfc2445"> format</a>.
-     */
+    /** Date and time for the end of the meeting. Acceptable <a href="https://datatracker.ietf.org/doc/html/rfc2445"> format</a>. */
     readonly end?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "agenda"?: string, "allowAnyUserToBeCoHost"?: boolean, "allowAuthenticatedDevices"?: boolean, "allowFirstUserToBeCoHost"?: boolean, "autoAcceptRequest"?: boolean, "enableConnectAudioBeforeHost"?: boolean, "enabledAutoRecordMeeting"?: boolean, "enabledJoinBeforeHost"?: boolean, "excludePassword"?: boolean, "hostEmail"?: string, "integrationTags"?: string, "inviteesUi"?: { "inviteeValues": any }, "joinBeforeHostMinutes"?: "0" | "5" | "10" | "15", "publicMeeting"?: boolean, "recurrence"?: string, "requireRegistrationInfo"?: ("requireFirstName" | "requireLastName" | "requireEmail" | "requireJobTitle" | "requireCompanyName" | "requireAddress1" | "requireAddress2" | "requireCity" | "requireState" | "requireZipCode" | "requireCountryRegion" | "requireWorkPhone" | "requireFax")[], "reminderTime"?: number, "sendEmail"?: boolean, "siteUrl"?: string } | { "attachmentsUi"?: { "attachmentValues": any }, "fileUi"?: { "fileValue": any }, "markdown"?: string };
 
-    /**
-     * ID of the meeting
-     */
+    /** ID of the meeting */
     readonly meetingId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "hostEmail"?: string, "sendEmail"?: boolean } | { "hostEmail"?: string, "password"?: string, "sendEmail"?: boolean };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -61,19 +43,13 @@ export interface CiscoWebexNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "from"?: string, "hostEmail"?: string, "integrationTag"?: string, "current"?: boolean, "meetingNumber"?: string, "meetingType"?: "meetingSeries" | "scheduledMeeting" | "meeting", "participantEmail"?: string, "siteUrl"?: string, "state"?: "active" | "ended" | "expired" | "inProgress" | "lobby" | "missed" | "ready" | "scheduled", "to"?: string, "webLink"?: string } | { "before"?: string, "beforeMessage"?: string, "parentId"?: string, "mentionedPeople"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "agenda"?: string, "allowAnyUserToBeCoHost"?: boolean, "allowAuthenticatedDevices"?: boolean, "allowFirstUserToBeCoHost"?: boolean, "enableConnectAudioBeforeHost"?: boolean, "enabledAutoRecordMeeting"?: boolean, "enabledJoinBeforeHost"?: boolean, "end"?: string, "excludePassword"?: boolean, "hostEmail"?: string, "inviteesUi"?: { "inviteeValues": any }, "joinBeforeHostMinutes"?: "0" | "5" | "10" | "15", "password"?: string, "publicMeeting"?: boolean, "recurrence"?: string, "requireRegistrationInfo"?: ("requireFirstName" | "requireLastName" | "requireEmail" | "requireJobTitle" | "requireCompanyName" | "requireAddress1" | "requireAddress2" | "requireCity" | "requireState" | "requireZipCode" | "requireCountryRegion" | "requireWorkPhone" | "requireFax")[], "reminderTime"?: number, "sendEmail"?: boolean, "siteUrl"?: string, "start"?: string, "title"?: string };
 
-    /**
-     * Default: "room"
-     */
+    /** Default: "room" */
     readonly destination?: "room" | "person";
 
     /**
@@ -82,33 +58,23 @@ export interface CiscoWebexNodeParameters {
      */
     readonly roomId?: string;
 
-    /**
-     * Default: "email"
-     */
+    /** Default: "email" */
     readonly specifyPersonBy?: "email" | "id";
 
     readonly toPersonId?: string;
 
     readonly toPersonEmail?: string;
 
-    /**
-     * The message, in plain text
-     */
+    /** The message, in plain text */
     readonly text?: string;
 
-    /**
-     * ID of the message to delete
-     */
+    /** ID of the message to delete */
     readonly messageId?: string;
 
-    /**
-     * Whether the message uses markdown
-     */
+    /** Whether the message uses markdown */
     readonly markdown?: boolean;
 
-    /**
-     * The message, in Markdown format. The maximum message length is 7439 bytes.
-     */
+    /** The message, in Markdown format. The maximum message length is 7439 bytes. */
     readonly markdownText?: string;
 
 }

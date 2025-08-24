@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolSerpApiNodeParameters {
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "gl"?: string, "device"?: "desktop" | "mobile" | "tablet", "no_cache"?: boolean, "google_domain"?: string, "hl"?: string };
 
 }

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostgresV2NodeParameters {
-    /**
-     * Default: "insert"
-     */
+    /** Default: "insert" */
     readonly operation?: "deleteTable" | "executeQuery" | "insert" | "upsert" | "select" | "update";
 
     /**
@@ -32,14 +30,10 @@ export interface PostgresV2NodeParameters {
 	mode: "list" | "name",
 };
 
-    /**
-     * Default: "truncate"
-     */
+    /** Default: "truncate" */
     readonly deleteCommand?: "truncate" | "delete" | "drop";
 
-    /**
-     * Whether to reset identity (auto-increment) columns to their initial values
-     */
+    /** Whether to reset identity (auto-increment) columns to their initial values */
     readonly restartSequences?: boolean;
 
     /**
@@ -55,9 +49,7 @@ export interface PostgresV2NodeParameters {
      */
     readonly combineConditions?: "AND" | "OR";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: any[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean };
 
     /**
@@ -78,9 +70,7 @@ export interface PostgresV2NodeParameters {
      */
     readonly valuesToSend?: { "values": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -102,9 +92,7 @@ export interface PostgresV2NodeParameters {
      */
     readonly columnToMatchOn?: string;
 
-    /**
-     * Rows with a value in the specified "Column to Match On" that corresponds to the value in this field will be updated
-     */
+    /** Rows with a value in the specified "Column to Match On" that corresponds to the value in this field will be updated */
     readonly valueToMatchOn?: string;
 
 }

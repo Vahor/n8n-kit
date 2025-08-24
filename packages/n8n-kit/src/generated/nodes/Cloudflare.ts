@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CloudflareNodeParameters {
-    /**
-     * Default: "zoneCertificate"
-     */
+    /** Default: "zoneCertificate" */
     readonly resource?: "zoneCertificate";
 
-    /**
-     * Default: "upload"
-     */
+    /** Default: "upload" */
     readonly operation?: "delete" | "get" | "getMany" | "upload";
 
     /**
@@ -25,16 +21,12 @@ export interface CloudflareNodeParameters {
      */
     readonly zoneId?: string;
 
-    /**
-     * The zone's leaf certificate
-     */
+    /** The zone's leaf certificate */
     readonly certificate?: string;
 
     readonly privateKey?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -44,9 +36,7 @@ export interface CloudflareNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "status"?: "active" | "expired" | "deleted" | "pending" };
 
     readonly certificateId?: string;

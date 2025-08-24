@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface WebhookNodeParameters {
-    /**
-     * Whether to allow the webhook to listen for multiple HTTP methods
-     */
+    /** Whether to allow the webhook to listen for multiple HTTP methods */
     readonly multipleMethods?: boolean;
 
     /**
@@ -20,9 +18,7 @@ export interface WebhookNodeParameters {
      */
     readonly httpMethod?: "DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT" | ("DELETE" | "GET" | "HEAD" | "PATCH" | "POST" | "PUT")[];
 
-    /**
-     * The path to listen to, dynamic values could be specified by using ':', e.g. 'your-path/:dynamic-value'. If dynamic values are set 'webhookId' would be prepended to path.
-     */
+    /** The path to listen to, dynamic values could be specified by using ':', e.g. 'your-path/:dynamic-value'. If dynamic values are set 'webhookId' would be prepended to path. */
     readonly path?: string;
 
     /**
@@ -56,9 +52,7 @@ export interface WebhookNodeParameters {
      */
     readonly responseBinaryPropertyName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "responsePropertyName"?: string, "rawBody"?: boolean, "responseCode"?: { "values": any }, "responseContentType"?: string, "responseData"?: string, "responseHeaders"?: { "entries": any } };
 
 }

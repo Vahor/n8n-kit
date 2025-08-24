@@ -10,14 +10,10 @@ export const outputs = {"main":"main"} as const;
 export interface DiscordV1NodeParameters {
     readonly webhookUri?: string;
 
-    /**
-     * Type options: {"maxValue":2000}
-     */
+    /** Type options: {"maxValue":2000} */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "allowedMentions"?: string, "attachments"?: string, "avatarUrl"?: string, "components"?: string, "embeds"?: string, "flags"?: number, "payloadJson"?: string, "username"?: string, "tts"?: boolean };
 
 }

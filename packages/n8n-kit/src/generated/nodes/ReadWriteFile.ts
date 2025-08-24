@@ -8,29 +8,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ReadWriteFileNodeParameters {
-    /**
-     * Default: "read"
-     */
+    /** Default: "read" */
     readonly operation?: "read" | "write";
 
-    /**
-     * Specify a file's path or path pattern to read multiple files. Always use forward-slashes for path separator even on Windows.
-     */
+    /** Specify a file's path or path pattern to read multiple files. Always use forward-slashes for path separator even on Windows. */
     readonly fileSelector?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fileExtension"?: string, "fileName"?: string, "mimeType"?: string, "dataPropertyName"?: string } | { "append"?: boolean };
 
-    /**
-     * Path and name of the file that should be written. Also include the file extension.
-     */
+    /** Path and name of the file that should be written. Also include the file extension. */
     readonly fileName?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly dataPropertyName?: string;
 
 }

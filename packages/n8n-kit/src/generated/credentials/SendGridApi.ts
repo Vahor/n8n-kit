@@ -8,9 +8,7 @@ export const name = "sendGridApi" as const;
  * documentationUrl: sendgrid
  */
 export interface SendGridApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "sendGridApi";

@@ -9,21 +9,15 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface KeapNodeParameters {
-    /**
-     * Default: "company"
-     */
+    /** Default: "company" */
     readonly resource?: "company" | "contact" | "contactNote" | "contactTag" | "ecommerceOrder" | "ecommerceProduct" | "email" | "file";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "getAll" | "create" | "get" | "delete" | "getAll" | "create" | "delete" | "get" | "getAll" | "createRecord" | "getAll" | "send" | "delete" | "getAll" | "upload";
 
     readonly companyName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "emailAddress"?: string, "notes"?: string, "optInReason"?: string, "website"?: string } | { "anniversary"?: string, "companyId"?: number, "contactType"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "jobTitle"?: string, "leadSourceId"?: number, "middleName"?: string, "optInReason"?: string, "ownerId"?: string, "preferredLocale"?: string, "preferredName"?: string, "sourceType"?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", "spouseName"?: string, "timezone"?: string, "website"?: string } | { "body"?: string, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other" } | { "body"?: string, "contactId"?: number, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other", "userId"?: string } | { "leadAffiliateId"?: number, "promoCodes"?: string, "salesAffiliateId"?: number } | { "active"?: boolean, "productDesc"?: string, "productPrice"?: number, "productShortDesc"?: string, "sku"?: string, "subscriptionOnly"?: boolean } | { "clickedDate"?: string, "contactId"?: number, "headers"?: string, "htmlContent"?: string, "openedDate"?: string, "originalProvider"?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", "originalProviderId"?: string, "plainContent"?: string, "providerSourceId"?: string, "receivedDate"?: string, "sentDate"?: string, "sentFromReplyAddress"?: string, "sentToBccAddresses"?: string, "sentToCCAddresses"?: string, "subject"?: string } | { "addressField"?: string, "htmlContent"?: string, "plainContent"?: string };
 
     /**
@@ -44,9 +38,7 @@ export interface KeapNodeParameters {
      */
     readonly phonesUi?: { "phonesValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -56,9 +48,7 @@ export interface KeapNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "companyName"?: string, "order"?: "datecreated" | "id" | "name", "orderDirection"?: "ascending" | "descending", "fields"?: string } | { "fields"?: string } | { "email"?: string, "givenName"?: string, "familyName"?: string, "order"?: "date" | "email" | "id" | "name", "orderDirection"?: "ascending" | "descending", "since"?: string, "until"?: string } | { "since"?: string, "until"?: string, "paid"?: boolean, "order"?: string, "contactId"?: number, "productId"?: number };
 
     /**
@@ -89,9 +79,7 @@ export interface KeapNodeParameters {
 
     readonly noteId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "contactId"?: number, "userId"?: string } | { "active"?: boolean } | { "contactId"?: number, "email"?: string, "sinceSentDate"?: string, "untilSentDate"?: string } | { "contactId"?: number, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
 
     /**
@@ -129,14 +117,10 @@ export interface KeapNodeParameters {
 
     readonly sentFromAddress?: string;
 
-    /**
-     * Contact IDs to receive the email. Multiple can be added seperated by comma.
-     */
+    /** Contact IDs to receive the email. Multiple can be added seperated by comma. */
     readonly contactIds?: string;
 
-    /**
-     * The subject line of the email
-     */
+    /** The subject line of the email */
     readonly subject?: string;
 
     /**
@@ -146,26 +130,18 @@ export interface KeapNodeParameters {
      */
     readonly attachmentsUi?: { "attachmentsValues": any, "attachmentsBinary": any };
 
-    /**
-     * Whether the data to upload should be taken from binary field
-     */
+    /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     readonly fileAssociation?: "company" | "contact" | "user";
 
-    /**
-     * The filename of the attached file, including extension
-     */
+    /** The filename of the attached file, including extension */
     readonly fileName?: string;
 
-    /**
-     * The content of the attachment, encoded in Base64
-     */
+    /** The content of the attachment, encoded in Base64 */
     readonly fileData?: string;
 
     readonly isPublic?: boolean;

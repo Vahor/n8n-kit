@@ -8,9 +8,7 @@ export const name = "microsoftSharePointOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftSharePointOAuth2ApiCredentials {
-    /**
-     * Default: "=openid offline_access https://{{$self.subdomain}}.sharepoint.com/.default"
-     */
+    /** Default: "=openid offline_access https://{{$self.subdomain}}.sharepoint.com/.default" */
     readonly "scope"?: any;
 
     readonly "subdomain"?: string;

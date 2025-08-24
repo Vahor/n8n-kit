@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TrelloTriggerNodeParameters {
-    /**
-     * ID of the model of which to subscribe to events
-     */
+    /** ID of the model of which to subscribe to events */
     readonly id?: string;
 
 }

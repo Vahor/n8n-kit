@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TravisCiNodeParameters {
-    /**
-     * Default: "build"
-     */
+    /** Default: "build" */
     readonly resource?: "build";
 
-    /**
-     * Default: "cancel"
-     */
+    /** Default: "cancel" */
     readonly operation?: "cancel" | "get" | "getAll" | "restart" | "trigger";
 
-    /**
-     * Value uniquely identifying the build
-     */
+    /** Value uniquely identifying the build */
     readonly buildId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "include"?: string } | { "include"?: string, "order"?: "asc" | "desc", "sortBy"?: "created_at" | "finished_at" | "id" | "number" | "started_at" } | { "message"?: string, "mergeMode"?: "deep_merge" | "deep_merge_append" | "deep_merge_prepend" | "merge" | "replace" };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -41,14 +31,10 @@ export interface TravisCiNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Same as {ownerName}/{repositoryName}
-     */
+    /** Same as {ownerName}/{repositoryName} */
     readonly slug?: string;
 
-    /**
-     * Branch requested to be built
-     */
+    /** Branch requested to be built */
     readonly branch?: string;
 
 }

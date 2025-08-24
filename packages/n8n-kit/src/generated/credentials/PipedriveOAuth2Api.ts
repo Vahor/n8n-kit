@@ -8,28 +8,20 @@ export const name = "pipedriveOAuth2Api" as const;
  * documentationUrl: pipedrive
  */
 export interface PipedriveOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://oauth.pipedrive.com/oauth/authorize"
-     */
+    /** Default: "https://oauth.pipedrive.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://oauth.pipedrive.com/oauth/token"
-     */
+    /** Default: "https://oauth.pipedrive.com/oauth/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "pipedriveOAuth2Api";

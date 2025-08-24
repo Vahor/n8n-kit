@@ -10,14 +10,10 @@ export const name = "bitwardenApi" as const;
 export interface BitwardenApiCredentials {
     readonly "clientId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientSecret"?: string;
 
-    /**
-     * Default: "cloudHosted"
-     */
+    /** Default: "cloudHosted" */
     readonly "environment"?: "cloudHosted" | "selfHosted";
 
     readonly "domain"?: string;

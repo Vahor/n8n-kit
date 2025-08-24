@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JenkinsNodeParameters {
-    /**
-     * Default: "job"
-     */
+    /** Default: "job" */
     readonly resource?: "build" | "instance" | "job";
 
     /**
@@ -33,24 +31,16 @@ export interface JenkinsNodeParameters {
      */
     readonly param?: { "params": any };
 
-    /**
-     * Name of the new Jenkins job
-     */
+    /** Name of the new Jenkins job */
     readonly newJob?: string;
 
-    /**
-     * XML of Jenkins config
-     */
+    /** XML of Jenkins config */
     readonly xml?: string;
 
-    /**
-     * Freeform reason for quiet down mode
-     */
+    /** Freeform reason for quiet down mode */
     readonly reason?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

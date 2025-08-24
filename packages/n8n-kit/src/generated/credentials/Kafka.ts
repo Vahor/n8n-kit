@@ -12,16 +12,12 @@ export interface KafkaCredentials {
 
     readonly "brokers"?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly "ssl"?: boolean;
 
     readonly "authentication"?: boolean;
 
-    /**
-     * Optional username if authenticated is required
-     */
+    /** Optional username if authenticated is required */
     readonly "username"?: string;
 
     /**
@@ -30,9 +26,7 @@ export interface KafkaCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     * Default: "plain"
-     */
+    /** Default: "plain" */
     readonly "saslMechanism"?: "plain" | "scram-sha-256" | "scram-sha-512";
 
     readonly __name: "kafka";

@@ -8,9 +8,7 @@ export const name = "googleContactsOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleContactsOAuth2ApiCredentials {
-    /**
-     * Default: "https://www.googleapis.com/auth/contacts"
-     */
+    /** Default: "https://www.googleapis.com/auth/contacts" */
     readonly "scope"?: any;
 
     readonly __name: "googleContactsOAuth2Api";

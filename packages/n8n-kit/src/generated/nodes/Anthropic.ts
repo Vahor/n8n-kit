@@ -9,19 +9,13 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AnthropicNodeParameters {
-    /**
-     * Default: "text"
-     */
+    /** Default: "text" */
     readonly resource?: "document" | "file" | "image" | "prompt" | "text";
 
-    /**
-     * Default: "analyze"
-     */
+    /** Default: "analyze" */
     readonly operation?: "analyze" | "upload" | "get" | "list" | "deleteFile" | "generate" | "improve" | "templatize" | "message";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly modelId?: {
 	value: string,
 	mode: "list" | "id",
@@ -33,14 +27,10 @@ export interface AnthropicNodeParameters {
      */
     readonly text?: string;
 
-    /**
-     * Default: "url"
-     */
+    /** Default: "url" */
     readonly inputType?: "url" | "binary";
 
-    /**
-     * URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma */
     readonly documentUrls?: string;
 
     /**
@@ -55,19 +45,13 @@ export interface AnthropicNodeParameters {
      */
     readonly simplify?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "maxTokens"?: number } | { "fileName"?: string } | { "system"?: string, "feedback"?: string } | { "system"?: string } | { "includeMergedResponse"?: boolean, "system"?: string, "codeExecution"?: boolean, "webSearch"?: boolean, "maxUses"?: number, "allowedDomains"?: string, "blockedDomains"?: string, "maxTokens"?: number, "temperature"?: number, "topP"?: number, "topK"?: number, "maxToolsIterations"?: number };
 
-    /**
-     * ID of the file to delete
-     */
+    /** ID of the file to delete */
     readonly fileId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -77,14 +61,10 @@ export interface AnthropicNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * URL of the file to upload
-     */
+    /** URL of the file to upload */
     readonly fileUrl?: string;
 
-    /**
-     * URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma */
     readonly imageUrls?: string;
 
     /**
@@ -100,9 +80,7 @@ export interface AnthropicNodeParameters {
      */
     readonly messages?: { "values": any };
 
-    /**
-     * Whether to add attachments to the message
-     */
+    /** Whether to add attachments to the message */
     readonly addAttachments?: boolean;
 
     /**
@@ -111,9 +89,7 @@ export interface AnthropicNodeParameters {
      */
     readonly attachmentsInputType?: "url" | "binary";
 
-    /**
-     * URL(s) of the file(s) to attach, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the file(s) to attach, multiple URLs can be added separated by comma */
     readonly attachmentsUrls?: string;
 
 }

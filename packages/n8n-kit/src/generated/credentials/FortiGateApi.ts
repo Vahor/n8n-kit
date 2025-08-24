@@ -8,9 +8,7 @@ export const name = "fortiGateApi" as const;
  * documentationUrl: fortigate
  */
 export interface FortiGateApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken": string;
 
     readonly __name: "fortiGateApi";

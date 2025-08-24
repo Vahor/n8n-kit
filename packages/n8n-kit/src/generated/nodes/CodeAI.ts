@@ -8,9 +8,7 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface CodeAINodeParameters {
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly code?: { "execute": any, "supplyData": any };
 
     /**

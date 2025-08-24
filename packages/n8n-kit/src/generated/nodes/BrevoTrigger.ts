@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BrevoTriggerNodeParameters {
-    /**
-     * Default: "transactional"
-     */
+    /** Default: "transactional" */
     readonly type?: "inbound" | "marketing" | "transactional";
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("blocked" | "click" | "deferred" | "delivered" | "hardBounce" | "invalid" | "spam" | "opened" | "request" | "softBounce" | "uniqueOpened" | "unsubscribed")[] | ("click" | "delivered" | "hardBounce" | "listAddition" | "opened" | "softBounce" | "spam" | "unsubscribed")[] | ("inboundEmailProcessed")[];
 
 }

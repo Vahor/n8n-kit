@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface YouTubeNodeParameters {
-    /**
-     * Default: "channel"
-     */
+    /** Default: "channel" */
     readonly resource?: "channel" | "playlist" | "playlistItem" | "video" | "videoCategory";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "get" | "getAll" | "update" | "uploadBanner" | "create" | "delete" | "get" | "getAll" | "update" | "add" | "delete" | "get" | "getAll" | "delete" | "get" | "getAll" | "rate" | "update" | "upload" | "getAll";
 
     /**
@@ -25,9 +21,7 @@ export interface YouTubeNodeParameters {
      */
     readonly part?: ("*" | "brandingSettings" | "contentDetails" | "contentOwnerDetails" | "id" | "localizations" | "snippet" | "statistics" | "status" | "topicDetails")[] | ("*" | "contentDetails" | "id" | "localizations" | "player" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "snippet" | "status")[] | ("*" | "contentDetails" | "id" | "liveStreamingDetails" | "localizations" | "player" | "recordingDetails" | "snippet" | "statistics" | "status" | "topicDetails")[];
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -37,34 +31,22 @@ export interface YouTubeNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "categoryId"?: string, "forUsername"?: string, "id"?: string, "managedByMe"?: boolean } | { "channelId"?: string, "id"?: string } | { "channelId"?: string, "forDeveloper"?: boolean, "publishedAfter"?: string, "publishedBefore"?: string, "q"?: string, "regionCode"?: string, "relatedToVideoId"?: string, "videoCategoryId"?: string, "videoSyndicated"?: boolean, "videoType"?: "any" | "episode" | "movie" };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "h1"?: string, "onBehalfOfContentOwner"?: string } | { "description"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string, "defaultLanguage"?: string, "onBehalfOfContentOwnerChannel"?: string, "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwner"?: string, "onBehalfOfContentOwnerChannel"?: string } | { "onBehalfOfContentOwner"?: string } | { "onBehalfOfContentOwnerChannel"?: string, "onBehalfOfContentOwner"?: string } | { "endAt"?: string, "note"?: string, "onBehalfOfContentOwner"?: string, "position"?: number, "startAt"?: string } | { "defaultLanguage"?: string, "description"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "privacyStatus"?: "private" | "public" | "unlisted", "publicStatsViewable"?: boolean, "publishAt"?: string, "recordingDate"?: string, "selfDeclaredMadeForKids"?: boolean, "tags"?: string } | { "order"?: "date" | "relevance", "safeSearch"?: "moderate" | "none" | "strict" };
 
-    /**
-     * ID of the channel
-     */
+    /** ID of the channel */
     readonly channelId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "brandingSettingsUi"?: { "channelSettingsValues": any, "imageSettingsValues": any, "statusValue": any }, "onBehalfOfContentOwner"?: string } | { "defaultLanguage"?: string, "description"?: string, "onBehalfOfContentOwner"?: string, "privacyStatus"?: "private" | "public" | "unlisted", "tags"?: string } | { "defaultLanguage"?: string, "description"?: string, "embeddable"?: boolean, "license"?: "creativeCommon" | "youtube", "notifySubscribers"?: boolean, "privacyStatus"?: "private" | "public" | "unlistef", "publicStatsViewable"?: boolean, "publishAt"?: string, "recordingDate"?: string, "selfDeclaredMadeForKids"?: boolean, "tags"?: string };
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryProperty?: string;
 
-    /**
-     * The playlist's title
-     */
+    /** The playlist's title */
     readonly title?: string;
 
     readonly playlistId?: string;

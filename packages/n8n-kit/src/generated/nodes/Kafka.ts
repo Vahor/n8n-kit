@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface KafkaNodeParameters {
-    /**
-     * Name of the queue of topic to publish to
-     */
+    /** Name of the queue of topic to publish to */
     readonly topic?: string;
 
     /**
@@ -20,36 +18,24 @@ export interface KafkaNodeParameters {
      */
     readonly sendInputData?: boolean;
 
-    /**
-     * The message to be sent
-     */
+    /** The message to be sent */
     readonly message?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Whether to use Confluent Schema Registry
-     */
+    /** Whether to use Confluent Schema Registry */
     readonly useSchemaRegistry?: boolean;
 
-    /**
-     * URL of the schema registry
-     */
+    /** URL of the schema registry */
     readonly schemaRegistryUrl?: string;
 
-    /**
-     * Whether to use a message key
-     */
+    /** Whether to use a message key */
     readonly useKey?: boolean;
 
-    /**
-     * The message key
-     */
+    /** The message key */
     readonly key?: string;
 
-    /**
-     * Namespace and Name of Schema in Schema Registry (namespace.name)
-     */
+    /** Namespace and Name of Schema in Schema Registry (namespace.name) */
     readonly eventName?: string;
 
     /**
@@ -58,14 +44,10 @@ export interface KafkaNodeParameters {
      */
     readonly headersUi?: { "headerValues": any };
 
-    /**
-     * Header parameters as JSON (flat object)
-     */
+    /** Header parameters as JSON (flat object) */
     readonly headerParametersJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "acks"?: boolean, "compression"?: boolean, "timeout"?: number };
 
 }

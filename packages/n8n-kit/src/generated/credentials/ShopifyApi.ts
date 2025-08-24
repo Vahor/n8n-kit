@@ -8,24 +8,16 @@ export const name = "shopifyApi" as const;
  * documentationUrl: shopify
  */
 export interface ShopifyApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
-    /**
-     * Only the subdomain without .myshopify.com
-     */
+    /** Only the subdomain without .myshopify.com */
     readonly "shopSubdomain": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "sharedSecret"?: string;
 
     readonly __name: "shopifyApi";

@@ -15,19 +15,13 @@ export interface GoogleFirebaseRealtimeDatabaseNodeParameters {
      */
     readonly projectId?: string;
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "push" | "update";
 
-    /**
-     * Object path on database. Do not append .json.
-     */
+    /** Object path on database. Do not append .json. */
     readonly path?: string;
 
-    /**
-     * Attributes to save
-     */
+    /** Attributes to save */
     readonly attributes?: string;
 
 }

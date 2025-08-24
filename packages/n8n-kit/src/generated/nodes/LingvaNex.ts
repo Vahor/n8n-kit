@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LingvaNexNodeParameters {
-    /**
-     * Default: "translate"
-     */
+    /** Default: "translate" */
     readonly operation?: "translate";
 
-    /**
-     * The input text to translate
-     */
+    /** The input text to translate */
     readonly text?: string;
 
     /**
@@ -25,9 +21,7 @@ export interface LingvaNexNodeParameters {
      */
     readonly translateTo?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "from"?: string, "platform"?: string, "translateMode"?: string };
 
 }

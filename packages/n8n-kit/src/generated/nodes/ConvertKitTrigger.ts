@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ConvertKitTriggerNodeParameters {
-    /**
-     * The events that can trigger the webhook and whether they are enabled
-     */
+    /** The events that can trigger the webhook and whether they are enabled */
     readonly event?: "formSubscribe" | "linkClick" | "productPurchase" | "purchaseCreate" | "courseComplete" | "courseSubscribe" | "subscriberActivate" | "subscriberUnsubscribe" | "tagAdd" | "tagRemove";
 
     /**
@@ -26,9 +24,7 @@ export interface ConvertKitTriggerNodeParameters {
      */
     readonly courseId?: string;
 
-    /**
-     * The URL of the initiating link
-     */
+    /** The URL of the initiating link */
     readonly link?: string;
 
     readonly productId?: string;

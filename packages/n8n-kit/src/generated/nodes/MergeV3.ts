@@ -26,19 +26,13 @@ export interface MergeV3NodeParameters {
      */
     readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "clashHandling"?: { "values": any }, "fuzzyCompare"?: boolean } | { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "multipleMatches"?: "all" | "first" } | { "emptyQueryResult"?: "success" | "empty" } | { "clashHandling"?: { "values": any }, "includeUnpaired"?: boolean };
 
-    /**
-     * Whether name(s) of field to match are different in input 1 and input 2
-     */
+    /** Whether name(s) of field to match are different in input 1 and input 2 */
     readonly advanced?: boolean;
 
-    /**
-     * Specify the fields to use for matching input items
-     */
+    /** Specify the fields to use for matching input items */
     readonly fieldsToMatchString?: string;
 
     /**
@@ -54,9 +48,7 @@ export interface MergeV3NodeParameters {
      */
     readonly joinMode?: "keepMatches" | "keepNonMatches" | "keepEverything" | "enrichInput1" | "enrichInput2";
 
-    /**
-     * Default: "both"
-     */
+    /** Default: "both" */
     readonly outputDataFrom?: "both" | "input1" | "input2";
 
     /**
@@ -66,14 +58,10 @@ export interface MergeV3NodeParameters {
      */
     readonly query?: string;
 
-    /**
-     * Default: "waitForAll"
-     */
+    /** Default: "waitForAll" */
     readonly chooseBranchMode?: "waitForAll";
 
-    /**
-     * Default: "specifiedInput"
-     */
+    /** Default: "specifiedInput" */
     readonly output?: "specifiedInput" | "empty";
 
     /**

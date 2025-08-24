@@ -9,51 +9,33 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBooksNodeParameters {
-    /**
-     * Default: "serviceAccount"
-     */
+    /** Default: "serviceAccount" */
     readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "bookshelf"
-     */
+    /** Default: "bookshelf" */
     readonly resource?: "bookshelf" | "bookshelfVolume" | "volume";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "add" | "clear" | "getAll" | "move" | "remove";
 
     readonly myLibrary?: boolean;
 
-    /**
-     * Full-text search query string
-     */
+    /** Full-text search query string */
     readonly searchQuery?: string;
 
-    /**
-     * ID of user
-     */
+    /** ID of user */
     readonly userId?: string;
 
-    /**
-     * ID of the bookshelf
-     */
+    /** ID of the bookshelf */
     readonly shelfId?: string;
 
-    /**
-     * ID of the volume
-     */
+    /** ID of the volume */
     readonly volumeId?: string;
 
-    /**
-     * Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on)
-     */
+    /** Position on shelf to move the item (0 puts the item before the current first item, 1 puts it between the first and the second and so on) */
     readonly volumePosition?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

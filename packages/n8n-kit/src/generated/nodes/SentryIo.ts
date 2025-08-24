@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SentryIoNodeParameters {
-    /**
-     * Default: "cloud"
-     */
+    /** Default: "cloud" */
     readonly sentryVersion?: "cloud" | "server";
 
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2" | "accessToken";
 
-    /**
-     * Default: "event"
-     */
+    /** Default: "event" */
     readonly resource?: "event" | "issue" | "organization" | "project" | "release" | "team";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -47,9 +39,7 @@ export interface SentryIoNodeParameters {
      */
     readonly full?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -59,29 +49,19 @@ export interface SentryIoNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The ID of the event to retrieve (either the numeric primary-key or the hexadecimal ID as reported by the raven client)
-     */
+    /** The ID of the event to retrieve (either the numeric primary-key or the hexadecimal ID as reported by the raven client) */
     readonly eventId?: string;
 
-    /**
-     * ID of issue to get
-     */
+    /** ID of issue to get */
     readonly issueId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "query"?: string, "statsPeriod"?: "14d" | "24h", "shortIdLookUp"?: boolean } | { "assignedTo"?: string, "hasSeen"?: boolean, "isBookmarked"?: boolean, "isPublic"?: boolean, "isSubscribed"?: boolean, "status"?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved" } | { "member"?: boolean, "owner"?: boolean } | { "slug"?: string } | { "query"?: string } | { "dateReleased"?: string, "commits"?: { "commitProperties": any }, "refs"?: { "refProperties": any } };
 
-    /**
-     * The slug of the organization the team should be created for
-     */
+    /** The slug of the organization the team should be created for */
     readonly name?: string;
 
-    /**
-     * Whether you agree to the applicable terms of service and privacy policy of Sentry.io
-     */
+    /** Whether you agree to the applicable terms of service and privacy policy of Sentry.io */
     readonly agreeTerms?: boolean;
 
     /**
@@ -90,9 +70,7 @@ export interface SentryIoNodeParameters {
      */
     readonly organization_slug?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "name"?: string, "slug"?: string } | { "isBookmarked"?: boolean, "digestsMaxDelay"?: number, "digestsMinDelay"?: number, "name"?: string, "slug"?: string, "team"?: string, "platform"?: string } | { "commits"?: { "commitProperties": any }, "dateReleased"?: string, "ref"?: string, "refs"?: { "refProperties": any }, "url"?: string };
 
     /**
@@ -101,14 +79,10 @@ export interface SentryIoNodeParameters {
      */
     readonly teamSlug?: string;
 
-    /**
-     * The version identifier of the release
-     */
+    /** The version identifier of the release */
     readonly version?: string;
 
-    /**
-     * A URL that points to the release. This can be the path to an online interface to the sourcecode for instance.
-     */
+    /** A URL that points to the release. This can be the path to an online interface to the sourcecode for instance. */
     readonly url?: string;
 
     /**

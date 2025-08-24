@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GitlabNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "issue"
-     */
+    /** Default: "issue" */
     readonly resource?: "file" | "issue" | "release" | "repository" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "createComment" | "edit" | "get" | "lock" | "get" | "getIssues" | "getRepositories" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "edit" | "get" | "list";
 
-    /**
-     * User, group or namespace of the project
-     */
+    /** User, group or namespace of the project */
     readonly owner?: string;
 
-    /**
-     * The name of the project
-     */
+    /** The name of the project */
     readonly repository?: string;
 
-    /**
-     * The title of the issue
-     */
+    /** The title of the issue */
     readonly title?: string;
 
     /**
@@ -45,9 +33,7 @@ export interface GitlabNodeParameters {
      */
     readonly body?: string;
 
-    /**
-     * Due Date for issue
-     */
+    /** Due Date for issue */
     readonly due_date?: string;
 
     /**
@@ -62,9 +48,7 @@ export interface GitlabNodeParameters {
      */
     readonly assignee_ids?: { "assignee"?: number };
 
-    /**
-     * The number of the issue on which to create the comment on
-     */
+    /** The number of the issue on which to create the comment on */
     readonly issueNumber?: number;
 
     /**
@@ -79,9 +63,7 @@ export interface GitlabNodeParameters {
      */
     readonly lockReason?: "off-topic" | "too heated" | "resolved" | "spam";
 
-    /**
-     * The tag of the release
-     */
+    /** The tag of the release */
     readonly releaseTag?: string;
 
     /**
@@ -90,19 +72,13 @@ export interface GitlabNodeParameters {
      */
     readonly additionalFields?: { "name"?: string, "description"?: string, "ref"?: string } | { "order_by"?: "created_at" | "released_at", "sort"?: "asc" | "desc" } | { "name"?: string, "description"?: string, "milestones"?: string, "released_at"?: string };
 
-    /**
-     * The ID or URL-encoded path of the project
-     */
+    /** The ID or URL-encoded path of the project */
     readonly projectId?: string;
 
-    /**
-     * The Git tag the release is associated with
-     */
+    /** The Git tag the release is associated with */
     readonly tag_name?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -118,9 +94,7 @@ export interface GitlabNodeParameters {
      */
     readonly getRepositoryIssuesFilters?: { "assignee_username"?: string, "author_username"?: string, "search"?: string, "labels"?: string, "updated_after"?: string, "state"?: "" | "closed" | "opened", "order_by"?: "created_at" | "updated_at" | "priority", "sort"?: "asc" | "desc" };
 
-    /**
-     * The file path of the file. Has to contain the full path or leave it empty for root folder.
-     */
+    /** The file path of the file. Has to contain the full path or leave it empty for root folder. */
     readonly filePath?: string;
 
     /**
@@ -142,26 +116,18 @@ export interface GitlabNodeParameters {
      */
     readonly asBinaryProperty?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Whether the data to upload should be taken from binary field
-     */
+    /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;
 
-    /**
-     * The text content of the file
-     */
+    /** The text content of the file */
     readonly fileContent?: string;
 
     readonly commitMessage?: string;
 
-    /**
-     * Name of the new branch to create. The commit is added to this branch.
-     */
+    /** Name of the new branch to create. The commit is added to this branch. */
     readonly branch?: string;
 
 }

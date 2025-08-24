@@ -3,7 +3,12 @@ import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import type { INodeProperties, INodeTypeDescription } from "n8n-workflow";
 import { globSync } from "tinyglobby";
-import { getNodeName, isLangChainNode, toTypescriptType } from "./shared";
+import {
+	getNodeName,
+	isLangChainNode,
+	renderComments,
+	toTypescriptType,
+} from "./shared";
 
 const allNodes = globSync(
 	[
@@ -139,13 +144,8 @@ const generateTypescriptNodeOutput = async (
 				`Type options: ${JSON.stringify(property.typeOptions)}`,
 		].filter(Boolean) as string[];
 
-		if (comments.length > 0) {
-			code.line(`/**`);
-			for (const comment of comments) {
-				code.line(` * ${comment}`);
-			}
-			code.line(` */`);
-		}
+		renderComments(code, comments);
+
 		// There will be duplicates but theses are ok (like "GET" | "GET")
 		const typeUnion = [
 			...new Set(property.__versionsOfProperty.map((p) => toTypescriptType(p))),

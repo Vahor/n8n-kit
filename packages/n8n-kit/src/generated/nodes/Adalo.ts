@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AdaloNodeParameters {
-    /**
-     * Default: "collection"
-     */
+    /** Default: "collection" */
     readonly resource?: "collection";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Open your Adalo application and click on the three buttons beside the collection name, then select API Documentation
-     */
+    /** Open your Adalo application and click on the three buttons beside the collection name, then select API Documentation */
     readonly collectionId?: string;
 
     readonly rowId?: string;
@@ -32,9 +26,7 @@ export interface AdaloNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -44,9 +36,7 @@ export interface AdaloNodeParameters {
      */
     readonly fieldsUi?: { "fieldValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

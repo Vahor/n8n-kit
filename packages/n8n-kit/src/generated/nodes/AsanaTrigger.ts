@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AsanaTriggerNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * The resource ID to subscribe to. The resource can be a task or project.
-     */
+    /** The resource ID to subscribe to. The resource can be a task or project. */
     readonly resource?: string;
 
     /**

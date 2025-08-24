@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface Sms77NodeParameters {
-    /**
-     * Default: "sms"
-     */
+    /** Default: "sms" */
     readonly resource?: "sms" | "voice";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send";
 
-    /**
-     * The caller ID displayed in the receivers display. Max 16 numeric or 11 alphanumeric characters.
-     */
+    /** The caller ID displayed in the receivers display. Max 16 numeric or 11 alphanumeric characters. */
     readonly from?: string;
 
-    /**
-     * The number of your recipient(s) separated by comma. Can be regular numbers or contact/groups from seven.
-     */
+    /** The number of your recipient(s) separated by comma. Can be regular numbers or contact/groups from seven. */
     readonly to?: string;
 
-    /**
-     * The message to send. Max. 1520 characters
-     */
+    /** The message to send. Max. 1520 characters */
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "delay"?: string, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number } | { "from"?: string };
 
 }

@@ -8,34 +8,22 @@ export const name = "crateDb" as const;
  * documentationUrl: crateDb
  */
 export interface CrateDbCredentials {
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "host"?: string;
 
-    /**
-     * Default: "doc"
-     */
+    /** Default: "doc" */
     readonly "database"?: string;
 
-    /**
-     * Default: "crate"
-     */
+    /** Default: "crate" */
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Default: "disable"
-     */
+    /** Default: "disable" */
     readonly "ssl"?: "allow" | "disable" | "require";
 
-    /**
-     * Default: 5432
-     */
+    /** Default: 5432 */
     readonly "port"?: number;
 
     readonly __name: "crateDb";

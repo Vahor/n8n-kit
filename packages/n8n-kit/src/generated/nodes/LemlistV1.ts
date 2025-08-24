@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LemlistV1NodeParameters {
-    /**
-     * Default: "activity"
-     */
+    /** Default: "activity" */
     readonly resource?: "activity" | "campaign" | "lead" | "team" | "unsubscribe";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "getAll" | "create" | "delete" | "get" | "unsubscribe" | "get" | "add" | "delete" | "getAll";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -31,9 +25,7 @@ export interface LemlistV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "campaignId"?: string, "type"?: "emailsBounced" | "emailsClicked" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed" };
 
     /**
@@ -43,14 +35,10 @@ export interface LemlistV1NodeParameters {
      */
     readonly campaignId?: string;
 
-    /**
-     * Email of the lead to create
-     */
+    /** Email of the lead to create */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "companyName"?: string, "deduplicate"?: boolean, "firstName"?: string, "lastName"?: string, "icebreaker"?: string, "phone"?: string, "picture"?: string, "linkedinUrl"?: string };
 
 }

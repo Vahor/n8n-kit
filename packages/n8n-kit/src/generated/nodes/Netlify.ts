@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NetlifyNodeParameters {
-    /**
-     * Default: "deploy"
-     */
+    /** Default: "deploy" */
     readonly resource?: "deploy" | "site";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "cancel" | "create" | "get" | "getAll" | "delete" | "get" | "getAll";
 
     /**
@@ -27,9 +23,7 @@ export interface NetlifyNodeParameters {
 
     readonly deployId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -39,9 +33,7 @@ export interface NetlifyNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "branch"?: string, "title"?: string };
 
 }

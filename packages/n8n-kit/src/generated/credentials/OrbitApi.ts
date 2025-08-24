@@ -10,9 +10,7 @@ export const name = "orbitApi" as const;
 export interface OrbitApiCredentials {
     readonly "deprecated"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "orbitApi";

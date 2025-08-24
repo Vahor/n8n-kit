@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MauticNodeParameters {
-    /**
-     * Default: "credentials"
-     */
+    /** Default: "credentials" */
     readonly authentication?: "credentials" | "oAuth2";
 
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "campaignContact" | "company" | "companyContact" | "contact" | "contactSegment" | "segmentEmail";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "editContactPoint" | "editDoNotContactList" | "get" | "getAll" | "sendEmail" | "update" | "add" | "remove" | "send";
 
-    /**
-     * The name of the company to create
-     */
+    /** The name of the company to create */
     readonly name?: string;
 
     /**
@@ -35,24 +27,16 @@ export interface MauticNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "annualRevenue"?: number, "companyEmail"?: string, "customFieldsUi"?: { "customFieldValues": any }, "description"?: string, "fax"?: string, "industry"?: string, "isPublished"?: boolean, "numberOfEmpoyees"?: number, "overwriteWithBlank"?: boolean, "phone"?: string, "website"?: string } | { "orderByDir"?: "asc" | "desc", "orderBy"?: string, "search"?: string } | { "addressUi"?: { "addressValues": any }, "b2bOrb2c"?: "B2B" | "B2C", "crmId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "fax"?: string, "hasPurchased"?: boolean, "ipAddress"?: string, "lastActive"?: string, "mobile"?: string, "ownerId"?: string, "phone"?: string, "prospectOrCustomer"?: "Prospect" | "Customer", "sandbox"?: boolean, "stage"?: string, "tags"?: any[], "socialMediaUi"?: { "socialMediaValues": any }, "website"?: string } | { "reason"?: "1" | "2" | "3", "comments"?: string };
 
-    /**
-     * The ID of the company to update
-     */
+    /** The ID of the company to update */
     readonly companyId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "addressUi"?: { "addressValues": any }, "annualRevenue"?: number, "companyEmail"?: string, "name"?: string, "customFieldsUi"?: { "customFieldValues": any }, "description"?: string, "fax"?: string, "industry"?: string, "isPublished"?: boolean, "numberOfEmpoyees"?: number, "overwriteWithBlank"?: boolean, "phone"?: string, "website"?: string } | { "bodyJson"?: string, "addressUi"?: { "addressValues": any }, "b2bOrb2c"?: "B2B" | "B2C", "crmId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "email"?: string, "fax"?: string, "firstName"?: string, "hasPurchased"?: boolean, "ipAddress"?: string, "lastActive"?: string, "lastName"?: string, "mobile"?: string, "ownerId"?: string, "phone"?: string, "position"?: string, "company"?: string, "prospectOrCustomer"?: "Prospect" | "Customer", "sandbox"?: boolean, "stage"?: string, "tags"?: any[], "title"?: string, "socialMediaUi"?: { "socialMediaValues": any }, "website"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -64,9 +48,7 @@ export interface MauticNodeParameters {
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Email address of the contact
-     */
+    /** Email address of the contact */
     readonly email?: string;
 
     readonly firstName?: string;
@@ -83,28 +65,20 @@ export interface MauticNodeParameters {
 
     readonly title?: string;
 
-    /**
-     * Contact parameters
-     */
+    /** Contact parameters */
     readonly bodyJson?: string;
 
     readonly contactId?: string;
 
-    /**
-     * Default: "add"
-     */
+    /** Default: "add" */
     readonly action?: "add" | "remove";
 
-    /**
-     * Default: "email"
-     */
+    /** Default: "email" */
     readonly channel?: "email" | "sms";
 
     readonly points?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "search"?: string, "orderBy"?: string, "orderByDir"?: "asc" | "desc", "publishedOnly"?: boolean, "minimal"?: boolean, "rawData"?: boolean };
 
     /**

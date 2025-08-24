@@ -8,14 +8,10 @@ export const name = "demioApi" as const;
  * documentationUrl: demio
  */
 export interface DemioApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiSecret"?: string;
 
     readonly __name: "demioApi";

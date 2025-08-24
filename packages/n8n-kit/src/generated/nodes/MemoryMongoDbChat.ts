@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryMongoDbChatNodeParameters {
-    /**
-     * Default: "fromInput"
-     */
+    /** Default: "fromInput" */
     readonly sessionIdType?: "fromInput" | "customKey";
 
-    /**
-     * Default: "={{ $json.sessionId }}"
-     */
+    /** Default: "={{ $json.sessionId }}" */
     readonly sessionKey?: string;
 
     /**
@@ -25,14 +21,10 @@ export interface MemoryMongoDbChatNodeParameters {
      */
     readonly collectionName?: string;
 
-    /**
-     * The database name to store the chat history in. If not provided, the database from credentials will be used.
-     */
+    /** The database name to store the chat history in. If not provided, the database from credentials will be used. */
     readonly databaseName?: string;
 
-    /**
-     * Default: 5
-     */
+    /** Default: 5 */
     readonly contextWindowLength?: number;
 
 }

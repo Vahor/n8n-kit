@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionTriggerNodeParameters {
-    /**
-     * Default: "pageAddedToDatabase"
-     */
+    /** Default: "pageAddedToDatabase" */
     readonly event?: "pageAddedToDatabase" | "pagedUpdatedInDatabase";
 
     /**

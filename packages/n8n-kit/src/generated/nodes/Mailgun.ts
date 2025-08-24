@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailgunNodeParameters {
-    /**
-     * Email address of the sender optional with name
-     */
+    /** Email address of the sender optional with name */
     readonly fromEmail?: string;
 
-    /**
-     * Email address of the recipient. Multiple ones can be separated by comma.
-     */
+    /** Email address of the recipient. Multiple ones can be separated by comma. */
     readonly toEmail?: string;
 
-    /**
-     * Cc Email address of the recipient. Multiple ones can be separated by comma.
-     */
+    /** Cc Email address of the recipient. Multiple ones can be separated by comma. */
     readonly ccEmail?: string;
 
-    /**
-     * Bcc Email address of the recipient. Multiple ones can be separated by comma.
-     */
+    /** Bcc Email address of the recipient. Multiple ones can be separated by comma. */
     readonly bccEmail?: string;
 
-    /**
-     * Subject line of the email
-     */
+    /** Subject line of the email */
     readonly subject?: string;
 
     /**
@@ -46,9 +36,7 @@ export interface MailgunNodeParameters {
      */
     readonly html?: string;
 
-    /**
-     * Name of the binary properties which contain data which should be added to email as attachment. Multiple ones can be comma-separated.
-     */
+    /** Name of the binary properties which contain data which should be added to email as attachment. Multiple ones can be comma-separated. */
     readonly attachments?: string;
 
 }

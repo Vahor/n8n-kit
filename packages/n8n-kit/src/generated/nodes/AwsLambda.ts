@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsLambdaNodeParameters {
-    /**
-     * Default: "invoke"
-     */
+    /** Default: "invoke" */
     readonly operation?: "invoke";
 
     /**
@@ -32,9 +30,7 @@ export interface AwsLambdaNodeParameters {
      */
     readonly invocationType?: "RequestResponse" | "Event";
 
-    /**
-     * The JSON that you want to provide to your Lambda function as input
-     */
+    /** The JSON that you want to provide to your Lambda function as input */
     readonly payload?: string;
 
 }

@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HaloPSANodeParameters {
-    /**
-     * Default: "client"
-     */
+    /** Default: "client" */
     readonly resource?: "client" | "site" | "ticket" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Enter client name
-     */
+    /** Enter client name */
     readonly clientName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "inactive"?: "false" | "true", "notes"?: string, "is_vip"?: boolean, "website"?: string } | { "agent_id"?: string, "startdate"?: string, "targetdate"?: string } | { "maincontact_name"?: string, "notes"?: string, "phonenumber"?: string } | { "emailaddress"?: string, "notes"?: string, "password"?: string, "surname"?: string, "inactive"?: boolean };
 
     readonly clientId?: string;
@@ -37,9 +29,7 @@ export interface HaloPSANodeParameters {
      */
     readonly simplify?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,14 +39,10 @@ export interface HaloPSANodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "activeStatus"?: "active" | "all" | "inactive", "search"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "inactive"?: "false" | "true", "name"?: string, "notes"?: string, "is_vip"?: boolean, "website"?: string } | { "agent_id"?: string, "details"?: string, "startdate"?: string, "summary"?: string, "targetdate"?: string } | { "client_id"?: string, "maincontact_name"?: string, "name"?: string, "notes"?: string, "phonenumber"?: string } | { "emailaddress"?: string, "name"?: string, "notes"?: string, "password"?: string, "site_id"?: string, "surname"?: string, "inactive"?: boolean };
 
     /**
@@ -71,21 +57,15 @@ export interface HaloPSANodeParameters {
 
     readonly ticketId?: string;
 
-    /**
-     * Enter site name
-     */
+    /** Enter site name */
     readonly siteName?: string;
 
-    /**
-     * Whether client can be selected by ID
-     */
+    /** Whether client can be selected by ID */
     readonly selectOption?: boolean;
 
     readonly siteId?: string;
 
-    /**
-     * Enter user name
-     */
+    /** Enter user name */
     readonly userName?: string;
 
     readonly userId?: string;

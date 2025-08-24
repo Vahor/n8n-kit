@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwilioTriggerNodeParameters {
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly updates?: ("com.twilio.messaging.inbound-message.received" | "com.twilio.voice.insights.call-summary.complete")[];
 
 }

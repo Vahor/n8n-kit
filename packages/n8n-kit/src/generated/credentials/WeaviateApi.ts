@@ -14,9 +14,7 @@ export interface WeaviateApiCredentials {
      */
     readonly "connection_type"?: "weaviate_cloud" | "custom_connection";
 
-    /**
-     * The Endpoint of a Weaviate Cloud instance.
-     */
+    /** The Endpoint of a Weaviate Cloud instance. */
     readonly "weaviate_cloud_endpoint": string;
 
     /**
@@ -37,9 +35,7 @@ export interface WeaviateApiCredentials {
      */
     readonly "custom_connection_http_port": number;
 
-    /**
-     * Whether to use a secure connection for HTTP.
-     */
+    /** Whether to use a secure connection for HTTP. */
     readonly "custom_connection_http_secure": boolean;
 
     /**
@@ -54,9 +50,7 @@ export interface WeaviateApiCredentials {
      */
     readonly "custom_connection_grpc_port": number;
 
-    /**
-     * Whether to use a secure connection for gRPC.
-     */
+    /** Whether to use a secure connection for gRPC. */
     readonly "custom_connection_grpc_secure": boolean;
 
     readonly __name: "weaviateApi";

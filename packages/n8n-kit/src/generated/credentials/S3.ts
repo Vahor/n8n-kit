@@ -10,23 +10,17 @@ export const name = "s3" as const;
 export interface S3Credentials {
     readonly "endpoint"?: string;
 
-    /**
-     * Default: "us-east-1"
-     */
+    /** Default: "us-east-1" */
     readonly "region"?: string;
 
     readonly "accessKeyId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "secretAccessKey"?: string;
 
     readonly "forcePathStyle"?: boolean;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "ignoreSSLIssues"?: boolean;
 
     readonly __name: "s3";

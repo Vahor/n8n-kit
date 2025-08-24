@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BannerbearNodeParameters {
-    /**
-     * Default: "image"
-     */
+    /** Default: "image" */
     readonly resource?: "image" | "template";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "get" | "getAll";
 
     /**
@@ -25,9 +21,7 @@ export interface BannerbearNodeParameters {
      */
     readonly templateId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "metadata"?: string, "waitForImage"?: boolean, "waitForImageMaxTries"?: number, "webhookUrl"?: string };
 
     /**
@@ -36,9 +30,7 @@ export interface BannerbearNodeParameters {
      */
     readonly modificationsUi?: { "modificationsValues": any };
 
-    /**
-     * Unique identifier for the image
-     */
+    /** Unique identifier for the image */
     readonly imageId?: string;
 
 }

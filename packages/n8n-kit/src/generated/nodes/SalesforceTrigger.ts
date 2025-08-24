@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SalesforceTriggerNodeParameters {
-    /**
-     * Which Salesforce event should trigger the node
-     */
+    /** Which Salesforce event should trigger the node */
     readonly triggerOn?: "accountCreated" | "accountUpdated" | "attachmentCreated" | "attachmentUpdated" | "caseCreated" | "caseUpdated" | "contactCreated" | "contactUpdated" | "customObjectCreated" | "customObjectUpdated" | "leadCreated" | "leadUpdated" | "opportunityCreated" | "opportunityUpdated" | "taskCreated" | "taskUpdated" | "userCreated" | "userUpdated";
 
     /**

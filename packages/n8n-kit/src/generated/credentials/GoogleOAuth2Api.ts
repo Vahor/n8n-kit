@@ -8,29 +8,19 @@ export const name = "googleOAuth2Api" as const;
  * documentationUrl: google/oauth-generic
  */
 export interface GoogleOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://accounts.google.com/o/oauth2/v2/auth"
-     */
+    /** Default: "https://accounts.google.com/o/oauth2/v2/auth" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://oauth2.googleapis.com/token"
-     */
+    /** Default: "https://oauth2.googleapis.com/token" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "access_type=offline&prompt=consent"
-     */
+    /** Default: "access_type=offline&prompt=consent" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "googleOAuth2Api";

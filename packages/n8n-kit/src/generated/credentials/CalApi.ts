@@ -8,14 +8,10 @@ export const name = "calApi" as const;
  * documentationUrl: cal
  */
 export interface CalApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Default: "https://api.cal.com"
-     */
+    /** Default: "https://api.cal.com" */
     readonly "host"?: string;
 
     readonly __name: "calApi";

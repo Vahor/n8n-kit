@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CustomerIoNodeParameters {
-    /**
-     * Default: "customer"
-     */
+    /** Default: "customer" */
     readonly resource?: "customer" | "event" | "campaign" | "segment";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "getMetrics" | "upsert" | "delete" | "track" | "trackAnonymous" | "add" | "remove";
 
-    /**
-     * The unique identifier for the campaign
-     */
+    /** The unique identifier for the campaign */
     readonly campaignId?: number;
 
     /**
@@ -32,14 +26,10 @@ export interface CustomerIoNodeParameters {
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook" } | { "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: string } | { "customAttributes"?: { "customAttribute": any }, "type"?: string } | { "customAttributes"?: { "customAttribute": any } };
 
-    /**
-     * The unique identifier for the customer
-     */
+    /** The unique identifier for the customer */
     readonly id?: string;
 
     /**
@@ -48,24 +38,16 @@ export interface CustomerIoNodeParameters {
      */
     readonly additionalFieldsJson?: string;
 
-    /**
-     * The unique identifier for the customer
-     */
+    /** The unique identifier for the customer */
     readonly customerId?: string;
 
-    /**
-     * Name of the event to track
-     */
+    /** Name of the event to track */
     readonly eventName?: string;
 
-    /**
-     * The unique identifier of the segment
-     */
+    /** The unique identifier of the segment */
     readonly segmentId?: number;
 
-    /**
-     * A list of customer IDs to add to the segment
-     */
+    /** A list of customer IDs to add to the segment */
     readonly customerIds?: string;
 
 }
