@@ -99,11 +99,13 @@ export const handler = async (options: DeployOptions) => {
 		}
 
 		// Apply tags
-		logger.debug(`Applying tags to workflow ${workflow.n8nWorkflowId}`);
-		await n8n.updateTags(
-			workflow.n8nWorkflowId,
-			workflowTags.map((t) => ({ id: t.id! })),
-		);
+		logger.log(`Applying tags to workflow ${workflow.n8nWorkflowId}`);
+		if (options.dryRun) {
+			await n8n.updateTags(
+				workflow.n8nWorkflowId,
+				workflowTags.map((t) => ({ id: t.id! })),
+			);
+		}
 
 		// Set active
 		!options.dryRun &&
