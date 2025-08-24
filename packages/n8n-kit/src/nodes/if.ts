@@ -8,7 +8,7 @@ import type {
 	IContext,
 	INextable,
 } from "../workflow/chain/types";
-import { BaseNode, type NodeProps } from "./node";
+import { Node, type NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
 type StringCondition = BaseCondition & {
@@ -59,11 +59,11 @@ export class If<
 	L extends string,
 	True extends IContext | null = null,
 	False extends IContext | null = null,
-> extends BaseNode<L> {
+> extends Node<L> {
 	protected override type = type;
 	protected override typeVersion = version;
 
-	public readonly endStates: INextable[] = [];
+	override endStates: INextable[] = [];
 
 	constructor(
 		id: L,

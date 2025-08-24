@@ -1,6 +1,6 @@
 import type { Type } from "arktype";
 import { prefix } from "../constants";
-import { BaseNode } from "../nodes/node";
+import { Node } from "../nodes/node";
 import { shortHash, validateIdentifier } from "../utils/slugify";
 import { Placeholder, type State } from "./chain";
 import { Chain } from "./chain/chain";
@@ -21,7 +21,7 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 	definition: WorkflowDefinitionProvider<
 		Input,
 		Output,
-		Chain<any, any> | BaseNode<any, any>
+		Chain<any, any> | Node<any, any>
 	>;
 	tags?: string[] | undefined;
 	active?: boolean;
@@ -75,8 +75,8 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	/**
 	 * @internal
 	 */
-	public "~cachedDefinition"?: Array<Chain<any, any> | BaseNode<any, any>>;
-	private dynamicalyAddedNodes: BaseNode<any, any>[] = [];
+	public "~cachedDefinition"?: Array<Chain<any, any> | Node<any, any>>;
+	private dynamicalyAddedNodes: Node<any, any>[] = [];
 
 	public constructor(
 		id: string,
@@ -87,7 +87,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		this.tags = this.buildTags();
 	}
 
-	public addToDynamicalyAddedNodes(node: BaseNode<any, any>) {
+	public addToDynamicalyAddedNodes(node: Node<any, any>) {
 		this.dynamicalyAddedNodes.push(node);
 	}
 
@@ -124,7 +124,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 					.flatMap((chain) =>
 						chain instanceof Chain ? chain.toList() : [chain as State],
 					)
-					.filter((state): state is BaseNode => state instanceof BaseNode),
+					.filter((state): state is Node => state instanceof Node),
 			),
 		];
 		return nodes;
@@ -153,7 +153,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 						throw new Error(`Placeholder ${_endState.id} not found`);
 					}
 				}
-				if (!(endState instanceof BaseNode)) continue;
+				if (!(endState instanceof Node)) continue;
 
 				const connectionOptions = node["~getConnectionOptions"](endState.id);
 				const connectionType = connectionOptions.type ?? "main";
@@ -244,7 +244,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 			(node): node is Group<any> => node instanceof Group,
 		);
 
-		const validateNested = (node: BaseNode<any, any>) => {
+		const validateNested = (node: Node<any, any>) => {
 			node["~setParent"](this);
 			node["~validate"]();
 		};
