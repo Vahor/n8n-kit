@@ -10,11 +10,6 @@ export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolHttpRequestNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Explain to LLM what this tool does, better description would allow LLM to produce expected result
      * Type options: {"rows":3}
      */
@@ -25,8 +20,6 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly method?: "DELETE" | "GET" | "PATCH" | "POST" | "PUT";
 
-    readonly placeholderNotice?: string;
-
     readonly url?: string;
 
     /**
@@ -34,12 +27,6 @@ export interface ToolHttpRequestNodeParameters {
      * Default: "none"
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
-
-    readonly nodeCredentialType?: any;
-
-    readonly googleApiWarning?: string;
-
-    readonly genericAuthType?: any;
 
     /**
      * Whether the request has query params or not

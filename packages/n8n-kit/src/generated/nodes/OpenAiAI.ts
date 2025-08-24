@@ -60,8 +60,6 @@ export interface OpenAiAINodeParameters {
      */
     readonly file_ids?: any[];
 
-    readonly noticeTools?: string;
-
     /**
      * Default: {}
      */
@@ -104,11 +102,6 @@ export interface OpenAiAINodeParameters {
      * Default: true
      */
     readonly simplify?: boolean;
-
-    /**
-     * Default: " "
-     */
-    readonly fileSizeLimitNotice?: string;
 
     /**
      * Default: "tts-1"
@@ -161,10 +154,5 @@ export interface OpenAiAINodeParameters {
      * Whether to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106.
      */
     readonly jsonOutput?: boolean;
-
-    /**
-     * Default: "hide"
-     */
-    readonly hideTools?: any;
 
 }

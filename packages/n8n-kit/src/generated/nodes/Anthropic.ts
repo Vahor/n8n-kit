@@ -87,8 +87,6 @@ export interface AnthropicNodeParameters {
      */
     readonly imageUrls?: string;
 
-    readonly experimentalNotice?: string;
-
     /**
      * Description of the prompt's purpose
      * Type options: {"rows":2}

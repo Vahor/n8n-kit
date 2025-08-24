@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface GmailV2NodeParameters {
     /**
-     * Type options: {"calloutAction":{"label":"Email triage agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"email_triage_agent_with_gmail"}}
-     */
-    readonly preBuiltAgentsCalloutGmail?: any;
-
-    /**
      * Default: "oAuth2"
      */
     readonly authentication?: "oAuth2" | "serviceAccount";
@@ -32,8 +27,6 @@ export interface GmailV2NodeParameters {
     readonly messageId?: string;
 
     readonly subject?: string;
-
-    readonly threadNotice?: string;
 
     /**
      * Default: "text"
@@ -79,8 +72,6 @@ export interface GmailV2NodeParameters {
      * Default: true
      */
     readonly simple?: boolean;
-
-    readonly filtersNotice?: string;
 
     /**
      * Default: {}

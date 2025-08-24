@@ -9,11 +9,6 @@ export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserStructuredNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * How to specify the schema for the function
      * Default: "fromJson"
      */

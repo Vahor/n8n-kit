@@ -10,11 +10,6 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatDeepSeekNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the completion. <a href="https://api-docs.deepseek.com/quick_start/pricing">Learn more</a>.
      * Default: "deepseek-chat"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

@@ -9,11 +9,6 @@ export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserItemListNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Default: {}
      */
     readonly options?: { "numberOfItems"?: number, "separator"?: string };

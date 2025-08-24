@@ -19,8 +19,6 @@ export interface HighLevelV1NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
-    readonly contactCreateNotice?: string;
-
     /**
      * Email or Phone are required to create contact
      */

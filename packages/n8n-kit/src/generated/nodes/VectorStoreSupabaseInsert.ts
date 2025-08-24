@@ -9,8 +9,6 @@ export const inputs = {"main":"main","Document":"ai_document","Embedding":"ai_em
 export const outputs = {"main":"main"} as const;
 
 export interface VectorStoreSupabaseInsertNodeParameters {
-    readonly setupNotice?: string;
-
     /**
      * Default: {"mode":"list","value":""}
      */
@@ -24,7 +22,5 @@ export interface VectorStoreSupabaseInsertNodeParameters {
      * Default: "match_documents"
      */
     readonly queryName?: string;
-
-    readonly notice?: string;
 
 }

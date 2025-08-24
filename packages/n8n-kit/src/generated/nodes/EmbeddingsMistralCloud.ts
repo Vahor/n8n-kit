@@ -10,11 +10,6 @@ export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsMistralCloudNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will compute the embeddings. <a href="https://docs.mistral.ai/platform/endpoints/">Learn more</a>.
      * Default: "mistral-embed"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.includes('embed') }}"}},{"type":"setKeyValue","properties":{"name":"={{ $responseItem.id }}","value":"={{ $responseItem.id }}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

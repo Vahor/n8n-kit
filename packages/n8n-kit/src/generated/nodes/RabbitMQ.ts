@@ -12,9 +12,7 @@ export interface RabbitMQNodeParameters {
     /**
      * Default: "sendMessage"
      */
-    readonly operation?: any | "sendMessage" | "deleteMessage";
-
-    readonly deleteMessage?: string;
+    readonly operation?: "sendMessage" | "deleteMessage";
 
     /**
      * To where data should be moved

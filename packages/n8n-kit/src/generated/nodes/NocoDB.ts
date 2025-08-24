@@ -93,8 +93,6 @@ export interface NocoDBNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    readonly info?: string;
-
     /**
      * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
      */

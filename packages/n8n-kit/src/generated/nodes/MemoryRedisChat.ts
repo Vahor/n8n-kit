@@ -10,11 +10,6 @@ export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryRedisChatNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The key to use to store the memory in the workflow data
      * Default: "chat_history"
      */

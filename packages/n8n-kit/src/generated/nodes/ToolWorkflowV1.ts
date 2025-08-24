@@ -8,21 +8,12 @@ export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolWorkflowV1NodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    readonly noticeTemplateExample?: string;
-
     readonly name?: string;
 
     /**
      * Type options: {"rows":3}
      */
     readonly description?: string;
-
-    readonly executeNotice?: string;
 
     /**
      * Where to get the workflow to execute from
@@ -33,7 +24,7 @@ export interface ToolWorkflowV1NodeParameters {
     /**
      * The workflow to execute
      */
-    readonly workflowId?: string | any;
+    readonly workflowId?: string;
 
     /**
      * The workflow JSON code to execute

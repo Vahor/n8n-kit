@@ -42,8 +42,6 @@ export interface SeaTableV2NodeParameters {
      */
     readonly apply_default?: boolean;
 
-    readonly notice?: string;
-
     /**
      * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
      */

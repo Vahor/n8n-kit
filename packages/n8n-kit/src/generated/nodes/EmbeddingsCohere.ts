@@ -10,11 +10,6 @@ export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsCohereNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the embeddings. <a href="https://docs.cohere.com/docs/models">Learn more</a>.
      * Default: "embed-english-v2.0"
      */

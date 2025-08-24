@@ -14,8 +14,6 @@ export interface NotionTriggerNodeParameters {
      */
     readonly event?: "pageAddedToDatabase" | "pagedUpdatedInDatabase";
 
-    readonly notionNotice?: string;
-
     /**
      * The Notion Database to operate on
      * Default: {"mode":"list","value":""}

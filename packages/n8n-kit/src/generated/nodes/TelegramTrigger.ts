@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TelegramTriggerNodeParameters {
-    readonly telegramTriggerNotice?: string;
-
     /**
      * Default: []
      */
     readonly updates?: ("*" | "callback_query" | "channel_post" | "edited_channel_post" | "edited_message" | "inline_query" | "message" | "poll" | "pre_checkout_query" | "shipping_query")[];
-
-    readonly attachmentNotice?: string;
 
     /**
      * Default: {}

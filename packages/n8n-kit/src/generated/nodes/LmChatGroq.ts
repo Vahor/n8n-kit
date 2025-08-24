@@ -10,11 +10,6 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatGroqNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the completion. <a href="https://console.groq.com/docs/models">Learn more</a>.
      * Default: "llama3-8b-8192"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.active === true && $responseItem.object === \"model\" }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}}]}}}}

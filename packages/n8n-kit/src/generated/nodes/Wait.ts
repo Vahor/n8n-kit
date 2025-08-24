@@ -39,10 +39,6 @@ export interface WaitNodeParameters {
      */
     readonly unit?: "seconds" | "minutes" | "hours" | "days";
 
-    readonly webhookNotice?: string;
-
-    readonly formNotice?: string;
-
     /**
      * Shown at the top of the form
      */

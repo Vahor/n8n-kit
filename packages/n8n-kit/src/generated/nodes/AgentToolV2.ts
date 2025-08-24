@@ -22,11 +22,7 @@ export interface AgentToolV2NodeParameters {
 
     readonly hasOutputParser?: boolean;
 
-    readonly notice?: string;
-
     readonly needsFallback?: boolean;
-
-    readonly fallbackNotice?: string;
 
     /**
      * Default: {}

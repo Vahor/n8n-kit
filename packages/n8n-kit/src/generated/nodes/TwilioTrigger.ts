@@ -14,6 +14,4 @@ export interface TwilioTriggerNodeParameters {
      */
     readonly updates?: ("com.twilio.messaging.inbound-message.received" | "com.twilio.voice.insights.call-summary.complete")[];
 
-    readonly callTriggerNotice?: string;
-
 }

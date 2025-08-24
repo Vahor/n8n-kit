@@ -14,10 +14,6 @@ export interface HttpRequestV2NodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    readonly nodeCredentialType?: any;
-
-    readonly genericAuthType?: any;
-
     /**
      * The request method to use
      * Default: "GET"
@@ -102,7 +98,5 @@ export interface HttpRequestV2NodeParameters {
      * Type options: {"multipleValues":true}
      */
     readonly queryParametersUi?: { "parameter": any };
-
-    readonly infoMessage?: string;
 
 }

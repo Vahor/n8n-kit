@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface DhlNodeParameters {
     /**
-     * Default: "shipment"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "get"
      */
     readonly operation?: "get";

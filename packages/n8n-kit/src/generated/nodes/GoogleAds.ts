@@ -19,8 +19,6 @@ export interface GoogleAdsNodeParameters {
      */
     readonly operation?: "getAll" | "get";
 
-    readonly campaigsNotice?: string;
-
     readonly managerCustomerId?: string;
 
     readonly clientCustomerId?: string;

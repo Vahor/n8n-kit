@@ -45,11 +45,11 @@ export interface QuickChartNodeParameters {
     /**
      * Default: {}
      */
-    readonly chartOptions?: { "backgroundColor"?: any, "devicePixelRatio"?: number, "format"?: "png" | "pdf" | "svg" | "webp", "height"?: number, "horizontal"?: boolean, "width"?: number };
+    readonly chartOptions?: { "backgroundColor"?: string, "devicePixelRatio"?: number, "format"?: "png" | "pdf" | "svg" | "webp", "height"?: number, "horizontal"?: boolean, "width"?: number };
 
     /**
      * Default: {}
      */
-    readonly datasetOptions?: { "backgroundColor"?: any, "borderColor"?: any, "fill"?: boolean, "label"?: string, "pointStyle"?: "circle" | "cross" | "crossRot" | "dash" | "line" | "rect" | "rectRot" | "rectRounded" | "star" | "triangle" };
+    readonly datasetOptions?: { "backgroundColor"?: string, "borderColor"?: string, "fill"?: boolean, "label"?: string, "pointStyle"?: "circle" | "cross" | "crossRot" | "dash" | "line" | "rect" | "rectRot" | "rectRounded" | "star" | "triangle" };
 
 }

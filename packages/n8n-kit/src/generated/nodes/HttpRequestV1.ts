@@ -100,6 +100,4 @@ export interface HttpRequestV1NodeParameters {
      */
     readonly queryParametersUi?: { "parameter": any };
 
-    readonly infoMessage?: string;
-
 }

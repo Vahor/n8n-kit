@@ -19,10 +19,6 @@ export interface ChatTriggerNodeParameters {
      */
     readonly mode?: "hostedChat" | "webhook";
 
-    readonly hostedChatNotice?: string;
-
-    readonly embeddedChatNotice?: string;
-
     /**
      * The way to authenticate
      * Default: "none"

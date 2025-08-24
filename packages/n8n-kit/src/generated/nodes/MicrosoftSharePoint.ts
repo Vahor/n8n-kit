@@ -70,14 +70,6 @@ export interface MicrosoftSharePointNodeParameters {
 	mode: "list" | "id",
 };
 
-    readonly noticeUnsupportedFields?: string;
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"loadOptionsDependsOn":["site.value","list.value"],"resourceMapper":{"resourceMapperMethod":"getMappingColumns","mode":"add","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":false}}
-     */
-    readonly columns?: any;
-
     /**
      * Select the item you want to delete
      * Default: {"mode":"list","value":""}

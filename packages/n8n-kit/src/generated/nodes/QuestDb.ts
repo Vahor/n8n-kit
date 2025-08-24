@@ -21,11 +21,6 @@ export interface QuestDbNodeParameters {
     readonly query?: string;
 
     /**
-     * Name of the schema the table belongs to
-     */
-    readonly schema?: any;
-
-    /**
      * Name of the table in which to insert data to
      */
     readonly table?: string;
@@ -44,6 +39,6 @@ export interface QuestDbNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "mode"?: "independently" | "transaction", "queryParams"?: string } | any;
+    readonly additionalFields?: { "mode"?: "independently" | "transaction", "queryParams"?: string };
 
 }

@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface ItemListsV2NodeParameters {
     /**
-     * Default: "itemList"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "splitOutItems"
      */
     readonly operation?: "aggregateItems" | "limit" | "removeDuplicates" | "sort" | "splitOutItems" | "summarize";

@@ -9,11 +9,7 @@ export const inputs = {"main":"main","Document":"ai_document","Embedding":"ai_em
 export const outputs = {"main":"main"} as const;
 
 export interface VectorStoreZepInsertNodeParameters {
-    readonly deprecationNotice?: string;
-
     readonly collectionName?: string;
-
-    readonly notice?: string;
 
     /**
      * Default: {}

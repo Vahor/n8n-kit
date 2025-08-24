@@ -20,12 +20,6 @@ export interface TheHiveProjectNodeParameters {
     readonly operation?: "create" | "deleteAlert" | "executeResponder" | "get" | "merge" | "promote" | "search" | "update" | "status" | "addAttachment" | "create" | "deleteAttachment" | "deleteCase" | "executeResponder" | "get" | "getAttachment" | "getTimeline" | "search" | "update" | "add" | "deleteComment" | "search" | "update" | "addAttachment" | "create" | "deleteLog" | "deleteAttachment" | "executeResponder" | "get" | "search" | "create" | "deleteObservable" | "executeAnalyzer" | "executeResponder" | "get" | "search" | "update" | "create" | "deletePage" | "search" | "update" | "executeQuery" | "create" | "deleteTask" | "executeResponder" | "get" | "search" | "update";
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getAlertFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly alertFields?: any;
-
-    /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
@@ -100,12 +94,6 @@ export interface TheHiveProjectNodeParameters {
 };
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getAlertUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly alertUpdateFields?: any;
-
-    /**
      * Array of supported attachments to add to the message
      * Default: {}
      * Type options: {"multipleValues":true}
@@ -113,22 +101,10 @@ export interface TheHiveProjectNodeParameters {
     readonly attachmentsUi?: { "values": any };
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getCaseFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly caseFields?: any;
-
-    /**
      * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadCaseAttachments"}
      */
     readonly attachmentId?: string;
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getCaseUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly caseUpdateFields?: any;
 
     /**
      * Default: "alert"
@@ -171,12 +147,6 @@ export interface TheHiveProjectNodeParameters {
 };
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getLogFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly logFields?: any;
-
-    /**
      * Whether to search in all tasks or only in selected task
      * Default: true
      */
@@ -197,12 +167,6 @@ export interface TheHiveProjectNodeParameters {
     readonly data?: string;
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getObservableFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly observableFields?: any;
-
-    /**
      * Default: {"mode":"list","value":""}
      */
     readonly observableId?: {
@@ -216,12 +180,6 @@ export interface TheHiveProjectNodeParameters {
      * Type options: {"loadOptionsDependsOn":["observableId.value","dataType"],"loadOptionsMethod":"loadAnalyzers"}
      */
     readonly analyzers?: any[];
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getObservableUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly observableUpdateFields?: any;
 
     /**
      * Default: "case"
@@ -260,21 +218,9 @@ export interface TheHiveProjectNodeParameters {
     readonly queryJson?: string;
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getTaskFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly taskFields?: any;
-
-    /**
      * Whether to search in all cases or only in a selected case
      * Default: true
      */
     readonly allCases?: boolean;
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getTaskUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly taskUpdateFields?: any;
 
 }

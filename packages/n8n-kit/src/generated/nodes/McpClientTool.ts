@@ -10,11 +10,6 @@ export const outputs = {"Tools":"ai_tool"} as const;
 
 export interface McpClientToolNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * SSE Endpoint of your MCP server
      */
     readonly sseEndpoint?: string;
@@ -35,8 +30,6 @@ export interface McpClientToolNodeParameters {
      * Default: "none"
      */
     readonly authentication?: "bearerAuth" | "headerAuth" | "none";
-
-    readonly credentials?: any;
 
     /**
      * How to select the tools you want to be exposed to the AI Agent

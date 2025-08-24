@@ -13,8 +13,6 @@ export interface DateTimeV2NodeParameters {
      */
     readonly operation?: "addToDate" | "extractDate" | "formatDate" | "getCurrentDate" | "getTimeBetweenDates" | "roundDate" | "subtractFromDate";
 
-    readonly notice?: string;
-
     /**
      * When deactivated, the time will be set to midnight
      * Default: true

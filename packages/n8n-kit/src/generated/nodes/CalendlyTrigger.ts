@@ -14,8 +14,6 @@ export interface CalendlyTriggerNodeParameters {
      */
     readonly authentication?: "oAuth2" | "apiKey";
 
-    readonly deprecationNotice?: string;
-
     /**
      * Default: "user"
      */

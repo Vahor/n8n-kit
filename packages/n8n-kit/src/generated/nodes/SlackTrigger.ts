@@ -10,13 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface SlackTriggerNodeParameters {
     /**
-     * Default: "accessToken"
-     */
-    readonly authentication?: any;
-
-    readonly notice?: string;
-
-    /**
      * Default: []
      */
     readonly trigger?: ("any_event" | "app_mention" | "file_public" | "file_share" | "message" | "channel_created" | "team_join" | "reaction_added")[];

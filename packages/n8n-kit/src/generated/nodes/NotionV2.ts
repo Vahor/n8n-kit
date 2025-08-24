@@ -9,10 +9,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionV2NodeParameters {
-    readonly notionNotice?: string;
-
-    readonly Credentials?: any;
-
     /**
      * Default: "page"
      */
@@ -117,8 +113,6 @@ export interface NotionV2NodeParameters {
      * Type options: {"multipleValues":true}
      */
     readonly filters?: { "conditions": any };
-
-    readonly jsonNotice?: string;
 
     readonly filterJson?: string;
 

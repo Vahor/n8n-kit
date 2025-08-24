@@ -8,8 +8,6 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentDefaultDataLoaderNodeParameters {
-    readonly notice?: string;
-
     /**
      * Default: "json"
      */

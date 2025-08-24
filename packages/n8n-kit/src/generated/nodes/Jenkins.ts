@@ -20,8 +20,6 @@ export interface JenkinsNodeParameters {
      */
     readonly operation?: "copy" | "create" | "trigger" | "triggerParams" | "cancelQuietDown" | "quietDown" | "restart" | "safeRestart" | "safeExit" | "exit" | "getAll";
 
-    readonly triggerParamsNotice?: string;
-
     /**
      * Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"getJobs"}
@@ -45,14 +43,10 @@ export interface JenkinsNodeParameters {
      */
     readonly xml?: string;
 
-    readonly createNotice?: string;
-
     /**
      * Freeform reason for quiet down mode
      */
     readonly reason?: string;
-
-    readonly instanceNotice?: string;
 
     /**
      * Whether to return all results or only up to a given limit

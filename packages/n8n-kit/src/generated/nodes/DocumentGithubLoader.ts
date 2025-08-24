@@ -9,11 +9,6 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentGithubLoaderNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
     readonly repository?: string;
 
     /**

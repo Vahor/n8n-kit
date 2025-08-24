@@ -8,11 +8,4 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ManualChatTriggerNodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Type options: {"buttonConfig":{"action":"openChat"}}
-     */
-    readonly openChat?: any;
-
 }

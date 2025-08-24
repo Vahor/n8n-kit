@@ -10,11 +10,6 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatMistralCloudNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the completion. <a href="https://docs.mistral.ai/platform/endpoints/">Learn more</a>.
      * Default: "mistral-small"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ !$responseItem.id.includes('embed') }}"}},{"type":"setKeyValue","properties":{"name":"={{ $responseItem.id }}","value":"={{ $responseItem.id }}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

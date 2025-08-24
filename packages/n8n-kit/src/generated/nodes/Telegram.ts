@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface TelegramNodeParameters {
     /**
-     * Type options: {"calloutAction":{"label":"Voice assistant agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"voice_assistant_agent_with_telegram_and_gcal"}}
-     */
-    readonly preBuiltAgentsCalloutTelegram?: any;
-
-    /**
      * Default: "message"
      */
     readonly resource?: "chat" | "callback" | "file" | "message";

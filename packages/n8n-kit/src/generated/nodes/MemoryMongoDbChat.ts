@@ -10,11 +10,6 @@ export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryMongoDbChatNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Default: "fromInput"
      */
     readonly sessionIdType?: "fromInput" | "customKey";

@@ -9,8 +9,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SlackV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
     /**
      * Default: "accessToken"
      */
@@ -130,7 +128,7 @@ export interface SlackV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
+    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: string, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
 
     /**
      * Default: {}

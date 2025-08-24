@@ -121,12 +121,12 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly to?: string;
 
     /**
-     * Default: "2025-08-24T00:21:42.069+02:00"
+     * Default: "2025-08-24T15:19:16.392+02:00"
      */
     readonly startDateTime?: string;
 
     /**
-     * Default: "2025-08-24T00:51:42.069+02:00"
+     * Default: "2025-08-24T15:49:16.393+02:00"
      */
     readonly endDateTime?: string;
 
@@ -156,8 +156,6 @@ export interface MicrosoftOutlookV2NodeParameters {
 	value: string,
 	mode: "list" | "url" | "id",
 };
-
-    readonly filtersNotice?: string;
 
     /**
      * Default: {}

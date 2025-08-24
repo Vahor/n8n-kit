@@ -24,8 +24,6 @@ export interface GithubNodeParameters {
      */
     readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
 
-    readonly webhookNotice?: string;
-
     /**
      * Default: {"mode":"list","value":""}
      */

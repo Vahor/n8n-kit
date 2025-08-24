@@ -9,8 +9,6 @@ export const inputs = {"main":"main","Model":"ai_languageModel","Retriever":"ai_
 export const outputs = {"main":"main"} as const;
 
 export interface ChainRetrievalQaNodeParameters {
-    readonly notice?: string;
-
     /**
      * Default: "={{ $json.input }}"
      */

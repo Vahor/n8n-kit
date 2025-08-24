@@ -7,6 +7,8 @@ export const mapPropertyType = (type: string) => {
 		case "notice":
 		case "dateTime":
 		case "json":
+		case "workflowSelector":
+		case "color":
 		case "string":
 			return "string";
 		case "options":

@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface PostgresV2NodeParameters {
     /**
-     * Default: "database"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "insert"
      */
     readonly operation?: "deleteTable" | "executeQuery" | "insert" | "upsert" | "select" | "update";
@@ -77,19 +72,11 @@ export interface PostgresV2NodeParameters {
      */
     readonly dataMode?: "autoMapInputData" | "defineBelow";
 
-    readonly notice?: string;
-
     /**
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Value","multipleValues":true}
      */
     readonly valuesToSend?: { "values": any };
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"loadOptionsDependsOn":["table.value","operation"],"resourceMapper":{"resourceMapperMethod":"getMappingColumns","mode":"add","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly columns?: any;
 
     /**
      * Whether to return all results or only up to a given limit

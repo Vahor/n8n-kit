@@ -9,11 +9,6 @@ export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentJsonInputLoaderNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Pointers to extract from JSON, e.g. "/text" or "/text, /meta/title"
      */
     readonly pointers?: string;

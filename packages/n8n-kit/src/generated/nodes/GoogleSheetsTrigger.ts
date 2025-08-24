@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsTriggerNodeParameters {
     /**
-     * Default: "triggerOAuth2"
-     */
-    readonly authentication?: any;
-
-    /**
      * Default: {"mode":"list","value":""}
      */
     readonly documentId?: {

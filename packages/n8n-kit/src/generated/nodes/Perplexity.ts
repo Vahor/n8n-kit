@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface PerplexityNodeParameters {
     /**
-     * Default: "chat"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "complete"
      */
     readonly operation?: "complete";

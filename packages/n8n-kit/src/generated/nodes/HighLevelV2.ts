@@ -19,8 +19,6 @@ export interface HighLevelV2NodeParameters {
      */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "bookAppointment" | "getFreeSlots";
 
-    readonly contactCreateNotice?: string;
-
     /**
      * Email or Phone are required to create contact
      */

@@ -9,19 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgentV1NodeParameters {
-    readonly aiAgentStarterCallout?: any;
-
-    /**
-     * Type options: {"calloutAction":{"label":"pre-built agents","icon":"bot","type":"openPreBuiltAgentsCollection"}}
-     */
-    readonly preBuiltAgentsCallout?: any;
-
-    readonly deprecated?: string;
-
     /**
      * Default: "conversationalAgent"
      */
-    readonly agent?: "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent" | "toolsAgent" | "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent" | any;
+    readonly agent?: "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent" | "toolsAgent" | "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent";
 
     /**
      * Default: "auto"
@@ -33,8 +24,6 @@ export interface AgentV1NodeParameters {
      * Type options: {"rows":2}
      */
     readonly text?: string;
-
-    readonly notice?: string;
 
     readonly hasOutputParser?: boolean;
 
@@ -48,10 +37,6 @@ export interface AgentV1NodeParameters {
      * Default: "sqlite"
      */
     readonly dataSource?: "mysql" | "postgres" | "sqlite";
-
-    readonly credentials?: any;
-
-    readonly sqLiteFileNotice?: string;
 
     /**
      * Default: "data"

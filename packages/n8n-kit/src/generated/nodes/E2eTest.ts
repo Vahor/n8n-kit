@@ -30,12 +30,6 @@ export interface E2eTestNodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"loadOptionsDependsOn":["fieldId"],"resourceMapper":{"resourceMapperMethod":"getMappingColumns","mode":"upsert","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":false}}
-     */
-    readonly resourceMapper?: any;
-
     readonly otherField?: string;
 
 }

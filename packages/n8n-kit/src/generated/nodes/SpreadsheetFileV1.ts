@@ -8,8 +8,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SpreadsheetFileV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
     /**
      * Default: "fromFile"
      */

@@ -38,8 +38,6 @@ export interface GoogleDriveTriggerNodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    readonly asas?: string;
-
     /**
      * The drive to monitor. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: "root"

@@ -14,17 +14,11 @@ export interface RespondToWebhookNodeParameters {
      */
     readonly enableResponseOutput?: boolean;
 
-    readonly generalNotice?: string;
-
     /**
      * The data that should be returned
      * Default: "firstIncomingItem"
      */
     readonly respondWith?: "allIncomingItems" | "binary" | "firstIncomingItem" | "json" | "jwt" | "noData" | "redirect" | "text";
-
-    readonly credentials?: any;
-
-    readonly webhookNotice?: string;
 
     /**
      * The URL to redirect to
@@ -55,8 +49,6 @@ export interface RespondToWebhookNodeParameters {
      * Default: "data"
      */
     readonly inputFieldName?: string;
-
-    readonly contentTypeNotice?: string;
 
     /**
      * Default: {}

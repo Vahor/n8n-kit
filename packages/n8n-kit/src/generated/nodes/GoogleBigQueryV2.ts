@@ -15,11 +15,6 @@ export interface GoogleBigQueryV2NodeParameters {
     readonly authentication?: "oAuth2" | "serviceAccount";
 
     /**
-     * Default: "database"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "executeQuery"
      */
     readonly operation?: "executeQuery" | "insert";
@@ -65,8 +60,6 @@ export interface GoogleBigQueryV2NodeParameters {
      * Default: "autoMap"
      */
     readonly dataMode?: "autoMap" | "define";
-
-    readonly info?: string;
 
     /**
      * Default: {}

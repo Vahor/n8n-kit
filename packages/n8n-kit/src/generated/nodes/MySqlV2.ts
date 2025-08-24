@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface MySqlV2NodeParameters {
     /**
-     * Default: "database"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "insert"
      */
     readonly operation?: "deleteTable" | "executeQuery" | "insert" | "upsert" | "select" | "update";
@@ -62,8 +57,6 @@ export interface MySqlV2NodeParameters {
      * Default: "autoMapInputData"
      */
     readonly dataMode?: "autoMapInputData" | "defineBelow";
-
-    readonly notice?: string;
 
     /**
      * Default: {}

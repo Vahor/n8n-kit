@@ -45,8 +45,6 @@ export interface ElasticsearchNodeParameters {
      */
     readonly returnAll?: boolean;
 
-    readonly paginateNotice?: string;
-
     /**
      * Max number of results to return
      * Default: 50

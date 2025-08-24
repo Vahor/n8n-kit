@@ -29,13 +29,13 @@ export interface DiscourseNodeParameters {
      * Color of the category
      * Default: "0000FF"
      */
-    readonly color?: any;
+    readonly color?: string;
 
     /**
      * Text color of the category
      * Default: "0000FF"
      */
-    readonly textColor?: any;
+    readonly textColor?: string;
 
     /**
      * Whether to return all results or only up to a given limit
@@ -57,7 +57,7 @@ export interface DiscourseNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "color"?: any, "textColor"?: any } | { "edit_reason"?: string, "cooked"?: boolean };
+    readonly updateFields?: { "color"?: string, "textColor"?: string } | { "edit_reason"?: string, "cooked"?: boolean };
 
     /**
      * ID of the group to update

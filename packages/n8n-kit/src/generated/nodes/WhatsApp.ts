@@ -20,11 +20,6 @@ export interface WhatsAppNodeParameters {
     readonly operation?: "send" | "sendAndWait" | "sendTemplate" | "mediaUpload" | "mediaUrlGet" | "mediaDelete";
 
     /**
-     * Default: "whatsapp"
-     */
-    readonly messagingProduct?: any;
-
-    /**
      * The ID of the business account's phone number from which the message will be sent from
      * Type options: {"loadOptions":{"routing":{"request":{"url":"={{$credentials.businessAccountId}}/phone_numbers","method":"GET"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.display_phone_number}} - {{$responseItem.verified_name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */

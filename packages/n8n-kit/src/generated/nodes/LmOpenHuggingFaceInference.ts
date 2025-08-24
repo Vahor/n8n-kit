@@ -10,11 +10,6 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmOpenHuggingFaceInferenceNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Default: "mistralai/Mistral-Nemo-Base-2407"
      */
     readonly model?: string;

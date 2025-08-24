@@ -9,8 +9,6 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FacebookLeadAdsTriggerNodeParameters {
-    readonly facebookLeadAdsNotice?: string;
-
     /**
      * Default: "newLead"
      */

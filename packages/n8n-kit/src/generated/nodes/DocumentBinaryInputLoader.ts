@@ -9,11 +9,6 @@ export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentBinaryInputLoaderNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Default: "jsonLoader"
      */
     readonly loader?: "csvLoader" | "docxLoader" | "epubLoader" | "jsonLoader" | "pdfLoader" | "textLoader";

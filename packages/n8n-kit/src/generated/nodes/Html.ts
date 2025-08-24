@@ -20,8 +20,6 @@ export interface HtmlNodeParameters {
      */
     readonly html?: string;
 
-    readonly notice?: string;
-
     /**
      * If HTML should be read from binary or JSON data
      * Default: "json"

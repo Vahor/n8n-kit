@@ -19,8 +19,6 @@ export interface VectorStorePineconeInsertNodeParameters {
 
     readonly pineconeNamespace?: string;
 
-    readonly notice?: string;
-
     /**
      * Whether to clear the namespace before inserting new data
      */

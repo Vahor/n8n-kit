@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface GoogleCalendarNodeParameters {
     /**
-     * Type options: {"calloutAction":{"label":"Voice assistant agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"voice_assistant_agent_with_telegram_and_gcal"}}
-     */
-    readonly preBuiltAgentsCalloutGoogleCalendar?: any;
-
-    /**
      * Default: "event"
      */
     readonly resource?: "calendar" | "event";
@@ -107,7 +102,5 @@ export interface GoogleCalendarNodeParameters {
      * Default: {}
      */
     readonly updateFields?: { "allday"?: "yes" | "no", "attendeesUi"?: { "values": any }, "attendees"?: string, "color"?: string, "description"?: string, "end"?: string, "guestsCanInviteOthers"?: boolean, "guestsCanModify"?: boolean, "guestsCanSeeOtherGuests"?: boolean, "id"?: string, "location"?: string, "maxAttendees"?: number, "repeatFrecuency"?: "Daily" | "weekly" | "monthly" | "yearly", "repeatHowManyTimes"?: number, "repeatUntil"?: string, "rrule"?: string, "sendUpdates"?: "all" | "externalOnly" | "none", "showMeAs"?: "transparent" | "opaque", "start"?: string, "summary"?: string, "visibility"?: "confidential" | "default" | "public" | "private" };
-
-    readonly useN8nTimeZone?: string;
 
 }

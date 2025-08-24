@@ -8,8 +8,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormNodeParameters {
-    readonly triggerNotice?: string;
-
     /**
      * Default: "page"
      */

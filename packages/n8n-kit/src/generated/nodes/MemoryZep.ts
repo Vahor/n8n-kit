@@ -9,15 +9,6 @@ export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryZepNodeParameters {
-    readonly deprecationNotice?: string;
-
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    readonly supportedVersions?: string;
-
     readonly sessionId?: string;
 
     /**

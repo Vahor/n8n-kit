@@ -10,11 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface EmailSendV2NodeParameters {
     /**
-     * Default: "email"
-     */
-    readonly resource?: any;
-
-    /**
      * Default: "send"
      */
     readonly operation?: "send" | "sendAndWait";

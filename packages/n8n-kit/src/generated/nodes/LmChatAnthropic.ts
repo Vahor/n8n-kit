@@ -10,11 +10,6 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatAnthropicNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the completion. <a href="https://docs.anthropic.com/claude/docs/models-overview">Learn more</a>.
      * Default: "claude-2"
      */

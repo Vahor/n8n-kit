@@ -10,11 +10,6 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatOllamaNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the completion. To download models, visit <a href="https://ollama.ai/library">Ollama Models Library</a>.
      * Default: "llama3.2"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/api/tags"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"models"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.name}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

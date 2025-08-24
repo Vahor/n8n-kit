@@ -14,8 +14,6 @@ export interface XmlNodeParameters {
      */
     readonly mode?: "jsonToxml" | "xmlToJson";
 
-    readonly xmlNotice?: string;
-
     /**
      * Name of the property to which to contains the converted XML data
      * Default: "data"

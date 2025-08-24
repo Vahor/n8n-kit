@@ -42,12 +42,6 @@ export interface AirtableV2NodeParameters {
 };
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"loadOptionsDependsOn":["table.value","base.value"],"resourceMapper":{"resourceMapperMethod":"getColumns","mode":"add","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly columns?: any;
-
-    /**
      * Default: {}
      */
     readonly options?: { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "downloadFields"?: any[] } | { "downloadFields"?: any[], "fields"?: any[], "view"?: {

@@ -45,8 +45,6 @@ export interface OpenAiAssistantNodeParameters {
      */
     readonly nativeTools?: ("code_interpreter" | "retrieval")[];
 
-    readonly noticeTools?: string;
-
     /**
      * Additional options to add
      * Default: {}

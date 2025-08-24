@@ -37,10 +37,6 @@ export interface WebhookNodeParameters {
      */
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode" | "responseNode" | "streaming";
 
-    readonly webhookNotice?: string;
-
-    readonly webhookStreamingNotice?: string;
-
     /**
      * The HTTP Response code to return
      * Default: 200
@@ -59,8 +55,6 @@ export interface WebhookNodeParameters {
      * Default: "data"
      */
     readonly responseBinaryPropertyName?: string;
-
-    readonly contentTypeNotice?: string;
 
     /**
      * Default: {}

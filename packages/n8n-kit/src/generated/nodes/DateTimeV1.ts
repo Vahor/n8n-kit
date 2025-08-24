@@ -8,8 +8,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DateTimeV1NodeParameters {
-    readonly noticeDateTime?: string;
-
     /**
      * Default: "format"
      */

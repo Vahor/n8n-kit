@@ -9,8 +9,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftExcelV2NodeParameters {
-    readonly notice?: string;
-
     /**
      * Default: "workbook"
      */

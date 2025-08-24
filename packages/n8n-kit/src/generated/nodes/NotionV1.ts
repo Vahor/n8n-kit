@@ -9,8 +9,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionV1NodeParameters {
-    readonly notionNotice?: string;
-
     /**
      * Default: "page"
      */
@@ -115,8 +113,6 @@ export interface NotionV1NodeParameters {
      * Type options: {"multipleValues":true}
      */
     readonly filters?: { "conditions": any };
-
-    readonly jsonNotice?: string;
 
     readonly filterJson?: string;
 

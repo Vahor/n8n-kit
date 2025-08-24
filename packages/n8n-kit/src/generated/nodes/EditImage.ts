@@ -31,7 +31,7 @@ export interface EditImageNodeParameters {
      * Default: "#ffffff00"
      * Type options: {"showAlpha":true}
      */
-    readonly backgroundColor?: any;
+    readonly backgroundColor?: string;
 
     /**
      * The width of the image to create
@@ -58,7 +58,7 @@ export interface EditImageNodeParameters {
      * Default: "#ff000000"
      * Type options: {"showAlpha":true}
      */
-    readonly color?: any;
+    readonly color?: string;
 
     /**
      * X (horizontal) start position of the primitive
@@ -105,7 +105,7 @@ export interface EditImageNodeParameters {
      * Color of the text
      * Default: "#000000"
      */
-    readonly fontColor?: any;
+    readonly fontColor?: string;
 
     /**
      * X (horizontal) position of the text
@@ -156,7 +156,7 @@ export interface EditImageNodeParameters {
      * Color of the border
      * Default: "#000000"
      */
-    readonly borderColor?: any;
+    readonly borderColor?: string;
 
     /**
      * The name of the binary property which contains the data of the image to composite on top of image which is found in Property Name

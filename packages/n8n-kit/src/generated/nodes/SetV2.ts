@@ -21,8 +21,6 @@ export interface SetV2NodeParameters {
      */
     readonly duplicateCount?: number;
 
-    readonly duplicateWarning?: string;
-
     /**
      * Default: "{\n  \"my_field_1\": \"value\",\n  \"my_field_2\": 1\n}\n"
      * Type options: {"rows":5}

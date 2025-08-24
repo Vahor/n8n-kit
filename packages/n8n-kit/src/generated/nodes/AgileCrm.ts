@@ -57,8 +57,6 @@ export interface AgileCrmNodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    readonly jsonNotice?: string;
-
     readonly filterJson?: string;
 
     /**

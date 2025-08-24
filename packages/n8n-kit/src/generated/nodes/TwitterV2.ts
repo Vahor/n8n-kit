@@ -54,10 +54,6 @@ export interface TwitterV2NodeParameters {
 	mode: "id" | "url",
 };
 
-    readonly noticeLocation?: string;
-
-    readonly noticeAttachments?: string;
-
     /**
      * The tweet to delete
      * Default: {"mode":"id","value":""}

@@ -42,10 +42,6 @@ export interface FormTriggerV2NodeParameters {
      */
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode";
 
-    readonly formNotice?: string;
-
-    readonly addFormPage?: string;
-
     /**
      * Default: {}
      */

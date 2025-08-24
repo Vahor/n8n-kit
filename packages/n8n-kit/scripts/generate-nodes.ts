@@ -100,6 +100,18 @@ const generateTypescriptNodeOutput = async (
 		}
 	> = {};
 	for (const property of result.properties) {
+		if (
+			property.type === "hidden" ||
+			property.type === "button" ||
+			property.type === "curlImport" ||
+			property.type === "credentialsSelect" ||
+			property.type === "notice" ||
+			property.type === "resourceMapper" ||
+			property.type === "credentials" ||
+			property.type === "callout"
+		)
+			continue; // I suppose ?
+
 		if (visitedProperties[property.name]) {
 			visitedProperties[property.name].__versionsOfProperty.push(property);
 			continue;

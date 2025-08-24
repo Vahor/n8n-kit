@@ -8,8 +8,6 @@ export const inputs = {"main":"main","Document":"ai_document","Embedding":"ai_em
 export const outputs = {"main":"main"} as const;
 
 export interface VectorStoreInMemoryInsertNodeParameters {
-    readonly notice?: string;
-
     /**
      * Whether to clear the store before inserting new data
      */

@@ -8,8 +8,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CompareDatasetsNodeParameters {
-    readonly infoBox?: string;
-
     /**
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}

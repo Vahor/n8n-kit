@@ -134,13 +134,11 @@ export interface SlackV2NodeParameters {
      */
     readonly blocksUi?: string;
 
-    readonly noticeAttachments?: string;
-
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: any, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: number, "fields"?: { "item": any } };
+    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: string, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: number, "fields"?: { "item": any } };
 
     /**
      * Other options to set

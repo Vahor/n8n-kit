@@ -58,8 +58,6 @@ export interface GoogleChatNodeParameters {
      */
     readonly messageUi?: { "text"?: string };
 
-    readonly jsonNotice?: string;
-
     /**
      * Message input as JSON Object or JSON String
      * Type options: {"alwaysOpenEditWindow":true}

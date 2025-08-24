@@ -92,7 +92,7 @@ export interface MattermostV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "actions"?: { "item": any }, "author_icon"?: string, "author_link"?: string, "author_name"?: string, "color"?: any, "fallback"?: string, "fields"?: { "item": any }, "footer"?: string, "footer_icon"?: string, "image_url"?: string, "pretext"?: string, "text"?: string, "thumb_url"?: string, "title"?: string, "title_link"?: string };
+    readonly attachments?: { "actions"?: { "item": any }, "author_icon"?: string, "author_link"?: string, "author_name"?: string, "color"?: string, "fallback"?: string, "fields"?: { "item": any }, "footer"?: string, "footer_icon"?: string, "image_url"?: string, "pretext"?: string, "text"?: string, "thumb_url"?: string, "title"?: string, "title_link"?: string };
 
     /**
      * Other options to set

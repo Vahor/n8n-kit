@@ -9,11 +9,6 @@ export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
 export interface TextSplitterRecursiveCharacterTextSplitterNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * Default: 1000
      */
     readonly chunkSize?: number;

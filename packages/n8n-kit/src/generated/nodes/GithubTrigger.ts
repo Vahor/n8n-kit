@@ -9,8 +9,6 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GithubTriggerNodeParameters {
-    readonly notice?: string;
-
     /**
      * Default: "accessToken"
      */

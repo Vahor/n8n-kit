@@ -34,7 +34,7 @@ export interface MispNodeParameters {
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string } | { "category"?: string, "deleted"?: boolean, "searchall"?: string, "tags"?: string, "type"?: string, "published"?: boolean } | { "analysis"?: "0" | "1" | "2", "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string, "threat_level_id"?: "1" | "2" | "3" | "4" } | { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "json"?: string } | { "created_by_email"?: string, "description"?: string, "nationality"?: string, "sector"?: string, "type"?: string, "usercount"?: number } | { "colour"?: any } | { "gpgkey"?: string, "invited_by"?: string, "org_id"?: string };
+    readonly additionalFields?: { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string } | { "category"?: string, "deleted"?: boolean, "searchall"?: string, "tags"?: string, "type"?: string, "published"?: boolean } | { "analysis"?: "0" | "1" | "2", "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string, "threat_level_id"?: "1" | "2" | "3" | "4" } | { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "json"?: string } | { "created_by_email"?: string, "description"?: string, "nationality"?: string, "sector"?: string, "type"?: string, "usercount"?: number } | { "colour"?: string } | { "gpgkey"?: string, "invited_by"?: string, "org_id"?: string };
 
     /**
      * UUID or numeric ID of the attribute
@@ -68,7 +68,7 @@ export interface MispNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string } | { "analysis"?: "0" | "1" | "2", "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "information"?: string, "sharing_group_id"?: string, "threat_level_id"?: "1" | "2" | "3" | "4" } | { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "name"?: string, "provider"?: string, "rules"?: string, "url"?: string } | { "description"?: string, "name"?: string, "nationality"?: string, "sector"?: string, "type"?: string } | { "colour"?: any, "name"?: string } | { "email"?: string, "gpgkey"?: string, "invited_by"?: string, "org_id"?: string };
+    readonly updateFields?: { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "sharing_group_id"?: string } | { "analysis"?: "0" | "1" | "2", "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "information"?: string, "sharing_group_id"?: string, "threat_level_id"?: "1" | "2" | "3" | "4" } | { "distribution"?: "3" | "2" | "5" | "4" | "1" | "0", "name"?: string, "provider"?: string, "rules"?: string, "url"?: string } | { "description"?: string, "name"?: string, "nationality"?: string, "sector"?: string, "type"?: string } | { "colour"?: string, "name"?: string } | { "email"?: string, "gpgkey"?: string, "invited_by"?: string, "org_id"?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

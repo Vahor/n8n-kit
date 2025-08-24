@@ -8,8 +8,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MergeV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
     /**
      * How data of branches should be merged
      * Default: "append"

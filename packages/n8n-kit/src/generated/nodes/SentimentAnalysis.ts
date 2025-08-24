@@ -14,8 +14,6 @@ export interface SentimentAnalysisNodeParameters {
      */
     readonly inputText?: string;
 
-    readonly detailedResultsNotice?: string;
-
     /**
      * Default: {}
      */

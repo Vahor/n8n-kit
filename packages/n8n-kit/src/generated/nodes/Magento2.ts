@@ -87,8 +87,6 @@ export interface Magento2NodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    readonly jsonNotice?: string;
-
     readonly filterJson?: string;
 
     /**

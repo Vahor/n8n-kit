@@ -10,11 +10,6 @@ export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsAzureOpenAiNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The name of the model(deployment) to use
      */
     readonly model?: string;

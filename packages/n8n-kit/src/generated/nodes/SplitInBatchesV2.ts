@@ -8,8 +8,6 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SplitInBatchesV2NodeParameters {
-    readonly splitInBatchesNotice?: string;
-
     /**
      * The number of items to return with each call
      * Default: 10

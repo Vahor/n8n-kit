@@ -105,8 +105,6 @@ export interface GoogleBusinessProfileNodeParameters {
      */
     readonly limit?: number;
 
-    readonly notice?: string;
-
     /**
      * Select the review to retrieve its details
      * Default: {"mode":"list","value":""}

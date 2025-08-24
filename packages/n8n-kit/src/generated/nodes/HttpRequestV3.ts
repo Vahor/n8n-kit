@@ -10,13 +10,6 @@ export const outputs = {"main":"main"} as const;
 
 export interface HttpRequestV3NodeParameters {
     /**
-     * Type options: {"calloutAction":{"label":"Joke agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"joke_agent_with_http_tool"}}
-     */
-    readonly preBuiltAgentsCalloutHttpRequest?: any;
-
-    readonly curlImport?: any;
-
-    /**
      * The request method to use
      * Default: "GET"
      */
@@ -32,17 +25,7 @@ export interface HttpRequestV3NodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    readonly nodeCredentialType?: any;
-
-    readonly googleApiWarning?: string;
-
-    readonly genericAuthType?: any;
-
     readonly provideSslCertificates?: boolean;
-
-    readonly provideSslCertificatesNotice?: string;
-
-    readonly sslCertificate?: any;
 
     /**
      * Whether the request has query params or not
@@ -168,7 +151,5 @@ export interface HttpRequestV3NodeParameters {
      * Type options: {"minValue":1}
      */
     readonly maxLength?: number;
-
-    readonly infoMessage?: string;
 
 }

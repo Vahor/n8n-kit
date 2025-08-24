@@ -33,12 +33,12 @@ export interface ClickUpNodeParameters {
     /**
      * Default: {}
      */
-    readonly updateFields?: { "name"?: string, "position"?: number } | { "assignee"?: string, "name"?: string, "parent"?: string, "resolved"?: boolean } | { "assignee"?: string, "commentText"?: string, "resolved"?: boolean } | { "name"?: string } | { "addOwners"?: string, "color"?: any, "description"?: string, "dueDate"?: string, "name"?: string, "removeOwners"?: string } | { "name"?: string, "note"?: string, "stepsCurrent"?: number, "stepsEnd"?: number, "stepsStart"?: number, "unit"?: string } | { "addAssignees"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "name"?: string, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "removeAssignees"?: string, "status"?: string, "startDate"?: string, "startDateTime"?: boolean, "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "duration"?: number, "start"?: string, "tags"?: any[], "task"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "name"?: string, "priority"?: number, "unsetStatus"?: boolean };
+    readonly updateFields?: { "name"?: string, "position"?: number } | { "assignee"?: string, "name"?: string, "parent"?: string, "resolved"?: boolean } | { "assignee"?: string, "commentText"?: string, "resolved"?: boolean } | { "name"?: string } | { "addOwners"?: string, "color"?: string, "description"?: string, "dueDate"?: string, "name"?: string, "removeOwners"?: string } | { "name"?: string, "note"?: string, "stepsCurrent"?: number, "stepsEnd"?: number, "stepsStart"?: number, "unit"?: string } | { "addAssignees"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "name"?: string, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "removeAssignees"?: string, "status"?: string, "startDate"?: string, "startDateTime"?: boolean, "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "duration"?: number, "start"?: string, "tags"?: any[], "task"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "name"?: string, "priority"?: number, "unsetStatus"?: boolean };
 
     /**
      * Default: {}
      */
-    readonly additionalFields?: { "assignee"?: string } | { "assignee"?: string, "notifyAll"?: boolean } | { "color"?: any, "description"?: string, "dueDate"?: string, "multipleOwners"?: boolean, "owners"?: string } | { "listIds"?: string, "owners"?: string, "stepsStart"?: number, "stepsEnd"?: number, "taskIds"?: string, "unit"?: string } | { "custom_task_ids"?: boolean, "team_id"?: string } | { "assignees"?: any[], "customFieldsJson"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "startDate"?: string, "startDateTime"?: boolean, "status"?: string, "tags"?: any[], "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "tags"?: any[] } | { "billable"?: boolean, "description"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "priority"?: number, "status"?: string };
+    readonly additionalFields?: { "assignee"?: string } | { "assignee"?: string, "notifyAll"?: boolean } | { "color"?: string, "description"?: string, "dueDate"?: string, "multipleOwners"?: boolean, "owners"?: string } | { "listIds"?: string, "owners"?: string, "stepsStart"?: number, "stepsEnd"?: number, "taskIds"?: string, "unit"?: string } | { "custom_task_ids"?: boolean, "team_id"?: string } | { "assignees"?: any[], "customFieldsJson"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "startDate"?: string, "startDateTime"?: boolean, "status"?: string, "tags"?: any[], "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "tags"?: any[] } | { "billable"?: boolean, "description"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "priority"?: number, "status"?: string };
 
     readonly checklistItem?: string;
 
@@ -102,12 +102,12 @@ export interface ClickUpNodeParameters {
     /**
      * Default: "#000000"
      */
-    readonly foregroundColor?: any;
+    readonly foregroundColor?: string;
 
     /**
      * Default: "#000000"
      */
-    readonly backgroundColor?: any;
+    readonly backgroundColor?: string;
 
     /**
      * Whether to return all results or only up to a given limit

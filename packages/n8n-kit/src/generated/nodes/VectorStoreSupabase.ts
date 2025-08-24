@@ -10,19 +10,9 @@ export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreSupabaseNodeParameters {
     /**
-     * Type options: {"calloutAction":{"label":"RAG starter template","type":"openSampleWorkflowTemplate","templateId":"rag-starter-template"}}
-     */
-    readonly ragStarterCallout?: any;
-
-    /**
      * Default: "retrieve"
      */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool" | "update";
-
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
 
     /**
      * Name of the vector store

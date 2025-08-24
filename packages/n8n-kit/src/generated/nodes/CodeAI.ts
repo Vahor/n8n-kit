@@ -13,8 +13,6 @@ export interface CodeAINodeParameters {
      */
     readonly code?: { "execute": any, "supplyData": any };
 
-    readonly notice?: string;
-
     /**
      * The input to add
      * Default: {}

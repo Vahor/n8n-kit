@@ -8,13 +8,6 @@ export const inputs = {"Model":"ai_languageModel","Output Parser":"ai_outputPars
 export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserAutofixingNodeParameters {
-    readonly info?: string;
-
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
     /**
      * Default: {}
      */

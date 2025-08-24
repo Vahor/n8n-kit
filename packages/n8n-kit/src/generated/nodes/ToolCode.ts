@@ -8,13 +8,6 @@ export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolCodeNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    readonly noticeTemplateExample?: string;
-
     readonly name?: string;
 
     /**

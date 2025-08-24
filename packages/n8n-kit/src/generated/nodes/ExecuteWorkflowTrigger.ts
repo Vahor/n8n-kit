@@ -9,20 +9,9 @@ export const outputs = {"main":"main"} as const;
 
 export interface ExecuteWorkflowTriggerNodeParameters {
     /**
-     * Default: "worklfow_call"
-     */
-    readonly events?: any;
-
-    readonly notice?: string;
-
-    readonly outdatedVersionWarning?: string;
-
-    /**
      * Default: "workflowInputs"
      */
     readonly inputSource?: "workflowInputs" | "jsonExample" | "passthrough";
-
-    readonly jsonExample_notice?: string;
 
     /**
      * Default: "{\n  \"aField\": \"a string\",\n  \"aNumber\": 123,\n  \"thisFieldAcceptsAnyType\": null,\n  \"anArray\": []\n}"

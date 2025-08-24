@@ -58,11 +58,6 @@ export interface AirtopNodeParameters {
     readonly additionalFields?: { "solveCaptcha"?: boolean, "extensionIds"?: string } | { "timeout"?: number } | { "waitUntil"?: "load" | "domContentLoaded" | "complete" | "noWait" } | { "includeNavigationBar"?: boolean, "screenResolution"?: string, "disableResize"?: boolean } | { "waitUntil"?: "complete" | "domContentLoaded" | "load" | "noWait" } | { "outputSchema"?: string, "parseJsonOutput"?: boolean, "interactionMode"?: "auto" | "accurate" | "cost-efficient", "paginationMode"?: "auto" | "paginated" | "infinite-scroll" } | { "outputSchema"?: string, "parseJsonOutput"?: boolean, "includeVisualAnalysis"?: boolean } | { "visualScope"?: "auto" | "viewport" | "page" | "scan", "waitForNavigation"?: "load" | "domcontentloaded" | "networkidle0" | "networkidle2" };
 
     /**
-     * Default: "This operation will save the profile on session termination"
-     */
-    readonly notice?: string;
-
-    /**
      * The ID of the <a href="https://docs.airtop.ai/guides/how-to/creating-a-session" target="_blank">Session</a> to use
      * Default: "={{ $json[\"sessionId\"] }}"
      */

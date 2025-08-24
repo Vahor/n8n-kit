@@ -14,8 +14,6 @@ export interface FacebookTriggerNodeParameters {
      */
     readonly appId?: string;
 
-    readonly whatsappBusinessAccountNotice?: string;
-
     /**
      * The object to subscribe to
      * Default: "user"

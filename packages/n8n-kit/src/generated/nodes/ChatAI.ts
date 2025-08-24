@@ -8,8 +8,6 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChatAINodeParameters {
-    readonly generalNotice?: string;
-
     /**
      * Type options: {"rows":6}
      */
