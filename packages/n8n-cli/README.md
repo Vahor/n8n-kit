@@ -115,11 +115,12 @@ bunx @vahor/n8n deploy [options]
 ```
 
 **Workflow Matching:**
+
 - Workflows are matched by a unique tag generated from their hash ID
 - If no match is found, a new workflow is created
 - If a match is found, the existing workflow is updated
 
-Note: The cli will never delete workflows. If you want to delete a workflow, you can do it manually in n8n.
+Note: The CLI will never delete workflows. If you want to delete a workflow, you can do it manually in n8n.
 
 **Example:**
 ```sh
@@ -161,5 +162,4 @@ Show help information for any command.
 ```sh
 bunx @vahor/n8n --help
 bunx @vahor/n8n deploy --help
-bunx @vahor/n8n workflow --help
 ```
