@@ -1,5 +1,5 @@
+import { isGroup } from "../../symbols";
 import { checkInternalIdentifier } from "../../utils/slugify";
-import { Group } from "../group";
 import type {
 	ConnectionOptions,
 	IChainable,
@@ -41,7 +41,7 @@ export abstract class State<
 	}
 
 	public addNext(state: IChainable, connectionOptions?: ConnectionOptions) {
-		if (state instanceof Group) {
+		if (isGroup(state)) {
 			const nodes = state.chain.toList();
 			if (nodes.length === 0) {
 				throw new Error("Group must have at least one node");
