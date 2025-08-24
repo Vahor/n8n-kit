@@ -27,7 +27,7 @@ export interface StickyNoteProps extends NodeProps {
 }
 
 export class StickyNote extends Node {
-	override endStates: INextable[] = NO_END_STATES;
+	override readonly endStates: INextable[] = NO_END_STATES;
 
 	protected type = type;
 	protected typeVersion = version;
