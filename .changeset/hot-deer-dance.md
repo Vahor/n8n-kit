@@ -2,4 +2,4 @@
 "@vahor/n8n-kit-cli": patch
 ---
 
-Add `--merge` option in deploy command to preserve n8n node position during deploy.
+Add a `--merge` option to the deploy command to preserve n8n node positions during deployment (enabled by default; pass `--no-merge` to disable).
