@@ -10,11 +10,17 @@ import { loadApplication } from "./build";
 
 export const command = "deploy";
 export const description = "Deploy app to n8n";
-export const builder = (yargs: Argv) => yargs.showHelpOnFail(true);
+export const builder = (yargs: Argv) =>
+	yargs.showHelpOnFail(true).option("merge", {
+		type: "boolean",
+		default: true,
+		describe: "Preserve node positions from existing workflows",
+	});
 
 type DeployOptions = {
 	dryRun: boolean;
 	yes: boolean;
+	merge: boolean;
 };
 
 export const handler = async (options: DeployOptions) => {
@@ -37,6 +43,10 @@ export const handler = async (options: DeployOptions) => {
 	const tags = await n8n.getTags();
 
 	logger.log("Resolving workflow ids...");
+	const matchMap = new Map<
+		string,
+		Awaited<ReturnType<N8nApi["listWorkflows"]>>[number]
+	>();
 	for (const workflow of app.workflows) {
 		logger.setContext(`resolve:${workflow.id}`);
 
@@ -58,6 +68,7 @@ export const handler = async (options: DeployOptions) => {
 			logger.log(
 				`Found match for workflow ${chalk.cyan(workflow.n8nWorkflowId)}`,
 			);
+			matchMap.set(workflow.n8nWorkflowId, match[0]!);
 		} else {
 			logger.log("No match found");
 		}
@@ -71,6 +82,24 @@ export const handler = async (options: DeployOptions) => {
 
 		const buildWorkflow = workflow.build();
 		const { id: _id, tags: workflowTags, active, ...rest } = buildWorkflow;
+
+		// If merge flag is enabled and workflow exists, merge node positions
+		if (options.merge && workflow.n8nWorkflowId) {
+			try {
+				logger.log("Merging node positions from existing workflow...");
+				const existingWorkflow = matchMap.get(workflow.n8nWorkflowId)!;
+
+				for (const node of rest.nodes) {
+					const existingNode = existingWorkflow.nodes.find(
+						(n) => n.name === node.name,
+					);
+					if (!existingNode || !existingNode.position) continue;
+					node.position = existingNode.position;
+				}
+			} catch (error) {
+				logger.warn(`Failed to merge positions: ${error}`);
+			}
+		}
 
 		// Create missing tags
 		for (const tag of workflowTags) {

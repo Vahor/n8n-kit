@@ -105,7 +105,8 @@ export { app };
 
 - **Generated Graph Layout**: 
 	- No mid-graph direction changes.
-    - No way to set node execution priority (n8n runs nodes top-to-bottom)
+  - No way to set node execution priority (n8n runs nodes top-to-bottom)
+  - **Workaround**: Deploy the workflow once, then edit the workflow in n8n. With the `--merge` option, node positions won't be overwritten.
 - **Credentials**: Must be defined in n8n first, then referenced via `Credentials.byId()` (no API endpoint available)
 - **Folders**: Workflows deploy to root; manual folder organization required (no API endpoint available). You can still organize them manually once deployed.
 
