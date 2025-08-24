@@ -48,6 +48,10 @@ const defaultRedactKeys = [
 	/nodes\[.*\]\.position/,
 	/nodes\[.*\]\.parameters.*\.value/,
 	/nodes\[.*\]\.credentials.*\.name/,
+	// cached result UI-only fields
+	"cachedResultName",
+	"cachedResultUrl",
+	"_rl",
 ];
 const replacer = () => undefined as unknown as string; // make ts happy, the lib expect a string
 
@@ -63,8 +67,11 @@ const getDiff = async (file1: string, file2: string) => {
 	}
 };
 
-function sortObjectByKey(obj: any) {
-	if (typeof obj !== "object" || obj === null || Array.isArray(obj)) {
+function sortObjectByKey<T>(obj: T): T {
+	if (Array.isArray(obj)) {
+		return obj.map((el) => sortObjectByKey(el)) as unknown as T;
+	}
+	if (typeof obj !== "object" || obj === null) {
 		return obj;
 	}
 
@@ -76,7 +83,7 @@ function sortObjectByKey(obj: any) {
 		result[key] = sortObjectByKey(obj[key]); // Recursive call for nested objects
 	}
 
-	return result;
+	return result as unknown as T;
 }
 
 const format = (workflow: WorkflowDefinition) => {
