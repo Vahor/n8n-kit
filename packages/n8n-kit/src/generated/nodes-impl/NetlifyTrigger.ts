@@ -3,6 +3,7 @@
 
 import type { NetlifyApiCredentials } from "../credentials/NetlifyApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NetlifyTriggerNodeParameters } from "../nodes/NetlifyTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface NetlifyTriggerProps extends NodeProps {
 /**
  * Handle netlify events via webhooks
  */
-export class NetlifyTrigger<L extends string> extends Node<L> {
+export class NetlifyTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.netlifyTrigger" as const;
     protected typeVersion = 1 as const;
 

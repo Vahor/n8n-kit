@@ -6,6 +6,7 @@ import type { JiraSoftwareServerApiCredentials } from "../credentials/JiraSoftwa
 import type { JiraSoftwareServerPatApiCredentials } from "../credentials/JiraSoftwareServerPatApi.ts";
 import type { HttpQueryAuthCredentials } from "../credentials/HttpQueryAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { JiraTriggerNodeParameters } from "../nodes/JiraTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -20,7 +21,7 @@ export interface JiraTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Jira events occur
  */
-export class JiraTrigger<L extends string> extends Node<L> {
+export class JiraTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.jiraTrigger" as const;
     protected typeVersion = 1.1 as const;
 

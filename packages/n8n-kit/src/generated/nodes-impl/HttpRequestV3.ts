@@ -3,6 +3,7 @@
 
 import type { HttpSslAuthCredentials } from "../credentials/HttpSslAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HttpRequestV3NodeParameters } from "../nodes/HttpRequestV3";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface HttpRequestV3Props extends NodeProps {
 /**
  * Makes an HTTP request and returns the response data
  */
-export class HttpRequestV3<L extends string> extends Node<L> {
+export class HttpRequestV3<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.httpRequest" as const;
     protected typeVersion = 4.2 as const;
 

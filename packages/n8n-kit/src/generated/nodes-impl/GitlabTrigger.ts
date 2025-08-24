@@ -4,6 +4,7 @@
 import type { GitlabApiCredentials } from "../credentials/GitlabApi.ts";
 import type { GitlabOAuth2ApiCredentials } from "../credentials/GitlabOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GitlabTriggerNodeParameters } from "../nodes/GitlabTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GitlabTriggerProps extends NodeProps {
 /**
  * Starts the workflow when GitLab events occur
  */
-export class GitlabTrigger<L extends string> extends Node<L> {
+export class GitlabTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gitlabTrigger" as const;
     protected typeVersion = 1 as const;
 

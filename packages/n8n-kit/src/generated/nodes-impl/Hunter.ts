@@ -3,6 +3,7 @@
 
 import type { HunterApiCredentials } from "../credentials/HunterApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HunterNodeParameters } from "../nodes/Hunter";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface HunterProps extends NodeProps {
 /**
  * Consume Hunter API
  */
-export class Hunter<L extends string> extends Node<L> {
+export class Hunter<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.hunter" as const;
     protected typeVersion = 1 as const;
 

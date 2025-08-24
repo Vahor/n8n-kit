@@ -4,6 +4,7 @@
 import type { PipedriveApiCredentials } from "../credentials/PipedriveApi.ts";
 import type { PipedriveOAuth2ApiCredentials } from "../credentials/PipedriveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { PipedriveNodeParameters } from "../nodes/Pipedrive";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface PipedriveProps extends NodeProps {
 /**
  * Create and edit data in Pipedrive
  */
-export class Pipedrive<L extends string> extends Node<L> {
+export class Pipedrive<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.pipedrive" as const;
     protected typeVersion = 1 as const;
 

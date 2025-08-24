@@ -4,6 +4,7 @@
 import type { ZendeskApiCredentials } from "../credentials/ZendeskApi.ts";
 import type { ZendeskOAuth2ApiCredentials } from "../credentials/ZendeskOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ZendeskTriggerNodeParameters } from "../nodes/ZendeskTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface ZendeskTriggerProps extends NodeProps {
 /**
  * Handle Zendesk events via webhooks
  */
-export class ZendeskTrigger<L extends string> extends Node<L> {
+export class ZendeskTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.zendeskTrigger" as const;
     protected typeVersion = 1 as const;
 

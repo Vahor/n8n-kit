@@ -3,6 +3,7 @@
 
 import type { LdapCredentials } from "../credentials/Ldap.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { LdapNodeParameters } from "../nodes/Ldap";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface LdapProps extends NodeProps {
 /**
  * Interact with LDAP servers
  */
-export class Ldap<L extends string> extends Node<L> {
+export class Ldap<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ldap" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { GoogleFirebaseRealtimeDatabaseOAuth2ApiCredentials } from "../credentials/GoogleFirebaseRealtimeDatabaseOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleFirebaseRealtimeDatabaseNodeParameters } from "../nodes/GoogleFirebaseRealtimeDatabase";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleFirebaseRealtimeDatabaseProps extends NodeProps {
 /**
  * Interact with Google Firebase - Realtime Database API
  */
-export class GoogleFirebaseRealtimeDatabase<L extends string> extends Node<L> {
+export class GoogleFirebaseRealtimeDatabase<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleFirebaseRealtimeDatabase" as const;
     protected typeVersion = 1 as const;
 

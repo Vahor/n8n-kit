@@ -3,6 +3,7 @@
 
 import type { MetabaseApiCredentials } from "../credentials/MetabaseApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MetabaseNodeParameters } from "../nodes/Metabase";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MetabaseProps extends NodeProps {
 /**
  * Use the Metabase API
  */
-export class Metabase<L extends string> extends Node<L> {
+export class Metabase<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.metabase" as const;
     protected typeVersion = 1 as const;
 

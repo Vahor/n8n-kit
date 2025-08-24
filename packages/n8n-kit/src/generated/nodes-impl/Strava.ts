@@ -3,6 +3,7 @@
 
 import type { StravaOAuth2ApiCredentials } from "../credentials/StravaOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { StravaNodeParameters } from "../nodes/Strava";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface StravaProps extends NodeProps {
 /**
  * Consume Strava API
  */
-export class Strava<L extends string> extends Node<L> {
+export class Strava<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.strava" as const;
     protected typeVersion = 1.1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "../credentials/MicrosoftTeamsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftTeamsV1NodeParameters } from "../nodes/MicrosoftTeamsV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftTeamsV1Props extends NodeProps {
 /**
  * Consume Microsoft Teams API
  */
-export class MicrosoftTeamsV1<L extends string> extends Node<L> {
+export class MicrosoftTeamsV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftTeams" as const;
     protected typeVersion = 1.1 as const;
 

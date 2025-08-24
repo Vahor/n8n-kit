@@ -3,7 +3,7 @@
 
 import type { RedisCredentials } from "../credentials/Redis.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryRedisChatNodeParameters } from "../nodes/MemoryRedisChat";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface MemoryRedisChatProps extends NodeProps {
 /**
  * Stores the chat history in Redis.
  */
-export class MemoryRedisChat<L extends string> extends Node<L> {
+export class MemoryRedisChat<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryRedisChat" as const;
     protected typeVersion = 1.5 as const;
 

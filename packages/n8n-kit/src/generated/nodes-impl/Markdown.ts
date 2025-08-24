@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { MarkdownNodeParameters } from "../nodes/Markdown";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -11,7 +12,7 @@ export interface MarkdownProps extends NodeProps {
 /**
  * Convert data between Markdown and HTML
  */
-export class Markdown<L extends string> extends Node<L> {
+export class Markdown<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.markdown" as const;
     protected typeVersion = 1 as const;
 

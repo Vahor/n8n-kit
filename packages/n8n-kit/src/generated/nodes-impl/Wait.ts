@@ -5,6 +5,7 @@ import type { HttpBasicAuthCredentials } from "../credentials/HttpBasicAuth.ts";
 import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts";
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WaitNodeParameters } from "../nodes/Wait";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -18,7 +19,7 @@ export interface WaitProps extends NodeProps {
 /**
  * Wait before continue with execution
  */
-export class Wait<L extends string> extends Node<L> {
+export class Wait<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.wait" as const;
     protected typeVersion = 1.1 as const;
 

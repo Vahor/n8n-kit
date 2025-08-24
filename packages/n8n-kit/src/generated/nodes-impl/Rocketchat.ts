@@ -3,6 +3,7 @@
 
 import type { RocketchatApiCredentials } from "../credentials/RocketchatApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { RocketchatNodeParameters } from "../nodes/Rocketchat";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface RocketchatProps extends NodeProps {
 /**
  * Consume RocketChat API
  */
-export class Rocketchat<L extends string> extends Node<L> {
+export class Rocketchat<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rocketchat" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { BambooHrApiCredentials } from "../credentials/BambooHrApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { BambooHrNodeParameters } from "../nodes/BambooHr";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface BambooHrProps extends NodeProps {
 /**
  * Consume BambooHR API
  */
-export class BambooHr<L extends string> extends Node<L> {
+export class BambooHr<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.bambooHr" as const;
     protected typeVersion = 1 as const;
 

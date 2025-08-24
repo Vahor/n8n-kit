@@ -4,6 +4,7 @@
 import type { SalesforceOAuth2ApiCredentials } from "../credentials/SalesforceOAuth2Api.ts";
 import type { SalesforceJwtApiCredentials } from "../credentials/SalesforceJwtApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SalesforceNodeParameters } from "../nodes/Salesforce";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface SalesforceProps extends NodeProps {
 /**
  * Consume Salesforce API
  */
-export class Salesforce<L extends string> extends Node<L> {
+export class Salesforce<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.salesforce" as const;
     protected typeVersion = 1 as const;
 

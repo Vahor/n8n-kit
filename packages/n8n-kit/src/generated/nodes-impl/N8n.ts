@@ -3,6 +3,7 @@
 
 import type { N8nApiCredentials } from "../credentials/N8nApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { N8nNodeParameters } from "../nodes/N8n";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface N8nProps extends NodeProps {
 /**
  * Handle events and perform actions on your n8n instance
  */
-export class N8n<L extends string> extends Node<L> {
+export class N8n<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.n8n" as const;
     protected typeVersion = 1 as const;
 

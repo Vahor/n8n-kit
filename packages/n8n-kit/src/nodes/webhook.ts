@@ -1,11 +1,8 @@
 import type { Type } from "arktype";
-import {
-	type,
-	version,
-	type WebhookNodeParameters,
-} from "../generated/nodes/Webhook";
+import type { WebhookNodeParameters } from "../generated/nodes/Webhook";
+import { Webhook as _Webhook } from "../generated/nodes-impl/Webhook";
 import type { IsNever, RequireFields } from "../utils/types";
-import { Node, type NodeProps } from "./node";
+import type { NodeProps } from "./node";
 
 interface WebhookBaseProps
 	extends RequireFields<WebhookNodeParameters, "httpMethod" | "path"> {}
@@ -29,23 +26,21 @@ type GetOutputSchemaField<
 			: P["outputSchema"][F]["infer"]
 		: never;
 
-export class Webhook<L extends string, P extends WebhookProps> extends Node<
-	L,
+// @ts-expect-error: we override the parameters type
+export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 	{
 		executionMode: "production" | "test";
 		headers: GetOutputSchemaField<P, "headers">;
 		params: GetOutputSchemaField<P, "params">;
 		body: GetOutputSchemaField<P, "body">;
-	}
+	},
+	L
 > {
-	protected override type = type;
-	protected override typeVersion = version;
-
 	constructor(
 		id: L,
 		override props: P,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 
 	override getParameters() {

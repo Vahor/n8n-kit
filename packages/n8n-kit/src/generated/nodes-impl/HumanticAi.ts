@@ -3,6 +3,7 @@
 
 import type { HumanticAiApiCredentials } from "../credentials/HumanticAiApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HumanticAiNodeParameters } from "../nodes/HumanticAi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface HumanticAiProps extends NodeProps {
 /**
  * Consume Humantic AI API
  */
-export class HumanticAi<L extends string> extends Node<L> {
+export class HumanticAi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.humanticAi" as const;
     protected typeVersion = 1 as const;
 

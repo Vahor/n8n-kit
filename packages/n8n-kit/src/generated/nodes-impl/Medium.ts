@@ -4,6 +4,7 @@
 import type { MediumApiCredentials } from "../credentials/MediumApi.ts";
 import type { MediumOAuth2ApiCredentials } from "../credentials/MediumOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MediumNodeParameters } from "../nodes/Medium";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface MediumProps extends NodeProps {
 /**
  * Consume Medium API
  */
-export class Medium<L extends string> extends Node<L> {
+export class Medium<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.medium" as const;
     protected typeVersion = 1 as const;
 

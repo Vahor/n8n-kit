@@ -1,29 +1,24 @@
 import type { Type } from "arktype";
-import {
-	type ExecuteWorkflowTriggerNodeParameters,
-	type,
-	version,
-} from "../generated/nodes/ExecuteWorkflowTrigger";
+import type { ExecuteWorkflowTriggerNodeParameters } from "../generated/nodes/ExecuteWorkflowTrigger";
+import { ExecuteWorkflowTrigger as _ExecuteWorkflowTrigger } from "../generated/nodes-impl/ExecuteWorkflowTrigger";
 import type { Workflow } from "../workflow";
-import { Node, type NodeProps } from "./node";
+import type { NodeProps } from "./node";
 
 export interface ExecuteWorkflowTriggerProps extends NodeProps {
 	parameters?: Omit<ExecuteWorkflowTriggerNodeParameters, "workflowInputs">;
 }
 
+// @ts-expect-error: we override the parameters type
 export class ExecuteWorkflowTrigger<
 	L extends string,
 	Input extends Type,
-> extends Node<L, Input["infer"]> {
-	protected override type = type;
-	protected override typeVersion = version;
-
+> extends _ExecuteWorkflowTrigger<Input["infer"], L> {
 	public constructor(
 		private readonly workflow: Workflow<Input, any>,
 		id: L,
 		override props: ExecuteWorkflowTriggerProps,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 
 	public buildWorkflowInputsSchema() {

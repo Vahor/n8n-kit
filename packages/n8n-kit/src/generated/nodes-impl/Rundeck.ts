@@ -3,6 +3,7 @@
 
 import type { RundeckApiCredentials } from "../credentials/RundeckApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { RundeckNodeParameters } from "../nodes/Rundeck";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface RundeckProps extends NodeProps {
 /**
  * Manage Rundeck API
  */
-export class Rundeck<L extends string> extends Node<L> {
+export class Rundeck<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rundeck" as const;
     protected typeVersion = 1 as const;
 

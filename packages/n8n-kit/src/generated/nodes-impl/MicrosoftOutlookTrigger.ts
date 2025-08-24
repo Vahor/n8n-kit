@@ -3,6 +3,7 @@
 
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "../credentials/MicrosoftOutlookOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftOutlookTriggerNodeParameters } from "../nodes/MicrosoftOutlookTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftOutlookTriggerProps extends NodeProps {
 /**
  * Fetches emails from Microsoft Outlook and starts the workflow on specified polling intervals.
  */
-export class MicrosoftOutlookTrigger<L extends string> extends Node<L> {
+export class MicrosoftOutlookTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftOutlookTrigger" as const;
     protected typeVersion = 1 as const;
 

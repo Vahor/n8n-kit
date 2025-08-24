@@ -3,7 +3,7 @@
 
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsGoogleVertexNodeParameters } from "../nodes/EmbeddingsGoogleVertex";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface EmbeddingsGoogleVertexProps extends NodeProps {
 /**
  * Use Google Vertex Embeddings
  */
-export class EmbeddingsGoogleVertex<L extends string> extends Node<L> {
+export class EmbeddingsGoogleVertex<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsGoogleVertex" as const;
     protected typeVersion = 1 as const;
 

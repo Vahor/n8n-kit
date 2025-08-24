@@ -3,6 +3,7 @@
 
 import type { FacebookGraphApiCredentials } from "../credentials/FacebookGraphApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FacebookGraphApiNodeParameters } from "../nodes/FacebookGraphApi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface FacebookGraphApiProps extends NodeProps {
 /**
  * Interacts with Facebook using the Graph API
  */
-export class FacebookGraphApi<L extends string> extends Node<L> {
+export class FacebookGraphApi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.facebookGraphApi" as const;
     protected typeVersion = 1 as const;
 

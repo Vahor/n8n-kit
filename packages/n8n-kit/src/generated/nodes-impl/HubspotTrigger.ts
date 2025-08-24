@@ -3,6 +3,7 @@
 
 import type { HubspotDeveloperApiCredentials } from "../credentials/HubspotDeveloperApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HubspotTriggerNodeParameters } from "../nodes/HubspotTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface HubspotTriggerProps extends NodeProps {
 /**
  * Starts the workflow when HubSpot events occur
  */
-export class HubspotTrigger<L extends string> extends Node<L> {
+export class HubspotTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.hubspotTrigger" as const;
     protected typeVersion = 1 as const;
 

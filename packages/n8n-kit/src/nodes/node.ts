@@ -46,7 +46,10 @@ export abstract class Node<
 	readonly endStates: INextable[];
 
 	public getParameters() {
-		return this.props?.parameters ?? {};
+		const p = this.props?.parameters;
+		if (p == null) return undefined;
+		if (Object.keys(p).length === 0) return undefined;
+		return p;
 	}
 
 	public getCredentials(): Array<Credentials<any> | undefined> | undefined {
@@ -92,6 +95,7 @@ export abstract class Node<
 	private credentialsToNode() {
 		const credentials = this.getCredentials();
 		if (!credentials) return undefined;
+		if (credentials.filter(Boolean).length === 0) return undefined;
 		return Object.fromEntries(
 			credentials
 				.filter(Boolean)

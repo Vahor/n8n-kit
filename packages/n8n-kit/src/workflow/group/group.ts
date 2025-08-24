@@ -14,7 +14,7 @@ export class Group<
 	LiteralId extends string,
 	C_CC extends ChainContext = {},
 	C_Ids extends string[] = [],
-> extends StickyNote {
+> extends StickyNote<LiteralId> {
 	constructor(
 		workflow: Workflow,
 		id: LiteralId,

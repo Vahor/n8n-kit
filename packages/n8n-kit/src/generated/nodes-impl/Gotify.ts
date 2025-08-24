@@ -3,6 +3,7 @@
 
 import type { GotifyApiCredentials } from "../credentials/GotifyApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GotifyNodeParameters } from "../nodes/Gotify";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GotifyProps extends NodeProps {
 /**
  * Consume Gotify API
  */
-export class Gotify<L extends string> extends Node<L> {
+export class Gotify<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gotify" as const;
     protected typeVersion = 1 as const;
 

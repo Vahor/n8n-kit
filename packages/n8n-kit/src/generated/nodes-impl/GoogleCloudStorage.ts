@@ -3,6 +3,7 @@
 
 import type { GoogleCloudStorageOAuth2ApiCredentials } from "../credentials/GoogleCloudStorageOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleCloudStorageNodeParameters } from "../nodes/GoogleCloudStorage";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleCloudStorageProps extends NodeProps {
 /**
  * Use the Google Cloud Storage API
  */
-export class GoogleCloudStorage<L extends string> extends Node<L> {
+export class GoogleCloudStorage<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleCloudStorage" as const;
     protected typeVersion = 1 as const;
 

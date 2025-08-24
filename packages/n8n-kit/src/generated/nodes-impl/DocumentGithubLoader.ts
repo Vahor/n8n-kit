@@ -3,7 +3,7 @@
 
 import type { GithubApiCredentials } from "../credentials/GithubApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { DocumentGithubLoaderNodeParameters } from "../nodes/DocumentGithubLoader";
@@ -17,7 +17,7 @@ export interface DocumentGithubLoaderProps extends NodeProps {
 /**
  * Use GitHub data as input to this chain
  */
-export class DocumentGithubLoader<L extends string> extends Node<L> {
+export class DocumentGithubLoader<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.documentGithubLoader" as const;
     protected typeVersion = 1.1 as const;
 

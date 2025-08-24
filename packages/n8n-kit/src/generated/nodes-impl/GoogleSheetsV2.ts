@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleSheetsOAuth2ApiCredentials } from "../credentials/GoogleSheetsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleSheetsV2NodeParameters } from "../nodes/GoogleSheetsV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleSheetsV2Props extends NodeProps {
 /**
  * Read, update and write data to Google Sheets
  */
-export class GoogleSheetsV2<L extends string> extends Node<L> {
+export class GoogleSheetsV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleSheets" as const;
     protected typeVersion = 4.7 as const;
 

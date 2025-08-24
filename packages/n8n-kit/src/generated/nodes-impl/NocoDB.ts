@@ -4,6 +4,7 @@
 import type { NocoDbCredentials } from "../credentials/NocoDb.ts";
 import type { NocoDbApiTokenCredentials } from "../credentials/NocoDbApiToken.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NocoDBNodeParameters } from "../nodes/NocoDB";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface NocoDBProps extends NodeProps {
 /**
  * Read, update, write and delete data from NocoDB
  */
-export class NocoDB<L extends string> extends Node<L> {
+export class NocoDB<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.nocoDb" as const;
     protected typeVersion = 3 as const;
 

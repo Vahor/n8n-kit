@@ -3,6 +3,7 @@
 
 import type { LineNotifyOAuth2ApiCredentials } from "../credentials/LineNotifyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { LineNodeParameters } from "../nodes/Line";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface LineProps extends NodeProps {
 /**
  * Consume Line API
  */
-export class Line<L extends string> extends Node<L> {
+export class Line<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.line" as const;
     protected typeVersion = 1 as const;
 

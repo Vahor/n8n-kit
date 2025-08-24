@@ -5,6 +5,7 @@ import type { HubspotApiCredentials } from "../credentials/HubspotApi.ts";
 import type { HubspotAppTokenCredentials } from "../credentials/HubspotAppToken.ts";
 import type { HubspotOAuth2ApiCredentials } from "../credentials/HubspotOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HubspotV1NodeParameters } from "../nodes/HubspotV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -18,7 +19,7 @@ export interface HubspotV1Props extends NodeProps {
 /**
  * Consume HubSpot API
  */
-export class HubspotV1<L extends string> extends Node<L> {
+export class HubspotV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.hubspot" as const;
     protected typeVersion = 1 as const;
 

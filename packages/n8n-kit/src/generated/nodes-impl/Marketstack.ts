@@ -3,6 +3,7 @@
 
 import type { MarketstackApiCredentials } from "../credentials/MarketstackApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MarketstackNodeParameters } from "../nodes/Marketstack";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MarketstackProps extends NodeProps {
 /**
  * Consume Marketstack API
  */
-export class Marketstack<L extends string> extends Node<L> {
+export class Marketstack<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.marketstack" as const;
     protected typeVersion = 1 as const;
 

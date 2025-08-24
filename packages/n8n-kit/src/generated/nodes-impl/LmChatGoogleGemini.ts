@@ -3,7 +3,7 @@
 
 import type { GooglePalmApiCredentials } from "../credentials/GooglePalmApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatGoogleGeminiNodeParameters } from "../nodes/LmChatGoogleGemini";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatGoogleGeminiProps extends NodeProps {
 /**
  * Chat Model Google Gemini
  */
-export class LmChatGoogleGemini<L extends string> extends Node<L> {
+export class LmChatGoogleGemini<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatGoogleGemini" as const;
     protected typeVersion = 1 as const;
 

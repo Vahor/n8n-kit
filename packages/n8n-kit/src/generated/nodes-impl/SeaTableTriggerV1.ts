@@ -3,6 +3,7 @@
 
 import type { SeaTableApiCredentials } from "../credentials/SeaTableApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SeaTableTriggerV1NodeParameters } from "../nodes/SeaTableTriggerV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SeaTableTriggerV1Props extends NodeProps {
 /**
  * Starts the workflow when SeaTable events occur
  */
-export class SeaTableTriggerV1<L extends string> extends Node<L> {
+export class SeaTableTriggerV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.seaTableTrigger" as const;
     protected typeVersion = 1 as const;
 

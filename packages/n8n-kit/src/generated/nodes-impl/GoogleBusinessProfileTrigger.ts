@@ -3,6 +3,7 @@
 
 import type { GoogleBusinessProfileOAuth2ApiCredentials } from "../credentials/GoogleBusinessProfileOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleBusinessProfileTriggerNodeParameters } from "../nodes/GoogleBusinessProfileTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleBusinessProfileTriggerProps extends NodeProps {
 /**
  * Fetches reviews from Google Business Profile and starts the workflow on specified polling intervals.
  */
-export class GoogleBusinessProfileTrigger<L extends string> extends Node<L> {
+export class GoogleBusinessProfileTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleBusinessProfileTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { ClearbitApiCredentials } from "../credentials/ClearbitApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ClearbitNodeParameters } from "../nodes/Clearbit";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ClearbitProps extends NodeProps {
 /**
  * Consume Clearbit API
  */
-export class Clearbit<L extends string> extends Node<L> {
+export class Clearbit<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.clearbit" as const;
     protected typeVersion = 1 as const;
 

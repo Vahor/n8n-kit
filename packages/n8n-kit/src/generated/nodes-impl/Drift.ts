@@ -4,6 +4,7 @@
 import type { DriftApiCredentials } from "../credentials/DriftApi.ts";
 import type { DriftOAuth2ApiCredentials } from "../credentials/DriftOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { DriftNodeParameters } from "../nodes/Drift";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface DriftProps extends NodeProps {
 /**
  * Consume Drift API
  */
-export class Drift<L extends string> extends Node<L> {
+export class Drift<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.drift" as const;
     protected typeVersion = 1 as const;
 

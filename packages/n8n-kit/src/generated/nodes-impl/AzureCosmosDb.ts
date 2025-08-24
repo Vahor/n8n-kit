@@ -3,6 +3,7 @@
 
 import type { MicrosoftAzureCosmosDbSharedKeyApiCredentials } from "../credentials/MicrosoftAzureCosmosDbSharedKeyApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AzureCosmosDbNodeParameters } from "../nodes/AzureCosmosDb";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AzureCosmosDbProps extends NodeProps {
 /**
  * Interact with Azure Cosmos DB API
  */
-export class AzureCosmosDb<L extends string> extends Node<L> {
+export class AzureCosmosDb<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.azureCosmosDb" as const;
     protected typeVersion = 1 as const;
 

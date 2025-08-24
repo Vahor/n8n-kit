@@ -3,6 +3,7 @@
 
 import type { KeapOAuth2ApiCredentials } from "../credentials/KeapOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { KeapTriggerNodeParameters } from "../nodes/KeapTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface KeapTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Infusionsoft events occur
  */
-export class KeapTrigger<L extends string> extends Node<L> {
+export class KeapTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.keapTrigger" as const;
     protected typeVersion = 1 as const;
 

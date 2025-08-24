@@ -3,6 +3,7 @@
 
 import type { EgoiApiCredentials } from "../credentials/EgoiApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { EgoiNodeParameters } from "../nodes/Egoi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface EgoiProps extends NodeProps {
 /**
  * Consume E-goi API
  */
-export class Egoi<L extends string> extends Node<L> {
+export class Egoi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.egoi" as const;
     protected typeVersion = 1 as const;
 

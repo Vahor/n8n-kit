@@ -4,6 +4,7 @@
 import type { NextCloudApiCredentials } from "../credentials/NextCloudApi.ts";
 import type { NextCloudOAuth2ApiCredentials } from "../credentials/NextCloudOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NextCloudNodeParameters } from "../nodes/NextCloud";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface NextCloudProps extends NodeProps {
 /**
  * Access data on Nextcloud
  */
-export class NextCloud<L extends string> extends Node<L> {
+export class NextCloud<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.nextCloud" as const;
     protected typeVersion = 1 as const;
 

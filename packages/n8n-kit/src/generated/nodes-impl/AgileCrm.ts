@@ -3,6 +3,7 @@
 
 import type { AgileCrmApiCredentials } from "../credentials/AgileCrmApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AgileCrmNodeParameters } from "../nodes/AgileCrm";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AgileCrmProps extends NodeProps {
 /**
  * Consume Agile CRM API
  */
-export class AgileCrm<L extends string> extends Node<L> {
+export class AgileCrm<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.agileCrm" as const;
     protected typeVersion = 1 as const;
 

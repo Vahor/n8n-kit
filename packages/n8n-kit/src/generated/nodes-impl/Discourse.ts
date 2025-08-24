@@ -3,6 +3,7 @@
 
 import type { DiscourseApiCredentials } from "../credentials/DiscourseApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { DiscourseNodeParameters } from "../nodes/Discourse";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface DiscourseProps extends NodeProps {
 /**
  * Consume Discourse API
  */
-export class Discourse<L extends string> extends Node<L> {
+export class Discourse<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.discourse" as const;
     protected typeVersion = 1 as const;
 

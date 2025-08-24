@@ -3,6 +3,7 @@
 
 import type { InvoiceNinjaApiCredentials } from "../credentials/InvoiceNinjaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { InvoiceNinjaNodeParameters } from "../nodes/InvoiceNinja";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface InvoiceNinjaProps extends NodeProps {
 /**
  * Consume Invoice Ninja API
  */
-export class InvoiceNinja<L extends string> extends Node<L> {
+export class InvoiceNinja<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.invoiceNinja" as const;
     protected typeVersion = 2 as const;
 

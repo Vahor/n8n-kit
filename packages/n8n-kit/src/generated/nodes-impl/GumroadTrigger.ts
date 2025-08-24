@@ -3,6 +3,7 @@
 
 import type { GumroadApiCredentials } from "../credentials/GumroadApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GumroadTriggerNodeParameters } from "../nodes/GumroadTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GumroadTriggerProps extends NodeProps {
 /**
  * Handle Gumroad events via webhooks
  */
-export class GumroadTrigger<L extends string> extends Node<L> {
+export class GumroadTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gumroadTrigger" as const;
     protected typeVersion = 1 as const;
 

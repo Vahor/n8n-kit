@@ -3,6 +3,7 @@
 
 import type { FlowApiCredentials } from "../credentials/FlowApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FlowTriggerNodeParameters } from "../nodes/FlowTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface FlowTriggerProps extends NodeProps {
 /**
  * Handle Flow events via webhooks
  */
-export class FlowTrigger<L extends string> extends Node<L> {
+export class FlowTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.flowTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { SpotifyOAuth2ApiCredentials } from "../credentials/SpotifyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SpotifyNodeParameters } from "../nodes/Spotify";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SpotifyProps extends NodeProps {
 /**
  * Access public song data via the Spotify API
  */
-export class Spotify<L extends string> extends Node<L> {
+export class Spotify<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.spotify" as const;
     protected typeVersion = 1 as const;
 

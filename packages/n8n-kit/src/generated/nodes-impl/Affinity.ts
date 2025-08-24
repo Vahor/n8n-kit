@@ -3,6 +3,7 @@
 
 import type { AffinityApiCredentials } from "../credentials/AffinityApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AffinityNodeParameters } from "../nodes/Affinity";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AffinityProps extends NodeProps {
 /**
  * Consume Affinity API
  */
-export class Affinity<L extends string> extends Node<L> {
+export class Affinity<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.affinity" as const;
     protected typeVersion = 1 as const;
 

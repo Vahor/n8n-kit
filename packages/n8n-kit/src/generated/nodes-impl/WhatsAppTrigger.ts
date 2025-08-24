@@ -3,6 +3,7 @@
 
 import type { WhatsAppTriggerApiCredentials } from "../credentials/WhatsAppTriggerApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WhatsAppTriggerNodeParameters } from "../nodes/WhatsAppTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface WhatsAppTriggerProps extends NodeProps {
 /**
  * Handle WhatsApp events via webhooks
  */
-export class WhatsAppTrigger<L extends string> extends Node<L> {
+export class WhatsAppTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.whatsAppTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { CockpitApiCredentials } from "../credentials/CockpitApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CockpitNodeParameters } from "../nodes/Cockpit";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CockpitProps extends NodeProps {
 /**
  * Consume Cockpit API
  */
-export class Cockpit<L extends string> extends Node<L> {
+export class Cockpit<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.cockpit" as const;
     protected typeVersion = 1 as const;
 

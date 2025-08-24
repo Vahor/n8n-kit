@@ -3,6 +3,7 @@
 
 import type { PostgresCredentials } from "../credentials/Postgres.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { PostgresTriggerNodeParameters } from "../nodes/PostgresTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface PostgresTriggerProps extends NodeProps {
 /**
  * Listens to Postgres messages
  */
-export class PostgresTrigger<L extends string> extends Node<L> {
+export class PostgresTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.postgresTrigger" as const;
     protected typeVersion = 1 as const;
 

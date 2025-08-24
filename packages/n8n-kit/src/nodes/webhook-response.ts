@@ -1,8 +1,5 @@
-import {
-	type RespondToWebhookNodeParameters,
-	type,
-	version,
-} from "../generated/nodes/RespondToWebhook";
+import type { RespondToWebhookNodeParameters } from "../generated/nodes/RespondToWebhook";
+import { RespondToWebhook as _WebhookResponse } from "../generated/nodes-impl/RespondToWebhook";
 import { ExpressionBuilder, recursiveExpression } from "../workflow";
 import { Node, type NodeProps } from "./node";
 
@@ -12,15 +9,13 @@ export interface WebhookResponseProps extends NodeProps {
 	};
 }
 
-export class WebhookResponse<L extends string> extends Node<L, never> {
-	protected override type = type;
-	protected override typeVersion = version;
-
+// @ts-expect-error: we override the parameters type
+export class WebhookResponse<L extends string> extends _WebhookResponse<L> {
 	constructor(
 		id: L,
 		override props: WebhookResponseProps,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 
 	override "~validate"(): void {

@@ -3,6 +3,7 @@
 
 import type { NotionApiCredentials } from "../credentials/NotionApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NotionV1NodeParameters } from "../nodes/NotionV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface NotionV1Props extends NodeProps {
 /**
  * Consume Notion API
  */
-export class NotionV1<L extends string> extends Node<L> {
+export class NotionV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.notion" as const;
     protected typeVersion = 1 as const;
 

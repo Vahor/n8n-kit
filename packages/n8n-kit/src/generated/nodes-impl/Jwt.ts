@@ -3,6 +3,7 @@
 
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { JwtNodeParameters } from "../nodes/Jwt";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface JwtProps extends NodeProps {
 /**
  * JWT
  */
-export class Jwt<L extends string> extends Node<L> {
+export class Jwt<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.jwt" as const;
     protected typeVersion = 1 as const;
 

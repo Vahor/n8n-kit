@@ -4,6 +4,7 @@
 import type { AsanaApiCredentials } from "../credentials/AsanaApi.ts";
 import type { AsanaOAuth2ApiCredentials } from "../credentials/AsanaOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AsanaNodeParameters } from "../nodes/Asana";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface AsanaProps extends NodeProps {
 /**
  * Consume Asana REST API
  */
-export class Asana<L extends string> extends Node<L> {
+export class Asana<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.asana" as const;
     protected typeVersion = 1 as const;
 

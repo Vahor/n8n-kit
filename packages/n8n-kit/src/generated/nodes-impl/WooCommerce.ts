@@ -3,6 +3,7 @@
 
 import type { WooCommerceApiCredentials } from "../credentials/WooCommerceApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WooCommerceNodeParameters } from "../nodes/WooCommerce";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface WooCommerceProps extends NodeProps {
 /**
  * Consume WooCommerce API
  */
-export class WooCommerce<L extends string> extends Node<L> {
+export class WooCommerce<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.wooCommerce" as const;
     protected typeVersion = 1 as const;
 

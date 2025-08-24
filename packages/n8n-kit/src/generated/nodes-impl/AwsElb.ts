@@ -3,6 +3,7 @@
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AwsElbNodeParameters } from "../nodes/AwsElb";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AwsElbProps extends NodeProps {
 /**
  * Sends data to AWS ELB API
  */
-export class AwsElb<L extends string> extends Node<L> {
+export class AwsElb<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsElb" as const;
     protected typeVersion = 1 as const;
 

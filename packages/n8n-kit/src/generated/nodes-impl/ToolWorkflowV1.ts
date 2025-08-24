@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolWorkflowV1NodeParameters } from "../nodes/ToolWorkflowV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -12,7 +12,7 @@ export interface ToolWorkflowV1Props extends NodeProps {
 /**
  * Uses another n8n workflow as a tool. Allows packaging any n8n node(s) as a tool.
  */
-export class ToolWorkflowV1<L extends string> extends Node<L> {
+export class ToolWorkflowV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolWorkflow" as const;
     protected typeVersion = 1.3 as const;
 

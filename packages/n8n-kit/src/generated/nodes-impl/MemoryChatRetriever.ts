@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { MemoryChatRetrieverNodeParameters } from "../nodes/MemoryChatRetriever";
@@ -13,7 +14,7 @@ export interface MemoryChatRetrieverProps extends NodeProps {
 /**
  * Retrieve chat messages from memory and use them in the workflow
  */
-export class MemoryChatRetriever<L extends string> extends Node<L> {
+export class MemoryChatRetriever<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryChatRetriever" as const;
     protected typeVersion = 1 as const;
 

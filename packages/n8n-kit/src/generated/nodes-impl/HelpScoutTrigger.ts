@@ -3,6 +3,7 @@
 
 import type { HelpScoutOAuth2ApiCredentials } from "../credentials/HelpScoutOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HelpScoutTriggerNodeParameters } from "../nodes/HelpScoutTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface HelpScoutTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Help Scout events occur
  */
-export class HelpScoutTrigger<L extends string> extends Node<L> {
+export class HelpScoutTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.helpScoutTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { MqttCredentials } from "../credentials/Mqtt.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MqttTriggerNodeParameters } from "../nodes/MqttTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MqttTriggerProps extends NodeProps {
 /**
  * Listens to MQTT events
  */
-export class MqttTrigger<L extends string> extends Node<L> {
+export class MqttTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mqttTrigger" as const;
     protected typeVersion = 1 as const;
 

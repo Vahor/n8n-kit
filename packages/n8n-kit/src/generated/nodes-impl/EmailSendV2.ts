@@ -3,6 +3,7 @@
 
 import type { SmtpCredentials } from "../credentials/Smtp.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { EmailSendV2NodeParameters } from "../nodes/EmailSendV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface EmailSendV2Props extends NodeProps {
 /**
  * Sends an email using SMTP protocol
  */
-export class EmailSendV2<L extends string> extends Node<L> {
+export class EmailSendV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.emailSend" as const;
     protected typeVersion = 2.1 as const;
 

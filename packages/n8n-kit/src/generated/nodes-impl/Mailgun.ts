@@ -3,6 +3,7 @@
 
 import type { MailgunApiCredentials } from "../credentials/MailgunApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MailgunNodeParameters } from "../nodes/Mailgun";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MailgunProps extends NodeProps {
 /**
  * Sends an email via Mailgun
  */
-export class Mailgun<L extends string> extends Node<L> {
+export class Mailgun<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mailgun" as const;
     protected typeVersion = 1 as const;
 

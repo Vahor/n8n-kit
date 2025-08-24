@@ -3,7 +3,7 @@
 
 import type { OpenRouterApiCredentials } from "../credentials/OpenRouterApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatOpenRouterNodeParameters } from "../nodes/LmChatOpenRouter";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatOpenRouterProps extends NodeProps {
 /**
  * For advanced usage with an AI chain
  */
-export class LmChatOpenRouter<L extends string> extends Node<L> {
+export class LmChatOpenRouter<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatOpenRouter" as const;
     protected typeVersion = 1 as const;
 

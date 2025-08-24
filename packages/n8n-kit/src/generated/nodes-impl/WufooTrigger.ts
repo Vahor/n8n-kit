@@ -3,6 +3,7 @@
 
 import type { WufooApiCredentials } from "../credentials/WufooApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WufooTriggerNodeParameters } from "../nodes/WufooTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface WufooTriggerProps extends NodeProps {
 /**
  * Handle Wufoo events via webhooks
  */
-export class WufooTrigger<L extends string> extends Node<L> {
+export class WufooTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.wufooTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { GoogleBusinessProfileOAuth2ApiCredentials } from "../credentials/GoogleBusinessProfileOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleBusinessProfileNodeParameters } from "../nodes/GoogleBusinessProfile";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleBusinessProfileProps extends NodeProps {
 /**
  * Consume Google Business Profile API
  */
-export class GoogleBusinessProfile<L extends string> extends Node<L> {
+export class GoogleBusinessProfile<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleBusinessProfile" as const;
     protected typeVersion = 1 as const;
 

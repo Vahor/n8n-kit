@@ -3,6 +3,7 @@
 
 import type { TwitterOAuth2ApiCredentials } from "../credentials/TwitterOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TwitterV2NodeParameters } from "../nodes/TwitterV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TwitterV2Props extends NodeProps {
 /**
  * Post, like, and search tweets, send messages, search users, and add users to lists
  */
-export class TwitterV2<L extends string> extends Node<L> {
+export class TwitterV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.twitter" as const;
     protected typeVersion = 2 as const;
 

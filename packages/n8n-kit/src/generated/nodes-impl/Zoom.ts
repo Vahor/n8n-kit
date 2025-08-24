@@ -4,6 +4,7 @@
 import type { ZoomApiCredentials } from "../credentials/ZoomApi.ts";
 import type { ZoomOAuth2ApiCredentials } from "../credentials/ZoomOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ZoomNodeParameters } from "../nodes/Zoom";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface ZoomProps extends NodeProps {
 /**
  * Consume Zoom API
  */
-export class Zoom<L extends string> extends Node<L> {
+export class Zoom<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.zoom" as const;
     protected typeVersion = 1 as const;
 

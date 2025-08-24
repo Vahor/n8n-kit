@@ -3,7 +3,7 @@
 
 import type { XAiApiCredentials } from "../credentials/XAiApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatXAiGrokNodeParameters } from "../nodes/LmChatXAiGrok";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatXAiGrokProps extends NodeProps {
 /**
  * For advanced usage with an AI chain
  */
-export class LmChatXAiGrok<L extends string> extends Node<L> {
+export class LmChatXAiGrok<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatXAiGrok" as const;
     protected typeVersion = 1 as const;
 

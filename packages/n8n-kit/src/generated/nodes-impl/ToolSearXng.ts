@@ -3,7 +3,7 @@
 
 import type { SearXngApiCredentials } from "../credentials/SearXngApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolSearXngNodeParameters } from "../nodes/ToolSearXng";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface ToolSearXngProps extends NodeProps {
 /**
  * Search in SearXNG
  */
-export class ToolSearXng<L extends string> extends Node<L> {
+export class ToolSearXng<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolSearXng" as const;
     protected typeVersion = 1 as const;
 

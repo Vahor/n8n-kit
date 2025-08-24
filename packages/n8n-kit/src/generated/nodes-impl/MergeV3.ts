@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { MergeV3NodeParameters } from "../nodes/MergeV3";
@@ -13,7 +14,7 @@ export interface MergeV3Props extends NodeProps {
 /**
  * Merges data of multiple streams once data from both is available
  */
-export class MergeV3<L extends string> extends Node<L> {
+export class MergeV3<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.merge" as const;
     protected typeVersion = 3.2 as const;
 

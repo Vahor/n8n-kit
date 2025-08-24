@@ -3,7 +3,7 @@
 
 import type { AnthropicApiCredentials } from "../credentials/AnthropicApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatAnthropicNodeParameters } from "../nodes/LmChatAnthropic";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatAnthropicProps extends NodeProps {
 /**
  * Language Model Anthropic
  */
-export class LmChatAnthropic<L extends string> extends Node<L> {
+export class LmChatAnthropic<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatAnthropic" as const;
     protected typeVersion = 1.3 as const;
 

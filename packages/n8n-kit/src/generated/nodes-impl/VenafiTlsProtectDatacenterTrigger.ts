@@ -3,6 +3,7 @@
 
 import type { VenafiTlsProtectDatacenterApiCredentials } from "../credentials/VenafiTlsProtectDatacenterApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { VenafiTlsProtectDatacenterTriggerNodeParameters } from "../nodes/VenafiTlsProtectDatacenterTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface VenafiTlsProtectDatacenterTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Venafi events occur
  */
-export class VenafiTlsProtectDatacenterTrigger<L extends string> extends Node<L> {
+export class VenafiTlsProtectDatacenterTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.venafiTlsProtectDatacenterTrigger" as const;
     protected typeVersion = 1 as const;
 

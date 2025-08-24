@@ -3,7 +3,7 @@
 
 import type { CohereApiCredentials } from "../credentials/CohereApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { RerankerCohereNodeParameters } from "../nodes/RerankerCohere";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface RerankerCohereProps extends NodeProps {
 /**
  * Use Cohere Reranker to reorder documents after retrieval from a vector store by relevance to the given query.
  */
-export class RerankerCohere<L extends string> extends Node<L> {
+export class RerankerCohere<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.rerankerCohere" as const;
     protected typeVersion = 1 as const;
 

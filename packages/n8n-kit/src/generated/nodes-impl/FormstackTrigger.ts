@@ -4,6 +4,7 @@
 import type { FormstackApiCredentials } from "../credentials/FormstackApi.ts";
 import type { FormstackOAuth2ApiCredentials } from "../credentials/FormstackOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FormstackTriggerNodeParameters } from "../nodes/FormstackTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface FormstackTriggerProps extends NodeProps {
 /**
  * Starts the workflow on a Formstack form submission.
  */
-export class FormstackTrigger<L extends string> extends Node<L> {
+export class FormstackTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.formstackTrigger" as const;
     protected typeVersion = 1 as const;
 

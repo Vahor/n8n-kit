@@ -3,6 +3,7 @@
 
 import type { GoogleAnalyticsOAuth2ApiCredentials } from "../credentials/GoogleAnalyticsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleAnalyticsV1NodeParameters } from "../nodes/GoogleAnalyticsV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleAnalyticsV1Props extends NodeProps {
 /**
  * Use the Google Analytics API
  */
-export class GoogleAnalyticsV1<L extends string> extends Node<L> {
+export class GoogleAnalyticsV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleAnalytics" as const;
     protected typeVersion = 1 as const;
 

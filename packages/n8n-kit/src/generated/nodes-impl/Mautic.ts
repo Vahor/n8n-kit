@@ -4,6 +4,7 @@
 import type { MauticApiCredentials } from "../credentials/MauticApi.ts";
 import type { MauticOAuth2ApiCredentials } from "../credentials/MauticOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MauticNodeParameters } from "../nodes/Mautic";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface MauticProps extends NodeProps {
 /**
  * Consume Mautic API
  */
-export class Mautic<L extends string> extends Node<L> {
+export class Mautic<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mautic" as const;
     protected typeVersion = 1 as const;
 

@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryBufferWindowNodeParameters } from "../nodes/MemoryBufferWindow";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -12,7 +12,7 @@ export interface MemoryBufferWindowProps extends NodeProps {
 /**
  * Stores in n8n memory, so no credentials required
  */
-export class MemoryBufferWindow<L extends string> extends Node<L> {
+export class MemoryBufferWindow<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryBufferWindow" as const;
     protected typeVersion = 1.3 as const;
 

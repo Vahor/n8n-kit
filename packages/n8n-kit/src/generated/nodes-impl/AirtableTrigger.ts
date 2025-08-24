@@ -5,6 +5,7 @@ import type { AirtableApiCredentials } from "../credentials/AirtableApi.ts";
 import type { AirtableTokenApiCredentials } from "../credentials/AirtableTokenApi.ts";
 import type { AirtableOAuth2ApiCredentials } from "../credentials/AirtableOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AirtableTriggerNodeParameters } from "../nodes/AirtableTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -18,7 +19,7 @@ export interface AirtableTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Airtable events occur
  */
-export class AirtableTrigger<L extends string> extends Node<L> {
+export class AirtableTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.airtableTrigger" as const;
     protected typeVersion = 1 as const;
 

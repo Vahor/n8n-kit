@@ -3,6 +3,7 @@
 
 import type { DhlApiCredentials } from "../credentials/DhlApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { DhlNodeParameters } from "../nodes/Dhl";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface DhlProps extends NodeProps {
 /**
  * Consume DHL API
  */
-export class Dhl<L extends string> extends Node<L> {
+export class Dhl<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.dhl" as const;
     protected typeVersion = 1 as const;
 

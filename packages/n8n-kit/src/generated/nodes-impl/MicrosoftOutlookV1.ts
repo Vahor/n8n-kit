@@ -3,6 +3,7 @@
 
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "../credentials/MicrosoftOutlookOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftOutlookV1NodeParameters } from "../nodes/MicrosoftOutlookV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftOutlookV1Props extends NodeProps {
 /**
  * Consume Microsoft Outlook API
  */
-export class MicrosoftOutlookV1<L extends string> extends Node<L> {
+export class MicrosoftOutlookV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftOutlook" as const;
     protected typeVersion = 1 as const;
 

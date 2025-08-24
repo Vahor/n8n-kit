@@ -3,7 +3,7 @@
 
 import type { HuggingFaceApiCredentials } from "../credentials/HuggingFaceApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmOpenHuggingFaceInferenceNodeParameters } from "../nodes/LmOpenHuggingFaceInference";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmOpenHuggingFaceInferenceProps extends NodeProps {
 /**
  * Language Model HuggingFaceInference
  */
-export class LmOpenHuggingFaceInference<L extends string> extends Node<L> {
+export class LmOpenHuggingFaceInference<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference" as const;
     protected typeVersion = 1 as const;
 

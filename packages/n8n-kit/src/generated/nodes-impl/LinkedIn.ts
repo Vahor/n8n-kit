@@ -4,6 +4,7 @@
 import type { LinkedInOAuth2ApiCredentials } from "../credentials/LinkedInOAuth2Api.ts";
 import type { LinkedInCommunityManagementOAuth2ApiCredentials } from "../credentials/LinkedInCommunityManagementOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { LinkedInNodeParameters } from "../nodes/LinkedIn";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface LinkedInProps extends NodeProps {
 /**
  * Consume LinkedIn API
  */
-export class LinkedIn<L extends string> extends Node<L> {
+export class LinkedIn<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.linkedIn" as const;
     protected typeVersion = 1 as const;
 

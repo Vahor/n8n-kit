@@ -3,6 +3,7 @@
 
 import type { GoogleSheetsTriggerOAuth2ApiCredentials } from "../credentials/GoogleSheetsTriggerOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleSheetsTriggerNodeParameters } from "../nodes/GoogleSheetsTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleSheetsTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Google Sheets events occur
  */
-export class GoogleSheetsTrigger<L extends string> extends Node<L> {
+export class GoogleSheetsTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleSheetsTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolHttpRequestNodeParameters } from "../nodes/ToolHttpRequest";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -12,7 +12,7 @@ export interface ToolHttpRequestProps extends NodeProps {
 /**
  * Makes an HTTP request and returns the response data
  */
-export class ToolHttpRequest<L extends string> extends Node<L> {
+export class ToolHttpRequest<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolHttpRequest" as const;
     protected typeVersion = 1.1 as const;
 

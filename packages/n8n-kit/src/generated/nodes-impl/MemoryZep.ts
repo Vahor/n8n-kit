@@ -3,7 +3,7 @@
 
 import type { ZepApiCredentials } from "../credentials/ZepApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryZepNodeParameters } from "../nodes/MemoryZep";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface MemoryZepProps extends NodeProps {
 /**
  * Use Zep Memory
  */
-export class MemoryZep<L extends string> extends Node<L> {
+export class MemoryZep<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryZep" as const;
     protected typeVersion = 1.3 as const;
 

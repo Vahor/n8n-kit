@@ -3,6 +3,7 @@
 
 import type { EmeliaApiCredentials } from "../credentials/EmeliaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { EmeliaNodeParameters } from "../nodes/Emelia";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface EmeliaProps extends NodeProps {
 /**
  * Consume the Emelia API
  */
-export class Emelia<L extends string> extends Node<L> {
+export class Emelia<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.emelia" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { GoogleCloudNaturalLanguageOAuth2ApiCredentials } from "../credentials/GoogleCloudNaturalLanguageOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleCloudNaturalLanguageNodeParameters } from "../nodes/GoogleCloudNaturalLanguage";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleCloudNaturalLanguageProps extends NodeProps {
 /**
  * Consume Google Cloud Natural Language API
  */
-export class GoogleCloudNaturalLanguage<L extends string> extends Node<L> {
+export class GoogleCloudNaturalLanguage<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleCloudNaturalLanguage" as const;
     protected typeVersion = 1 as const;
 

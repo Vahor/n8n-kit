@@ -3,6 +3,7 @@
 
 import type { ElasticSecurityApiCredentials } from "../credentials/ElasticSecurityApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ElasticSecurityNodeParameters } from "../nodes/ElasticSecurity";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ElasticSecurityProps extends NodeProps {
 /**
  * Consume the Elastic Security API
  */
-export class ElasticSecurity<L extends string> extends Node<L> {
+export class ElasticSecurity<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.elasticSecurity" as const;
     protected typeVersion = 1 as const;
 

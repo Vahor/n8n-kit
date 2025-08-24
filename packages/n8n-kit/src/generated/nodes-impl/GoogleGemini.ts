@@ -3,6 +3,7 @@
 
 import type { GooglePalmApiCredentials } from "../credentials/GooglePalmApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { GoogleGeminiNodeParameters } from "../nodes/GoogleGemini";
@@ -16,7 +17,7 @@ export interface GoogleGeminiProps extends NodeProps {
 /**
  * Interact with Google Gemini AI models
  */
-export class GoogleGemini<L extends string> extends Node<L> {
+export class GoogleGemini<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.googleGemini" as const;
     protected typeVersion = 1 as const;
 

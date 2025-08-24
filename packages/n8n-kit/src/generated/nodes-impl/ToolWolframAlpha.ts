@@ -3,7 +3,7 @@
 
 import type { WolframAlphaApiCredentials } from "../credentials/WolframAlphaApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolWolframAlphaNodeParameters } from "../nodes/ToolWolframAlpha";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface ToolWolframAlphaProps extends NodeProps {
 /**
  * Connects to WolframAlpha's computational intelligence engine.
  */
-export class ToolWolframAlpha<L extends string> extends Node<L> {
+export class ToolWolframAlpha<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolWolframAlpha" as const;
     protected typeVersion = 1 as const;
 

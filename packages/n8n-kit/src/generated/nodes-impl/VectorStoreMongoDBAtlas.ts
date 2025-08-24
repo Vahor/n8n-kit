@@ -3,7 +3,7 @@
 
 import type { MongoDbCredentials } from "../credentials/MongoDb.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreMongoDBAtlasNodeParameters } from "../nodes/VectorStoreMongoDBAtlas";
@@ -17,7 +17,7 @@ export interface VectorStoreMongoDBAtlasProps extends NodeProps {
 /**
  * Work with your data in MongoDB Atlas Vector Store
  */
-export class VectorStoreMongoDBAtlas<L extends string> extends Node<L> {
+export class VectorStoreMongoDBAtlas<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas" as const;
     protected typeVersion = 1.3 as const;
 

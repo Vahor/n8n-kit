@@ -3,6 +3,7 @@
 
 import type { TotpApiCredentials } from "../credentials/TotpApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TotpNodeParameters } from "../nodes/Totp";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TotpProps extends NodeProps {
 /**
  * Generate a time-based one-time password
  */
-export class Totp<L extends string> extends Node<L> {
+export class Totp<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.totp" as const;
     protected typeVersion = 1 as const;
 

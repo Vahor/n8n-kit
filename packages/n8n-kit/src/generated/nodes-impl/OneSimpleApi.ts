@@ -3,6 +3,7 @@
 
 import type { OneSimpleApiCredentials } from "../credentials/OneSimpleApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { OneSimpleApiNodeParameters } from "../nodes/OneSimpleApi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface OneSimpleApiProps extends NodeProps {
 /**
  * A toolbox of no-code utilities
  */
-export class OneSimpleApi<L extends string> extends Node<L> {
+export class OneSimpleApi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.oneSimpleApi" as const;
     protected typeVersion = 1 as const;
 

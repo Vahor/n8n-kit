@@ -3,6 +3,7 @@
 
 import type { MicrosoftSharePointOAuth2ApiCredentials } from "../credentials/MicrosoftSharePointOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftSharePointNodeParameters } from "../nodes/MicrosoftSharePoint";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftSharePointProps extends NodeProps {
 /**
  * Interact with Microsoft SharePoint API
  */
-export class MicrosoftSharePoint<L extends string> extends Node<L> {
+export class MicrosoftSharePoint<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftSharePoint" as const;
     protected typeVersion = 1 as const;
 

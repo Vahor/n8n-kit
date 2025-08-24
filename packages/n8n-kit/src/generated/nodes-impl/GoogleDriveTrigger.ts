@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleDriveOAuth2ApiCredentials } from "../credentials/GoogleDriveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleDriveTriggerNodeParameters } from "../nodes/GoogleDriveTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleDriveTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Google Drive events occur
  */
-export class GoogleDriveTrigger<L extends string> extends Node<L> {
+export class GoogleDriveTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleDriveTrigger" as const;
     protected typeVersion = 1 as const;
 

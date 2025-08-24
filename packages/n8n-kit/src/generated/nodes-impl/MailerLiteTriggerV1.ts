@@ -3,6 +3,7 @@
 
 import type { MailerLiteApiCredentials } from "../credentials/MailerLiteApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MailerLiteTriggerV1NodeParameters } from "../nodes/MailerLiteTriggerV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MailerLiteTriggerV1Props extends NodeProps {
 /**
  * Starts the workflow when MailerLite events occur
  */
-export class MailerLiteTriggerV1<L extends string> extends Node<L> {
+export class MailerLiteTriggerV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mailerLiteTrigger" as const;
     protected typeVersion = 1 as const;
 

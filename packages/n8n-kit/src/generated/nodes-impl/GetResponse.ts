@@ -4,6 +4,7 @@
 import type { GetResponseApiCredentials } from "../credentials/GetResponseApi.ts";
 import type { GetResponseOAuth2ApiCredentials } from "../credentials/GetResponseOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GetResponseNodeParameters } from "../nodes/GetResponse";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GetResponseProps extends NodeProps {
 /**
  * Consume GetResponse API
  */
-export class GetResponse<L extends string> extends Node<L> {
+export class GetResponse<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.getResponse" as const;
     protected typeVersion = 1 as const;
 

@@ -4,6 +4,7 @@
 import type { CalendlyApiCredentials } from "../credentials/CalendlyApi.ts";
 import type { CalendlyOAuth2ApiCredentials } from "../credentials/CalendlyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CalendlyTriggerNodeParameters } from "../nodes/CalendlyTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface CalendlyTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Calendly events occur
  */
-export class CalendlyTrigger<L extends string> extends Node<L> {
+export class CalendlyTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.calendlyTrigger" as const;
     protected typeVersion = 1 as const;
 

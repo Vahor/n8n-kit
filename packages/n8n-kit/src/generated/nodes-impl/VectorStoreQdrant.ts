@@ -3,7 +3,7 @@
 
 import type { QdrantApiCredentials } from "../credentials/QdrantApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreQdrantNodeParameters } from "../nodes/VectorStoreQdrant";
@@ -17,7 +17,7 @@ export interface VectorStoreQdrantProps extends NodeProps {
 /**
  * Work with your data in a Qdrant collection
  */
-export class VectorStoreQdrant<L extends string> extends Node<L> {
+export class VectorStoreQdrant<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreQdrant" as const;
     protected typeVersion = 1.3 as const;
 

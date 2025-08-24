@@ -4,6 +4,7 @@
 import type { ZammadBasicAuthApiCredentials } from "../credentials/ZammadBasicAuthApi.ts";
 import type { ZammadTokenAuthApiCredentials } from "../credentials/ZammadTokenAuthApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ZammadNodeParameters } from "../nodes/Zammad";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface ZammadProps extends NodeProps {
 /**
  * Consume the Zammad API
  */
-export class Zammad<L extends string> extends Node<L> {
+export class Zammad<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.zammad" as const;
     protected typeVersion = 1 as const;
 

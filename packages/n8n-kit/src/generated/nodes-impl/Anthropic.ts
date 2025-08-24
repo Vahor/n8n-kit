@@ -3,6 +3,7 @@
 
 import type { AnthropicApiCredentials } from "../credentials/AnthropicApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AnthropicNodeParameters } from "../nodes/Anthropic";
@@ -16,7 +17,7 @@ export interface AnthropicProps extends NodeProps {
 /**
  * Interact with Anthropic AI models
  */
-export class Anthropic<L extends string> extends Node<L> {
+export class Anthropic<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.anthropic" as const;
     protected typeVersion = 1 as const;
 

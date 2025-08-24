@@ -3,6 +3,7 @@
 
 import type { BitwardenApiCredentials } from "../credentials/BitwardenApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { BitwardenNodeParameters } from "../nodes/Bitwarden";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface BitwardenProps extends NodeProps {
 /**
  * Consume the Bitwarden API
  */
-export class Bitwarden<L extends string> extends Node<L> {
+export class Bitwarden<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.bitwarden" as const;
     protected typeVersion = 1 as const;
 

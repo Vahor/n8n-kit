@@ -3,6 +3,7 @@
 
 import type { ZohoOAuth2ApiCredentials } from "../credentials/ZohoOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ZohoCrmNodeParameters } from "../nodes/ZohoCrm";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ZohoCrmProps extends NodeProps {
 /**
  * Consume Zoho CRM API
  */
-export class ZohoCrm<L extends string> extends Node<L> {
+export class ZohoCrm<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.zohoCrm" as const;
     protected typeVersion = 1 as const;
 

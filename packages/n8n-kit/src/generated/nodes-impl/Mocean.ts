@@ -3,6 +3,7 @@
 
 import type { MoceanApiCredentials } from "../credentials/MoceanApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MoceanNodeParameters } from "../nodes/Mocean";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MoceanProps extends NodeProps {
 /**
  * Send SMS and voice messages via Mocean
  */
-export class Mocean<L extends string> extends Node<L> {
+export class Mocean<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mocean" as const;
     protected typeVersion = 1 as const;
 

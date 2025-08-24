@@ -3,6 +3,7 @@
 
 import type { CalApiCredentials } from "../credentials/CalApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CalTriggerNodeParameters } from "../nodes/CalTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CalTriggerProps extends NodeProps {
 /**
  * Handle Cal.com events via webhooks
  */
-export class CalTrigger<L extends string> extends Node<L> {
+export class CalTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.calTrigger" as const;
     protected typeVersion = 2 as const;
 

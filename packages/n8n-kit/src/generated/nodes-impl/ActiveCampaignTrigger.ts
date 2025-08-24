@@ -3,6 +3,7 @@
 
 import type { ActiveCampaignApiCredentials } from "../credentials/ActiveCampaignApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ActiveCampaignTriggerNodeParameters } from "../nodes/ActiveCampaignTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ActiveCampaignTriggerProps extends NodeProps {
 /**
  * Handle ActiveCampaign events via webhooks
  */
-export class ActiveCampaignTrigger<L extends string> extends Node<L> {
+export class ActiveCampaignTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.activeCampaignTrigger" as const;
     protected typeVersion = 1 as const;
 

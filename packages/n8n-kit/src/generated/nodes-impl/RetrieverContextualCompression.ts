@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { RetrieverContextualCompressionNodeParameters } from "../nodes/RetrieverContextualCompression";
@@ -14,7 +14,7 @@ export interface RetrieverContextualCompressionProps extends NodeProps {
 /**
  * Enhances document similarity search by contextual compression.
  */
-export class RetrieverContextualCompression<L extends string> extends Node<L> {
+export class RetrieverContextualCompression<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.retrieverContextualCompression" as const;
     protected typeVersion = 1 as const;
 

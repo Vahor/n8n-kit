@@ -8,6 +8,7 @@ import type { HttpQueryAuthCredentials } from "../credentials/HttpQueryAuth.ts";
 import type { OAuth1ApiCredentials } from "../credentials/OAuth1Api.ts";
 import type { OAuth2ApiCredentials } from "../credentials/OAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HttpRequestV1NodeParameters } from "../nodes/HttpRequestV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -24,7 +25,7 @@ export interface HttpRequestV1Props extends NodeProps {
 /**
  * Makes an HTTP request and returns the response data
  */
-export class HttpRequestV1<L extends string> extends Node<L> {
+export class HttpRequestV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.httpRequest" as const;
     protected typeVersion = 1 as const;
 

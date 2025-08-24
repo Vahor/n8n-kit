@@ -4,6 +4,7 @@
 import type { FtpCredentials } from "../credentials/Ftp.ts";
 import type { SftpCredentials } from "../credentials/Sftp.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FtpNodeParameters } from "../nodes/Ftp";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface FtpProps extends NodeProps {
 /**
  * Transfer files via FTP or SFTP
  */
-export class Ftp<L extends string> extends Node<L> {
+export class Ftp<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ftp" as const;
     protected typeVersion = 1 as const;
 

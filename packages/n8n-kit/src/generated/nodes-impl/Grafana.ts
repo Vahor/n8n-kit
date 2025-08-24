@@ -3,6 +3,7 @@
 
 import type { GrafanaApiCredentials } from "../credentials/GrafanaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GrafanaNodeParameters } from "../nodes/Grafana";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GrafanaProps extends NodeProps {
 /**
  * Consume the Grafana API
  */
-export class Grafana<L extends string> extends Node<L> {
+export class Grafana<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.grafana" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { DemioApiCredentials } from "../credentials/DemioApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { DemioNodeParameters } from "../nodes/Demio";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface DemioProps extends NodeProps {
 /**
  * Consume the Demio API
  */
-export class Demio<L extends string> extends Node<L> {
+export class Demio<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.demio" as const;
     protected typeVersion = 1 as const;
 

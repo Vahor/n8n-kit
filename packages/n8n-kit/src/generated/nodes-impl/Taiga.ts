@@ -3,6 +3,7 @@
 
 import type { TaigaApiCredentials } from "../credentials/TaigaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TaigaNodeParameters } from "../nodes/Taiga";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TaigaProps extends NodeProps {
 /**
  * Consume Taiga API
  */
-export class Taiga<L extends string> extends Node<L> {
+export class Taiga<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.taiga" as const;
     protected typeVersion = 1 as const;
 

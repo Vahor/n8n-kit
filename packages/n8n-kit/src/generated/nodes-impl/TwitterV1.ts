@@ -3,6 +3,7 @@
 
 import type { TwitterOAuth1ApiCredentials } from "../credentials/TwitterOAuth1Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TwitterV1NodeParameters } from "../nodes/TwitterV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TwitterV1Props extends NodeProps {
 /**
  * Consume Twitter API
  */
-export class TwitterV1<L extends string> extends Node<L> {
+export class TwitterV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.twitter" as const;
     protected typeVersion = 1 as const;
 

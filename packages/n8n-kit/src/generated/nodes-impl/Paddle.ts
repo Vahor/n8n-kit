@@ -3,6 +3,7 @@
 
 import type { PaddleApiCredentials } from "../credentials/PaddleApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { PaddleNodeParameters } from "../nodes/Paddle";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface PaddleProps extends NodeProps {
 /**
  * Consume Paddle API
  */
-export class Paddle<L extends string> extends Node<L> {
+export class Paddle<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.paddle" as const;
     protected typeVersion = 1 as const;
 

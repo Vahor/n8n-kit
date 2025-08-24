@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleBigQueryOAuth2ApiCredentials } from "../credentials/GoogleBigQueryOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleBigQueryV2NodeParameters } from "../nodes/GoogleBigQueryV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleBigQueryV2Props extends NodeProps {
 /**
  * Consume Google BigQuery API
  */
-export class GoogleBigQueryV2<L extends string> extends Node<L> {
+export class GoogleBigQueryV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleBigQuery" as const;
     protected typeVersion = 2.1 as const;
 

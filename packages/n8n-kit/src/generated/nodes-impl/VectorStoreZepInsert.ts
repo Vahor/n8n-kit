@@ -3,6 +3,7 @@
 
 import type { ZepApiCredentials } from "../credentials/ZepApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreZepInsertNodeParameters } from "../nodes/VectorStoreZepInsert";
@@ -16,7 +17,7 @@ export interface VectorStoreZepInsertProps extends NodeProps {
 /**
  * Insert data into Zep Vector Store index
  */
-export class VectorStoreZepInsert<L extends string> extends Node<L> {
+export class VectorStoreZepInsert<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreZepInsert" as const;
     protected typeVersion = 1 as const;
 

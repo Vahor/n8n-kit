@@ -3,6 +3,7 @@
 
 import type { ActionNetworkApiCredentials } from "../credentials/ActionNetworkApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ActionNetworkNodeParameters } from "../nodes/ActionNetwork";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ActionNetworkProps extends NodeProps {
 /**
  * Consume the Action Network API
  */
-export class ActionNetwork<L extends string> extends Node<L> {
+export class ActionNetwork<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.actionNetwork" as const;
     protected typeVersion = 1 as const;
 

@@ -4,7 +4,7 @@
 import type { HttpBearerAuthCredentials } from "../credentials/HttpBearerAuth.ts";
 import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { McpClientToolNodeParameters } from "../nodes/McpClientTool";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -17,7 +17,7 @@ export interface McpClientToolProps extends NodeProps {
 /**
  * Connect tools from an MCP Server
  */
-export class McpClientTool<L extends string> extends Node<L> {
+export class McpClientTool<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;
     protected typeVersion = 1.1 as const;
 

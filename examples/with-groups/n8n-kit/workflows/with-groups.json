@@ -7,40 +7,35 @@
 			"name": "When clicking ‘Test workflow’",
 			"type": "n8n-nodes-base.manualTrigger",
 			"position": [60, 180],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "inside group 1",
 			"name": "inside group 1",
 			"type": "n8n-nodes-base.noOp",
 			"position": [420, 60],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "inside group 2",
 			"name": "inside group 2",
 			"type": "n8n-nodes-base.noOp",
 			"position": [780, 300],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "inside group 1 - 2",
 			"name": "inside group 1 - 2",
 			"type": "n8n-nodes-base.noOp",
 			"position": [780, 60],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "after groups",
 			"name": "after groups",
 			"type": "n8n-nodes-base.noOp",
 			"position": [1140, 180],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "group-1",

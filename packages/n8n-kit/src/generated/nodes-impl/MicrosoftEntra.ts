@@ -3,6 +3,7 @@
 
 import type { MicrosoftEntraOAuth2ApiCredentials } from "../credentials/MicrosoftEntraOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftEntraNodeParameters } from "../nodes/MicrosoftEntra";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftEntraProps extends NodeProps {
 /**
  * Interact with Microsoft Entra ID API
  */
-export class MicrosoftEntra<L extends string> extends Node<L> {
+export class MicrosoftEntra<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftEntra" as const;
     protected typeVersion = 1 as const;
 

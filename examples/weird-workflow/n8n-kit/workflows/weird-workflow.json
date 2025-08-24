@@ -48,8 +48,7 @@
 			"name": "invalid-entity-id",
 			"type": "n8n-nodes-base.noOp",
 			"position": [780, 60],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "check-valid-execution-type",
@@ -96,16 +95,14 @@
 			"name": "invalid-execution-type",
 			"type": "n8n-nodes-base.noOp",
 			"position": [1140, 300],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "nooo",
 			"name": "nooo",
 			"type": "n8n-nodes-base.noOp",
 			"position": [1140, 540],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "invalid-execution-type-response",
@@ -124,16 +121,14 @@
 			"name": "2",
 			"type": "n8n-nodes-base.noOp",
 			"position": [1500, 540],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "3",
 			"name": "3",
 			"type": "n8n-nodes-base.noOp",
 			"position": [1860, 540],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "invalid-entity-id-handle-error-message-group",

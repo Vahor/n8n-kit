@@ -1,6 +1,6 @@
 import type { CronExpression } from "n8n-workflow";
-import { type, version } from "../generated/nodes/ScheduleTrigger";
-import { Node, type NodeProps } from "./node";
+import { ScheduleTrigger as _ScheduleTrigger } from "../generated/nodes-impl/ScheduleTrigger";
+import type { NodeProps } from "./node";
 
 export type ScheduleInterval =
 	| {
@@ -51,8 +51,7 @@ export interface ScheduleTriggerProps extends NodeProps {
 	};
 }
 
-export class ScheduleTrigger<L extends string> extends Node<
-	L,
+export class ScheduleTrigger<L extends string> extends _ScheduleTrigger<
 	{
 		timestamp: string;
 		"Readable date": string;
@@ -64,11 +63,9 @@ export class ScheduleTrigger<L extends string> extends Node<
 		Minute: string;
 		Second: string;
 		Timezone: string;
-	}
+	},
+	L
 > {
-	protected override type = type;
-	protected override typeVersion = version;
-
 	constructor(
 		id: L,
 		override props: ScheduleTriggerProps,

@@ -3,6 +3,7 @@
 
 import type { TwilioApiCredentials } from "../credentials/TwilioApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TwilioNodeParameters } from "../nodes/Twilio";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TwilioProps extends NodeProps {
 /**
  * Send SMS and WhatsApp messages or make phone calls
  */
-export class Twilio<L extends string> extends Node<L> {
+export class Twilio<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.twilio" as const;
     protected typeVersion = 1 as const;
 

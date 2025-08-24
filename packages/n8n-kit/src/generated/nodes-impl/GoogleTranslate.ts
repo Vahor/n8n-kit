@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleTranslateOAuth2ApiCredentials } from "../credentials/GoogleTranslateOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleTranslateNodeParameters } from "../nodes/GoogleTranslate";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleTranslateProps extends NodeProps {
 /**
  * Translate data using Google Translate
  */
-export class GoogleTranslate<L extends string> extends Node<L> {
+export class GoogleTranslate<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleTranslate" as const;
     protected typeVersion = 2 as const;
 

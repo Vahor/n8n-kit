@@ -3,6 +3,7 @@
 
 import type { OuraApiCredentials } from "../credentials/OuraApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { OuraNodeParameters } from "../nodes/Oura";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface OuraProps extends NodeProps {
 /**
  * Consume Oura API
  */
-export class Oura<L extends string> extends Node<L> {
+export class Oura<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.oura" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { PerplexityApiCredentials } from "../credentials/PerplexityApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { PerplexityNodeParameters } from "../nodes/Perplexity";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface PerplexityProps extends NodeProps {
 /**
  * Interact with the Perplexity API to generate AI responses with citations
  */
-export class Perplexity<L extends string> extends Node<L> {
+export class Perplexity<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.perplexity" as const;
     protected typeVersion = 1 as const;
 

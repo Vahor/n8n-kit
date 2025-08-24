@@ -3,6 +3,7 @@
 
 import type { MailerLiteApiCredentials } from "../credentials/MailerLiteApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MailerLiteV2NodeParameters } from "../nodes/MailerLiteV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MailerLiteV2Props extends NodeProps {
 /**
  * Consume Mailer Lite API
  */
-export class MailerLiteV2<L extends string> extends Node<L> {
+export class MailerLiteV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mailerLite" as const;
     protected typeVersion = 2 as const;
 

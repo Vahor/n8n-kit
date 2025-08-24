@@ -3,6 +3,7 @@
 
 import type { TrelloApiCredentials } from "../credentials/TrelloApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TrelloNodeParameters } from "../nodes/Trello";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TrelloProps extends NodeProps {
 /**
  * Create, change and delete boards and cards
  */
-export class Trello<L extends string> extends Node<L> {
+export class Trello<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.trello" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { QuickBaseApiCredentials } from "../credentials/QuickBaseApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { QuickBaseNodeParameters } from "../nodes/QuickBase";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface QuickBaseProps extends NodeProps {
 /**
  * Integrate with the Quick Base RESTful API
  */
-export class QuickBase<L extends string> extends Node<L> {
+export class QuickBase<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.quickbase" as const;
     protected typeVersion = 1 as const;
 

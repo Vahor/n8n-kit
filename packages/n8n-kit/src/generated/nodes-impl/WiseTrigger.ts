@@ -3,6 +3,7 @@
 
 import type { WiseApiCredentials } from "../credentials/WiseApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WiseTriggerNodeParameters } from "../nodes/WiseTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface WiseTriggerProps extends NodeProps {
 /**
  * Handle Wise events via webhooks
  */
-export class WiseTrigger<L extends string> extends Node<L> {
+export class WiseTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.wiseTrigger" as const;
     protected typeVersion = 1 as const;
 

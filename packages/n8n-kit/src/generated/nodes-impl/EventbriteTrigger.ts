@@ -4,6 +4,7 @@
 import type { EventbriteApiCredentials } from "../credentials/EventbriteApi.ts";
 import type { EventbriteOAuth2ApiCredentials } from "../credentials/EventbriteOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { EventbriteTriggerNodeParameters } from "../nodes/EventbriteTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface EventbriteTriggerProps extends NodeProps {
 /**
  * Handle Eventbrite events via webhooks
  */
-export class EventbriteTrigger<L extends string> extends Node<L> {
+export class EventbriteTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.eventbriteTrigger" as const;
     protected typeVersion = 1 as const;
 

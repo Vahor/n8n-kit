@@ -4,6 +4,7 @@
 import type { ServiceNowOAuth2ApiCredentials } from "../credentials/ServiceNowOAuth2Api.ts";
 import type { ServiceNowBasicApiCredentials } from "../credentials/ServiceNowBasicApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ServiceNowNodeParameters } from "../nodes/ServiceNow";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface ServiceNowProps extends NodeProps {
 /**
  * Consume ServiceNow API
  */
-export class ServiceNow<L extends string> extends Node<L> {
+export class ServiceNow<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.serviceNow" as const;
     protected typeVersion = 1 as const;
 

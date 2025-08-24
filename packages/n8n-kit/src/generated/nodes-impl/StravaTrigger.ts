@@ -3,6 +3,7 @@
 
 import type { StravaOAuth2ApiCredentials } from "../credentials/StravaOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { StravaTriggerNodeParameters } from "../nodes/StravaTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface StravaTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Strava events occur
  */
-export class StravaTrigger<L extends string> extends Node<L> {
+export class StravaTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.stravaTrigger" as const;
     protected typeVersion = 1 as const;
 

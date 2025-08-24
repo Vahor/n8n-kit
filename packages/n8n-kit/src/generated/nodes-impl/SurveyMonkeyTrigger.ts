@@ -4,6 +4,7 @@
 import type { SurveyMonkeyApiCredentials } from "../credentials/SurveyMonkeyApi.ts";
 import type { SurveyMonkeyOAuth2ApiCredentials } from "../credentials/SurveyMonkeyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SurveyMonkeyTriggerNodeParameters } from "../nodes/SurveyMonkeyTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface SurveyMonkeyTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Survey Monkey events occur
  */
-export class SurveyMonkeyTrigger<L extends string> extends Node<L> {
+export class SurveyMonkeyTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.surveyMonkeyTrigger" as const;
     protected typeVersion = 1 as const;
 

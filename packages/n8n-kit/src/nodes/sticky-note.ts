@@ -1,12 +1,8 @@
-import {
-	type StickyNoteNodeParameters,
-	type,
-	version,
-} from "../generated/nodes/StickyNote";
-
+import type { StickyNoteNodeParameters } from "../generated/nodes/StickyNote";
+import { StickyNote as _StickyNote } from "../generated/nodes-impl/StickyNote";
 import { NO_END_STATES } from "../workflow/chain/chain";
 import type { INextable } from "../workflow/chain/types";
-import { Node, type NodePosition, type NodeProps } from "./node";
+import type { NodePosition, NodeProps } from "./node";
 
 export const StickyNoteColors = {
 	YELLOW: 1,
@@ -26,17 +22,15 @@ export interface StickyNoteProps extends NodeProps {
 	};
 }
 
-export class StickyNote extends Node {
+// @ts-expect-error: we override the parameters type
+export class StickyNote<L extends string> extends _StickyNote<L> {
 	override endStates: INextable[] = NO_END_STATES;
 
-	protected type = type;
-	protected typeVersion = version;
-
 	constructor(
-		id: string,
+		id: L,
 		override props: StickyNoteProps,
 	) {
-		super(id, props);
+		super(id, props as any);
 		this.size = {
 			width: props.parameters.width,
 			height: props.parameters.height,

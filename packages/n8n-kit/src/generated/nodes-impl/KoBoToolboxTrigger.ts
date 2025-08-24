@@ -3,6 +3,7 @@
 
 import type { KoBoToolboxApiCredentials } from "../credentials/KoBoToolboxApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { KoBoToolboxTriggerNodeParameters } from "../nodes/KoBoToolboxTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface KoBoToolboxTriggerProps extends NodeProps {
 /**
  * Process KoBoToolbox submissions
  */
-export class KoBoToolboxTrigger<L extends string> extends Node<L> {
+export class KoBoToolboxTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.koBoToolboxTrigger" as const;
     protected typeVersion = 1 as const;
 
