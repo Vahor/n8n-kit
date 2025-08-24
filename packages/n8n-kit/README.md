@@ -206,11 +206,6 @@ $("['Node Name'].nested.property").toExpression()
 ### Method Calls
 
 ```typescript
-$("json.items")
-	.call("length")
-	.toExpression()
-// Results in: "={{ $json.items.length() }}"
-
 $("json.text")
 	.call("toUpperCase")
 	.call("split", " ")
