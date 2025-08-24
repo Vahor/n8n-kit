@@ -6,9 +6,10 @@ Thank you for your interest in contributing to n8n-kit! This guide will help you
 
 ### Prerequisites
 
-- **Bun >= 1.2.20** - Required for expect type features
+- **Bun >= 1.2.20** - Used ad package-manager and test runner with [expect type features](https://bun.com/docs/test/writing#type-testing).
 
 ### Commands
+
 - `bun run format` - Formats all files in the project (using [biome](https://github.com/biomejs/biome))
 - `bun run --filter '*' dev` - Builds cli and lib in watch mode
 - `bun run --filter '*' build` - Builds cli and lib
