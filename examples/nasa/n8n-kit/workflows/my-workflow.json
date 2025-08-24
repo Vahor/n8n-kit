@@ -18,7 +18,7 @@
 			"id": "schedule-trigger",
 			"name": "Schedule trigger",
 			"type": "n8n-nodes-base.scheduleTrigger",
-			"position": [300, 295],
+			"position": [300, 300],
 			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
@@ -37,7 +37,7 @@
 			"id": "nasa",
 			"name": "nasa",
 			"type": "n8n-nodes-base.nasa",
-			"position": [735, 295],
+			"position": [740, 300],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "donkiSolarFlare",
@@ -49,7 +49,7 @@
 			"id": "if",
 			"name": "if",
 			"type": "n8n-nodes-base.if",
-			"position": [925, 295],
+			"position": [940, 300],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -78,7 +78,7 @@
 			"id": "PostBin(true)",
 			"name": "PostBin(true)",
 			"type": "n8n-nodes-base.postBin",
-			"position": [1115, 180],
+			"position": [1140, 180],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "request",
@@ -91,7 +91,7 @@
 			"id": "PostBin(false)",
 			"name": "PostBin(false)",
 			"type": "n8n-nodes-base.postBin",
-			"position": [1115, 410],
+			"position": [1140, 420],
 			"typeVersion": 1,
 			"parameters": {
 				"resource": "request",

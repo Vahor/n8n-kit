@@ -6,7 +6,7 @@
 			"id": "When clicking ‘Test workflow’",
 			"name": "When clicking ‘Test workflow’",
 			"type": "n8n-nodes-base.manualTrigger",
-			"position": [55, 55],
+			"position": [60, 60],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -14,7 +14,7 @@
 			"id": "call-reusable-workflow",
 			"name": "call-reusable-workflow",
 			"type": "n8n-nodes-base.executeWorkflow",
-			"position": [245, 55],
+			"position": [260, 60],
 			"typeVersion": 1.2,
 			"parameters": {
 				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" },
@@ -30,7 +30,7 @@
 			"id": "log-result",
 			"name": "log-result",
 			"type": "n8n-nodes-base.code",
-			"position": [435, 55],
+			"position": [460, 60],
 			"typeVersion": 2,
 			"parameters": {
 				"jsCode": "=console.log({{ $('call-reusable-workflow').hello }});"
@@ -50,5 +50,5 @@
 	"settings": {},
 	"staticData": {},
 	"active": false,
-	"tags": [{ "name": "@vahor/n8n-SZ23gbg+KGGHL" }]
+	"tags": [{ "name": "client-id" }, { "name": "@vahor/n8n-SZ23gbg+KGGHL" }]
 }

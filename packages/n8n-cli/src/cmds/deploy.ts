@@ -2,7 +2,9 @@ import { confirm } from "@inquirer/prompts";
 import { workflowTagId } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import chalk from "chalk";
+import { table } from "table";
 import type { Argv } from "yargs";
+import { UNDEFINED_ID } from "../constants";
 import { N8nApi } from "../n8n-api";
 import { loadApplication } from "./build";
 
@@ -56,7 +58,10 @@ export const handler = async (options: DeployOptions) => {
 			logger.log(
 				`Found match for workflow ${chalk.cyan(workflow.n8nWorkflowId)}`,
 			);
+		} else {
+			logger.log("No match found");
 		}
+		logger.setContext(null);
 	}
 
 	logger.log("Deploying workflows...");
@@ -76,7 +81,7 @@ export const handler = async (options: DeployOptions) => {
 					const result = await n8n.createTag(tag.name);
 					tag.id = result.id;
 				} else {
-					tag.id = "dry-run";
+					tag.id = UNDEFINED_ID;
 				}
 			} else {
 				tag.id = existingTag.id;
@@ -84,23 +89,28 @@ export const handler = async (options: DeployOptions) => {
 		}
 
 		// Create or update workflow
+		logger.log("Deploying workflow...");
 		if (workflow.n8nWorkflowId) {
 			!options.dryRun &&
 				(await n8n.updateWorkflow(workflow.n8nWorkflowId, rest));
-			logger.log(`Updated workflow ${chalk.bold(workflow.id)}`);
+			logger.log(
+				`Updated workflow with id ${chalk.cyan(workflow.n8nWorkflowId)}`,
+			);
 		} else {
 			if (!options.dryRun) {
 				const result = await n8n.createWorkflow(rest);
 				workflow.n8nWorkflowId = result.id;
 			} else {
-				workflow.n8nWorkflowId = "dry-run";
+				workflow.n8nWorkflowId = UNDEFINED_ID;
 			}
-			logger.log(`Created workflow ${chalk.bold(workflow.id)}`);
+			logger.log(
+				`Created workflow with id ${chalk.cyan(workflow.n8nWorkflowId)}`,
+			);
 		}
 
 		// Apply tags
-		logger.log(`Applying tags to workflow ${workflow.n8nWorkflowId}`);
-		if (options.dryRun) {
+		logger.log("Applying tags...");
+		if (!options.dryRun) {
 			await n8n.updateTags(
 				workflow.n8nWorkflowId,
 				workflowTags.map((t) => ({ id: t.id! })),
@@ -108,10 +118,24 @@ export const handler = async (options: DeployOptions) => {
 		}
 
 		// Set active
+		logger.log(`Setting ${active ? "active" : "inactive"} state...`);
 		!options.dryRun &&
 			(await n8n.setActiveWorkflow(workflow.n8nWorkflowId, active));
 
 		logger.log("Done");
 		logger.setContext(null);
 	}
+
+	logger.log(`Deployed ${app.workflows.length} workflows`);
+	console.log();
+	console.log(
+		table([
+			["ID", "Name", "URL"],
+			...app.workflows.map((w) => [
+				w.id,
+				w.getName(),
+				n8n.formatWorkflowUrl(w.n8nWorkflowId!),
+			]),
+		]),
+	);
 };

@@ -67,7 +67,7 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 export class Workflow<Input extends Type = any, Output extends Type = any> {
 	public readonly id: string;
 	public readonly hashId: string;
-	private readonly tags: Tag[];
+	private readonly tags: string[];
 
 	// Undefined until we know the id
 	public n8nWorkflowId: string | undefined = undefined;
@@ -188,18 +188,18 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 			settings: this.props.settings ?? {},
 			staticData: {},
 			active: this.props.active ?? false,
-			tags: this.tags,
+			tags: this.tags.map((tag) => ({
+				name: tag,
+			})) as Tag[],
 		};
 	}
 
 	private buildTags() {
 		const tags = [...(this.props.tags ?? [])].filter(
-			(tag) => !tag.name.startsWith(`${prefix}id-`),
+			(tag) => !tag.startsWith(`${prefix}id-`),
 		);
 
-		tags.push({
-			name: workflowTagId(this.hashId),
-		});
+		tags.push(workflowTagId(this.hashId));
 		return tags;
 	}
 
