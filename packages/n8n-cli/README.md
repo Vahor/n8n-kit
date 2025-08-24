@@ -146,6 +146,7 @@ The diff command:
 - Fetches deployed workflows from your n8n instance
 - Creates temporary JSON files for comparison in a `.diff` folder
 - Uses `git diff` to show the differences between local and deployed versions
+- Exits with a `1` exit code if there are any differences
 
 **Example:**
 ```sh

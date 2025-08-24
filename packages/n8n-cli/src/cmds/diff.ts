@@ -44,6 +44,7 @@ const defaultRedactKeys = [
 	"versionId",
 	"triggerCount",
 	"pinData",
+	"isArchived",
 	/nodes\[.*\]\.position/,
 	/nodes\[.*\]\.parameters.*\.value/,
 ];
@@ -54,8 +55,10 @@ const getDiff = async (file1: string, file2: string) => {
 		await spawn("git", ["--no-pager", "diff", "--no-index", file1, file2], {
 			stdio: "inherit",
 		});
+		return false;
 	} catch (_) {
 		// ignore
+		return true;
 	}
 };
 
@@ -108,7 +111,9 @@ export const handler = async (options: Options) => {
 
 	const redact = new Redact(defaultRedactKeys, replacer);
 
+	let hasAnyDiff = false;
 	for (const workflow of toDiff) {
+		logger.setContext(`diff:${workflow.id}`);
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
@@ -133,6 +138,11 @@ export const handler = async (options: Options) => {
 			});
 			if (!result) continue;
 		}
-		await getDiff(fromPath, toPath);
+		const hasDiff = await getDiff(fromPath, toPath);
+		if (!hasDiff) {
+			logger.log(`No diff found for ${workflow.id}`);
+		}
+		hasAnyDiff = hasAnyDiff || hasDiff;
 	}
+	if (hasAnyDiff) process.exit(1);
 };
