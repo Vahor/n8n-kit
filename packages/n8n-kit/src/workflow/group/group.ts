@@ -17,6 +17,7 @@ export class Group<
 	C_Ids extends string[] = [],
 > extends StickyNote<LiteralId> {
 	static readonly [GROUP_SYMBOL] = true;
+	readonly [GROUP_SYMBOL] = true;
 
 	constructor(
 		workflow: Workflow,

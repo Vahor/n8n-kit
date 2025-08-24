@@ -205,7 +205,6 @@
 		"nooo": { "main": [[{ "node": "2", "type": "main", "index": 0 }]] }
 	},
 	"settings": {},
-	"staticData": {},
 	"active": true,
 	"tags": [{ "name": "@vahor/n8n-IuNO+W5pw5tVI" }]
 }
