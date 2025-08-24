@@ -11,8 +11,6 @@ export const description = "Deploy app to n8n";
 export const builder = (yargs: Argv) => yargs.showHelpOnFail(true);
 
 type DeployOptions = {
-	noBuild: boolean;
-	noDeploy: boolean;
 	dryRun: boolean;
 	yes: boolean;
 };
@@ -20,13 +18,8 @@ type DeployOptions = {
 export const handler = async (options: DeployOptions) => {
 	const app = await loadApplication();
 
-	if (options.dryRun || options.noDeploy) {
-		logger.log("Dry run, not deploying workflows");
-		return;
-	}
-
 	console.log();
-	if (!options.yes) {
+	if (!options.yes && !options.dryRun) {
 		const result = await confirm({
 			message: "This will overwrite existing workflows, continue?",
 		});
@@ -79,8 +72,12 @@ export const handler = async (options: DeployOptions) => {
 			const existingTag = tags.find((t) => t.name === tag.name);
 			if (!existingTag) {
 				logger.log(`Creating tag ${chalk.bold(tag.name)}`);
-				const result = await n8n.createTag(tag.name);
-				tag.id = result.id;
+				if (!options.dryRun) {
+					const result = await n8n.createTag(tag.name);
+					tag.id = result.id;
+				} else {
+					tag.id = "dry-run";
+				}
 			} else {
 				tag.id = existingTag.id;
 			}
@@ -88,22 +85,29 @@ export const handler = async (options: DeployOptions) => {
 
 		// Create or update workflow
 		if (workflow.n8nWorkflowId) {
-			await n8n.updateWorkflow(workflow.n8nWorkflowId, rest);
+			!options.dryRun &&
+				(await n8n.updateWorkflow(workflow.n8nWorkflowId, rest));
 			logger.log(`Updated workflow ${chalk.bold(workflow.id)}`);
 		} else {
-			const result = await n8n.createWorkflow(rest);
-			workflow.n8nWorkflowId = result.id;
+			if (!options.dryRun) {
+				const result = await n8n.createWorkflow(rest);
+				workflow.n8nWorkflowId = result.id;
+			} else {
+				workflow.n8nWorkflowId = "dry-run";
+			}
 			logger.log(`Created workflow ${chalk.bold(workflow.id)}`);
 		}
 
 		// Apply tags
+		logger.debug(`Applying tags to workflow ${workflow.n8nWorkflowId}`);
 		await n8n.updateTags(
 			workflow.n8nWorkflowId,
 			workflowTags.map((t) => ({ id: t.id! })),
 		);
 
 		// Set active
-		await n8n.setActiveWorkflow(workflow.n8nWorkflowId, active);
+		!options.dryRun &&
+			(await n8n.setActiveWorkflow(workflow.n8nWorkflowId, active));
 
 		logger.log("Done");
 		logger.setContext(null);
