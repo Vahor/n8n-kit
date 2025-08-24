@@ -16,6 +16,7 @@ npm install @vahor/n8n-kit-cli
   - [init](#init)
   - [build](#build)
   - [deploy](#deploy)
+  - [diff](#diff)
 - [Global Options](#global-options)
 
 ## Required Environment Variables
@@ -128,6 +129,31 @@ bunx @vahor/n8n deploy [options]
 **Example:**
 ```sh
 bunx @vahor/n8n deploy --yes
+```
+
+### diff
+
+Compare your local workflows with the ones deployed to n8n.
+
+```sh
+bunx @vahor/n8n diff [options]
+```
+
+**Options:**
+- `--id <string...>` - Specific workflow IDs to diff (compares all workflows if not specified)
+
+The diff command:
+- Fetches deployed workflows from your n8n instance
+- Creates temporary JSON files for comparison in a `.diff` folder
+- Uses `git diff` to show the differences between local and deployed versions
+
+**Example:**
+```sh
+# Diff all workflows
+bunx @vahor/n8n diff
+
+# Diff specific workflows
+bunx @vahor/n8n diff --id my-workflow-1 --id my-workflow-2
 ```
 
 ## Global Options

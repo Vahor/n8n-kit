@@ -109,6 +109,9 @@ export const handler = async (options: Options) => {
 	const redact = new Redact(defaultRedactKeys, replacer);
 
 	for (const workflow of toDiff) {
+		if (!matchMap.has(workflow.id)) {
+			continue;
+		}
 		const from = sortObjectByKey(workflow.build());
 		const to = sortObjectByKey(matchMap.get(workflow.id)!);
 
