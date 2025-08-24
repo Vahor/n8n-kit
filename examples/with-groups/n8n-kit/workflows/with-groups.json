@@ -6,7 +6,7 @@
 			"id": "When clicking ‘Test workflow’",
 			"name": "When clicking ‘Test workflow’",
 			"type": "n8n-nodes-base.manualTrigger",
-			"position": [55, 270],
+			"position": [60, 180],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -14,7 +14,7 @@
 			"id": "inside group 1",
 			"name": "inside group 1",
 			"type": "n8n-nodes-base.noOp",
-			"position": [405, 405],
+			"position": [420, 60],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -22,7 +22,7 @@
 			"id": "inside group 2",
 			"name": "inside group 2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [755, 125],
+			"position": [780, 300],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -30,7 +30,7 @@
 			"id": "inside group 1 - 2",
 			"name": "inside group 1 - 2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [755, 405],
+			"position": [780, 60],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -38,7 +38,7 @@
 			"id": "after groups",
 			"name": "after groups",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1105, 135],
+			"position": [1140, 180],
 			"typeVersion": 1,
 			"parameters": {}
 		},
@@ -46,26 +46,26 @@
 			"id": "group-1",
 			"name": "group-1",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [700, 70],
+			"position": [720, 120],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 1",
 				"color": 1,
-				"width": 920,
-				"height": 490
+				"width": 960,
+				"height": 360
 			}
 		},
 		{
 			"id": "group-2",
 			"name": "group-2",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [700, 70],
+			"position": [720, 120],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 2",
 				"color": 3,
-				"width": 570,
-				"height": 230
+				"width": 600,
+				"height": 360
 			}
 		}
 	],
