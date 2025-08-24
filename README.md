@@ -118,4 +118,4 @@ MIT
 ## Credits
 
 n8n nodes are automatically generated based on the code of the official [n8n node repository](https://github.com/n8n-io/n8n).\
-Workflows chaining is inspired from [aws-cdk-lib](https://github.com/aws/aws-cdk/tree/main/packages/aws-cdk-lib/aws-stepfunctions) stepfunctions.
+Workflows chaining is inspired y[aws-cdk-lib](https://github.com/aws/aws-cdk/tree/main/packages/aws-cdk-lib/aws-stepfunctions) stepfunctions.
