@@ -1,3 +1,4 @@
+import * as fs from "node:fs";
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import type { INodeProperties, INodeTypeDescription } from "n8n-workflow";
@@ -13,6 +14,23 @@ const allNodes = globSync(
 		cwd: path.resolve(__dirname),
 	},
 );
+
+const testDir = path.resolve(__dirname, "../test");
+const testDataDir = path.resolve(__dirname, "../test/data");
+
+// Create test files that some nodes require during generation
+const createTestFiles = () => {
+	// https://github.com/Vahor/n8n-kit/blob/4f0be9a2ba3d7e2ce70cff40a8d8afc7e5b9194c/packages/n8n-kit/test/README.md
+	cleanupTestFiles();
+	fs.mkdirSync(testDataDir, { recursive: true });
+
+	const pdfPath = path.join(testDataDir, "05-versions-space.pdf");
+	fs.writeFileSync(pdfPath, "");
+};
+
+const cleanupTestFiles = () => {
+	fs.rmSync(testDir, { recursive: true, force: true });
+};
 
 const parseConnectionsTypes = (
 	result: INodeTypeDescription,
@@ -139,8 +157,14 @@ const generateTypescriptNodeOutput = async (
 	await code.save("src/generated/nodes");
 };
 
+if (allNodes.length === 0) {
+	console.error("No nodes found");
+	process.exit(0);
+}
+
 const count = allNodes.length;
 let current = 0;
+createTestFiles();
 
 const baseNodes = allNodes.filter(
 	(node) => !node.includes("@n8n/nodes-langchain"),
@@ -226,3 +250,4 @@ for (const nodePath of allNodes.sort((a, b) =>
 }
 console.log();
 console.log(count - current, "nodes failed to parse");
+cleanupTestFiles();
