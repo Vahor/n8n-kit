@@ -186,7 +186,6 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 			],
 			connections: connections,
 			settings: this.props.settings ?? {},
-			staticData: {},
 			active: this.props.active ?? false,
 			tags: this.tags.map((tag) => ({
 				name: tag,
