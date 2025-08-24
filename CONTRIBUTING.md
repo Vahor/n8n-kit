@@ -92,8 +92,11 @@ bun run generate:entrypoint
 1. **Create a new branch** from the `main` branch.
 
 2. **Make your changes** in the new branch.
+	- Use `bun run format` to format all files before committing. (husky will prevent committing if there are any formatting issues)
 
 3. **Add tests or examples** to cover your changes.
+	- Use [`bun test`](https://bun.com/docs/cli/test) to run tests. Or `bun test <path-to-test-file>` to run a single test.
+	- Use `bun typecheck` in a package folder to check types.
 
 4. **Update the documentation** if necessary.
 
