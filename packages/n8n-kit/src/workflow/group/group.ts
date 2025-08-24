@@ -17,6 +17,9 @@ export class Group<
 	C_Ids extends string[] = [],
 > extends StickyNote<LiteralId> {
 	static readonly [GROUP_SYMBOL] = true;
+	readonly [GROUP_SYMBOL] = true;
+
+	private readonly nodesInChain: State[] = [];
 
 	constructor(
 		workflow: Workflow,
@@ -25,7 +28,7 @@ export class Group<
 		public readonly chain: Chain<C_CC, C_Ids>,
 	) {
 		super(id, {
-			position: GROUP_DEFAULT_POSITION,
+			position: [...GROUP_DEFAULT_POSITION],
 			parameters: {
 				..._props,
 				// @ts-expect-error: remove filterNodes
@@ -36,10 +39,11 @@ export class Group<
 		});
 		workflow.addToDynamicalyAddedNodes(this);
 		this.endStates = [this];
+		this.nodesInChain = this.chain.toList();
 	}
 
 	override "~validate"(): void {
-		const nodes = this.chain.toList();
+		const nodes = this.nodesInChain;
 		for (let i = 0; i < nodes.length; i++) {
 			const node = nodes[i]!;
 			if (this._props.filterNodes?.(node, i) === false) continue;

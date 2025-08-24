@@ -180,10 +180,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		return {
 			id: this.hashId,
 			name: this.getName(),
-			nodes: [
-				...nodes.map((node) => node.toNode()),
-				...(this.dynamicalyAddedNodes.map((node) => node.toNode()) ?? []),
-			],
+			nodes: layoutNodes.map((node) => node.toNode()),
 			connections: connections,
 			settings: this.props.settings ?? {},
 			active: this.props.active ?? false,

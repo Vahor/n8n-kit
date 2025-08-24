@@ -35,6 +35,7 @@ export abstract class Node<
 	protected workflowParent?: Workflow;
 
 	static readonly [NODE_SYMBOL] = true;
+	readonly [NODE_SYMBOL] = true;
 
 	protected abstract readonly type: string;
 	protected abstract typeVersion: number;

@@ -134,7 +134,7 @@
 			"id": "invalid-entity-id-handle-error-message-group",
 			"name": "invalid-entity-id-handle-error-message-group",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 240],
+			"position": [720, 0],
 			"typeVersion": 1,
 			"parameters": {
 				"parameters": { "content": "Handle error message", "color": "RED" },
@@ -146,7 +146,7 @@
 			"id": "invalid-execution-type-handle-error-message-group",
 			"name": "invalid-execution-type-handle-error-message-group",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 240],
+			"position": [1080, 240],
 			"typeVersion": 1,
 			"parameters": {
 				"parameters": { "content": "Handle error message", "color": "RED" },
@@ -205,7 +205,6 @@
 		"nooo": { "main": [[{ "node": "2", "type": "main", "index": 0 }]] }
 	},
 	"settings": {},
-	"staticData": {},
 	"active": true,
 	"tags": [{ "name": "@vahor/n8n-IuNO+W5pw5tVI" }]
 }

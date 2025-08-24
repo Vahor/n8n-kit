@@ -13,54 +13,54 @@
 			"id": "inside group 1",
 			"name": "inside group 1",
 			"type": "n8n-nodes-base.noOp",
-			"position": [260, 60],
+			"position": [420, 60],
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 2",
 			"name": "inside group 2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [460, 300],
+			"position": [780, 300],
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 1 - 2",
 			"name": "inside group 1 - 2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [460, 60],
+			"position": [780, 60],
 			"typeVersion": 1
 		},
 		{
 			"id": "after groups",
 			"name": "after groups",
 			"type": "n8n-nodes-base.noOp",
-			"position": [660, 180],
+			"position": [1140, 180],
 			"typeVersion": 1
 		},
 		{
 			"id": "group-1",
 			"name": "group-1",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [null, null],
+			"position": [360, 0],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 1",
 				"color": 1,
-				"width": null,
-				"height": null
+				"width": 600,
+				"height": 240
 			}
 		},
 		{
 			"id": "group-2",
 			"name": "group-2",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [null, null],
+			"position": [720, 240],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 2",
 				"color": 3,
-				"width": null,
-				"height": null
+				"width": 240,
+				"height": 240
 			}
 		}
 	],

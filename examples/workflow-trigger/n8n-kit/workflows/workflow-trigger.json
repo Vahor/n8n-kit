@@ -18,7 +18,7 @@
 			"parameters": {
 				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" },
 				"workflowId": {
-					"value": "reusable-workflow",
+					"value": "@vahor/n8n-_resolved_workflow_id@reusable-workflow",
 					"mode": "list",
 					"cachedResultName": "reusable-workflow"
 				},
@@ -47,7 +47,6 @@
 		}
 	},
 	"settings": {},
-	"staticData": {},
 	"active": false,
 	"tags": [{ "name": "client-id" }, { "name": "@vahor/n8n-SZ23gbg+KGGHL" }]
 }

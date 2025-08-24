@@ -1,11 +1,11 @@
 import dagre from "@dagrejs/dagre";
 import { DEFAULT_NODE_SIZE, type Node, type NodePosition } from "../nodes/node";
-import { Group } from "./group";
+import { isGroup } from "../symbols";
 
-export const GROUP_DEFAULT_POSITION: NodePosition = [
+export const GROUP_DEFAULT_POSITION = Object.freeze([
 	Infinity,
 	Infinity,
-] as const;
+]) as NodePosition;
 
 export interface WorkflowLayoutOptions {
 	rankdir?: "TB" | "BT" | "LR" | "RL";
@@ -37,7 +37,7 @@ export function calculateLayout(
 
 	// Add nodes to the graph
 	for (const node of nodes) {
-		if (node instanceof Group) {
+		if (isGroup(node)) {
 			g.setNode(node.id, {
 				label: node.getLabel(),
 			});
@@ -52,7 +52,7 @@ export function calculateLayout(
 
 	// Add edges based on connections
 	for (const node of nodes) {
-		if (node instanceof Group) continue;
+		if (isGroup(node)) continue;
 		for (const groupid of node.groupIds) {
 			g.setParent(node.id, groupid);
 		}
@@ -78,7 +78,7 @@ export function calculateLayout(
 	// Update group positions and sizes
 	const groupPadding = DEFAULT_NODE_SIZE.width / 2;
 	for (const node of nodes) {
-		if (!(node instanceof Group)) continue;
+		if (!isGroup(node)) continue;
 		const nodesInGroup = nodes.filter((n) => n.groupIds.includes(node.id));
 
 		const minX = Math.min(...nodesInGroup.map((n) => n.position![0]));
