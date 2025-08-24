@@ -4,7 +4,7 @@
 import type { VonageApiCredentials } from "../credentials/VonageApi.ts";
 import type { Credentials } from "../../credentials";
 import type { VonageNodeParameters } from "../nodes/Vonage";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface VonageProps extends NodeProps {
     readonly parameters: VonageNodeParameters;

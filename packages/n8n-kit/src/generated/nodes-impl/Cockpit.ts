@@ -4,7 +4,7 @@
 import type { CockpitApiCredentials } from "../credentials/CockpitApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CockpitNodeParameters } from "../nodes/Cockpit";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CockpitProps extends NodeProps {
     readonly parameters: CockpitNodeParameters;

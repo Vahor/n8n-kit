@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleBigQueryOAuth2ApiCredentials } from "../credentials/GoogleBigQueryOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleBigQueryV1NodeParameters } from "../nodes/GoogleBigQueryV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleBigQueryV1Props extends NodeProps {
     readonly parameters: GoogleBigQueryV1NodeParameters;

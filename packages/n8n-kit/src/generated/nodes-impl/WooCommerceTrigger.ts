@@ -4,7 +4,7 @@
 import type { WooCommerceApiCredentials } from "../credentials/WooCommerceApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WooCommerceTriggerNodeParameters } from "../nodes/WooCommerceTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WooCommerceTriggerProps extends NodeProps {
     readonly parameters: WooCommerceTriggerNodeParameters;

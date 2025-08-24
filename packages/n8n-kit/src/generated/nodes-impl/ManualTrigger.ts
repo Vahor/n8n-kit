@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ManualTriggerNodeParameters } from "../nodes/ManualTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ManualTriggerProps extends NodeProps {
     readonly parameters: ManualTriggerNodeParameters;

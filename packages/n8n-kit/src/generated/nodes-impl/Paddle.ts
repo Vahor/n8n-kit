@@ -4,7 +4,7 @@
 import type { PaddleApiCredentials } from "../credentials/PaddleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PaddleNodeParameters } from "../nodes/Paddle";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PaddleProps extends NodeProps {
     readonly parameters: PaddleNodeParameters;

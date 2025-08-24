@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleDocsOAuth2ApiCredentials } from "../credentials/GoogleDocsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleDocsNodeParameters } from "../nodes/GoogleDocs";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleDocsProps extends NodeProps {
     readonly parameters: GoogleDocsNodeParameters;

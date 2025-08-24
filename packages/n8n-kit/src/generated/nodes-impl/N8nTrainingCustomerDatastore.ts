@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { N8nTrainingCustomerDatastoreNodeParameters } from "../nodes/N8nTrainingCustomerDatastore";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface N8nTrainingCustomerDatastoreProps extends NodeProps {
     readonly parameters: N8nTrainingCustomerDatastoreNodeParameters;

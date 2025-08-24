@@ -4,7 +4,7 @@
 import type { WhatsAppApiCredentials } from "../credentials/WhatsAppApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WhatsAppNodeParameters } from "../nodes/WhatsApp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WhatsAppProps extends NodeProps {
     readonly parameters: WhatsAppNodeParameters;

@@ -4,7 +4,7 @@
 import type { TaigaApiCredentials } from "../credentials/TaigaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TaigaTriggerNodeParameters } from "../nodes/TaigaTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TaigaTriggerProps extends NodeProps {
     readonly parameters: TaigaTriggerNodeParameters;

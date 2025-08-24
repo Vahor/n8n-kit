@@ -4,7 +4,7 @@
 import type { MicrosoftDynamicsOAuth2ApiCredentials } from "../credentials/MicrosoftDynamicsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftDynamicsCrmNodeParameters } from "../nodes/MicrosoftDynamicsCrm";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftDynamicsCrmProps extends NodeProps {
     readonly parameters: MicrosoftDynamicsCrmNodeParameters;

@@ -4,7 +4,7 @@
 import type { PostmarkApiCredentials } from "../credentials/PostmarkApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PostmarkTriggerNodeParameters } from "../nodes/PostmarkTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PostmarkTriggerProps extends NodeProps {
     readonly parameters: PostmarkTriggerNodeParameters;

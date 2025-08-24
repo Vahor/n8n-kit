@@ -4,7 +4,7 @@
 import type { GrafanaApiCredentials } from "../credentials/GrafanaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { GrafanaNodeParameters } from "../nodes/Grafana";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GrafanaProps extends NodeProps {
     readonly parameters: GrafanaNodeParameters;

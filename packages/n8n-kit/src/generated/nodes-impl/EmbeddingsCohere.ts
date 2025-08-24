@@ -5,7 +5,7 @@ import type { CohereApiCredentials } from "../credentials/CohereApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsCohereNodeParameters } from "../nodes/EmbeddingsCohere";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmbeddingsCohereProps extends NodeProps {
     readonly parameters: EmbeddingsCohereNodeParameters;

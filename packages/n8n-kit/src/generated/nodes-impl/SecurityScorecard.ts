@@ -4,7 +4,7 @@
 import type { SecurityScorecardApiCredentials } from "../credentials/SecurityScorecardApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SecurityScorecardNodeParameters } from "../nodes/SecurityScorecard";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SecurityScorecardProps extends NodeProps {
     readonly parameters: SecurityScorecardNodeParameters;

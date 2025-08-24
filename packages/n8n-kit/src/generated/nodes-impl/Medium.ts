@@ -5,7 +5,7 @@ import type { MediumApiCredentials } from "../credentials/MediumApi.ts";
 import type { MediumOAuth2ApiCredentials } from "../credentials/MediumOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MediumNodeParameters } from "../nodes/Medium";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MediumProps extends NodeProps {
     readonly parameters: MediumNodeParameters;

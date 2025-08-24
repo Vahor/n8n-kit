@@ -4,7 +4,7 @@
 import type { GoogleFirebaseRealtimeDatabaseOAuth2ApiCredentials } from "../credentials/GoogleFirebaseRealtimeDatabaseOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleFirebaseRealtimeDatabaseNodeParameters } from "../nodes/GoogleFirebaseRealtimeDatabase";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleFirebaseRealtimeDatabaseProps extends NodeProps {
     readonly parameters: GoogleFirebaseRealtimeDatabaseNodeParameters;

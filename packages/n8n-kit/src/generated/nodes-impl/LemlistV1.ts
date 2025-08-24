@@ -4,7 +4,7 @@
 import type { LemlistApiCredentials } from "../credentials/LemlistApi.ts";
 import type { Credentials } from "../../credentials";
 import type { LemlistV1NodeParameters } from "../nodes/LemlistV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LemlistV1Props extends NodeProps {
     readonly parameters: LemlistV1NodeParameters;

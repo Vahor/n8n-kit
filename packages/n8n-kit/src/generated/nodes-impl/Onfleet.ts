@@ -4,7 +4,7 @@
 import type { OnfleetApiCredentials } from "../credentials/OnfleetApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OnfleetNodeParameters } from "../nodes/Onfleet";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OnfleetProps extends NodeProps {
     readonly parameters: OnfleetNodeParameters;

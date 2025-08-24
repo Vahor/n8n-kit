@@ -4,7 +4,7 @@
 import type { PushoverApiCredentials } from "../credentials/PushoverApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PushoverNodeParameters } from "../nodes/Pushover";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PushoverProps extends NodeProps {
     readonly parameters: PushoverNodeParameters;

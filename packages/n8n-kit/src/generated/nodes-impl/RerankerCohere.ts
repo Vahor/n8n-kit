@@ -5,7 +5,7 @@ import type { CohereApiCredentials } from "../credentials/CohereApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { RerankerCohereNodeParameters } from "../nodes/RerankerCohere";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RerankerCohereProps extends NodeProps {
     readonly parameters: RerankerCohereNodeParameters;

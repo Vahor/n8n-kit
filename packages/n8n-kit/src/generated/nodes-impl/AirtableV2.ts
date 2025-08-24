@@ -5,7 +5,7 @@ import type { AirtableTokenApiCredentials } from "../credentials/AirtableTokenAp
 import type { AirtableOAuth2ApiCredentials } from "../credentials/AirtableOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { AirtableV2NodeParameters } from "../nodes/AirtableV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AirtableV2Props extends NodeProps {
     readonly parameters: AirtableV2NodeParameters;

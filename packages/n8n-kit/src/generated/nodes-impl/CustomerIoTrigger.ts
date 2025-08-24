@@ -4,7 +4,7 @@
 import type { CustomerIoApiCredentials } from "../credentials/CustomerIoApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CustomerIoTriggerNodeParameters } from "../nodes/CustomerIoTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CustomerIoTriggerProps extends NodeProps {
     readonly parameters: CustomerIoTriggerNodeParameters;

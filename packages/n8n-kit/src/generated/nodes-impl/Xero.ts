@@ -4,7 +4,7 @@
 import type { XeroOAuth2ApiCredentials } from "../credentials/XeroOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { XeroNodeParameters } from "../nodes/Xero";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface XeroProps extends NodeProps {
     readonly parameters: XeroNodeParameters;

@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { HackerNewsNodeParameters } from "../nodes/HackerNews";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HackerNewsProps extends NodeProps {
     readonly parameters: HackerNewsNodeParameters;

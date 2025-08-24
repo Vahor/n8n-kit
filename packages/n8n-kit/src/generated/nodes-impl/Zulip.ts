@@ -4,7 +4,7 @@
 import type { ZulipApiCredentials } from "../credentials/ZulipApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ZulipNodeParameters } from "../nodes/Zulip";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ZulipProps extends NodeProps {
     readonly parameters: ZulipNodeParameters;

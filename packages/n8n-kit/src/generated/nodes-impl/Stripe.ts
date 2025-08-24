@@ -4,7 +4,7 @@
 import type { StripeApiCredentials } from "../credentials/StripeApi.ts";
 import type { Credentials } from "../../credentials";
 import type { StripeNodeParameters } from "../nodes/Stripe";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StripeProps extends NodeProps {
     readonly parameters: StripeNodeParameters;

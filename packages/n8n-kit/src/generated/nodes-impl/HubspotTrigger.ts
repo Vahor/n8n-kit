@@ -4,7 +4,7 @@
 import type { HubspotDeveloperApiCredentials } from "../credentials/HubspotDeveloperApi.ts";
 import type { Credentials } from "../../credentials";
 import type { HubspotTriggerNodeParameters } from "../nodes/HubspotTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HubspotTriggerProps extends NodeProps {
     readonly parameters: HubspotTriggerNodeParameters;

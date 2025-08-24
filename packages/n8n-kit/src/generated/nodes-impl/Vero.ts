@@ -4,7 +4,7 @@
 import type { VeroApiCredentials } from "../credentials/VeroApi.ts";
 import type { Credentials } from "../../credentials";
 import type { VeroNodeParameters } from "../nodes/Vero";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface VeroProps extends NodeProps {
     readonly parameters: VeroNodeParameters;

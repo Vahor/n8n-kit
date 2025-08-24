@@ -4,7 +4,7 @@
 import type { VenafiTlsProtectDatacenterApiCredentials } from "../credentials/VenafiTlsProtectDatacenterApi.ts";
 import type { Credentials } from "../../credentials";
 import type { VenafiTlsProtectDatacenterNodeParameters } from "../nodes/VenafiTlsProtectDatacenter";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface VenafiTlsProtectDatacenterProps extends NodeProps {
     readonly parameters: VenafiTlsProtectDatacenterNodeParameters;

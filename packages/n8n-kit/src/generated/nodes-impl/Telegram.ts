@@ -4,7 +4,7 @@
 import type { TelegramApiCredentials } from "../credentials/TelegramApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TelegramNodeParameters } from "../nodes/Telegram";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TelegramProps extends NodeProps {
     readonly parameters: TelegramNodeParameters;

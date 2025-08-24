@@ -4,7 +4,7 @@
 import type { MispApiCredentials } from "../credentials/MispApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MispNodeParameters } from "../nodes/Misp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MispProps extends NodeProps {
     readonly parameters: MispNodeParameters;

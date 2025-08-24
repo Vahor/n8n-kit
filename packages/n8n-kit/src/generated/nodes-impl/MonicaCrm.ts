@@ -4,7 +4,7 @@
 import type { MonicaCrmApiCredentials } from "../credentials/MonicaCrmApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MonicaCrmNodeParameters } from "../nodes/MonicaCrm";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MonicaCrmProps extends NodeProps {
     readonly parameters: MonicaCrmNodeParameters;

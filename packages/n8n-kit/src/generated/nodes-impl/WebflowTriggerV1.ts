@@ -5,7 +5,7 @@ import type { WebflowApiCredentials } from "../credentials/WebflowApi.ts";
 import type { WebflowOAuth2ApiCredentials } from "../credentials/WebflowOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { WebflowTriggerV1NodeParameters } from "../nodes/WebflowTriggerV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WebflowTriggerV1Props extends NodeProps {
     readonly parameters: WebflowTriggerV1NodeParameters;

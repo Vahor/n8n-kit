@@ -4,7 +4,7 @@
 import type { HumanticAiApiCredentials } from "../credentials/HumanticAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { HumanticAiNodeParameters } from "../nodes/HumanticAi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HumanticAiProps extends NodeProps {
     readonly parameters: HumanticAiNodeParameters;

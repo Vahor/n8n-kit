@@ -5,7 +5,7 @@ import type { LinearApiCredentials } from "../credentials/LinearApi.ts";
 import type { LinearOAuth2ApiCredentials } from "../credentials/LinearOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { LinearNodeParameters } from "../nodes/Linear";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LinearProps extends NodeProps {
     readonly parameters: LinearNodeParameters;

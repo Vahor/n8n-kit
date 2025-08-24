@@ -4,7 +4,7 @@
 import type { BoxOAuth2ApiCredentials } from "../credentials/BoxOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { BoxTriggerNodeParameters } from "../nodes/BoxTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BoxTriggerProps extends NodeProps {
     readonly parameters: BoxTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { SalesforceOAuth2ApiCredentials } from "../credentials/SalesforceOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { SalesforceTriggerNodeParameters } from "../nodes/SalesforceTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SalesforceTriggerProps extends NodeProps {
     readonly parameters: SalesforceTriggerNodeParameters;

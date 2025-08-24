@@ -4,7 +4,7 @@
 import type { UrlScanIoApiCredentials } from "../credentials/UrlScanIoApi.ts";
 import type { Credentials } from "../../credentials";
 import type { UrlScanIoNodeParameters } from "../nodes/UrlScanIo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface UrlScanIoProps extends NodeProps {
     readonly parameters: UrlScanIoNodeParameters;

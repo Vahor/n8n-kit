@@ -5,7 +5,7 @@ import type { AcuitySchedulingApiCredentials } from "../credentials/AcuitySchedu
 import type { AcuitySchedulingOAuth2ApiCredentials } from "../credentials/AcuitySchedulingOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { AcuitySchedulingTriggerNodeParameters } from "../nodes/AcuitySchedulingTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AcuitySchedulingTriggerProps extends NodeProps {
     readonly parameters: AcuitySchedulingTriggerNodeParameters;

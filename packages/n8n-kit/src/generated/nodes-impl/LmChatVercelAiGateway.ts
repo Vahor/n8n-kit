@@ -5,7 +5,7 @@ import type { VercelAiGatewayApiCredentials } from "../credentials/VercelAiGatew
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatVercelAiGatewayNodeParameters } from "../nodes/LmChatVercelAiGateway";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatVercelAiGatewayProps extends NodeProps {
     readonly parameters: LmChatVercelAiGatewayNodeParameters;

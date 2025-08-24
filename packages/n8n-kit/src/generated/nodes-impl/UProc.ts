@@ -4,7 +4,7 @@
 import type { UProcApiCredentials } from "../credentials/UProcApi.ts";
 import type { Credentials } from "../../credentials";
 import type { UProcNodeParameters } from "../nodes/UProc";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface UProcProps extends NodeProps {
     readonly parameters: UProcNodeParameters;

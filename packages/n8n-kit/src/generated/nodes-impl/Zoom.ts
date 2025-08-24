@@ -5,7 +5,7 @@ import type { ZoomApiCredentials } from "../credentials/ZoomApi.ts";
 import type { ZoomOAuth2ApiCredentials } from "../credentials/ZoomOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { ZoomNodeParameters } from "../nodes/Zoom";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ZoomProps extends NodeProps {
     readonly parameters: ZoomNodeParameters;

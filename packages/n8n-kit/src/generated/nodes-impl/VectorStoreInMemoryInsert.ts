@@ -4,7 +4,7 @@
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreInMemoryInsertNodeParameters } from "../nodes/VectorStoreInMemoryInsert";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface VectorStoreInMemoryInsertProps extends NodeProps {
     readonly parameters: VectorStoreInMemoryInsertNodeParameters;

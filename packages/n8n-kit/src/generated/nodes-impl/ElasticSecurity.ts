@@ -4,7 +4,7 @@
 import type { ElasticSecurityApiCredentials } from "../credentials/ElasticSecurityApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ElasticSecurityNodeParameters } from "../nodes/ElasticSecurity";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ElasticSecurityProps extends NodeProps {
     readonly parameters: ElasticSecurityNodeParameters;

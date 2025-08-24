@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleBooksOAuth2ApiCredentials } from "../credentials/GoogleBooksOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleBooksNodeParameters } from "../nodes/GoogleBooks";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleBooksProps extends NodeProps {
     readonly parameters: GoogleBooksNodeParameters;

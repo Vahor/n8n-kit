@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { RemoveDuplicatesV2NodeParameters } from "../nodes/RemoveDuplicatesV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RemoveDuplicatesV2Props extends NodeProps {
     readonly parameters: RemoveDuplicatesV2NodeParameters;

@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatGoogleVertexNodeParameters } from "../nodes/LmChatGoogleVertex";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatGoogleVertexProps extends NodeProps {
     readonly parameters: LmChatGoogleVertexNodeParameters;

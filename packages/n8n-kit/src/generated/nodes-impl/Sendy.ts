@@ -4,7 +4,7 @@
 import type { SendyApiCredentials } from "../credentials/SendyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SendyNodeParameters } from "../nodes/Sendy";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SendyProps extends NodeProps {
     readonly parameters: SendyNodeParameters;

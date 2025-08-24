@@ -4,7 +4,7 @@
 import type { HttpBasicAuthCredentials } from "../credentials/HttpBasicAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { FormTriggerV2NodeParameters } from "../nodes/FormTriggerV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FormTriggerV2Props extends NodeProps {
     readonly parameters: FormTriggerV2NodeParameters;

@@ -4,7 +4,7 @@
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "../credentials/MicrosoftTeamsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftTeamsV2NodeParameters } from "../nodes/MicrosoftTeamsV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftTeamsV2Props extends NodeProps {
     readonly parameters: MicrosoftTeamsV2NodeParameters;

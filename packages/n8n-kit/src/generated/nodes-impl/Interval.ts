@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { IntervalNodeParameters } from "../nodes/Interval";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface IntervalProps extends NodeProps {
     readonly parameters: IntervalNodeParameters;

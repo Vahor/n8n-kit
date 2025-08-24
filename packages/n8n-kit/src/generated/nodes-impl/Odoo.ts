@@ -4,7 +4,7 @@
 import type { OdooApiCredentials } from "../credentials/OdooApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OdooNodeParameters } from "../nodes/Odoo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OdooProps extends NodeProps {
     readonly parameters: OdooNodeParameters;

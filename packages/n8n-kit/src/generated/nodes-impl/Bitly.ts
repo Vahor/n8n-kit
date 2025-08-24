@@ -5,7 +5,7 @@ import type { BitlyApiCredentials } from "../credentials/BitlyApi.ts";
 import type { BitlyOAuth2ApiCredentials } from "../credentials/BitlyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { BitlyNodeParameters } from "../nodes/Bitly";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BitlyProps extends NodeProps {
     readonly parameters: BitlyNodeParameters;

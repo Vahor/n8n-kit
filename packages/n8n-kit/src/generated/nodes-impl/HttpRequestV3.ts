@@ -4,7 +4,7 @@
 import type { HttpSslAuthCredentials } from "../credentials/HttpSslAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { HttpRequestV3NodeParameters } from "../nodes/HttpRequestV3";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HttpRequestV3Props extends NodeProps {
     readonly parameters: HttpRequestV3NodeParameters;

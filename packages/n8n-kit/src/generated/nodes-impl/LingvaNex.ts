@@ -4,7 +4,7 @@
 import type { LingvaNexApiCredentials } from "../credentials/LingvaNexApi.ts";
 import type { Credentials } from "../../credentials";
 import type { LingvaNexNodeParameters } from "../nodes/LingvaNex";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LingvaNexProps extends NodeProps {
     readonly parameters: LingvaNexNodeParameters;

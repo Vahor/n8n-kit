@@ -5,7 +5,7 @@ import type { SurveyMonkeyApiCredentials } from "../credentials/SurveyMonkeyApi.
 import type { SurveyMonkeyOAuth2ApiCredentials } from "../credentials/SurveyMonkeyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { SurveyMonkeyTriggerNodeParameters } from "../nodes/SurveyMonkeyTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SurveyMonkeyTriggerProps extends NodeProps {
     readonly parameters: SurveyMonkeyTriggerNodeParameters;

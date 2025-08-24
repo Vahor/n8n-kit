@@ -77,7 +77,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(
 		`import type { ${result.nodeName}NodeParameters } from "../nodes/${result.nodeName}";`,
 	);
-	code.line(`import { Node, type NodeProps } from "../../nodes";`);
+	code.line(`import { Node, type NodeProps } from "../../nodes/node";`);
 
 	code.line();
 

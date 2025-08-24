@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ErrorTriggerNodeParameters } from "../nodes/ErrorTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ErrorTriggerProps extends NodeProps {
     readonly parameters: ErrorTriggerNodeParameters;

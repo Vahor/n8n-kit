@@ -6,7 +6,7 @@ import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { McpClientToolNodeParameters } from "../nodes/McpClientTool";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface McpClientToolProps extends NodeProps {
     readonly parameters: McpClientToolNodeParameters;

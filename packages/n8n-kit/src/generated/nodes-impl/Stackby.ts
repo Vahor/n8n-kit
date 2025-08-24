@@ -4,7 +4,7 @@
 import type { StackbyApiCredentials } from "../credentials/StackbyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { StackbyNodeParameters } from "../nodes/Stackby";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StackbyProps extends NodeProps {
     readonly parameters: StackbyNodeParameters;

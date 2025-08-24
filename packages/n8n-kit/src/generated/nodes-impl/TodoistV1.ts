@@ -5,7 +5,7 @@ import type { TodoistApiCredentials } from "../credentials/TodoistApi.ts";
 import type { TodoistOAuth2ApiCredentials } from "../credentials/TodoistOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { TodoistV1NodeParameters } from "../nodes/TodoistV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TodoistV1Props extends NodeProps {
     readonly parameters: TodoistV1NodeParameters;

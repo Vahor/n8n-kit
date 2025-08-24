@@ -4,7 +4,7 @@
 import type { MessageBirdApiCredentials } from "../credentials/MessageBirdApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MessageBirdNodeParameters } from "../nodes/MessageBird";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MessageBirdProps extends NodeProps {
     readonly parameters: MessageBirdNodeParameters;

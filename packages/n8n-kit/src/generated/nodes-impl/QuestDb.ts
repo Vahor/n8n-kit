@@ -4,7 +4,7 @@
 import type { QuestDbCredentials } from "../credentials/QuestDb.ts";
 import type { Credentials } from "../../credentials";
 import type { QuestDbNodeParameters } from "../nodes/QuestDb";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface QuestDbProps extends NodeProps {
     readonly parameters: QuestDbNodeParameters;

@@ -4,7 +4,7 @@
 import type { PostgresCredentials } from "../credentials/Postgres.ts";
 import type { Credentials } from "../../credentials";
 import type { PostgresV2NodeParameters } from "../nodes/PostgresV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PostgresV2Props extends NodeProps {
     readonly parameters: PostgresV2NodeParameters;

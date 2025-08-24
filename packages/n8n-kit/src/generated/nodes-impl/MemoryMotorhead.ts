@@ -5,7 +5,7 @@ import type { MotorheadApiCredentials } from "../credentials/MotorheadApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryMotorheadNodeParameters } from "../nodes/MemoryMotorhead";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryMotorheadProps extends NodeProps {
     readonly parameters: MemoryMotorheadNodeParameters;

@@ -6,7 +6,7 @@ import type { AirtableTokenApiCredentials } from "../credentials/AirtableTokenAp
 import type { AirtableOAuth2ApiCredentials } from "../credentials/AirtableOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { AirtableTriggerNodeParameters } from "../nodes/AirtableTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AirtableTriggerProps extends NodeProps {
     readonly parameters: AirtableTriggerNodeParameters;

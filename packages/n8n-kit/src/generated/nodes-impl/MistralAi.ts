@@ -4,7 +4,7 @@
 import type { MistralCloudApiCredentials } from "../credentials/MistralCloudApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MistralAiNodeParameters } from "../nodes/MistralAi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MistralAiProps extends NodeProps {
     readonly parameters: MistralAiNodeParameters;

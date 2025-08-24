@@ -4,7 +4,7 @@
 import type { ClockifyApiCredentials } from "../credentials/ClockifyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ClockifyTriggerNodeParameters } from "../nodes/ClockifyTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ClockifyTriggerProps extends NodeProps {
     readonly parameters: ClockifyTriggerNodeParameters;

@@ -5,7 +5,7 @@ import type { SlackApiCredentials } from "../credentials/SlackApi.ts";
 import type { SlackOAuth2ApiCredentials } from "../credentials/SlackOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { SlackV1NodeParameters } from "../nodes/SlackV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SlackV1Props extends NodeProps {
     readonly parameters: SlackV1NodeParameters;

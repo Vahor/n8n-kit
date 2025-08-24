@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { FormTriggerV1NodeParameters } from "../nodes/FormTriggerV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FormTriggerV1Props extends NodeProps {
     readonly parameters: FormTriggerV1NodeParameters;

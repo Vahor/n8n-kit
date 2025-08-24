@@ -4,7 +4,7 @@
 import type { NpmApiCredentials } from "../credentials/NpmApi.ts";
 import type { Credentials } from "../../credentials";
 import type { NpmNodeParameters } from "../nodes/Npm";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NpmProps extends NodeProps {
     readonly parameters: NpmNodeParameters;

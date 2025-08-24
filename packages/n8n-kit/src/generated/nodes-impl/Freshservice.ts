@@ -4,7 +4,7 @@
 import type { FreshserviceApiCredentials } from "../credentials/FreshserviceApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FreshserviceNodeParameters } from "../nodes/Freshservice";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FreshserviceProps extends NodeProps {
     readonly parameters: FreshserviceNodeParameters;

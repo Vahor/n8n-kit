@@ -5,7 +5,7 @@ import type { RedisCredentials } from "../credentials/Redis.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryRedisChatNodeParameters } from "../nodes/MemoryRedisChat";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryRedisChatProps extends NodeProps {
     readonly parameters: MemoryRedisChatNodeParameters;

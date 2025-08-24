@@ -5,7 +5,7 @@ import type { MauticApiCredentials } from "../credentials/MauticApi.ts";
 import type { MauticOAuth2ApiCredentials } from "../credentials/MauticOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MauticTriggerNodeParameters } from "../nodes/MauticTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MauticTriggerProps extends NodeProps {
     readonly parameters: MauticTriggerNodeParameters;

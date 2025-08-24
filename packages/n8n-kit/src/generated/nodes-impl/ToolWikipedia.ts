@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolWikipediaNodeParameters } from "../nodes/ToolWikipedia";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolWikipediaProps extends NodeProps {
     readonly parameters: ToolWikipediaNodeParameters;

@@ -4,7 +4,7 @@
 import type { SpontitApiCredentials } from "../credentials/SpontitApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SpontitNodeParameters } from "../nodes/Spontit";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SpontitProps extends NodeProps {
     readonly parameters: SpontitNodeParameters;

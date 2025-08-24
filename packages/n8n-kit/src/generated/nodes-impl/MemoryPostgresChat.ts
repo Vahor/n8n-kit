@@ -5,7 +5,7 @@ import type { PostgresCredentials } from "../credentials/Postgres.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryPostgresChatNodeParameters } from "../nodes/MemoryPostgresChat";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryPostgresChatProps extends NodeProps {
     readonly parameters: MemoryPostgresChatNodeParameters;

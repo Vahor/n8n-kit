@@ -4,7 +4,7 @@
 import type { OuraApiCredentials } from "../credentials/OuraApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OuraNodeParameters } from "../nodes/Oura";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OuraProps extends NodeProps {
     readonly parameters: OuraNodeParameters;

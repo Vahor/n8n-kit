@@ -1,5 +1,5 @@
-import { Node, type NodeProps, type StickyNoteProps } from "../../nodes";
-import { StickyNote } from "../../nodes/sticky-note";
+import { Node, type NodeProps } from "../../nodes/node";
+import { StickyNote, type StickyNoteProps } from "../../nodes/sticky-note";
 import type { Chain, ChainContext, State } from "../chain";
 import { GROUP_DEFAULT_POSITION } from "../layout";
 import type { Workflow } from "../workflow";

@@ -6,7 +6,7 @@ import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { WaitNodeParameters } from "../nodes/Wait";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WaitProps extends NodeProps {
     readonly parameters: WaitNodeParameters;

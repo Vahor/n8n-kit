@@ -4,7 +4,7 @@
 import type { SupabaseApiCredentials } from "../credentials/SupabaseApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SupabaseNodeParameters } from "../nodes/Supabase";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SupabaseProps extends NodeProps {
     readonly parameters: SupabaseNodeParameters;

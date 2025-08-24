@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { FunctionItemNodeParameters } from "../nodes/FunctionItem";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FunctionItemProps extends NodeProps {
     readonly parameters: FunctionItemNodeParameters;

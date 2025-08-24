@@ -4,7 +4,7 @@
 import type { MicrosoftToDoOAuth2ApiCredentials } from "../credentials/MicrosoftToDoOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftToDoNodeParameters } from "../nodes/MicrosoftToDo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftToDoProps extends NodeProps {
     readonly parameters: MicrosoftToDoNodeParameters;

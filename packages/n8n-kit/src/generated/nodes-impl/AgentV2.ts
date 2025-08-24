@@ -4,7 +4,7 @@
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentV2NodeParameters } from "../nodes/AgentV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AgentV2Props extends NodeProps {
     readonly parameters: AgentV2NodeParameters;

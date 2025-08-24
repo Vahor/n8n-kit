@@ -4,7 +4,7 @@
 import type { OneSimpleApiCredentials } from "../credentials/OneSimpleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OneSimpleApiNodeParameters } from "../nodes/OneSimpleApi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OneSimpleApiProps extends NodeProps {
     readonly parameters: OneSimpleApiNodeParameters;

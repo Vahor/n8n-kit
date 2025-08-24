@@ -4,7 +4,7 @@
 import type { ElasticsearchApiCredentials } from "../credentials/ElasticsearchApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ElasticsearchNodeParameters } from "../nodes/Elasticsearch";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ElasticsearchProps extends NodeProps {
     readonly parameters: ElasticsearchNodeParameters;

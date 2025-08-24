@@ -5,7 +5,7 @@ import type { SerpApiCredentials } from "../credentials/SerpApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolSerpApiNodeParameters } from "../nodes/ToolSerpApi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolSerpApiProps extends NodeProps {
     readonly parameters: ToolSerpApiNodeParameters;

@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { AiTransformNodeParameters } from "../nodes/AiTransform";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AiTransformProps extends NodeProps {
     readonly parameters: AiTransformNodeParameters;

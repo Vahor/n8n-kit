@@ -4,7 +4,7 @@
 import type { ImapCredentials } from "../credentials/Imap.ts";
 import type { Credentials } from "../../credentials";
 import type { EmailReadImapV1NodeParameters } from "../nodes/EmailReadImapV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmailReadImapV1Props extends NodeProps {
     readonly parameters: EmailReadImapV1NodeParameters;

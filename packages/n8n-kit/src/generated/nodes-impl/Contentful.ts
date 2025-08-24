@@ -4,7 +4,7 @@
 import type { ContentfulApiCredentials } from "../credentials/ContentfulApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ContentfulNodeParameters } from "../nodes/Contentful";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ContentfulProps extends NodeProps {
     readonly parameters: ContentfulNodeParameters;

@@ -5,7 +5,7 @@ import type { CohereApiCredentials } from "../credentials/CohereApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatCohereNodeParameters } from "../nodes/LmChatCohere";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatCohereProps extends NodeProps {
     readonly parameters: LmChatCohereNodeParameters;

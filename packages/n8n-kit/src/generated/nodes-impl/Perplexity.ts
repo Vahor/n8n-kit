@@ -4,7 +4,7 @@
 import type { PerplexityApiCredentials } from "../credentials/PerplexityApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PerplexityNodeParameters } from "../nodes/Perplexity";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PerplexityProps extends NodeProps {
     readonly parameters: PerplexityNodeParameters;

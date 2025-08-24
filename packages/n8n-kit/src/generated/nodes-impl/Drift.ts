@@ -5,7 +5,7 @@ import type { DriftApiCredentials } from "../credentials/DriftApi.ts";
 import type { DriftOAuth2ApiCredentials } from "../credentials/DriftOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { DriftNodeParameters } from "../nodes/Drift";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DriftProps extends NodeProps {
     readonly parameters: DriftNodeParameters;

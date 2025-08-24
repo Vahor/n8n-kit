@@ -5,7 +5,7 @@ import type { SearXngApiCredentials } from "../credentials/SearXngApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolSearXngNodeParameters } from "../nodes/ToolSearXng";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolSearXngProps extends NodeProps {
     readonly parameters: ToolSearXngNodeParameters;

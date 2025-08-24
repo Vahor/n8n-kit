@@ -4,7 +4,7 @@
 import type { NasaApiCredentials } from "../credentials/NasaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { NasaNodeParameters } from "../nodes/Nasa";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NasaProps extends NodeProps {
     readonly parameters: NasaNodeParameters;

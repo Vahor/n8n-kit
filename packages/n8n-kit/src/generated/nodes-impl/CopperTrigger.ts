@@ -4,7 +4,7 @@
 import type { CopperApiCredentials } from "../credentials/CopperApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CopperTriggerNodeParameters } from "../nodes/CopperTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CopperTriggerProps extends NodeProps {
     readonly parameters: CopperTriggerNodeParameters;

@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ExtractFromFileNodeParameters } from "../nodes/ExtractFromFile";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ExtractFromFileProps extends NodeProps {
     readonly parameters: ExtractFromFileNodeParameters;

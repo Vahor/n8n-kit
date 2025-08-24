@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { RssFeedReadTriggerNodeParameters } from "../nodes/RssFeedReadTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RssFeedReadTriggerProps extends NodeProps {
     readonly parameters: RssFeedReadTriggerNodeParameters;

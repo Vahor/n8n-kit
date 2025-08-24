@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleDriveOAuth2ApiCredentials } from "../credentials/GoogleDriveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleDriveTriggerNodeParameters } from "../nodes/GoogleDriveTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleDriveTriggerProps extends NodeProps {
     readonly parameters: GoogleDriveTriggerNodeParameters;

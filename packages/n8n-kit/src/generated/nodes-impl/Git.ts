@@ -4,7 +4,7 @@
 import type { GitPasswordCredentials } from "../credentials/GitPassword.ts";
 import type { Credentials } from "../../credentials";
 import type { GitNodeParameters } from "../nodes/Git";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GitProps extends NodeProps {
     readonly parameters: GitNodeParameters;

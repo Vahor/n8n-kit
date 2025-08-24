@@ -5,7 +5,7 @@ import type { FtpCredentials } from "../credentials/Ftp.ts";
 import type { SftpCredentials } from "../credentials/Sftp.ts";
 import type { Credentials } from "../../credentials";
 import type { FtpNodeParameters } from "../nodes/Ftp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FtpProps extends NodeProps {
     readonly parameters: FtpNodeParameters;

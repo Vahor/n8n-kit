@@ -4,7 +4,7 @@
 import type { GooglePerspectiveOAuth2ApiCredentials } from "../credentials/GooglePerspectiveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GooglePerspectiveNodeParameters } from "../nodes/GooglePerspective";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GooglePerspectiveProps extends NodeProps {
     readonly parameters: GooglePerspectiveNodeParameters;

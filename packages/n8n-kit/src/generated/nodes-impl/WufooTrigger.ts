@@ -4,7 +4,7 @@
 import type { WufooApiCredentials } from "../credentials/WufooApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WufooTriggerNodeParameters } from "../nodes/WufooTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WufooTriggerProps extends NodeProps {
     readonly parameters: WufooTriggerNodeParameters;

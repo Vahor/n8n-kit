@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { WorkflowTriggerNodeParameters } from "../nodes/WorkflowTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WorkflowTriggerProps extends NodeProps {
     readonly parameters: WorkflowTriggerNodeParameters;

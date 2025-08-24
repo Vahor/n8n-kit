@@ -4,7 +4,7 @@
 import type { SpotifyOAuth2ApiCredentials } from "../credentials/SpotifyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { SpotifyNodeParameters } from "../nodes/Spotify";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SpotifyProps extends NodeProps {
     readonly parameters: SpotifyNodeParameters;

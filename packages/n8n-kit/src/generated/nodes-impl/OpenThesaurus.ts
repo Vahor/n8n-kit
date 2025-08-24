@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { OpenThesaurusNodeParameters } from "../nodes/OpenThesaurus";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OpenThesaurusProps extends NodeProps {
     readonly parameters: OpenThesaurusNodeParameters;

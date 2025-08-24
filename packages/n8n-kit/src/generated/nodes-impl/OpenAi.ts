@@ -4,7 +4,7 @@
 import type { OpenAiApiCredentials } from "../credentials/OpenAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OpenAiNodeParameters } from "../nodes/OpenAi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OpenAiProps extends NodeProps {
     readonly parameters: OpenAiNodeParameters;

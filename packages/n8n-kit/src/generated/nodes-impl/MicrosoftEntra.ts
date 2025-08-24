@@ -4,7 +4,7 @@
 import type { MicrosoftEntraOAuth2ApiCredentials } from "../credentials/MicrosoftEntraOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftEntraNodeParameters } from "../nodes/MicrosoftEntra";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftEntraProps extends NodeProps {
     readonly parameters: MicrosoftEntraNodeParameters;

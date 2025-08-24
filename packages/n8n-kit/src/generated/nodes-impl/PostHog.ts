@@ -4,7 +4,7 @@
 import type { PostHogApiCredentials } from "../credentials/PostHogApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PostHogNodeParameters } from "../nodes/PostHog";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PostHogProps extends NodeProps {
     readonly parameters: PostHogNodeParameters;

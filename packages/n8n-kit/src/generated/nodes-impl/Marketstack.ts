@@ -4,7 +4,7 @@
 import type { MarketstackApiCredentials } from "../credentials/MarketstackApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MarketstackNodeParameters } from "../nodes/Marketstack";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MarketstackProps extends NodeProps {
     readonly parameters: MarketstackNodeParameters;

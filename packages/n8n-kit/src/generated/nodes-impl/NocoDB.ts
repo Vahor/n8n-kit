@@ -5,7 +5,7 @@ import type { NocoDbCredentials } from "../credentials/NocoDb.ts";
 import type { NocoDbApiTokenCredentials } from "../credentials/NocoDbApiToken.ts";
 import type { Credentials } from "../../credentials";
 import type { NocoDBNodeParameters } from "../nodes/NocoDB";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NocoDBProps extends NodeProps {
     readonly parameters: NocoDBNodeParameters;

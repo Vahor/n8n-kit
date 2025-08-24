@@ -4,7 +4,7 @@
 import type { DisqusApiCredentials } from "../credentials/DisqusApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DisqusNodeParameters } from "../nodes/Disqus";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DisqusProps extends NodeProps {
     readonly parameters: DisqusNodeParameters;

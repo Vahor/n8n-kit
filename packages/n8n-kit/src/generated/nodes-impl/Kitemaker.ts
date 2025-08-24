@@ -4,7 +4,7 @@
 import type { KitemakerApiCredentials } from "../credentials/KitemakerApi.ts";
 import type { Credentials } from "../../credentials";
 import type { KitemakerNodeParameters } from "../nodes/Kitemaker";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface KitemakerProps extends NodeProps {
     readonly parameters: KitemakerNodeParameters;

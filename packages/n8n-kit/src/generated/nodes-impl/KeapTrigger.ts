@@ -4,7 +4,7 @@
 import type { KeapOAuth2ApiCredentials } from "../credentials/KeapOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { KeapTriggerNodeParameters } from "../nodes/KeapTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface KeapTriggerProps extends NodeProps {
     readonly parameters: KeapTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { SeaTableApiCredentials } from "../credentials/SeaTableApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SeaTableTriggerV1NodeParameters } from "../nodes/SeaTableTriggerV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SeaTableTriggerV1Props extends NodeProps {
     readonly parameters: SeaTableTriggerV1NodeParameters;

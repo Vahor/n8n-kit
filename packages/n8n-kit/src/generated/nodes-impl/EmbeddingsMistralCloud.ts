@@ -5,7 +5,7 @@ import type { MistralCloudApiCredentials } from "../credentials/MistralCloudApi.
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsMistralCloudNodeParameters } from "../nodes/EmbeddingsMistralCloud";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmbeddingsMistralCloudProps extends NodeProps {
     readonly parameters: EmbeddingsMistralCloudNodeParameters;

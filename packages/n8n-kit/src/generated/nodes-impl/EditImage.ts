@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { EditImageNodeParameters } from "../nodes/EditImage";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EditImageProps extends NodeProps {
     readonly parameters: EditImageNodeParameters;

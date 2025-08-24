@@ -4,7 +4,7 @@
 import type { OrbitApiCredentials } from "../credentials/OrbitApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OrbitNodeParameters } from "../nodes/Orbit";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OrbitProps extends NodeProps {
     readonly parameters: OrbitNodeParameters;

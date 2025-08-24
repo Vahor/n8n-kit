@@ -4,7 +4,7 @@
 import type { TheHiveProjectApiCredentials } from "../credentials/TheHiveProjectApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TheHiveProjectNodeParameters } from "../nodes/TheHiveProject";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TheHiveProjectProps extends NodeProps {
     readonly parameters: TheHiveProjectNodeParameters;

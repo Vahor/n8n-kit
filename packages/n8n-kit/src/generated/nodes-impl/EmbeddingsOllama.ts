@@ -5,7 +5,7 @@ import type { OllamaApiCredentials } from "../credentials/OllamaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsOllamaNodeParameters } from "../nodes/EmbeddingsOllama";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmbeddingsOllamaProps extends NodeProps {
     readonly parameters: EmbeddingsOllamaNodeParameters;

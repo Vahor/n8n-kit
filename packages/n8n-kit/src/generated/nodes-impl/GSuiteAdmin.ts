@@ -4,7 +4,7 @@
 import type { GSuiteAdminOAuth2ApiCredentials } from "../credentials/GSuiteAdminOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GSuiteAdminNodeParameters } from "../nodes/GSuiteAdmin";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GSuiteAdminProps extends NodeProps {
     readonly parameters: GSuiteAdminNodeParameters;

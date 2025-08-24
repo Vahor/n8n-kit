@@ -5,7 +5,7 @@ import type { AzureOpenAiApiCredentials } from "../credentials/AzureOpenAiApi.ts
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsAzureOpenAiNodeParameters } from "../nodes/EmbeddingsAzureOpenAi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmbeddingsAzureOpenAiProps extends NodeProps {
     readonly parameters: EmbeddingsAzureOpenAiNodeParameters;

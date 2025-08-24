@@ -4,7 +4,7 @@
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "../credentials/MicrosoftTeamsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftTeamsTriggerNodeParameters } from "../nodes/MicrosoftTeamsTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftTeamsTriggerProps extends NodeProps {
     readonly parameters: MicrosoftTeamsTriggerNodeParameters;

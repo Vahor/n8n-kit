@@ -5,7 +5,7 @@ import type { WolframAlphaApiCredentials } from "../credentials/WolframAlphaApi.
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolWolframAlphaNodeParameters } from "../nodes/ToolWolframAlpha";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolWolframAlphaProps extends NodeProps {
     readonly parameters: ToolWolframAlphaNodeParameters;

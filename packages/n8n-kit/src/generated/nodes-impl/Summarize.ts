@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SummarizeNodeParameters } from "../nodes/Summarize";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SummarizeProps extends NodeProps {
     readonly parameters: SummarizeNodeParameters;

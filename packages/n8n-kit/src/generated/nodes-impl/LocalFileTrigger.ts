@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { LocalFileTriggerNodeParameters } from "../nodes/LocalFileTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LocalFileTriggerProps extends NodeProps {
     readonly parameters: LocalFileTriggerNodeParameters;

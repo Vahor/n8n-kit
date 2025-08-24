@@ -4,7 +4,7 @@
 import type { CortexApiCredentials } from "../credentials/CortexApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CortexNodeParameters } from "../nodes/Cortex";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CortexProps extends NodeProps {
     readonly parameters: CortexNodeParameters;

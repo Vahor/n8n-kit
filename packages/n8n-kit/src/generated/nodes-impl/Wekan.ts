@@ -4,7 +4,7 @@
 import type { WekanApiCredentials } from "../credentials/WekanApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WekanNodeParameters } from "../nodes/Wekan";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WekanProps extends NodeProps {
     readonly parameters: WekanNodeParameters;

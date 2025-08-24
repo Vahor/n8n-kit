@@ -4,7 +4,7 @@
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
 import type { AwsTextractNodeParameters } from "../nodes/AwsTextract";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AwsTextractProps extends NodeProps {
     readonly parameters: AwsTextractNodeParameters;

@@ -6,7 +6,7 @@ import type { DiscordOAuth2ApiCredentials } from "../credentials/DiscordOAuth2Ap
 import type { DiscordWebhookApiCredentials } from "../credentials/DiscordWebhookApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DiscordV2NodeParameters } from "../nodes/DiscordV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DiscordV2Props extends NodeProps {
     readonly parameters: DiscordV2NodeParameters;

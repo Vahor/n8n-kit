@@ -4,7 +4,7 @@
 import type { PayPalApiCredentials } from "../credentials/PayPalApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PayPalTriggerNodeParameters } from "../nodes/PayPalTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PayPalTriggerProps extends NodeProps {
     readonly parameters: PayPalTriggerNodeParameters;

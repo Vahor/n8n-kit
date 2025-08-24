@@ -4,7 +4,7 @@
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { MergeV3NodeParameters } from "../nodes/MergeV3";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MergeV3Props extends NodeProps {
     readonly parameters: MergeV3NodeParameters;

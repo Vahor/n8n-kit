@@ -4,7 +4,7 @@
 import type { LineNotifyOAuth2ApiCredentials } from "../credentials/LineNotifyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { LineNodeParameters } from "../nodes/Line";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LineProps extends NodeProps {
     readonly parameters: LineNodeParameters;

@@ -4,7 +4,7 @@
 import type { SalesmateApiCredentials } from "../credentials/SalesmateApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SalesmateNodeParameters } from "../nodes/Salesmate";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SalesmateProps extends NodeProps {
     readonly parameters: SalesmateNodeParameters;

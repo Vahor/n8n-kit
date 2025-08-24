@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { TextSplitterTokenSplitterNodeParameters } from "../nodes/TextSplitterTokenSplitter";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TextSplitterTokenSplitterProps extends NodeProps {
     readonly parameters: TextSplitterTokenSplitterNodeParameters;

@@ -4,7 +4,7 @@
 import type { MicrosoftOneDriveOAuth2ApiCredentials } from "../credentials/MicrosoftOneDriveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftOneDriveTriggerNodeParameters } from "../nodes/MicrosoftOneDriveTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftOneDriveTriggerProps extends NodeProps {
     readonly parameters: MicrosoftOneDriveTriggerNodeParameters;

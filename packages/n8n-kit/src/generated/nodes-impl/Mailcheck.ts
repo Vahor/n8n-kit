@@ -4,7 +4,7 @@
 import type { MailcheckApiCredentials } from "../credentials/MailcheckApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MailcheckNodeParameters } from "../nodes/Mailcheck";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MailcheckProps extends NodeProps {
     readonly parameters: MailcheckNodeParameters;

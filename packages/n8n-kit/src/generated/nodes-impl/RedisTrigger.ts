@@ -4,7 +4,7 @@
 import type { RedisCredentials } from "../credentials/Redis.ts";
 import type { Credentials } from "../../credentials";
 import type { RedisTriggerNodeParameters } from "../nodes/RedisTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RedisTriggerProps extends NodeProps {
     readonly parameters: RedisTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { GoogleContactsOAuth2ApiCredentials } from "../credentials/GoogleContactsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleContactsNodeParameters } from "../nodes/GoogleContacts";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleContactsProps extends NodeProps {
     readonly parameters: GoogleContactsNodeParameters;

@@ -4,7 +4,7 @@
 import type { GoogleSheetsTriggerOAuth2ApiCredentials } from "../credentials/GoogleSheetsTriggerOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleSheetsTriggerNodeParameters } from "../nodes/GoogleSheetsTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleSheetsTriggerProps extends NodeProps {
     readonly parameters: GoogleSheetsTriggerNodeParameters;

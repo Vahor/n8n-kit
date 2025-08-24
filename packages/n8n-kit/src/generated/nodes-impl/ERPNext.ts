@@ -4,7 +4,7 @@
 import type { ERPNextApiCredentials } from "../credentials/ERPNextApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ERPNextNodeParameters } from "../nodes/ERPNext";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ERPNextProps extends NodeProps {
     readonly parameters: ERPNextNodeParameters;

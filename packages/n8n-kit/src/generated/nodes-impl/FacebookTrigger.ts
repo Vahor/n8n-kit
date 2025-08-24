@@ -4,7 +4,7 @@
 import type { FacebookGraphAppApiCredentials } from "../credentials/FacebookGraphAppApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FacebookTriggerNodeParameters } from "../nodes/FacebookTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FacebookTriggerProps extends NodeProps {
     readonly parameters: FacebookTriggerNodeParameters;

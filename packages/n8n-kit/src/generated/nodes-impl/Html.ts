@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { HtmlNodeParameters } from "../nodes/Html";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HtmlProps extends NodeProps {
     readonly parameters: HtmlNodeParameters;

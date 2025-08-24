@@ -4,7 +4,7 @@
 import type { UptimeRobotApiCredentials } from "../credentials/UptimeRobotApi.ts";
 import type { Credentials } from "../../credentials";
 import type { UptimeRobotNodeParameters } from "../nodes/UptimeRobot";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface UptimeRobotProps extends NodeProps {
     readonly parameters: UptimeRobotNodeParameters;

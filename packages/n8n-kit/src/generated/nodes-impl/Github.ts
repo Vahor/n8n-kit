@@ -5,7 +5,7 @@ import type { GithubApiCredentials } from "../credentials/GithubApi.ts";
 import type { GithubOAuth2ApiCredentials } from "../credentials/GithubOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GithubNodeParameters } from "../nodes/Github";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GithubProps extends NodeProps {
     readonly parameters: GithubNodeParameters;

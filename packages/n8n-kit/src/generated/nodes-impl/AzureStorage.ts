@@ -5,7 +5,7 @@ import type { AzureStorageOAuth2ApiCredentials } from "../credentials/AzureStora
 import type { AzureStorageSharedKeyApiCredentials } from "../credentials/AzureStorageSharedKeyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AzureStorageNodeParameters } from "../nodes/AzureStorage";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AzureStorageProps extends NodeProps {
     readonly parameters: AzureStorageNodeParameters;

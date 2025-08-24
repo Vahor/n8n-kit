@@ -4,7 +4,7 @@
 import type { WiseApiCredentials } from "../credentials/WiseApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WiseTriggerNodeParameters } from "../nodes/WiseTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WiseTriggerProps extends NodeProps {
     readonly parameters: WiseTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { CustomerIoApiCredentials } from "../credentials/CustomerIoApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CustomerIoNodeParameters } from "../nodes/CustomerIo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CustomerIoProps extends NodeProps {
     readonly parameters: CustomerIoNodeParameters;

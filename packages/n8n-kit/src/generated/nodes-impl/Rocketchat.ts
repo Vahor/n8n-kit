@@ -4,7 +4,7 @@
 import type { RocketchatApiCredentials } from "../credentials/RocketchatApi.ts";
 import type { Credentials } from "../../credentials";
 import type { RocketchatNodeParameters } from "../nodes/Rocketchat";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RocketchatProps extends NodeProps {
     readonly parameters: RocketchatNodeParameters;

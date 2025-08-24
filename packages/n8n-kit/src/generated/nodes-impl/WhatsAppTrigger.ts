@@ -4,7 +4,7 @@
 import type { WhatsAppTriggerApiCredentials } from "../credentials/WhatsAppTriggerApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WhatsAppTriggerNodeParameters } from "../nodes/WhatsAppTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WhatsAppTriggerProps extends NodeProps {
     readonly parameters: WhatsAppTriggerNodeParameters;

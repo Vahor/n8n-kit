@@ -5,7 +5,7 @@ import type { ServiceNowOAuth2ApiCredentials } from "../credentials/ServiceNowOA
 import type { ServiceNowBasicApiCredentials } from "../credentials/ServiceNowBasicApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ServiceNowNodeParameters } from "../nodes/ServiceNow";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ServiceNowProps extends NodeProps {
     readonly parameters: ServiceNowNodeParameters;

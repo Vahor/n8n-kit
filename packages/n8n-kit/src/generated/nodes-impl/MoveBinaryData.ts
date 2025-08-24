@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MoveBinaryDataNodeParameters } from "../nodes/MoveBinaryData";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MoveBinaryDataProps extends NodeProps {
     readonly parameters: MoveBinaryDataNodeParameters;

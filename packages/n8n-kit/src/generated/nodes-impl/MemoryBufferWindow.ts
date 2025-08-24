@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryBufferWindowNodeParameters } from "../nodes/MemoryBufferWindow";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryBufferWindowProps extends NodeProps {
     readonly parameters: MemoryBufferWindowNodeParameters;

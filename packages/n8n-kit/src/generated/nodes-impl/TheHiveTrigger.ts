@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { TheHiveTriggerNodeParameters } from "../nodes/TheHiveTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TheHiveTriggerProps extends NodeProps {
     readonly parameters: TheHiveTriggerNodeParameters;

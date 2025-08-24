@@ -4,7 +4,7 @@
 import type { FileMakerCredentials } from "../credentials/FileMaker.ts";
 import type { Credentials } from "../../credentials";
 import type { FileMakerNodeParameters } from "../nodes/FileMaker";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FileMakerProps extends NodeProps {
     readonly parameters: FileMakerNodeParameters;

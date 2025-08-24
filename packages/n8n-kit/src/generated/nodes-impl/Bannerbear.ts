@@ -4,7 +4,7 @@
 import type { BannerbearApiCredentials } from "../credentials/BannerbearApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BannerbearNodeParameters } from "../nodes/Bannerbear";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BannerbearProps extends NodeProps {
     readonly parameters: BannerbearNodeParameters;

@@ -4,7 +4,7 @@
 import type { Msg91ApiCredentials } from "../credentials/Msg91Api.ts";
 import type { Credentials } from "../../credentials";
 import type { Msg91NodeParameters } from "../nodes/Msg91";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface Msg91Props extends NodeProps {
     readonly parameters: Msg91NodeParameters;

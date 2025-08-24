@@ -4,7 +4,7 @@
 import type { JenkinsApiCredentials } from "../credentials/JenkinsApi.ts";
 import type { Credentials } from "../../credentials";
 import type { JenkinsNodeParameters } from "../nodes/Jenkins";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface JenkinsProps extends NodeProps {
     readonly parameters: JenkinsNodeParameters;

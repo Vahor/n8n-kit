@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { IfV2NodeParameters } from "../nodes/IfV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface IfV2Props extends NodeProps {
     readonly parameters: IfV2NodeParameters;

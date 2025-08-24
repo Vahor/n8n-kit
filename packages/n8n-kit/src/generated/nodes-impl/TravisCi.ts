@@ -4,7 +4,7 @@
 import type { TravisCiApiCredentials } from "../credentials/TravisCiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TravisCiNodeParameters } from "../nodes/TravisCi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TravisCiProps extends NodeProps {
     readonly parameters: TravisCiNodeParameters;

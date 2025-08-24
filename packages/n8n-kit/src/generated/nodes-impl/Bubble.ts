@@ -4,7 +4,7 @@
 import type { BubbleApiCredentials } from "../credentials/BubbleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BubbleNodeParameters } from "../nodes/Bubble";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BubbleProps extends NodeProps {
     readonly parameters: BubbleNodeParameters;

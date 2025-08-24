@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ICalendarNodeParameters } from "../nodes/ICalendar";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ICalendarProps extends NodeProps {
     readonly parameters: ICalendarNodeParameters;

@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MergeV1NodeParameters } from "../nodes/MergeV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MergeV1Props extends NodeProps {
     readonly parameters: MergeV1NodeParameters;

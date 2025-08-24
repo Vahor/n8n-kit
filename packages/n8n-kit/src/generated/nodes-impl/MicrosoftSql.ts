@@ -4,7 +4,7 @@
 import type { MicrosoftSqlCredentials } from "../credentials/MicrosoftSql.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftSqlNodeParameters } from "../nodes/MicrosoftSql";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftSqlProps extends NodeProps {
     readonly parameters: MicrosoftSqlNodeParameters;

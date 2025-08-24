@@ -5,7 +5,7 @@ import type { GooglePalmApiCredentials } from "../credentials/GooglePalmApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatGoogleGeminiNodeParameters } from "../nodes/LmChatGoogleGemini";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatGoogleGeminiProps extends NodeProps {
     readonly parameters: LmChatGoogleGeminiNodeParameters;

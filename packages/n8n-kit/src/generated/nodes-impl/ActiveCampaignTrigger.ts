@@ -4,7 +4,7 @@
 import type { ActiveCampaignApiCredentials } from "../credentials/ActiveCampaignApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ActiveCampaignTriggerNodeParameters } from "../nodes/ActiveCampaignTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ActiveCampaignTriggerProps extends NodeProps {
     readonly parameters: ActiveCampaignTriggerNodeParameters;

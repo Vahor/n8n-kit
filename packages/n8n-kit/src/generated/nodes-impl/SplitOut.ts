@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SplitOutNodeParameters } from "../nodes/SplitOut";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SplitOutProps extends NodeProps {
     readonly parameters: SplitOutNodeParameters;

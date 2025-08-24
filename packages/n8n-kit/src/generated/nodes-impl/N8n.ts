@@ -4,7 +4,7 @@
 import type { N8nApiCredentials } from "../credentials/N8nApi.ts";
 import type { Credentials } from "../../credentials";
 import type { N8nNodeParameters } from "../nodes/N8n";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface N8nProps extends NodeProps {
     readonly parameters: N8nNodeParameters;

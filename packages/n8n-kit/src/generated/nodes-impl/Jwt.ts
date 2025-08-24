@@ -4,7 +4,7 @@
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { JwtNodeParameters } from "../nodes/Jwt";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface JwtProps extends NodeProps {
     readonly parameters: JwtNodeParameters;

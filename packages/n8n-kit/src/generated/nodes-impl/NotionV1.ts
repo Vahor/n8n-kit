@@ -4,7 +4,7 @@
 import type { NotionApiCredentials } from "../credentials/NotionApi.ts";
 import type { Credentials } from "../../credentials";
 import type { NotionV1NodeParameters } from "../nodes/NotionV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NotionV1Props extends NodeProps {
     readonly parameters: NotionV1NodeParameters;

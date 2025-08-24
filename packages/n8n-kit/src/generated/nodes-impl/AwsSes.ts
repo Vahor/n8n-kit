@@ -4,7 +4,7 @@
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
 import type { AwsSesNodeParameters } from "../nodes/AwsSes";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AwsSesProps extends NodeProps {
     readonly parameters: AwsSesNodeParameters;

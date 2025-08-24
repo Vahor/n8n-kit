@@ -4,7 +4,7 @@
 import type { NetlifyApiCredentials } from "../credentials/NetlifyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { NetlifyTriggerNodeParameters } from "../nodes/NetlifyTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NetlifyTriggerProps extends NodeProps {
     readonly parameters: NetlifyTriggerNodeParameters;

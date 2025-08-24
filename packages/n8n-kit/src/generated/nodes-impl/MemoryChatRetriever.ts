@@ -4,7 +4,7 @@
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { MemoryChatRetrieverNodeParameters } from "../nodes/MemoryChatRetriever";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryChatRetrieverProps extends NodeProps {
     readonly parameters: MemoryChatRetrieverNodeParameters;

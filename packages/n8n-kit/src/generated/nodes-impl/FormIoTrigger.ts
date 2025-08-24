@@ -4,7 +4,7 @@
 import type { FormIoApiCredentials } from "../credentials/FormIoApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FormIoTriggerNodeParameters } from "../nodes/FormIoTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FormIoTriggerProps extends NodeProps {
     readonly parameters: FormIoTriggerNodeParameters;

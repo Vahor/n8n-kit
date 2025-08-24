@@ -4,7 +4,7 @@
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "../credentials/MicrosoftOutlookOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftOutlookV2NodeParameters } from "../nodes/MicrosoftOutlookV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftOutlookV2Props extends NodeProps {
     readonly parameters: MicrosoftOutlookV2NodeParameters;

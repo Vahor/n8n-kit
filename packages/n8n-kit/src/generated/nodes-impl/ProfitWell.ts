@@ -4,7 +4,7 @@
 import type { ProfitWellApiCredentials } from "../credentials/ProfitWellApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ProfitWellNodeParameters } from "../nodes/ProfitWell";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ProfitWellProps extends NodeProps {
     readonly parameters: ProfitWellNodeParameters;

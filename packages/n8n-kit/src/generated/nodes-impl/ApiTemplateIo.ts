@@ -4,7 +4,7 @@
 import type { ApiTemplateIoApiCredentials } from "../credentials/ApiTemplateIoApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ApiTemplateIoNodeParameters } from "../nodes/ApiTemplateIo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ApiTemplateIoProps extends NodeProps {
     readonly parameters: ApiTemplateIoNodeParameters;

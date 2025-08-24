@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ExecuteCommandNodeParameters } from "../nodes/ExecuteCommand";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ExecuteCommandProps extends NodeProps {
     readonly parameters: ExecuteCommandNodeParameters;

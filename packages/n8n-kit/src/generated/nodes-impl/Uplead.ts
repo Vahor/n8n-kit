@@ -4,7 +4,7 @@
 import type { UpleadApiCredentials } from "../credentials/UpleadApi.ts";
 import type { Credentials } from "../../credentials";
 import type { UpleadNodeParameters } from "../nodes/Uplead";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface UpleadProps extends NodeProps {
     readonly parameters: UpleadNodeParameters;

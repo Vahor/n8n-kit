@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SwitchV1NodeParameters } from "../nodes/SwitchV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SwitchV1Props extends NodeProps {
     readonly parameters: SwitchV1NodeParameters;

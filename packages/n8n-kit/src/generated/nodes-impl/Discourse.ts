@@ -4,7 +4,7 @@
 import type { DiscourseApiCredentials } from "../credentials/DiscourseApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DiscourseNodeParameters } from "../nodes/Discourse";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DiscourseProps extends NodeProps {
     readonly parameters: DiscourseNodeParameters;

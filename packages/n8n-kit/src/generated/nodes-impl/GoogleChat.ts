@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleChatOAuth2ApiCredentials } from "../credentials/GoogleChatOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleChatNodeParameters } from "../nodes/GoogleChat";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleChatProps extends NodeProps {
     readonly parameters: GoogleChatNodeParameters;

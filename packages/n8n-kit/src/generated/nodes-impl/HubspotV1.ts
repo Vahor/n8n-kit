@@ -6,7 +6,7 @@ import type { HubspotAppTokenCredentials } from "../credentials/HubspotAppToken.
 import type { HubspotOAuth2ApiCredentials } from "../credentials/HubspotOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { HubspotV1NodeParameters } from "../nodes/HubspotV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HubspotV1Props extends NodeProps {
     readonly parameters: HubspotV1NodeParameters;

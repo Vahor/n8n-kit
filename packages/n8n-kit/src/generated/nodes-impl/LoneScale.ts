@@ -4,7 +4,7 @@
 import type { LoneScaleApiCredentials } from "../credentials/LoneScaleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { LoneScaleNodeParameters } from "../nodes/LoneScale";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LoneScaleProps extends NodeProps {
     readonly parameters: LoneScaleNodeParameters;

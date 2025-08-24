@@ -4,7 +4,7 @@
 import type { DemioApiCredentials } from "../credentials/DemioApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DemioNodeParameters } from "../nodes/Demio";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DemioProps extends NodeProps {
     readonly parameters: DemioNodeParameters;

@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { QuickChartNodeParameters } from "../nodes/QuickChart";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface QuickChartProps extends NodeProps {
     readonly parameters: QuickChartNodeParameters;

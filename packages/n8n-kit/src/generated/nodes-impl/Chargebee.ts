@@ -4,7 +4,7 @@
 import type { ChargebeeApiCredentials } from "../credentials/ChargebeeApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ChargebeeNodeParameters } from "../nodes/Chargebee";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ChargebeeProps extends NodeProps {
     readonly parameters: ChargebeeNodeParameters;

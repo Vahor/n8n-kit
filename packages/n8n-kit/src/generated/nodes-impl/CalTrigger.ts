@@ -4,7 +4,7 @@
 import type { CalApiCredentials } from "../credentials/CalApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CalTriggerNodeParameters } from "../nodes/CalTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CalTriggerProps extends NodeProps {
     readonly parameters: CalTriggerNodeParameters;

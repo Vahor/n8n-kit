@@ -4,7 +4,7 @@
 import type { AutomizyApiCredentials } from "../credentials/AutomizyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AutomizyNodeParameters } from "../nodes/Automizy";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AutomizyProps extends NodeProps {
     readonly parameters: AutomizyNodeParameters;
