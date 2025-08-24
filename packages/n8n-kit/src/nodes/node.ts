@@ -43,7 +43,7 @@ export abstract class Node<
 
 	public readonly props?: NodeProps;
 
-	protected readonly endStates: INextable[];
+	readonly endStates: INextable[];
 
 	public getParameters() {
 		return this.props?.parameters ?? {};
