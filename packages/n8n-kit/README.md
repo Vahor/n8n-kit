@@ -181,7 +181,7 @@ The ExpressionBuilder provides type-safe n8n expressions with IDE support:
 
 ```typescript
 // In .next() callback, $ gives access to previous node outputs
-// json will be the previous node object. You can also acces properties of all past nodes in the chain.
+// json will be the previous node object. You can also access properties of all past nodes in the chain.
 .next(({ $ }) => 
 	new SomeNode("id", {
 		parameters: {
