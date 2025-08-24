@@ -1,5 +1,10 @@
 import { confirm } from "@inquirer/prompts";
-import { workflowTagId } from "@vahor/n8n-kit";
+import {
+	RESOLVED_WORKFLOW_ID,
+	RESOLVED_WORKFLOW_ID_PREFIX,
+	type WorkflowDefinition,
+	workflowTagId,
+} from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import chalk from "chalk";
 import { table } from "table";
@@ -43,10 +48,10 @@ export const handler = async (options: DeployOptions) => {
 	const tags = await n8n.getTags();
 
 	logger.log("Resolving workflow ids...");
-	const matchMap = new Map<
-		string,
-		Awaited<ReturnType<N8nApi["listWorkflows"]>>[number]
-	>();
+
+	// custom id -> n8n id
+	const matchMap = new Map<string, Pick<WorkflowDefinition, "id" | "nodes">>();
+
 	for (const workflow of app.workflows) {
 		logger.setContext(`resolve:${workflow.id}`);
 
@@ -68,7 +73,7 @@ export const handler = async (options: DeployOptions) => {
 			logger.log(
 				`Found match for workflow ${chalk.cyan(workflow.n8nWorkflowId)}`,
 			);
-			matchMap.set(workflow.n8nWorkflowId, match[0]!);
+			matchMap.set(workflow.id, match[0]!);
 		} else {
 			logger.log("No match found");
 		}
@@ -87,7 +92,7 @@ export const handler = async (options: DeployOptions) => {
 		if (options.merge && workflow.n8nWorkflowId) {
 			try {
 				logger.log("Merging node positions from existing workflow...");
-				const existingWorkflow = matchMap.get(workflow.n8nWorkflowId)!;
+				const existingWorkflow = matchMap.get(workflow.id)!;
 
 				for (const node of rest.nodes) {
 					const existingNode = existingWorkflow.nodes.find(
@@ -118,17 +123,40 @@ export const handler = async (options: DeployOptions) => {
 		}
 
 		// Create or update workflow
+		let jsonRepresentation = JSON.stringify(rest);
+		logger.log(`Resolving references in workflow...`);
+		for (const [workflowId, workflow] of matchMap) {
+			const resolvedWorkflowKey = RESOLVED_WORKFLOW_ID(workflowId);
+			if (jsonRepresentation.includes(resolvedWorkflowKey)) {
+				jsonRepresentation = jsonRepresentation.replaceAll(
+					resolvedWorkflowKey,
+					workflow.id,
+				);
+				logger.debug(
+					`Replaced references to ${workflowId} with ${workflow.id}`,
+				);
+			}
+		}
+		if (jsonRepresentation.includes(RESOLVED_WORKFLOW_ID_PREFIX)) {
+			logger.error(
+				`Workflow contains unresolved references, check order of workflows`,
+			);
+			process.exit(1);
+		}
 		logger.log("Deploying workflow...");
 		if (workflow.n8nWorkflowId) {
 			!options.dryRun &&
-				(await n8n.updateWorkflow(workflow.n8nWorkflowId, rest));
+				(await n8n.updateWorkflow(workflow.n8nWorkflowId, jsonRepresentation));
 			logger.log(
 				`Updated workflow with id ${chalk.cyan(workflow.n8nWorkflowId)}`,
 			);
 		} else {
 			if (!options.dryRun) {
-				const result = await n8n.createWorkflow(rest);
+				const result = await n8n.createWorkflow(jsonRepresentation);
 				workflow.n8nWorkflowId = result.id;
+				if (!matchMap.has(workflow.id)) {
+					matchMap.set(workflow.id, result);
+				}
 			} else {
 				workflow.n8nWorkflowId = UNDEFINED_ID;
 			}

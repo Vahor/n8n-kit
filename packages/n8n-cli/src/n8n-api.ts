@@ -48,21 +48,23 @@ export class N8nApi {
 	}
 
 	async createWorkflow(
-		input: Omit<WorkflowDefinition, "id" | "tags" | "active">,
+		// input: Omit<WorkflowDefinition, "id" | "tags" | "active">,
+		input: string,
 	): Promise<WorkflowDefinition> {
 		return this.request("/api/v1/workflows", {
 			method: "POST",
-			body: JSON.stringify(input),
+			body: input,
 		});
 	}
 
 	async updateWorkflow(
 		id: string,
-		input: Omit<WorkflowDefinition, "id" | "tags" | "active">,
+		// input: Omit<WorkflowDefinition, "id" | "tags" | "active">
+		input: string,
 	) {
 		return this.request(`/api/v1/workflows/${id}`, {
 			method: "PUT",
-			body: JSON.stringify(input),
+			body: input,
 		});
 	}
 
