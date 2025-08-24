@@ -5,7 +5,7 @@ import type { EventbriteApiCredentials } from "../credentials/EventbriteApi.ts";
 import type { EventbriteOAuth2ApiCredentials } from "../credentials/EventbriteOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { EventbriteTriggerNodeParameters } from "../nodes/EventbriteTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EventbriteTriggerProps extends NodeProps {
     readonly parameters: EventbriteTriggerNodeParameters;

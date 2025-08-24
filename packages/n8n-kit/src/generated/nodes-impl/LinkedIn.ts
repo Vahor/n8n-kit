@@ -5,7 +5,7 @@ import type { LinkedInOAuth2ApiCredentials } from "../credentials/LinkedInOAuth2
 import type { LinkedInCommunityManagementOAuth2ApiCredentials } from "../credentials/LinkedInCommunityManagementOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { LinkedInNodeParameters } from "../nodes/LinkedIn";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LinkedInProps extends NodeProps {
     readonly parameters: LinkedInNodeParameters;

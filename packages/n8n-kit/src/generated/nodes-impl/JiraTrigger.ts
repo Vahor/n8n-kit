@@ -7,7 +7,7 @@ import type { JiraSoftwareServerPatApiCredentials } from "../credentials/JiraSof
 import type { HttpQueryAuthCredentials } from "../credentials/HttpQueryAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { JiraTriggerNodeParameters } from "../nodes/JiraTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface JiraTriggerProps extends NodeProps {
     readonly parameters: JiraTriggerNodeParameters;

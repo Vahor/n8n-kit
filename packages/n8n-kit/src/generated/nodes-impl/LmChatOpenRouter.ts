@@ -5,7 +5,7 @@ import type { OpenRouterApiCredentials } from "../credentials/OpenRouterApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatOpenRouterNodeParameters } from "../nodes/LmChatOpenRouter";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatOpenRouterProps extends NodeProps {
     readonly parameters: LmChatOpenRouterNodeParameters;

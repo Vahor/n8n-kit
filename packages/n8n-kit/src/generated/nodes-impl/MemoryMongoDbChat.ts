@@ -5,7 +5,7 @@ import type { MongoDbCredentials } from "../credentials/MongoDb.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryMongoDbChatNodeParameters } from "../nodes/MemoryMongoDbChat";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryMongoDbChatProps extends NodeProps {
     readonly parameters: MemoryMongoDbChatNodeParameters;

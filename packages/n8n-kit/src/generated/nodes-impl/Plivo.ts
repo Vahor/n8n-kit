@@ -4,7 +4,7 @@
 import type { PlivoApiCredentials } from "../credentials/PlivoApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PlivoNodeParameters } from "../nodes/Plivo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PlivoProps extends NodeProps {
     readonly parameters: PlivoNodeParameters;

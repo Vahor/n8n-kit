@@ -4,7 +4,7 @@
 import type { RabbitMQCredentials } from "../credentials/RabbitMQ.ts";
 import type { Credentials } from "../../credentials";
 import type { RabbitMQNodeParameters } from "../nodes/RabbitMQ";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RabbitMQProps extends NodeProps {
     readonly parameters: RabbitMQNodeParameters;

@@ -5,7 +5,7 @@ import type { BeeminderApiCredentials } from "../credentials/BeeminderApi.ts";
 import type { BeeminderOAuth2ApiCredentials } from "../credentials/BeeminderOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { BeeminderNodeParameters } from "../nodes/Beeminder";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BeeminderProps extends NodeProps {
     readonly parameters: BeeminderNodeParameters;

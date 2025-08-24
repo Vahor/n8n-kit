@@ -5,7 +5,7 @@ import type { CalendlyApiCredentials } from "../credentials/CalendlyApi.ts";
 import type { CalendlyOAuth2ApiCredentials } from "../credentials/CalendlyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { CalendlyTriggerNodeParameters } from "../nodes/CalendlyTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CalendlyTriggerProps extends NodeProps {
     readonly parameters: CalendlyTriggerNodeParameters;

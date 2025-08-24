@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { FilterV2NodeParameters } from "../nodes/FilterV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FilterV2Props extends NodeProps {
     readonly parameters: FilterV2NodeParameters;

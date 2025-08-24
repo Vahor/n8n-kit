@@ -4,7 +4,7 @@
 import type { Sms77ApiCredentials } from "../credentials/Sms77Api.ts";
 import type { Credentials } from "../../credentials";
 import type { Sms77NodeParameters } from "../nodes/Sms77";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface Sms77Props extends NodeProps {
     readonly parameters: Sms77NodeParameters;

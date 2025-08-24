@@ -4,7 +4,7 @@
 import type { TimescaleDbCredentials } from "../credentials/TimescaleDb.ts";
 import type { Credentials } from "../../credentials";
 import type { TimescaleDbNodeParameters } from "../nodes/TimescaleDb";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TimescaleDbProps extends NodeProps {
     readonly parameters: TimescaleDbNodeParameters;

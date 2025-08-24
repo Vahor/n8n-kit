@@ -4,7 +4,7 @@
 import type { GotifyApiCredentials } from "../credentials/GotifyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { GotifyNodeParameters } from "../nodes/Gotify";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GotifyProps extends NodeProps {
     readonly parameters: GotifyNodeParameters;

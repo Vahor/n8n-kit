@@ -4,7 +4,7 @@
 import type { MailgunApiCredentials } from "../credentials/MailgunApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MailgunNodeParameters } from "../nodes/Mailgun";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MailgunProps extends NodeProps {
     readonly parameters: MailgunNodeParameters;

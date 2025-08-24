@@ -4,7 +4,7 @@
 import type { MailerLiteApiCredentials } from "../credentials/MailerLiteApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MailerLiteTriggerV2NodeParameters } from "../nodes/MailerLiteTriggerV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MailerLiteTriggerV2Props extends NodeProps {
     readonly parameters: MailerLiteTriggerV2NodeParameters;

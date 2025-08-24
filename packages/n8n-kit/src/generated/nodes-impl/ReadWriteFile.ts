@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ReadWriteFileNodeParameters } from "../nodes/ReadWriteFile";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ReadWriteFileProps extends NodeProps {
     readonly parameters: ReadWriteFileNodeParameters;

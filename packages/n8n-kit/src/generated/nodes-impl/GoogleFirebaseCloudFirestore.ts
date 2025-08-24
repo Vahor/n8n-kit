@@ -5,7 +5,7 @@ import type { GoogleFirebaseCloudFirestoreOAuth2ApiCredentials } from "../creden
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleFirebaseCloudFirestoreNodeParameters } from "../nodes/GoogleFirebaseCloudFirestore";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleFirebaseCloudFirestoreProps extends NodeProps {
     readonly parameters: GoogleFirebaseCloudFirestoreNodeParameters;

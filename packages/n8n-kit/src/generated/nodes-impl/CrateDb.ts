@@ -4,7 +4,7 @@
 import type { CrateDbCredentials } from "../credentials/CrateDb.ts";
 import type { Credentials } from "../../credentials";
 import type { CrateDbNodeParameters } from "../nodes/CrateDb";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CrateDbProps extends NodeProps {
     readonly parameters: CrateDbNodeParameters;

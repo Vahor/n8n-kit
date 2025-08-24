@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SortNodeParameters } from "../nodes/Sort";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SortProps extends NodeProps {
     readonly parameters: SortNodeParameters;

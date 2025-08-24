@@ -4,7 +4,7 @@
 import type { MongoDbCredentials } from "../credentials/MongoDb.ts";
 import type { Credentials } from "../../credentials";
 import type { MongoDbNodeParameters } from "../nodes/MongoDb";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MongoDbProps extends NodeProps {
     readonly parameters: MongoDbNodeParameters;

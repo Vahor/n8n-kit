@@ -5,7 +5,7 @@ import type { MindeeReceiptApiCredentials } from "../credentials/MindeeReceiptAp
 import type { MindeeInvoiceApiCredentials } from "../credentials/MindeeInvoiceApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MindeeNodeParameters } from "../nodes/Mindee";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MindeeProps extends NodeProps {
     readonly parameters: MindeeNodeParameters;

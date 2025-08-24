@@ -4,7 +4,7 @@
 import type { KoBoToolboxApiCredentials } from "../credentials/KoBoToolboxApi.ts";
 import type { Credentials } from "../../credentials";
 import type { KoBoToolboxNodeParameters } from "../nodes/KoBoToolbox";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface KoBoToolboxProps extends NodeProps {
     readonly parameters: KoBoToolboxNodeParameters;

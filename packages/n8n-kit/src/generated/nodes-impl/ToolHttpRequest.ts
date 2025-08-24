@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolHttpRequestNodeParameters } from "../nodes/ToolHttpRequest";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolHttpRequestProps extends NodeProps {
     readonly parameters: ToolHttpRequestNodeParameters;

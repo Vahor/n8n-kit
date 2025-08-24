@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleSlidesOAuth2ApiCredentials } from "../credentials/GoogleSlidesOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleSlidesNodeParameters } from "../nodes/GoogleSlides";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleSlidesProps extends NodeProps {
     readonly parameters: GoogleSlidesNodeParameters;

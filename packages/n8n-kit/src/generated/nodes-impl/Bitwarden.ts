@@ -4,7 +4,7 @@
 import type { BitwardenApiCredentials } from "../credentials/BitwardenApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BitwardenNodeParameters } from "../nodes/Bitwarden";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BitwardenProps extends NodeProps {
     readonly parameters: BitwardenNodeParameters;

@@ -4,7 +4,7 @@
 import type { JinaAiApiCredentials } from "../credentials/JinaAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { JinaAiNodeParameters } from "../nodes/JinaAi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface JinaAiProps extends NodeProps {
     readonly parameters: JinaAiNodeParameters;

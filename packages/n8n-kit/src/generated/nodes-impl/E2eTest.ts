@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { E2eTestNodeParameters } from "../nodes/E2eTest";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface E2eTestProps extends NodeProps {
     readonly parameters: E2eTestNodeParameters;

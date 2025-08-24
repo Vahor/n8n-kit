@@ -4,7 +4,7 @@
 import type { MicrosoftAzureCosmosDbSharedKeyApiCredentials } from "../credentials/MicrosoftAzureCosmosDbSharedKeyApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AzureCosmosDbNodeParameters } from "../nodes/AzureCosmosDb";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AzureCosmosDbProps extends NodeProps {
     readonly parameters: AzureCosmosDbNodeParameters;

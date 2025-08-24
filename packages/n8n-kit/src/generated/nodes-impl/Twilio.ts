@@ -4,7 +4,7 @@
 import type { TwilioApiCredentials } from "../credentials/TwilioApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TwilioNodeParameters } from "../nodes/Twilio";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TwilioProps extends NodeProps {
     readonly parameters: TwilioNodeParameters;

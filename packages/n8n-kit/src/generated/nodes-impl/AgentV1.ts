@@ -7,7 +7,7 @@ import type { Credentials } from "../../credentials";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentV1NodeParameters } from "../nodes/AgentV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AgentV1Props extends NodeProps {
     readonly parameters: AgentV1NodeParameters;

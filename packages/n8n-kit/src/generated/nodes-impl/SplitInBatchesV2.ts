@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SplitInBatchesV2NodeParameters } from "../nodes/SplitInBatchesV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SplitInBatchesV2Props extends NodeProps {
     readonly parameters: SplitInBatchesV2NodeParameters;

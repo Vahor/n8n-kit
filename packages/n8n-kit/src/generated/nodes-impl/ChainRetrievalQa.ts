@@ -4,7 +4,7 @@
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChainRetrievalQaNodeParameters } from "../nodes/ChainRetrievalQa";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ChainRetrievalQaProps extends NodeProps {
     readonly parameters: ChainRetrievalQaNodeParameters;

@@ -6,7 +6,7 @@ import type { PipedriveOAuth2ApiCredentials } from "../credentials/PipedriveOAut
 import type { HttpBasicAuthCredentials } from "../credentials/HttpBasicAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { PipedriveTriggerNodeParameters } from "../nodes/PipedriveTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PipedriveTriggerProps extends NodeProps {
     readonly parameters: PipedriveTriggerNodeParameters;

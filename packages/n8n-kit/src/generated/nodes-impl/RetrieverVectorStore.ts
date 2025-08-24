@@ -5,7 +5,7 @@ import type { IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { RetrieverVectorStoreNodeParameters } from "../nodes/RetrieverVectorStore";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RetrieverVectorStoreProps extends NodeProps {
     readonly parameters: RetrieverVectorStoreNodeParameters;

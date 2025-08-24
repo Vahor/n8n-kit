@@ -5,7 +5,7 @@ import type { StrapiApiCredentials } from "../credentials/StrapiApi.ts";
 import type { StrapiTokenApiCredentials } from "../credentials/StrapiTokenApi.ts";
 import type { Credentials } from "../../credentials";
 import type { StrapiNodeParameters } from "../nodes/Strapi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StrapiProps extends NodeProps {
     readonly parameters: StrapiNodeParameters;

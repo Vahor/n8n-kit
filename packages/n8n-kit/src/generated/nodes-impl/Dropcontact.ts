@@ -4,7 +4,7 @@
 import type { DropcontactApiCredentials } from "../credentials/DropcontactApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DropcontactNodeParameters } from "../nodes/Dropcontact";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DropcontactProps extends NodeProps {
     readonly parameters: DropcontactNodeParameters;

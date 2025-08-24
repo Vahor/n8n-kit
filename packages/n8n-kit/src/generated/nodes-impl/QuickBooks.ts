@@ -4,7 +4,7 @@
 import type { QuickBooksOAuth2ApiCredentials } from "../credentials/QuickBooksOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { QuickBooksNodeParameters } from "../nodes/QuickBooks";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface QuickBooksProps extends NodeProps {
     readonly parameters: QuickBooksNodeParameters;

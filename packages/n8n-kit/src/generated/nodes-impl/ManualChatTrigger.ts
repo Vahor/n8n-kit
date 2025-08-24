@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ManualChatTriggerNodeParameters } from "../nodes/ManualChatTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ManualChatTriggerProps extends NodeProps {
     readonly parameters: ManualChatTriggerNodeParameters;

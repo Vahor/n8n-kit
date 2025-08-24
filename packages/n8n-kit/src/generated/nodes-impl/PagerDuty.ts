@@ -5,7 +5,7 @@ import type { PagerDutyApiCredentials } from "../credentials/PagerDutyApi.ts";
 import type { PagerDutyOAuth2ApiCredentials } from "../credentials/PagerDutyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { PagerDutyNodeParameters } from "../nodes/PagerDuty";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PagerDutyProps extends NodeProps {
     readonly parameters: PagerDutyNodeParameters;

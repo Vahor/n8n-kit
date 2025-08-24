@@ -4,7 +4,7 @@
 import type { AdaloApiCredentials } from "../credentials/AdaloApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AdaloNodeParameters } from "../nodes/Adalo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AdaloProps extends NodeProps {
     readonly parameters: AdaloNodeParameters;

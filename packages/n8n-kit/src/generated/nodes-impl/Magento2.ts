@@ -4,7 +4,7 @@
 import type { Magento2ApiCredentials } from "../credentials/Magento2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { Magento2NodeParameters } from "../nodes/Magento2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface Magento2Props extends NodeProps {
     readonly parameters: Magento2NodeParameters;

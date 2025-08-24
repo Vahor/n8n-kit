@@ -4,7 +4,7 @@
 import type { PeekalinkApiCredentials } from "../credentials/PeekalinkApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PeekalinkNodeParameters } from "../nodes/Peekalink";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PeekalinkProps extends NodeProps {
     readonly parameters: PeekalinkNodeParameters;

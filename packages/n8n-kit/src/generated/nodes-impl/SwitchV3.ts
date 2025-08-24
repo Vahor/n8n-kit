@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { SwitchV3NodeParameters } from "../nodes/SwitchV3";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SwitchV3Props extends NodeProps {
     readonly parameters: SwitchV3NodeParameters;

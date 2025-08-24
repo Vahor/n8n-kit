@@ -4,7 +4,7 @@
 import type { MattermostApiCredentials } from "../credentials/MattermostApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MattermostV1NodeParameters } from "../nodes/MattermostV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MattermostV1Props extends NodeProps {
     readonly parameters: MattermostV1NodeParameters;

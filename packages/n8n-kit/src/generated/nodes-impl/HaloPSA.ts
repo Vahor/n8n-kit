@@ -4,7 +4,7 @@
 import type { HaloPSAApiCredentials } from "../credentials/HaloPSAApi.ts";
 import type { Credentials } from "../../credentials";
 import type { HaloPSANodeParameters } from "../nodes/HaloPSA";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HaloPSAProps extends NodeProps {
     readonly parameters: HaloPSANodeParameters;

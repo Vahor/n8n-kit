@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { RetrieverWorkflowNodeParameters } from "../nodes/RetrieverWorkflow";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RetrieverWorkflowProps extends NodeProps {
     readonly parameters: RetrieverWorkflowNodeParameters;

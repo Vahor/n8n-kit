@@ -4,7 +4,7 @@
 import type { SegmentApiCredentials } from "../credentials/SegmentApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SegmentNodeParameters } from "../nodes/Segment";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SegmentProps extends NodeProps {
     readonly parameters: SegmentNodeParameters;

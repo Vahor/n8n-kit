@@ -27,7 +27,7 @@ export type NodeProps = {
 	parameters?: unknown;
 };
 
-export abstract class BaseNode<
+export abstract class Node<
 	LiteralId extends string = string,
 	T extends IContext = never,
 > extends State<LiteralId, T> {
@@ -43,6 +43,8 @@ export abstract class BaseNode<
 
 	public readonly props?: NodeProps;
 
+	readonly endStates: INextable[];
+
 	public getParameters() {
 		return this.props?.parameters ?? {};
 	}
@@ -54,6 +56,7 @@ export abstract class BaseNode<
 	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
 		this.props = props;
+		this.endStates = [this];
 	}
 
 	get label() {
@@ -106,17 +109,5 @@ export abstract class BaseNode<
 			parameters: this.getParameters(),
 			credentials: this.credentialsToNode(),
 		};
-	}
-}
-
-export abstract class Node<
-	LiteralId extends string,
-	T extends IContext = never,
-> extends BaseNode<LiteralId, T> {
-	public readonly endStates: INextable[];
-
-	constructor(id: LiteralId, props?: NodeProps) {
-		super(id, props);
-		this.endStates = [this];
 	}
 }

@@ -4,7 +4,7 @@
 import type { IntercomApiCredentials } from "../credentials/IntercomApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IntercomNodeParameters } from "../nodes/Intercom";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface IntercomProps extends NodeProps {
     readonly parameters: IntercomNodeParameters;

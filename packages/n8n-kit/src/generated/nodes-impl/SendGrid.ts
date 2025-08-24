@@ -4,7 +4,7 @@
 import type { SendGridApiCredentials } from "../credentials/SendGridApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SendGridNodeParameters } from "../nodes/SendGrid";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SendGridProps extends NodeProps {
     readonly parameters: SendGridNodeParameters;

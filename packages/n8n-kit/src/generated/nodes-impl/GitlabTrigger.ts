@@ -5,7 +5,7 @@ import type { GitlabApiCredentials } from "../credentials/GitlabApi.ts";
 import type { GitlabOAuth2ApiCredentials } from "../credentials/GitlabOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GitlabTriggerNodeParameters } from "../nodes/GitlabTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GitlabTriggerProps extends NodeProps {
     readonly parameters: GitlabTriggerNodeParameters;

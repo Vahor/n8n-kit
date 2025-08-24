@@ -4,7 +4,7 @@
 import type { MicrosoftExcelOAuth2ApiCredentials } from "../credentials/MicrosoftExcelOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftExcelV2NodeParameters } from "../nodes/MicrosoftExcelV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftExcelV2Props extends NodeProps {
     readonly parameters: MicrosoftExcelV2NodeParameters;

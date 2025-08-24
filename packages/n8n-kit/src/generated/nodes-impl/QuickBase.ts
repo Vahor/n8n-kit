@@ -4,7 +4,7 @@
 import type { QuickBaseApiCredentials } from "../credentials/QuickBaseApi.ts";
 import type { Credentials } from "../../credentials";
 import type { QuickBaseNodeParameters } from "../nodes/QuickBase";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface QuickBaseProps extends NodeProps {
     readonly parameters: QuickBaseNodeParameters;

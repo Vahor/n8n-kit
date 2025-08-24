@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { FormNodeParameters } from "../nodes/Form";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FormProps extends NodeProps {
     readonly parameters: FormNodeParameters;

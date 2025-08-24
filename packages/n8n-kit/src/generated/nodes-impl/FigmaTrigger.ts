@@ -4,7 +4,7 @@
 import type { FigmaApiCredentials } from "../credentials/FigmaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FigmaTriggerNodeParameters } from "../nodes/FigmaTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FigmaTriggerProps extends NodeProps {
     readonly parameters: FigmaTriggerNodeParameters;

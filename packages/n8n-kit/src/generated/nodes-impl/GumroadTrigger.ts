@@ -4,7 +4,7 @@
 import type { GumroadApiCredentials } from "../credentials/GumroadApi.ts";
 import type { Credentials } from "../../credentials";
 import type { GumroadTriggerNodeParameters } from "../nodes/GumroadTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GumroadTriggerProps extends NodeProps {
     readonly parameters: GumroadTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { EmeliaApiCredentials } from "../credentials/EmeliaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { EmeliaTriggerNodeParameters } from "../nodes/EmeliaTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmeliaTriggerProps extends NodeProps {
     readonly parameters: EmeliaTriggerNodeParameters;

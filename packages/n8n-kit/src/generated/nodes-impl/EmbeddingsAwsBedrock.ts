@@ -5,7 +5,7 @@ import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsAwsBedrockNodeParameters } from "../nodes/EmbeddingsAwsBedrock";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmbeddingsAwsBedrockProps extends NodeProps {
     readonly parameters: EmbeddingsAwsBedrockNodeParameters;

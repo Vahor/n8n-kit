@@ -4,7 +4,7 @@
 import type { TwitterOAuth2ApiCredentials } from "../credentials/TwitterOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { TwitterV2NodeParameters } from "../nodes/TwitterV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TwitterV2Props extends NodeProps {
     readonly parameters: TwitterV2NodeParameters;

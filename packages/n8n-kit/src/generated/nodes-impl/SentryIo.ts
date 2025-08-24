@@ -6,7 +6,7 @@ import type { SentryIoApiCredentials } from "../credentials/SentryIoApi.ts";
 import type { SentryIoServerApiCredentials } from "../credentials/SentryIoServerApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SentryIoNodeParameters } from "../nodes/SentryIo";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SentryIoProps extends NodeProps {
     readonly parameters: SentryIoNodeParameters;

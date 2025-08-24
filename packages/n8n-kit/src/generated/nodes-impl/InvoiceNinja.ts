@@ -4,7 +4,7 @@
 import type { InvoiceNinjaApiCredentials } from "../credentials/InvoiceNinjaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { InvoiceNinjaNodeParameters } from "../nodes/InvoiceNinja";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface InvoiceNinjaProps extends NodeProps {
     readonly parameters: InvoiceNinjaNodeParameters;

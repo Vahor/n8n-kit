@@ -5,7 +5,7 @@ import type { TypeformApiCredentials } from "../credentials/TypeformApi.ts";
 import type { TypeformOAuth2ApiCredentials } from "../credentials/TypeformOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { TypeformTriggerNodeParameters } from "../nodes/TypeformTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TypeformTriggerProps extends NodeProps {
     readonly parameters: TypeformTriggerNodeParameters;

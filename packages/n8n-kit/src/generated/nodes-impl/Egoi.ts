@@ -4,7 +4,7 @@
 import type { EgoiApiCredentials } from "../credentials/EgoiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { EgoiNodeParameters } from "../nodes/Egoi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EgoiProps extends NodeProps {
     readonly parameters: EgoiNodeParameters;

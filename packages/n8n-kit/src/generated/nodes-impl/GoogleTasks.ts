@@ -4,7 +4,7 @@
 import type { GoogleTasksOAuth2ApiCredentials } from "../credentials/GoogleTasksOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleTasksNodeParameters } from "../nodes/GoogleTasks";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleTasksProps extends NodeProps {
     readonly parameters: GoogleTasksNodeParameters;

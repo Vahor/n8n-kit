@@ -4,7 +4,7 @@
 import type { SyncroMspApiCredentials } from "../credentials/SyncroMspApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SyncroMspV1NodeParameters } from "../nodes/SyncroMspV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SyncroMspV1Props extends NodeProps {
     readonly parameters: SyncroMspV1NodeParameters;

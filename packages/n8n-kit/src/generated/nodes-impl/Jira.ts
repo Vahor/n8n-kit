@@ -6,7 +6,7 @@ import type { JiraSoftwareServerApiCredentials } from "../credentials/JiraSoftwa
 import type { JiraSoftwareServerPatApiCredentials } from "../credentials/JiraSoftwareServerPatApi.ts";
 import type { Credentials } from "../../credentials";
 import type { JiraNodeParameters } from "../nodes/Jira";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface JiraProps extends NodeProps {
     readonly parameters: JiraNodeParameters;

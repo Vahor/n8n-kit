@@ -5,7 +5,7 @@ import type { GooglePalmApiCredentials } from "../credentials/GooglePalmApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsGoogleGeminiNodeParameters } from "../nodes/EmbeddingsGoogleGemini";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmbeddingsGoogleGeminiProps extends NodeProps {
     readonly parameters: EmbeddingsGoogleGeminiNodeParameters;

@@ -4,7 +4,7 @@
 import type { DhlApiCredentials } from "../credentials/DhlApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DhlNodeParameters } from "../nodes/Dhl";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DhlProps extends NodeProps {
     readonly parameters: DhlNodeParameters;

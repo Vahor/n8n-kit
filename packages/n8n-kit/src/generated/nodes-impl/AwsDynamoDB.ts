@@ -4,7 +4,7 @@
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
 import type { AwsDynamoDBNodeParameters } from "../nodes/AwsDynamoDB";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AwsDynamoDBProps extends NodeProps {
     readonly parameters: AwsDynamoDBNodeParameters;

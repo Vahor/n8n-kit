@@ -9,7 +9,7 @@ import type { OAuth1ApiCredentials } from "../credentials/OAuth1Api.ts";
 import type { OAuth2ApiCredentials } from "../credentials/OAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { HttpRequestV2NodeParameters } from "../nodes/HttpRequestV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HttpRequestV2Props extends NodeProps {
     readonly parameters: HttpRequestV2NodeParameters;

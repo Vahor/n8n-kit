@@ -4,7 +4,7 @@
 import type { TrelloApiCredentials } from "../credentials/TrelloApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TrelloNodeParameters } from "../nodes/Trello";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TrelloProps extends NodeProps {
     readonly parameters: TrelloNodeParameters;

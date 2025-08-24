@@ -4,7 +4,7 @@
 import type { OpenWeatherMapApiCredentials } from "../credentials/OpenWeatherMapApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OpenWeatherMapNodeParameters } from "../nodes/OpenWeatherMap";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OpenWeatherMapProps extends NodeProps {
     readonly parameters: OpenWeatherMapNodeParameters;

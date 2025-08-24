@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ReadPDFNodeParameters } from "../nodes/ReadPDF";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ReadPDFProps extends NodeProps {
     readonly parameters: ReadPDFNodeParameters;

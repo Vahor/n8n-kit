@@ -5,7 +5,7 @@ import type { XAiApiCredentials } from "../credentials/XAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatXAiGrokNodeParameters } from "../nodes/LmChatXAiGrok";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatXAiGrokProps extends NodeProps {
     readonly parameters: LmChatXAiGrokNodeParameters;

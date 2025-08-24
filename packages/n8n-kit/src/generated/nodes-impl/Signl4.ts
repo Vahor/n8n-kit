@@ -4,7 +4,7 @@
 import type { Signl4ApiCredentials } from "../credentials/Signl4Api.ts";
 import type { Credentials } from "../../credentials";
 import type { Signl4NodeParameters } from "../nodes/Signl4";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface Signl4Props extends NodeProps {
     readonly parameters: Signl4NodeParameters;

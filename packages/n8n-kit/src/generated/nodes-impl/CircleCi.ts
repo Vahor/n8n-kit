@@ -4,7 +4,7 @@
 import type { CircleCiApiCredentials } from "../credentials/CircleCiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CircleCiNodeParameters } from "../nodes/CircleCi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CircleCiProps extends NodeProps {
     readonly parameters: CircleCiNodeParameters;

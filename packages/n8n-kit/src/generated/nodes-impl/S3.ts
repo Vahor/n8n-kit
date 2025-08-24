@@ -4,7 +4,7 @@
 import type { S3Credentials } from "../credentials/S3.ts";
 import type { Credentials } from "../../credentials";
 import type { S3NodeParameters } from "../nodes/S3";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface S3Props extends NodeProps {
     readonly parameters: S3NodeParameters;

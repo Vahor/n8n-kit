@@ -4,7 +4,7 @@
 import type { BaserowApiCredentials } from "../credentials/BaserowApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BaserowNodeParameters } from "../nodes/Baserow";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BaserowProps extends NodeProps {
     readonly parameters: BaserowNodeParameters;

@@ -4,7 +4,7 @@
 import type { GoogleCloudStorageOAuth2ApiCredentials } from "../credentials/GoogleCloudStorageOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleCloudStorageNodeParameters } from "../nodes/GoogleCloudStorage";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleCloudStorageProps extends NodeProps {
     readonly parameters: GoogleCloudStorageNodeParameters;

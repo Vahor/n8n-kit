@@ -4,7 +4,7 @@
 import type { PushbulletOAuth2ApiCredentials } from "../credentials/PushbulletOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { PushbulletNodeParameters } from "../nodes/Pushbullet";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PushbulletProps extends NodeProps {
     readonly parameters: PushbulletNodeParameters;

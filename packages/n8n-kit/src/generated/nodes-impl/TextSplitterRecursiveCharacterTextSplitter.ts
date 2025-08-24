@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { TextSplitterRecursiveCharacterTextSplitterNodeParameters } from "../nodes/TextSplitterRecursiveCharacterTextSplitter";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TextSplitterRecursiveCharacterTextSplitterProps extends NodeProps {
     readonly parameters: TextSplitterRecursiveCharacterTextSplitterNodeParameters;

@@ -4,7 +4,7 @@
 import type { PhilipsHueOAuth2ApiCredentials } from "../credentials/PhilipsHueOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { PhilipsHueNodeParameters } from "../nodes/PhilipsHue";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PhilipsHueProps extends NodeProps {
     readonly parameters: PhilipsHueNodeParameters;

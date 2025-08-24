@@ -4,7 +4,7 @@
 import type { DeepLApiCredentials } from "../credentials/DeepLApi.ts";
 import type { Credentials } from "../../credentials";
 import type { DeepLNodeParameters } from "../nodes/DeepL";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DeepLProps extends NodeProps {
     readonly parameters: DeepLNodeParameters;

@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolCalculatorNodeParameters } from "../nodes/ToolCalculator";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolCalculatorProps extends NodeProps {
     readonly parameters: ToolCalculatorNodeParameters;

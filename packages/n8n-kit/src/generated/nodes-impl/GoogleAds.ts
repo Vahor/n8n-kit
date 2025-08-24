@@ -4,7 +4,7 @@
 import type { GoogleAdsOAuth2ApiCredentials } from "../credentials/GoogleAdsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleAdsNodeParameters } from "../nodes/GoogleAds";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleAdsProps extends NodeProps {
     readonly parameters: GoogleAdsNodeParameters;

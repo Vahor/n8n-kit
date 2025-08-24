@@ -5,7 +5,7 @@ import type { ZendeskApiCredentials } from "../credentials/ZendeskApi.ts";
 import type { ZendeskOAuth2ApiCredentials } from "../credentials/ZendeskOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { ZendeskNodeParameters } from "../nodes/Zendesk";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ZendeskProps extends NodeProps {
     readonly parameters: ZendeskNodeParameters;

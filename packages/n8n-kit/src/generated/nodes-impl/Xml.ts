@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { XmlNodeParameters } from "../nodes/Xml";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface XmlProps extends NodeProps {
     readonly parameters: XmlNodeParameters;

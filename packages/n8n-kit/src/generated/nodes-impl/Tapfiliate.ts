@@ -4,7 +4,7 @@
 import type { TapfiliateApiCredentials } from "../credentials/TapfiliateApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TapfiliateNodeParameters } from "../nodes/Tapfiliate";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TapfiliateProps extends NodeProps {
     readonly parameters: TapfiliateNodeParameters;

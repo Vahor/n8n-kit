@@ -4,7 +4,7 @@
 import type { MySqlCredentials } from "../credentials/MySql.ts";
 import type { Credentials } from "../../credentials";
 import type { MySqlV2NodeParameters } from "../nodes/MySqlV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MySqlV2Props extends NodeProps {
     readonly parameters: MySqlV2NodeParameters;

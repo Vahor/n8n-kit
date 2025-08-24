@@ -22,7 +22,7 @@ import type { INextable } from "./types";
  * ```
  */
 export class Placeholder<L extends string> extends State<L> {
-	public override endStates: INextable[] = NO_END_STATES;
+	override readonly endStates: INextable[] = NO_END_STATES;
 
 	constructor(id: L) {
 		super(id);

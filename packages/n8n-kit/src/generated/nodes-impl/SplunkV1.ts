@@ -4,7 +4,7 @@
 import type { SplunkApiCredentials } from "../credentials/SplunkApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SplunkV1NodeParameters } from "../nodes/SplunkV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SplunkV1Props extends NodeProps {
     readonly parameters: SplunkV1NodeParameters;

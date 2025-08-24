@@ -5,7 +5,7 @@ import type { NextCloudApiCredentials } from "../credentials/NextCloudApi.ts";
 import type { NextCloudOAuth2ApiCredentials } from "../credentials/NextCloudOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { NextCloudNodeParameters } from "../nodes/NextCloud";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NextCloudProps extends NodeProps {
     readonly parameters: NextCloudNodeParameters;

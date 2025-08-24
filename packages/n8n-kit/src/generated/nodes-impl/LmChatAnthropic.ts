@@ -5,7 +5,7 @@ import type { AnthropicApiCredentials } from "../credentials/AnthropicApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatAnthropicNodeParameters } from "../nodes/LmChatAnthropic";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatAnthropicProps extends NodeProps {
     readonly parameters: LmChatAnthropicNodeParameters;

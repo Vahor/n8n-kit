@@ -4,7 +4,7 @@
 import type { StravaOAuth2ApiCredentials } from "../credentials/StravaOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { StravaNodeParameters } from "../nodes/Strava";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StravaProps extends NodeProps {
     readonly parameters: StravaNodeParameters;

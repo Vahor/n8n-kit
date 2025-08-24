@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { PostBinNodeParameters } from "../nodes/PostBin";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PostBinProps extends NodeProps {
     readonly parameters: PostBinNodeParameters;

@@ -4,7 +4,7 @@
 import type { RedditOAuth2ApiCredentials } from "../credentials/RedditOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { RedditNodeParameters } from "../nodes/Reddit";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RedditProps extends NodeProps {
     readonly parameters: RedditNodeParameters;

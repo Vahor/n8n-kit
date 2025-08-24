@@ -5,7 +5,7 @@ import type { SalesforceOAuth2ApiCredentials } from "../credentials/SalesforceOA
 import type { SalesforceJwtApiCredentials } from "../credentials/SalesforceJwtApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SalesforceNodeParameters } from "../nodes/Salesforce";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SalesforceProps extends NodeProps {
     readonly parameters: SalesforceNodeParameters;

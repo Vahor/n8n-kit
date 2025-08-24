@@ -5,7 +5,7 @@ import type { GongApiCredentials } from "../credentials/GongApi.ts";
 import type { GongOAuth2ApiCredentials } from "../credentials/GongOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GongNodeParameters } from "../nodes/Gong";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GongProps extends NodeProps {
     readonly parameters: GongNodeParameters;

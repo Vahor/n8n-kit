@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { CoinGeckoNodeParameters } from "../nodes/CoinGecko";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CoinGeckoProps extends NodeProps {
     readonly parameters: CoinGeckoNodeParameters;

@@ -4,7 +4,7 @@
 import type { AffinityApiCredentials } from "../credentials/AffinityApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AffinityNodeParameters } from "../nodes/Affinity";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AffinityProps extends NodeProps {
     readonly parameters: AffinityNodeParameters;

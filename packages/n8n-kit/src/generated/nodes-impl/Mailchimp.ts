@@ -5,7 +5,7 @@ import type { MailchimpApiCredentials } from "../credentials/MailchimpApi.ts";
 import type { MailchimpOAuth2ApiCredentials } from "../credentials/MailchimpOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MailchimpNodeParameters } from "../nodes/Mailchimp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MailchimpProps extends NodeProps {
     readonly parameters: MailchimpNodeParameters;

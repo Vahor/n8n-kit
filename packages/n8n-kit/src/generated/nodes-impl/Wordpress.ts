@@ -4,7 +4,7 @@
 import type { WordpressApiCredentials } from "../credentials/WordpressApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WordpressNodeParameters } from "../nodes/Wordpress";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WordpressProps extends NodeProps {
     readonly parameters: WordpressNodeParameters;

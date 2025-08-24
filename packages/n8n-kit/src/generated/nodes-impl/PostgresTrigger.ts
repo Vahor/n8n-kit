@@ -4,7 +4,7 @@
 import type { PostgresCredentials } from "../credentials/Postgres.ts";
 import type { Credentials } from "../../credentials";
 import type { PostgresTriggerNodeParameters } from "../nodes/PostgresTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PostgresTriggerProps extends NodeProps {
     readonly parameters: PostgresTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { ConvertKitApiCredentials } from "../credentials/ConvertKitApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ConvertKitTriggerNodeParameters } from "../nodes/ConvertKitTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ConvertKitTriggerProps extends NodeProps {
     readonly parameters: ConvertKitTriggerNodeParameters;

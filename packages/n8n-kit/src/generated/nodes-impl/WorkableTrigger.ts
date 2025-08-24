@@ -4,7 +4,7 @@
 import type { WorkableApiCredentials } from "../credentials/WorkableApi.ts";
 import type { Credentials } from "../../credentials";
 import type { WorkableTriggerNodeParameters } from "../nodes/WorkableTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WorkableTriggerProps extends NodeProps {
     readonly parameters: WorkableTriggerNodeParameters;

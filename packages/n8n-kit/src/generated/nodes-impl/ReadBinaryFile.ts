@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ReadBinaryFileNodeParameters } from "../nodes/ReadBinaryFile";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ReadBinaryFileProps extends NodeProps {
     readonly parameters: ReadBinaryFileNodeParameters;

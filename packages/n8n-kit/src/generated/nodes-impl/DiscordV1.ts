@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { DiscordV1NodeParameters } from "../nodes/DiscordV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DiscordV1Props extends NodeProps {
     readonly parameters: DiscordV1NodeParameters;

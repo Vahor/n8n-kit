@@ -5,7 +5,7 @@ import type { LinearApiCredentials } from "../credentials/LinearApi.ts";
 import type { LinearOAuth2ApiCredentials } from "../credentials/LinearOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { LinearTriggerNodeParameters } from "../nodes/LinearTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LinearTriggerProps extends NodeProps {
     readonly parameters: LinearTriggerNodeParameters;

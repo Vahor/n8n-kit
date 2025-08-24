@@ -4,7 +4,7 @@
 import type { FacebookLeadAdsOAuth2ApiCredentials } from "../credentials/FacebookLeadAdsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { FacebookLeadAdsTriggerNodeParameters } from "../nodes/FacebookLeadAdsTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FacebookLeadAdsTriggerProps extends NodeProps {
     readonly parameters: FacebookLeadAdsTriggerNodeParameters;

@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { StopAndErrorNodeParameters } from "../nodes/StopAndError";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StopAndErrorProps extends NodeProps {
     readonly parameters: StopAndErrorNodeParameters;

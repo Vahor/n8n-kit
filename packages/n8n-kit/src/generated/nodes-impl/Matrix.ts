@@ -4,7 +4,7 @@
 import type { MatrixApiCredentials } from "../credentials/MatrixApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MatrixNodeParameters } from "../nodes/Matrix";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MatrixProps extends NodeProps {
     readonly parameters: MatrixNodeParameters;

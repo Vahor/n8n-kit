@@ -5,7 +5,7 @@ import type { OpenAiApiCredentials } from "../credentials/OpenAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmOpenAiNodeParameters } from "../nodes/LmOpenAi";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmOpenAiProps extends NodeProps {
     readonly parameters: LmOpenAiNodeParameters;

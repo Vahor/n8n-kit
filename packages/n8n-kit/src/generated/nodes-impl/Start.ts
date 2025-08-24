@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { StartNodeParameters } from "../nodes/Start";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StartProps extends NodeProps {
     readonly parameters: StartNodeParameters;

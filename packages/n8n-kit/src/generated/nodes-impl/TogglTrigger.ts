@@ -4,7 +4,7 @@
 import type { TogglApiCredentials } from "../credentials/TogglApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TogglTriggerNodeParameters } from "../nodes/TogglTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TogglTriggerProps extends NodeProps {
     readonly parameters: TogglTriggerNodeParameters;

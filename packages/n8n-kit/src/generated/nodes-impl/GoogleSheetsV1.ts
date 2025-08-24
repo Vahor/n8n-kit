@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleSheetsOAuth2ApiCredentials } from "../credentials/GoogleSheetsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleSheetsV1NodeParameters } from "../nodes/GoogleSheetsV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleSheetsV1Props extends NodeProps {
     readonly parameters: GoogleSheetsV1NodeParameters;

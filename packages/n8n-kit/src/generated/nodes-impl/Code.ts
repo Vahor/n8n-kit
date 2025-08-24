@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { CodeNodeParameters } from "../nodes/Code";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CodeProps extends NodeProps {
     readonly parameters: CodeNodeParameters;

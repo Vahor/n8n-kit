@@ -5,7 +5,7 @@ import type { AsanaApiCredentials } from "../credentials/AsanaApi.ts";
 import type { AsanaOAuth2ApiCredentials } from "../credentials/AsanaOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { AsanaTriggerNodeParameters } from "../nodes/AsanaTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AsanaTriggerProps extends NodeProps {
     readonly parameters: AsanaTriggerNodeParameters;

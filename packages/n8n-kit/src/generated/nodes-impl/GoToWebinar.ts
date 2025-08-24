@@ -4,7 +4,7 @@
 import type { GoToWebinarOAuth2ApiCredentials } from "../credentials/GoToWebinarOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoToWebinarNodeParameters } from "../nodes/GoToWebinar";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoToWebinarProps extends NodeProps {
     readonly parameters: GoToWebinarNodeParameters;

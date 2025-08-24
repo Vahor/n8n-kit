@@ -4,7 +4,7 @@
 import type { TwakeCloudApiCredentials } from "../credentials/TwakeCloudApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TwakeNodeParameters } from "../nodes/Twake";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TwakeProps extends NodeProps {
     readonly parameters: TwakeNodeParameters;

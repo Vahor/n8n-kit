@@ -4,7 +4,7 @@
 import type { RundeckApiCredentials } from "../credentials/RundeckApi.ts";
 import type { Credentials } from "../../credentials";
 import type { RundeckNodeParameters } from "../nodes/Rundeck";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RundeckProps extends NodeProps {
     readonly parameters: RundeckNodeParameters;

@@ -6,7 +6,7 @@ import type { ShopifyAccessTokenApiCredentials } from "../credentials/ShopifyAcc
 import type { ShopifyOAuth2ApiCredentials } from "../credentials/ShopifyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { ShopifyNodeParameters } from "../nodes/Shopify";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ShopifyProps extends NodeProps {
     readonly parameters: ShopifyNodeParameters;

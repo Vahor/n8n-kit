@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { StickyNoteNodeParameters } from "../nodes/StickyNote";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StickyNoteProps extends NodeProps {
     readonly parameters: StickyNoteNodeParameters;

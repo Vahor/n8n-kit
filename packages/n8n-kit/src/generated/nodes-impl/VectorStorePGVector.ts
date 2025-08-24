@@ -7,7 +7,7 @@ import type { IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStorePGVectorNodeParameters } from "../nodes/VectorStorePGVector";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface VectorStorePGVectorProps extends NodeProps {
     readonly parameters: VectorStorePGVectorNodeParameters;

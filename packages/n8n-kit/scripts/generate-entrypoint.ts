@@ -7,6 +7,7 @@ const buildEntrypoint = async (
 	forFolder: string,
 	options?: {
 		toExport?: (withoutExtension: string) => string;
+		skip?: (withoutExtension: string) => boolean;
 		append?: string[];
 	},
 ) => {
@@ -28,6 +29,9 @@ const buildEntrypoint = async (
 			continue;
 		}
 		const withoutExtension = relativePath.replace(/\.ts$/, "");
+		if (options?.skip?.(withoutExtension)) {
+			continue;
+		}
 		const toExport = options?.toExport
 			? options.toExport(withoutExtension)
 			: starExport;
@@ -45,7 +49,9 @@ const buildEntrypoint = async (
 	await code.save(forFolder);
 };
 
-await buildEntrypoint("src/nodes");
+await buildEntrypoint("src/nodes", {
+	skip: (withoutExtension) => withoutExtension === "node",
+});
 await buildEntrypoint("src/generated/nodes-impl");
 await buildEntrypoint("src/generated/nodes", {
 	toExport: (withoutExtension) => `type { ${withoutExtension}NodeParameters }`,

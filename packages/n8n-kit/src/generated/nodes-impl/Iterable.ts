@@ -4,7 +4,7 @@
 import type { IterableApiCredentials } from "../credentials/IterableApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IterableNodeParameters } from "../nodes/Iterable";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface IterableProps extends NodeProps {
     readonly parameters: IterableNodeParameters;

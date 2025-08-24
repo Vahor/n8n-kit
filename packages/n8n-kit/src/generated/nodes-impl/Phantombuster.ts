@@ -4,7 +4,7 @@
 import type { PhantombusterApiCredentials } from "../credentials/PhantombusterApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PhantombusterNodeParameters } from "../nodes/Phantombuster";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PhantombusterProps extends NodeProps {
     readonly parameters: PhantombusterNodeParameters;

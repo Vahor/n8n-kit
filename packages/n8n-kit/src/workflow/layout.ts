@@ -1,9 +1,5 @@
 import dagre from "@dagrejs/dagre";
-import {
-	type BaseNode,
-	DEFAULT_NODE_SIZE,
-	type NodePosition,
-} from "../nodes/node";
+import { DEFAULT_NODE_SIZE, type Node, type NodePosition } from "../nodes/node";
 import { Group } from "./group";
 
 export const GROUP_DEFAULT_POSITION: NodePosition = [
@@ -20,7 +16,7 @@ export interface WorkflowLayoutOptions {
 }
 
 export function calculateLayout(
-	nodes: BaseNode<any, any>[],
+	nodes: Node<any, any>[],
 	options: WorkflowLayoutOptions = {},
 ): void {
 	const g = new dagre.graphlib.Graph({

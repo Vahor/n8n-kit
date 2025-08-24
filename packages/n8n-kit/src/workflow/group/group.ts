@@ -1,5 +1,5 @@
-import { BaseNode, type NodeProps, type StickyNoteProps } from "../../nodes";
-import { StickyNote } from "../../nodes/sticky-note";
+import { Node, type NodeProps } from "../../nodes/node";
+import { StickyNote, type StickyNoteProps } from "../../nodes/sticky-note";
 import type { Chain, ChainContext, State } from "../chain";
 import { GROUP_DEFAULT_POSITION } from "../layout";
 import type { Workflow } from "../workflow";
@@ -40,7 +40,7 @@ export class Group<
 		for (let i = 0; i < nodes.length; i++) {
 			const node = nodes[i]!;
 			if (this._props.filterNodes?.(node, i) === false) continue;
-			if (node instanceof BaseNode) {
+			if (node instanceof Node) {
 				node["~setGroup"](this.id);
 			}
 		}

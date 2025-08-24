@@ -4,7 +4,7 @@
 import type { HomeAssistantApiCredentials } from "../credentials/HomeAssistantApi.ts";
 import type { Credentials } from "../../credentials";
 import type { HomeAssistantNodeParameters } from "../nodes/HomeAssistant";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HomeAssistantProps extends NodeProps {
     readonly parameters: HomeAssistantNodeParameters;

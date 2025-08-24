@@ -4,7 +4,7 @@
 import type { GoogleCloudNaturalLanguageOAuth2ApiCredentials } from "../credentials/GoogleCloudNaturalLanguageOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleCloudNaturalLanguageNodeParameters } from "../nodes/GoogleCloudNaturalLanguage";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleCloudNaturalLanguageProps extends NodeProps {
     readonly parameters: GoogleCloudNaturalLanguageNodeParameters;

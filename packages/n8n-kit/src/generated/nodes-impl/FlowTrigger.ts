@@ -4,7 +4,7 @@
 import type { FlowApiCredentials } from "../credentials/FlowApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FlowTriggerNodeParameters } from "../nodes/FlowTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FlowTriggerProps extends NodeProps {
     readonly parameters: FlowTriggerNodeParameters;

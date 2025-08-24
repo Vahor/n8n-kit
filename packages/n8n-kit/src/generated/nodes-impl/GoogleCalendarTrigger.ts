@@ -4,7 +4,7 @@
 import type { GoogleCalendarOAuth2ApiCredentials } from "../credentials/GoogleCalendarOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleCalendarTriggerNodeParameters } from "../nodes/GoogleCalendarTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleCalendarTriggerProps extends NodeProps {
     readonly parameters: GoogleCalendarTriggerNodeParameters;

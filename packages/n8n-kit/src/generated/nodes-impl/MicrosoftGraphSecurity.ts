@@ -4,7 +4,7 @@
 import type { MicrosoftGraphSecurityOAuth2ApiCredentials } from "../credentials/MicrosoftGraphSecurityOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftGraphSecurityNodeParameters } from "../nodes/MicrosoftGraphSecurity";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftGraphSecurityProps extends NodeProps {
     readonly parameters: MicrosoftGraphSecurityNodeParameters;

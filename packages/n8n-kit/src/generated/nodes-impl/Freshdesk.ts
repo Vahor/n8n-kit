@@ -4,7 +4,7 @@
 import type { FreshdeskApiCredentials } from "../credentials/FreshdeskApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FreshdeskNodeParameters } from "../nodes/Freshdesk";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FreshdeskProps extends NodeProps {
     readonly parameters: FreshdeskNodeParameters;

@@ -3,7 +3,7 @@
 
 import type { IChainable } from "../../workflow/chain/types";
 import type { ToolThinkNodeParameters } from "../nodes/ToolThink";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ToolThinkProps extends NodeProps {
     readonly parameters: ToolThinkNodeParameters;

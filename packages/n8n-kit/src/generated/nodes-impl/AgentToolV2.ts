@@ -5,7 +5,7 @@ import type { IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentToolV2NodeParameters } from "../nodes/AgentToolV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AgentToolV2Props extends NodeProps {
     readonly parameters: AgentToolV2NodeParameters;

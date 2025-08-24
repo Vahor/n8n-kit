@@ -4,7 +4,7 @@
 import type { GoogleAnalyticsOAuth2ApiCredentials } from "../credentials/GoogleAnalyticsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleAnalyticsV1NodeParameters } from "../nodes/GoogleAnalyticsV1";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleAnalyticsV1Props extends NodeProps {
     readonly parameters: GoogleAnalyticsV1NodeParameters;

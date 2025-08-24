@@ -4,7 +4,7 @@
 import type { HunterApiCredentials } from "../credentials/HunterApi.ts";
 import type { Credentials } from "../../credentials";
 import type { HunterNodeParameters } from "../nodes/Hunter";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HunterProps extends NodeProps {
     readonly parameters: HunterNodeParameters;

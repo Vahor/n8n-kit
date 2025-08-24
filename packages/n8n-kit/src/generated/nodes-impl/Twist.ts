@@ -4,7 +4,7 @@
 import type { TwistOAuth2ApiCredentials } from "../credentials/TwistOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { TwistNodeParameters } from "../nodes/Twist";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TwistProps extends NodeProps {
     readonly parameters: TwistNodeParameters;

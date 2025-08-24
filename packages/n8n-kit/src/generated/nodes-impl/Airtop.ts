@@ -4,7 +4,7 @@
 import type { AirtopApiCredentials } from "../credentials/AirtopApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AirtopNodeParameters } from "../nodes/Airtop";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AirtopProps extends NodeProps {
     readonly parameters: AirtopNodeParameters;

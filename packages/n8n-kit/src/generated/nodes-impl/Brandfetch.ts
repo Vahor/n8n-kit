@@ -4,7 +4,7 @@
 import type { BrandfetchApiCredentials } from "../credentials/BrandfetchApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BrandfetchNodeParameters } from "../nodes/Brandfetch";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BrandfetchProps extends NodeProps {
     readonly parameters: BrandfetchNodeParameters;

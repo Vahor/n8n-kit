@@ -5,7 +5,7 @@ import type { XataApiCredentials } from "../credentials/XataApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryXataNodeParameters } from "../nodes/MemoryXata";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryXataProps extends NodeProps {
     readonly parameters: MemoryXataNodeParameters;

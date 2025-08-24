@@ -5,7 +5,7 @@ import type { DropboxApiCredentials } from "../credentials/DropboxApi.ts";
 import type { DropboxOAuth2ApiCredentials } from "../credentials/DropboxOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { DropboxNodeParameters } from "../nodes/Dropbox";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DropboxProps extends NodeProps {
     readonly parameters: DropboxNodeParameters;

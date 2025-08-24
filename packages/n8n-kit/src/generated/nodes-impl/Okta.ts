@@ -4,7 +4,7 @@
 import type { OktaApiCredentials } from "../credentials/OktaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { OktaNodeParameters } from "../nodes/Okta";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OktaProps extends NodeProps {
     readonly parameters: OktaNodeParameters;

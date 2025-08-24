@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ItemListsV3NodeParameters } from "../nodes/ItemListsV3";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ItemListsV3Props extends NodeProps {
     readonly parameters: ItemListsV3NodeParameters;

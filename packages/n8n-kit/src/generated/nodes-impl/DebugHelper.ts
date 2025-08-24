@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { DebugHelperNodeParameters } from "../nodes/DebugHelper";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DebugHelperProps extends NodeProps {
     readonly parameters: DebugHelperNodeParameters;

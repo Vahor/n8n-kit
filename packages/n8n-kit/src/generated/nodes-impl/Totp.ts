@@ -4,7 +4,7 @@
 import type { TotpApiCredentials } from "../credentials/TotpApi.ts";
 import type { Credentials } from "../../credentials";
 import type { TotpNodeParameters } from "../nodes/Totp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface TotpProps extends NodeProps {
     readonly parameters: TotpNodeParameters;

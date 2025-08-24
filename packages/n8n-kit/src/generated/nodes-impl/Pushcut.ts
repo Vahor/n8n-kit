@@ -4,7 +4,7 @@
 import type { PushcutApiCredentials } from "../credentials/PushcutApi.ts";
 import type { Credentials } from "../../credentials";
 import type { PushcutNodeParameters } from "../nodes/Pushcut";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface PushcutProps extends NodeProps {
     readonly parameters: PushcutNodeParameters;

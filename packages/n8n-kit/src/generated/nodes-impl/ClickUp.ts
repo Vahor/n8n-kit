@@ -5,7 +5,7 @@ import type { ClickUpApiCredentials } from "../credentials/ClickUpApi.ts";
 import type { ClickUpOAuth2ApiCredentials } from "../credentials/ClickUpOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { ClickUpNodeParameters } from "../nodes/ClickUp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ClickUpProps extends NodeProps {
     readonly parameters: ClickUpNodeParameters;

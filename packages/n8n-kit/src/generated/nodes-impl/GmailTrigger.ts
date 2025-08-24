@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GmailOAuth2ApiCredentials } from "../credentials/GmailOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GmailTriggerNodeParameters } from "../nodes/GmailTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GmailTriggerProps extends NodeProps {
     readonly parameters: GmailTriggerNodeParameters;

@@ -4,7 +4,7 @@
 import type { KafkaCredentials } from "../credentials/Kafka.ts";
 import type { Credentials } from "../../credentials";
 import type { KafkaTriggerNodeParameters } from "../nodes/KafkaTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface KafkaTriggerProps extends NodeProps {
     readonly parameters: KafkaTriggerNodeParameters;

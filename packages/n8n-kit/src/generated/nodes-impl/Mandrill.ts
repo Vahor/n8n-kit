@@ -4,7 +4,7 @@
 import type { MandrillApiCredentials } from "../credentials/MandrillApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MandrillNodeParameters } from "../nodes/Mandrill";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MandrillProps extends NodeProps {
     readonly parameters: MandrillNodeParameters;

@@ -5,7 +5,7 @@ import type { ZammadBasicAuthApiCredentials } from "../credentials/ZammadBasicAu
 import type { ZammadTokenAuthApiCredentials } from "../credentials/ZammadTokenAuthApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ZammadNodeParameters } from "../nodes/Zammad";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ZammadProps extends NodeProps {
     readonly parameters: ZammadNodeParameters;

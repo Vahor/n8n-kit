@@ -5,7 +5,7 @@ import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmChatAwsBedrockNodeParameters } from "../nodes/LmChatAwsBedrock";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmChatAwsBedrockProps extends NodeProps {
     readonly parameters: LmChatAwsBedrockNodeParameters;

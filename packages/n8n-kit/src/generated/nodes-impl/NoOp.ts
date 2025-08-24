@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { NoOpNodeParameters } from "../nodes/NoOp";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface NoOpProps extends NodeProps {
     readonly parameters: NoOpNodeParameters;

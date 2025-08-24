@@ -4,7 +4,7 @@
 import type { MoceanApiCredentials } from "../credentials/MoceanApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MoceanNodeParameters } from "../nodes/Mocean";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MoceanProps extends NodeProps {
     readonly parameters: MoceanNodeParameters;

@@ -4,7 +4,7 @@
 import type { AgileCrmApiCredentials } from "../credentials/AgileCrmApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AgileCrmNodeParameters } from "../nodes/AgileCrm";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AgileCrmProps extends NodeProps {
     readonly parameters: AgileCrmNodeParameters;

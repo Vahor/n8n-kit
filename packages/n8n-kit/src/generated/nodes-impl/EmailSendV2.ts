@@ -4,7 +4,7 @@
 import type { SmtpCredentials } from "../credentials/Smtp.ts";
 import type { Credentials } from "../../credentials";
 import type { EmailSendV2NodeParameters } from "../nodes/EmailSendV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface EmailSendV2Props extends NodeProps {
     readonly parameters: EmailSendV2NodeParameters;

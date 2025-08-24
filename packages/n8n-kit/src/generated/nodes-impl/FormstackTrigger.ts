@@ -5,7 +5,7 @@ import type { FormstackApiCredentials } from "../credentials/FormstackApi.ts";
 import type { FormstackOAuth2ApiCredentials } from "../credentials/FormstackOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { FormstackTriggerNodeParameters } from "../nodes/FormstackTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FormstackTriggerProps extends NodeProps {
     readonly parameters: FormstackTriggerNodeParameters;

@@ -5,7 +5,7 @@ import type { IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { OutputParserAutofixingNodeParameters } from "../nodes/OutputParserAutofixing";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface OutputParserAutofixingProps extends NodeProps {
     readonly parameters: OutputParserAutofixingNodeParameters;

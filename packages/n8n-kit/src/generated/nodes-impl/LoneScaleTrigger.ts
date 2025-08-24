@@ -4,7 +4,7 @@
 import type { LoneScaleApiCredentials } from "../credentials/LoneScaleApi.ts";
 import type { Credentials } from "../../credentials";
 import type { LoneScaleTriggerNodeParameters } from "../nodes/LoneScaleTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LoneScaleTriggerProps extends NodeProps {
     readonly parameters: LoneScaleTriggerNodeParameters;

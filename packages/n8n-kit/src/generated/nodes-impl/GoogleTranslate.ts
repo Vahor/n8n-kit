@@ -5,7 +5,7 @@ import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleTranslateOAuth2ApiCredentials } from "../credentials/GoogleTranslateOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleTranslateNodeParameters } from "../nodes/GoogleTranslate";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleTranslateProps extends NodeProps {
     readonly parameters: GoogleTranslateNodeParameters;

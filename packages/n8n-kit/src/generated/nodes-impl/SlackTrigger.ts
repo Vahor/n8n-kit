@@ -4,7 +4,7 @@
 import type { SlackApiCredentials } from "../credentials/SlackApi.ts";
 import type { Credentials } from "../../credentials";
 import type { SlackTriggerNodeParameters } from "../nodes/SlackTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SlackTriggerProps extends NodeProps {
     readonly parameters: SlackTriggerNodeParameters;

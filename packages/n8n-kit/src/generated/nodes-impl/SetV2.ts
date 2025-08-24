@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SetV2NodeParameters } from "../nodes/SetV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SetV2Props extends NodeProps {
     readonly parameters: SetV2NodeParameters;

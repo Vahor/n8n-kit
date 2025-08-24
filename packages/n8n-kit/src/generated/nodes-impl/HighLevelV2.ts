@@ -4,7 +4,7 @@
 import type { HighLevelOAuth2ApiCredentials } from "../credentials/HighLevelOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { HighLevelV2NodeParameters } from "../nodes/HighLevelV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HighLevelV2Props extends NodeProps {
     readonly parameters: HighLevelV2NodeParameters;

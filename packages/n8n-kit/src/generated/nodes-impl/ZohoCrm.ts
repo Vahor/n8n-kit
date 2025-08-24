@@ -4,7 +4,7 @@
 import type { ZohoOAuth2ApiCredentials } from "../credentials/ZohoOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { ZohoCrmNodeParameters } from "../nodes/ZohoCrm";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ZohoCrmProps extends NodeProps {
     readonly parameters: ZohoCrmNodeParameters;

@@ -4,7 +4,7 @@
 import type { MqttCredentials } from "../credentials/Mqtt.ts";
 import type { Credentials } from "../../credentials";
 import type { MqttNodeParameters } from "../nodes/Mqtt";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MqttProps extends NodeProps {
     readonly parameters: MqttNodeParameters;

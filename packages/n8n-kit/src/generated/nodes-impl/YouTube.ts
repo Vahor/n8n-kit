@@ -4,7 +4,7 @@
 import type { YouTubeOAuth2ApiCredentials } from "../credentials/YouTubeOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { YouTubeNodeParameters } from "../nodes/YouTube";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface YouTubeProps extends NodeProps {
     readonly parameters: YouTubeNodeParameters;

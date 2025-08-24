@@ -4,7 +4,7 @@
 import type { AutopilotApiCredentials } from "../credentials/AutopilotApi.ts";
 import type { Credentials } from "../../credentials";
 import type { AutopilotTriggerNodeParameters } from "../nodes/AutopilotTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AutopilotTriggerProps extends NodeProps {
     readonly parameters: AutopilotTriggerNodeParameters;

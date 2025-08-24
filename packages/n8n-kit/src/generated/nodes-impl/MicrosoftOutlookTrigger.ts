@@ -4,7 +4,7 @@
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "../credentials/MicrosoftOutlookOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftOutlookTriggerNodeParameters } from "../nodes/MicrosoftOutlookTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftOutlookTriggerProps extends NodeProps {
     readonly parameters: MicrosoftOutlookTriggerNodeParameters;

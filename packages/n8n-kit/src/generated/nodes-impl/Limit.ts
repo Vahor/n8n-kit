@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { LimitNodeParameters } from "../nodes/Limit";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LimitProps extends NodeProps {
     readonly parameters: LimitNodeParameters;

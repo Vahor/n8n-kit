@@ -6,7 +6,7 @@ import type { Credentials } from "../../credentials";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AnthropicNodeParameters } from "../nodes/Anthropic";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface AnthropicProps extends NodeProps {
     readonly parameters: AnthropicNodeParameters;

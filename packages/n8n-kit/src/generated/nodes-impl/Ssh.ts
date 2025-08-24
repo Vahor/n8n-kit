@@ -5,7 +5,7 @@ import type { SshPasswordCredentials } from "../credentials/SshPassword.ts";
 import type { SshPrivateKeyCredentials } from "../credentials/SshPrivateKey.ts";
 import type { Credentials } from "../../credentials";
 import type { SshNodeParameters } from "../nodes/Ssh";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SshProps extends NodeProps {
     readonly parameters: SshNodeParameters;

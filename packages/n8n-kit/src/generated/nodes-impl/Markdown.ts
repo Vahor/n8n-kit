@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MarkdownNodeParameters } from "../nodes/Markdown";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MarkdownProps extends NodeProps {
     readonly parameters: MarkdownNodeParameters;

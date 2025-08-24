@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { CompareDatasetsNodeParameters } from "../nodes/CompareDatasets";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CompareDatasetsProps extends NodeProps {
     readonly parameters: CompareDatasetsNodeParameters;

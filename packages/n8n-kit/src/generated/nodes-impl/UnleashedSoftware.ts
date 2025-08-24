@@ -4,7 +4,7 @@
 import type { UnleashedSoftwareApiCredentials } from "../credentials/UnleashedSoftwareApi.ts";
 import type { Credentials } from "../../credentials";
 import type { UnleashedSoftwareNodeParameters } from "../nodes/UnleashedSoftware";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface UnleashedSoftwareProps extends NodeProps {
     readonly parameters: UnleashedSoftwareNodeParameters;

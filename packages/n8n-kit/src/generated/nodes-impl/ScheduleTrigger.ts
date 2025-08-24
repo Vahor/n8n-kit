@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ScheduleTriggerNodeParameters } from "../nodes/ScheduleTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ScheduleTriggerProps extends NodeProps {
     readonly parameters: ScheduleTriggerNodeParameters;

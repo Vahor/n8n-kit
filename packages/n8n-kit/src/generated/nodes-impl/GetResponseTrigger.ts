@@ -5,7 +5,7 @@ import type { GetResponseApiCredentials } from "../credentials/GetResponseApi.ts
 import type { GetResponseOAuth2ApiCredentials } from "../credentials/GetResponseOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GetResponseTriggerNodeParameters } from "../nodes/GetResponseTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GetResponseTriggerProps extends NodeProps {
     readonly parameters: GetResponseTriggerNodeParameters;

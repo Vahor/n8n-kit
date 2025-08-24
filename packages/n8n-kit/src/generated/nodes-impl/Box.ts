@@ -4,7 +4,7 @@
 import type { BoxOAuth2ApiCredentials } from "../credentials/BoxOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { BoxNodeParameters } from "../nodes/Box";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BoxProps extends NodeProps {
     readonly parameters: BoxNodeParameters;

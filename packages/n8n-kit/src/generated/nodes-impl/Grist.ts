@@ -4,7 +4,7 @@
 import type { GristApiCredentials } from "../credentials/GristApi.ts";
 import type { Credentials } from "../../credentials";
 import type { GristNodeParameters } from "../nodes/Grist";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GristProps extends NodeProps {
     readonly parameters: GristNodeParameters;

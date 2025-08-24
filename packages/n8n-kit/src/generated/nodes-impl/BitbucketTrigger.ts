@@ -4,7 +4,7 @@
 import type { BitbucketApiCredentials } from "../credentials/BitbucketApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BitbucketTriggerNodeParameters } from "../nodes/BitbucketTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BitbucketTriggerProps extends NodeProps {
     readonly parameters: BitbucketTriggerNodeParameters;

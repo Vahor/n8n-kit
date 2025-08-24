@@ -7,7 +7,7 @@ import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { WebhookNodeParameters } from "../nodes/Webhook";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface WebhookProps extends NodeProps {
     readonly parameters: WebhookNodeParameters;

@@ -4,7 +4,7 @@
 import type { MicrosoftSharePointOAuth2ApiCredentials } from "../credentials/MicrosoftSharePointOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MicrosoftSharePointNodeParameters } from "../nodes/MicrosoftSharePoint";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MicrosoftSharePointProps extends NodeProps {
     readonly parameters: MicrosoftSharePointNodeParameters;

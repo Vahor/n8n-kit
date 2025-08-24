@@ -4,7 +4,7 @@
 import type { CloudflareApiCredentials } from "../credentials/CloudflareApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CloudflareNodeParameters } from "../nodes/Cloudflare";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CloudflareProps extends NodeProps {
     readonly parameters: CloudflareNodeParameters;

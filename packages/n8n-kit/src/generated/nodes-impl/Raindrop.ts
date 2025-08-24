@@ -4,7 +4,7 @@
 import type { RaindropOAuth2ApiCredentials } from "../credentials/RaindropOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { RaindropNodeParameters } from "../nodes/Raindrop";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface RaindropProps extends NodeProps {
     readonly parameters: RaindropNodeParameters;

@@ -5,7 +5,7 @@ import type { ZepApiCredentials } from "../credentials/ZepApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { MemoryZepNodeParameters } from "../nodes/MemoryZep";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MemoryZepProps extends NodeProps {
     readonly parameters: MemoryZepNodeParameters;

@@ -4,7 +4,7 @@
 import type { ClearbitApiCredentials } from "../credentials/ClearbitApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ClearbitNodeParameters } from "../nodes/Clearbit";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ClearbitProps extends NodeProps {
     readonly parameters: ClearbitNodeParameters;

@@ -5,7 +5,7 @@ import type { GhostAdminApiCredentials } from "../credentials/GhostAdminApi.ts";
 import type { GhostContentApiCredentials } from "../credentials/GhostContentApi.ts";
 import type { Credentials } from "../../credentials";
 import type { GhostNodeParameters } from "../nodes/Ghost";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GhostProps extends NodeProps {
     readonly parameters: GhostNodeParameters;

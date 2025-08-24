@@ -6,7 +6,7 @@ import {
 
 import { NO_END_STATES } from "../workflow/chain/chain";
 import type { INextable } from "../workflow/chain/types";
-import { BaseNode, type NodePosition, type NodeProps } from "./node";
+import { Node, type NodePosition, type NodeProps } from "./node";
 
 export const StickyNoteColors = {
 	YELLOW: 1,
@@ -26,7 +26,7 @@ export interface StickyNoteProps extends NodeProps {
 	};
 }
 
-export class StickyNote extends BaseNode {
+export class StickyNote extends Node {
 	override endStates: INextable[] = NO_END_STATES;
 
 	protected type = type;

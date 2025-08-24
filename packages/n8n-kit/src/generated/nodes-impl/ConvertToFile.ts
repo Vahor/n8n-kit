@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ConvertToFileNodeParameters } from "../nodes/ConvertToFile";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ConvertToFileProps extends NodeProps {
     readonly parameters: ConvertToFileNodeParameters;

@@ -4,7 +4,7 @@
 import type { SnowflakeCredentials } from "../credentials/Snowflake.ts";
 import type { Credentials } from "../../credentials";
 import type { SnowflakeNodeParameters } from "../nodes/Snowflake";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SnowflakeProps extends NodeProps {
     readonly parameters: SnowflakeNodeParameters;

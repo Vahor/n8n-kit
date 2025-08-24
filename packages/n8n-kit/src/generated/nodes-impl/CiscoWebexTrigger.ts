@@ -4,7 +4,7 @@
 import type { CiscoWebexOAuth2ApiCredentials } from "../credentials/CiscoWebexOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { CiscoWebexTriggerNodeParameters } from "../nodes/CiscoWebexTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CiscoWebexTriggerProps extends NodeProps {
     readonly parameters: CiscoWebexTriggerNodeParameters;

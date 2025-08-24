@@ -4,7 +4,7 @@
 import type { MetabaseApiCredentials } from "../credentials/MetabaseApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MetabaseNodeParameters } from "../nodes/Metabase";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MetabaseProps extends NodeProps {
     readonly parameters: MetabaseNodeParameters;

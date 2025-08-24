@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SimulateNodeParameters } from "../nodes/Simulate";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SimulateProps extends NodeProps {
     readonly parameters: SimulateNodeParameters;

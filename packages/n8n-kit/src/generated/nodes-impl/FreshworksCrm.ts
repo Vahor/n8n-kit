@@ -4,7 +4,7 @@
 import type { FreshworksCrmApiCredentials } from "../credentials/FreshworksCrmApi.ts";
 import type { Credentials } from "../../credentials";
 import type { FreshworksCrmNodeParameters } from "../nodes/FreshworksCrm";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface FreshworksCrmProps extends NodeProps {
     readonly parameters: FreshworksCrmNodeParameters;

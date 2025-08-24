@@ -4,7 +4,7 @@
 import type { CrowdDevApiCredentials } from "../credentials/CrowdDevApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CrowdDevNodeParameters } from "../nodes/CrowdDev";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CrowdDevProps extends NodeProps {
     readonly parameters: CrowdDevNodeParameters;

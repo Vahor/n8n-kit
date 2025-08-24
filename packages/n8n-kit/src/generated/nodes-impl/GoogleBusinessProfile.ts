@@ -4,7 +4,7 @@
 import type { GoogleBusinessProfileOAuth2ApiCredentials } from "../credentials/GoogleBusinessProfileOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { GoogleBusinessProfileNodeParameters } from "../nodes/GoogleBusinessProfile";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface GoogleBusinessProfileProps extends NodeProps {
     readonly parameters: GoogleBusinessProfileNodeParameters;

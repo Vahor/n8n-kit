@@ -5,7 +5,7 @@ import type { MailjetEmailApiCredentials } from "../credentials/MailjetEmailApi.
 import type { MailjetSmsApiCredentials } from "../credentials/MailjetSmsApi.ts";
 import type { Credentials } from "../../credentials";
 import type { MailjetNodeParameters } from "../nodes/Mailjet";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MailjetProps extends NodeProps {
     readonly parameters: MailjetNodeParameters;

@@ -4,7 +4,7 @@
 import type { ActionNetworkApiCredentials } from "../credentials/ActionNetworkApi.ts";
 import type { Credentials } from "../../credentials";
 import type { ActionNetworkNodeParameters } from "../nodes/ActionNetwork";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ActionNetworkProps extends NodeProps {
     readonly parameters: ActionNetworkNodeParameters;

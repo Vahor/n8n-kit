@@ -4,7 +4,7 @@
 import type { CodaApiCredentials } from "../credentials/CodaApi.ts";
 import type { Credentials } from "../../credentials";
 import type { CodaNodeParameters } from "../nodes/Coda";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface CodaProps extends NodeProps {
     readonly parameters: CodaNodeParameters;

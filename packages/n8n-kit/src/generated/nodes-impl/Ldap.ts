@@ -4,7 +4,7 @@
 import type { LdapCredentials } from "../credentials/Ldap.ts";
 import type { Credentials } from "../../credentials";
 import type { LdapNodeParameters } from "../nodes/Ldap";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LdapProps extends NodeProps {
     readonly parameters: LdapNodeParameters;

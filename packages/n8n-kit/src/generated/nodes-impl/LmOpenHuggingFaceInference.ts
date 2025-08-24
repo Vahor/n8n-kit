@@ -5,7 +5,7 @@ import type { HuggingFaceApiCredentials } from "../credentials/HuggingFaceApi.ts
 import type { Credentials } from "../../credentials";
 import type { IChainable } from "../../workflow/chain/types";
 import type { LmOpenHuggingFaceInferenceNodeParameters } from "../nodes/LmOpenHuggingFaceInference";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface LmOpenHuggingFaceInferenceProps extends NodeProps {
     readonly parameters: LmOpenHuggingFaceInferenceNodeParameters;

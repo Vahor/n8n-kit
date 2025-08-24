@@ -5,7 +5,7 @@ import type { HarvestApiCredentials } from "../credentials/HarvestApi.ts";
 import type { HarvestOAuth2ApiCredentials } from "../credentials/HarvestOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { HarvestNodeParameters } from "../nodes/Harvest";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HarvestProps extends NodeProps {
     readonly parameters: HarvestNodeParameters;

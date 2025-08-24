@@ -5,7 +5,7 @@ import type { MondayComApiCredentials } from "../credentials/MondayComApi.ts";
 import type { MondayComOAuth2ApiCredentials } from "../credentials/MondayComOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { MondayComNodeParameters } from "../nodes/MondayCom";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface MondayComProps extends NodeProps {
     readonly parameters: MondayComNodeParameters;

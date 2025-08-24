@@ -4,7 +4,7 @@
 import type { JotFormApiCredentials } from "../credentials/JotFormApi.ts";
 import type { Credentials } from "../../credentials";
 import type { JotFormTriggerNodeParameters } from "../nodes/JotFormTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface JotFormTriggerProps extends NodeProps {
     readonly parameters: JotFormTriggerNodeParameters;

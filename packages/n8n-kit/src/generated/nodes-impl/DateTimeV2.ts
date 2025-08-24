@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { DateTimeV2NodeParameters } from "../nodes/DateTimeV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface DateTimeV2Props extends NodeProps {
     readonly parameters: DateTimeV2NodeParameters;

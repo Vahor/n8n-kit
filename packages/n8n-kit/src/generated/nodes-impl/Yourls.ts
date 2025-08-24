@@ -4,7 +4,7 @@
 import type { YourlsApiCredentials } from "../credentials/YourlsApi.ts";
 import type { Credentials } from "../../credentials";
 import type { YourlsNodeParameters } from "../nodes/Yourls";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface YourlsProps extends NodeProps {
     readonly parameters: YourlsNodeParameters;

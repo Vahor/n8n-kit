@@ -5,7 +5,7 @@ import type { StoryblokContentApiCredentials } from "../credentials/StoryblokCon
 import type { StoryblokManagementApiCredentials } from "../credentials/StoryblokManagementApi.ts";
 import type { Credentials } from "../../credentials";
 import type { StoryblokNodeParameters } from "../nodes/Storyblok";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface StoryblokProps extends NodeProps {
     readonly parameters: StoryblokNodeParameters;

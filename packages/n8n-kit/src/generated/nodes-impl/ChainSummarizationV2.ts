@@ -4,7 +4,7 @@
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChainSummarizationV2NodeParameters } from "../nodes/ChainSummarizationV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ChainSummarizationV2Props extends NodeProps {
     readonly parameters: ChainSummarizationV2NodeParameters;

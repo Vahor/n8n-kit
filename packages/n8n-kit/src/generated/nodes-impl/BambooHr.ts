@@ -4,7 +4,7 @@
 import type { BambooHrApiCredentials } from "../credentials/BambooHrApi.ts";
 import type { Credentials } from "../../credentials";
 import type { BambooHrNodeParameters } from "../nodes/BambooHr";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface BambooHrProps extends NodeProps {
     readonly parameters: BambooHrNodeParameters;

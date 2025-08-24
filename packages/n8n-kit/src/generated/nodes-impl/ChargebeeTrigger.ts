@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ChargebeeTriggerNodeParameters } from "../nodes/ChargebeeTrigger";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface ChargebeeTriggerProps extends NodeProps {
     readonly parameters: ChargebeeTriggerNodeParameters;

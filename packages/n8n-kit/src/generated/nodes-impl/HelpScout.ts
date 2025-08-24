@@ -4,7 +4,7 @@
 import type { HelpScoutOAuth2ApiCredentials } from "../credentials/HelpScoutOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { HelpScoutNodeParameters } from "../nodes/HelpScout";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface HelpScoutProps extends NodeProps {
     readonly parameters: HelpScoutNodeParameters;

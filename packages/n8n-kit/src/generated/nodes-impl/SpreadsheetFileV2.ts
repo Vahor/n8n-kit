@@ -2,7 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SpreadsheetFileV2NodeParameters } from "../nodes/SpreadsheetFileV2";
-import { Node, type NodeProps } from "../../nodes";
+import { Node, type NodeProps } from "../../nodes/node";
 
 export interface SpreadsheetFileV2Props extends NodeProps {
     readonly parameters: SpreadsheetFileV2NodeParameters;
