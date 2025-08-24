@@ -1,7 +1,7 @@
 import type { Type } from "arktype";
 import type { ExecuteWorkflowNodeParameters } from "../generated/nodes/ExecuteWorkflow";
 import { ExecuteWorkflow as _ExecuteWorkflow } from "../generated/nodes-impl/ExecuteWorkflow";
-import type { Workflow } from "../workflow";
+import { RESOLVED_WORKFLOW_ID, type Workflow } from "../workflow";
 import type { NodeProps } from "./node";
 
 export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
@@ -33,7 +33,7 @@ export class ExecuteWorkflow<
 			// @ts-expect-error: remove workflow from output as it's onlu used for the workflowId
 			workflow: undefined,
 			workflowId: {
-				value: this.props.parameters.workflow.id,
+				value: RESOLVED_WORKFLOW_ID(this.props.parameters.workflow.id),
 				mode: "list",
 				cachedResultName: this.props.parameters.workflow.id,
 			},

@@ -274,3 +274,6 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 export type WorkflowDefinition = ReturnType<Workflow["build"]>;
 
 export const workflowTagId = (id: string) => `${prefix}${id}`;
+export const RESOLVED_WORKFLOW_ID_PREFIX = `${prefix}_resolved_workflow_id@`;
+export const RESOLVED_WORKFLOW_ID = (workflowId: string) =>
+	`${RESOLVED_WORKFLOW_ID_PREFIX}${workflowId}`;
