@@ -7,8 +7,7 @@
 			"name": "When clicking ‘Test workflow’",
 			"type": "n8n-nodes-base.manualTrigger",
 			"position": [60, 60],
-			"typeVersion": 1,
-			"parameters": {}
+			"typeVersion": 1
 		},
 		{
 			"id": "call-reusable-workflow",

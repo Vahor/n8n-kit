@@ -127,9 +127,7 @@
 			"name": "When chat message received",
 			"type": "@n8n/n8n-nodes-langchain.chatTrigger",
 			"position": [210, 1680],
-			"typeVersion": 1.3,
-			"parameters": {},
-			"credentials": {}
+			"typeVersion": 1.3
 		},
 		{
 			"id": "ai-agent",
@@ -141,8 +139,7 @@
 				"options": {
 					"systemMessage": "You are a helpful HR assistant designed to answer employee questions based on company policies.\n\nRetrieve relevant information from the provided internal documents and provide a concise, accurate, and informative answer to the employee's question.\n\nUse the tool called \"company_documents_tool\" to retrieve any information from the company's documents.\n\nIf the answer cannot be found in the provided documents, respond with \"I cannot find the answer in the available resources.\""
 				}
-			},
-			"credentials": {}
+			}
 		},
 		{
 			"id": "google-gemini",
@@ -158,8 +155,7 @@
 			"name": "Window Buffer Memory",
 			"type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
 			"position": [940, 1740],
-			"typeVersion": 1.3,
-			"parameters": {}
+			"typeVersion": 1.3
 		},
 		{
 			"id": "vector-store-tool",
