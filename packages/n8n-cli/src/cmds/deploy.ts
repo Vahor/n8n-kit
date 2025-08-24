@@ -2,8 +2,6 @@ import { confirm } from "@inquirer/prompts";
 import {
 	RESOLVED_WORKFLOW_ID,
 	RESOLVED_WORKFLOW_ID_PREFIX,
-	type WorkflowDefinition,
-	workflowTagId,
 } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import chalk from "chalk";
@@ -11,7 +9,7 @@ import { table } from "table";
 import type { Argv } from "yargs";
 import { UNDEFINED_ID } from "../constants";
 import { N8nApi } from "../n8n-api";
-import { loadApplication } from "./build";
+import { getWorkflowMapping, loadApplication } from "./shared";
 
 export const command = "deploy";
 export const description = "Deploy app to n8n";
@@ -29,7 +27,10 @@ type DeployOptions = {
 };
 
 export const handler = async (options: DeployOptions) => {
-	const app = await loadApplication();
+	const { app } = await loadApplication();
+	console.log(
+		table([["ID", "Name"], ...app.workflows.map((w) => [w.id, w.getName()])]),
+	);
 
 	console.log();
 	if (!options.yes && !options.dryRun) {
@@ -50,35 +51,13 @@ export const handler = async (options: DeployOptions) => {
 	logger.log("Resolving workflow ids...");
 
 	// custom id -> n8n id
-	const matchMap = new Map<string, Pick<WorkflowDefinition, "id" | "nodes">>();
-
-	for (const workflow of app.workflows) {
-		logger.setContext(`resolve:${workflow.id}`);
-
-		const tag = workflowTagId(workflow.hashId);
-		const match = (
-			await n8n.listWorkflows({
-				tags: [tag],
-			})
-		).filter((w) => w.isArchived === false);
-		if (match.length === 0) logger.debug("No match found");
-		if (match.length > 1) {
-			logger.error(
-				`Multiple matches found for workflow ${workflow.id} (${tag})`,
-			);
-			process.exit(1);
-		}
-		if (match.length === 1) {
-			workflow.n8nWorkflowId = match[0]!.id;
-			logger.log(
-				`Found match for workflow ${chalk.cyan(workflow.n8nWorkflowId)}`,
-			);
-			matchMap.set(workflow.id, match[0]!);
-		} else {
-			logger.log("No match found");
-		}
-		logger.setContext(null);
-	}
+	const matchMap = await getWorkflowMapping(
+		n8n,
+		app.workflows,
+		(workflow, match) => {
+			workflow.n8nWorkflowId = match.id;
+		},
+	);
 
 	logger.log("Deploying workflows...");
 
