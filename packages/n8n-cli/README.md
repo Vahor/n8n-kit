@@ -163,8 +163,3 @@ bunx @vahor/n8n --help
 bunx @vahor/n8n deploy --help
 bunx @vahor/n8n workflow --help
 ```
-
-## Limitations
-
-- **Credentials**: Must be created manually in n8n first, then referenced by ID
-- **Folders**: Workflows deploy to the root; You can still organize them manually once deployed
