@@ -12,9 +12,7 @@ export interface OdooApiCredentials {
 
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
     readonly "db"?: string;

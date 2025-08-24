@@ -9,24 +9,16 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GithubTriggerNodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly owner?: {
 	value: string,
 	mode: "list" | "url" | "name",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly repository?: {
 	value: string,
 	mode: "list" | "url" | "name",
@@ -38,9 +30,7 @@ export interface GithubTriggerNodeParameters {
      */
     readonly events?: ("*" | "check_run" | "check_suite" | "commit_comment" | "create" | "delete" | "deploy_key" | "deployment" | "deployment_status" | "fork" | "github_app_authorization" | "gollum" | "installation" | "installation_repositories" | "issue_comment" | "issues" | "label" | "marketplace_purchase" | "member" | "membership" | "meta" | "milestone" | "org_block" | "organization" | "page_build" | "project" | "project_card" | "project_column" | "public" | "pull_request" | "pull_request_review" | "pull_request_review_comment" | "push" | "release" | "repository" | "repository_import" | "repository_vulnerability_alert" | "security_advisory" | "star" | "status" | "team" | "team_add" | "watch")[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "insecureSSL"?: boolean };
 
 }

@@ -9,41 +9,27 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZammadNodeParameters {
-    /**
-     * Default: "tokenAuth"
-     */
+    /** Default: "tokenAuth" */
     readonly authentication?: "basicAuth" | "tokenAuth";
 
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "group" | "organization" | "ticket" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getSelf" | "update";
 
     readonly name?: string;
 
-    /**
-     * Group to update. Specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
-     */
+    /** Group to update. Specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>. */
     readonly id?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "note"?: string } | { "shared"?: boolean, "domain"?: string, "domain_assignment"?: boolean, "active"?: boolean, "vip"?: boolean, "note"?: string, "customFieldsUi"?: { "customFieldPairs": any } } | { "customFieldsUi"?: { "customFieldPairs": any } } | { "active"?: boolean, "addressUi"?: { "addressDetails": any }, "customFieldsUi"?: { "customFieldPairs": any }, "department"?: string, "email"?: string, "fax"?: string, "note"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "vip"?: boolean, "web"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "name"?: string, "note"?: string } | { "shared"?: boolean, "domain"?: string, "domain_assignment"?: boolean, "active"?: boolean, "vip"?: boolean, "note"?: string, "customFieldsUi"?: { "customFieldPairs": any } } | { "active"?: boolean, "addressUi"?: { "addressDetails": any }, "customFieldsUi"?: { "customFieldPairs": any }, "department"?: string, "email"?: string, "fax"?: string, "firstname"?: string, "lastname"?: string, "note"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "vip"?: boolean, "web"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -53,9 +39,7 @@ export interface ZammadNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Title of the ticket to create
-     */
+    /** Title of the ticket to create */
     readonly title?: string;
 
     /**
@@ -70,9 +54,7 @@ export interface ZammadNodeParameters {
      */
     readonly customer?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly article?: { "articleDetails": any };
 
     readonly firstname?: string;
@@ -81,9 +63,7 @@ export interface ZammadNodeParameters {
 
     readonly query?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "query"?: string, "sortUi"?: { "sortDetails": any } };
 
 }

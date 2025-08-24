@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EventbriteTriggerNodeParameters {
-    /**
-     * Default: "privateKey"
-     */
+    /** Default: "privateKey" */
     readonly authentication?: "privateKey" | "oAuth2";
 
     /**

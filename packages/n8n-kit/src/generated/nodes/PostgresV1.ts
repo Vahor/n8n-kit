@@ -9,11 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostgresV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
-    /**
-     * Default: "insert"
-     */
+    /** Default: "insert" */
     readonly operation?: "executeQuery" | "insert" | "update";
 
     /**
@@ -28,14 +24,10 @@ export interface PostgresV1NodeParameters {
      */
     readonly schema?: string;
 
-    /**
-     * Name of the table in which to insert data to
-     */
+    /** Name of the table in which to insert data to */
     readonly table?: string;
 
-    /**
-     * Comma-separated list of the properties which should used as columns for the new rows. You can use type casting with colons (:) like id:int.
-     */
+    /** Comma-separated list of the properties which should used as columns for the new rows. You can use type casting with colons (:) like id:int. */
     readonly columns?: string;
 
     /**
@@ -50,9 +42,7 @@ export interface PostgresV1NodeParameters {
      */
     readonly returnFields?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "mode"?: "independently" | "multiple" | "transaction", "largeNumbersOutput"?: "numbers" | "text", "queryParams"?: string };
 
 }

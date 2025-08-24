@@ -9,18 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionV2NodeParameters {
-    readonly notionNotice?: string;
-
-    readonly Credentials?: any;
-
-    /**
-     * Default: "page"
-     */
+    /** Default: "page" */
     readonly resource?: "block" | "database" | "databasePage" | "page" | "user";
 
-    /**
-     * Default: "append"
-     */
+    /** Default: "append" */
     readonly operation?: "append" | "getAll" | "get" | "getAll" | "search" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "update" | "create" | "get" | "search" | "archive" | "create" | "search";
 
     /**
@@ -38,9 +30,7 @@ export interface NotionV2NodeParameters {
      */
     readonly blockUi?: { "blockValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -52,9 +42,7 @@ export interface NotionV2NodeParameters {
 
     readonly fetchNestedBlocks?: boolean;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly simplifyOutput?: boolean;
 
     /**
@@ -72,19 +60,13 @@ export interface NotionV2NodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * The text to search for
-     */
+    /** The text to search for */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "sort"?: { "sortValue": any } } | { "iconType"?: "emoji" | "file", "icon"?: string } | { "downloadFiles"?: boolean, "filter"?: { "singleCondition": any, "multipleCondition": any }, "sort"?: { "sortValue": any } } | { "filter"?: { "filters": any }, "sort"?: { "sortValue": any } };
 
-    /**
-     * Page title. Appears at the top of the page and can be found via Quick Find.
-     */
+    /** Page title. Appears at the top of the page and can be found via Quick Find. */
     readonly title?: string;
 
     /**
@@ -102,14 +84,10 @@ export interface NotionV2NodeParameters {
 	mode: "url" | "id",
 } | string;
 
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly filterType?: "none" | "manual" | "json";
 
-    /**
-     * Default: "anyFilter"
-     */
+    /** Default: "anyFilter" */
     readonly matchType?: "anyFilter" | "allFilters";
 
     /**
@@ -117,8 +95,6 @@ export interface NotionV2NodeParameters {
      * Type options: {"multipleValues":true}
      */
     readonly filters?: { "conditions": any };
-
-    readonly jsonNotice?: string;
 
     readonly filterJson?: string;
 

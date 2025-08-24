@@ -10,9 +10,7 @@ export const name = "workableApi" as const;
 export interface WorkableApiCredentials {
     readonly "subdomain"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "workableApi";

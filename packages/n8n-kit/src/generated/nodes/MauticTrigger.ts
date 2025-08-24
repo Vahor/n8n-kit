@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MauticTriggerNodeParameters {
-    /**
-     * Default: "credentials"
-     */
+    /** Default: "credentials" */
     readonly authentication?: "credentials" | "oAuth2";
 
     /**

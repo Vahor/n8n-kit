@@ -8,19 +8,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenThesaurusNodeParameters {
-    /**
-     * Default: "getSynonyms"
-     */
+    /** Default: "getSynonyms" */
     readonly operation?: "getSynonyms";
 
-    /**
-     * The word to get synonyms for
-     */
+    /** The word to get synonyms for */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "baseform"?: boolean, "similar"?: boolean, "startswith"?: boolean, "substring"?: boolean, "substringFromResults"?: number, "substringMaxResults"?: number, "subsynsets"?: boolean, "supersynsets"?: boolean };
 
 }

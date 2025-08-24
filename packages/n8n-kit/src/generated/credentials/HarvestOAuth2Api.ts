@@ -8,31 +8,21 @@ export const name = "harvestOAuth2Api" as const;
  * documentationUrl: harvest
  */
 export interface HarvestOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://id.getharvest.com/oauth2/authorize"
-     */
+    /** Default: "https://id.getharvest.com/oauth2/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://id.getharvest.com/api/v2/oauth2/token"
-     */
+    /** Default: "https://id.getharvest.com/api/v2/oauth2/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "all"
-     */
+    /** Default: "all" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "harvestOAuth2Api";

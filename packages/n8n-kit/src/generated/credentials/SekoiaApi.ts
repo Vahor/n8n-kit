@@ -8,9 +8,7 @@ export const name = "sekoiaApi" as const;
  * documentationUrl: sekoia
  */
 export interface SekoiaApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "sekoiaApi";

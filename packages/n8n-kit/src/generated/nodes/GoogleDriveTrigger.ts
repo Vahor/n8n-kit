@@ -9,16 +9,12 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleDriveTriggerNodeParameters {
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
     readonly triggerOn?: "specificFile" | "specificFolder";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly fileToWatch?: {
 	value: string,
 	mode: "list" | "url" | "id",
@@ -30,15 +26,11 @@ export interface GoogleDriveTriggerNodeParameters {
      */
     readonly event?: "fileUpdated" | "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated" | "watchFolderUpdated" | "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly folderToWatch?: {
 	value: string,
 	mode: "list" | "url" | "id",
 };
-
-    readonly asas?: string;
 
     /**
      * The drive to monitor. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -47,9 +39,7 @@ export interface GoogleDriveTriggerNodeParameters {
      */
     readonly driveToWatch?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fileType"?: "all" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.video" };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

@@ -21,9 +21,7 @@ export interface WaitNodeParameters {
      */
     readonly incomingAuthentication?: "basicAuth" | "none" | "basicAuth" | "headerAuth" | "jwtAuth" | "none";
 
-    /**
-     * The date and time to wait for before continuing
-     */
+    /** The date and time to wait for before continuing */
     readonly dateTime?: string;
 
     /**
@@ -39,13 +37,7 @@ export interface WaitNodeParameters {
      */
     readonly unit?: "seconds" | "minutes" | "hours" | "days";
 
-    readonly webhookNotice?: string;
-
-    readonly formNotice?: string;
-
-    /**
-     * Shown at the top of the form
-     */
+    /** Shown at the top of the form */
     readonly formTitle?: string;
 
     /**
@@ -91,9 +83,7 @@ export interface WaitNodeParameters {
      */
     readonly responseBinaryPropertyName?: string;
 
-    /**
-     * Whether to limit the time this node should wait for a user response before execution resumes
-     */
+    /** Whether to limit the time this node should wait for a user response before execution resumes */
     readonly limitWaitTime?: boolean;
 
     /**
@@ -115,14 +105,10 @@ export interface WaitNodeParameters {
      */
     readonly resumeUnit?: "seconds" | "minutes" | "hours" | "days";
 
-    /**
-     * Continue execution after the specified date and time
-     */
+    /** Continue execution after the specified date and time */
     readonly maxDateAndTime?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any }, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "webhookSuffix"?: string };
 
 }

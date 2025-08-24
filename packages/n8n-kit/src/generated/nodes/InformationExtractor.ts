@@ -27,8 +27,6 @@ export interface InformationExtractorNodeParameters {
      */
     readonly jsonSchemaExample?: string;
 
-    readonly notice?: string;
-
     /**
      * Schema to use for the function
      * Default: "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"state\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"cities\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
@@ -42,9 +40,7 @@ export interface InformationExtractorNodeParameters {
      */
     readonly attributes?: { "attributes": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

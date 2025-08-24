@@ -9,19 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ItemListsV1NodeParameters {
-    /**
-     * Default: "itemList"
-     */
-    readonly resource?: any;
-
-    /**
-     * Default: "splitOutItems"
-     */
+    /** Default: "splitOutItems" */
     readonly operation?: "aggregateItems" | "limit" | "removeDuplicates" | "sort" | "splitOutItems" | "summarize";
 
-    /**
-     * The name of the input field to break out into separate items
-     */
+    /** The name of the input field to break out into separate items */
     readonly fieldToSplitOut?: string;
 
     /**
@@ -36,9 +27,7 @@ export interface ItemListsV1NodeParameters {
      */
     readonly fieldsToInclude?: { "fields": any };
 
-    /**
-     * Default: "aggregateIndividualFields"
-     */
+    /** Default: "aggregateIndividualFields" */
     readonly aggregate?: "aggregateIndividualFields" | "aggregateAllItemData";
 
     /**
@@ -104,9 +93,7 @@ export interface ItemListsV1NodeParameters {
      */
     readonly keep?: "firstItems" | "lastItems";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "removeOtherFields"?: boolean, "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "mergeLists"?: boolean, "keepMissing"?: boolean } | { "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
 
     /**
@@ -115,9 +102,7 @@ export interface ItemListsV1NodeParameters {
      */
     readonly fieldsToSummarize?: { "values": any };
 
-    /**
-     * The name of the input fields that you want to split the summary by
-     */
+    /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;
 
 }

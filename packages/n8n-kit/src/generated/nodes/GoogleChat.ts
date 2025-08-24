@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleChatNodeParameters {
-    /**
-     * Default: "serviceAccount"
-     */
+    /** Default: "serviceAccount" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "member" | "message" | "space";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "sendAndWait" | "update";
 
-    /**
-     * Member to be retrieved in the form "spaces/*<space>/members/*"
-     */
+    /** Member to be retrieved in the form "spaces/*<space>/members/*" */
     readonly memberId?: string;
 
     /**
@@ -36,9 +28,7 @@ export interface GoogleChatNodeParameters {
      */
     readonly spaceId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -48,17 +38,11 @@ export interface GoogleChatNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether to pass the message object as JSON
-     */
+    /** Whether to pass the message object as JSON */
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly messageUi?: { "text"?: string };
-
-    readonly jsonNotice?: string;
 
     /**
      * Message input as JSON Object or JSON String
@@ -66,19 +50,13 @@ export interface GoogleChatNodeParameters {
      */
     readonly messageJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "requestId"?: string };
 
-    /**
-     * Resource name of the message to be deleted, in the form "spaces//messages/"
-     */
+    /** Resource name of the message to be deleted, in the form "spaces//messages/" */
     readonly messageId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFieldsUi?: { "text"?: string };
 
     /**
@@ -87,19 +65,13 @@ export interface GoogleChatNodeParameters {
      */
     readonly updateFieldsJson?: string;
 
-    /**
-     * Type options: {"rows":4}
-     */
+    /** Type options: {"rows":4} */
     readonly message?: string;
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -114,14 +86,10 @@ export interface GoogleChatNodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
 }

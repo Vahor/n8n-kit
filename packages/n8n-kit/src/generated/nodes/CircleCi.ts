@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CircleCiNodeParameters {
-    /**
-     * Default: "pipeline"
-     */
+    /** Default: "pipeline" */
     readonly resource?: "pipeline";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "trigger";
 
-    /**
-     * Source control system
-     */
+    /** Source control system */
     readonly vcs?: "bitbucket" | "github";
 
-    /**
-     * Project slug in the form org-name/repo-name
-     */
+    /** Project slug in the form org-name/repo-name */
     readonly projectSlug?: string;
 
     /**
@@ -36,9 +28,7 @@ export interface CircleCiNodeParameters {
      */
     readonly pipelineNumber?: number;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -48,14 +38,10 @@ export interface CircleCiNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "branch"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "branch"?: string, "tag"?: string };
 
 }

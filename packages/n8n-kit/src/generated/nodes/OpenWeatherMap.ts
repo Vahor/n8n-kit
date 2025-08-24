@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenWeatherMapNodeParameters {
-    /**
-     * Default: "currentWeather"
-     */
+    /** Default: "currentWeather" */
     readonly operation?: "currentWeather" | "5DayForecast";
 
     /**
@@ -26,9 +24,7 @@ export interface OpenWeatherMapNodeParameters {
      */
     readonly locationSelection?: "cityName" | "cityId" | "coordinates" | "zipCode";
 
-    /**
-     * The name of the city to return the weather of
-     */
+    /** The name of the city to return the weather of */
     readonly cityName?: string;
 
     /**
@@ -37,24 +33,16 @@ export interface OpenWeatherMapNodeParameters {
      */
     readonly cityId?: number;
 
-    /**
-     * The latitude of the location to return the weather of
-     */
+    /** The latitude of the location to return the weather of */
     readonly latitude?: string;
 
-    /**
-     * The longitude of the location to return the weather of
-     */
+    /** The longitude of the location to return the weather of */
     readonly longitude?: string;
 
-    /**
-     * The ID of city to return the weather of. List can be downloaded here: http://bulk.openweathermap.org/sample/.
-     */
+    /** The ID of city to return the weather of. List can be downloaded here: http://bulk.openweathermap.org/sample/. */
     readonly zipCode?: string;
 
-    /**
-     * The two letter language code to get your output in (eg. en, de, ...).
-     */
+    /** The two letter language code to get your output in (eg. en, de, ...). */
     readonly language?: string;
 
 }

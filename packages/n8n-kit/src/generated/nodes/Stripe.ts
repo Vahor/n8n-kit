@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StripeNodeParameters {
-    /**
-     * Default: "balance"
-     */
+    /** Default: "balance" */
     readonly resource?: "balance" | "charge" | "coupon" | "customer" | "customerCard" | "source" | "token";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "add" | "get" | "remove" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "create";
 
-    /**
-     * ID of the customer to be associated with this card
-     */
+    /** ID of the customer to be associated with this card */
     readonly customerId?: string;
 
     /**
@@ -30,14 +24,10 @@ export interface StripeNodeParameters {
      */
     readonly token?: string;
 
-    /**
-     * ID of the card to remove
-     */
+    /** ID of the card to remove */
     readonly cardId?: string;
 
-    /**
-     * ID of the source to retrieve
-     */
+    /** ID of the source to retrieve */
     readonly sourceId?: string;
 
     /**
@@ -52,24 +42,16 @@ export interface StripeNodeParameters {
      */
     readonly currency?: string;
 
-    /**
-     * ID of the customer's payment source to be charged
-     */
+    /** ID of the customer's payment source to be charged */
     readonly source?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any } } | { "address"?: { "details": any }, "description"?: string, "email"?: string, "metadata"?: { "metadataProperties": any }, "phone"?: string, "shipping"?: { "shippingProperties": any } } | { "metadata"?: { "metadataProperties": any }, "statement_descriptor"?: string };
 
-    /**
-     * ID of the charge to retrieve
-     */
+    /** ID of the charge to retrieve */
     readonly chargeId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -79,9 +61,7 @@ export interface StripeNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any } } | { "address"?: { "details": any }, "description"?: string, "email"?: string, "metadata"?: { "metadataProperties": any }, "name"?: string, "phone"?: string, "shipping"?: { "shippingProperties": any } };
 
     /**
@@ -109,31 +89,21 @@ export interface StripeNodeParameters {
      */
     readonly percentOff?: number;
 
-    /**
-     * Full name or business name of the customer to create
-     */
+    /** Full name or business name of the customer to create */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "email"?: string };
 
     readonly number?: string;
 
-    /**
-     * Security code printed on the back of the card
-     */
+    /** Security code printed on the back of the card */
     readonly cvc?: string;
 
-    /**
-     * Number of the month when the card will expire
-     */
+    /** Number of the month when the card will expire */
     readonly expirationMonth?: string;
 
-    /**
-     * Year when the card will expire
-     */
+    /** Year when the card will expire */
     readonly expirationYear?: string;
 
 }

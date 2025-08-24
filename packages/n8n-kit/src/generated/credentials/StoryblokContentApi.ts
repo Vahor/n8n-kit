@@ -8,9 +8,7 @@ export const name = "storyblokContentApi" as const;
  * documentationUrl: storyblok
  */
 export interface StoryblokContentApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "storyblokContentApi";

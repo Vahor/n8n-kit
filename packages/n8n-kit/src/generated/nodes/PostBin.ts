@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostBinNodeParameters {
-    /**
-     * Default: "bin"
-     */
+    /** Default: "bin" */
     readonly resource?: "bin" | "request";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "delete" | "get" | "removeFirst" | "send";
 
-    /**
-     * Unique identifier for each bin
-     */
+    /** Unique identifier for each bin */
     readonly binId?: string;
 
-    /**
-     * Type options: {"rows":5}
-     */
+    /** Type options: {"rows":5} */
     readonly binContent?: string;
 
-    /**
-     * Unique identifier for each request
-     */
+    /** Unique identifier for each request */
     readonly requestId?: string;
 
 }

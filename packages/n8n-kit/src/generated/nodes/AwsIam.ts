@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsIamNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "user" | "group";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "addToGroup" | "create" | "delete" | "get" | "getAll" | "removeFromGroup" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -43,14 +39,10 @@ export interface AwsIamNodeParameters {
      */
     readonly userName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "path"?: string, "permissionsBoundary"?: string, "tags"?: { "tags": any } } | { "pathPrefix"?: string } | { "path"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -66,9 +58,7 @@ export interface AwsIamNodeParameters {
      */
     readonly groupName?: string;
 
-    /**
-     * Whether to include a list of users in the group
-     */
+    /** Whether to include a list of users in the group */
     readonly includeUsers?: boolean;
 
 }

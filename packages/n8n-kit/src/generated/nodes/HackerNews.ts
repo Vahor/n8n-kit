@@ -8,29 +8,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HackerNewsNodeParameters {
-    /**
-     * Default: "article"
-     */
+    /** Default: "article" */
     readonly resource?: "all" | "article" | "user";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "getAll" | "get";
 
-    /**
-     * The ID of the Hacker News article to be returned
-     */
+    /** The ID of the Hacker News article to be returned */
     readonly articleId?: string;
 
-    /**
-     * The Hacker News user to be returned
-     */
+    /** The Hacker News user to be returned */
     readonly username?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -40,9 +30,7 @@ export interface HackerNewsNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "includeComments"?: boolean } | { "keyword"?: string, "tags"?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
 
 }

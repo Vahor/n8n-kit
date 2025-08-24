@@ -8,9 +8,7 @@ export const name = "mistralCloudApi" as const;
  * documentationUrl: mistral
  */
 export interface MistralCloudApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "mistralCloudApi";

@@ -10,11 +10,6 @@ export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsHuggingFaceInferenceNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model name to use from HuggingFace library
      * Default: "sentence-transformers/distilbert-base-nli-mean-tokens"
      */

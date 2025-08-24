@@ -15,9 +15,7 @@ export interface LoneScaleNodeParameters {
      */
     readonly resource?: "list" | "item";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "add";
 
     /**
@@ -32,34 +30,22 @@ export interface LoneScaleNodeParameters {
      */
     readonly list?: string;
 
-    /**
-     * Contact first name
-     */
+    /** Contact first name */
     readonly first_name?: string;
 
-    /**
-     * Contact last name
-     */
+    /** Contact last name */
     readonly last_name?: string;
 
-    /**
-     * Contact company name
-     */
+    /** Contact company name */
     readonly company_name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly peopleAdditionalFields?: { "full_name"?: string, "email"?: string, "company_name"?: string, "current_position"?: string, "domain"?: string, "linkedin_url"?: string, "location"?: string, "contact_id"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly companyAdditionalFields?: { "linkedin_url"?: string, "domain"?: string, "location"?: string, "contact_id"?: string };
 
-    /**
-     * Name of your list
-     */
+    /** Name of your list */
     readonly name?: string;
 
 }

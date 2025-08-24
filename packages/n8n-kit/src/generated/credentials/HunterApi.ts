@@ -8,9 +8,7 @@ export const name = "hunterApi" as const;
  * documentationUrl: hunter
  */
 export interface HunterApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "hunterApi";

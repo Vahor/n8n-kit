@@ -8,34 +8,22 @@ export const name = "hubspotOAuth2Api" as const;
  * documentationUrl: hubspot
  */
 export interface HubspotOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://app.hubspot.com/oauth/authorize"
-     */
+    /** Default: "https://app.hubspot.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.hubapi.com/oauth/v1/token"
-     */
+    /** Default: "https://api.hubapi.com/oauth/v1/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "crm.lists.write crm.objects.contacts.read crm.objects.contacts.write crm.objects.companies.read crm.objects.companies.write crm.objects.deals.read crm.objects.deals.write crm.objects.owners.read crm.schemas.companies.read crm.schemas.contacts.read crm.schemas.deals.read forms tickets"
-     */
+    /** Default: "crm.lists.write crm.objects.contacts.read crm.objects.contacts.write crm.objects.companies.read crm.objects.companies.write crm.objects.deals.read crm.objects.deals.write crm.objects.owners.read crm.schemas.companies.read crm.schemas.contacts.read crm.schemas.deals.read forms tickets" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "grant_type=authorization_code"
-     */
+    /** Default: "grant_type=authorization_code" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "hubspotOAuth2Api";

@@ -8,16 +8,12 @@ export const name = "azureOpenAiApi" as const;
  * documentationUrl: azureopenai
  */
 export interface AzureOpenAiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly "resourceName": string;
 
-    /**
-     * Default: "2025-03-01-preview"
-     */
+    /** Default: "2025-03-01-preview" */
     readonly "apiVersion": string;
 
     readonly "endpoint"?: string;

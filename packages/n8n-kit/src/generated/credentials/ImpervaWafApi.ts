@@ -10,9 +10,7 @@ export const name = "impervaWafApi" as const;
 export interface ImpervaWafApiCredentials {
     readonly "apiID": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "impervaWafApi";

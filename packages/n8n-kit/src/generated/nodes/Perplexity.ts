@@ -9,14 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PerplexityNodeParameters {
-    /**
-     * Default: "chat"
-     */
-    readonly resource?: any;
-
-    /**
-     * Default: "complete"
-     */
+    /** Default: "complete" */
     readonly operation?: "complete";
 
     /**
@@ -32,14 +25,10 @@ export interface PerplexityNodeParameters {
      */
     readonly messages?: { "message": any };
 
-    /**
-     * Whether to return only essential fields (ID, citations, message)
-     */
+    /** Whether to return only essential fields (ID, citations, message) */
     readonly simplify?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "frequencyPenalty"?: number, "maxTokens"?: number, "temperature"?: number, "topK"?: number, "topP"?: number, "presencePenalty"?: number, "returnImages"?: boolean, "returnRelatedQuestions"?: boolean, "searchDomainFilter"?: string, "searchRecency"?: "day" | "hour" | "month" | "week" };
 
 }

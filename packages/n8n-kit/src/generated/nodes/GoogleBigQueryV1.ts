@@ -9,21 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBigQueryV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "record"
-     */
+    /** Default: "record" */
     readonly resource?: "record";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getAll";
 
     /**
@@ -44,19 +36,13 @@ export interface GoogleBigQueryV1NodeParameters {
      */
     readonly tableId?: string;
 
-    /**
-     * Comma-separated list of the item properties to use as columns
-     */
+    /** Comma-separated list of the item properties to use as columns */
     readonly columns?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "ignoreUnknownValues"?: boolean, "skipInvalidRows"?: boolean, "templateSuffix"?: string, "traceId"?: string } | { "selectedFields"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

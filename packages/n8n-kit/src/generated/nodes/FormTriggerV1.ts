@@ -8,14 +8,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormTriggerV1NodeParameters {
-    /**
-     * The final segment of the form's URL, both for test and production
-     */
+    /** The final segment of the form's URL, both for test and production */
     readonly path?: string;
 
-    /**
-     * Shown at the top of the form
-     */
+    /** Shown at the top of the form */
     readonly formTitle?: string;
 
     /**
@@ -36,9 +32,7 @@ export interface FormTriggerV1NodeParameters {
      */
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "formSubmittedText"?: string };
 
 }

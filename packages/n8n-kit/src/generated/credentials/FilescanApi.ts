@@ -8,9 +8,7 @@ export const name = "filescanApi" as const;
  * documentationUrl: filescan
  */
 export interface FilescanApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "filescanApi";

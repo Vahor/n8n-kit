@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NasaNodeParameters {
-    /**
-     * Default: "astronomyPictureOfTheDay"
-     */
+    /** Default: "astronomyPictureOfTheDay" */
     readonly resource?: "asteroidNeoBrowse" | "asteroidNeoFeed" | "asteroidNeoLookup" | "astronomyPictureOfTheDay" | "donkiCoronalMassEjection" | "donkiHighSpeedStream" | "donkiInterplanetaryShock" | "donkiMagnetopauseCrossing" | "donkiNotifications" | "donkiRadiationBeltEnhancement" | "donkiSolarEnergeticParticle" | "donkiSolarFlare" | "donkiWsaEnlilSimulation" | "earthAssets" | "earthImagery";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll";
 
-    /**
-     * The ID of the asteroid to be returned
-     */
+    /** The ID of the asteroid to be returned */
     readonly asteroidId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "includeCloseApproachData"?: boolean } | { "date"?: string } | { "startDate"?: string, "endDate"?: string } | { "startDate"?: string, "endDate"?: string, "location"?: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B", "catalog"?: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG" } | { "date"?: string, "dim"?: number };
 
     /**
@@ -35,24 +27,16 @@ export interface NasaNodeParameters {
      */
     readonly download?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Latitude for the location of the image
-     */
+    /** Latitude for the location of the image */
     readonly lat?: number;
 
-    /**
-     * Longitude for the location of the image
-     */
+    /** Longitude for the location of the image */
     readonly lon?: number;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

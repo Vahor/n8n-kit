@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StrapiNodeParameters {
-    /**
-     * Default: "password"
-     */
+    /** Default: "password" */
     readonly authentication?: "password" | "token";
 
-    /**
-     * Default: "entry"
-     */
+    /** Default: "entry" */
     readonly resource?: "entry";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Name of the content type
-     */
+    /** Name of the content type */
     readonly contentType?: string;
 
-    /**
-     * Comma-separated list of the properties which should used as columns for the new rows
-     */
+    /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;
 
-    /**
-     * The ID of the entry to delete
-     */
+    /** The ID of the entry to delete */
     readonly entryId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -51,9 +37,7 @@ export interface StrapiNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "publicationState"?: "live" | "preview", "sort"?: string, "where"?: string };
 
     /**

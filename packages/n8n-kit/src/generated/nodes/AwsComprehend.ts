@@ -15,9 +15,7 @@ export interface AwsComprehendNodeParameters {
      */
     readonly resource?: "text";
 
-    /**
-     * Default: "detectDominantLanguage"
-     */
+    /** Default: "detectDominantLanguage" */
     readonly operation?: "detectDominantLanguage" | "detectEntities" | "detectSentiment";
 
     /**
@@ -26,9 +24,7 @@ export interface AwsComprehendNodeParameters {
      */
     readonly languageCode?: "ar" | "zh" | "zh-TW" | "en" | "fr" | "de" | "hi" | "it" | "ja" | "ko" | "pt" | "es";
 
-    /**
-     * The text to send
-     */
+    /** The text to send */
     readonly text?: string;
 
     /**
@@ -37,9 +33,7 @@ export interface AwsComprehendNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "endpointArn"?: string };
 
 }

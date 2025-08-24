@@ -9,21 +9,15 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOneDriveNodeParameters {
-    /**
-     * Default: "file"
-     */
+    /** Default: "file" */
     readonly resource?: "file" | "folder";
 
-    /**
-     * Default: "upload"
-     */
+    /** Default: "upload" */
     readonly operation?: "copy" | "delete" | "download" | "get" | "rename" | "search" | "share" | "upload" | "create" | "delete" | "getChildren" | "rename" | "search" | "share";
 
     readonly fileId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "name"?: string };
 
     /**
@@ -32,64 +26,40 @@ export interface MicrosoftOneDriveNodeParameters {
      */
     readonly parentReference?: { "driveId"?: string, "driveType"?: string, "id"?: string, "listId"?: string, "name"?: string, "path"?: string, "shareId"?: string, "siteId"?: string };
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * ID of the file
-     */
+    /** ID of the file */
     readonly itemId?: string;
 
-    /**
-     * New name for file
-     */
+    /** New name for file */
     readonly newName?: string;
 
-    /**
-     * The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.
-     */
+    /** The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content. */
     readonly query?: string;
 
-    /**
-     * The type of sharing link to create
-     */
+    /** The type of sharing link to create */
     readonly type?: "view" | "edit" | "embed";
 
-    /**
-     * The type of sharing link to create
-     */
+    /** The type of sharing link to create */
     readonly scope?: "anonymous" | "organization";
 
-    /**
-     * The name the file should be saved as
-     */
+    /** The name the file should be saved as */
     readonly fileName?: string;
 
-    /**
-     * ID of the parent folder that will contain the file
-     */
+    /** ID of the parent folder that will contain the file */
     readonly parentId?: string;
 
-    /**
-     * Whether the data to upload should be taken from binary field
-     */
+    /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;
 
-    /**
-     * The text content of the file
-     */
+    /** The text content of the file */
     readonly fileContent?: string;
 
-    /**
-     * The name or path of the folder
-     */
+    /** The name or path of the folder */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "parentFolderId"?: string };
 
     readonly folderId?: string;

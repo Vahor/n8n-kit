@@ -8,16 +8,7 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgentV2NodeParameters {
-    readonly aiAgentStarterCallout?: any;
-
-    /**
-     * Type options: {"calloutAction":{"label":"pre-built agents","icon":"bot","type":"openPreBuiltAgentsCollection"}}
-     */
-    readonly preBuiltAgentsCallout?: any;
-
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly promptType?: "auto" | "define";
 
     /**
@@ -28,15 +19,9 @@ export interface AgentV2NodeParameters {
 
     readonly hasOutputParser?: boolean;
 
-    readonly notice?: string;
-
     readonly needsFallback?: boolean;
 
-    readonly fallbackNotice?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number }, "enableStreaming"?: boolean } | { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

@@ -8,9 +8,7 @@ export const name = "oneSimpleApi" as const;
  * documentationUrl: oneSimpleApi
  */
 export interface OneSimpleApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly __name: "oneSimpleApi";

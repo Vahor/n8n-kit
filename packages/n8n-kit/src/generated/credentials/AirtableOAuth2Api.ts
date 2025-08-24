@@ -8,31 +8,21 @@ export const name = "airtableOAuth2Api" as const;
  * documentationUrl: airtable
  */
 export interface AirtableOAuth2ApiCredentials {
-    /**
-     * Default: "pkce"
-     */
+    /** Default: "pkce" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://airtable.com/oauth2/v1/authorize"
-     */
+    /** Default: "https://airtable.com/oauth2/v1/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://airtable.com/oauth2/v1/token"
-     */
+    /** Default: "https://airtable.com/oauth2/v1/token" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "schema.bases:read data.records:read data.records:write"
-     */
+    /** Default: "schema.bases:read data.records:read data.records:write" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "airtableOAuth2Api";

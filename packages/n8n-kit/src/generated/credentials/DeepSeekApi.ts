@@ -8,14 +8,10 @@ export const name = "deepSeekApi" as const;
  * documentationUrl: deepseek
  */
 export interface DeepSeekApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
-    /**
-     * Default: "https://api.deepseek.com"
-     */
+    /** Default: "https://api.deepseek.com" */
     readonly "url"?: any;
 
     readonly __name: "deepSeekApi";

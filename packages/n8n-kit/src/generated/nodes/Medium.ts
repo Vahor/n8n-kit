@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MediumNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "post"
-     */
+    /** Default: "post" */
     readonly resource?: "post" | "publication";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getAll";
 
-    /**
-     * Whether you are posting for a publication
-     */
+    /** Whether you are posting for a publication */
     readonly publication?: boolean;
 
     /**
@@ -35,29 +27,19 @@ export interface MediumNodeParameters {
      */
     readonly publicationId?: string;
 
-    /**
-     * Title of the post. Max Length : 100 characters.
-     */
+    /** Title of the post. Max Length : 100 characters. */
     readonly title?: string;
 
-    /**
-     * The format of the content to be posted
-     */
+    /** The format of the content to be posted */
     readonly contentFormat?: "html" | "markdown";
 
-    /**
-     * The body of the post, in a valid semantic HTML fragment, or Markdown
-     */
+    /** The body of the post, in a valid semantic HTML fragment, or Markdown */
     readonly content?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "canonicalUrl"?: string, "license"?: "all-rights-reserved" | "cc-40-by" | "cc-40-by-nc" | "cc-40-by-nc-nd" | "cc-40-by-nc-sa" | "cc-40-by-nd" | "cc-40-by-sa" | "cc-40-zero" | "public-domain", "notifyFollowers"?: boolean, "publishStatus"?: "public" | "draft" | "unlisted", "tags"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

@@ -15,19 +15,13 @@ export interface GhostNodeParameters {
      */
     readonly source?: "adminApi" | "contentApi";
 
-    /**
-     * Default: "post"
-     */
+    /** Default: "post" */
     readonly resource?: "post";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Post's title
-     */
+    /** Post's title */
     readonly title?: string;
 
     /**
@@ -36,19 +30,13 @@ export interface GhostNodeParameters {
      */
     readonly contentFormat?: "html" | "mobileDoc" | "lexical";
 
-    /**
-     * The content of the post to create
-     */
+    /** The content of the post to create */
     readonly content?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "authors"?: any[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: any[], "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
 
-    /**
-     * The ID of the post to delete
-     */
+    /** The ID of the post to delete */
     readonly postId?: string;
 
     /**
@@ -57,19 +45,13 @@ export interface GhostNodeParameters {
      */
     readonly by?: "id" | "slug";
 
-    /**
-     * The ID or slug of the post to get
-     */
+    /** The ID or slug of the post to get */
     readonly identifier?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fields"?: string, "formats"?: ("html" | "mobiledoc" | "lexical")[] } | { "fields"?: string, "formats"?: ("html" | "plaintext")[] } | { "include"?: ("authors" | "tags")[], "fields"?: string, "formats"?: ("html" | "plaintext" | "lexical")[] } | { "include"?: ("authors" | "tags")[], "fields"?: string, "formats"?: ("html" | "mobiledoc" | "lexical")[] };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -79,9 +61,7 @@ export interface GhostNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "authors"?: any[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: any[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
 
 }

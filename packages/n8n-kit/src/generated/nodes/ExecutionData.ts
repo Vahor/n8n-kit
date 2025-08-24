@@ -8,11 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ExecutionDataNodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Default: "save"
-     */
+    /** Default: "save" */
     readonly operation?: "save";
 
     /**

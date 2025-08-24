@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SnowflakeNodeParameters {
-    /**
-     * Default: "insert"
-     */
+    /** Default: "insert" */
     readonly operation?: "executeQuery" | "insert" | "update";
 
     /**
@@ -20,14 +18,10 @@ export interface SnowflakeNodeParameters {
      */
     readonly query?: string;
 
-    /**
-     * Name of the table in which to insert data to
-     */
+    /** Name of the table in which to insert data to */
     readonly table?: string;
 
-    /**
-     * Comma-separated list of the properties which should used as columns for the new rows
-     */
+    /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;
 
     /**

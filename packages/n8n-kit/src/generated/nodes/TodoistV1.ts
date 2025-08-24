@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TodoistV1NodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "oAuth2";
 
-    /**
-     * Default: "task"
-     */
+    /** Default: "task" */
     readonly resource?: "task";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "close" | "create" | "delete" | "get" | "getAll" | "move" | "reopen" | "update";
 
     readonly taskId?: string;
@@ -60,14 +54,10 @@ export interface TodoistV1NodeParameters {
      */
     readonly commands?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "parentId"?: string, "priority"?: number, "section"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -77,14 +67,10 @@ export interface TodoistV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "filter"?: string, "ids"?: string, "labelId"?: string, "lang"?: string, "parentId"?: string, "projectId"?: string, "sectionId"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "content"?: string, "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "labels"?: any[], "priority"?: number };
 
 }

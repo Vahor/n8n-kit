@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BambooHrNodeParameters {
-    /**
-     * Default: "employee"
-     */
+    /** Default: "employee" */
     readonly resource?: "companyReport" | "employee" | "employeeDocument" | "file";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update" | "delete" | "download" | "getAll" | "update" | "upload" | "get";
 
-    /**
-     * Whether the employee to create was added to a pay schedule synced with Trax Payroll
-     */
+    /** Whether the employee to create was added to a pay schedule synced with Trax Payroll */
     readonly synced?: boolean;
 
     readonly firstName?: string;
@@ -78,26 +72,18 @@ export interface BambooHrNodeParameters {
 
     readonly preferredName?: string;
 
-    /**
-     * A standard United States Social Security number, with dashes
-     */
+    /** A standard United States Social Security number, with dashes */
     readonly ssn?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "address"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string };
 
     readonly employeeId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fields"?: any[] } | { "share"?: boolean } | { "fd"?: boolean, "onlyCurrent"?: boolean };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -113,14 +99,10 @@ export interface BambooHrNodeParameters {
      */
     readonly addasasress?: { "value": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "addasasress"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "firstName"?: string, "lastName"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string } | { "categoryId"?: string, "name"?: string, "shareWithEmployee"?: boolean };
 
-    /**
-     * ID of the employee file
-     */
+    /** ID of the employee file */
     readonly fileId?: string;
 
     /**
@@ -143,9 +125,7 @@ export interface BambooHrNodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * ID of the report. You can get the report number by hovering over the report name on the reports page and grabbing the ID.
-     */
+    /** ID of the report. You can get the report number by hovering over the report name on the reports page and grabbing the ID. */
     readonly reportId?: string;
 
     /**

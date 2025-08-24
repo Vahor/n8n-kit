@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EgoiNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update";
 
     /**
@@ -25,14 +21,10 @@ export interface EgoiNodeParameters {
      */
     readonly list?: string;
 
-    /**
-     * Email address for a subscriber
-     */
+    /** Email address for a subscriber */
     readonly email?: string;
 
-    /**
-     * Contact ID of the subscriber
-     */
+    /** Contact ID of the subscriber */
     readonly contactId?: string;
 
     /**
@@ -41,14 +33,10 @@ export interface EgoiNodeParameters {
      */
     readonly resolveData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "birth_date"?: string, "cellphone"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: any[] };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "birth_date"?: string, "cellphone"?: string, "email"?: string, "extraFieldsUi"?: { "extraFieldValues": any }, "first_name"?: string, "last_name"?: string, "status"?: "unconfirmed" | "active" | "inactive" | "removed", "tagIds"?: any[] };
 
     /**
@@ -57,9 +45,7 @@ export interface EgoiNodeParameters {
      */
     readonly by?: "id" | "email";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

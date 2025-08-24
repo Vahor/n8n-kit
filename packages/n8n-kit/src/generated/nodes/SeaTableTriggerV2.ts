@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SeaTableTriggerV2NodeParameters {
-    /**
-     * Default: "newRow"
-     */
+    /** Default: "newRow" */
     readonly event?: "newRow" | "updatedRow" | "newAsset";
 
     /**
@@ -32,12 +30,8 @@ export interface SeaTableTriggerV2NodeParameters {
      */
     readonly assetColumn?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "simple"?: boolean, "convert"?: boolean };
-
-    readonly notice?: string;
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

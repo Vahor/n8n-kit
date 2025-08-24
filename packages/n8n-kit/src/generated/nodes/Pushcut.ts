@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushcutNodeParameters {
-    /**
-     * Default: "notification"
-     */
+    /** Default: "notification" */
     readonly resource?: "notification";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send";
 
     /**
@@ -25,9 +21,7 @@ export interface PushcutNodeParameters {
      */
     readonly notificationName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "devices"?: any[], "input"?: string, "text"?: string, "title"?: string };
 
 }

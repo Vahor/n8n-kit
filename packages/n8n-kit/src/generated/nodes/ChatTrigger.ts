@@ -9,19 +9,11 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChatTriggerNodeParameters {
-    /**
-     * Whether the chat should be publicly available or only accessible through the manual chat interface
-     */
+    /** Whether the chat should be publicly available or only accessible through the manual chat interface */
     readonly public?: boolean;
 
-    /**
-     * Default: "hostedChat"
-     */
+    /** Default: "hostedChat" */
     readonly mode?: "hostedChat" | "webhook";
-
-    readonly hostedChatNotice?: string;
-
-    readonly embeddedChatNotice?: string;
 
     /**
      * The way to authenticate
@@ -36,9 +28,7 @@ export interface ChatTriggerNodeParameters {
      */
     readonly initialMessages?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string } | { "allowedOrigins"?: string, "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "inputPlaceholder"?: string, "loadPreviousSession"?: "notSupported" | "memory" | "manually", "showWelcomeScreen"?: boolean, "getStarted"?: string, "subtitle"?: string, "title"?: string, "customCss"?: string, "responseMode"?: "lastNode" | "responseNode" } | { "allowedOrigins"?: string, "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "inputPlaceholder"?: string, "loadPreviousSession"?: "notSupported" | "memory" | "manually", "showWelcomeScreen"?: boolean, "getStarted"?: string, "subtitle"?: string, "title"?: string, "customCss"?: string, "responseMode"?: "lastNode" | "responseNode" | "streaming" } | { "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "responseMode"?: "lastNode" | "responseNodes" } | { "allowedOrigins"?: string, "allowFileUploads"?: boolean, "allowedFilesMimeTypes"?: string, "inputPlaceholder"?: string, "loadPreviousSession"?: "notSupported" | "memory" | "manually", "showWelcomeScreen"?: boolean, "getStarted"?: string, "subtitle"?: string, "title"?: string, "customCss"?: string, "responseMode"?: "lastNode" | "streaming" | "responseNode" | "lastNode" | "streaming" | "responseNodes" };
 
 }

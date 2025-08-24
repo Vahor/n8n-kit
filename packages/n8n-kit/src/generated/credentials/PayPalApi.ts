@@ -10,14 +10,10 @@ export const name = "payPalApi" as const;
 export interface PayPalApiCredentials {
     readonly "clientId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "secret"?: string;
 
-    /**
-     * Default: "live"
-     */
+    /** Default: "live" */
     readonly "env"?: "sanbox" | "live";
 
     readonly __name: "payPalApi";

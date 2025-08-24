@@ -8,21 +8,15 @@ export const name = "redis" as const;
  * documentationUrl: redis
  */
 export interface RedisCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "user"?: string;
 
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "host"?: string;
 
-    /**
-     * Default: 6379
-     */
+    /** Default: 6379 */
     readonly "port"?: number;
 
     readonly "database"?: number;

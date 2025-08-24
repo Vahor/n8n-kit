@@ -8,8 +8,6 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WorkflowTriggerNodeParameters {
-    readonly oldVersionNotice?: string;
-
     /**
      * Specifies under which conditions an execution should happen:
 					<ul>

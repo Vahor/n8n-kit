@@ -8,9 +8,7 @@ export const name = "httpCustomAuth" as const;
  * documentationUrl: httpRequest
  */
 export interface HttpCustomAuthCredentials {
-    /**
-     * Use json to specify authentication values for headers, body and qs.
-     */
+    /** Use json to specify authentication values for headers, body and qs. */
     readonly "json": string;
 
     readonly __name: "httpCustomAuth";

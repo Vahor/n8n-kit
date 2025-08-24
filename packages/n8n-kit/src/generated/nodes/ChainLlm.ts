@@ -9,16 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChainLlmNodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Default: "={{ $json.input }}"
-     */
+    /** Default: "={{ $json.input }}" */
     readonly prompt?: string;
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly promptType?: "auto" | "define";
 
     /**
@@ -42,7 +36,5 @@ export interface ChainLlmNodeParameters {
      * Default: {}
      */
     readonly batching?: { "batchSize"?: number, "delayBetweenBatches"?: number };
-
-    readonly fallbackNotice?: string;
 
 }

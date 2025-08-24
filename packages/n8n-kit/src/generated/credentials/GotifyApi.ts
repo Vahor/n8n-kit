@@ -20,14 +20,10 @@ export interface GotifyApiCredentials {
      */
     readonly "clientApiToken"?: string;
 
-    /**
-     * The URL of the Gotify host
-     */
+    /** The URL of the Gotify host */
     readonly "url"?: string;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "ignoreSSLIssues"?: boolean;
 
     readonly __name: "gotifyApi";

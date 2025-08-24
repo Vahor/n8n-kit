@@ -8,34 +8,22 @@ export const name = "discordOAuth2Api" as const;
  * documentationUrl: discord
  */
 export interface DiscordOAuth2ApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "botToken"?: string;
 
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://discord.com/api/oauth2/authorize"
-     */
+    /** Default: "https://discord.com/api/oauth2/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://discord.com/api/oauth2/token"
-     */
+    /** Default: "https://discord.com/api/oauth2/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "permissions=1642758929655"
-     */
+    /** Default: "permissions=1642758929655" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Define custom scopes
-     */
+    /** Define custom scopes */
     readonly "customScopes"?: boolean;
 
     readonly "customScopesNotice"?: string;
@@ -46,9 +34,7 @@ export interface DiscordOAuth2ApiCredentials {
      */
     readonly "enabledScopes"?: string;
 
-    /**
-     * Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"identify guilds guilds.join bot\"}}"
-     */
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"identify guilds guilds.join bot\"}}" */
     readonly "scope"?: any;
 
     readonly __name: "discordOAuth2Api";

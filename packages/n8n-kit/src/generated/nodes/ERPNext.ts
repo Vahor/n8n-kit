@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ERPNextNodeParameters {
-    /**
-     * Default: "document"
-     */
+    /** Default: "document" */
     readonly resource?: "document";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -25,9 +21,7 @@ export interface ERPNextNodeParameters {
      */
     readonly docType?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -37,9 +31,7 @@ export interface ERPNextNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fields"?: any[], "filters"?: { "customProperty": any } };
 
     /**
@@ -48,9 +40,7 @@ export interface ERPNextNodeParameters {
      */
     readonly properties?: { "customProperty": any };
 
-    /**
-     * The name (ID) of document you would like to get
-     */
+    /** The name (ID) of document you would like to get */
     readonly documentName?: string;
 
 }

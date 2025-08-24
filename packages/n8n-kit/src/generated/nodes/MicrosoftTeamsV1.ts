@@ -9,16 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftTeamsV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
-    /**
-     * Default: "channel"
-     */
+    /** Default: "channel" */
     readonly resource?: "channel" | "channelMessage" | "chatMessage" | "task";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll";
 
     /**
@@ -27,14 +21,10 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly teamId?: string;
 
-    /**
-     * Channel name as it will appear to the user in Microsoft Teams
-     */
+    /** Channel name as it will appear to the user in Microsoft Teams */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean };
 
     /**
@@ -43,9 +33,7 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly channelId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -55,9 +43,7 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "name"?: string, "description"?: string } | { "assignedTo"?: string, "bucketId"?: string, "dueDateTime"?: string, "groupId"?: string, "labels"?: any[], "percentComplete"?: number, "planId"?: string, "title"?: string };
 
     /**
@@ -66,9 +52,7 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly messageType?: "text" | "html";
 
-    /**
-     * The content of the item
-     */
+    /** The content of the item */
     readonly message?: string;
 
     /**
@@ -79,9 +63,7 @@ export interface MicrosoftTeamsV1NodeParameters {
 
     readonly messageId?: string;
 
-    /**
-     * Default: "all"
-     */
+    /** Default: "all" */
     readonly groupSource?: "all" | "mine";
 
     /**
@@ -102,21 +84,15 @@ export interface MicrosoftTeamsV1NodeParameters {
      */
     readonly bucketId?: string;
 
-    /**
-     * Title of the task
-     */
+    /** Title of the task */
     readonly title?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "assignedTo"?: string, "dueDateTime"?: string, "labels"?: any[], "percentComplete"?: number };
 
     readonly taskId?: string;
 
-    /**
-     * Default: "member"
-     */
+    /** Default: "member" */
     readonly tasksFor?: "member" | "plan";
 
     /**

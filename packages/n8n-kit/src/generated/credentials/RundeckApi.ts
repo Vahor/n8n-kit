@@ -10,9 +10,7 @@ export const name = "rundeckApi" as const;
 export interface RundeckApiCredentials {
     readonly "url"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "token"?: string;
 
     readonly __name: "rundeckApi";

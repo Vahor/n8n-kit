@@ -8,26 +8,16 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentDefaultDataLoaderNodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Default: "json"
-     */
+    /** Default: "json" */
     readonly dataType?: "json" | "binary";
 
-    /**
-     * Default: "allInputData"
-     */
+    /** Default: "allInputData" */
     readonly jsonMode?: "allInputData" | "expressionData";
 
-    /**
-     * Default: "allInputData"
-     */
+    /** Default: "allInputData" */
     readonly binaryMode?: "allInputData" | "specificField";
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly loader?: "auto" | "csvLoader" | "docxLoader" | "epubLoader" | "jsonLoader" | "pdfLoader" | "textLoader";
 
     /**
@@ -42,14 +32,10 @@ export interface DocumentDefaultDataLoaderNodeParameters {
      */
     readonly binaryDataKey?: string;
 
-    /**
-     * Default: "simple"
-     */
+    /** Default: "simple" */
     readonly textSplittingMode?: "simple" | "custom";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "pointers"?: string, "separator"?: string, "column"?: string, "splitPages"?: boolean, "metadata"?: { "metadataValues": any } };
 
 }

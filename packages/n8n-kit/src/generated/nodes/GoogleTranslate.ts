@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleTranslateNodeParameters {
-    /**
-     * Default: "serviceAccount"
-     */
+    /** Default: "serviceAccount" */
     readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "language"
-     */
+    /** Default: "language" */
     readonly resource?: "language";
 
-    /**
-     * Default: "translate"
-     */
+    /** Default: "translate" */
     readonly operation?: "translate";
 
-    /**
-     * The input text to translate
-     */
+    /** The input text to translate */
     readonly text?: string;
 
     /**

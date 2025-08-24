@@ -15,24 +15,16 @@ export interface FtpNodeParameters {
      */
     readonly protocol?: "ftp" | "sftp";
 
-    /**
-     * Default: "download"
-     */
+    /** Default: "download" */
     readonly operation?: "delete" | "download" | "list" | "rename" | "upload";
 
-    /**
-     * The file path of the file to delete. Has to contain the full path.
-     */
+    /** The file path of the file to delete. Has to contain the full path. */
     readonly path?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "folder"?: boolean, "recursive"?: boolean } | { "enableConcurrentReads"?: boolean, "maxConcurrentReads"?: number, "chunkSize"?: number } | { "createDirectories"?: boolean };
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     readonly oldPath?: string;
@@ -45,14 +37,10 @@ export interface FtpNodeParameters {
      */
     readonly binaryData?: boolean;
 
-    /**
-     * The text content of the file to upload
-     */
+    /** The text content of the file to upload */
     readonly fileContent?: string;
 
-    /**
-     * Whether to return object representing all directories / objects recursively found within SFTP server
-     */
+    /** Whether to return object representing all directories / objects recursively found within SFTP server */
     readonly recursive?: boolean;
 
 }

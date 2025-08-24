@@ -9,44 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwitterV1NodeParameters {
-    /**
-     * Default: "tweet"
-     */
+    /** Default: "tweet" */
     readonly resource?: "directMessage" | "tweet";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "create" | "delete" | "like" | "retweet" | "search";
 
-    /**
-     * The ID of the user who should receive the direct message
-     */
+    /** The ID of the user who should receive the direct message */
     readonly userId?: string;
 
-    /**
-     * The text of your Direct Message. URL encode as necessary. Max length of 10,000 characters.
-     */
+    /** The text of your Direct Message. URL encode as necessary. Max length of 10,000 characters. */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "attachment"?: string } | { "attachments"?: string, "displayCoordinates"?: boolean, "inReplyToStatusId"?: string, "locationFieldsUi"?: { "locationFieldsValues": any }, "possiblySensitive"?: boolean } | { "includeEntities"?: boolean, "lang"?: string, "locationFieldsUi"?: { "locationFieldsValues": any }, "resultType"?: "mixed" | "recent" | "popular", "tweetMode"?: "compat" | "extended", "until"?: string } | { "includeEntities"?: boolean } | { "trimUser"?: boolean };
 
-    /**
-     * The ID of the tweet to delete
-     */
+    /** The ID of the tweet to delete */
     readonly tweetId?: string;
 
-    /**
-     * A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href="https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators">here</a>.
-     */
+    /** A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href="https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators">here</a>. */
     readonly searchText?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

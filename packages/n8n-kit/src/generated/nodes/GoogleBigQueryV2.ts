@@ -9,19 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBigQueryV2NodeParameters {
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "database"
-     */
-    readonly resource?: any;
-
-    /**
-     * Default: "executeQuery"
-     */
+    /** Default: "executeQuery" */
     readonly operation?: "executeQuery" | "insert";
 
     /**
@@ -33,17 +24,13 @@ export interface GoogleBigQueryV2NodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly datasetId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly tableId?: {
 	value: string,
 	mode: "list" | "id",
@@ -55,9 +42,7 @@ export interface GoogleBigQueryV2NodeParameters {
      */
     readonly sqlQuery?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "defaultDataset"?: string, "dryRun"?: boolean, "includeSchema"?: boolean, "location"?: string, "maximumBytesBilled"?: string, "maxResults"?: number, "timeoutMs"?: number, "rawOutput"?: boolean, "useLegacySql"?: boolean, "returnAsNumbers"?: boolean, "queryParameters"?: { "namedParameters": any } } | { "batchSize"?: number, "ignoreUnknownValues"?: boolean, "skipInvalidRows"?: boolean, "templateSuffix"?: string, "traceId"?: string };
 
     /**
@@ -65,8 +50,6 @@ export interface GoogleBigQueryV2NodeParameters {
      * Default: "autoMap"
      */
     readonly dataMode?: "autoMap" | "define";
-
-    readonly info?: string;
 
     /**
      * Default: {}

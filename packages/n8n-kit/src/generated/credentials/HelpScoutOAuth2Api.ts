@@ -8,28 +8,20 @@ export const name = "helpScoutOAuth2Api" as const;
  * documentationUrl: helpScout
  */
 export interface HelpScoutOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://secure.helpscout.net/authentication/authorizeClientApplication"
-     */
+    /** Default: "https://secure.helpscout.net/authentication/authorizeClientApplication" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.helpscout.net/v2/oauth2/token"
-     */
+    /** Default: "https://api.helpscout.net/v2/oauth2/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "helpScoutOAuth2Api";

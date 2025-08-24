@@ -8,8 +8,6 @@ export const inputs = {"main":"main","Memory":"ai_memory"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MemoryChatRetrieverNodeParameters {
-    readonly deprecatedNotice?: string;
-
     /**
      * Whether to simplify the output to only include the sender and the text
      * Default: true

@@ -9,47 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GmailV2NodeParameters {
-    /**
-     * Type options: {"calloutAction":{"label":"Email triage agent","icon":"bot","type":"openSampleWorkflowTemplate","templateId":"email_triage_agent_with_gmail"}}
-     */
-    readonly preBuiltAgentsCalloutGmail?: any;
-
-    /**
-     * Default: "oAuth2"
-     */
+    /** Default: "oAuth2" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message" | "label" | "draft" | "thread";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "addLabels" | "delete" | "get" | "getAll" | "markAsRead" | "markAsUnread" | "removeLabels" | "reply" | "send" | "sendAndWait" | "addLabels" | "delete" | "get" | "getAll" | "removeLabels" | "reply" | "trash" | "untrash";
 
     readonly messageId?: string;
 
     readonly subject?: string;
 
-    readonly threadNotice?: string;
-
-    /**
-     * Default: "text"
-     */
+    /** Default: "text" */
     readonly emailType?: "html" | "text" | "text" | "html";
 
     readonly message?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean } | { "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show" } | { "appendAttribution"?: boolean, "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyTo"?: string, "replyToSenderOnly"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyToSenderOnly"?: boolean } | { "returnOnlyMessages"?: boolean };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -59,19 +40,13 @@ export interface GmailV2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Label Name
-     */
+    /** Label Name */
     readonly name?: string;
 
-    /**
-     * The ID of the label
-     */
+    /** The ID of the label */
     readonly labelId?: string;
 
-    /**
-     * The email addresses of the recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com.
-     */
+    /** The email addresses of the recipients. Multiple addresses can be separated by a comma. e.g. jay@getsby.com, jon@smith.com. */
     readonly sendTo?: string;
 
     /**
@@ -80,11 +55,7 @@ export interface GmailV2NodeParameters {
      */
     readonly simple?: boolean;
 
-    readonly filtersNotice?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "includeSpamTrash"?: boolean, "labelIds"?: any[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string, "sender"?: string } | { "includeSpamTrash"?: boolean, "labelIds"?: any[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string };
 
     /**
@@ -94,14 +65,10 @@ export interface GmailV2NodeParameters {
      */
     readonly labelIds?: any[];
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -116,14 +83,10 @@ export interface GmailV2NodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
-    /**
-     * The ID of the thread you are operating on
-     */
+    /** The ID of the thread you are operating on */
     readonly threadId?: string;
 
 }

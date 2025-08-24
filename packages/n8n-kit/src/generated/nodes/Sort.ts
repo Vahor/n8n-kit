@@ -28,9 +28,7 @@ export interface SortNodeParameters {
      */
     readonly code?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableDotNotation"?: boolean };
 
 }

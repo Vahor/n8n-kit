@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface UrlScanIoNodeParameters {
-    /**
-     * Default: "scan"
-     */
+    /** Default: "scan" */
     readonly resource?: "scan";
 
-    /**
-     * Default: "perform"
-     */
+    /** Default: "perform" */
     readonly operation?: "get" | "getAll" | "perform";
 
-    /**
-     * ID of the scan to retrieve
-     */
+    /** ID of the scan to retrieve */
     readonly scanId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -36,19 +28,13 @@ export interface UrlScanIoNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "query"?: string };
 
-    /**
-     * URL to scan
-     */
+    /** URL to scan */
     readonly url?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "customAgent"?: string, "overrideSafety"?: string, "referer"?: string, "tags"?: string, "visibility"?: "private" | "public" | "unlisted" };
 
 }

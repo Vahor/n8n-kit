@@ -8,9 +8,7 @@ export const name = "contentfulApi" as const;
  * documentationUrl: contentful
  */
 export interface ContentfulApiCredentials {
-    /**
-     * The ID for the Contentful space
-     */
+    /** The ID for the Contentful space */
     readonly "spaceId": string;
 
     /**

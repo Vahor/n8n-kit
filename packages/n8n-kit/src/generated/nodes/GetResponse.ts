@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GetResponseNodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "oAuth2";
 
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     readonly email?: string;
@@ -32,24 +26,16 @@ export interface GetResponseNodeParameters {
      */
     readonly campaignId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: any[] };
 
-    /**
-     * ID of contact to delete
-     */
+    /** ID of contact to delete */
     readonly contactId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "ipAddress"?: string, "messageId"?: string } | { "fields"?: string } | { "campaignId"?: string, "changeOnFrom"?: string, "changeOnTo"?: string, "createdOnFrom"?: string, "createdOnTo"?: string, "exactMatch"?: boolean, "fields"?: string, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -59,9 +45,7 @@ export interface GetResponseNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "campaignId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "email"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: any[] };
 
 }

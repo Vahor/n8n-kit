@@ -14,19 +14,13 @@ export interface RemoveDuplicatesV1NodeParameters {
      */
     readonly compare?: "allFields" | "allFieldsExcept" | "selectedFields";
 
-    /**
-     * Fields in the input to exclude from the comparison
-     */
+    /** Fields in the input to exclude from the comparison */
     readonly fieldsToExclude?: string;
 
-    /**
-     * Fields in the input to add to the comparison
-     */
+    /** Fields in the input to add to the comparison */
     readonly fieldsToCompare?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean };
 
 }

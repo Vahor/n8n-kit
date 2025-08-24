@@ -9,11 +9,6 @@ export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserStructuredNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * How to specify the schema for the function
      * Default: "fromJson"
      */
@@ -40,14 +35,10 @@ export interface OutputParserStructuredNodeParameters {
      */
     readonly jsonSchema?: string;
 
-    /**
-     * Whether to automatically fix the output when it is not in the correct format. Will cause another LLM call.
-     */
+    /** Whether to automatically fix the output when it is not in the correct format. Will cause another LLM call. */
     readonly autoFix?: boolean;
 
-    /**
-     * Whether to customize the prompt used for retrying the output parsing. If disabled, a default prompt will be used.
-     */
+    /** Whether to customize the prompt used for retrying the output parsing. If disabled, a default prompt will be used. */
     readonly customizeRetryPrompt?: boolean;
 
     /**

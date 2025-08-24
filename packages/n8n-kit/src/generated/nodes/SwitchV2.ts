@@ -14,9 +14,7 @@ export interface SwitchV2NodeParameters {
      */
     readonly mode?: "expression" | "rules";
 
-    /**
-     * The index of output to which to send data to
-     */
+    /** The index of output to which to send data to */
     readonly output?: string;
 
     /**
@@ -31,9 +29,7 @@ export interface SwitchV2NodeParameters {
      */
     readonly dataType?: "boolean" | "dateTime" | "number" | "string";
 
-    /**
-     * The value to compare with the first one
-     */
+    /** The value to compare with the first one */
     readonly value1?: boolean | string | number;
 
     /**

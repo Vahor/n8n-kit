@@ -9,43 +9,27 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOutlookV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "draft" | "folder" | "folderMessage" | "message" | "messageAttachment";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "send" | "update" | "delete" | "get" | "getAll" | "getMime" | "move" | "reply" | "send" | "update" | "add" | "download" | "get" | "getAll" | "create" | "delete" | "get" | "getChildren" | "getAll" | "getAll";
 
     readonly messageId?: string;
 
-    /**
-     * The subject of the message
-     */
+    /** The subject of the message */
     readonly subject?: string;
 
-    /**
-     * Message body content
-     */
+    /** Message body content */
     readonly bodyContent?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string } | { "recipients"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContent"?: string, "bodyContentType"?: "html" | "Text", "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "subject"?: string } | { "attachments"?: { "attachments": any }, "bccRecipients"?: string, "bodyContentType"?: "html" | "Text", "categories"?: any[], "ccRecipients"?: string, "internetMessageHeaders"?: { "headers": any }, "from"?: string, "importance"?: "Low" | "Normal" | "High", "isReadReceiptRequested"?: boolean, "toRecipients"?: string, "replyTo"?: string, "saveToSentItems"?: boolean } | { "fileName"?: string } | { "fields"?: string, "filter"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "filter"?: string };
 
-    /**
-     * Default: "reply"
-     */
+    /** Default: "reply" */
     readonly replyType?: "reply" | "replyAll";
 
-    /**
-     * A comment to include. Can be an empty string.
-     */
+    /** A comment to include. Can be an empty string. */
     readonly comment?: string;
 
     /**
@@ -54,9 +38,7 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly send?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -66,19 +48,13 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Email addresses of recipients. Multiple can be added separated by comma.
-     */
+    /** Email addresses of recipients. Multiple can be added separated by comma. */
     readonly toRecipients?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Target Folder ID
-     */
+    /** Target Folder ID */
     readonly folderId?: string;
 
     readonly attachmentId?: string;
@@ -89,14 +65,10 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly folderType?: "folder" | "searchFolder";
 
-    /**
-     * Name of the folder
-     */
+    /** Name of the folder */
     readonly displayName?: string;
 
-    /**
-     * Whether to include child folders in the search
-     */
+    /** Whether to include child folders in the search */
     readonly includeNestedFolders?: boolean;
 
     /**
@@ -106,9 +78,7 @@ export interface MicrosoftOutlookV1NodeParameters {
      */
     readonly sourceFolderIds?: string;
 
-    /**
-     * The OData query to filter the messages
-     */
+    /** The OData query to filter the messages */
     readonly filterQuery?: string;
 
     /**

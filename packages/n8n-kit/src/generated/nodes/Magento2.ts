@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface Magento2NodeParameters {
-    /**
-     * Default: "customer"
-     */
+    /** Default: "customer" */
     readonly resource?: "customer" | "invoice" | "order" | "product";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "cancel" | "get" | "getAll" | "ship";
 
-    /**
-     * Email address of the user to create
-     */
+    /** Email address of the user to create */
     readonly email?: string;
 
-    /**
-     * First name of the user to create
-     */
+    /** First name of the user to create */
     readonly firstname?: string;
 
-    /**
-     * Last name of the user to create
-     */
+    /** Last name of the user to create */
     readonly lastname?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string } | { "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
 
-    /**
-     * ID of the customer to update
-     */
+    /** ID of the customer to update */
     readonly customerId?: string;
 
     readonly firstName?: string;
@@ -54,14 +40,10 @@ export interface Magento2NodeParameters {
      */
     readonly website_id?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string } | { "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -71,14 +53,10 @@ export interface Magento2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly filterType?: "none" | "manual" | "json";
 
-    /**
-     * Default: "anyFilter"
-     */
+    /** Default: "anyFilter" */
     readonly matchType?: "anyFilter" | "allFilters";
 
     /**
@@ -87,20 +65,14 @@ export interface Magento2NodeParameters {
      */
     readonly filters?: { "conditions": any };
 
-    readonly jsonNotice?: string;
-
     readonly filterJson?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "sort"?: { "sort": any } };
 
     readonly orderId?: string;
 
-    /**
-     * Stock-keeping unit of the product
-     */
+    /** Stock-keeping unit of the product */
     readonly sku?: string;
 
     readonly name?: string;

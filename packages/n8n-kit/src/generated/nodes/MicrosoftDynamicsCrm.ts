@@ -9,31 +9,21 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftDynamicsCrmNodeParameters {
-    /**
-     * Default: "account"
-     */
+    /** Default: "account" */
     readonly resource?: "account";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Company or business name
-     */
+    /** Company or business name */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "accountcategorycode"?: string, "accountratingcode"?: string, "addresses"?: { "address": any }, "businesstypecode"?: string, "customersizecode"?: string, "customertypecode"?: string, "description"?: string, "emailaddress1"?: string, "emailaddress2"?: string, "emailaddress3"?: string, "fax"?: string, "ftpsiteurl"?: string, "industrycode"?: string, "name"?: string, "creditlimit"?: number, "numberofemployees"?: number, "paymenttermscode"?: string, "preferredappointmentdaycode"?: string, "preferredappointmenttimecode"?: string, "preferredcontactmethodcode"?: string, "primarysatoriid"?: string, "primarytwitterid"?: string, "revenue"?: number, "sharesoutstanding"?: number, "shippingmethodcode"?: string, "sic"?: string, "stageid"?: string, "stockexchange"?: string, "telephone1"?: string, "telephone2"?: string, "telephone3"?: string, "territorycode"?: string, "tickersymbol"?: string, "websiteurl"?: string, "yominame"?: string };
 
     readonly accountId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -43,19 +33,13 @@ export interface MicrosoftDynamicsCrmNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "returnFields"?: any[], "expandFields"?: any[] } | { "returnFields"?: any[] };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "query"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "accountcategorycode"?: string, "accountratingcode"?: string, "addresses"?: { "address": any }, "businesstypecode"?: string, "customersizecode"?: string, "customertypecode"?: string, "description"?: string, "emailaddress1"?: string, "emailaddress2"?: string, "emailaddress3"?: string, "fax"?: string, "ftpsiteurl"?: string, "industrycode"?: string, "name"?: string, "creditlimit"?: number, "numberofemployees"?: number, "paymenttermscode"?: string, "preferredappointmentdaycode"?: string, "preferredappointmenttimecode"?: string, "preferredcontactmethodcode"?: string, "primarysatoriid"?: string, "primarytwitterid"?: string, "revenue"?: number, "sharesoutstanding"?: number, "shippingmethodcode"?: string, "sic"?: string, "stageid"?: string, "stockexchange"?: string, "telephone1"?: string, "telephone2"?: string, "telephone3"?: string, "territorycode"?: string, "tickersymbol"?: string, "websiteurl"?: string, "yominame"?: string };
 
 }

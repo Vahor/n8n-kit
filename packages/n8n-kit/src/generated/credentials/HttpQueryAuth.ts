@@ -10,9 +10,7 @@ export const name = "httpQueryAuth" as const;
 export interface HttpQueryAuthCredentials {
     readonly "name"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "value"?: string;
 
     readonly __name: "httpQueryAuth";

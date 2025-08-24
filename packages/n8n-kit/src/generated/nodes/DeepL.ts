@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DeepLNodeParameters {
-    /**
-     * Default: "language"
-     */
+    /** Default: "language" */
     readonly resource?: "language";
 
-    /**
-     * Default: "translate"
-     */
+    /** Default: "translate" */
     readonly operation?: "translate";
 
-    /**
-     * Input text to translate
-     */
+    /** Input text to translate */
     readonly text?: string;
 
     /**
@@ -30,9 +24,7 @@ export interface DeepLNodeParameters {
      */
     readonly translateTo?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "sourceLang"?: string, "splitSentences"?: "nonewlines" | "0" | "1", "preserveFormatting"?: "0" | "1", "formality"?: "more" | "less" | "default" };
 
 }

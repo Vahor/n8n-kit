@@ -8,16 +8,12 @@ export const name = "zendeskApi" as const;
  * documentationUrl: zendesk
  */
 export interface ZendeskApiCredentials {
-    /**
-     * The subdomain of your Zendesk work environment
-     */
+    /** The subdomain of your Zendesk work environment */
     readonly "subdomain"?: string;
 
     readonly "email"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly __name: "zendeskApi";

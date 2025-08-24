@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EmailSendV1NodeParameters {
-    /**
-     * Email address of the sender optional with name
-     */
+    /** Email address of the sender optional with name */
     readonly fromEmail?: string;
 
-    /**
-     * Email address of the recipient
-     */
+    /** Email address of the recipient */
     readonly toEmail?: string;
 
-    /**
-     * Email address of CC recipient
-     */
+    /** Email address of CC recipient */
     readonly ccEmail?: string;
 
-    /**
-     * Email address of BCC recipient
-     */
+    /** Email address of BCC recipient */
     readonly bccEmail?: string;
 
-    /**
-     * Subject line of the email
-     */
+    /** Subject line of the email */
     readonly subject?: string;
 
     /**
@@ -46,14 +36,10 @@ export interface EmailSendV1NodeParameters {
      */
     readonly html?: string;
 
-    /**
-     * Name of the binary properties that contain data to add to email as attachment. Multiple ones can be comma-separated.
-     */
+    /** Name of the binary properties that contain data to add to email as attachment. Multiple ones can be comma-separated. */
     readonly attachments?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "allowUnauthorizedCerts"?: boolean, "replyTo"?: string };
 
 }

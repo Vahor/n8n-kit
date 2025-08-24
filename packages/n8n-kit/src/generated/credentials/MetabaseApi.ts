@@ -8,18 +8,14 @@ export const name = "metabaseApi" as const;
  * documentationUrl: metabase
  */
 export interface MetabaseApiCredentials {
-    /**
-     * Type options: {"expirable":true}
-     */
+    /** Type options: {"expirable":true} */
     readonly "sessionToken"?: any;
 
     readonly "url"?: string;
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "metabaseApi";

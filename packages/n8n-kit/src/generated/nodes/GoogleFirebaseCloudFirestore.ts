@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleFirebaseCloudFirestoreNodeParameters {
-    /**
-     * Default: "googleFirebaseCloudFirestoreOAuth2Api"
-     */
+    /** Default: "googleFirebaseCloudFirestoreOAuth2Api" */
     readonly authentication?: "googleFirebaseCloudFirestoreOAuth2Api" | "serviceAccount";
 
-    /**
-     * Default: "document"
-     */
+    /** Default: "document" */
     readonly resource?: "document" | "collection";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "upsert" | "delete" | "get" | "getAll" | "query" | "getAll";
 
     /**
@@ -36,16 +30,12 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      */
     readonly database?: string;
 
-    /**
-     * Collection name
-     */
+    /** Collection name */
     readonly collection?: string;
 
     readonly documentId?: string;
 
-    /**
-     * List of attributes to save
-     */
+    /** List of attributes to save */
     readonly columns?: string;
 
     /**
@@ -54,9 +44,7 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -66,14 +54,10 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Must correspond to a document ID
-     */
+    /** Must correspond to a document ID */
     readonly updateKey?: string;
 
-    /**
-     * JSON query to execute
-     */
+    /** JSON query to execute */
     readonly query?: string;
 
 }

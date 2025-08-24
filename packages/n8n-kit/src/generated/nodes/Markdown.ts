@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MarkdownNodeParameters {
-    /**
-     * Default: "htmlToMarkdown"
-     */
+    /** Default: "htmlToMarkdown" */
     readonly mode?: "markdownToHtml" | "htmlToMarkdown";
 
-    /**
-     * The HTML to be converted to markdown
-     */
+    /** The HTML to be converted to markdown */
     readonly html?: string;
 
-    /**
-     * The Markdown to be converted to html
-     */
+    /** The Markdown to be converted to html */
     readonly markdown?: string;
 
     /**
@@ -30,9 +24,7 @@ export interface MarkdownNodeParameters {
      */
     readonly destinationKey?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "bulletMarker"?: string, "codeFence"?: string, "emDelimiter"?: string, "globalEscape"?: { "value": any }, "ignore"?: string, "keepDataImages"?: boolean, "lineStartEscape"?: { "value": any }, "maxConsecutiveNewlines"?: number, "useLinkReferenceDefinitions"?: boolean, "strongDelimiter"?: string, "codeBlockStyle"?: "fence" | "indented", "textReplace"?: { "values": any }, "blockElements"?: string } | { "openLinksInNewWindow"?: boolean, "simplifiedAutoLink"?: boolean, "backslashEscapesHTMLTags"?: boolean, "completeHTMLDocument"?: boolean, "customizedHeaderId"?: boolean, "emoji"?: boolean, "encodeEmails"?: boolean, "excludeTrailingPunctuationFromURLs"?: boolean, "ghCodeBlocks"?: boolean, "ghCompatibleHeaderId"?: boolean, "ghMentionsLink"?: string, "ghMentions"?: boolean, "tasklists"?: boolean, "headerLevelStart"?: number, "requireSpaceBeforeHeadingText"?: boolean, "literalMidWordAsterisks"?: boolean, "literalMidWordUnderscores"?: boolean, "noHeaderId"?: boolean, "parseImgDimensions"?: boolean, "prefixHeaderId"?: string, "rawHeaderId"?: boolean, "rawPrefixHeaderId"?: boolean, "simpleLineBreaks"?: boolean, "smartIndentationFix"?: boolean, "disableForced4SpacesIndentedSublists"?: boolean, "splitAdjacentBlockquotes"?: boolean, "strikethrough"?: boolean, "tablesHeaderId"?: boolean, "tables"?: boolean };
 
 }

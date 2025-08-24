@@ -2,7 +2,7 @@ import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import type { ICredentialType } from "n8n-workflow";
 import { globSync } from "tinyglobby";
-import { toTypescriptType } from "./shared";
+import { renderComments, toTypescriptType } from "./shared";
 
 const allNodes = globSync(
 	[
@@ -78,13 +78,7 @@ const generateTypescriptCredentialsOutput = async (
 				`Type options: ${JSON.stringify(property.typeOptions)}`,
 		].filter(Boolean) as string[];
 
-		if (comments.length > 0) {
-			code.line(`/**`);
-			for (const comment of comments) {
-				code.line(` * ${comment}`);
-			}
-			code.line(` */`);
-		}
+		renderComments(code, comments);
 
 		code.line(
 			`readonly ${JSON.stringify(property.name)}${property.required ? "" : "?"}: ${toTypescriptType(property)};`,

@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SetV1NodeParameters {
-    /**
-     * Whether only the values set on this node should be kept and all others removed
-     */
+    /** Whether only the values set on this node should be kept and all others removed */
     readonly keepOnlySet?: boolean;
 
     /**
@@ -20,9 +18,7 @@ export interface SetV1NodeParameters {
      */
     readonly values?: { "boolean": any, "number": any, "string": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "dotNotation"?: boolean };
 
 }

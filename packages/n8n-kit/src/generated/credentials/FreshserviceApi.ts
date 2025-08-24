@@ -8,14 +8,10 @@ export const name = "freshserviceApi" as const;
  * documentationUrl: freshservice
  */
 export interface FreshserviceApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Domain in the Freshservice org URL. For example, in <code>https://n8n.freshservice.com</code>, the domain is <code>n8n</code>
-     */
+    /** Domain in the Freshservice org URL. For example, in <code>https://n8n.freshservice.com</code>, the domain is <code>n8n</code> */
     readonly "domain"?: string;
 
     readonly __name: "freshserviceApi";

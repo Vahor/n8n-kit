@@ -8,14 +8,10 @@ export const name = "deepLApi" as const;
  * documentationUrl: deepL
  */
 export interface DeepLApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Default: "pro"
-     */
+    /** Default: "pro" */
     readonly "apiPlan"?: "pro" | "free";
 
     readonly __name: "deepLApi";

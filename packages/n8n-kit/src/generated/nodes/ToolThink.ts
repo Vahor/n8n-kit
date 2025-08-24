@@ -9,11 +9,6 @@ export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolThinkNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The thinking tool's description
      * Default: "Use the tool to think about something. It will not obtain new information or change the database, but just append the thought to the log. Use it when complex reasoning or some cache memory is needed."
      * Type options: {"rows":3}

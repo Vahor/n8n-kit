@@ -9,11 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MySqlV1NodeParameters {
-    readonly oldVersionNotice?: string;
-
-    /**
-     * Default: "insert"
-     */
+    /** Default: "insert" */
     readonly operation?: "executeQuery" | "insert" | "update";
 
     /**
@@ -31,9 +27,7 @@ export interface MySqlV1NodeParameters {
 	mode: "list" | "name",
 };
 
-    /**
-     * Comma-separated list of the properties which should used as columns for the new rows
-     */
+    /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;
 
     /**

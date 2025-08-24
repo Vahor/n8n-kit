@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SplitOutNodeParameters {
-    /**
-     * The name of the input fields to break out into separate items. Separate multiple field names by commas. For binary data, use $binary.
-     */
+    /** The name of the input fields to break out into separate items. Separate multiple field names by commas. For binary data, use $binary. */
     readonly fieldToSplitOut?: string;
 
     /**
@@ -19,14 +17,10 @@ export interface SplitOutNodeParameters {
      */
     readonly include?: "noOtherFields" | "allOtherFields" | "selectedOtherFields";
 
-    /**
-     * Fields in the input items to aggregate together
-     */
+    /** Fields in the input items to aggregate together */
     readonly fieldsToInclude?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean };
 
 }

@@ -8,21 +8,10 @@ export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolWorkflowV1NodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    readonly noticeTemplateExample?: string;
-
     readonly name?: string;
 
-    /**
-     * Type options: {"rows":3}
-     */
+    /** Type options: {"rows":3} */
     readonly description?: string;
-
-    readonly executeNotice?: string;
 
     /**
      * Where to get the workflow to execute from
@@ -30,10 +19,8 @@ export interface ToolWorkflowV1NodeParameters {
      */
     readonly source?: "database" | "parameter";
 
-    /**
-     * The workflow to execute
-     */
-    readonly workflowId?: string | any;
+    /** The workflow to execute */
+    readonly workflowId?: string;
 
     /**
      * The workflow JSON code to execute
@@ -55,9 +42,7 @@ export interface ToolWorkflowV1NodeParameters {
      */
     readonly fields?: { "values": any };
 
-    /**
-     * Whether to specify the schema for the function. This would require the LLM to provide the input in the correct format and would validate it against the schema.
-     */
+    /** Whether to specify the schema for the function. This would require the LLM to provide the input in the correct format and would validate it against the schema. */
     readonly specifyInputSchema?: boolean;
 
     /**

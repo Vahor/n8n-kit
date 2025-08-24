@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DemioNodeParameters {
-    /**
-     * Default: "event"
-     */
+    /** Default: "event" */
     readonly resource?: "event" | "report";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "register" | "get";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -31,26 +25,18 @@ export interface DemioNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "type"?: "automated" | "past" | "upcoming" } | { "status"?: "attended" | "banned" | "completed" | "did-not-attend" | "left-early" };
 
     readonly eventId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "active"?: boolean, "date_id"?: string } | { "company"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "ref_url"?: string, "gdpr"?: string, "last_name"?: string, "phone_number"?: string, "date_id"?: string, "website"?: string };
 
-    /**
-     * The registrant's first name
-     */
+    /** The registrant's first name */
     readonly firstName?: string;
 
-    /**
-     * The registrant's email address
-     */
+    /** The registrant's email address */
     readonly email?: string;
 
     /**

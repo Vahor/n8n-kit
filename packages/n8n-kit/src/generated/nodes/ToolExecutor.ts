@@ -14,9 +14,7 @@ export interface ToolExecutorNodeParameters {
      */
     readonly query?: string;
 
-    /**
-     * Name of the tool to execute if the connected tool is a toolkit
-     */
+    /** Name of the tool to execute if the connected tool is a toolkit */
     readonly toolName?: string;
 
 }

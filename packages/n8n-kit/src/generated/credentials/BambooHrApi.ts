@@ -10,9 +10,7 @@ export const name = "bambooHrApi" as const;
 export interface BambooHrApiCredentials {
     readonly "subdomain"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "bambooHrApi";

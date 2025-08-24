@@ -9,14 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolSerpApiNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "gl"?: string, "device"?: "desktop" | "mobile" | "tablet", "no_cache"?: boolean, "google_domain"?: string, "hl"?: string };
 
 }

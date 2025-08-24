@@ -8,14 +8,10 @@ export const name = "moceanApi" as const;
  * documentationUrl: mocean
  */
 export interface MoceanApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "mocean-api-key"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "mocean-api-secret"?: string;
 
     readonly __name: "moceanApi";

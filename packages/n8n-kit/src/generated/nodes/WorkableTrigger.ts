@@ -11,9 +11,7 @@ export const outputs = {"main":"main"} as const;
 export interface WorkableTriggerNodeParameters {
     readonly triggerOn?: "candidateCreated" | "candidateMoved";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "job"?: string, "stage"?: string };
 
 }

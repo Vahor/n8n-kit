@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WooCommerceTriggerNodeParameters {
-    /**
-     * Determines which resource events the webhook is triggered for
-     */
+    /** Determines which resource events the webhook is triggered for */
     readonly event?: "coupon.created" | "coupon.deleted" | "coupon.updated" | "customer.created" | "customer.deleted" | "customer.updated" | "order.created" | "order.deleted" | "order.updated" | "product.created" | "product.deleted" | "product.updated";
 
 }

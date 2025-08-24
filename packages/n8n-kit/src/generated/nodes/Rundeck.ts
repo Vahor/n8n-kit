@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RundeckNodeParameters {
-    /**
-     * Default: "job"
-     */
+    /** Default: "job" */
     readonly resource?: "job";
 
-    /**
-     * Default: "execute"
-     */
+    /** Default: "execute" */
     readonly operation?: "execute" | "getMetadata";
 
-    /**
-     * The job ID to execute
-     */
+    /** The job ID to execute */
     readonly jobid?: string;
 
     /**
@@ -30,9 +24,7 @@ export interface RundeckNodeParameters {
      */
     readonly arguments?: { "arguments": any };
 
-    /**
-     * Filter Rundeck nodes by name
-     */
+    /** Filter Rundeck nodes by name */
     readonly filter?: string;
 
 }

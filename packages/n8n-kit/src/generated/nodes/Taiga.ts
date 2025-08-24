@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TaigaNodeParameters {
-    /**
-     * Default: "issue"
-     */
+    /** Default: "issue" */
     readonly resource?: "epic" | "issue" | "task" | "userStory";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -27,19 +23,13 @@ export interface TaigaNodeParameters {
 
     readonly subject?: string;
 
-    /**
-     * Default: {}
-     */
-    readonly additionalFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: any, "description"?: string, "is_blocked"?: boolean, "tags"?: any[] } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "tags"?: any[], "type"?: string } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "status"?: string, "tags"?: any[], "taskboard_order"?: number, "user_story"?: string, "us_order"?: number } | { "assigned_to"?: string, "backlog_order"?: number, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "kanban_order"?: number, "milestone"?: string, "sprint_order"?: number, "status"?: string, "tags"?: any[], "type"?: string };
+    /** Default: {} */
+    readonly additionalFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: string, "description"?: string, "is_blocked"?: boolean, "tags"?: any[] } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "tags"?: any[], "type"?: string } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "status"?: string, "tags"?: any[], "taskboard_order"?: number, "user_story"?: string, "us_order"?: number } | { "assigned_to"?: string, "backlog_order"?: number, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "kanban_order"?: number, "milestone"?: string, "sprint_order"?: number, "status"?: string, "tags"?: any[], "type"?: string };
 
-    /**
-     * ID of the epic to delete
-     */
+    /** ID of the epic to delete */
     readonly epicId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,29 +39,19 @@ export interface TaigaNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "assigned_to"?: string, "statusIsClosed"?: boolean } | { "assigned_to"?: string, "orderBy"?: "assigned_to" | "created_date" | "modified_date" | "owner" | "priority" | "severity" | "status" | "subject" | "type", "owner"?: string, "priority"?: string, "role"?: string, "severity"?: string, "status"?: string, "tags"?: any[], "type"?: string } | { "assigned_to"?: string, "statusIsClosed"?: boolean, "milestone"?: string, "owner"?: string, "role"?: string, "status"?: string, "tags"?: any[], "userStory"?: string } | { "assigned_to"?: string, "epic"?: string, "statusIsClosed"?: boolean, "statusIsArchived"?: boolean, "milestone"?: string, "role"?: string, "status"?: string, "tags"?: any[] };
 
-    /**
-     * Default: {}
-     */
-    readonly updateFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: any, "description"?: string, "is_blocked"?: boolean, "subject"?: string, "tags"?: any[] } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "subject"?: string, "tags"?: any[], "type"?: string } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "status"?: string, "subject"?: string, "user_story"?: string, "us_order"?: number, "tags"?: any[], "taskboard_order"?: number } | { "assigned_to"?: string, "backlog_order"?: number, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "kanban_order"?: number, "milestone"?: string, "subject"?: string, "sprint_order"?: number, "status"?: string, "tags"?: any[], "type"?: string };
+    /** Default: {} */
+    readonly updateFields?: { "assigned_to"?: string, "blocked_note"?: string, "color"?: string, "description"?: string, "is_blocked"?: boolean, "subject"?: string, "tags"?: any[] } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "priority"?: string, "severity"?: string, "status"?: string, "subject"?: string, "tags"?: any[], "type"?: string } | { "assigned_to"?: string, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "milestone"?: string, "status"?: string, "subject"?: string, "user_story"?: string, "us_order"?: number, "tags"?: any[], "taskboard_order"?: number } | { "assigned_to"?: string, "backlog_order"?: number, "blocked_note"?: string, "description"?: string, "is_blocked"?: boolean, "kanban_order"?: number, "milestone"?: string, "subject"?: string, "sprint_order"?: number, "status"?: string, "tags"?: any[], "type"?: string };
 
-    /**
-     * ID of the issue to delete
-     */
+    /** ID of the issue to delete */
     readonly issueId?: string;
 
-    /**
-     * ID of the task to delete
-     */
+    /** ID of the task to delete */
     readonly taskId?: string;
 
-    /**
-     * ID of the user story to delete
-     */
+    /** ID of the user story to delete */
     readonly userStoryId?: string;
 
 }

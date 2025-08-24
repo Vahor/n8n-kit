@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ClickUpTriggerNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
     /**
@@ -20,14 +18,10 @@ export interface ClickUpTriggerNodeParameters {
      */
     readonly team?: string;
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("*" | "folderCreated" | "folderDeleted" | "folderUpdated" | "goalCreated" | "goalDeleted" | "goalUpdated" | "keyResultCreated" | "keyResultDelete" | "keyResultUpdated" | "listCreated" | "listDeleted" | "listUpdated" | "spaceCreated" | "spaceDeleted" | "spaceUpdated" | "taskAssigneeUpdated" | "taskCommentPosted" | "taskCommentUpdated" | "taskCreated" | "taskDeleted" | "taskDueDateUpdated" | "taskMoved" | "taskStatusUpdated" | "taskTagUpdated" | "taskTimeEstimateUpdated" | "taskTimeTrackedUpdated" | "taskUpdated")[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "folderId"?: string, "listId"?: string, "spaceId"?: string, "taskId"?: string };
 
 }

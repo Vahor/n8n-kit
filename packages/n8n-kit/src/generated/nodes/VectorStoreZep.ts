@@ -9,24 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreZepNodeParameters {
-    /**
-     * Type options: {"calloutAction":{"label":"RAG starter template","type":"openSampleWorkflowTemplate","templateId":"rag-starter-template"}}
-     */
-    readonly ragStarterCallout?: any;
-
-    /**
-     * Default: "retrieve"
-     */
+    /** Default: "retrieve" */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
 
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
-     * Name of the vector store
-     */
+    /** Name of the vector store */
     readonly toolName?: string;
 
     /**
@@ -34,8 +20,6 @@ export interface VectorStoreZepNodeParameters {
      * Type options: {"rows":2}
      */
     readonly toolDescription?: string;
-
-    readonly deprecationNotice?: string;
 
     readonly collectionName?: string;
 
@@ -45,14 +29,10 @@ export interface VectorStoreZepNodeParameters {
      */
     readonly embeddingBatchSize?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "embeddingDimensions"?: number, "isAutoEmbedded"?: boolean } | { "embeddingDimensions"?: number, "metadata"?: { "metadataValues": any } };
 
-    /**
-     * Search prompt to retrieve matching documents from the vector store using similarity-based ranking
-     */
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
 
     /**
@@ -67,14 +47,10 @@ export interface VectorStoreZepNodeParameters {
      */
     readonly includeDocumentMetadata?: boolean;
 
-    /**
-     * Whether or not to rerank results
-     */
+    /** Whether or not to rerank results */
     readonly useReranker?: boolean;
 
-    /**
-     * ID of an embedding entry
-     */
+    /** ID of an embedding entry */
     readonly id?: string;
 
 }

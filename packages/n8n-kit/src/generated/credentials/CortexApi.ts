@@ -8,14 +8,10 @@ export const name = "cortexApi" as const;
  * documentationUrl: cortex
  */
 export interface CortexApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "cortexApiKey"?: string;
 
-    /**
-     * The URL of the Cortex instance
-     */
+    /** The URL of the Cortex instance */
     readonly "host"?: string;
 
     readonly __name: "cortexApi";

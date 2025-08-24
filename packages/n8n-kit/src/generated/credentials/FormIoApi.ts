@@ -8,18 +8,14 @@ export const name = "formIoApi" as const;
  * documentationUrl: formIoTrigger
  */
 export interface FormIoApiCredentials {
-    /**
-     * Default: "cloudHosted"
-     */
+    /** Default: "cloudHosted" */
     readonly "environment"?: "cloudHosted" | "selfHosted";
 
     readonly "domain"?: string;
 
     readonly "email"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly __name: "formIoApi";

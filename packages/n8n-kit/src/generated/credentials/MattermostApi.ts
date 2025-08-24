@@ -8,16 +8,12 @@ export const name = "mattermostApi" as const;
  * documentationUrl: mattermost
  */
 export interface MattermostApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly "baseUrl"?: string;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "mattermostApi";

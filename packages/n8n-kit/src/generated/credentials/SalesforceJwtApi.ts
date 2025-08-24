@@ -8,14 +8,10 @@ export const name = "salesforceJwtApi" as const;
  * documentationUrl: salesforce
  */
 export interface SalesforceJwtApiCredentials {
-    /**
-     * Default: "production"
-     */
+    /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";
 
-    /**
-     * Consumer Key from Salesforce Connected App
-     */
+    /** Consumer Key from Salesforce Connected App */
     readonly "clientId": string;
 
     readonly "username": string;

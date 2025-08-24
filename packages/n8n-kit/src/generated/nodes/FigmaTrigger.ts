@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FigmaTriggerNodeParameters {
-    /**
-     * Trigger will monitor this Figma Team for changes. Team ID can be found in the URL of a Figma Team page when viewed in a web browser: figma.com/files/team/{TEAM-ID}/.
-     */
+    /** Trigger will monitor this Figma Team for changes. Team ID can be found in the URL of a Figma Team page when viewed in a web browser: figma.com/files/team/{TEAM-ID}/. */
     readonly teamId?: string;
 
     readonly triggerOn?: "fileComment" | "fileDelete" | "fileUpdate" | "fileVersionUpdate" | "libraryPublish";

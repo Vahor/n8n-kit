@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleDocsNodeParameters {
-    /**
-     * Default: "serviceAccount"
-     */
+    /** Default: "serviceAccount" */
     readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "document"
-     */
+    /** Default: "document" */
     readonly resource?: "document";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "update";
 
     /**
@@ -39,9 +33,7 @@ export interface GoogleDocsNodeParameters {
 
     readonly title?: string;
 
-    /**
-     * The ID in the document URL (or just paste the whole URL)
-     */
+    /** The ID in the document URL (or just paste the whole URL) */
     readonly documentURL?: string;
 
     /**
@@ -57,9 +49,7 @@ export interface GoogleDocsNodeParameters {
      */
     readonly actionsUi?: { "actionFields": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "writeControlObject": any };
 
 }

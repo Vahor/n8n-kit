@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BrandfetchNodeParameters {
-    /**
-     * Default: "logo"
-     */
+    /** Default: "logo" */
     readonly operation?: "color" | "company" | "font" | "industry" | "logo";
 
-    /**
-     * The domain name of the company
-     */
+    /** The domain name of the company */
     readonly domain?: string;
 
-    /**
-     * Name of the binary property to which to write the data of the read file
-     */
+    /** Name of the binary property to which to write the data of the read file */
     readonly download?: boolean;
 
-    /**
-     * Default: ["logo","icon"]
-     */
+    /** Default: ["logo","icon"] */
     readonly imageTypes?: ("icon" | "logo")[];
 
     /**

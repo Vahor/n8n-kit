@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RedisTriggerNodeParameters {
-    /**
-     * Channels to subscribe to, multiple channels be defined with comma. Wildcard character(*) is supported.
-     */
+    /** Channels to subscribe to, multiple channels be defined with comma. Wildcard character(*) is supported. */
     readonly channels?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "jsonParseBody"?: boolean, "onlyMessage"?: boolean };
 
 }

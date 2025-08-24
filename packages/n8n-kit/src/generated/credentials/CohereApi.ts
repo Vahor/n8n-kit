@@ -8,14 +8,10 @@ export const name = "cohereApi" as const;
  * documentationUrl: cohere
  */
 export interface CohereApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
-    /**
-     * Default: "https://api.cohere.ai"
-     */
+    /** Default: "https://api.cohere.ai" */
     readonly "url"?: any;
 
     readonly __name: "cohereApi";

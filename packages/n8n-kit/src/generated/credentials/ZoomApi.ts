@@ -10,9 +10,7 @@ export const name = "zoomApi" as const;
 export interface ZoomApiCredentials {
     readonly "notice"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "zoomApi";

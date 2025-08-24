@@ -8,14 +8,7 @@ export const inputs = {"Vector Store":"ai_vectorStore","Model":"ai_languageModel
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolVectorStoreNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
-     * Name of the data in vector store. This will be used to fill this tool description: Useful for when you need to answer questions about [name]. Whenever you need information about [data description], you should ALWAYS use this. Input should be a fully formed question.
-     */
+    /** Name of the data in vector store. This will be used to fill this tool description: Useful for when you need to answer questions about [name]. Whenever you need information about [data description], you should ALWAYS use this. Input should be a fully formed question. */
     readonly name?: string;
 
     /**

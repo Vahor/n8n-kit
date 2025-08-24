@@ -15,44 +15,28 @@ export interface DropboxNodeParameters {
      */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "file"
-     */
+    /** Default: "file" */
     readonly resource?: "file" | "folder" | "search";
 
-    /**
-     * Default: "upload"
-     */
+    /** Default: "upload" */
     readonly operation?: "copy" | "delete" | "download" | "move" | "upload" | "copy" | "create" | "delete" | "list" | "move" | "query";
 
-    /**
-     * The path of file or folder to copy
-     */
+    /** The path of file or folder to copy */
     readonly path?: string;
 
-    /**
-     * The destination path of file or folder
-     */
+    /** The destination path of file or folder */
     readonly toPath?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Whether the data to upload should be taken from binary field
-     */
+    /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;
 
-    /**
-     * The text content of the file to upload
-     */
+    /** The text content of the file to upload */
     readonly fileContent?: string;
 
-    /**
-     * The string to search for. May match across multiple fields based on the request arguments.
-     */
+    /** The string to search for. May match across multiple fields based on the request arguments. */
     readonly query?: string;
 
     /**
@@ -61,9 +45,7 @@ export interface DropboxNodeParameters {
      */
     readonly fileStatus?: "active" | "deleted";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -79,9 +61,7 @@ export interface DropboxNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "file_categories"?: ("audio" | "document" | "paper" | "folder" | "image" | "other" | "pdf" | "presentation" | "spreadsheet" | "video")[], "file_extensions"?: string, "path"?: string } | { "include_deleted"?: boolean, "include_has_explicit_shared_members"?: boolean, "include_mounted_folders"?: boolean, "include_non_downloadable_files"?: boolean, "recursive"?: boolean };
 
 }

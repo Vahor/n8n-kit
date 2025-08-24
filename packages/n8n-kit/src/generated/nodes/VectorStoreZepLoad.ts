@@ -9,13 +9,9 @@ export const inputs = {"Embedding":"ai_embedding"} as const;
 export const outputs = {"ai_vectorStore":"ai_vectorStore"} as const;
 
 export interface VectorStoreZepLoadNodeParameters {
-    readonly deprecationNotice?: string;
-
     readonly collectionName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "embeddingDimensions"?: number, "metadata"?: { "metadataValues": any } };
 
 }

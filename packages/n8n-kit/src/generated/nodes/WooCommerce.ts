@@ -9,31 +9,21 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WooCommerceNodeParameters {
-    /**
-     * Default: "product"
-     */
+    /** Default: "product" */
     readonly resource?: "customer" | "order" | "product";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "billing"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "first_name"?: string, "last_name"?: string, "meta_data"?: { "meta_data_fields": any }, "password"?: string, "shipping"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "username"?: string } | { "backorders"?: "no" | "notify" | "yes", "buttonText"?: string, "catalogVisibility"?: "catalog" | "hidden" | "search" | "visible", "categories"?: any[], "crossSellIds"?: string, "dateOnSaleFrom"?: string, "dateOnSaleTo"?: string, "description"?: string, "downloadable"?: boolean, "externalUrl"?: string, "featured"?: boolean, "manageStock"?: boolean, "menuOrder"?: number, "parentId"?: string, "purchaseNote"?: string, "regularPrice"?: string, "reviewsAllowed"?: boolean, "salePrice"?: string, "shippingClass"?: string, "shortDescription"?: string, "sku"?: string, "slug"?: string, "soldIndividually"?: boolean, "status"?: "draft" | "pending" | "private" | "publish", "stockQuantity"?: number, "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tags"?: any[], "taxClass"?: string, "taxStatus"?: "taxable" | "shipping" | "none", "type"?: "simple" | "grouped" | "external" | "variable", "upsellIds"?: string, "virtual"?: boolean, "weight"?: string } | { "currency"?: string, "customerId"?: string, "customerNote"?: string, "parentId"?: string, "paymentMethodId"?: string, "paymentMethodTitle"?: string, "setPaid"?: boolean, "status"?: "cancelled" | "completed" | "failed" | "on-hold" | "pending" | "processing" | "refunded" | "trash", "transactionID"?: string };
 
-    /**
-     * ID of the customer to delete
-     */
+    /** ID of the customer to delete */
     readonly customerId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -43,19 +33,13 @@ export interface WooCommerceNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "email"?: string, "order"?: "asc" | "desc", "orderby"?: "id" | "include" | "name" | "registered_date" };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "billing"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string }, "first_name"?: string, "last_name"?: string, "meta_data"?: { "meta_data_fields": any }, "password"?: string, "shipping"?: { "first_name"?: string, "last_name"?: string, "company"?: string, "address_1"?: string, "address_2"?: string, "city"?: string, "state"?: string, "postcode"?: string, "country"?: string, "email"?: string, "phone"?: string } } | { "backorders"?: "no" | "notify" | "yes", "buttonText"?: string, "catalogVisibility"?: "visible" | "catalog" | "search" | "hidden", "categories"?: any[], "crossSellIds"?: string, "dateOnSaleFrom"?: string, "dateOnSaleTo"?: string, "description"?: string, "downloadable"?: boolean, "externalUrl"?: string, "featured"?: boolean, "manageStock"?: boolean, "menuOrder"?: number, "name"?: string, "parentId"?: string, "purchaseNote"?: string, "regularPrice"?: string, "reviewsAllowed"?: boolean, "salePrice"?: string, "shippingClass"?: string, "shortDescription"?: string, "sku"?: string, "slug"?: string, "soldIndividually"?: boolean, "status"?: "draft" | "pending" | "private" | "publish", "stockQuantity"?: number, "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tags"?: any[], "taxClass"?: string, "taxStatus"?: "taxable" | "shipping" | "none", "type"?: "simple" | "grouped" | "external" | "variable", "upsellIds"?: string, "virtual"?: boolean, "weight"?: string } | { "currency"?: string, "customerId"?: string, "customerNote"?: string, "parentId"?: string, "paymentMethodId"?: string, "paymentMethodTitle"?: string, "status"?: "cancelled" | "completed" | "failed" | "on-hold" | "pending" | "processing" | "refunded" | "trash", "transactionID"?: string };
 
-    /**
-     * Product name
-     */
+    /** Product name */
     readonly name?: string;
 
     /**
@@ -81,9 +65,7 @@ export interface WooCommerceNodeParameters {
 
     readonly productId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "after"?: string, "before"?: string, "category"?: string, "context"?: "view" | "embed" | "edit", "featured"?: boolean, "maxPrice"?: string, "minPrice"?: string, "order"?: "asc" | "desc", "orderBy"?: "date" | "id" | "include" | "slug" | "title", "search"?: string, "sku"?: string, "slug"?: string, "status"?: "any" | "draft" | "pending" | "private" | "publish", "stockStatus"?: "instock" | "outofstock" | "onbackorder", "tag"?: string, "taxClass"?: "standard" | "reduced-rate" | "zero-rate.", "type"?: "simple" | "grouped" | "external" | "variable" } | { "after"?: string, "before"?: string, "customer"?: string, "decimalPoints"?: number, "order"?: "asc" | "desc", "product"?: string, "orderBy"?: "date" | "id" | "include" | "slug" | "title", "search"?: string, "status"?: "any" | "cancelled" | "completed" | "failed" | "on-hold" | "pending" | "processing" | "refunded" | "trash" };
 
     /**

@@ -10,9 +10,7 @@ export const name = "rocketchatApi" as const;
 export interface RocketchatApiCredentials {
     readonly "userId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "authKey"?: string;
 
     readonly "domain"?: string;

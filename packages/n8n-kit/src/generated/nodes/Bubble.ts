@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BubbleNodeParameters {
-    /**
-     * Default: "object"
-     */
+    /** Default: "object" */
     readonly resource?: "object";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
-    /**
-     * Name of data type of the object to create
-     */
+    /** Name of data type of the object to create */
     readonly typeName?: string;
 
     /**
@@ -30,14 +24,10 @@ export interface BubbleNodeParameters {
      */
     readonly properties?: { "property": any };
 
-    /**
-     * ID of the object to retrieve
-     */
+    /** ID of the object to retrieve */
     readonly objectId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,9 +39,7 @@ export interface BubbleNodeParameters {
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "filters"?: { "filter": any }, "filtersJson"?: string, "sort"?: { "sortValue": any } };
 
 }

@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MandrillNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message";
 
-    /**
-     * Default: "sendTemplate"
-     */
+    /** Default: "sendTemplate" */
     readonly operation?: "sendTemplate" | "sendHtml";
 
     /**
@@ -25,21 +21,15 @@ export interface MandrillNodeParameters {
      */
     readonly template?: string;
 
-    /**
-     * Email address of the sender optional with name
-     */
+    /** Email address of the sender optional with name */
     readonly fromEmail?: string;
 
-    /**
-     * Email address of the recipient. Multiple ones can be separated by comma.
-     */
+    /** Email address of the recipient. Multiple ones can be separated by comma. */
     readonly toEmail?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "async"?: boolean, "autoText"?: boolean, "autoHtml"?: boolean, "bccAddress"?: string, "fromName"?: string, "googleAnalyticsCampaign"?: string, "googleAnalyticsDomains"?: string, "html"?: string, "important"?: boolean, "inlineCss"?: boolean, "ipPool"?: string, "preserveRecipients"?: boolean, "returnPathDomain"?: string, "sendAt"?: string, "signingDomain"?: string, "subAccount"?: string, "subject"?: string, "tags"?: string, "text"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean, "trackingDomain"?: string, "urlStripQs"?: boolean, "viewContentLink"?: boolean };
 
     /**

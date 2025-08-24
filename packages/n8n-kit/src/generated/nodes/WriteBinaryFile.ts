@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WriteBinaryFileNodeParameters {
-    /**
-     * Path to which the file should be written
-     */
+    /** Path to which the file should be written */
     readonly fileName?: string;
 
     /**
@@ -19,9 +17,7 @@ export interface WriteBinaryFileNodeParameters {
      */
     readonly dataPropertyName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "append"?: boolean };
 
 }

@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BrevoNodeParameters {
-    /**
-     * Default: "email"
-     */
+    /** Default: "email" */
     readonly resource?: "contact" | "attribute" | "email" | "sender";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "update" | "delete" | "getAll" | "create" | "delete" | "getAll" | "create" | "upsert" | "delete" | "get" | "getAll" | "update" | "send" | "sendTemplate";
 
     /**
@@ -25,24 +21,16 @@ export interface BrevoNodeParameters {
      */
     readonly attributeCategory?: "calculated" | "category" | "global" | "normal" | "transactional";
 
-    /**
-     * Name of the attribute
-     */
+    /** Name of the attribute */
     readonly attributeName?: string;
 
-    /**
-     * Attribute Type
-     */
+    /** Attribute Type */
     readonly attributeType?: "boolean" | "date" | "float" | "text";
 
-    /**
-     * Value of the attribute
-     */
+    /** Value of the attribute */
     readonly attributeValue?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly attributeCategoryList?: { "categoryEnumeration"?: { "attributesValues": any } };
 
     /**
@@ -51,14 +39,10 @@ export interface BrevoNodeParameters {
      */
     readonly updateAttributeCategory?: "calculated" | "category" | "global";
 
-    /**
-     * Name of the existing attribute
-     */
+    /** Name of the existing attribute */
     readonly updateAttributeName?: string;
 
-    /**
-     * Value of the attribute to update
-     */
+    /** Value of the attribute to update */
     readonly updateAttributeValue?: string;
 
     /**
@@ -73,14 +57,10 @@ export interface BrevoNodeParameters {
      */
     readonly deleteAttributeCategory?: "calculated" | "category" | "global" | "normal" | "transactional";
 
-    /**
-     * Name of the attribute
-     */
+    /** Name of the attribute */
     readonly deleteAttributeName?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -90,19 +70,13 @@ export interface BrevoNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Name of the sender
-     */
+    /** Name of the sender */
     readonly name?: string;
 
-    /**
-     * Email of the sender
-     */
+    /** Email of the sender */
     readonly email?: string;
 
-    /**
-     * ID of the sender to delete
-     */
+    /** ID of the sender to delete */
     readonly id?: string;
 
     /**
@@ -112,19 +86,13 @@ export interface BrevoNodeParameters {
      */
     readonly createContactAttributes?: { "attributesValues": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "sort"?: "desc" | "asc" };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "modifiedSince"?: string };
 
-    /**
-     * Email (urlencoded) OR ID of the contact OR its SMS attribute value
-     */
+    /** Email (urlencoded) OR ID of the contact OR its SMS attribute value */
     readonly identifier?: string;
 
     /**
@@ -143,19 +111,13 @@ export interface BrevoNodeParameters {
 
     readonly sendHTML?: boolean;
 
-    /**
-     * Subject of the email
-     */
+    /** Subject of the email */
     readonly subject?: string;
 
-    /**
-     * Text content of the message
-     */
+    /** Text content of the message */
     readonly textContent?: string;
 
-    /**
-     * HTML content of the message
-     */
+    /** HTML content of the message */
     readonly htmlContent?: string;
 
     readonly sender?: string;
@@ -168,9 +130,7 @@ export interface BrevoNodeParameters {
      */
     readonly additionalFields?: { "emailAttachments"?: { "attachment": any }, "receipientsBCC"?: { "receipientBcc": any }, "receipientsCC"?: { "receipientCc": any }, "emailTags"?: { "tags": any } } | { "emailAttachments"?: { "attachment": any }, "emailTags"?: { "tags": any }, "templateParameters"?: { "parameterValues": any } };
 
-    /**
-     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v3/smtp/templates","qs":{"templateStatus":true,"limit":1000,"offset":0,"sort":"desc"}},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"templates"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
-     */
+    /** Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v3/smtp/templates","qs":{"templateStatus":true,"limit":1000,"offset":0,"sort":"desc"}},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"templates"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}} */
     readonly templateId?: string;
 
 }

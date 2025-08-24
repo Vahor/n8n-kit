@@ -15,9 +15,7 @@ export interface RenameKeysNodeParameters {
      */
     readonly keys?: { "key": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "regexReplacement"?: { "replacements": any } };
 
 }

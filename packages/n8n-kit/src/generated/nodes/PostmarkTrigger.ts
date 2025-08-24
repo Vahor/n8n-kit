@@ -15,14 +15,10 @@ export interface PostmarkTriggerNodeParameters {
      */
     readonly events?: ("bounce" | "click" | "delivery" | "open" | "spamComplaint" | "subscriptionChange")[];
 
-    /**
-     * Only fires on first open for event "Open"
-     */
+    /** Only fires on first open for event "Open" */
     readonly firstOpen?: boolean;
 
-    /**
-     * Whether to include message content for events "Bounce" and "Spam Complaint"
-     */
+    /** Whether to include message content for events "Bounce" and "Spam Complaint" */
     readonly includeContent?: boolean;
 
 }

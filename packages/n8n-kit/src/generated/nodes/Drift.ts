@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DriftNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getCustomAttributes" | "delete" | "get" | "update";
 
-    /**
-     * The email of the contact
-     */
+    /** The email of the contact */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "name"?: string, "phone"?: string };
 
-    /**
-     * Unique identifier for the contact
-     */
+    /** Unique identifier for the contact */
     readonly contactId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "email"?: string, "name"?: string, "phone"?: string };
 
 }

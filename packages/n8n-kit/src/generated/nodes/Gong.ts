@@ -9,37 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GongNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "call"
-     */
+    /** Default: "call" */
     readonly resource?: "call" | "user";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "get" | "getAll";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly call?: {
 	value: string,
 	mode: "list" | "id" | "url",
 };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "properties"?: ("pointsOfInterest" | "media" | "brief" | "publicComments" | "highlights" | "keyPoints" | "callOutcome" | "outline" | "parties" | "structure" | "topics" | "trackers" | "transcript")[] } | { "properties"?: ("parties" | "topics")[] };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,17 +37,13 @@ export interface GongNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "fromDateTime"?: string, "toDateTime"?: string, "workspaceId"?: string, "callIds"?: string, "primaryUserIds"?: {
 	value: string,
 	mode: "list" | "id",
 } } | { "createdFromDateTime"?: string, "createdToDateTime"?: string, "userIds"?: string };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly user?: {
 	value: string,
 	mode: "list" | "id",

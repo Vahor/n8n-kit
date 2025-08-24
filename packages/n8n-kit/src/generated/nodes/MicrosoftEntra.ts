@@ -9,31 +9,21 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftEntraNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "group" | "user";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "addGroup" | "create" | "delete" | "get" | "getAll" | "removeGroup" | "update";
 
     readonly groupType?: "Unified" | "";
 
-    /**
-     * The name to display in the address book for the group
-     */
+    /** The name to display in the address book for the group */
     readonly displayName?: string;
 
-    /**
-     * The mail alias for the group. Only enter the local-part without the domain.
-     */
+    /** The mail alias for the group. Only enter the local-part without the domain. */
     readonly mailNickname?: string;
 
-    /**
-     * Whether the group is mail-enabled
-     */
+    /** Whether the group is mail-enabled */
     readonly mailEnabled?: boolean;
 
     readonly membershipType?: "" | "DynamicMembership";
@@ -44,22 +34,16 @@ export interface MicrosoftEntraNodeParameters {
      */
     readonly securityEnabled?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "isAssignableToRole"?: boolean, "description"?: string, "membershipRule"?: string, "membershipRuleProcessingState"?: "On" | "Paused", "preferredDataLocation"?: string, "uniqueName"?: string, "visibility"?: "Private" | "Public" } | { "aboutMe"?: string, "ageGroup"?: "Adult" | "Minor" | "NotAdult", "birthday"?: string, "businessPhones"?: string, "city"?: string, "companyName"?: string, "consentProvidedForMinor"?: "Denied" | "Granted" | "NotRequired", "country"?: string, "department"?: string, "employeeId"?: string, "employeeType"?: string, "employeeHireDate"?: string, "employeeLeaveDateTime"?: string, "employeeOrgData"?: { "employeeOrgValues": any }, "givenName"?: string, "forceChangePassword"?: "forceChangePasswordNextSignIn" | "forceChangePasswordNextSignInWithMfa", "interests"?: string, "jobTitle"?: string, "surname"?: string, "mail"?: string, "mobilePhone"?: string, "mySite"?: string, "officeLocation"?: string, "onPremisesImmutableId"?: string, "otherMails"?: string, "passwordPolicies"?: ("DisablePasswordExpiration" | "DisableStrongPassword")[], "pastProjects"?: string, "postalCode"?: string, "preferredLanguage"?: string, "responsibilities"?: string, "schools"?: string, "skills"?: string, "state"?: string, "streetAddress"?: string, "usageLocation"?: string, "userType"?: "Guest" | "Member" };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly group?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: "simple"
-     */
+    /** Default: "simple" */
     readonly output?: "simple" | "raw" | "fields";
 
     /**
@@ -69,14 +53,10 @@ export interface MicrosoftEntraNodeParameters {
      */
     readonly fields?: any[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeMembers"?: boolean };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -86,19 +66,13 @@ export interface MicrosoftEntraNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * <a href="https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter">Query parameter</a> to filter results by
-     */
+    /** <a href="https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter">Query parameter</a> to filter results by */
     readonly filter?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "allowExternalSenders"?: boolean, "autoSubscribeNewMembers"?: boolean, "description"?: string, "displayName"?: string, "mailNickname"?: string, "membershipRule"?: string, "membershipRuleProcessingState"?: "On" | "Paused", "preferredDataLocation"?: string, "securityEnabled"?: boolean, "uniqueName"?: string, "visibility"?: "Private" | "Public" } | { "aboutMe"?: string, "accountEnabled"?: boolean, "ageGroup"?: "Adult" | "Minor" | "NotAdult", "birthday"?: string, "businessPhones"?: string, "city"?: string, "companyName"?: string, "consentProvidedForMinor"?: "Denied" | "Granted" | "NotRequired", "country"?: string, "department"?: string, "displayName"?: string, "employeeId"?: string, "employeeType"?: string, "givenName"?: string, "employeeHireDate"?: string, "employeeLeaveDateTime"?: string, "employeeOrgData"?: { "employeeOrgValues": any }, "forceChangePassword"?: "forceChangePasswordNextSignIn" | "forceChangePasswordNextSignInWithMfa", "interests"?: string, "jobTitle"?: string, "surname"?: string, "mail"?: string, "mailNickname"?: string, "mobilePhone"?: string, "mySite"?: string, "officeLocation"?: string, "onPremisesImmutableId"?: string, "otherMails"?: string, "password"?: string, "passwordPolicies"?: ("DisablePasswordExpiration" | "DisableStrongPassword")[], "pastProjects"?: string, "postalCode"?: string, "preferredLanguage"?: string, "responsibilities"?: string, "schools"?: string, "skills"?: string, "state"?: string, "streetAddress"?: string, "usageLocation"?: string, "userPrincipalName"?: string, "userType"?: "Guest" | "Member" };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly user?: {
 	value: string,
 	mode: "list" | "id",
@@ -110,9 +84,7 @@ export interface MicrosoftEntraNodeParameters {
      */
     readonly accountEnabled?: boolean;
 
-    /**
-     * The user principal name (UPN)
-     */
+    /** The user principal name (UPN) */
     readonly userPrincipalName?: string;
 
     /**

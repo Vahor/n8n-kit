@@ -8,9 +8,7 @@ export const name = "googleDriveOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleDriveOAuth2ApiCredentials {
-    /**
-     * Default: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.photos.readonly"
-     */
+    /** Default: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.photos.readonly" */
     readonly "scope"?: any;
 
     readonly "notice"?: string;

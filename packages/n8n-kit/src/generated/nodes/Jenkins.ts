@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JenkinsNodeParameters {
-    /**
-     * Default: "job"
-     */
+    /** Default: "job" */
     readonly resource?: "build" | "instance" | "job";
 
     /**
@@ -19,8 +17,6 @@ export interface JenkinsNodeParameters {
      * Default: "trigger"
      */
     readonly operation?: "copy" | "create" | "trigger" | "triggerParams" | "cancelQuietDown" | "quietDown" | "restart" | "safeRestart" | "safeExit" | "exit" | "getAll";
-
-    readonly triggerParamsNotice?: string;
 
     /**
      * Name of the job. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -35,28 +31,16 @@ export interface JenkinsNodeParameters {
      */
     readonly param?: { "params": any };
 
-    /**
-     * Name of the new Jenkins job
-     */
+    /** Name of the new Jenkins job */
     readonly newJob?: string;
 
-    /**
-     * XML of Jenkins config
-     */
+    /** XML of Jenkins config */
     readonly xml?: string;
 
-    readonly createNotice?: string;
-
-    /**
-     * Freeform reason for quiet down mode
-     */
+    /** Freeform reason for quiet down mode */
     readonly reason?: string;
 
-    readonly instanceNotice?: string;
-
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

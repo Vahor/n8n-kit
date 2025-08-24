@@ -10,29 +10,18 @@ export const outputs = {"ai_memory":"ai_memory"} as const;
 
 export interface MemoryRedisChatNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The key to use to store the memory in the workflow data
      * Default: "chat_history"
      */
     readonly sessionKey?: string;
 
-    /**
-     * Default: "fromInput"
-     */
+    /** Default: "fromInput" */
     readonly sessionIdType?: "fromInput" | "customKey";
 
-    /**
-     * For how long the session should be stored in seconds. If set to 0 it will not expire.
-     */
+    /** For how long the session should be stored in seconds. If set to 0 it will not expire. */
     readonly sessionTTL?: number;
 
-    /**
-     * Default: 5
-     */
+    /** Default: 5 */
     readonly contextWindowLength?: number;
 
 }

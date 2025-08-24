@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PipedriveTriggerNodeParameters {
-    /**
-     * Default: "apiToken"
-     */
+    /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
 
     /**

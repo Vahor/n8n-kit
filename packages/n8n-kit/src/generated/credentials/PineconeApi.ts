@@ -8,9 +8,7 @@ export const name = "pineconeApi" as const;
  * documentationUrl: pinecone
  */
 export interface PineconeApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "pineconeApi";

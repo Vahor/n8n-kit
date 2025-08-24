@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HumanticAiNodeParameters {
-    /**
-     * Default: "profile"
-     */
+    /** Default: "profile" */
     readonly resource?: "profile";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "update";
 
-    /**
-     * The LinkedIn profile URL or email ID for creating a Humantic profile. If you are sending the resume, this should be a unique string.
-     */
+    /** The LinkedIn profile URL or email ID for creating a Humantic profile. If you are sending the resume, this should be a unique string. */
     readonly userId?: string;
 
-    /**
-     * Whether to send a resume for a resume based analysis
-     */
+    /** Whether to send a resume for a resume based analysis */
     readonly sendResume?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "persona"?: ("sales" | "hiring")[] };
 
-    /**
-     * Additional text written by the user
-     */
+    /** Additional text written by the user */
     readonly text?: string;
 
 }

@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TogglTriggerNodeParameters {
-    /**
-     * Default: "newTimeEntry"
-     */
+    /** Default: "newTimeEntry" */
     readonly event?: "newTimeEntry";
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

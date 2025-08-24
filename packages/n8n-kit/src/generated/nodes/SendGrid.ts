@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SendGridNodeParameters {
-    /**
-     * Default: "list"
-     */
+    /** Default: "list" */
     readonly resource?: "contact" | "list" | "mail";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "upsert" | "delete" | "get" | "getAll" | "send";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -31,49 +25,31 @@ export interface SendGridNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Name of the list
-     */
+    /** Name of the list */
     readonly name?: string;
 
-    /**
-     * ID of the list
-     */
+    /** ID of the list */
     readonly listId?: string;
 
-    /**
-     * Whether to delete all contacts on the list
-     */
+    /** Whether to delete all contacts on the list */
     readonly deleteContacts?: boolean;
 
-    /**
-     * Whether to return the contact sample
-     */
+    /** Whether to return the contact sample */
     readonly contactSample?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "query"?: string };
 
-    /**
-     * Primary email for the contact
-     */
+    /** Primary email for the contact */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "alternateEmails"?: string, "city"?: string, "country"?: string, "firstName"?: string, "lastName"?: string, "postalCode"?: string, "stateProvinceRegion"?: string, "listIdsUi"?: { "listIdValues": any }, "customFieldsUi"?: { "customFieldValues": any } } | { "attachments"?: string, "bccEmail"?: string, "categories"?: string, "ccEmail"?: string, "enableSandbox"?: boolean, "ipPoolName"?: string, "replyToEmail"?: string, "headers"?: { "details": any }, "sendAt"?: string };
 
-    /**
-     * ID of the contact. Multiple can be added separated by comma.
-     */
+    /** ID of the contact. Multiple can be added separated by comma. */
     readonly ids?: string;
 
-    /**
-     * Whether all contacts will be deleted
-     */
+    /** Whether all contacts will be deleted */
     readonly deleteAll?: boolean;
 
     /**
@@ -82,34 +58,22 @@ export interface SendGridNodeParameters {
      */
     readonly by?: "id" | "email";
 
-    /**
-     * ID of the contact
-     */
+    /** ID of the contact */
     readonly contactId?: string;
 
-    /**
-     * Email address of the sender of the email
-     */
+    /** Email address of the sender of the email */
     readonly fromEmail?: string;
 
-    /**
-     * Name of the sender of the email
-     */
+    /** Name of the sender of the email */
     readonly fromName?: string;
 
-    /**
-     * Comma-separated list of recipient email addresses
-     */
+    /** Comma-separated list of recipient email addresses */
     readonly toEmail?: string;
 
-    /**
-     * Subject of the email to send
-     */
+    /** Subject of the email to send */
     readonly subject?: string;
 
-    /**
-     * Whether this email will contain a dynamic template
-     */
+    /** Whether this email will contain a dynamic template */
     readonly dynamicTemplate?: boolean;
 
     /**
@@ -118,9 +82,7 @@ export interface SendGridNodeParameters {
      */
     readonly contentType?: "text/plain" | "text/html";
 
-    /**
-     * Message body of the email to send
-     */
+    /** Message body of the email to send */
     readonly contentValue?: string;
 
     /**

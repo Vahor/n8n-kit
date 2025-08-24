@@ -8,9 +8,7 @@ export const name = "calendlyApi" as const;
  * documentationUrl: calendly
  */
 export interface CalendlyApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "calendlyApi";

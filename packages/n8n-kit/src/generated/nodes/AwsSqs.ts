@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsSqsNodeParameters {
-    /**
-     * Default: "sendMessage"
-     */
+    /** Default: "sendMessage" */
     readonly operation?: "sendMessage";
 
     /**
@@ -20,9 +18,7 @@ export interface AwsSqsNodeParameters {
      */
     readonly queue?: string;
 
-    /**
-     * Default: "standard"
-     */
+    /** Default: "standard" */
     readonly queueType?: "fifo" | "standard";
 
     /**
@@ -31,19 +27,13 @@ export interface AwsSqsNodeParameters {
      */
     readonly sendInputData?: boolean;
 
-    /**
-     * Message to send to the queue
-     */
+    /** Message to send to the queue */
     readonly message?: string;
 
-    /**
-     * Tag that specifies that a message belongs to a specific message group. Applies only to FIFO (first-in-first-out) queues.
-     */
+    /** Tag that specifies that a message belongs to a specific message group. Applies only to FIFO (first-in-first-out) queues. */
     readonly messageGroupId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "delaySeconds"?: number, "messageAttributes"?: { "binary": any, "number": any, "string": any }, "messageDeduplicationId"?: string };
 
 }

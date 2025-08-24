@@ -10,14 +10,10 @@ export const name = "azureStorageOAuth2Api" as const;
 export interface AzureStorageOAuth2ApiCredentials {
     readonly "account"?: string;
 
-    /**
-     * Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net"
-     */
+    /** Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net" */
     readonly "baseUrl"?: any;
 
-    /**
-     * Default: "https://storage.azure.com/.default"
-     */
+    /** Default: "https://storage.azure.com/.default" */
     readonly "scope"?: any;
 
     readonly __name: "azureStorageOAuth2Api";

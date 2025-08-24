@@ -10,9 +10,7 @@ export const name = "activeCampaignApi" as const;
 export interface ActiveCampaignApiCredentials {
     readonly "apiUrl"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "activeCampaignApi";

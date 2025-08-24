@@ -8,9 +8,7 @@ export const name = "autopilotApi" as const;
  * documentationUrl: autopilot
  */
 export interface AutopilotApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "autopilotApi";

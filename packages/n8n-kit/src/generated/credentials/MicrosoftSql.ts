@@ -8,41 +8,27 @@ export const name = "microsoftSql" as const;
  * documentationUrl: microsoftSql
  */
 export interface MicrosoftSqlCredentials {
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "server"?: string;
 
-    /**
-     * Default: "master"
-     */
+    /** Default: "master" */
     readonly "database"?: string;
 
-    /**
-     * Default: "sa"
-     */
+    /** Default: "sa" */
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Default: 1433
-     */
+    /** Default: 1433 */
     readonly "port"?: number;
 
     readonly "domain"?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly "tls"?: boolean;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
     /**

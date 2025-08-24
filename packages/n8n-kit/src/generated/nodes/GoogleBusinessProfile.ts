@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleBusinessProfileNodeParameters {
-    /**
-     * Default: "post"
-     */
+    /** Default: "post" */
     readonly resource?: "post" | "review";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "delete" | "get" | "getAll" | "reply";
 
     /**
@@ -43,34 +39,22 @@ export interface GoogleBusinessProfileNodeParameters {
      */
     readonly postType?: "STANDARD" | "EVENT" | "OFFER" | "ALERT";
 
-    /**
-     * The main text of the post
-     */
+    /** The main text of the post */
     readonly summary?: string;
 
-    /**
-     * E.g. Sales this week.
-     */
+    /** E.g. Sales this week. */
     readonly title?: string;
 
-    /**
-     * The start date and time of the event
-     */
+    /** The start date and time of the event */
     readonly startDateTime?: string;
 
-    /**
-     * The end date and time of the event
-     */
+    /** The end date and time of the event */
     readonly endDateTime?: string;
 
-    /**
-     * The start date of the offer
-     */
+    /** The start date of the offer */
     readonly startDate?: string;
 
-    /**
-     * The end date of the offer
-     */
+    /** The end date of the offer */
     readonly endDate?: string;
 
     /**
@@ -79,9 +63,7 @@ export interface GoogleBusinessProfileNodeParameters {
      */
     readonly alertType?: "COVID_19";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string } | { "summary"?: string, "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "GET_OFFER" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "startDateTime"?: string, "endDateTime"?: string, "title"?: string, "startDate"?: string, "endDate"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string };
 
     /**
@@ -93,9 +75,7 @@ export interface GoogleBusinessProfileNodeParameters {
 	mode: "list" | "name",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -104,8 +84,6 @@ export interface GoogleBusinessProfileNodeParameters {
      * Type options: {"minValue":1}
      */
     readonly limit?: number;
-
-    readonly notice?: string;
 
     /**
      * Select the review to retrieve its details

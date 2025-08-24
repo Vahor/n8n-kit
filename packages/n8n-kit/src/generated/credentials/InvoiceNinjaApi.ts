@@ -10,14 +10,10 @@ export const name = "invoiceNinjaApi" as const;
 export interface InvoiceNinjaApiCredentials {
     readonly "url"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "secret"?: string;
 
     readonly __name: "invoiceNinjaApi";

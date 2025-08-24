@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MongoDbNodeParameters {
-    /**
-     * Default: "document"
-     */
+    /** Default: "document" */
     readonly resource?: "searchIndexes" | "document";
 
-    /**
-     * Default: "find"
-     */
+    /** Default: "find" */
     readonly operation?: "aggregate" | "delete" | "find" | "findOneAndReplace" | "findOneAndUpdate" | "insert" | "update" | "createSearchIndex" | "dropSearchIndex" | "listSearchIndexes" | "updateSearchIndex";
 
-    /**
-     * MongoDB Collection
-     */
+    /** MongoDB Collection */
     readonly collection?: string;
 
     /**
@@ -36,9 +30,7 @@ export interface MongoDbNodeParameters {
      */
     readonly options?: { "limit"?: number, "skip"?: number, "sort"?: string, "projection"?: string } | { "dateFields"?: string, "useDotNotation"?: boolean };
 
-    /**
-     * Comma-separated list of the fields to be included into the new document
-     */
+    /** Comma-separated list of the fields to be included into the new document */
     readonly fields?: string;
 
     /**
@@ -47,19 +39,13 @@ export interface MongoDbNodeParameters {
      */
     readonly updateKey?: string;
 
-    /**
-     * Whether to perform an insert if no documents match the update key
-     */
+    /** Whether to perform an insert if no documents match the update key */
     readonly upsert?: boolean;
 
-    /**
-     * If provided, only lists indexes with the specified name
-     */
+    /** If provided, only lists indexes with the specified name */
     readonly indexName?: string;
 
-    /**
-     * The name of the search index
-     */
+    /** The name of the search index */
     readonly indexNameRequired?: string;
 
     /**

@@ -8,14 +8,10 @@ export const name = "wiseApi" as const;
  * documentationUrl: wise
  */
 export interface WiseApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
-    /**
-     * Default: "live"
-     */
+    /** Default: "live" */
     readonly "environment"?: "live" | "test";
 
     /**

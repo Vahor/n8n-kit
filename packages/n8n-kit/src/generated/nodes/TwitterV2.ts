@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwitterV2NodeParameters {
-    /**
-     * Default: "tweet"
-     */
+    /** Default: "tweet" */
     readonly resource?: "directMessage" | "list" | "tweet" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "add" | "create" | "delete" | "like" | "retweet" | "search" | "searchUser";
 
     /**
@@ -34,9 +30,7 @@ export interface TwitterV2NodeParameters {
      */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "attachments"?: string } | { "location"?: string, "attachments"?: string, "inQuoteToStatusId"?: {
 	value: string,
 	mode: "id" | "url",
@@ -53,10 +47,6 @@ export interface TwitterV2NodeParameters {
 	value: string,
 	mode: "id" | "url",
 };
-
-    readonly noticeLocation?: string;
-
-    readonly noticeAttachments?: string;
 
     /**
      * The tweet to delete
@@ -76,14 +66,10 @@ export interface TwitterV2NodeParameters {
 	mode: "id" | "url",
 };
 
-    /**
-     * A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href="https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators">here</a>.
-     */
+    /** A UTF-8, URL-encoded search query of 500 characters maximum, including operators. Queries may additionally be limited by complexity. Check the searching examples <a href="https://developer.twitter.com/en/docs/tweets/search/guides/standard-operators">here</a>. */
     readonly searchText?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -93,9 +79,7 @@ export interface TwitterV2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether you want to search the authenticated user
-     */
+    /** Whether you want to search the authenticated user */
     readonly me?: boolean;
 
 }

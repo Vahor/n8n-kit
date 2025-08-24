@@ -9,32 +9,22 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OpenAiAINodeParameters {
-    /**
-     * Default: "text"
-     */
+    /** Default: "text" */
     readonly resource?: "assistant" | "text" | "image" | "audio" | "file";
 
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly operation?: "create" | "deleteAssistant" | "list" | "message" | "update" | "generate" | "transcribe" | "translate" | "deleteFile" | "list" | "upload" | "analyze" | "generate" | "message" | "classify";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly modelId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * The name of the assistant. The maximum length is 256 characters.
-     */
+    /** The name of the assistant. The maximum length is 256 characters. */
     readonly name?: string;
 
-    /**
-     * The description of the assistant. The maximum length is 512 characters.
-     */
+    /** The description of the assistant. The maximum length is 512 characters. */
     readonly description?: string;
 
     /**
@@ -43,14 +33,10 @@ export interface OpenAiAINodeParameters {
      */
     readonly instructions?: string;
 
-    /**
-     * Whether to enable the code interpreter that allows the assistants to write and run Python code in a sandboxed execution environment, find more <a href="https://platform.openai.com/docs/assistants/tools/code-interpreter" target="_blank">here</a>
-     */
+    /** Whether to enable the code interpreter that allows the assistants to write and run Python code in a sandboxed execution environment, find more <a href="https://platform.openai.com/docs/assistants/tools/code-interpreter" target="_blank">here</a> */
     readonly codeInterpreter?: boolean;
 
-    /**
-     * Whether to augments the assistant with knowledge from outside its model, such as proprietary product information or documents, find more <a href="https://platform.openai.com/docs/assistants/tools/knowledge-retrieval" target="_blank">here</a>
-     */
+    /** Whether to augments the assistant with knowledge from outside its model, such as proprietary product information or documents, find more <a href="https://platform.openai.com/docs/assistants/tools/knowledge-retrieval" target="_blank">here</a> */
     readonly knowledgeRetrieval?: boolean;
 
     /**
@@ -60,11 +46,7 @@ export interface OpenAiAINodeParameters {
      */
     readonly file_ids?: any[];
 
-    readonly noticeTools?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "temperature"?: number, "topP"?: number, "failIfExists"?: boolean } | { "baseURL"?: string, "maxRetries"?: number, "timeout"?: number, "preserveOriginalTools"?: boolean } | { "codeInterpreter"?: boolean, "description"?: string, "file_ids"?: any[], "instructions"?: string, "knowledgeRetrieval"?: boolean, "modelId"?: {
 	value: string,
 	mode: "list" | "id",
@@ -79,24 +61,16 @@ export interface OpenAiAINodeParameters {
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly prompt?: "auto" | "define" | string;
 
-    /**
-     * Type options: {"rows":2}
-     */
+    /** Type options: {"rows":2} */
     readonly text?: string;
 
-    /**
-     * Default: "connector"
-     */
+    /** Default: "connector" */
     readonly memory?: "connector" | "threadId";
 
-    /**
-     * The ID of the thread to continue, a new thread will be created if not specified
-     */
+    /** The ID of the thread to continue, a new thread will be created if not specified */
     readonly threadId?: string;
 
     /**
@@ -105,14 +79,7 @@ export interface OpenAiAINodeParameters {
      */
     readonly simplify?: boolean;
 
-    /**
-     * Default: " "
-     */
-    readonly fileSizeLimitNotice?: string;
-
-    /**
-     * Default: "tts-1"
-     */
+    /** Default: "tts-1" */
     readonly model?: "tts-1" | "tts-1-hd" | "dall-e-2" | "dall-e-3" | "gpt-image-1";
 
     /**
@@ -133,22 +100,16 @@ export interface OpenAiAINodeParameters {
      */
     readonly binaryPropertyName?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly fileId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: "url"
-     */
+    /** Default: "url" */
     readonly inputType?: "url" | "base64";
 
-    /**
-     * URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma
-     */
+    /** URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma */
     readonly imageUrls?: string;
 
     /**
@@ -157,14 +118,7 @@ export interface OpenAiAINodeParameters {
      */
     readonly messages?: { "values": any };
 
-    /**
-     * Whether to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106.
-     */
+    /** Whether to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106. */
     readonly jsonOutput?: boolean;
-
-    /**
-     * Default: "hide"
-     */
-    readonly hideTools?: any;
 
 }

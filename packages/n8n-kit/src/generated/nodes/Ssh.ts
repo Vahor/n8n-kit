@@ -9,44 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SshNodeParameters {
-    /**
-     * Default: "password"
-     */
+    /** Default: "password" */
     readonly authentication?: "password" | "privateKey";
 
-    /**
-     * Default: "command"
-     */
+    /** Default: "command" */
     readonly resource?: "command" | "file";
 
-    /**
-     * Default: "execute"
-     */
+    /** Default: "execute" */
     readonly operation?: "execute" | "download" | "upload";
 
-    /**
-     * The command to be executed on a remote device
-     */
+    /** The command to be executed on a remote device */
     readonly command?: string;
 
-    /**
-     * Default: "/"
-     */
+    /** Default: "/" */
     readonly cwd?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    /**
-     * The directory to upload the file to. The name of the file does not need to be specified, it's taken from the binary data file name. To override this behavior, set the parameter "File Name" under options.
-     */
+    /** The directory to upload the file to. The name of the file does not need to be specified, it's taken from the binary data file name. To override this behavior, set the parameter "File Name" under options. */
     readonly path?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fileName"?: string };
 
 }

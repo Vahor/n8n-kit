@@ -10,9 +10,7 @@ export const name = "unleashedSoftwareApi" as const;
 export interface UnleashedSoftwareApiCredentials {
     readonly "apiId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "unleashedSoftwareApi";

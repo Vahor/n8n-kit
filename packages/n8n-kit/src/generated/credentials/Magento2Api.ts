@@ -10,9 +10,7 @@ export const name = "magento2Api" as const;
 export interface Magento2ApiCredentials {
     readonly "host"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "magento2Api";

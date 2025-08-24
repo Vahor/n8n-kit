@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftGraphSecurityNodeParameters {
-    /**
-     * Default: "secureScore"
-     */
+    /** Default: "secureScore" */
     readonly resource?: "secureScore" | "secureScoreControlProfile";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "get" | "getAll" | "update";
 
-    /**
-     * ID of the secure score to retrieve
-     */
+    /** ID of the secure score to retrieve */
     readonly secureScoreId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -36,29 +28,19 @@ export interface MicrosoftGraphSecurityNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "filter"?: string, "includeControlScores"?: boolean } | { "filter"?: string };
 
-    /**
-     * ID of the secure score control profile to retrieve
-     */
+    /** ID of the secure score control profile to retrieve */
     readonly secureScoreControlProfileId?: string;
 
-    /**
-     * Name of the provider of the security product or service
-     */
+    /** Name of the provider of the security product or service */
     readonly provider?: string;
 
-    /**
-     * Name of the vendor of the security product or service
-     */
+    /** Name of the vendor of the security product or service */
     readonly vendor?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "state"?: "Default" | "Ignored" | "ThirdParty" };
 
 }

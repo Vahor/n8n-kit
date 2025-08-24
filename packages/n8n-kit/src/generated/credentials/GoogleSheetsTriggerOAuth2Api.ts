@@ -8,9 +8,7 @@ export const name = "googleSheetsTriggerOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleSheetsTriggerOAuth2ApiCredentials {
-    /**
-     * Default: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata"
-     */
+    /** Default: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata" */
     readonly "scope"?: any;
 
     readonly "notice"?: string;

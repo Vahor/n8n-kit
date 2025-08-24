@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GSuiteAdminNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "device" | "group" | "user";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "getAll" | "update" | "changeStatus" | "create" | "delete" | "get" | "getAll" | "update" | "addToGroup" | "create" | "delete" | "get" | "getAll" | "removeFromGroup" | "update";
 
     /**
@@ -28,9 +24,7 @@ export interface GSuiteAdminNodeParameters {
 	mode: "list" | "deviceId",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -46,14 +40,10 @@ export interface GSuiteAdminNodeParameters {
      */
     readonly projection?: "basic" | "full" | "basic" | "custom" | "full";
 
-    /**
-     * Whether to include devices from organizational units below your specified organizational unit
-     */
+    /** Whether to include devices from organizational units below your specified organizational unit */
     readonly includeChildOrgunits?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filter?: { "orgUnitPath"?: string, "query"?: string } | { "customer"?: string, "domain"?: string, "query"?: string, "userId"?: string } | { "customer"?: string, "domain"?: string, "query"?: string, "showDeleted"?: boolean };
 
     /**
@@ -62,9 +52,7 @@ export interface GSuiteAdminNodeParameters {
      */
     readonly sort?: { "sortRules": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateOptions?: { "orgUnitPath"?: string, "annotatedUser"?: string, "annotatedLocation"?: string, "annotatedAssetId"?: string, "notes"?: string };
 
     /**
@@ -85,24 +73,16 @@ export interface GSuiteAdminNodeParameters {
 	mode: "list" | "groupId",
 };
 
-    /**
-     * The group's display name
-     */
+    /** The group's display name */
     readonly name?: string;
 
-    /**
-     * The group's email address. If your account has multiple domains, select the appropriate domain for the email address. The email must be unique
-     */
+    /** The group's email address. If your account has multiple domains, select the appropriate domain for the email address. The email must be unique */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string } | { "changePasswordAtNextLogin"?: boolean, "phoneUi"?: { "phoneValues": any }, "emailUi"?: { "emailValues": any }, "roles"?: ("directorySyncAdmin" | "groupsAdmin" | "groupsEditor" | "groupsReader" | "helpDeskAdmin" | "inventoryReportingAdmin" | "mobileAdmin" | "servicesAdmin" | "storageAdmin" | "superAdmin" | "userManagement")[], "customFields"?: { "fieldValues": any } };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "description"?: string, "email"?: string, "name"?: string } | { "archived"?: boolean, "suspendUi"?: boolean, "changePasswordAtNextLogin"?: boolean, "firstName"?: string, "lastName"?: string, "password"?: string, "phoneUi"?: { "phoneValues": any }, "primaryEmail"?: string, "emailUi"?: { "emailValues": any }, "roles"?: ("directorySyncAdmin" | "groupsAdmin" | "groupsEditor" | "groupsReader" | "helpDeskAdmin" | "inventoryReportingAdmin" | "mobileAdmin" | "servicesAdmin" | "storageAdmin" | "superAdmin" | "userManagement")[], "customFields"?: { "fieldValues": any } };
 
     /**
@@ -124,9 +104,7 @@ export interface GSuiteAdminNodeParameters {
      */
     readonly password?: string;
 
-    /**
-     * The username that will be set to the user. Example: If you domain is example.com and you set the username to n.smith then the user's final email address will be n.smith@example.com.
-     */
+    /** The username that will be set to the user. Example: If you domain is example.com and you set the username to n.smith then the user's final email address will be n.smith@example.com. */
     readonly username?: string;
 
     /**
@@ -135,9 +113,7 @@ export interface GSuiteAdminNodeParameters {
      */
     readonly domain?: string;
 
-    /**
-     * Default: "simplified"
-     */
+    /** Default: "simplified" */
     readonly output?: "simplified" | "raw" | "select";
 
     /**

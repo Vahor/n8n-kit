@@ -8,6 +8,4 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ManualTriggerNodeParameters {
-    readonly notice?: string;
-
 }

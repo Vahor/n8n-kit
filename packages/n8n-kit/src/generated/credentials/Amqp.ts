@@ -10,16 +10,12 @@ export const name = "amqp" as const;
 export interface AmqpCredentials {
     readonly "hostname"?: string;
 
-    /**
-     * Default: 5672
-     */
+    /** Default: 5672 */
     readonly "port"?: number;
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "transportType"?: string;

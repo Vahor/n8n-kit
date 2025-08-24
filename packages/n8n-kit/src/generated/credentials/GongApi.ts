@@ -8,19 +8,13 @@ export const name = "gongApi" as const;
  * documentationUrl: gong
  */
 export interface GongApiCredentials {
-    /**
-     * Default: "https://api.gong.io"
-     */
+    /** Default: "https://api.gong.io" */
     readonly "baseUrl"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessKey"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessKeySecret"?: string;
 
     readonly __name: "gongApi";

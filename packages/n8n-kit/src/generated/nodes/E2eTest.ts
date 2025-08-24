@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface E2eTestNodeParameters {
-    /**
-     * Default: "remoteOptions"
-     */
+    /** Default: "remoteOptions" */
     readonly operation?: "remoteOptions" | "resourceLocator" | "resourceMapper";
 
     readonly fieldId?: string;
@@ -22,19 +20,11 @@ export interface E2eTestNodeParameters {
      */
     readonly remoteOptions?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly rlc?: {
 	value: string,
 	mode: "list" | "url" | "id",
 };
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"loadOptionsDependsOn":["fieldId"],"resourceMapper":{"resourceMapperMethod":"getMappingColumns","mode":"upsert","fieldWords":{"singular":"column","plural":"columns"},"addAllFields":true,"multiKeyMatch":false}}
-     */
-    readonly resourceMapper?: any;
 
     readonly otherField?: string;
 

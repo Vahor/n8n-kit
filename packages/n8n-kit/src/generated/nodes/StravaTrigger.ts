@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface StravaTriggerNodeParameters {
-    /**
-     * Default: "*"
-     */
+    /** Default: "*" */
     readonly object?: "*" | "activity" | "athlete";
 
-    /**
-     * Default: "*"
-     */
+    /** Default: "*" */
     readonly event?: "*" | "create" | "delete" | "update";
 
     /**
@@ -25,9 +21,7 @@ export interface StravaTriggerNodeParameters {
      */
     readonly resolveData?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "deleteIfExist"?: boolean };
 
 }

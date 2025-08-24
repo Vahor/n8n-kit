@@ -10,9 +10,7 @@ export const name = "automizyApi" as const;
 export interface AutomizyApiCredentials {
     readonly "deprecated"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly __name: "automizyApi";

@@ -9,33 +9,23 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DropcontactNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact";
 
-    /**
-     * Default: "enrich"
-     */
+    /** Default: "enrich" */
     readonly operation?: "enrich" | "fetchRequest";
 
     readonly requestId?: string;
 
     readonly email?: string;
 
-    /**
-     * When off, waits for the contact data before completing. Waiting time can be adjusted with Extend Wait Time option. When on, returns a request_id that can be used later in the Fetch Request operation.
-     */
+    /** When off, waits for the contact data before completing. Waiting time can be adjusted with Extend Wait Time option. When on, returns a request_id that can be used later in the Fetch Request operation. */
     readonly simplify?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "num_siren"?: string, "siret"?: string, "company"?: string, "country"?: string, "first_name"?: string, "full_name"?: string, "last_name"?: string, "linkedin"?: string, "phone"?: string, "website"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "waitTime"?: number, "siren"?: boolean, "language"?: "en" | "fr" };
 
 }

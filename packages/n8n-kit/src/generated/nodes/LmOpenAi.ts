@@ -9,8 +9,6 @@ export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmOpenAiNodeParameters {
-    readonly deprecated?: string;
-
     /**
      * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
      * Default: {"mode":"list","value":"gpt-3.5-turbo-instruct"}
@@ -19,8 +17,6 @@ export interface LmOpenAiNodeParameters {
 	value: string,
 	mode: "list" | "id",
 };
-
-    readonly notice?: string;
 
     /**
      * Additional options to add

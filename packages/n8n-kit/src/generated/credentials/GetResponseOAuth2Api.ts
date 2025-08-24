@@ -8,28 +8,20 @@ export const name = "getResponseOAuth2Api" as const;
  * documentationUrl: getresponse
  */
 export interface GetResponseOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://app.getresponse.com/oauth2_authorize.html"
-     */
+    /** Default: "https://app.getresponse.com/oauth2_authorize.html" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.getresponse.com/v3/token"
-     */
+    /** Default: "https://api.getresponse.com/v3/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "getResponseOAuth2Api";

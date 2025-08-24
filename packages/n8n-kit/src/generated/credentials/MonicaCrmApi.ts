@@ -8,16 +8,12 @@ export const name = "monicaCrmApi" as const;
  * documentationUrl: monicaCrm
  */
 export interface MonicaCrmApiCredentials {
-    /**
-     * Default: "cloudHosted"
-     */
+    /** Default: "cloudHosted" */
     readonly "environment"?: "cloudHosted" | "selfHosted";
 
     readonly "domain"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly __name: "monicaCrmApi";

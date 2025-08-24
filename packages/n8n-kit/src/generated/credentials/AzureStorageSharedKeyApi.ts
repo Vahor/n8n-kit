@@ -8,9 +8,7 @@ export const name = "azureStorageSharedKeyApi" as const;
  * documentationUrl: azurestorage
  */
 export interface AzureStorageSharedKeyApiCredentials {
-    /**
-     * Account name
-     */
+    /** Account name */
     readonly "account"?: string;
 
     /**
@@ -19,9 +17,7 @@ export interface AzureStorageSharedKeyApiCredentials {
      */
     readonly "key"?: string;
 
-    /**
-     * Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net"
-     */
+    /** Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net" */
     readonly "baseUrl"?: any;
 
     readonly __name: "azureStorageSharedKeyApi";

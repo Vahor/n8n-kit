@@ -9,19 +9,13 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormTriggerV2NodeParameters {
-    /**
-     * Default: "none"
-     */
+    /** Default: "none" */
     readonly authentication?: "basicAuth" | "none";
 
-    /**
-     * The final segment of the form's URL, both for test and production
-     */
+    /** The final segment of the form's URL, both for test and production */
     readonly path?: string;
 
-    /**
-     * Shown at the top of the form
-     */
+    /** Shown at the top of the form */
     readonly formTitle?: string;
 
     /**
@@ -42,13 +36,7 @@ export interface FormTriggerV2NodeParameters {
      */
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode";
 
-    readonly formNotice?: string;
-
-    readonly addFormPage?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean, "customCss"?: string };
 
 }

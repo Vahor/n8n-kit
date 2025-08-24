@@ -15,22 +15,14 @@ export interface AgentToolV2NodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     * Type options: {"rows":2}
-     */
+    /** Type options: {"rows":2} */
     readonly text?: string;
 
     readonly hasOutputParser?: boolean;
 
-    readonly notice?: string;
-
     readonly needsFallback?: boolean;
 
-    readonly fallbackNotice?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

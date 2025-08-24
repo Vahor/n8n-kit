@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ZulipNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message" | "stream" | "user";
 
-    /**
-     * Default: "sendPrivate"
-     */
+    /** Default: "sendPrivate" */
     readonly operation?: "delete" | "get" | "sendPrivate" | "sendStream" | "update" | "updateFile" | "create" | "delete" | "getAll" | "getSubscribed" | "update" | "create" | "deactivate" | "get" | "getAll" | "update";
 
     /**
@@ -26,9 +22,7 @@ export interface ZulipNodeParameters {
      */
     readonly to?: any[];
 
-    /**
-     * The content of the message
-     */
+    /** The content of the message */
     readonly content?: string;
 
     /**
@@ -43,19 +37,13 @@ export interface ZulipNodeParameters {
      */
     readonly topic?: string;
 
-    /**
-     * Unique identifier for the message
-     */
+    /** Unique identifier for the message */
     readonly messageId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "content"?: string, "propagateMode"?: "changeOne" | "changeLater" | "changeAll", "topic"?: string };
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly dataBinaryProperty?: string;
 
     readonly jsonParameters?: boolean;
@@ -73,24 +61,16 @@ export interface ZulipNodeParameters {
      */
     readonly subscriptions?: { "properties": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "announce"?: boolean, "authorizationErrorsFatal"?: boolean, "historyPublicToSubscribers"?: boolean, "inviteOnly"?: boolean, "principals"?: { "properties": any }, "streamPostPolicy"?: "1" | "2" | "3" } | { "includeAllActive"?: boolean, "includeDefault"?: boolean, "includeOwnersubscribed"?: boolean, "includePublic"?: boolean, "includeSubscribed"?: boolean } | { "includeSubscribers"?: boolean } | { "isAnnouncementOnly"?: boolean, "description"?: string, "isPrivate"?: boolean, "historyPublicToSubscribers"?: boolean, "newName"?: string, "streamPostPolicy"?: "1" | "2" | "3" } | { "clientGravatar"?: boolean, "includeCustomProfileFields"?: boolean } | { "fullName"?: string, "isAdmin"?: boolean, "isGuest"?: boolean, "profileData"?: { "property": any }, "role"?: "600" | "400" | "200" | "300" | "100" };
 
-    /**
-     * ID of stream to update
-     */
+    /** ID of stream to update */
     readonly streamId?: string;
 
-    /**
-     * The email address of the new user
-     */
+    /** The email address of the new user */
     readonly email?: string;
 
-    /**
-     * The full name of the new user
-     */
+    /** The full name of the new user */
     readonly fullName?: string;
 
     /**
@@ -99,14 +79,10 @@ export interface ZulipNodeParameters {
      */
     readonly password?: string;
 
-    /**
-     * The short name of the new user. Not user-visible.
-     */
+    /** The short name of the new user. Not user-visible. */
     readonly shortName?: string;
 
-    /**
-     * The ID of user to get
-     */
+    /** The ID of user to get */
     readonly userId?: string;
 
 }

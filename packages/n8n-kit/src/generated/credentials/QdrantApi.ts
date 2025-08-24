@@ -8,9 +8,7 @@ export const name = "qdrantApi" as const;
  * documentationUrl: https://docs.n8n.io/integrations/builtin/credentials/qdrant/
  */
 export interface QdrantApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly "qdrantUrl": string;

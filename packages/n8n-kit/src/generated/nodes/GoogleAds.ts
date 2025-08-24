@@ -9,25 +9,17 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleAdsNodeParameters {
-    /**
-     * Default: "campaign"
-     */
+    /** Default: "campaign" */
     readonly resource?: "campaign";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "getAll" | "get";
-
-    readonly campaigsNotice?: string;
 
     readonly managerCustomerId?: string;
 
     readonly clientCustomerId?: string;
 
-    /**
-     * ID of the campaign
-     */
+    /** ID of the campaign */
     readonly campaignId?: string;
 
     /**

@@ -9,16 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OrbitNodeParameters {
-    readonly deprecated?: string;
-
-    /**
-     * Default: "member"
-     */
+    /** Default: "member" */
     readonly resource?: "activity" | "member" | "note" | "post";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "getAll" | "upsert" | "delete" | "get" | "getAll" | "lookup" | "update" | "create" | "getAll" | "update" | "create" | "getAll" | "delete";
 
     /**
@@ -32,14 +26,10 @@ export interface OrbitNodeParameters {
 
     readonly title?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "activityType"?: string, "description"?: string, "key"?: string, "link"?: string, "linkText"?: string, "occurredAt"?: string } | { "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string } | { "publishedAt"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,48 +39,32 @@ export interface OrbitNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "memberId"?: string };
 
-    /**
-     * By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically.
-     */
+    /** By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically. */
     readonly resolveIdentities?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "sort"?: string, "direction"?: "ASC" | "DESC" };
 
-    /**
-     * Set to github, twitter, email, discourse or the source of any identities you've manually created
-     */
+    /** Set to github, twitter, email, discourse or the source of any identities you've manually created */
     readonly source?: "discourse" | "email" | "github" | "twitter";
 
     readonly searchBy?: "username" | "id";
 
-    /**
-     * The username at the source
-     */
+    /** The username at the source */
     readonly id?: string;
 
-    /**
-     * The username at the source
-     */
+    /** The username at the source */
     readonly username?: string;
 
-    /**
-     * The email address
-     */
+    /** The email address */
     readonly email?: string;
 
     readonly host?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string };
 
     /**
@@ -106,9 +80,7 @@ export interface OrbitNodeParameters {
 
     readonly noteId?: string;
 
-    /**
-     * Supply any URL and Orbit will do its best job to parse out a title, description, and image
-     */
+    /** Supply any URL and Orbit will do its best job to parse out a title, description, and image */
     readonly url?: string;
 
     readonly postId?: string;

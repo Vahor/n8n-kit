@@ -10,9 +10,7 @@ export const name = "qualysApi" as const;
 export interface QualysApiCredentials {
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
     /**

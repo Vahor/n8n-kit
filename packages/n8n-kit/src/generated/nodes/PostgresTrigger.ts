@@ -9,45 +9,31 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PostgresTriggerNodeParameters {
-    /**
-     * Default: "createTrigger"
-     */
+    /** Default: "createTrigger" */
     readonly triggerMode?: "createTrigger" | "listenTrigger";
 
-    /**
-     * Default: {"mode":"list","value":"public"}
-     */
+    /** Default: {"mode":"list","value":"public"} */
     readonly schema?: {
 	value: string,
 	mode: "list" | "name",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly tableName?: {
 	value: string,
 	mode: "list" | "name",
 };
 
-    /**
-     * Name of the channel to listen to
-     */
+    /** Name of the channel to listen to */
     readonly channelName?: string;
 
-    /**
-     * Default: "INSERT"
-     */
+    /** Default: "INSERT" */
     readonly firesOn?: "INSERT" | "UPDATE" | "DELETE";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "channelName"?: string, "functionName"?: string, "replaceIfExists"?: boolean, "triggerName"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "connectionTimeout"?: number, "delayClosingIdleConnection"?: number };
 
 }

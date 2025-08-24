@@ -10,14 +10,10 @@ export const name = "taigaApi" as const;
 export interface TaigaApiCredentials {
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Default: "cloud"
-     */
+    /** Default: "cloud" */
     readonly "environment"?: "cloud" | "selfHosted";
 
     readonly "url"?: string;

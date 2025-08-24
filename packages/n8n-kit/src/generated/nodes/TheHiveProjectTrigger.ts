@@ -8,8 +8,6 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TheHiveProjectTriggerNodeParameters {
-    readonly notice?: string;
-
     /**
      * Events types
      * Default: []
@@ -23,9 +21,7 @@ export interface TheHiveProjectTriggerNodeParameters {
      */
     readonly filters?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "outputOnlyData"?: boolean };
 
 }

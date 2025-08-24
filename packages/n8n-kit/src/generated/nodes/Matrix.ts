@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MatrixNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "account" | "event" | "media" | "message" | "room" | "roomMember";
 
-    /**
-     * Default: "me"
-     */
+    /** Default: "me" */
     readonly operation?: "me" | "get" | "upload" | "create" | "getAll" | "create" | "invite" | "join" | "kick" | "leave" | "getAll";
 
-    /**
-     * The room related to the event
-     */
+    /** The room related to the event */
     readonly roomId?: string;
 
-    /**
-     * The room related to the event
-     */
+    /** The room related to the event */
     readonly eventId?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     /**
@@ -40,14 +30,10 @@ export interface MatrixNodeParameters {
      */
     readonly mediaType?: "file" | "image" | "audio" | "video";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "fileName"?: string };
 
-    /**
-     * The text to send
-     */
+    /** The text to send */
     readonly text?: string;
 
     /**
@@ -62,14 +48,10 @@ export interface MatrixNodeParameters {
      */
     readonly messageFormat?: "plain" | "org.matrix.custom.html";
 
-    /**
-     * A plain text message to display in case the HTML cannot be rendered by the Matrix client
-     */
+    /** A plain text message to display in case the HTML cannot be rendered by the Matrix client */
     readonly fallbackText?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -79,30 +61,22 @@ export interface MatrixNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly otherOptions?: { "filter"?: string };
 
     readonly roomName?: string;
 
-    /**
-     * Default: "public_chat"
-     */
+    /** Default: "public_chat" */
     readonly preset?: "private_chat" | "public_chat";
 
     readonly roomAlias?: string;
 
     readonly roomIdOrAlias?: string;
 
-    /**
-     * The fully qualified user ID of the invitee
-     */
+    /** The fully qualified user ID of the invitee */
     readonly userId?: string;
 
-    /**
-     * Reason for kick
-     */
+    /** Reason for kick */
     readonly reason?: string;
 
     /**

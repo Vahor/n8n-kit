@@ -9,42 +9,30 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RocketchatNodeParameters {
-    /**
-     * Default: "chat"
-     */
+    /** Default: "chat" */
     readonly resource?: "chat";
 
-    /**
-     * Default: "postMessage"
-     */
+    /** Default: "postMessage" */
     readonly operation?: "postMessage";
 
-    /**
-     * The channel name with the prefix in front of it
-     */
+    /** The channel name with the prefix in front of it */
     readonly channel?: string;
 
-    /**
-     * The text of the message to send, is optional because of attachments
-     */
+    /** The text of the message to send, is optional because of attachments */
     readonly text?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "alias"?: string, "avatar"?: string, "emoji"?: string };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Attachment"}
      */
-    readonly attachments?: { "color"?: any, "text"?: string, "ts"?: string, "thumbUrl"?: string, "messageLink"?: string, "collapsed"?: boolean, "authorName"?: string, "authorLink"?: string, "authorIcon"?: string, "title"?: string, "titleLink"?: string, "titleLinkDownload"?: boolean, "imageUrl"?: string, "audioUrl"?: string, "videoUrl"?: string, "fields"?: { "fieldsValues": any } };
+    readonly attachments?: { "color"?: string, "text"?: string, "ts"?: string, "thumbUrl"?: string, "messageLink"?: string, "collapsed"?: boolean, "authorName"?: string, "authorLink"?: string, "authorIcon"?: string, "title"?: string, "titleLink"?: string, "titleLinkDownload"?: boolean, "imageUrl"?: string, "audioUrl"?: string, "videoUrl"?: string, "fields"?: { "fieldsValues": any } };
 
-    /**
-     * Type options: {"alwaysOpenEditWindow":true}
-     */
+    /** Type options: {"alwaysOpenEditWindow":true} */
     readonly attachmentsJson?: string;
 
 }

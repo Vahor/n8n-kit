@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IterableNodeParameters {
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "event" | "user" | "userList";
 
-    /**
-     * Default: "track"
-     */
+    /** Default: "track" */
     readonly operation?: "track" | "upsert" | "delete" | "get" | "add" | "remove";
 
-    /**
-     * The name of the event to track
-     */
+    /** The name of the event to track */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "campaignId"?: string, "createdAt"?: string, "dataFieldsUi"?: { "dataFieldValues": any }, "email"?: string, "id"?: string, "templateId"?: string, "userId"?: string } | { "dataFieldsUi"?: { "dataFieldValues": any }, "mergeNestedObjects"?: boolean } | { "campaignId"?: number, "channelUnsubscribe"?: boolean };
 
-    /**
-     * Identifier to be used
-     */
+    /** Identifier to be used */
     readonly identifier?: "email" | "userId";
 
     readonly value?: string;
@@ -48,14 +38,10 @@ export interface IterableNodeParameters {
      */
     readonly by?: "email" | "userId";
 
-    /**
-     * Unique identifier for a particular user
-     */
+    /** Unique identifier for a particular user */
     readonly userId?: string;
 
-    /**
-     * Email for a particular user
-     */
+    /** Email for a particular user */
     readonly email?: string;
 
     /**

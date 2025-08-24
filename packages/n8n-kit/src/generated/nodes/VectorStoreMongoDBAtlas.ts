@@ -9,24 +9,10 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
 export interface VectorStoreMongoDBAtlasNodeParameters {
-    /**
-     * Type options: {"calloutAction":{"label":"RAG starter template","type":"openSampleWorkflowTemplate","templateId":"rag-starter-template"}}
-     */
-    readonly ragStarterCallout?: any;
-
-    /**
-     * Default: "retrieve"
-     */
+    /** Default: "retrieve" */
     readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool" | "update";
 
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
-     * Name of the vector store
-     */
+    /** Name of the vector store */
     readonly toolName?: string;
 
     /**
@@ -35,9 +21,7 @@ export interface VectorStoreMongoDBAtlasNodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly mongoCollection?: {
 	value: string,
 	mode: "list" | "name",
@@ -55,9 +39,7 @@ export interface VectorStoreMongoDBAtlasNodeParameters {
      */
     readonly metadata_field?: string;
 
-    /**
-     * The name of the vector index
-     */
+    /** The name of the vector index */
     readonly vectorIndexName?: string;
 
     /**
@@ -66,14 +48,10 @@ export interface VectorStoreMongoDBAtlasNodeParameters {
      */
     readonly embeddingBatchSize?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "clearNamespace"?: boolean, "namespace"?: string } | { "namespace"?: string, "metadata"?: { "metadataValues": any } };
 
-    /**
-     * Search prompt to retrieve matching documents from the vector store using similarity-based ranking
-     */
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
 
     /**
@@ -88,14 +66,10 @@ export interface VectorStoreMongoDBAtlasNodeParameters {
      */
     readonly includeDocumentMetadata?: boolean;
 
-    /**
-     * Whether or not to rerank results
-     */
+    /** Whether or not to rerank results */
     readonly useReranker?: boolean;
 
-    /**
-     * ID of an embedding entry
-     */
+    /** ID of an embedding entry */
     readonly id?: string;
 
 }

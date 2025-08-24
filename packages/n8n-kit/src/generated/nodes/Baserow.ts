@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BaserowNodeParameters {
-    /**
-     * Default: "row"
-     */
+    /** Default: "row" */
     readonly resource?: "row";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -31,9 +27,7 @@ export interface BaserowNodeParameters {
      */
     readonly tableId?: string;
 
-    /**
-     * ID of the row to return
-     */
+    /** ID of the row to return */
     readonly rowId?: string;
 
     /**
@@ -42,9 +36,7 @@ export interface BaserowNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -53,9 +45,7 @@ export interface BaserowNodeParameters {
      */
     readonly fieldsUi?: { "fieldValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -65,9 +55,7 @@ export interface BaserowNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "filters"?: { "fields": any }, "filterType"?: "AND" | "OR", "search"?: string, "order"?: { "fields": any } };
 
 }

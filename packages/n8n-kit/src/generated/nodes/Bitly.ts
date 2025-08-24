@@ -9,26 +9,18 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BitlyNodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
-    /**
-     * Default: "link"
-     */
+    /** Default: "link" */
     readonly resource?: "link";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "update";
 
     readonly longUrl?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "domain"?: string, "group"?: string, "tags"?: any[], "title"?: string };
 
     /**
@@ -39,9 +31,7 @@ export interface BitlyNodeParameters {
 
     readonly id?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "archived"?: boolean, "group"?: string, "longUrl"?: string, "tags"?: any[], "title"?: string };
 
 }

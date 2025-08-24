@@ -8,9 +8,7 @@ export const name = "clickUpApi" as const;
  * documentationUrl: clickUp
  */
 export interface ClickUpApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "clickUpApi";

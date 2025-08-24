@@ -17,9 +17,7 @@ export interface SimulateNodeParameters {
 
     readonly subtitle?: string;
 
-    /**
-     * Default: "all"
-     */
+    /** Default: "all" */
     readonly output?: "all" | "specify" | "custom";
 
     /**

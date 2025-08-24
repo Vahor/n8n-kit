@@ -9,21 +9,13 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CalendlyTriggerNodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "oAuth2" | "apiKey";
 
-    readonly deprecationNotice?: string;
-
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly scope?: "organization" | "user";
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("invitee.created" | "invitee.canceled")[];
 
 }

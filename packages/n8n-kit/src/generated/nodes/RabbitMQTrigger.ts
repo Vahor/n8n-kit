@@ -9,16 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RabbitMQTriggerNodeParameters {
-    /**
-     * The name of the queue to read from
-     */
+    /** The name of the queue to read from */
     readonly queue?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "arguments"?: { "argument": any }, "assertExchange"?: boolean, "assertQueue"?: boolean, "autoDelete"?: boolean, "binding"?: { "bindings": any }, "contentIsBinary"?: boolean, "acknowledge"?: "executionFinishes" | "executionFinishesSuccessfully" | "immediately" | "laterMessageNode", "durable"?: boolean, "exclusive"?: boolean, "headers"?: { "header": any }, "jsonParseBody"?: boolean, "onlyContent"?: boolean, "parallelMessages"?: number };
-
-    readonly laterMessageNode?: string;
 
 }

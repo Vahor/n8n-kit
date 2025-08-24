@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsDynamoDBNodeParameters {
-    /**
-     * Default: "item"
-     */
+    /** Default: "item" */
     readonly resource?: "item";
 
-    /**
-     * Default: "upsert"
-     */
+    /** Default: "upsert" */
     readonly operation?: "upsert" | "delete" | "get" | "getAll";
 
     /**
@@ -32,9 +28,7 @@ export interface AwsDynamoDBNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -43,9 +37,7 @@ export interface AwsDynamoDBNodeParameters {
      */
     readonly fieldsUi?: { "fieldValues": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "eavUi": { "eavValues": any }, "conditionExpression"?: string, "eanUi"?: { "eanValues": any } } | { "conditionExpression"?: string, "eanUi"?: { "eanValues": any }, "expressionAttributeUi": { "expressionAttributeValues": any } } | { "projectionExpression"?: string, "eanUi"?: { "eanValues": any }, "readType"?: "stronglyConsistentRead" | "eventuallyConsistentRead" };
 
     /**
@@ -67,24 +59,16 @@ export interface AwsDynamoDBNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: "ALL_ATTRIBUTES"
-     */
+    /** Default: "ALL_ATTRIBUTES" */
     readonly select?: "ALL_ATTRIBUTES" | "ALL_PROJECTED_ATTRIBUTES" | "SPECIFIC_ATTRIBUTES" | "ALL_ATTRIBUTES" | "ALL_PROJECTED_ATTRIBUTES" | "COUNT" | "SPECIFIC_ATTRIBUTES";
 
-    /**
-     * Whether to do an scan or query. Check <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-query-scan.html" >differences</a>.
-     */
+    /** Whether to do an scan or query. Check <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-query-scan.html" >differences</a>. */
     readonly scan?: boolean;
 
-    /**
-     * A filter expression determines which items within the Scan results should be returned to you. All of the other results are discarded. Empty value will return all Scan results.
-     */
+    /** A filter expression determines which items within the Scan results should be returned to you. All of the other results are discarded. Empty value will return all Scan results. */
     readonly filterExpression?: string;
 
-    /**
-     * Condition to determine the items to be retrieved. The condition must perform an equality test on a single partition key value, in this format: <code>partitionKeyName = :partitionkeyval</code>
-     */
+    /** Condition to determine the items to be retrieved. The condition must perform an equality test on a single partition key value, in this format: <code>partitionKeyName = :partitionkeyval</code> */
     readonly keyConditionExpression?: string;
 
     /**
@@ -94,9 +78,7 @@ export interface AwsDynamoDBNodeParameters {
      */
     readonly eavUi?: { "eavValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -106,9 +88,7 @@ export interface AwsDynamoDBNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "indexName"?: string, "projectionExpression"?: string, "filterExpression"?: string, "eanUi"?: { "eanValues": any } };
 
 }

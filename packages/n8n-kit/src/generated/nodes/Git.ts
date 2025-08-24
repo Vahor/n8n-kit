@@ -15,49 +15,31 @@ export interface GitNodeParameters {
      */
     readonly authentication?: "gitPassword" | "none";
 
-    /**
-     * Default: "log"
-     */
+    /** Default: "log" */
     readonly operation?: "add" | "addConfig" | "clone" | "commit" | "fetch" | "listConfig" | "log" | "pull" | "push" | "pushTags" | "status" | "tag" | "userSetup";
 
-    /**
-     * Local path of the git repository to operate on
-     */
+    /** Local path of the git repository to operate on */
     readonly repositoryPath?: string;
 
-    /**
-     * Comma-separated list of paths (absolute or relative to Repository Path) of files or folders to add
-     */
+    /** Comma-separated list of paths (absolute or relative to Repository Path) of files or folders to add */
     readonly pathsToAdd?: string;
 
-    /**
-     * Name of the key to set
-     */
+    /** Name of the key to set */
     readonly key?: string;
 
-    /**
-     * Value of the key to set
-     */
+    /** Value of the key to set */
     readonly value?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "mode"?: "append" | "set" } | { "pathsToAdd"?: string } | { "file"?: string } | { "targetRepository"?: string };
 
-    /**
-     * The URL or path of the repository to clone
-     */
+    /** The URL or path of the repository to clone */
     readonly sourceRepository?: string;
 
-    /**
-     * The commit message to use
-     */
+    /** The commit message to use */
     readonly message?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -67,9 +49,7 @@ export interface GitNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The name of the tag to create
-     */
+    /** The name of the tag to create */
     readonly name?: string;
 
 }

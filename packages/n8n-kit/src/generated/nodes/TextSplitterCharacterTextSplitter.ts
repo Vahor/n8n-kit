@@ -8,16 +8,9 @@ export const inputs = {} as const;
 export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
 export interface TextSplitterCharacterTextSplitterNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
     readonly separator?: string;
 
-    /**
-     * Default: 1000
-     */
+    /** Default: 1000 */
     readonly chunkSize?: number;
 
     readonly chunkOverlap?: number;

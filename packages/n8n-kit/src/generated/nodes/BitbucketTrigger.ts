@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BitbucketTriggerNodeParameters {
-    /**
-     * Default: "workspace"
-     */
+    /** Default: "workspace" */
     readonly resource?: "repository" | "workspace";
 
     /**

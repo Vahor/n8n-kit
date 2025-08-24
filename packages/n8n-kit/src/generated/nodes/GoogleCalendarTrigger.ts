@@ -20,9 +20,7 @@ export interface GoogleCalendarTriggerNodeParameters {
 
     readonly triggerOn?: "eventCancelled" | "eventCreated" | "eventEnded" | "eventStarted" | "eventUpdated";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "matchTerm"?: string };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };

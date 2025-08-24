@@ -16,9 +16,7 @@ export interface MailgunApiCredentials {
 
     readonly "emailDomain"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "mailgunApi";

@@ -8,16 +8,12 @@ export const name = "azureEntraCognitiveServicesOAuth2Api" as const;
  * documentationUrl: azureEntraCognitiveServicesOAuth2Api
  */
 export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
     readonly "resourceName": string;
 
-    /**
-     * Default: "2025-03-01-preview"
-     */
+    /** Default: "2025-03-01-preview" */
     readonly "apiVersion": string;
 
     readonly "endpoint"?: string;
@@ -28,34 +24,22 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
      */
     readonly "tenantId"?: string;
 
-    /**
-     * Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/authorize"
-     */
+    /** Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/token"
-     */
+    /** Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/token" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "{\"grant_type\": \"client_credentials\", \"resource\": \"https://cognitiveservices.azure.com/\"}"
-     */
+    /** Default: "{\"grant_type\": \"client_credentials\", \"resource\": \"https://cognitiveservices.azure.com/\"}" */
     readonly "additionalBodyProperties"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
-    /**
-     * Define custom scopes. You might need this if the default scopes are not sufficient or if you want to minimize permissions. Ensure you include "openid" and "offline_access".
-     */
+    /** Define custom scopes. You might need this if the default scopes are not sufficient or if you want to minimize permissions. Ensure you include "openid" and "offline_access". */
     readonly "customScopes"?: boolean;
 
-    /**
-     * For some services additional query parameters have to be set which can be defined here
-     */
+    /** For some services additional query parameters have to be set which can be defined here */
     readonly "authQueryParameters"?: any;
 
     /**
@@ -64,9 +48,7 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
      */
     readonly "enabledScopes"?: string;
 
-    /**
-     * Default: "={{ $self.customScopes ? $self.enabledScopes : \"openid offline_access\"}}"
-     */
+    /** Default: "={{ $self.customScopes ? $self.enabledScopes : \"openid offline_access\"}}" */
     readonly "scope"?: any;
 
     readonly __name: "azureEntraCognitiveServicesOAuth2Api";

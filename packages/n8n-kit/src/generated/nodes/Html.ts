@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HtmlNodeParameters {
-    /**
-     * Default: "generateHtmlTemplate"
-     */
+    /** Default: "generateHtmlTemplate" */
     readonly operation?: "generateHtmlTemplate" | "extractHtmlContent" | "convertToHtmlTable";
 
     /**
@@ -20,17 +18,13 @@ export interface HtmlNodeParameters {
      */
     readonly html?: string;
 
-    readonly notice?: string;
-
     /**
      * If HTML should be read from binary or JSON data
      * Default: "json"
      */
     readonly sourceData?: "binary" | "json";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly dataPropertyName?: string;
 
     /**
@@ -39,9 +33,7 @@ export interface HtmlNodeParameters {
      */
     readonly extractionValues?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean } | { "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
 
 }

@@ -8,23 +8,17 @@ export const name = "zscalerZiaApi" as const;
  * documentationUrl: zscalerzia
  */
 export interface ZscalerZiaApiCredentials {
-    /**
-     * Type options: {"expirable":true}
-     */
+    /** Type options: {"expirable":true} */
     readonly "cookie"?: any;
 
     readonly "baseUrl": string;
 
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
     readonly __name: "zscalerZiaApi";

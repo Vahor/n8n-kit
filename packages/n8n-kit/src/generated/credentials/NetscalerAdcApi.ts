@@ -12,9 +12,7 @@ export interface NetscalerAdcApiCredentials {
 
     readonly "username": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
     readonly __name: "citrixAdcApi";

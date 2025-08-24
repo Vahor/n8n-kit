@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailerLiteV2NodeParameters {
-    /**
-     * Default: "subscriber"
-     */
+    /** Default: "subscriber" */
     readonly resource?: "subscriber";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update";
 
-    /**
-     * Email of new subscriber
-     */
+    /** Email of new subscriber */
     readonly email?: string;
 
-    /**
-     * Email of subscriber
-     */
+    /** Email of subscriber */
     readonly subscriberId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "active" | "bounced" | "junk" | "unconfirmed" | "unsubscribed", "subscribed_at"?: string, "ip_address"?: string, "opted_in_at"?: string, "optin_ip"?: string, "unsubscribed_at"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -46,9 +34,7 @@ export interface MailerLiteV2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "status"?: "active" | "bounced" | "junk" | "unconfirmed" | "unsubscribed" };
 
 }

@@ -9,12 +9,8 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface LinearTriggerNodeParameters {
-    /**
-     * Default: "apiToken"
-     */
+    /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
-
-    readonly notice?: string;
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -22,9 +18,7 @@ export interface LinearTriggerNodeParameters {
      */
     readonly teamId?: string;
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly resources?: ("reaction" | "cycle" | "issue" | "comment" | "issueLabel" | "project")[];
 
 }

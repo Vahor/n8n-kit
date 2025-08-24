@@ -9,44 +9,28 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WordpressNodeParameters {
-    /**
-     * Default: "post"
-     */
+    /** Default: "post" */
     readonly resource?: "post" | "page" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update";
 
-    /**
-     * The title for the post
-     */
+    /** The title for the post */
     readonly title?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "authorId"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "date"?: string, "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "format"?: "aside" | "audio" | "chat" | "gallery" | "image" | "link" | "quote" | "standard" | "status" | "video", "sticky"?: boolean, "categories"?: any[], "tags"?: any[], "postTemplate"?: { "values": any } } | { "authorId"?: string, "parent"?: number, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "pageTemplate"?: { "values": any }, "menuOrder"?: number, "featuredMediaId"?: number } | { "url"?: string, "description"?: string, "nickname"?: string, "slug"?: string };
 
-    /**
-     * Unique identifier for the object
-     */
+    /** Unique identifier for the object */
     readonly postId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "authorId"?: string, "title"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "date"?: string, "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "format"?: "aside" | "audio" | "chat" | "gallery" | "image" | "link" | "quote" | "standard" | "status" | "video", "sticky"?: boolean, "categories"?: any[], "tags"?: any[], "postTemplate"?: { "values": any } } | { "authorId"?: string, "parent"?: number, "title"?: string, "content"?: string, "slug"?: string, "password"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "commentStatus"?: "open" | "closed", "pingStatus"?: "open" | "closed", "pageTemplate"?: { "values": any }, "menuOrder"?: number, "featuredMediaId"?: number } | { "username"?: string, "name"?: string, "firstName"?: string, "lastName"?: string, "email"?: string, "password"?: string, "url"?: string, "description"?: string, "nickname"?: string, "slug"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "password"?: string, "context"?: "view" | "embed" | "edit" } | { "after"?: string, "author"?: any[], "before"?: string, "categories"?: any[], "context"?: "view" | "embed" | "edit", "excludedCategories"?: any[], "excludedTags"?: any[], "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish", "sticky"?: boolean, "tags"?: any[] } | { "force"?: boolean } | { "after"?: string, "author"?: any[], "before"?: string, "context"?: "view" | "embed" | "edit", "menuOrder"?: number, "order"?: "asc" | "desc", "orderBy"?: "author" | "date" | "id" | "include" | "include_slugs" | "modified" | "parent" | "relevance" | "slug" | "title", "page"?: number, "parent"?: number, "search"?: string, "status"?: "draft" | "future" | "pending" | "private" | "publish" } | { "context"?: "view" | "embed" | "edit" } | { "context"?: "view" | "embed" | "edit", "orderBy"?: "email" | "id" | "include" | "include_slugs" | "name" | "registered_date" | "slug" | "url", "order"?: "asc" | "desc", "search"?: string, "who"?: "authors" };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -56,34 +40,22 @@ export interface WordpressNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Unique identifier for the object
-     */
+    /** Unique identifier for the object */
     readonly pageId?: string;
 
-    /**
-     * Login name for the user
-     */
+    /** Login name for the user */
     readonly username?: string;
 
-    /**
-     * Display name for the user
-     */
+    /** Display name for the user */
     readonly name?: string;
 
-    /**
-     * First name for the user
-     */
+    /** First name for the user */
     readonly firstName?: string;
 
-    /**
-     * Last name for the user
-     */
+    /** Last name for the user */
     readonly lastName?: string;
 
-    /**
-     * The email address for the user
-     */
+    /** The email address for the user */
     readonly email?: string;
 
     /**
@@ -92,14 +64,10 @@ export interface WordpressNodeParameters {
      */
     readonly password?: string;
 
-    /**
-     * Unique identifier for the user
-     */
+    /** Unique identifier for the user */
     readonly userId?: string;
 
-    /**
-     * Reassign the deleted user's posts and links to this user ID
-     */
+    /** Reassign the deleted user's posts and links to this user ID */
     readonly reassign?: string;
 
 }

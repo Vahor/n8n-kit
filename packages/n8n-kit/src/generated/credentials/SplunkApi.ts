@@ -8,19 +8,13 @@ export const name = "splunkApi" as const;
  * documentationUrl: splunk
  */
 export interface SplunkApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "authToken"?: string;
 
-    /**
-     * Protocol, domain and port
-     */
+    /** Protocol, domain and port */
     readonly "baseUrl"?: string;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
     readonly __name: "splunkApi";

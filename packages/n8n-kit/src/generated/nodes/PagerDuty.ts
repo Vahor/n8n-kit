@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PagerDutyNodeParameters {
-    /**
-     * Default: "apiToken"
-     */
+    /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
 
-    /**
-     * Default: "incident"
-     */
+    /** Default: "incident" */
     readonly resource?: "incident" | "incidentNote" | "logEntry" | "user";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update" | "create" | "getAll" | "get" | "getAll" | "get";
 
-    /**
-     * A succinct description of the nature, symptoms, cause, or effect of the incident
-     */
+    /** A succinct description of the nature, symptoms, cause, or effect of the incident */
     readonly title?: string;
 
     /**
@@ -35,14 +27,10 @@ export interface PagerDutyNodeParameters {
      */
     readonly serviceId?: string;
 
-    /**
-     * The email address of a valid user associated with the account making the request
-     */
+    /** The email address of a valid user associated with the account making the request */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "escalationPolicyId"?: string, "details"?: string, "incidentKey"?: string, "priorityId"?: string, "urgency"?: "high" | "low" };
 
     /**
@@ -51,14 +39,10 @@ export interface PagerDutyNodeParameters {
      */
     readonly conferenceBridgeUi?: { "conferenceBridgeValues": any };
 
-    /**
-     * Unique identifier for the incident
-     */
+    /** Unique identifier for the incident */
     readonly incidentId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -68,29 +52,19 @@ export interface PagerDutyNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "dateRange"?: "all", "incidentKey"?: string, "include"?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], "serviceIds"?: any[], "since"?: string, "sortBy"?: string, "statuses"?: ("acknowledged" | "resolved" | "triggered")[], "teamIds"?: string, "timeZone"?: string, "until"?: string, "urgencies"?: ("high" | "low")[], "userIds"?: string } | { "include"?: ("channels" | "incidents" | "services" | "teams")[], "isOverview"?: boolean, "since"?: string, "timeZone"?: string, "until"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "escalationLevel"?: number, "escalationPolicyId"?: string, "priorityId"?: string, "resolution"?: string, "status"?: "acknowledged" | "resolved", "title"?: string, "urgency"?: "high" | "low" };
 
-    /**
-     * The note content
-     */
+    /** The note content */
     readonly content?: string;
 
-    /**
-     * Unique identifier for the log entry
-     */
+    /** Unique identifier for the log entry */
     readonly logEntryId?: string;
 
-    /**
-     * Unique identifier for the user
-     */
+    /** Unique identifier for the user */
     readonly userId?: string;
 
 }

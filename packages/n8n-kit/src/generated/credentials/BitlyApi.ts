@@ -8,9 +8,7 @@ export const name = "bitlyApi" as const;
  * documentationUrl: bitly
  */
 export interface BitlyApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "bitlyApi";

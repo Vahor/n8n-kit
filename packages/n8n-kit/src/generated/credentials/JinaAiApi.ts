@@ -8,9 +8,7 @@ export const name = "jinaAiApi" as const;
  * documentationUrl: jinaai
  */
 export interface JinaAiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "jinaAiApi";

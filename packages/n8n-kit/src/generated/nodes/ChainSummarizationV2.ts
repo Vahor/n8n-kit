@@ -9,8 +9,6 @@ export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ChainSummarizationV2NodeParameters {
-    readonly notice?: string;
-
     /**
      * How to pass data into the summarization chain
      * Default: "nodeInputJson"
@@ -35,9 +33,7 @@ export interface ChainSummarizationV2NodeParameters {
      */
     readonly chunkOverlap?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "binaryDataKey"?: string, "summarizationMethodAndPrompts"?: { "values": any }, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

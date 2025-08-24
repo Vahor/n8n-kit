@@ -15,9 +15,7 @@ export interface KeapTriggerNodeParameters {
      */
     readonly eventId?: string;
 
-    /**
-     * Whether to return the data exactly in the way it got received from the API
-     */
+    /** Whether to return the data exactly in the way it got received from the API */
     readonly rawData?: boolean;
 
 }

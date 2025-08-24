@@ -9,19 +9,13 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FlowTriggerNodeParameters {
-    /**
-     * Resource that triggers the webhook
-     */
+    /** Resource that triggers the webhook */
     readonly resource?: "list" | "task";
 
-    /**
-     * Lists IDs, perhaps known better as "Projects" separated by a comma (,)
-     */
+    /** Lists IDs, perhaps known better as "Projects" separated by a comma (,) */
     readonly listIds?: string;
 
-    /**
-     * Task IDs separated by a comma (,)
-     */
+    /** Task IDs separated by a comma (,) */
     readonly taskIds?: string;
 
 }

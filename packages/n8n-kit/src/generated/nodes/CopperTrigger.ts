@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CopperTriggerNodeParameters {
-    /**
-     * The resource which will fire the event
-     */
+    /** The resource which will fire the event */
     readonly resource?: "company" | "lead" | "opportunity" | "person" | "project" | "task";
 
-    /**
-     * The event to listen to
-     */
+    /** The event to listen to */
     readonly event?: "delete" | "new" | "update";
 
 }

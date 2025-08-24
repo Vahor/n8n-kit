@@ -8,9 +8,7 @@ export const name = "virusTotalApi" as const;
  * documentationUrl: virustotal
  */
 export interface VirusTotalApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken": string;
 
     readonly __name: "virusTotalApi";

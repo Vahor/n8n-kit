@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RemoveDuplicatesV2NodeParameters {
-    /**
-     * Default: "removeDuplicateInputItems"
-     */
+    /** Default: "removeDuplicateInputItems" */
     readonly operation?: "removeDuplicateInputItems" | "removeItemsSeenInPreviousExecutions" | "clearDeduplicationHistory";
 
     /**
@@ -19,14 +17,10 @@ export interface RemoveDuplicatesV2NodeParameters {
      */
     readonly compare?: "allFields" | "allFieldsExcept" | "selectedFields";
 
-    /**
-     * Fields in the input to exclude from the comparison
-     */
+    /** Fields in the input to exclude from the comparison */
     readonly fieldsToExclude?: string;
 
-    /**
-     * Fields in the input to add to the comparison
-     */
+    /** Fields in the input to add to the comparison */
     readonly fieldsToCompare?: string;
 
     /**
@@ -35,19 +29,13 @@ export interface RemoveDuplicatesV2NodeParameters {
      */
     readonly logic?: "removeItemsWithAlreadySeenKeyValues" | "removeItemsUpToStoredIncrementalKey" | "removeItemsUpToStoredDate";
 
-    /**
-     * Use an input field (or a combination of fields) that has a unique ID value
-     */
+    /** Use an input field (or a combination of fields) that has a unique ID value */
     readonly dedupeValue?: string;
 
-    /**
-     * Use an input field (or a combination of fields) that has an incremental value
-     */
+    /** Use an input field (or a combination of fields) that has an incremental value */
     readonly incrementalDedupeValue?: number;
 
-    /**
-     * Use an input field that has a date value in ISO format
-     */
+    /** Use an input field that has a date value in ISO format */
     readonly dateDedupeValue?: string;
 
     /**
@@ -56,9 +44,7 @@ export interface RemoveDuplicatesV2NodeParameters {
      */
     readonly mode?: "cleanDatabase";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean, "scope"?: "workflow" | "node", "historySize"?: number };
 
 }

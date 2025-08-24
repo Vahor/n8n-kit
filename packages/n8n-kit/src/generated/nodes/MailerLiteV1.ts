@@ -9,39 +9,25 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailerLiteV1NodeParameters {
-    /**
-     * Default: "subscriber"
-     */
+    /** Default: "subscriber" */
     readonly resource?: "subscriber";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update";
 
-    /**
-     * Email of new subscriber
-     */
+    /** Email of new subscriber */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "confirmation_timestamp"?: string, "confirmation_ip"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "name"?: string, "resubscribe"?: boolean, "signup_ip"?: string, "signup_timestamp"?: string, "type"?: "active" | "unsubscribed" | "unconfirmed" };
 
-    /**
-     * Email of subscriber
-     */
+    /** Email of subscriber */
     readonly subscriberId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "name"?: string, "resend_autoresponders"?: boolean, "type"?: "active" | "unsubscribed" | "unconfirmed" };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -51,9 +37,7 @@ export interface MailerLiteV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "type"?: "active" | "unsubscribed" | "unconfirmed" };
 
 }

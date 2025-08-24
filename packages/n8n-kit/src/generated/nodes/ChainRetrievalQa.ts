@@ -9,16 +9,10 @@ export const inputs = {"main":"main","Model":"ai_languageModel","Retriever":"ai_
 export const outputs = {"main":"main"} as const;
 
 export interface ChainRetrievalQaNodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Default: "={{ $json.input }}"
-     */
+    /** Default: "={{ $json.input }}" */
     readonly query?: string;
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly promptType?: "auto" | "define";
 
     /**
@@ -27,9 +21,7 @@ export interface ChainRetrievalQaNodeParameters {
      */
     readonly text?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

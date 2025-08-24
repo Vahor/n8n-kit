@@ -8,9 +8,7 @@ export const name = "circleCiApi" as const;
  * documentationUrl: circleCi
  */
 export interface CircleCiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "circleCiApi";

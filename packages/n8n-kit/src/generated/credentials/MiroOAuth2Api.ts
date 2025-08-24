@@ -8,28 +8,20 @@ export const name = "miroOAuth2Api" as const;
  * documentationUrl: miro
  */
 export interface MiroOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://miro.com/oauth/authorize"
-     */
+    /** Default: "https://miro.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.miro.com/v1/oauth/token"
-     */
+    /** Default: "https://api.miro.com/v1/oauth/token" */
     readonly "accessTokenUrl": any;
 
     readonly "scope": any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "miroOAuth2Api";

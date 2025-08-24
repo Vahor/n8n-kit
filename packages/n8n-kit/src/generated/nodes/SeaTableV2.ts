@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SeaTableV2NodeParameters {
-    /**
-     * Default: "row"
-     */
+    /** Default: "row" */
     readonly resource?: "row" | "base" | "link" | "asset";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "remove" | "get" | "list" | "lock" | "search" | "unlock" | "update" | "snapshot" | "metadata" | "collaborator" | "add" | "list" | "remove" | "getPublicURL" | "upload";
 
     /**
@@ -37,16 +33,10 @@ export interface SeaTableV2NodeParameters {
      */
     readonly fieldsToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * Whether to use the column default values to populate new rows during creation (only available for normal backend)
-     */
+    /** Whether to use the column default values to populate new rows during creation (only available for normal backend) */
     readonly apply_default?: boolean;
 
-    readonly notice?: string;
-
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -56,14 +46,10 @@ export interface SeaTableV2NodeParameters {
      */
     readonly columnsUi?: { "columnValues": any };
 
-    /**
-     * Whether write to Big Data backend (true) or not (false). True requires the activation of the Big Data backend in the base.
-     */
+    /** Whether write to Big Data backend (true) or not (false). True requires the activation of the Big Data backend in the base. */
     readonly bigdata?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "simple"?: boolean, "convert"?: boolean } | { "insensitive"?: boolean, "wildcard"?: boolean, "simple"?: boolean, "convert"?: boolean } | { "replace"?: boolean, "append"?: boolean };
 
     /**
@@ -78,14 +64,10 @@ export interface SeaTableV2NodeParameters {
      */
     readonly searchColumn?: string;
 
-    /**
-     * What to look for?
-     */
+    /** What to look for? */
     readonly searchTerm?: string;
 
-    /**
-     * SeaTable identifies users with a unique username like 244b43hr6fy54bb4afa2c2cb7369d244@auth.local. Get this username from an email or the name of a collaborator.
-     */
+    /** SeaTable identifies users with a unique username like 244b43hr6fy54bb4afa2c2cb7369d244@auth.local. Get this username from an email or the name of a collaborator. */
     readonly searchString?: string;
 
     /**
@@ -94,14 +76,10 @@ export interface SeaTableV2NodeParameters {
      */
     readonly linkColumn?: string;
 
-    /**
-     * Provide the row ID of table you selected
-     */
+    /** Provide the row ID of table you selected */
     readonly linkColumnSourceId?: string;
 
-    /**
-     * Provide the row ID of table you want to link
-     */
+    /** Provide the row ID of table you want to link */
     readonly linkColumnTargetId?: string;
 
     /**

@@ -8,46 +8,30 @@ export const name = "shopifyOAuth2Api" as const;
  * documentationUrl: shopify
  */
 export interface ShopifyOAuth2ApiCredentials {
-    /**
-     * Only the subdomain without .myshopify.com
-     */
+    /** Only the subdomain without .myshopify.com */
     readonly "shopSubdomain": string;
 
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
     readonly "clientId": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
-    /**
-     * Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/authorize"
-     */
+    /** Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/access_token"
-     */
+    /** Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/access_token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "write_orders read_orders write_products read_products"
-     */
+    /** Default: "write_orders read_orders write_products read_products" */
     readonly "scope"?: any;
 
-    /**
-     * Default: "access_mode=value"
-     */
+    /** Default: "access_mode=value" */
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "shopifyOAuth2Api";

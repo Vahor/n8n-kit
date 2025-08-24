@@ -8,9 +8,7 @@ export const name = "microsoftOneDriveOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftOneDriveOAuth2ApiCredentials {
-    /**
-     * Default: "openid offline_access Files.ReadWrite.All"
-     */
+    /** Default: "openid offline_access Files.ReadWrite.All" */
     readonly "scope"?: any;
 
     readonly __name: "microsoftOneDriveOAuth2Api";

@@ -9,14 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolSearXngNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "numResults"?: number, "pageNumber"?: number, "language"?: string, "safesearch"?: "0" | "1" | "2" };
 
 }

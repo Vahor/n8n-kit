@@ -9,21 +9,11 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TheHiveProjectNodeParameters {
-    /**
-     * Default: "alert"
-     */
+    /** Default: "alert" */
     readonly resource?: "alert" | "case" | "comment" | "observable" | "page" | "query" | "task" | "log";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "deleteAlert" | "executeResponder" | "get" | "merge" | "promote" | "search" | "update" | "status" | "addAttachment" | "create" | "deleteAttachment" | "deleteCase" | "executeResponder" | "get" | "getAttachment" | "getTimeline" | "search" | "update" | "add" | "deleteComment" | "search" | "update" | "addAttachment" | "create" | "deleteLog" | "deleteAttachment" | "executeResponder" | "get" | "search" | "create" | "deleteObservable" | "executeAnalyzer" | "executeResponder" | "get" | "search" | "update" | "create" | "deletePage" | "search" | "update" | "executeQuery" | "create" | "deleteTask" | "executeResponder" | "get" | "search" | "update";
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getAlertFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly alertFields?: any;
 
     /**
      * Default: {}
@@ -31,17 +21,13 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly observableUi?: { "values": any };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly alertId?: {
 	value: string,
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly id?: {
 	value: string,
 	mode: "list" | "url" | "id",
@@ -56,14 +42,10 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly responder?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeSimilarAlerts"?: boolean, "includeSimilarCases"?: boolean } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "caseTemplate"?: string } | { "canRename"?: boolean } | { "fileName"?: string, "dataPropertyName"?: string } | { "category"?: string, "title"?: string, "order"?: number };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -91,19 +73,11 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly status?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly caseId?: {
 	value: string,
 	mode: "list" | "url" | "id",
 };
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getAlertUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly alertUpdateFields?: any;
 
     /**
      * Array of supported attachments to add to the message
@@ -113,36 +87,18 @@ export interface TheHiveProjectNodeParameters {
     readonly attachmentsUi?: { "values": any };
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getCaseFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly caseFields?: any;
-
-    /**
      * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Type options: {"loadOptionsMethod":"loadCaseAttachments"}
      */
     readonly attachmentId?: string;
 
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getCaseUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly caseUpdateFields?: any;
-
-    /**
-     * Default: "alert"
-     */
+    /** Default: "alert" */
     readonly addTo?: "alert" | "case";
 
-    /**
-     * Type options: {"rows":2}
-     */
+    /** Type options: {"rows":2} */
     readonly message?: string;
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly commentId?: {
 	value: string,
 	mode: "list" | "id",
@@ -154,27 +110,17 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly searchIn?: "all" | "alert" | "case";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly logId?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly taskId?: {
 	value: string,
 	mode: "list" | "id",
 };
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getLogFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly logFields?: any;
 
     /**
      * Whether to search in all tasks or only in selected task
@@ -182,9 +128,7 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly allTasks?: boolean;
 
-    /**
-     * Default: "case"
-     */
+    /** Default: "case" */
     readonly createIn?: "case" | "alert";
 
     /**
@@ -196,15 +140,7 @@ export interface TheHiveProjectNodeParameters {
 
     readonly data?: string;
 
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getObservableFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly observableFields?: any;
-
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly observableId?: {
 	value: string,
 	mode: "list" | "id",
@@ -217,24 +153,14 @@ export interface TheHiveProjectNodeParameters {
      */
     readonly analyzers?: any[];
 
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getObservableUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly observableUpdateFields?: any;
-
-    /**
-     * Default: "case"
-     */
+    /** Default: "case" */
     readonly location?: "case" | "knowledgeBase";
 
     readonly title?: string;
 
     readonly category?: string;
 
-    /**
-     * Type options: {"rows":2}
-     */
+    /** Type options: {"rows":2} */
     readonly content?: string;
 
     /**
@@ -260,21 +186,9 @@ export interface TheHiveProjectNodeParameters {
     readonly queryJson?: string;
 
     /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getTaskFields","mode":"add","valuesLabel":"Fields"}}
-     */
-    readonly taskFields?: any;
-
-    /**
      * Whether to search in all cases or only in a selected case
      * Default: true
      */
     readonly allCases?: boolean;
-
-    /**
-     * Default: {"mappingMode":"defineBelow","value":null}
-     * Type options: {"resourceMapper":{"resourceMapperMethod":"getTaskUpdateFields","mode":"update","valuesLabel":"Fields","addAllFields":true,"multiKeyMatch":true}}
-     */
-    readonly taskUpdateFields?: any;
 
 }

@@ -8,14 +8,10 @@ export const name = "xAiApi" as const;
  * documentationUrl: xai
  */
 export interface XAiApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey": string;
 
-    /**
-     * Default: "https://api.x.ai/v1"
-     */
+    /** Default: "https://api.x.ai/v1" */
     readonly "url"?: any;
 
     readonly __name: "xAiApi";

@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ElasticSecurityNodeParameters {
-    /**
-     * Default: "case"
-     */
+    /** Default: "case" */
     readonly resource?: "case" | "caseComment" | "caseTag" | "connector";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "getStatus" | "update" | "add" | "get" | "getAll" | "remove" | "update" | "add" | "remove" | "create";
 
     readonly title?: string;
@@ -27,19 +23,13 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly connectorId?: string;
 
-    /**
-     * Default: ".jira"
-     */
+    /** Default: ".jira" */
     readonly connectorType?: ".resilient" | ".jira" | ".servicenow";
 
-    /**
-     * Type of the Jira issue to create for this case
-     */
+    /** Type of the Jira issue to create for this case */
     readonly issueType?: string;
 
-    /**
-     * Priority of the Jira issue to create for this case
-     */
+    /** Priority of the Jira issue to create for this case */
     readonly priority?: string;
 
     /**
@@ -60,14 +50,10 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly impact?: "1" | "2" | "3";
 
-    /**
-     * Category of the ServiceNow ITSM issue to create for this case
-     */
+    /** Category of the ServiceNow ITSM issue to create for this case */
     readonly category?: string;
 
-    /**
-     * Comma-separated list of numerical types of the IBM Resilient issue to create for this case
-     */
+    /** Comma-separated list of numerical types of the IBM Resilient issue to create for this case */
     readonly issueTypes?: string;
 
     /**
@@ -77,16 +63,12 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly severityCode?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "description"?: string, "owner"?: string, "syncAlerts"?: boolean } | { "owner"?: string };
 
     readonly caseId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -96,19 +78,13 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "status"?: "open" | "in-progress" | "closed", "tags"?: any[] };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly sortOptions?: { "sortOptionsProperties": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "description"?: string, "status"?: "closed" | "open" | "in-progress", "syncAlerts"?: boolean, "title"?: string, "version"?: string };
 
     readonly comment?: string;
@@ -119,9 +95,7 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * ID of the case comment to retrieve
-     */
+    /** ID of the case comment to retrieve */
     readonly commentId?: string;
 
     /**
@@ -130,19 +104,13 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly tag?: string;
 
-    /**
-     * Connectors allow you to send Elastic Security cases into other systems (only ServiceNow, Jira, or IBM Resilient)
-     */
+    /** Connectors allow you to send Elastic Security cases into other systems (only ServiceNow, Jira, or IBM Resilient) */
     readonly name?: string;
 
-    /**
-     * URL of the third-party instance
-     */
+    /** URL of the third-party instance */
     readonly apiUrl?: string;
 
-    /**
-     * Jira-registered email
-     */
+    /** Jira-registered email */
     readonly email?: string;
 
     /**
@@ -151,14 +119,10 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly apiToken?: string;
 
-    /**
-     * Jira Project Key
-     */
+    /** Jira Project Key */
     readonly projectKey?: string;
 
-    /**
-     * ServiceNow ITSM username
-     */
+    /** ServiceNow ITSM username */
     readonly username?: string;
 
     /**
@@ -179,9 +143,7 @@ export interface ElasticSecurityNodeParameters {
      */
     readonly apiKeySecret?: string;
 
-    /**
-     * IBM Resilient organization ID
-     */
+    /** IBM Resilient organization ID */
     readonly orgId?: string;
 
 }

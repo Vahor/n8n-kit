@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleAnalyticsV2NodeParameters {
-    /**
-     * Default: "report"
-     */
+    /** Default: "report" */
     readonly resource?: "report" | "userActivity";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "search";
 
     /**
@@ -34,19 +30,13 @@ export interface GoogleAnalyticsV2NodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Default: "last7days"
-     */
+    /** Default: "last7days" */
     readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
-    /**
-     * Default: "2025-08-16T00:00:00.000+02:00"
-     */
+    /** Default: "2025-08-16T00:00:00.000+02:00" */
     readonly startDate?: string;
 
-    /**
-     * Default: "2025-08-23T00:00:00.000+02:00"
-     */
+    /** Default: "2025-08-23T00:00:00.000+02:00" */
     readonly endDate?: string;
 
     /**
@@ -63,9 +53,7 @@ export interface GoogleAnalyticsV2NodeParameters {
      */
     readonly dimensionsGA4?: { "dimensionValues": any };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -81,9 +69,7 @@ export interface GoogleAnalyticsV2NodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "currencyCode"?: string, "dimensionFiltersUI"?: { "filterExpressions": any }, "metricAggregations"?: ("MAXIMUM" | "MINIMUM" | "TOTAL")[], "metricsFiltersUI"?: { "filterExpressions": any }, "keepEmptyRows"?: boolean, "orderByUI"?: { "metricOrderBy": any, "dimmensionOrderBy": any }, "returnPropertyQuota"?: boolean } | { "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "useResourceQuotas"?: boolean } | { "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
 
     /**
@@ -109,9 +95,7 @@ export interface GoogleAnalyticsV2NodeParameters {
      */
     readonly dimensionsUA?: { "dimensionValues": any };
 
-    /**
-     * ID of a user
-     */
+    /** ID of a user */
     readonly userId?: string;
 
 }

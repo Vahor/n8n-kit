@@ -9,20 +9,11 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WhatsAppNodeParameters {
-    /**
-     * Default: "message"
-     */
+    /** Default: "message" */
     readonly resource?: "message" | "media";
 
-    /**
-     * Default: "sendTemplate"
-     */
+    /** Default: "sendTemplate" */
     readonly operation?: "send" | "sendAndWait" | "sendTemplate" | "mediaUpload" | "mediaUrlGet" | "mediaDelete";
-
-    /**
-     * Default: "whatsapp"
-     */
-    readonly messagingProduct?: any;
 
     /**
      * The ID of the business account's phone number from which the message will be sent from
@@ -30,9 +21,7 @@ export interface WhatsAppNodeParameters {
      */
     readonly phoneNumberId?: string;
 
-    /**
-     * Phone number of the recipient of the message
-     */
+    /** Phone number of the recipient of the message */
     readonly recipientPhoneNumber?: string;
 
     /**
@@ -47,24 +36,16 @@ export interface WhatsAppNodeParameters {
      */
     readonly name?: { "data": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "addresses"?: { "address": any }, "birthday"?: string, "emails"?: { "data": any }, "organization"?: { "data": any }, "phones"?: { "data": any }, "urls"?: { "url": any } } | { "nameAndAddress": any } | { "mediaFilename"?: string, "mediaCaption"?: string } | { "previewUrl"?: boolean } | { "mediaFileName"?: string };
 
-    /**
-     * Type options: {"minValue":-180,"maxValue":180}
-     */
+    /** Type options: {"minValue":-180,"maxValue":180} */
     readonly longitude?: number;
 
-    /**
-     * Type options: {"minValue":-90,"maxValue":90}
-     */
+    /** Type options: {"minValue":-90,"maxValue":90} */
     readonly latitude?: number;
 
-    /**
-     * The body of the message (max 4096 characters)
-     */
+    /** The body of the message (max 4096 characters) */
     readonly textBody?: string;
 
     /**
@@ -73,14 +54,10 @@ export interface WhatsAppNodeParameters {
      */
     readonly mediaPath?: "useMediaLink" | "useMediaId" | "useMedian8n";
 
-    /**
-     * Link of the media to be sent
-     */
+    /** Link of the media to be sent */
     readonly mediaLink?: string;
 
-    /**
-     * ID of the media to be sent
-     */
+    /** ID of the media to be sent */
     readonly mediaId?: string;
 
     /**
@@ -89,9 +66,7 @@ export interface WhatsAppNodeParameters {
      */
     readonly mediaPropertyName?: string;
 
-    /**
-     * The name of the file (required when using a file ID)
-     */
+    /** The name of the file (required when using a file ID) */
     readonly mediaFilename?: string;
 
     /**
@@ -106,29 +81,19 @@ export interface WhatsAppNodeParameters {
      */
     readonly components?: { "component": any };
 
-    /**
-     * The ID of the media
-     */
+    /** The ID of the media */
     readonly mediaGetId?: string;
 
-    /**
-     * The ID of the media
-     */
+    /** The ID of the media */
     readonly mediaDeleteId?: string;
 
-    /**
-     * Type options: {"rows":4}
-     */
+    /** Type options: {"rows":4} */
     readonly message?: string;
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -143,14 +108,10 @@ export interface WhatsAppNodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
 }

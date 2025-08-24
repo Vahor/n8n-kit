@@ -15,14 +15,10 @@ export interface ContentfulNodeParameters {
      */
     readonly source?: "deliveryApi" | "previewApi";
 
-    /**
-     * Default: "entry"
-     */
+    /** Default: "entry" */
     readonly resource?: "asset" | "contentType" | "entry" | "locale" | "space";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "get" | "get" | "getAll" | "getAll";
 
     /**
@@ -33,14 +29,10 @@ export interface ContentfulNodeParameters {
 
     readonly contentTypeId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "rawData"?: boolean } | { "content_type"?: string, "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean } | { "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**

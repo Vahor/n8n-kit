@@ -24,9 +24,7 @@ export interface SurveyMonkeyApiCredentials {
 
     readonly "clientId"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "clientSecret"?: string;
 
     readonly __name: "surveyMonkeyApi";

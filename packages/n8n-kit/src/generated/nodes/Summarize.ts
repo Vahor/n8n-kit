@@ -14,14 +14,10 @@ export interface SummarizeNodeParameters {
      */
     readonly fieldsToSummarize?: { "values": any };
 
-    /**
-     * The name of the input fields that you want to split the summary by
-     */
+    /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "continueIfFieldNotFound"?: boolean, "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
 
 }

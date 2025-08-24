@@ -15,9 +15,7 @@ export interface MicrosoftTeamsTriggerNodeParameters {
      */
     readonly event?: "newChannel" | "newChannelMessage" | "newChat" | "newChatMessage" | "newTeamMember";
 
-    /**
-     * Whether to watch for the event in all the available teams
-     */
+    /** Whether to watch for the event in all the available teams */
     readonly watchAllTeams?: boolean;
 
     /**
@@ -29,9 +27,7 @@ export interface MicrosoftTeamsTriggerNodeParameters {
 	mode: "list" | "id" | "url",
 };
 
-    /**
-     * Whether to watch for the event in all the available channels
-     */
+    /** Whether to watch for the event in all the available channels */
     readonly watchAllChannels?: boolean;
 
     /**
@@ -43,9 +39,7 @@ export interface MicrosoftTeamsTriggerNodeParameters {
 	mode: "list" | "id" | "url",
 };
 
-    /**
-     * Whether to watch for the event in all the available chats
-     */
+    /** Whether to watch for the event in all the available chats */
     readonly watchAllChats?: boolean;
 
     /**

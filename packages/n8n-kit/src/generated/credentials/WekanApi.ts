@@ -10,16 +10,12 @@ export const name = "wekanApi" as const;
 export interface WekanApiCredentials {
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     readonly "url"?: string;
 
-    /**
-     * Type options: {"expirable":true}
-     */
+    /** Type options: {"expirable":true} */
     readonly "token"?: any;
 
     readonly __name: "wekanApi";

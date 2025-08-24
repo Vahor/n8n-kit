@@ -9,18 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AirtableV1NodeParameters {
-    /**
-     * Default: "airtableApi"
-     */
+    /** Default: "airtableApi" */
     readonly authentication?: "airtableTokenApi" | "airtableOAuth2Api" | "airtableApi";
 
-    readonly oldVersionNotice?: string;
-
-    readonly deprecated?: string;
-
-    /**
-     * Default: "read"
-     */
+    /** Default: "read" */
     readonly operation?: "append" | "delete" | "list" | "read" | "update";
 
     /**
@@ -32,9 +24,7 @@ export interface AirtableV1NodeParameters {
 	mode: "url" | "id",
 };
 
-    /**
-     * Default: {"mode":"url","value":""}
-     */
+    /** Default: {"mode":"url","value":""} */
     readonly table?: {
 	value: string,
 	mode: "url" | "id",
@@ -53,9 +43,7 @@ export interface AirtableV1NodeParameters {
      */
     readonly fields?: string;
 
-    /**
-     * ID of the record to delete
-     */
+    /** ID of the record to delete */
     readonly id?: string;
 
     /**
@@ -71,14 +59,10 @@ export interface AirtableV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether the attachment fields define in 'Download Fields' will be downloaded
-     */
+    /** Whether the attachment fields define in 'Download Fields' will be downloaded */
     readonly downloadAttachments?: boolean;
 
-    /**
-     * Name of the fields of type 'attachment' that should be downloaded. Multiple ones can be defined separated by comma. Case sensitive and cannot include spaces after a comma.
-     */
+    /** Name of the fields of type 'attachment' that should be downloaded. Multiple ones can be defined separated by comma. Case sensitive and cannot include spaces after a comma. */
     readonly downloadFieldNames?: string;
 
     /**
@@ -93,9 +77,7 @@ export interface AirtableV1NodeParameters {
      */
     readonly updateAllFields?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "bulkSize"?: number, "ignoreFields"?: string, "typecast"?: boolean };
 
 }

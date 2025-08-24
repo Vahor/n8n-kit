@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsSnsTriggerNodeParameters {
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly topic?: {
 	value: string,
 	mode: "list" | "url" | "id",

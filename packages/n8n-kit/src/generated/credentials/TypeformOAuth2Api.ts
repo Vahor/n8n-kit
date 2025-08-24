@@ -8,31 +8,21 @@ export const name = "typeformOAuth2Api" as const;
  * documentationUrl: typeform
  */
 export interface TypeformOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://api.typeform.com/oauth/authorize"
-     */
+    /** Default: "https://api.typeform.com/oauth/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://api.typeform.com/oauth/token"
-     */
+    /** Default: "https://api.typeform.com/oauth/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "webhooks:write webhooks:read forms:read"
-     */
+    /** Default: "webhooks:write webhooks:read forms:read" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "header"
-     */
+    /** Default: "header" */
     readonly "authentication"?: any;
 
     readonly __name: "typeformOAuth2Api";

@@ -8,9 +8,7 @@ export const name = "dropcontactApi" as const;
  * documentationUrl: dropcontact
  */
 export interface DropcontactApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
     readonly __name: "dropcontactApi";

@@ -8,19 +8,13 @@ export const name = "questDb" as const;
  * documentationUrl: questDb
  */
 export interface QuestDbCredentials {
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "host"?: string;
 
-    /**
-     * Default: "qdb"
-     */
+    /** Default: "qdb" */
     readonly "database"?: string;
 
-    /**
-     * Default: "admin"
-     */
+    /** Default: "admin" */
     readonly "user"?: string;
 
     /**
@@ -29,14 +23,10 @@ export interface QuestDbCredentials {
      */
     readonly "password"?: string;
 
-    /**
-     * Default: "disable"
-     */
+    /** Default: "disable" */
     readonly "ssl"?: "allow" | "disable" | "require";
 
-    /**
-     * Default: 8812
-     */
+    /** Default: 8812 */
     readonly "port"?: number;
 
     readonly __name: "questDb";

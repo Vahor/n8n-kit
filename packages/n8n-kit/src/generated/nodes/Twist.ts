@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TwistNodeParameters {
-    /**
-     * Default: "messageConversation"
-     */
+    /** Default: "messageConversation" */
     readonly resource?: "channel" | "comment" | "messageConversation" | "thread";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "archive" | "create" | "delete" | "get" | "getAll" | "unarchive" | "update" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -25,24 +21,16 @@ export interface TwistNodeParameters {
      */
     readonly workspaceId?: string;
 
-    /**
-     * The name of the channel
-     */
+    /** The name of the channel */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "color"?: "6" | "1" | "4" | "0" | "7" | "9" | "5" | "11" | "8" | "3" | "2" | "10", "description"?: string, "public"?: boolean, "temp_id"?: number, "user_ids"?: any[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "direct_mentions"?: any[], "mark_thread_position"?: boolean, "recipients"?: any[], "temp_id"?: number, "send_as_integration"?: boolean } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "direct_mentions"?: any[] } | { "to_obj_index"?: number, "limit"?: number, "order_by"?: "ASC" | "DESC", "from_obj_index"?: number } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "direct_mentions"?: any[], "recipients"?: any[], "send_as_integration"?: boolean, "temp_id"?: number };
 
-    /**
-     * The ID of the channel
-     */
+    /** The ID of the channel */
     readonly channelId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -52,29 +40,19 @@ export interface TwistNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "archived"?: boolean } | { "as_ids"?: boolean, "to_obj_index"?: number, "newer_than_ts"?: string, "older_than_ts"?: string, "order_by"?: "ASC" | "DESC", "from_obj_index"?: number } | { "as_ids"?: boolean, "filter_by"?: "attached_to_me" | "everyone" | "is_starred", "newer_than_ts"?: string, "older_than_ts"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "color"?: "6" | "1" | "4" | "0" | "7" | "9" | "5" | "11" | "8" | "3" | "2" | "10", "description"?: string, "name"?: string, "public"?: boolean } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: any[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: any[], "title"?: string };
 
-    /**
-     * The ID of the thread
-     */
+    /** The ID of the thread */
     readonly threadId?: string;
 
-    /**
-     * The content of the comment
-     */
+    /** The content of the comment */
     readonly content?: string;
 
-    /**
-     * The ID of the comment
-     */
+    /** The ID of the comment */
     readonly commentId?: string;
 
     /**
@@ -83,14 +61,10 @@ export interface TwistNodeParameters {
      */
     readonly conversationId?: string;
 
-    /**
-     * The ID of the conversation message
-     */
+    /** The ID of the conversation message */
     readonly id?: string;
 
-    /**
-     * The title of the new thread (1 < length < 300)
-     */
+    /** The title of the new thread (1 < length < 300) */
     readonly title?: string;
 
 }

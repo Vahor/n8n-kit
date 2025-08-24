@@ -9,51 +9,33 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MailjetNodeParameters {
-    /**
-     * Default: "email"
-     */
+    /** Default: "email" */
     readonly resource?: "email" | "sms";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send" | "sendTemplate" | "send";
 
-    /**
-     * The title for the email
-     */
+    /** The title for the email */
     readonly fromEmail?: string;
 
-    /**
-     * Email address of the recipient. Multiple ones can be separated by comma.
-     */
+    /** Email address of the recipient. Multiple ones can be separated by comma. */
     readonly toEmail?: string;
 
-    /**
-     * Subject line of the email
-     */
+    /** Subject line of the email */
     readonly subject?: string;
 
-    /**
-     * Plain text message of email
-     */
+    /** Plain text message of email */
     readonly text?: string;
 
-    /**
-     * HTML text message of email
-     */
+    /** HTML text message of email */
     readonly html?: string;
 
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "bccEmail"?: string, "ccAddresses"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "templateLanguage"?: boolean, "trackClicks"?: "account_default" | "disabled" | "enabled", "trackOpens"?: "account_default" | "disabled" | "enabled" } | { "bccEmail"?: string, "ccEmail"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "subject"?: string, "templateLanguage"?: boolean, "trackClicks"?: string, "trackOpens"?: string };
 
-    /**
-     * HTML text message of email
-     */
+    /** HTML text message of email */
     readonly variablesJson?: string;
 
     /**
@@ -68,14 +50,10 @@ export interface MailjetNodeParameters {
      */
     readonly templateId?: string;
 
-    /**
-     * Customizable sender name. Should be between 3 and 11 characters in length, only alphanumeric characters are allowed.
-     */
+    /** Customizable sender name. Should be between 3 and 11 characters in length, only alphanumeric characters are allowed. */
     readonly from?: string;
 
-    /**
-     * Message recipient. Should be between 3 and 15 characters in length. The number always starts with a plus sign followed by a country code, followed by the number. Phone numbers are expected to comply with the E.164 format.
-     */
+    /** Message recipient. Should be between 3 and 15 characters in length. The number always starts with a plus sign followed by a country code, followed by the number. Phone numbers are expected to comply with the E.164 format. */
     readonly to?: string;
 
 }

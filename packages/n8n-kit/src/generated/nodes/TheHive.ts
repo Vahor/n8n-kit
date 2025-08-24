@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TheHiveNodeParameters {
-    /**
-     * Default: "alert"
-     */
+    /** Default: "alert" */
     readonly resource?: "alert" | "case" | "log" | "observable" | "task";
 
     /**
@@ -21,9 +19,7 @@ export interface TheHiveNodeParameters {
      */
     readonly operation?: string | "create" | "executeResponder" | "getAll" | "get";
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -33,21 +29,15 @@ export interface TheHiveNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Title of the alert
-     */
+    /** Title of the alert */
     readonly id?: string;
 
     readonly caseId?: string;
 
-    /**
-     * Title of the alert
-     */
+    /** Title of the alert */
     readonly title?: string;
 
-    /**
-     * Description of the alert
-     */
+    /** Description of the alert */
     readonly description?: string;
 
     /**
@@ -56,14 +46,10 @@ export interface TheHiveNodeParameters {
      */
     readonly severity?: "1" | "2" | "3";
 
-    /**
-     * Date and time when the alert was raised default=now
-     */
+    /** Date and time when the alert was raised default=now */
     readonly date?: string;
 
-    /**
-     * Case Tags
-     */
+    /** Case Tags */
     readonly tags?: string;
 
     /**
@@ -78,19 +64,13 @@ export interface TheHiveNodeParameters {
      */
     readonly status?: "New" | "Updated" | "Ignored" | "Imported" | "Ok" | "Deleted" | "Cancel" | "Completed" | "InProgress" | "Waiting";
 
-    /**
-     * Type of the alert
-     */
+    /** Type of the alert */
     readonly type?: string;
 
-    /**
-     * Source of the alert
-     */
+    /** Source of the alert */
     readonly source?: string;
 
-    /**
-     * Source reference of the alert
-     */
+    /** Source reference of the alert */
     readonly sourceRef?: string;
 
     /**
@@ -112,29 +92,19 @@ export interface TheHiveNodeParameters {
      */
     readonly responder?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly jsonParameters?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "caseTemplate"?: string, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string } | { "caseTemplate"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "artifactUi"?: { "artifactValues": any }, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "caseTemplate"?: string, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "status"?: "New" | "Updated" | "Ignored" | "Imported", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "message"?: string, "tags"?: string, "tlp"?: "0" | "1" | "2" | "3", "ioc"?: boolean, "sighted"?: boolean, "status"?: "Ok" | "Deleted" } | { "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "description"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "metrics"?: string, "owner"?: string, "resolutionStatus"?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", "severity"?: "1" | "2" | "3", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string, "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "description"?: string, "endDate"?: string, "flag"?: boolean, "owner"?: string, "startDate"?: string, "status"?: "Cancel" | "Completed" | "InProgress" | "Waiting", "title"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "sort"?: string } | { "includeSimilar"?: boolean } | { "tags"?: string } | { "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "endDate"?: string, "summary"?: string, "metrics"?: string } | { "description"?: string, "endDate"?: string, "owner"?: string, "startDate"?: string } | { "attachmentValues"?: { "attachmentValues": any } };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "dataType"?: any[], "range"?: { "dateRange": any }, "description"?: string, "ioc"?: boolean, "keyword"?: string, "message"?: string, "tags"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "tlp"?: "0" | "1" | "2" | "3", "data"?: string } | { "customFieldsUi"?: { "customFields": any }, "description"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "severity"?: "1" | "2" | "3", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string, "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "description"?: string, "endDate"?: string, "flag"?: boolean, "owner"?: string, "startDate"?: string, "status"?: "Cancel" | "Completed" | "InProgress" | "Waiting", "title"?: string };
 
     /**
@@ -151,24 +121,16 @@ export interface TheHiveNodeParameters {
      */
     readonly binaryProperty?: string;
 
-    /**
-     * Description of the observable in the context of the case
-     */
+    /** Description of the observable in the context of the case */
     readonly message?: string;
 
-    /**
-     * Date and time of the begin of the case default=now
-     */
+    /** Date and time of the begin of the case default=now */
     readonly startDate?: string;
 
-    /**
-     * Whether the observable is an IOC (Indicator of compromise)
-     */
+    /** Whether the observable is an IOC (Indicator of compromise) */
     readonly ioc?: boolean;
 
-    /**
-     * Whether sighted previously
-     */
+    /** Whether sighted previously */
     readonly sighted?: boolean;
 
     /**
@@ -180,14 +142,10 @@ export interface TheHiveNodeParameters {
 
     readonly owner?: string;
 
-    /**
-     * Flag of the case default=false
-     */
+    /** Flag of the case default=false */
     readonly flag?: boolean;
 
-    /**
-     * ID of the task
-     */
+    /** ID of the task */
     readonly taskId?: string;
 
 }

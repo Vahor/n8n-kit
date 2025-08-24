@@ -9,34 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface EmailSendV2NodeParameters {
-    /**
-     * Default: "email"
-     */
-    readonly resource?: any;
-
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "send" | "sendAndWait";
 
-    /**
-     * Email address of the sender. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
-     */
+    /** Email address of the sender. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;. */
     readonly fromEmail?: string;
 
-    /**
-     * Email address of the recipient. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;.
-     */
+    /** Email address of the recipient. You can also specify a name: Nathan Doe &lt;nate@n8n.io&gt;. */
     readonly toEmail?: string;
 
-    /**
-     * Subject line of the email
-     */
+    /** Subject line of the email */
     readonly subject?: string;
 
-    /**
-     * Default: "html"
-     */
+    /** Default: "html" */
     readonly emailFormat?: "text" | "html" | "both";
 
     /**
@@ -51,24 +36,16 @@ export interface EmailSendV2NodeParameters {
      */
     readonly html?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "appendAttribution"?: boolean, "attachments"?: string, "ccEmail"?: string, "bccEmail"?: string, "allowUnauthorizedCerts"?: boolean, "replyTo"?: string } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
 
-    /**
-     * Type options: {"rows":4}
-     */
+    /** Type options: {"rows":4} */
     readonly message?: string;
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -83,9 +60,7 @@ export interface EmailSendV2NodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
 }

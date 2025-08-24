@@ -10,9 +10,7 @@ export const name = "bitbucketApi" as const;
 export interface BitbucketApiCredentials {
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "appPassword"?: string;
 
     readonly __name: "bitbucketApi";

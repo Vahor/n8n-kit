@@ -8,21 +8,15 @@ export const name = "bubbleApi" as const;
  * documentationUrl: bubble
  */
 export interface BubbleApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly "appName"?: string;
 
-    /**
-     * Default: "live"
-     */
+    /** Default: "live" */
     readonly "environment"?: "development" | "live";
 
-    /**
-     * Default: "bubbleHosted"
-     */
+    /** Default: "bubbleHosted" */
     readonly "hosting"?: "bubbleHosted" | "selfHosted";
 
     readonly "domain"?: string;

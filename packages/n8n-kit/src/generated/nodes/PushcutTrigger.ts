@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PushcutTriggerNodeParameters {
-    /**
-     * Choose any name you would like. It will show up as a server action in the app.
-     */
+    /** Choose any name you would like. It will show up as a server action in the app. */
     readonly actionName?: string;
 
 }

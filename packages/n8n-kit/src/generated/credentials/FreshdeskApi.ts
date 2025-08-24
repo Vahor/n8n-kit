@@ -8,14 +8,10 @@ export const name = "freshdeskApi" as const;
  * documentationUrl: freshdesk
  */
 export interface FreshdeskApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * If the URL you get displayed on Freshdesk is "https://company.freshdesk.com" enter "company"
-     */
+    /** If the URL you get displayed on Freshdesk is "https://company.freshdesk.com" enter "company" */
     readonly "domain"?: string;
 
     readonly __name: "freshdeskApi";

@@ -33,14 +33,10 @@ export interface CortexNodeParameters {
      */
     readonly observableType?: string;
 
-    /**
-     * Enter the observable value
-     */
+    /** Enter the observable value */
     readonly observableValue?: string;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryPropertyName?: string;
 
     /**
@@ -49,9 +45,7 @@ export interface CortexNodeParameters {
      */
     readonly tlp?: "0" | "1" | "2" | "3";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "force"?: boolean, "timeout"?: number };
 
     /**
@@ -66,9 +60,7 @@ export interface CortexNodeParameters {
      */
     readonly entityType?: string;
 
-    /**
-     * Choose between providing JSON object or seperated attributes
-     */
+    /** Choose between providing JSON object or seperated attributes */
     readonly jsonObject?: boolean;
 
     readonly objectData?: string;
@@ -79,9 +71,7 @@ export interface CortexNodeParameters {
      */
     readonly parameters?: { "values": any };
 
-    /**
-     * ID of the job
-     */
+    /** ID of the job */
     readonly jobId?: string;
 
 }

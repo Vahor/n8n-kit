@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftToDoNodeParameters {
-    /**
-     * Default: "task"
-     */
+    /** Default: "task" */
     readonly resource?: "linkedResource" | "list" | "task";
 
-    /**
-     * Default: "get"
-     */
+    /** Default: "get" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -27,26 +23,18 @@ export interface MicrosoftToDoNodeParameters {
 
     readonly taskId?: string;
 
-    /**
-     * Field indicating title of the linked entity
-     */
+    /** Field indicating title of the linked entity */
     readonly displayName?: string;
 
-    /**
-     * App name of the source that is sending the linked entity
-     */
+    /** App name of the source that is sending the linked entity */
     readonly applicationName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "externalId"?: string, "webUrl"?: string } | { "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred" };
 
     readonly linkedResourceId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -56,19 +44,13 @@ export interface MicrosoftToDoNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "applicationName"?: string, "displayName"?: string, "externalId"?: string, "webUrl"?: string } | { "content"?: string, "dueDateTime"?: string, "reminderDateTime"?: string, "importance"?: "low" | "normal" | "high", "status"?: "notStarted" | "inProgress" | "completed" | "waitingOnOthers" | "deferred", "title"?: string };
 
-    /**
-     * A brief description of the task
-     */
+    /** A brief description of the task */
     readonly title?: string;
 
-    /**
-     * The identifier of the list, unique in the user's mailbox
-     */
+    /** The identifier of the list, unique in the user's mailbox */
     readonly listId?: string;
 
 }

@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SeaTableV1NodeParameters {
-    /**
-     * Default: "row"
-     */
+    /** Default: "row" */
     readonly resource?: "row";
 
     /**
@@ -40,9 +38,7 @@ export interface SeaTableV1NodeParameters {
      */
     readonly fieldsToSend?: "autoMapInputData" | "defineBelow";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -65,14 +61,10 @@ export interface SeaTableV1NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "view_name"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "convert_link_id"?: boolean, "direction"?: "asc" | "desc", "order_by"?: string };
 
 }

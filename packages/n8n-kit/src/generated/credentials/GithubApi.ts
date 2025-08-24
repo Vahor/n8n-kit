@@ -16,9 +16,7 @@ export interface GithubApiCredentials {
 
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "githubApi";

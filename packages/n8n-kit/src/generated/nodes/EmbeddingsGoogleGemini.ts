@@ -10,11 +10,6 @@ export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsGoogleGeminiNodeParameters {
     /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
      * The model which will generate the embeddings. <a href="https://developers.generativeai.google/api/rest/generativelanguage/models/list">Learn more</a>.
      * Default: "models/text-embedding-004"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1beta/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"models"}},{"type":"filter","properties":{"pass":"={{ $responseItem.name.includes('embedding') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.name}}","description":"={{$responseItem.description}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

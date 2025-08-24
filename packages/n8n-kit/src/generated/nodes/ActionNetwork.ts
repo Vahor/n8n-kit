@@ -9,24 +9,16 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ActionNetworkNodeParameters {
-    /**
-     * Default: "attendance"
-     */
+    /** Default: "attendance" */
     readonly resource?: "attendance" | "event" | "person" | "personTag" | "petition" | "signature" | "tag";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "create" | "get" | "getAll" | "update" | "add" | "remove";
 
-    /**
-     * ID of the person to create an attendance for
-     */
+    /** ID of the person to create an attendance for */
     readonly personId?: string;
 
-    /**
-     * ID of the event to create an attendance for
-     */
+    /** ID of the event to create an attendance for */
     readonly eventId?: string;
 
     /**
@@ -35,14 +27,10 @@ export interface ActionNetworkNodeParameters {
      */
     readonly simple?: boolean;
 
-    /**
-     * ID of the attendance to retrieve
-     */
+    /** ID of the attendance to retrieve */
     readonly attendanceId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -52,19 +40,13 @@ export interface ActionNetworkNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Source where the event originated
-     */
+    /** Source where the event originated */
     readonly originSystem?: string;
 
-    /**
-     * Title of the event to create
-     */
+    /** Title of the event to create */
     readonly title?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "browser_url"?: string, "description"?: string, "end_date"?: string, "featured_image_url"?: string, "instructions"?: string, "location"?: { "postal_addresses_fields": any }, "name"?: string, "start_date"?: string } | { "family_name"?: string, "given_name"?: string, "languages_spoken"?: "da" | "nl" | "en" | "fi" | "fr" | "de" | "hu" | "id" | "ja" | "pt" | "br" | "ru" | "es" | "sv" | "tr" | "cy", "phone_numbers"?: { "phone_numbers_fields": any }, "postal_addresses"?: { "postal_addresses_fields": any } } | { "browser_url"?: string, "featured_image_url"?: string, "name"?: string, "petition_text"?: string, "target"?: string } | { "comments"?: string };
 
     /**
@@ -73,29 +55,19 @@ export interface ActionNetworkNodeParameters {
      */
     readonly email_addresses?: { "email_addresses_fields": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "family_name"?: string, "given_name"?: string, "languages_spoken"?: "da" | "nl" | "en" | "fi" | "fr" | "de" | "hu" | "id" | "ja" | "pt" | "br" | "ru" | "es" | "sv" | "tr" | "cy", "phone_numbers"?: { "phone_numbers_fields": any }, "postal_addresses"?: { "postal_addresses_fields": any } } | { "browser_url"?: string, "featured_image_url"?: string, "name"?: string, "petition_text"?: string, "target"?: string } | { "comments"?: string };
 
-    /**
-     * ID of the petition to retrieve
-     */
+    /** ID of the petition to retrieve */
     readonly petitionId?: string;
 
-    /**
-     * ID of the signature to retrieve
-     */
+    /** ID of the signature to retrieve */
     readonly signatureId?: string;
 
-    /**
-     * Name of the tag to create
-     */
+    /** Name of the tag to create */
     readonly name?: string;
 
-    /**
-     * ID of the tag to retrieve
-     */
+    /** ID of the tag to retrieve */
     readonly tagId?: string;
 
     /**

@@ -8,24 +8,16 @@ export const name = "postgres" as const;
  * documentationUrl: postgres
  */
 export interface PostgresCredentials {
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "host"?: string;
 
-    /**
-     * Default: "postgres"
-     */
+    /** Default: "postgres" */
     readonly "database"?: string;
 
-    /**
-     * Default: "postgres"
-     */
+    /** Default: "postgres" */
     readonly "user"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
     /**
@@ -34,56 +26,36 @@ export interface PostgresCredentials {
      */
     readonly "maxConnections"?: number;
 
-    /**
-     * Whether to connect even if SSL certificate validation is not possible
-     */
+    /** Whether to connect even if SSL certificate validation is not possible */
     readonly "allowUnauthorizedCerts"?: boolean;
 
-    /**
-     * Default: "disable"
-     */
+    /** Default: "disable" */
     readonly "ssl"?: "allow" | "disable" | "require";
 
-    /**
-     * Default: 5432
-     */
+    /** Default: 5432 */
     readonly "port"?: number;
 
     readonly "sshTunnel"?: boolean;
 
-    /**
-     * Default: "password"
-     */
+    /** Default: "password" */
     readonly "sshAuthenticateWith"?: "password" | "privateKey";
 
-    /**
-     * Default: "localhost"
-     */
+    /** Default: "localhost" */
     readonly "sshHost"?: string;
 
-    /**
-     * Default: 22
-     */
+    /** Default: 22 */
     readonly "sshPort"?: number;
 
-    /**
-     * Default: "root"
-     */
+    /** Default: "root" */
     readonly "sshUser"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "sshPassword"?: string;
 
-    /**
-     * Type options: {"rows":4,"password":true}
-     */
+    /** Type options: {"rows":4,"password":true} */
     readonly "privateKey"?: string;
 
-    /**
-     * Passphrase used to create the key, if no passphrase was used leave empty
-     */
+    /** Passphrase used to create the key, if no passphrase was used leave empty */
     readonly "passphrase"?: string;
 
     readonly __name: "postgres";

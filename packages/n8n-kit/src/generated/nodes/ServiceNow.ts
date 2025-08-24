@@ -15,14 +15,10 @@ export interface ServiceNowNodeParameters {
      */
     readonly authentication?: "basicAuth" | "oAuth2";
 
-    /**
-     * Default: "user"
-     */
+    /** Default: "user" */
     readonly resource?: "attachment" | "businessService" | "configurationItems" | "department" | "dictionary" | "incident" | "tableRecord" | "user" | "userGroup" | "userRole";
 
-    /**
-     * Default: "upload"
-     */
+    /** Default: "upload" */
     readonly operation?: "upload" | "delete" | "get" | "getAll" | "getAll" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -31,9 +27,7 @@ export interface ServiceNowNodeParameters {
      */
     readonly tableName?: string;
 
-    /**
-     * Sys_id of the record in the table specified in Table Name that you want to attach the file to
-     */
+    /** Sys_id of the record in the table specified in Table Name that you want to attach the file to */
     readonly id?: string;
 
     /**
@@ -42,19 +36,13 @@ export interface ServiceNowNodeParameters {
      */
     readonly inputDataFieldName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "file_name"?: string } | { "queryFilter"?: string } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: any[], "sysparm_query"?: string, "sysparm_display_value"?: "false" | "all" | "true" } | { "sysparm_exclude_reference_link"?: boolean, "sysparm_fields"?: any[], "sysparm_display_value"?: "false" | "all" | "true" };
 
-    /**
-     * Sys_id value of the attachment to delete
-     */
+    /** Sys_id value of the attachment to delete */
     readonly attachmentId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -72,29 +60,19 @@ export interface ServiceNowNodeParameters {
      */
     readonly outputField?: string;
 
-    /**
-     * Short description of the incident
-     */
+    /** Short description of the incident */
     readonly short_description?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "assigned_to"?: string, "assignment_group"?: string, "business_service"?: string, "caller_id"?: string, "category"?: string, "close_notes"?: string, "cmdb_ci"?: any[], "contact_type"?: "email" | "phone" | "self-service" | "walk-in", "description"?: string, "impact"?: "3" | "2" | "1", "close_code"?: string, "state"?: string, "subcategory"?: string, "urgency"?: "3" | "2" | "1" } | { "active"?: boolean, "building"?: string, "city"?: string, "company"?: string, "country"?: string, "department"?: string, "email"?: string, "first_name"?: string, "gender"?: string, "home_phone"?: string, "last_name"?: string, "location"?: string, "manager"?: string, "middle_name"?: string, "mobile_phone"?: string, "user_password"?: string, "password_needs_reset"?: boolean, "phone"?: string, "roles"?: any[], "source"?: string, "state"?: string, "street"?: string, "user_name"?: string, "zip"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "assigned_to"?: string, "assignment_group"?: string, "business_service"?: string, "caller_id"?: string, "category"?: string, "close_notes"?: string, "cmdb_ci"?: any[], "contact_type"?: "email" | "phone" | "self-service" | "walk-in", "description"?: string, "impact"?: "3" | "2" | "1", "close_code"?: string, "hold_reason"?: string, "state"?: string, "subcategory"?: string, "urgency"?: "3" | "2" | "1", "work_notes"?: string } | { "active"?: boolean, "building"?: string, "city"?: string, "company"?: string, "country"?: string, "department"?: string, "email"?: string, "first_name"?: string, "gender"?: string, "home_phone"?: string, "last_name"?: string, "location"?: string, "manager"?: string, "middle_name"?: string, "mobile_phone"?: string, "user_password"?: string, "password_needs_reset"?: boolean, "phone"?: string, "roles"?: any[], "source"?: string, "state"?: string, "street"?: string, "user_name"?: string, "zip"?: string };
 
-    /**
-     * Default: "columns"
-     */
+    /** Default: "columns" */
     readonly dataToSend?: "mapInput" | "columns" | "nothing";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all inputs.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all inputs. */
     readonly inputsToIgnore?: string;
 
     /**
@@ -109,9 +87,7 @@ export interface ServiceNowNodeParameters {
      */
     readonly getOption?: "id" | "user_name";
 
-    /**
-     * Unique identifier of the user
-     */
+    /** Unique identifier of the user */
     readonly user_name?: string;
 
 }

@@ -8,18 +8,14 @@ export const inputs = {} as const;
 export const outputs = {"Retriever":"ai_retriever"} as const;
 
 export interface RetrieverWorkflowNodeParameters {
-    readonly executeNotice?: string;
-
     /**
      * Where to get the workflow to execute from
      * Default: "database"
      */
     readonly source?: "database" | "parameter";
 
-    /**
-     * The workflow to execute
-     */
-    readonly workflowId?: string | any;
+    /** The workflow to execute */
+    readonly workflowId?: string;
 
     /**
      * The workflow JSON code to execute

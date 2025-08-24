@@ -8,16 +8,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormNodeParameters {
-    readonly triggerNotice?: string;
-
-    /**
-     * Default: "page"
-     */
+    /** Default: "page" */
     readonly operation?: "page" | "completion";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -32,9 +26,7 @@ export interface FormNodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Whether to limit the time this node should wait for a user response before execution resumes
-     */
+    /** Whether to limit the time this node should wait for a user response before execution resumes */
     readonly limitWaitTime?: boolean;
 
     /**
@@ -56,28 +48,20 @@ export interface FormNodeParameters {
      */
     readonly resumeUnit?: "minutes" | "hours" | "days";
 
-    /**
-     * Continue execution after the specified date and time
-     */
+    /** Continue execution after the specified date and time */
     readonly maxDateAndTime?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "formTitle"?: string, "formDescription"?: string, "buttonLabel"?: string, "customCss"?: string } | { "formTitle"?: string, "customCss"?: string };
 
-    /**
-     * Default: "text"
-     */
+    /** Default: "text" */
     readonly respondWith?: "text" | "redirect" | "showText" | "returnBinary";
 
     readonly redirectUrl?: string;
 
     readonly completionTitle?: string;
 
-    /**
-     * Type options: {"rows":2}
-     */
+    /** Type options: {"rows":2} */
     readonly completionMessage?: string;
 
     /**

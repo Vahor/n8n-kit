@@ -10,14 +10,10 @@ export const name = "elasticsearchApi" as const;
 export interface ElasticsearchApiCredentials {
     readonly "username"?: string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password"?: string;
 
-    /**
-     * Referred to as Elasticsearch 'endpoint' in the Elastic deployment dashboard
-     */
+    /** Referred to as Elasticsearch 'endpoint' in the Elastic deployment dashboard */
     readonly "baseUrl"?: string;
 
     readonly "ignoreSSLIssues"?: boolean;

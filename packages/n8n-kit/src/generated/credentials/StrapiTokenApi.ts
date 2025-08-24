@@ -8,9 +8,7 @@ export const name = "strapiTokenApi" as const;
  * documentationUrl: strapi
  */
 export interface StrapiTokenApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken"?: string;
 
     readonly "url"?: string;

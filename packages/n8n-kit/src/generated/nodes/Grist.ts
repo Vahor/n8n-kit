@@ -9,29 +9,19 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GristNodeParameters {
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "getAll" | "update";
 
-    /**
-     * In your document, click your profile icon, then Document Settings, then copy the value under "This document's ID"
-     */
+    /** In your document, click your profile icon, then Document Settings, then copy the value under "This document's ID" */
     readonly docId?: string;
 
-    /**
-     * ID of table to operate on. If unsure, look at the Code View.
-     */
+    /** ID of table to operate on. If unsure, look at the Code View. */
     readonly tableId?: string;
 
-    /**
-     * ID of the row to delete, or comma-separated list of row IDs to delete
-     */
+    /** ID of the row to delete, or comma-separated list of row IDs to delete */
     readonly rowId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -41,9 +31,7 @@ export interface GristNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalOptions?: { "filter"?: { "filterProperties": any }, "sort"?: { "sortProperties": any } };
 
     /**
@@ -52,9 +40,7 @@ export interface GristNodeParameters {
      */
     readonly dataToSend?: "autoMapInputs" | "defineInNode";
 
-    /**
-     * List of input properties to avoid sending, separated by commas. Leave empty to send all properties.
-     */
+    /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 
     /**

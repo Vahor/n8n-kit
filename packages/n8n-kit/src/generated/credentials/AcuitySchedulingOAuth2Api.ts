@@ -8,31 +8,21 @@ export const name = "acuitySchedulingOAuth2Api" as const;
  * documentationUrl: acuityScheduling
  */
 export interface AcuitySchedulingOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://acuityscheduling.com/oauth2/authorize"
-     */
+    /** Default: "https://acuityscheduling.com/oauth2/authorize" */
     readonly "authUrl": any;
 
-    /**
-     * Default: "https://acuityscheduling.com/oauth2/token"
-     */
+    /** Default: "https://acuityscheduling.com/oauth2/token" */
     readonly "accessTokenUrl": any;
 
-    /**
-     * Default: "api-v1"
-     */
+    /** Default: "api-v1" */
     readonly "scope": any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "acuitySchedulingOAuth2Api";

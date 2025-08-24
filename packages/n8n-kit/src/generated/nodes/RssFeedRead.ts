@@ -8,14 +8,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface RssFeedReadNodeParameters {
-    /**
-     * URL of the RSS feed
-     */
+    /** URL of the RSS feed */
     readonly url?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "customFields"?: string, "ignoreSSL"?: boolean };
 
 }

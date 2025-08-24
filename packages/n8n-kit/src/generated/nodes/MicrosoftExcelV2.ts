@@ -9,50 +9,34 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftExcelV2NodeParameters {
-    readonly notice?: string;
-
-    /**
-     * Default: "workbook"
-     */
+    /** Default: "workbook" */
     readonly resource?: "table" | "workbook" | "worksheet";
 
-    /**
-     * Default: "append"
-     */
+    /** Default: "append" */
     readonly operation?: "append" | "convertToRange" | "addTable" | "deleteTable" | "getColumns" | "getRows" | "lookup" | "addWorksheet" | "deleteWorkbook" | "getAll" | "append" | "upsert" | "clear" | "deleteWorksheet" | "getAll" | "readRows" | "update";
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly workbook?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly worksheet?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly table?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /**
-     * Default: "define"
-     */
+    /** Default: "define" */
     readonly dataMode?: "autoMap" | "define" | "raw" | "autoMap" | "define";
 
-    /**
-     * Raw values for the specified range as array of string arrays in JSON format
-     */
+    /** Raw values for the specified range as array of string arrays in JSON format */
     readonly data?: string;
 
     /**
@@ -61,19 +45,13 @@ export interface MicrosoftExcelV2NodeParameters {
      */
     readonly fieldsUi?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "index"?: number, "rawData"?: boolean, "dataProperty": string } | { "returnAllMatches"?: boolean } | { "rawData"?: boolean, "dataProperty": string } | { "rawData"?: boolean, "dataProperty": string, "fields"?: string } | { "rawData"?: boolean, "dataProperty": string, "fields"?: string, "updateAll"?: boolean } | { "appendAfterSelectedRange"?: boolean, "rawData"?: boolean, "dataProperty": string, "updateAll"?: boolean };
 
-    /**
-     * Default: "auto"
-     */
+    /** Default: "auto" */
     readonly selectRange?: "auto" | "manual";
 
-    /**
-     * The range of cells that will be converted to a table
-     */
+    /** The range of cells that will be converted to a table */
     readonly range?: string;
 
     /**
@@ -82,9 +60,7 @@ export interface MicrosoftExcelV2NodeParameters {
      */
     readonly hasHeaders?: boolean;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -94,9 +70,7 @@ export interface MicrosoftExcelV2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Whether the data should be returned RAW instead of parsed into keys according to their header
-     */
+    /** Whether the data should be returned RAW instead of parsed into keys according to their header */
     readonly rawData?: boolean;
 
     /**
@@ -105,29 +79,19 @@ export interface MicrosoftExcelV2NodeParameters {
      */
     readonly dataProperty?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "fields"?: string } | { "fields"?: string, "column"?: any[] };
 
-    /**
-     * The name of the column in which to look for value
-     */
+    /** The name of the column in which to look for value */
     readonly lookupColumn?: string;
 
-    /**
-     * The value to look for in column
-     */
+    /** The value to look for in column */
     readonly lookupValue?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "name"?: string };
 
-    /**
-     * Default: "All"
-     */
+    /** Default: "All" */
     readonly applyTo?: "All" | "Formats" | "Contents";
 
     readonly useRange?: boolean;

@@ -10,9 +10,7 @@ export const name = "serviceNowBasicApi" as const;
 export interface ServiceNowBasicApiCredentials {
     readonly "user": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "password": string;
 
     readonly "subdomain": string;

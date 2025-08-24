@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GetResponseTriggerNodeParameters {
-    /**
-     * Default: "apiKey"
-     */
+    /** Default: "apiKey" */
     readonly authentication?: "apiKey" | "oAuth2";
 
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("subscribe" | "unsubscribe" | "click" | "open" | "survey")[];
 
     /**
@@ -26,9 +22,7 @@ export interface GetResponseTriggerNodeParameters {
      */
     readonly listIds?: any[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "delete"?: boolean };
 
 }

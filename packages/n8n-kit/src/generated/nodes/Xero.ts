@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface XeroNodeParameters {
-    /**
-     * Default: "invoice"
-     */
+    /** Default: "invoice" */
     readonly resource?: "contact" | "invoice";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getAll" | "update";
 
     /**
@@ -25,21 +21,15 @@ export interface XeroNodeParameters {
      */
     readonly organizationId?: string;
 
-    /**
-     * Full name of contact/organisation
-     */
+    /** Full name of contact/organisation */
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "accountNumber"?: string, "addressesUi"?: { "addressesValues": any }, "bankAccountDetails"?: string, "contactNumber"?: string, "contactStatus"?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", "defaultCurrency"?: string, "emailAddress"?: string, "firstName"?: string, "lastName"?: string, "phonesUi"?: { "phonesValues": any }, "purchasesDefaultAccountCode"?: string, "salesDefaultAccountCode"?: string, "skypeUserName"?: string, "taxNumber"?: string, "xeroNetworkKey"?: string } | { "brandingThemeId"?: string, "currency"?: string, "currencyRate"?: string, "date"?: string, "dueDate"?: string, "expectedPaymentDate"?: string, "invoiceNumber"?: string, "lineAmountType"?: "Exclusive" | "Inclusive" | "NoTax", "plannedPaymentDate"?: string, "reference"?: string, "sendToContact"?: boolean, "status"?: "DRAFT" | "SUBMITTED" | "AUTHORISED", "url"?: string };
 
     readonly contactId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -49,19 +39,13 @@ export interface XeroNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeArchived"?: boolean, "orderBy"?: string, "sortOrder"?: "ASC" | "DESC", "where"?: string } | { "createdByMyApp"?: boolean, "orderBy"?: string, "sortOrder"?: "ASC" | "DESC", "statuses"?: ("DRAFT" | "SUBMITTED" | "AUTHORISED")[], "where"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "accountNumber"?: string, "addressesUi"?: { "addressesValues": any }, "bankAccountDetails"?: string, "contactNumber"?: string, "contactStatus"?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", "defaultCurrency"?: string, "emailAddress"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phonesUi"?: { "phonesValues": any }, "purchasesDefaultAccountCode"?: string, "salesDefaultAccountCode"?: string, "skypeUserName"?: string, "taxNumber"?: string, "xeroNetworkKey"?: string } | { "brandingThemeId"?: string, "contactId"?: string, "currency"?: string, "currencyRate"?: string, "date"?: string, "dueDate"?: string, "expectedPaymentDate"?: string, "invoiceNumber"?: string, "lineAmountType"?: "Exclusive" | "Inclusive" | "NoTax", "lineItemsUi"?: { "lineItemsValues": any }, "plannedPaymentDate"?: string, "reference"?: string, "sendToContact"?: boolean, "status"?: "DRAFT" | "SUBMITTED" | "AUTHORISED", "url"?: string };
 
-    /**
-     * Invoice Type
-     */
+    /** Invoice Type */
     readonly type?: "ACCPAY" | "ACCREC";
 
     /**

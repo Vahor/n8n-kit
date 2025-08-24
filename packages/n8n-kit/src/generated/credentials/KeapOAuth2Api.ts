@@ -8,31 +8,21 @@ export const name = "keapOAuth2Api" as const;
  * documentationUrl: keap
  */
 export interface KeapOAuth2ApiCredentials {
-    /**
-     * Default: "authorizationCode"
-     */
+    /** Default: "authorizationCode" */
     readonly "grantType"?: any;
 
-    /**
-     * Default: "https://signin.infusionsoft.com/app/oauth/authorize"
-     */
+    /** Default: "https://signin.infusionsoft.com/app/oauth/authorize" */
     readonly "authUrl"?: any;
 
-    /**
-     * Default: "https://api.infusionsoft.com/token"
-     */
+    /** Default: "https://api.infusionsoft.com/token" */
     readonly "accessTokenUrl"?: any;
 
-    /**
-     * Default: "full"
-     */
+    /** Default: "full" */
     readonly "scope"?: any;
 
     readonly "authQueryParameters"?: any;
 
-    /**
-     * Default: "body"
-     */
+    /** Default: "body" */
     readonly "authentication"?: any;
 
     readonly __name: "keapOAuth2Api";

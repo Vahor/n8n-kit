@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OdooNodeParameters {
-    /**
-     * Default: "contact"
-     */
+    /** Default: "contact" */
     readonly resource?: "contact" | "custom" | "note" | "opportunity";
 
     /**
@@ -20,9 +18,7 @@ export interface OdooNodeParameters {
      */
     readonly customResource?: string;
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     /**
@@ -33,9 +29,7 @@ export interface OdooNodeParameters {
 
     readonly customResourceId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -45,9 +39,7 @@ export interface OdooNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "fieldsList"?: any[] };
 
     /**
@@ -59,16 +51,12 @@ export interface OdooNodeParameters {
 
     readonly opportunityName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "phone"?: string, "vat"?: string, "website"?: string };
 
     readonly opportunityId?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "name"?: string, "phone"?: string, "vat"?: string, "website"?: string };
 
     readonly contactName?: string;

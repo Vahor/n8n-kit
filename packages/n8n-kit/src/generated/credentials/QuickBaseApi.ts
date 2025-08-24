@@ -10,9 +10,7 @@ export const name = "quickbaseApi" as const;
 export interface QuickBaseApiCredentials {
     readonly "hostname": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "userToken": string;
 
     readonly __name: "quickbaseApi";

@@ -8,9 +8,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SetV2NodeParameters {
-    /**
-     * Default: "manual"
-     */
+    /** Default: "manual" */
     readonly mode?: "manual" | "raw";
 
     readonly duplicateItem?: boolean;
@@ -20,8 +18,6 @@ export interface SetV2NodeParameters {
      * Type options: {"minValue":0}
      */
     readonly duplicateCount?: number;
-
-    readonly duplicateWarning?: string;
 
     /**
      * Default: "{\n  \"my_field_1\": \"value\",\n  \"my_field_2\": 1\n}\n"
@@ -36,9 +32,7 @@ export interface SetV2NodeParameters {
      */
     readonly fields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly assignments?: any;
 
     /**
@@ -47,24 +41,16 @@ export interface SetV2NodeParameters {
      */
     readonly include?: "all" | "none" | "selected" | "except" | "all" | "selected" | "except";
 
-    /**
-     * Whether to pass to the output all the input fields (along with the fields set in 'Fields to Set')
-     */
+    /** Whether to pass to the output all the input fields (along with the fields set in 'Fields to Set') */
     readonly includeOtherFields?: boolean;
 
-    /**
-     * Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel.
-     */
+    /** Comma-separated list of the field names you want to include in the output. You can drag the selected fields from the input panel. */
     readonly includeFields?: string;
 
-    /**
-     * Comma-separated list of the field names you want to exclude from the output. You can drag the selected fields from the input panel.
-     */
+    /** Comma-separated list of the field names you want to exclude from the output. You can drag the selected fields from the input panel. */
     readonly excludeFields?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "includeBinary"?: boolean, "stripBinary"?: boolean, "ignoreConversionErrors"?: boolean, "dotNotation"?: boolean };
 
 }

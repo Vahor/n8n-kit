@@ -8,14 +8,7 @@ export const inputs = {"Text Splitter":"ai_textSplitter"} as const;
 export const outputs = {"ai_document":"ai_document"} as const;
 
 export interface DocumentBinaryInputLoaderNodeParameters {
-    /**
-     * Type options: {"containerClass":"ndv-connection-hint-notice"}
-     */
-    readonly notice?: string;
-
-    /**
-     * Default: "jsonLoader"
-     */
+    /** Default: "jsonLoader" */
     readonly loader?: "csvLoader" | "docxLoader" | "epubLoader" | "jsonLoader" | "pdfLoader" | "textLoader";
 
     /**
@@ -24,14 +17,10 @@ export interface DocumentBinaryInputLoaderNodeParameters {
      */
     readonly binaryDataKey?: string;
 
-    /**
-     * Default: true
-     */
+    /** Default: true */
     readonly splitPages?: boolean;
 
-    /**
-     * Column to extract from CSV
-     */
+    /** Column to extract from CSV */
     readonly column?: string;
 
     /**
@@ -40,14 +29,10 @@ export interface DocumentBinaryInputLoaderNodeParameters {
      */
     readonly separator?: string;
 
-    /**
-     * Pointers to extract from JSON, e.g. "/text" or "/text, /meta/title"
-     */
+    /** Pointers to extract from JSON, e.g. "/text" or "/text, /meta/title" */
     readonly pointers?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "metadata"?: { "metadataValues": any } };
 
 }

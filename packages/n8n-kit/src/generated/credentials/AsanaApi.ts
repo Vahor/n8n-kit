@@ -8,9 +8,7 @@ export const name = "asanaApi" as const;
  * documentationUrl: asana
  */
 export interface AsanaApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "asanaApi";

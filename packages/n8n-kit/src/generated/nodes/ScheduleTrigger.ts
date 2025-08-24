@@ -8,8 +8,6 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface ScheduleTriggerNodeParameters {
-    readonly notice?: string;
-
     /**
      * Default: {"interval":[{"field":"days"}]}
      * Type options: {"multipleValues":true}

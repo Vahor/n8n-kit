@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface HelpScoutTriggerNodeParameters {
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly events?: ("convo.assigned" | "convo.created" | "convo.deleted" | "convo.merged" | "convo.moved" | "convo.status" | "convo.tags" | "convo.agent.reply.created" | "convo.customer.reply.created" | "convo.note.created" | "customer.created" | "satisfaction.ratings")[];
 
 }

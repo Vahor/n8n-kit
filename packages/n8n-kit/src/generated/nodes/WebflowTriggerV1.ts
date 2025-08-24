@@ -9,9 +9,7 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WebflowTriggerV1NodeParameters {
-    /**
-     * Default: "accessToken"
-     */
+    /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 
     /**
@@ -20,9 +18,7 @@ export interface WebflowTriggerV1NodeParameters {
      */
     readonly site?: string;
 
-    /**
-     * Default: "form_submission"
-     */
+    /** Default: "form_submission" */
     readonly event?: "collection_item_created" | "collection_item_deleted" | "collection_item_changed" | "ecomm_inventory_changed" | "ecomm_new_order" | "ecomm_order_changed" | "form_submission" | "site_publish";
 
 }

@@ -20,9 +20,7 @@ export interface TextClassifierNodeParameters {
      */
     readonly categories?: { "categories": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "multiClass"?: boolean, "fallback"?: "discard" | "other", "systemPromptTemplate"?: string, "enableAutoFixing"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
 
 }

@@ -10,16 +10,12 @@ export const name = "sshPrivateKey" as const;
 export interface SshPrivateKeyCredentials {
     readonly "host": string;
 
-    /**
-     * Default: 22
-     */
+    /** Default: 22 */
     readonly "port": number;
 
     readonly "username"?: string;
 
-    /**
-     * Type options: {"rows":4,"password":true}
-     */
+    /** Type options: {"rows":4,"password":true} */
     readonly "privateKey"?: string;
 
     /**

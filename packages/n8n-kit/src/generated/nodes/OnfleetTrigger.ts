@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface OnfleetTriggerNodeParameters {
-    /**
-     * Default: []
-     */
+    /** Default: [] */
     readonly triggerOn?: "SMSRecipientOptOut" | "smsRecipientResponseMissed" | "taskArrival" | "taskAssigned" | "taskCloned" | "taskCompleted" | "taskCreated" | "taskDelayed" | "taskDeleted" | "taskEta" | "taskFailed" | "taskStarted" | "taskUnassigned" | "taskUpdated" | "workerCreated" | "workerDeleted" | "workerDuty";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "name"?: string };
 
 }

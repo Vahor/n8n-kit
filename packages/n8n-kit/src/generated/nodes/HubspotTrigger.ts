@@ -15,9 +15,7 @@ export interface HubspotTriggerNodeParameters {
      */
     readonly eventsUi?: { "eventValues": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "maxConcurrentRequests"?: number };
 
 }

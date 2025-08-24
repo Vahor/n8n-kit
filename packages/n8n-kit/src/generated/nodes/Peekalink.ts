@@ -9,9 +9,7 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface PeekalinkNodeParameters {
-    /**
-     * Default: "preview"
-     */
+    /** Default: "preview" */
     readonly operation?: "isAvailable" | "preview";
 
     readonly url?: string;

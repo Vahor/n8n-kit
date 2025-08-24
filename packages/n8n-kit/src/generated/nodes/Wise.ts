@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WiseNodeParameters {
-    /**
-     * Default: "account"
-     */
+    /** Default: "account" */
     readonly resource?: "account" | "exchangeRate" | "profile" | "quote" | "recipient" | "transfer";
 
-    /**
-     * Default: "getBalances"
-     */
+    /** Default: "getBalances" */
     readonly operation?: "getBalances" | "getCurrencies" | "getStatement" | "get" | "get" | "getAll" | "create" | "get" | "getAll" | "create" | "delete" | "execute" | "get" | "getAll";
 
     /**
@@ -33,9 +29,7 @@ export interface WiseNodeParameters {
      */
     readonly borderlessAccountId?: string;
 
-    /**
-     * Code of the currency of the borderless account to retrieve the statement of
-     */
+    /** Code of the currency of the borderless account to retrieve the statement of */
     readonly currency?: string;
 
     /**
@@ -44,29 +38,19 @@ export interface WiseNodeParameters {
      */
     readonly format?: "json" | "csv" | "pdf" | "xml";
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryProperty?: string;
 
-    /**
-     * Name of the file that will be downloaded
-     */
+    /** Name of the file that will be downloaded */
     readonly fileName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "lineStyle"?: "COMPACT" | "FLAT", "range"?: { "rangeProperties": any } } | { "interval"?: "day" | "hour" | "minute", "range"?: { "rangeProperties": any }, "time"?: string } | { "reference"?: string };
 
-    /**
-     * Code of the source currency to retrieve the exchange rate for
-     */
+    /** Code of the source currency to retrieve the exchange rate for */
     readonly source?: string;
 
-    /**
-     * Code of the target currency to retrieve the exchange rate for
-     */
+    /** Code of the target currency to retrieve the exchange rate for */
     readonly target?: string;
 
     /**
@@ -89,24 +73,16 @@ export interface WiseNodeParameters {
      */
     readonly amount?: number;
 
-    /**
-     * Code of the currency to send for the quote to create
-     */
+    /** Code of the currency to send for the quote to create */
     readonly sourceCurrency?: string;
 
-    /**
-     * Code of the currency to receive for the quote to create
-     */
+    /** Code of the currency to receive for the quote to create */
     readonly targetCurrency?: string;
 
-    /**
-     * ID of the quote to retrieve
-     */
+    /** ID of the quote to retrieve */
     readonly quoteId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -116,19 +92,13 @@ export interface WiseNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * ID of the transfer to delete
-     */
+    /** ID of the transfer to delete */
     readonly transferId?: string;
 
-    /**
-     * Whether to download the transfer receipt as a PDF file. Only for executed transfers, having status 'Outgoing Payment Sent'.
-     */
+    /** Whether to download the transfer receipt as a PDF file. Only for executed transfers, having status 'Outgoing Payment Sent'. */
     readonly downloadReceipt?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "range"?: { "rangeProperties": any }, "sourceCurrency"?: string, "status"?: "bounced_back" | "cancelled" | "charged_back" | "funds_converted" | "funds_refunded" | "incoming_payment_waiting" | "outgoing_payment_sent" | "processing" | "unknown" | "waiting_recipient_input_to_proceed", "targetCurrency"?: string };
 
 }

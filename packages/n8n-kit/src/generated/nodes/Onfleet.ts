@@ -15,19 +15,13 @@ export interface OnfleetNodeParameters {
      */
     readonly resource?: "admin" | "container" | "destination" | "hub" | "organization" | "recipient" | "task" | "team" | "worker";
 
-    /**
-     * Default: "getAll"
-     */
+    /** Default: "getAll" */
     readonly operation?: "create" | "delete" | "getAll" | "update" | "addTask" | "get" | "updateTask" | "create" | "get" | "create" | "getAll" | "update" | "get" | "getDelegatee" | "create" | "get" | "update" | "clone" | "complete" | "create" | "delete" | "get" | "getAll" | "update" | "autoDispatch" | "create" | "delete" | "get" | "getAll" | "getTimeEstimates" | "update" | "create" | "delete" | "get" | "getAll" | "getSchedule" | "update";
 
-    /**
-     * The ID of the admin object for lookup
-     */
+    /** The ID of the admin object for lookup */
     readonly id?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -37,38 +31,26 @@ export interface OnfleetNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * The administrator's name
-     */
+    /** The administrator's name */
     readonly name?: string;
 
-    /**
-     * The administrator's email address
-     */
+    /** The administrator's email address */
     readonly email?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "phone"?: string, "isReadOnly"?: boolean } | { "addressApartment"?: string, "addressName"?: string, "addressNotes"?: string } | { "addressApartment"?: string, "addressName"?: string, "addressNotes"?: string, "addressPostalCode"?: string } | { "teams"?: any[] } | { "recipientNotes"?: string, "recipientSkipSMSNotifications"?: boolean } | { "notes"?: string } | { "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "notes"?: string, "pickupTask"?: boolean, "quantity"?: number, "recipient"?: { "recipientProperties": any }, "recipientName"?: string, "recipientNotes"?: string, "recipientSkipSMSNotifications"?: boolean, "serviceTime"?: number, "useMerchantForProxy"?: boolean } | { "hub"?: string, "enableSelfAssignment"?: boolean } | { "endingRoute"?: { "endingRouteProperties": any }, "maxAllowedDelay"?: number, "maxTasksPerRoute"?: number, "scheduleTimeWindow"?: { "scheduleTimeWindowProperties": any }, "serviceTime"?: number, "taskTimeWindow"?: { "taskTimeWindowProperties": any } } | { "capacity"?: number, "displayName"?: string, "vehicle"?: { "vehicleProperties": any } };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly updateFields?: { "name"?: string, "phone"?: string, "isReadOnly"?: boolean } | { "destination"?: { "destinationProperties": any }, "name"?: string, "teams"?: any[] } | { "recipientName"?: string, "notes"?: string, "recipientPhone"?: string, "skipSMSNotifications"?: boolean } | { "completeAfter"?: string, "completeBefore"?: string, "executor"?: string, "merchant"?: string, "notes"?: string, "pickupTask"?: boolean, "quantity"?: number, "serviceTime"?: number } | { "managers"?: any[], "hub"?: string, "name"?: string, "enableSelfAssignment"?: boolean, "workers"?: any[] } | { "capacity"?: number, "displayName"?: string, "name"?: string, "teams"?: any[] };
 
     readonly containerType?: "organizations" | "teams" | "workers";
 
-    /**
-     * The object ID according to the container chosen
-     */
+    /** The object ID according to the container chosen */
     readonly containerId?: string;
 
     readonly type?: "-1" | "0" | "1";
 
-    /**
-     * The index given indicates the position where the tasks are going to be inserted
-     */
+    /** The index given indicates the position where the tasks are going to be inserted */
     readonly index?: number;
 
     /**
@@ -78,44 +60,28 @@ export interface OnfleetNodeParameters {
      */
     readonly tasks?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "considerDependencies"?: boolean } | { "recipientSkipPhoneNumberValidation"?: boolean } | { "filter"?: ("accountStatus" | "activeTask" | "capacity" | "delayTime" | "displayName" | "imageUrl" | "location" | "metadata" | "name" | "onDuty" | "organization" | "phone" | "tasks" | "teams" | "timeCreated" | "timeLastModified" | "timeLastSeen" | "userData" | "vehicle" | "id")[] } | { "analytics"?: boolean, "filter"?: ("accountStatus" | "activeTask" | "capacity" | "delayTime" | "displayName" | "imageUrl" | "location" | "metadata" | "name" | "onDuty" | "organization" | "phone" | "tasks" | "teams" | "timeCreated" | "timeLastModified" | "timeLastSeen" | "userData" | "vehicle" | "id")[] };
 
-    /**
-     * Whether or not the address is specified in a single unparsed string
-     */
+    /** Whether or not the address is specified in a single unparsed string */
     readonly unparsed?: boolean;
 
-    /**
-     * The destination's street address details
-     */
+    /** The destination's street address details */
     readonly address?: string;
 
-    /**
-     * The number component of this address, it may also contain letters
-     */
+    /** The number component of this address, it may also contain letters */
     readonly addressNumber?: string;
 
-    /**
-     * The name of the street
-     */
+    /** The name of the street */
     readonly addressStreet?: string;
 
-    /**
-     * The name of the municipality
-     */
+    /** The name of the municipality */
     readonly addressCity?: string;
 
-    /**
-     * The name of the country
-     */
+    /** The name of the country */
     readonly addressCountry?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly destination?: { "destinationProperties": any };
 
     /**
@@ -124,19 +90,13 @@ export interface OnfleetNodeParameters {
      */
     readonly getBy?: "id" | "phone" | "name";
 
-    /**
-     * The phone of the recipient for lookup
-     */
+    /** The phone of the recipient for lookup */
     readonly phone?: string;
 
-    /**
-     * The recipient's complete name
-     */
+    /** The recipient's complete name */
     readonly recipientName?: string;
 
-    /**
-     * A unique, valid phone number as per the organization's country if there's no leading + sign. If a phone number has a leading + sign, it will disregard the organization's country setting.
-     */
+    /** A unique, valid phone number as per the organization's country if there's no leading + sign. If a phone number has a leading + sign, it will disregard the organization's country setting. */
     readonly recipientPhone?: string;
 
     /**
@@ -145,14 +105,10 @@ export interface OnfleetNodeParameters {
      */
     readonly success?: boolean;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "from"?: string, "state"?: ("all" | "2" | "1" | "3" | "0")[], "to"?: string } | { "dropOff"?: { "dropOffProperties": any }, "pickUp"?: { "pickUpProperties": any }, "restrictedVehicleTypes"?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", "serviceTime"?: number } | { "radius"?: number } | { "states"?: ("2" | "1" | "0")[], "teams"?: any[], "phones"?: string };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly overrideFields?: { "completeAfter"?: string, "completeBefore"?: string, "includeBarcodes"?: boolean, "includeDependencies"?: boolean, "includeMetadata"?: boolean, "notes"?: string, "pickupTask"?: boolean, "serviceTime"?: number };
 
     /**
@@ -169,9 +125,7 @@ export interface OnfleetNodeParameters {
      */
     readonly managers?: any[];
 
-    /**
-     * Whether to search for only those workers who are currently within a certain target area
-     */
+    /** Whether to search for only those workers who are currently within a certain target area */
     readonly byLocation?: boolean;
 
     /**

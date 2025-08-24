@@ -10,9 +10,7 @@ export const outputs = {"main":"main"} as const;
 export interface N8nTrainingCustomerMessengerNodeParameters {
     readonly customerId?: string;
 
-    /**
-     * Type options: {"rows":4}
-     */
+    /** Type options: {"rows":4} */
     readonly message?: string;
 
 }

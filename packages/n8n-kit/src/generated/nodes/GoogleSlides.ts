@@ -9,34 +9,22 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSlidesNodeParameters {
-    /**
-     * Default: "serviceAccount"
-     */
+    /** Default: "serviceAccount" */
     readonly authentication?: "oAuth2" | "serviceAccount";
 
-    /**
-     * Default: "presentation"
-     */
+    /** Default: "presentation" */
     readonly resource?: "page" | "presentation";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "get" | "getSlides" | "replaceText" | "get" | "getThumbnail";
 
-    /**
-     * Title of the presentation to create
-     */
+    /** Title of the presentation to create */
     readonly title?: string;
 
-    /**
-     * ID of the presentation to retrieve. Found in the presentation URL: <code>https://docs.google.com/presentation/d/PRESENTATION_ID/edit</code>
-     */
+    /** ID of the presentation to retrieve. Found in the presentation URL: <code>https://docs.google.com/presentation/d/PRESENTATION_ID/edit</code> */
     readonly presentationId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -46,9 +34,7 @@ export interface GoogleSlidesNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * ID of the page object to retrieve
-     */
+    /** ID of the page object to retrieve */
     readonly pageObjectId?: string;
 
     /**
@@ -57,19 +43,13 @@ export interface GoogleSlidesNodeParameters {
      */
     readonly textUi?: { "textValues": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "revisionId"?: string };
 
-    /**
-     * Name of the binary property to which to write the data of the read page
-     */
+    /** Name of the binary property to which to write the data of the read page */
     readonly download?: boolean;
 
-    /**
-     * Default: "data"
-     */
+    /** Default: "data" */
     readonly binaryProperty?: string;
 
 }

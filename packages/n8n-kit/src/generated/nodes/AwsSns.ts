@@ -9,34 +9,24 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsSnsNodeParameters {
-    /**
-     * Default: "publish"
-     */
+    /** Default: "publish" */
     readonly operation?: "create" | "delete" | "publish";
 
     readonly name?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "displayName"?: string, "fifoTopic"?: boolean };
 
-    /**
-     * Default: {"mode":"list","value":""}
-     */
+    /** Default: {"mode":"list","value":""} */
     readonly topic?: {
 	value: string,
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Subject when the message is delivered to email endpoints
-     */
+    /** Subject when the message is delivered to email endpoints */
     readonly subject?: string;
 
-    /**
-     * The message you want to send
-     */
+    /** The message you want to send */
     readonly message?: string;
 
 }

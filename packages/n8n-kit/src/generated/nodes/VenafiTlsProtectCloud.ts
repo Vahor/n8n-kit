@@ -9,26 +9,18 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface VenafiTlsProtectCloudNodeParameters {
-    /**
-     * Default: "certificateRequest"
-     */
+    /** Default: "certificateRequest" */
     readonly resource?: "certificate" | "certificateRequest";
 
-    /**
-     * Default: "delete"
-     */
+    /** Default: "delete" */
     readonly operation?: "delete" | "download" | "get" | "getMany" | "renew" | "create" | "get" | "getMany";
 
     readonly certificateId?: string;
 
-    /**
-     * Default: "certificate"
-     */
+    /** Default: "certificate" */
     readonly downloadItem?: "certificate" | "keystore";
 
-    /**
-     * Default: "PEM"
-     */
+    /** Default: "PEM" */
     readonly keystoreType?: "JKS" | "PKCS12" | "PEM";
 
     readonly certificateLabel?: string;
@@ -43,14 +35,10 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly binaryProperty?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "chainOrder"?: "EE_FIRST" | "EE_ONLY" | "ROOT_FIRST", "format"?: "PEM" | "DER" } | { "validityPeriod"?: "P1Y" | "P10D" | "PT12H" } | { "validityPeriod"?: string };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -60,9 +48,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "subject"?: string };
 
     /**
@@ -89,9 +75,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
      */
     readonly commonName?: string;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "keyType"?: "EC" | "RSA", "keyCurve"?: "ED25519" | "P256" | "P384" | "P521" | "UNKNOWN", "keyLength"?: number, "organization"?: string, "organizationalUnits"?: string, "locality"?: string, "state"?: string, "country"?: string, "SubjectAltNamesUi"?: { "SubjectAltNamesValues": any } };
 
     readonly certificateRequestId?: string;

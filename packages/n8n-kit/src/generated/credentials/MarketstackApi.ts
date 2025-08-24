@@ -8,14 +8,10 @@ export const name = "marketstackApi" as const;
  * documentationUrl: marketstack
  */
 export interface MarketstackApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
-    /**
-     * Whether to use HTTPS (paid plans only)
-     */
+    /** Whether to use HTTPS (paid plans only) */
     readonly "useHttps"?: boolean;
 
     readonly __name: "marketstackApi";

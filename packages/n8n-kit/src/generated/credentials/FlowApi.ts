@@ -10,9 +10,7 @@ export const name = "flowApi" as const;
 export interface FlowApiCredentials {
     readonly "organizationId"?: number;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
     readonly __name: "flowApi";

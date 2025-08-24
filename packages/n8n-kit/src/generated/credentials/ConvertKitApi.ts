@@ -8,9 +8,7 @@ export const name = "convertKitApi" as const;
  * documentationUrl: convertKit
  */
 export interface ConvertKitApiCredentials {
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiSecret"?: string;
 
     readonly __name: "convertKitApi";

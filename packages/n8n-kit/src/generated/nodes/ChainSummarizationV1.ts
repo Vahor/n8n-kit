@@ -9,17 +9,13 @@ export const inputs = {"main":"main","Model":"ai_languageModel","Document":"ai_d
 export const outputs = {"main":"main"} as const;
 
 export interface ChainSummarizationV1NodeParameters {
-    readonly notice?: string;
-
     /**
      * The type of summarization to run
      * Default: "map_reduce"
      */
     readonly type?: "map_reduce" | "refine" | "stuff";
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "combineMapPrompt"?: string, "prompt"?: string, "refinePrompt"?: string, "refineQuestionPrompt"?: string };
 
 }

@@ -9,19 +9,13 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface DiscordV2NodeParameters {
-    /**
-     * Default: "botToken"
-     */
+    /** Default: "botToken" */
     readonly authentication?: "botToken" | "oAuth2" | "webhook";
 
-    /**
-     * Default: "channel"
-     */
+    /** Default: "channel" */
     readonly resource?: "channel" | "message" | "member";
 
-    /**
-     * Default: "send"
-     */
+    /** Default: "send" */
     readonly operation?: "deleteMessage" | "get" | "getAll" | "react" | "send" | "sendAndWait" | "create" | "deleteChannel" | "get" | "getAll" | "update" | "getAll" | "roleAdd" | "roleRemove" | "sendLegacy";
 
     /**
@@ -42,9 +36,7 @@ export interface DiscordV2NodeParameters {
 	mode: "list" | "url" | "id",
 };
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -54,22 +46,16 @@ export interface DiscordV2NodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly options?: { "simplify"?: boolean } | { "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "message_reference"?: string, "tts"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "nsfw"?: boolean, "bitrate"?: number, "categoryId"?: {
 	value: string,
 	mode: "list" | "url" | "id",
 }, "position"?: number, "rate_limit_per_user"?: number, "topic"?: string, "user_limit"?: number } | { "filter"?: ("0" | "2" | "4")[] } | { "avatar_url"?: string, "flags"?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], "tts"?: boolean, "username"?: string, "wait"?: boolean };
 
-    /**
-     * The ID of the message
-     */
+    /** The ID of the message */
     readonly messageId?: string;
 
-    /**
-     * The emoji you want to react with
-     */
+    /** The emoji you want to react with */
     readonly emoji?: string;
 
     /**
@@ -105,19 +91,13 @@ export interface DiscordV2NodeParameters {
      */
     readonly files?: { "values": any };
 
-    /**
-     * Type options: {"rows":4}
-     */
+    /** Type options: {"rows":4} */
     readonly message?: string;
 
-    /**
-     * Default: "approval"
-     */
+    /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
 
-    /**
-     * Default: "fields"
-     */
+    /** Default: "fields" */
     readonly defineForm?: "fields" | "json";
 
     /**
@@ -132,14 +112,10 @@ export interface DiscordV2NodeParameters {
      */
     readonly formFields?: { "values": any };
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly approvalOptions?: { "values": any };
 
-    /**
-     * The name of the channel
-     */
+    /** The name of the channel */
     readonly name?: string;
 
     /**
@@ -148,9 +124,7 @@ export interface DiscordV2NodeParameters {
      */
     readonly type?: "0" | "2" | "4";
 
-    /**
-     * The ID of the user after which to return the members
-     */
+    /** The ID of the user after which to return the members */
     readonly after?: string;
 
     /**

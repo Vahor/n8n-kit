@@ -9,14 +9,10 @@ export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JiraTriggerNodeParameters {
-    /**
-     * Default: "cloud"
-     */
+    /** Default: "cloud" */
     readonly jiraVersion?: "cloud" | "server" | "serverPat";
 
-    /**
-     * Whether authentication should be activated for the incoming webhooks (makes it more secure)
-     */
+    /** Whether authentication should be activated for the incoming webhooks (makes it more secure) */
     readonly authenticateWebhook?: boolean;
 
     /**
@@ -31,9 +27,7 @@ export interface JiraTriggerNodeParameters {
      */
     readonly events?: ("*" | "board_configuration_changed" | "board_created" | "board_deleted" | "board_updated" | "comment_created" | "comment_deleted" | "comment_updated" | "jira:issue_created" | "jira:issue_deleted" | "issuelink_created" | "issuelink_deleted" | "jira:issue_updated" | "option_attachments_changed" | "option_issuelinks_changed" | "option_subtasks_changed" | "option_timetracking_changed" | "option_unassigned_issues_changed" | "option_voting_changed" | "option_watching_changed" | "project_created" | "project_deleted" | "project_updated" | "sprint_closed" | "sprint_created" | "sprint_deleted" | "sprint_started" | "sprint_updated" | "user_created" | "user_deleted" | "user_updated" | "jira:version_created" | "jira:version_deleted" | "jira:version_moved" | "jira:version_released" | "jira:version_unreleased" | "jira:version_updated" | "worklog_created" | "worklog_deleted" | "worklog_updated")[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "excludeBody"?: boolean, "filter"?: string, "includeFields"?: ("attachment.id" | "board.id" | "comment.id" | "issue.id" | "mergeVersion.id" | "modifiedUser.accountId" | "modifiedUser.key" | "modifiedUser.name" | "project.id" | "project.key" | "property.key" | "sprint.id" | "version.id" | "worklog.id")[] };
 
 }

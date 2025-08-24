@@ -10,9 +10,7 @@ export const name = "solarWindsObservabilityApi" as const;
 export interface SolarWindsObservabilityApiCredentials {
     readonly "url": string;
 
-    /**
-     * Type options: {"password":true}
-     */
+    /** Type options: {"password":true} */
     readonly "apiToken": string;
 
     readonly __name: "solarWindsObservabilityApi";

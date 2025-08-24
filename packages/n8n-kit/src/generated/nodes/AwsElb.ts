@@ -9,14 +9,10 @@ export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsElbNodeParameters {
-    /**
-     * Default: "loadBalancer"
-     */
+    /** Default: "loadBalancer" */
     readonly resource?: "listenerCertificate" | "loadBalancer";
 
-    /**
-     * Default: "create"
-     */
+    /** Default: "create" */
     readonly operation?: "create" | "delete" | "get" | "getMany" | "add" | "getMany" | "remove";
 
     /**
@@ -25,19 +21,13 @@ export interface AwsElbNodeParameters {
      */
     readonly ipAddressType?: "ipv4" | "dualstack";
 
-    /**
-     * This name must be unique per region per account, can have a maximum of 32 characters
-     */
+    /** This name must be unique per region per account, can have a maximum of 32 characters */
     readonly name?: string;
 
-    /**
-     * Default: "internet-facing"
-     */
+    /** Default: "internet-facing" */
     readonly schema?: "internal" | "internet-facing";
 
-    /**
-     * Default: "application"
-     */
+    /** Default: "application" */
     readonly type?: "application" | "network";
 
     /**
@@ -47,19 +37,13 @@ export interface AwsElbNodeParameters {
      */
     readonly subnets?: any[];
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly additionalFields?: { "securityGroups"?: any[], "tagsUi"?: { "tagValues": any } };
 
-    /**
-     * Unique identifier for a particular loadBalancer
-     */
+    /** Unique identifier for a particular loadBalancer */
     readonly loadBalancerId?: string;
 
-    /**
-     * Whether to return all results or only up to a given limit
-     */
+    /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
     /**
@@ -69,9 +53,7 @@ export interface AwsElbNodeParameters {
      */
     readonly limit?: number;
 
-    /**
-     * Default: {}
-     */
+    /** Default: {} */
     readonly filters?: { "names"?: string };
 
     /**
@@ -80,9 +62,7 @@ export interface AwsElbNodeParameters {
      */
     readonly listenerId?: string;
 
-    /**
-     * Unique identifier for a particular loadBalancer
-     */
+    /** Unique identifier for a particular loadBalancer */
     readonly certificateId?: string;
 
 }
