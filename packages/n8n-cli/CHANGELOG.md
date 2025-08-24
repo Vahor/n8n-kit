@@ -1,5 +1,14 @@
 # @vahor/n8n-kit-cli
 
+## 0.1.2
+
+### Patch Changes
+
+- [`2083f66`](https://github.com/Vahor/n8n-kit/commit/2083f6677a71481d7f974a9e7befc521600d87b3) Thanks [@Vahor](https://github.com/Vahor)! - fix mts file export and cli bundle size
+
+- Updated dependencies [[`2083f66`](https://github.com/Vahor/n8n-kit/commit/2083f6677a71481d7f974a9e7befc521600d87b3)]:
+  - @vahor/n8n-kit@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
