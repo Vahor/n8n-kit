@@ -47,6 +47,7 @@ const defaultRedactKeys = [
 	"isArchived",
 	/nodes\[.*\]\.position/,
 	/nodes\[.*\]\.parameters.*\.value/,
+	/nodes\[.*\]\.credentials.*\.name/,
 ];
 const replacer = () => undefined as unknown as string; // make ts happy, the lib expect a string
 

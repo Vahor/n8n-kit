@@ -13,54 +13,54 @@
 			"id": "inside group 1",
 			"name": "inside group 1",
 			"type": "n8n-nodes-base.noOp",
-			"position": [420, 60],
+			"position": [260, 60],
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 2",
 			"name": "inside group 2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [780, 300],
+			"position": [460, 300],
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 1 - 2",
 			"name": "inside group 1 - 2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [780, 60],
+			"position": [460, 60],
 			"typeVersion": 1
 		},
 		{
 			"id": "after groups",
 			"name": "after groups",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1140, 180],
+			"position": [660, 180],
 			"typeVersion": 1
 		},
 		{
 			"id": "group-1",
 			"name": "group-1",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 120],
+			"position": [null, null],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 1",
 				"color": 1,
-				"width": 960,
-				"height": 360
+				"width": null,
+				"height": null
 			}
 		},
 		{
 			"id": "group-2",
 			"name": "group-2",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 120],
+			"position": [null, null],
 			"typeVersion": 1,
 			"parameters": {
 				"content": "Group 2",
 				"color": 3,
-				"width": 600,
-				"height": 360
+				"width": null,
+				"height": null
 			}
 		}
 	],
@@ -84,7 +84,6 @@
 		}
 	},
 	"settings": {},
-	"staticData": {},
 	"active": false,
 	"tags": [{ "name": "@vahor/n8n-TZaTpkZBM0/EA" }]
 }
