@@ -16,7 +16,7 @@
 		"./package.json": "./package.json",
 		".": {
 			"import": {
-				"types": "./dist/index.d.cts",
+				"types": "./dist/index.d.mts",
 				"default": "./dist/index.mjs"
 			},
 			"require": {
@@ -26,7 +26,7 @@
 		},
 		"./nodes": {
 			"import": {
-				"types": "./dist/nodes/index.d.cts",
+				"types": "./dist/nodes/index.d.mts",
 				"default": "./dist/nodes/index.mjs"
 			},
 			"require": {
@@ -36,7 +36,7 @@
 		},
 		"./workflow": {
 			"import": {
-				"types": "./dist/workflow/index.d.cts",
+				"types": "./dist/workflow/index.d.mts",
 				"default": "./dist/workflow/index.mjs"
 			},
 			"require": {
@@ -46,7 +46,7 @@
 		},
 		"./credentials/generated": {
 			"import": {
-				"types": "./dist/credentials/generated.d.cts",
+				"types": "./dist/credentials/generated.d.mts",
 				"default": "./dist/credentials/generated.mjs"
 			},
 			"require": {
@@ -56,7 +56,7 @@
 		},
 		"./nodes/generated": {
 			"import": {
-				"types": "./dist/nodes/generated.d.cts",
+				"types": "./dist/nodes/generated.d.mts",
 				"default": "./dist/nodes/generated.mjs"
 			},
 			"require": {
@@ -66,7 +66,7 @@
 		},
 		"./logger": {
 			"import": {
-				"types": "./dist/logger.d.cts",
+				"types": "./dist/logger.d.mts",
 				"default": "./dist/logger.mjs"
 			},
 			"require": {
