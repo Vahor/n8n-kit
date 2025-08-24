@@ -120,7 +120,7 @@ bunx @vahor/n8n deploy [options]
 - If no match is found, a new workflow is created
 - If a match is found, the existing workflow is updated
 
-Note: The CLI will never delete workflows. If you want to delete a workflow, you can do it manually in n8n.
+**Note:** The CLI will never delete workflows or ids. If you want to delete a workflow that is no longer defined in your code, you can do it manually in n8n.
 
 **Example:**
 ```sh

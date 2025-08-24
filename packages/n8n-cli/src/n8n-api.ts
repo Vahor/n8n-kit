@@ -21,6 +21,10 @@ export class N8nApi {
 	): Promise<T> {
 		const url = `${this.baseUrl}${endpoint}`;
 		logger.debug(`${options.method ?? "GET"} ${url}`);
+		if (options.body) {
+			logger.debug(`Body:  ${JSON.stringify(options.body)}`);
+		}
+
 		const response = await fetch(url, {
 			...options,
 			headers: {
@@ -35,9 +39,6 @@ export class N8nApi {
 			const responseBody = await response.text();
 			logger.error(responseBody);
 
-			if (options.body) {
-				logger.debug(`Body:  ${JSON.stringify(options.body)}`);
-			}
 			throw new Error(
 				`N8N API error: ${response.status} ${response.statusText}`,
 			);
@@ -129,5 +130,9 @@ export class N8nApi {
 
 	async getWorkflowById(id: string): Promise<WorkflowDefinition> {
 		return this.request(`/api/v1/workflows/${id}`);
+	}
+
+	public formatWorkflowUrl(id: string) {
+		return `${this.baseUrl}/workflow/${id}`;
 	}
 }

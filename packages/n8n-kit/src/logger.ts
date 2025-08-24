@@ -21,8 +21,8 @@ class Logger {
 	 */
 	private _format(message: string): string {
 		const parts: string[] = [];
-		if (this.isDryRun) parts.push("[dry-run]");
-		if (this.context) parts.push(`[${this.context}]`);
+		if (this.isDryRun) parts.push(chalk.yellow("[dry-run]"));
+		if (this.context) parts.push(chalk.green(`[${this.context}]`));
 		if (parts.length === 0) return message;
 		return `${parts.join("")} ${message}`;
 	}

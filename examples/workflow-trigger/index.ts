@@ -8,6 +8,7 @@ import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
 const reusableWorkflow = new Workflow("reusable-workflow", {
 	name: "Reusable workflow",
+	tags: ["reusable"],
 	inputSchema: type({
 		a: "string",
 		b: "1 | 2",
@@ -23,6 +24,7 @@ const reusableWorkflow = new Workflow("reusable-workflow", {
 
 const workflow = new Workflow("workflow-trigger", {
 	name: "Workflow with trigger",
+	tags: ["client-id"],
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.next(
 			new ExecuteWorkflow("call-reusable-workflow", {
