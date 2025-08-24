@@ -1,7 +1,7 @@
 import type { RespondToWebhookNodeParameters } from "../generated/nodes/RespondToWebhook";
 import { RespondToWebhook as _WebhookResponse } from "../generated/nodes-impl/RespondToWebhook";
 import { ExpressionBuilder, recursiveExpression } from "../workflow";
-import { Node, type NodeProps } from "./node";
+import type { NodeProps } from "./node";
 
 export interface WebhookResponseProps extends NodeProps {
 	parameters: Omit<RespondToWebhookNodeParameters, "responseBody"> & {
