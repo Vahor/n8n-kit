@@ -19,11 +19,7 @@
 		"noImplicitOverride": true,
 		"noUnusedLocals": false,
 		"noUnusedParameters": false,
-		"noPropertyAccessFromIndexSignature": false,
-
-		"paths": {
-			"n8n-nodes-base/*": ["./vendor/n8n/packages/nodes-base/*"]
-		}
+		"noPropertyAccessFromIndexSignature": false
 	},
 	"include": [
 		"src/**/*.ts",
