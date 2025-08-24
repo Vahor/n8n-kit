@@ -114,7 +114,7 @@ bun run generate:entrypoint
 	```
 	Follow the wizard and commit the changes.
 
-6. **Create a pull request**:
+6. **Create a pull request**
 
 
 ## Pull Request Review Process
