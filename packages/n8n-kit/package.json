@@ -96,10 +96,11 @@
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
-		"@types/cli-progress": "^3.11.6",
+		"@n8n/n8n-nodes-langchain": "1.107.0",
+		"n8n-core": "1.106.2",
+		"cheerio": "1.0.0-rc.6",
+		"eventsource": "2.0.2",
 		"codemaker": "^1.113.0",
-		"n8n-nodes-base": "^1.14.1",
-		"n8n-workflow": "^1.82.0",
 		"tinyglobby": "^0.2.14",
 		"tsdown": "catalog:",
 		"typescript": "catalog:"

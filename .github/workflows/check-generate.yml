@@ -1,0 +1,87 @@
+name: Check generate
+
+on:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/check-generate')
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - name: Post starting comment
+        uses: actions/github-script@v7
+        env:
+          MESSAGE: |
+            Check Generate job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+
+            Please wait.
+
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          result-encoding: string
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.MESSAGE
+            })
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        run: bun run --filter '*' build
+
+      - name: Check examples
+        working-directory: packages/n8n-kit/
+        run: bun generate 
+
+      - name: Post success comment
+        if: ${{ success() }}
+        uses: actions/github-script@v7
+        env:
+          MESSAGE: |
+            Check generate job completed.
+            Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          result-encoding: string
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.MESSAGE
+            })
+
+      - name: Post failure comment
+        if: ${{ failure() }}
+        uses: actions/github-script@v7
+        env:
+          MESSAGE: |
+            Check examples job failed.
+            Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          result-encoding: string
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: process.env.MESSAGE
+            })

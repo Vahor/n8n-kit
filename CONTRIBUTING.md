@@ -146,3 +146,7 @@ git sparse-checkout set packages/nodes-base packages/@n8n/nodes-langchain
 
 refresh with `git submodule update --remote`
 
+
+### n8n-kit dev deps
+
+Some of the dev dependencies are only here for the generation of the nodes. So we have to make sure the versions are the same as the ones in the n8n repo. If there's a dependency issue like `Missing 'default' export in module`, `Export named 'assertParamIsOfAnyTypes' not found in module`, `Cannot find module '@langchain/community/vectorstores/supabase'` check vendor/n8n/[name]/package.json
