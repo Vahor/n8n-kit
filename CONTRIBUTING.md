@@ -11,23 +11,26 @@ Thank you for your interest in contributing to n8n-kit! This guide will help you
 ### Commands
 
 - `bun run format` - Formats all files in the project (using [biome](https://github.com/biomejs/biome))
-- `bun run --filter '*' dev` - Builds cli and lib in watch mode
-- `bun run --filter '*' build` - Builds cli and lib
+- `bun run --filter '*' dev` - Builds CLI and lib in watch mode
+- `bun run --filter '*' build` - Builds CLI and lib
 
 ### Development Setup
 
 1. Fork and clone the repository:
+   
    ```bash
    git clone https://github.com/Vahor/n8n-kit.git
    cd n8n-kit
    ```
 
 2. Install dependencies:
+   
    ```bash
    bun install
    ```
 
 3. Verify the setup:
+
    ```bash
    bun run --filter '*' build 
    ```
@@ -47,24 +50,28 @@ You'll find code related to `@vahor/n8n-kit-cli` in the [`packages/n8n-cli`](./p
 If the [n8n](https://github.com/n8n-io/n8n) repository has been updated with new version of nodes, you'll have to follow the steps below to update the generated files.
 
 1. Update the submodule:
+
 ```bash
 # root directory
 git submodule update --remote
 ```
 
 2. Patch the generated files:
+
 ```bash
 # packages/n8n-kit
 bash scripts/replace-n8n-nodes-base-path.sh
 ```
 
 3. Generate the new files:
+
 ```bash
 # packages/n8n-kit
 bun run generate
 ```
 
 4. Check that the examples still work:
+
 ```bash
 # root directory
 bash scripts/build-and-check-examples.sh
@@ -76,7 +83,8 @@ If you want to add/update nodes, you'll have to follow the steps below.
 
 1. Add or update the node in [`packages/n8n-kit/src/nodes`](./packages/n8n-kit/src/nodes) directory.
 
-2. Add that entry to the barrel file 
+2. Update the barrel (entrypoint) file by running:
+
 ```bash
 # packages/n8n-kit
 bun run generate:entrypoint
@@ -99,6 +107,7 @@ bun run generate:entrypoint
 4. **Update the documentation** if necessary.
 
 5. **Create a changeset** (optional):
+
 	```bash
 	# root directory
 	bunx @changesets/cli
@@ -111,15 +120,18 @@ bun run generate:entrypoint
 ## Pull Request Review Process
 
 1. **Ask coderabbit for a review**:
+
 ```txt
 @coderabbit review
 ```
 
 2. **Check if the examples still work**:
+
 ```txt
 /check-examples
 ```
-Note: we don't run the examples for each commits as it might take too long (pull submodule, build cli and lib, build all examples, check diff).
+
+Note: we don't run the examples for each commit as it might take too long (update submodule, build CLI and lib, build all examples, check diff).
 
 ## Notes
 
