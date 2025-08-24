@@ -107,7 +107,7 @@ export { app };
 	- No mid-graph direction changes.
     - No way to set node execution priority (n8n runs nodes top-to-bottom)
 - **Credentials**: Must be defined in n8n first, then referenced via `Credentials.byId()` (no API endpoint available)
-- **Folders**: Workflows deploy to root; manual folder organization required (no API endpoint available). You can still organize the manually once deployed.
+- **Folders**: Workflows deploy to root; manual folder organization required (no API endpoint available). You can still organize them manually once deployed.
 
 Have ideas for improvements? [Open an issue](https://github.com/Vahor/n8n-kit/issues) or [Suggest a Pull Request](https://github.com/Vahor/n8n-kit/blob/main/CONTRIBUTING.md)
 
