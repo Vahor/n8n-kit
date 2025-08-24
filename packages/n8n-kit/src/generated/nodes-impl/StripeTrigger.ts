@@ -3,6 +3,7 @@
 
 import type { StripeApiCredentials } from "../credentials/StripeApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { StripeTriggerNodeParameters } from "../nodes/StripeTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface StripeTriggerProps extends NodeProps {
 /**
  * Handle Stripe events via webhooks
  */
-export class StripeTrigger<L extends string> extends Node<L> {
+export class StripeTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.stripeTrigger" as const;
     protected typeVersion = 1 as const;
 

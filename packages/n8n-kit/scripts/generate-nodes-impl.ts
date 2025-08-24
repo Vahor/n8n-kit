@@ -66,9 +66,14 @@ const generateTypescriptNodeOutput = async (
 	if (result.credentials.length > 0) {
 		code.line(`import type { Credentials } from "../../credentials";`);
 	}
+	const chainTypesImports = ["IContext"];
 	if (Object.keys(result.outputs).filter((o) => o !== "main").length > 0) {
-		code.line(`import type { IChainable } from "../../workflow/chain/types";`);
+		chainTypesImports.push("IChainable");
 	}
+	code.line(
+		`import type { ${chainTypesImports.join(", ")} } from "../../workflow/chain/types";`,
+	);
+
 	if (hasInputs) {
 		code.line(`import type { State } from "../../workflow/chain/state";`);
 		code.line(`import { DEFAULT_NODE_SIZE } from "../../nodes/node";`);
@@ -99,7 +104,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(` * ${result.description}`);
 	code.line(` */`);
 	code.openBlock(
-		`export class ${result.nodeName}<L extends string> extends Node<L>`,
+		`export class ${result.nodeName}<C extends IContext, L extends string = string> extends Node<L, C>`,
 	);
 
 	code.line(`protected type = "${result.type}" as const;`);

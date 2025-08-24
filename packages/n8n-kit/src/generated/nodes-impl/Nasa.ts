@@ -3,6 +3,7 @@
 
 import type { NasaApiCredentials } from "../credentials/NasaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NasaNodeParameters } from "../nodes/Nasa";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface NasaProps extends NodeProps {
 /**
  * Retrieve data from the NASA API
  */
-export class Nasa<L extends string> extends Node<L> {
+export class Nasa<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.nasa" as const;
     protected typeVersion = 1 as const;
 

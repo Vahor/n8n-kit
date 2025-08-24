@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { OutputParserStructuredNodeParameters } from "../nodes/OutputParserStructured";
@@ -14,7 +14,7 @@ export interface OutputParserStructuredProps extends NodeProps {
 /**
  * Return data in a defined JSON format
  */
-export class OutputParserStructured<L extends string> extends Node<L> {
+export class OutputParserStructured<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.outputParserStructured" as const;
     protected typeVersion = 1.3 as const;
 

@@ -3,6 +3,7 @@
 
 import type { ApiTemplateIoApiCredentials } from "../credentials/ApiTemplateIoApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ApiTemplateIoNodeParameters } from "../nodes/ApiTemplateIo";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ApiTemplateIoProps extends NodeProps {
 /**
  * Consume the APITemplate.io API
  */
-export class ApiTemplateIo<L extends string> extends Node<L> {
+export class ApiTemplateIo<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.apiTemplateIo" as const;
     protected typeVersion = 1 as const;
 

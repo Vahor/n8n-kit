@@ -3,6 +3,7 @@
 
 import type { HttpBasicAuthCredentials } from "../credentials/HttpBasicAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChatTriggerNodeParameters } from "../nodes/ChatTrigger";
@@ -16,7 +17,7 @@ export interface ChatTriggerProps extends NodeProps {
 /**
  * Runs the workflow when an n8n generated webchat is submitted
  */
-export class ChatTrigger<L extends string> extends Node<L> {
+export class ChatTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.chatTrigger" as const;
     protected typeVersion = 1.3 as const;
 

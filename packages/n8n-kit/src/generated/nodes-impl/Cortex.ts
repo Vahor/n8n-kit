@@ -3,6 +3,7 @@
 
 import type { CortexApiCredentials } from "../credentials/CortexApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CortexNodeParameters } from "../nodes/Cortex";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CortexProps extends NodeProps {
 /**
  * Apply the Cortex analyzer/responder on the given entity
  */
-export class Cortex<L extends string> extends Node<L> {
+export class Cortex<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.cortex" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { PushbulletOAuth2ApiCredentials } from "../credentials/PushbulletOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { PushbulletNodeParameters } from "../nodes/Pushbullet";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface PushbulletProps extends NodeProps {
 /**
  * Consume Pushbullet API
  */
-export class Pushbullet<L extends string> extends Node<L> {
+export class Pushbullet<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.pushbullet" as const;
     protected typeVersion = 1 as const;
 

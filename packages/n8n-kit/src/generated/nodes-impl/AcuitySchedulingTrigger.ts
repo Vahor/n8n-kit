@@ -4,6 +4,7 @@
 import type { AcuitySchedulingApiCredentials } from "../credentials/AcuitySchedulingApi.ts";
 import type { AcuitySchedulingOAuth2ApiCredentials } from "../credentials/AcuitySchedulingOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AcuitySchedulingTriggerNodeParameters } from "../nodes/AcuitySchedulingTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface AcuitySchedulingTriggerProps extends NodeProps {
 /**
  * Handle Acuity Scheduling events via webhooks
  */
-export class AcuitySchedulingTrigger<L extends string> extends Node<L> {
+export class AcuitySchedulingTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.acuitySchedulingTrigger" as const;
     protected typeVersion = 1 as const;
 

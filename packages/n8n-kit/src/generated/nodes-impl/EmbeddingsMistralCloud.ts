@@ -3,7 +3,7 @@
 
 import type { MistralCloudApiCredentials } from "../credentials/MistralCloudApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsMistralCloudNodeParameters } from "../nodes/EmbeddingsMistralCloud";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface EmbeddingsMistralCloudProps extends NodeProps {
 /**
  * Use Embeddings Mistral Cloud
  */
-export class EmbeddingsMistralCloud<L extends string> extends Node<L> {
+export class EmbeddingsMistralCloud<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsMistralCloud" as const;
     protected typeVersion = 1 as const;
 

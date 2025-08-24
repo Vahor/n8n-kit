@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GmailOAuth2ApiCredentials } from "../credentials/GmailOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GmailTriggerNodeParameters } from "../nodes/GmailTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GmailTriggerProps extends NodeProps {
 /**
  * Fetches emails from Gmail and starts the workflow on specified polling intervals.
  */
-export class GmailTrigger<L extends string> extends Node<L> {
+export class GmailTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gmailTrigger" as const;
     protected typeVersion = 1.3 as const;
 

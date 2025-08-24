@@ -4,6 +4,7 @@
 import type { GongApiCredentials } from "../credentials/GongApi.ts";
 import type { GongOAuth2ApiCredentials } from "../credentials/GongOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GongNodeParameters } from "../nodes/Gong";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GongProps extends NodeProps {
 /**
  * Interact with Gong API
  */
-export class Gong<L extends string> extends Node<L> {
+export class Gong<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gong" as const;
     protected typeVersion = 1 as const;
 

@@ -3,7 +3,7 @@
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsAwsBedrockNodeParameters } from "../nodes/EmbeddingsAwsBedrock";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface EmbeddingsAwsBedrockProps extends NodeProps {
 /**
  * Use Embeddings AWS Bedrock
  */
-export class EmbeddingsAwsBedrock<L extends string> extends Node<L> {
+export class EmbeddingsAwsBedrock<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsAwsBedrock" as const;
     protected typeVersion = 1 as const;
 

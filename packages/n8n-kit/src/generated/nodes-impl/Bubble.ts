@@ -3,6 +3,7 @@
 
 import type { BubbleApiCredentials } from "../credentials/BubbleApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { BubbleNodeParameters } from "../nodes/Bubble";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface BubbleProps extends NodeProps {
 /**
  * Consume the Bubble Data API
  */
-export class Bubble<L extends string> extends Node<L> {
+export class Bubble<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.bubble" as const;
     protected typeVersion = 1 as const;
 

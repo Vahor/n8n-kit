@@ -3,6 +3,7 @@
 
 import type { SpontitApiCredentials } from "../credentials/SpontitApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SpontitNodeParameters } from "../nodes/Spontit";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SpontitProps extends NodeProps {
 /**
  * Consume Spontit API
  */
-export class Spontit<L extends string> extends Node<L> {
+export class Spontit<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.spontit" as const;
     protected typeVersion = 1 as const;
 

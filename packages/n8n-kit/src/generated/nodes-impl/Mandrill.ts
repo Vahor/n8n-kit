@@ -3,6 +3,7 @@
 
 import type { MandrillApiCredentials } from "../credentials/MandrillApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MandrillNodeParameters } from "../nodes/Mandrill";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MandrillProps extends NodeProps {
 /**
  * Consume Mandrill API
  */
-export class Mandrill<L extends string> extends Node<L> {
+export class Mandrill<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mandrill" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AwsS3V1NodeParameters } from "../nodes/AwsS3V1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AwsS3V1Props extends NodeProps {
 /**
  * Sends data to AWS S3
  */
-export class AwsS3V1<L extends string> extends Node<L> {
+export class AwsS3V1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsS3" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { XeroOAuth2ApiCredentials } from "../credentials/XeroOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { XeroNodeParameters } from "../nodes/Xero";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface XeroProps extends NodeProps {
 /**
  * Consume Xero API
  */
-export class Xero<L extends string> extends Node<L> {
+export class Xero<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.xero" as const;
     protected typeVersion = 1 as const;
 

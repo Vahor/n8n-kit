@@ -3,6 +3,7 @@
 
 import type { NetlifyApiCredentials } from "../credentials/NetlifyApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NetlifyNodeParameters } from "../nodes/Netlify";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface NetlifyProps extends NodeProps {
 /**
  * Consume Netlify API
  */
-export class Netlify<L extends string> extends Node<L> {
+export class Netlify<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.netlify" as const;
     protected typeVersion = 1 as const;
 

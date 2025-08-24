@@ -3,6 +3,7 @@
 
 import type { MattermostApiCredentials } from "../credentials/MattermostApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MattermostV1NodeParameters } from "../nodes/MattermostV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MattermostV1Props extends NodeProps {
 /**
  * Sends data to Mattermost
  */
-export class MattermostV1<L extends string> extends Node<L> {
+export class MattermostV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mattermost" as const;
     protected typeVersion = 1 as const;
 

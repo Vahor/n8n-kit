@@ -3,7 +3,7 @@
 
 import type { OpenAiApiCredentials } from "../credentials/OpenAiApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatOpenAiNodeParameters } from "../nodes/LmChatOpenAi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatOpenAiProps extends NodeProps {
 /**
  * For advanced usage with an AI chain
  */
-export class LmChatOpenAi<L extends string> extends Node<L> {
+export class LmChatOpenAi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatOpenAi" as const;
     protected typeVersion = 1.2 as const;
 

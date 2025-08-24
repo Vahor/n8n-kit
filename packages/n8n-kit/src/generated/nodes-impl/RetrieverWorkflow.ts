@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { RetrieverWorkflowNodeParameters } from "../nodes/RetrieverWorkflow";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -12,7 +12,7 @@ export interface RetrieverWorkflowProps extends NodeProps {
 /**
  * Use an n8n Workflow as Retriever
  */
-export class RetrieverWorkflow<L extends string> extends Node<L> {
+export class RetrieverWorkflow<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;
     protected typeVersion = 1.1 as const;
 

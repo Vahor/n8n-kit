@@ -3,6 +3,7 @@
 
 import type { NotionApiCredentials } from "../credentials/NotionApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NotionTriggerNodeParameters } from "../nodes/NotionTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface NotionTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Notion events occur
  */
-export class NotionTrigger<L extends string> extends Node<L> {
+export class NotionTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.notionTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentV2NodeParameters } from "../nodes/AgentV2";
@@ -13,7 +14,7 @@ export interface AgentV2Props extends NodeProps {
 /**
  * Generates an action plan and executes it. Can use external tools.
  */
-export class AgentV2<L extends string> extends Node<L> {
+export class AgentV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;
     protected typeVersion = 2.2 as const;
 

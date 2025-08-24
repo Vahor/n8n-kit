@@ -3,6 +3,7 @@
 
 import type { VeroApiCredentials } from "../credentials/VeroApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { VeroNodeParameters } from "../nodes/Vero";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface VeroProps extends NodeProps {
 /**
  * Consume Vero API
  */
-export class Vero<L extends string> extends Node<L> {
+export class Vero<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.vero" as const;
     protected typeVersion = 1 as const;
 

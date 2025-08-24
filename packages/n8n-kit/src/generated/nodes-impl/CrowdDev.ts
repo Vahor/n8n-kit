@@ -3,6 +3,7 @@
 
 import type { CrowdDevApiCredentials } from "../credentials/CrowdDevApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CrowdDevNodeParameters } from "../nodes/CrowdDev";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CrowdDevProps extends NodeProps {
 /**
  * crowd.dev is an open-source suite of community and data tools built to unlock community-led growth for your organization.
  */
-export class CrowdDev<L extends string> extends Node<L> {
+export class CrowdDev<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.crowdDev" as const;
     protected typeVersion = 1 as const;
 

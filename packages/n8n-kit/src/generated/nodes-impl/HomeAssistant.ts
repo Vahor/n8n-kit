@@ -3,6 +3,7 @@
 
 import type { HomeAssistantApiCredentials } from "../credentials/HomeAssistantApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { HomeAssistantNodeParameters } from "../nodes/HomeAssistant";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface HomeAssistantProps extends NodeProps {
 /**
  * Consume Home Assistant API
  */
-export class HomeAssistant<L extends string> extends Node<L> {
+export class HomeAssistant<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.homeAssistant" as const;
     protected typeVersion = 1 as const;
 

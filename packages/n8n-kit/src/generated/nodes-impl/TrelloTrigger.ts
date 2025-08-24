@@ -3,6 +3,7 @@
 
 import type { TrelloApiCredentials } from "../credentials/TrelloApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TrelloTriggerNodeParameters } from "../nodes/TrelloTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TrelloTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Trello events occur
  */
-export class TrelloTrigger<L extends string> extends Node<L> {
+export class TrelloTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.trelloTrigger" as const;
     protected typeVersion = 1 as const;
 

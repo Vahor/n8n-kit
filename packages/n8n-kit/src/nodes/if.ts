@@ -1,4 +1,4 @@
-import { type, version } from "../generated/nodes/IfV2";
+import { IfV2 as _If } from "../generated/nodes-impl/IfV2";
 import type { ErrorMessage, IsNullable } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import { Chain } from "../workflow/chain/chain";
@@ -8,7 +8,7 @@ import type {
 	IContext,
 	INextable,
 } from "../workflow/chain/types";
-import { Node, type NodeProps } from "./node";
+import type { NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
 type StringCondition = BaseCondition & {
@@ -45,7 +45,7 @@ type BaseCondition = {
 	};
 };
 
-interface IfBaseProps {
+export interface IfProps extends NodeProps {
 	conditions: Array<StringCondition>;
 	combinator?: ConditionCombinator;
 	options?: {
@@ -53,23 +53,19 @@ interface IfBaseProps {
 	};
 }
 
-export interface IfProps extends IfBaseProps, NodeProps {}
-
+// @ts-expect-error: we override the parameters type
 export class If<
 	L extends string,
 	True extends IContext | null = null,
 	False extends IContext | null = null,
-> extends Node<L> {
-	protected override type = type;
-	protected override typeVersion = version;
-
+> extends _If<{}, L> {
 	override endStates: INextable[] = [];
 
 	constructor(
 		id: L,
 		override props: IfProps,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 
 	override "~validate"(): void {

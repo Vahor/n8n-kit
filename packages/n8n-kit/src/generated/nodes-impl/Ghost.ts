@@ -4,6 +4,7 @@
 import type { GhostAdminApiCredentials } from "../credentials/GhostAdminApi.ts";
 import type { GhostContentApiCredentials } from "../credentials/GhostContentApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GhostNodeParameters } from "../nodes/Ghost";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GhostProps extends NodeProps {
 /**
  * Consume Ghost API
  */
-export class Ghost<L extends string> extends Node<L> {
+export class Ghost<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ghost" as const;
     protected typeVersion = 1 as const;
 

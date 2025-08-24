@@ -3,6 +3,7 @@
 
 import type { CloudflareApiCredentials } from "../credentials/CloudflareApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CloudflareNodeParameters } from "../nodes/Cloudflare";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CloudflareProps extends NodeProps {
 /**
  * Consume Cloudflare API
  */
-export class Cloudflare<L extends string> extends Node<L> {
+export class Cloudflare<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.cloudflare" as const;
     protected typeVersion = 1 as const;
 

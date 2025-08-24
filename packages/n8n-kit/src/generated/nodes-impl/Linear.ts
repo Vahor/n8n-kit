@@ -4,6 +4,7 @@
 import type { LinearApiCredentials } from "../credentials/LinearApi.ts";
 import type { LinearOAuth2ApiCredentials } from "../credentials/LinearOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { LinearNodeParameters } from "../nodes/Linear";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface LinearProps extends NodeProps {
 /**
  * Consume Linear API
  */
-export class Linear<L extends string> extends Node<L> {
+export class Linear<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.linear" as const;
     protected typeVersion = 1.1 as const;
 

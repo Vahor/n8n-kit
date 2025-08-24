@@ -3,6 +3,7 @@
 
 import type { OpenAiApiCredentials } from "../credentials/OpenAiApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { OpenAiAssistantNodeParameters } from "../nodes/OpenAiAssistant";
@@ -16,7 +17,7 @@ export interface OpenAiAssistantProps extends NodeProps {
 /**
  * Utilizes Assistant API from Open AI.
  */
-export class OpenAiAssistant<L extends string> extends Node<L> {
+export class OpenAiAssistant<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.openAiAssistant" as const;
     protected typeVersion = 1.1 as const;
 

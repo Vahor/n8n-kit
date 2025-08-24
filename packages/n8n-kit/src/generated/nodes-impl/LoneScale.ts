@@ -3,6 +3,7 @@
 
 import type { LoneScaleApiCredentials } from "../credentials/LoneScaleApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { LoneScaleNodeParameters } from "../nodes/LoneScale";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface LoneScaleProps extends NodeProps {
 /**
  * Create List, add / delete items
  */
-export class LoneScale<L extends string> extends Node<L> {
+export class LoneScale<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.loneScale" as const;
     protected typeVersion = 1 as const;
 

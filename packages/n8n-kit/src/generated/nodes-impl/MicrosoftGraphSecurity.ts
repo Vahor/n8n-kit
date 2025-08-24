@@ -3,6 +3,7 @@
 
 import type { MicrosoftGraphSecurityOAuth2ApiCredentials } from "../credentials/MicrosoftGraphSecurityOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftGraphSecurityNodeParameters } from "../nodes/MicrosoftGraphSecurity";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftGraphSecurityProps extends NodeProps {
 /**
  * Consume the Microsoft Graph Security API
  */
-export class MicrosoftGraphSecurity<L extends string> extends Node<L> {
+export class MicrosoftGraphSecurity<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftGraphSecurity" as const;
     protected typeVersion = 1 as const;
 

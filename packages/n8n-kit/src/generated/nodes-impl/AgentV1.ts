@@ -4,6 +4,7 @@
 import type { MySqlCredentials } from "../credentials/MySql.ts";
 import type { PostgresCredentials } from "../credentials/Postgres.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentV1NodeParameters } from "../nodes/AgentV1";
@@ -18,7 +19,7 @@ export interface AgentV1Props extends NodeProps {
 /**
  * Generates an action plan and executes it. Can use external tools.
  */
-export class AgentV1<L extends string> extends Node<L> {
+export class AgentV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;
     protected typeVersion = 1.9 as const;
 

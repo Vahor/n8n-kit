@@ -4,6 +4,7 @@
 import type { PagerDutyApiCredentials } from "../credentials/PagerDutyApi.ts";
 import type { PagerDutyOAuth2ApiCredentials } from "../credentials/PagerDutyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { PagerDutyNodeParameters } from "../nodes/PagerDuty";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface PagerDutyProps extends NodeProps {
 /**
  * Consume PagerDuty API
  */
-export class PagerDuty<L extends string> extends Node<L> {
+export class PagerDuty<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.pagerDuty" as const;
     protected typeVersion = 1 as const;
 

@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { MoveBinaryDataNodeParameters } from "../nodes/MoveBinaryData";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -11,7 +12,7 @@ export interface MoveBinaryDataProps extends NodeProps {
 /**
  * Move data between binary and JSON properties
  */
-export class MoveBinaryData<L extends string> extends Node<L> {
+export class MoveBinaryData<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.moveBinaryData" as const;
     protected typeVersion = 1.1 as const;
 

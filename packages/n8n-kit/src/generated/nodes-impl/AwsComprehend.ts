@@ -3,6 +3,7 @@
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AwsComprehendNodeParameters } from "../nodes/AwsComprehend";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AwsComprehendProps extends NodeProps {
 /**
  * Sends data to Amazon Comprehend
  */
-export class AwsComprehend<L extends string> extends Node<L> {
+export class AwsComprehend<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsComprehend" as const;
     protected typeVersion = 1 as const;
 

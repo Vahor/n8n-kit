@@ -4,6 +4,7 @@
 import type { HttpBearerAuthCredentials } from "../credentials/HttpBearerAuth.ts";
 import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { McpTriggerNodeParameters } from "../nodes/McpTrigger";
@@ -18,7 +19,7 @@ export interface McpTriggerProps extends NodeProps {
 /**
  * Expose n8n tools as an MCP Server endpoint
  */
-export class McpTrigger<L extends string> extends Node<L> {
+export class McpTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.mcpTrigger" as const;
     protected typeVersion = 2 as const;
 

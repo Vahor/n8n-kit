@@ -4,6 +4,7 @@
 import type { GithubApiCredentials } from "../credentials/GithubApi.ts";
 import type { GithubOAuth2ApiCredentials } from "../credentials/GithubOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GithubNodeParameters } from "../nodes/Github";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GithubProps extends NodeProps {
 /**
  * Consume GitHub API
  */
-export class Github<L extends string> extends Node<L> {
+export class Github<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.github" as const;
     protected typeVersion = 1.1 as const;
 

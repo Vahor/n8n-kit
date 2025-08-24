@@ -3,7 +3,7 @@
 
 import type { GroqApiCredentials } from "../credentials/GroqApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatGroqNodeParameters } from "../nodes/LmChatGroq";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatGroqProps extends NodeProps {
 /**
  * Language Model Groq
  */
-export class LmChatGroq<L extends string> extends Node<L> {
+export class LmChatGroq<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatGroq" as const;
     protected typeVersion = 1 as const;
 

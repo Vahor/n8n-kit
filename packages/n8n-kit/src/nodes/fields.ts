@@ -1,12 +1,9 @@
 import type { Type } from "arktype";
-import {
-	type SetV2NodeParameters,
-	type,
-	version,
-} from "../generated/nodes/SetV2";
+import type { SetV2NodeParameters } from "../generated/nodes/SetV2";
+import { SetV2 as _Fields } from "../generated/nodes-impl/SetV2";
 import type { IsNever } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
-import { Node, type NodeProps } from "./node";
+import type { NodeProps } from "./node";
 
 export interface SetProps extends NodeProps {
 	parameters: SetV2NodeParameters & {
@@ -35,15 +32,12 @@ type AssignementsToObject<
 		: never;
 };
 
-export class Fields<L extends string, P extends SetProps> extends Node<
-	L,
+export class Fields<L extends string, P extends SetProps> extends _Fields<
 	IsNever<P["parameters"]["assignments"]> extends true
 		? never
-		: AssignementsToObject<NonNullable<P["parameters"]["assignments"]>>
+		: AssignementsToObject<NonNullable<P["parameters"]["assignments"]>>,
+	L
 > {
-	protected override type = type;
-	protected override typeVersion = version;
-
 	public constructor(
 		id: L,
 		override props: P,

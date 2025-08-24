@@ -3,7 +3,7 @@
 
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatGoogleVertexNodeParameters } from "../nodes/LmChatGoogleVertex";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatGoogleVertexProps extends NodeProps {
 /**
  * Chat Model Google Vertex
  */
-export class LmChatGoogleVertex<L extends string> extends Node<L> {
+export class LmChatGoogleVertex<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatGoogleVertex" as const;
     protected typeVersion = 1 as const;
 

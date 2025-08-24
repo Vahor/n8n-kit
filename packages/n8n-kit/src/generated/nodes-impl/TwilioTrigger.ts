@@ -3,6 +3,7 @@
 
 import type { TwilioApiCredentials } from "../credentials/TwilioApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TwilioTriggerNodeParameters } from "../nodes/TwilioTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TwilioTriggerProps extends NodeProps {
 /**
  * Starts the workflow on a Twilio update
  */
-export class TwilioTrigger<L extends string> extends Node<L> {
+export class TwilioTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.twilioTrigger" as const;
     protected typeVersion = 1 as const;
 

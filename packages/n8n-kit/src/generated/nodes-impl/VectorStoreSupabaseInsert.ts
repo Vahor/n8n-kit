@@ -3,6 +3,7 @@
 
 import type { SupabaseApiCredentials } from "../credentials/SupabaseApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreSupabaseInsertNodeParameters } from "../nodes/VectorStoreSupabaseInsert";
@@ -16,7 +17,7 @@ export interface VectorStoreSupabaseInsertProps extends NodeProps {
 /**
  * Insert data into Supabase Vector Store index [https://supabase.com/docs/guides/ai/langchain]
  */
-export class VectorStoreSupabaseInsert<L extends string> extends Node<L> {
+export class VectorStoreSupabaseInsert<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreSupabaseInsert" as const;
     protected typeVersion = 1 as const;
 

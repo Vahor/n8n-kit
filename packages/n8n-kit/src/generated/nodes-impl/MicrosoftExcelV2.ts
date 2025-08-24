@@ -3,6 +3,7 @@
 
 import type { MicrosoftExcelOAuth2ApiCredentials } from "../credentials/MicrosoftExcelOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftExcelV2NodeParameters } from "../nodes/MicrosoftExcelV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftExcelV2Props extends NodeProps {
 /**
  * Consume Microsoft Excel API
  */
-export class MicrosoftExcelV2<L extends string> extends Node<L> {
+export class MicrosoftExcelV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftExcel" as const;
     protected typeVersion = 2.1 as const;
 

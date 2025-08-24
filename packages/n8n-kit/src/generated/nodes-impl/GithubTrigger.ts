@@ -4,6 +4,7 @@
 import type { GithubApiCredentials } from "../credentials/GithubApi.ts";
 import type { GithubOAuth2ApiCredentials } from "../credentials/GithubOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GithubTriggerNodeParameters } from "../nodes/GithubTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GithubTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Github events occur
  */
-export class GithubTrigger<L extends string> extends Node<L> {
+export class GithubTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.githubTrigger" as const;
     protected typeVersion = 1 as const;
 

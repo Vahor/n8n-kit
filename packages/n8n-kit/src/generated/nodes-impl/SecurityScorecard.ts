@@ -3,6 +3,7 @@
 
 import type { SecurityScorecardApiCredentials } from "../credentials/SecurityScorecardApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SecurityScorecardNodeParameters } from "../nodes/SecurityScorecard";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SecurityScorecardProps extends NodeProps {
 /**
  * Consume SecurityScorecard API
  */
-export class SecurityScorecard<L extends string> extends Node<L> {
+export class SecurityScorecard<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.securityScorecard" as const;
     protected typeVersion = 1 as const;
 

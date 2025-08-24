@@ -3,6 +3,7 @@
 
 import type { CiscoWebexOAuth2ApiCredentials } from "../credentials/CiscoWebexOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CiscoWebexTriggerNodeParameters } from "../nodes/CiscoWebexTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CiscoWebexTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Cisco Webex events occur.
  */
-export class CiscoWebexTrigger<L extends string> extends Node<L> {
+export class CiscoWebexTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ciscoWebexTrigger" as const;
     protected typeVersion = 1 as const;
 

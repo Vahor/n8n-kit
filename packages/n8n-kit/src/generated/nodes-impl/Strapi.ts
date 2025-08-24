@@ -4,6 +4,7 @@
 import type { StrapiApiCredentials } from "../credentials/StrapiApi.ts";
 import type { StrapiTokenApiCredentials } from "../credentials/StrapiTokenApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { StrapiNodeParameters } from "../nodes/Strapi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface StrapiProps extends NodeProps {
 /**
  * Consume Strapi API
  */
-export class Strapi<L extends string> extends Node<L> {
+export class Strapi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.strapi" as const;
     protected typeVersion = 1 as const;
 

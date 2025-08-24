@@ -3,6 +3,7 @@
 
 import type { MistralCloudApiCredentials } from "../credentials/MistralCloudApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MistralAiNodeParameters } from "../nodes/MistralAi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MistralAiProps extends NodeProps {
 /**
  * Consume Mistral AI API
  */
-export class MistralAi<L extends string> extends Node<L> {
+export class MistralAi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mistralAi" as const;
     protected typeVersion = 1 as const;
 

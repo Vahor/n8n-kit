@@ -3,6 +3,7 @@
 
 import type { MicrosoftToDoOAuth2ApiCredentials } from "../credentials/MicrosoftToDoOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftToDoNodeParameters } from "../nodes/MicrosoftToDo";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftToDoProps extends NodeProps {
 /**
  * Consume Microsoft To Do API.
  */
-export class MicrosoftToDo<L extends string> extends Node<L> {
+export class MicrosoftToDo<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftToDo" as const;
     protected typeVersion = 1 as const;
 

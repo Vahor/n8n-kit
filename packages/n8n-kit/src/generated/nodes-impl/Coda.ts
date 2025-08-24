@@ -3,6 +3,7 @@
 
 import type { CodaApiCredentials } from "../credentials/CodaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { CodaNodeParameters } from "../nodes/Coda";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface CodaProps extends NodeProps {
 /**
  * Consume Coda API
  */
-export class Coda<L extends string> extends Node<L> {
+export class Coda<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.coda" as const;
     protected typeVersion = 1.1 as const;
 

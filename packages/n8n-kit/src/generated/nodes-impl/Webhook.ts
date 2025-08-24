@@ -5,7 +5,7 @@ import type { HttpBasicAuthCredentials } from "../credentials/HttpBasicAuth.ts";
 import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts";
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { WebhookNodeParameters } from "../nodes/Webhook";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -19,7 +19,7 @@ export interface WebhookProps extends NodeProps {
 /**
  * Starts the workflow when a webhook is called
  */
-export class Webhook<L extends string> extends Node<L> {
+export class Webhook<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.webhook" as const;
     protected typeVersion = 2.1 as const;
 

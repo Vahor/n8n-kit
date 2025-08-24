@@ -3,6 +3,7 @@
 
 import type { FacebookLeadAdsOAuth2ApiCredentials } from "../credentials/FacebookLeadAdsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FacebookLeadAdsTriggerNodeParameters } from "../nodes/FacebookLeadAdsTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface FacebookLeadAdsTriggerProps extends NodeProps {
 /**
  * Handle Facebook Lead Ads events via webhooks
  */
-export class FacebookLeadAdsTrigger<L extends string> extends Node<L> {
+export class FacebookLeadAdsTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.facebookLeadAdsTrigger" as const;
     protected typeVersion = 1 as const;
 

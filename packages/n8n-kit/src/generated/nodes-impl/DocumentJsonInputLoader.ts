@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { DocumentJsonInputLoaderNodeParameters } from "../nodes/DocumentJsonInputLoader";
@@ -14,7 +14,7 @@ export interface DocumentJsonInputLoaderProps extends NodeProps {
 /**
  * Use JSON data from a previous step in the workflow
  */
-export class DocumentJsonInputLoader<L extends string> extends Node<L> {
+export class DocumentJsonInputLoader<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.documentJsonInputLoader" as const;
     protected typeVersion = 1 as const;
 

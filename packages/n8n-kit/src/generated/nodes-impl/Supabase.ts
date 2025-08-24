@@ -3,6 +3,7 @@
 
 import type { SupabaseApiCredentials } from "../credentials/SupabaseApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SupabaseNodeParameters } from "../nodes/Supabase";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SupabaseProps extends NodeProps {
 /**
  * Add, get, delete and update data in a table
  */
-export class Supabase<L extends string> extends Node<L> {
+export class Supabase<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.supabase" as const;
     protected typeVersion = 1 as const;
 

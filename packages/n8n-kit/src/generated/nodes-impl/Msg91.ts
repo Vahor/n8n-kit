@@ -3,6 +3,7 @@
 
 import type { Msg91ApiCredentials } from "../credentials/Msg91Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { Msg91NodeParameters } from "../nodes/Msg91";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface Msg91Props extends NodeProps {
 /**
  * Sends transactional SMS via MSG91
  */
-export class Msg91<L extends string> extends Node<L> {
+export class Msg91<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.msg91" as const;
     protected typeVersion = 1 as const;
 

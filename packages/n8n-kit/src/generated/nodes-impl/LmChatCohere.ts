@@ -3,7 +3,7 @@
 
 import type { CohereApiCredentials } from "../credentials/CohereApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatCohereNodeParameters } from "../nodes/LmChatCohere";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface LmChatCohereProps extends NodeProps {
 /**
  * For advanced usage with an AI chain
  */
-export class LmChatCohere<L extends string> extends Node<L> {
+export class LmChatCohere<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatCohere" as const;
     protected typeVersion = 1 as const;
 

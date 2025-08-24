@@ -3,7 +3,7 @@
 
 import type { MongoDbCredentials } from "../credentials/MongoDb.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryMongoDbChatNodeParameters } from "../nodes/MemoryMongoDbChat";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface MemoryMongoDbChatProps extends NodeProps {
 /**
  * Stores the chat history in MongoDB collection.
  */
-export class MemoryMongoDbChat<L extends string> extends Node<L> {
+export class MemoryMongoDbChat<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryMongoDbChat" as const;
     protected typeVersion = 1 as const;
 

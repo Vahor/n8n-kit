@@ -4,6 +4,7 @@
 import type { MailjetEmailApiCredentials } from "../credentials/MailjetEmailApi.ts";
 import type { MailjetSmsApiCredentials } from "../credentials/MailjetSmsApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MailjetNodeParameters } from "../nodes/Mailjet";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface MailjetProps extends NodeProps {
 /**
  * Consume Mailjet API
  */
-export class Mailjet<L extends string> extends Node<L> {
+export class Mailjet<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mailjet" as const;
     protected typeVersion = 1 as const;
 

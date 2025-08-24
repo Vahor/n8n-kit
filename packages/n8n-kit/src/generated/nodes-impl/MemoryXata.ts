@@ -3,7 +3,7 @@
 
 import type { XataApiCredentials } from "../credentials/XataApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryXataNodeParameters } from "../nodes/MemoryXata";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface MemoryXataProps extends NodeProps {
 /**
  * Use Xata Memory
  */
-export class MemoryXata<L extends string> extends Node<L> {
+export class MemoryXata<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryXata" as const;
     protected typeVersion = 1.4 as const;
 

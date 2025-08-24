@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleDriveOAuth2ApiCredentials } from "../credentials/GoogleDriveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleDriveV2NodeParameters } from "../nodes/GoogleDriveV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleDriveV2Props extends NodeProps {
 /**
  * Access data on Google Drive
  */
-export class GoogleDriveV2<L extends string> extends Node<L> {
+export class GoogleDriveV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleDrive" as const;
     protected typeVersion = 3 as const;
 

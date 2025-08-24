@@ -3,6 +3,7 @@
 
 import type { EmeliaApiCredentials } from "../credentials/EmeliaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { EmeliaTriggerNodeParameters } from "../nodes/EmeliaTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface EmeliaTriggerProps extends NodeProps {
 /**
  * Handle Emelia campaign activity events via webhooks
  */
-export class EmeliaTrigger<L extends string> extends Node<L> {
+export class EmeliaTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.emeliaTrigger" as const;
     protected typeVersion = 1 as const;
 

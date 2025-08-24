@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ToolVectorStoreNodeParameters } from "../nodes/ToolVectorStore";
@@ -14,7 +14,7 @@ export interface ToolVectorStoreProps extends NodeProps {
 /**
  * Answer questions with a vector store
  */
-export class ToolVectorStore<L extends string> extends Node<L> {
+export class ToolVectorStore<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolVectorStore" as const;
     protected typeVersion = 1.1 as const;
 

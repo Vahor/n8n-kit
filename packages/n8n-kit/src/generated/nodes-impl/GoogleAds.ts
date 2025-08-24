@@ -3,6 +3,7 @@
 
 import type { GoogleAdsOAuth2ApiCredentials } from "../credentials/GoogleAdsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleAdsNodeParameters } from "../nodes/GoogleAds";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleAdsProps extends NodeProps {
 /**
  * Use the Google Ads API
  */
-export class GoogleAds<L extends string> extends Node<L> {
+export class GoogleAds<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleAds" as const;
     protected typeVersion = 1 as const;
 

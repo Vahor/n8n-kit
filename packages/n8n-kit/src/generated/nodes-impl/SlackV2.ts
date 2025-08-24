@@ -4,6 +4,7 @@
 import type { SlackApiCredentials } from "../credentials/SlackApi.ts";
 import type { SlackOAuth2ApiCredentials } from "../credentials/SlackOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SlackV2NodeParameters } from "../nodes/SlackV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface SlackV2Props extends NodeProps {
 /**
  * Consume Slack API
  */
-export class SlackV2<L extends string> extends Node<L> {
+export class SlackV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.slack" as const;
     protected typeVersion = 2.3 as const;
 

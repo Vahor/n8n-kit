@@ -3,6 +3,7 @@
 
 import type { FormIoApiCredentials } from "../credentials/FormIoApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FormIoTriggerNodeParameters } from "../nodes/FormIoTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface FormIoTriggerProps extends NodeProps {
 /**
  * Handle form.io events via webhooks
  */
-export class FormIoTrigger<L extends string> extends Node<L> {
+export class FormIoTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.formIoTrigger" as const;
     protected typeVersion = 1 as const;
 

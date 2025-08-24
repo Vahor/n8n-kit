@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleSlidesOAuth2ApiCredentials } from "../credentials/GoogleSlidesOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleSlidesNodeParameters } from "../nodes/GoogleSlides";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleSlidesProps extends NodeProps {
 /**
  * Consume the Google Slides API
  */
-export class GoogleSlides<L extends string> extends Node<L> {
+export class GoogleSlides<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleSlides" as const;
     protected typeVersion = 2 as const;
 

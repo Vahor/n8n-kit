@@ -4,6 +4,7 @@
 import type { SshPasswordCredentials } from "../credentials/SshPassword.ts";
 import type { SshPrivateKeyCredentials } from "../credentials/SshPrivateKey.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SshNodeParameters } from "../nodes/Ssh";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface SshProps extends NodeProps {
 /**
  * Execute commands via SSH
  */
-export class Ssh<L extends string> extends Node<L> {
+export class Ssh<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ssh" as const;
     protected typeVersion = 1 as const;
 

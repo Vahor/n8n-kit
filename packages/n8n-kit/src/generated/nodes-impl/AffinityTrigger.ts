@@ -3,6 +3,7 @@
 
 import type { AffinityApiCredentials } from "../credentials/AffinityApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AffinityTriggerNodeParameters } from "../nodes/AffinityTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AffinityTriggerProps extends NodeProps {
 /**
  * Handle Affinity events via webhooks
  */
-export class AffinityTrigger<L extends string> extends Node<L> {
+export class AffinityTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.affinityTrigger" as const;
     protected typeVersion = 1 as const;
 

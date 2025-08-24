@@ -3,6 +3,7 @@
 
 import type { BaserowApiCredentials } from "../credentials/BaserowApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { BaserowNodeParameters } from "../nodes/Baserow";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface BaserowProps extends NodeProps {
 /**
  * Consume the Baserow API
  */
-export class Baserow<L extends string> extends Node<L> {
+export class Baserow<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.baserow" as const;
     protected typeVersion = 1 as const;
 

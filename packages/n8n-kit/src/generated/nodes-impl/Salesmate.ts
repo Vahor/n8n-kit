@@ -3,6 +3,7 @@
 
 import type { SalesmateApiCredentials } from "../credentials/SalesmateApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SalesmateNodeParameters } from "../nodes/Salesmate";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SalesmateProps extends NodeProps {
 /**
  * Consume Salesmate API
  */
-export class Salesmate<L extends string> extends Node<L> {
+export class Salesmate<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.salesmate" as const;
     protected typeVersion = 1 as const;
 

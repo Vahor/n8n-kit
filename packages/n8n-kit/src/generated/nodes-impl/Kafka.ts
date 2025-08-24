@@ -3,6 +3,7 @@
 
 import type { KafkaCredentials } from "../credentials/Kafka.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { KafkaNodeParameters } from "../nodes/Kafka";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface KafkaProps extends NodeProps {
 /**
  * Sends messages to a Kafka topic
  */
-export class Kafka<L extends string> extends Node<L> {
+export class Kafka<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.kafka" as const;
     protected typeVersion = 1 as const;
 

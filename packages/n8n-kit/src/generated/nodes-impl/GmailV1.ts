@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GmailOAuth2ApiCredentials } from "../credentials/GmailOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GmailV1NodeParameters } from "../nodes/GmailV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GmailV1Props extends NodeProps {
 /**
  * Consume the Gmail API
  */
-export class GmailV1<L extends string> extends Node<L> {
+export class GmailV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gmail" as const;
     protected typeVersion = 1 as const;
 

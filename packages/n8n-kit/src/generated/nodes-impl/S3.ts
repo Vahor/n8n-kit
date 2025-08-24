@@ -3,6 +3,7 @@
 
 import type { S3Credentials } from "../credentials/S3.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { S3NodeParameters } from "../nodes/S3";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface S3Props extends NodeProps {
 /**
  * Sends data to any S3-compatible service
  */
-export class S3<L extends string> extends Node<L> {
+export class S3<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.s3" as const;
     protected typeVersion = 1 as const;
 

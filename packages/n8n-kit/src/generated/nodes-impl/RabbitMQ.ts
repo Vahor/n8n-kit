@@ -3,6 +3,7 @@
 
 import type { RabbitMQCredentials } from "../credentials/RabbitMQ.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { RabbitMQNodeParameters } from "../nodes/RabbitMQ";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface RabbitMQProps extends NodeProps {
 /**
  * Sends messages to a RabbitMQ topic
  */
-export class RabbitMQ<L extends string> extends Node<L> {
+export class RabbitMQ<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rabbitmq" as const;
     protected typeVersion = 1.1 as const;
 

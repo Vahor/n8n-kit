@@ -5,6 +5,7 @@ import type { DiscordBotApiCredentials } from "../credentials/DiscordBotApi.ts";
 import type { DiscordOAuth2ApiCredentials } from "../credentials/DiscordOAuth2Api.ts";
 import type { DiscordWebhookApiCredentials } from "../credentials/DiscordWebhookApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { DiscordV2NodeParameters } from "../nodes/DiscordV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -18,7 +19,7 @@ export interface DiscordV2Props extends NodeProps {
 /**
  * Sends data to Discord
  */
-export class DiscordV2<L extends string> extends Node<L> {
+export class DiscordV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.discord" as const;
     protected typeVersion = 2 as const;
 

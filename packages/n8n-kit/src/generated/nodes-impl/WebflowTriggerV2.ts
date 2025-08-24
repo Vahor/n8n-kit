@@ -3,6 +3,7 @@
 
 import type { WebflowOAuth2ApiCredentials } from "../credentials/WebflowOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WebflowTriggerV2NodeParameters } from "../nodes/WebflowTriggerV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface WebflowTriggerV2Props extends NodeProps {
 /**
  * Handle Webflow events via webhooks
  */
-export class WebflowTriggerV2<L extends string> extends Node<L> {
+export class WebflowTriggerV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.webflowTrigger" as const;
     protected typeVersion = 2 as const;
 

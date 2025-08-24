@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { EditImageNodeParameters } from "../nodes/EditImage";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -11,7 +12,7 @@ export interface EditImageProps extends NodeProps {
 /**
  * Edits an image like blur, resize or adding border and text
  */
-export class EditImage<L extends string> extends Node<L> {
+export class EditImage<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.editImage" as const;
     protected typeVersion = 1 as const;
 

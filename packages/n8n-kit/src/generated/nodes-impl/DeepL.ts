@@ -3,6 +3,7 @@
 
 import type { DeepLApiCredentials } from "../credentials/DeepLApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { DeepLNodeParameters } from "../nodes/DeepL";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface DeepLProps extends NodeProps {
 /**
  * Translate data using DeepL
  */
-export class DeepL<L extends string> extends Node<L> {
+export class DeepL<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.deepL" as const;
     protected typeVersion = 1 as const;
 

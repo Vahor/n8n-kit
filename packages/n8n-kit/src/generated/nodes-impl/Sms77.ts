@@ -3,6 +3,7 @@
 
 import type { Sms77ApiCredentials } from "../credentials/Sms77Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { Sms77NodeParameters } from "../nodes/Sms77";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface Sms77Props extends NodeProps {
 /**
  * Send SMS and make text-to-speech calls
  */
-export class Sms77<L extends string> extends Node<L> {
+export class Sms77<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.sms77" as const;
     protected typeVersion = 1 as const;
 

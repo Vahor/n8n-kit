@@ -3,6 +3,7 @@
 
 import type { UnleashedSoftwareApiCredentials } from "../credentials/UnleashedSoftwareApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { UnleashedSoftwareNodeParameters } from "../nodes/UnleashedSoftware";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface UnleashedSoftwareProps extends NodeProps {
 /**
  * Consume Unleashed Software API
  */
-export class UnleashedSoftware<L extends string> extends Node<L> {
+export class UnleashedSoftware<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.unleashedSoftware" as const;
     protected typeVersion = 1 as const;
 

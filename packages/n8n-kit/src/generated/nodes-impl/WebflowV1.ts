@@ -4,6 +4,7 @@
 import type { WebflowApiCredentials } from "../credentials/WebflowApi.ts";
 import type { WebflowOAuth2ApiCredentials } from "../credentials/WebflowOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WebflowV1NodeParameters } from "../nodes/WebflowV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface WebflowV1Props extends NodeProps {
 /**
  * Consume the Webflow API
  */
-export class WebflowV1<L extends string> extends Node<L> {
+export class WebflowV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.webflow" as const;
     protected typeVersion = 1 as const;
 

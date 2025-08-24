@@ -3,6 +3,7 @@
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AwsTranscribeNodeParameters } from "../nodes/AwsTranscribe";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AwsTranscribeProps extends NodeProps {
 /**
  * Sends data to AWS Transcribe
  */
-export class AwsTranscribe<L extends string> extends Node<L> {
+export class AwsTranscribe<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsTranscribe" as const;
     protected typeVersion = 1 as const;
 

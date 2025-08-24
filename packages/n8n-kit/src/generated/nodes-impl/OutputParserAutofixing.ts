@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { OutputParserAutofixingNodeParameters } from "../nodes/OutputParserAutofixing";
@@ -14,7 +14,7 @@ export interface OutputParserAutofixingProps extends NodeProps {
 /**
  * Deprecated, use structured output parser
  */
-export class OutputParserAutofixing<L extends string> extends Node<L> {
+export class OutputParserAutofixing<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.outputParserAutofixing" as const;
     protected typeVersion = 1 as const;
 

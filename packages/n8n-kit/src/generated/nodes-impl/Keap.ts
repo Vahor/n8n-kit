@@ -3,6 +3,7 @@
 
 import type { KeapOAuth2ApiCredentials } from "../credentials/KeapOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { KeapNodeParameters } from "../nodes/Keap";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface KeapProps extends NodeProps {
 /**
  * Consume Keap API
  */
-export class Keap<L extends string> extends Node<L> {
+export class Keap<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.keap" as const;
     protected typeVersion = 1 as const;
 

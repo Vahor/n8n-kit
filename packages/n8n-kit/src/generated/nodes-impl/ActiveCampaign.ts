@@ -3,6 +3,7 @@
 
 import type { ActiveCampaignApiCredentials } from "../credentials/ActiveCampaignApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ActiveCampaignNodeParameters } from "../nodes/ActiveCampaign";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ActiveCampaignProps extends NodeProps {
 /**
  * Create and edit data in ActiveCampaign
  */
-export class ActiveCampaign<L extends string> extends Node<L> {
+export class ActiveCampaign<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.activeCampaign" as const;
     protected typeVersion = 1 as const;
 

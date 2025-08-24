@@ -3,6 +3,7 @@
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { AwsLambdaNodeParameters } from "../nodes/AwsLambda";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface AwsLambdaProps extends NodeProps {
 /**
  * Invoke functions on AWS Lambda
  */
-export class AwsLambda<L extends string> extends Node<L> {
+export class AwsLambda<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsLambda" as const;
     protected typeVersion = 1 as const;
 

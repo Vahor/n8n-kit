@@ -3,6 +3,7 @@
 
 import type { OktaApiCredentials } from "../credentials/OktaApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { OktaNodeParameters } from "../nodes/Okta";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface OktaProps extends NodeProps {
 /**
  * Use the Okta API
  */
-export class Okta<L extends string> extends Node<L> {
+export class Okta<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.okta" as const;
     protected typeVersion = 1 as const;
 

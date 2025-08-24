@@ -4,6 +4,7 @@
 import type { StoryblokContentApiCredentials } from "../credentials/StoryblokContentApi.ts";
 import type { StoryblokManagementApiCredentials } from "../credentials/StoryblokManagementApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { StoryblokNodeParameters } from "../nodes/Storyblok";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface StoryblokProps extends NodeProps {
 /**
  * Consume Storyblok API
  */
-export class Storyblok<L extends string> extends Node<L> {
+export class Storyblok<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.storyblok" as const;
     protected typeVersion = 1 as const;
 

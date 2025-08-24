@@ -1,11 +1,8 @@
 import type { Type } from "arktype";
-import {
-	type ExecuteWorkflowNodeParameters,
-	type,
-	version,
-} from "../generated/nodes/ExecuteWorkflow";
+import type { ExecuteWorkflowNodeParameters } from "../generated/nodes/ExecuteWorkflow";
+import { ExecuteWorkflow as _ExecuteWorkflow } from "../generated/nodes-impl/ExecuteWorkflow";
 import type { Workflow } from "../workflow";
-import { Node, type NodeProps } from "./node";
+import type { NodeProps } from "./node";
 
 export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
 	extends NodeProps {
@@ -22,10 +19,7 @@ export class ExecuteWorkflow<
 	L extends string,
 	Input extends Type,
 	Output extends Type,
-> extends Node<L, Output["infer"]> {
-	protected override type = type;
-	protected override typeVersion = version;
-
+> extends _ExecuteWorkflow<Output["infer"], L> {
 	public constructor(
 		id: L,
 		override props: ExecuteWorkflowProps<Input, Output>,

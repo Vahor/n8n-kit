@@ -5,6 +5,7 @@ import type { SentryIoOAuth2ApiCredentials } from "../credentials/SentryIoOAuth2
 import type { SentryIoApiCredentials } from "../credentials/SentryIoApi.ts";
 import type { SentryIoServerApiCredentials } from "../credentials/SentryIoServerApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SentryIoNodeParameters } from "../nodes/SentryIo";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -18,7 +19,7 @@ export interface SentryIoProps extends NodeProps {
 /**
  * Consume Sentry.io API
  */
-export class SentryIo<L extends string> extends Node<L> {
+export class SentryIo<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.sentryIo" as const;
     protected typeVersion = 1 as const;
 

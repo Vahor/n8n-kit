@@ -3,6 +3,7 @@
 
 import type { NpmApiCredentials } from "../credentials/NpmApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { NpmNodeParameters } from "../nodes/Npm";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface NpmProps extends NodeProps {
 /**
  * Consume NPM registry API
  */
-export class Npm<L extends string> extends Node<L> {
+export class Npm<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.npm" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { FlowApiCredentials } from "../credentials/FlowApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { FlowNodeParameters } from "../nodes/Flow";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface FlowProps extends NodeProps {
 /**
  * Consume Flow API
  */
-export class Flow<L extends string> extends Node<L> {
+export class Flow<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.flow" as const;
     protected typeVersion = 1 as const;
 

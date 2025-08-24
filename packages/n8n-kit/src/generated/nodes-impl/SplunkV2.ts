@@ -3,6 +3,7 @@
 
 import type { SplunkApiCredentials } from "../credentials/SplunkApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SplunkV2NodeParameters } from "../nodes/SplunkV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SplunkV2Props extends NodeProps {
 /**
  * Consume the Splunk Enterprise API
  */
-export class SplunkV2<L extends string> extends Node<L> {
+export class SplunkV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.splunk" as const;
     protected typeVersion = 2 as const;
 

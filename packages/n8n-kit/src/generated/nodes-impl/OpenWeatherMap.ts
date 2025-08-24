@@ -3,6 +3,7 @@
 
 import type { OpenWeatherMapApiCredentials } from "../credentials/OpenWeatherMapApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { OpenWeatherMapNodeParameters } from "../nodes/OpenWeatherMap";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface OpenWeatherMapProps extends NodeProps {
 /**
  * Gets current and future weather information
  */
-export class OpenWeatherMap<L extends string> extends Node<L> {
+export class OpenWeatherMap<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.openWeatherMap" as const;
     protected typeVersion = 1 as const;
 

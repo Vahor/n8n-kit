@@ -4,6 +4,7 @@
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleChatOAuth2ApiCredentials } from "../credentials/GoogleChatOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleChatNodeParameters } from "../nodes/GoogleChat";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface GoogleChatProps extends NodeProps {
 /**
  * Consume Google Chat API
  */
-export class GoogleChat<L extends string> extends Node<L> {
+export class GoogleChat<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleChat" as const;
     protected typeVersion = 1 as const;
 

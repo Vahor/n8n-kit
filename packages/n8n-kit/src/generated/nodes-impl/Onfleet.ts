@@ -3,6 +3,7 @@
 
 import type { OnfleetApiCredentials } from "../credentials/OnfleetApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { OnfleetNodeParameters } from "../nodes/Onfleet";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface OnfleetProps extends NodeProps {
 /**
  * Consume Onfleet API
  */
-export class Onfleet<L extends string> extends Node<L> {
+export class Onfleet<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.onfleet" as const;
     protected typeVersion = 1 as const;
 

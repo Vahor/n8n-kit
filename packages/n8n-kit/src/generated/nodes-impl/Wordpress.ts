@@ -3,6 +3,7 @@
 
 import type { WordpressApiCredentials } from "../credentials/WordpressApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { WordpressNodeParameters } from "../nodes/Wordpress";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface WordpressProps extends NodeProps {
 /**
  * Consume Wordpress API
  */
-export class Wordpress<L extends string> extends Node<L> {
+export class Wordpress<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.wordpress" as const;
     protected typeVersion = 1 as const;
 

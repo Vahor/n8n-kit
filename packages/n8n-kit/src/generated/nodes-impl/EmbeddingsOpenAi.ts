@@ -3,7 +3,7 @@
 
 import type { OpenAiApiCredentials } from "../credentials/OpenAiApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsOpenAiNodeParameters } from "../nodes/EmbeddingsOpenAi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface EmbeddingsOpenAiProps extends NodeProps {
 /**
  * Use Embeddings OpenAI
  */
-export class EmbeddingsOpenAi<L extends string> extends Node<L> {
+export class EmbeddingsOpenAi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsOpenAi" as const;
     protected typeVersion = 1.2 as const;
 

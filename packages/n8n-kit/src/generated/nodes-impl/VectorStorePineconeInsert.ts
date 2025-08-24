@@ -3,6 +3,7 @@
 
 import type { PineconeApiCredentials } from "../credentials/PineconeApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStorePineconeInsertNodeParameters } from "../nodes/VectorStorePineconeInsert";
@@ -16,7 +17,7 @@ export interface VectorStorePineconeInsertProps extends NodeProps {
 /**
  * Insert data into Pinecone Vector Store index
  */
-export class VectorStorePineconeInsert<L extends string> extends Node<L> {
+export class VectorStorePineconeInsert<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStorePineconeInsert" as const;
     protected typeVersion = 1 as const;
 

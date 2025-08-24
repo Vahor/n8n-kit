@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { FilterV1NodeParameters } from "../nodes/FilterV1";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -11,7 +12,7 @@ export interface FilterV1Props extends NodeProps {
 /**
  * Remove items matching a condition
  */
-export class FilterV1<L extends string> extends Node<L> {
+export class FilterV1<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.filter" as const;
     protected typeVersion = 1 as const;
 

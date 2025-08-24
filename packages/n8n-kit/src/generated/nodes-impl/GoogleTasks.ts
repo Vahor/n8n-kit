@@ -3,6 +3,7 @@
 
 import type { GoogleTasksOAuth2ApiCredentials } from "../credentials/GoogleTasksOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { GoogleTasksNodeParameters } from "../nodes/GoogleTasks";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface GoogleTasksProps extends NodeProps {
 /**
  * Consume Google Tasks API
  */
-export class GoogleTasks<L extends string> extends Node<L> {
+export class GoogleTasks<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleTasks" as const;
     protected typeVersion = 1 as const;
 

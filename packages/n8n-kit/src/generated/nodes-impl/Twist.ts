@@ -3,6 +3,7 @@
 
 import type { TwistOAuth2ApiCredentials } from "../credentials/TwistOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TwistNodeParameters } from "../nodes/Twist";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TwistProps extends NodeProps {
 /**
  * Consume Twist API
  */
-export class Twist<L extends string> extends Node<L> {
+export class Twist<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.twist" as const;
     protected typeVersion = 1 as const;
 

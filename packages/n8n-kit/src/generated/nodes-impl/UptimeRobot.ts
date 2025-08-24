@@ -3,6 +3,7 @@
 
 import type { UptimeRobotApiCredentials } from "../credentials/UptimeRobotApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { UptimeRobotNodeParameters } from "../nodes/UptimeRobot";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface UptimeRobotProps extends NodeProps {
 /**
  * Consume UptimeRobot API
  */
-export class UptimeRobot<L extends string> extends Node<L> {
+export class UptimeRobot<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.uptimeRobot" as const;
     protected typeVersion = 1 as const;
 

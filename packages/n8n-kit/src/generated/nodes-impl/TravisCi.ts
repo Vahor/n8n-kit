@@ -3,6 +3,7 @@
 
 import type { TravisCiApiCredentials } from "../credentials/TravisCiApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { TravisCiNodeParameters } from "../nodes/TravisCi";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface TravisCiProps extends NodeProps {
 /**
  * Consume TravisCI API
  */
-export class TravisCi<L extends string> extends Node<L> {
+export class TravisCi<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.travisCi" as const;
     protected typeVersion = 1 as const;
 

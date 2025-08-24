@@ -5,6 +5,7 @@ import type { JiraSoftwareCloudApiCredentials } from "../credentials/JiraSoftwar
 import type { JiraSoftwareServerApiCredentials } from "../credentials/JiraSoftwareServerApi.ts";
 import type { JiraSoftwareServerPatApiCredentials } from "../credentials/JiraSoftwareServerPatApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { JiraNodeParameters } from "../nodes/Jira";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -18,7 +19,7 @@ export interface JiraProps extends NodeProps {
 /**
  * Consume Jira Software API
  */
-export class Jira<L extends string> extends Node<L> {
+export class Jira<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.jira" as const;
     protected typeVersion = 1 as const;
 

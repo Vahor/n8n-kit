@@ -3,7 +3,7 @@
 
 import type { JwtAuthCredentials } from "../credentials/JwtAuth.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { RespondToWebhookNodeParameters } from "../nodes/RespondToWebhook";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -15,7 +15,7 @@ export interface RespondToWebhookProps extends NodeProps {
 /**
  * Returns data for Webhook
  */
-export class RespondToWebhook<L extends string> extends Node<L> {
+export class RespondToWebhook<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.respondToWebhook" as const;
     protected typeVersion = 1.5 as const;
 

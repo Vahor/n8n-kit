@@ -4,6 +4,7 @@
 import type { MauticApiCredentials } from "../credentials/MauticApi.ts";
 import type { MauticOAuth2ApiCredentials } from "../credentials/MauticOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MauticTriggerNodeParameters } from "../nodes/MauticTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface MauticTriggerProps extends NodeProps {
 /**
  * Handle Mautic events via webhooks
  */
-export class MauticTrigger<L extends string> extends Node<L> {
+export class MauticTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mauticTrigger" as const;
     protected typeVersion = 1 as const;
 

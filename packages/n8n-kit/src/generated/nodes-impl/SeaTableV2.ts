@@ -3,6 +3,7 @@
 
 import type { SeaTableApiCredentials } from "../credentials/SeaTableApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { SeaTableV2NodeParameters } from "../nodes/SeaTableV2";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface SeaTableV2Props extends NodeProps {
 /**
  * Consume the SeaTable API
  */
-export class SeaTableV2<L extends string> extends Node<L> {
+export class SeaTableV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.seaTable" as const;
     protected typeVersion = 2 as const;
 

@@ -3,6 +3,7 @@
 
 import type { RedisCredentials } from "../credentials/Redis.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { RedisNodeParameters } from "../nodes/Redis";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface RedisProps extends NodeProps {
 /**
  * Get, send and update data in Redis
  */
-export class Redis<L extends string> extends Node<L> {
+export class Redis<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.redis" as const;
     protected typeVersion = 1 as const;
 

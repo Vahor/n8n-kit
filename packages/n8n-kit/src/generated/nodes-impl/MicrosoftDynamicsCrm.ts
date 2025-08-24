@@ -3,6 +3,7 @@
 
 import type { MicrosoftDynamicsOAuth2ApiCredentials } from "../credentials/MicrosoftDynamicsOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftDynamicsCrmNodeParameters } from "../nodes/MicrosoftDynamicsCrm";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface MicrosoftDynamicsCrmProps extends NodeProps {
 /**
  * Consume Microsoft Dynamics CRM API
  */
-export class MicrosoftDynamicsCrm<L extends string> extends Node<L> {
+export class MicrosoftDynamicsCrm<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftDynamicsCrm" as const;
     protected typeVersion = 1 as const;
 

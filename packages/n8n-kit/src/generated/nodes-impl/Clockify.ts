@@ -3,6 +3,7 @@
 
 import type { ClockifyApiCredentials } from "../credentials/ClockifyApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { ClockifyNodeParameters } from "../nodes/Clockify";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface ClockifyProps extends NodeProps {
 /**
  * Consume Clockify REST API
  */
-export class Clockify<L extends string> extends Node<L> {
+export class Clockify<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.clockify" as const;
     protected typeVersion = 1 as const;
 

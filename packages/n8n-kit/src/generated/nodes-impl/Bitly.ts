@@ -4,6 +4,7 @@
 import type { BitlyApiCredentials } from "../credentials/BitlyApi.ts";
 import type { BitlyOAuth2ApiCredentials } from "../credentials/BitlyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { BitlyNodeParameters } from "../nodes/Bitly";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -16,7 +17,7 @@ export interface BitlyProps extends NodeProps {
 /**
  * Consume Bitly API
  */
-export class Bitly<L extends string> extends Node<L> {
+export class Bitly<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.bitly" as const;
     protected typeVersion = 1 as const;
 

@@ -3,6 +3,7 @@
 
 import type { KitemakerApiCredentials } from "../credentials/KitemakerApi.ts";
 import type { Credentials } from "../../credentials";
+import type { IContext } from "../../workflow/chain/types";
 import type { KitemakerNodeParameters } from "../nodes/Kitemaker";
 import { Node, type NodeProps } from "../../nodes/node";
 
@@ -14,7 +15,7 @@ export interface KitemakerProps extends NodeProps {
 /**
  * Consume the Kitemaker GraphQL API
  */
-export class Kitemaker<L extends string> extends Node<L> {
+export class Kitemaker<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "n8n-nodes-base.kitemaker" as const;
     protected typeVersion = 1 as const;
 

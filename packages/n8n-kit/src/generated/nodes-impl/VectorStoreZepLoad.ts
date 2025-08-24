@@ -3,7 +3,7 @@
 
 import type { ZepApiCredentials } from "../credentials/ZepApi.ts";
 import type { Credentials } from "../../credentials";
-import type { IChainable } from "../../workflow/chain/types";
+import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreZepLoadNodeParameters } from "../nodes/VectorStoreZepLoad";
@@ -17,7 +17,7 @@ export interface VectorStoreZepLoadProps extends NodeProps {
 /**
  * Load data from Zep Vector Store index
  */
-export class VectorStoreZepLoad<L extends string> extends Node<L> {
+export class VectorStoreZepLoad<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreZepLoad" as const;
     protected typeVersion = 1 as const;
 

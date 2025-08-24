@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { IContext } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChainSummarizationV2NodeParameters } from "../nodes/ChainSummarizationV2";
@@ -13,7 +14,7 @@ export interface ChainSummarizationV2Props extends NodeProps {
 /**
  * Transforms text into a concise summary
  */
-export class ChainSummarizationV2<L extends string> extends Node<L> {
+export class ChainSummarizationV2<C extends IContext, L extends string = string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.chainSummarization" as const;
     protected typeVersion = 2.1 as const;
 
