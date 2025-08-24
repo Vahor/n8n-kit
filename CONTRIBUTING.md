@@ -40,9 +40,6 @@ You'll find code related to `@vahor/n8n-kit` in the [`packages/n8n-kit`](./packa
 
 You'll find code related to `@vahor/n8n-kit-cli` in the [`packages/n8n-cli`](./packages/n8n-cli) directory.
 
-
-`/check-examples` command in PR to check if examples still work.
-
 ## Types of Contributions
 
 ### Updating generated files
