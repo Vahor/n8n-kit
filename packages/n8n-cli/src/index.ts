@@ -20,7 +20,6 @@ yargsInstance
 	.command(require("./cmds/init"))
 	.command(require("./cmds/deploy"))
 	.command(require("./cmds/build"))
-	.command(require("./cmds/workflow"))
 
 	.option("dry-run", {
 		type: "boolean",

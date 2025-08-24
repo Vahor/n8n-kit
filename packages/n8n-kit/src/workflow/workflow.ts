@@ -23,7 +23,7 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 		Output,
 		Chain<any, any> | BaseNode<any, any>
 	>;
-	tags?: Tag[] | undefined;
+	tags?: string[] | undefined;
 	active?: boolean;
 	description?: string;
 
