@@ -1,0 +1,4 @@
+[test]
+coverageIgnoreSourcemaps = true
+coverageSkipTestFiles = true
+coveragePathIgnorePatterns = ["**/generated/**"]
