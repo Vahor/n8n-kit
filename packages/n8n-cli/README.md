@@ -114,6 +114,9 @@ Deploy your workflows to n8n.
 bunx @vahor/n8n deploy [options]
 ```
 
+**Options:**
+- `--merge` - Do not overwrite nodes position in existing workflows (default: true)
+
 **Workflow Matching:**
 
 - Workflows are matched by a unique tag generated from their hash ID
