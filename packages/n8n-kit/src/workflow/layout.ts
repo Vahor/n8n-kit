@@ -2,10 +2,10 @@ import dagre from "@dagrejs/dagre";
 import { DEFAULT_NODE_SIZE, type Node, type NodePosition } from "../nodes/node";
 import { isGroup } from "../symbols";
 
-export const GROUP_DEFAULT_POSITION: NodePosition = [
+export const GROUP_DEFAULT_POSITION = Object.freeze([
 	Infinity,
 	Infinity,
-] as const;
+]) as NodePosition;
 
 export interface WorkflowLayoutOptions {
 	rankdir?: "TB" | "BT" | "LR" | "RL";
