@@ -1,4 +1,4 @@
-name: Check generate
+name: Check examples
 
 on:
   issue_comment:
@@ -10,16 +10,16 @@ concurrency:
 
 jobs:
   run:
-    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/check-generate')
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/check-examples')
     runs-on: ubuntu-latest
     permissions: write-all
 
     steps:
       - name: Post starting comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         env:
           MESSAGE: |
-            Check Generate job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+            Check Example job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
             Please wait.
 
@@ -47,15 +47,14 @@ jobs:
         run: bun run --filter '*' build
 
       - name: Check examples
-        working-directory: packages/n8n-kit/
-        run: bun generate 
+        run: bash scripts/build-and-check-examples.sh
 
       - name: Post success comment
         if: ${{ success() }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         env:
           MESSAGE: |
-            Check generate job completed.
+            Check examples job succeeded.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -70,7 +69,7 @@ jobs:
 
       - name: Post failure comment
         if: ${{ failure() }}
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         env:
           MESSAGE: |
             Check examples job failed.
