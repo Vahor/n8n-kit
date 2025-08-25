@@ -128,6 +128,24 @@ describe("If", () => {
 			});
 		});
 
+		test("preserve id and context even when connecting to another chain", () => {
+			const chain = Chain.start(new NoOp("start")).next(
+				// Only checking true as we've seen that other cases
+				// correctly infer the ids and context
+				baseifNode.true(trueNodeChain),
+			);
+			type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
+			type ExpectedContext = trueNodeInContext;
+			expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
+
+			type IdsInChain = typeof chain extends Chain<any, infer Ids>
+				? Ids
+				: never;
+			expectTypeOf<IdsInChain>().toEqualTypeOf<
+				["start", "true", "something", "end"]
+			>();
+		});
+
 		test("can connect to if true/false nodes", () => {
 			Chain.start(new NoOp("start"))
 				.next(baseifNode.true(trueNode).false(falseNode))

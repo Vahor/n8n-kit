@@ -31,25 +31,29 @@ export type AddIChainableToChainContext<
 	N,
 	CC extends ChainContext,
 	WithPrevious = true,
-> = N extends Group<infer _, infer G_Chain_CC, any>
-	? IgnoreContext<G_Chain_CC> extends true
-		? Omit<CC, PREVIOUS_CONTENT>
-		: Prettify<Omit<CC, PREVIOUS_CONTENT> & G_Chain_CC>
-	: N extends If<any, any, any, infer I_Chain_CC, any>
-		? IgnoreContext<I_Chain_CC> extends true
+> = Prettify<
+	N extends Chain<infer C_CC, any>
+		? IgnoreContext<C_CC> extends true
 			? Omit<CC, PREVIOUS_CONTENT>
-			: Prettify<Omit<CC & I_Chain_CC, PREVIOUS_CONTENT>>
-		: N extends IChainable<infer Id, infer C>
-			? IgnoreContext<C> extends true
+			: Omit<CC, PREVIOUS_CONTENT> & C_CC
+		: N extends Group<infer _, infer G_Chain_CC, any>
+			? IgnoreContext<G_Chain_CC> extends true
 				? Omit<CC, PREVIOUS_CONTENT>
-				: Prettify<
-						{ [k in Id]: C } & Omit<CC, PREVIOUS_CONTENT> & {
-								[k in PREVIOUS_CONTENT as WithPrevious extends true
-									? k
-									: never]: C;
-							}
-					>
-			: { CC: CC };
+				: Omit<CC, PREVIOUS_CONTENT> & G_Chain_CC
+			: N extends If<any, any, any, infer I_Chain_CC, any>
+				? IgnoreContext<I_Chain_CC> extends true
+					? Omit<CC, PREVIOUS_CONTENT>
+					: Omit<CC & I_Chain_CC, PREVIOUS_CONTENT>
+				: N extends IChainable<infer Id, infer C>
+					? IgnoreContext<C> extends true
+						? Omit<CC, PREVIOUS_CONTENT>
+						: { [k in Id]: C } & Omit<CC, PREVIOUS_CONTENT> & {
+									[k in PREVIOUS_CONTENT as WithPrevious extends true
+										? k
+										: never]: C;
+								}
+					: CC
+>;
 
 export type AddNodeIdToIds<N, Ids extends readonly string[]> = N extends Group<
 	infer _,
@@ -59,9 +63,11 @@ export type AddNodeIdToIds<N, Ids extends readonly string[]> = N extends Group<
 	? [...Ids, ...G_Chain_Ids]
 	: N extends If<any, any, any, any, infer G_Chain_Ids>
 		? [...Ids, ...G_Chain_Ids]
-		: N extends IChainable<infer Id>
-			? [...Ids, Id]
-			: Ids;
+		: N extends Chain<any, infer G_Chain_Ids>
+			? [...Ids, ...G_Chain_Ids]
+			: N extends IChainable<infer Id>
+				? [...Ids, Id]
+				: Ids;
 
 export type ExtractChainContext<C> = C extends Chain<infer CC> ? CC : {};
 
@@ -83,7 +89,7 @@ export class Chain<
 	CC extends ChainContext = {},
 	IdsInContext extends string[] = [],
 	EndsInMultiple = false,
-> implements IChainable
+> implements IChainable<"chain", CC>
 {
 	"~context": CC = undefined as any;
 
