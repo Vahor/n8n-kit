@@ -1,5 +1,19 @@
 # @vahor/n8n-kit
 
+## 0.1.3
+
+### Patch Changes
+
+- [#44](https://github.com/Vahor/n8n-kit/pull/44) [`04a27b4`](https://github.com/Vahor/n8n-kit/commit/04a27b4f34071428c2dc4a677eb55d1edcda7c23) Thanks [@Vahor](https://github.com/Vahor)! - Add node clone method - keeping type
+
+- [#42](https://github.com/Vahor/n8n-kit/pull/42) [`57a65e3`](https://github.com/Vahor/n8n-kit/commit/57a65e3ce8c00c14f2a7ce2abb0648f88040bb0b) Thanks [@Vahor](https://github.com/Vahor)! - remove default value for Id in generated nodes
+
+- [#44](https://github.com/Vahor/n8n-kit/pull/44) [`04a27b4`](https://github.com/Vahor/n8n-kit/commit/04a27b4f34071428c2dc4a677eb55d1edcda7c23) Thanks [@Vahor](https://github.com/Vahor)! - preserve Context and Ids passed through true/false in if node
+
+- [#45](https://github.com/Vahor/n8n-kit/pull/45) [`44213de`](https://github.com/Vahor/n8n-kit/commit/44213de27009f1187828f941959109d33176e8cb) Thanks [@Vahor](https://github.com/Vahor)! - Add support for types in n8n fixedCollection properties
+
+- [#45](https://github.com/Vahor/n8n-kit/pull/45) [`44213de`](https://github.com/Vahor/n8n-kit/commit/44213de27009f1187828f941959109d33176e8cb) Thanks [@Vahor](https://github.com/Vahor)! - add support for multipleValues typeOption on n8n fields
+
 ## 0.1.2
 
 ### Patch Changes
