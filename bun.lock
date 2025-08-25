@@ -90,6 +90,11 @@
       },
     },
   },
+  "catalog": {
+    "arktype": "^2.1.20",
+    "tsdown": "^0.14.1",
+    "typescript": "^5.9.2",
+  },
   "packages": {
     "@acuminous/bitsyntax": ["@acuminous/bitsyntax@0.1.2", "", { "dependencies": { "buffer-more-ints": "~1.0.0", "debug": "^4.3.4", "safe-buffer": "~5.1.2" } }, "sha512-29lUK80d1muEQqiUsSo+3A0yP6CdspgC95EnKBMi22Xlwt79i/En4Vr67+cXhU+cZjbti3TgGGC5wy1stIywVQ=="],
 
