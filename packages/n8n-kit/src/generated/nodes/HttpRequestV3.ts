@@ -33,7 +33,7 @@ export interface HttpRequestV3NodeParameters {
      * Default: {"parameters":[{"name":"","value":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly queryParameters?: { parameters: { name?: string, value?: string } };
+    readonly queryParameters?: { parameters: Array<{ name?: string, value?: string }> };
 
     readonly jsonQuery?: string;
 
@@ -47,7 +47,7 @@ export interface HttpRequestV3NodeParameters {
      * Default: {"parameters":[{"name":"","value":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly headerParameters?: { parameters: { name?: string, value?: string } };
+    readonly headerParameters?: { parameters: Array<{ name?: string, value?: string }> };
 
     readonly jsonHeaders?: string;
 
@@ -70,7 +70,7 @@ export interface HttpRequestV3NodeParameters {
      * Default: {"parameters":[{"name":"","value":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly bodyParameters?: { parameters: { name?: string, value?: string } } | { parameters: { parameterType?: "formBinaryData" | "formData", name?: string, value?: string, inputDataFieldName?: string } };
+    readonly bodyParameters?: { parameters: Array<{ name?: string, value?: string }> } | { parameters: Array<{ parameterType?: "formBinaryData" | "formData", name?: string, value?: string, inputDataFieldName?: string }> };
 
     readonly jsonBody?: string;
 
@@ -82,7 +82,7 @@ export interface HttpRequestV3NodeParameters {
     readonly rawContentType?: string;
 
     /** Default: {} */
-    readonly options?: { batching?: { batch: { batchSize?: number, batchInterval?: number } }, allowUnauthorizedCerts?: boolean, queryParameterArrays?: "repeat" | "brackets" | "indices", lowercaseHeaders?: boolean, redirect?: { redirect: { followRedirects?: boolean, maxRedirects?: number } }, response?: { response: { fullResponse?: boolean, neverError?: boolean, responseFormat?: "autodetect" | "file" | "json" | "text", outputPropertyName: string } }, pagination?: { pagination: { paginationMode?: "off" | "updateAParameterInEachRequest" | "responseContainsNextURL", webhookNotice?: string, nextURL?: string, parameters?: { parameters: { type?: "body" | "headers" | "qs", name?: string, value?: string } }, paginationCompleteWhen?: "responseIsEmpty" | "receiveSpecificStatusCodes" | "other", statusCodesWhenComplete?: string, completeExpression?: string, limitPagesFetched?: boolean, maxRequests?: number, requestInterval?: number } }, proxy?: string, timeout?: number };
+    readonly options?: { batching?: { batch: { batchSize?: number, batchInterval?: number } }, allowUnauthorizedCerts?: boolean, queryParameterArrays?: "repeat" | "brackets" | "indices", lowercaseHeaders?: boolean, redirect?: { redirect: { followRedirects?: boolean, maxRedirects?: number } }, response?: { response: { fullResponse?: boolean, neverError?: boolean, responseFormat?: "autodetect" | "file" | "json" | "text", outputPropertyName: string } }, pagination?: { pagination: { paginationMode?: "off" | "updateAParameterInEachRequest" | "responseContainsNextURL", webhookNotice?: string, nextURL?: string, parameters?: { parameters: Array<{ type?: "body" | "headers" | "qs", name?: string, value?: string }> }, paginationCompleteWhen?: "responseIsEmpty" | "receiveSpecificStatusCodes" | "other", statusCodesWhenComplete?: string, completeExpression?: string, limitPagesFetched?: boolean, maxRequests?: number, requestInterval?: number } }, proxy?: string, timeout?: number };
 
     /** Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost */
     readonly optimizeResponse?: boolean;

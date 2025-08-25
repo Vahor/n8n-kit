@@ -46,7 +46,7 @@ export interface SeaTableV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Column to Send","multipleValues":true}
      */
-    readonly columnsUi?: { columnValues: { columnName?: string, columnValue?: string } };
+    readonly columnsUi?: { columnValues: Array<{ columnName?: string, columnValue?: string }> };
 
     /**
      * Whether to return all results or only up to a given limit

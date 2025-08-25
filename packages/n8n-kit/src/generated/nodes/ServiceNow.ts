@@ -79,7 +79,7 @@ export interface ServiceNowNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSend?: { field: { column?: string, value?: string } };
+    readonly fieldsToSend?: { field: Array<{ column?: string, value?: string }> };
 
     /**
      * Unique identifier of the user

@@ -26,7 +26,7 @@ export interface EmeliaNodeParameters {
     readonly contactEmail?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { customFieldsUi?: { customFieldsValues: { fieldName?: string, value?: string } }, firstName?: string, lastContacted?: string, lastName?: string, lastOpen?: string, lastReplied?: string, mailsSent?: number, phoneNumber?: string };
+    readonly additionalFields?: { customFieldsUi?: { customFieldsValues: Array<{ fieldName?: string, value?: string }> }, firstName?: string, lastContacted?: string, lastName?: string, lastOpen?: string, lastReplied?: string, mailsSent?: number, phoneNumber?: string };
 
     /** The name of the campaign to create */
     readonly campaignName?: string;

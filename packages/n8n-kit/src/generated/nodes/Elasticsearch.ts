@@ -53,7 +53,7 @@ export interface ElasticsearchNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { fieldValues: { fieldId?: string, fieldValue?: string } };
+    readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> };
 
     /** Default: {} */
     readonly additionalFields?: { documentId?: string, routing?: string, timeout?: string } | { aliases?: string, include_type_name?: boolean, mappings?: string, master_timeout?: string, settings?: string, timeout?: string, wait_for_active_shards?: string } | { allow_no_indices?: boolean, expand_wildcards?: "all" | "closed" | "hidden" | "none" | "open", flat_settings?: boolean, ignore_unavailable?: boolean, include_defaults?: boolean, local?: boolean, master_timeout?: string };

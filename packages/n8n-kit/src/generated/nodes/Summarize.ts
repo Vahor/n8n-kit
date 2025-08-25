@@ -12,7 +12,7 @@ export interface SummarizeNodeParameters {
      * Default: {"values":[{"aggregation":"count","field":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSummarize?: { values: { aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string } };
+    readonly fieldsToSummarize?: { values: Array<{ aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string }> };
 
     /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;

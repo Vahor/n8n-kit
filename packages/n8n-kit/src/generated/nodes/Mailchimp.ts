@@ -46,7 +46,7 @@ export interface MailchimpNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeFieldsUi?: { mergeFieldsValues: { name: string, value: string } };
+    readonly mergeFieldsUi?: { mergeFieldsValues: Array<{ name: string, value: string }> };
 
     /** Type options: {"alwaysOpenEditWindow":true} */
     readonly mergeFieldsJson?: string;
@@ -58,7 +58,7 @@ export interface MailchimpNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly groupsUi?: { groupsValues: { categoryId?: string, categoryFieldId?: string, value?: boolean } };
+    readonly groupsUi?: { groupsValues: Array<{ categoryId?: string, categoryFieldId?: string, value?: boolean }> };
 
     /** Type options: {"alwaysOpenEditWindow":true} */
     readonly groupJson?: string;
@@ -74,7 +74,7 @@ export interface MailchimpNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { emailType?: "html" | "text", groupsUi?: { groupsValues: { categoryId?: string, categoryFieldId?: string, value?: boolean } }, language?: string, mergeFieldsUi?: { mergeFieldsValues: { name: string, value: string } }, ipOptIn?: string, ipSignup?: string, timestampSignup?: string, skipMergeValidation?: boolean, status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", vip?: boolean, locationFieldsUi?: { locationFieldsValues: { latitude: string, longitude: string } }, timestampOpt?: string };
+    readonly updateFields?: { emailType?: "html" | "text", groupsUi?: { groupsValues: Array<{ categoryId?: string, categoryFieldId?: string, value?: boolean }> }, language?: string, mergeFieldsUi?: { mergeFieldsValues: Array<{ name: string, value: string }> }, ipOptIn?: string, ipSignup?: string, timestampSignup?: string, skipMergeValidation?: boolean, status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", vip?: boolean, locationFieldsUi?: { locationFieldsValues: { latitude: string, longitude: string } }, timestampOpt?: string };
 
     /**
      * Default: []

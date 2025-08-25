@@ -24,19 +24,19 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly addressesUi?: { addressesValues: { countryCode?: string, line1?: string, line2?: string, locality?: string, postalCode?: string, region?: string, zipCode?: string, zipFour?: string } } | { addressesValues: { field?: "BILLING" | "SHIPPING" | "OTHER", countryCode?: string, line1?: string, line2?: string, locality?: string, postalCode?: string, region?: string, zipCode?: string, zipFour?: string } };
+    readonly addressesUi?: { addressesValues: { countryCode?: string, line1?: string, line2?: string, locality?: string, postalCode?: string, region?: string, zipCode?: string, zipFour?: string } } | { addressesValues: Array<{ field?: "BILLING" | "SHIPPING" | "OTHER", countryCode?: string, line1?: string, line2?: string, locality?: string, postalCode?: string, region?: string, zipCode?: string, zipFour?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly faxesUi?: { faxesValues: { type?: string, number?: string } } | { faxesValues: { field?: "FAX1" | "FAX2", number?: string } };
+    readonly faxesUi?: { faxesValues: { type?: string, number?: string } } | { faxesValues: Array<{ field?: "FAX1" | "FAX2", number?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly phonesUi?: { phonesValues: { type?: string, number?: string } } | { phonesValues: { field?: "PHONE1" | "PHONE2" | "PHONE3" | "PHONE4" | "PHONE5", number?: string } };
+    readonly phonesUi?: { phonesValues: Array<{ type?: string, number?: string }> } | { phonesValues: Array<{ field?: "PHONE1" | "PHONE2" | "PHONE3" | "PHONE4" | "PHONE5", number?: string }> };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -61,13 +61,13 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly emailsUi?: { emailsValues: { field?: "EMAIL1" | "EMAIL2" | "EMAIL3", email?: string } };
+    readonly emailsUi?: { emailsValues: Array<{ field?: "EMAIL1" | "EMAIL2" | "EMAIL3", email?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly socialAccountsUi?: { socialAccountsValues: { type?: "Facebook" | "Twitter" | "LinkedIn", name?: string } };
+    readonly socialAccountsUi?: { socialAccountsValues: Array<{ type?: "Facebook" | "Twitter" | "LinkedIn", name?: string }> };
 
     readonly contactId?: string;
 
@@ -105,7 +105,7 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly orderItemsUi?: { orderItemsValues: { description?: string, price?: number, "product ID"?: number, quantity?: number } };
+    readonly orderItemsUi?: { orderItemsValues: Array<{ description?: string, price?: number, "product ID"?: number, quantity?: number }> };
 
     readonly orderId?: string;
 
@@ -128,7 +128,7 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { attachmentsValues: { fileData?: string, fileName?: string }, attachmentsBinary: { property?: string } };
+    readonly attachmentsUi?: { attachmentsValues: Array<{ fileData?: string, fileName?: string }>, attachmentsBinary: Array<{ property?: string }> };
 
     /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;

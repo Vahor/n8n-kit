@@ -65,7 +65,7 @@ export interface S3NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly tagsUi?: { tagsValues: { key?: string, value?: string } };
+    readonly tagsUi?: { tagsValues: Array<{ key?: string, value?: string }> };
 
     readonly fileKey?: string;
 

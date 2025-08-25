@@ -116,7 +116,7 @@ export interface OpenAiAINodeParameters {
      * Default: {"values":[{"content":""}]}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly messages?: { values: { content?: string, role?: "user" | "assistant" | "system" } };
+    readonly messages?: { values: Array<{ content?: string, role?: "user" | "assistant" | "system" }> };
 
     /** Whether to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106. */
     readonly jsonOutput?: boolean;

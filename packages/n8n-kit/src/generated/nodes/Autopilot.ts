@@ -19,7 +19,7 @@ export interface AutopilotNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { Company?: string, customFieldsUi?: { customFieldsValues: { key?: string, value?: string } }, Fax?: string, FirstName?: string, Industry?: string, LastName?: string, LeadSource?: string, LinkedIn?: string, autopilotList?: string, MailingCountry?: string, MailingPostalCode?: string, MailingState?: string, MailingStreet?: string, MailingCity?: string, MobilePhone?: string, newEmail?: string, notify?: boolean, NumberOfEmployees?: number, owner_name?: string, Phone?: string, Salutation?: string, autopilotSessionId?: string, Status?: string, Title?: string, unsubscribed?: boolean, Website?: string };
+    readonly additionalFields?: { Company?: string, customFieldsUi?: { customFieldsValues: Array<{ key?: string, value?: string }> }, Fax?: string, FirstName?: string, Industry?: string, LastName?: string, LeadSource?: string, LinkedIn?: string, autopilotList?: string, MailingCountry?: string, MailingPostalCode?: string, MailingState?: string, MailingStreet?: string, MailingCity?: string, MobilePhone?: string, newEmail?: string, notify?: boolean, NumberOfEmployees?: number, owner_name?: string, Phone?: string, Salutation?: string, autopilotSessionId?: string, Status?: string, Title?: string, unsubscribed?: boolean, Website?: string };
 
     /** Can be ID or email */
     readonly contactId?: string;

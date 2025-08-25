@@ -33,7 +33,7 @@ export interface OpenAiNodeParameters {
      * Default: {}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly prompt?: { messages: { role?: "assistant" | "system" | "user", content?: string } } | string;
+    readonly prompt?: { messages: Array<{ role?: "assistant" | "system" | "user", content?: string }> } | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data

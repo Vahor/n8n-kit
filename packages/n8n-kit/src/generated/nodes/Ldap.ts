@@ -38,7 +38,7 @@ export interface LdapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attributes?: { attribute: { id: string, value?: string } } | { add: { id: string, value?: string }, replace: { id: string, value?: string }, delete: { id: string, value?: string } };
+    readonly attributes?: { attribute: Array<{ id: string, value?: string }> } | { add: Array<{ id: string, value?: string }>, replace: Array<{ id: string, value?: string }>, delete: Array<{ id: string, value?: string }> };
 
     /** The distinguished name of the subtree to search in */
     readonly baseDN?: string;

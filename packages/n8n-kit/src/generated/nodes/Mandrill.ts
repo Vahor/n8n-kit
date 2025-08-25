@@ -43,14 +43,14 @@ export interface MandrillNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeVarsUi?: { mergeVarsValues: { name?: string, content?: string } };
+    readonly mergeVarsUi?: { mergeVarsValues: Array<{ name?: string, content?: string }> };
 
     /**
      * Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill search api.
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly metadataUi?: { metadataValues: { name?: string, value?: string } };
+    readonly metadataUi?: { metadataValues: Array<{ name?: string, value?: string }> };
 
     /**
      * Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill search api.
@@ -69,7 +69,7 @@ export interface MandrillNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { attachmentsValues: { type?: string, name?: string, content?: string }, attachmentsBinary: { property?: string } };
+    readonly attachmentsUi?: { attachmentsValues: Array<{ type?: string, name?: string, content?: string }>, attachmentsBinary: Array<{ property?: string }> };
 
     /**
      * Optional extra headers to add to the message (most headers are allowed)
@@ -82,6 +82,6 @@ export interface MandrillNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly headersUi?: { headersValues: { name?: string, value?: string } };
+    readonly headersUi?: { headersValues: Array<{ name?: string, value?: string }> };
 
 }

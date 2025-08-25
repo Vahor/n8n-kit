@@ -19,7 +19,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly observableUi?: { values: { dataType?: string, data?: string, binaryProperty?: string, message?: string, tags?: string } };
+    readonly observableUi?: { values: Array<{ dataType?: string, data?: string, binaryProperty?: string, message?: string, tags?: string }> };
 
     /** Default: {"mode":"list","value":""} */
     readonly alertId?: {
@@ -59,13 +59,13 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { values: { field?: string | "message" | "date" | "message" | "category" | "content" | "title", operator?: "_between" | "_like" | "_endsWith" | "_eq" | "_gt" | "_gte" | "_in" | "_lt" | "_lte" | "_match" | "_ne" | "_startsWith", value?: string, values?: string, from?: string, to?: string } };
+    readonly filters?: { values: Array<{ field?: string | "message" | "date" | "message" | "category" | "content" | "title", operator?: "_between" | "_like" | "_endsWith" | "_eq" | "_gt" | "_gte" | "_in" | "_lt" | "_lte" | "_match" | "_ne" | "_startsWith", value?: string, values?: string, from?: string, to?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { fields: { field?: string | "message" | "date" | "message" | "category" | "content" | "title", direction?: "asc" | "desc" } };
+    readonly sort?: { fields: Array<{ field?: string | "message" | "date" | "message" | "category" | "content" | "title", direction?: "asc" | "desc" }> };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -84,7 +84,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { values: { field?: string } };
+    readonly attachmentsUi?: { values: Array<{ field?: string }> };
 
     /**
      * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

@@ -31,7 +31,7 @@ export interface DemioNodeParameters {
     readonly eventId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { active?: boolean, date_id?: string } | { company?: string, customFieldsUi?: { customFieldsValues: { fieldId?: string, value?: string } }, ref_url?: string, gdpr?: string, last_name?: string, phone_number?: string, date_id?: string, website?: string };
+    readonly additionalFields?: { active?: boolean, date_id?: string } | { company?: string, customFieldsUi?: { customFieldsValues: Array<{ fieldId?: string, value?: string }> }, ref_url?: string, gdpr?: string, last_name?: string, phone_number?: string, date_id?: string, website?: string };
 
     /** The registrant's first name */
     readonly firstName?: string;

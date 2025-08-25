@@ -40,7 +40,7 @@ export interface MergeV3NodeParameters {
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeByFields?: { values: { field1?: string, field2?: string } };
+    readonly mergeByFields?: { values: Array<{ field1?: string, field2?: string }> };
 
     /**
      * How to select the items to send to output

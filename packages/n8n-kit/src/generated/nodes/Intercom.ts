@@ -65,7 +65,7 @@ export interface IntercomNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly customAttributesUi?: { customAttributesValues: { name?: string, value?: string } };
+    readonly customAttributesUi?: { customAttributesValues: Array<{ name?: string, value?: string }> };
 
     readonly deleteBy?: "id" | "userId";
 

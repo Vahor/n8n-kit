@@ -38,7 +38,7 @@ export interface AwsElbNodeParameters {
     readonly subnets?: any[];
 
     /** Default: {} */
-    readonly additionalFields?: { securityGroups?: any[], tagsUi?: { tagValues: { key?: string, value?: string } } };
+    readonly additionalFields?: { securityGroups?: any[], tagsUi?: { tagValues: Array<{ key?: string, value?: string }> } };
 
     /** Unique identifier for a particular loadBalancer */
     readonly loadBalancerId?: string;

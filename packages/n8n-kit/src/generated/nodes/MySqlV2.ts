@@ -29,7 +29,7 @@ export interface MySqlV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly where?: { values: { column?: string, condition?: "equal" | "!=" | "LIKE" | ">" | "<" | ">=" | "<=" | "IS NULL" | "IS NOT NULL", value?: string } };
+    readonly where?: { values: Array<{ column?: string, condition?: "equal" | "!=" | "LIKE" | ">" | "<" | ">=" | "<=" | "IS NULL" | "IS NOT NULL", value?: string }> };
 
     /**
      * How to combine the conditions defined in "Select Rows": AND requires all conditions to be true, OR requires at least one condition to be true
@@ -56,7 +56,7 @@ export interface MySqlV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Value","multipleValues":true}
      */
-    readonly valuesToSend?: { values: { column?: string, value?: string } };
+    readonly valuesToSend?: { values: Array<{ column?: string, value?: string }> };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -72,7 +72,7 @@ export interface MySqlV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { values: { column?: string, direction?: "ASC" | "DESC" } };
+    readonly sort?: { values: Array<{ column?: string, direction?: "ASC" | "DESC" }> };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>

@@ -43,7 +43,7 @@ export interface GoogleBigQueryV2NodeParameters {
     readonly sqlQuery?: string;
 
     /** Default: {} */
-    readonly options?: { defaultDataset?: string, dryRun?: boolean, includeSchema?: boolean, location?: string, maximumBytesBilled?: string, maxResults?: number, timeoutMs?: number, rawOutput?: boolean, useLegacySql?: boolean, returnAsNumbers?: boolean, queryParameters?: { namedParameters: { name?: string, value?: string } } } | { batchSize?: number, ignoreUnknownValues?: boolean, skipInvalidRows?: boolean, templateSuffix?: string, traceId?: string };
+    readonly options?: { defaultDataset?: string, dryRun?: boolean, includeSchema?: boolean, location?: string, maximumBytesBilled?: string, maxResults?: number, timeoutMs?: number, rawOutput?: boolean, useLegacySql?: boolean, returnAsNumbers?: boolean, queryParameters?: { namedParameters: Array<{ name?: string, value?: string }> } } | { batchSize?: number, ignoreUnknownValues?: boolean, skipInvalidRows?: boolean, templateSuffix?: string, traceId?: string };
 
     /**
      * Whether to insert the input data this node receives in the new row
@@ -55,6 +55,6 @@ export interface GoogleBigQueryV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field","multipleValues":true}
      */
-    readonly fieldsUi?: { values: { fieldId?: string, fieldValue?: string } };
+    readonly fieldsUi?: { values: Array<{ fieldId?: string, fieldValue?: string }> };
 
 }

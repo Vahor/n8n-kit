@@ -13,7 +13,7 @@ export interface HubspotTriggerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly eventsUi?: { eventValues: { name: "company.creation" | "company.deletion" | "company.propertyChange" | "contact.creation" | "contact.deletion" | "contact.privacyDeletion" | "contact.propertyChange" | "conversation.creation" | "conversation.deletion" | "conversation.newMessage" | "conversation.privacyDeletion" | "conversation.propertyChange" | "deal.creation" | "deal.deletion" | "deal.propertyChange" | "ticket.creation" | "ticket.deletion" | "ticket.propertyChange", property: string } };
+    readonly eventsUi?: { eventValues: Array<{ name: "company.creation" | "company.deletion" | "company.propertyChange" | "contact.creation" | "contact.deletion" | "contact.privacyDeletion" | "contact.propertyChange" | "conversation.creation" | "conversation.deletion" | "conversation.newMessage" | "conversation.privacyDeletion" | "conversation.propertyChange" | "deal.creation" | "deal.deletion" | "deal.propertyChange" | "ticket.creation" | "ticket.deletion" | "ticket.propertyChange", property: string }> };
 
     /** Default: {} */
     readonly additionalFields?: { maxConcurrentRequests?: number };

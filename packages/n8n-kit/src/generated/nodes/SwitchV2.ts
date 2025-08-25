@@ -36,7 +36,7 @@ export interface SwitchV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly rules?: { rules: { operation?: "equal" | "notEqual", value2?: boolean, outputKey?: string } } | { rules: { operation?: "after" | "before", value2?: string, outputKey?: string } } | { rules: { operation?: "smaller" | "smallerEqual" | "equal" | "notEqual" | "larger" | "largerEqual", value2?: number, outputKey?: string } } | { rules: { operation?: "contains" | "notContains" | "endsWith" | "notEndsWith" | "equal" | "notEqual" | "regex" | "notRegex" | "startsWith" | "notStartsWith", value2?: string, outputKey?: string } };
+    readonly rules?: { rules: Array<{ operation?: "equal" | "notEqual", value2?: boolean, outputKey?: string }> } | { rules: Array<{ operation?: "after" | "before", value2?: string, outputKey?: string }> } | { rules: Array<{ operation?: "smaller" | "smallerEqual" | "equal" | "notEqual" | "larger" | "largerEqual", value2?: number, outputKey?: string }> } | { rules: Array<{ operation?: "contains" | "notContains" | "endsWith" | "notEndsWith" | "equal" | "notEqual" | "regex" | "notRegex" | "startsWith" | "notStartsWith", value2?: string, outputKey?: string }> };
 
     /**
      * The output to which to route all items which do not match any of the rules. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

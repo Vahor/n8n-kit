@@ -27,7 +27,7 @@ export interface GetResponseNodeParameters {
     readonly campaignId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { customFieldsUi?: { customFieldValues: { customFieldId?: string, value?: string } }, dayOfCycle?: string, ipAddress?: string, name?: string, note?: string, scoring?: number, tags?: any[] };
+    readonly additionalFields?: { customFieldsUi?: { customFieldValues: Array<{ customFieldId?: string, value?: string }> }, dayOfCycle?: string, ipAddress?: string, name?: string, note?: string, scoring?: number, tags?: any[] };
 
     /** ID of contact to delete */
     readonly contactId?: string;
@@ -46,6 +46,6 @@ export interface GetResponseNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { campaignId?: string, customFieldsUi?: { customFieldValues: { customFieldId?: string, value?: string } }, dayOfCycle?: string, email?: string, ipAddress?: string, name?: string, note?: string, scoring?: number, tags?: any[] };
+    readonly updateFields?: { campaignId?: string, customFieldsUi?: { customFieldValues: Array<{ customFieldId?: string, value?: string }> }, dayOfCycle?: string, email?: string, ipAddress?: string, name?: string, note?: string, scoring?: number, tags?: any[] };
 
 }

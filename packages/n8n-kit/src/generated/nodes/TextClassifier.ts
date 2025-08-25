@@ -18,7 +18,7 @@ export interface TextClassifierNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly categories?: { categories: { category: string, description?: string } };
+    readonly categories?: { categories: Array<{ category: string, description?: string }> };
 
     /** Default: {} */
     readonly options?: { multiClass?: boolean, fallback?: "discard" | "other", systemPromptTemplate?: string, enableAutoFixing?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };

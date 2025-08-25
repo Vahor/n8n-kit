@@ -44,7 +44,7 @@ export interface SeaTableV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Column to Send","multipleValues":true}
      */
-    readonly columnsUi?: { columnValues: { columnName?: string, columnValue?: string } };
+    readonly columnsUi?: { columnValues: Array<{ columnName?: string, columnValue?: string }> };
 
     /** Whether write to Big Data backend (true) or not (false). True requires the activation of the Big Data backend in the base. */
     readonly bigdata?: boolean;

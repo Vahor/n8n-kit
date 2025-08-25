@@ -31,39 +31,30 @@ export const toTypescriptType = (
 	switch (property.type) {
 		case "options":
 			if (property.options && Array.isArray(property.options)) {
-				const values = property.options
-					.map((opt) => {
-						// @ts-expect-error: TODO: fix this
-						const value = opt.value;
-						if (typeof value === "string") {
-							return `"${value.replaceAll('"', '\\"').replaceAll("\n", "\\n")}"`;
-						}
-						return value;
-					})
-					.join(" | ");
+				const values = formatOptions(property.options).join(" | ");
 				return values || "string";
 			}
 			return "string";
 
 		case "multiOptions":
 			if (property.options && Array.isArray(property.options)) {
-				const values = property.options
-					// @ts-expect-error: TODO: fix this
-					.map((opt) => `"${opt.value}"`)
-					.join(" | ");
-				if (values) return `(${values})[]`;
+				const values = formatOptions(property.options).join(" | ") || "string";
+				return `(${values})[]`;
 			}
 			return "any[]";
 
 		case "fixedCollection": {
 			let result = "{ ";
+			const isArray = property.typeOptions?.multipleValues === true;
 			if (Array.isArray(property.options) && property.options.length > 0) {
 				for (const option of property.options) {
-					result += `${addQuotesToPropertyName(option.name)}: { `;
+					result += `${addQuotesToPropertyName(option.name)}: ${isArray ? "Array<" : ""}{ `;
 
 					result += handleCollection(option.values).join(", ");
 
-					result += " }, ";
+					result += " }";
+					if (isArray) result += ">";
+					result += ", ";
 				}
 				// remove last comma
 				result = result.slice(0, -2);
@@ -90,6 +81,24 @@ export const toTypescriptType = (
 		default:
 			return mapPropertyType(property.type);
 	}
+};
+
+const formatOptions = (
+	options?: (
+		| INodeProperties
+		| INodePropertyOptions
+		| INodePropertyCollection
+	)[],
+) => {
+	if (!options || options.length === 0) return [];
+	return options.map((opt) => {
+		// @ts-expect-error: TODO: fix this
+		const value = opt.value;
+		if (typeof value === "string") {
+			return `"${value.replaceAll('"', '\\"').replaceAll("\n", "\\n")}"`;
+		}
+		return value;
+	});
 };
 
 const handleCollection = (

@@ -56,7 +56,7 @@ export interface SentryIoNodeParameters {
     readonly issueId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { query?: string, statsPeriod?: "14d" | "24h", shortIdLookUp?: boolean } | { assignedTo?: string, hasSeen?: boolean, isBookmarked?: boolean, isPublic?: boolean, isSubscribed?: boolean, status?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved" } | { member?: boolean, owner?: boolean } | { slug?: string } | { query?: string } | { dateReleased?: string, commits?: { commitProperties: { id: string, authorEmail?: string, authorName?: string, message?: string, patchSet?: { patchSetProperties: { path: string, type?: "add" | "modify" | "delete" } }, repository?: string, timestamp?: string } }, refs?: { refProperties: { commit: string, repository: string, previousCommit?: string } } };
+    readonly additionalFields?: { query?: string, statsPeriod?: "14d" | "24h", shortIdLookUp?: boolean } | { assignedTo?: string, hasSeen?: boolean, isBookmarked?: boolean, isPublic?: boolean, isSubscribed?: boolean, status?: "ignored" | "resolved" | "resolvedInNextRelease" | "unresolved" } | { member?: boolean, owner?: boolean } | { slug?: string } | { query?: string } | { dateReleased?: string, commits?: { commitProperties: Array<{ id: string, authorEmail?: string, authorName?: string, message?: string, patchSet?: { patchSetProperties: Array<{ path: string, type?: "add" | "modify" | "delete" }> }, repository?: string, timestamp?: string }> }, refs?: { refProperties: Array<{ commit: string, repository: string, previousCommit?: string }> } };
 
     /** The slug of the organization the team should be created for */
     readonly name?: string;
@@ -71,7 +71,7 @@ export interface SentryIoNodeParameters {
     readonly organization_slug?: string;
 
     /** Default: {} */
-    readonly updateFields?: { name?: string, slug?: string } | { isBookmarked?: boolean, digestsMaxDelay?: number, digestsMinDelay?: number, name?: string, slug?: string, team?: string, platform?: string } | { commits?: { commitProperties: { id: string, authorEmail?: string, authorName?: string, message?: string, patchSet?: { patchSetProperties: { path: string, type?: "add" | "modify" | "delete" } }, repository?: string, timestamp?: string } }, dateReleased?: string, ref?: string, refs?: { refProperties: { commit: string, repository: string, previousCommit?: string } }, url?: string };
+    readonly updateFields?: { name?: string, slug?: string } | { isBookmarked?: boolean, digestsMaxDelay?: number, digestsMinDelay?: number, name?: string, slug?: string, team?: string, platform?: string } | { commits?: { commitProperties: Array<{ id: string, authorEmail?: string, authorName?: string, message?: string, patchSet?: { patchSetProperties: Array<{ path: string, type?: "add" | "modify" | "delete" }> }, repository?: string, timestamp?: string }> }, dateReleased?: string, ref?: string, refs?: { refProperties: Array<{ commit: string, repository: string, previousCommit?: string }> }, url?: string };
 
     /**
      * The slug of the team to create a new project for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

@@ -98,7 +98,7 @@ export interface TelegramNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly media?: { media: { type?: "photo" | "video", media?: string, additionalFields?: { caption?: string, parse_mode?: "Markdown" | "MarkdownV2" | "HTML" } } };
+    readonly media?: { media: Array<{ type?: "photo" | "video", media?: string, additionalFields?: { caption?: string, parse_mode?: "Markdown" | "MarkdownV2" | "HTML" } }> };
 
     /** Text of the message to be sent */
     readonly text?: string;
@@ -111,14 +111,14 @@ export interface TelegramNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly inlineKeyboard?: { rows: { row?: { buttons: { text?: string, additionalFields?: { callback_data?: string, pay?: boolean, switch_inline_query_current_chat?: string, switch_inline_query?: string, url?: string, web_app?: { url?: string } } } } } };
+    readonly inlineKeyboard?: { rows: Array<{ row?: { buttons: Array<{ text?: string, additionalFields?: { callback_data?: string, pay?: boolean, switch_inline_query_current_chat?: string, switch_inline_query?: string, url?: string, web_app?: { url?: string } } }> } }> };
 
     /**
      * Adds a custom keyboard with reply options
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly replyKeyboard?: { rows: { row?: { buttons: { text?: string, additionalFields?: { request_contact?: boolean, request_location?: boolean, web_app?: { url?: string } } } } } };
+    readonly replyKeyboard?: { rows: Array<{ row?: { buttons: Array<{ text?: string, additionalFields?: { request_contact?: boolean, request_location?: boolean, web_app?: { url?: string } } }> } }> };
 
     /** Default: {} */
     readonly replyKeyboardOptions?: { resize_keyboard?: boolean, one_time_keyboard?: boolean, selective?: boolean };
@@ -145,7 +145,7 @@ export interface TelegramNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
+    readonly formFields?: { values: Array<{ fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 
     /** Default: {} */
     readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, disapproveLabel?: string } };

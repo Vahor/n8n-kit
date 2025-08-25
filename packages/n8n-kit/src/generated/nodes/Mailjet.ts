@@ -42,7 +42,7 @@ export interface MailjetNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly variablesUi?: { variablesValues: { name?: string, value?: string } };
+    readonly variablesUi?: { variablesValues: Array<{ name?: string, value?: string }> };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

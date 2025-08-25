@@ -27,7 +27,7 @@ export interface BitlyNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly deeplink?: { deeplinkUi: { appId?: string, appUriPath?: string, installType?: string, installUrl?: string } };
+    readonly deeplink?: { deeplinkUi: Array<{ appId?: string, appUriPath?: string, installType?: string, installUrl?: string }> };
 
     readonly id?: string;
 

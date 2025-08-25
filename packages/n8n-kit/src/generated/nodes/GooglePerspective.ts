@@ -18,7 +18,7 @@ export interface GooglePerspectiveNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly requestedAttributesUi?: { requestedAttributesValues: { attributeName?: "flirtation" | "identity_attack" | "insult" | "profanity" | "severe_toxicity" | "sexually_explicit" | "threat" | "toxicity", scoreThreshold?: number } };
+    readonly requestedAttributesUi?: { requestedAttributesValues: Array<{ attributeName?: "flirtation" | "identity_attack" | "insult" | "profanity" | "severe_toxicity" | "sexually_explicit" | "threat" | "toxicity", scoreThreshold?: number }> };
 
     /** Default: {} */
     readonly options?: { languages?: string };

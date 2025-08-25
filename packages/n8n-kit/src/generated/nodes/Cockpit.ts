@@ -50,7 +50,7 @@ export interface CockpitNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataFieldsUi?: { field: { name?: string, value?: string } };
+    readonly dataFieldsUi?: { field: Array<{ name?: string, value?: string }> };
 
     /** Name of the form to operate on */
     readonly form?: string;

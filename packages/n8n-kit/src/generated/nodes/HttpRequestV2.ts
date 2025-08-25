@@ -59,7 +59,7 @@ export interface HttpRequestV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly bodyParametersUi?: { parameter: { name?: string, value?: string } };
+    readonly bodyParametersUi?: { parameter: Array<{ name?: string, value?: string }> };
 
     /** Header parameters as JSON or RAW */
     readonly headerParametersJson?: string;
@@ -69,7 +69,7 @@ export interface HttpRequestV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly headerParametersUi?: { parameter: { name?: string, value?: string } };
+    readonly headerParametersUi?: { parameter: Array<{ name?: string, value?: string }> };
 
     /** Query parameters as JSON (flat object) */
     readonly queryParametersJson?: string;
@@ -79,6 +79,6 @@ export interface HttpRequestV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly queryParametersUi?: { parameter: { name?: string, value?: string } };
+    readonly queryParametersUi?: { parameter: Array<{ name?: string, value?: string }> };
 
 }

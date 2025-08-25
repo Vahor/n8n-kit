@@ -28,7 +28,7 @@ export interface AwsCognitoNodeParameters {
     readonly newGroupName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { description?: string, precedence?: number, arn?: string } | { messageAction?: "RESEND" | "SUPPRESS", forceAliasCreation?: boolean, userAttributes: { attributes: { attributeType?: "standard" | "custom", standardName?: "address" | "birthdate" | "email" | "email_verified" | "family_name" | "gender" | "given_name" | "locale" | "middle_name" | "name" | "nickname" | "phone_number" | "phone_number_verified" | "preferred_username" | "profilepicture" | "updated_at" | "sub" | "website" | "zoneinfo", customName?: string, value?: string } }, desiredDeliveryMediums?: ("SMS" | "EMAIL")[], temporaryPasswordOptions?: string };
+    readonly additionalFields?: { description?: string, precedence?: number, arn?: string } | { messageAction?: "RESEND" | "SUPPRESS", forceAliasCreation?: boolean, userAttributes: { attributes: Array<{ attributeType?: "standard" | "custom", standardName?: "address" | "birthdate" | "email" | "email_verified" | "family_name" | "gender" | "given_name" | "locale" | "middle_name" | "name" | "nickname" | "phone_number" | "phone_number_verified" | "preferred_username" | "profilepicture" | "updated_at" | "sub" | "website" | "zoneinfo", customName?: string, value?: string }> }, desiredDeliveryMediums?: ("SMS" | "EMAIL")[], temporaryPasswordOptions?: string };
 
     /**
      * Select the group you want to delete
@@ -78,6 +78,6 @@ export interface AwsCognitoNodeParameters {
      * Default: {"attributes":[]}
      * Type options: {"multipleValues":true}
      */
-    readonly userAttributes?: { attributes: { attributeType?: "standard" | "custom", standardName?: "address" | "birthdate" | "email" | "family_name" | "gender" | "given_name" | "locale" | "middle_name" | "name" | "nickname" | "phone_number" | "preferred_username" | "profilepicture" | "updated_at" | "sub" | "website" | "zoneinfo", customName?: string, value?: string } };
+    readonly userAttributes?: { attributes: Array<{ attributeType?: "standard" | "custom", standardName?: "address" | "birthdate" | "email" | "family_name" | "gender" | "given_name" | "locale" | "middle_name" | "name" | "nickname" | "phone_number" | "preferred_username" | "profilepicture" | "updated_at" | "sub" | "website" | "zoneinfo", customName?: string, value?: string }> };
 
 }

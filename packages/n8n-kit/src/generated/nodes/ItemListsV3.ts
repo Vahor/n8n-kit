@@ -19,7 +19,7 @@ export interface ItemListsV3NodeParameters {
      * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToAggregate?: { fieldToAggregate: { fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string } };
+    readonly fieldsToAggregate?: { fieldToAggregate: Array<{ fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string }> };
 
     /**
      * The name of the output field to put the data in
@@ -70,7 +70,7 @@ export interface ItemListsV3NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sortFieldsUi?: { sortField: { fieldName: string, order?: "ascending" | "descending" } };
+    readonly sortFieldsUi?: { sortField: Array<{ fieldName: string, order?: "ascending" | "descending" }> };
 
     /**
      * Javascript code to determine the order of any two items
@@ -86,7 +86,7 @@ export interface ItemListsV3NodeParameters {
      * Default: {"values":[{"aggregation":"count","field":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSummarize?: { values: { aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string } };
+    readonly fieldsToSummarize?: { values: Array<{ aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string }> };
 
     /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;

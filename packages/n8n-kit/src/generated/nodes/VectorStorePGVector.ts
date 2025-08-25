@@ -34,7 +34,7 @@ export interface VectorStorePGVectorNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { collection?: { values: { useCollection?: boolean, collectionName: string, collectionTableName: string } }, columnNames?: { values: { idColumnName: string, vectorColumnName: string, contentColumnName: string, metadataColumnName: string } } } | { distanceStrategy?: "cosine" | "innerProduct" | "euclidean", collection?: { values: { useCollection?: boolean, collectionName: string, collectionTableName: string } }, columnNames?: { values: { idColumnName: string, vectorColumnName: string, contentColumnName: string, metadataColumnName: string } }, metadata?: { metadataValues: { name: string, value?: string } } };
+    readonly options?: { collection?: { values: { useCollection?: boolean, collectionName: string, collectionTableName: string } }, columnNames?: { values: { idColumnName: string, vectorColumnName: string, contentColumnName: string, metadataColumnName: string } } } | { distanceStrategy?: "cosine" | "innerProduct" | "euclidean", collection?: { values: { useCollection?: boolean, collectionName: string, collectionTableName: string } }, columnNames?: { values: { idColumnName: string, vectorColumnName: string, contentColumnName: string, metadataColumnName: string } }, metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

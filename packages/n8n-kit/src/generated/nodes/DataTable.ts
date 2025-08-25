@@ -28,6 +28,6 @@ export interface DataTableNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { conditions: { keyName?: string, condition?: "eq" | "neq", keyValue?: string } };
+    readonly filters?: { conditions: Array<{ keyName?: string, condition?: "eq" | "neq", keyValue?: string }> };
 
 }

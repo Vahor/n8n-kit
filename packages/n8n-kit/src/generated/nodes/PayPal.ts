@@ -24,7 +24,7 @@ export interface PayPalNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly itemsUi?: { itemsValues: { recipientType?: "phone" | "email" | "paypalId", receiverValue: string, currency?: "AUD" | "BRL" | "CAD" | "CZK" | "DKK" | "EUR" | "USD", amount: string, note?: string, senderItemId?: string, recipientWallet?: "paypal" | "venmo" } };
+    readonly itemsUi?: { itemsValues: Array<{ recipientType?: "phone" | "email" | "paypalId", receiverValue: string, currency?: "AUD" | "BRL" | "CAD" | "CZK" | "DKK" | "EUR" | "USD", amount: string, note?: string, senderItemId?: string, recipientWallet?: "paypal" | "venmo" }> };
 
     /**
      * An array of individual payout items

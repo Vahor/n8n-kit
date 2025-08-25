@@ -25,7 +25,7 @@ export interface OdooNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
      */
-    readonly fieldsToCreateOrUpdate?: { fields: { fieldName?: string, fieldValue?: string } };
+    readonly fieldsToCreateOrUpdate?: { fields: Array<{ fieldName?: string, fieldValue?: string }> };
 
     readonly customResourceId?: string;
 
@@ -47,7 +47,7 @@ export interface OdooNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Filter"}
      */
-    readonly filterRequest?: { filter: { fieldName?: string, operator?: "notEqual" | "lesserThen" | "lesserOrEqual" | "equal" | "greaterThen" | "greaterOrEqual" | "childOf" | "in" | "like" | "notIn", value?: string } };
+    readonly filterRequest?: { filter: Array<{ fieldName?: string, operator?: "notEqual" | "lesserThen" | "lesserOrEqual" | "equal" | "greaterThen" | "greaterOrEqual" | "childOf" | "in" | "like" | "notIn", value?: string }> };
 
     readonly opportunityName?: string;
 

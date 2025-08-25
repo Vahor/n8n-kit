@@ -22,7 +22,7 @@ export interface MailerLiteV2NodeParameters {
     readonly subscriberId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { customFieldsUi?: { customFieldsValues: { fieldId?: string, value?: string } }, status?: "active" | "bounced" | "junk" | "unconfirmed" | "unsubscribed", subscribed_at?: string, ip_address?: string, opted_in_at?: string, optin_ip?: string, unsubscribed_at?: string };
+    readonly additionalFields?: { customFieldsUi?: { customFieldsValues: Array<{ fieldId?: string, value?: string }> }, status?: "active" | "bounced" | "junk" | "unconfirmed" | "unsubscribed", subscribed_at?: string, ip_address?: string, opted_in_at?: string, optin_ip?: string, unsubscribed_at?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

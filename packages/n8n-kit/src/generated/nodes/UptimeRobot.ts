@@ -38,7 +38,7 @@ export interface UptimeRobotNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { alert_contacts?: boolean, logs?: boolean, mwindow?: boolean, monitors?: string, response_times?: boolean, search?: string, statuses?: ("0" | "1" | "2" | "8" | "9")[], types?: ("5" | "1" | "2" | "3" | "4")[] } | { alert_contacts?: string } | { mwindow?: string } | { psps?: string };
+    readonly filters?: { alert_contacts?: boolean, logs?: boolean, mwindow?: boolean, monitors?: string, response_times?: boolean, search?: string, statuses?: (0 | 1 | 2 | 8 | 9)[], types?: (5 | 1 | 2 | 3 | 4)[] } | { alert_contacts?: string } | { mwindow?: string } | { psps?: string };
 
     /** Default: {} */
     readonly updateFields?: { friendly_name?: string, http_auth_type?: 1 | 2, http_method?: 6 | 2 | 1 | 7 | 5 | 3 | 4, http_password?: string, http_username?: string, interval?: number, port?: number, status?: 0 | 1, sub_type?: 99 | 3 | 1 | 2 | 6 | 5 | 4, url?: string } | { friendly_name?: string, value?: string } | { friendly_name?: string, start_time?: string, type?: 1 | 2 | 3 | 4, weekDay?: 1 | 2 | 3 | 4 | 5 | 6 | 7, monthDay?: number } | { custom_domain?: string, friendly_name?: string, monitors?: string, password?: string, sort?: 1 | 2 | 3 | 4 };

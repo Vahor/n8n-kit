@@ -68,7 +68,7 @@ export interface ClickUpNodeParameters {
     readonly folder?: string;
 
     /** Default: {} */
-    readonly filters?: { archived?: boolean } | { archived?: boolean, assignees?: any[], customFieldsUi?: { customFieldsValues: { fieldId?: string, operator?: "!=" | "<" | "<=" | ">" | ">=" | "equal" | "IS NOT NULL" | "IS NULL", value?: string } }, dateCreatedGt?: string, dateCreatedLt?: string, dateUpdatedGt?: string, dateUpdatedLt?: string, dueDateGt?: string, dueDateLt?: string, includeClosed?: boolean, orderBy?: "id" | "created" | "updated" | "dueDate", statuses?: any[], subtasks?: boolean, tags?: any[] } | { end_date?: string, start_date?: string };
+    readonly filters?: { archived?: boolean } | { archived?: boolean, assignees?: any[], customFieldsUi?: { customFieldsValues: Array<{ fieldId?: string, operator?: "!=" | "<" | "<=" | ">" | ">=" | "equal" | "IS NOT NULL" | "IS NULL", value?: string }> }, dateCreatedGt?: string, dateCreatedLt?: string, dateUpdatedGt?: string, dateUpdatedLt?: string, dueDateGt?: string, dueDateLt?: string, includeClosed?: boolean, orderBy?: "id" | "created" | "updated" | "dueDate", statuses?: any[], subtasks?: boolean, tags?: any[] } | { end_date?: string, start_date?: string };
 
     readonly goal?: string;
 
@@ -140,7 +140,7 @@ export interface ClickUpNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly tagsUi?: { tagsValues: { name?: string, tag_bg?: string, tag_fg?: string } };
+    readonly tagsUi?: { tagsValues: Array<{ name?: string, tag_bg?: string, tag_fg?: string }> };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

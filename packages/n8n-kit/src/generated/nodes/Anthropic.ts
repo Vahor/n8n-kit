@@ -78,7 +78,7 @@ export interface AnthropicNodeParameters {
      * Default: {"values":[{"content":"","role":"user"}]}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly messages?: { values: { content?: string, role?: "user" | "assistant" } };
+    readonly messages?: { values: Array<{ content?: string, role?: "user" | "assistant" }> };
 
     /** Whether to add attachments to the message */
     readonly addAttachments?: boolean;

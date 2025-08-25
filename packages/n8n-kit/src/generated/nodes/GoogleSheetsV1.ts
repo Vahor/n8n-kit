@@ -32,7 +32,7 @@ export interface GoogleSheetsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly toDelete?: { columns: { sheetId: string, startIndex?: number, amount?: number }, rows: { sheetId: string, startIndex?: number, amount?: number } };
+    readonly toDelete?: { columns: Array<{ sheetId: string, startIndex?: number, amount?: number }>, rows: Array<{ sheetId: string, startIndex?: number, amount?: number }> };
 
     /** Whether the data should be returned RAW instead of parsed into keys according to their header */
     readonly rawData?: boolean;
@@ -78,7 +78,7 @@ export interface GoogleSheetsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sheetsUi?: { sheetValues: { propertiesUi?: { hidden?: boolean, title?: string } } };
+    readonly sheetsUi?: { sheetValues: Array<{ propertiesUi?: { hidden?: boolean, title?: string } }> };
 
     /**
      * Whether to return a simplified version of the response instead of the raw data

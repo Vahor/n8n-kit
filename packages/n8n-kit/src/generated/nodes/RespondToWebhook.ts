@@ -45,6 +45,6 @@ export interface RespondToWebhookNodeParameters {
     readonly inputFieldName?: string;
 
     /** Default: {} */
-    readonly options?: { responseCode?: number, responseHeaders?: { entries: { name?: string, value?: string } }, responseKey?: string, enableStreaming?: boolean };
+    readonly options?: { responseCode?: number, responseHeaders?: { entries: Array<{ name?: string, value?: string }> }, responseKey?: string, enableStreaming?: boolean };
 
 }

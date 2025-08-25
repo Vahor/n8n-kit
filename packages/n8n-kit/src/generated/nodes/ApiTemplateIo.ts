@@ -43,13 +43,13 @@ export interface ApiTemplateIoNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly overridesUi?: { overrideValues: { propertiesUi?: { propertyValues: { key?: string, value?: string } } } };
+    readonly overridesUi?: { overrideValues: Array<{ propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> } }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly propertiesUi?: { propertyValues: { key?: string, value?: string } };
+    readonly propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> };
 
     /** Default: {} */
     readonly options?: { fileName?: string };

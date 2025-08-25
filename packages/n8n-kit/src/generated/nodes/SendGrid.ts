@@ -44,7 +44,7 @@ export interface SendGridNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { addressUi?: { addressValues: { address1?: string, address2?: string } }, alternateEmails?: string, city?: string, country?: string, firstName?: string, lastName?: string, postalCode?: string, stateProvinceRegion?: string, listIdsUi?: { listIdValues: { listIds?: any[] } }, customFieldsUi?: { customFieldValues: { fieldId?: string, fieldValue?: string } } } | { attachments?: string, bccEmail?: string, categories?: string, ccEmail?: string, enableSandbox?: boolean, ipPoolName?: string, replyToEmail?: string, headers?: { details: { key?: string, value?: string } }, sendAt?: string };
+    readonly additionalFields?: { addressUi?: { addressValues: { address1?: string, address2?: string } }, alternateEmails?: string, city?: string, country?: string, firstName?: string, lastName?: string, postalCode?: string, stateProvinceRegion?: string, listIdsUi?: { listIdValues: { listIds?: any[] } }, customFieldsUi?: { customFieldValues: Array<{ fieldId?: string, fieldValue?: string }> } } | { attachments?: string, bccEmail?: string, categories?: string, ccEmail?: string, enableSandbox?: boolean, ipPoolName?: string, replyToEmail?: string, headers?: { details: Array<{ key?: string, value?: string }> }, sendAt?: string };
 
     /** ID of the contact. Multiple can be added separated by comma. */
     readonly ids?: string;
@@ -96,6 +96,6 @@ export interface SendGridNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dynamicTemplateFields?: { fields: { key?: string, value?: string } };
+    readonly dynamicTemplateFields?: { fields: Array<{ key?: string, value?: string }> };
 
 }

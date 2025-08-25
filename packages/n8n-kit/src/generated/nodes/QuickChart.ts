@@ -22,7 +22,7 @@ export interface QuickChartNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly labelsUi?: { labelsValues: { label?: string } };
+    readonly labelsUi?: { labelsValues: Array<{ label?: string }> };
 
     /** The array of labels to be used in the chart */
     readonly labelsArray?: string;

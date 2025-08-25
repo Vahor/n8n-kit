@@ -13,9 +13,9 @@ export interface RenameKeysNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly keys?: { key: { currentKey?: string, newKey?: string } };
+    readonly keys?: { key: Array<{ currentKey?: string, newKey?: string }> };
 
     /** Default: {} */
-    readonly additionalOptions?: { regexReplacement?: { replacements: { regExNotice?: string, searchRegex?: string, replaceRegex?: string, options?: { caseInsensitive?: boolean, depth?: number } } } };
+    readonly additionalOptions?: { regexReplacement?: { replacements: Array<{ regExNotice?: string, searchRegex?: string, replaceRegex?: string, options?: { caseInsensitive?: boolean, depth?: number } }> } };
 
 }

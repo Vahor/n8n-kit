@@ -21,7 +21,7 @@ export interface SurveyMonkeyTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSurveys"}
      */
-    readonly surveyIds?: any[];
+    readonly surveyIds?: (string)[];
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -35,7 +35,7 @@ export interface SurveyMonkeyTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getCollectors","loadOptionsDependsOn":["surveyId"]}
      */
-    readonly collectorIds?: any[];
+    readonly collectorIds?: (string)[];
 
     /**
      * By default the webhook-data only contain the IDs. If this option gets activated, it will resolve the data automatically.

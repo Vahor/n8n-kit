@@ -56,7 +56,7 @@ export interface SalesmateNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly filters?: { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: { field?: "name" | "email" | "phone", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string } } } } | { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: { field?: "title" | "tags", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string } } } } | { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: { field?: "title" | "tags" | "lastCommunicationMode", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string } } } };
+    readonly filters?: { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: Array<{ field?: "name" | "email" | "phone", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string }> } } } | { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: Array<{ field?: "title" | "tags", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string }> } } } | { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: Array<{ field?: "title" | "tags" | "lastCommunicationMode", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string }> } } };
 
     readonly title?: string;
 

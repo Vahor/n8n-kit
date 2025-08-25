@@ -21,7 +21,7 @@ export interface MergeV2NodeParameters {
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeByFields?: { values: { field1?: string, field2?: string } };
+    readonly mergeByFields?: { values: Array<{ field1?: string, field2?: string }> };
 
     /** Default: "keepMatches" */
     readonly joinMode?: "keepMatches" | "keepNonMatches" | "keepEverything" | "enrichInput1" | "enrichInput2";

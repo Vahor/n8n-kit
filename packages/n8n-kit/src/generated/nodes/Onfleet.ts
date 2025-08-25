@@ -106,7 +106,7 @@ export interface OnfleetNodeParameters {
     readonly success?: boolean;
 
     /** Default: {} */
-    readonly filters?: { from?: string, state?: ("all" | "2" | "1" | "3" | "0")[], to?: string } | { dropOff?: { dropOffProperties: { dropOffLongitude: number, dropOffLatitude: number } }, pickUp?: { pickUpProperties: { pickupLongitude: number, pickupLatitude: number, pickupTime?: string } }, restrictedVehicleTypes?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", serviceTime?: number } | { radius?: number } | { states?: ("2" | "1" | "0")[], teams?: any[], phones?: string };
+    readonly filters?: { from?: string, state?: ("all" | 2 | 1 | 3 | 0)[], to?: string } | { dropOff?: { dropOffProperties: { dropOffLongitude: number, dropOffLatitude: number } }, pickUp?: { pickUpProperties: { pickupLongitude: number, pickupLatitude: number, pickupTime?: string } }, restrictedVehicleTypes?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", serviceTime?: number } | { radius?: number } | { states?: (2 | 1 | 0)[], teams?: any[], phones?: string };
 
     /** Default: {} */
     readonly overrideFields?: { completeAfter?: string, completeBefore?: string, includeBarcodes?: boolean, includeDependencies?: boolean, includeMetadata?: boolean, notes?: string, pickupTask?: boolean, serviceTime?: number };
@@ -151,6 +151,6 @@ export interface OnfleetNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Schedule"}
      */
-    readonly schedule?: { scheduleProperties: { date: string, timezone: string, shifts?: { shiftsProperties: { start: string, end: string } } } };
+    readonly schedule?: { scheduleProperties: Array<{ date: string, timezone: string, shifts?: { shiftsProperties: Array<{ start: string, end: string }> } }> };
 
 }

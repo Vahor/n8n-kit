@@ -31,7 +31,7 @@ export interface InvoiceNinjaNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly contactsUi?: { contacstValues: { firstName?: string, lastName?: string, email?: string, phone?: string } };
+    readonly contactsUi?: { contacstValues: Array<{ firstName?: string, lastName?: string, email?: string, phone?: string }> };
 
     /**
      * Default: {}
@@ -58,7 +58,7 @@ export interface InvoiceNinjaNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly invoiceItemsUi?: { invoiceItemsValues: { cost?: number, description?: string, service?: string, hours?: number, taxName1?: string, taxName2?: string, taxRate1?: number, taxRate2?: number } };
+    readonly invoiceItemsUi?: { invoiceItemsValues: Array<{ cost?: number, description?: string, service?: string, hours?: number, taxName1?: string, taxName2?: string, taxRate1?: number, taxRate2?: number }> };
 
     readonly invoiceId?: string;
 
@@ -66,7 +66,7 @@ export interface InvoiceNinjaNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly timeLogsUi?: { timeLogsValues: { startDate?: string, endDate?: string, duration?: number } };
+    readonly timeLogsUi?: { timeLogsValues: Array<{ startDate?: string, endDate?: string, duration?: number }> };
 
     readonly taskId?: string;
 

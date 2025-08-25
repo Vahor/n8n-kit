@@ -28,7 +28,7 @@ export interface VeroNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataAttributesUi?: { dataAttributesValues: { key?: string, value?: string } };
+    readonly dataAttributesUi?: { dataAttributesValues: Array<{ key?: string, value?: string }> };
 
     /**
      * Key value pairs that represent the custom user properties you want to update
@@ -52,7 +52,7 @@ export interface VeroNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly extraAttributesUi?: { extraAttributesValues: { key?: string, value?: string } };
+    readonly extraAttributesUi?: { extraAttributesValues: Array<{ key?: string, value?: string }> };
 
     /**
      * Key value pairs that represent reserved, Vero-specific operators. Refer to the note on “deduplication” below.

@@ -24,7 +24,7 @@ export interface SegmentNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly traits?: { traitsUi: { key?: string, value?: string } };
+    readonly traits?: { traitsUi: Array<{ key?: string, value?: string }> };
 
     /**
      * Default: {}
@@ -45,7 +45,7 @@ export interface SegmentNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { propertiesUi: { key?: string, value?: string } };
+    readonly properties?: { propertiesUi: Array<{ key?: string, value?: string }> };
 
     /** Name of the page For example, most sites have a “Signup” page that can be useful to tag, so you can see users as they move through your funnel */
     readonly name?: string;

@@ -34,7 +34,7 @@ export interface AdaloNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { fieldValues: { fieldId?: string, fieldValue?: string } };
+    readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

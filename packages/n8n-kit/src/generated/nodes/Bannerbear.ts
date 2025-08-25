@@ -28,7 +28,7 @@ export interface BannerbearNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly modificationsUi?: { modificationsValues: { name?: string, text?: string, color?: string, background?: string, imageUrl?: string } };
+    readonly modificationsUi?: { modificationsValues: Array<{ name?: string, text?: string, color?: string, background?: string, imageUrl?: string }> };
 
     /** Unique identifier for the image */
     readonly imageId?: string;

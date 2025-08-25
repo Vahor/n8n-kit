@@ -15,7 +15,7 @@ export interface AggregateNodeParameters {
      * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToAggregate?: { fieldToAggregate: { fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string } };
+    readonly fieldsToAggregate?: { fieldToAggregate: Array<{ fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string }> };
 
     /**
      * The name of the output field to put the data in

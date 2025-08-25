@@ -28,7 +28,7 @@ export interface MemoryManagerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly messages?: { messageValues: { type?: "ai" | "system" | "user", message: string, hideFromUI: boolean } };
+    readonly messages?: { messageValues: Array<{ type?: "ai" | "system" | "user", message: string, hideFromUI: boolean }> };
 
     /**
      * The amount of last messages to delete

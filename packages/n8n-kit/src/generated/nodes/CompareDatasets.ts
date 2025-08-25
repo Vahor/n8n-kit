@@ -12,7 +12,7 @@ export interface CompareDatasetsNodeParameters {
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeByFields?: { values: { field1?: string, field2?: string } };
+    readonly mergeByFields?: { values: Array<{ field1?: string, field2?: string }> };
 
     /** Default: "preferInput2" */
     readonly resolve?: "preferInput1" | "preferInput2" | "mix" | "includeBoth";

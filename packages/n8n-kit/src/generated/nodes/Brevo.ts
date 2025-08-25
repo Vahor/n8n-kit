@@ -31,7 +31,7 @@ export interface BrevoNodeParameters {
     readonly attributeValue?: string;
 
     /** Default: {} */
-    readonly attributeCategoryList?: { categoryEnumeration?: { attributesValues: { attributeCategoryValue?: number, attributeCategoryLabel?: string } } };
+    readonly attributeCategoryList?: { categoryEnumeration?: { attributesValues: Array<{ attributeCategoryValue?: number, attributeCategoryLabel?: string }> } };
 
     /**
      * Category of the attribute
@@ -49,7 +49,7 @@ export interface BrevoNodeParameters {
      * List of the values and labels that the attribute can take
      * Default: {}
      */
-    readonly updateAttributeCategoryList?: { updateCategoryEnumeration?: { updateAttributesValues: { attributeCategoryValue?: number, attributeCategoryLabel?: string } } };
+    readonly updateAttributeCategoryList?: { updateCategoryEnumeration?: { updateAttributesValues: Array<{ attributeCategoryValue?: number, attributeCategoryLabel?: string }> } };
 
     /**
      * Category of the attribute
@@ -84,7 +84,7 @@ export interface BrevoNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly createContactAttributes?: { attributesValues: { fieldName?: string, fieldValue?: string } };
+    readonly createContactAttributes?: { attributesValues: Array<{ fieldName?: string, fieldValue?: string }> };
 
     /** Default: {} */
     readonly options?: { sort?: "desc" | "asc" };
@@ -100,14 +100,14 @@ export interface BrevoNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly updateAttributes?: { updateAttributesValues: { fieldName?: string, fieldValue?: string } };
+    readonly updateAttributes?: { updateAttributesValues: Array<{ fieldName?: string, fieldValue?: string }> };
 
     /**
      * Array of attributes to be updated
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly upsertAttributes?: { upsertAttributesValues: { fieldName?: string, fieldValue?: string } };
+    readonly upsertAttributes?: { upsertAttributesValues: Array<{ fieldName?: string, fieldValue?: string }> };
 
     readonly sendHTML?: boolean;
 

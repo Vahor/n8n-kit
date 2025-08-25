@@ -43,7 +43,7 @@ export interface HelpScoutNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly threadsUi?: { threadsValues: { type?: "chat" | "customer" | "note" | "phone" | "reply", text?: string, bcc?: string, cc?: string, draft?: boolean } };
+    readonly threadsUi?: { threadsValues: Array<{ type?: "chat" | "customer" | "note" | "phone" | "reply", text?: string, bcc?: string, cc?: string, draft?: boolean }> };
 
     readonly conversationId?: string;
 
@@ -67,31 +67,31 @@ export interface HelpScoutNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly chatsUi?: { chatsValues: { type?: "aim" | "gtalk" | "icq" | "msn" | "other" | "qq" | "skype" | "xmpp" | "yahoo", value?: string } };
+    readonly chatsUi?: { chatsValues: Array<{ type?: "aim" | "gtalk" | "icq" | "msn" | "other" | "qq" | "skype" | "xmpp" | "yahoo", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly emailsUi?: { emailsValues: { type?: "home" | "other" | "work", value?: string } };
+    readonly emailsUi?: { emailsValues: Array<{ type?: "home" | "other" | "work", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly phonesUi?: { phonesValues: { type?: "fax" | "home" | "other" | "pager" | "work", value?: string } };
+    readonly phonesUi?: { phonesValues: Array<{ type?: "fax" | "home" | "other" | "pager" | "work", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly socialProfilesUi?: { socialProfilesValues: { type?: "aboutMe" | "facebook" | "flickr" | "forsquare" | "google" | "googleplus" | "linkedin" | "other" | "quora" | "tungleme" | "twitter" | "youtube", value?: string } };
+    readonly socialProfilesUi?: { socialProfilesValues: Array<{ type?: "aboutMe" | "facebook" | "flickr" | "forsquare" | "google" | "googleplus" | "linkedin" | "other" | "quora" | "tungleme" | "twitter" | "youtube", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly websitesUi?: { websitesValues: { value?: string } };
+    readonly websitesUi?: { websitesValues: Array<{ value?: string }> };
 
     readonly customerId?: string;
 
@@ -106,6 +106,6 @@ export interface HelpScoutNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { attachmentsValues: { fileName?: string, mimeType?: string, data?: string }, attachmentsBinary: { property?: string } };
+    readonly attachmentsUi?: { attachmentsValues: Array<{ fileName?: string, mimeType?: string, data?: string }>, attachmentsBinary: Array<{ property?: string }> };
 
 }

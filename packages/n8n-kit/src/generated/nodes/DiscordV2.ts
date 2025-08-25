@@ -50,7 +50,7 @@ export interface DiscordV2NodeParameters {
     readonly options?: { simplify?: boolean } | { flags?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], message_reference?: string, tts?: boolean } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { nsfw?: boolean, bitrate?: number, categoryId?: {
 	value: string,
 	mode: "list" | "url" | "id",
-}, position?: number, rate_limit_per_user?: number, topic?: string, user_limit?: number } | { filter?: ("0" | "2" | "4")[] } | { avatar_url?: string, flags?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], tts?: boolean, username?: string, wait?: boolean };
+}, position?: number, rate_limit_per_user?: number, topic?: string, user_limit?: number } | { filter?: (0 | 2 | 4)[] } | { avatar_url?: string, flags?: ("SUPPRESS_EMBEDS" | "SUPPRESS_NOTIFICATIONS")[], tts?: boolean, username?: string, wait?: boolean };
 
     /** The ID of the message */
     readonly messageId?: string;
@@ -83,13 +83,13 @@ export interface DiscordV2NodeParameters {
      * Default: []
      * Type options: {"multipleValues":true}
      */
-    readonly embeds?: { values: { inputMethod?: "fields" | "json", json?: string, description?: string, author?: string, color?: string, timestamp?: string, title?: string, url?: string, image?: string, thumbnail?: string, video?: string } };
+    readonly embeds?: { values: Array<{ inputMethod?: "fields" | "json", json?: string, description?: string, author?: string, color?: string, timestamp?: string, title?: string, url?: string, image?: string, thumbnail?: string, video?: string }> };
 
     /**
      * Default: []
      * Type options: {"multipleValues":true}
      */
-    readonly files?: { values: { inputFieldName?: string } };
+    readonly files?: { values: Array<{ inputFieldName?: string }> };
 
     /** Type options: {"rows":4} */
     readonly message?: string;
@@ -110,7 +110,7 @@ export interface DiscordV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
+    readonly formFields?: { values: Array<{ fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 
     /** Default: {} */
     readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, disapproveLabel?: string } };

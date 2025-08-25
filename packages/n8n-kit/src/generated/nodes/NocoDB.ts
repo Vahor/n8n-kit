@@ -65,7 +65,7 @@ export interface NocoDBNodeParameters {
     readonly downloadFieldNames?: string;
 
     /** Default: {} */
-    readonly options?: { viewId?: string, fields?: string, sort?: { property: { field?: string, direction?: "asc" | "desc" } }, where?: string };
+    readonly options?: { viewId?: string, fields?: string, sort?: { property: Array<{ field?: string, direction?: "asc" | "desc" }> }, where?: string };
 
     /**
      * Whether to insert the input data this node receives in the new row
@@ -80,6 +80,6 @@ export interface NocoDBNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { fieldValues: { fieldName?: string, binaryData?: boolean, fieldValue?: string, binaryProperty?: string } };
+    readonly fieldsUi?: { fieldValues: Array<{ fieldName?: string, binaryData?: boolean, fieldValue?: string, binaryProperty?: string }> };
 
 }

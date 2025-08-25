@@ -54,7 +54,7 @@ export interface FileMakerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly queries?: { query: { fields?: { field: { name?: string, value?: string } }, omit?: boolean } };
+    readonly queries?: { query: Array<{ fields?: { field: Array<{ name?: string, value?: string }> }, omit?: boolean }> };
 
     /** Whether to sort data */
     readonly setSort?: boolean;
@@ -64,7 +64,7 @@ export interface FileMakerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sortParametersUi?: { rules: { name?: string, value?: "ascend" | "descend" } };
+    readonly sortParametersUi?: { rules: Array<{ name?: string, value?: "ascend" | "descend" }> };
 
     /** Whether to define a script to be run before the action specified by the API call and after the subsequent sort */
     readonly setScriptBefore?: boolean;
@@ -110,7 +110,7 @@ export interface FileMakerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsParametersUi?: { fields: { name?: string, value?: string } };
+    readonly fieldsParametersUi?: { fields: Array<{ name?: string, value?: string }> };
 
     /**
      * The name of the FileMaker script to be run. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

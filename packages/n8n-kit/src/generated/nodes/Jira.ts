@@ -36,10 +36,10 @@ export interface JiraNodeParameters {
     readonly additionalFields?: { assignee?: {
 	value: string,
 	mode: "list" | "id",
-}, description?: string, componentIds?: any[], customFieldsUi?: { customFieldsValues: { fieldId?: {
+}, description?: string, componentIds?: any[], customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
 	value: string,
 	mode: "list" | "id",
-}, fieldValue?: string } }, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
+}, fieldValue?: string }> }, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
 	value: string,
 	mode: "list" | "id",
 }, reporter?: {
@@ -53,10 +53,10 @@ export interface JiraNodeParameters {
     readonly updateFields?: { assignee?: {
 	value: string,
 	mode: "list" | "id",
-}, description?: string, customFieldsUi?: { customFieldsValues: { fieldId?: {
+}, description?: string, customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
 	value: string,
 	mode: "list" | "id",
-}, fieldValue?: string } }, issueType?: string, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
+}, fieldValue?: string }> }, issueType?: string, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
 	value: string,
 	mode: "list" | "id",
 }, reporter?: {

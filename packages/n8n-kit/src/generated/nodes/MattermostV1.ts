@@ -78,7 +78,7 @@ export interface MattermostV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { actions?: { item: { type?: "button" | "select", data_source?: "channels" | "custom" | "users", options?: { option: { text?: string, value?: string } }, name?: string, integration?: { item: { url?: string, context?: { property: { name?: string, value?: string } } } } } }, author_icon?: string, author_link?: string, author_name?: string, color?: string, fallback?: string, fields?: { item: { title?: string, value?: string, short?: boolean } }, footer?: string, footer_icon?: string, image_url?: string, pretext?: string, text?: string, thumb_url?: string, title?: string, title_link?: string };
+    readonly attachments?: { actions?: { item: Array<{ type?: "button" | "select", data_source?: "channels" | "custom" | "users", options?: { option: Array<{ text?: string, value?: string }> }, name?: string, integration?: { item: { url?: string, context?: { property: Array<{ name?: string, value?: string }> } } } }> }, author_icon?: string, author_link?: string, author_name?: string, color?: string, fallback?: string, fields?: { item: Array<{ title?: string, value?: string, short?: boolean }> }, footer?: string, footer_icon?: string, image_url?: string, pretext?: string, text?: string, thumb_url?: string, title?: string, title_link?: string };
 
     /**
      * Other options to set

@@ -76,7 +76,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
     readonly commonName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { keyType?: "EC" | "RSA", keyCurve?: "ED25519" | "P256" | "P384" | "P521" | "UNKNOWN", keyLength?: number, organization?: string, organizationalUnits?: string, locality?: string, state?: string, country?: string, SubjectAltNamesUi?: { SubjectAltNamesValues: { Typename?: "dnsNames", name?: string } } };
+    readonly additionalFields?: { keyType?: "EC" | "RSA", keyCurve?: "ED25519" | "P256" | "P384" | "P521" | "UNKNOWN", keyLength?: number, organization?: string, organizationalUnits?: string, locality?: string, state?: string, country?: string, SubjectAltNamesUi?: { SubjectAltNamesValues: Array<{ Typename?: "dnsNames", name?: string }> } };
 
     readonly certificateRequestId?: string;
 

@@ -15,6 +15,6 @@ export interface ExecutionDataNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Saved Field","multipleValues":true}
      */
-    readonly dataToSave?: { values: { key?: string, value?: string } };
+    readonly dataToSave?: { values: Array<{ key?: string, value?: string }> };
 
 }

@@ -60,7 +60,7 @@ export interface FreshdeskNodeParameters {
     readonly contactId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { address?: string, company_id?: number, customFields?: { customField: { name?: string, value?: string } }, description?: string, email?: string, job_title?: string, language?: string, mobile?: string, name?: string, other_companies?: string, other_emails?: string, phone?: string, tags?: string, time_zone?: string, twitter_id?: string, unique_external_id?: string, view_all_tickets?: boolean };
+    readonly additionalFields?: { address?: string, company_id?: number, customFields?: { customField: Array<{ name?: string, value?: string }> }, description?: string, email?: string, job_title?: string, language?: string, mobile?: string, name?: string, other_companies?: string, other_emails?: string, phone?: string, tags?: string, time_zone?: string, twitter_id?: string, unique_external_id?: string, view_all_tickets?: boolean };
 
     /** Default: {} */
     readonly filters?: { company_id?: number, email?: string, mobile?: string, phone?: string, state?: "blocked" | "deleted" | "unverified" | "verified", updated_since?: string };

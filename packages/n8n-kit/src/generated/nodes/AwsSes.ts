@@ -74,7 +74,7 @@ export interface AwsSesNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly templateDataUi?: { templateDataValues: { key?: string, value?: string } };
+    readonly templateDataUi?: { templateDataValues: Array<{ key?: string, value?: string }> };
 
     /** The subject line of the email */
     readonly subjectPart?: string;

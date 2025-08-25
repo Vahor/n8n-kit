@@ -43,7 +43,7 @@ export interface MicrosoftExcelV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsUi?: { values: { column?: string, fieldValue?: string } };
+    readonly fieldsUi?: { values: Array<{ column?: string, fieldValue?: string }> };
 
     /** Default: {} */
     readonly options?: { index?: number, rawData?: boolean, dataProperty: string } | { returnAllMatches?: boolean } | { rawData?: boolean, dataProperty: string } | { rawData?: boolean, dataProperty: string, fields?: string } | { rawData?: boolean, dataProperty: string, fields?: string, updateAll?: boolean } | { appendAfterSelectedRange?: boolean, rawData?: boolean, dataProperty: string, updateAll?: boolean };

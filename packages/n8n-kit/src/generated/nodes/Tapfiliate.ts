@@ -48,7 +48,7 @@ export interface TapfiliateNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly metadataUi?: { metadataValues: { key?: string, value?: string } };
+    readonly metadataUi?: { metadataValues: Array<{ key?: string, value?: string }> };
 
     /** Name of the metadata key to remove */
     readonly key?: string;

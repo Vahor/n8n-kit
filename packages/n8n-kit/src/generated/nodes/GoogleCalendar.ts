@@ -59,7 +59,7 @@ export interface GoogleCalendarNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly remindersUi?: { remindersValues: { method?: "email" | "popup", minutes?: number } };
+    readonly remindersUi?: { remindersValues: Array<{ method?: "email" | "popup", minutes?: number }> };
 
     readonly eventId?: string;
 

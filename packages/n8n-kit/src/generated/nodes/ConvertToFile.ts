@@ -35,6 +35,6 @@ export interface ConvertToFileNodeParameters {
     readonly allDay?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { attendeesUi?: { attendeeValues: { name: string, email: string, rsvp?: boolean } }, busyStatus?: "BUSY" | "TENTATIVE", calName?: string, description?: string, fileName?: string, geolocationUi?: { geolocationValues: { lat?: string, lon?: string } }, location?: string, recurrenceRule?: string, organizerUi?: { organizerValues: { name: string, email: string } }, sequence?: number, status?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", uid?: string, url?: string, useWorkflowTimezone?: boolean };
+    readonly additionalFields?: { attendeesUi?: { attendeeValues: Array<{ name: string, email: string, rsvp?: boolean }> }, busyStatus?: "BUSY" | "TENTATIVE", calName?: string, description?: string, fileName?: string, geolocationUi?: { geolocationValues: { lat?: string, lon?: string } }, location?: string, recurrenceRule?: string, organizerUi?: { organizerValues: { name: string, email: string } }, sequence?: number, status?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", uid?: string, url?: string, useWorkflowTimezone?: boolean };
 
 }

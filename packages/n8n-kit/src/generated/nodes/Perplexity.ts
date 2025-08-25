@@ -23,7 +23,7 @@ export interface PerplexityNodeParameters {
      * Default: {"message":[{"role":"user","content":""}]}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly messages?: { message: { content?: string, role: "assistant" | "system" | "user" } };
+    readonly messages?: { message: Array<{ content?: string, role: "assistant" | "system" | "user" }> };
 
     /** Whether to return only essential fields (ID, citations, message) */
     readonly simplify?: boolean;

@@ -67,7 +67,7 @@ export interface GoogleGeminiNodeParameters {
      * Default: {"values":[{"content":""}]}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly messages?: { values: { content?: string, role?: "user" | "model" } };
+    readonly messages?: { values: Array<{ content?: string, role?: "user" | "model" }> };
 
     /** Whether to attempt to return the response in JSON format */
     readonly jsonOutput?: boolean;

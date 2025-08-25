@@ -16,7 +16,7 @@ export interface SetV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly values?: { boolean: { name?: string, value?: boolean }, number: { name?: string, value?: number }, string: { name?: string, value?: string } };
+    readonly values?: { boolean: Array<{ name?: string, value?: boolean }>, number: Array<{ name?: string, value?: number }>, string: Array<{ name?: string, value?: string }> };
 
     /** Default: {} */
     readonly options?: { dotNotation?: boolean };

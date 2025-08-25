@@ -30,7 +30,7 @@ export interface SetV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly fields?: { values: { name?: string, type?: "stringValue" | "numberValue" | "booleanValue" | "arrayValue" | "objectValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string } };
+    readonly fields?: { values: Array<{ name?: string, type?: "stringValue" | "numberValue" | "booleanValue" | "arrayValue" | "objectValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string }> };
 
     /** Default: {} */
     readonly assignments?: any;

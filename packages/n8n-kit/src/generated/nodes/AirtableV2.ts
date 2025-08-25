@@ -63,6 +63,6 @@ export interface AirtableV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { property: { field?: string, direction?: "asc" | "desc" } };
+    readonly sort?: { property: Array<{ field?: string, direction?: "asc" | "desc" }> };
 
 }
