@@ -1,10 +1,4 @@
-import type {
-	AnyString,
-	ErrorMessage,
-	IsAny,
-	IsNever,
-	Prettify,
-} from "../../utils/types";
+import type { ErrorMessage, IsAny, IsNever, Prettify } from "../../utils/types";
 import { Group } from "../group";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import { State } from "./state";
@@ -75,11 +69,8 @@ export class Chain<
 	/**
 	 * Begin a new Chain from one chainable
 	 */
-	public static start<
-		BaseContext extends ChainContext = {},
-		N1 extends IChainable = IChainable,
-	>(state: N1) {
-		return new Chain<AddIChainableToChainContext<N1, BaseContext>, [N1["id"]]>(
+	public static start<N1 extends IChainable>(state: N1) {
+		return new Chain<AddIChainableToChainContext<N1, {}>, [N1["id"]]>(
 			state.startState,
 			state.endStates,
 			state,
@@ -206,7 +197,7 @@ export class Chain<
 
 	public connect<
 		Keys extends IdsInContext[number],
-		Ids extends Array<Keys & AnyString>,
+		Ids extends Array<Keys>,
 		N extends IChainable,
 	>(
 		ids: Ids,
