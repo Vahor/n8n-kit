@@ -35,7 +35,7 @@
 		"@types/bun": "^1.2.20",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.5",
-		"pkg-pr-new": "^0.0.55"
+		"pkg-pr-new": "^0.0.57"
 	},
 	"scripts": {
 		"build": "bun run build.ts",
