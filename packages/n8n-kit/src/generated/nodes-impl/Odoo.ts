@@ -15,7 +15,7 @@ export interface OdooProps extends NodeProps {
 /**
  * Consume Odoo API
  */
-export class Odoo<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Odoo<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.odoo" as const;
     protected typeVersion = 1 as const;
 

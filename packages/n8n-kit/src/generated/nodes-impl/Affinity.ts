@@ -15,7 +15,7 @@ export interface AffinityProps extends NodeProps {
 /**
  * Consume Affinity API
  */
-export class Affinity<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Affinity<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.affinity" as const;
     protected typeVersion = 1 as const;
 

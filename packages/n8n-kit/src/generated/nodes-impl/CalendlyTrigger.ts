@@ -17,7 +17,7 @@ export interface CalendlyTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Calendly events occur
  */
-export class CalendlyTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class CalendlyTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.calendlyTrigger" as const;
     protected typeVersion = 1 as const;
 

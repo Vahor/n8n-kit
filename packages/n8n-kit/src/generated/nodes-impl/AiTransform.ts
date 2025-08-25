@@ -12,7 +12,7 @@ export interface AiTransformProps extends NodeProps {
 /**
  * Modify data based on instructions written in plain english
  */
-export class AiTransform<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AiTransform<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.aiTransform" as const;
     protected typeVersion = 1 as const;
 

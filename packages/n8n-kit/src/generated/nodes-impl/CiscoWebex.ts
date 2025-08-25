@@ -15,7 +15,7 @@ export interface CiscoWebexProps extends NodeProps {
 /**
  * Consume the Cisco Webex API
  */
-export class CiscoWebex<C extends IContext, L extends string = string> extends Node<L, C> {
+export class CiscoWebex<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ciscoWebex" as const;
     protected typeVersion = 1 as const;
 

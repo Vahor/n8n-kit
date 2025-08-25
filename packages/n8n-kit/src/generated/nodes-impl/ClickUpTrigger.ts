@@ -17,7 +17,7 @@ export interface ClickUpTriggerProps extends NodeProps {
 /**
  * Handle ClickUp events via webhooks (Beta)
  */
-export class ClickUpTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ClickUpTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.clickUpTrigger" as const;
     protected typeVersion = 1 as const;
 

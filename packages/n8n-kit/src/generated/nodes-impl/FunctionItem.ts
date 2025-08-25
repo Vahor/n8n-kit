@@ -12,7 +12,7 @@ export interface FunctionItemProps extends NodeProps {
 /**
  * Run custom function code which gets executed once per item
  */
-export class FunctionItem<C extends IContext, L extends string = string> extends Node<L, C> {
+export class FunctionItem<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.functionItem" as const;
     protected typeVersion = 1 as const;
 

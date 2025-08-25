@@ -15,7 +15,7 @@ export interface LemlistV2Props extends NodeProps {
 /**
  * Consume the Lemlist API
  */
-export class LemlistV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class LemlistV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.lemlist" as const;
     protected typeVersion = 2 as const;
 

@@ -17,7 +17,7 @@ export interface GoogleSlidesProps extends NodeProps {
 /**
  * Consume the Google Slides API
  */
-export class GoogleSlides<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleSlides<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleSlides" as const;
     protected typeVersion = 2 as const;
 

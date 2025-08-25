@@ -14,7 +14,7 @@ export interface CodeAIProps extends NodeProps {
 /**
  * LangChain Code Node
  */
-export class CodeAI<C extends IContext, L extends string = string> extends Node<L, C> {
+export class CodeAI<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.code" as const;
     protected typeVersion = 1 as const;
 

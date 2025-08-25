@@ -15,7 +15,7 @@ export interface AwsTextractProps extends NodeProps {
 /**
  * Sends data to Amazon Textract
  */
-export class AwsTextract<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsTextract<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsTextract" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface PushcutProps extends NodeProps {
 /**
  * Consume Pushcut API
  */
-export class Pushcut<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Pushcut<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.pushcut" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface ZohoCrmProps extends NodeProps {
 /**
  * Consume Zoho CRM API
  */
-export class ZohoCrm<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ZohoCrm<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.zohoCrm" as const;
     protected typeVersion = 1 as const;
 

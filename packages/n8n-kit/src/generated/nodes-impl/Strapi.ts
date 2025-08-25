@@ -17,7 +17,7 @@ export interface StrapiProps extends NodeProps {
 /**
  * Consume Strapi API
  */
-export class Strapi<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Strapi<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.strapi" as const;
     protected typeVersion = 1 as const;
 

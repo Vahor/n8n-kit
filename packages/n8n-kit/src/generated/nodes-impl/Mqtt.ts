@@ -15,7 +15,7 @@ export interface MqttProps extends NodeProps {
 /**
  * Push messages to MQTT
  */
-export class Mqtt<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Mqtt<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mqtt" as const;
     protected typeVersion = 1 as const;
 

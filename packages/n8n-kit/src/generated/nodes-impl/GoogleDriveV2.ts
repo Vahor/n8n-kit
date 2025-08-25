@@ -17,7 +17,7 @@ export interface GoogleDriveV2Props extends NodeProps {
 /**
  * Access data on Google Drive
  */
-export class GoogleDriveV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleDriveV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleDrive" as const;
     protected typeVersion = 3 as const;
 

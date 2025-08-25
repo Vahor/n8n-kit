@@ -15,7 +15,7 @@ export interface PaddleProps extends NodeProps {
 /**
  * Consume Paddle API
  */
-export class Paddle<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Paddle<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.paddle" as const;
     protected typeVersion = 1 as const;
 

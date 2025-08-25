@@ -15,7 +15,7 @@ export interface StravaTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Strava events occur
  */
-export class StravaTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class StravaTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.stravaTrigger" as const;
     protected typeVersion = 1 as const;
 

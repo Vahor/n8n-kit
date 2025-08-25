@@ -12,7 +12,7 @@ export interface SetV2Props extends NodeProps {
 /**
  * Modify, add, or remove item fields
  */
-export class SetV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SetV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.set" as const;
     protected typeVersion = 3.4 as const;
 

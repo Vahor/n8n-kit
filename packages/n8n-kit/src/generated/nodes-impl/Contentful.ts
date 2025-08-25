@@ -15,7 +15,7 @@ export interface ContentfulProps extends NodeProps {
 /**
  * Consume Contentful API
  */
-export class Contentful<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Contentful<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.contentful" as const;
     protected typeVersion = 1 as const;
 

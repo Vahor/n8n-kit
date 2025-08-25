@@ -15,7 +15,7 @@ export interface AwsElbProps extends NodeProps {
 /**
  * Sends data to AWS ELB API
  */
-export class AwsElb<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsElb<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsElb" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface AwsSnsTriggerProps extends NodeProps {
 /**
  * Handle AWS SNS events via webhooks
  */
-export class AwsSnsTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsSnsTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsSnsTrigger" as const;
     protected typeVersion = 1 as const;
 

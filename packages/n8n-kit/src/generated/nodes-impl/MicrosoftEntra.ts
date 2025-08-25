@@ -15,7 +15,7 @@ export interface MicrosoftEntraProps extends NodeProps {
 /**
  * Interact with Microsoft Entra ID API
  */
-export class MicrosoftEntra<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MicrosoftEntra<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftEntra" as const;
     protected typeVersion = 1 as const;
 

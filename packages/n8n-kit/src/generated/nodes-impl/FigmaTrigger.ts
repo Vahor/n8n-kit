@@ -15,7 +15,7 @@ export interface FigmaTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Figma events occur
  */
-export class FigmaTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class FigmaTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.figmaTrigger" as const;
     protected typeVersion = 1 as const;
 

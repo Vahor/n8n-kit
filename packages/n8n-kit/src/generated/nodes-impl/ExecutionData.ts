@@ -12,7 +12,7 @@ export interface ExecutionDataProps extends NodeProps {
 /**
  * Add execution data for search
  */
-export class ExecutionData<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ExecutionData<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.executionData" as const;
     protected typeVersion = 1.1 as const;
 

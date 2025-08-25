@@ -12,7 +12,7 @@ export interface MemoryBufferWindowProps extends NodeProps {
 /**
  * Stores in n8n memory, so no credentials required
  */
-export class MemoryBufferWindow<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MemoryBufferWindow<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryBufferWindow" as const;
     protected typeVersion = 1.3 as const;
 

@@ -15,7 +15,7 @@ export interface InvoiceNinjaProps extends NodeProps {
 /**
  * Consume Invoice Ninja API
  */
-export class InvoiceNinja<C extends IContext, L extends string = string> extends Node<L, C> {
+export class InvoiceNinja<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.invoiceNinja" as const;
     protected typeVersion = 2 as const;
 

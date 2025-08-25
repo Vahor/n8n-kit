@@ -15,7 +15,7 @@ export interface SendGridProps extends NodeProps {
 /**
  * Consume SendGrid API
  */
-export class SendGrid<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SendGrid<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.sendGrid" as const;
     protected typeVersion = 1 as const;
 

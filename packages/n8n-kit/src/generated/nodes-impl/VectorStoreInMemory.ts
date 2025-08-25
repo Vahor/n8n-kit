@@ -14,7 +14,7 @@ export interface VectorStoreInMemoryProps extends NodeProps {
 /**
  * The easiest way to experiment with vector stores, without external setup.
  */
-export class VectorStoreInMemory<C extends IContext, L extends string = string> extends Node<L, C> {
+export class VectorStoreInMemory<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemory" as const;
     protected typeVersion = 1.3 as const;
 

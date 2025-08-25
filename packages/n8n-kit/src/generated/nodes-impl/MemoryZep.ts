@@ -15,7 +15,7 @@ export interface MemoryZepProps extends NodeProps {
 /**
  * Use Zep Memory
  */
-export class MemoryZep<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MemoryZep<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryZep" as const;
     protected typeVersion = 1.3 as const;
 

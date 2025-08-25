@@ -15,7 +15,7 @@ export interface FormTriggerV2Props extends NodeProps {
 /**
  * Generate webforms in n8n and pass their responses to the workflow
  */
-export class FormTriggerV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class FormTriggerV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.formTrigger" as const;
     protected typeVersion = 2.3 as const;
 

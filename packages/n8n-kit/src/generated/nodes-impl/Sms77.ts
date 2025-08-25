@@ -15,7 +15,7 @@ export interface Sms77Props extends NodeProps {
 /**
  * Send SMS and make text-to-speech calls
  */
-export class Sms77<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Sms77<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.sms77" as const;
     protected typeVersion = 1 as const;
 

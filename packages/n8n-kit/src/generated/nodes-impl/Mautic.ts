@@ -17,7 +17,7 @@ export interface MauticProps extends NodeProps {
 /**
  * Consume Mautic API
  */
-export class Mautic<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Mautic<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mautic" as const;
     protected typeVersion = 1 as const;
 

@@ -17,7 +17,7 @@ export interface HarvestProps extends NodeProps {
 /**
  * Access data on Harvest
  */
-export class Harvest<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Harvest<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.harvest" as const;
     protected typeVersion = 1 as const;
 

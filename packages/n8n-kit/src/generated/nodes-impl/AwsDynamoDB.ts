@@ -15,7 +15,7 @@ export interface AwsDynamoDBProps extends NodeProps {
 /**
  * Consume the AWS DynamoDB API
  */
-export class AwsDynamoDB<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsDynamoDB<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsDynamoDb" as const;
     protected typeVersion = 1 as const;
 

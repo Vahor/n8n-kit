@@ -15,7 +15,7 @@ export interface AwsIamProps extends NodeProps {
 /**
  * Interacts with Amazon IAM
  */
-export class AwsIam<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsIam<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsIam" as const;
     protected typeVersion = 1 as const;
 

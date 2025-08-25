@@ -25,7 +25,7 @@ export interface HttpRequestV1Props extends NodeProps {
 /**
  * Makes an HTTP request and returns the response data
  */
-export class HttpRequestV1<C extends IContext, L extends string = string> extends Node<L, C> {
+export class HttpRequestV1<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.httpRequest" as const;
     protected typeVersion = 1 as const;
 

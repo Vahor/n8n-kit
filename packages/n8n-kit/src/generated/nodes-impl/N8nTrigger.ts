@@ -12,7 +12,7 @@ export interface N8nTriggerProps extends NodeProps {
 /**
  * Handle events and perform actions on your n8n instance
  */
-export class N8nTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class N8nTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.n8nTrigger" as const;
     protected typeVersion = 1 as const;
 

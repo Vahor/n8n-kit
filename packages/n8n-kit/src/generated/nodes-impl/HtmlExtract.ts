@@ -12,7 +12,7 @@ export interface HtmlExtractProps extends NodeProps {
 /**
  * Extracts data from HTML
  */
-export class HtmlExtract<C extends IContext, L extends string = string> extends Node<L, C> {
+export class HtmlExtract<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.htmlExtract" as const;
     protected typeVersion = 1 as const;
 

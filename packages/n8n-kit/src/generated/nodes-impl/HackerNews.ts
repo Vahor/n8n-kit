@@ -12,7 +12,7 @@ export interface HackerNewsProps extends NodeProps {
 /**
  * Consume Hacker News API
  */
-export class HackerNews<C extends IContext, L extends string = string> extends Node<L, C> {
+export class HackerNews<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.hackerNews" as const;
     protected typeVersion = 1 as const;
 

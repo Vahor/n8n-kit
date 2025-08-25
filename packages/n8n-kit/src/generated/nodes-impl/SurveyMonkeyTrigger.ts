@@ -17,7 +17,7 @@ export interface SurveyMonkeyTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Survey Monkey events occur
  */
-export class SurveyMonkeyTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SurveyMonkeyTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.surveyMonkeyTrigger" as const;
     protected typeVersion = 1 as const;
 

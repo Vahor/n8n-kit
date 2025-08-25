@@ -15,7 +15,7 @@ export interface MailgunProps extends NodeProps {
 /**
  * Sends an email via Mailgun
  */
-export class Mailgun<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Mailgun<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mailgun" as const;
     protected typeVersion = 1 as const;
 

@@ -17,7 +17,7 @@ export interface SlackV1Props extends NodeProps {
 /**
  * Consume Slack API
  */
-export class SlackV1<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SlackV1<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.slack" as const;
     protected typeVersion = 1 as const;
 

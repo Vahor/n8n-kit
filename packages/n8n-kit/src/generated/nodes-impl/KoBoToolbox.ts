@@ -15,7 +15,7 @@ export interface KoBoToolboxProps extends NodeProps {
 /**
  * Work with KoBoToolbox forms and submissions
  */
-export class KoBoToolbox<C extends IContext, L extends string = string> extends Node<L, C> {
+export class KoBoToolbox<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.koBoToolbox" as const;
     protected typeVersion = 1 as const;
 

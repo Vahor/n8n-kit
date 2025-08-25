@@ -21,7 +21,7 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 	definition: WorkflowDefinitionProvider<
 		Input,
 		Output,
-		Chain<any, any> | Node<any, any>
+		Chain<any, any> | Node<any, unknown>
 	>;
 	tags?: string[] | undefined;
 	active?: boolean;

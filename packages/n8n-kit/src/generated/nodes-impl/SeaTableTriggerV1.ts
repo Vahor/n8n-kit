@@ -15,7 +15,7 @@ export interface SeaTableTriggerV1Props extends NodeProps {
 /**
  * Starts the workflow when SeaTable events occur
  */
-export class SeaTableTriggerV1<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SeaTableTriggerV1<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.seaTableTrigger" as const;
     protected typeVersion = 1 as const;
 

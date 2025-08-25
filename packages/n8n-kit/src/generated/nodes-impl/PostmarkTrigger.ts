@@ -15,7 +15,7 @@ export interface PostmarkTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Postmark events occur
  */
-export class PostmarkTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class PostmarkTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.postmarkTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface AwsCertificateManagerProps extends NodeProps {
 /**
  * Sends data to AWS Certificate Manager
  */
-export class AwsCertificateManager<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsCertificateManager<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsCertificateManager" as const;
     protected typeVersion = 1 as const;
 

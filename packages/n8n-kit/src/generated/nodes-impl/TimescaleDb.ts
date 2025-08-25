@@ -15,7 +15,7 @@ export interface TimescaleDbProps extends NodeProps {
 /**
  * Add and update data in TimescaleDB
  */
-export class TimescaleDb<C extends IContext, L extends string = string> extends Node<L, C> {
+export class TimescaleDb<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.timescaleDb" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface EmeliaTriggerProps extends NodeProps {
 /**
  * Handle Emelia campaign activity events via webhooks
  */
-export class EmeliaTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class EmeliaTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.emeliaTrigger" as const;
     protected typeVersion = 1 as const;
 

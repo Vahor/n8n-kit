@@ -12,7 +12,7 @@ export interface ExtractFromFileProps extends NodeProps {
 /**
  * Convert binary data to JSON
  */
-export class ExtractFromFile<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ExtractFromFile<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.extractFromFile" as const;
     protected typeVersion = 1 as const;
 

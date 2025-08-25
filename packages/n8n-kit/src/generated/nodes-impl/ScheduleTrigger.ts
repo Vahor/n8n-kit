@@ -12,7 +12,7 @@ export interface ScheduleTriggerProps extends NodeProps {
 /**
  * Triggers the workflow on a given schedule
  */
-export class ScheduleTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ScheduleTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.scheduleTrigger" as const;
     protected typeVersion = 1.2 as const;
 

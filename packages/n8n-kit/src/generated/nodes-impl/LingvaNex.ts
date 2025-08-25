@@ -15,7 +15,7 @@ export interface LingvaNexProps extends NodeProps {
 /**
  * Consume LingvaNex API
  */
-export class LingvaNex<C extends IContext, L extends string = string> extends Node<L, C> {
+export class LingvaNex<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.lingvaNex" as const;
     protected typeVersion = 1 as const;
 

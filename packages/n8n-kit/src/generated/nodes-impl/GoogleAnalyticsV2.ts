@@ -15,7 +15,7 @@ export interface GoogleAnalyticsV2Props extends NodeProps {
 /**
  * Use the Google Analytics API
  */
-export class GoogleAnalyticsV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleAnalyticsV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleAnalytics" as const;
     protected typeVersion = 2 as const;
 

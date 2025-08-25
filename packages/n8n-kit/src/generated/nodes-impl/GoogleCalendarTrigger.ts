@@ -15,7 +15,7 @@ export interface GoogleCalendarTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Google Calendar events occur
  */
-export class GoogleCalendarTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleCalendarTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleCalendarTrigger" as const;
     protected typeVersion = 1 as const;
 

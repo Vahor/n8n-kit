@@ -17,7 +17,7 @@ export interface VectorStoreMongoDBAtlasProps extends NodeProps {
 /**
  * Work with your data in MongoDB Atlas Vector Store
  */
-export class VectorStoreMongoDBAtlas<C extends IContext, L extends string = string> extends Node<L, C> {
+export class VectorStoreMongoDBAtlas<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas" as const;
     protected typeVersion = 1.3 as const;
 

@@ -12,7 +12,7 @@ export interface ToolCalculatorProps extends NodeProps {
 /**
  * Make it easier for AI agents to perform arithmetic
  */
-export class ToolCalculator<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ToolCalculator<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolCalculator" as const;
     protected typeVersion = 1 as const;
 

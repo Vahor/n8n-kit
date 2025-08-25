@@ -12,7 +12,7 @@ export interface CompressionProps extends NodeProps {
 /**
  * Compress and decompress files
  */
-export class Compression<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Compression<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.compression" as const;
     protected typeVersion = 1.1 as const;
 

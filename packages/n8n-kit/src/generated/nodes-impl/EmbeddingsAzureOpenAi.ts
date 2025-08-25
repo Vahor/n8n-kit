@@ -15,7 +15,7 @@ export interface EmbeddingsAzureOpenAiProps extends NodeProps {
 /**
  * Use Embeddings Azure OpenAI
  */
-export class EmbeddingsAzureOpenAi<C extends IContext, L extends string = string> extends Node<L, C> {
+export class EmbeddingsAzureOpenAi<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsAzureOpenAi" as const;
     protected typeVersion = 1 as const;
 

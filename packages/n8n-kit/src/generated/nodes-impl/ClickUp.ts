@@ -17,7 +17,7 @@ export interface ClickUpProps extends NodeProps {
 /**
  * Consume ClickUp API (Beta)
  */
-export class ClickUp<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ClickUp<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.clickUp" as const;
     protected typeVersion = 1 as const;
 

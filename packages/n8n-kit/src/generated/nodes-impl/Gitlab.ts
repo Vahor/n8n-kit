@@ -17,7 +17,7 @@ export interface GitlabProps extends NodeProps {
 /**
  * Retrieve data from GitLab API
  */
-export class Gitlab<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Gitlab<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gitlab" as const;
     protected typeVersion = 1 as const;
 

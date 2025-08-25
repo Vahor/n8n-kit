@@ -15,7 +15,7 @@ export interface LmChatOllamaProps extends NodeProps {
 /**
  * Language Model Ollama
  */
-export class LmChatOllama<C extends IContext, L extends string = string> extends Node<L, C> {
+export class LmChatOllama<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatOllama" as const;
     protected typeVersion = 1 as const;
 

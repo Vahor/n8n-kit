@@ -10,7 +10,7 @@ export interface WebhookResponseProps extends NodeProps {
 }
 
 // @ts-expect-error: we override the parameters type
-export class WebhookResponse<L extends string> extends _WebhookResponse<L> {
+export class WebhookResponse<L extends string> extends _WebhookResponse<{}, L> {
 	constructor(
 		id: L,
 		override props: WebhookResponseProps,

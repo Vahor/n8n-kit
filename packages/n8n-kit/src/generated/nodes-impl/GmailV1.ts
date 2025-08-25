@@ -17,7 +17,7 @@ export interface GmailV1Props extends NodeProps {
 /**
  * Consume the Gmail API
  */
-export class GmailV1<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GmailV1<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gmail" as const;
     protected typeVersion = 1 as const;
 

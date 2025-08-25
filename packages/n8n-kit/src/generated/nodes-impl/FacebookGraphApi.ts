@@ -15,7 +15,7 @@ export interface FacebookGraphApiProps extends NodeProps {
 /**
  * Interacts with Facebook using the Graph API
  */
-export class FacebookGraphApi<C extends IContext, L extends string = string> extends Node<L, C> {
+export class FacebookGraphApi<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.facebookGraphApi" as const;
     protected typeVersion = 1 as const;
 

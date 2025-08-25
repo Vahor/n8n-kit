@@ -19,7 +19,7 @@ export interface WaitProps extends NodeProps {
 /**
  * Wait before continue with execution
  */
-export class Wait<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Wait<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.wait" as const;
     protected typeVersion = 1.1 as const;
 

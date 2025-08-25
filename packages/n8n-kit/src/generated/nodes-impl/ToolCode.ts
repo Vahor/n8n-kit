@@ -12,7 +12,7 @@ export interface ToolCodeProps extends NodeProps {
 /**
  * Write a tool in JS or Python
  */
-export class ToolCode<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ToolCode<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolCode" as const;
     protected typeVersion = 1.3 as const;
 

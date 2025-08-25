@@ -14,7 +14,7 @@ export interface InformationExtractorProps extends NodeProps {
 /**
  * Extract information from text in a structured format
  */
-export class InformationExtractor<C extends IContext, L extends string = string> extends Node<L, C> {
+export class InformationExtractor<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.informationExtractor" as const;
     protected typeVersion = 1.2 as const;
 

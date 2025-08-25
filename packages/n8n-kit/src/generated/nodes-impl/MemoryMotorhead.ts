@@ -15,7 +15,7 @@ export interface MemoryMotorheadProps extends NodeProps {
 /**
  * Use Motorhead Memory
  */
-export class MemoryMotorhead<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MemoryMotorhead<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryMotorhead" as const;
     protected typeVersion = 1.3 as const;
 

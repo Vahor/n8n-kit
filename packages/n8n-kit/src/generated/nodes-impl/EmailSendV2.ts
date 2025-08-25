@@ -15,7 +15,7 @@ export interface EmailSendV2Props extends NodeProps {
 /**
  * Sends an email using SMTP protocol
  */
-export class EmailSendV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class EmailSendV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.emailSend" as const;
     protected typeVersion = 2.1 as const;
 

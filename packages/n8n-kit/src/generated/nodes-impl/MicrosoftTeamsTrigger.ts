@@ -15,7 +15,7 @@ export interface MicrosoftTeamsTriggerProps extends NodeProps {
 /**
  * Triggers workflows in n8n based on events from Microsoft Teams, such as new messages or team updates, using specified configurations.
  */
-export class MicrosoftTeamsTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MicrosoftTeamsTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftTeamsTrigger" as const;
     protected typeVersion = 1 as const;
 

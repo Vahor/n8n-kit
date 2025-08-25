@@ -15,7 +15,7 @@ export interface LoneScaleTriggerProps extends NodeProps {
 /**
  * Trigger LoneScale Workflow
  */
-export class LoneScaleTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class LoneScaleTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.loneScaleTrigger" as const;
     protected typeVersion = 1 as const;
 

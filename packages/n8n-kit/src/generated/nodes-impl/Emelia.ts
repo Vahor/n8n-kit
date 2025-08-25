@@ -15,7 +15,7 @@ export interface EmeliaProps extends NodeProps {
 /**
  * Consume the Emelia API
  */
-export class Emelia<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Emelia<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.emelia" as const;
     protected typeVersion = 1 as const;
 

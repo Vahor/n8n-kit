@@ -27,7 +27,7 @@ export interface GraphQLProps extends NodeProps {
 /**
  * Makes a GraphQL request and returns the received data
  */
-export class GraphQL<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GraphQL<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.graphql" as const;
     protected typeVersion = 1.1 as const;
 

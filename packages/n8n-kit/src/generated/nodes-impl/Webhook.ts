@@ -19,7 +19,7 @@ export interface WebhookProps extends NodeProps {
 /**
  * Starts the workflow when a webhook is called
  */
-export class Webhook<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Webhook<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.webhook" as const;
     protected typeVersion = 2.1 as const;
 

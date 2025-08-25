@@ -12,7 +12,7 @@ export interface ReadPDFProps extends NodeProps {
 /**
  * Reads a PDF and extracts its content
  */
-export class ReadPDF<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ReadPDF<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.readPDF" as const;
     protected typeVersion = 1 as const;
 

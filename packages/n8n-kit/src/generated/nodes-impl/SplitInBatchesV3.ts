@@ -12,7 +12,7 @@ export interface SplitInBatchesV3Props extends NodeProps {
 /**
  * Split data into batches and iterate over each batch
  */
-export class SplitInBatchesV3<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SplitInBatchesV3<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.splitInBatches" as const;
     protected typeVersion = 3 as const;
 

@@ -12,7 +12,7 @@ export interface WriteBinaryFileProps extends NodeProps {
 /**
  * Writes a binary file to disk
  */
-export class WriteBinaryFile<C extends IContext, L extends string = string> extends Node<L, C> {
+export class WriteBinaryFile<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.writeBinaryFile" as const;
     protected typeVersion = 1 as const;
 

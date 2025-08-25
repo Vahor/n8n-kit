@@ -15,7 +15,7 @@ export interface KafkaTriggerProps extends NodeProps {
 /**
  * Consume messages from a Kafka topic
  */
-export class KafkaTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class KafkaTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.kafkaTrigger" as const;
     protected typeVersion = 1.1 as const;
 

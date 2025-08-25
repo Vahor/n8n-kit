@@ -15,7 +15,7 @@ export interface CockpitProps extends NodeProps {
 /**
  * Consume Cockpit API
  */
-export class Cockpit<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Cockpit<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.cockpit" as const;
     protected typeVersion = 1 as const;
 

@@ -17,7 +17,7 @@ export interface OpenAiAIProps extends NodeProps {
 /**
  * Message an assistant or GPT, analyze images, generate audio, etc.
  */
-export class OpenAiAI<C extends IContext, L extends string = string> extends Node<L, C> {
+export class OpenAiAI<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.openAi" as const;
     protected typeVersion = 1.8 as const;
 
