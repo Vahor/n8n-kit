@@ -15,7 +15,7 @@ export interface FreshdeskProps extends NodeProps {
 /**
  * Consume Freshdesk API
  */
-export class Freshdesk<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Freshdesk<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.freshdesk" as const;
     protected typeVersion = 1 as const;
 

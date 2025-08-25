@@ -12,7 +12,7 @@ export interface CompareDatasetsProps extends NodeProps {
 /**
  * Compare two inputs for changes
  */
-export class CompareDatasets<C extends IContext, L extends string = string> extends Node<L, C> {
+export class CompareDatasets<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.compareDatasets" as const;
     protected typeVersion = 2.3 as const;
 

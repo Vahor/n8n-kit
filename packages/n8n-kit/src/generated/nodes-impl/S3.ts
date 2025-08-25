@@ -15,7 +15,7 @@ export interface S3Props extends NodeProps {
 /**
  * Sends data to any S3-compatible service
  */
-export class S3<C extends IContext, L extends string = string> extends Node<L, C> {
+export class S3<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.s3" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface TelegramProps extends NodeProps {
 /**
  * Sends data to Telegram
  */
-export class Telegram<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Telegram<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.telegram" as const;
     protected typeVersion = 1.2 as const;
 

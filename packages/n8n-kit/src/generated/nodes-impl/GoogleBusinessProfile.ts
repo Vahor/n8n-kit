@@ -15,7 +15,7 @@ export interface GoogleBusinessProfileProps extends NodeProps {
 /**
  * Consume Google Business Profile API
  */
-export class GoogleBusinessProfile<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleBusinessProfile<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleBusinessProfile" as const;
     protected typeVersion = 1 as const;
 

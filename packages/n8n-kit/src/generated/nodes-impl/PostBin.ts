@@ -12,7 +12,7 @@ export interface PostBinProps extends NodeProps {
 /**
  * Consume PostBin API
  */
-export class PostBin<C extends IContext, L extends string = string> extends Node<L, C> {
+export class PostBin<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.postBin" as const;
     protected typeVersion = 1 as const;
 

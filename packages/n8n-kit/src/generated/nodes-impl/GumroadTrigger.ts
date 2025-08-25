@@ -15,7 +15,7 @@ export interface GumroadTriggerProps extends NodeProps {
 /**
  * Handle Gumroad events via webhooks
  */
-export class GumroadTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GumroadTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gumroadTrigger" as const;
     protected typeVersion = 1 as const;
 

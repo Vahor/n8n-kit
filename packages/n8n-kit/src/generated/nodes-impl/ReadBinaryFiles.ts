@@ -12,7 +12,7 @@ export interface ReadBinaryFilesProps extends NodeProps {
 /**
  * Reads binary files from disk
  */
-export class ReadBinaryFiles<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ReadBinaryFiles<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.readBinaryFiles" as const;
     protected typeVersion = 1 as const;
 

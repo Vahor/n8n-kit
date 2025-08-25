@@ -12,7 +12,7 @@ export interface FormProps extends NodeProps {
 /**
  * Generate webforms in n8n and pass their responses to the workflow
  */
-export class Form<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Form<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.form" as const;
     protected typeVersion = 2.3 as const;
 

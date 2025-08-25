@@ -15,7 +15,7 @@ export interface MicrosoftSqlProps extends NodeProps {
 /**
  * Get, add and update data in Microsoft SQL
  */
-export class MicrosoftSql<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MicrosoftSql<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.microsoftSql" as const;
     protected typeVersion = 1.1 as const;
 

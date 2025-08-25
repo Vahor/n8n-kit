@@ -12,7 +12,7 @@ export interface RetrieverWorkflowProps extends NodeProps {
 /**
  * Use an n8n Workflow as Retriever
  */
-export class RetrieverWorkflow<C extends IContext, L extends string = string> extends Node<L, C> {
+export class RetrieverWorkflow<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;
     protected typeVersion = 1.1 as const;
 

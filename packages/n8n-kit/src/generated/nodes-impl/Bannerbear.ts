@@ -15,7 +15,7 @@ export interface BannerbearProps extends NodeProps {
 /**
  * Consume Bannerbear API
  */
-export class Bannerbear<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Bannerbear<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.bannerbear" as const;
     protected typeVersion = 1 as const;
 

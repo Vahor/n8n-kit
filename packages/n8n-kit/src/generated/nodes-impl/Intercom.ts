@@ -15,7 +15,7 @@ export interface IntercomProps extends NodeProps {
 /**
  * Consume Intercom API
  */
-export class Intercom<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Intercom<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.intercom" as const;
     protected typeVersion = 1 as const;
 

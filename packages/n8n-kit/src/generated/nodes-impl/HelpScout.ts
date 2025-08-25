@@ -15,7 +15,7 @@ export interface HelpScoutProps extends NodeProps {
 /**
  * Consume Help Scout API
  */
-export class HelpScout<C extends IContext, L extends string = string> extends Node<L, C> {
+export class HelpScout<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.helpScout" as const;
     protected typeVersion = 1 as const;
 

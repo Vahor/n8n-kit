@@ -17,7 +17,7 @@ export interface AnthropicProps extends NodeProps {
 /**
  * Interact with Anthropic AI models
  */
-export class Anthropic<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Anthropic<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.anthropic" as const;
     protected typeVersion = 1 as const;
 

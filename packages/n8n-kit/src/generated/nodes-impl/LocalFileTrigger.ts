@@ -12,7 +12,7 @@ export interface LocalFileTriggerProps extends NodeProps {
 /**
  * Triggers a workflow on file system changes
  */
-export class LocalFileTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class LocalFileTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.localFileTrigger" as const;
     protected typeVersion = 1 as const;
 

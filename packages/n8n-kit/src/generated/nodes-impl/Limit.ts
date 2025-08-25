@@ -12,7 +12,7 @@ export interface LimitProps extends NodeProps {
 /**
  * Restrict the number of items
  */
-export class Limit<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Limit<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.limit" as const;
     protected typeVersion = 1 as const;
 

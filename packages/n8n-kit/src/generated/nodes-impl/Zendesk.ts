@@ -17,7 +17,7 @@ export interface ZendeskProps extends NodeProps {
 /**
  * Consume Zendesk API
  */
-export class Zendesk<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Zendesk<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.zendesk" as const;
     protected typeVersion = 1 as const;
 

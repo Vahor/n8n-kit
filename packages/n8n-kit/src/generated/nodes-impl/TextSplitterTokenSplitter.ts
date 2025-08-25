@@ -12,7 +12,7 @@ export interface TextSplitterTokenSplitterProps extends NodeProps {
 /**
  * Split text into chunks by tokens
  */
-export class TextSplitterTokenSplitter<C extends IContext, L extends string = string> extends Node<L, C> {
+export class TextSplitterTokenSplitter<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter" as const;
     protected typeVersion = 1 as const;
 

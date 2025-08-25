@@ -12,7 +12,7 @@ export interface ManualTriggerProps extends NodeProps {
 /**
  * Runs the flow on clicking a button in n8n
  */
-export class ManualTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ManualTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.manualTrigger" as const;
     protected typeVersion = 1 as const;
 

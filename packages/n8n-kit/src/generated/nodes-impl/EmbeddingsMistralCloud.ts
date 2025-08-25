@@ -15,7 +15,7 @@ export interface EmbeddingsMistralCloudProps extends NodeProps {
 /**
  * Use Embeddings Mistral Cloud
  */
-export class EmbeddingsMistralCloud<C extends IContext, L extends string = string> extends Node<L, C> {
+export class EmbeddingsMistralCloud<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsMistralCloud" as const;
     protected typeVersion = 1 as const;
 

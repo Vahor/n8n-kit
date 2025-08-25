@@ -12,7 +12,7 @@ export interface ItemListsV2Props extends NodeProps {
 /**
  * Helper for working with lists of items and transforming arrays
  */
-export class ItemListsV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ItemListsV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.itemLists" as const;
     protected typeVersion = 2.2 as const;
 

@@ -15,7 +15,7 @@ export interface KitemakerProps extends NodeProps {
 /**
  * Consume the Kitemaker GraphQL API
  */
-export class Kitemaker<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Kitemaker<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.kitemaker" as const;
     protected typeVersion = 1 as const;
 

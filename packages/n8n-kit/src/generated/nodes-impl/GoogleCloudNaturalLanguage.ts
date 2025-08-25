@@ -15,7 +15,7 @@ export interface GoogleCloudNaturalLanguageProps extends NodeProps {
 /**
  * Consume Google Cloud Natural Language API
  */
-export class GoogleCloudNaturalLanguage<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleCloudNaturalLanguage<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleCloudNaturalLanguage" as const;
     protected typeVersion = 1 as const;
 

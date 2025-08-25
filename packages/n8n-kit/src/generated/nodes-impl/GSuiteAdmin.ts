@@ -15,7 +15,7 @@ export interface GSuiteAdminProps extends NodeProps {
 /**
  * Consume Google Workspace Admin API
  */
-export class GSuiteAdmin<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GSuiteAdmin<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.gSuiteAdmin" as const;
     protected typeVersion = 1 as const;
 

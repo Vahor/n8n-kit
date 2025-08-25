@@ -17,7 +17,7 @@ export interface LinearProps extends NodeProps {
 /**
  * Consume Linear API
  */
-export class Linear<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Linear<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.linear" as const;
     protected typeVersion = 1.1 as const;
 

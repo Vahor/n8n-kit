@@ -15,7 +15,7 @@ export interface MispProps extends NodeProps {
 /**
  * Consume the MISP API
  */
-export class Misp<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Misp<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.misp" as const;
     protected typeVersion = 1 as const;
 

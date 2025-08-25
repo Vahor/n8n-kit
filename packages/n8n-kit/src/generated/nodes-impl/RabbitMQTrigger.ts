@@ -15,7 +15,7 @@ export interface RabbitMQTriggerProps extends NodeProps {
 /**
  * Listens to RabbitMQ messages
  */
-export class RabbitMQTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class RabbitMQTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rabbitmqTrigger" as const;
     protected typeVersion = 1 as const;
 

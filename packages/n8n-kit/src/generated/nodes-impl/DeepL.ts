@@ -15,7 +15,7 @@ export interface DeepLProps extends NodeProps {
 /**
  * Translate data using DeepL
  */
-export class DeepL<C extends IContext, L extends string = string> extends Node<L, C> {
+export class DeepL<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.deepL" as const;
     protected typeVersion = 1 as const;
 

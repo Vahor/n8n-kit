@@ -12,7 +12,7 @@ export interface StartProps extends NodeProps {
 /**
  * Starts the workflow execution from this node
  */
-export class Start<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Start<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.start" as const;
     protected typeVersion = 1 as const;
 

@@ -17,7 +17,7 @@ export interface GoogleBooksProps extends NodeProps {
 /**
  * Read data from Google Books
  */
-export class GoogleBooks<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleBooks<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleBooks" as const;
     protected typeVersion = 2 as const;
 

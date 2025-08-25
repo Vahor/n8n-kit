@@ -17,7 +17,7 @@ export interface ServiceNowProps extends NodeProps {
 /**
  * Consume ServiceNow API
  */
-export class ServiceNow<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ServiceNow<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.serviceNow" as const;
     protected typeVersion = 1 as const;
 

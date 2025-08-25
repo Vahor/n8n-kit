@@ -14,7 +14,7 @@ export interface AgentV2Props extends NodeProps {
 /**
  * Generates an action plan and executes it. Can use external tools.
  */
-export class AgentV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AgentV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;
     protected typeVersion = 2.2 as const;
 

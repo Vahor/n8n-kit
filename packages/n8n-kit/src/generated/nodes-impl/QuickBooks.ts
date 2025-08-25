@@ -15,7 +15,7 @@ export interface QuickBooksProps extends NodeProps {
 /**
  * Consume the QuickBooks Online API
  */
-export class QuickBooks<C extends IContext, L extends string = string> extends Node<L, C> {
+export class QuickBooks<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.quickbooks" as const;
     protected typeVersion = 1 as const;
 

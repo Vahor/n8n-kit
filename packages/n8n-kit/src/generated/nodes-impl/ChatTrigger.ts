@@ -17,7 +17,7 @@ export interface ChatTriggerProps extends NodeProps {
 /**
  * Runs the workflow when an n8n generated webchat is submitted
  */
-export class ChatTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ChatTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.chatTrigger" as const;
     protected typeVersion = 1.3 as const;
 

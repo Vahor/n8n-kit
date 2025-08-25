@@ -15,7 +15,7 @@ export interface NasaProps extends NodeProps {
 /**
  * Retrieve data from the NASA API
  */
-export class Nasa<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Nasa<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.nasa" as const;
     protected typeVersion = 1 as const;
 

@@ -12,7 +12,7 @@ export interface SplitOutProps extends NodeProps {
 /**
  * Turn a list inside item(s) into separate items
  */
-export class SplitOut<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SplitOut<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.splitOut" as const;
     protected typeVersion = 1 as const;
 

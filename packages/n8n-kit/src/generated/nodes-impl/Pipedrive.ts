@@ -17,7 +17,7 @@ export interface PipedriveProps extends NodeProps {
 /**
  * Create and edit data in Pipedrive
  */
-export class Pipedrive<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Pipedrive<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.pipedrive" as const;
     protected typeVersion = 1 as const;
 

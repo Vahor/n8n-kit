@@ -15,7 +15,7 @@ export interface HaloPSAProps extends NodeProps {
 /**
  * Consume HaloPSA API
  */
-export class HaloPSA<C extends IContext, L extends string = string> extends Node<L, C> {
+export class HaloPSA<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.haloPSA" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface RabbitMQProps extends NodeProps {
 /**
  * Sends messages to a RabbitMQ topic
  */
-export class RabbitMQ<C extends IContext, L extends string = string> extends Node<L, C> {
+export class RabbitMQ<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rabbitmq" as const;
     protected typeVersion = 1.1 as const;
 

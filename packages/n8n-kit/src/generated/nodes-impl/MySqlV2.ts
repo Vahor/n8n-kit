@@ -15,7 +15,7 @@ export interface MySqlV2Props extends NodeProps {
 /**
  * Get, add and update data in MySQL
  */
-export class MySqlV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MySqlV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mySql" as const;
     protected typeVersion = 2.5 as const;
 

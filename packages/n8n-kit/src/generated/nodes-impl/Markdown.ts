@@ -12,7 +12,7 @@ export interface MarkdownProps extends NodeProps {
 /**
  * Convert data between Markdown and HTML
  */
-export class Markdown<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Markdown<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.markdown" as const;
     protected typeVersion = 1 as const;
 

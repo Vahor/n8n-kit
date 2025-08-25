@@ -15,7 +15,7 @@ export interface PostgresV2Props extends NodeProps {
 /**
  * Get, add and update data in Postgres
  */
-export class PostgresV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class PostgresV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.postgres" as const;
     protected typeVersion = 2.6 as const;
 

@@ -15,7 +15,7 @@ export interface FileMakerProps extends NodeProps {
 /**
  * Retrieve data from the FileMaker data API
  */
-export class FileMaker<C extends IContext, L extends string = string> extends Node<L, C> {
+export class FileMaker<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.filemaker" as const;
     protected typeVersion = 1 as const;
 

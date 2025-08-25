@@ -17,7 +17,7 @@ export interface TodoistV2Props extends NodeProps {
 /**
  * Consume Todoist API
  */
-export class TodoistV2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class TodoistV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.todoist" as const;
     protected typeVersion = 2.1 as const;
 

@@ -15,7 +15,7 @@ export interface BitwardenProps extends NodeProps {
 /**
  * Consume the Bitwarden API
  */
-export class Bitwarden<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Bitwarden<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.bitwarden" as const;
     protected typeVersion = 1 as const;
 

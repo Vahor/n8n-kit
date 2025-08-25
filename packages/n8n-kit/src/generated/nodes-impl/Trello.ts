@@ -15,7 +15,7 @@ export interface TrelloProps extends NodeProps {
 /**
  * Create, change and delete boards and cards
  */
-export class Trello<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Trello<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.trello" as const;
     protected typeVersion = 1 as const;
 

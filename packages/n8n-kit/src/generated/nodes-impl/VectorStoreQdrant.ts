@@ -17,7 +17,7 @@ export interface VectorStoreQdrantProps extends NodeProps {
 /**
  * Work with your data in a Qdrant collection
  */
-export class VectorStoreQdrant<C extends IContext, L extends string = string> extends Node<L, C> {
+export class VectorStoreQdrant<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreQdrant" as const;
     protected typeVersion = 1.3 as const;
 

@@ -15,7 +15,7 @@ export interface ProfitWellProps extends NodeProps {
 /**
  * Consume ProfitWell API
  */
-export class ProfitWell<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ProfitWell<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.profitWell" as const;
     protected typeVersion = 1 as const;
 

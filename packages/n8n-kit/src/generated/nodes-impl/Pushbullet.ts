@@ -15,7 +15,7 @@ export interface PushbulletProps extends NodeProps {
 /**
  * Consume Pushbullet API
  */
-export class Pushbullet<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Pushbullet<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.pushbullet" as const;
     protected typeVersion = 1 as const;
 

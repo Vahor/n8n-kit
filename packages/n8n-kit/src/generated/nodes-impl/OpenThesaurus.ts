@@ -12,7 +12,7 @@ export interface OpenThesaurusProps extends NodeProps {
 /**
  * Get synonmns for German words using the OpenThesaurus API
  */
-export class OpenThesaurus<C extends IContext, L extends string = string> extends Node<L, C> {
+export class OpenThesaurus<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.openThesaurus" as const;
     protected typeVersion = 1 as const;
 

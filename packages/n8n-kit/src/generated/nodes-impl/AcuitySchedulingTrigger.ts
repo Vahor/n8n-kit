@@ -17,7 +17,7 @@ export interface AcuitySchedulingTriggerProps extends NodeProps {
 /**
  * Handle Acuity Scheduling events via webhooks
  */
-export class AcuitySchedulingTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AcuitySchedulingTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.acuitySchedulingTrigger" as const;
     protected typeVersion = 1 as const;
 

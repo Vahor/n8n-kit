@@ -15,7 +15,7 @@ export interface LdapProps extends NodeProps {
 /**
  * Interact with LDAP servers
  */
-export class Ldap<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Ldap<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.ldap" as const;
     protected typeVersion = 1 as const;
 

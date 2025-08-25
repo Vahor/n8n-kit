@@ -17,7 +17,7 @@ export interface GoogleDocsProps extends NodeProps {
 /**
  * Consume Google Docs API.
  */
-export class GoogleDocs<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleDocs<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleDocs" as const;
     protected typeVersion = 2 as const;
 

@@ -12,7 +12,7 @@ export interface StickyNoteProps extends NodeProps {
 /**
  * Make your workflow easier to understand
  */
-export class StickyNote<C extends IContext, L extends string = string> extends Node<L, C> {
+export class StickyNote<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.stickyNote" as const;
     protected typeVersion = 1 as const;
 

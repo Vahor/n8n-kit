@@ -104,7 +104,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(` * ${result.description}`);
 	code.line(` */`);
 	code.openBlock(
-		`export class ${result.nodeName}<C extends IContext, L extends string = string> extends Node<L, C>`,
+		`export class ${result.nodeName}<C extends IContext, L extends string> extends Node<L, C>`,
 	);
 
 	code.line(`protected type = "${result.type}" as const;`);

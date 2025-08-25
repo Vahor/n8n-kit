@@ -14,7 +14,7 @@ export interface DocumentDefaultDataLoaderProps extends NodeProps {
 /**
  * Load data from previous step in the workflow
  */
-export class DocumentDefaultDataLoader<C extends IContext, L extends string = string> extends Node<L, C> {
+export class DocumentDefaultDataLoader<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.documentDefaultDataLoader" as const;
     protected typeVersion = 1.1 as const;
 

@@ -15,7 +15,7 @@ export interface TheHiveProps extends NodeProps {
 /**
  * Consume TheHive API
  */
-export class TheHive<C extends IContext, L extends string = string> extends Node<L, C> {
+export class TheHive<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.theHive" as const;
     protected typeVersion = 1 as const;
 

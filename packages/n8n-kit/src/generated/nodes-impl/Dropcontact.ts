@@ -15,7 +15,7 @@ export interface DropcontactProps extends NodeProps {
 /**
  * Find B2B emails and enrich contacts
  */
-export class Dropcontact<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Dropcontact<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.dropcontact" as const;
     protected typeVersion = 1 as const;
 

@@ -12,7 +12,7 @@ export interface SummarizeProps extends NodeProps {
 /**
  * Sum, count, max, etc. across items
  */
-export class Summarize<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Summarize<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.summarize" as const;
     protected typeVersion = 1.1 as const;
 

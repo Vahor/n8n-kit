@@ -12,7 +12,7 @@ export interface RssFeedReadProps extends NodeProps {
 /**
  * Reads data from an RSS Feed
  */
-export class RssFeedRead<C extends IContext, L extends string = string> extends Node<L, C> {
+export class RssFeedRead<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rssFeedRead" as const;
     protected typeVersion = 1.2 as const;
 

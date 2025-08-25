@@ -12,7 +12,7 @@ export interface CryptoProps extends NodeProps {
 /**
  * Provide cryptographic utilities
  */
-export class Crypto<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Crypto<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.crypto" as const;
     protected typeVersion = 1 as const;
 

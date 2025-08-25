@@ -15,7 +15,7 @@ export interface AffinityTriggerProps extends NodeProps {
 /**
  * Handle Affinity events via webhooks
  */
-export class AffinityTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AffinityTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.affinityTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -17,7 +17,7 @@ export interface VectorStoreWeaviateProps extends NodeProps {
 /**
  * Work with your data in a Weaviate Cluster
  */
-export class VectorStoreWeaviate<C extends IContext, L extends string = string> extends Node<L, C> {
+export class VectorStoreWeaviate<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreWeaviate" as const;
     protected typeVersion = 1.3 as const;
 

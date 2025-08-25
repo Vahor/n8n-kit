@@ -15,7 +15,7 @@ export interface AwsTranscribeProps extends NodeProps {
 /**
  * Sends data to AWS Transcribe
  */
-export class AwsTranscribe<C extends IContext, L extends string = string> extends Node<L, C> {
+export class AwsTranscribe<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.awsTranscribe" as const;
     protected typeVersion = 1 as const;
 

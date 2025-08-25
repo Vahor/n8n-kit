@@ -12,7 +12,7 @@ export interface AggregateProps extends NodeProps {
 /**
  * Combine a field from many items into a list in a single item
  */
-export class Aggregate<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Aggregate<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.aggregate" as const;
     protected typeVersion = 1 as const;
 

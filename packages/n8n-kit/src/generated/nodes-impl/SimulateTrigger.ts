@@ -12,7 +12,7 @@ export interface SimulateTriggerProps extends NodeProps {
 /**
  * Simulate a trigger node
  */
-export class SimulateTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SimulateTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.simulateTrigger" as const;
     protected typeVersion = 1 as const;
 

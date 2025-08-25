@@ -14,7 +14,7 @@ export interface RetrieverMultiQueryProps extends NodeProps {
 /**
  * Automates prompt tuning, generates diverse queries and expands document pool for enhanced retrieval.
  */
-export class RetrieverMultiQuery<C extends IContext, L extends string = string> extends Node<L, C> {
+export class RetrieverMultiQuery<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.retrieverMultiQuery" as const;
     protected typeVersion = 1 as const;
 

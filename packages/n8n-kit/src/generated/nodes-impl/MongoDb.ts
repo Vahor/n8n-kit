@@ -15,7 +15,7 @@ export interface MongoDbProps extends NodeProps {
 /**
  * Find, insert and update documents in MongoDB
  */
-export class MongoDb<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MongoDb<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mongoDb" as const;
     protected typeVersion = 1.2 as const;
 

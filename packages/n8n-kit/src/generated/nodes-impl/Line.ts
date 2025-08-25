@@ -15,7 +15,7 @@ export interface LineProps extends NodeProps {
 /**
  * Consume Line API
  */
-export class Line<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Line<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.line" as const;
     protected typeVersion = 1 as const;
 

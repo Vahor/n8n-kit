@@ -17,7 +17,7 @@ export interface DriftProps extends NodeProps {
 /**
  * Consume Drift API
  */
-export class Drift<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Drift<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.drift" as const;
     protected typeVersion = 1 as const;
 

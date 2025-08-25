@@ -12,7 +12,7 @@ export interface RssFeedReadTriggerProps extends NodeProps {
 /**
  * Starts a workflow when an RSS feed is updated
  */
-export class RssFeedReadTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class RssFeedReadTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.rssFeedReadTrigger" as const;
     protected typeVersion = 1 as const;
 

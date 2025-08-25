@@ -15,7 +15,7 @@ export interface PostgresTriggerProps extends NodeProps {
 /**
  * Listens to Postgres messages
  */
-export class PostgresTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class PostgresTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.postgresTrigger" as const;
     protected typeVersion = 1 as const;
 

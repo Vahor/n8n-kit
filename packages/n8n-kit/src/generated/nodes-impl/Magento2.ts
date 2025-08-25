@@ -15,7 +15,7 @@ export interface Magento2Props extends NodeProps {
 /**
  * Consume Magento API
  */
-export class Magento2<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Magento2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.magento2" as const;
     protected typeVersion = 1 as const;
 

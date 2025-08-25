@@ -15,7 +15,7 @@ export interface LmChatAwsBedrockProps extends NodeProps {
 /**
  * Language Model AWS Bedrock
  */
-export class LmChatAwsBedrock<C extends IContext, L extends string = string> extends Node<L, C> {
+export class LmChatAwsBedrock<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatAwsBedrock" as const;
     protected typeVersion = 1.1 as const;
 

@@ -14,7 +14,7 @@ export interface MemoryManagerProps extends NodeProps {
 /**
  * Manage chat messages memory and use it in the workflow
  */
-export class MemoryManager<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MemoryManager<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryManager" as const;
     protected typeVersion = 1.1 as const;
 

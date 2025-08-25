@@ -17,7 +17,7 @@ export interface WebflowV1Props extends NodeProps {
 /**
  * Consume the Webflow API
  */
-export class WebflowV1<C extends IContext, L extends string = string> extends Node<L, C> {
+export class WebflowV1<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.webflow" as const;
     protected typeVersion = 1 as const;
 

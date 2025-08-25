@@ -15,7 +15,7 @@ export interface SpotifyProps extends NodeProps {
 /**
  * Access public song data via the Spotify API
  */
-export class Spotify<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Spotify<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.spotify" as const;
     protected typeVersion = 1 as const;
 

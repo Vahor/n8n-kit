@@ -17,7 +17,7 @@ export interface VectorStoreSupabaseProps extends NodeProps {
 /**
  * Work with your data in Supabase Vector Store
  */
-export class VectorStoreSupabase<C extends IContext, L extends string = string> extends Node<L, C> {
+export class VectorStoreSupabase<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreSupabase" as const;
     protected typeVersion = 1.3 as const;
 

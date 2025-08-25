@@ -15,7 +15,7 @@ export interface EmbeddingsOllamaProps extends NodeProps {
 /**
  * Use Ollama Embeddings
  */
-export class EmbeddingsOllama<C extends IContext, L extends string = string> extends Node<L, C> {
+export class EmbeddingsOllama<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsOllama" as const;
     protected typeVersion = 1 as const;
 

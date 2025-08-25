@@ -12,7 +12,7 @@ export interface HtmlProps extends NodeProps {
 /**
  * Work with HTML
  */
-export class Html<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Html<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.html" as const;
     protected typeVersion = 1.2 as const;
 

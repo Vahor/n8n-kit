@@ -14,7 +14,7 @@ export interface MemoryChatRetrieverProps extends NodeProps {
 /**
  * Retrieve chat messages from memory and use them in the workflow
  */
-export class MemoryChatRetriever<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MemoryChatRetriever<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryChatRetriever" as const;
     protected typeVersion = 1 as const;
 

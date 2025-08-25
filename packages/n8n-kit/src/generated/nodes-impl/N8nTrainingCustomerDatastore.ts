@@ -12,7 +12,7 @@ export interface N8nTrainingCustomerDatastoreProps extends NodeProps {
 /**
  * Dummy node used for n8n training
  */
-export class N8nTrainingCustomerDatastore<C extends IContext, L extends string = string> extends Node<L, C> {
+export class N8nTrainingCustomerDatastore<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.n8nTrainingCustomerDatastore" as const;
     protected typeVersion = 1 as const;
 

@@ -15,7 +15,7 @@ export interface GoogleCloudStorageProps extends NodeProps {
 /**
  * Use the Google Cloud Storage API
  */
-export class GoogleCloudStorage<C extends IContext, L extends string = string> extends Node<L, C> {
+export class GoogleCloudStorage<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.googleCloudStorage" as const;
     protected typeVersion = 1 as const;
 

@@ -12,7 +12,7 @@ export interface MoveBinaryDataProps extends NodeProps {
 /**
  * Move data between binary and JSON properties
  */
-export class MoveBinaryData<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MoveBinaryData<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.moveBinaryData" as const;
     protected typeVersion = 1.1 as const;
 

@@ -12,7 +12,7 @@ export interface DebugHelperProps extends NodeProps {
 /**
  * Causes problems intentionally and generates useful data for debugging
  */
-export class DebugHelper<C extends IContext, L extends string = string> extends Node<L, C> {
+export class DebugHelper<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.debugHelper" as const;
     protected typeVersion = 1 as const;
 

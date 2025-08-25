@@ -15,7 +15,7 @@ export interface MailjetTriggerProps extends NodeProps {
 /**
  * Handle Mailjet events via webhooks
  */
-export class MailjetTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MailjetTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.mailjetTrigger" as const;
     protected typeVersion = 1 as const;
 

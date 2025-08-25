@@ -12,7 +12,7 @@ export interface SseTriggerProps extends NodeProps {
 /**
  * Triggers the workflow when Server-Sent Events occur
  */
-export class SseTrigger<C extends IContext, L extends string = string> extends Node<L, C> {
+export class SseTrigger<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.sseTrigger" as const;
     protected typeVersion = 1 as const;
 

@@ -14,7 +14,7 @@ export interface ToolVectorStoreProps extends NodeProps {
 /**
  * Answer questions with a vector store
  */
-export class ToolVectorStore<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ToolVectorStore<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.toolVectorStore" as const;
     protected typeVersion = 1.1 as const;
 

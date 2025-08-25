@@ -14,7 +14,7 @@ export interface ChainLlmProps extends NodeProps {
 /**
  * A simple chain to prompt a large language model
  */
-export class ChainLlm<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ChainLlm<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.chainLlm" as const;
     protected typeVersion = 1.7 as const;
 

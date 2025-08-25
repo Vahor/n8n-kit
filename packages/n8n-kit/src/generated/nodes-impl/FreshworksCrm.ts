@@ -15,7 +15,7 @@ export interface FreshworksCrmProps extends NodeProps {
 /**
  * Consume the Freshworks CRM API
  */
-export class FreshworksCrm<C extends IContext, L extends string = string> extends Node<L, C> {
+export class FreshworksCrm<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.freshworksCrm" as const;
     protected typeVersion = 1 as const;
 

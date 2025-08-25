@@ -15,7 +15,7 @@ export interface Signl4Props extends NodeProps {
 /**
  * Consume SIGNL4 API
  */
-export class Signl4<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Signl4<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.signl4" as const;
     protected typeVersion = 1 as const;
 

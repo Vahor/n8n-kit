@@ -15,7 +15,7 @@ export interface MemoryXataProps extends NodeProps {
 /**
  * Use Xata Memory
  */
-export class MemoryXata<C extends IContext, L extends string = string> extends Node<L, C> {
+export class MemoryXata<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.memoryXata" as const;
     protected typeVersion = 1.4 as const;
 

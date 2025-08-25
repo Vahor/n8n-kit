@@ -17,7 +17,7 @@ export interface VectorStorePineconeLoadProps extends NodeProps {
 /**
  * Load data from Pinecone Vector Store index
  */
-export class VectorStorePineconeLoad<C extends IContext, L extends string = string> extends Node<L, C> {
+export class VectorStorePineconeLoad<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStorePineconeLoad" as const;
     protected typeVersion = 1 as const;
 

@@ -12,7 +12,7 @@ export interface ExecuteCommandProps extends NodeProps {
 /**
  * Executes a command on the host
  */
-export class ExecuteCommand<C extends IContext, L extends string = string> extends Node<L, C> {
+export class ExecuteCommand<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.executeCommand" as const;
     protected typeVersion = 1 as const;
 

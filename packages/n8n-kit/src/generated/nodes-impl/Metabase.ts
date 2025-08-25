@@ -15,7 +15,7 @@ export interface MetabaseProps extends NodeProps {
 /**
  * Use the Metabase API
  */
-export class Metabase<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Metabase<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.metabase" as const;
     protected typeVersion = 1 as const;
 

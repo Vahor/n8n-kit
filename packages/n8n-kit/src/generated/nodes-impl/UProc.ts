@@ -15,7 +15,7 @@ export interface UProcProps extends NodeProps {
 /**
  * Consume uProc API
  */
-export class UProc<C extends IContext, L extends string = string> extends Node<L, C> {
+export class UProc<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.uproc" as const;
     protected typeVersion = 1 as const;
 

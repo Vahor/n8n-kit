@@ -15,7 +15,7 @@ export interface CustomerIoProps extends NodeProps {
 /**
  * Consume Customer.io API
  */
-export class CustomerIo<C extends IContext, L extends string = string> extends Node<L, C> {
+export class CustomerIo<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.customerIo" as const;
     protected typeVersion = 1 as const;
 

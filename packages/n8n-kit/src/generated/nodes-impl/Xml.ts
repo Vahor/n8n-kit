@@ -12,7 +12,7 @@ export interface XmlProps extends NodeProps {
 /**
  * Convert data from and to XML
  */
-export class Xml<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Xml<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.xml" as const;
     protected typeVersion = 1 as const;
 

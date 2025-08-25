@@ -15,7 +15,7 @@ export interface ClockifyProps extends NodeProps {
 /**
  * Consume Clockify REST API
  */
-export class Clockify<C extends IContext, L extends string = string> extends Node<L, C> {
+export class Clockify<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.clockify" as const;
     protected typeVersion = 1 as const;
 
