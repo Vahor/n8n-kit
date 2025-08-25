@@ -1,7 +1,11 @@
 import { IfV2 as _If } from "../generated/nodes-impl/IfV2";
 import type { ErrorMessage, IsNullable } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
-import { Chain } from "../workflow/chain/chain";
+import type {
+	AddIChainableToChainContext,
+	AddNodeIdToIds,
+	ChainContext,
+} from "../workflow/chain/chain";
 import type {
 	ConnectionOptions,
 	IChainable,
@@ -58,6 +62,9 @@ export class If<
 	L extends string,
 	True extends IContext | null = null,
 	False extends IContext | null = null,
+	// Make If behave like a Chain
+	CC extends ChainContext = {},
+	IdsInContext extends string[] = [],
 > extends _If<{}, L> {
 	override endStates: INextable[] = [];
 
@@ -98,29 +105,37 @@ export class If<
 		};
 	}
 
-	public true<C extends IContext>(
+	public true<N extends IChainable>(
 		next: IsNullable<True> extends true
-			? IChainable<any, C>
+			? N
 			: ErrorMessage<"true() node is already set">,
 		connectionOptions?: Omit<ConnectionOptions, "from">,
-	): If<L, C, False> {
+	): If<
+		L,
+		N["~context"],
+		False,
+		AddIChainableToChainContext<N, CC>,
+		AddNodeIdToIds<N, IdsInContext>
+	> {
 		if (typeof next === "string") throw new Error(next);
 		super.addNext(next.startState, { ...connectionOptions, from: 0 });
 		return this as any;
 	}
 
-	public false<C extends IContext>(
+	public false<N extends IChainable>(
 		next: IsNullable<False> extends true
-			? IChainable<any, C>
+			? N
 			: ErrorMessage<"false() node is already set">,
 		connectionOptions?: Omit<ConnectionOptions, "from">,
-	): If<L, True, C> {
+	): If<
+		L,
+		True,
+		N["~context"],
+		AddIChainableToChainContext<N, CC>,
+		AddNodeIdToIds<N, IdsInContext>
+	> {
 		if (typeof next === "string") throw new Error(next);
 		super.addNext(next.startState, { ...connectionOptions, from: 1 });
 		return this as any;
-	}
-
-	public afterwards(): Chain {
-		return Chain.custom(this, this.endStates, this);
 	}
 }
