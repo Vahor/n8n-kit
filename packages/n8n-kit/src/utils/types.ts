@@ -12,6 +12,12 @@ export type IsRecord<T> = string extends keyof T ? true : false;
 
 export type IsAny<T> = 0 extends 1 & T ? true : false;
 
+export type IsUnknown<T> = IsAny<T> extends true
+	? false
+	: unknown extends T
+		? true
+		: false;
+
 export type IsNullable<T> = IsNever<T> extends true
 	? false
 	: T extends null

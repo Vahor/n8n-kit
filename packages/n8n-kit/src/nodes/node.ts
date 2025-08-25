@@ -1,5 +1,7 @@
+import clone from "lodash.clonedeep";
 import type { Credentials } from "../credentials";
 import { NODE_SYMBOL } from "../symbols";
+import { checkInternalIdentifier } from "../utils/slugify";
 import type { Workflow } from "../workflow";
 import { State } from "../workflow/chain/state";
 import type { IContext, INextable } from "../workflow/chain/types";
@@ -30,8 +32,8 @@ export type NodeProps = {
 
 export abstract class Node<
 	LiteralId extends string = string,
-	T extends IContext = never,
-> extends State<LiteralId, T> {
+	C extends IContext = never,
+> extends State<LiteralId, C> {
 	protected workflowParent?: Workflow;
 
 	static readonly [NODE_SYMBOL] = true;
@@ -105,6 +107,30 @@ export abstract class Node<
 				.filter(Boolean)
 				.map((cred) => [cred!.type, { id: cred!.n8nCredentialsId }]),
 		);
+	}
+
+	public clone<Id extends string>(
+		id: Id,
+		props?: NodeProps,
+	): Omit<this, "id"> & Node<Id, C> {
+		checkInternalIdentifier(id);
+		const newInstance = clone(this) as unknown as Node<Id, C>;
+		if (props) {
+			// @ts-expect-error: readonly
+			newInstance.props = {
+				...newInstance.props,
+				...props,
+			};
+		}
+
+		// @ts-expect-error: readonly
+		newInstance.id = id;
+		// @ts-expect-error: readonly
+		newInstance.startState = newInstance;
+		const indexOfSelf = newInstance.endStates.indexOf(this);
+		if (indexOfSelf !== -1) newInstance.endStates[indexOfSelf] = newInstance;
+
+		return newInstance as any;
 	}
 
 	toNode() {

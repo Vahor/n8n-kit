@@ -19,8 +19,6 @@ export class Group<
 	static readonly [GROUP_SYMBOL] = true;
 	readonly [GROUP_SYMBOL] = true;
 
-	private readonly nodesInChain: State[] = [];
-
 	constructor(
 		workflow: Workflow,
 		id: LiteralId,
@@ -38,16 +36,18 @@ export class Group<
 			},
 		});
 		workflow.addToDynamicalyAddedNodes(this);
-		this.endStates = [this];
-		this.nodesInChain = this.chain.toList();
+		this.endStates = this.chain.toList();
+		if (this.endStates.length === 0) {
+			throw new Error("Group must have at least one node");
+		}
 	}
 
 	override "~validate"(): void {
-		const nodes = this.nodesInChain;
+		const nodes = this.endStates;
 		for (let i = 0; i < nodes.length; i++) {
 			const node = nodes[i]!;
-			if (this._props.filterNodes?.(node, i) === false) continue;
 			if (isNode(node)) {
+				if (this._props.filterNodes?.(node, i) === false) continue;
 				node["~setGroup"](this.id);
 			}
 		}
