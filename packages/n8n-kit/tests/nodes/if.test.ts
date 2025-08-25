@@ -1,7 +1,8 @@
-import { describe, test } from "bun:test";
-import { Chain } from "../../src";
-import { If } from "../../src/nodes";
+import { describe, expectTypeOf, test } from "bun:test";
+import { Chain, type } from "../../src";
+import { Code, If } from "../../src/nodes";
 import { NoOp } from "../../src/nodes/generated";
+import type { Prettify } from "../../src/utils/types";
 
 describe("If", () => {
 	describe("type test, cannot chain two true/false", () => {
@@ -40,18 +41,104 @@ describe("If", () => {
 	});
 
 	describe("type test, chaining if -> true/false -> connect, we have access to the context of the if", () => {
+		const baseifNode = new If("if", {
+			conditions: [],
+		});
+		const trueNode = new Code("true", {
+			outputSchema: type({ hello: "'true'" }),
+			parameters: {},
+		});
+		type trueNodeInContext = { true: { hello: "true" } };
+		const falseNode = new Code("false", {
+			outputSchema: type({ something: "1" }),
+			parameters: {},
+		});
+		type falseNodeInContext = { false: { something: 1 } };
+		const trueNodeChain = Chain.start(trueNode)
+			.next(new NoOp("something"))
+			.next(new NoOp("end"));
+
+		describe("node ids are correctly inferred", () => {
+			test("true().false()", () => {
+				const ifNode = baseifNode.true(trueNode).false(falseNode);
+				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
+					? Ids
+					: never;
+				expectTypeOf<IdsInIf>().toEqualTypeOf<["true", "false"]>();
+			});
+
+			test("true()", () => {
+				const ifNode = baseifNode.true(trueNode);
+				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
+					? Ids
+					: never;
+				expectTypeOf<IdsInIf>().toEqualTypeOf<["true"]>();
+			});
+			test("false()", () => {
+				const ifNode = baseifNode.false(falseNode);
+				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
+					? Ids
+					: never;
+				expectTypeOf<IdsInIf>().toEqualTypeOf<["false"]>();
+			});
+			test("false().true()", () => {
+				const ifNode = baseifNode.false(falseNode).true(trueNode);
+				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
+					? Ids
+					: never;
+				expectTypeOf<IdsInIf>().toEqualTypeOf<["false", "true"]>();
+			});
+		});
+
+		describe("node outputs are correctly inferred", () => {
+			test("true().false()", () => {
+				const chain = Chain.start(new NoOp("start")).next(
+					baseifNode.true(trueNode).false(falseNode),
+				);
+				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
+				type ExpectedContext = Prettify<trueNodeInContext & falseNodeInContext>;
+				expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
+			});
+
+			test("true()", () => {
+				const chain = Chain.start(new NoOp("start")).next(
+					baseifNode.true(trueNode),
+				);
+				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
+				type ExpectedContext = trueNodeInContext;
+				expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
+			});
+
+			test("false()", () => {
+				const chain = Chain.start(new NoOp("start")).next(
+					baseifNode.false(falseNode),
+				);
+				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
+				type ExpectedContext = falseNodeInContext;
+				expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
+			});
+
+			test("false().true()", () => {
+				const chain = Chain.start(new NoOp("start")).next(
+					baseifNode.false(falseNode).true(trueNode),
+				);
+				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
+				type ExpectedContext = Prettify<falseNodeInContext & trueNodeInContext>;
+				expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
+			});
+		});
+
 		test("can connect to if true/false nodes", () => {
-			const _ = Chain.start(new NoOp("start"))
-				.next(
-					new If("if", {
-						conditions: [],
-					})
-						.true(new NoOp("true"))
-						.false(new NoOp("false")),
-				)
-				// TODO: https://github.com/Vahor/n8n-kit/issues/14
-				// @ts-expect-error: we have access to the context of the if
+			Chain.start(new NoOp("start"))
+				.next(baseifNode.true(trueNode).false(falseNode))
 				.connect(["true", "false"], new NoOp("connect"));
+		});
+
+		test("fails with invalid node id", () => {
+			Chain.start(new NoOp("start"))
+				.next(baseifNode.true(trueNode).false(falseNode))
+				// @ts-expect-error: invalid node id
+				.connect(["invalid", "false"], new NoOp("connect"));
 		});
 	});
 });
