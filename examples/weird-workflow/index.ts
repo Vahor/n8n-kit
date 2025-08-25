@@ -19,10 +19,8 @@ const handleErrorMessageChain = <Id extends string>(
 		workflow,
 		`${id}-handle-error-message-group`,
 		{
-			parameters: {
-				content: "Handle error message",
-				color: "RED",
-			},
+			content: "Handle error message",
+			color: "RED",
 		},
 		Chain.start(new NoOp(id)).multiple([
 			new WebhookResponse(`${id}-response`, {
@@ -72,15 +70,13 @@ const checkValidExecutionType = ({
 }: {
 	$: $Selector<typeof entryNode>;
 	workflow: Workflow;
-	trueChain: Chain;
+	trueChain: Chain<any>;
 }) => {
 	return new Group(
 		workflow,
 		"check-valid-execution-type-group",
 		{
-			parameters: {
-				content: "Check valid execution type",
-			},
+			content: "Check valid execution type",
 			filterNodes: (node) => {
 				return (
 					node.id.startsWith("invalid-execution-type") ||

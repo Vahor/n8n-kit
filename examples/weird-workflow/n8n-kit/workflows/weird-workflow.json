@@ -137,7 +137,8 @@
 			"position": [720, 0],
 			"typeVersion": 1,
 			"parameters": {
-				"parameters": { "content": "Handle error message", "color": "RED" },
+				"content": "Handle error message",
+				"color": 3,
 				"width": 600,
 				"height": 240
 			}
@@ -149,7 +150,8 @@
 			"position": [1080, 240],
 			"typeVersion": 1,
 			"parameters": {
-				"parameters": { "content": "Handle error message", "color": "RED" },
+				"content": "Handle error message",
+				"color": 3,
 				"width": 600,
 				"height": 240
 			}
@@ -161,7 +163,7 @@
 			"position": [720, 240],
 			"typeVersion": 1,
 			"parameters": {
-				"parameters": { "content": "Check valid execution type" },
+				"content": "Check valid execution type",
 				"width": 960,
 				"height": 360
 			}
