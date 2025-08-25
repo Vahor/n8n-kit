@@ -6,7 +6,7 @@ import type {
 	IsUnknown,
 	Prettify,
 } from "../../utils/types";
-import { Group } from "../group";
+import type { Group } from "../group";
 import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import { State } from "./state";
 import type { ConnectionOptions, IChainable, INextable } from "./types";
@@ -92,6 +92,7 @@ export class Chain<
 > implements IChainable<"chain", CC>
 {
 	"~context": CC = undefined as any;
+	readonly id = "chain";
 
 	/**
 	 * Begin a new Chain from one chainable
@@ -116,11 +117,6 @@ export class Chain<
 	}
 
 	/**
-	 * Identify this Chain
-	 */
-	public readonly id: string;
-
-	/**
 	 * The start state of this chain
 	 */
 	public readonly startState: State;
@@ -135,7 +131,6 @@ export class Chain<
 		endStates: INextable[],
 		private readonly lastAdded: IChainable<string>,
 	) {
-		this.id = lastAdded.id;
 		this.startState = startState;
 		this.endStates = endStates;
 	}
@@ -205,17 +200,6 @@ export class Chain<
 
 		for (const endState of this.endStates) {
 			for (const nextState of next) {
-				if (nextState instanceof Group) {
-					const nodes = nextState.chain.toList();
-					if (nodes.length === 0) {
-						throw new Error("Group must have at least one node");
-					}
-					// Add the group just for the sticky layout
-					// TODO: try to add the type here.
-					this.next(nodes[0]! as any);
-					continue;
-				}
-
 				endState.addNext(nextState);
 			}
 		}

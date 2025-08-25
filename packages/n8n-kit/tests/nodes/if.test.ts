@@ -5,6 +5,15 @@ import { NoOp } from "../../src/nodes/generated";
 import type { Prettify } from "../../src/utils/types";
 
 describe("If", () => {
+	test.failing("fails if there are more than two inputs", () => {
+		new If("if", {
+			conditions: [],
+		})
+			.true(new NoOp("true"))
+			// @ts-expect-error: this should fail
+			.true(new NoOp("false"))
+			.false(new NoOp("false"));
+	});
 	describe("type test, cannot chain two true/false", () => {
 		test("true().true()", () => {
 			new If("if", {
@@ -41,9 +50,10 @@ describe("If", () => {
 	});
 
 	describe("type test, chaining if -> true/false -> connect, we have access to the context of the if", () => {
-		const baseifNode = new If("if", {
-			conditions: [],
-		});
+		const baseifNode = () =>
+			new If("if", {
+				conditions: [],
+			});
 		const trueNode = new Code("true", {
 			outputSchema: type({ hello: "'true'" }),
 			parameters: {},
@@ -54,13 +64,16 @@ describe("If", () => {
 			parameters: {},
 		});
 		type falseNodeInContext = { false: { something: 1 } };
-		const trueNodeChain = Chain.start(trueNode)
+		const trueNodeChain = Chain.start(
+			trueNode.clone("true2", { label: "True 2" }),
+		)
 			.next(new NoOp("something"))
 			.next(new NoOp("end"));
+		type true2NodeInContext = { true2: trueNodeInContext["true"] };
 
 		describe("node ids are correctly inferred", () => {
 			test("true().false()", () => {
-				const ifNode = baseifNode.true(trueNode).false(falseNode);
+				const ifNode = baseifNode().true(trueNode).false(falseNode);
 				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
 					? Ids
 					: never;
@@ -68,21 +81,21 @@ describe("If", () => {
 			});
 
 			test("true()", () => {
-				const ifNode = baseifNode.true(trueNode);
+				const ifNode = baseifNode().true(trueNode);
 				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
 					? Ids
 					: never;
 				expectTypeOf<IdsInIf>().toEqualTypeOf<["true"]>();
 			});
 			test("false()", () => {
-				const ifNode = baseifNode.false(falseNode);
+				const ifNode = baseifNode().false(falseNode);
 				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
 					? Ids
 					: never;
 				expectTypeOf<IdsInIf>().toEqualTypeOf<["false"]>();
 			});
 			test("false().true()", () => {
-				const ifNode = baseifNode.false(falseNode).true(trueNode);
+				const ifNode = baseifNode().false(falseNode).true(trueNode);
 				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
 					? Ids
 					: never;
@@ -93,7 +106,7 @@ describe("If", () => {
 		describe("node outputs are correctly inferred", () => {
 			test("true().false()", () => {
 				const chain = Chain.start(new NoOp("start")).next(
-					baseifNode.true(trueNode).false(falseNode),
+					baseifNode().true(trueNode).false(falseNode),
 				);
 				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
 				type ExpectedContext = Prettify<trueNodeInContext & falseNodeInContext>;
@@ -102,7 +115,7 @@ describe("If", () => {
 
 			test("true()", () => {
 				const chain = Chain.start(new NoOp("start")).next(
-					baseifNode.true(trueNode),
+					baseifNode().true(trueNode),
 				);
 				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
 				type ExpectedContext = trueNodeInContext;
@@ -111,7 +124,7 @@ describe("If", () => {
 
 			test("false()", () => {
 				const chain = Chain.start(new NoOp("start")).next(
-					baseifNode.false(falseNode),
+					baseifNode().false(falseNode),
 				);
 				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
 				type ExpectedContext = falseNodeInContext;
@@ -120,7 +133,7 @@ describe("If", () => {
 
 			test("false().true()", () => {
 				const chain = Chain.start(new NoOp("start")).next(
-					baseifNode.false(falseNode).true(trueNode),
+					baseifNode().false(falseNode).true(trueNode),
 				);
 				type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
 				type ExpectedContext = Prettify<falseNodeInContext & trueNodeInContext>;
@@ -132,29 +145,36 @@ describe("If", () => {
 			const chain = Chain.start(new NoOp("start")).next(
 				// Only checking true as we've seen that other cases
 				// correctly infer the ids and context
-				baseifNode.true(trueNodeChain),
+				baseifNode().true(trueNodeChain),
 			);
 			type ChainContext = typeof chain extends Chain<infer _> ? _ : never;
-			type ExpectedContext = trueNodeInContext;
+			type ExpectedContext = true2NodeInContext;
 			expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
 
 			type IdsInChain = typeof chain extends Chain<any, infer Ids>
 				? Ids
 				: never;
 			expectTypeOf<IdsInChain>().toEqualTypeOf<
-				["start", "true", "something", "end"]
+				["start", "true2", "something", "end"]
 			>();
 		});
 
 		test("can connect to if true/false nodes", () => {
 			Chain.start(new NoOp("start"))
-				.next(baseifNode.true(trueNode).false(falseNode))
-				.connect(["true", "false"], new NoOp("connect"));
+				.next(baseifNode().true(trueNode).false(falseNode))
+				.connect(["true", "false"], ({ $ }) => {
+					return new NoOp("connect", {
+						parameters: {
+							message: $("true.hello"),
+							something: $("false.something"),
+						},
+					});
+				});
 		});
 
-		test("fails with invalid node id", () => {
+		test.failing("fails with invalid node id", () => {
 			Chain.start(new NoOp("start"))
-				.next(baseifNode.true(trueNode).false(falseNode))
+				.next(baseifNode().true(trueNode).false(falseNode))
 				// @ts-expect-error: invalid node id
 				.connect(["invalid", "false"], new NoOp("connect"));
 		});

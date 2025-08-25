@@ -105,6 +105,14 @@ export class If<
 		};
 	}
 
+	override canTakeInput(
+		_fromState: IChainable,
+		_withConnectionOptions?: ConnectionOptions,
+	): boolean {
+		// NOTE: this does not prevent calling twice the same method (true().true()), but it prevent calling it more that twice.
+		return this.endStates.length < 2;
+	}
+
 	public true<N extends IChainable>(
 		next: IsNullable<True> extends true
 			? N
@@ -119,6 +127,7 @@ export class If<
 	> {
 		if (typeof next === "string") throw new Error(next);
 		super.addNext(next.startState, { ...connectionOptions, from: 0 });
+		this.endStates = [...this.endStates, ...next.endStates];
 		return this as any;
 	}
 
@@ -136,6 +145,7 @@ export class If<
 	> {
 		if (typeof next === "string") throw new Error(next);
 		super.addNext(next.startState, { ...connectionOptions, from: 1 });
+		this.endStates = [...this.endStates, ...next.endStates];
 		return this as any;
 	}
 }

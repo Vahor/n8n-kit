@@ -93,14 +93,16 @@
 	"dependencies": {
 		"@dagrejs/dagre": "^1.1.5",
 		"arktype": "catalog:",
+		"lodash.clonedeep": "^4.5.0",
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
 		"@n8n/n8n-nodes-langchain": "1.107.0",
-		"n8n-core": "1.106.2",
+		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
-		"eventsource": "2.0.2",
 		"codemaker": "^1.113.0",
+		"eventsource": "2.0.2",
+		"n8n-core": "1.106.2",
 		"tinyglobby": "^0.2.14",
 		"tsdown": "catalog:",
 		"typescript": "catalog:"

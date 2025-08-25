@@ -40,14 +40,27 @@ export abstract class State<
 		};
 	}
 
+	public canTakeInput(
+		_fromState: IChainable,
+		_withConnectionOptions?: ConnectionOptions,
+	) {
+		return true;
+	}
+
 	public addNext(state: IChainable, connectionOptions?: ConnectionOptions) {
+		if (!this.canTakeInput(state, connectionOptions)) {
+			throw new Error(
+				`Cannot add '${state.id}' to '${this.id}' because it cannot take more input with ${JSON.stringify(
+					connectionOptions,
+				)}`,
+			);
+		}
+
 		if (isGroup(state)) {
-			const nodes = state.chain.toList();
-			if (nodes.length === 0) {
-				throw new Error("Group must have at least one node");
-			}
-			// Add the group just for the sticky layout
-			this.addNext(nodes[0]!, connectionOptions);
+			const nodes = state.endStates;
+			// TODO: we should probably add checks
+			const firstNode = nodes.at(0)! as unknown as IChainable;
+			this.addNext(firstNode, connectionOptions);
 			return;
 		}
 
