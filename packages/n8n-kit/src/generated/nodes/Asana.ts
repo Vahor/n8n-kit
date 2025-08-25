@@ -25,7 +25,7 @@ export interface AsanaNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly otherProperties?: { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "liked"?: boolean, "notes"?: string, "workspace"?: string } | { "assignee"?: string, "assignee_status"?: "inbox" | "today" | "upcoming" | "later", "completed"?: boolean, "due_on"?: string, "name"?: string, "liked"?: boolean, "notes"?: string, "projects"?: any[] };
+    readonly otherProperties?: { assignee?: string, assignee_status?: "inbox" | "today" | "upcoming" | "later", completed?: boolean, due_on?: string, liked?: boolean, notes?: string, workspace?: string } | { assignee?: string, assignee_status?: "inbox" | "today" | "upcoming" | "later", completed?: boolean, due_on?: string, name?: string, liked?: boolean, notes?: string, projects?: any[] };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -38,7 +38,7 @@ export interface AsanaNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "opt_fields"?: any[], "opt_pretty"?: boolean };
+    readonly options?: { opt_fields?: any[], opt_pretty?: boolean };
 
     /**
      * The workspace to create the task in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -53,7 +53,7 @@ export interface AsanaNodeParameters {
      * Properties to search for
      * Default: {}
      */
-    readonly filters?: { "assignee"?: string, "opt_fields"?: any[], "opt_pretty"?: boolean, "project"?: string, "section"?: string, "workspace"?: string, "completed_since"?: string, "modified_since"?: string };
+    readonly filters?: { assignee?: string, opt_fields?: any[], opt_pretty?: boolean, project?: string, section?: string, workspace?: string, completed_since?: string, modified_since?: string };
 
     /**
      * Project to show the sections of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -71,7 +71,7 @@ export interface AsanaNodeParameters {
      * Properties to search for
      * Default: {}
      */
-    readonly searchTaskProperties?: { "completed"?: boolean, "text"?: string };
+    readonly searchTaskProperties?: { completed?: boolean, text?: string };
 
     /** Whether body is HTML or simple text */
     readonly isTextHtml?: boolean;
@@ -83,7 +83,7 @@ export interface AsanaNodeParameters {
      * Properties of the task comment
      * Default: {}
      */
-    readonly additionalFields?: { "is_pinned"?: boolean } | { "insert_after"?: string, "insert_before"?: string, "section"?: string } | { "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "notes"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace" } | { "archived"?: boolean, "team"?: string };
+    readonly additionalFields?: { is_pinned?: boolean } | { insert_after?: string, insert_before?: string, section?: string } | { color?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", due_on?: string, notes?: string, privacy_setting?: "private" | "private_to_team" | "public_to_workspace" } | { archived?: boolean, team?: string };
 
     /**
      * The project where the task will be added. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -110,6 +110,6 @@ export interface AsanaNodeParameters {
      * Other properties to set
      * Default: {}
      */
-    readonly updateFields?: { "color"?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", "due_on"?: string, "name"?: string, "notes"?: string, "owner"?: string, "privacy_setting"?: "private" | "private_to_team" | "public_to_workspace", "team"?: string };
+    readonly updateFields?: { color?: "dark-blue" | "dark-brown" | "dark-green" | "dark-orange" | "dark-pink" | "dark-purple" | "dark-red" | "dark-teal" | "dark-warm-gray" | "light-blue" | "light-green" | "light-orange" | "light-pink" | "light-purple" | "light-red" | "light-teal" | "light-warm-gray" | "light-yellow" | "none", due_on?: string, name?: string, notes?: string, owner?: string, privacy_setting?: "private" | "private_to_team" | "public_to_workspace", team?: string };
 
 }

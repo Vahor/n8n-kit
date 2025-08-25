@@ -31,6 +31,6 @@ export interface HackerNewsNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { "includeComments"?: boolean } | { "keyword"?: string, "tags"?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
+    readonly additionalFields?: { includeComments?: boolean } | { keyword?: string, tags?: ("ask_hn" | "comment" | "front_page" | "poll" | "show_hn" | "story")[] };
 
 }

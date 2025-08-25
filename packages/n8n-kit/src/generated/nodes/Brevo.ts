@@ -31,7 +31,7 @@ export interface BrevoNodeParameters {
     readonly attributeValue?: string;
 
     /** Default: {} */
-    readonly attributeCategoryList?: { "categoryEnumeration"?: { "attributesValues": any } };
+    readonly attributeCategoryList?: { categoryEnumeration?: { attributesValues: { attributeCategoryValue?: number, attributeCategoryLabel?: string } } };
 
     /**
      * Category of the attribute
@@ -49,7 +49,7 @@ export interface BrevoNodeParameters {
      * List of the values and labels that the attribute can take
      * Default: {}
      */
-    readonly updateAttributeCategoryList?: { "updateCategoryEnumeration"?: { "updateAttributesValues": any } };
+    readonly updateAttributeCategoryList?: { updateCategoryEnumeration?: { updateAttributesValues: { attributeCategoryValue?: number, attributeCategoryLabel?: string } } };
 
     /**
      * Category of the attribute
@@ -84,13 +84,13 @@ export interface BrevoNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly createContactAttributes?: { "attributesValues": any };
+    readonly createContactAttributes?: { attributesValues: { fieldName?: string, fieldValue?: string } };
 
     /** Default: {} */
-    readonly options?: { "sort"?: "desc" | "asc" };
+    readonly options?: { sort?: "desc" | "asc" };
 
     /** Default: {} */
-    readonly filters?: { "modifiedSince"?: string };
+    readonly filters?: { modifiedSince?: string };
 
     /** Email (urlencoded) OR ID of the contact OR its SMS attribute value */
     readonly identifier?: string;
@@ -100,14 +100,14 @@ export interface BrevoNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly updateAttributes?: { "updateAttributesValues": any };
+    readonly updateAttributes?: { updateAttributesValues: { fieldName?: string, fieldValue?: string } };
 
     /**
      * Array of attributes to be updated
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly upsertAttributes?: { "upsertAttributesValues": any };
+    readonly upsertAttributes?: { upsertAttributesValues: { fieldName?: string, fieldValue?: string } };
 
     readonly sendHTML?: boolean;
 
@@ -128,7 +128,7 @@ export interface BrevoNodeParameters {
      * Additional fields to add
      * Default: {}
      */
-    readonly additionalFields?: { "emailAttachments"?: { "attachment": any }, "receipientsBCC"?: { "receipientBcc": any }, "receipientsCC"?: { "receipientCc": any }, "emailTags"?: { "tags": any } } | { "emailAttachments"?: { "attachment": any }, "emailTags"?: { "tags": any }, "templateParameters"?: { "parameterValues": any } };
+    readonly additionalFields?: { emailAttachments?: { attachment: { binaryPropertyName?: string } }, receipientsBCC?: { receipientBcc: { bcc?: string } }, receipientsCC?: { receipientCc: { cc?: string } }, emailTags?: { tags: { tag?: string } } } | { emailAttachments?: { attachment: { binaryPropertyName?: string } }, emailTags?: { tags: { tag?: string } }, templateParameters?: { parameterValues: { parameters?: string } } };
 
     /** Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v3/smtp/templates","qs":{"templateStatus":true,"limit":1000,"offset":0,"sort":"desc"}},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"templates"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}} */
     readonly templateId?: string;

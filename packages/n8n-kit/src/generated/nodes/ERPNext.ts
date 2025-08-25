@@ -32,13 +32,13 @@ export interface ERPNextNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "fields"?: any[], "filters"?: { "customProperty": any } };
+    readonly options?: { fields?: any[], filters?: { customProperty: { field?: string, operator?: "equalsGreater" | "equalsLess" | "is" | "greater" | "less" | "isNot", value?: string } } };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "customProperty": any };
+    readonly properties?: { customProperty: { field?: string, value?: string } };
 
     /** The name (ID) of document you would like to get */
     readonly documentName?: string;

@@ -43,6 +43,6 @@ export interface MistralAiNodeParameters {
     readonly url?: string;
 
     /** Default: {} */
-    readonly options?: { "batch"?: boolean, "batchSize": number, "deleteFiles"?: boolean };
+    readonly options?: { batch?: boolean, batchSize: number, deleteFiles?: boolean };
 
 }

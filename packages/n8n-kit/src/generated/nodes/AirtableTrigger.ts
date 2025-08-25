@@ -37,7 +37,7 @@ export interface AirtableTriggerNodeParameters {
     readonly downloadFieldNames?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "fields"?: string, "formula"?: string, "viewId"?: string };
+    readonly additionalFields?: { fields?: string, formula?: string, viewId?: string };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

@@ -33,12 +33,12 @@ export interface SwitchV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly rules?: { "rules": any };
+    readonly rules?: { rules: { operation?: "equal" | "notEqual", value2?: boolean, output?: number } } | { rules: { operation?: "after" | "before", value2?: string, output?: number } } | { rules: { operation?: "smaller" | "smallerEqual" | "equal" | "notEqual" | "larger" | "largerEqual", value2?: number, output?: number } } | { rules: { operation?: "contains" | "notContains" | "endsWith" | "notEndsWith" | "equal" | "notEqual" | "regex" | "notRegex" | "startsWith" | "notStartsWith", value2?: string, output?: number } };
 
     /**
      * The output to which to route all items which do not match any of the rules
      * Default: -1
      */
-    readonly fallbackOutput?: "-1" | "0" | "1" | "2" | "3";
+    readonly fallbackOutput?: -1 | 0 | 1 | 2 | 3;
 
 }

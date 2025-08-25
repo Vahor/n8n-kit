@@ -39,7 +39,7 @@ export interface SendyNodeParameters {
     readonly brandId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "excludeListIds"?: string, "excludeSegmentIds"?: string, "listIds"?: string, "plainText"?: string, "queryString"?: string, "segmentIds"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean } | { "country"?: string, "gdpr"?: boolean, "hp"?: boolean, "ipaddress"?: string, "name"?: string, "referrer"?: string, "silent"?: boolean };
+    readonly additionalFields?: { excludeListIds?: string, excludeSegmentIds?: string, listIds?: string, plainText?: string, queryString?: string, segmentIds?: string, trackClicks?: boolean, trackOpens?: boolean } | { country?: string, gdpr?: boolean, hp?: boolean, ipaddress?: string, name?: string, referrer?: string, silent?: boolean };
 
     /** Email address of the subscriber */
     readonly email?: string;

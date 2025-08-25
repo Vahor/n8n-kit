@@ -31,7 +31,7 @@ export interface MonicaCrmNodeParameters {
     readonly summary?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string } | { "birthdate"?: string, "deceasedDate"?: string, "isDeceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "isFavorited"?: boolean };
+    readonly additionalFields?: { description?: string } | { birthdate?: string, deceasedDate?: string, isDeceased?: boolean, last_name?: string, nickname?: string, is_partial?: false | true } | { isFavorited?: boolean };
 
     /** ID of the activity to delete */
     readonly activityId?: string;
@@ -47,7 +47,7 @@ export interface MonicaCrmNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "activity_type_id"?: string, "contacts"?: string, "description"?: string, "happened_at"?: string, "summary"?: string } | { "calledAt"?: string, "contactId"?: string, "content"?: string } | { "birthdate"?: string, "deceased_date"?: string, "first_name"?: string, "gender_id"?: string, "is_deceased"?: boolean, "last_name"?: string, "nickname"?: string, "is_partial"?: "false" | "true" } | { "contact_id"?: string, "content"?: string, "written_at"?: string, "written_by_me"?: "true" | "false" } | { "post"?: string, "title"?: string } | { "body"?: string, "contact_id"?: string, "is_favorited"?: boolean } | { "contact_id"?: string, "description"?: string, "frequency_type"?: "one_time" | "week" | "month" | "year", "initial_data"?: string, "frequency_number"?: number, "title"?: string } | { "contactId"?: string, "completed"?: boolean, "description"?: string, "title"?: string };
+    readonly updateFields?: { activity_type_id?: string, contacts?: string, description?: string, happened_at?: string, summary?: string } | { calledAt?: string, contactId?: string, content?: string } | { birthdate?: string, deceased_date?: string, first_name?: string, gender_id?: string, is_deceased?: boolean, last_name?: string, nickname?: string, is_partial?: false | true } | { contact_id?: string, content?: string, written_at?: string, written_by_me?: true | false } | { post?: string, title?: string } | { body?: string, contact_id?: string, is_favorited?: boolean } | { contact_id?: string, description?: string, frequency_type?: "one_time" | "week" | "month" | "year", initial_data?: string, frequency_number?: number, title?: string } | { contactId?: string, completed?: boolean, description?: string, title?: string };
 
     /** ID of the contact to associate the call with */
     readonly contactId?: string;
@@ -70,7 +70,7 @@ export interface MonicaCrmNodeParameters {
     readonly genderId?: string;
 
     /** Default: {} */
-    readonly filters?: { "query"?: string, "sort"?: "created_at" | "-created_at" | "updated_at" | "-updated_at" };
+    readonly filters?: { query?: string, sort?: "created_at" | "-created_at" | "updated_at" | "-updated_at" };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -108,7 +108,7 @@ export interface MonicaCrmNodeParameters {
      * Author of the message
      * Default: true
      */
-    readonly writtenByMe?: "true" | "false";
+    readonly writtenByMe?: true | false;
 
     /** ID of the message to update */
     readonly messageId?: string;

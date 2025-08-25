@@ -40,7 +40,7 @@ export interface HttpRequestV2NodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { "batchInterval"?: number, "batchSize"?: number, "bodyContentType"?: "json" | "raw" | "multipart-form-data" | "form-urlencoded", "fullResponse"?: boolean, "followAllRedirects"?: boolean, "followRedirect"?: boolean, "ignoreResponseCode"?: boolean, "bodyContentCustomMimeType"?: string, "proxy"?: string, "splitIntoItems"?: boolean, "timeout"?: number, "useQueryString"?: boolean };
+    readonly options?: { batchInterval?: number, batchSize?: number, bodyContentType?: "json" | "raw" | "multipart-form-data" | "form-urlencoded", fullResponse?: boolean, followAllRedirects?: boolean, followRedirect?: boolean, ignoreResponseCode?: boolean, bodyContentCustomMimeType?: string, proxy?: string, splitIntoItems?: boolean, timeout?: number, useQueryString?: boolean };
 
     /** Whether binary data should be send as body */
     readonly sendBinaryData?: boolean;
@@ -59,7 +59,7 @@ export interface HttpRequestV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly bodyParametersUi?: { "parameter": any };
+    readonly bodyParametersUi?: { parameter: { name?: string, value?: string } };
 
     /** Header parameters as JSON or RAW */
     readonly headerParametersJson?: string;
@@ -69,7 +69,7 @@ export interface HttpRequestV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly headerParametersUi?: { "parameter": any };
+    readonly headerParametersUi?: { parameter: { name?: string, value?: string } };
 
     /** Query parameters as JSON (flat object) */
     readonly queryParametersJson?: string;
@@ -79,6 +79,6 @@ export interface HttpRequestV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly queryParametersUi?: { "parameter": any };
+    readonly queryParametersUi?: { parameter: { name?: string, value?: string } };
 
 }

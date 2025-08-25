@@ -20,6 +20,6 @@ export interface EmbeddingsMistralCloudNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "batchSize"?: number, "stripNewLines"?: boolean };
+    readonly options?: { batchSize?: number, stripNewLines?: boolean };
 
 }

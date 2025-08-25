@@ -41,7 +41,7 @@ export interface SplunkV2NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "add_orphan_field"?: boolean, "listDefaultActionArgs"?: boolean } | { "add_summary_to_metadata"?: boolean };
+    readonly options?: { add_orphan_field?: boolean, listDefaultActionArgs?: boolean } | { add_summary_to_metadata?: boolean };
 
     /**
      * Search language string to execute, in Splunk's <a href="https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/WhatsInThisManual">Search Processing Language</a>
@@ -50,13 +50,13 @@ export interface SplunkV2NodeParameters {
     readonly search?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "adhoc_search_level"?: "fast" | "smart" | "verbose", "auto_cancel"?: number, "auto_finalize_ec"?: number, "auto_pause"?: number, "index_earliest"?: string, "earliest_time"?: string, "exec_mode"?: "blocking" | "normal" | "oneshot", "indexedRealtimeOffset"?: number, "index_latest"?: string, "latest_time"?: string, "max_time"?: number, "namespace"?: string, "reduce_freq"?: number, "remote_server_list"?: string, "reuse_max_seconds_ago"?: number, "rf"?: string, "search_mode"?: "normal" | "realtime", "status_buckets"?: number, "timeout"?: number, "workload_pool"?: string } | { "email"?: string, "realname"?: string };
+    readonly additionalFields?: { adhoc_search_level?: "fast" | "smart" | "verbose", auto_cancel?: number, auto_finalize_ec?: number, auto_pause?: number, index_earliest?: string, earliest_time?: string, exec_mode?: "blocking" | "normal" | "oneshot", indexedRealtimeOffset?: number, index_latest?: string, latest_time?: string, max_time?: number, namespace?: string, reduce_freq?: number, remote_server_list?: string, reuse_max_seconds_ago?: number, rf?: string, search_mode?: "normal" | "realtime", status_buckets?: number, timeout?: number, workload_pool?: string } | { email?: string, realname?: string };
 
     /** Default: {} */
-    readonly sort?: { "values": any };
+    readonly sort?: { values: { sort_dir?: "asc" | "desc", sort_key?: string, sort_mode?: "auto" | "alpha" | "alpha_case" | "num" } };
 
     /** Default: {} */
-    readonly filters?: { "keyValueMatch"?: { "keyValuePair": any } };
+    readonly filters?: { keyValueMatch?: { keyValuePair: { key?: string, value?: string } } };
 
     /**
      * Comma-separated list of roles to assign to the user. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -75,6 +75,6 @@ export interface SplunkV2NodeParameters {
 };
 
     /** Default: {} */
-    readonly updateFields?: { "email"?: string, "realname"?: string, "password"?: string, "roles"?: any[] };
+    readonly updateFields?: { email?: string, realname?: string, password?: string, roles?: any[] };
 
 }

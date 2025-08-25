@@ -26,6 +26,6 @@ export interface OuraNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "end"?: string, "start"?: string };
+    readonly filters?: { end?: string, start?: string };
 
 }

@@ -16,13 +16,13 @@ export interface ZendeskTriggerNodeParameters {
     readonly service?: "support";
 
     /** Default: {} */
-    readonly options?: { "fields"?: any[] };
+    readonly options?: { fields?: any[] };
 
     /**
      * The condition to set
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly conditions?: { "all": any, "any": any };
+    readonly conditions?: { all: { resource?: "ticket", field?: "assignee" | "group" | "priority" | "status" | "type", operation?: "changed" | "value_previous" | "value" | "greater_than" | "is" | "is_not" | "less_than" | "not_changed" | "not_value_previous" | "not_value" | "changed" | "value_previous" | "value" | "is" | "is_not" | "not_changed" | "not_value_previous" | "not_value", value?: "closed" | "new" | "open" | "pending" | "solved" | "question" | "incident" | "problem" | "task" | "low" | "normal" | "high" | "urgent" | string }, any: { resource?: "ticket", field?: "assignee" | "group" | "priority" | "status" | "type", operation?: "changed" | "value_previous" | "value" | "greater_than" | "is" | "is_not" | "less_than" | "not_changed" | "not_value_previous" | "not_value" | "changed" | "value_previous" | "value" | "is" | "is_not" | "not_changed" | "not_value_previous" | "not_value", value?: "closed" | "new" | "open" | "pending" | "solved" | "question" | "incident" | "problem" | "task" | "low" | "normal" | "high" | "urgent" | string } };
 
 }

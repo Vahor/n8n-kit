@@ -28,7 +28,7 @@ export interface FormTriggerV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
 
     /**
      * When to respond to the form submission
@@ -37,6 +37,6 @@ export interface FormTriggerV2NodeParameters {
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode";
 
     /** Default: {} */
-    readonly options?: { "appendAttribution"?: boolean, "buttonLabel"?: string, "path"?: string, "respondWithOptions"?: { "values": any }, "ignoreBots"?: boolean, "useWorkflowTimezone"?: boolean, "customCss"?: string };
+    readonly options?: { appendAttribution?: boolean, buttonLabel?: string, path?: string, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, ignoreBots?: boolean, useWorkflowTimezone?: boolean, customCss?: string };
 
 }

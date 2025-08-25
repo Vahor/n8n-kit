@@ -20,6 +20,6 @@ export interface LmChatCohereNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "temperature"?: number, "maxRetries"?: number };
+    readonly options?: { temperature?: number, maxRetries?: number };
 
 }

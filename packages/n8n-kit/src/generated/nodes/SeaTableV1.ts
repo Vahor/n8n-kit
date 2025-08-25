@@ -46,7 +46,7 @@ export interface SeaTableV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Column to Send","multipleValues":true}
      */
-    readonly columnsUi?: { "columnValues": any };
+    readonly columnsUi?: { columnValues: { columnName?: string, columnValue?: string } };
 
     /**
      * Whether to return all results or only up to a given limit
@@ -62,9 +62,9 @@ export interface SeaTableV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "view_name"?: string };
+    readonly filters?: { view_name?: string };
 
     /** Default: {} */
-    readonly options?: { "convert_link_id"?: boolean, "direction"?: "asc" | "desc", "order_by"?: string };
+    readonly options?: { convert_link_id?: boolean, direction?: "asc" | "desc", order_by?: string };
 
 }

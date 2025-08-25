@@ -22,18 +22,24 @@ export interface HighLevelV2NodeParameters {
     readonly phone?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "notes"?: string, "tags"?: string, "timezone"?: {
+    readonly additionalFields?: { address1?: string, city?: string, customFields?: { values: { fieldId: {
 	value: string,
 	mode: "list" | "id",
-}, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "tags"?: string, "stageId"?: string } | { "assignedTo"?: string, "body"?: string } | { "endTime"?: string, "title"?: string, "appointmentStatus"?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", "assignedUserId"?: string, "address"?: string, "ignoreDateRange"?: boolean, "toNotify"?: boolean } | { "timezone"?: string, "userId"?: string, "userIds"?: { "userIds"?: string }, "enableLookBusy"?: boolean };
+}, fieldValue?: string } }, dnd?: boolean, firstName?: string, lastName?: string, name?: string, postalCode?: string, source?: string, state?: string, notes?: string, tags?: string, timezone?: {
+	value: string,
+	mode: "list" | "id",
+}, website?: string } | { assignedTo?: string, companyName?: string, monetaryValue?: number, tags?: string, stageId?: string } | { assignedTo?: string, body?: string } | { endTime?: string, title?: string, appointmentStatus?: "cancelled" | "confirmed" | "invalid" | "new" | "noshow" | "showed", assignedUserId?: string, address?: string, ignoreDateRange?: boolean, toNotify?: boolean } | { timezone?: string, userId?: string, userIds?: { userIds?: string }, enableLookBusy?: boolean };
 
     readonly contactId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: {
+    readonly updateFields?: { address1?: string, city?: string, customFields?: { values: { fieldId: {
 	value: string,
 	mode: "list" | "id",
-}, "website"?: string } | { "assignedTo"?: string, "monetaryValue"?: number, "name"?: string, "pipelineId"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned" } | { "assignedTo"?: string, "completed"?: boolean, "body"?: string, "dueDate"?: string, "title"?: string };
+}, fieldValue?: string } }, dnd?: boolean, email?: string, firstName?: string, lastName?: string, name?: string, phone?: string, postalCode?: string, state?: string, tags?: string, timezone?: {
+	value: string,
+	mode: "list" | "id",
+}, website?: string } | { assignedTo?: string, monetaryValue?: number, name?: string, pipelineId?: string, stageId?: string, status?: "open" | "won" | "lost" | "abandoned" } | { assignedTo?: string, completed?: boolean, body?: string, dueDate?: string, title?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -46,10 +52,10 @@ export interface HighLevelV2NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "query"?: string } | { "assignedTo"?: string, "campaignId"?: string, "endDate"?: string, "pipelineId"?: string, "stageId"?: string, "startDate"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "query"?: string };
+    readonly filters?: { query?: string } | { assignedTo?: string, campaignId?: string, endDate?: string, pipelineId?: string, stageId?: string, startDate?: string, status?: "open" | "won" | "lost" | "abandoned", query?: string };
 
     /** Default: {} */
-    readonly options?: { "order"?: "desc" | "asc", "sortBy"?: "date_added" | "date_updated" };
+    readonly options?: { order?: "desc" | "asc", sortBy?: "date_added" | "date_updated" };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

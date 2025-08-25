@@ -28,7 +28,7 @@ export interface GmailV2NodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly options?: { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "fromAlias"?: string, "replyTo"?: string, "threadId"?: string, "sendTo"?: string } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean } | { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean, "includeSpamTrash"?: boolean } | { "labelListVisibility"?: "labelHide" | "labelShow" | "labelShowIfUnread", "messageListVisibility"?: "hide" | "show" } | { "appendAttribution"?: boolean, "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyTo"?: string, "replyToSenderOnly"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "attachmentsUi"?: { "attachmentsBinary": any }, "bccList"?: string, "ccList"?: string, "senderName"?: string, "replyToSenderOnly"?: boolean } | { "returnOnlyMessages"?: boolean };
+    readonly options?: { attachmentsUi?: { attachmentsBinary: { property?: string } }, bccList?: string, ccList?: string, fromAlias?: string, replyTo?: string, threadId?: string, sendTo?: string } | { dataPropertyAttachmentsPrefixName?: string, downloadAttachments?: boolean } | { dataPropertyAttachmentsPrefixName?: string, downloadAttachments?: boolean, includeSpamTrash?: boolean } | { labelListVisibility?: "labelHide" | "labelShow" | "labelShowIfUnread", messageListVisibility?: "hide" | "show" } | { appendAttribution?: boolean, attachmentsUi?: { attachmentsBinary: { property?: string } }, bccList?: string, ccList?: string, senderName?: string, replyTo?: string, replyToSenderOnly?: boolean } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { attachmentsUi?: { attachmentsBinary: { property?: string } }, bccList?: string, ccList?: string, senderName?: string, replyToSenderOnly?: boolean } | { returnOnlyMessages?: boolean };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -56,7 +56,7 @@ export interface GmailV2NodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly filters?: { "includeSpamTrash"?: boolean, "labelIds"?: any[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string, "sender"?: string } | { "includeSpamTrash"?: boolean, "labelIds"?: any[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "receivedAfter"?: string, "receivedBefore"?: string };
+    readonly filters?: { includeSpamTrash?: boolean, labelIds?: any[], q?: string, readStatus?: "both" | "unread" | "read", receivedAfter?: string, receivedBefore?: string, sender?: string } | { includeSpamTrash?: boolean, labelIds?: any[], q?: string, readStatus?: "both" | "unread" | "read", receivedAfter?: string, receivedBefore?: string };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -81,10 +81,10 @@ export interface GmailV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
 
     /** Default: {} */
-    readonly approvalOptions?: { "values": any };
+    readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, buttonApprovalStyle?: "primary" | "secondary", disapproveLabel?: string, buttonDisapprovalStyle?: "primary" | "secondary" } };
 
     /** The ID of the thread you are operating on */
     readonly threadId?: string;

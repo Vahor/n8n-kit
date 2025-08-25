@@ -12,12 +12,12 @@ export interface SummarizeNodeParameters {
      * Default: {"values":[{"aggregation":"count","field":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSummarize?: { "values": any };
+    readonly fieldsToSummarize?: { values: { aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string } };
 
     /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;
 
     /** Default: {} */
-    readonly options?: { "continueIfFieldNotFound"?: boolean, "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
+    readonly options?: { continueIfFieldNotFound?: boolean, disableDotNotation?: boolean, outputFormat?: "separateItems" | "singleItem", skipEmptySplitFields?: boolean };
 
 }

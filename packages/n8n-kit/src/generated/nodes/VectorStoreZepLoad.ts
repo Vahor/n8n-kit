@@ -12,6 +12,6 @@ export interface VectorStoreZepLoadNodeParameters {
     readonly collectionName?: string;
 
     /** Default: {} */
-    readonly options?: { "embeddingDimensions"?: number, "metadata"?: { "metadataValues": any } };
+    readonly options?: { embeddingDimensions?: number, metadata?: { metadataValues: { name: string, value?: string } } };
 
 }

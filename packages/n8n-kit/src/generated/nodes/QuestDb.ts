@@ -31,6 +31,6 @@ export interface QuestDbNodeParameters {
     readonly returnFields?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "mode"?: "independently" | "transaction", "queryParams"?: string };
+    readonly additionalFields?: { mode?: "independently" | "transaction", queryParams?: string };
 
 }

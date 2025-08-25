@@ -15,7 +15,7 @@ export interface ClockifyTriggerNodeParameters {
      */
     readonly workspaceId?: string;
 
-    readonly watchField?: "0";
+    readonly watchField?: 0;
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

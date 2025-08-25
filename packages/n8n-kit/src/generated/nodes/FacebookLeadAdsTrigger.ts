@@ -31,6 +31,6 @@ export interface FacebookLeadAdsTriggerNodeParameters {
 };
 
     /** Default: {} */
-    readonly options?: { "simplifyOutput"?: boolean };
+    readonly options?: { simplifyOutput?: boolean };
 
 }

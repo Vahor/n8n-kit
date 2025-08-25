@@ -47,7 +47,7 @@ export interface DiscourseNodeParameters {
     readonly categoryId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "color"?: string, "textColor"?: string } | { "edit_reason"?: string, "cooked"?: boolean };
+    readonly updateFields?: { color?: string, textColor?: string } | { edit_reason?: string, cooked?: boolean };
 
     /** ID of the group to update */
     readonly groupId?: string;
@@ -59,7 +59,7 @@ export interface DiscourseNodeParameters {
     readonly content?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "category"?: string, "reply_to_post_number"?: string, "topic_id"?: string } | { "active"?: boolean, "approved"?: boolean };
+    readonly additionalFields?: { category?: string, reply_to_post_number?: string, topic_id?: string } | { active?: boolean, approved?: boolean };
 
     /** ID of the post */
     readonly postId?: string;
@@ -89,7 +89,7 @@ export interface DiscourseNodeParameters {
     readonly flag?: "active" | "blocked" | "new" | "staff" | "suspect" | "suspended";
 
     /** Default: {} */
-    readonly options?: { "asc"?: boolean, "order"?: "created" | "days_visited" | "email" | "last_emailed" | "posts" | "posts_read" | "read_time" | "seen" | "topics_viewed" | "trust_level" | "username", "showEmails"?: boolean, "stats"?: boolean };
+    readonly options?: { asc?: boolean, order?: "created" | "days_visited" | "email" | "last_emailed" | "posts" | "posts_read" | "read_time" | "seen" | "topics_viewed" | "trust_level" | "username", showEmails?: boolean, stats?: boolean };
 
     /** Usernames to add to group. Multiples can be defined separated by comma. */
     readonly usernames?: string;

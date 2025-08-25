@@ -20,6 +20,6 @@ export interface LmChatMistralCloudNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "maxTokens"?: number, "temperature"?: number, "maxRetries"?: number, "topP"?: number, "safeMode"?: boolean, "randomSeed"?: number };
+    readonly options?: { maxTokens?: number, temperature?: number, maxRetries?: number, topP?: number, safeMode?: boolean, randomSeed?: number };
 
 }

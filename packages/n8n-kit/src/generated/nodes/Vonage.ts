@@ -25,6 +25,6 @@ export interface VonageNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "account-ref"?: string, "callback"?: string, "client-ref"?: string, "message-class"?: "0" | "1" | "2" | "3", "protocol-id"?: string, "status-report-req"?: boolean, "ttl"?: number };
+    readonly additionalFields?: { "account-ref"?: string, callback?: string, "client-ref"?: string, "message-class"?: 0 | 1 | 2 | 3, "protocol-id"?: string, "status-report-req"?: boolean, ttl?: number };
 
 }

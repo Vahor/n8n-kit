@@ -34,6 +34,6 @@ export interface EmailReadImapV2NodeParameters {
     readonly dataPropertyAttachmentsPrefixName?: string;
 
     /** Default: {} */
-    readonly options?: { "customEmailConfig"?: string, "forceReconnect"?: number, "trackLastMessageId"?: boolean };
+    readonly options?: { customEmailConfig?: string, forceReconnect?: number, trackLastMessageId?: boolean };
 
 }

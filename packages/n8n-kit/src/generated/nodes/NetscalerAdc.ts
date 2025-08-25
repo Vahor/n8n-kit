@@ -61,7 +61,7 @@ export interface NetscalerAdcNodeParameters {
     readonly privateKeyFormat?: "PEM" | "DER";
 
     /** Default: {} */
-    readonly additionalFields?: { "pempassphrase"?: string, "subjectaltname"?: string, "days"?: string };
+    readonly additionalFields?: { pempassphrase?: string, subjectaltname?: string, days?: string };
 
     /** Name for the certificate and private-key pair */
     readonly certificateKeyPairName?: string;
@@ -95,7 +95,7 @@ export interface NetscalerAdcNodeParameters {
     readonly binaryProperty?: string;
 
     /** Default: {} */
-    readonly options?: { "fileName"?: string };
+    readonly options?: { fileName?: string };
 
     /** Name of the file. It should not include filepath. */
     readonly fileName?: string;

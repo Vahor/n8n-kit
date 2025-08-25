@@ -43,6 +43,6 @@ export interface TimescaleDbNodeParameters {
     readonly returnFields?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "mode"?: "independently" | "multiple" | "transaction", "queryParams"?: string };
+    readonly additionalFields?: { mode?: "independently" | "multiple" | "transaction", queryParams?: string };
 
 }

@@ -29,10 +29,10 @@ export interface BitwardenNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "groups"?: any[], "externalId"?: string } | { "accessAll"?: boolean, "collections"?: any[], "externalId"?: string, "name"?: string } | { "type"?: "0" | "1" | "2" | "3", "collections"?: any[], "externalId"?: string, "accessAll"?: boolean };
+    readonly updateFields?: { groups?: any[], externalId?: string } | { accessAll?: boolean, collections?: any[], externalId?: string, name?: string } | { type?: 0 | 1 | 2 | 3, collections?: any[], externalId?: string, accessAll?: boolean };
 
     /** Default: {} */
-    readonly filters?: { "actingUserId"?: string, "end"?: string, "itemID"?: string, "start"?: string };
+    readonly filters?: { actingUserId?: string, end?: string, itemID?: string, start?: string };
 
     /** The identifier of the group */
     readonly groupId?: string;
@@ -44,7 +44,7 @@ export interface BitwardenNodeParameters {
     readonly accessAll?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "collections"?: any[], "externalId"?: string };
+    readonly additionalFields?: { collections?: any[], externalId?: string };
 
     /** Comma-separated list of IDs of members to set in a group */
     readonly memberIds?: string;
@@ -53,7 +53,7 @@ export interface BitwardenNodeParameters {
     readonly memberId?: string;
 
     /** Default: 2 */
-    readonly type?: "0" | "1" | "2" | "3";
+    readonly type?: 0 | 1 | 2 | 3;
 
     /** The email of the member to update */
     readonly email?: string;

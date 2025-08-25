@@ -36,6 +36,6 @@ export interface DocumentDefaultDataLoaderNodeParameters {
     readonly textSplittingMode?: "simple" | "custom";
 
     /** Default: {} */
-    readonly options?: { "pointers"?: string, "separator"?: string, "column"?: string, "splitPages"?: boolean, "metadata"?: { "metadataValues": any } };
+    readonly options?: { pointers?: string, separator?: string, column?: string, splitPages?: boolean, metadata?: { metadataValues: { name: string, value?: string } } };
 
 }

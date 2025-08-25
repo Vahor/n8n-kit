@@ -25,7 +25,7 @@ export interface HumanticAiNodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Default: {} */
-    readonly options?: { "persona"?: ("sales" | "hiring")[] };
+    readonly options?: { persona?: ("sales" | "hiring")[] };
 
     /** Additional text written by the user */
     readonly text?: string;

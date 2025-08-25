@@ -22,7 +22,7 @@ export interface TwitterV1NodeParameters {
     readonly text?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "attachment"?: string } | { "attachments"?: string, "displayCoordinates"?: boolean, "inReplyToStatusId"?: string, "locationFieldsUi"?: { "locationFieldsValues": any }, "possiblySensitive"?: boolean } | { "includeEntities"?: boolean, "lang"?: string, "locationFieldsUi"?: { "locationFieldsValues": any }, "resultType"?: "mixed" | "recent" | "popular", "tweetMode"?: "compat" | "extended", "until"?: string } | { "includeEntities"?: boolean } | { "trimUser"?: boolean };
+    readonly additionalFields?: { attachment?: string } | { attachments?: string, displayCoordinates?: boolean, inReplyToStatusId?: string, locationFieldsUi?: { locationFieldsValues: { latitude: string, longitude: string } }, possiblySensitive?: boolean } | { includeEntities?: boolean, lang?: string, locationFieldsUi?: { locationFieldsValues: { latitude: string, longitude: string, radius: "mi" | "km", distance: number } }, resultType?: "mixed" | "recent" | "popular", tweetMode?: "compat" | "extended", until?: string } | { includeEntities?: boolean } | { trimUser?: boolean };
 
     /** The ID of the tweet to delete */
     readonly tweetId?: string;

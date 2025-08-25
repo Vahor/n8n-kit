@@ -12,6 +12,6 @@ export interface WorkableTriggerNodeParameters {
     readonly triggerOn?: "candidateCreated" | "candidateMoved";
 
     /** Default: {} */
-    readonly filters?: { "job"?: string, "stage"?: string };
+    readonly filters?: { job?: string, stage?: string };
 
 }

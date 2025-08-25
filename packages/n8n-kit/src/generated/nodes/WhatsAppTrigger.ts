@@ -13,6 +13,6 @@ export interface WhatsAppTriggerNodeParameters {
     readonly updates?: ("account_review_update" | "account_update" | "business_capability_update" | "message_template_quality_update" | "message_template_status_update" | "messages" | "phone_number_name_update" | "phone_number_quality_update" | "security" | "template_category_update")[];
 
     /** Default: {} */
-    readonly options?: { "messageStatusUpdates"?: ("all" | "deleted" | "delivered" | "failed" | "read" | "sent")[] };
+    readonly options?: { messageStatusUpdates?: ("all" | "deleted" | "delivered" | "failed" | "read" | "sent")[] };
 
 }

@@ -19,7 +19,7 @@ export interface HaloPSANodeParameters {
     readonly clientName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "inactive"?: "false" | "true", "notes"?: string, "is_vip"?: boolean, "website"?: string } | { "agent_id"?: string, "startdate"?: string, "targetdate"?: string } | { "maincontact_name"?: string, "notes"?: string, "phonenumber"?: string } | { "emailaddress"?: string, "notes"?: string, "password"?: string, "surname"?: string, "inactive"?: boolean };
+    readonly additionalFields?: { inactive?: false | true, notes?: string, is_vip?: boolean, website?: string } | { agent_id?: string, startdate?: string, targetdate?: string } | { maincontact_name?: string, notes?: string, phonenumber?: string } | { emailaddress?: string, notes?: string, password?: string, surname?: string, inactive?: boolean };
 
     readonly clientId?: string;
 
@@ -40,10 +40,10 @@ export interface HaloPSANodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "activeStatus"?: "active" | "all" | "inactive", "search"?: string };
+    readonly filters?: { activeStatus?: "active" | "all" | "inactive", search?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "inactive"?: "false" | "true", "name"?: string, "notes"?: string, "is_vip"?: boolean, "website"?: string } | { "agent_id"?: string, "details"?: string, "startdate"?: string, "summary"?: string, "targetdate"?: string } | { "client_id"?: string, "maincontact_name"?: string, "name"?: string, "notes"?: string, "phonenumber"?: string } | { "emailaddress"?: string, "name"?: string, "notes"?: string, "password"?: string, "site_id"?: string, "surname"?: string, "inactive"?: boolean };
+    readonly updateFields?: { inactive?: false | true, name?: string, notes?: string, is_vip?: boolean, website?: string } | { agent_id?: string, details?: string, startdate?: string, summary?: string, targetdate?: string } | { client_id?: string, maincontact_name?: string, name?: string, notes?: string, phonenumber?: string } | { emailaddress?: string, name?: string, notes?: string, password?: string, site_id?: string, surname?: string, inactive?: boolean };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

@@ -30,6 +30,6 @@ export interface ICalendarNodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "attendeesUi"?: { "attendeeValues": any }, "busyStatus"?: "BUSY" | "TENTATIVE", "calName"?: string, "description"?: string, "fileName"?: string, "geolocationUi"?: { "geolocationValues": any }, "location"?: string, "recurrenceRule"?: string, "organizerUi"?: { "organizerValues": any }, "sequence"?: number, "status"?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", "uid"?: string, "url"?: string, "useWorkflowTimezone"?: boolean };
+    readonly additionalFields?: { attendeesUi?: { attendeeValues: { name: string, email: string, rsvp?: boolean } }, busyStatus?: "BUSY" | "TENTATIVE", calName?: string, description?: string, fileName?: string, geolocationUi?: { geolocationValues: { lat?: string, lon?: string } }, location?: string, recurrenceRule?: string, organizerUi?: { organizerValues: { name: string, email: string } }, sequence?: number, status?: "CONFIRMED" | "CANCELLED" | "TENTATIVE", uid?: string, url?: string, useWorkflowTimezone?: boolean };
 
 }

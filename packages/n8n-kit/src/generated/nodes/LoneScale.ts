@@ -40,10 +40,10 @@ export interface LoneScaleNodeParameters {
     readonly company_name?: string;
 
     /** Default: {} */
-    readonly peopleAdditionalFields?: { "full_name"?: string, "email"?: string, "company_name"?: string, "current_position"?: string, "domain"?: string, "linkedin_url"?: string, "location"?: string, "contact_id"?: string };
+    readonly peopleAdditionalFields?: { full_name?: string, email?: string, company_name?: string, current_position?: string, domain?: string, linkedin_url?: string, location?: string, contact_id?: string };
 
     /** Default: {} */
-    readonly companyAdditionalFields?: { "linkedin_url"?: string, "domain"?: string, "location"?: string, "contact_id"?: string };
+    readonly companyAdditionalFields?: { linkedin_url?: string, domain?: string, location?: string, contact_id?: string };
 
     /** Name of your list */
     readonly name?: string;

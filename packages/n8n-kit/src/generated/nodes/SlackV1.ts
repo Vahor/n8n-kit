@@ -25,7 +25,7 @@ export interface SlackV1NodeParameters {
     readonly channelId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "isPrivate"?: boolean } | { "includeNumMembers"?: boolean } | { "channelIds"?: any[], "description"?: string, "handle"?: string, "include_count"?: boolean } | { "include_count"?: boolean } | { "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean } | { "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status_emoji"?: string, "status_expiration"?: string, "status_text"?: string, "user"?: string } | { "include_labels"?: boolean, "user"?: string };
+    readonly additionalFields?: { isPrivate?: boolean } | { includeNumMembers?: boolean } | { channelIds?: any[], description?: string, handle?: string, include_count?: boolean } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean } | { customFieldUi?: { customFieldValues: { id?: string, value?: string, alt?: string } }, email?: string, first_name?: string, last_name?: string, status_emoji?: string, status_expiration?: string, status_text?: string, user?: string } | { include_labels?: boolean, user?: string };
 
     /**
      * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -51,13 +51,13 @@ export interface SlackV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
+    readonly filters?: { excludeArchived?: boolean, types?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { inclusive?: boolean, latest?: string, oldest?: string } | { channelId?: string, showFilesHidden?: boolean, tsFrom?: string, tsTo?: string, types?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], userId?: string };
 
     /** Whether to resolve the data automatically. By default the response only contain the ID to resource. */
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly options?: { "channelId"?: string, "returnIm"?: boolean, "users"?: any[] } | { "channelId"?: string, "fileComment"?: string, "fileId"?: string, "timestamp"?: string } | { "channelId"?: string, "fileId"?: string, "fileComment"?: string, "timestamp"?: string } | { "channelIds"?: any[], "fileName"?: string, "initialComment"?: string, "threadTs"?: string, "title"?: string };
+    readonly options?: { channelId?: string, returnIm?: boolean, users?: any[] } | { channelId?: string, fileComment?: string, fileId?: string, timestamp?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: string } | { channelIds?: any[], fileName?: string, initialComment?: string, threadTs?: string, title?: string };
 
     /** New name for conversation */
     readonly name?: string;
@@ -89,17 +89,17 @@ export interface SlackV1NodeParameters {
      * Other options to set
      * Default: {}
      */
-    readonly otherOptions?: { "icon_emoji"?: string, "icon_url"?: string, "link_names"?: boolean, "thread_ts"?: string, "mrkdwn"?: boolean, "reply_broadcast"?: boolean, "unfurl_links"?: boolean, "unfurl_media"?: boolean, "sendAsUser"?: string };
+    readonly otherOptions?: { icon_emoji?: string, icon_url?: string, link_names?: boolean, thread_ts?: string, mrkdwn?: boolean, reply_broadcast?: boolean, unfurl_links?: boolean, unfurl_media?: boolean, sendAsUser?: string };
 
     /**
      * The attachment to add
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: string, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: string, "fields"?: { "item": any } };
+    readonly attachments?: { fallback?: string, text?: string, title?: string, title_link?: string, color?: string, pretext?: string, author_name?: string, author_link?: string, author_icon?: string, image_url?: string, thumb_url?: string, footer?: string, footer_icon?: string, ts?: string, fields?: { item: { title?: string, value?: string, short?: boolean } } };
 
     /** Default: {} */
-    readonly updateFields?: { "link_names"?: boolean, "parse"?: "client" | "full" | "none" } | { "channels"?: any[], "description"?: string, "handle"?: string, "include_count"?: boolean, "name"?: string };
+    readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: any[], description?: string, handle?: string, include_count?: boolean, name?: string };
 
     /**
      * The attachments to add
@@ -118,7 +118,7 @@ export interface SlackV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Block"}
      */
-    readonly blocksUi?: { "blocksValues": any };
+    readonly blocksUi?: { blocksValues: { type?: "actions" | "section", blockId?: string, elementsUi?: { elementsValues: { type?: "button", text?: string, emoji?: boolean, actionId?: string, url?: string, value?: string, style?: "danger" | "default" | "primary", confirmUi?: { confirmValue: { titleUi?: { titleValue: { text?: string, emoji?: boolean } }, textUi?: { textValue: { text?: string, emoji?: boolean } }, confirmTextUi?: { confirmValue: { text?: string, emoji?: boolean } }, denyUi?: { denyValue: { text?: string, emoji?: boolean } }, style?: "danger" | "default" | "primary" } } } }, textUi?: { textValue: { type?: "mrkwdn" | "plainText", text?: string, emoji?: boolean, verbatim?: boolean } }, fieldsUi?: { fieldsValues: { type?: "mrkwdn" | "plainText", text?: string, emoji?: boolean, verbatim?: boolean } }, accessoryUi?: { accessoriesValues: { type?: "button", text?: string, emoji?: boolean, actionId?: string, url?: string, value?: string, style?: "danger" | "default" | "primary", confirmUi?: { confirmValue: { titleUi?: { titleValue: { text?: string, emoji?: boolean } }, textUi?: { textValue: { text?: string, emoji?: boolean } }, confirmTextUi?: { confirmValue: { text?: string, emoji?: boolean } }, denyUi?: { denyValue: { text?: string, emoji?: boolean } }, style?: "danger" | "default" | "primary" } } } } } };
 
     /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;

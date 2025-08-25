@@ -41,7 +41,7 @@ export interface SupabaseNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any };
+    readonly filters?: { conditions: { keyName?: string, condition?: "eq" | "fullText" | "gt" | "gte" | "ilike" | "is" | "lt" | "lte" | "like" | "neq", searchFunction?: "fts" | "plfts" | "phfts" | "wfts", keyValue?: string } } | { conditions: { keyName?: string, keyValue?: string } };
 
     readonly filterString?: string;
 
@@ -55,7 +55,7 @@ export interface SupabaseNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any };
+    readonly fieldsUi?: { fieldValues: { fieldId?: string, fieldValue?: string } };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

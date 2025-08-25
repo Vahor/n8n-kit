@@ -27,7 +27,7 @@ export interface OrbitNodeParameters {
     readonly title?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "activityType"?: string, "description"?: string, "key"?: string, "link"?: string, "linkText"?: string, "occurredAt"?: string } | { "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string } | { "publishedAt"?: string };
+    readonly additionalFields?: { activityType?: string, description?: string, key?: string, link?: string, linkText?: string, occurredAt?: string } | { bio?: string, birthday?: string, company?: string, location?: string, name?: string, pronouns?: string, shippingAddress?: string, slug?: string, tagsToAdd?: string, tagList?: string, tShirt?: string, teammate?: boolean, url?: string } | { publishedAt?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -40,13 +40,13 @@ export interface OrbitNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "memberId"?: string };
+    readonly filters?: { memberId?: string };
 
     /** By default, the response just includes the reference of the identity. When set to true the identities will be resolved automatically. */
     readonly resolveIdentities?: boolean;
 
     /** Default: {} */
-    readonly options?: { "sort"?: string, "direction"?: "ASC" | "DESC" };
+    readonly options?: { sort?: string, direction?: "ASC" | "DESC" };
 
     /** Set to github, twitter, email, discourse or the source of any identities you've manually created */
     readonly source?: "discourse" | "email" | "github" | "twitter";
@@ -65,14 +65,14 @@ export interface OrbitNodeParameters {
     readonly host?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "bio"?: string, "birthday"?: string, "company"?: string, "location"?: string, "name"?: string, "pronouns"?: string, "shippingAddress"?: string, "slug"?: string, "tagsToAdd"?: string, "tagList"?: string, "tShirt"?: string, "teammate"?: boolean, "url"?: string };
+    readonly updateFields?: { bio?: string, birthday?: string, company?: string, location?: string, name?: string, pronouns?: string, shippingAddress?: string, slug?: string, tagsToAdd?: string, tagList?: string, tShirt?: string, teammate?: boolean, url?: string };
 
     /**
      * The identity is used to find the member. If no member exists, a new member will be created and linked to the provided identity.
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly identityUi?: { "identityValue": any };
+    readonly identityUi?: { identityValue: { source?: "discourse" | "email" | "github" | "twitter", searchBy: "username" | "id", id: string, username: string, email: string, host: string } };
 
     readonly note?: string;
 

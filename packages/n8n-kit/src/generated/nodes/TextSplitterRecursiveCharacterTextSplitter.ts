@@ -17,6 +17,6 @@ export interface TextSplitterRecursiveCharacterTextSplitterNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "splitCode"?: "cpp" | "go" | "java" | "js" | "php" | "proto" | "python" | "rst" | "ruby" | "rust" | "scala" | "swift" | "markdown" | "latex" | "html" };
+    readonly options?: { splitCode?: "cpp" | "go" | "java" | "js" | "php" | "proto" | "python" | "rst" | "ruby" | "rust" | "scala" | "swift" | "markdown" | "latex" | "html" };
 
 }

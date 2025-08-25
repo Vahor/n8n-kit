@@ -22,12 +22,12 @@ export interface HighLevelV1NodeParameters {
     readonly phone?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "firstName"?: string, "lastName"?: string, "name"?: string, "postalCode"?: string, "source"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "monetaryValue"?: number, "name"?: string, "tags"?: string } | { "assignedTo"?: string, "description"?: string, "status"?: "incompleted" | "completed" };
+    readonly additionalFields?: { address1?: string, city?: string, customFields?: { values: { fieldId: string, fieldValue?: string } }, dnd?: boolean, firstName?: string, lastName?: string, name?: string, postalCode?: string, source?: string, state?: string, tags?: string, timezone?: string, website?: string } | { assignedTo?: string, companyName?: string, monetaryValue?: number, name?: string, tags?: string } | { assignedTo?: string, description?: string, status?: "incompleted" | "completed" };
 
     readonly contactId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "address1"?: string, "city"?: string, "customFields"?: { "values": any }, "dnd"?: boolean, "email"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phone"?: string, "postalCode"?: string, "state"?: string, "tags"?: string, "timezone"?: string, "website"?: string } | { "assignedTo"?: string, "companyName"?: string, "contactIdentifier"?: string, "monetaryValue"?: number, "name"?: string, "stageId"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "title"?: string, "tags"?: string } | { "assignedTo"?: string, "description"?: string, "dueDate"?: string, "status"?: "incompleted" | "completed", "title"?: string };
+    readonly updateFields?: { address1?: string, city?: string, customFields?: { values: { fieldId: string, fieldValue?: string } }, dnd?: boolean, email?: string, firstName?: string, lastName?: string, name?: string, phone?: string, postalCode?: string, state?: string, tags?: string, timezone?: string, website?: string } | { assignedTo?: string, companyName?: string, contactIdentifier?: string, monetaryValue?: number, name?: string, stageId?: string, status?: "open" | "won" | "lost" | "abandoned", title?: string, tags?: string } | { assignedTo?: string, description?: string, dueDate?: string, status?: "incompleted" | "completed", title?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -40,10 +40,10 @@ export interface HighLevelV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "query"?: string } | { "assignedTo"?: string, "campaignId"?: string, "endDate"?: string, "stageId"?: string, "startDate"?: string, "status"?: "open" | "won" | "lost" | "abandoned", "query"?: string };
+    readonly filters?: { query?: string } | { assignedTo?: string, campaignId?: string, endDate?: string, stageId?: string, startDate?: string, status?: "open" | "won" | "lost" | "abandoned", query?: string };
 
     /** Default: {} */
-    readonly options?: { "order"?: "desc" | "asc", "sortBy"?: "date_added" | "date_updated" };
+    readonly options?: { order?: "desc" | "asc", sortBy?: "date_added" | "date_updated" };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

@@ -15,7 +15,7 @@ export interface AwsSnsNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly options?: { "displayName"?: string, "fifoTopic"?: boolean };
+    readonly options?: { displayName?: string, fifoTopic?: boolean };
 
     /** Default: {"mode":"list","value":""} */
     readonly topic?: {

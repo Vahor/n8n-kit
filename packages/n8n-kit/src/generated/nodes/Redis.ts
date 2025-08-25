@@ -28,7 +28,7 @@ export interface RedisNodeParameters {
     readonly keyType?: "automatic" | "hash" | "list" | "sets" | "string";
 
     /** Default: {} */
-    readonly options?: { "dotNotation"?: boolean };
+    readonly options?: { dotNotation?: boolean };
 
     /** Whether to set a timeout on key */
     readonly expire?: boolean;

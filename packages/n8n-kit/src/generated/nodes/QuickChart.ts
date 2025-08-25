@@ -22,7 +22,7 @@ export interface QuickChartNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly labelsUi?: { "labelsValues": any };
+    readonly labelsUi?: { labelsValues: { label?: string } };
 
     /** The array of labels to be used in the chart */
     readonly labelsArray?: string;
@@ -37,9 +37,9 @@ export interface QuickChartNodeParameters {
     readonly output?: string;
 
     /** Default: {} */
-    readonly chartOptions?: { "backgroundColor"?: string, "devicePixelRatio"?: number, "format"?: "png" | "pdf" | "svg" | "webp", "height"?: number, "horizontal"?: boolean, "width"?: number };
+    readonly chartOptions?: { backgroundColor?: string, devicePixelRatio?: number, format?: "png" | "pdf" | "svg" | "webp", height?: number, horizontal?: boolean, width?: number };
 
     /** Default: {} */
-    readonly datasetOptions?: { "backgroundColor"?: string, "borderColor"?: string, "fill"?: boolean, "label"?: string, "pointStyle"?: "circle" | "cross" | "crossRot" | "dash" | "line" | "rect" | "rectRot" | "rectRounded" | "star" | "triangle" };
+    readonly datasetOptions?: { backgroundColor?: string, borderColor?: string, fill?: boolean, label?: string, pointStyle?: "circle" | "cross" | "crossRot" | "dash" | "line" | "rect" | "rectRot" | "rectRounded" | "star" | "triangle" };
 
 }

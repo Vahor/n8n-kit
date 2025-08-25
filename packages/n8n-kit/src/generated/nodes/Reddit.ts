@@ -53,7 +53,7 @@ export interface RedditNodeParameters {
     readonly content?: "about" | "rules";
 
     /** Default: {} */
-    readonly filters?: { "keyword"?: string, "trending"?: boolean } | { "category"?: "top" | "hot" | "new" | "rising" };
+    readonly filters?: { keyword?: string, trending?: boolean } | { category?: "top" | "hot" | "new" | "rising" };
 
     /**
      * The kind of the post to create
@@ -83,7 +83,7 @@ export interface RedditNodeParameters {
     readonly keyword?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "sort"?: "comments" | "hot" | "new" | "relevance" | "top" };
+    readonly additionalFields?: { sort?: "comments" | "hot" | "new" | "relevance" | "top" };
 
     /** Reddit ID of the user to retrieve */
     readonly username?: string;

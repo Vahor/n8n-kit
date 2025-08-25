@@ -24,10 +24,10 @@ export interface ZammadNodeParameters {
     readonly id?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "note"?: string } | { "shared"?: boolean, "domain"?: string, "domain_assignment"?: boolean, "active"?: boolean, "vip"?: boolean, "note"?: string, "customFieldsUi"?: { "customFieldPairs": any } } | { "customFieldsUi"?: { "customFieldPairs": any } } | { "active"?: boolean, "addressUi"?: { "addressDetails": any }, "customFieldsUi"?: { "customFieldPairs": any }, "department"?: string, "email"?: string, "fax"?: string, "note"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "vip"?: boolean, "web"?: string };
+    readonly additionalFields?: { active?: boolean, customFieldsUi?: { customFieldPairs: { name?: string, value?: string } }, note?: string } | { shared?: boolean, domain?: string, domain_assignment?: boolean, active?: boolean, vip?: boolean, note?: string, customFieldsUi?: { customFieldPairs: { name?: string, value?: string } } } | { customFieldsUi?: { customFieldPairs: { name?: string, value?: string } } } | { active?: boolean, addressUi?: { addressDetails: { city?: string, country?: string, address?: string, zip?: string } }, customFieldsUi?: { customFieldPairs: { name?: string, value?: string } }, department?: string, email?: string, fax?: string, note?: string, organization?: string, phone?: string, mobile?: string, verified?: boolean, vip?: boolean, web?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "active"?: boolean, "customFieldsUi"?: { "customFieldPairs": any }, "name"?: string, "note"?: string } | { "shared"?: boolean, "domain"?: string, "domain_assignment"?: boolean, "active"?: boolean, "vip"?: boolean, "note"?: string, "customFieldsUi"?: { "customFieldPairs": any } } | { "active"?: boolean, "addressUi"?: { "addressDetails": any }, "customFieldsUi"?: { "customFieldPairs": any }, "department"?: string, "email"?: string, "fax"?: string, "firstname"?: string, "lastname"?: string, "note"?: string, "organization"?: string, "phone"?: string, "mobile"?: string, "verified"?: boolean, "vip"?: boolean, "web"?: string };
+    readonly updateFields?: { active?: boolean, customFieldsUi?: { customFieldPairs: { name?: string, value?: string } }, name?: string, note?: string } | { shared?: boolean, domain?: string, domain_assignment?: boolean, active?: boolean, vip?: boolean, note?: string, customFieldsUi?: { customFieldPairs: { name?: string, value?: string } } } | { active?: boolean, addressUi?: { addressDetails: { city?: string, country?: string, address?: string, zip?: string } }, customFieldsUi?: { customFieldPairs: { name?: string, value?: string } }, department?: string, email?: string, fax?: string, firstname?: string, lastname?: string, note?: string, organization?: string, phone?: string, mobile?: string, verified?: boolean, vip?: boolean, web?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -55,7 +55,7 @@ export interface ZammadNodeParameters {
     readonly customer?: string;
 
     /** Default: {} */
-    readonly article?: { "articleDetails": any };
+    readonly article?: { articleDetails: { subject?: string, body?: string, visibility?: "external" | "internal", sender?: "Agent" | "Customer" | "System", type?: "chat" | "email" | "fax" | "note" | "phone" | "sms", reply_to?: string } };
 
     readonly firstname?: string;
 
@@ -64,6 +64,6 @@ export interface ZammadNodeParameters {
     readonly query?: string;
 
     /** Default: {} */
-    readonly filters?: { "query"?: string, "sortUi"?: { "sortDetails": any } };
+    readonly filters?: { query?: string, sortUi?: { sortDetails: { sort_by?: string, order_by?: "asc" | "desc" } } };
 
 }

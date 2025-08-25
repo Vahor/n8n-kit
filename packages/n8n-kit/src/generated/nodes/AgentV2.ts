@@ -22,6 +22,6 @@ export interface AgentV2NodeParameters {
     readonly needsFallback?: boolean;
 
     /** Default: {} */
-    readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number }, "enableStreaming"?: boolean } | { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
+    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number }, enableStreaming?: boolean } | { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

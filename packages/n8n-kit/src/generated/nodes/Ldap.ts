@@ -38,7 +38,7 @@ export interface LdapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attributes?: { "attribute": any } | { "add": any, "replace": any, "delete": any };
+    readonly attributes?: { attribute: { id: string, value?: string } } | { add: { id: string, value?: string }, replace: { id: string, value?: string }, delete: { id: string, value?: string } };
 
     /** The distinguished name of the subtree to search in */
     readonly baseDN?: string;
@@ -77,6 +77,6 @@ export interface LdapNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "attributes"?: any[], "pageSize"?: number, "scope"?: "base" | "one" | "sub" };
+    readonly options?: { attributes?: any[], pageSize?: number, scope?: "base" | "one" | "sub" };
 
 }

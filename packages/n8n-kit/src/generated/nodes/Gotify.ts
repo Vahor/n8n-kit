@@ -19,10 +19,10 @@ export interface GotifyNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "priority"?: number, "title"?: string };
+    readonly additionalFields?: { priority?: number, title?: string };
 
     /** Default: {} */
-    readonly options?: { "contentType"?: "text/plain" | "text/markdown" };
+    readonly options?: { contentType?: "text/plain" | "text/markdown" };
 
     readonly messageId?: string;
 

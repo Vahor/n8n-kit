@@ -24,13 +24,13 @@ export interface RocketchatNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { "alias"?: string, "avatar"?: string, "emoji"?: string };
+    readonly options?: { alias?: string, avatar?: string, emoji?: string };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Attachment"}
      */
-    readonly attachments?: { "color"?: string, "text"?: string, "ts"?: string, "thumbUrl"?: string, "messageLink"?: string, "collapsed"?: boolean, "authorName"?: string, "authorLink"?: string, "authorIcon"?: string, "title"?: string, "titleLink"?: string, "titleLinkDownload"?: boolean, "imageUrl"?: string, "audioUrl"?: string, "videoUrl"?: string, "fields"?: { "fieldsValues": any } };
+    readonly attachments?: { color?: string, text?: string, ts?: string, thumbUrl?: string, messageLink?: string, collapsed?: boolean, authorName?: string, authorLink?: string, authorIcon?: string, title?: string, titleLink?: string, titleLinkDownload?: boolean, imageUrl?: string, audioUrl?: string, videoUrl?: string, fields?: { fieldsValues: { short?: boolean, title?: string, value?: string } } };
 
     /** Type options: {"alwaysOpenEditWindow":true} */
     readonly attachmentsJson?: string;

@@ -69,7 +69,7 @@ export interface AirtableV1NodeParameters {
      * Additional options which decide which records should be returned
      * Default: {}
      */
-    readonly additionalOptions?: { "fields"?: string, "filterByFormula"?: string, "sort"?: { "property": any }, "view"?: string };
+    readonly additionalOptions?: { fields?: string, filterByFormula?: string, sort?: { property: { field?: string, direction?: "asc" | "desc" } }, view?: string };
 
     /**
      * Whether all fields should be sent to Airtable or only specific ones
@@ -78,6 +78,6 @@ export interface AirtableV1NodeParameters {
     readonly updateAllFields?: boolean;
 
     /** Default: {} */
-    readonly options?: { "bulkSize"?: number, "ignoreFields"?: string, "typecast"?: boolean };
+    readonly options?: { bulkSize?: number, ignoreFields?: string, typecast?: boolean };
 
 }

@@ -18,6 +18,6 @@ export interface DocumentGithubLoaderNodeParameters {
     readonly textSplittingMode?: "simple" | "custom";
 
     /** Default: {} */
-    readonly additionalOptions?: { "recursive"?: boolean, "ignorePaths"?: string };
+    readonly additionalOptions?: { recursive?: boolean, ignorePaths?: string };
 
 }

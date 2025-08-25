@@ -18,6 +18,6 @@ export interface VectorStorePineconeLoadNodeParameters {
     readonly pineconeNamespace?: string;
 
     /** Default: {} */
-    readonly options?: { "metadata"?: { "metadataValues": any } };
+    readonly options?: { metadata?: { metadataValues: { name: string, value?: string } } };
 
 }

@@ -37,7 +37,7 @@ export interface MediumNodeParameters {
     readonly content?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "canonicalUrl"?: string, "license"?: "all-rights-reserved" | "cc-40-by" | "cc-40-by-nc" | "cc-40-by-nc-nd" | "cc-40-by-nc-sa" | "cc-40-by-nd" | "cc-40-by-sa" | "cc-40-zero" | "public-domain", "notifyFollowers"?: boolean, "publishStatus"?: "public" | "draft" | "unlisted", "tags"?: string };
+    readonly additionalFields?: { canonicalUrl?: string, license?: "all-rights-reserved" | "cc-40-by" | "cc-40-by-nc" | "cc-40-by-nc-nd" | "cc-40-by-nc-sa" | "cc-40-by-nd" | "cc-40-by-sa" | "cc-40-zero" | "public-domain", notifyFollowers?: boolean, publishStatus?: "public" | "draft" | "unlisted", tags?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

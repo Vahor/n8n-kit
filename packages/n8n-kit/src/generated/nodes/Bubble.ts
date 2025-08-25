@@ -22,7 +22,7 @@ export interface BubbleNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "property": any };
+    readonly properties?: { property: { key?: string, value?: string } };
 
     /** ID of the object to retrieve */
     readonly objectId?: string;
@@ -40,6 +40,6 @@ export interface BubbleNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { "filters"?: { "filter": any }, "filtersJson"?: string, "sort"?: { "sortValue": any } };
+    readonly options?: { filters?: { filter: { key?: string, constraint_type?: "equals" | "not equal" | "is_empty" | "is_not_empty" | "text contains" | "not text contains" | "greater than" | "less than" | "in" | "not in" | "contains" | "not contains" | "empty" | "not empty" | "geographic_search", value?: string } }, filtersJson?: string, sort?: { sortValue: { sort_field?: string, descending?: boolean, geo_reference?: string } } };
 
 }

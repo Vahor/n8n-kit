@@ -19,6 +19,6 @@ export interface EmbeddingsHuggingFaceInferenceNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "endpointUrl"?: string, "provider"?: "black-forest-labs" | "cerebras" | "cohere" | "fal-ai" | "featherless-ai" | "fireworks-ai" | "groq" | "hf-inference" | "hyperbolic" | "nebius" | "novita" | "nscale" | "openai" | "ovhcloud" | "replicate" | "sambanova" | "together" | "auto" };
+    readonly options?: { endpointUrl?: string, provider?: "black-forest-labs" | "cerebras" | "cohere" | "fal-ai" | "featherless-ai" | "fireworks-ai" | "groq" | "hf-inference" | "hyperbolic" | "nebius" | "novita" | "nscale" | "openai" | "ovhcloud" | "replicate" | "sambanova" | "together" | "auto" };
 
 }

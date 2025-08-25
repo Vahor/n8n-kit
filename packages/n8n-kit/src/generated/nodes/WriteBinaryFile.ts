@@ -18,6 +18,6 @@ export interface WriteBinaryFileNodeParameters {
     readonly dataPropertyName?: string;
 
     /** Default: {} */
-    readonly options?: { "append"?: boolean };
+    readonly options?: { append?: boolean };
 
 }

@@ -26,7 +26,7 @@ export interface LemlistV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "campaignId"?: string, "type"?: "emailsBounced" | "emailsClicked" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed" };
+    readonly filters?: { campaignId?: string, type?: "emailsBounced" | "emailsClicked" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed" };
 
     /**
      * ID of the campaign to create the lead under. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -39,6 +39,6 @@ export interface LemlistV1NodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "companyName"?: string, "deduplicate"?: boolean, "firstName"?: string, "lastName"?: string, "icebreaker"?: string, "phone"?: string, "picture"?: string, "linkedinUrl"?: string };
+    readonly additionalFields?: { companyName?: string, deduplicate?: boolean, firstName?: string, lastName?: string, icebreaker?: string, phone?: string, picture?: string, linkedinUrl?: string };
 
 }

@@ -40,7 +40,7 @@ export interface GoogleBigQueryV1NodeParameters {
     readonly columns?: string;
 
     /** Default: {} */
-    readonly options?: { "ignoreUnknownValues"?: boolean, "skipInvalidRows"?: boolean, "templateSuffix"?: string, "traceId"?: string } | { "selectedFields"?: string };
+    readonly options?: { ignoreUnknownValues?: boolean, skipInvalidRows?: boolean, templateSuffix?: string, traceId?: string } | { selectedFields?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

@@ -34,6 +34,6 @@ export interface EmailReadImapV1NodeParameters {
     readonly dataPropertyAttachmentsPrefixName?: string;
 
     /** Default: {} */
-    readonly options?: { "customEmailConfig"?: string, "allowUnauthorizedCerts"?: boolean, "forceReconnect"?: number };
+    readonly options?: { customEmailConfig?: string, allowUnauthorizedCerts?: boolean, forceReconnect?: number };
 
 }

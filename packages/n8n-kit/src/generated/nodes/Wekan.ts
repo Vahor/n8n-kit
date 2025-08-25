@@ -25,7 +25,7 @@ export interface WekanNodeParameters {
     readonly owner?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "isActive"?: boolean, "isAdmin"?: boolean, "color"?: "belize" | "midnight" | "nephritis" | "pomegranate" | "pumpkin" | "wisteria", "isCommentOnly"?: boolean, "isNoComments"?: boolean, "permission"?: "private" | "public", "isWorker"?: boolean } | { "assignees"?: any[], "description"?: string, "members"?: any[] };
+    readonly additionalFields?: { isActive?: boolean, isAdmin?: boolean, color?: "belize" | "midnight" | "nephritis" | "pomegranate" | "pumpkin" | "wisteria", isCommentOnly?: boolean, isNoComments?: boolean, permission?: "private" | "public", isWorker?: boolean } | { assignees?: any[], description?: string, members?: any[] };
 
     /** The ID of the board to delete */
     readonly boardId?: string;
@@ -73,7 +73,7 @@ export interface WekanNodeParameters {
     readonly fromObject?: "list" | "swimlane";
 
     /** Default: {} */
-    readonly updateFields?: { "authorId"?: string, "assignees"?: any[], "color"?: "black" | "blue" | "crimson" | "darkgreen" | "gold" | "gray" | "green" | "indigo" | "lime" | "magenta" | "mistyrose" | "navy" | "orange" | "paleturquoise" | "peachpuff" | "pink" | "plum" | "purple" | "red" | "saddlebrown" | "silver" | "sky" | "slateblue" | "white" | "yellow", "description"?: string, "dueAt"?: string, "endAt"?: string, "labelIds"?: string, "listId"?: string, "members"?: any[], "isOverTime"?: boolean, "parentId"?: string, "receivedAt"?: string, "sort"?: number, "spentTime"?: number, "startAt"?: string, "swimlaneId"?: string, "title"?: string } | { "title"?: string, "isFinished"?: boolean };
+    readonly updateFields?: { authorId?: string, assignees?: any[], color?: "black" | "blue" | "crimson" | "darkgreen" | "gold" | "gray" | "green" | "indigo" | "lime" | "magenta" | "mistyrose" | "navy" | "orange" | "paleturquoise" | "peachpuff" | "pink" | "plum" | "purple" | "red" | "saddlebrown" | "silver" | "sky" | "slateblue" | "white" | "yellow", description?: string, dueAt?: string, endAt?: string, labelIds?: string, listId?: string, members?: any[], isOverTime?: boolean, parentId?: string, receivedAt?: string, sort?: number, spentTime?: number, startAt?: string, swimlaneId?: string, title?: string } | { title?: string, isFinished?: boolean };
 
     /** The comment text */
     readonly comment?: string;

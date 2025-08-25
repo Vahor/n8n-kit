@@ -29,12 +29,12 @@ export interface ChainLlmNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly messages?: { "messageValues": any };
+    readonly messages?: { messageValues: { type?: "AIMessagePromptTemplate" | "SystemMessagePromptTemplate" | "HumanMessagePromptTemplate", messageType?: "text" | "imageBinary" | "imageUrl", binaryImageDataKey: string, imageUrl: string, imageDetail?: "auto" | "low" | "high", message: string } };
 
     /**
      * Batch processing options for rate limiting
      * Default: {}
      */
-    readonly batching?: { "batchSize"?: number, "delayBetweenBatches"?: number };
+    readonly batching?: { batchSize?: number, delayBetweenBatches?: number };
 
 }

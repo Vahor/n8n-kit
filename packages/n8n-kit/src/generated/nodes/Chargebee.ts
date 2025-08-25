@@ -19,7 +19,7 @@ export interface ChargebeeNodeParameters {
      * Properties to set on the new user
      * Default: {}
      */
-    readonly properties?: { "id"?: string, "first_name"?: string, "last_name"?: string, "email"?: string, "phone"?: string, "company"?: string, "customProperties"?: { "property": any } };
+    readonly properties?: { id?: string, first_name?: string, last_name?: string, email?: string, phone?: string, company?: string, customProperties?: { property: { name?: string, value?: string } } };
 
     /**
      * Max. amount of results to return(< 100).
@@ -33,7 +33,7 @@ export interface ChargebeeNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "date": any, "total": any };
+    readonly filters?: { date: { operation?: "is" | "is_not" | "after" | "before", value?: string }, total: { operation?: "gte" | "gt" | "is" | "is_not" | "lte" | "lt", value?: number } };
 
     /** The ID of the invoice to get */
     readonly invoiceId?: string;

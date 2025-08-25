@@ -13,6 +13,6 @@ export interface OnfleetTriggerNodeParameters {
     readonly triggerOn?: "SMSRecipientOptOut" | "smsRecipientResponseMissed" | "taskArrival" | "taskAssigned" | "taskCloned" | "taskCompleted" | "taskCreated" | "taskDelayed" | "taskDeleted" | "taskEta" | "taskFailed" | "taskStarted" | "taskUnassigned" | "taskUpdated" | "workerCreated" | "workerDeleted" | "workerDuty";
 
     /** Default: {} */
-    readonly additionalFields?: { "name"?: string };
+    readonly additionalFields?: { name?: string };
 
 }

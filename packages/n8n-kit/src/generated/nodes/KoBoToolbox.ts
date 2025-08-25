@@ -32,10 +32,10 @@ export interface KoBoToolboxNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "sort"?: { "value": any } } | { "download"?: boolean, "binaryNamingScheme"?: "sequence" | "question", "dataPropertyAttachmentsPrefixName"?: string, "fields"?: string, "version"?: "download_url" | "download_small_url" | "download_medium_url" | "download_large_url", "selectMask"?: string, "numberMask"?: string, "reformat"?: boolean, "sort"?: string };
+    readonly options?: { sort?: { value: { descending?: boolean, ordering?: "asset_type" | "date_modified" | "name" | "owner__username" | "subscribers_count" } } } | { download?: boolean, binaryNamingScheme?: "sequence" | "question", dataPropertyAttachmentsPrefixName?: string, fields?: string, version?: "download_url" | "download_small_url" | "download_medium_url" | "download_large_url", selectMask?: string, numberMask?: string, reformat?: boolean, sort?: string };
 
     /** Default: {} */
-    readonly filters?: { "filter"?: string };
+    readonly filters?: { filter?: string };
 
     /** Hook ID (starts with h, e.g. hVehywQ2oXPYGHJHKtqth4) */
     readonly hookId?: string;

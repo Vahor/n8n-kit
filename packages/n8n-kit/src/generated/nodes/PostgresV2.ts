@@ -41,7 +41,7 @@ export interface PostgresV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly where?: { "values": any };
+    readonly where?: { values: { column?: string, condition?: "equal" | "!=" | "LIKE" | ">" | "<" | ">=" | "<=" | "IS NULL" | "IS NOT NULL", value?: string } };
 
     /**
      * How to combine the conditions defined in "Select Rows": AND requires all conditions to be true, OR requires at least one condition to be true
@@ -50,7 +50,7 @@ export interface PostgresV2NodeParameters {
     readonly combineConditions?: "AND" | "OR";
 
     /** Default: {} */
-    readonly options?: { "cascade"?: boolean, "connectionTimeout"?: number, "delayClosingIdleConnection"?: number, "queryBatching"?: "single" | "independently" | "transaction", "queryReplacement"?: string, "treatQueryParametersInSingleQuotesAsText"?: boolean, "outputColumns"?: any[], "largeNumbersOutput"?: "numbers" | "text", "skipOnConflict"?: boolean, "replaceEmptyStrings"?: boolean };
+    readonly options?: { cascade?: boolean, connectionTimeout?: number, delayClosingIdleConnection?: number, queryBatching?: "single" | "independently" | "transaction", queryReplacement?: string, treatQueryParametersInSingleQuotesAsText?: boolean, outputColumns?: any[], largeNumbersOutput?: "numbers" | "text", skipOnConflict?: boolean, replaceEmptyStrings?: boolean };
 
     /**
      * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
@@ -68,7 +68,7 @@ export interface PostgresV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Value","multipleValues":true}
      */
-    readonly valuesToSend?: { "values": any };
+    readonly valuesToSend?: { values: { column?: string, value?: string } };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -84,7 +84,7 @@ export interface PostgresV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { "values": any };
+    readonly sort?: { values: { column?: string, direction?: "ASC" | "DESC" } };
 
     /**
      * The column to compare when finding the rows to update. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/" target="_blank">expression</a>.

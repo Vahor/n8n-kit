@@ -31,13 +31,13 @@ export interface TwitterV2NodeParameters {
     readonly text?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "attachments"?: string } | { "location"?: string, "attachments"?: string, "inQuoteToStatusId"?: {
+    readonly additionalFields?: { attachments?: string } | { location?: string, attachments?: string, inQuoteToStatusId?: {
 	value: string,
 	mode: "id" | "url",
-}, "inReplyToStatusId"?: {
+}, inReplyToStatusId?: {
 	value: string,
 	mode: "id" | "url",
-} } | { "sortOrder"?: "recency" | "relevancy", "startTime"?: string, "endTime"?: string, "tweetFieldsObject"?: ("attachments" | "author_id" | "context_annotations" | "conversation_id" | "created_at" | "edit_controls" | "entities" | "geo" | "id" | "in_reply_to_user_id" | "lang" | "non_public_metrics" | "public_metrics" | "organic_metrics" | "promoted_metrics" | "possibly_sensitive" | "referenced_tweets" | "reply_settings" | "source" | "text" | "withheld")[] };
+} } | { sortOrder?: "recency" | "relevancy", startTime?: string, endTime?: string, tweetFieldsObject?: ("attachments" | "author_id" | "context_annotations" | "conversation_id" | "created_at" | "edit_controls" | "entities" | "geo" | "id" | "in_reply_to_user_id" | "lang" | "non_public_metrics" | "public_metrics" | "organic_metrics" | "promoted_metrics" | "possibly_sensitive" | "referenced_tweets" | "reply_settings" | "source" | "text" | "withheld")[] };
 
     /**
      * The list you want to add the user to

@@ -15,7 +15,7 @@ export interface AggregateNodeParameters {
      * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToAggregate?: { "fieldToAggregate": any };
+    readonly fieldsToAggregate?: { fieldToAggregate: { fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string } };
 
     /**
      * The name of the output field to put the data in
@@ -31,6 +31,6 @@ export interface AggregateNodeParameters {
     readonly fieldsToInclude?: string;
 
     /** Default: {} */
-    readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean };
+    readonly options?: { disableDotNotation?: boolean, mergeLists?: boolean, includeBinaries?: boolean, keepOnlyUnique?: boolean, keepMissing?: boolean };
 
 }

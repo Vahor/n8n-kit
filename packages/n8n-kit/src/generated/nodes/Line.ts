@@ -18,6 +18,6 @@ export interface LineNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "imageUi"?: { "imageValue": any }, "notificationDisabled"?: boolean, "stickerUi"?: { "stickerValue": any } };
+    readonly additionalFields?: { imageUi?: { imageValue: { binaryData?: boolean, imageFullsize?: string, imageThumbnail?: string, binaryProperty?: string } }, notificationDisabled?: boolean, stickerUi?: { stickerValue: { stickerId?: number, stickerPackageId?: number } } };
 
 }

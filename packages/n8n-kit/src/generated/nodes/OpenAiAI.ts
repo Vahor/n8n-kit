@@ -47,10 +47,10 @@ export interface OpenAiAINodeParameters {
     readonly file_ids?: any[];
 
     /** Default: {} */
-    readonly options?: { "temperature"?: number, "topP"?: number, "failIfExists"?: boolean } | { "baseURL"?: string, "maxRetries"?: number, "timeout"?: number, "preserveOriginalTools"?: boolean } | { "codeInterpreter"?: boolean, "description"?: string, "file_ids"?: any[], "instructions"?: string, "knowledgeRetrieval"?: boolean, "modelId"?: {
+    readonly options?: { temperature?: number, topP?: number, failIfExists?: boolean } | { baseURL?: string, maxRetries?: number, timeout?: number, preserveOriginalTools?: boolean } | { codeInterpreter?: boolean, description?: string, file_ids?: any[], instructions?: string, knowledgeRetrieval?: boolean, modelId?: {
 	value: string,
 	mode: "list" | "id",
-}, "name"?: string, "removeCustomTools"?: boolean, "temperature"?: number, "topP"?: number } | { "response_format"?: "mp3" | "opus" | "aac" | "flac", "speed"?: number, "binaryPropertyOutput"?: string } | { "language"?: string, "temperature"?: number } | { "temperature"?: number } | { "purpose"?: "assistants" | "fine-tune" } | { "purpose"?: "any" | "assistants" | "fine-tune" } | { "n"?: number, "dalleQuality"?: "hd" | "standard", "quality"?: "high" | "medium" | "low", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792" | "1024x1024" | "1024x1536" | "1536x1024", "style"?: "natural" | "vivid", "returnImageUrls"?: boolean, "binaryPropertyOutput"?: string } | { "detail"?: "auto" | "low" | "high", "maxTokens"?: number } | { "useStableModel"?: boolean } | { "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number, "reasoning_effort"?: "low" | "medium" | "high", "maxToolsIterations"?: number };
+}, name?: string, removeCustomTools?: boolean, temperature?: number, topP?: number } | { response_format?: "mp3" | "opus" | "aac" | "flac", speed?: number, binaryPropertyOutput?: string } | { language?: string, temperature?: number } | { temperature?: number } | { purpose?: "assistants" | "fine-tune" } | { purpose?: "any" | "assistants" | "fine-tune" } | { n?: number, dalleQuality?: "hd" | "standard", quality?: "high" | "medium" | "low", size?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792" | "1024x1024" | "1024x1536" | "1536x1024", style?: "natural" | "vivid", returnImageUrls?: boolean, binaryPropertyOutput?: string } | { detail?: "auto" | "low" | "high", maxTokens?: number } | { useStableModel?: boolean } | { frequency_penalty?: number, maxTokens?: number, n?: number, presence_penalty?: number, temperature?: number, topP?: number, reasoning_effort?: "low" | "medium" | "high", maxToolsIterations?: number };
 
     /**
      * Assistant to respond to the message. You can add, modify or remove assistants in the <a href="https://platform.openai.com/playground?mode=assistant" target="_blank">playground</a>.
@@ -116,7 +116,7 @@ export interface OpenAiAINodeParameters {
      * Default: {"values":[{"content":""}]}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly messages?: { "values": any };
+    readonly messages?: { values: { content?: string, role?: "user" | "assistant" | "system" } };
 
     /** Whether to attempt to return the response in JSON format. Compatible with GPT-4 Turbo and all GPT-3.5 Turbo models newer than gpt-3.5-turbo-1106. */
     readonly jsonOutput?: boolean;

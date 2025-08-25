@@ -22,10 +22,10 @@ export interface GmailTriggerNodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly filters?: { "includeSpamTrash"?: boolean, "includeDrafts"?: boolean, "labelIds"?: any[], "q"?: string, "readStatus"?: "both" | "unread" | "read", "sender"?: string };
+    readonly filters?: { includeSpamTrash?: boolean, includeDrafts?: boolean, labelIds?: any[], q?: string, readStatus?: "both" | "unread" | "read", sender?: string };
 
     /** Default: {} */
-    readonly options?: { "dataPropertyAttachmentsPrefixName"?: string, "downloadAttachments"?: boolean };
+    readonly options?: { dataPropertyAttachmentsPrefixName?: string, downloadAttachments?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

@@ -44,7 +44,7 @@ export interface SlackV2NodeParameters {
     readonly userIds?: any[];
 
     /** Default: {} */
-    readonly options?: { "includeNumMembers"?: boolean } | { "channelId"?: string, "returnIm"?: boolean, "users"?: any[] } | { "searchChannel"?: any[] } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "fileComment"?: string } | { "channelId"?: string, "fileId"?: string, "fileComment"?: string, "timestamp"?: number } | { "channelIds"?: any[], "channelId"?: string, "fileName"?: string, "initialComment"?: string, "threadTs"?: string, "title"?: string } | { "customFieldUi"?: { "customFieldValues": any }, "email"?: string, "first_name"?: string, "last_name"?: string, "status"?: { "set_status": any }, "user"?: string } | { "include_count"?: boolean } | { "include_count"?: boolean, "include_disabled"?: boolean, "include_users"?: boolean };
+    readonly options?: { includeNumMembers?: boolean } | { channelId?: string, returnIm?: boolean, users?: any[] } | { searchChannel?: any[] } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { fileComment?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: number } | { channelIds?: any[], channelId?: string, fileName?: string, initialComment?: string, threadTs?: string, title?: string } | { customFieldUi?: { customFieldValues: { id?: string, value?: string, alt?: string } }, email?: string, first_name?: string, last_name?: string, status?: { set_status: { status_emoji?: string, status_expiration?: string, status_text?: string } }, user?: string } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -63,7 +63,7 @@ export interface SlackV2NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "excludeArchived"?: boolean, "types"?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { "inclusive"?: boolean, "latest"?: string, "oldest"?: string } | { "channelId"?: string, "showFilesHidden"?: boolean, "tsFrom"?: string, "tsTo"?: string, "types"?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], "userId"?: string };
+    readonly filters?: { excludeArchived?: boolean, types?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { inclusive?: boolean, latest?: string, oldest?: string } | { channelId?: string, showFilesHidden?: boolean, tsFrom?: string, tsTo?: string, types?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], userId?: string };
 
     /** Whether to resolve the data automatically. By default the response only contain the ID to resource. */
     readonly resolveData?: boolean;
@@ -112,16 +112,19 @@ export interface SlackV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "fallback"?: string, "text"?: string, "title"?: string, "title_link"?: string, "color"?: string, "pretext"?: string, "author_name"?: string, "author_link"?: string, "author_icon"?: string, "image_url"?: string, "thumb_url"?: string, "footer"?: string, "footer_icon"?: string, "ts"?: number, "fields"?: { "item": any } };
+    readonly attachments?: { fallback?: string, text?: string, title?: string, title_link?: string, color?: string, pretext?: string, author_name?: string, author_link?: string, author_icon?: string, image_url?: string, thumb_url?: string, footer?: string, footer_icon?: string, ts?: number, fields?: { item: { title?: string, value?: string, short?: boolean } } };
 
     /**
      * Other options to set
      * Default: {}
      */
-    readonly otherOptions?: { "includeLinkToWorkflow"?: boolean, "botProfile"?: { "imageValues": any }, "link_names"?: boolean, "thread_ts"?: { "replyValues": any }, "mrkdwn"?: boolean, "unfurl_links"?: boolean, "unfurl_media"?: boolean, "ephemeral"?: { "ephemeralValues": any } | boolean, "sendAsUser"?: string } | { "includeLinkToWorkflow"?: boolean };
+    readonly otherOptions?: { includeLinkToWorkflow?: boolean, botProfile?: { imageValues: { profilePhotoType?: "image" | "emoji", icon_emoji?: string, icon_url?: string } }, link_names?: boolean, thread_ts?: { replyValues: { thread_ts?: number, reply_broadcast?: boolean } }, mrkdwn?: boolean, unfurl_links?: boolean, unfurl_media?: boolean, ephemeral?: { ephemeralValues: { user?: {
+	value: string,
+	mode: "list" | "id",
+}, ephemeral?: boolean } } | boolean, sendAsUser?: string } | { includeLinkToWorkflow?: boolean };
 
     /** Default: {} */
-    readonly updateFields?: { "link_names"?: boolean, "parse"?: "client" | "full" | "none" } | { "channels"?: any[], "description"?: string, "handle"?: string, "include_count"?: boolean, "name"?: string };
+    readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: any[], description?: string, handle?: string, include_count?: boolean, name?: string };
 
     /** The text to search for within messages */
     readonly query?: string;
@@ -151,10 +154,10 @@ export interface SlackV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
 
     /** Default: {} */
-    readonly approvalOptions?: { "values": any };
+    readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, buttonApprovalStyle?: "primary" | "secondary", disapproveLabel?: string, buttonDisapprovalStyle?: "primary" | "secondary" } };
 
     /** Choose whether to add a star to a message or a file */
     readonly target?: "message" | "file";
@@ -174,12 +177,12 @@ export interface SlackV2NodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Default: {} */
-    readonly Options?: { "channelIds"?: any[], "description"?: string, "handle"?: string, "include_count"?: boolean };
+    readonly Options?: { channelIds?: any[], description?: string, handle?: string, include_count?: boolean };
 
     /** The encoded ID of the User Group to update */
     readonly userGroupId?: string;
 
     /** Default: {} */
-    readonly option?: { "include_count"?: boolean };
+    readonly option?: { include_count?: boolean };
 
 }

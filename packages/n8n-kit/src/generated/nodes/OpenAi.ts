@@ -33,7 +33,7 @@ export interface OpenAiNodeParameters {
      * Default: {}
      * Type options: {"sortable":true,"multipleValues":true}
      */
-    readonly prompt?: { "messages": any } | string;
+    readonly prompt?: { messages: { role?: "assistant" | "system" | "user", content?: string } } | string;
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
@@ -45,7 +45,7 @@ export interface OpenAiNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "echo"?: boolean, "frequency_penalty"?: number, "maxTokens"?: number, "n"?: number, "presence_penalty"?: number, "temperature"?: number, "topP"?: number } | { "n"?: number, "quality"?: "hd" | "standard", "size"?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792", "style"?: "natural" | "vivid" };
+    readonly options?: { echo?: boolean, frequency_penalty?: number, maxTokens?: number, n?: number, presence_penalty?: number, temperature?: number, topP?: number } | { n?: number, quality?: "hd" | "standard", size?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792", style?: "natural" | "vivid" };
 
     /**
      * The model to use for image generation

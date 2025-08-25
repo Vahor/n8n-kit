@@ -35,10 +35,10 @@ export interface AwsDynamoDBNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any };
+    readonly fieldsUi?: { fieldValues: { fieldId?: string, fieldValue?: string } };
 
     /** Default: {} */
-    readonly additionalFields?: { "eavUi": { "eavValues": any }, "conditionExpression"?: string, "eanUi"?: { "eanValues": any } } | { "conditionExpression"?: string, "eanUi"?: { "eanValues": any }, "expressionAttributeUi": { "expressionAttributeValues": any } } | { "projectionExpression"?: string, "eanUi"?: { "eanValues": any }, "readType"?: "stronglyConsistentRead" | "eventuallyConsistentRead" };
+    readonly additionalFields?: { eavUi: { eavValues: { attribute?: string, type?: "N" | "S", value?: string } }, conditionExpression?: string, eanUi?: { eanValues: { key?: string, value?: string } } } | { conditionExpression?: string, eanUi?: { eanValues: { key?: string, value?: string } }, expressionAttributeUi: { expressionAttributeValues: { attribute?: string, type?: "N" | "S", value?: string } } } | { projectionExpression?: string, eanUi?: { eanValues: { key?: string, value?: string } }, readType?: "stronglyConsistentRead" | "eventuallyConsistentRead" };
 
     /**
      * Use ReturnValues if you want to get the item attributes as they appeared before they were deleted
@@ -51,7 +51,7 @@ export interface AwsDynamoDBNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly keysUi?: { "keyValues": any };
+    readonly keysUi?: { keyValues: { key?: string, type?: "B" | "N" | "S", value?: string } };
 
     /**
      * Whether to return a simplified version of the response instead of the raw data
@@ -76,7 +76,7 @@ export interface AwsDynamoDBNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"minValue":1}
      */
-    readonly eavUi?: { "eavValues": any };
+    readonly eavUi?: { eavValues: { attribute?: string, type?: "N" | "S", value?: string } };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -89,6 +89,6 @@ export interface AwsDynamoDBNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "indexName"?: string, "projectionExpression"?: string, "filterExpression"?: string, "eanUi"?: { "eanValues": any } };
+    readonly options?: { indexName?: string, projectionExpression?: string, filterExpression?: string, eanUi?: { eanValues: { key?: string, value?: string } } };
 
 }

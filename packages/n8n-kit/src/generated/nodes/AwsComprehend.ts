@@ -34,6 +34,6 @@ export interface AwsComprehendNodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "endpointArn"?: string };
+    readonly additionalFields?: { endpointArn?: string };
 
 }

@@ -38,7 +38,7 @@ export interface AwsElbNodeParameters {
     readonly subnets?: any[];
 
     /** Default: {} */
-    readonly additionalFields?: { "securityGroups"?: any[], "tagsUi"?: { "tagValues": any } };
+    readonly additionalFields?: { securityGroups?: any[], tagsUi?: { tagValues: { key?: string, value?: string } } };
 
     /** Unique identifier for a particular loadBalancer */
     readonly loadBalancerId?: string;
@@ -54,7 +54,7 @@ export interface AwsElbNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "names"?: string };
+    readonly filters?: { names?: string };
 
     /**
      * Unique identifier for a particular loadBalancer. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

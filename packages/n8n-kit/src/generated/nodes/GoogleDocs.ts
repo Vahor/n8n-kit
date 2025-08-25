@@ -47,9 +47,9 @@ export interface GoogleDocsNodeParameters {
      * Default: {"actionFields":[{"object":"text","action":"insert","locationChoice":"endOfSegmentLocation","index":0,"text":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly actionsUi?: { "actionFields": any };
+    readonly actionsUi?: { actionFields: { object?: "footer" | "header" | "namedRange" | "pageBreak" | "paragraphBullets" | "positionedObject" | "table" | "tableColumn" | "tableRow" | "text", action?: "replaceAll" | "insert" | "create" | "delete" | "delete" | "insert" | "insert" | "delete", insertSegment?: "header" | "body" | "footer", segmentId?: string, index?: number, name?: string, startIndex?: number, endIndex?: number, bulletPreset?: "BULLET_DISC_CIRCLE_SQUARE" | "BULLET_CHECKBOX" | "NUMBERED_DECIMAL_NESTED", footerId?: string, headerId?: string, namedRangeReference?: "namedRangeId" | "name", value?: string, objectId?: string, locationChoice?: "endOfSegmentLocation" | "location", rows?: number, columns?: number, text?: string, replaceText?: string, matchCase?: boolean, insertPosition?: false | true, rowIndex?: number, columnIndex?: number } };
 
     /** Default: {} */
-    readonly updateFields?: { "writeControlObject": any };
+    readonly updateFields?: { writeControlObject: { control?: "targetRevisionId" | "requiredRevisionId", value?: string } };
 
 }

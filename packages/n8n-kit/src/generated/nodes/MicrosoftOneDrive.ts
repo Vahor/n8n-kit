@@ -18,13 +18,13 @@ export interface MicrosoftOneDriveNodeParameters {
     readonly fileId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "name"?: string };
+    readonly additionalFields?: { name?: string };
 
     /**
      * Reference to the parent item the copy will be created in <a href="https://docs.microsoft.com/en-us/onedrive/developer/rest-api/resources/itemreference?view=odsp-graph-online"> Details </a>
      * Default: {}
      */
-    readonly parentReference?: { "driveId"?: string, "driveType"?: string, "id"?: string, "listId"?: string, "name"?: string, "path"?: string, "shareId"?: string, "siteId"?: string };
+    readonly parentReference?: { driveId?: string, driveType?: string, id?: string, listId?: string, name?: string, path?: string, shareId?: string, siteId?: string };
 
     /** Default: "data" */
     readonly binaryPropertyName?: string;
@@ -60,7 +60,7 @@ export interface MicrosoftOneDriveNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly options?: { "parentFolderId"?: string };
+    readonly options?: { parentFolderId?: string };
 
     readonly folderId?: string;
 

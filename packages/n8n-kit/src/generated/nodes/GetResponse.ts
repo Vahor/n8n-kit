@@ -27,13 +27,13 @@ export interface GetResponseNodeParameters {
     readonly campaignId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: any[] };
+    readonly additionalFields?: { customFieldsUi?: { customFieldValues: { customFieldId?: string, value?: string } }, dayOfCycle?: string, ipAddress?: string, name?: string, note?: string, scoring?: number, tags?: any[] };
 
     /** ID of contact to delete */
     readonly contactId?: string;
 
     /** Default: {} */
-    readonly options?: { "ipAddress"?: string, "messageId"?: string } | { "fields"?: string } | { "campaignId"?: string, "changeOnFrom"?: string, "changeOnTo"?: string, "createdOnFrom"?: string, "createdOnTo"?: string, "exactMatch"?: boolean, "fields"?: string, "name"?: string, "origin"?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", "sortBy"?: "campaignId" | "changedOn" | "createdOn" | "email", "sortOrder"?: "ASC" | "DESC" };
+    readonly options?: { ipAddress?: string, messageId?: string } | { fields?: string } | { campaignId?: string, changeOnFrom?: string, changeOnTo?: string, createdOnFrom?: string, createdOnTo?: string, exactMatch?: boolean, fields?: string, name?: string, origin?: "api" | "copy" | "email" | "forward" | "import" | "iphone" | "landing_page" | "leads" | "panel" | "sale" | "survey" | "webinar" | "www", sortBy?: "campaignId" | "changedOn" | "createdOn" | "email", sortOrder?: "ASC" | "DESC" };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -46,6 +46,6 @@ export interface GetResponseNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "campaignId"?: string, "customFieldsUi"?: { "customFieldValues": any }, "dayOfCycle"?: string, "email"?: string, "ipAddress"?: string, "name"?: string, "note"?: string, "scoring"?: number, "tags"?: any[] };
+    readonly updateFields?: { campaignId?: string, customFieldsUi?: { customFieldValues: { customFieldId?: string, value?: string } }, dayOfCycle?: string, email?: string, ipAddress?: string, name?: string, note?: string, scoring?: number, tags?: any[] };
 
 }

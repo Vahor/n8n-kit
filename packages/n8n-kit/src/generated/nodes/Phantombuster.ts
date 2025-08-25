@@ -38,7 +38,7 @@ export interface PhantombusterNodeParameters {
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "prevContainerId"?: string, "prevStatus"?: "finished" | "lauch error" | "never launched" | "running" | "starting" | "unknown", "prevRuntimeEventIndex"?: number } | { "argumentsJson"?: string, "argumentsUi"?: { "argumentValues": any }, "bonusArgumentUi"?: { "bonusArgumentValue": any }, "bonusArgumentJson"?: string, "manualLaunch"?: boolean, "maxInstanceCount"?: number, "saveArgument"?: string };
+    readonly additionalFields?: { prevContainerId?: string, prevStatus?: "finished" | "lauch error" | "never launched" | "running" | "starting" | "unknown", prevRuntimeEventIndex?: number } | { argumentsJson?: string, argumentsUi?: { argumentValues: { key?: string, value?: string } }, bonusArgumentUi?: { bonusArgumentValue: { key?: string, value?: string } }, bonusArgumentJson?: string, manualLaunch?: boolean, maxInstanceCount?: number, saveArgument?: string };
 
     readonly jsonParameters?: boolean;
 

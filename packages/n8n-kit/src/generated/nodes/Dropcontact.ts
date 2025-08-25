@@ -23,9 +23,9 @@ export interface DropcontactNodeParameters {
     readonly simplify?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "num_siren"?: string, "siret"?: string, "company"?: string, "country"?: string, "first_name"?: string, "full_name"?: string, "last_name"?: string, "linkedin"?: string, "phone"?: string, "website"?: string };
+    readonly additionalFields?: { num_siren?: string, siret?: string, company?: string, country?: string, first_name?: string, full_name?: string, last_name?: string, linkedin?: string, phone?: string, website?: string };
 
     /** Default: {} */
-    readonly options?: { "waitTime"?: number, "siren"?: boolean, "language"?: "en" | "fr" };
+    readonly options?: { waitTime?: number, siren?: boolean, language?: "en" | "fr" };
 
 }

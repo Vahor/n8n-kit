@@ -25,7 +25,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToInclude?: { "fields": any };
+    readonly fieldsToInclude?: { fields: { fieldName?: string } };
 
     /** Default: "aggregateIndividualFields" */
     readonly aggregate?: "aggregateIndividualFields" | "aggregateAllItemData";
@@ -34,7 +34,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToAggregate?: { "fieldToAggregate": any };
+    readonly fieldsToAggregate?: { fieldToAggregate: { fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string } };
 
     /**
      * The name of the output field to put the data in
@@ -46,7 +46,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToExclude?: { "fields": any };
+    readonly fieldsToExclude?: { fields: { fieldName?: string } };
 
     /**
      * The fields of the input items to compare to see if they are the same
@@ -58,7 +58,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToCompare?: { "fields": any };
+    readonly fieldsToCompare?: { fields: { fieldName?: string } };
 
     /**
      * The fields of the input items to compare to see if they are the same
@@ -71,7 +71,7 @@ export interface ItemListsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sortFieldsUi?: { "sortField": any };
+    readonly sortFieldsUi?: { sortField: { fieldName: string, order?: "ascending" | "descending" } };
 
     /**
      * Javascript code to determine the order of any two items
@@ -94,13 +94,13 @@ export interface ItemListsV1NodeParameters {
     readonly keep?: "firstItems" | "lastItems";
 
     /** Default: {} */
-    readonly options?: { "removeOtherFields"?: boolean, "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "mergeLists"?: boolean, "keepMissing"?: boolean } | { "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
+    readonly options?: { removeOtherFields?: boolean, disableDotNotation?: boolean } | { disableDotNotation?: boolean } | { disableDotNotation?: boolean, destinationFieldName?: string, mergeLists?: boolean, keepMissing?: boolean } | { disableDotNotation?: boolean, outputFormat?: "separateItems" | "singleItem", skipEmptySplitFields?: boolean };
 
     /**
      * Default: {"values":[{"aggregation":"count","field":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSummarize?: { "values": any };
+    readonly fieldsToSummarize?: { values: { aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string } };
 
     /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;

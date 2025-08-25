@@ -96,6 +96,7 @@ export type { CrowdDevTriggerNodeParameters } from "./CrowdDevTrigger";
 export type { CryptoNodeParameters } from "./Crypto";
 export type { CustomerIoNodeParameters } from "./CustomerIo";
 export type { CustomerIoTriggerNodeParameters } from "./CustomerIoTrigger";
+export type { DataTableNodeParameters } from "./DataTable";
 export type { DateTimeV1NodeParameters } from "./DateTimeV1";
 export type { DateTimeV2NodeParameters } from "./DateTimeV2";
 export type { DebugHelperNodeParameters } from "./DebugHelper";

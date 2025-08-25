@@ -27,7 +27,7 @@ export interface CustomerIoNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "steps"?: number, "type"?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook" } | { "customProperties"?: { "customProperty": any }, "email"?: string, "createdAt"?: string } | { "customAttributes"?: { "customAttribute": any }, "type"?: string } | { "customAttributes"?: { "customAttribute": any } };
+    readonly additionalFields?: { steps?: number, type?: "email" | "empty" | "push" | "slack" | "twilio" | "urbanAirship" | "webhook" } | { customProperties?: { customProperty: { key: string, value: string } }, email?: string, createdAt?: string } | { customAttributes?: { customAttribute: { key: string, value: string } }, type?: string } | { customAttributes?: { customAttribute: { key: string, value: string } } };
 
     /** The unique identifier for the customer */
     readonly id?: string;

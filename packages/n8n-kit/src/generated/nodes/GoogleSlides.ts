@@ -41,10 +41,10 @@ export interface GoogleSlidesNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly textUi?: { "textValues": any };
+    readonly textUi?: { textValues: { matchCase?: boolean, pageObjectIds?: any[], text?: string, replaceText?: string } };
 
     /** Default: {} */
-    readonly options?: { "revisionId"?: string };
+    readonly options?: { revisionId?: string };
 
     /** Name of the binary property to which to write the data of the read page */
     readonly download?: boolean;

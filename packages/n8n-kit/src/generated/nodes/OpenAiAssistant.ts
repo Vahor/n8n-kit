@@ -43,6 +43,6 @@ export interface OpenAiAssistantNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "baseURL"?: string, "maxRetries"?: number, "timeout"?: number };
+    readonly options?: { baseURL?: string, maxRetries?: number, timeout?: number };
 
 }

@@ -13,6 +13,6 @@ export interface RabbitMQTriggerNodeParameters {
     readonly queue?: string;
 
     /** Default: {} */
-    readonly options?: { "arguments"?: { "argument": any }, "assertExchange"?: boolean, "assertQueue"?: boolean, "autoDelete"?: boolean, "binding"?: { "bindings": any }, "contentIsBinary"?: boolean, "acknowledge"?: "executionFinishes" | "executionFinishesSuccessfully" | "immediately" | "laterMessageNode", "durable"?: boolean, "exclusive"?: boolean, "headers"?: { "header": any }, "jsonParseBody"?: boolean, "onlyContent"?: boolean, "parallelMessages"?: number };
+    readonly options?: { arguments?: { argument: { key?: string, value?: string } }, assertExchange?: boolean, assertQueue?: boolean, autoDelete?: boolean, binding?: { bindings: { exchange?: string, routingKey?: string } }, contentIsBinary?: boolean, acknowledge?: "executionFinishes" | "executionFinishesSuccessfully" | "immediately" | "laterMessageNode", durable?: boolean, exclusive?: boolean, headers?: { header: { key?: string, value?: string } }, jsonParseBody?: boolean, onlyContent?: boolean, parallelMessages?: number };
 
 }

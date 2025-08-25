@@ -22,6 +22,6 @@ export interface LmOpenAiNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "baseURL"?: string, "frequencyPenalty"?: number, "maxTokens"?: number, "presencePenalty"?: number, "temperature"?: number, "timeout"?: number, "maxRetries"?: number, "topP"?: number };
+    readonly options?: { baseURL?: string, frequencyPenalty?: number, maxTokens?: number, presencePenalty?: number, temperature?: number, timeout?: number, maxRetries?: number, topP?: number };
 
 }

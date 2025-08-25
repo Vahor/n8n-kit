@@ -72,7 +72,7 @@ export interface GithubNodeParameters {
      * Additional fields to add
      * Default: {}
      */
-    readonly additionalParameters?: { "author": any, "branch": any, "committer": any } | { "reference"?: string };
+    readonly additionalParameters?: { author: { name?: string, email?: string }, branch: { branch?: string }, committer: { name?: string, email?: string } } | { reference?: string };
 
     /**
      * Whether to set the data of the file as binary property instead of returning the raw API response
@@ -93,13 +93,13 @@ export interface GithubNodeParameters {
      * Default: {"label":""}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Label"}
      */
-    readonly labels?: { "label"?: string };
+    readonly labels?: { label?: string };
 
     /**
      * Default: {"assignee":""}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Assignee"}
      */
-    readonly assignees?: { "assignee"?: string };
+    readonly assignees?: { assignee?: string };
 
     /** The number of the issue on which to create the comment on */
     readonly issueNumber?: number;
@@ -108,7 +108,7 @@ export interface GithubNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly editFields?: { "assignees"?: { "assignee"?: string }, "body"?: string, "labels"?: { "label"?: string }, "state"?: "closed" | "open", "state_reason"?: "completed" | "not_planned" | "reopened", "title"?: string };
+    readonly editFields?: { assignees?: { assignee?: string }, body?: string, labels?: { label?: string }, state?: "closed" | "open", state_reason?: "completed" | "not_planned" | "reopened", title?: string };
 
     /**
      * The reason for locking the issue
@@ -123,7 +123,7 @@ export interface GithubNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field"}
      */
-    readonly additionalFields?: { "name"?: string, "body"?: string, "draft"?: boolean, "prerelease"?: boolean, "target_commitish"?: string } | { "body"?: string, "draft"?: boolean, "name"?: string, "prerelease"?: boolean, "tag_name"?: string, "target_commitish"?: string } | { "commitId"?: string };
+    readonly additionalFields?: { name?: string, body?: string, draft?: boolean, prerelease?: boolean, target_commitish?: string } | { body?: string, draft?: boolean, name?: string, prerelease?: boolean, tag_name?: string, target_commitish?: string } | { commitId?: string };
 
     readonly release_id?: string;
 
@@ -141,13 +141,13 @@ export interface GithubNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
-    readonly getRepositoryIssuesFilters?: { "assignee"?: string, "creator"?: string, "mentioned"?: string, "labels"?: string, "since"?: string, "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "comments", "direction"?: "asc" | "desc" };
+    readonly getRepositoryIssuesFilters?: { assignee?: string, creator?: string, mentioned?: string, labels?: string, since?: string, state?: "all" | "closed" | "open", sort?: "created" | "updated" | "comments", direction?: "asc" | "desc" };
 
     /**
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
-    readonly getRepositoryPullRequestsFilters?: { "state"?: "all" | "closed" | "open", "sort"?: "created" | "updated" | "popularity" | "long-running", "direction"?: "asc" | "desc" };
+    readonly getRepositoryPullRequestsFilters?: { state?: "all" | "closed" | "open", sort?: "created" | "updated" | "popularity" | "long-running", direction?: "asc" | "desc" };
 
     /** The number of the pull request */
     readonly pullRequestNumber?: number;

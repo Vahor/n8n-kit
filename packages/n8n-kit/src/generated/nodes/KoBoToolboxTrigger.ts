@@ -19,6 +19,6 @@ export interface KoBoToolboxTriggerNodeParameters {
     readonly triggerOn?: "formSubmission";
 
     /** Default: {} */
-    readonly formatOptions?: { "download"?: boolean, "binaryNamingScheme"?: "sequence" | "question", "dataPropertyAttachmentsPrefixName"?: string, "version"?: "download_url" | "download_small_url" | "download_medium_url" | "download_large_url", "selectMask"?: string, "numberMask"?: string, "reformat"?: boolean };
+    readonly formatOptions?: { download?: boolean, binaryNamingScheme?: "sequence" | "question", dataPropertyAttachmentsPrefixName?: string, version?: "download_url" | "download_small_url" | "download_medium_url" | "download_large_url", selectMask?: string, numberMask?: string, reformat?: boolean };
 
 }

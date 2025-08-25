@@ -34,7 +34,7 @@ export interface VectorStoreMilvusNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { "clearCollection"?: boolean };
+    readonly options?: { clearCollection?: boolean };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

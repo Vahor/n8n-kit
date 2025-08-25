@@ -22,6 +22,6 @@ export interface StravaTriggerNodeParameters {
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly options?: { "deleteIfExist"?: boolean };
+    readonly options?: { deleteIfExist?: boolean };
 
 }

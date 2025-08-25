@@ -26,12 +26,12 @@ export interface DemioNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "type"?: "automated" | "past" | "upcoming" } | { "status"?: "attended" | "banned" | "completed" | "did-not-attend" | "left-early" };
+    readonly filters?: { type?: "automated" | "past" | "upcoming" } | { status?: "attended" | "banned" | "completed" | "did-not-attend" | "left-early" };
 
     readonly eventId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "active"?: boolean, "date_id"?: string } | { "company"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "ref_url"?: string, "gdpr"?: string, "last_name"?: string, "phone_number"?: string, "date_id"?: string, "website"?: string };
+    readonly additionalFields?: { active?: boolean, date_id?: string } | { company?: string, customFieldsUi?: { customFieldsValues: { fieldId?: string, value?: string } }, ref_url?: string, gdpr?: string, last_name?: string, phone_number?: string, date_id?: string, website?: string };
 
     /** The registrant's first name */
     readonly firstName?: string;

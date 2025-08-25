@@ -43,6 +43,6 @@ export interface LinkedInNodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string, "originalUrl"?: string, "thumbnailBinaryPropertyName"?: string, "title"?: string, "visibility"?: "CONNECTIONS" | "PUBLIC" };
+    readonly additionalFields?: { description?: string, originalUrl?: string, thumbnailBinaryPropertyName?: string, title?: string, visibility?: "CONNECTIONS" | "PUBLIC" };
 
 }

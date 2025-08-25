@@ -28,7 +28,7 @@ export interface OneSimpleApiNodeParameters {
     readonly output?: string;
 
     /** Default: {} */
-    readonly options?: { "page"?: "A0" | "A1" | "A2" | "A3" | "A4" | "A5" | "A6" | "Ledger" | "Legal" | "Letter" | "Tabloid", "force"?: boolean } | { "size"?: "Small" | "Medium" | "Large", "format"?: "PNG" | "SVG" } | { "screen"?: "phone" | "phone-landscape" | "retina" | "tablet" | "tablet-landscape", "force"?: boolean, "fullpage"?: boolean } | { "headers"?: boolean };
+    readonly options?: { page?: "A0" | "A1" | "A2" | "A3" | "A4" | "A5" | "A6" | "Ledger" | "Legal" | "Letter" | "Tabloid", force?: boolean } | { size?: "Small" | "Medium" | "Large", format?: "PNG" | "SVG" } | { screen?: "phone" | "phone-landscape" | "retina" | "tablet" | "tablet-landscape", force?: boolean, fullpage?: boolean } | { headers?: boolean };
 
     /** The text that should be turned into a QR code - like a website URL */
     readonly message?: string;

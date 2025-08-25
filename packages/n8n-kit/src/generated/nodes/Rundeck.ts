@@ -22,7 +22,7 @@ export interface RundeckNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly arguments?: { "arguments": any };
+    readonly arguments?: { arguments: { name?: string, value?: string } };
 
     /** Filter Rundeck nodes by name */
     readonly filter?: string;

@@ -25,10 +25,10 @@ export interface ClickUpNodeParameters {
     readonly checklist?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "name"?: string, "position"?: number } | { "assignee"?: string, "name"?: string, "parent"?: string, "resolved"?: boolean } | { "assignee"?: string, "commentText"?: string, "resolved"?: boolean } | { "name"?: string } | { "addOwners"?: string, "color"?: string, "description"?: string, "dueDate"?: string, "name"?: string, "removeOwners"?: string } | { "name"?: string, "note"?: string, "stepsCurrent"?: number, "stepsEnd"?: number, "stepsStart"?: number, "unit"?: string } | { "addAssignees"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "name"?: string, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "removeAssignees"?: string, "status"?: string, "startDate"?: string, "startDateTime"?: boolean, "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "duration"?: number, "start"?: string, "tags"?: any[], "task"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "name"?: string, "priority"?: number, "unsetStatus"?: boolean };
+    readonly updateFields?: { name?: string, position?: number } | { assignee?: string, name?: string, parent?: string, resolved?: boolean } | { assignee?: string, commentText?: string, resolved?: boolean } | { name?: string } | { addOwners?: string, color?: string, description?: string, dueDate?: string, name?: string, removeOwners?: string } | { name?: string, note?: string, stepsCurrent?: number, stepsEnd?: number, stepsStart?: number, unit?: string } | { addAssignees?: string, content?: string, dueDate?: string, dueDateTime?: boolean, markdownContent?: boolean, name?: string, notifyAll?: boolean, parentId?: string, priority?: number, removeAssignees?: string, status?: string, startDate?: string, startDateTime?: boolean, timeEstimate?: number } | { assignee?: string, billable?: boolean, description?: string, duration?: number, start?: string, tags?: any[], task?: string } | { assignee?: string, content?: string, dueDate?: string, dueDateTime?: boolean, name?: string, priority?: number, unsetStatus?: boolean };
 
     /** Default: {} */
-    readonly additionalFields?: { "assignee"?: string } | { "assignee"?: string, "notifyAll"?: boolean } | { "color"?: string, "description"?: string, "dueDate"?: string, "multipleOwners"?: boolean, "owners"?: string } | { "listIds"?: string, "owners"?: string, "stepsStart"?: number, "stepsEnd"?: number, "taskIds"?: string, "unit"?: string } | { "custom_task_ids"?: boolean, "team_id"?: string } | { "assignees"?: any[], "customFieldsJson"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "markdownContent"?: boolean, "notifyAll"?: boolean, "parentId"?: string, "priority"?: number, "startDate"?: string, "startDateTime"?: boolean, "status"?: string, "tags"?: any[], "timeEstimate"?: number } | { "assignee"?: string, "billable"?: boolean, "description"?: string, "tags"?: any[] } | { "billable"?: boolean, "description"?: string } | { "assignee"?: string, "content"?: string, "dueDate"?: string, "dueDateTime"?: boolean, "priority"?: number, "status"?: string };
+    readonly additionalFields?: { assignee?: string } | { assignee?: string, notifyAll?: boolean } | { color?: string, description?: string, dueDate?: string, multipleOwners?: boolean, owners?: string } | { listIds?: string, owners?: string, stepsStart?: number, stepsEnd?: number, taskIds?: string, unit?: string } | { custom_task_ids?: boolean, team_id?: string } | { assignees?: any[], customFieldsJson?: string, content?: string, dueDate?: string, dueDateTime?: boolean, markdownContent?: boolean, notifyAll?: boolean, parentId?: string, priority?: number, startDate?: string, startDateTime?: boolean, status?: string, tags?: any[], timeEstimate?: number } | { assignee?: string, billable?: boolean, description?: string, tags?: any[] } | { billable?: boolean, description?: string } | { assignee?: string, content?: string, dueDate?: string, dueDateTime?: boolean, priority?: number, status?: string };
 
     readonly checklistItem?: string;
 
@@ -68,7 +68,7 @@ export interface ClickUpNodeParameters {
     readonly folder?: string;
 
     /** Default: {} */
-    readonly filters?: { "archived"?: boolean } | { "archived"?: boolean, "assignees"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "dateCreatedGt"?: string, "dateCreatedLt"?: string, "dateUpdatedGt"?: string, "dateUpdatedLt"?: string, "dueDateGt"?: string, "dueDateLt"?: string, "includeClosed"?: boolean, "orderBy"?: "id" | "created" | "updated" | "dueDate", "statuses"?: any[], "subtasks"?: boolean, "tags"?: any[] } | { "end_date"?: string, "start_date"?: string };
+    readonly filters?: { archived?: boolean } | { archived?: boolean, assignees?: any[], customFieldsUi?: { customFieldsValues: { fieldId?: string, operator?: "!=" | "<" | "<=" | ">" | ">=" | "equal" | "IS NOT NULL" | "IS NULL", value?: string } }, dateCreatedGt?: string, dateCreatedLt?: string, dateUpdatedGt?: string, dateUpdatedLt?: string, dueDateGt?: string, dueDateLt?: string, includeClosed?: boolean, orderBy?: "id" | "created" | "updated" | "dueDate", statuses?: any[], subtasks?: boolean, tags?: any[] } | { end_date?: string, start_date?: string };
 
     readonly goal?: string;
 
@@ -140,7 +140,7 @@ export interface ClickUpNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly tagsUi?: { "tagsValues": any };
+    readonly tagsUi?: { tagsValues: { name?: string, tag_bg?: string, tag_fg?: string } };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

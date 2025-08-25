@@ -28,6 +28,6 @@ export interface GoogleCloudNaturalLanguageNodeParameters {
     readonly gcsContentUri?: string;
 
     /** Default: {} */
-    readonly options?: { "documentType"?: "HTML" | "PLAIN_TEXT", "encodingType"?: "NONE" | "UTF8" | "UTF16" | "UTF32", "language"?: "ar" | "zh" | "zh-Hant" | "nl" | "en" | "fr" | "de" | "id" | "it" | "ja" | "ko" | "pt" | "es" | "th" | "tr" | "vi" };
+    readonly options?: { documentType?: "HTML" | "PLAIN_TEXT", encodingType?: "NONE" | "UTF8" | "UTF16" | "UTF32", language?: "ar" | "zh" | "zh-Hant" | "nl" | "en" | "fr" | "de" | "id" | "it" | "ja" | "ko" | "pt" | "es" | "th" | "tr" | "vi" };
 
 }

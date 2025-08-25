@@ -29,6 +29,6 @@ export interface RetrieverWorkflowNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly fields?: { "values": any };
+    readonly fields?: { values: { name?: string, type?: "stringValue" | "numberValue" | "booleanValue" | "arrayValue" | "objectValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string } };
 
 }

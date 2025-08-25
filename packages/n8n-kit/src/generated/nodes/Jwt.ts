@@ -16,7 +16,7 @@ export interface JwtNodeParameters {
     readonly useJson?: boolean;
 
     /** Default: {} */
-    readonly claims?: { "audience"?: string, "expiresIn"?: number, "issuer"?: string, "jwtid"?: string, "notBefore"?: number, "subject"?: string };
+    readonly claims?: { audience?: string, expiresIn?: number, issuer?: string, jwtid?: string, notBefore?: number, subject?: string };
 
     /**
      * Claims to add to the token in JSON format
@@ -32,6 +32,6 @@ export interface JwtNodeParameters {
     readonly token?: string;
 
     /** Default: {} */
-    readonly options?: { "complete"?: boolean, "ignoreExpiration"?: boolean, "ignoreNotBefore"?: boolean, "clockTolerance"?: number, "kid"?: string, "algorithm"?: "ES256" | "ES384" | "ES512" | "HS256" | "HS384" | "HS512" | "PS256" | "PS384" | "PS512" | "RS256" | "RS384" | "RS512" };
+    readonly options?: { complete?: boolean, ignoreExpiration?: boolean, ignoreNotBefore?: boolean, clockTolerance?: number, kid?: string, algorithm?: "ES256" | "ES384" | "ES512" | "HS256" | "HS384" | "HS512" | "PS256" | "PS384" | "PS512" | "RS256" | "RS384" | "RS512" };
 
 }

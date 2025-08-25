@@ -40,6 +40,6 @@ export interface FacebookGraphApiNodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Default: {} */
-    readonly options?: { "fields"?: { "field": any }, "queryParameters"?: { "parameter": any }, "queryParametersJson"?: string };
+    readonly options?: { fields?: { field: { name?: string } }, queryParameters?: { parameter: { name?: string, value?: string } }, queryParametersJson?: string };
 
 }

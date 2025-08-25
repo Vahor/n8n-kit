@@ -19,7 +19,7 @@ export interface CrowdDevNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly username?: { "itemChoice": any } | string;
+    readonly username?: { itemChoice: { key: string, value: string } } | string;
 
     /** UI friendly name of the member */
     readonly displayName?: string;
@@ -29,7 +29,7 @@ export interface CrowdDevNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly emails?: { "itemChoice": any };
+    readonly emails?: { itemChoice: { email?: string } };
 
     /** Date of joining the community */
     readonly joinedAt?: string;
@@ -50,7 +50,7 @@ export interface CrowdDevNodeParameters {
     readonly sourceId?: string;
 
     /** Default: {} */
-    readonly additionalOptions?: { "title"?: string, "body"?: string, "channel"?: string, "sourceParentId"?: string } | { "displayName"?: string, "emails"?: { "itemChoice": any }, "joinedAt"?: string, "organizations"?: { "itemChoice": any }, "tags"?: { "itemChoice": any }, "tasks"?: { "itemChoice": any }, "notes"?: { "itemChoice": any }, "activities"?: { "itemChoice": any } } | { "url"?: string, "description"?: string, "logo"?: string, "employees"?: number, "members"?: { "itemChoice": any } } | { "name"?: string, "body"?: string, "status"?: string, "members"?: { "itemChoice": any }, "activities"?: { "itemChoice": any }, "assigneess"?: string };
+    readonly additionalOptions?: { title?: string, body?: string, channel?: string, sourceParentId?: string } | { displayName?: string, emails?: { itemChoice: { email?: string } }, joinedAt?: string, organizations?: { itemChoice: { name: string, url?: string, description?: string, logo?: string, employees?: number } }, tags?: { itemChoice: { tag?: string } }, tasks?: { itemChoice: { task?: string } }, notes?: { itemChoice: { note?: string } }, activities?: { itemChoice: { activity?: string } } } | { url?: string, description?: string, logo?: string, employees?: number, members?: { itemChoice: { member?: string } } } | { name?: string, body?: string, status?: string, members?: { itemChoice: { member?: string } }, activities?: { itemChoice: { activity?: string } }, assigneess?: string };
 
     /** The ID of the member */
     readonly id?: string;

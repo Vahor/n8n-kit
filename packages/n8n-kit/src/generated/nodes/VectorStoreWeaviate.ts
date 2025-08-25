@@ -34,7 +34,7 @@ export interface VectorStoreWeaviateNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { "tenant"?: string, "textKey"?: string, "skip_init_checks"?: boolean, "timeout_init"?: number, "timeout_insert"?: number, "timeout_query"?: number, "proxy_grpc"?: string, "clearStore"?: boolean } | { "searchFilterJson"?: string, "metadataKeys"?: string, "tenant"?: string, "textKey"?: string, "skip_init_checks"?: boolean, "timeout_init"?: number, "timeout_insert"?: number, "timeout_query"?: number, "proxy_grpc"?: string };
+    readonly options?: { tenant?: string, textKey?: string, skip_init_checks?: boolean, timeout_init?: number, timeout_insert?: number, timeout_query?: number, proxy_grpc?: string, clearStore?: boolean } | { searchFilterJson?: string, metadataKeys?: string, tenant?: string, textKey?: string, skip_init_checks?: boolean, timeout_init?: number, timeout_insert?: number, timeout_query?: number, proxy_grpc?: string };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

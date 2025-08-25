@@ -35,7 +35,7 @@ export interface HunterNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "type"?: "personal" | "generic", "seniority"?: ("junior" | "senior" | "executive")[], "department"?: ("communication" | "executive" | "finance" | "hr" | "it" | "legal" | "management" | "marketing" | "sales" | "support")[] };
+    readonly filters?: { type?: "personal" | "generic", seniority?: ("junior" | "senior" | "executive")[], department?: ("communication" | "executive" | "finance" | "hr" | "it" | "legal" | "management" | "marketing" | "sales" | "support")[] };
 
     /** The person's first name. It doesn't need to be in lowercase. */
     readonly firstname?: string;

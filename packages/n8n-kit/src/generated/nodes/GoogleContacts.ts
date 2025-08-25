@@ -20,7 +20,7 @@ export interface GoogleContactsNodeParameters {
     readonly givenName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "addressesUi"?: { "addressesValues": any }, "birthday"?: string, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: any[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
+    readonly additionalFields?: { addressesUi?: { addressesValues: { streetAddress?: string, city?: string, region?: string, countryCode?: string, postalCode?: string, type?: "home" | "work" | "other" } }, birthday?: string, companyUi?: { companyValues: { current?: boolean, domain?: string, name?: string, title?: string } }, customFieldsUi?: { customFieldsValues: { key?: string, value?: string } }, emailsUi?: { emailsValues: { type?: "home" | "work" | "other", value?: string } }, eventsUi?: { eventsValues: { date?: string, type?: "anniversary" | "other" } }, fileAs?: string, group?: any[], honorificPrefix?: string, honorificSuffix?: string, middleName?: string, biographies?: string, phoneUi?: { phoneValues: { type?: "googleVoice" | "home" | "homeFax" | "main" | "mobile" | "other" | "otherFax" | "pager" | "work" | "workFax" | "workMobile" | "workPager", value?: string } }, relationsUi?: { relationsValues: { person?: string, type?: "assistant" | "brother" | "child" | "domesticPartner" | "father" | "friend" | "manager" | "mother" | "parent" | "referredBy" | "relative" | "sister" | "spouse" } } };
 
     readonly contactId?: string;
 
@@ -50,9 +50,9 @@ export interface GoogleContactsNodeParameters {
     readonly query?: string;
 
     /** Default: {} */
-    readonly options?: { "sortOrder"?: "LAST_MODIFIED_ASCENDING" | "LAST_MODIFIED_DESCENDING" | "FIRST_NAME_ASCENDING" | "LAST_NAME_ASCENDING" };
+    readonly options?: { sortOrder?: "LAST_MODIFIED_ASCENDING" | "LAST_MODIFIED_DESCENDING" | "FIRST_NAME_ASCENDING" | "LAST_NAME_ASCENDING" };
 
     /** Default: {} */
-    readonly updateFields?: { "etag"?: string, "familyName"?: string, "givenName"?: string, "addressesUi"?: { "addressesValues": any }, "birthday"?: string, "companyUi"?: { "companyValues": any }, "customFieldsUi"?: { "customFieldsValues": any }, "emailsUi"?: { "emailsValues": any }, "eventsUi"?: { "eventsValues": any }, "fileAs"?: string, "group"?: any[], "honorificPrefix"?: string, "honorificSuffix"?: string, "middleName"?: string, "biographies"?: string, "phoneUi"?: { "phoneValues": any }, "relationsUi"?: { "relationsValues": any } };
+    readonly updateFields?: { etag?: string, familyName?: string, givenName?: string, addressesUi?: { addressesValues: { streetAddress?: string, city?: string, region?: string, countryCode?: string, postalCode?: string, type?: "home" | "work" | "other" } }, birthday?: string, companyUi?: { companyValues: { current?: boolean, domain?: string, name?: string, title?: string } }, customFieldsUi?: { customFieldsValues: { key?: string, value?: string } }, emailsUi?: { emailsValues: { type?: "home" | "work" | "other", value?: string } }, eventsUi?: { eventsValues: { date?: string, type?: "anniversary" | "other" } }, fileAs?: string, group?: any[], honorificPrefix?: string, honorificSuffix?: string, middleName?: string, biographies?: string, phoneUi?: { phoneValues: { type?: "googleVoice" | "home" | "homeFax" | "main" | "mobile" | "other" | "otherFax" | "pager" | "work" | "workFax" | "workMobile" | "workPager", value?: string } }, relationsUi?: { relationsValues: { person?: string, type?: "assistant" | "brother" | "child" | "domesticPartner" | "father" | "friend" | "manager" | "mother" | "parent" | "referredBy" | "relative" | "sister" | "spouse" } } };
 
 }

@@ -30,7 +30,7 @@ export interface SetV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly fields?: { "values": any };
+    readonly fields?: { values: { name?: string, type?: "stringValue" | "numberValue" | "booleanValue" | "arrayValue" | "objectValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string } };
 
     /** Default: {} */
     readonly assignments?: any;
@@ -51,6 +51,6 @@ export interface SetV2NodeParameters {
     readonly excludeFields?: string;
 
     /** Default: {} */
-    readonly options?: { "includeBinary"?: boolean, "stripBinary"?: boolean, "ignoreConversionErrors"?: boolean, "dotNotation"?: boolean };
+    readonly options?: { includeBinary?: boolean, stripBinary?: boolean, ignoreConversionErrors?: boolean, dotNotation?: boolean };
 
 }

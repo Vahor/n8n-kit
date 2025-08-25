@@ -22,6 +22,6 @@ export interface LingvaNexNodeParameters {
     readonly translateTo?: string;
 
     /** Default: {} */
-    readonly options?: { "from"?: string, "platform"?: string, "translateMode"?: string };
+    readonly options?: { from?: string, platform?: string, translateMode?: string };
 
 }

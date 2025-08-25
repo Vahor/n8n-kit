@@ -25,6 +25,6 @@ export interface Sms77NodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly options?: { "delay"?: string, "foreign_id"?: string, "flash"?: boolean, "label"?: string, "performance_tracking"?: boolean, "ttl"?: number } | { "from"?: string };
+    readonly options?: { delay?: string, foreign_id?: string, flash?: boolean, label?: string, performance_tracking?: boolean, ttl?: number } | { from?: string };
 
 }

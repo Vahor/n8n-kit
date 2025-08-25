@@ -22,13 +22,13 @@ export interface BannerbearNodeParameters {
     readonly templateId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "metadata"?: string, "waitForImage"?: boolean, "waitForImageMaxTries"?: number, "webhookUrl"?: string };
+    readonly additionalFields?: { metadata?: string, waitForImage?: boolean, waitForImageMaxTries?: number, webhookUrl?: string };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly modificationsUi?: { "modificationsValues": any };
+    readonly modificationsUi?: { modificationsValues: { name?: string, text?: string, color?: string, background?: string, imageUrl?: string } };
 
     /** Unique identifier for the image */
     readonly imageId?: string;

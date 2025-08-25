@@ -50,7 +50,7 @@ export interface WaitNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
 
     /**
      * When to respond to the form submission
@@ -109,6 +109,6 @@ export interface WaitNodeParameters {
     readonly maxDateAndTime?: string;
 
     /** Default: {} */
-    readonly options?: { "binaryData"?: boolean, "binaryPropertyName"?: string, "ignoreBots"?: boolean, "ipWhitelist"?: string, "noResponseBody"?: boolean, "rawBody"?: boolean, "responseData"?: string, "responseContentType"?: string, "responseHeaders"?: { "entries": any }, "responsePropertyName"?: string, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "respondWithOptions"?: { "values": any }, "webhookSuffix"?: string } | { "appendAttribution"?: boolean, "webhookSuffix"?: string };
+    readonly options?: { binaryData?: boolean, binaryPropertyName?: string, ignoreBots?: boolean, ipWhitelist?: string, noResponseBody?: boolean, rawBody?: boolean, responseData?: string, responseContentType?: string, responseHeaders?: { entries: { name?: string, value?: string } }, responsePropertyName?: string, webhookSuffix?: string } | { appendAttribution?: boolean, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, webhookSuffix?: string } | { appendAttribution?: boolean, webhookSuffix?: string };
 
 }

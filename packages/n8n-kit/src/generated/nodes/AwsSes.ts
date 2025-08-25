@@ -37,10 +37,10 @@ export interface AwsSesNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "configurationSetName"?: string } | { "bccAddresses"?: string, "ccAddresses"?: string, "configurationSetName"?: string, "replyToAddresses"?: string, "returnPath"?: string, "returnPathArn"?: string, "sourceArn"?: string } | { "textPart"?: string };
+    readonly additionalFields?: { configurationSetName?: string } | { bccAddresses?: string, ccAddresses?: string, configurationSetName?: string, replyToAddresses?: string, returnPath?: string, returnPathArn?: string, sourceArn?: string } | { textPart?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "failureRedirectionURL"?: string, "fromEmailAddress"?: string, "successRedirectionURL"?: string, "templateContent"?: string, "templateSubject"?: string } | { "textPart"?: string, "subjectPart"?: string, "htmlPart"?: string };
+    readonly updateFields?: { failureRedirectionURL?: string, fromEmailAddress?: string, successRedirectionURL?: string, templateContent?: string, templateSubject?: string } | { textPart?: string, subjectPart?: string, htmlPart?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -74,7 +74,7 @@ export interface AwsSesNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly templateDataUi?: { "templateDataValues": any };
+    readonly templateDataUi?: { templateDataValues: { key?: string, value?: string } };
 
     /** The subject line of the email */
     readonly subjectPart?: string;

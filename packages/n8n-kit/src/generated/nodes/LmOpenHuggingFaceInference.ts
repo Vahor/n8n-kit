@@ -16,6 +16,6 @@ export interface LmOpenHuggingFaceInferenceNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "endpointUrl"?: string, "frequencyPenalty"?: number, "maxTokens"?: number, "presencePenalty"?: number, "temperature"?: number, "topK"?: number, "topP"?: number };
+    readonly options?: { endpointUrl?: string, frequencyPenalty?: number, maxTokens?: number, presencePenalty?: number, temperature?: number, topK?: number, topP?: number };
 
 }

@@ -25,7 +25,7 @@ export interface GongNodeParameters {
 };
 
     /** Default: {} */
-    readonly options?: { "properties"?: ("pointsOfInterest" | "media" | "brief" | "publicComments" | "highlights" | "keyPoints" | "callOutcome" | "outline" | "parties" | "structure" | "topics" | "trackers" | "transcript")[] } | { "properties"?: ("parties" | "topics")[] };
+    readonly options?: { properties?: ("pointsOfInterest" | "media" | "brief" | "publicComments" | "highlights" | "keyPoints" | "callOutcome" | "outline" | "parties" | "structure" | "topics" | "trackers" | "transcript")[] } | { properties?: ("parties" | "topics")[] };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -38,10 +38,10 @@ export interface GongNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "fromDateTime"?: string, "toDateTime"?: string, "workspaceId"?: string, "callIds"?: string, "primaryUserIds"?: {
+    readonly filters?: { fromDateTime?: string, toDateTime?: string, workspaceId?: string, callIds?: string, primaryUserIds?: {
 	value: string,
 	mode: "list" | "id",
-} } | { "createdFromDateTime"?: string, "createdToDateTime"?: string, "userIds"?: string };
+} } | { createdFromDateTime?: string, createdToDateTime?: string, userIds?: string };
 
     /** Default: {"mode":"list","value":""} */
     readonly user?: {

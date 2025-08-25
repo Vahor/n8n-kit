@@ -43,6 +43,6 @@ export interface PostgresV1NodeParameters {
     readonly returnFields?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "mode"?: "independently" | "multiple" | "transaction", "largeNumbersOutput"?: "numbers" | "text", "queryParams"?: string };
+    readonly additionalFields?: { mode?: "independently" | "multiple" | "transaction", largeNumbersOutput?: "numbers" | "text", queryParams?: string };
 
 }

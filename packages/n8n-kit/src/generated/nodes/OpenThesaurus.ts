@@ -15,6 +15,6 @@ export interface OpenThesaurusNodeParameters {
     readonly text?: string;
 
     /** Default: {} */
-    readonly options?: { "baseform"?: boolean, "similar"?: boolean, "startswith"?: boolean, "substring"?: boolean, "substringFromResults"?: number, "substringMaxResults"?: number, "subsynsets"?: boolean, "supersynsets"?: boolean };
+    readonly options?: { baseform?: boolean, similar?: boolean, startswith?: boolean, substring?: boolean, substringFromResults?: number, substringMaxResults?: number, subsynsets?: boolean, supersynsets?: boolean };
 
 }

@@ -21,6 +21,6 @@ export interface RemoveDuplicatesV1NodeParameters {
     readonly fieldsToCompare?: string;
 
     /** Default: {} */
-    readonly options?: { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean };
+    readonly options?: { disableDotNotation?: boolean, removeOtherFields?: boolean };
 
 }

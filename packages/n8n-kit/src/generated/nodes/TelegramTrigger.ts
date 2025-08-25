@@ -13,6 +13,6 @@ export interface TelegramTriggerNodeParameters {
     readonly updates?: ("*" | "callback_query" | "channel_post" | "edited_channel_post" | "edited_message" | "inline_query" | "message" | "poll" | "pre_checkout_query" | "shipping_query")[];
 
     /** Default: {} */
-    readonly additionalFields?: { "download"?: boolean, "imageSize"?: "small" | "medium" | "large" | "extraLarge", "chatIds"?: string, "userIds"?: string };
+    readonly additionalFields?: { download?: boolean, imageSize?: "small" | "medium" | "large" | "extraLarge", chatIds?: string, userIds?: string };
 
 }

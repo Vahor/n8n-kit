@@ -19,7 +19,7 @@ export interface SortNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sortFieldsUi?: { "sortField": any };
+    readonly sortFieldsUi?: { sortField: { fieldName: string, order?: "ascending" | "descending" } };
 
     /**
      * Javascript code to determine the order of any two items
@@ -29,6 +29,6 @@ export interface SortNodeParameters {
     readonly code?: string;
 
     /** Default: {} */
-    readonly options?: { "disableDotNotation"?: boolean };
+    readonly options?: { disableDotNotation?: boolean };
 
 }

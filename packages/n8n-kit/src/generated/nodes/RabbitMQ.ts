@@ -43,6 +43,6 @@ export interface RabbitMQNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly options?: { "alternateExchange"?: string, "arguments"?: { "argument": any }, "autoDelete"?: boolean, "durable"?: boolean, "exclusive"?: boolean, "headers"?: { "header": any } };
+    readonly options?: { alternateExchange?: string, arguments?: { argument: { key?: string, value?: string } }, autoDelete?: boolean, durable?: boolean, exclusive?: boolean, headers?: { header: { key?: string, value?: string } } };
 
 }

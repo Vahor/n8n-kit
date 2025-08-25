@@ -35,7 +35,7 @@ export interface StoryblokNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "starts_with"?: string };
+    readonly filters?: { starts_with?: string };
 
     /**
      * The name of the space. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -47,6 +47,6 @@ export interface StoryblokNodeParameters {
     readonly storyId?: string;
 
     /** Default: {} */
-    readonly options?: { "releaseId"?: string, "language"?: string };
+    readonly options?: { releaseId?: string, language?: string };
 
 }

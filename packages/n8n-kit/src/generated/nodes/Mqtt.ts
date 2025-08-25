@@ -22,6 +22,6 @@ export interface MqttNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly options?: { "qos"?: "0" | "1" | "2", "retain"?: boolean };
+    readonly options?: { qos?: 0 | 1 | 2, retain?: boolean };
 
 }

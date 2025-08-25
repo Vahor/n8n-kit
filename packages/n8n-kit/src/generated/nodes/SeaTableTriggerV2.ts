@@ -31,7 +31,7 @@ export interface SeaTableTriggerV2NodeParameters {
     readonly assetColumn?: string;
 
     /** Default: {} */
-    readonly options?: { "simple"?: boolean, "convert"?: boolean };
+    readonly options?: { simple?: boolean, convert?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

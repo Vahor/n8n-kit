@@ -28,10 +28,10 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly options?: { "description"?: string, "type"?: "private" | "standard" } | { "description"?: string } | { "includeLinkToWorkflow"?: boolean, "makeReply"?: string } | { "includeLinkToWorkflow"?: boolean } | { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "assignedTo"?: {
+    readonly options?: { description?: string, type?: "private" | "standard" } | { description?: string } | { includeLinkToWorkflow?: boolean, makeReply?: string } | { includeLinkToWorkflow?: boolean } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { assignedTo?: {
 	value: string,
 	mode: "list" | "id",
-}, "dueDateTime"?: string, "percentComplete"?: number };
+}, dueDateTime?: string, percentComplete?: number };
 
     /**
      * Select the channel from the list, by URL, or by ID (the ID is the "threadId" in the URL)
@@ -93,10 +93,10 @@ export interface MicrosoftTeamsV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
 
     /** Default: {} */
-    readonly approvalOptions?: { "values": any };
+    readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, disapproveLabel?: string } };
 
     /**
      * Default: {"mode":"list","value":""}
@@ -140,18 +140,18 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly tasksFor?: "member" | "plan";
 
     /** Default: {} */
-    readonly updateFields?: { "assignedTo"?: {
+    readonly updateFields?: { assignedTo?: {
 	value: string,
 	mode: "list" | "id",
-}, "bucketId"?: {
+}, bucketId?: {
 	value: string,
 	mode: "list" | "id",
-}, "dueDateTime"?: string, "groupId"?: {
+}, dueDateTime?: string, groupId?: {
 	value: string,
 	mode: "list" | "id",
-}, "percentComplete"?: number, "planId"?: {
+}, percentComplete?: number, planId?: {
 	value: string,
 	mode: "list" | "id",
-}, "title"?: string };
+}, title?: string };
 
 }

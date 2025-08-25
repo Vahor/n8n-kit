@@ -38,9 +38,9 @@ export interface InformationExtractorNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attributes?: { "attributes": any };
+    readonly attributes?: { attributes: { name: string, type: "boolean" | "date" | "number" | "string", description: string, required: boolean } };
 
     /** Default: {} */
-    readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
+    readonly options?: { systemPromptTemplate?: string, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

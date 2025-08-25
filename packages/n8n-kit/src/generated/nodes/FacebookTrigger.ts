@@ -26,6 +26,6 @@ export interface FacebookTriggerNodeParameters {
     readonly fields?: any[];
 
     /** Default: {} */
-    readonly options?: { "includeValues"?: boolean };
+    readonly options?: { includeValues?: boolean };
 
 }

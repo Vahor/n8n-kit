@@ -62,6 +62,6 @@ export interface GraphQLNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly headerParametersUi?: { "parameter": any };
+    readonly headerParametersUi?: { parameter: { name?: string, value?: string } };
 
 }

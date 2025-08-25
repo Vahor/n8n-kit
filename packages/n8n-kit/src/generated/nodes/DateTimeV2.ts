@@ -24,7 +24,7 @@ export interface DateTimeV2NodeParameters {
     readonly outputFieldName?: string;
 
     /** Default: {} */
-    readonly options?: { "includeInputFields"?: boolean, "timezone"?: string } | { "includeInputFields"?: boolean } | { "includeInputFields"?: boolean, "fromFormat"?: string, "timezone"?: boolean } | { "includeInputFields"?: boolean, "isoString"?: boolean };
+    readonly options?: { includeInputFields?: boolean, timezone?: string } | { includeInputFields?: boolean } | { includeInputFields?: boolean, fromFormat?: string, timezone?: boolean } | { includeInputFields?: boolean, isoString?: boolean };
 
     /** The date that you want to change */
     readonly magnitude?: string;

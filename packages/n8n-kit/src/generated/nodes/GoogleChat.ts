@@ -42,7 +42,7 @@ export interface GoogleChatNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly messageUi?: { "text"?: string };
+    readonly messageUi?: { text?: string };
 
     /**
      * Message input as JSON Object or JSON String
@@ -51,13 +51,13 @@ export interface GoogleChatNodeParameters {
     readonly messageJson?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "requestId"?: string };
+    readonly additionalFields?: { requestId?: string };
 
     /** Resource name of the message to be deleted, in the form "spaces//messages/" */
     readonly messageId?: string;
 
     /** Default: {} */
-    readonly updateFieldsUi?: { "text"?: string };
+    readonly updateFieldsUi?: { text?: string };
 
     /**
      * Message input as JSON Object or JSON String
@@ -84,12 +84,12 @@ export interface GoogleChatNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: { fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: { option?: string } }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean } };
 
     /** Default: {} */
-    readonly approvalOptions?: { "values": any };
+    readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, disapproveLabel?: string } };
 
     /** Default: {} */
-    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
+    readonly options?: { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean };
 
 }

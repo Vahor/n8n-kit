@@ -19,7 +19,7 @@ export interface YourlsNodeParameters {
     readonly url?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "keyword"?: string, "title"?: string };
+    readonly additionalFields?: { keyword?: string, title?: string };
 
     /** The short URL to expand */
     readonly shortUrl?: string;

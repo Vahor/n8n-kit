@@ -43,10 +43,10 @@ export interface MicrosoftExcelV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsUi?: { "values": any };
+    readonly fieldsUi?: { values: { column?: string, fieldValue?: string } };
 
     /** Default: {} */
-    readonly options?: { "index"?: number, "rawData"?: boolean, "dataProperty": string } | { "returnAllMatches"?: boolean } | { "rawData"?: boolean, "dataProperty": string } | { "rawData"?: boolean, "dataProperty": string, "fields"?: string } | { "rawData"?: boolean, "dataProperty": string, "fields"?: string, "updateAll"?: boolean } | { "appendAfterSelectedRange"?: boolean, "rawData"?: boolean, "dataProperty": string, "updateAll"?: boolean };
+    readonly options?: { index?: number, rawData?: boolean, dataProperty: string } | { returnAllMatches?: boolean } | { rawData?: boolean, dataProperty: string } | { rawData?: boolean, dataProperty: string, fields?: string } | { rawData?: boolean, dataProperty: string, fields?: string, updateAll?: boolean } | { appendAfterSelectedRange?: boolean, rawData?: boolean, dataProperty: string, updateAll?: boolean };
 
     /** Default: "auto" */
     readonly selectRange?: "auto" | "manual";
@@ -80,7 +80,7 @@ export interface MicrosoftExcelV2NodeParameters {
     readonly dataProperty?: string;
 
     /** Default: {} */
-    readonly filters?: { "fields"?: string } | { "fields"?: string, "column"?: any[] };
+    readonly filters?: { fields?: string } | { fields?: string, column?: any[] };
 
     /** The name of the column in which to look for value */
     readonly lookupColumn?: string;
@@ -89,7 +89,7 @@ export interface MicrosoftExcelV2NodeParameters {
     readonly lookupValue?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "name"?: string };
+    readonly additionalFields?: { name?: string };
 
     /** Default: "All" */
     readonly applyTo?: "All" | "Formats" | "Contents";

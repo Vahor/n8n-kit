@@ -44,7 +44,7 @@ export interface TheHiveNodeParameters {
      * Severity of the alert. Default=Medium.
      * Default: 2
      */
-    readonly severity?: "1" | "2" | "3";
+    readonly severity?: 1 | 2 | 3;
 
     /** Date and time when the alert was raised default=now */
     readonly date?: string;
@@ -56,7 +56,7 @@ export interface TheHiveNodeParameters {
      * Traffict Light Protocol (TLP). Default=Amber.
      * Default: 2
      */
-    readonly tlp?: "0" | "1" | "2" | "3";
+    readonly tlp?: 0 | 1 | 2 | 3;
 
     /**
      * Status of the alert
@@ -84,7 +84,7 @@ export interface TheHiveNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly artifactUi?: { "artifactValues": any };
+    readonly artifactUi?: { artifactValues: { dataType?: string, data?: string, binaryProperty?: string, message?: string, tags?: string } };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -96,16 +96,16 @@ export interface TheHiveNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "caseTemplate"?: string, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string } | { "caseTemplate"?: string };
+    readonly additionalFields?: { caseTemplate?: string, customFieldsUi?: { customFields: { field?: string, value?: string } }, customFieldsJson?: string } | { caseTemplate?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "artifactUi"?: { "artifactValues": any }, "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "caseTemplate"?: string, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "status"?: "New" | "Updated" | "Ignored" | "Imported", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "message"?: string, "tags"?: string, "tlp"?: "0" | "1" | "2" | "3", "ioc"?: boolean, "sighted"?: boolean, "status"?: "Ok" | "Deleted" } | { "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "description"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "metrics"?: string, "owner"?: string, "resolutionStatus"?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", "severity"?: "1" | "2" | "3", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string, "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "description"?: string, "endDate"?: string, "flag"?: boolean, "owner"?: string, "startDate"?: string, "status"?: "Cancel" | "Completed" | "InProgress" | "Waiting", "title"?: string };
+    readonly updateFields?: { artifactUi?: { artifactValues: { dataType?: string, data?: string, binaryProperty?: string, message?: string, tags?: string } }, customFieldsUi?: { customFields: { field?: string, value?: string } }, customFieldsJson?: string, caseTemplate?: string, description?: string, follow?: boolean, severity?: 1 | 2 | 3, status?: "New" | "Updated" | "Ignored" | "Imported", tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { message?: string, tags?: string, tlp?: 0 | 1 | 2 | 3, ioc?: boolean, sighted?: boolean, status?: "Ok" | "Deleted" } | { customFieldsUi?: { customFields: { field?: string, value?: string } }, customFieldsJson?: string, description?: string, endDate?: string, flag?: boolean, impactStatus?: "NoImpact" | "WithImpact" | "NotApplicable", metrics?: string, owner?: string, resolutionStatus?: "Duplicated" | "FalsePositive" | "Indeterminate" | "Other" | "TruePositive", severity?: 1 | 2 | 3, startDate?: string, status?: "Open" | "Resolved" | "Deleted", summary?: string, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { description?: string, endDate?: string, flag?: boolean, owner?: string, startDate?: string, status?: "Cancel" | "Completed" | "InProgress" | "Waiting", title?: string };
 
     /** Default: {} */
-    readonly options?: { "sort"?: string } | { "includeSimilar"?: boolean } | { "tags"?: string } | { "customFieldsUi"?: { "customFields": any }, "customFieldsJson"?: string, "endDate"?: string, "summary"?: string, "metrics"?: string } | { "description"?: string, "endDate"?: string, "owner"?: string, "startDate"?: string } | { "attachmentValues"?: { "attachmentValues": any } };
+    readonly options?: { sort?: string } | { includeSimilar?: boolean } | { tags?: string } | { customFieldsUi?: { customFields: { field?: string, value?: string } }, customFieldsJson?: string, endDate?: string, summary?: string, metrics?: string } | { description?: string, endDate?: string, owner?: string, startDate?: string } | { attachmentValues?: { attachmentValues: { binaryProperty?: string } } };
 
     /** Default: {} */
-    readonly filters?: { "customFieldsUi"?: { "customFields": any }, "description"?: string, "follow"?: boolean, "severity"?: "1" | "2" | "3", "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "dataType"?: any[], "range"?: { "dateRange": any }, "description"?: string, "ioc"?: boolean, "keyword"?: string, "message"?: string, "tags"?: string, "sighted"?: boolean, "Status"?: "Ok" | "Deleted", "tlp"?: "0" | "1" | "2" | "3", "data"?: string } | { "customFieldsUi"?: { "customFields": any }, "description"?: string, "endDate"?: string, "flag"?: boolean, "impactStatus"?: "NoImpact" | "WithImpact" | "NotApplicable", "owner"?: string, "resolutionStatus"?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", "severity"?: "1" | "2" | "3", "startDate"?: string, "status"?: "Open" | "Resolved" | "Deleted", "summary"?: string, "tags"?: string, "title"?: string, "tlp"?: "0" | "1" | "2" | "3" } | { "description"?: string, "endDate"?: string, "flag"?: boolean, "owner"?: string, "startDate"?: string, "status"?: "Cancel" | "Completed" | "InProgress" | "Waiting", "title"?: string };
+    readonly filters?: { customFieldsUi?: { customFields: { field?: string, value?: string } }, description?: string, follow?: boolean, severity?: 1 | 2 | 3, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { dataType?: any[], range?: { dateRange: { fromDate?: string, toDate?: string } }, description?: string, ioc?: boolean, keyword?: string, message?: string, tags?: string, sighted?: boolean, Status?: "Ok" | "Deleted", tlp?: 0 | 1 | 2 | 3, data?: string } | { customFieldsUi?: { customFields: { field?: string, value?: string } }, description?: string, endDate?: string, flag?: boolean, impactStatus?: "NoImpact" | "WithImpact" | "NotApplicable", owner?: string, resolutionStatus?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", severity?: 1 | 2 | 3, startDate?: string, status?: "Open" | "Resolved" | "Deleted", summary?: string, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { description?: string, endDate?: string, flag?: boolean, owner?: string, startDate?: string, status?: "Cancel" | "Completed" | "InProgress" | "Waiting", title?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

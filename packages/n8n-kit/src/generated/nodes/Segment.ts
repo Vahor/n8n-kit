@@ -24,19 +24,19 @@ export interface SegmentNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly traits?: { "traitsUi": any };
+    readonly traits?: { traitsUi: { key?: string, value?: string } };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly context?: { "contextUi": any };
+    readonly context?: { contextUi: { active?: boolean, ip?: string, locate?: string, page?: string, timezone?: string, app?: { appUi: { name?: string, version?: string, build?: string } }, campaign?: { campaignUi: { name?: string, source?: string, medium?: string, term?: string, content?: string } }, device?: { deviceUi: { id?: string, manufacturer?: string, model?: string, name?: string, type?: string, version?: string } } } };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly integrations?: { "integrationsUi": any };
+    readonly integrations?: { integrationsUi: { all?: boolean, salesforce?: boolean } };
 
     /** Name of the action that a user has performed */
     readonly event?: string;
@@ -45,7 +45,7 @@ export interface SegmentNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly properties?: { "propertiesUi": any };
+    readonly properties?: { propertiesUi: { key?: string, value?: string } };
 
     /** Name of the page For example, most sites have a “Signup” page that can be useful to tag, so you can see users as they move through your funnel */
     readonly name?: string;

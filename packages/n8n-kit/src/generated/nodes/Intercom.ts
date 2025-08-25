@@ -29,7 +29,7 @@ export interface IntercomNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "company_id"?: string, "email"?: string, "segment_id"?: string, "tag_id"?: string } | { "email"?: string, "phone"?: string } | { "segment_id"?: string, "tag_id"?: string };
+    readonly filters?: { company_id?: string, email?: string, segment_id?: string, tag_id?: string } | { email?: string, phone?: string } | { segment_id?: string, tag_id?: string };
 
     /** The property to select the user by */
     readonly selectBy?: "id" | "userId" | "email" | "id" | "userId" | "phone" | "companyId" | "id" | "name";
@@ -52,7 +52,7 @@ export interface IntercomNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "avatar"?: string, "companies"?: any[], "email"?: string, "name"?: string, "phone"?: string, "sessionCount"?: number, "userId"?: string, "unsubscribedFromEmails"?: boolean, "updateLastRequestAt"?: boolean, "utmCampaign"?: string, "utmContent"?: string, "utmMedium"?: string, "utmSource"?: string, "utmTerm"?: string } | { "avatar"?: string, "companies"?: any[], "email"?: string, "name"?: string, "phone"?: string, "unsubscribedFromEmails"?: boolean, "updateLastRequestAt"?: boolean, "utmCampaign"?: string, "utmContent"?: string, "utmMedium"?: string, "utmSource"?: string, "utmTerm"?: string } | { "industry"?: string, "monthlySpend"?: string, "name"?: string, "plan"?: string, "size"?: number, "website"?: string };
+    readonly additionalFields?: { avatar?: string, companies?: any[], email?: string, name?: string, phone?: string, sessionCount?: number, userId?: string, unsubscribedFromEmails?: boolean, updateLastRequestAt?: boolean, utmCampaign?: string, utmContent?: string, utmMedium?: string, utmSource?: string, utmTerm?: string } | { avatar?: string, companies?: any[], email?: string, name?: string, phone?: string, unsubscribedFromEmails?: boolean, updateLastRequestAt?: boolean, utmCampaign?: string, utmContent?: string, utmMedium?: string, utmSource?: string, utmTerm?: string } | { industry?: string, monthlySpend?: string, name?: string, plan?: string, size?: number, website?: string };
 
     /**
      * A hash of key/value pairs to represent custom data you want to attribute to a user
@@ -65,7 +65,7 @@ export interface IntercomNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly customAttributesUi?: { "customAttributesValues": any };
+    readonly customAttributesUi?: { customAttributesValues: { name?: string, value?: string } };
 
     readonly deleteBy?: "id" | "userId";
 

@@ -19,7 +19,7 @@ export interface AwsS3V2NodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "acl"?: "authenticatedRead" | "Private" | "publicRead" | "publicReadWrite", "bucketObjectLockEnabled"?: boolean, "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWrite"?: boolean, "grantWriteAcp"?: boolean, "region"?: string } | { "delimiter"?: string, "encodingType"?: "url", "fetchOwner"?: boolean, "prefix"?: string, "requesterPays"?: boolean, "startAfter"?: string } | { "parentFolderKey"?: string, "requesterPays"?: boolean, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "RecudedRedundancy" | "standard" | "standardIA" } | { "acl"?: "authenticatedRead" | "awsExecRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "publicRead" | "publicReadWrite", "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWriteAcp"?: boolean, "lockLegalHold"?: boolean, "lockMode"?: "governance" | "compliance", "lockRetainUntilDate"?: string, "metadataDirective"?: "copy" | "replace", "requesterPays"?: boolean, "serverSideEncryption"?: "AES256" | "aws:kms", "serverSideEncryptionContext"?: string, "encryptionAwsKmsKeyId"?: string, "serversideEncryptionCustomerAlgorithm"?: string, "serversideEncryptionCustomerKey"?: string, "serversideEncryptionCustomerKeyMD5"?: string, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "standard" | "standardIA", "taggingDirective"?: "copy" | "replace" } | { "acl"?: "authenticatedRead" | "awsExecRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "publicRead" | "publicReadWrite", "grantFullControl"?: boolean, "grantRead"?: boolean, "grantReadAcp"?: boolean, "grantWriteAcp"?: boolean, "lockLegalHold"?: boolean, "lockMode"?: "governance" | "compliance", "lockRetainUntilDate"?: string, "parentFolderKey"?: string, "requesterPays"?: boolean, "serverSideEncryption"?: "AES256" | "aws:kms", "serverSideEncryptionContext"?: string, "encryptionAwsKmsKeyId"?: string, "serversideEncryptionCustomerAlgorithm"?: string, "serversideEncryptionCustomerKey"?: string, "serversideEncryptionCustomerKeyMD5"?: string, "storageClass"?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "standard" | "standardIA" };
+    readonly additionalFields?: { acl?: "authenticatedRead" | "Private" | "publicRead" | "publicReadWrite", bucketObjectLockEnabled?: boolean, grantFullControl?: boolean, grantRead?: boolean, grantReadAcp?: boolean, grantWrite?: boolean, grantWriteAcp?: boolean, region?: string } | { delimiter?: string, encodingType?: "url", fetchOwner?: boolean, prefix?: string, requesterPays?: boolean, startAfter?: string } | { parentFolderKey?: string, requesterPays?: boolean, storageClass?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "RecudedRedundancy" | "standard" | "standardIA" } | { acl?: "authenticatedRead" | "awsExecRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "publicRead" | "publicReadWrite", grantFullControl?: boolean, grantRead?: boolean, grantReadAcp?: boolean, grantWriteAcp?: boolean, lockLegalHold?: boolean, lockMode?: "governance" | "compliance", lockRetainUntilDate?: string, metadataDirective?: "copy" | "replace", requesterPays?: boolean, serverSideEncryption?: "AES256" | "aws:kms", serverSideEncryptionContext?: string, encryptionAwsKmsKeyId?: string, serversideEncryptionCustomerAlgorithm?: string, serversideEncryptionCustomerKey?: string, serversideEncryptionCustomerKeyMD5?: string, storageClass?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "standard" | "standardIA", taggingDirective?: "copy" | "replace" } | { acl?: "authenticatedRead" | "awsExecRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "publicRead" | "publicReadWrite", grantFullControl?: boolean, grantRead?: boolean, grantReadAcp?: boolean, grantWriteAcp?: boolean, lockLegalHold?: boolean, lockMode?: "governance" | "compliance", lockRetainUntilDate?: string, parentFolderKey?: string, requesterPays?: boolean, serverSideEncryption?: "AES256" | "aws:kms", serverSideEncryptionContext?: string, encryptionAwsKmsKeyId?: string, serversideEncryptionCustomerAlgorithm?: string, serversideEncryptionCustomerKey?: string, serversideEncryptionCustomerKeyMD5?: string, storageClass?: "deepArchive" | "glacier" | "intelligentTiering" | "onezoneIA" | "standard" | "standardIA" };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -38,7 +38,7 @@ export interface AwsS3V2NodeParameters {
     readonly folderKey?: string;
 
     /** Default: {} */
-    readonly options?: { "fetchOwner"?: boolean, "folderKey"?: string } | { "versionId"?: string };
+    readonly options?: { fetchOwner?: boolean, folderKey?: string } | { versionId?: string };
 
     /** The name of the source bucket should start with (/) and key name of the source object, separated by a slash (/) */
     readonly sourcePath?: string;
@@ -65,7 +65,7 @@ export interface AwsS3V2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly tagsUi?: { "tagsValues": any };
+    readonly tagsUi?: { tagsValues: { key?: string, value?: string } };
 
     readonly fileKey?: string;
 

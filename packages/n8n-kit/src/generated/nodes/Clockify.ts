@@ -38,10 +38,10 @@ export interface ClockifyNodeParameters {
     readonly clientId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "archived"?: boolean, "name"?: string, "sort-order"?: "ASCENDING" | "DESCENDING" } | { "billable"?: boolean, "color"?: string, "clientId"?: string, "estimateUi"?: { "estimateValues": any }, "isPublic"?: boolean, "note"?: string } | { "archived"?: boolean, "billable"?: boolean, "clients"?: any[], "contains-client"?: boolean, "client-status"?: "ACTIVE" | "ARCHIVED", "contains-user"?: boolean, "is-template"?: boolean, "name"?: string, "sort-column"?: "NAME" | "CLIENT_NAME" | "DURATION", "sort-order"?: "ASCENDING" | "DESCENDING", "users"?: string, "user-status"?: "ACTIVE" | "ARCHIVED" } | { "archived"?: boolean, "name"?: string, "sort-column"?: "NAME", "sort-order"?: "ASCENDING" | "DESCENDING" } | { "assigneeIds"?: any[], "estimate"?: string } | { "email"?: string, "name"?: string, "status"?: "ACTIVE" | "INACTIVE" | "PENDING" | "DECLINED", "sort-column"?: "EMAIL" | "NAME" | "HOURLYRATE", "sort-order"?: "ASCENDING" | "DESCENDING" } | { "billable"?: boolean, "customFieldsUi"?: { "customFieldsValues": any }, "description"?: string, "end"?: string, "projectId"?: string, "tagIds"?: any[], "taskId"?: string } | { "consider-duration-format"?: boolean, "hydrated"?: boolean };
+    readonly additionalFields?: { archived?: boolean, name?: string, "sort-order"?: "ASCENDING" | "DESCENDING" } | { billable?: boolean, color?: string, clientId?: string, estimateUi?: { estimateValues: { estimate?: number, type?: "AUTO" | "MANUAL" } }, isPublic?: boolean, note?: string } | { archived?: boolean, billable?: boolean, clients?: any[], "contains-client"?: boolean, "client-status"?: "ACTIVE" | "ARCHIVED", "contains-user"?: boolean, "is-template"?: boolean, name?: string, "sort-column"?: "NAME" | "CLIENT_NAME" | "DURATION", "sort-order"?: "ASCENDING" | "DESCENDING", users?: string, "user-status"?: "ACTIVE" | "ARCHIVED" } | { archived?: boolean, name?: string, "sort-column"?: "NAME", "sort-order"?: "ASCENDING" | "DESCENDING" } | { assigneeIds?: any[], estimate?: string } | { email?: string, name?: string, status?: "ACTIVE" | "INACTIVE" | "PENDING" | "DECLINED", "sort-column"?: "EMAIL" | "NAME" | "HOURLYRATE", "sort-order"?: "ASCENDING" | "DESCENDING" } | { billable?: boolean, customFieldsUi?: { customFieldsValues: { customFieldId?: string, value?: string } }, description?: string, end?: string, projectId?: string, tagIds?: any[], taskId?: string } | { "consider-duration-format"?: boolean, hydrated?: boolean };
 
     /** Default: {} */
-    readonly updateFields?: { "address"?: string, "archived"?: boolean } | { "billable"?: boolean, "color"?: string, "clientId"?: string, "estimateUi"?: { "estimateValues": any }, "isPublic"?: boolean, "name"?: string, "note"?: string } | { "archived"?: boolean, "name"?: string } | { "assigneeIds"?: any[], "estimate"?: string, "name"?: string, "status"?: "ACTIVE" | "DONE" } | { "billable"?: boolean, "customFieldsUi"?: { "customFieldsValues": any }, "description"?: string, "end"?: string, "projectId"?: string, "start"?: string, "tagIds"?: any[], "taskId"?: string };
+    readonly updateFields?: { address?: string, archived?: boolean } | { billable?: boolean, color?: string, clientId?: string, estimateUi?: { estimateValues: { estimate?: number, type?: "AUTO" | "MANUAL" } }, isPublic?: boolean, name?: string, note?: string } | { archived?: boolean, name?: string } | { assigneeIds?: any[], estimate?: string, name?: string, status?: "ACTIVE" | "DONE" } | { billable?: boolean, customFieldsUi?: { customFieldsValues: { customFieldId?: string, value?: string } }, description?: string, end?: string, projectId?: string, start?: string, tagIds?: any[], taskId?: string };
 
     readonly projectId?: string;
 
@@ -51,7 +51,7 @@ export interface ClockifyNodeParameters {
     readonly taskId?: string;
 
     /** Default: {} */
-    readonly filters?: { "is-active"?: boolean, "name"?: string, "sort-column"?: "NAME", "sort-order"?: "ASCENDING" | "DESCENDING" };
+    readonly filters?: { "is-active"?: boolean, name?: string, "sort-column"?: "NAME", "sort-order"?: "ASCENDING" | "DESCENDING" };
 
     readonly start?: string;
 

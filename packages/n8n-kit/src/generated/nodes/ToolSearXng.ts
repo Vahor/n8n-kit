@@ -10,6 +10,6 @@ export const outputs = {"ai_tool":"ai_tool"} as const;
 
 export interface ToolSearXngNodeParameters {
     /** Default: {} */
-    readonly options?: { "numResults"?: number, "pageNumber"?: number, "language"?: string, "safesearch"?: "0" | "1" | "2" };
+    readonly options?: { numResults?: number, pageNumber?: number, language?: string, safesearch?: 0 | 1 | 2 };
 
 }

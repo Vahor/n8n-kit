@@ -12,6 +12,6 @@ export interface VectorStoreZepInsertNodeParameters {
     readonly collectionName?: string;
 
     /** Default: {} */
-    readonly options?: { "embeddingDimensions"?: number, "isAutoEmbedded"?: boolean };
+    readonly options?: { embeddingDimensions?: number, isAutoEmbedded?: boolean };
 
 }

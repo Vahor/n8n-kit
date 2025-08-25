@@ -37,7 +37,7 @@ export interface CloudflareNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "status"?: "active" | "expired" | "deleted" | "pending" };
+    readonly filters?: { status?: "active" | "expired" | "deleted" | "pending" };
 
     readonly certificateId?: string;
 

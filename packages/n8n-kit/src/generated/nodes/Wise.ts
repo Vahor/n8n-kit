@@ -45,7 +45,7 @@ export interface WiseNodeParameters {
     readonly fileName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "lineStyle"?: "COMPACT" | "FLAT", "range"?: { "rangeProperties": any } } | { "interval"?: "day" | "hour" | "minute", "range"?: { "rangeProperties": any }, "time"?: string } | { "reference"?: string };
+    readonly additionalFields?: { lineStyle?: "COMPACT" | "FLAT", range?: { rangeProperties: { intervalStart?: string, intervalEnd?: string } } } | { interval?: "day" | "hour" | "minute", range?: { rangeProperties: { from?: string, to?: string } }, time?: string } | { reference?: string };
 
     /** Code of the source currency to retrieve the exchange rate for */
     readonly source?: string;
@@ -99,6 +99,6 @@ export interface WiseNodeParameters {
     readonly downloadReceipt?: boolean;
 
     /** Default: {} */
-    readonly filters?: { "range"?: { "rangeProperties": any }, "sourceCurrency"?: string, "status"?: "bounced_back" | "cancelled" | "charged_back" | "funds_converted" | "funds_refunded" | "incoming_payment_waiting" | "outgoing_payment_sent" | "processing" | "unknown" | "waiting_recipient_input_to_proceed", "targetCurrency"?: string };
+    readonly filters?: { range?: { rangeProperties: { createdDateStart?: string, createdDateEnd?: string } }, sourceCurrency?: string, status?: "bounced_back" | "cancelled" | "charged_back" | "funds_converted" | "funds_refunded" | "incoming_payment_waiting" | "outgoing_payment_sent" | "processing" | "unknown" | "waiting_recipient_input_to_proceed", targetCurrency?: string };
 
 }

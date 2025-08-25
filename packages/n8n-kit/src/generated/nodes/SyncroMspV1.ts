@@ -26,7 +26,7 @@ export interface SyncroMspV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "businessName"?: string, "email"?: string, "firstName"?: string, "includeDisabled"?: boolean, "lastname"?: string, "query"?: string, "sort"?: string } | { "query"?: string, "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer" } | { "status"?: "active" | "all" | "resolved" };
+    readonly filters?: { businessName?: string, email?: string, firstName?: string, includeDisabled?: boolean, lastname?: string, query?: string, sort?: string } | { query?: string, status?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer" } | { status?: "active" | "all" | "resolved" };
 
     /** Get specific customer by ID */
     readonly customerId?: string;
@@ -34,10 +34,10 @@ export interface SyncroMspV1NodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "address"?: { "addressFields": any }, "businessName"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastname"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string } | { "assetId"?: string, "contactId"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer" } | { "address"?: { "addressFields": any }, "name"?: string, "notes"?: string, "phone"?: string } | { "resolved"?: boolean };
+    readonly additionalFields?: { address?: { addressFields: { address?: string, address2?: string, city?: string, state?: string, zip?: string } }, businessName?: string, firstName?: string, getSms?: boolean, invoiceCcEmails?: string, lastname?: string, noEmail?: boolean, notes?: string, notificationEmail?: string, phone?: string, referredBy?: string } | { assetId?: string, contactId?: string, issueType?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", status?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer" } | { address?: { addressFields: { address?: string, address2?: string, city?: string, state?: string, zip?: string } }, name?: string, notes?: string, phone?: string } | { resolved?: boolean };
 
     /** Default: {} */
-    readonly updateFields?: { "address"?: { "addressFields": any }, "businessName"?: string, "email"?: string, "firstName"?: string, "getSms"?: boolean, "invoiceCcEmails"?: string, "lastName"?: string, "noEmail"?: boolean, "notes"?: string, "notificationEmail"?: string, "phone"?: string, "referredBy"?: string } | { "assetId"?: string, "contactId"?: string, "customerId"?: string, "dueDate"?: string, "issueType"?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", "status"?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", "subject"?: string } | { "address"?: { "addressFields": any }, "customerId"?: string, "email"?: string, "name"?: string, "notes"?: string, "phone"?: string };
+    readonly updateFields?: { address?: { addressFields: { address?: string, address2?: string, city?: string, state?: string, zip?: string } }, businessName?: string, email?: string, firstName?: string, getSms?: boolean, invoiceCcEmails?: string, lastName?: string, noEmail?: boolean, notes?: string, notificationEmail?: string, phone?: string, referredBy?: string } | { assetId?: string, contactId?: string, customerId?: string, dueDate?: string, issueType?: "Contract Work" | "Network Project" | "Other" | "Regular Maintenance" | "Remote Support", status?: "Customer Reply" | "In Progress" | "New" | "Resolved" | "Scheduled" | "Waiting for Parts" | "Waiting on Customer", subject?: string } | { address?: { addressFields: { address?: string, address2?: string, city?: string, state?: string, zip?: string } }, customerId?: string, email?: string, name?: string, notes?: string, phone?: string };
 
     readonly subject?: string;
 

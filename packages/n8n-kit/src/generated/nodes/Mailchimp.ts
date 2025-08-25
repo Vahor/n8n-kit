@@ -33,20 +33,20 @@ export interface MailchimpNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { "emailType"?: "html" | "text", "language"?: string, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "tags"?: string, "vip"?: boolean, "timestampOpt"?: string } | { "fields"?: string, "excludeFields"?: string } | { "beforeLastChanged"?: string, "beforeTimestampOpt"?: string, "emailType"?: "html" | "text", "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "sinceLastChanged"?: string } | { "isSyncing"?: boolean } | { "beforeCreateTime"?: string, "beforeSendTime"?: string, "excludeFields"?: any[], "fields"?: any[], "listId"?: string, "sinceCreateTime"?: string, "sinceSendTime"?: string, "sortDirection"?: "ASC" | "DESC", "sortField"?: "create_time" | "send_time", "status"?: "save" | "sending" | "sent" | "schedule" };
+    readonly options?: { emailType?: "html" | "text", language?: string, ipOptIn?: string, ipSignup?: string, timestampSignup?: string, tags?: string, vip?: boolean, timestampOpt?: string } | { fields?: string, excludeFields?: string } | { beforeLastChanged?: string, beforeTimestampOpt?: string, emailType?: "html" | "text", status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", sinceLastChanged?: string } | { isSyncing?: boolean } | { beforeCreateTime?: string, beforeSendTime?: string, excludeFields?: any[], fields?: any[], listId?: string, sinceCreateTime?: string, sinceSendTime?: string, sortDirection?: "ASC" | "DESC", sortField?: "create_time" | "send_time", status?: "save" | "sending" | "sent" | "schedule" };
 
     /**
      * Subscriber location information.n
      * Default: {}
      */
-    readonly locationFieldsUi?: { "locationFieldsValues": any };
+    readonly locationFieldsUi?: { locationFieldsValues: { latitude: string, longitude: string } };
 
     /**
      * An individual merge var and value for a member
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeFieldsUi?: { "mergeFieldsValues": any };
+    readonly mergeFieldsUi?: { mergeFieldsValues: { name: string, value: string } };
 
     /** Type options: {"alwaysOpenEditWindow":true} */
     readonly mergeFieldsJson?: string;
@@ -58,7 +58,7 @@ export interface MailchimpNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly groupsUi?: { "groupsValues": any };
+    readonly groupsUi?: { groupsValues: { categoryId?: string, categoryFieldId?: string, value?: boolean } };
 
     /** Type options: {"alwaysOpenEditWindow":true} */
     readonly groupJson?: string;
@@ -74,7 +74,7 @@ export interface MailchimpNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "emailType"?: "html" | "text", "groupsUi"?: { "groupsValues": any }, "language"?: string, "mergeFieldsUi"?: { "mergeFieldsValues": any }, "ipOptIn"?: string, "ipSignup"?: string, "timestampSignup"?: string, "skipMergeValidation"?: boolean, "status"?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", "vip"?: boolean, "locationFieldsUi"?: { "locationFieldsValues": any }, "timestampOpt"?: string };
+    readonly updateFields?: { emailType?: "html" | "text", groupsUi?: { groupsValues: { categoryId?: string, categoryFieldId?: string, value?: boolean } }, language?: string, mergeFieldsUi?: { mergeFieldsValues: { name: string, value: string } }, ipOptIn?: string, ipSignup?: string, timestampSignup?: string, skipMergeValidation?: boolean, status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", vip?: boolean, locationFieldsUi?: { locationFieldsValues: { latitude: string, longitude: string } }, timestampOpt?: string };
 
     /**
      * Default: []

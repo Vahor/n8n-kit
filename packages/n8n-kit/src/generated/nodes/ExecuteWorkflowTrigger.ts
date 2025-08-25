@@ -19,6 +19,6 @@ export interface ExecuteWorkflowTriggerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true,"minRequiredFields":1}
      */
-    readonly workflowInputs?: { "values": any };
+    readonly workflowInputs?: { values: { name: string, type: "any" | "string" | "number" | "boolean" | "array" | "object" } };
 
 }

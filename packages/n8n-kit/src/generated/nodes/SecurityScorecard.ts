@@ -38,10 +38,10 @@ export interface SecurityScorecardNodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly filters?: { "severity"?: string, "severity_in"?: string } | { "grade"?: string, "industry"?: string, "issueType"?: string, "status"?: "active" | "inactive", "vulnerability"?: string };
+    readonly filters?: { severity?: string, severity_in?: string } | { grade?: string, industry?: string, issueType?: string, status?: "active" | "inactive", vulnerability?: string };
 
     /** Default: {} */
-    readonly options?: { "date_from"?: string, "date_to"?: string, "timing"?: "daily" | "weekly" | "monthly" } | { "from"?: string, "to"?: string } | { "format"?: "csv" | "pdf" } | { "countries"?: string, "format"?: "csv" | "pdf", "ips"?: string, "subdomains"?: string };
+    readonly options?: { date_from?: string, date_to?: string, timing?: "daily" | "weekly" | "monthly" } | { from?: string, to?: string } | { format?: "csv" | "pdf" } | { countries?: string, format?: "csv" | "pdf", ips?: string, subdomains?: string };
 
     /** Default: "food" */
     readonly industry?: "food" | "healthcare" | "manofacturing" | "retail" | "technology";
@@ -56,7 +56,7 @@ export interface SecurityScorecardNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "days_to_resolve_issue"?: number, "domain"?: string, "grade_to_maintain"?: string, "is_organization_point_of_contact"?: boolean, "issue_desc"?: string, "issue_title"?: string, "issue_type"?: string, "sendme_copy"?: boolean, "target_url"?: string };
+    readonly additionalFields?: { days_to_resolve_issue?: number, domain?: string, grade_to_maintain?: string, is_organization_point_of_contact?: boolean, issue_desc?: string, issue_title?: string, issue_type?: string, sendme_copy?: boolean, target_url?: string };
 
     readonly portfolioId?: string;
 

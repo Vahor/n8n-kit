@@ -64,7 +64,7 @@ export interface GoogleBusinessProfileNodeParameters {
     readonly alertType?: "COVID_19";
 
     /** Default: {} */
-    readonly additionalOptions?: { "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string } | { "summary"?: string, "languageCode"?: string, "callToActionType"?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "GET_OFFER" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", "url"?: string, "startDateTime"?: string, "endDateTime"?: string, "title"?: string, "startDate"?: string, "endDate"?: string, "couponCode"?: string, "redeemOnlineUrl"?: string, "termsConditions"?: string };
+    readonly additionalOptions?: { languageCode?: string, callToActionType?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "CALL" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", url?: string, couponCode?: string, redeemOnlineUrl?: string, termsConditions?: string } | { summary?: string, languageCode?: string, callToActionType?: "ACTION_TYPE_UNSPECIFIED" | "BOOK" | "GET_OFFER" | "LEARN_MORE" | "ORDER" | "SHOP" | "SIGN_UP", url?: string, startDateTime?: string, endDateTime?: string, title?: string, startDate?: string, endDate?: string, couponCode?: string, redeemOnlineUrl?: string, termsConditions?: string };
 
     /**
      * Select the post to retrieve its details

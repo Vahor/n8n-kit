@@ -45,6 +45,6 @@ export interface RemoveDuplicatesV2NodeParameters {
     readonly mode?: "cleanDatabase";
 
     /** Default: {} */
-    readonly options?: { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean, "scope"?: "workflow" | "node", "historySize"?: number };
+    readonly options?: { disableDotNotation?: boolean, removeOtherFields?: boolean, scope?: "workflow" | "node", historySize?: number };
 
 }

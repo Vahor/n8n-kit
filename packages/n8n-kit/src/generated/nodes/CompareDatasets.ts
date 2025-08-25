@@ -12,7 +12,7 @@ export interface CompareDatasetsNodeParameters {
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeByFields?: { "values": any };
+    readonly mergeByFields?: { values: { field1?: string, field2?: string } };
 
     /** Default: "preferInput2" */
     readonly resolve?: "preferInput1" | "preferInput2" | "mix" | "includeBoth";
@@ -26,6 +26,6 @@ export interface CompareDatasetsNodeParameters {
     readonly exceptWhenMix?: string;
 
     /** Default: {} */
-    readonly options?: { "skipFields"?: string, "fuzzyCompare"?: boolean, "disableDotNotation"?: boolean, "multipleMatches"?: "first" | "all" };
+    readonly options?: { skipFields?: string, fuzzyCompare?: boolean, disableDotNotation?: boolean, multipleMatches?: "first" | "all" };
 
 }

@@ -34,6 +34,6 @@ export interface NetlifyNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { "branch"?: string, "title"?: string };
+    readonly additionalFields?: { branch?: string, title?: string };
 
 }

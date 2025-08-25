@@ -31,7 +31,7 @@ export interface AwsTranscribeNodeParameters {
     readonly languageCode?: "en-US" | "en-GB" | "de-DE" | "en-IN" | "en-IE" | "ru-RU" | "es-ES";
 
     /** Default: {} */
-    readonly options?: { "channelIdentification"?: boolean, "maxAlternatives"?: number, "maxSpeakerLabels"?: number, "vocabularyName"?: string, "vocabularyFilterName"?: string, "vocabularyFilterMethod"?: "remove" | "mask" | "tag" };
+    readonly options?: { channelIdentification?: boolean, maxAlternatives?: number, maxSpeakerLabels?: number, vocabularyName?: string, vocabularyFilterName?: string, vocabularyFilterMethod?: "remove" | "mask" | "tag" };
 
     /**
      * By default, the response only contains metadata about the transcript. Enable this option to retrieve the transcript instead.
@@ -56,6 +56,6 @@ export interface AwsTranscribeNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "jobNameContains"?: string, "status"?: "COMPLETED" | "FAILED" | "IN_PROGRESS" | "QUEUED" };
+    readonly filters?: { jobNameContains?: string, status?: "COMPLETED" | "FAILED" | "IN_PROGRESS" | "QUEUED" };
 
 }

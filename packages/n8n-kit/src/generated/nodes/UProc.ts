@@ -445,6 +445,6 @@ export interface UProcNodeParameters {
     readonly count?: string;
 
     /** Default: {} */
-    readonly additionalOptions?: { "dataWebhook"?: string };
+    readonly additionalOptions?: { dataWebhook?: string };
 
 }

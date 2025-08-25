@@ -13,9 +13,9 @@ export interface CalTriggerNodeParameters {
     readonly events?: ("BOOKING_CANCELLED" | "BOOKING_CREATED" | "BOOKING_RESCHEDULED" | "MEETING_ENDED")[];
 
     /** Default: 1 */
-    readonly version?: "1" | "2";
+    readonly version?: 1 | 2;
 
     /** Default: {} */
-    readonly options?: { "appId"?: string, "eventTypeId"?: string, "payloadTemplate"?: string };
+    readonly options?: { appId?: string, eventTypeId?: string, payloadTemplate?: string };
 
 }

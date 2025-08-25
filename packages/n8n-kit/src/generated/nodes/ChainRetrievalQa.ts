@@ -22,6 +22,6 @@ export interface ChainRetrievalQaNodeParameters {
     readonly text?: string;
 
     /** Default: {} */
-    readonly options?: { "systemPromptTemplate"?: string, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
+    readonly options?: { systemPromptTemplate?: string, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

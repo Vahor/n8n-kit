@@ -62,6 +62,6 @@ export interface DropboxNodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly filters?: { "file_categories"?: ("audio" | "document" | "paper" | "folder" | "image" | "other" | "pdf" | "presentation" | "spreadsheet" | "video")[], "file_extensions"?: string, "path"?: string } | { "include_deleted"?: boolean, "include_has_explicit_shared_members"?: boolean, "include_mounted_folders"?: boolean, "include_non_downloadable_files"?: boolean, "recursive"?: boolean };
+    readonly filters?: { file_categories?: ("audio" | "document" | "paper" | "folder" | "image" | "other" | "pdf" | "presentation" | "spreadsheet" | "video")[], file_extensions?: string, path?: string } | { include_deleted?: boolean, include_has_explicit_shared_members?: boolean, include_mounted_folders?: boolean, include_non_downloadable_files?: boolean, recursive?: boolean };
 
 }

@@ -31,7 +31,7 @@ export interface GitNodeParameters {
     readonly value?: string;
 
     /** Default: {} */
-    readonly options?: { "mode"?: "append" | "set" } | { "pathsToAdd"?: string } | { "file"?: string } | { "targetRepository"?: string };
+    readonly options?: { mode?: "append" | "set" } | { pathsToAdd?: string } | { file?: string } | { targetRepository?: string };
 
     /** The URL or path of the repository to clone */
     readonly sourceRepository?: string;
