@@ -14,6 +14,6 @@ export interface PayPalTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getEvents"}
      */
-    readonly events?: any[];
+    readonly events?: (string)[];
 
 }

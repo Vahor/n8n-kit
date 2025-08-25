@@ -14,7 +14,7 @@ export interface ActiveCampaignTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getEvents"}
      */
-    readonly events?: any[];
+    readonly events?: (string)[];
 
     /** Default: [] */
     readonly sources?: ("public" | "admin" | "api" | "system")[];

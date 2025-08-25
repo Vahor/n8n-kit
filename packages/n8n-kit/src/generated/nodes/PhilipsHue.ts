@@ -34,6 +34,6 @@ export interface PhilipsHueNodeParameters {
     readonly on?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "alert"?: "none" | "select" | "lselect", "bri"?: number, "bri_inc"?: number, "ct"?: number, "ct_inc"?: number, "xy"?: string, "xy_inc"?: string, "effect"?: "none" | "colorloop", "hue"?: number, "hue_inc"?: number, "sat"?: number, "sat_inc"?: number, "transitiontime"?: number };
+    readonly additionalFields?: { alert?: "none" | "select" | "lselect", bri?: number, bri_inc?: number, ct?: number, ct_inc?: number, xy?: string, xy_inc?: string, effect?: "none" | "colorloop", hue?: number, hue_inc?: number, sat?: number, sat_inc?: number, transitiontime?: number };
 
 }

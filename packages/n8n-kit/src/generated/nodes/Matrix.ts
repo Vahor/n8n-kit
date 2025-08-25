@@ -31,7 +31,7 @@ export interface MatrixNodeParameters {
     readonly mediaType?: "file" | "image" | "audio" | "video";
 
     /** Default: {} */
-    readonly additionalFields?: { "fileName"?: string };
+    readonly additionalFields?: { fileName?: string };
 
     /** The text to send */
     readonly text?: string;
@@ -62,7 +62,7 @@ export interface MatrixNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly otherOptions?: { "filter"?: string };
+    readonly otherOptions?: { filter?: string };
 
     readonly roomName?: string;
 
@@ -83,6 +83,6 @@ export interface MatrixNodeParameters {
      * Filtering options
      * Default: {}
      */
-    readonly filters?: { "notMembership"?: "" | "ban" | "invite" | "join" | "leave", "membership"?: "" | "ban" | "invite" | "join" | "leave" };
+    readonly filters?: { notMembership?: "" | "ban" | "invite" | "join" | "leave", membership?: "" | "ban" | "invite" | "join" | "leave" };
 
 }

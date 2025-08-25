@@ -19,6 +19,6 @@ export interface LocalFileTriggerNodeParameters {
     readonly events?: ("add" | "change" | "unlink" | "addDir" | "unlinkDir")[];
 
     /** Default: {} */
-    readonly options?: { "awaitWriteFinish"?: boolean, "followSymlinks"?: boolean, "ignored"?: string, "ignoreInitial"?: boolean, "depth"?: "1" | "2" | "3" | "4" | "5" | "0" | "-1", "usePolling"?: boolean, "ignoreMode"?: "match" | "contain" };
+    readonly options?: { awaitWriteFinish?: boolean, followSymlinks?: boolean, ignored?: string, ignoreInitial?: boolean, depth?: 1 | 2 | 3 | 4 | 5 | 0 | -1, usePolling?: boolean, ignoreMode?: "match" | "contain" };
 
 }

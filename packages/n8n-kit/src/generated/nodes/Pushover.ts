@@ -25,7 +25,7 @@ export interface PushoverNodeParameters {
      * Send as -2 to generate no notification/alert, -1 to always send as a quiet notification, 1 to display as high-priority and bypass the user's quiet hours, or 2 to also require confirmation from the user
      * Default: -2
      */
-    readonly priority?: "-2" | "-1" | "0" | "1" | "2";
+    readonly priority?: -2 | -1 | 0 | 1 | 2;
 
     /**
      * Specifies how often (in seconds) the Pushover servers will send the same notification to the user. This parameter must have a value of at least 30 seconds between retries.
@@ -42,6 +42,6 @@ export interface PushoverNodeParameters {
     readonly expire?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { "attachmentsUi"?: { "attachmentsValues": any }, "device"?: string, "html"?: boolean, "sound"?: string, "timestamp"?: string, "title"?: string, "url"?: string, "url_title"?: string };
+    readonly additionalFields?: { attachmentsUi?: { attachmentsValues: { binaryPropertyName?: string } }, device?: string, html?: boolean, sound?: string, timestamp?: string, title?: string, url?: string, url_title?: string };
 
 }

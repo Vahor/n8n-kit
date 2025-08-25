@@ -22,12 +22,12 @@ export interface DriftNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "name"?: string, "phone"?: string };
+    readonly additionalFields?: { name?: string, phone?: string };
 
     /** Unique identifier for the contact */
     readonly contactId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "email"?: string, "name"?: string, "phone"?: string };
+    readonly updateFields?: { email?: string, name?: string, phone?: string };
 
 }

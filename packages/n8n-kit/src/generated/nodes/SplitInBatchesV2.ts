@@ -16,6 +16,6 @@ export interface SplitInBatchesV2NodeParameters {
     readonly batchSize?: number;
 
     /** Default: {} */
-    readonly options?: { "reset"?: boolean };
+    readonly options?: { reset?: boolean };
 
 }

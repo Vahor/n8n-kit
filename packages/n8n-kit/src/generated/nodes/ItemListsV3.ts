@@ -19,7 +19,7 @@ export interface ItemListsV3NodeParameters {
      * Default: {"fieldToAggregate":[{"fieldToAggregate":"","renameField":false}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToAggregate?: { "fieldToAggregate": any };
+    readonly fieldsToAggregate?: { fieldToAggregate: Array<{ fieldToAggregate?: string, renameField?: boolean, outputFieldName?: string }> };
 
     /**
      * The name of the output field to put the data in
@@ -35,7 +35,7 @@ export interface ItemListsV3NodeParameters {
     readonly fieldsToInclude?: string;
 
     /** Default: {} */
-    readonly options?: { "disableDotNotation"?: boolean, "mergeLists"?: boolean, "includeBinaries"?: boolean, "keepOnlyUnique"?: boolean, "keepMissing"?: boolean } | { "disableDotNotation"?: boolean, "removeOtherFields"?: boolean } | { "disableDotNotation"?: boolean } | { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean } | { "disableDotNotation"?: boolean, "outputFormat"?: "separateItems" | "singleItem", "skipEmptySplitFields"?: boolean };
+    readonly options?: { disableDotNotation?: boolean, mergeLists?: boolean, includeBinaries?: boolean, keepOnlyUnique?: boolean, keepMissing?: boolean } | { disableDotNotation?: boolean, removeOtherFields?: boolean } | { disableDotNotation?: boolean } | { disableDotNotation?: boolean, destinationFieldName?: string, includeBinary?: boolean } | { disableDotNotation?: boolean, outputFormat?: "separateItems" | "singleItem", skipEmptySplitFields?: boolean };
 
     /**
      * If there are more items than this number, some are removed
@@ -70,7 +70,7 @@ export interface ItemListsV3NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sortFieldsUi?: { "sortField": any };
+    readonly sortFieldsUi?: { sortField: Array<{ fieldName: string, order?: "ascending" | "descending" }> };
 
     /**
      * Javascript code to determine the order of any two items
@@ -86,7 +86,7 @@ export interface ItemListsV3NodeParameters {
      * Default: {"values":[{"aggregation":"count","field":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsToSummarize?: { "values": any };
+    readonly fieldsToSummarize?: { values: Array<{ aggregation?: "append" | "average" | "concatenate" | "count" | "countUnique" | "max" | "min" | "sum", field?: string, includeEmpty?: boolean, separateBy?: "," | ", " | "\n" | "" | " " | "other", customSeparator?: string }> };
 
     /** The name of the input fields that you want to split the summary by */
     readonly fieldsToSplitBy?: string;

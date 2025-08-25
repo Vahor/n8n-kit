@@ -40,6 +40,6 @@ export interface EmailSendV1NodeParameters {
     readonly attachments?: string;
 
     /** Default: {} */
-    readonly options?: { "allowUnauthorizedCerts"?: boolean, "replyTo"?: string };
+    readonly options?: { allowUnauthorizedCerts?: boolean, replyTo?: string };
 
 }

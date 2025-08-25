@@ -16,7 +16,7 @@ export interface N8nNodeParameters {
     readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "update";
 
     /** Default: {} */
-    readonly additionalOptions?: { "categories"?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], "daysAbandonedWorkflow"?: number };
+    readonly additionalOptions?: { categories?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], daysAbandonedWorkflow?: number };
 
     /** Name of the new credential */
     readonly name?: string;
@@ -45,13 +45,13 @@ export interface N8nNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "workflowId"?: {
+    readonly filters?: { workflowId?: {
 	value: string,
 	mode: "list" | "url" | "id",
-}, "status"?: "error" | "success" | "waiting" } | { "activeWorkflows"?: boolean, "tags"?: string, "name"?: string, "projectId"?: string, "excludePinnedData"?: boolean };
+}, status?: "error" | "success" | "waiting" } | { activeWorkflows?: boolean, tags?: string, name?: string, projectId?: string, excludePinnedData?: boolean };
 
     /** Default: {} */
-    readonly options?: { "activeWorkflows"?: boolean };
+    readonly options?: { activeWorkflows?: boolean };
 
     /**
      * Workflow to filter the executions by

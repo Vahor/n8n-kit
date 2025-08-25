@@ -18,25 +18,25 @@ export interface KeapNodeParameters {
     readonly companyName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "emailAddress"?: string, "notes"?: string, "optInReason"?: string, "website"?: string } | { "anniversary"?: string, "companyId"?: number, "contactType"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "jobTitle"?: string, "leadSourceId"?: number, "middleName"?: string, "optInReason"?: string, "ownerId"?: string, "preferredLocale"?: string, "preferredName"?: string, "sourceType"?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", "spouseName"?: string, "timezone"?: string, "website"?: string } | { "body"?: string, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other" } | { "body"?: string, "contactId"?: number, "title"?: string, "type"?: "appointment" | "call" | "email" | "fax" | "letter" | "other", "userId"?: string } | { "leadAffiliateId"?: number, "promoCodes"?: string, "salesAffiliateId"?: number } | { "active"?: boolean, "productDesc"?: string, "productPrice"?: number, "productShortDesc"?: string, "sku"?: string, "subscriptionOnly"?: boolean } | { "clickedDate"?: string, "contactId"?: number, "headers"?: string, "htmlContent"?: string, "openedDate"?: string, "originalProvider"?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", "originalProviderId"?: string, "plainContent"?: string, "providerSourceId"?: string, "receivedDate"?: string, "sentDate"?: string, "sentFromReplyAddress"?: string, "sentToBccAddresses"?: string, "sentToCCAddresses"?: string, "subject"?: string } | { "addressField"?: string, "htmlContent"?: string, "plainContent"?: string };
+    readonly additionalFields?: { emailAddress?: string, notes?: string, optInReason?: string, website?: string } | { anniversary?: string, companyId?: number, contactType?: string, familyName?: string, givenName?: string, ipAddress?: string, jobTitle?: string, leadSourceId?: number, middleName?: string, optInReason?: string, ownerId?: string, preferredLocale?: string, preferredName?: string, sourceType?: "API" | "IMPORT" | "LANDINGPAGE" | "MANUAL" | "OTHER" | "UNKNOWN", spouseName?: string, timezone?: string, website?: string } | { body?: string, title?: string, type?: "appointment" | "call" | "email" | "fax" | "letter" | "other" } | { body?: string, contactId?: number, title?: string, type?: "appointment" | "call" | "email" | "fax" | "letter" | "other", userId?: string } | { leadAffiliateId?: number, promoCodes?: string, salesAffiliateId?: number } | { active?: boolean, productDesc?: string, productPrice?: number, productShortDesc?: string, sku?: string, subscriptionOnly?: boolean } | { clickedDate?: string, contactId?: number, headers?: string, htmlContent?: string, openedDate?: string, originalProvider?: "UNKNOWN" | "INFUSIONSOFT" | "MICROSOFT" | "GOOGLE", originalProviderId?: string, plainContent?: string, providerSourceId?: string, receivedDate?: string, sentDate?: string, sentFromReplyAddress?: string, sentToBccAddresses?: string, sentToCCAddresses?: string, subject?: string } | { addressField?: string, htmlContent?: string, plainContent?: string };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly addressesUi?: { "addressesValues": any };
+    readonly addressesUi?: { addressesValues: { countryCode?: string, line1?: string, line2?: string, locality?: string, postalCode?: string, region?: string, zipCode?: string, zipFour?: string } } | { addressesValues: Array<{ field?: "BILLING" | "SHIPPING" | "OTHER", countryCode?: string, line1?: string, line2?: string, locality?: string, postalCode?: string, region?: string, zipCode?: string, zipFour?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly faxesUi?: { "faxesValues": any };
+    readonly faxesUi?: { faxesValues: { type?: string, number?: string } } | { faxesValues: Array<{ field?: "FAX1" | "FAX2", number?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly phonesUi?: { "phonesValues": any };
+    readonly phonesUi?: { phonesValues: Array<{ type?: string, number?: string }> } | { phonesValues: Array<{ field?: "PHONE1" | "PHONE2" | "PHONE3" | "PHONE4" | "PHONE5", number?: string }> };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -49,7 +49,7 @@ export interface KeapNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "companyName"?: string, "order"?: "datecreated" | "id" | "name", "orderDirection"?: "ascending" | "descending", "fields"?: string } | { "fields"?: string } | { "email"?: string, "givenName"?: string, "familyName"?: string, "order"?: "date" | "email" | "id" | "name", "orderDirection"?: "ascending" | "descending", "since"?: string, "until"?: string } | { "since"?: string, "until"?: string, "paid"?: boolean, "order"?: string, "contactId"?: number, "productId"?: number };
+    readonly options?: { companyName?: string, order?: "datecreated" | "id" | "name", orderDirection?: "ascending" | "descending", fields?: string } | { fields?: string } | { email?: string, givenName?: string, familyName?: string, order?: "date" | "email" | "id" | "name", orderDirection?: "ascending" | "descending", since?: string, until?: string } | { since?: string, until?: string, paid?: boolean, order?: string, contactId?: number, productId?: number };
 
     /**
      * Performs duplicate checking by one of the following options: Email, EmailAndName. If a match is found using the option provided, the existing contact will be updated.
@@ -61,13 +61,13 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly emailsUi?: { "emailsValues": any };
+    readonly emailsUi?: { emailsValues: Array<{ field?: "EMAIL1" | "EMAIL2" | "EMAIL3", email?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly socialAccountsUi?: { "socialAccountsValues": any };
+    readonly socialAccountsUi?: { socialAccountsValues: Array<{ type?: "Facebook" | "Twitter" | "LinkedIn", name?: string }> };
 
     readonly contactId?: string;
 
@@ -80,7 +80,7 @@ export interface KeapNodeParameters {
     readonly noteId?: string;
 
     /** Default: {} */
-    readonly filters?: { "contactId"?: number, "userId"?: string } | { "active"?: boolean } | { "contactId"?: number, "email"?: string, "sinceSentDate"?: string, "untilSentDate"?: string } | { "contactId"?: number, "name"?: string, "permission"?: "user" | "company" | "both", "type"?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", "viewable"?: "public" | "private" | "both" };
+    readonly filters?: { contactId?: number, userId?: string } | { active?: boolean } | { contactId?: number, email?: string, sinceSentDate?: string, untilSentDate?: string } | { contactId?: number, name?: string, permission?: "user" | "company" | "both", type?: "application" | "attachment" | "contact" | "digitalProduct" | "fax" | "funnel" | "hidden" | "image" | "import" | "logoThumnail" | "reSampledImage" | "styleCart" | "templateThumnail" | "ticket" | "webform", viewable?: "public" | "private" | "both" };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -99,13 +99,13 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly addressUi?: { "addressValues": any };
+    readonly addressUi?: { addressValues: { company?: string, countryCode?: string, firstName?: string, middleName?: string, lastName?: string, line1?: string, line2?: string, locality?: string, region?: string, zipCode?: string, zipFour?: string, phone?: string } };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly orderItemsUi?: { "orderItemsValues": any };
+    readonly orderItemsUi?: { orderItemsValues: Array<{ description?: string, price?: number, "product ID"?: number, quantity?: number }> };
 
     readonly orderId?: string;
 
@@ -128,7 +128,7 @@ export interface KeapNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { "attachmentsValues": any, "attachmentsBinary": any };
+    readonly attachmentsUi?: { attachmentsValues: Array<{ fileData?: string, fileName?: string }>, attachmentsBinary: Array<{ property?: string }> };
 
     /** Whether the data to upload should be taken from binary field */
     readonly binaryData?: boolean;

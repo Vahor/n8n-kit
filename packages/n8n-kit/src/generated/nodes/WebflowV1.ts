@@ -37,7 +37,7 @@ export interface WebflowV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any };
+    readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> };
 
     /** ID of the item to operate on */
     readonly itemId?: string;

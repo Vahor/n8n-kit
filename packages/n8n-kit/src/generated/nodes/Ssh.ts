@@ -31,6 +31,6 @@ export interface SshNodeParameters {
     readonly path?: string;
 
     /** Default: {} */
-    readonly options?: { "fileName"?: string };
+    readonly options?: { fileName?: string };
 
 }

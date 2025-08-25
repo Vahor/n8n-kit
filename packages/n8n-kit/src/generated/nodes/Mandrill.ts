@@ -30,7 +30,7 @@ export interface MandrillNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { "async"?: boolean, "autoText"?: boolean, "autoHtml"?: boolean, "bccAddress"?: string, "fromName"?: string, "googleAnalyticsCampaign"?: string, "googleAnalyticsDomains"?: string, "html"?: string, "important"?: boolean, "inlineCss"?: boolean, "ipPool"?: string, "preserveRecipients"?: boolean, "returnPathDomain"?: string, "sendAt"?: string, "signingDomain"?: string, "subAccount"?: string, "subject"?: string, "tags"?: string, "text"?: string, "trackClicks"?: boolean, "trackOpens"?: boolean, "trackingDomain"?: string, "urlStripQs"?: boolean, "viewContentLink"?: boolean };
+    readonly options?: { async?: boolean, autoText?: boolean, autoHtml?: boolean, bccAddress?: string, fromName?: string, googleAnalyticsCampaign?: string, googleAnalyticsDomains?: string, html?: string, important?: boolean, inlineCss?: boolean, ipPool?: string, preserveRecipients?: boolean, returnPathDomain?: string, sendAt?: string, signingDomain?: string, subAccount?: string, subject?: string, tags?: string, text?: string, trackClicks?: boolean, trackOpens?: boolean, trackingDomain?: string, urlStripQs?: boolean, viewContentLink?: boolean };
 
     /**
      * Global merge variables
@@ -43,14 +43,14 @@ export interface MandrillNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeVarsUi?: { "mergeVarsValues": any };
+    readonly mergeVarsUi?: { mergeVarsValues: Array<{ name?: string, content?: string }> };
 
     /**
      * Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill search api.
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly metadataUi?: { "metadataValues": any };
+    readonly metadataUi?: { metadataValues: Array<{ name?: string, value?: string }> };
 
     /**
      * Metadata an associative array of user metadata. Mandrill will store this metadata and make it available for retrieval. In addition, you can select up to 10 metadata fields to index and make searchable using the Mandrill search api.
@@ -69,7 +69,7 @@ export interface MandrillNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { "attachmentsValues": any, "attachmentsBinary": any };
+    readonly attachmentsUi?: { attachmentsValues: Array<{ type?: string, name?: string, content?: string }>, attachmentsBinary: Array<{ property?: string }> };
 
     /**
      * Optional extra headers to add to the message (most headers are allowed)
@@ -82,6 +82,6 @@ export interface MandrillNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly headersUi?: { "headersValues": any };
+    readonly headersUi?: { headersValues: Array<{ name?: string, value?: string }> };
 
 }

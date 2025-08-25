@@ -41,7 +41,7 @@ export interface ZulipNodeParameters {
     readonly messageId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "content"?: string, "propagateMode"?: "changeOne" | "changeLater" | "changeAll", "topic"?: string };
+    readonly updateFields?: { content?: string, propagateMode?: "changeOne" | "changeLater" | "changeAll", topic?: string };
 
     /** Default: "data" */
     readonly dataBinaryProperty?: string;
@@ -59,10 +59,10 @@ export interface ZulipNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly subscriptions?: { "properties": any };
+    readonly subscriptions?: { properties: Array<{ name: string, description: string }> };
 
     /** Default: {} */
-    readonly additionalFields?: { "announce"?: boolean, "authorizationErrorsFatal"?: boolean, "historyPublicToSubscribers"?: boolean, "inviteOnly"?: boolean, "principals"?: { "properties": any }, "streamPostPolicy"?: "1" | "2" | "3" } | { "includeAllActive"?: boolean, "includeDefault"?: boolean, "includeOwnersubscribed"?: boolean, "includePublic"?: boolean, "includeSubscribed"?: boolean } | { "includeSubscribers"?: boolean } | { "isAnnouncementOnly"?: boolean, "description"?: string, "isPrivate"?: boolean, "historyPublicToSubscribers"?: boolean, "newName"?: string, "streamPostPolicy"?: "1" | "2" | "3" } | { "clientGravatar"?: boolean, "includeCustomProfileFields"?: boolean } | { "fullName"?: string, "isAdmin"?: boolean, "isGuest"?: boolean, "profileData"?: { "property": any }, "role"?: "600" | "400" | "200" | "300" | "100" };
+    readonly additionalFields?: { announce?: boolean, authorizationErrorsFatal?: boolean, historyPublicToSubscribers?: boolean, inviteOnly?: boolean, principals?: { properties: Array<{ email: string }> }, streamPostPolicy?: 1 | 2 | 3 } | { includeAllActive?: boolean, includeDefault?: boolean, includeOwnersubscribed?: boolean, includePublic?: boolean, includeSubscribed?: boolean } | { includeSubscribers?: boolean } | { isAnnouncementOnly?: boolean, description?: string, isPrivate?: boolean, historyPublicToSubscribers?: boolean, newName?: string, streamPostPolicy?: 1 | 2 | 3 } | { clientGravatar?: boolean, includeCustomProfileFields?: boolean } | { fullName?: string, isAdmin?: boolean, isGuest?: boolean, profileData?: { property: Array<{ id: string, value?: string }> }, role?: 600 | 400 | 200 | 300 | 100 };
 
     /** ID of stream to update */
     readonly streamId?: string;

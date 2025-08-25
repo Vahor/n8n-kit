@@ -27,7 +27,7 @@ export interface DateTimeV1NodeParameters {
     readonly toFormat?: string | "MM/DD/YYYY" | "YYYY/MM/DD" | "MMMM DD YYYY" | "MM-DD-YYYY" | "YYYY-MM-DD" | "X" | "x";
 
     /** Default: {} */
-    readonly options?: { "fromFormat"?: string, "fromTimezone"?: string, "toTimezone"?: string } | { "fromFormat"?: string };
+    readonly options?: { fromFormat?: string, fromTimezone?: string, toTimezone?: string } | { fromFormat?: string };
 
     /** Default: "add" */
     readonly operation?: "add" | "subtract";

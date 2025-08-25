@@ -13,6 +13,6 @@ export interface CronNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Time"}
      */
-    readonly triggerTimes?: { "item": any };
+    readonly triggerTimes?: { item: Array<{ mode?: "everyMinute" | "everyHour" | "everyDay" | "everyWeek" | "everyMonth" | "everyX" | "custom", hour?: number, minute?: number, dayOfMonth?: number, weekday?: "1" | "2" | "3" | "4" | "5" | "6" | "0", cronExpression?: string, value?: number, unit?: "minutes" | "hours" }> };
 
 }

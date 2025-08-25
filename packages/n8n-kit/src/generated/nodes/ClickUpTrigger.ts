@@ -22,6 +22,6 @@ export interface ClickUpTriggerNodeParameters {
     readonly events?: ("*" | "folderCreated" | "folderDeleted" | "folderUpdated" | "goalCreated" | "goalDeleted" | "goalUpdated" | "keyResultCreated" | "keyResultDelete" | "keyResultUpdated" | "listCreated" | "listDeleted" | "listUpdated" | "spaceCreated" | "spaceDeleted" | "spaceUpdated" | "taskAssigneeUpdated" | "taskCommentPosted" | "taskCommentUpdated" | "taskCreated" | "taskDeleted" | "taskDueDateUpdated" | "taskMoved" | "taskStatusUpdated" | "taskTagUpdated" | "taskTimeEstimateUpdated" | "taskTimeTrackedUpdated" | "taskUpdated")[];
 
     /** Default: {} */
-    readonly filters?: { "folderId"?: string, "listId"?: string, "spaceId"?: string, "taskId"?: string };
+    readonly filters?: { folderId?: string, listId?: string, spaceId?: string, taskId?: string };
 
 }

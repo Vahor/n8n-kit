@@ -23,7 +23,7 @@ export interface LinearNodeParameters {
     readonly comment?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "parentId"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string };
+    readonly additionalFields?: { parentId?: string } | { assigneeId?: string, description?: string, priorityId?: 1 | 2 | 3 | 4 | 0, stateId?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -44,7 +44,7 @@ export interface LinearNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "3" | "0", "stateId"?: string, "teamId"?: string, "title"?: string } | { "assigneeId"?: string, "description"?: string, "priorityId"?: "1" | "2" | "3" | "4" | "0", "stateId"?: string, "teamId"?: string, "title"?: string };
+    readonly updateFields?: { assigneeId?: string, description?: string, priorityId?: 1 | 2 | 3 | 3 | 0, stateId?: string, teamId?: string, title?: string } | { assigneeId?: string, description?: string, priorityId?: 1 | 2 | 3 | 4 | 0, stateId?: string, teamId?: string, title?: string };
 
     readonly link?: string;
 

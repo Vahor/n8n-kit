@@ -86,6 +86,6 @@ export interface MicrosoftSharePointNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "fields"?: ("contentType" | "createdDateTime" | "createdBy" | "fields" | "id" | "lastModifiedDateTime" | "lastModifiedBy" | "parentReference" | "webUrl")[] };
+    readonly options?: { fields?: ("contentType" | "createdDateTime" | "createdBy" | "fields" | "id" | "lastModifiedDateTime" | "lastModifiedBy" | "parentReference" | "webUrl")[] };
 
 }

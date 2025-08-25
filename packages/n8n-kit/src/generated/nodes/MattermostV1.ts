@@ -78,13 +78,13 @@ export interface MattermostV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add attachment"}
      */
-    readonly attachments?: { "actions"?: { "item": any }, "author_icon"?: string, "author_link"?: string, "author_name"?: string, "color"?: string, "fallback"?: string, "fields"?: { "item": any }, "footer"?: string, "footer_icon"?: string, "image_url"?: string, "pretext"?: string, "text"?: string, "thumb_url"?: string, "title"?: string, "title_link"?: string };
+    readonly attachments?: { actions?: { item: Array<{ type?: "button" | "select", data_source?: "channels" | "custom" | "users", options?: { option: Array<{ text?: string, value?: string }> }, name?: string, integration?: { item: { url?: string, context?: { property: Array<{ name?: string, value?: string }> } } } }> }, author_icon?: string, author_link?: string, author_name?: string, color?: string, fallback?: string, fields?: { item: Array<{ title?: string, value?: string, short?: boolean }> }, footer?: string, footer_icon?: string, image_url?: string, pretext?: string, text?: string, thumb_url?: string, title?: string, title_link?: string };
 
     /**
      * Other options to set
      * Default: {}
      */
-    readonly otherOptions?: { "root_id"?: string };
+    readonly otherOptions?: { root_id?: string };
 
     /** Emoji to use for this reaction */
     readonly emojiName?: string;
@@ -104,7 +104,7 @@ export interface MattermostV1NodeParameters {
     readonly password?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "first_name"?: string, "last_name"?: string, "locale"?: string, "nickname"?: string, "notificationUi"?: { "notificationValues": any } } | { "inChannel"?: string, "inTeam"?: string, "notInTeam"?: string, "notInChannel"?: string, "sort"?: "createdAt" | "lastActivityAt" | "status" | "username" } | { "since"?: string };
+    readonly additionalFields?: { first_name?: string, last_name?: string, locale?: string, nickname?: string, notificationUi?: { notificationValues: { channel?: boolean, desktop?: "all" | "mention" | "none", desktop_sound?: boolean, email?: boolean, first_name?: boolean, mention_keys?: string, push?: "all" | "mention" | "none" } } } | { inChannel?: string, inTeam?: string, notInTeam?: string, notInChannel?: string, sort?: "createdAt" | "lastActivityAt" | "status" | "username" } | { since?: string };
 
     /** User's ID */
     readonly userIds?: string;

@@ -21,9 +21,9 @@ export interface HtmlExtractNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly extractionValues?: { "values": any };
+    readonly extractionValues?: { values: Array<{ key?: string, cssSelector?: string, returnValue?: "attribute" | "html" | "text" | "value", attribute?: string, returnArray?: boolean }> };
 
     /** Default: {} */
-    readonly options?: { "trimValues"?: boolean };
+    readonly options?: { trimValues?: boolean };
 
 }

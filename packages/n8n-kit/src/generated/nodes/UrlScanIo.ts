@@ -29,12 +29,12 @@ export interface UrlScanIoNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "query"?: string };
+    readonly filters?: { query?: string };
 
     /** URL to scan */
     readonly url?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "customAgent"?: string, "overrideSafety"?: string, "referer"?: string, "tags"?: string, "visibility"?: "private" | "public" | "unlisted" };
+    readonly additionalFields?: { customAgent?: string, overrideSafety?: string, referer?: string, tags?: string, visibility?: "private" | "public" | "unlisted" };
 
 }

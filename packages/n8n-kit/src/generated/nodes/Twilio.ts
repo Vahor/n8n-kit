@@ -31,6 +31,6 @@ export interface TwilioNodeParameters {
     readonly twiml?: boolean;
 
     /** Default: {} */
-    readonly options?: { "statusCallback"?: string };
+    readonly options?: { statusCallback?: string };
 
 }

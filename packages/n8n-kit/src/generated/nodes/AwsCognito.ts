@@ -28,7 +28,7 @@ export interface AwsCognitoNodeParameters {
     readonly newGroupName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string, "precedence"?: number, "arn"?: string } | { "messageAction"?: "RESEND" | "SUPPRESS", "forceAliasCreation"?: boolean, "userAttributes": { "attributes": any }, "desiredDeliveryMediums"?: ("SMS" | "EMAIL")[], "temporaryPasswordOptions"?: string };
+    readonly additionalFields?: { description?: string, precedence?: number, arn?: string } | { messageAction?: "RESEND" | "SUPPRESS", forceAliasCreation?: boolean, userAttributes: { attributes: Array<{ attributeType?: "standard" | "custom", standardName?: "address" | "birthdate" | "email" | "email_verified" | "family_name" | "gender" | "given_name" | "locale" | "middle_name" | "name" | "nickname" | "phone_number" | "phone_number_verified" | "preferred_username" | "profilepicture" | "updated_at" | "sub" | "website" | "zoneinfo", customName?: string, value?: string }> }, desiredDeliveryMediums?: ("SMS" | "EMAIL")[], temporaryPasswordOptions?: string };
 
     /**
      * Select the group you want to delete
@@ -71,13 +71,13 @@ export interface AwsCognitoNodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly filters?: { "filter": any };
+    readonly filters?: { filter: { attribute?: "cognito:user_status" | "email" | "family_name" | "given_name" | "name" | "phone_number" | "preferred_username" | "status" | "sub" | "username", value?: string } };
 
     /**
      * Attributes to update for the user
      * Default: {"attributes":[]}
      * Type options: {"multipleValues":true}
      */
-    readonly userAttributes?: { "attributes": any };
+    readonly userAttributes?: { attributes: Array<{ attributeType?: "standard" | "custom", standardName?: "address" | "birthdate" | "email" | "family_name" | "gender" | "given_name" | "locale" | "middle_name" | "name" | "nickname" | "phone_number" | "preferred_username" | "profilepicture" | "updated_at" | "sub" | "website" | "zoneinfo", customName?: string, value?: string }> };
 
 }

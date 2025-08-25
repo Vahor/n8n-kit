@@ -40,7 +40,7 @@ export interface ToolWorkflowV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly fields?: { "values": any };
+    readonly fields?: { values: Array<{ name?: string, type?: "stringValue" | "numberValue" | "booleanValue" | "arrayValue" | "objectValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string }> };
 
     /** Whether to specify the schema for the function. This would require the LLM to provide the input in the correct format and would validate it against the schema. */
     readonly specifyInputSchema?: boolean;

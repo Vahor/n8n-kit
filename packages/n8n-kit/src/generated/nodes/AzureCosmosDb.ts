@@ -25,7 +25,7 @@ export interface AzureCosmosDbNodeParameters {
     readonly partitionKey?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "indexingPolicy"?: string, "maxThroughput"?: number, "offerThroughput"?: number } | { "partitionKey"?: string };
+    readonly additionalFields?: { indexingPolicy?: string, maxThroughput?: number, offerThroughput?: number } | { partitionKey?: string };
 
     /**
      * Select the container you want to delete
@@ -77,6 +77,6 @@ export interface AzureCosmosDbNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly options?: { "queryOptions": any };
+    readonly options?: { queryOptions: { queryParameters?: string } };
 
 }

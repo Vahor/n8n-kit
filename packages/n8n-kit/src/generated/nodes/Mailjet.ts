@@ -33,7 +33,7 @@ export interface MailjetNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "bccEmail"?: string, "ccAddresses"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "templateLanguage"?: boolean, "trackClicks"?: "account_default" | "disabled" | "enabled", "trackOpens"?: "account_default" | "disabled" | "enabled" } | { "bccEmail"?: string, "ccEmail"?: string, "fromName"?: string, "priority"?: number, "replyTo"?: string, "subject"?: string, "templateLanguage"?: boolean, "trackClicks"?: string, "trackOpens"?: string };
+    readonly additionalFields?: { bccEmail?: string, ccAddresses?: string, fromName?: string, priority?: number, replyTo?: string, templateLanguage?: boolean, trackClicks?: "account_default" | "disabled" | "enabled", trackOpens?: "account_default" | "disabled" | "enabled" } | { bccEmail?: string, ccEmail?: string, fromName?: string, priority?: number, replyTo?: string, subject?: string, templateLanguage?: boolean, trackClicks?: string, trackOpens?: string };
 
     /** HTML text message of email */
     readonly variablesJson?: string;
@@ -42,7 +42,7 @@ export interface MailjetNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly variablesUi?: { "variablesValues": any };
+    readonly variablesUi?: { variablesValues: Array<{ name?: string, value?: string }> };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

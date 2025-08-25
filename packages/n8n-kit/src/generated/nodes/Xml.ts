@@ -21,6 +21,6 @@ export interface XmlNodeParameters {
     readonly dataPropertyName?: string;
 
     /** Default: {} */
-    readonly options?: { "allowSurrogateChars"?: boolean, "attrkey"?: string, "cdata"?: boolean, "charkey"?: string, "headless"?: boolean, "rootName"?: string } | { "attrkey"?: string, "charkey"?: string, "explicitArray"?: boolean, "explicitRoot"?: boolean, "ignoreAttrs"?: boolean, "mergeAttrs"?: boolean, "normalize"?: boolean, "normalizeTags"?: boolean, "trim"?: boolean };
+    readonly options?: { allowSurrogateChars?: boolean, attrkey?: string, cdata?: boolean, charkey?: string, headless?: boolean, rootName?: string } | { attrkey?: string, charkey?: string, explicitArray?: boolean, explicitRoot?: boolean, ignoreAttrs?: boolean, mergeAttrs?: boolean, normalize?: boolean, normalizeTags?: boolean, trim?: boolean };
 
 }

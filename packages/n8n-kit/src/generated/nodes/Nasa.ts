@@ -19,7 +19,7 @@ export interface NasaNodeParameters {
     readonly asteroidId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "includeCloseApproachData"?: boolean } | { "date"?: string } | { "startDate"?: string, "endDate"?: string } | { "startDate"?: string, "endDate"?: string, "location"?: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B", "catalog"?: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG" } | { "date"?: string, "dim"?: number };
+    readonly additionalFields?: { includeCloseApproachData?: boolean } | { date?: string } | { startDate?: string, endDate?: string } | { startDate?: string, endDate?: string, location?: "ALL" | "earth" | "MESSENGER" | "STEREO A" | "STEREO B", catalog?: "ALL" | "SWRC_CATALOG" | "WINSLOW_MESSENGER_ICME_CATALOG" } | { date?: string, dim?: number };
 
     /**
      * By default just the URL of the image is returned. When set to true the image will be downloaded.

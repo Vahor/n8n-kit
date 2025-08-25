@@ -19,7 +19,7 @@ export interface TravisCiNodeParameters {
     readonly buildId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "include"?: string } | { "include"?: string, "order"?: "asc" | "desc", "sortBy"?: "created_at" | "finished_at" | "id" | "number" | "started_at" } | { "message"?: string, "mergeMode"?: "deep_merge" | "deep_merge_append" | "deep_merge_prepend" | "merge" | "replace" };
+    readonly additionalFields?: { include?: string } | { include?: string, order?: "asc" | "desc", sortBy?: "created_at" | "finished_at" | "id" | "number" | "started_at" } | { message?: string, mergeMode?: "deep_merge" | "deep_merge_append" | "deep_merge_prepend" | "merge" | "replace" };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

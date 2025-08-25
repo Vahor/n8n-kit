@@ -67,12 +67,12 @@ export interface BeeminderNodeParameters {
     readonly datapointId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "comment"?: string, "timestamp"?: string, "requestid"?: string } | { "note"?: string, "dryrun"?: boolean } | { "goaldate"?: string, "goalval"?: number, "rate"?: number, "initval"?: number, "secret"?: boolean, "datapublic"?: boolean, "datasource"?: "api" | "ifttt" | "zapier" | "manual", "dryrun"?: boolean, "tags"?: string } | { "datapoints"?: boolean, "emaciated"?: boolean } | { "associations"?: boolean, "diff_since"?: string, "skinny"?: boolean, "emaciated"?: boolean, "datapoints_count"?: number } | { "emaciated"?: boolean };
+    readonly additionalFields?: { comment?: string, timestamp?: string, requestid?: string } | { note?: string, dryrun?: boolean } | { goaldate?: string, goalval?: number, rate?: number, initval?: number, secret?: boolean, datapublic?: boolean, datasource?: "api" | "ifttt" | "zapier" | "manual", dryrun?: boolean, tags?: string } | { datapoints?: boolean, emaciated?: boolean } | { associations?: boolean, diff_since?: string, skinny?: boolean, emaciated?: boolean, datapoints_count?: number } | { emaciated?: boolean };
 
     /** Default: {} */
-    readonly updateFields?: { "title"?: string, "yaxis"?: string, "tmin"?: string, "tmax"?: string, "secret"?: boolean, "datapublic"?: boolean, "roadall"?: string, "datasource"?: "api" | "ifttt" | "zapier" | "", "tags"?: string } | { "value"?: number, "comment"?: string, "timestamp"?: string };
+    readonly updateFields?: { title?: string, yaxis?: string, tmin?: string, tmax?: string, secret?: boolean, datapublic?: boolean, roadall?: string, datasource?: "api" | "ifttt" | "zapier" | "", tags?: string } | { value?: number, comment?: string, timestamp?: string };
 
     /** Default: {} */
-    readonly options?: { "sort"?: string, "page"?: number, "per"?: number };
+    readonly options?: { sort?: string, page?: number, per?: number };
 
 }

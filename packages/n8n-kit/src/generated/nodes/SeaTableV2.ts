@@ -44,13 +44,13 @@ export interface SeaTableV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Column to Send","multipleValues":true}
      */
-    readonly columnsUi?: { "columnValues": any };
+    readonly columnsUi?: { columnValues: Array<{ columnName?: string, columnValue?: string }> };
 
     /** Whether write to Big Data backend (true) or not (false). True requires the activation of the Big Data backend in the base. */
     readonly bigdata?: boolean;
 
     /** Default: {} */
-    readonly options?: { "simple"?: boolean, "convert"?: boolean } | { "insensitive"?: boolean, "wildcard"?: boolean, "simple"?: boolean, "convert"?: boolean } | { "replace"?: boolean, "append"?: boolean };
+    readonly options?: { simple?: boolean, convert?: boolean } | { insensitive?: boolean, wildcard?: boolean, simple?: boolean, convert?: boolean } | { replace?: boolean, append?: boolean };
 
     /**
      * The name of SeaTable view to access, or specify by using an expression. Provide it in the way "col.name:::col.type".

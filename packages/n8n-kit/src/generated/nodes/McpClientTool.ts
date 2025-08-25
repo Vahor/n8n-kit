@@ -51,6 +51,6 @@ export interface McpClientToolNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "timeout"?: number };
+    readonly options?: { timeout?: number };
 
 }

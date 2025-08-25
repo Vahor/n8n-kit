@@ -94,6 +94,7 @@ export * from "./CrowdDevTrigger";
 export * from "./Crypto";
 export * from "./CustomerIo";
 export * from "./CustomerIoTrigger";
+export * from "./DataTable";
 export * from "./DateTimeV1";
 export * from "./DateTimeV2";
 export * from "./DebugHelper";

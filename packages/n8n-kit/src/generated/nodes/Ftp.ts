@@ -22,7 +22,7 @@ export interface FtpNodeParameters {
     readonly path?: string;
 
     /** Default: {} */
-    readonly options?: { "folder"?: boolean, "recursive"?: boolean } | { "enableConcurrentReads"?: boolean, "maxConcurrentReads"?: number, "chunkSize"?: number } | { "createDirectories"?: boolean };
+    readonly options?: { folder?: boolean, recursive?: boolean } | { enableConcurrentReads?: boolean, maxConcurrentReads?: number, chunkSize?: number } | { createDirectories?: boolean };
 
     /** Default: "data" */
     readonly binaryPropertyName?: string;

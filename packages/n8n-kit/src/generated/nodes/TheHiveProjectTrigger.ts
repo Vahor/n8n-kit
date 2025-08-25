@@ -19,9 +19,9 @@ export interface TheHiveProjectTriggerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "values": any };
+    readonly filters?: { values: Array<{ field?: string, operator?: "equal" | "notEqual" | "includes", value?: string }> };
 
     /** Default: {} */
-    readonly options?: { "outputOnlyData"?: boolean };
+    readonly options?: { outputOnlyData?: boolean };
 
 }

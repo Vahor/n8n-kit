@@ -19,7 +19,7 @@ export interface ClearbitNodeParameters {
     readonly domain?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "companyName"?: string, "facebook"?: string, "linkedin"?: string, "twitter"?: string } | { "company"?: string, "companyDomain"?: string, "facebook"?: string, "familyName"?: string, "givenName"?: string, "ipAddress"?: string, "location"?: string, "linkedIn"?: string, "twitter"?: string };
+    readonly additionalFields?: { companyName?: string, facebook?: string, linkedin?: string, twitter?: string } | { company?: string, companyDomain?: string, facebook?: string, familyName?: string, givenName?: string, ipAddress?: string, location?: string, linkedIn?: string, twitter?: string };
 
     /** Name is the partial name of the company */
     readonly name?: string;

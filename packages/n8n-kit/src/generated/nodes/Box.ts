@@ -21,7 +21,7 @@ export interface BoxNodeParameters {
     readonly parentId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "fields"?: string, "name"?: string, "version"?: string } | { "fields"?: string } | { "contet_types"?: string, "createdRangeUi"?: { "createdRangeValuesUi": any }, "direction"?: "ASC" | "DESC", "fields"?: string, "file_extensions"?: string, "ancestor_folder_ids"?: string, "scope"?: "user_content" | "enterprise_content", "size_range"?: string, "sort"?: "relevance" | "modified_at", "trash_content"?: "non_trashed_only" | "trashed_only", "updatedRangeUi"?: { "updatedRangeValuesUi": any }, "owner_user_ids"?: string };
+    readonly additionalFields?: { fields?: string, name?: string, version?: string } | { fields?: string } | { contet_types?: string, createdRangeUi?: { createdRangeValuesUi: { from?: string, to?: string } }, direction?: "ASC" | "DESC", fields?: string, file_extensions?: string, ancestor_folder_ids?: string, scope?: "user_content" | "enterprise_content", size_range?: string, sort?: "relevance" | "modified_at", trash_content?: "non_trashed_only" | "trashed_only", updatedRangeUi?: { updatedRangeValuesUi: { from?: string, to?: string } }, owner_user_ids?: string };
 
     /** Default: "data" */
     readonly binaryPropertyName?: string;
@@ -64,7 +64,7 @@ export interface BoxNodeParameters {
     readonly role?: "coOwner" | "editor" | "previewer" | "previewerUploader" | "uploader" | "viewer" | "viewerUploader";
 
     /** Default: {} */
-    readonly options?: { "can_view_path"?: boolean, "expires_at"?: string, "fields"?: string, "notify"?: boolean } | { "access"?: "collaborators" | "open", "fields"?: string };
+    readonly options?: { can_view_path?: boolean, expires_at?: string, fields?: string, notify?: boolean } | { access?: "collaborators" | "open", fields?: string };
 
     /** The name the file should be saved as */
     readonly fileName?: string;
@@ -84,6 +84,6 @@ export interface BoxNodeParameters {
     readonly recursive?: boolean;
 
     /** Default: {} */
-    readonly updateFields?: { "can_non_owners_invite"?: boolean, "can_non_owners_view_collaborators"?: boolean, "description"?: string, "fields"?: string, "is_collaboration_restricted_to_enterprise"?: boolean, "name"?: string, "parentId"?: string, "shared_link"?: { "access"?: "collaborators" | "company" | "open", "password"?: string, "permissions"?: { "can_download"?: boolean, "unshared_at"?: string, "vanity_name"?: string }, "tags"?: string } };
+    readonly updateFields?: { can_non_owners_invite?: boolean, can_non_owners_view_collaborators?: boolean, description?: string, fields?: string, is_collaboration_restricted_to_enterprise?: boolean, name?: string, parentId?: string, shared_link?: { access?: "collaborators" | "company" | "open", password?: string, permissions?: { can_download?: boolean, unshared_at?: string, vanity_name?: string }, tags?: string } };
 
 }

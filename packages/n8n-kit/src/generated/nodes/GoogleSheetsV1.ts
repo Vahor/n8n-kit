@@ -32,7 +32,7 @@ export interface GoogleSheetsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly toDelete?: { "columns": any, "rows": any };
+    readonly toDelete?: { columns: Array<{ sheetId: string, startIndex?: number, amount?: number }>, rows: Array<{ sheetId: string, startIndex?: number, amount?: number }> };
 
     /** Whether the data should be returned RAW instead of parsed into keys according to their header */
     readonly rawData?: boolean;
@@ -69,7 +69,7 @@ export interface GoogleSheetsV1NodeParameters {
     readonly key?: string;
 
     /** Default: {} */
-    readonly options?: { "continue"?: boolean, "returnAllMatches"?: boolean, "usePathForKeyRow"?: boolean, "valueInputMode"?: "RAW" | "USER_ENTERED", "valueRenderMode"?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { "gridProperties"?: { "columnCount"?: number, "columnGroupControlAfter"?: boolean, "frozenColumnCount"?: number, "frozenRowCount"?: number, "hideGridlines"?: boolean, "rowCount"?: number, "rowGroupControlAfter"?: boolean }, "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: string, "title"?: string };
+    readonly options?: { continue?: boolean, returnAllMatches?: boolean, usePathForKeyRow?: boolean, valueInputMode?: "RAW" | "USER_ENTERED", valueRenderMode?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { locale?: string, autoRecalc?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { gridProperties?: { columnCount?: number, columnGroupControlAfter?: boolean, frozenColumnCount?: number, frozenRowCount?: number, hideGridlines?: boolean, rowCount?: number, rowGroupControlAfter?: boolean }, hidden?: boolean, rightToLeft?: boolean, sheetId?: number, index?: number, tabColor?: string, title?: string };
 
     /** The title of the spreadsheet */
     readonly title?: string;
@@ -78,7 +78,7 @@ export interface GoogleSheetsV1NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sheetsUi?: { "sheetValues": any };
+    readonly sheetsUi?: { sheetValues: Array<{ propertiesUi?: { hidden?: boolean, title?: string } }> };
 
     /**
      * Whether to return a simplified version of the response instead of the raw data

@@ -20,6 +20,6 @@ export interface LmChatOllamaNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "temperature"?: number, "topK"?: number, "topP"?: number, "frequencyPenalty"?: number, "keepAlive"?: string, "lowVram"?: boolean, "mainGpu"?: number, "numBatch"?: number, "numCtx"?: number, "numGpu"?: number, "numPredict"?: number, "numThread"?: number, "penalizeNewline"?: boolean, "presencePenalty"?: number, "repeatPenalty"?: number, "useMLock"?: boolean, "useMMap"?: boolean, "vocabOnly"?: boolean, "format"?: "default" | "json" };
+    readonly options?: { temperature?: number, topK?: number, topP?: number, frequencyPenalty?: number, keepAlive?: string, lowVram?: boolean, mainGpu?: number, numBatch?: number, numCtx?: number, numGpu?: number, numPredict?: number, numThread?: number, penalizeNewline?: boolean, presencePenalty?: number, repeatPenalty?: number, useMLock?: boolean, useMMap?: boolean, vocabOnly?: boolean, format?: "default" | "json" };
 
 }

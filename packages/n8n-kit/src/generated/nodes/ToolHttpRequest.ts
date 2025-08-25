@@ -36,7 +36,7 @@ export interface ToolHttpRequestNodeParameters {
      * Default: {"values":[{"name":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly parametersQuery?: { "values": any };
+    readonly parametersQuery?: { values: Array<{ name?: string, valueProvider?: "modelRequired" | "modelOptional" | "fieldValue", value?: string }> };
 
     /** Type options: {"rows":5} */
     readonly jsonQuery?: string;
@@ -51,7 +51,7 @@ export interface ToolHttpRequestNodeParameters {
      * Default: {"values":[{"name":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly parametersHeaders?: { "values": any };
+    readonly parametersHeaders?: { values: Array<{ name?: string, valueProvider?: "modelRequired" | "modelOptional" | "fieldValue", value?: string }> };
 
     /** Type options: {"rows":5} */
     readonly jsonHeaders?: string;
@@ -66,7 +66,7 @@ export interface ToolHttpRequestNodeParameters {
      * Default: {"values":[{"name":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly parametersBody?: { "values": any };
+    readonly parametersBody?: { values: Array<{ name?: string, valueProvider?: "modelRequired" | "modelOptional" | "fieldValue", value?: string }> };
 
     /** Type options: {"rows":5} */
     readonly jsonBody?: string;
@@ -75,7 +75,7 @@ export interface ToolHttpRequestNodeParameters {
      * Default: []
      * Type options: {"multipleValues":true}
      */
-    readonly placeholderDefinitions?: { "values": any };
+    readonly placeholderDefinitions?: { values: Array<{ name?: string, description?: string, type?: "not specified" | "string" | "number" | "boolean" | "json" }> };
 
     /** Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost */
     readonly optimizeResponse?: boolean;

@@ -9,6 +9,6 @@ export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserAutofixingNodeParameters {
     /** Default: {} */
-    readonly options?: { "prompt"?: string };
+    readonly options?: { prompt?: string };
 
 }

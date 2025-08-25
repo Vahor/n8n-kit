@@ -34,6 +34,6 @@ export interface AwsSqsNodeParameters {
     readonly messageGroupId?: string;
 
     /** Default: {} */
-    readonly options?: { "delaySeconds"?: number, "messageAttributes"?: { "binary": any, "number": any, "string": any }, "messageDeduplicationId"?: string };
+    readonly options?: { delaySeconds?: number, messageAttributes?: { binary: Array<{ name?: string, dataPropertyName?: string }>, number: Array<{ name?: string, value?: number }>, string: Array<{ name?: string, value?: string }> }, messageDeduplicationId?: string };
 
 }

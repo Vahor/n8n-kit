@@ -24,7 +24,7 @@ export interface FormNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: Array<{ fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 
     /** Whether to limit the time this node should wait for a user response before execution resumes */
     readonly limitWaitTime?: boolean;
@@ -52,7 +52,7 @@ export interface FormNodeParameters {
     readonly maxDateAndTime?: string;
 
     /** Default: {} */
-    readonly options?: { "formTitle"?: string, "formDescription"?: string, "buttonLabel"?: string, "customCss"?: string } | { "formTitle"?: string, "customCss"?: string };
+    readonly options?: { formTitle?: string, formDescription?: string, buttonLabel?: string, customCss?: string } | { formTitle?: string, customCss?: string };
 
     /** Default: "text" */
     readonly respondWith?: "text" | "redirect" | "showText" | "returnBinary";

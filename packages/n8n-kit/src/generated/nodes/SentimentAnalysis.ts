@@ -15,6 +15,6 @@ export interface SentimentAnalysisNodeParameters {
     readonly inputText?: string;
 
     /** Default: {} */
-    readonly options?: { "categories"?: string, "systemPromptTemplate"?: string, "includeDetailedResults"?: boolean, "enableAutoFixing"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
+    readonly options?: { categories?: string, systemPromptTemplate?: string, includeDetailedResults?: boolean, enableAutoFixing?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

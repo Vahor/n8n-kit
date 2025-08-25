@@ -35,7 +35,7 @@ export interface StackbyNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { "view"?: string };
+    readonly additionalFields?: { view?: string };
 
     /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;

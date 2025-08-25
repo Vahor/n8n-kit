@@ -34,7 +34,7 @@ export interface VectorStoreSupabaseNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { "queryName"?: string } | { "queryName"?: string, "metadata"?: { "metadataValues": any } };
+    readonly options?: { queryName?: string } | { queryName?: string, metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

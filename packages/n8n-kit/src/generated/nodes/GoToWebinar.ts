@@ -71,7 +71,7 @@ export interface GoToWebinarNodeParameters {
     readonly lastName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "fullAddress"?: { "details": any }, "industry"?: string, "jobTitle"?: string, "multiChoiceResponses"?: { "details": any }, "numberOfEmployees"?: string, "organization"?: string, "phone"?: string, "purchasingRole"?: string, "purchasingTimeFrame"?: string, "questionsAndComments"?: string, "resendConfirmation"?: boolean, "simpleResponses"?: { "details": any }, "source"?: string } | { "times": { "timesProperties": any }, "webinarKey"?: string } | { "description"?: string, "experienceType"?: "CLASSIC" | "BROADCAST" | "SIMULIVE", "isOnDemand"?: boolean, "isPasswordProtected"?: boolean, "timezone"?: string, "type"?: "single_session" | "series" | "sequence" } | { "sendCancellationEmails"?: boolean } | { "times": { "timesProperties": any } };
+    readonly additionalFields?: { fullAddress?: { details: { address?: string, city?: string, state?: string, zipCode?: string, country?: string } }, industry?: string, jobTitle?: string, multiChoiceResponses?: { details: Array<{ questionKey?: string, AnswerKey?: string }> }, numberOfEmployees?: string, organization?: string, phone?: string, purchasingRole?: string, purchasingTimeFrame?: string, questionsAndComments?: string, resendConfirmation?: boolean, simpleResponses?: { details: Array<{ questionKey?: string, responseText?: string }> }, source?: string } | { times: { timesProperties: { fromTime?: string, toTime?: string } }, webinarKey?: string } | { description?: string, experienceType?: "CLASSIC" | "BROADCAST" | "SIMULIVE", isOnDemand?: boolean, isPasswordProtected?: boolean, timezone?: string, type?: "single_session" | "series" | "sequence" } | { sendCancellationEmails?: boolean } | { times: { timesProperties: { fromTime?: string, toTime?: string } } };
 
     readonly subject?: string;
 
@@ -79,11 +79,11 @@ export interface GoToWebinarNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly times?: { "timesProperties": any };
+    readonly times?: { timesProperties: Array<{ startTime: string, endTime: string }> };
 
     readonly notifyParticipants?: boolean;
 
     /** Default: {} */
-    readonly updateFields?: { "description"?: string, "experienceType"?: "CLASSIC" | "BROADCAST" | "SIMULIVE", "isOnDemand"?: boolean, "isPasswordProtected"?: boolean, "times"?: { "timesProperties": any }, "subject"?: string, "timezone"?: string, "type"?: "single_session" | "series" | "sequence" };
+    readonly updateFields?: { description?: string, experienceType?: "CLASSIC" | "BROADCAST" | "SIMULIVE", isOnDemand?: boolean, isPasswordProtected?: boolean, times?: { timesProperties: Array<{ startTime: string, endTime: string }> }, subject?: string, timezone?: string, type?: "single_session" | "series" | "sequence" };
 
 }

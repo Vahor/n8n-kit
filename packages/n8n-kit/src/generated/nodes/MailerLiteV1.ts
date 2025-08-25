@@ -19,13 +19,13 @@ export interface MailerLiteV1NodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "confirmation_timestamp"?: string, "confirmation_ip"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "name"?: string, "resubscribe"?: boolean, "signup_ip"?: string, "signup_timestamp"?: string, "type"?: "active" | "unsubscribed" | "unconfirmed" };
+    readonly additionalFields?: { confirmation_timestamp?: string, confirmation_ip?: string, customFieldsUi?: { customFieldsValues: Array<{ fieldId?: string, value?: string }> }, name?: string, resubscribe?: boolean, signup_ip?: string, signup_timestamp?: string, type?: "active" | "unsubscribed" | "unconfirmed" };
 
     /** Email of subscriber */
     readonly subscriberId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "name"?: string, "resend_autoresponders"?: boolean, "type"?: "active" | "unsubscribed" | "unconfirmed" };
+    readonly updateFields?: { customFieldsUi?: { customFieldsValues: Array<{ fieldId?: string, value?: string }> }, name?: string, resend_autoresponders?: boolean, type?: "active" | "unsubscribed" | "unconfirmed" };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -38,6 +38,6 @@ export interface MailerLiteV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "type"?: "active" | "unsubscribed" | "unconfirmed" };
+    readonly filters?: { type?: "active" | "unsubscribed" | "unconfirmed" };
 
 }

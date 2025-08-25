@@ -25,7 +25,7 @@ export interface AutomizyNodeParameters {
     readonly listId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: any[] } | { "direction"?: "asc" | "desc", "fields"?: string, "sortBy"?: string };
+    readonly additionalFields?: { customFieldsUi?: { customFieldsValues: Array<{ key?: string, value?: string }> }, status?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", tags?: any[] } | { direction?: "asc" | "desc", fields?: string, sortBy?: string };
 
     /** Can be ID or email */
     readonly contactId?: string;
@@ -41,7 +41,7 @@ export interface AutomizyNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "addTags"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "removeTags"?: any[], "status"?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", "tags"?: any[] };
+    readonly updateFields?: { addTags?: any[], customFieldsUi?: { customFieldsValues: Array<{ key?: string, value?: string }> }, removeTags?: any[], status?: "ACTIVE" | "BANNED" | "BOUNCED" | "INACTIVE" | "UNSUBSCRIBED", tags?: any[] };
 
     readonly name?: string;
 

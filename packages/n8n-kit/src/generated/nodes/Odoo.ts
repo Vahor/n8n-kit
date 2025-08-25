@@ -25,7 +25,7 @@ export interface OdooNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Field"}
      */
-    readonly fieldsToCreateOrUpdate?: { "fields": any };
+    readonly fieldsToCreateOrUpdate?: { fields: Array<{ fieldName?: string, fieldValue?: string }> };
 
     readonly customResourceId?: string;
 
@@ -40,24 +40,24 @@ export interface OdooNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "fieldsList"?: any[] };
+    readonly options?: { fieldsList?: any[] };
 
     /**
      * Filter request by applying filters
      * Default: {}
      * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Filter"}
      */
-    readonly filterRequest?: { "filter": any };
+    readonly filterRequest?: { filter: Array<{ fieldName?: string, operator?: "notEqual" | "lesserThen" | "lesserOrEqual" | "equal" | "greaterThen" | "greaterOrEqual" | "childOf" | "in" | "like" | "notIn", value?: string }> };
 
     readonly opportunityName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "phone"?: string, "vat"?: string, "website"?: string };
+    readonly additionalFields?: { email_from?: string, expected_revenue?: number, description?: string, phone?: string, priority?: "1" | "2" | "3", probability?: number } | { address?: { value: { city?: string, country_id?: string, state_id?: string, street?: string, street2?: string, zip?: string } }, email?: string, comment?: string, function?: string, mobile?: string, phone?: string, vat?: string, website?: string };
 
     readonly opportunityId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "email_from"?: string, "expected_revenue"?: number, "description"?: string, "name"?: string, "phone"?: string, "priority"?: "1" | "2" | "3", "probability"?: number } | { "address"?: { "value": any }, "email"?: string, "comment"?: string, "function"?: string, "mobile"?: string, "name"?: string, "phone"?: string, "vat"?: string, "website"?: string };
+    readonly updateFields?: { email_from?: string, expected_revenue?: number, description?: string, name?: string, phone?: string, priority?: "1" | "2" | "3", probability?: number } | { address?: { value: { city?: string, country_id?: string, state_id?: string, street?: string, street2?: string, zip?: string } }, email?: string, comment?: string, function?: string, mobile?: string, name?: string, phone?: string, vat?: string, website?: string };
 
     readonly contactName?: string;
 

@@ -12,6 +12,6 @@ export interface RetrieverMultiQueryNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "queryCount"?: number };
+    readonly options?: { queryCount?: number };
 
 }

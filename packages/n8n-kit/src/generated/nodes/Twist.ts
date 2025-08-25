@@ -25,7 +25,7 @@ export interface TwistNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "color"?: "6" | "1" | "4" | "0" | "7" | "9" | "5" | "11" | "8" | "3" | "2" | "10", "description"?: string, "public"?: boolean, "temp_id"?: number, "user_ids"?: any[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "direct_mentions"?: any[], "mark_thread_position"?: boolean, "recipients"?: any[], "temp_id"?: number, "send_as_integration"?: boolean } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "direct_mentions"?: any[] } | { "to_obj_index"?: number, "limit"?: number, "order_by"?: "ASC" | "DESC", "from_obj_index"?: number } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "direct_mentions"?: any[], "recipients"?: any[], "send_as_integration"?: boolean, "temp_id"?: number };
+    readonly additionalFields?: { color?: 6 | 1 | 4 | 0 | 7 | 9 | 5 | 11 | 8 | 3 | 2 | 10, description?: string, public?: boolean, temp_id?: number, user_ids?: any[] } | { actionsUi?: { actionValues: Array<{ action?: "open_url" | "prefill_message" | "send_reply", button_text?: string, message?: string, type?: "action", url?: string }> }, binaryProperties?: string, direct_mentions?: any[], mark_thread_position?: boolean, recipients?: any[], temp_id?: number, send_as_integration?: boolean } | { actionsUi?: { actionValues: Array<{ action?: "open_url" | "prefill_message" | "send_reply", button_text?: string, message?: string, type?: "action", url?: string }> }, binaryProperties?: string, direct_mentions?: any[] } | { to_obj_index?: number, limit?: number, order_by?: "ASC" | "DESC", from_obj_index?: number } | { actionsUi?: { actionValues: Array<{ action?: "open_url" | "prefill_message" | "send_reply", button_text?: string, message?: string, type?: "action", url?: string }> }, binaryProperties?: string, direct_mentions?: any[], recipients?: any[], send_as_integration?: boolean, temp_id?: number };
 
     /** The ID of the channel */
     readonly channelId?: string;
@@ -41,10 +41,10 @@ export interface TwistNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "archived"?: boolean } | { "as_ids"?: boolean, "to_obj_index"?: number, "newer_than_ts"?: string, "older_than_ts"?: string, "order_by"?: "ASC" | "DESC", "from_obj_index"?: number } | { "as_ids"?: boolean, "filter_by"?: "attached_to_me" | "everyone" | "is_starred", "newer_than_ts"?: string, "older_than_ts"?: string };
+    readonly filters?: { archived?: boolean } | { as_ids?: boolean, to_obj_index?: number, newer_than_ts?: string, older_than_ts?: string, order_by?: "ASC" | "DESC", from_obj_index?: number } | { as_ids?: boolean, filter_by?: "attached_to_me" | "everyone" | "is_starred", newer_than_ts?: string, older_than_ts?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "color"?: "6" | "1" | "4" | "0" | "7" | "9" | "5" | "11" | "8" | "3" | "2" | "10", "description"?: string, "name"?: string, "public"?: boolean } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: any[] } | { "actionsUi"?: { "actionValues": any }, "binaryProperties"?: string, "content"?: string, "direct_mentions"?: any[], "title"?: string };
+    readonly updateFields?: { color?: 6 | 1 | 4 | 0 | 7 | 9 | 5 | 11 | 8 | 3 | 2 | 10, description?: string, name?: string, public?: boolean } | { actionsUi?: { actionValues: Array<{ action?: "open_url" | "prefill_message" | "send_reply", button_text?: string, message?: string, type?: "action", url?: string }> }, binaryProperties?: string, content?: string, direct_mentions?: any[] } | { actionsUi?: { actionValues: Array<{ action?: "open_url" | "prefill_message" | "send_reply", button_text?: string, message?: string, type?: "action", url?: string }> }, binaryProperties?: string, content?: string, direct_mentions?: any[], title?: string };
 
     /** The ID of the thread */
     readonly threadId?: string;

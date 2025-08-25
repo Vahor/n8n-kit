@@ -25,6 +25,6 @@ export interface MessageBirdNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "createdDatetime"?: string, "datacoding"?: "auto" | "plain" | "unicode", "gateway"?: number, "groupIds"?: string, "mclass"?: "1" | "0", "reference"?: string, "reportUrl"?: string, "scheduledDatetime"?: string, "type"?: "binary" | "flash" | "sms", "typeDetails"?: string, "validity"?: number };
+    readonly additionalFields?: { createdDatetime?: string, datacoding?: "auto" | "plain" | "unicode", gateway?: number, groupIds?: string, mclass?: 1 | 0, reference?: string, reportUrl?: string, scheduledDatetime?: string, type?: "binary" | "flash" | "sms", typeDetails?: string, validity?: number };
 
 }

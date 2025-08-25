@@ -37,13 +37,13 @@ export interface StravaNodeParameters {
     readonly elapsedTime?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { "commute"?: boolean, "description"?: string, "distance"?: number, "trainer"?: boolean };
+    readonly additionalFields?: { commute?: boolean, description?: string, distance?: number, trainer?: boolean };
 
     /** ID or email of activity */
     readonly activityId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "commute"?: boolean, "description"?: string, "gear_id"?: string, "hide_from_home"?: boolean, "name"?: string, "type"?: string, "sport_type"?: "AlpineSki" | "BackcountrySki" | "Badminton" | "Canoeing" | "Crossfit" | "EBikeRide" | "Elliptical" | "EMountainBikeRide" | "Golf" | "GravelRide" | "Handcycle" | "HighIntensityIntervalTraining" | "Hike" | "IceSkate" | "InlineSkate" | "Kayaking" | "Kitesurf" | "MountainBikeRide" | "NordicSki" | "Pickleball" | "Pilates" | "Racquetball" | "Ride" | "RockClimbing" | "RollerSki" | "Rowing" | "Run" | "Sail" | "Skateboard" | "Snowboard" | "Snowshoe" | "Soccer" | "Squash" | "StairStepper" | "StandUpPaddling" | "Surfing" | "Swim" | "TableTennis" | "Tennis" | "TrailRun" | "Velomobile" | "VirtualRide" | "VirtualRow" | "VirtualRun" | "Walk" | "WeightTraining" | "Wheelchair" | "Windsurf" | "Workout" | "Yoga", "trainer"?: boolean };
+    readonly updateFields?: { commute?: boolean, description?: string, gear_id?: string, hide_from_home?: boolean, name?: string, type?: string, sport_type?: "AlpineSki" | "BackcountrySki" | "Badminton" | "Canoeing" | "Crossfit" | "EBikeRide" | "Elliptical" | "EMountainBikeRide" | "Golf" | "GravelRide" | "Handcycle" | "HighIntensityIntervalTraining" | "Hike" | "IceSkate" | "InlineSkate" | "Kayaking" | "Kitesurf" | "MountainBikeRide" | "NordicSki" | "Pickleball" | "Pilates" | "Racquetball" | "Ride" | "RockClimbing" | "RollerSki" | "Rowing" | "Run" | "Sail" | "Skateboard" | "Snowboard" | "Snowshoe" | "Soccer" | "Squash" | "StairStepper" | "StandUpPaddling" | "Surfing" | "Swim" | "TableTennis" | "Tennis" | "TrailRun" | "Velomobile" | "VirtualRide" | "VirtualRow" | "VirtualRun" | "Walk" | "WeightTraining" | "Wheelchair" | "Windsurf" | "Workout" | "Yoga", trainer?: boolean };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

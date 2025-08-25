@@ -33,10 +33,10 @@ export interface GoogleAnalyticsV2NodeParameters {
     /** Default: "last7days" */
     readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
-    /** Default: "2025-08-16T00:00:00.000+02:00" */
+    /** Default: "2025-08-17T00:00:00.000+02:00" */
     readonly startDate?: string;
 
-    /** Default: "2025-08-23T00:00:00.000+02:00" */
+    /** Default: "2025-08-24T00:00:00.000+02:00" */
     readonly endDate?: string;
 
     /**
@@ -44,14 +44,14 @@ export interface GoogleAnalyticsV2NodeParameters {
      * Default: {"metricValues":[{"listName":"totalUsers"}]}
      * Type options: {"multipleValues":true}
      */
-    readonly metricsGA4?: { "metricValues": any };
+    readonly metricsGA4?: { metricValues: Array<{ listName?: "active1DayUsers" | "active28DayUsers" | "active7DayUsers" | "checkouts" | "eventCount" | "screenPageViews" | "userEngagementDuration" | "sessions" | "sessionsPerUser" | "totalUsers" | "other" | "custom", name?: string, expression?: string, invisible?: boolean }> };
 
     /**
      * Dimensions are attributes of your data. For example, the dimension city indicates the city from which an event originates. Dimension values in report responses are strings; for example, the city could be "Paris" or "New York". Requests are allowed up to 9 dimensions.
      * Default: {"dimensionValues":[{"listName":"date"}]}
      * Type options: {"multipleValues":true}
      */
-    readonly dimensionsGA4?: { "dimensionValues": any };
+    readonly dimensionsGA4?: { dimensionValues: Array<{ listName?: "browser" | "campaignName" | "city" | "country" | "date" | "deviceCategory" | "itemName" | "language" | "pageLocation" | "sourceMedium" | "other", name?: string }> };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -70,7 +70,7 @@ export interface GoogleAnalyticsV2NodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "currencyCode"?: string, "dimensionFiltersUI"?: { "filterExpressions": any }, "metricAggregations"?: ("MAXIMUM" | "MINIMUM" | "TOTAL")[], "metricsFiltersUI"?: { "filterExpressions": any }, "keepEmptyRows"?: boolean, "orderByUI"?: { "metricOrderBy": any, "dimmensionOrderBy": any }, "returnPropertyQuota"?: boolean } | { "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "useResourceQuotas"?: boolean } | { "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
+    readonly additionalFields?: { currencyCode?: string, dimensionFiltersUI?: { filterExpressions: { filterExpressionType?: "andGroup" | "orGroup", expression?: { stringFilter: Array<{ listName?: "browser" | "campaignName" | "city" | "country" | "date" | "deviceCategory" | "itemName" | "language" | "pageLocation" | "sourceMedium" | "other", name?: string, value?: string, caseSensitive?: boolean, matchType?: "BEGINS_WITH" | "CONTAINS" | "ENDS_WITH" | "EXACT" | "FULL_REGEXP" | "PARTIAL_REGEXP" }>, inListFilter: Array<{ listName?: "browser" | "campaignName" | "city" | "country" | "date" | "deviceCategory" | "itemName" | "language" | "pageLocation" | "sourceMedium" | "other", name?: string, values?: string, caseSensitive?: boolean }>, numericFilter: Array<{ listName?: "browser" | "campaignName" | "city" | "country" | "date" | "deviceCategory" | "itemName" | "language" | "pageLocation" | "sourceMedium" | "other", name?: string, valueType?: "doubleValue" | "int64Value", value?: string, operation?: "EQUAL" | "GREATER_THAN" | "GREATER_THAN_OR_EQUAL" | "LESS_THAN" | "LESS_THAN_OR_EQUAL" }> } } }, metricAggregations?: ("MAXIMUM" | "MINIMUM" | "TOTAL")[], metricsFiltersUI?: { filterExpressions: { filterExpressionType?: "andGroup" | "orGroup", expression?: { betweenFilter: Array<{ listName?: "active1DayUsers" | "active28DayUsers" | "active7DayUsers" | "checkouts" | "eventCount" | "screenPageViews" | "userEngagementDuration" | "sessions" | "sessionsPerUser" | "totalUsers" | "other" | "custom", name?: string, valueType?: "doubleValue" | "int64Value", fromValue?: string, toValue?: string }>, numericFilter: Array<{ listName?: "active1DayUsers" | "active28DayUsers" | "active7DayUsers" | "checkouts" | "eventCount" | "screenPageViews" | "userEngagementDuration" | "sessions" | "sessionsPerUser" | "totalUsers" | "other" | "custom", name?: string, valueType?: "doubleValue" | "int64Value", value?: string, operation?: "EQUAL" | "GREATER_THAN" | "GREATER_THAN_OR_EQUAL" | "LESS_THAN" | "LESS_THAN_OR_EQUAL" }> } } }, keepEmptyRows?: boolean, orderByUI?: { metricOrderBy: Array<{ desc?: boolean, metricName?: string }>, dimmensionOrderBy: Array<{ desc?: boolean, dimensionName?: string, orderType?: "ALPHANUMERIC" | "CASE_INSENSITIVE_ALPHANUMERIC" | "NUMERIC" | "ORDER_TYPE_UNSPECIFIED" }> }, returnPropertyQuota?: boolean } | { dimensionFiltersUi?: { filterValues: Array<{ listName?: "ga:browser" | "ga:campaign" | "ga:city" | "ga:country" | "ga:date" | "ga:deviceCategory" | "ga:productName" | "ga:language" | "ga:pagePath" | "ga:sourceMedium" | "other", name?: string, operator?: "BEGINS_WITH" | "ENDS_WITH" | "NUMERIC_EQUAL" | "EXACT" | "NUMERIC_GREATER_THAN" | "NUMERIC_LESS_THAN" | "PARTIAL" | "REGEXP", expressions?: string }> }, hideTotals?: boolean, hideValueRanges?: boolean, includeEmptyRows?: boolean, useResourceQuotas?: boolean } | { activityTypes?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
 
     /**
      * The View of Google Analytics
@@ -86,14 +86,14 @@ export interface GoogleAnalyticsV2NodeParameters {
      * Default: {"metricValues":[{"listName":"ga:users"}]}
      * Type options: {"multipleValues":true}
      */
-    readonly metricsUA?: { "metricValues": any };
+    readonly metricsUA?: { metricValues: Array<{ listName?: "ga:productCheckouts" | "ga:totalEvents" | "ga:pageviews" | "ga:sessionDuration" | "ga:sessions" | "ga:sessionsPerUser" | "ga:users" | "other" | "custom", name?: string, expression?: string, formattingType?: "CURRENCY" | "FLOAT" | "INTEGER" | "PERCENT" | "TIME" }> };
 
     /**
      * Dimensions are attributes of your data. For example, the dimension ga:city indicates the city, for example, "Paris" or "New York", from which a session originates.
      * Default: {"dimensionValues":[{"listName":"ga:date"}]}
      * Type options: {"multipleValues":true}
      */
-    readonly dimensionsUA?: { "dimensionValues": any };
+    readonly dimensionsUA?: { dimensionValues: Array<{ listName?: "ga:browser" | "ga:campaign" | "ga:city" | "ga:country" | "ga:date" | "ga:deviceCategory" | "ga:productName" | "ga:language" | "ga:pagePath" | "ga:sourceMedium" | "other", name?: string }> };
 
     /** ID of a user */
     readonly userId?: string;

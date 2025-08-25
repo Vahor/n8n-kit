@@ -22,7 +22,7 @@ export interface MicrosoftExcelV1NodeParameters {
     readonly workbook?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "name"?: string } | { "index"?: number };
+    readonly additionalFields?: { name?: string } | { index?: number };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -35,7 +35,7 @@ export interface MicrosoftExcelV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "fields"?: string };
+    readonly filters?: { fields?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -84,6 +84,6 @@ export interface MicrosoftExcelV1NodeParameters {
     readonly lookupValue?: string;
 
     /** Default: {} */
-    readonly options?: { "returnAllMatches"?: boolean };
+    readonly options?: { returnAllMatches?: boolean };
 
 }

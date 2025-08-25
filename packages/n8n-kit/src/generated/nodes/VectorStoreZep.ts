@@ -30,7 +30,7 @@ export interface VectorStoreZepNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { "embeddingDimensions"?: number, "isAutoEmbedded"?: boolean } | { "embeddingDimensions"?: number, "metadata"?: { "metadataValues": any } };
+    readonly options?: { embeddingDimensions?: number, isAutoEmbedded?: boolean } | { embeddingDimensions?: number, metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

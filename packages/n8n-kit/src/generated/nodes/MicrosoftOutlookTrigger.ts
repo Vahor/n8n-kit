@@ -22,10 +22,10 @@ export interface MicrosoftOutlookTriggerNodeParameters {
     readonly fields?: ("bccRecipients" | "body" | "bodyPreview" | "categories" | "ccRecipients" | "changeKey" | "conversationId" | "createdDateTime" | "flag" | "from" | "hasAttachments" | "importance" | "inferenceClassification" | "internetMessageId" | "isDeliveryReceiptRequested" | "isDraft" | "isRead" | "isReadReceiptRequested" | "lastModifiedDateTime" | "parentFolderId" | "receivedDateTime" | "replyTo" | "sender" | "sentDateTime" | "subject" | "toRecipients" | "webLink")[];
 
     /** Default: {} */
-    readonly filters?: { "custom"?: string, "hasAttachments"?: boolean, "foldersToExclude"?: any[], "foldersToInclude"?: any[], "readStatus"?: "both" | "unread" | "read", "sender"?: string };
+    readonly filters?: { custom?: string, hasAttachments?: boolean, foldersToExclude?: any[], foldersToInclude?: any[], readStatus?: "both" | "unread" | "read", sender?: string };
 
     /** Default: {} */
-    readonly options?: { "attachmentsPrefix"?: string, "downloadAttachments"?: boolean };
+    readonly options?: { attachmentsPrefix?: string, downloadAttachments?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

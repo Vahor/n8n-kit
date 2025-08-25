@@ -12,13 +12,13 @@ export interface ModelSelectorNodeParameters {
      * The number of data inputs you want to merge. The node waits for all connected inputs to be executed.
      * Default: 2
      */
-    readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
+    readonly numberInputs?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
     /**
      * Rules to map workflow data to specific models
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly rules?: { "rule": any };
+    readonly rules?: { rule: Array<{ modelIndex: string, conditions?: any }> };
 
 }

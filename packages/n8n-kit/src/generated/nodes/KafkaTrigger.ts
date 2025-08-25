@@ -22,6 +22,6 @@ export interface KafkaTriggerNodeParameters {
     readonly schemaRegistryUrl?: string;
 
     /** Default: {} */
-    readonly options?: { "allowAutoTopicCreation"?: boolean, "autoCommitThreshold"?: number, "autoCommitInterval"?: number, "heartbeatInterval"?: number, "maxInFlightRequests"?: number, "fromBeginning"?: boolean, "jsonParseMessage"?: boolean, "parallelProcessing"?: boolean, "onlyMessage"?: boolean, "returnHeaders"?: boolean, "sessionTimeout"?: number };
+    readonly options?: { allowAutoTopicCreation?: boolean, autoCommitThreshold?: number, autoCommitInterval?: number, heartbeatInterval?: number, maxInFlightRequests?: number, fromBeginning?: boolean, jsonParseMessage?: boolean, parallelProcessing?: boolean, onlyMessage?: boolean, returnHeaders?: boolean, sessionTimeout?: number };
 
 }

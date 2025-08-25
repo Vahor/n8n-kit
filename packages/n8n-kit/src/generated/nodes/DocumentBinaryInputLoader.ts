@@ -33,6 +33,6 @@ export interface DocumentBinaryInputLoaderNodeParameters {
     readonly pointers?: string;
 
     /** Default: {} */
-    readonly options?: { "metadata"?: { "metadataValues": any } };
+    readonly options?: { metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
 
 }

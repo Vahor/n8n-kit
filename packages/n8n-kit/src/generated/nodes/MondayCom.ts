@@ -31,7 +31,7 @@ export interface MondayComNodeParameters {
     readonly kind?: "share" | "public" | "private";
 
     /** Default: {} */
-    readonly additionalFields?: { "templateId"?: number } | { "defaults"?: string } | { "columnValues"?: string };
+    readonly additionalFields?: { templateId?: number } | { defaults?: string } | { columnValues?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

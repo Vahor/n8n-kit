@@ -13,6 +13,6 @@ export interface RedisTriggerNodeParameters {
     readonly channels?: string;
 
     /** Default: {} */
-    readonly options?: { "jsonParseBody"?: boolean, "onlyMessage"?: boolean };
+    readonly options?: { jsonParseBody?: boolean, onlyMessage?: boolean };
 
 }

@@ -43,12 +43,12 @@ export interface KitemakerNodeParameters {
     readonly statusId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string, "effort"?: "SMALL" | "MEDIUM" | "LARGE", "impact"?: "SMALL" | "MEDIUM" | "LARGE", "labelIds"?: any[], "memberIds"?: any[] };
+    readonly additionalFields?: { description?: string, effort?: "SMALL" | "MEDIUM" | "LARGE", impact?: "SMALL" | "MEDIUM" | "LARGE", labelIds?: any[], memberIds?: any[] };
 
     /** ID of the work item to retrieve */
     readonly workItemId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "description"?: string, "effort"?: "SMALL" | "MEDIUM" | "LARGE", "impact"?: "SMALL" | "MEDIUM" | "LARGE", "statusId"?: string, "title"?: string };
+    readonly updateFields?: { description?: string, effort?: "SMALL" | "MEDIUM" | "LARGE", impact?: "SMALL" | "MEDIUM" | "LARGE", statusId?: string, title?: string };
 
 }

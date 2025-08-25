@@ -31,9 +31,9 @@ export interface HtmlNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly extractionValues?: { "values": any };
+    readonly extractionValues?: { values: Array<{ key?: string, cssSelector?: string, returnValue?: "attribute" | "html" | "text" | "value", attribute?: string, skipSelectors?: string, returnArray?: boolean }> };
 
     /** Default: {} */
-    readonly options?: { "trimValues"?: boolean, "cleanUpText"?: boolean } | { "capitalize"?: boolean, "customStyling"?: boolean, "caption"?: string, "tableAttributes"?: string, "headerAttributes"?: string, "rowAttributes"?: string, "cellAttributes"?: string };
+    readonly options?: { trimValues?: boolean, cleanUpText?: boolean } | { capitalize?: boolean, customStyling?: boolean, caption?: string, tableAttributes?: string, headerAttributes?: string, rowAttributes?: string, cellAttributes?: string };
 
 }

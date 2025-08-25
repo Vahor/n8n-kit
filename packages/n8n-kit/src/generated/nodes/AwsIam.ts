@@ -40,7 +40,7 @@ export interface AwsIamNodeParameters {
     readonly userName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "path"?: string, "permissionsBoundary"?: string, "tags"?: { "tags": any } } | { "pathPrefix"?: string } | { "path"?: string };
+    readonly additionalFields?: { path?: string, permissionsBoundary?: string, tags?: { tags: Array<{ key?: string, value?: string }> } } | { pathPrefix?: string } | { path?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

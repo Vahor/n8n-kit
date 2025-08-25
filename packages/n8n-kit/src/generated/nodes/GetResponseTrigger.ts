@@ -23,6 +23,6 @@ export interface GetResponseTriggerNodeParameters {
     readonly listIds?: any[];
 
     /** Default: {} */
-    readonly options?: { "delete"?: boolean };
+    readonly options?: { delete?: boolean };
 
 }

@@ -25,6 +25,6 @@ export interface TwakeNodeParameters {
     readonly content?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "senderIcon"?: string, "senderName"?: string };
+    readonly additionalFields?: { senderIcon?: string, senderName?: string };
 
 }

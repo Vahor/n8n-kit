@@ -30,12 +30,12 @@ export interface SwitchV3NodeParameters {
      * Default: {"values":[{"conditions":{"options":{"caseSensitive":true,"leftValue":"","typeValidation":"strict"},"conditions":[{"leftValue":"","rightValue":"","operator":{"type":"string","operation":"equals"}}],"combinator":"and"}}]}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly rules?: { "values": any };
+    readonly rules?: { values: Array<{ conditions?: any, renameOutput?: boolean, outputKey?: string }> };
 
     /** If the type of an expression doesn't match the type of the comparison, n8n will try to cast the expression to the required type. E.g. for booleans <code>"false"</code> or <code>0</code> will be cast to <code>false</code> */
     readonly looseTypeValidation?: boolean;
 
     /** Default: {} */
-    readonly options?: { "fallbackOutput"?: string, "ignoreCase"?: boolean, "looseTypeValidation"?: boolean, "renameFallbackOutput"?: string, "allMatchingOutputs"?: boolean };
+    readonly options?: { fallbackOutput?: string, ignoreCase?: boolean, looseTypeValidation?: boolean, renameFallbackOutput?: string, allMatchingOutputs?: boolean };
 
 }

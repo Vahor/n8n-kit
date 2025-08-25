@@ -30,7 +30,7 @@ export interface ContentfulNodeParameters {
     readonly contentTypeId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "rawData"?: boolean } | { "content_type"?: string, "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean } | { "equal"?: string, "exclude"?: string, "exist"?: string, "select"?: string, "include"?: string, "notEqual"?: string, "order"?: string, "query"?: string, "rawData"?: boolean };
+    readonly additionalFields?: { rawData?: boolean } | { content_type?: string, equal?: string, exclude?: string, exist?: string, select?: string, include?: string, notEqual?: string, order?: string, query?: string, rawData?: boolean } | { equal?: string, exclude?: string, exist?: string, select?: string, include?: string, notEqual?: string, order?: string, query?: string, rawData?: boolean };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

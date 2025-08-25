@@ -25,6 +25,6 @@ export interface DeepLNodeParameters {
     readonly translateTo?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "sourceLang"?: string, "splitSentences"?: "nonewlines" | "0" | "1", "preserveFormatting"?: "0" | "1", "formality"?: "more" | "less" | "default" };
+    readonly additionalFields?: { sourceLang?: string, splitSentences?: "nonewlines" | "0" | "1", preserveFormatting?: "0" | "1", formality?: "more" | "less" | "default" };
 
 }

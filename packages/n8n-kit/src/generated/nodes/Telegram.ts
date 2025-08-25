@@ -22,7 +22,7 @@ export interface TelegramNodeParameters {
     readonly messageId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "disable_notification"?: boolean } | { "cache_time"?: number, "show_alert"?: boolean, "text"?: string, "url"?: string } | { "mimeType"?: string } | { "appendAttribution"?: boolean, "caption"?: string, "disable_notification"?: boolean, "disable_web_page_preview"?: boolean, "duration"?: number, "fileName"?: string, "height"?: number, "parse_mode"?: "Markdown" | "MarkdownV2" | "HTML", "performer"?: string, "reply_to_message_id"?: number, "message_thread_id"?: number, "title"?: string, "thumb"?: string, "width"?: number };
+    readonly additionalFields?: { disable_notification?: boolean } | { cache_time?: number, show_alert?: boolean, text?: string, url?: string } | { mimeType?: string } | { appendAttribution?: boolean, caption?: string, disable_notification?: boolean, disable_web_page_preview?: boolean, duration?: number, fileName?: string, height?: number, parse_mode?: "Markdown" | "MarkdownV2" | "HTML", performer?: string, reply_to_message_id?: number, message_thread_id?: number, title?: string, thumb?: string, width?: number };
 
     /** Unique identifier of the target user */
     readonly userId?: string;
@@ -98,33 +98,33 @@ export interface TelegramNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly media?: { "media": any };
+    readonly media?: { media: Array<{ type?: "photo" | "video", media?: string, additionalFields?: { caption?: string, parse_mode?: "Markdown" | "MarkdownV2" | "HTML" } }> };
 
     /** Text of the message to be sent */
     readonly text?: string;
 
     /** Default: {} */
-    readonly forceReply?: { "force_reply"?: boolean, "selective"?: boolean };
+    readonly forceReply?: { force_reply?: boolean, selective?: boolean };
 
     /**
      * Adds an inline keyboard that appears right next to the message it belongs to
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly inlineKeyboard?: { "rows": any };
+    readonly inlineKeyboard?: { rows: Array<{ row?: { buttons: Array<{ text?: string, additionalFields?: { callback_data?: string, pay?: boolean, switch_inline_query_current_chat?: string, switch_inline_query?: string, url?: string, web_app?: { url?: string } } }> } }> };
 
     /**
      * Adds a custom keyboard with reply options
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly replyKeyboard?: { "rows": any };
+    readonly replyKeyboard?: { rows: Array<{ row?: { buttons: Array<{ text?: string, additionalFields?: { request_contact?: boolean, request_location?: boolean, web_app?: { url?: string } } }> } }> };
 
     /** Default: {} */
-    readonly replyKeyboardOptions?: { "resize_keyboard"?: boolean, "one_time_keyboard"?: boolean, "selective"?: boolean };
+    readonly replyKeyboardOptions?: { resize_keyboard?: boolean, one_time_keyboard?: boolean, selective?: boolean };
 
     /** Default: {} */
-    readonly replyKeyboardRemove?: { "remove_keyboard"?: boolean, "selective"?: boolean };
+    readonly replyKeyboardRemove?: { remove_keyboard?: boolean, selective?: boolean };
 
     /** Type options: {"rows":4} */
     readonly message?: string;
@@ -145,12 +145,12 @@ export interface TelegramNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly formFields?: { "values": any };
+    readonly formFields?: { values: Array<{ fieldLabel: string, fieldName?: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 
     /** Default: {} */
-    readonly approvalOptions?: { "values": any };
+    readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, disapproveLabel?: string } };
 
     /** Default: {} */
-    readonly options?: { "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean } | { "messageButtonLabel"?: string, "responseFormTitle"?: string, "responseFormDescription"?: string, "responseFormButtonLabel"?: string, "responseFormCustomCss"?: string, "limitWaitTime"?: { "values": any }, "appendAttribution"?: boolean };
+    readonly options?: { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean };
 
 }

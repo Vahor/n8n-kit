@@ -27,12 +27,12 @@ export interface SalesmateNodeParameters {
     readonly rawData?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "description"?: string, "tags"?: string } | { "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+    readonly additionalFields?: { website?: string, phone?: string, otherPhone?: string, facebookHandle?: string, googlePlusHandle?: string, linkedInHandle?: string, skypeId?: string, twitterHandle?: string, currency?: string, billingAddressLine1?: string, billingAddressLine2?: string, billingCity?: string, billingZipCode?: string, billingState?: string, description?: string, tags?: string } | { description?: string, tags?: string, dueDate?: string, duration?: number, isCalendarInvite?: boolean, isCompleted?: boolean } | { description?: string, tags?: string, primaryCompany?: string, source?: "Ads" | "Referrals" | "Website" | "Word of mouth", estimatedCloseDate?: string, dealValue?: number, priority?: "High" | "Medium" | "Low" };
 
     readonly id?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "name"?: string, "owner"?: string, "website"?: string, "phone"?: string, "otherPhone"?: string, "facebookHandle"?: string, "googlePlusHandle"?: string, "linkedInHandle"?: string, "skypeId"?: string, "twitterHandle"?: string, "currency"?: string, "billingAddressLine1"?: string, "billingAddressLine2"?: string, "billingCity"?: string, "billingZipCode"?: string, "billingState"?: string, "description"?: string, "tags"?: string } | { "title"?: string, "type"?: string, "owner"?: string, "description"?: string, "tags"?: string, "dueDate"?: string, "duration"?: number, "isCalendarInvite"?: boolean, "isCompleted"?: boolean } | { "title"?: string, "owner"?: string, "primaryContact"?: string, "pipeline"?: "Sales", "status"?: "Open" | "Close" | "Lost", "stage"?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", "currency"?: string, "description"?: string, "tags"?: string, "primaryCompany"?: string, "source"?: "Ads" | "Referrals" | "Website" | "Word of mouth", "estimatedCloseDate"?: string, "dealValue"?: number, "priority"?: "High" | "Medium" | "Low" };
+    readonly updateFields?: { name?: string, owner?: string, website?: string, phone?: string, otherPhone?: string, facebookHandle?: string, googlePlusHandle?: string, linkedInHandle?: string, skypeId?: string, twitterHandle?: string, currency?: string, billingAddressLine1?: string, billingAddressLine2?: string, billingCity?: string, billingZipCode?: string, billingState?: string, description?: string, tags?: string } | { title?: string, type?: string, owner?: string, description?: string, tags?: string, dueDate?: string, duration?: number, isCalendarInvite?: boolean, isCompleted?: boolean } | { title?: string, owner?: string, primaryContact?: string, pipeline?: "Sales", status?: "Open" | "Close" | "Lost", stage?: "Contacted" | "In Negotiation" | "New (Untouched)" | "Proposal Presented" | "Qualified", currency?: string, description?: string, tags?: string, primaryCompany?: string, source?: "Ads" | "Referrals" | "Website" | "Word of mouth", estimatedCloseDate?: string, dealValue?: number, priority?: "High" | "Medium" | "Low" };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -47,7 +47,7 @@ export interface SalesmateNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { "fields"?: string, "sortBy"?: string, "sortOrder"?: "asc" | "desc" };
+    readonly options?: { fields?: string, sortBy?: string, sortOrder?: "asc" | "desc" };
 
     /** Type options: {"alwaysOpenEditWindow":true} */
     readonly filtersJson?: string;
@@ -56,7 +56,7 @@ export interface SalesmateNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly filters?: { "filtersUi": any };
+    readonly filters?: { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: Array<{ field?: "name" | "email" | "phone", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string }> } } } | { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: Array<{ field?: "title" | "tags", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string }> } } } | { filtersUi: { operator?: "AND" | "OR", conditions?: { conditionsUi: Array<{ field?: "title" | "tags" | "lastCommunicationMode", condition?: "EQUALS" | "NOT_EQUALS" | "Contains" | "DOES_NOT_CONTAINS" | "EMPTY" | "NOT_EMPTY" | "STARTS_WITH" | "ENDS_WITH", value?: string }> } } };
 
     readonly title?: string;
 

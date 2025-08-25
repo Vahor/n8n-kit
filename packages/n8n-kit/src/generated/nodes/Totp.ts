@@ -13,6 +13,6 @@ export interface TotpNodeParameters {
     readonly operation?: "generateSecret";
 
     /** Default: {} */
-    readonly options?: { "algorithm"?: "SHA1" | "SHA224" | "SHA256" | "SHA3-224" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512", "digits"?: number, "period"?: number };
+    readonly options?: { algorithm?: "SHA1" | "SHA224" | "SHA256" | "SHA3-224" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512", digits?: number, period?: number };
 
 }

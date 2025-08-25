@@ -21,17 +21,17 @@ export interface BitlyNodeParameters {
     readonly longUrl?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "domain"?: string, "group"?: string, "tags"?: any[], "title"?: string };
+    readonly additionalFields?: { domain?: string, group?: string, tags?: any[], title?: string };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly deeplink?: { "deeplinkUi": any };
+    readonly deeplink?: { deeplinkUi: Array<{ appId?: string, appUriPath?: string, installType?: string, installUrl?: string }> };
 
     readonly id?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "archived"?: boolean, "group"?: string, "longUrl"?: string, "tags"?: any[], "title"?: string };
+    readonly updateFields?: { archived?: boolean, group?: string, longUrl?: string, tags?: any[], title?: string };
 
 }

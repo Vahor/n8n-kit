@@ -31,6 +31,6 @@ export interface AwsRekognitionNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "regionsOfInterestUi"?: { "regionsOfInterestValues": any }, "version"?: string, "wordFilterUi"?: { "MinBoundingBoxHeight"?: number, "MinBoundingBoxWidth"?: number, "MinConfidence"?: number }, "maxLabels"?: number, "minConfidence"?: number, "attributes"?: ("all" | "default")[] };
+    readonly additionalFields?: { regionsOfInterestUi?: { regionsOfInterestValues: Array<{ height?: number, left?: number, top?: number, Width?: number }> }, version?: string, wordFilterUi?: { MinBoundingBoxHeight?: number, MinBoundingBoxWidth?: number, MinConfidence?: number }, maxLabels?: number, minConfidence?: number, attributes?: ("all" | "default")[] };
 
 }

@@ -34,6 +34,6 @@ export interface ChainSummarizationV2NodeParameters {
     readonly chunkOverlap?: number;
 
     /** Default: {} */
-    readonly options?: { "binaryDataKey"?: string, "summarizationMethodAndPrompts"?: { "values": any }, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
+    readonly options?: { binaryDataKey?: string, summarizationMethodAndPrompts?: { values: { summarizationMethod?: "map_reduce" | "refine" | "stuff", combineMapPrompt?: string, prompt?: string, refinePrompt?: string, refineQuestionPrompt?: string } }, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

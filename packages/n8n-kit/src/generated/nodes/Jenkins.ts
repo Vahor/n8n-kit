@@ -29,7 +29,7 @@ export interface JenkinsNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly param?: { "params": any };
+    readonly param?: { params: Array<{ name?: string, value?: string }> };
 
     /** Name of the new Jenkins job */
     readonly newJob?: string;

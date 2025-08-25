@@ -26,7 +26,7 @@ export interface EmeliaNodeParameters {
     readonly contactEmail?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "customFieldsUi"?: { "customFieldsValues": any }, "firstName"?: string, "lastContacted"?: string, "lastName"?: string, "lastOpen"?: string, "lastReplied"?: string, "mailsSent"?: number, "phoneNumber"?: string };
+    readonly additionalFields?: { customFieldsUi?: { customFieldsValues: Array<{ fieldName?: string, value?: string }> }, firstName?: string, lastContacted?: string, lastName?: string, lastOpen?: string, lastReplied?: string, mailsSent?: number, phoneNumber?: string };
 
     /** The name of the campaign to create */
     readonly campaignName?: string;
@@ -42,7 +42,7 @@ export interface EmeliaNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "copyContacts"?: boolean, "copyProvider"?: boolean, "copyMails"?: boolean, "copySettings"?: boolean };
+    readonly options?: { copyContacts?: boolean, copyProvider?: boolean, copyMails?: boolean, copySettings?: boolean };
 
     /**
      * The ID of the contact list to add the contact to. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

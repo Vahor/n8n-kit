@@ -22,7 +22,7 @@ export interface PostHogNodeParameters {
     readonly distinctId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "contextUi"?: { "contextValues": any }, "timestamp"?: string } | { "propertiesUi"?: { "propertyValues": any }, "timestamp"?: string } | { "propertiesUi"?: { "propertyValues": any }, "messageId"?: string, "timestamp"?: string } | { "category"?: string, "contextUi"?: { "contextValues": any }, "messageId"?: string, "propertiesUi"?: { "propertyValues": any }, "timestamp"?: string };
+    readonly additionalFields?: { contextUi?: { contextValues: Array<{ key?: string, value?: string }> }, timestamp?: string } | { propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> }, timestamp?: string } | { propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> }, messageId?: string, timestamp?: string } | { category?: string, contextUi?: { contextValues: Array<{ key?: string, value?: string }> }, messageId?: string, propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> }, timestamp?: string };
 
     /** The name of the event */
     readonly eventName?: string;

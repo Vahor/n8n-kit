@@ -25,7 +25,7 @@ export interface XeroNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "accountNumber"?: string, "addressesUi"?: { "addressesValues": any }, "bankAccountDetails"?: string, "contactNumber"?: string, "contactStatus"?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", "defaultCurrency"?: string, "emailAddress"?: string, "firstName"?: string, "lastName"?: string, "phonesUi"?: { "phonesValues": any }, "purchasesDefaultAccountCode"?: string, "salesDefaultAccountCode"?: string, "skypeUserName"?: string, "taxNumber"?: string, "xeroNetworkKey"?: string } | { "brandingThemeId"?: string, "currency"?: string, "currencyRate"?: string, "date"?: string, "dueDate"?: string, "expectedPaymentDate"?: string, "invoiceNumber"?: string, "lineAmountType"?: "Exclusive" | "Inclusive" | "NoTax", "plannedPaymentDate"?: string, "reference"?: string, "sendToContact"?: boolean, "status"?: "DRAFT" | "SUBMITTED" | "AUTHORISED", "url"?: string };
+    readonly additionalFields?: { accountNumber?: string, addressesUi?: { addressesValues: Array<{ type?: "POBOX" | "STREET", line1?: string, line2?: string, city?: string, region?: string, postalCode?: string, country?: string, attentionTo?: string }> }, bankAccountDetails?: string, contactNumber?: string, contactStatus?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", defaultCurrency?: string, emailAddress?: string, firstName?: string, lastName?: string, phonesUi?: { phonesValues: Array<{ phoneType?: "DEFAULT" | "DDI" | "MOBILE" | "FAX", phoneNumber?: string, phoneAreaCode?: string, phoneCountryCode?: string }> }, purchasesDefaultAccountCode?: string, salesDefaultAccountCode?: string, skypeUserName?: string, taxNumber?: string, xeroNetworkKey?: string } | { brandingThemeId?: string, currency?: string, currencyRate?: string, date?: string, dueDate?: string, expectedPaymentDate?: string, invoiceNumber?: string, lineAmountType?: "Exclusive" | "Inclusive" | "NoTax", plannedPaymentDate?: string, reference?: string, sendToContact?: boolean, status?: "DRAFT" | "SUBMITTED" | "AUTHORISED", url?: string };
 
     readonly contactId?: string;
 
@@ -40,10 +40,10 @@ export interface XeroNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "includeArchived"?: boolean, "orderBy"?: string, "sortOrder"?: "ASC" | "DESC", "where"?: string } | { "createdByMyApp"?: boolean, "orderBy"?: string, "sortOrder"?: "ASC" | "DESC", "statuses"?: ("DRAFT" | "SUBMITTED" | "AUTHORISED")[], "where"?: string };
+    readonly options?: { includeArchived?: boolean, orderBy?: string, sortOrder?: "ASC" | "DESC", where?: string } | { createdByMyApp?: boolean, orderBy?: string, sortOrder?: "ASC" | "DESC", statuses?: ("DRAFT" | "SUBMITTED" | "AUTHORISED")[], where?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "accountNumber"?: string, "addressesUi"?: { "addressesValues": any }, "bankAccountDetails"?: string, "contactNumber"?: string, "contactStatus"?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", "defaultCurrency"?: string, "emailAddress"?: string, "firstName"?: string, "lastName"?: string, "name"?: string, "phonesUi"?: { "phonesValues": any }, "purchasesDefaultAccountCode"?: string, "salesDefaultAccountCode"?: string, "skypeUserName"?: string, "taxNumber"?: string, "xeroNetworkKey"?: string } | { "brandingThemeId"?: string, "contactId"?: string, "currency"?: string, "currencyRate"?: string, "date"?: string, "dueDate"?: string, "expectedPaymentDate"?: string, "invoiceNumber"?: string, "lineAmountType"?: "Exclusive" | "Inclusive" | "NoTax", "lineItemsUi"?: { "lineItemsValues": any }, "plannedPaymentDate"?: string, "reference"?: string, "sendToContact"?: boolean, "status"?: "DRAFT" | "SUBMITTED" | "AUTHORISED", "url"?: string };
+    readonly updateFields?: { accountNumber?: string, addressesUi?: { addressesValues: Array<{ type?: "POBOX" | "STREET", line1?: string, line2?: string, city?: string, region?: string, postalCode?: string, country?: string, attentionTo?: string }> }, bankAccountDetails?: string, contactNumber?: string, contactStatus?: "ACTIVE" | "ARCHIVED" | "GDPRREQUEST", defaultCurrency?: string, emailAddress?: string, firstName?: string, lastName?: string, name?: string, phonesUi?: { phonesValues: Array<{ phoneType?: "DEFAULT" | "DDI" | "MOBILE" | "FAX", phoneNumber?: string, phoneAreaCode?: string, phoneCountryCode?: string }> }, purchasesDefaultAccountCode?: string, salesDefaultAccountCode?: string, skypeUserName?: string, taxNumber?: string, xeroNetworkKey?: string } | { brandingThemeId?: string, contactId?: string, currency?: string, currencyRate?: string, date?: string, dueDate?: string, expectedPaymentDate?: string, invoiceNumber?: string, lineAmountType?: "Exclusive" | "Inclusive" | "NoTax", lineItemsUi?: { lineItemsValues: Array<{ lineItemId?: string, description?: string, quantity?: number, unitAmount?: string, itemCode?: string, accountCode?: string, taxType: "INPUT" | "NONE" | "OUTPUT" | "GSTONIMPORTS", taxAmount?: string, lineAmount?: string, discountRate?: string }> }, plannedPaymentDate?: string, reference?: string, sendToContact?: boolean, status?: "DRAFT" | "SUBMITTED" | "AUTHORISED", url?: string };
 
     /** Invoice Type */
     readonly type?: "ACCPAY" | "ACCREC";
@@ -53,7 +53,7 @@ export interface XeroNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly lineItemsUi?: { "lineItemsValues": any };
+    readonly lineItemsUi?: { lineItemsValues: Array<{ description?: string, quantity?: number, unitAmount?: string, itemCode?: string, accountCode?: string, taxType: "INPUT" | "NONE" | "OUTPUT" | "GSTONIMPORTS", taxAmount?: string, lineAmount?: string, discountRate?: string }> };
 
     readonly invoiceId?: string;
 

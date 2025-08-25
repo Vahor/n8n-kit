@@ -20,6 +20,6 @@ export interface LmChatGroqNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "maxTokensToSample"?: number, "temperature"?: number };
+    readonly options?: { maxTokensToSample?: number, temperature?: number };
 
 }

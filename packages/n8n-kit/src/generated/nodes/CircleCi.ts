@@ -39,9 +39,9 @@ export interface CircleCiNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "branch"?: string };
+    readonly filters?: { branch?: string };
 
     /** Default: {} */
-    readonly additionalFields?: { "branch"?: string, "tag"?: string };
+    readonly additionalFields?: { branch?: string, tag?: string };
 
 }

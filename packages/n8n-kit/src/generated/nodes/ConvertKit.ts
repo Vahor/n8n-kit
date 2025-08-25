@@ -35,7 +35,7 @@ export interface ConvertKitNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string } | { "subscriberState"?: "active" | "cancelled" } | { "fieldsUi"?: { "fieldsValues": any }, "firstName"?: string, "tags"?: any[] } | { "fields"?: { "field": any }, "firstName"?: string };
+    readonly additionalFields?: { fieldsUi?: { fieldsValues: Array<{ key?: string, value?: string }> }, firstName?: string } | { subscriberState?: "active" | "cancelled" } | { fieldsUi?: { fieldsValues: Array<{ key?: string, value?: string }> }, firstName?: string, tags?: any[] } | { fields?: { field: Array<{ key?: string, value?: string }> }, firstName?: string };
 
     /** Tag name, multiple can be added separated by comma */
     readonly name?: string;

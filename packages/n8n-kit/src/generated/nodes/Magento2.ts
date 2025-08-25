@@ -25,7 +25,7 @@ export interface Magento2NodeParameters {
     readonly lastname?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string } | { "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
+    readonly additionalFields?: { addresses?: { address: Array<{ street: string, city: string, region?: string, postcode: string, country_id: string, company?: string, fax?: string, firstname: string, lastname: string, middlename?: string, prefix?: string, suffix?: string, telephone: string, default_billing?: boolean, default_shipping?: boolean }> }, amazon_id?: string, confirmation?: string, customAttributes?: { customAttribute: Array<{ attribute_code?: string, value?: string }> }, dob?: string, default_billing?: string, default_shipping?: string, gender?: 1 | 2 | 3, group_id?: string, is_subscribed?: boolean, middlename?: string, password?: string, prefix?: string, store_id?: string, suffix?: string, vertex_customer_code?: string, vertex_customer_country?: string, website_id?: string } | { attribute_set_id?: string, name?: string, price?: number, status?: 1 | 2, type_id?: string, visibility?: 1 | 2 | 3 | 4, weight?: number };
 
     /** ID of the customer to update */
     readonly customerId?: string;
@@ -41,7 +41,7 @@ export interface Magento2NodeParameters {
     readonly website_id?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "addresses"?: { "address": any }, "amazon_id"?: string, "confirmation"?: string, "customAttributes"?: { "customAttribute": any }, "dob"?: string, "default_billing"?: string, "default_shipping"?: string, "gender"?: "1" | "2" | "3", "group_id"?: string, "is_subscribed"?: boolean, "middlename"?: string, "password"?: string, "prefix"?: string, "store_id"?: string, "suffix"?: string, "vertex_customer_code"?: string, "vertex_customer_country"?: string, "website_id"?: string } | { "attribute_set_id"?: string, "name"?: string, "price"?: number, "status"?: "1" | "2", "type_id"?: string, "visibility"?: "1" | "2" | "3" | "4", "weight"?: number };
+    readonly updateFields?: { addresses?: { address: Array<{ street: string, city: string, region?: string, postcode: string, country_id: string, company?: string, fax?: string, firstname: string, lastname: string, middlename?: string, prefix?: string, suffix?: string, telephone: string, default_billing?: boolean, default_shipping?: boolean }> }, amazon_id?: string, confirmation?: string, customAttributes?: { customAttribute: Array<{ attribute_code?: string, value?: string }> }, dob?: string, default_billing?: string, default_shipping?: string, gender?: 1 | 2 | 3, group_id?: string, is_subscribed?: boolean, middlename?: string, password?: string, prefix?: string, store_id?: string, suffix?: string, vertex_customer_code?: string, vertex_customer_country?: string, website_id?: string } | { attribute_set_id?: string, name?: string, price?: number, status?: 1 | 2, type_id?: string, visibility?: 1 | 2 | 3 | 4, weight?: number };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -63,12 +63,12 @@ export interface Magento2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "conditions": any };
+    readonly filters?: { conditions: Array<{ field?: string, condition_type?: "eq" | "gt" | "gteq" | "in" | "lt" | "lte" | "like" | "moreq" | "neq" | "nin" | "notnull" | "null", value?: string }> };
 
     readonly filterJson?: string;
 
     /** Default: {} */
-    readonly options?: { "sort"?: { "sort": any } };
+    readonly options?: { sort?: { sort: Array<{ direction?: "ASC" | "DESC", field?: string }> } };
 
     readonly orderId?: string;
 

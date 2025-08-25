@@ -24,10 +24,10 @@ export interface MergeV3NodeParameters {
      * The number of data inputs you want to merge. The node waits for all connected inputs to be executed.
      * Default: 2
      */
-    readonly numberInputs?: "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10";
+    readonly numberInputs?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
     /** Default: {} */
-    readonly options?: { "clashHandling"?: { "values": any }, "fuzzyCompare"?: boolean } | { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "multipleMatches"?: "all" | "first" } | { "emptyQueryResult"?: "success" | "empty" } | { "clashHandling"?: { "values": any }, "includeUnpaired"?: boolean };
+    readonly options?: { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, fuzzyCompare?: boolean } | { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, disableDotNotation?: boolean, fuzzyCompare?: boolean, multipleMatches?: "all" | "first" } | { emptyQueryResult?: "success" | "empty" } | { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, includeUnpaired?: boolean };
 
     /** Whether name(s) of field to match are different in input 1 and input 2 */
     readonly advanced?: boolean;
@@ -40,7 +40,7 @@ export interface MergeV3NodeParameters {
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeByFields?: { "values": any };
+    readonly mergeByFields?: { values: Array<{ field1?: string, field2?: string }> };
 
     /**
      * How to select the items to send to output

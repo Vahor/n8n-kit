@@ -44,16 +44,16 @@ export interface GSuiteAdminNodeParameters {
     readonly includeChildOrgunits?: boolean;
 
     /** Default: {} */
-    readonly filter?: { "orgUnitPath"?: string, "query"?: string } | { "customer"?: string, "domain"?: string, "query"?: string, "userId"?: string } | { "customer"?: string, "domain"?: string, "query"?: string, "showDeleted"?: boolean };
+    readonly filter?: { orgUnitPath?: string, query?: string } | { customer?: string, domain?: string, query?: string, userId?: string } | { customer?: string, domain?: string, query?: string, showDeleted?: boolean };
 
     /**
      * Define sorting rules for the results
      * Default: {}
      */
-    readonly sort?: { "sortRules": any };
+    readonly sort?: { sortRules: { orderBy?: "annotatedLocation" | "annotatedUser" | "lastSync" | "notes" | "serialNumber" | "status", sortBy?: "ascending" | "descending" } } | { sortRules: { orderBy?: "email", sortOrder?: "ASCENDING" | "DESCENDING" } } | { sortRules: { orderBy?: "email" | "familyName" | "givenName", sortOrder?: "ASCENDING" | "DESCENDING" } };
 
     /** Default: {} */
-    readonly updateOptions?: { "orgUnitPath"?: string, "annotatedUser"?: string, "annotatedLocation"?: string, "annotatedAssetId"?: string, "notes"?: string };
+    readonly updateOptions?: { orgUnitPath?: string, annotatedUser?: string, annotatedLocation?: string, annotatedAssetId?: string, notes?: string };
 
     /**
      * Set the status of a device
@@ -80,10 +80,10 @@ export interface GSuiteAdminNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string } | { "changePasswordAtNextLogin"?: boolean, "phoneUi"?: { "phoneValues": any }, "emailUi"?: { "emailValues": any }, "roles"?: ("directorySyncAdmin" | "groupsAdmin" | "groupsEditor" | "groupsReader" | "helpDeskAdmin" | "inventoryReportingAdmin" | "mobileAdmin" | "servicesAdmin" | "storageAdmin" | "superAdmin" | "userManagement")[], "customFields"?: { "fieldValues": any } };
+    readonly additionalFields?: { description?: string } | { changePasswordAtNextLogin?: boolean, phoneUi?: { phoneValues: Array<{ type?: "assistant" | "callback" | "car" | "company_main" | "custom" | "grand_central" | "home" | "home_fax" | "isdn" | "main" | "mobile" | "other" | "other_fax" | "pager" | "radio" | "telex" | "tty_tdd" | "work" | "work_fax" | "work_mobile" | "work_pager", value?: string, primary?: boolean }> }, emailUi?: { emailValues: Array<{ type?: "home" | "work" | "other", address?: string }> }, roles?: ("directorySyncAdmin" | "groupsAdmin" | "groupsEditor" | "groupsReader" | "helpDeskAdmin" | "inventoryReportingAdmin" | "mobileAdmin" | "servicesAdmin" | "storageAdmin" | "superAdmin" | "userManagement")[], customFields?: { fieldValues: Array<{ schemaName?: string, fieldName: string, value: string }> } };
 
     /** Default: {} */
-    readonly updateFields?: { "description"?: string, "email"?: string, "name"?: string } | { "archived"?: boolean, "suspendUi"?: boolean, "changePasswordAtNextLogin"?: boolean, "firstName"?: string, "lastName"?: string, "password"?: string, "phoneUi"?: { "phoneValues": any }, "primaryEmail"?: string, "emailUi"?: { "emailValues": any }, "roles"?: ("directorySyncAdmin" | "groupsAdmin" | "groupsEditor" | "groupsReader" | "helpDeskAdmin" | "inventoryReportingAdmin" | "mobileAdmin" | "servicesAdmin" | "storageAdmin" | "superAdmin" | "userManagement")[], "customFields"?: { "fieldValues": any } };
+    readonly updateFields?: { description?: string, email?: string, name?: string } | { archived?: boolean, suspendUi?: boolean, changePasswordAtNextLogin?: boolean, firstName?: string, lastName?: string, password?: string, phoneUi?: { phoneValues: Array<{ type?: "assistant" | "callback" | "car" | "company_main" | "custom" | "grand_central" | "home" | "home_fax" | "isdn" | "main" | "mobile" | "other" | "other_fax" | "pager" | "radio" | "telex" | "tty_tdd" | "work" | "work_fax" | "work_mobile" | "work_pager", value?: string, primary?: boolean }> }, primaryEmail?: string, emailUi?: { emailValues: Array<{ type?: "home" | "work" | "other", address?: string }> }, roles?: ("directorySyncAdmin" | "groupsAdmin" | "groupsEditor" | "groupsReader" | "helpDeskAdmin" | "inventoryReportingAdmin" | "mobileAdmin" | "servicesAdmin" | "storageAdmin" | "superAdmin" | "userManagement")[], customFields?: { fieldValues: Array<{ schemaName?: string, fieldName: string, value: string }> } };
 
     /**
      * Select the user to perform the operation on

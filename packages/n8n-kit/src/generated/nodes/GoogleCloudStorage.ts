@@ -28,13 +28,13 @@ export interface GoogleCloudStorageNodeParameters {
     readonly returnAll?: boolean;
 
     /** Default: {} */
-    readonly getFilters?: { "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number };
+    readonly getFilters?: { ifMetagenerationMatch?: number, ifMetagenerationNotMatch?: number };
 
     /** Default: {} */
-    readonly createAcl?: { "predefinedAcl"?: "authenticatedRead" | "private" | "projectPrivate" | "publicRead" | "publicReadWrite", "predefinedDefaultObjectAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
+    readonly createAcl?: { predefinedAcl?: "authenticatedRead" | "private" | "projectPrivate" | "publicRead" | "publicReadWrite", predefinedDefaultObjectAcl?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
     /** Default: {} */
-    readonly createBody?: { "acl"?: string, "billing"?: string, "cors"?: string, "customPlacementConfig"?: string, "dataLocations"?: string, "defaultEventBasedHold"?: boolean, "defaultObjectAcl"?: string, "encryption"?: string, "iamConfiguration"?: string, "labels"?: string, "lifecycle"?: string, "location"?: string, "logging"?: string, "retentionPolicy"?: string, "rpo"?: string, "storageClass"?: string, "versioning"?: string, "website"?: string };
+    readonly createBody?: { acl?: string, billing?: string, cors?: string, customPlacementConfig?: string, dataLocations?: string, defaultEventBasedHold?: boolean, defaultObjectAcl?: string, encryption?: string, iamConfiguration?: string, labels?: string, lifecycle?: string, location?: string, logging?: string, retentionPolicy?: string, rpo?: string, storageClass?: string, versioning?: string, website?: string };
 
     readonly objectName?: string;
 
@@ -67,24 +67,24 @@ export interface GoogleCloudStorageNodeParameters {
     readonly maxResults?: number;
 
     /** Default: {} */
-    readonly createData?: { "acl"?: string, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "crc32c"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "md5Hash"?: string, "metadata"?: string, "storageClass"?: string, "temporaryHold"?: boolean };
+    readonly createData?: { acl?: string, cacheControl?: string, contentDisposition?: string, contentEncoding?: string, contentLanguage?: string, contentType?: string, crc32c?: string, customTime?: string, eventBasedHold?: boolean, md5Hash?: string, metadata?: string, storageClass?: string, temporaryHold?: boolean };
 
     /** Default: {"acl":"[]"} */
-    readonly updateData?: { "acl"?: string, "cacheControl"?: string, "contentDisposition"?: string, "contentEncoding"?: string, "contentLanguage"?: string, "contentType"?: string, "customTime"?: string, "eventBasedHold"?: boolean, "metadata"?: string, "temporaryHold"?: boolean };
+    readonly updateData?: { acl?: string, cacheControl?: string, contentDisposition?: string, contentEncoding?: string, contentLanguage?: string, contentType?: string, customTime?: string, eventBasedHold?: boolean, metadata?: string, temporaryHold?: boolean };
 
     /** Default: {} */
-    readonly createQuery?: { "contentEncoding"?: string, "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number, "kmsKeyName"?: string, "predefinedAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
+    readonly createQuery?: { contentEncoding?: string, generation?: number, ifGenerationMatch?: number, ifGenerationNotMatch?: number, ifMetagenerationMatch?: number, ifMetagenerationNotMatch?: number, kmsKeyName?: string, predefinedAcl?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
     /** Default: {} */
-    readonly getParameters?: { "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number };
+    readonly getParameters?: { generation?: number, ifGenerationMatch?: number, ifGenerationNotMatch?: number, ifMetagenerationMatch?: number, ifMetagenerationNotMatch?: number };
 
     /** Default: {} */
-    readonly metagenAndAclQuery?: { "generation"?: number, "ifGenerationMatch"?: number, "ifGenerationNotMatch"?: number, "ifMetagenerationMatch"?: number, "ifMetagenerationNotMatch"?: number, "predefinedAcl"?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
+    readonly metagenAndAclQuery?: { generation?: number, ifGenerationMatch?: number, ifGenerationNotMatch?: number, ifMetagenerationMatch?: number, ifMetagenerationNotMatch?: number, predefinedAcl?: "authenticatedRead" | "bucketOwnerFullControl" | "bucketOwnerRead" | "private" | "projectPrivate" | "publicRead" };
 
     /** Default: {} */
     readonly encryptionHeaders?: { "X-Goog-Encryption-Algorithm"?: "AES256", "X-Goog-Encryption-Key"?: string, "X-Goog-Encryption-Key-Sha256"?: string };
 
     /** Default: {} */
-    readonly listFilters?: { "delimiter"?: string, "endOffset"?: string, "includeTrailingDelimiter"?: boolean, "prefix"?: string, "startOffset"?: string, "versions"?: boolean };
+    readonly listFilters?: { delimiter?: string, endOffset?: string, includeTrailingDelimiter?: boolean, prefix?: string, startOffset?: string, versions?: boolean };
 
 }

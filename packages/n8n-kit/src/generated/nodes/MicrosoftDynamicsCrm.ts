@@ -19,7 +19,7 @@ export interface MicrosoftDynamicsCrmNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "accountcategorycode"?: string, "accountratingcode"?: string, "addresses"?: { "address": any }, "businesstypecode"?: string, "customersizecode"?: string, "customertypecode"?: string, "description"?: string, "emailaddress1"?: string, "emailaddress2"?: string, "emailaddress3"?: string, "fax"?: string, "ftpsiteurl"?: string, "industrycode"?: string, "name"?: string, "creditlimit"?: number, "numberofemployees"?: number, "paymenttermscode"?: string, "preferredappointmentdaycode"?: string, "preferredappointmenttimecode"?: string, "preferredcontactmethodcode"?: string, "primarysatoriid"?: string, "primarytwitterid"?: string, "revenue"?: number, "sharesoutstanding"?: number, "shippingmethodcode"?: string, "sic"?: string, "stageid"?: string, "stockexchange"?: string, "telephone1"?: string, "telephone2"?: string, "telephone3"?: string, "territorycode"?: string, "tickersymbol"?: string, "websiteurl"?: string, "yominame"?: string };
+    readonly additionalFields?: { accountcategorycode?: string, accountratingcode?: string, addresses?: { address: Array<{ addresstypecode?: string, line1?: string, line2?: string, line3?: string, city?: string, stateorprovince?: string, country?: string, name?: string, postalcode?: string, primarycontactname?: string, telephone1?: string, telephone2?: string, fax?: string }> }, businesstypecode?: string, customersizecode?: string, customertypecode?: string, description?: string, emailaddress1?: string, emailaddress2?: string, emailaddress3?: string, fax?: string, ftpsiteurl?: string, industrycode?: string, name?: string, creditlimit?: number, numberofemployees?: number, paymenttermscode?: string, preferredappointmentdaycode?: string, preferredappointmenttimecode?: string, preferredcontactmethodcode?: string, primarysatoriid?: string, primarytwitterid?: string, revenue?: number, sharesoutstanding?: number, shippingmethodcode?: string, sic?: string, stageid?: string, stockexchange?: string, telephone1?: string, telephone2?: string, telephone3?: string, territorycode?: string, tickersymbol?: string, websiteurl?: string, yominame?: string };
 
     readonly accountId?: string;
 
@@ -34,12 +34,12 @@ export interface MicrosoftDynamicsCrmNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "returnFields"?: any[], "expandFields"?: any[] } | { "returnFields"?: any[] };
+    readonly options?: { returnFields?: any[], expandFields?: any[] } | { returnFields?: any[] };
 
     /** Default: {} */
-    readonly filters?: { "query"?: string };
+    readonly filters?: { query?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "accountcategorycode"?: string, "accountratingcode"?: string, "addresses"?: { "address": any }, "businesstypecode"?: string, "customersizecode"?: string, "customertypecode"?: string, "description"?: string, "emailaddress1"?: string, "emailaddress2"?: string, "emailaddress3"?: string, "fax"?: string, "ftpsiteurl"?: string, "industrycode"?: string, "name"?: string, "creditlimit"?: number, "numberofemployees"?: number, "paymenttermscode"?: string, "preferredappointmentdaycode"?: string, "preferredappointmenttimecode"?: string, "preferredcontactmethodcode"?: string, "primarysatoriid"?: string, "primarytwitterid"?: string, "revenue"?: number, "sharesoutstanding"?: number, "shippingmethodcode"?: string, "sic"?: string, "stageid"?: string, "stockexchange"?: string, "telephone1"?: string, "telephone2"?: string, "telephone3"?: string, "territorycode"?: string, "tickersymbol"?: string, "websiteurl"?: string, "yominame"?: string };
+    readonly updateFields?: { accountcategorycode?: string, accountratingcode?: string, addresses?: { address: Array<{ addresstypecode?: string, line1?: string, line2?: string, line3?: string, city?: string, stateorprovince?: string, country?: string, name?: string, postalcode?: string, primarycontactname?: string, telephone1?: string, telephone2?: string, fax?: string }> }, businesstypecode?: string, customersizecode?: string, customertypecode?: string, description?: string, emailaddress1?: string, emailaddress2?: string, emailaddress3?: string, fax?: string, ftpsiteurl?: string, industrycode?: string, name?: string, creditlimit?: number, numberofemployees?: number, paymenttermscode?: string, preferredappointmentdaycode?: string, preferredappointmenttimecode?: string, preferredcontactmethodcode?: string, primarysatoriid?: string, primarytwitterid?: string, revenue?: number, sharesoutstanding?: number, shippingmethodcode?: string, sic?: string, stageid?: string, stockexchange?: string, telephone1?: string, telephone2?: string, telephone3?: string, territorycode?: string, tickersymbol?: string, websiteurl?: string, yominame?: string };
 
 }

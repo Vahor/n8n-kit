@@ -12,6 +12,6 @@ export interface RssFeedReadNodeParameters {
     readonly url?: string;
 
     /** Default: {} */
-    readonly options?: { "customFields"?: string, "ignoreSSL"?: boolean };
+    readonly options?: { customFields?: string, ignoreSSL?: boolean };
 
 }

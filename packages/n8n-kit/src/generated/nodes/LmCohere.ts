@@ -13,6 +13,6 @@ export interface LmCohereNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "maxTokens"?: number, "model"?: string, "temperature"?: number };
+    readonly options?: { maxTokens?: number, model?: string, temperature?: number };
 
 }

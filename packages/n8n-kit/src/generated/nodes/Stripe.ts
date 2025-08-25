@@ -46,7 +46,7 @@ export interface StripeNodeParameters {
     readonly source?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any } } | { "address"?: { "details": any }, "description"?: string, "email"?: string, "metadata"?: { "metadataProperties": any }, "phone"?: string, "shipping"?: { "shippingProperties": any } } | { "metadata"?: { "metadataProperties": any }, "statement_descriptor"?: string };
+    readonly additionalFields?: { description?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, receipt_email?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } } }> } } | { address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, description?: string, email?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, phone?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, phone?: string }> } } | { metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, statement_descriptor?: string };
 
     /** ID of the charge to retrieve */
     readonly chargeId?: string;
@@ -62,7 +62,7 @@ export interface StripeNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "description"?: string, "metadata"?: { "metadataProperties": any }, "receipt_email"?: string, "shipping"?: { "shippingProperties": any } } | { "address"?: { "details": any }, "description"?: string, "email"?: string, "metadata"?: { "metadataProperties": any }, "name"?: string, "phone"?: string, "shipping"?: { "shippingProperties": any } };
+    readonly updateFields?: { description?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, receipt_email?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } } }> } } | { address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, description?: string, email?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, name?: string, phone?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, phone?: string }> } };
 
     /**
      * How long the discount will be in effect
@@ -93,7 +93,7 @@ export interface StripeNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly filters?: { "email"?: string };
+    readonly filters?: { email?: string };
 
     readonly number?: string;
 

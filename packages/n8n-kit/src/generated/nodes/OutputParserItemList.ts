@@ -9,6 +9,6 @@ export const outputs = {"ai_outputParser":"ai_outputParser"} as const;
 
 export interface OutputParserItemListNodeParameters {
     /** Default: {} */
-    readonly options?: { "numberOfItems"?: number, "separator"?: string };
+    readonly options?: { numberOfItems?: number, separator?: string };
 
 }

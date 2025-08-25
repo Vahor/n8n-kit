@@ -41,10 +41,10 @@ export interface HomeAssistantNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly eventAttributes?: { "attributes": any };
+    readonly eventAttributes?: { attributes: Array<{ name?: string, value?: string }> };
 
     /** Default: {} */
-    readonly additionalFields?: { "endTime"?: string, "entityIds"?: string, "minimalResponse"?: boolean, "significantChangesOnly"?: boolean, "startTime"?: string } | { "endTime"?: string, "entityId"?: string, "startTime"?: string };
+    readonly additionalFields?: { endTime?: string, entityIds?: string, minimalResponse?: boolean, significantChangesOnly?: boolean, startTime?: string } | { endTime?: string, entityId?: string, startTime?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -62,7 +62,7 @@ export interface HomeAssistantNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly serviceAttributes?: { "attributes": any };
+    readonly serviceAttributes?: { attributes: Array<{ name?: string, value?: string }> };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -76,7 +76,7 @@ export interface HomeAssistantNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly stateAttributes?: { "attributes": any };
+    readonly stateAttributes?: { attributes: Array<{ name?: string, value?: string }> };
 
     /** Render a Home Assistant template. <a href="https://www.home-assistant.io/docs/configuration/templating/">See template docs for more information.</a>. */
     readonly template?: string;

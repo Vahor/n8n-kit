@@ -26,7 +26,7 @@ export interface BambooHrNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly address?: { "value": any };
+    readonly address?: { value: { address1?: string, address2?: string, city?: string, state?: string, country?: string } };
 
     readonly dateOfBirth?: string;
 
@@ -66,7 +66,7 @@ export interface BambooHrNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly payRate?: { "value": any };
+    readonly payRate?: { value: { value?: string, currency?: string } };
 
     readonly payType?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly";
 
@@ -76,12 +76,12 @@ export interface BambooHrNodeParameters {
     readonly ssn?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "address"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string };
+    readonly additionalFields?: { address?: { value: { address1?: string, address2?: string, city?: string, state?: string, country?: string } }, dateOfBirth?: string, department?: string, division?: string, employeeNumber?: string, exempt?: "exempt" | "non-exempt", gender?: "female" | "male", hireDate?: string, location?: string, maritalStatus?: "single" | "married" | "domesticPartnership", mobilePhone?: string, paidPer?: "hour" | "day" | "week" | "month" | "quater" | "year", payRate?: { value: { value?: string, currency?: string } }, payType?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", preferredName?: string, ssn?: string, workEmail?: string, workPhone?: string };
 
     readonly employeeId?: string;
 
     /** Default: {} */
-    readonly options?: { "fields"?: any[] } | { "share"?: boolean } | { "fd"?: boolean, "onlyCurrent"?: boolean };
+    readonly options?: { fields?: any[] } | { share?: boolean } | { fd?: boolean, onlyCurrent?: boolean };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -97,10 +97,10 @@ export interface BambooHrNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly addasasress?: { "value": any };
+    readonly addasasress?: { value: { address1?: string, address2?: string, city?: string, state?: string, country?: string } };
 
     /** Default: {} */
-    readonly updateFields?: { "addasasress"?: { "value": any }, "dateOfBirth"?: string, "department"?: string, "division"?: string, "employeeNumber"?: string, "firstName"?: string, "lastName"?: string, "exempt"?: "exempt" | "non-exempt", "gender"?: "female" | "male", "hireDate"?: string, "location"?: string, "maritalStatus"?: "single" | "married" | "domesticPartnership", "mobilePhone"?: string, "paidPer"?: "hour" | "day" | "week" | "month" | "quater" | "year", "payRate"?: { "value": any }, "payType"?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", "preferredName"?: string, "ssn"?: string, "workEmail"?: string, "workPhone"?: string } | { "categoryId"?: string, "name"?: string, "shareWithEmployee"?: boolean };
+    readonly updateFields?: { addasasress?: { value: { address1?: string, address2?: string, city?: string, state?: string, country?: string } }, dateOfBirth?: string, department?: string, division?: string, employeeNumber?: string, firstName?: string, lastName?: string, exempt?: "exempt" | "non-exempt", gender?: "female" | "male", hireDate?: string, location?: string, maritalStatus?: "single" | "married" | "domesticPartnership", mobilePhone?: string, paidPer?: "hour" | "day" | "week" | "month" | "quater" | "year", payRate?: { value: { value?: string, currency?: string } }, payType?: "commission" | "contract" | "daily" | "exceptionHourly" | "hourly" | "monthly" | "pieceRate" | "proRata" | "salary" | "weekly", preferredName?: string, ssn?: string, workEmail?: string, workPhone?: string } | { categoryId?: string, name?: string, shareWithEmployee?: boolean };
 
     /** ID of the employee file */
     readonly fileId?: string;

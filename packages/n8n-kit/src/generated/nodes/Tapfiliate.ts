@@ -25,7 +25,7 @@ export interface TapfiliateNodeParameters {
     readonly lastname?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "addressUi"?: { "addressValues": any }, "companyName"?: string } | { "approved"?: boolean, "coupon"?: string };
+    readonly additionalFields?: { addressUi?: { addressValues: { address?: string, address_two?: string, postal_code?: string, city?: string, state?: string, country?: string } }, companyName?: string } | { approved?: boolean, coupon?: string };
 
     /** The ID of the affiliate */
     readonly affiliateId?: string;
@@ -41,14 +41,14 @@ export interface TapfiliateNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "affiliate_group_id"?: string, "click_id"?: string, "email"?: string, "parentId"?: string, "referral_code"?: string, "source_id"?: string } | { "affiliate_group_id"?: string, "email"?: string, "parentId"?: string, "source_id"?: string };
+    readonly filters?: { affiliate_group_id?: string, click_id?: string, email?: string, parentId?: string, referral_code?: string, source_id?: string } | { affiliate_group_id?: string, email?: string, parentId?: string, source_id?: string };
 
     /**
      * Meta data
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly metadataUi?: { "metadataValues": any };
+    readonly metadataUi?: { metadataValues: Array<{ key?: string, value?: string }> };
 
     /** Name of the metadata key to remove */
     readonly key?: string;

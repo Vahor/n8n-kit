@@ -28,7 +28,7 @@ export interface MemoryManagerNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly messages?: { "messageValues": any };
+    readonly messages?: { messageValues: Array<{ type?: "ai" | "system" | "user", message: string, hideFromUI: boolean }> };
 
     /**
      * The amount of last messages to delete
@@ -43,6 +43,6 @@ export interface MemoryManagerNodeParameters {
     readonly simplifyOutput?: boolean;
 
     /** Default: {} */
-    readonly options?: { "groupMessages"?: boolean };
+    readonly options?: { groupMessages?: boolean };
 
 }

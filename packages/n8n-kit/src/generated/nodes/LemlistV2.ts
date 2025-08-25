@@ -26,7 +26,7 @@ export interface LemlistV2NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "campaignId"?: string, "isFirst"?: boolean, "leadId"?: string, "type"?: "aircallCreated" | "aircallDone" | "aircallEnded" | "aircallInterested" | "aircallNotInterested" | "apiDone" | "apiFailed" | "apiInterested" | "apiNotInterested" | "attracted" | "connectionIssue" | "contacted" | "customDomainErrors" | "emailsBounced" | "emailsClicked" | "emailsFailed" | "emailsInterested" | "emailsNotInterested" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed" | "hooked" | "interested" | "lemwarmPaused" | "linkedinInterested" | "linkedinInviteAccepted" | "linkedinInviteDone" | "linkedinInviteFailed" | "linkedinNotInterested" | "linkedinReplied" | "linkedinSendFailed" | "linkedinSent" | "linkedinVisitDone" | "linkedinVisitFailed" | "linkedinVoiceNoteDone" | "linkedinVoiceNoteFailed" | "manualInterested" | "manualNotInterested" | "notInterested" | "opportunitiesDone" | "paused" | "resumed" | "sendLimitReached" | "skipped" | "warmed", "version"?: string } | { "version"?: string };
+    readonly filters?: { campaignId?: string, isFirst?: boolean, leadId?: string, type?: "aircallCreated" | "aircallDone" | "aircallEnded" | "aircallInterested" | "aircallNotInterested" | "apiDone" | "apiFailed" | "apiInterested" | "apiNotInterested" | "attracted" | "connectionIssue" | "contacted" | "customDomainErrors" | "emailsBounced" | "emailsClicked" | "emailsFailed" | "emailsInterested" | "emailsNotInterested" | "emailsOpened" | "emailsReplied" | "emailsSendFailed" | "emailsSent" | "emailsUnsubscribed" | "hooked" | "interested" | "lemwarmPaused" | "linkedinInterested" | "linkedinInviteAccepted" | "linkedinInviteDone" | "linkedinInviteFailed" | "linkedinNotInterested" | "linkedinReplied" | "linkedinSendFailed" | "linkedinSent" | "linkedinVisitDone" | "linkedinVisitFailed" | "linkedinVoiceNoteDone" | "linkedinVoiceNoteFailed" | "manualInterested" | "manualNotInterested" | "notInterested" | "opportunitiesDone" | "paused" | "resumed" | "sendLimitReached" | "skipped" | "warmed", version?: string } | { version?: string };
 
     /**
      * ID of the campaign to get stats for. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -55,7 +55,7 @@ export interface LemlistV2NodeParameters {
     readonly findPhone?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "email"?: string, "firstName"?: string, "lastName"?: string, "linkedinUrl"?: string, "companyName"?: string, "companyDomain"?: string } | { "companyName"?: string, "companyDomain"?: string, "deduplicate"?: boolean, "findEmail"?: boolean, "findPhone"?: boolean, "firstName"?: string, "icebreaker"?: string, "jobTitle"?: string, "lastName"?: string, "linkedinEnrichment"?: boolean, "linkedinUrl"?: string, "phone"?: string, "picture"?: string, "verifyEmail"?: boolean };
+    readonly additionalFields?: { email?: string, firstName?: string, lastName?: string, linkedinUrl?: string, companyName?: string, companyDomain?: string } | { companyName?: string, companyDomain?: string, deduplicate?: boolean, findEmail?: boolean, findPhone?: boolean, firstName?: string, icebreaker?: string, jobTitle?: string, lastName?: string, linkedinEnrichment?: boolean, linkedinUrl?: string, phone?: string, picture?: string, verifyEmail?: boolean };
 
     /** Email of the lead to create */
     readonly email?: string;

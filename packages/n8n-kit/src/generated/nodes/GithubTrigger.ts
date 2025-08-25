@@ -31,6 +31,6 @@ export interface GithubTriggerNodeParameters {
     readonly events?: ("*" | "check_run" | "check_suite" | "commit_comment" | "create" | "delete" | "deploy_key" | "deployment" | "deployment_status" | "fork" | "github_app_authorization" | "gollum" | "installation" | "installation_repositories" | "issue_comment" | "issues" | "label" | "marketplace_purchase" | "member" | "membership" | "meta" | "milestone" | "org_block" | "organization" | "page_build" | "project" | "project_card" | "project_column" | "public" | "pull_request" | "pull_request_review" | "pull_request_review_comment" | "push" | "release" | "repository" | "repository_import" | "repository_vulnerability_alert" | "security_advisory" | "star" | "status" | "team" | "team_add" | "watch")[];
 
     /** Default: {} */
-    readonly options?: { "insecureSSL"?: boolean };
+    readonly options?: { insecureSSL?: boolean };
 
 }

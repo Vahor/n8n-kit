@@ -33,7 +33,7 @@ export interface NextCloudNodeParameters {
     readonly fileContent?: string;
 
     /** The share permissions to set */
-    readonly shareType?: "7" | "4" | "1" | "3" | "0";
+    readonly shareType?: 7 | 4 | 1 | 3 | 0;
 
     /** The ID of the circle to share with */
     readonly circleId?: string;
@@ -48,13 +48,13 @@ export interface NextCloudNodeParameters {
     readonly user?: string;
 
     /** Default: {} */
-    readonly options?: { "password"?: string, "permissions"?: "31" | "4" | "8" | "1" | "2" } | { "search"?: string, "offset"?: number };
+    readonly options?: { password?: string, permissions?: 31 | 4 | 8 | 1 | 2 } | { search?: string, offset?: number };
 
     /** Username the user will have */
     readonly userId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "displayName"?: string };
+    readonly additionalFields?: { displayName?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -70,6 +70,6 @@ export interface NextCloudNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly updateFields?: { "field": any };
+    readonly updateFields?: { field: { key?: "address" | "displayname" | "email" | "password" | "twitter" | "website", value?: string } };
 
 }

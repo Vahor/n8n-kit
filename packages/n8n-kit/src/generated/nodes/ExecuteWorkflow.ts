@@ -34,6 +34,6 @@ export interface ExecuteWorkflowNodeParameters {
     readonly mode?: "once" | "each";
 
     /** Default: {} */
-    readonly options?: { "waitForSubWorkflow"?: boolean };
+    readonly options?: { waitForSubWorkflow?: boolean };
 
 }

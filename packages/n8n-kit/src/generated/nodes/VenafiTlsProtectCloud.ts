@@ -36,7 +36,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
     readonly binaryProperty?: string;
 
     /** Default: {} */
-    readonly options?: { "chainOrder"?: "EE_FIRST" | "EE_ONLY" | "ROOT_FIRST", "format"?: "PEM" | "DER" } | { "validityPeriod"?: "P1Y" | "P10D" | "PT12H" } | { "validityPeriod"?: string };
+    readonly options?: { chainOrder?: "EE_FIRST" | "EE_ONLY" | "ROOT_FIRST", format?: "PEM" | "DER" } | { validityPeriod?: "P1Y" | "P10D" | "PT12H" } | { validityPeriod?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -49,7 +49,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "subject"?: string };
+    readonly filters?: { subject?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -76,7 +76,7 @@ export interface VenafiTlsProtectCloudNodeParameters {
     readonly commonName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "keyType"?: "EC" | "RSA", "keyCurve"?: "ED25519" | "P256" | "P384" | "P521" | "UNKNOWN", "keyLength"?: number, "organization"?: string, "organizationalUnits"?: string, "locality"?: string, "state"?: string, "country"?: string, "SubjectAltNamesUi"?: { "SubjectAltNamesValues": any } };
+    readonly additionalFields?: { keyType?: "EC" | "RSA", keyCurve?: "ED25519" | "P256" | "P384" | "P521" | "UNKNOWN", keyLength?: number, organization?: string, organizationalUnits?: string, locality?: string, state?: string, country?: string, SubjectAltNamesUi?: { SubjectAltNamesValues: Array<{ Typename?: "dnsNames", name?: string }> } };
 
     readonly certificateRequestId?: string;
 

@@ -42,12 +42,12 @@ export interface KafkaNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly headersUi?: { "headerValues": any };
+    readonly headersUi?: { headerValues: Array<{ key?: string, value?: string }> };
 
     /** Header parameters as JSON (flat object) */
     readonly headerParametersJson?: string;
 
     /** Default: {} */
-    readonly options?: { "acks"?: boolean, "compression"?: boolean, "timeout"?: number };
+    readonly options?: { acks?: boolean, compression?: boolean, timeout?: number };
 
 }

@@ -25,7 +25,7 @@ export interface RaindropNodeParameters {
     readonly link?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string } | { "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "view"?: "list" | "simple" | "grid" | "Masonry" } | { "collectionId"?: string };
+    readonly additionalFields?: { important?: boolean, order?: number, pleaseParse?: boolean, tags?: string, title?: string } | { cover?: string, public?: boolean, parentId?: string, sort?: number, view?: "list" | "simple" | "grid" | "Masonry" } | { collectionId?: string };
 
     /** The ID of the bookmark to delete */
     readonly bookmarkId?: string;
@@ -41,7 +41,7 @@ export interface RaindropNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "collectionId"?: string, "important"?: boolean, "order"?: number, "pleaseParse"?: boolean, "tags"?: string, "title"?: string } | { "cover"?: string, "public"?: boolean, "parentId"?: string, "sort"?: number, "title"?: string, "view"?: "list" | "simple" | "grid" | "Masonry" };
+    readonly updateFields?: { collectionId?: string, important?: boolean, order?: number, pleaseParse?: boolean, tags?: string, title?: string } | { cover?: string, public?: boolean, parentId?: string, sort?: number, title?: string, view?: "list" | "simple" | "grid" | "Masonry" };
 
     /** Title of the collection to create */
     readonly title?: string;
@@ -53,7 +53,7 @@ export interface RaindropNodeParameters {
     readonly tags?: string;
 
     /** Default: {} */
-    readonly filters?: { "collectionId"?: string };
+    readonly filters?: { collectionId?: string };
 
     /**
      * Whether to return details on the logged-in user

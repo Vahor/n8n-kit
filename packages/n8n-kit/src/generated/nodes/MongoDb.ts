@@ -28,7 +28,7 @@ export interface MongoDbNodeParameters {
      * Add query options
      * Default: {}
      */
-    readonly options?: { "limit"?: number, "skip"?: number, "sort"?: string, "projection"?: string } | { "dateFields"?: string, "useDotNotation"?: boolean };
+    readonly options?: { limit?: number, skip?: number, sort?: string, projection?: string } | { dateFields?: string, useDotNotation?: boolean };
 
     /** Comma-separated list of the fields to be included into the new document */
     readonly fields?: string;

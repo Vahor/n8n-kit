@@ -19,7 +19,7 @@ export interface GrafanaNodeParameters {
     readonly title?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "folderId"?: string } | { "email"?: string };
+    readonly additionalFields?: { folderId?: string } | { email?: string };
 
     /** Unique alphabetic identifier or URL of the dashboard to delete */
     readonly dashboardUidOrUrl?: string;
@@ -35,10 +35,10 @@ export interface GrafanaNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "query"?: string } | { "name"?: string };
+    readonly filters?: { query?: string } | { name?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "folderId"?: string, "title"?: string } | { "email"?: string, "name"?: string } | { "role"?: "Admin" | "Editor" | "Viewer" };
+    readonly updateFields?: { folderId?: string, title?: string } | { email?: string, name?: string } | { role?: "Admin" | "Editor" | "Viewer" };
 
     /** Name of the team to create */
     readonly name?: string;

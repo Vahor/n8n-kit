@@ -29,7 +29,7 @@ export interface MarketstackNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "exchange"?: string, "latest"?: boolean, "sort"?: "ASC" | "DESC", "specificDate"?: string, "dateFrom"?: string, "dateTo"?: string };
+    readonly filters?: { exchange?: string, latest?: boolean, sort?: "ASC" | "DESC", specificDate?: string, dateFrom?: string, dateTo?: string };
 
     /** Stock exchange to retrieve, specified by <a href="https://en.wikipedia.org/wiki/Market_Identifier_Code">Market Identifier Code</a>, e.g. <code>XNAS</code> */
     readonly exchange?: string;

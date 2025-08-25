@@ -32,7 +32,7 @@ export interface CockpitNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "fields"?: string, "filter"?: string, "language"?: string, "populate"?: boolean, "rawData"?: boolean, "skip"?: number, "sort"?: string };
+    readonly options?: { fields?: string, filter?: string, language?: string, populate?: boolean, rawData?: boolean, skip?: number, sort?: string };
 
     readonly id?: string;
 
@@ -50,7 +50,7 @@ export interface CockpitNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly dataFieldsUi?: { "field": any };
+    readonly dataFieldsUi?: { field: Array<{ name?: string, value?: string }> };
 
     /** Name of the form to operate on */
     readonly form?: string;

@@ -14,6 +14,6 @@ export interface DiscordV1NodeParameters {
     readonly text?: string;
 
     /** Default: {} */
-    readonly options?: { "allowedMentions"?: string, "attachments"?: string, "avatarUrl"?: string, "components"?: string, "embeds"?: string, "flags"?: number, "payloadJson"?: string, "username"?: string, "tts"?: boolean };
+    readonly options?: { allowedMentions?: string, attachments?: string, avatarUrl?: string, components?: string, embeds?: string, flags?: number, payloadJson?: string, username?: string, tts?: boolean };
 
 }

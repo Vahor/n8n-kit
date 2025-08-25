@@ -24,7 +24,7 @@ export interface AgentV1NodeParameters {
     readonly hasOutputParser?: boolean;
 
     /** Default: {} */
-    readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean } | { "humanMessage"?: string, "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean } | { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean } | { "humanMessageTemplate"?: string, "prefix"?: string, "suffixChat"?: string, "suffix"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean } | { "ignoredTables"?: string, "includedSampleRows"?: number, "includedTables"?: string, "prefixPrompt"?: string, "suffixPrompt"?: string, "topK"?: number } | { "humanMessageTemplate"?: string };
+    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean } | { humanMessage?: string, systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean } | { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean } | { humanMessageTemplate?: string, prefix?: string, suffixChat?: string, suffix?: string, maxIterations?: number, returnIntermediateSteps?: boolean } | { ignoredTables?: string, includedSampleRows?: number, includedTables?: string, prefixPrompt?: string, suffixPrompt?: string, topK?: number } | { humanMessageTemplate?: string };
 
     /**
      * SQL database to connect to

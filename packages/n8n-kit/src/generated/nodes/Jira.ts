@@ -33,30 +33,36 @@ export interface JiraNodeParameters {
     readonly summary?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "assignee"?: {
+    readonly additionalFields?: { assignee?: {
 	value: string,
 	mode: "list" | "id",
-}, "description"?: string, "componentIds"?: any[], "customFieldsUi"?: { "customFieldsValues": any }, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: {
+}, description?: string, componentIds?: any[], customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
 	value: string,
 	mode: "list" | "id",
-}, "reporter"?: {
+}, fieldValue?: string }> }, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
 	value: string,
 	mode: "list" | "id",
-}, "updateHistory"?: boolean } | { "expand"?: string, "fields"?: string, "fieldsByKey"?: boolean, "properties"?: string, "updateHistory"?: boolean } | { "htmlBody"?: string, "subject"?: string, "textBody"?: string } | { "expand"?: string, "transitionId"?: string, "skipRemoteOnlyCondition"?: boolean } | { "password"?: string, "notification"?: boolean } | { "expand"?: ("groups" | "applicationRoles")[] };
+}, reporter?: {
+	value: string,
+	mode: "list" | "id",
+}, updateHistory?: boolean } | { expand?: string, fields?: string, fieldsByKey?: boolean, properties?: string, updateHistory?: boolean } | { htmlBody?: string, subject?: string, textBody?: string } | { expand?: string, transitionId?: string, skipRemoteOnlyCondition?: boolean } | { password?: string, notification?: boolean } | { expand?: ("groups" | "applicationRoles")[] };
 
     readonly issueKey?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "assignee"?: {
+    readonly updateFields?: { assignee?: {
 	value: string,
 	mode: "list" | "id",
-}, "description"?: string, "customFieldsUi"?: { "customFieldsValues": any }, "issueType"?: string, "labels"?: any[], "serverLabels"?: string, "parentIssueKey"?: string, "priority"?: {
+}, description?: string, customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
 	value: string,
 	mode: "list" | "id",
-}, "reporter"?: {
+}, fieldValue?: string }> }, issueType?: string, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
 	value: string,
 	mode: "list" | "id",
-}, "summary"?: string, "statusId"?: {
+}, reporter?: {
+	value: string,
+	mode: "list" | "id",
+}, summary?: string, statusId?: {
 	value: string,
 	mode: "list" | "id",
 } };
@@ -77,7 +83,7 @@ export interface JiraNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "expand"?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], "fields"?: string, "fieldsByKey"?: boolean, "jql"?: string } | { "expand"?: "renderedBody", "wikiMarkup"?: boolean } | { "expand"?: "renderedBody" } | { "expand"?: "renderedBody", "orderBy"?: "+created" | "-created" };
+    readonly options?: { expand?: ("changelog" | "editmeta" | "names" | "operations" | "renderedFields" | "schema" | "transitions" | "versionedRepresentations")[], fields?: string, fieldsByKey?: boolean, jql?: string } | { expand?: "renderedBody", wikiMarkup?: boolean } | { expand?: "renderedBody" } | { expand?: "renderedBody", orderBy?: "+created" | "-created" };
 
     readonly jsonParameters?: boolean;
 
@@ -86,7 +92,7 @@ export interface JiraNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly notificationRecipientsUi?: { "notificationRecipientsValues": any };
+    readonly notificationRecipientsUi?: { notificationRecipientsValues: { reporter?: boolean, assignee?: boolean, watchers?: boolean, voters?: boolean, users?: any[], groups?: any[] } };
 
     /**
      * The recipients of the email notification for the issue
@@ -99,7 +105,7 @@ export interface JiraNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly notificationRecipientsRestrictionsUi?: { "notificationRecipientsRestrictionsValues": any };
+    readonly notificationRecipientsRestrictionsUi?: { notificationRecipientsRestrictionsValues: { users?: any[], groups?: any[] } };
 
     /**
      * Restricts the notifications to users with the specified permissions

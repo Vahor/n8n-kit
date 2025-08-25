@@ -136,6 +136,7 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	for (const property of Object.values(visitedProperties)) {
+		// if (property.name !== "fieldsToSummarize") continue;
 		const comments = [
 			property.description?.replaceAll("*/", "*<space>/"),
 			property.default && `Default: ${JSON.stringify(property.default)}`,
@@ -196,6 +197,7 @@ for (const nodePath of allNodes.sort((a, b) =>
 		current++;
 		continue;
 	}
+	// if (nodeName !== "ScheduleTrigger") continue;
 
 	if (
 		isLangChainNode(nodePath) &&

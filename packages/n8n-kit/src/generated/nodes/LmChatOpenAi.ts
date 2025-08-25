@@ -23,6 +23,6 @@ export interface LmChatOpenAiNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "baseURL"?: string, "frequencyPenalty"?: number, "maxTokens"?: number, "responseFormat"?: "text" | "json_object", "presencePenalty"?: number, "temperature"?: number, "reasoningEffort"?: "low" | "medium" | "high", "timeout"?: number, "maxRetries"?: number, "topP"?: number };
+    readonly options?: { baseURL?: string, frequencyPenalty?: number, maxTokens?: number, responseFormat?: "text" | "json_object", presencePenalty?: number, temperature?: number, reasoningEffort?: "low" | "medium" | "high", timeout?: number, maxRetries?: number, topP?: number };
 
 }

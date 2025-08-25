@@ -43,6 +43,6 @@ export interface CrateDbNodeParameters {
     readonly returnFields?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "mode"?: "independently" | "multiple", "queryParams"?: string };
+    readonly additionalFields?: { mode?: "independently" | "multiple", queryParams?: string };
 
 }

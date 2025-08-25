@@ -32,7 +32,7 @@ export interface AffinityNodeParameters {
     readonly entityId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "creator_id"?: string } | { "persons"?: any[] } | { "organizations"?: any[] };
+    readonly additionalFields?: { creator_id?: string } | { persons?: any[] } | { organizations?: any[] };
 
     /** The unique ID of the list entry object to be retrieved */
     readonly listEntryId?: string;
@@ -47,10 +47,10 @@ export interface AffinityNodeParameters {
     readonly organizationId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "domain"?: string, "name"?: string, "persons"?: any[] } | { "firstName"?: string, "lastName"?: string, "organizations"?: any[] };
+    readonly updateFields?: { domain?: string, name?: string, persons?: any[] } | { firstName?: string, lastName?: string, organizations?: any[] };
 
     /** Default: {} */
-    readonly options?: { "withInteractionDates"?: boolean } | { "term"?: string, "withInteractionDates"?: boolean };
+    readonly options?: { withInteractionDates?: boolean } | { term?: string, withInteractionDates?: boolean };
 
     /** The first name of the person */
     readonly firstName?: string;

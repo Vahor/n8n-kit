@@ -16,6 +16,6 @@ export interface EmbeddingsAzureOpenAiNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { "batchSize"?: number, "stripNewLines"?: boolean, "timeout"?: number, "dimensions"?: "256" | "512" | "1024" | "1536" | "3072" };
+    readonly options?: { batchSize?: number, stripNewLines?: boolean, timeout?: number, dimensions?: 256 | 512 | 1024 | 1536 | 3072 };
 
 }

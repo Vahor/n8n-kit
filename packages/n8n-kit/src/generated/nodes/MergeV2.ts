@@ -21,7 +21,7 @@ export interface MergeV2NodeParameters {
      * Default: {"values":[{"field1":"","field2":""}]}
      * Type options: {"multipleValues":true}
      */
-    readonly mergeByFields?: { "values": any };
+    readonly mergeByFields?: { values: Array<{ field1?: string, field2?: string }> };
 
     /** Default: "keepMatches" */
     readonly joinMode?: "keepMatches" | "keepNonMatches" | "keepEverything" | "enrichInput1" | "enrichInput2";
@@ -36,6 +36,6 @@ export interface MergeV2NodeParameters {
     readonly output?: "input1" | "input2" | "empty";
 
     /** Default: {} */
-    readonly options?: { "clashHandling"?: { "values": any }, "disableDotNotation"?: boolean, "fuzzyCompare"?: boolean, "includeUnpaired"?: boolean, "multipleMatches"?: "all" | "first" };
+    readonly options?: { clashHandling?: { values: { resolveClash?: "addSuffix" | "preferInput1" | "preferInput2", mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, disableDotNotation?: boolean, fuzzyCompare?: boolean, includeUnpaired?: boolean, multipleMatches?: "all" | "first" };
 
 }

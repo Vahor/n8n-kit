@@ -36,7 +36,7 @@ export interface TodoistV2NodeParameters {
     readonly section?: string;
 
     /** Default: {} */
-    readonly options?: { "section"?: string, "parent"?: string } | { "note"?: string, "reminder"?: string, "auto_reminder"?: boolean } | { "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "parentId"?: string, "priority"?: number, "section"?: string, "order"?: number, "dueDate"?: string, "assigneeId"?: string, "duration"?: number, "durationUnit"?: "minute" | "day", "deadlineDate"?: string };
+    readonly options?: { section?: string, parent?: string } | { note?: string, reminder?: string, auto_reminder?: boolean } | { description?: string, dueDateTime?: string, dueLang?: string, dueString?: string, parentId?: string, priority?: number, section?: string, order?: number, dueDate?: string, assigneeId?: string, duration?: number, durationUnit?: "minute" | "day", deadlineDate?: string };
 
     /**
      * Optional labels that will be assigned to a created task. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -68,10 +68,10 @@ export interface TodoistV2NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "filter"?: string, "ids"?: string, "labelId"?: string, "lang"?: string, "parentId"?: string, "projectId"?: string, "sectionId"?: string };
+    readonly filters?: { filter?: string, ids?: string, labelId?: string, lang?: string, parentId?: string, projectId?: string, sectionId?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "content"?: string, "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "labels"?: any[], "priority"?: number, "order"?: number, "dueDate"?: string, "assigneeId"?: string, "duration"?: number, "durationUnit"?: "minute" | "day", "deadlineDate"?: string };
+    readonly updateFields?: { content?: string, description?: string, dueDateTime?: string, dueLang?: string, dueString?: string, labels?: any[], priority?: number, order?: number, dueDate?: string, assigneeId?: string, duration?: number, durationUnit?: "minute" | "day", deadlineDate?: string };
 
     /** The project ID - can be either a string or number */
     readonly projectId?: string;
@@ -80,10 +80,10 @@ export interface TodoistV2NodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly projectOptions?: { "color"?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", "is_favorite"?: boolean, "parent_id"?: string, "view_style"?: "list" | "board" };
+    readonly projectOptions?: { color?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", is_favorite?: boolean, parent_id?: string, view_style?: "list" | "board" };
 
     /** Default: {} */
-    readonly projectUpdateFields?: { "name"?: string, "color"?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", "is_favorite"?: boolean, "view_style"?: "list" | "board" };
+    readonly projectUpdateFields?: { name?: string, color?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", is_favorite?: boolean, view_style?: "list" | "board" };
 
     readonly sectionId?: string;
 
@@ -100,13 +100,13 @@ export interface TodoistV2NodeParameters {
     readonly sectionName?: string;
 
     /** Default: {} */
-    readonly sectionOptions?: { "order"?: number };
+    readonly sectionOptions?: { order?: number };
 
     /** Default: {} */
-    readonly sectionUpdateFields?: { "name"?: string };
+    readonly sectionUpdateFields?: { name?: string };
 
     /** Default: {} */
-    readonly sectionFilters?: { "project_id"?: string };
+    readonly sectionFilters?: { project_id?: string };
 
     readonly commentId?: string;
 
@@ -120,10 +120,10 @@ export interface TodoistV2NodeParameters {
     readonly commentContent?: string;
 
     /** Default: {} */
-    readonly commentUpdateFields?: { "content"?: string };
+    readonly commentUpdateFields?: { content?: string };
 
     /** Default: {} */
-    readonly commentFilters?: { "task_id"?: string, "project_id"?: string };
+    readonly commentFilters?: { task_id?: string, project_id?: string };
 
     readonly labelId?: string;
 
@@ -131,10 +131,10 @@ export interface TodoistV2NodeParameters {
     readonly labelName?: string;
 
     /** Default: {} */
-    readonly labelOptions?: { "color"?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", "order"?: number, "is_favorite"?: boolean };
+    readonly labelOptions?: { color?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", order?: number, is_favorite?: boolean };
 
     /** Default: {} */
-    readonly labelUpdateFields?: { "name"?: string, "color"?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", "order"?: number, "is_favorite"?: boolean };
+    readonly labelUpdateFields?: { name?: string, color?: "berry_red" | "red" | "orange" | "yellow" | "olive_green" | "lime_green" | "green" | "mint_green" | "teal" | "sky_blue" | "light_blue" | "blue" | "grape" | "violet" | "lavender" | "magenta" | "salmon" | "charcoal" | "grey" | "taupe", order?: number, is_favorite?: boolean };
 
     readonly reminderId?: string;
 
@@ -160,9 +160,9 @@ export interface TodoistV2NodeParameters {
     readonly timezone?: string;
 
     /** Default: {} */
-    readonly reminderOptions?: { "type"?: "absolute" | "relative", "minute_offset"?: number, "notify_uid"?: string };
+    readonly reminderOptions?: { type?: "absolute" | "relative", minute_offset?: number, notify_uid?: string };
 
     /** Default: {} */
-    readonly reminderUpdateFields?: { "due"?: { "string"?: string, "date"?: string, "datetime"?: string, "timezone"?: string }, "type"?: "absolute" | "relative", "minute_offset"?: number, "notify_uid"?: string };
+    readonly reminderUpdateFields?: { due?: { string?: string, date?: string, datetime?: string, timezone?: string }, type?: "absolute" | "relative", minute_offset?: number, notify_uid?: string };
 
 }

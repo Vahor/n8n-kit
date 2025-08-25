@@ -21,6 +21,6 @@ export interface SplitOutNodeParameters {
     readonly fieldsToInclude?: string;
 
     /** Default: {} */
-    readonly options?: { "disableDotNotation"?: boolean, "destinationFieldName"?: string, "includeBinary"?: boolean };
+    readonly options?: { disableDotNotation?: boolean, destinationFieldName?: string, includeBinary?: boolean };
 
 }

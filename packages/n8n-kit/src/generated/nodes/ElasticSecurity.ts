@@ -36,19 +36,19 @@ export interface ElasticSecurityNodeParameters {
      * Urgency of the ServiceNow ITSM issue to create for this case
      * Default: 1
      */
-    readonly urgency?: "1" | "2" | "3";
+    readonly urgency?: 1 | 2 | 3;
 
     /**
      * Severity of the ServiceNow ITSM issue to create for this case
      * Default: 1
      */
-    readonly severity?: "1" | "2" | "3";
+    readonly severity?: 1 | 2 | 3;
 
     /**
      * Impact of the ServiceNow ITSM issue to create for this case
      * Default: 1
      */
-    readonly impact?: "1" | "2" | "3";
+    readonly impact?: 1 | 2 | 3;
 
     /** Category of the ServiceNow ITSM issue to create for this case */
     readonly category?: string;
@@ -64,7 +64,7 @@ export interface ElasticSecurityNodeParameters {
     readonly severityCode?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { "description"?: string, "owner"?: string, "syncAlerts"?: boolean } | { "owner"?: string };
+    readonly additionalFields?: { description?: string, owner?: string, syncAlerts?: boolean } | { owner?: string };
 
     readonly caseId?: string;
 
@@ -79,13 +79,13 @@ export interface ElasticSecurityNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "status"?: "open" | "in-progress" | "closed", "tags"?: any[] };
+    readonly filters?: { status?: "open" | "in-progress" | "closed", tags?: any[] };
 
     /** Default: {} */
-    readonly sortOptions?: { "sortOptionsProperties": any };
+    readonly sortOptions?: { sortOptionsProperties: { sortField?: "createdAt" | "updatedAt", sortOrder?: "asc" | "desc" } };
 
     /** Default: {} */
-    readonly updateFields?: { "description"?: string, "status"?: "closed" | "open" | "in-progress", "syncAlerts"?: boolean, "title"?: string, "version"?: string };
+    readonly updateFields?: { description?: string, status?: "closed" | "open" | "in-progress", syncAlerts?: boolean, title?: string, version?: string };
 
     readonly comment?: string;
 

@@ -34,7 +34,7 @@ export interface GhostNodeParameters {
     readonly content?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "authors"?: any[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: any[], "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
+    readonly additionalFields?: { authors?: any[], canonical_url?: string, codeinjection_foot?: string, codeinjection_head?: string, featured?: boolean, meta_description?: string, meta_title?: string, og_description?: string, og_image?: string, og_title?: string, published_at?: string, slug?: string, status?: "draft" | "published" | "scheduled", tags?: any[], twitter_description?: string, twitter_image?: string, twitter_title?: string };
 
     /** The ID of the post to delete */
     readonly postId?: string;
@@ -49,7 +49,7 @@ export interface GhostNodeParameters {
     readonly identifier?: string;
 
     /** Default: {} */
-    readonly options?: { "fields"?: string, "formats"?: ("html" | "mobiledoc" | "lexical")[] } | { "fields"?: string, "formats"?: ("html" | "plaintext")[] } | { "include"?: ("authors" | "tags")[], "fields"?: string, "formats"?: ("html" | "plaintext" | "lexical")[] } | { "include"?: ("authors" | "tags")[], "fields"?: string, "formats"?: ("html" | "mobiledoc" | "lexical")[] };
+    readonly options?: { fields?: string, formats?: ("html" | "mobiledoc" | "lexical")[] } | { fields?: string, formats?: ("html" | "plaintext")[] } | { include?: ("authors" | "tags")[], fields?: string, formats?: ("html" | "plaintext" | "lexical")[] } | { include?: ("authors" | "tags")[], fields?: string, formats?: ("html" | "mobiledoc" | "lexical")[] };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -62,6 +62,6 @@ export interface GhostNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { "authors"?: any[], "canonical_url"?: string, "codeinjection_foot"?: string, "codeinjection_head"?: string, "content"?: string, "contentJson"?: string, "featured"?: boolean, "meta_description"?: string, "meta_title"?: string, "og_description"?: string, "og_image"?: string, "og_title"?: string, "published_at"?: string, "slug"?: string, "status"?: "draft" | "published" | "scheduled", "tags"?: any[], "title"?: string, "twitter_description"?: string, "twitter_image"?: string, "twitter_title"?: string };
+    readonly updateFields?: { authors?: any[], canonical_url?: string, codeinjection_foot?: string, codeinjection_head?: string, content?: string, contentJson?: string, featured?: boolean, meta_description?: string, meta_title?: string, og_description?: string, og_image?: string, og_title?: string, published_at?: string, slug?: string, status?: "draft" | "published" | "scheduled", tags?: any[], title?: string, twitter_description?: string, twitter_image?: string, twitter_title?: string };
 
 }

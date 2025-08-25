@@ -9,20 +9,20 @@ export const outputs = {"custom":"custom"} as const;
 
 export interface CodeAINodeParameters {
     /** Default: {} */
-    readonly code?: { "execute": any, "supplyData": any };
+    readonly code?: { execute: { code?: string }, supplyData: { code?: string } };
 
     /**
      * The input to add
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly inputs?: { "input": any };
+    readonly inputs?: { input: Array<{ type: "ai_chain" | "ai_document" | "ai_embedding" | "ai_languageModel" | "ai_memory" | "ai_outputParser" | "ai_textSplitter" | "ai_tool" | "ai_vectorStore" | "main", maxConnections: number, required: boolean }> };
 
     /**
      * The output to add
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly outputs?: { "output": any };
+    readonly outputs?: { output: Array<{ type: "ai_chain" | "ai_document" | "ai_embedding" | "ai_languageModel" | "ai_memory" | "ai_outputParser" | "ai_textSplitter" | "ai_tool" | "ai_vectorStore" | "main" }> };
 
 }

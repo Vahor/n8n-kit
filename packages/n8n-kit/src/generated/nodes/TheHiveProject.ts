@@ -19,7 +19,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly observableUi?: { "values": any };
+    readonly observableUi?: { values: Array<{ dataType?: string, data?: string, binaryProperty?: string, message?: string, tags?: string }> };
 
     /** Default: {"mode":"list","value":""} */
     readonly alertId?: {
@@ -43,7 +43,7 @@ export interface TheHiveProjectNodeParameters {
     readonly responder?: string;
 
     /** Default: {} */
-    readonly options?: { "includeSimilarAlerts"?: boolean, "includeSimilarCases"?: boolean } | { "returnCount"?: boolean, "extraData"?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { "caseTemplate"?: string } | { "canRename"?: boolean } | { "fileName"?: string, "dataPropertyName"?: string } | { "category"?: string, "title"?: string, "order"?: number };
+    readonly options?: { includeSimilarAlerts?: boolean, includeSimilarCases?: boolean } | { returnCount?: boolean, extraData?: ("isOwner" | "links" | "permissions" | "seen" | "shareCount" | "shares")[] | ("actionRequired" | "actionRequiredMap" | "case" | "caseId" | "caseTemplate" | "caseTemplateId" | "shareCount")[] | ("caseNumber" | "importDate" | "procedureCount" | "status")[] | ("actionRequired" | "alertCount" | "alerts" | "attachmentCount" | "contributors" | "computed.handlingDuration" | "computed.handlingDurationInDays" | "computed.handlingDurationInHours" | "computed.handlingDurationInMinutes" | "computed.handlingDurationInSeconds" | "isOwner" | "observableStats" | "permissions" | "procedureCount" | "shareCount" | "similarAlerts" | "status" | "taskStats")[] | ("links")[] | ("actionCount" | "case" | "task" | "taskId")[] | string } | { caseTemplate?: string } | { canRename?: boolean } | { fileName?: string, dataPropertyName?: string } | { category?: string, title?: string, order?: number };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -59,13 +59,13 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly filters?: { "values": any };
+    readonly filters?: { values: Array<{ field?: string | "message" | "date" | "message" | "category" | "content" | "title", operator?: "_between" | "_like" | "_endsWith" | "_eq" | "_gt" | "_gte" | "_in" | "_lt" | "_lte" | "_match" | "_ne" | "_startsWith", value?: string, values?: string, from?: string, to?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { "fields": any };
+    readonly sort?: { fields: Array<{ field?: string | "message" | "date" | "message" | "category" | "content" | "title", direction?: "asc" | "desc" }> };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -84,7 +84,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { "values": any };
+    readonly attachmentsUi?: { values: Array<{ field?: string }> };
 
     /**
      * ID of the attachment. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

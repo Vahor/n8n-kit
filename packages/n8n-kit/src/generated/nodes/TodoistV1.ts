@@ -55,7 +55,7 @@ export interface TodoistV1NodeParameters {
     readonly commands?: string;
 
     /** Default: {} */
-    readonly options?: { "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "parentId"?: string, "priority"?: number, "section"?: string };
+    readonly options?: { description?: string, dueDateTime?: string, dueLang?: string, dueString?: string, parentId?: string, priority?: number, section?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -68,9 +68,9 @@ export interface TodoistV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "filter"?: string, "ids"?: string, "labelId"?: string, "lang"?: string, "parentId"?: string, "projectId"?: string, "sectionId"?: string };
+    readonly filters?: { filter?: string, ids?: string, labelId?: string, lang?: string, parentId?: string, projectId?: string, sectionId?: string };
 
     /** Default: {} */
-    readonly updateFields?: { "content"?: string, "description"?: string, "dueDateTime"?: string, "dueLang"?: string, "dueString"?: string, "labels"?: any[], "priority"?: number };
+    readonly updateFields?: { content?: string, description?: string, dueDateTime?: string, dueLang?: string, dueString?: string, labels?: any[], priority?: number };
 
 }

@@ -32,7 +32,7 @@ export interface GristNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly additionalOptions?: { "filter"?: { "filterProperties": any }, "sort"?: { "sortProperties": any } };
+    readonly additionalOptions?: { filter?: { filterProperties: Array<{ field: string, values?: string }> }, sort?: { sortProperties: Array<{ field: string, direction?: "asc" | "desc" }> } };
 
     /**
      * Whether to insert the input data this node receives in the new row
@@ -47,6 +47,6 @@ export interface GristNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsToSend?: { "properties": any };
+    readonly fieldsToSend?: { properties: Array<{ fieldId?: string, fieldValue?: string }> };
 
 }

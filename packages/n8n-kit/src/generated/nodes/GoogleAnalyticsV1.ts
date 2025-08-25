@@ -38,7 +38,7 @@ export interface GoogleAnalyticsV1NodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "dateRangesUi"?: { "dateRanges": any }, "dimensionUi"?: { "dimensionValues": any }, "dimensionFiltersUi"?: { "filterValues": any }, "hideTotals"?: boolean, "hideValueRanges"?: boolean, "includeEmptyRows"?: boolean, "metricsUi"?: { "metricValues": any }, "useResourceQuotas"?: boolean } | { "activityTypes"?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
+    readonly additionalFields?: { dateRangesUi?: { dateRanges: { startDate?: string, endDate?: string } }, dimensionUi?: { dimensionValues: Array<{ name?: string }> }, dimensionFiltersUi?: { filterValues: Array<{ dimensionName?: string, operator?: "BEGINS_WITH" | "ENDS_WITH" | "NUMERIC_EQUAL" | "EXACT" | "NUMERIC_GREATER_THAN" | "NUMERIC_LESS_THAN" | "PARTIAL" | "REGEXP", expressions?: string }> }, hideTotals?: boolean, hideValueRanges?: boolean, includeEmptyRows?: boolean, metricsUi?: { metricValues: Array<{ alias?: string, expression?: string, formattingType?: "CURRENCY" | "FLOAT" | "INTEGER" | "PERCENT" | "TIME" }> }, useResourceQuotas?: boolean } | { activityTypes?: ("ECOMMERCE" | "EVENT" | "GOAL" | "PAGEVIEW" | "SCREENVIEW")[] };
 
     /** ID of a user */
     readonly userId?: string;

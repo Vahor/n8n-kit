@@ -15,6 +15,6 @@ export interface DhlNodeParameters {
     readonly trackingNumber?: string;
 
     /** Default: {} */
-    readonly options?: { "recipientPostalCode"?: string };
+    readonly options?: { recipientPostalCode?: string };
 
 }

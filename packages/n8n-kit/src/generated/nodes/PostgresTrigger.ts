@@ -31,9 +31,9 @@ export interface PostgresTriggerNodeParameters {
     readonly firesOn?: "INSERT" | "UPDATE" | "DELETE";
 
     /** Default: {} */
-    readonly additionalFields?: { "channelName"?: string, "functionName"?: string, "replaceIfExists"?: boolean, "triggerName"?: string };
+    readonly additionalFields?: { channelName?: string, functionName?: string, replaceIfExists?: boolean, triggerName?: string };
 
     /** Default: {} */
-    readonly options?: { "connectionTimeout"?: number, "delayClosingIdleConnection"?: number };
+    readonly options?: { connectionTimeout?: number, delayClosingIdleConnection?: number };
 
 }

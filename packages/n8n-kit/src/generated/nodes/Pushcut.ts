@@ -22,6 +22,6 @@ export interface PushcutNodeParameters {
     readonly notificationName?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { "devices"?: any[], "input"?: string, "text"?: string, "title"?: string };
+    readonly additionalFields?: { devices?: any[], input?: string, text?: string, title?: string };
 
 }

@@ -15,7 +15,7 @@ export interface ReadWriteFileNodeParameters {
     readonly fileSelector?: string;
 
     /** Default: {} */
-    readonly options?: { "fileExtension"?: string, "fileName"?: string, "mimeType"?: string, "dataPropertyName"?: string } | { "append"?: boolean };
+    readonly options?: { fileExtension?: string, fileName?: string, mimeType?: string, dataPropertyName?: string } | { append?: boolean };
 
     /** Path and name of the file that should be written. Also include the file extension. */
     readonly fileName?: string;

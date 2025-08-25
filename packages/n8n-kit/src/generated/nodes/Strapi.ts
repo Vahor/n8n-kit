@@ -38,7 +38,7 @@ export interface StrapiNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "publicationState"?: "live" | "preview", "sort"?: string, "where"?: string };
+    readonly options?: { publicationState?: "live" | "preview", sort?: string, where?: string };
 
     /**
      * Name of the property which decides which rows in the database should be updated. Normally that would be "id".

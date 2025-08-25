@@ -37,13 +37,13 @@ export interface HelpScoutNodeParameters {
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { "assignTo"?: number, "autoReply"?: boolean, "closedAt"?: string, "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "imported"?: boolean, "tags"?: any[], "user"?: number } | { "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string } | { "createdAt"?: string, "customerEmail"?: string, "customerId"?: number, "draft"?: boolean, "imported"?: boolean };
+    readonly additionalFields?: { assignTo?: number, autoReply?: boolean, closedAt?: string, createdAt?: string, customerEmail?: string, customerId?: number, imported?: boolean, tags?: any[], user?: number } | { age?: number, firstName?: string, gender?: "female" | "male" | "unknown", jobTitle?: string, lastName?: string, location?: string, background?: string, organization?: string, photoUrl?: string } | { createdAt?: string, customerEmail?: string, customerId?: number, draft?: boolean, imported?: boolean };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly threadsUi?: { "threadsValues": any };
+    readonly threadsUi?: { threadsValues: Array<{ type?: "chat" | "customer" | "note" | "phone" | "reply", text?: string, bcc?: string, cc?: string, draft?: boolean }> };
 
     readonly conversationId?: string;
 
@@ -58,45 +58,45 @@ export interface HelpScoutNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { "assignTo"?: number, "embed"?: "threads", "folder"?: string, "mailbox"?: string, "modifiedSince"?: string, "number"?: number, "query"?: string, "sortField"?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", "sortOrder"?: "asc" | "desc", "status"?: "active" | "all" | "closed" | "open" | "pending" | "spam", "tags"?: any[] } | { "firstName"?: string, "lastName"?: string, "mailbox"?: string, "modifiedSince"?: string, "sortField"?: "score" | "firstName" | "lastName" | "modifiedAt", "sortOrder"?: "asc" | "desc", "query"?: string };
+    readonly options?: { assignTo?: number, embed?: "threads", folder?: string, mailbox?: string, modifiedSince?: string, number?: number, query?: string, sortField?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", sortOrder?: "asc" | "desc", status?: "active" | "all" | "closed" | "open" | "pending" | "spam", tags?: any[] } | { firstName?: string, lastName?: string, mailbox?: string, modifiedSince?: string, sortField?: "score" | "firstName" | "lastName" | "modifiedAt", sortOrder?: "asc" | "desc", query?: string };
 
     /** Default: {} */
-    readonly addressUi?: { "addressValue": any };
+    readonly addressUi?: { addressValue: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postalCode?: string } };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly chatsUi?: { "chatsValues": any };
+    readonly chatsUi?: { chatsValues: Array<{ type?: "aim" | "gtalk" | "icq" | "msn" | "other" | "qq" | "skype" | "xmpp" | "yahoo", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly emailsUi?: { "emailsValues": any };
+    readonly emailsUi?: { emailsValues: Array<{ type?: "home" | "other" | "work", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly phonesUi?: { "phonesValues": any };
+    readonly phonesUi?: { phonesValues: Array<{ type?: "fax" | "home" | "other" | "pager" | "work", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly socialProfilesUi?: { "socialProfilesValues": any };
+    readonly socialProfilesUi?: { socialProfilesValues: Array<{ type?: "aboutMe" | "facebook" | "flickr" | "forsquare" | "google" | "googleplus" | "linkedin" | "other" | "quora" | "tungleme" | "twitter" | "youtube", value?: string }> };
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly websitesUi?: { "websitesValues": any };
+    readonly websitesUi?: { websitesValues: Array<{ value?: string }> };
 
     readonly customerId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "age"?: number, "firstName"?: string, "gender"?: "female" | "male" | "unknown", "jobTitle"?: string, "lastName"?: string, "location"?: string, "background"?: string, "organization"?: string, "photoUrl"?: string };
+    readonly updateFields?: { age?: number, firstName?: string, gender?: "female" | "male" | "unknown", jobTitle?: string, lastName?: string, location?: string, background?: string, organization?: string, photoUrl?: string };
 
     /** The chat text */
     readonly text?: string;
@@ -106,6 +106,6 @@ export interface HelpScoutNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly attachmentsUi?: { "attachmentsValues": any, "attachmentsBinary": any };
+    readonly attachmentsUi?: { attachmentsValues: Array<{ fileName?: string, mimeType?: string, data?: string }>, attachmentsBinary: Array<{ property?: string }> };
 
 }

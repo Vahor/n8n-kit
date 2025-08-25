@@ -29,7 +29,7 @@ export interface MicrosoftGraphSecurityNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { "filter"?: string, "includeControlScores"?: boolean } | { "filter"?: string };
+    readonly filters?: { filter?: string, includeControlScores?: boolean } | { filter?: string };
 
     /** ID of the secure score control profile to retrieve */
     readonly secureScoreControlProfileId?: string;
@@ -41,6 +41,6 @@ export interface MicrosoftGraphSecurityNodeParameters {
     readonly vendor?: string;
 
     /** Default: {} */
-    readonly updateFields?: { "state"?: "Default" | "Ignored" | "ThirdParty" };
+    readonly updateFields?: { state?: "Default" | "Ignored" | "ThirdParty" };
 
 }

@@ -28,6 +28,6 @@ export interface MoceanNodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly options?: { "dlrUrl"?: string };
+    readonly options?: { dlrUrl?: string };
 
 }

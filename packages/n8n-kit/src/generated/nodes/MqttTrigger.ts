@@ -13,6 +13,6 @@ export interface MqttTriggerNodeParameters {
     readonly topics?: string;
 
     /** Default: {} */
-    readonly options?: { "jsonParseBody"?: boolean, "onlyMessage"?: boolean, "parallelProcessing"?: boolean };
+    readonly options?: { jsonParseBody?: boolean, onlyMessage?: boolean, parallelProcessing?: boolean };
 
 }

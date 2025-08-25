@@ -18,6 +18,6 @@ export interface IfV2NodeParameters {
     readonly looseTypeValidation?: boolean;
 
     /** Default: {} */
-    readonly options?: { "ignoreCase"?: boolean, "looseTypeValidation"?: boolean };
+    readonly options?: { ignoreCase?: boolean, looseTypeValidation?: boolean };
 
 }

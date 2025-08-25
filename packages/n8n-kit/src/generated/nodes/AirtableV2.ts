@@ -34,10 +34,10 @@ export interface AirtableV2NodeParameters {
 };
 
     /** Default: {} */
-    readonly options?: { "typecast"?: boolean, "ignoreFields"?: string, "updateAllMatches"?: boolean } | { "downloadFields"?: any[] } | { "downloadFields"?: any[], "fields"?: any[], "view"?: {
+    readonly options?: { typecast?: boolean, ignoreFields?: string, updateAllMatches?: boolean } | { downloadFields?: any[] } | { downloadFields?: any[], fields?: any[], view?: {
 	value: string,
 	mode: "list" | "url" | "id",
-} } | { "permissionLevel"?: ("comment" | "create" | "edit" | "none" | "read")[] };
+} } | { permissionLevel?: ("comment" | "create" | "edit" | "none" | "read")[] };
 
     /** ID of the record to delete. <a href="https://support.airtable.com/docs/record-id" target="_blank">More info</a>. */
     readonly id?: string;
@@ -63,6 +63,6 @@ export interface AirtableV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sort?: { "property": any };
+    readonly sort?: { property: Array<{ field?: string, direction?: "asc" | "desc" }> };
 
 }

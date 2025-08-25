@@ -23,6 +23,6 @@ export interface AgentToolV2NodeParameters {
     readonly needsFallback?: boolean;
 
     /** Default: {} */
-    readonly options?: { "systemMessage"?: string, "maxIterations"?: number, "returnIntermediateSteps"?: boolean, "passthroughBinaryImages"?: boolean, "batching"?: { "batchSize"?: number, "delayBetweenBatches"?: number } };
+    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

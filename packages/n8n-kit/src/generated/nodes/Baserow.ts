@@ -43,7 +43,7 @@ export interface BaserowNodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any };
+    readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -56,6 +56,6 @@ export interface BaserowNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly additionalOptions?: { "filters"?: { "fields": any }, "filterType"?: "AND" | "OR", "search"?: string, "order"?: { "fields": any } };
+    readonly additionalOptions?: { filters?: { fields: Array<{ field?: string, operator?: "contains" | "contains_not" | "date_after" | "date_before" | "date_equal" | "date_equals_month" | "date_equals_today" | "date_equals_year" | "date_not_equal" | "equal" | "filename_contains" | "higher_than" | "empty" | "not_empty" | "boolean" | "link_row_has_not" | "link_row_has" | "lower_than" | "not_equal" | "single_select_equal" | "single_select_not_equal", value?: string }> }, filterType?: "AND" | "OR", search?: string, order?: { fields: Array<{ field?: string, direction?: "" | "-" }> } };
 
 }

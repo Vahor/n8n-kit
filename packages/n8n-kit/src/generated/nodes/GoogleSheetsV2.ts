@@ -43,10 +43,10 @@ export interface GoogleSheetsV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
      */
-    readonly fieldsUi?: { "fieldValues": any } | { "values": any };
+    readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> } | { values: Array<{ column?: string, columnName?: string, fieldValue?: string }> };
 
     /** Default: {} */
-    readonly options?: { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error", "useAppend"?: boolean } | { "hidden"?: boolean, "rightToLeft"?: boolean, "sheetId"?: number, "index"?: number, "tabColor"?: string } | { "dataLocationOnSheet"?: { "values": any }, "outputFormatting"?: { "values": any }, "returnFirstMatch"?: boolean, "returnAllMatches"?: "returnFirstMatch" | "returnAllMatches" } | { "cellFormat"?: "USER_ENTERED" | "RAW", "locationDefine"?: { "values": any }, "handlingExtraData"?: "insertInNewColumn" | "ignoreIt" | "error" } | { "locale"?: string, "autoRecalc"?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
+    readonly options?: { cellFormat?: "USER_ENTERED" | "RAW", locationDefine?: { values: { headerRow?: number } }, handlingExtraData?: "insertInNewColumn" | "ignoreIt" | "error", useAppend?: boolean } | { hidden?: boolean, rightToLeft?: boolean, sheetId?: number, index?: number, tabColor?: string } | { dataLocationOnSheet?: { values: { rangeDefinition?: "detectAutomatically" | "specifyRangeA1" | "specifyRange", readRowsUntil?: "firstEmptyRow" | "lastRowInSheet", headerRow?: number, firstDataRow?: number, range?: string } }, outputFormatting?: { values: { general?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", date?: "FORMATTED_STRING" | "SERIAL_NUMBER" } }, returnFirstMatch?: boolean, returnAllMatches?: "returnFirstMatch" | "returnAllMatches" } | { cellFormat?: "USER_ENTERED" | "RAW", locationDefine?: { values: { headerRow?: number, firstDataRow?: number } }, handlingExtraData?: "insertInNewColumn" | "ignoreIt" | "error" } | { cellFormat?: "USER_ENTERED" | "RAW", locationDefine?: { values: { headerRow?: number, firstDataRow?: number } }, handlingExtraData?: "insertInNewColumn" | "ignoreIt" | "error", useAppend?: boolean } | { locale?: string, autoRecalc?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
 
     /**
      * What to clear
@@ -103,7 +103,7 @@ export interface GoogleSheetsV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValueButtonText":"Add Filter","multipleValues":true}
      */
-    readonly filtersUI?: { "values": any };
+    readonly filtersUI?: { values: Array<{ lookupColumn?: string, lookupValue?: string }> };
 
     /**
      * How to combine the conditions defined in "Filters": AND requires all conditions to be true, OR requires at least one condition to be true
@@ -123,6 +123,6 @@ export interface GoogleSheetsV2NodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sheetsUi?: { "sheetValues": any };
+    readonly sheetsUi?: { sheetValues: Array<{ title?: string, hidden?: boolean }> };
 
 }

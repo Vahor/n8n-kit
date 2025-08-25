@@ -46,7 +46,7 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
 };
 
     /** Default: {} */
-    readonly options?: { "folderChild"?: boolean };
+    readonly options?: { folderChild?: boolean };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }
