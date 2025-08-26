@@ -75,7 +75,7 @@ export class TreeBuilder {
 			}
 		}
 
-		// Find root nodes (no incoming connections, excluding sticky notes)
+		// Find root nodes (with no incoming connections)
 		const allNodes = Array.from(this.nodeNameMap.values());
 		const rootNodes = allNodes.filter((node) => !hasIncoming.has(node.name));
 
