@@ -1,7 +1,7 @@
 import * as path from "node:path";
 import { CodeMaker } from "codemaker";
 import { globSync } from "tinyglobby";
-import { capitalize, validCustomTypeAsStringUnion } from "./shared";
+import { validCustomTypeAsStringUnion } from "./shared";
 
 const allNodesTypes = globSync("../src/generated/nodes/**/*.ts", {
 	cwd: path.resolve(__dirname),
@@ -137,6 +137,11 @@ const generateTypescriptNodeOutput = async (
 		code.line();
 	}
 
+	// If we accept more than one type of input, add by default the custom input method
+	if (Object.keys(result.inputs).length > 1 && !result.inputs.custom) {
+		result.inputs.custom = "custom";
+	}
+
 	for (const [inputName, inputType] of Object.entries(result.inputs)) {
 		if (inputName === "main") continue;
 		if (inputName === "custom") {
@@ -148,7 +153,7 @@ const generateTypescriptNodeOutput = async (
 			);
 		} else {
 			code.openBlock(
-				`public with${capitalize(code.toCamelCase(inputName))}(next: State): this`,
+				`public with${code.toPascalCase(inputName)}(next: State): this`,
 			);
 			code.line(
 				`super.addNext(next.startState, { type: "${inputType}", direction: "input" });`,
@@ -159,13 +164,28 @@ const generateTypescriptNodeOutput = async (
 		code.line();
 	}
 
+	// If we accept more than one type of input, add by default the custom input method
+	if (Object.keys(result.outputs).length > 1 && !result.outputs.custom) {
+		result.outputs.custom = "custom";
+	}
+
+	// TODO: make a shared method for inputs and outputs (only diff is direction and with-to)
 	for (const [outputName, outputType] of Object.entries(result.outputs)) {
 		if (outputName === "main") continue;
-		code.openBlock(
-			`public to${capitalize(code.toCamelCase(outputName))}(next: IChainable): this`,
-		);
-		code.line(`super.addNext(next.startState, { type: "${outputType}" });`);
-		code.line(`return this;`);
+		if (outputName === "custom") {
+			code.openBlock(
+				`public to(type: ${validCustomTypeAsStringUnion}, next: State): this`,
+			);
+			code.line(
+				`super.addNext(next.startState, { type, direction: "input" });`,
+			);
+		} else {
+			code.openBlock(
+				`public to${code.toPascalCase(outputName)}(next: IChainable): this`,
+			);
+			code.line(`super.addNext(next.startState, { type: "${outputType}" });`);
+			code.line(`return this;`);
+		}
 		code.closeBlock();
 		code.line();
 	}

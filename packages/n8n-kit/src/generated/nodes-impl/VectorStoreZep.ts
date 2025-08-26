@@ -30,14 +30,13 @@ export class VectorStoreZep<C extends IContext, L extends string> extends Node<L
         return [this.props!.zepApiCredentials];
     }
 
-    public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_outputParser", next: State): this {
+    public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {
         super.addNext(next.startState, { type, direction: "input" });
         return this;
     }
 
-    public toCustom(next: IChainable): this {
-        super.addNext(next.startState, { type: "custom" });
-        return this;
+    public to(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {
+        super.addNext(next.startState, { type, direction: "input" });
     }
 
 }

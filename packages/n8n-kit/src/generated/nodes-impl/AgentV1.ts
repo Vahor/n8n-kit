@@ -32,7 +32,7 @@ export class AgentV1<C extends IContext, L extends string> extends Node<L, C> {
         return [this.props!.mySqlCredentials, this.props!.postgresCredentials];
     }
 
-    public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_outputParser", next: State): this {
+    public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {
         super.addNext(next.startState, { type, direction: "input" });
         return this;
     }
