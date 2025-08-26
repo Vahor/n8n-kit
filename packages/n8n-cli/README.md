@@ -195,7 +195,7 @@ The generated TypeScript file will include:
 
 **Known Limitations:**
 - When a node has multiple versions, the imported node will be wrong. Example: `GoogleDrive` instead of `GoogleDriveV2`.
-- The generated code is probably not optimal.
+- The generated code is probably not optimal. (ex: `connect` is not implemented and will be replaced by `next` and `Placeholder`)
 - The generated code will use `generated` nodes from `@vahor/n8n-kit/nodes/generated` even if a proper implementation is available.
 - Groups are not supported as they are not native to n8n.
 - As it's generated code, run prettier or biome on it to make it look nice.
