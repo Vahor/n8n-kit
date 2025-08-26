@@ -6,7 +6,7 @@ import {
 } from "@vahor/n8n-kit/nodes";
 import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
-const reusableWorkflow = new Workflow("reusable-workflow", {
+const reusableWorkflow = new Workflow("my-workflow", {
 	name: "Reusable workflow",
 	tags: ["reusable"],
 	inputSchema: type({

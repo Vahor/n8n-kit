@@ -1,5 +1,5 @@
 {
-	"id": "TZaTpkZBM0/EA",
+	"id": "iJFYtqyGWaroz",
 	"name": "Workflow with groups",
 	"nodes": [
 		{
@@ -85,5 +85,5 @@
 	},
 	"settings": {},
 	"active": false,
-	"tags": [{ "name": "@vahor/n8n-TZaTpkZBM0/EA" }]
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }

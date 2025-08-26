@@ -1,12 +1,12 @@
 {
-	"id": "Vep5Pzx1nKJBc",
-	"name": "Complex Workflow",
+	"id": "iJFYtqyGWaroz",
+	"name": "Weird Workflow",
 	"nodes": [
 		{
 			"id": "webhook",
 			"name": "Webhook",
 			"type": "n8n-nodes-base.webhook",
-			"position": [55, 270],
+			"position": [60, 300],
 			"typeVersion": 2.1,
 			"parameters": {
 				"label": "Webhook",
@@ -19,7 +19,7 @@
 			"id": "check-valid-entity-id",
 			"name": "check-valid-entity-id",
 			"type": "n8n-nodes-base.if",
-			"position": [405, 270],
+			"position": [420, 300],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -31,7 +31,7 @@
 								"operation": "exists",
 								"singleValue": true
 							},
-							"id": "complex-workflow/check-valid-entity-id/0"
+							"id": "my-workflow/check-valid-entity-id/0"
 						}
 					],
 					"combinator": "and",
@@ -47,15 +47,14 @@
 			"id": "invalid-entity-id",
 			"name": "invalid-entity-id",
 			"type": "n8n-nodes-base.noOp",
-			"position": [755, 125],
-			"typeVersion": 1,
-			"parameters": {}
+			"position": [780, 60],
+			"typeVersion": 1
 		},
 		{
 			"id": "check-valid-execution-type",
 			"name": "check-valid-execution-type",
 			"type": "n8n-nodes-base.if",
-			"position": [755, 405],
+			"position": [780, 420],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -67,7 +66,7 @@
 								"operation": "exists",
 								"singleValue": true
 							},
-							"id": "complex-workflow/check-valid-execution-type/0"
+							"id": "my-workflow/check-valid-execution-type/0"
 						}
 					],
 					"combinator": "and",
@@ -83,7 +82,7 @@
 			"id": "invalid-entity-id-response",
 			"name": "invalid-entity-id-response",
 			"type": "n8n-nodes-base.respondToWebhook",
-			"position": [1105, 125],
+			"position": [1140, 60],
 			"typeVersion": 1.5,
 			"parameters": {
 				"respondWith": "json",
@@ -95,23 +94,21 @@
 			"id": "invalid-execution-type",
 			"name": "invalid-execution-type",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1105, 395],
-			"typeVersion": 1,
-			"parameters": {}
+			"position": [1140, 300],
+			"typeVersion": 1
 		},
 		{
 			"id": "nooo",
 			"name": "nooo",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1105, 655],
-			"typeVersion": 1,
-			"parameters": {}
+			"position": [1140, 540],
+			"typeVersion": 1
 		},
 		{
 			"id": "invalid-execution-type-response",
 			"name": "invalid-execution-type-response",
 			"type": "n8n-nodes-base.respondToWebhook",
-			"position": [1455, 395],
+			"position": [1500, 300],
 			"typeVersion": 1.5,
 			"parameters": {
 				"respondWith": "json",
@@ -123,52 +120,52 @@
 			"id": "2",
 			"name": "2",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1455, 655],
-			"typeVersion": 1,
-			"parameters": {}
+			"position": [1500, 540],
+			"typeVersion": 1
 		},
 		{
 			"id": "3",
 			"name": "3",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1805, 655],
-			"typeVersion": 1,
-			"parameters": {}
+			"position": [1860, 540],
+			"typeVersion": 1
 		},
 		{
 			"id": "invalid-entity-id-handle-error-message-group",
 			"name": "invalid-entity-id-handle-error-message-group",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [700, 340],
+			"position": [720, 0],
 			"typeVersion": 1,
 			"parameters": {
-				"parameters": { "content": "Handle error message", "color": "RED" },
-				"width": 570,
-				"height": 220
+				"content": "Handle error message",
+				"color": 3,
+				"width": 600,
+				"height": 240
 			}
 		},
 		{
 			"id": "invalid-execution-type-handle-error-message-group",
 			"name": "invalid-execution-type-handle-error-message-group",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [700, 340],
+			"position": [1080, 240],
 			"typeVersion": 1,
 			"parameters": {
-				"parameters": { "content": "Handle error message", "color": "RED" },
-				"width": 570,
-				"height": 220
+				"content": "Handle error message",
+				"color": 3,
+				"width": 600,
+				"height": 240
 			}
 		},
 		{
 			"id": "check-valid-execution-type-group",
 			"name": "check-valid-execution-type-group",
 			"type": "n8n-nodes-base.stickyNote",
-			"position": [700, 340],
+			"position": [720, 240],
 			"typeVersion": 1,
 			"parameters": {
-				"parameters": { "content": "Check valid execution type" },
-				"width": 920,
-				"height": 230
+				"content": "Check valid execution type",
+				"width": 960,
+				"height": 360
 			}
 		}
 	],
@@ -210,7 +207,6 @@
 		"nooo": { "main": [[{ "node": "2", "type": "main", "index": 0 }]] }
 	},
 	"settings": {},
-	"staticData": {},
 	"active": true,
-	"tags": [{ "name": "@vahor/n8n-Vep5Pzx1nKJBc" }]
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }
