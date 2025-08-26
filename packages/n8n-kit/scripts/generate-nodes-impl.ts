@@ -176,9 +176,7 @@ const generateTypescriptNodeOutput = async (
 			code.openBlock(
 				`public toCustom(type: ${validCustomTypeAsStringUnion}, next: State): this`,
 			);
-			code.line(
-				`super.addNext(next.startState, { type, direction: "input" });`,
-			);
+			code.line(`super.addNext(next.startState, { type });`);
 		} else {
 			code.openBlock(
 				`public to${code.toPascalCase(outputName)}(next: IChainable): this`,
