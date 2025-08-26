@@ -192,7 +192,7 @@ const extractNodesTypes = (
 ): void => {
 	for (const node of workflowData.nodes) {
 		const asImport = nodeToClassname(node);
-		if (asImport === "If") {
+		if (asImport === "If" || asImport === "Merge") {
 			nodesImports.add(asImport);
 		} else {
 			generatedNodesImports.add(asImport);
@@ -275,7 +275,12 @@ const writeWorkflowDefinitionNode = async (
 		if (node.crossTreeConnections.length === 1) {
 			// we only handle 1 cross-tree connection
 			for (const connection of node.crossTreeConnections) {
-				code.line(`.next(new Placeholder("${connection.name}")),`);
+				const toIndex = connection.toIndex;
+				const connectionOptionsString =
+					toIndex === 0 ? "" : `, { to: ${toIndex} }`;
+				code.line(
+					`.next(new Placeholder("${connection.name}")${connectionOptionsString}),`,
+				);
 			}
 		} else {
 			logger.error(
