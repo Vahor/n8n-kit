@@ -29,7 +29,6 @@ export const builder = (yargs: Argv) => {
 
 type Options = GlobalOptions & {
 	id: string[];
-	viewer: "none" | "delta";
 };
 
 const defaultRedactKeys = [
@@ -53,7 +52,7 @@ const defaultRedactKeys = [
 	"cachedResultUrl",
 	"_rl",
 ];
-const replacer = () => undefined as unknown as string; // make ts happy, the lib expect a string
+const replacer = () => undefined;
 
 const getDiff = async (file1: string, file2: string) => {
 	try {

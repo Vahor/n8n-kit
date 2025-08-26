@@ -1,8 +1,11 @@
 export class Redact {
 	private redactKeys: (RegExp | string)[];
-	private replacer: () => string;
+	private replacer: () => string | undefined;
 
-	constructor(redactKeys: (RegExp | string)[], replacer: () => string) {
+	constructor(
+		redactKeys: (RegExp | string)[],
+		replacer: () => string | undefined,
+	) {
 		this.redactKeys = redactKeys;
 		this.replacer = replacer;
 	}
