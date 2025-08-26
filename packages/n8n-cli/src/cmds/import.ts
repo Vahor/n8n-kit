@@ -320,7 +320,12 @@ const writeWorkflowDefinitionNode = async (
 	if (mainConnectionChildren.length === 1) {
 		code.line(".next(");
 		code.indent();
-		writeWorkflowDefinitionNode(code, node.children[0]!, false, visited);
+		writeWorkflowDefinitionNode(
+			code,
+			mainConnectionChildren[0]!,
+			false,
+			visited,
+		);
 		code.unindent(false);
 		code.line("),");
 		return;
