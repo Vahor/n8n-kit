@@ -342,6 +342,11 @@ const writeWorkflowDefinitionNode = async (
 	}
 };
 
+const formatString = (str: any) => {
+	if (typeof str === "string" && str.includes("\n")) return `\`${str}\``;
+	return JSON.stringify(str);
+};
+
 const writeObject = (code: CodeMaker, obj: any) => {
 	if (obj == null) return;
 	if (Array.isArray(obj)) {
@@ -359,7 +364,7 @@ const writeObject = (code: CodeMaker, obj: any) => {
 				code.unindent(false);
 				code.line("},");
 			} else {
-				code.line(`${JSON.stringify(value)},`);
+				code.line(`${formatString(value)},`);
 			}
 		}
 		return;
@@ -380,10 +385,10 @@ const writeObject = (code: CodeMaker, obj: any) => {
 				code.unindent(false);
 				code.line("},");
 			} else {
-				code.line(`${key}: ${JSON.stringify(value)},`);
+				code.line(`${key}: ${formatString(value)},`);
 			}
 		}
 		return;
 	}
-	code.line(JSON.stringify(obj));
+	code.line(formatString(obj));
 };
