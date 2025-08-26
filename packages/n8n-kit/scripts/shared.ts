@@ -149,10 +149,6 @@ export const getNodeName = (nodePath: string) => {
 	return nodePath.split("/").pop()?.split(".")[0]!;
 };
 
-export const capitalize = (str: string) => {
-	return str.charAt(0).toUpperCase() + str.slice(1);
-};
-
 export const validCustomType = [
 	"ai_textSplitter",
 	"ai_embedding",
@@ -160,6 +156,7 @@ export const validCustomType = [
 	"ai_languageModel",
 	"ai_memory",
 	"ai_tool",
+	"ai_vectorStore",
 	"ai_outputParser",
 ];
 export const validCustomTypeAsStringUnion = validCustomType

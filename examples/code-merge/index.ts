@@ -4,7 +4,7 @@ import { Code, ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
 // https://n8n.io/workflows/655-merge-greetings-with-the-users-based-on-the-language/
 
-const workflow = new Workflow("merge-example", {
+const workflow = new Workflow("my-workflow", {
 	name: "Merge Example",
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.multiple([

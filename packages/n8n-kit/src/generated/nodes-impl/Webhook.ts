@@ -31,8 +31,8 @@ export class Webhook<C extends IContext, L extends string> extends Node<L, C> {
         return [this.props!.httpBasicAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.jwtAuthCredentials];
     }
 
-    public toCustom(next: IChainable): this {
-        super.addNext(next.startState, { type: "custom" });
+    public toCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: IChainable): this {
+        super.addNext(next.startState, { type });
         return this;
     }
 

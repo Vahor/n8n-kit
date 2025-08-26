@@ -150,6 +150,7 @@ export class Chain<
 		_next: EndsInMultiple extends true
 			? ErrorMessage<"Cannot use next() after multiple(), use connect() instead">
 			: ChainableProvider<N, CC>,
+		connectionOptions?: ConnectionOptions,
 	): Chain<
 		AddIChainableToChainContext<N, CC>,
 		AddNodeIdToIds<N, IdsInContext>
@@ -169,7 +170,7 @@ export class Chain<
 		}
 
 		for (const endState of this.endStates) {
-			endState.addNext(next);
+			endState.addNext(next, connectionOptions);
 		}
 
 		return new Chain(this.startState, next.endStates, next);

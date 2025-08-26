@@ -35,9 +35,8 @@ export class N8nApi {
 		});
 
 		if (!response.ok) {
-			logger.error(response.statusText);
 			const responseBody = await response.text();
-			logger.error(responseBody);
+			logger.debug(responseBody);
 
 			throw new Error(
 				`N8N API error: ${response.status} ${response.statusText}`,

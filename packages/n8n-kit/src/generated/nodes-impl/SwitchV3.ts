@@ -20,8 +20,8 @@ export class SwitchV3<C extends IContext, L extends string> extends Node<L, C> {
         super(id, props);
     }
 
-    public toCustom(next: IChainable): this {
-        super.addNext(next.startState, { type: "custom" });
+    public toCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: IChainable): this {
+        super.addNext(next.startState, { type });
         return this;
     }
 

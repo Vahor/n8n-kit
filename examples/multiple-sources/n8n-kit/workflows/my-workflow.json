@@ -41,7 +41,7 @@
 					"mode": "list"
 				}
 			},
-			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id-1" } }
 		},
 		{
 			"id": "gdrive-file-updated",
@@ -58,7 +58,7 @@
 					"mode": "list"
 				}
 			},
-			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id-1" } }
 		},
 		{
 			"id": "download-from-drive",
@@ -71,7 +71,7 @@
 				"fileId": { "mode": "id", "value": "={{ $json.id }}" },
 				"options": { "fileName": "={{ $json.name }}" }
 			},
-			"credentials": { "googleDriveOAuth2Api": { "id": "some-id" } }
+			"credentials": { "googleDriveOAuth2Api": { "id": "some-id-1" } }
 		},
 		{
 			"id": "upload-to-pinecone",
@@ -83,7 +83,7 @@
 				"mode": "insert",
 				"pineconeIndex": { "value": "company-files", "mode": "list" }
 			},
-			"credentials": { "pineconeApi": { "id": "some-id" } }
+			"credentials": { "pineconeApi": { "id": "some-id-2" } }
 		},
 		{
 			"id": "embeddings-google-gemini",
@@ -92,7 +92,7 @@
 			"position": [1260, 1020],
 			"typeVersion": 1,
 			"parameters": { "modelName": "models/text-embedding-004" },
-			"credentials": { "googlePalmApi": { "id": "some-id" } }
+			"credentials": { "googlePalmApi": { "id": "some-id-=" } }
 		},
 		{
 			"id": "document-to-vector-store",
@@ -148,7 +148,7 @@
 			"position": [940, 1500],
 			"typeVersion": 1,
 			"parameters": { "modelName": "models/gemini-2.0-flash-exp" },
-			"credentials": { "googlePalmApi": { "id": "some-id" } }
+			"credentials": { "googlePalmApi": { "id": "some-id-=" } }
 		},
 		{
 			"id": "memory-buffer-window",
@@ -177,7 +177,7 @@
 			"parameters": {
 				"pineconeIndex": { "value": "company-files", "mode": "list" }
 			},
-			"credentials": { "pineconeApi": { "id": "some-id" } }
+			"credentials": { "pineconeApi": { "id": "some-id-2" } }
 		},
 		{
 			"id": "google-gemini-retrieval",
@@ -186,7 +186,7 @@
 			"position": [1260, 2040],
 			"typeVersion": 1,
 			"parameters": { "modelName": "models/gemini-2.0-flash-exp" },
-			"credentials": { "googlePalmApi": { "id": "some-id" } }
+			"credentials": { "googlePalmApi": { "id": "some-id-=" } }
 		},
 		{
 			"id": "embeddings-google-gemini-retrieval",
@@ -195,7 +195,7 @@
 			"position": [1520, 1680],
 			"typeVersion": 1,
 			"parameters": { "modelName": "models/text-embedding-004" },
-			"credentials": { "googlePalmApi": { "id": "some-id" } }
+			"credentials": { "googlePalmApi": { "id": "some-id-=" } }
 		}
 	],
 	"connections": {

@@ -23,13 +23,13 @@ export class InformationExtractor<C extends IContext, L extends string> extends 
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
-    public with(next: State): this {
-        super.addNext(next.startState, { type: "main", direction: "input" });
+    public withModel(next: State): this {
+        super.addNext(next.startState, { type: "ai_languageModel", direction: "input" });
         return this;
     }
 
-    public withModel(next: State): this {
-        super.addNext(next.startState, { type: "ai_languageModel", direction: "input" });
+    public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {
+        super.addNext(next.startState, { type, direction: "input" });
         return this;
     }
 

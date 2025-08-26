@@ -18,9 +18,9 @@
 			"parameters": {
 				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" },
 				"workflowId": {
-					"value": "@vahor/n8n-_resolved_workflow_id@reusable-workflow",
+					"value": "@vahor/n8n-_resolved_workflow_id@my-workflow",
 					"mode": "list",
-					"cachedResultName": "reusable-workflow"
+					"cachedResultName": "my-workflow"
 				},
 				"source": "database"
 			}

@@ -135,6 +135,7 @@ export const handler = async (options: Options) => {
 
 		const fromPath = path.join(diffFolder, `${workflow.id}_from.json`);
 		const toPath = path.join(diffFolder, `${workflow.id}_to.json`);
+		logger.debug(`Writting files to ${fromPath} and ${toPath}`);
 		await fs.promises.writeFile(fromPath, JSON.stringify(from, null, 2));
 		await fs.promises.writeFile(toPath, JSON.stringify(to, null, 2));
 

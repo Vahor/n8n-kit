@@ -21,6 +21,7 @@ yargsInstance
 	.command(require("./cmds/deploy"))
 	.command(require("./cmds/diff"))
 	.command(require("./cmds/build"))
+	.command(require("./cmds/import"))
 
 	.option("dry-run", {
 		type: "boolean",

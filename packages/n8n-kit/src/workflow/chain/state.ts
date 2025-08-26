@@ -1,5 +1,6 @@
 import { isGroup } from "../../symbols";
 import { checkInternalIdentifier } from "../../utils/slugify";
+import type { Chain } from "./chain";
 import type {
 	ConnectionOptions,
 	IChainable,
@@ -60,6 +61,13 @@ export abstract class State<
 			const nodes = state.endStates;
 			// TODO: we should probably add checks
 			const firstNode = nodes.at(0)! as unknown as IChainable;
+			this.addNext(firstNode, connectionOptions);
+			return;
+		}
+
+		if (state.id === "chain") {
+			const chain = state as unknown as Chain;
+			const firstNode = chain.toList().at(0)!;
 			this.addNext(firstNode, connectionOptions);
 			return;
 		}
