@@ -126,7 +126,7 @@ describe("TreeBuilder", () => {
 			expect(root.children[1]!.node.name).toBe("noop2");
 		});
 
-		test.only("handle cross chain connections", () => {
+		test("handle cross chain connections", () => {
 			const trigger = new ManualTrigger("trigger");
 			const trigger2 = new ManualTrigger("trigger2");
 			const noop1 = new NoOp("noop1");
@@ -157,6 +157,43 @@ describe("TreeBuilder", () => {
 			expect(tree1.root.children).toHaveLength(0);
 			expect(tree1.root.crossTreeConnections).toHaveLength(1);
 			expect(tree1.root.crossTreeConnections[0]!.name).toBe("noop1");
+		});
+
+		test("support connection options", () => {
+			const trigger = new ManualTrigger("trigger");
+			const noop1 = new NoOp("noop1");
+			const noop2 = new NoOp("noop2");
+			const merge = new Merge("merge", {
+				parameters: { mode: "combine" },
+			});
+
+			const workflow = new Workflow("test", {
+				name: "Cross Chain",
+				definition: [
+					Chain.start(trigger)
+						.multiple([noop1, noop2])
+						.connect(["noop1", "noop2"], merge, { noop1: { to: 1 } }),
+				],
+			});
+
+			const workflowDefinition = workflow.build();
+			const builder = new TreeBuilder(workflowDefinition);
+			const trees = builder.buildTrees();
+
+			expect(trees).toHaveLength(1);
+			const root = trees[0]!.root;
+			expect(root.node.name).toBe("trigger");
+			expect(root.children).toHaveLength(2);
+
+			expect(root.children[0]!.node.name).toBe("noop1");
+			expect(root.children[0]!.connectionsTo).toHaveLength(1);
+			expect(root.children[0]!.connectionsTo[0]!.fromIndex).toBe(0);
+			expect(root.children[0]!.connectionsTo[0]!.toIndex).toBe(1);
+
+			expect(root.children[1]!.node.name).toBe("noop2");
+			expect(root.children[1]!.connectionsTo).toHaveLength(1);
+			expect(root.children[1]!.connectionsTo[0]!.fromIndex).toBe(0);
+			expect(root.children[1]!.connectionsTo[0]!.toIndex).toBe(0);
 		});
 	});
 });

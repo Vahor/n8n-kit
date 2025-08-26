@@ -140,13 +140,13 @@ export class TreeBuilder {
 		const nodeConnections = this.connections[nodeName];
 		if (nodeConnections) {
 			Object.entries(nodeConnections).forEach(([outputType, outputGroups]) => {
-				outputGroups.forEach((connectionGroup, toIndex) => {
+				outputGroups.forEach((connectionGroup, fromIndex) => {
 					connectionGroup.forEach((connection) => {
 						const connectionData = {
 							name: connection.node,
 							type: outputType,
-							fromIndex: connection.index,
-							toIndex: toIndex,
+							fromIndex: fromIndex,
+							toIndex: connection.index,
 						};
 
 						treeNode.connectionsTo.push(connectionData);
