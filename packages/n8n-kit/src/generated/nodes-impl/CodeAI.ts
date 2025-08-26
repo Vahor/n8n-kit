@@ -29,7 +29,8 @@ export class CodeAI<C extends IContext, L extends string> extends Node<L, C> {
     }
 
     public toCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {
-        super.addNext(next.startState, { type, direction: "input" });
+        super.addNext(next.startState, { type });
+        return this;
     }
 
 }

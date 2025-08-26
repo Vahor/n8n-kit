@@ -182,8 +182,8 @@ const generateTypescriptNodeOutput = async (
 				`public to${code.toPascalCase(outputName)}(next: IChainable): this`,
 			);
 			code.line(`super.addNext(next.startState, { type: "${outputType}" });`);
-			code.line(`return this;`);
 		}
+		code.line(`return this;`);
 		code.closeBlock();
 		code.line();
 	}
