@@ -31,7 +31,7 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 		/**
 		 * @default "v1"
 		 */
-		executionOrder: "v1" | "v2";
+		executionOrder?: "v1" | "v2";
 
 		timezone?: string;
 
@@ -148,7 +148,9 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 			for (let endState of node.listOutgoing()) {
 				if (endState instanceof Placeholder) {
 					const _endState = endState;
-					endState = nodes.find((n) => n.id === endState.id)!;
+					endState = nodes.find(
+						(n) => n.getLabel() === endState.id || n.id === endState.id,
+					)!;
 					if (!endState) {
 						throw new Error(`Placeholder ${_endState.id} not found`);
 					}

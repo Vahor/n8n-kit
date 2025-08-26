@@ -18,15 +18,15 @@ import {
 
 const googleDriveApiCredentials = Credentials.byId({
 	name: "googleDriveOAuth2Api",
-	id: "some-id",
+	id: "some-id-1",
 });
 const pineconeApiCredentials = Credentials.byId({
 	name: "pineconeApi",
-	id: "some-id",
+	id: "some-id-2",
 });
 const googlePalmApiCredentials = Credentials.byId({
 	name: "googlePalmApi",
-	id: "some-id",
+	id: "some-id-=",
 });
 
 const pineconeIndex = {

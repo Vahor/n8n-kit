@@ -28,6 +28,7 @@ export const DEFAULT_NODE_SIZE: Required<NodeSize> = {
 export type NodeProps = {
 	label?: string;
 	parameters?: unknown;
+	position?: NodePosition;
 };
 
 export abstract class Node<
@@ -65,6 +66,7 @@ export abstract class Node<
 	constructor(id: LiteralId, props?: NodeProps) {
 		super(id);
 		this.props = props;
+		this.position = props?.position;
 		this.endStates = [this];
 	}
 
@@ -98,7 +100,7 @@ export abstract class Node<
 		return this.label ?? this.id;
 	}
 
-	private credentialsToNode() {
+	private credentialsToNode(): { [type: string]: { id: string } } | undefined {
 		const credentials = this.getCredentials();
 		if (!credentials) return undefined;
 		if (credentials.filter(Boolean).length === 0) return undefined;

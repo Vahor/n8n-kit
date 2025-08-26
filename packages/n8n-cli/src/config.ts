@@ -36,7 +36,7 @@ export const readConfigFile = async (): Promise<N8nKitConfig> => {
 
 	const parsed = n8nKitConfig(config);
 	if (parsed instanceof type.errors) {
-		const message = "Errors found while validating environment variables";
+		const message = "Errors found while validating config file";
 		console.error(formatArkErrors(parsed, message));
 		process.exit(1);
 	}
@@ -49,7 +49,4 @@ export const writeConfigFile = async (config: N8nKitConfig) => {
 	const configFilePath = configFileName;
 
 	await fs.promises.writeFile(configFilePath, JSON.stringify(config, null, 2));
-
-	console.log(`Config file ${configFilePath} written with:`);
-	console.log(JSON.stringify(config, null, 2));
 };

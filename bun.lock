@@ -60,6 +60,7 @@
         "@vahor/n8n-kit": "workspace:*",
         "arktype": "catalog:",
         "chalk": "^5.6.0",
+        "codemaker": "^1.113.0",
         "nano-spawn": "^1.0.2",
         "table": "^6.9.0",
         "yargs": "^17.7.2",

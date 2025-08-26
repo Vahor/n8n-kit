@@ -7,6 +7,8 @@ import type { INextable } from "./types";
  *
  * You can't call `next()` on it.
  *
+ * id can be the label or the id of the node.
+ *
  * Example:
  * ```ts
  * definition: [
