@@ -49,11 +49,29 @@ const getWorkflowData = async (n8n: N8nApi, options: Options) => {
 	}
 };
 
+const banner = () => {
+	console.log();
+	logger.log(
+		chalk.yellow("!  WARNING: The import command is very experimental!"),
+	);
+	logger.log(
+		chalk.yellow(
+			"   Generated TypeScript code may be incomplete or incorrect.",
+		),
+	);
+	console.log();
+};
+
 export const handler = async (options: Options) => {
+	if (options.dryRun) {
+		logger.log("Can't import in dry-run mode");
+		process.exit(0);
+	}
 	if ((!options.id && !options.file) || (options.id && options.file)) {
 		logger.error("Either id or path must be provided");
 		process.exit(1);
 	}
+	banner();
 
 	const n8n = new N8nApi();
 	const workflowData = await getWorkflowData(n8n, options);

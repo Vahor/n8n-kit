@@ -17,6 +17,7 @@ npm install @vahor/n8n-kit-cli
   - [build](#build)
   - [deploy](#deploy)
   - [diff](#diff)
+  - [import](#import)
 - [Global Options](#global-options)
 
 ## Required Environment Variables
@@ -156,6 +157,47 @@ bunx @vahor/n8n diff
 # Diff specific workflows
 bunx @vahor/n8n diff --id my-workflow-1 --id my-workflow-2
 ```
+
+### import
+
+> **⚠️ Warning**: 
+> [!WARNING]  
+> This command is very experimental and may produce incomplete or incorrect TypeScript code.
+> But you can still use it as a starting point for your own workflows.
+
+Generate TypeScript code from existing n8n workflows.
+
+```sh
+bunx @vahor/n8n import --out <output-file> [options]
+```
+
+**Options:**
+- `--id <string>` - Import workflow by ID from n8n instance
+- `--file <string>` - Import workflow from local JSON file
+- `--out <string>` - Output path for generated TypeScript file (required)
+
+You must specify either `--id` or `--file`, but not both.
+
+**Examples:**
+```sh
+# Import from n8n instance by workflow ID
+bunx @vahor/n8n import --id "workflow-123" --out "src/imported-workflow.ts"
+
+# Import from local JSON file
+bunx @vahor/n8n import --file "workflow.json" --out "src/imported-workflow.ts"
+```
+
+The generated TypeScript file will include:
+- Imports from `@vahor/n8n-kit`
+- Credential definitions (if any)
+- Workflow definition with nodes and connections
+- An exported `app` instance ready to use
+
+**Known Limitations:**
+- When a node has multiple versions, the imported node will be wrong. Example: `GoogleDrive` instead of `GoogleDriveV2`.
+- The generated code is probably not optimal.
+- The generated code will use `generated` nodes from `@vahor/n8n-kit/nodes/generated` even if a proper implementation is available.
+- As it's generated code, run prettier or biome on it to make it look nice.
 
 ## Global Options
 
