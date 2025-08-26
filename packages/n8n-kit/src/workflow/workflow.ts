@@ -193,11 +193,12 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	}
 
 	private buildTags() {
+		const workflowTag = workflowTagId(this.hashId);
 		const tags = [...(this.props.tags ?? [])].filter(
-			(tag) => !tag.startsWith(`${prefix}id-`),
+			(tag) => tag !== workflowTag,
 		);
 
-		tags.push(workflowTagId(this.hashId));
+		tags.push(workflowTag);
 		return tags;
 	}
 
