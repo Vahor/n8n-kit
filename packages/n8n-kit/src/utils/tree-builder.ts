@@ -1,9 +1,10 @@
-import type { WorkflowDefinition } from "@vahor/n8n-kit";
-import logger from "@vahor/n8n-kit/logger";
+import logger from "../logger";
+import type { WorkflowDefinition } from "../workflow";
 
 type TreeNode = {
 	node: WorkflowDefinition["nodes"][number];
 	children: TreeNode[];
+	/* Contains connections info from children and cross-tree connections */
 	connectionsTo: Array<{
 		name: string;
 		type: string;

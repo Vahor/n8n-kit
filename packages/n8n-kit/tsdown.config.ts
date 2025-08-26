@@ -5,6 +5,7 @@ export const input = [
 	"src/logger.ts",
 	"src/workflow/index.ts",
 	"src/nodes/index.ts",
+	"src/utils/index.ts",
 	"src/nodes/generated.ts",
 	"src/credentials/generated.ts",
 ];

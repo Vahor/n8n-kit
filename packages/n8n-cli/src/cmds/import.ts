@@ -2,12 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import type { WorkflowDefinition } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
+import { type Tree, TreeBuilder } from "@vahor/n8n-kit/utils";
 import chalk from "chalk";
 import { CodeMaker, toPascalCase } from "codemaker";
 import type { Argv } from "yargs";
 import type { GlobalOptions } from "..";
 import { N8nApi } from "../n8n-api";
-import { type Tree, TreeBuilder } from "../utils/tree-builder";
 
 export const command = "import";
 export const description =
@@ -342,33 +342,43 @@ const writeWorkflowDefinitionNode = async (
 	}
 };
 
-const writeObject = (code: CodeMaker, obj: Record<string, any>) => {
+const writeObject = (code: CodeMaker, obj: any) => {
 	if (obj == null) return;
 	if (Array.isArray(obj)) {
 		for (const value of obj) {
-			const isObject = typeof value === "object";
-			if (isObject) code.openBlock("");
-
-			writeObject(code, value);
-
-			if (isObject) {
+			if (Array.isArray(value)) {
+				code.line("[");
+				code.indent();
+				writeObject(code, value);
+				code.unindent(false);
+				code.line("],");
+			} else if (value && typeof value === "object") {
+				code.line("{");
+				code.indent();
+				writeObject(code, value);
 				code.unindent(false);
 				code.line("},");
+			} else {
+				code.line(`${JSON.stringify(value)},`);
 			}
 		}
 		return;
 	}
 	if (typeof obj === "object") {
-		for (const [key, value] of Object.entries(obj)) {
-			if (typeof value === "object") {
-				const isArray = Array.isArray(value);
-				const openBlock = isArray ? "[" : "{";
-				const closeBlock = isArray ? "]" : "}";
-				code.line(`${key}: ${openBlock}`);
+		for (const [rawKey, value] of Object.entries(obj)) {
+			const key = JSON.stringify(rawKey);
+			if (Array.isArray(value)) {
+				code.line(`${key}: [`);
 				code.indent();
 				writeObject(code, value);
 				code.unindent(false);
-				code.line(`${closeBlock},`);
+				code.line("],");
+			} else if (value && typeof value === "object") {
+				code.line(`${key}: {`);
+				code.indent();
+				writeObject(code, value);
+				code.unindent(false);
+				code.line("},");
 			} else {
 				code.line(`${key}: ${JSON.stringify(value)},`);
 			}
