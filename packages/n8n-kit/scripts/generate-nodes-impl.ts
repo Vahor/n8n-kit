@@ -174,7 +174,7 @@ const generateTypescriptNodeOutput = async (
 		if (outputName === "main") continue;
 		if (outputName === "custom") {
 			code.openBlock(
-				`public to(type: ${validCustomTypeAsStringUnion}, next: State): this`,
+				`public toCustom(type: ${validCustomTypeAsStringUnion}, next: State): this`,
 			);
 			code.line(
 				`super.addNext(next.startState, { type, direction: "input" });`,
