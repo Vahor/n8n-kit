@@ -33,7 +33,7 @@ export class TextClassifier<C extends IContext, L extends string> extends Node<L
         return this;
     }
 
-    public toCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {
+    public toCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: IChainable): this {
         super.addNext(next.startState, { type });
         return this;
     }
