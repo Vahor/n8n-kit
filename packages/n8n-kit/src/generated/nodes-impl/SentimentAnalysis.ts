@@ -23,11 +23,6 @@ export class SentimentAnalysis<C extends IContext, L extends string> extends Nod
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
-    public with(next: State): this {
-        super.addNext(next.startState, { type: "main", direction: "input" });
-        return this;
-    }
-
     public withModel(next: State): this {
         super.addNext(next.startState, { type: "ai_languageModel", direction: "input" });
         return this;

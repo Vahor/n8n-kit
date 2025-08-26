@@ -143,7 +143,7 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	for (const [inputName, inputType] of Object.entries(result.inputs)) {
-		if (inputName === "main") continue;
+		if (inputName === "main" || inputType === "main") continue;
 		if (inputName === "custom") {
 			code.openBlock(
 				`public withCustom(type: ${validCustomTypeAsStringUnion}, next: State): this`,
@@ -171,7 +171,7 @@ const generateTypescriptNodeOutput = async (
 
 	// TODO: make a shared method for inputs and outputs (only diff is direction and with-to)
 	for (const [outputName, outputType] of Object.entries(result.outputs)) {
-		if (outputName === "main") continue;
+		if (outputName === "main" || outputType === "main") continue;
 		if (outputName === "custom") {
 			code.openBlock(
 				`public toCustom(type: ${validCustomTypeAsStringUnion}, next: State): this`,

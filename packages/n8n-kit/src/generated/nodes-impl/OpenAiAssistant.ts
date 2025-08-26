@@ -30,11 +30,6 @@ export class OpenAiAssistant<C extends IContext, L extends string> extends Node<
         return [this.props!.openAiApiCredentials];
     }
 
-    public withUndefined(next: State): this {
-        super.addNext(next.startState, { type: "main", direction: "input" });
-        return this;
-    }
-
     public withTools(next: State): this {
         super.addNext(next.startState, { type: "ai_tool", direction: "input" });
         return this;
