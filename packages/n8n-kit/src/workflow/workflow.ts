@@ -25,7 +25,6 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 	>;
 	tags?: string[] | undefined;
 	active?: boolean;
-	description?: string;
 
 	settings?: {
 		/**

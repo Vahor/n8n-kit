@@ -84,7 +84,6 @@ You know what a workflow is, right?
 const workflow = new Workflow("my-workflow", {
 	active: true,
 	name: "My Workflow",
-	description: "This is a description",
 	tags: ["tag1", "tag2"],
 	settings: {
 		executionTimeout: 1200,
@@ -114,13 +113,12 @@ const workflow = new Workflow("my-workflow", {
 **Parameters:**
 - `name` - Name of the workflow
 - `active` - Whether the workflow is active or not
-- `description` - Description of the workflow. Can be a function that takes the workflow as parameter (required for `Group` nodes)
 - `tags` - Tags of the workflow
 - `settings` - Settings of the workflow
 - `inputSchema` - Input schema of the workflow. Only used for type validation when using `ExecuteWorkflow` and `ExecuteWorkflowTrigger`.
 - `outputSchema` - Output schema of the workflow. Only used for type validation when using 
 `ExecuteWorkflow` and `ExecuteWorkflowTrigger`.
-- `definition` - Definition of the workflow.
+- `definition` - Definition of the workflow. Can be a function that takes the workflow as parameter (required for `Group` nodes)
 
 For all type parameters, you'll have to use the `type` function from [`arktype`](https://arktype.io/docs/primitives) to define the schema. The `type` method is re-exported in `@vahor/n8n-kit`.
 
