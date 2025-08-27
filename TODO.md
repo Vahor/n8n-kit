@@ -10,4 +10,3 @@
 
 - clone() method (check if test `can connect to if true/false nodes`, I had to implement clone for that)
    - In here build a workflow, check that the connection to something + end is not there.
-- Example with start if -> two branches -> connects. We have an example with multiple but not if
