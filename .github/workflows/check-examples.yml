@@ -51,7 +51,7 @@ jobs:
             };
 
       - name: Debug PR info
-        run: echo "PR info ${{ steps.pr-info.outputs.result }}"
+        run: echo 'PR info ${{ steps.pr-info.outputs.result }}'
 
       - name: Checkout
         uses: actions/checkout@v4
