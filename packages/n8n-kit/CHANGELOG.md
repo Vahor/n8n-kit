@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.2.0
+
+### Minor Changes
+
+- [#47](https://github.com/Vahor/n8n-kit/pull/47) [`ddc79b7`](https://github.com/Vahor/n8n-kit/commit/ddc79b752dab214c39d0dfc019db5f76dbb7c62a) Thanks [@Vahor](https://github.com/Vahor)! - Add `import` command. Use it to generate a typescript file based on a n8n workflow
+
 ## 0.1.3
 
 ### Patch Changes
