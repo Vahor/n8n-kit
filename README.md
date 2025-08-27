@@ -125,7 +125,7 @@ export { app };
   - No way to set node execution priority (n8n runs nodes top-to-bottom)
   - **Workaround**: Deploy the workflow once, then edit the workflow in n8n. With the `--merge` option, node positions won't be overwritten.
 - **Credentials**: Must be defined in n8n first, then referenced via `Credentials.byId()` (no API endpoint available)
-- **Folders**: Workflows deploy to root; manual folder organization required (no API endpoint available). You can still organize them manually once deployed.
+- **Folders**: The cli will deploy workflow to the root folder. You can still organize them manually once deployed. (no API endpoint available)
 
 Have ideas for improvements? [Open an issue](https://github.com/Vahor/n8n-kit/issues) or [Suggest a Pull Request](https://github.com/Vahor/n8n-kit/blob/main/CONTRIBUTING.md)
 

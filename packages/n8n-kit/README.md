@@ -30,12 +30,10 @@ Main export containing core functionality:
 Manually implemented nodes with full type definitions:
 - `If` - Conditional logic node
 - `ScheduleTrigger` - Schedule-based triggers
-- `Nasa` - NASA API integration
 - And more...
 
 ### `@vahor/n8n-kit/nodes/generated`
 Auto-generated nodes from n8n-nodes-base (without output types):
-- `PostBin` - PostBin integration
 - All 400+ n8n base nodes and ai nodes
 
 ### `@vahor/n8n-kit/credentials/generated`

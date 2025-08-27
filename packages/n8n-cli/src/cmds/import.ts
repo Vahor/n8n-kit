@@ -91,11 +91,10 @@ export const handler = async (options: Options) => {
 
 	const n8n = new N8nApi();
 	const workflowData = await getWorkflowData(n8n, options);
-	await writeTypescriptFile(options, workflowData, filePath);
+	await writeTypescriptFile(workflowData, filePath);
 };
 
 const writeTypescriptFile = async (
-	options: Options,
 	workflowData: WorkflowDefinition,
 	filePath: string,
 ) => {
