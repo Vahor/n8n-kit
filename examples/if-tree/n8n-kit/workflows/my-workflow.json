@@ -1,0 +1,256 @@
+{
+	"id": "iJFYtqyGWaroz",
+	"name": "If Tree",
+	"nodes": [
+		{
+			"id": "manual-trigger",
+			"name": "manual-trigger",
+			"type": "n8n-nodes-base.manualTrigger",
+			"position": [60, 125],
+			"typeVersion": 1
+		},
+		{
+			"id": "if-root",
+			"name": "if-root",
+			"type": "n8n-nodes-base.if",
+			"position": [260, 125],
+			"typeVersion": 2.2,
+			"parameters": {
+				"conditions": {
+					"conditions": [],
+					"combinator": "or",
+					"options": {
+						"caseSensitive": true,
+						"version": 2,
+						"typeValidation": "strict"
+					}
+				}
+			}
+		},
+		{
+			"id": "true",
+			"name": "true",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1060, 180],
+			"typeVersion": 1
+		},
+		{
+			"id": "false",
+			"name": "false",
+			"type": "n8n-nodes-base.noOp",
+			"position": [460, 190],
+			"typeVersion": 1
+		},
+		{
+			"id": "if-true",
+			"name": "if-true",
+			"type": "n8n-nodes-base.if",
+			"position": [1260, 180],
+			"typeVersion": 2.2,
+			"parameters": {
+				"conditions": {
+					"conditions": [],
+					"combinator": "and",
+					"options": {
+						"caseSensitive": true,
+						"version": 2,
+						"typeValidation": "strict"
+					}
+				}
+			}
+		},
+		{
+			"id": "if-false",
+			"name": "if-false",
+			"type": "n8n-nodes-base.if",
+			"position": [660, 180],
+			"typeVersion": 2.2,
+			"parameters": {
+				"conditions": {
+					"conditions": [],
+					"combinator": "and",
+					"options": {
+						"caseSensitive": true,
+						"version": 2,
+						"typeValidation": "strict"
+					}
+				}
+			}
+		},
+		{
+			"id": "if-true-true",
+			"name": "if-true-true",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1460, 60],
+			"typeVersion": 1
+		},
+		{
+			"id": "if-true-false",
+			"name": "if-true-false",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1460, 300],
+			"typeVersion": 1
+		},
+		{
+			"id": "if-false-true",
+			"name": "if-false-true",
+			"type": "n8n-nodes-base.noOp",
+			"position": [860, 180],
+			"typeVersion": 1
+		},
+		{
+			"id": "if-false-false",
+			"name": "if-false-false",
+			"type": "n8n-nodes-base.noOp",
+			"position": [860, 420],
+			"typeVersion": 1
+		},
+		{
+			"id": "end",
+			"name": "end",
+			"type": "n8n-nodes-base.noOp",
+			"position": [1660, 180],
+			"typeVersion": 1
+		}
+	],
+	"connections": {
+		"manual-trigger": {
+			"main": [
+				[
+					{
+						"node": "if-root",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-root": {
+			"main": [
+				[
+					{
+						"node": "true",
+						"type": "main",
+						"index": 0
+					}
+				],
+				[
+					{
+						"node": "false",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"true": {
+			"main": [
+				[
+					{
+						"node": "if-true",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"false": {
+			"main": [
+				[
+					{
+						"node": "if-false",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-true": {
+			"main": [
+				[
+					{
+						"node": "if-true-true",
+						"type": "main",
+						"index": 0
+					}
+				],
+				[
+					{
+						"node": "if-true-false",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-false": {
+			"main": [
+				[
+					{
+						"node": "if-false-true",
+						"type": "main",
+						"index": 0
+					}
+				],
+				[
+					{
+						"node": "if-false-false",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-true-true": {
+			"main": [
+				[
+					{
+						"node": "end",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-true-false": {
+			"main": [
+				[
+					{
+						"node": "end",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-false-true": {
+			"main": [
+				[
+					{
+						"node": "false",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"if-false-false": {
+			"main": [
+				[
+					{
+						"node": "true",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		}
+	},
+	"settings": {},
+	"active": true,
+	"tags": [
+		{
+			"name": "@vahor/n8n-iJFYtqyGWaroz"
+		}
+	]
+}
