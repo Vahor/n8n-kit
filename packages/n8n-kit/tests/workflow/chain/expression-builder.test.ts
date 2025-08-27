@@ -16,6 +16,9 @@ type Context = {
 		};
 		"something with spaces": {
 			field: "value";
+			again: Array<{
+				and_again: string;
+			}>;
 		};
 	};
 	json: {
@@ -92,6 +95,51 @@ describe("ExpressionBuilder", () => {
 		test("on something else", () => {
 			// @ts-expect-error: this should fail
 			$("data").filter((o) => o.type === "message");
+		});
+	});
+
+	describe("first", () => {
+		test("on an array", () => {
+			const builder = $("data.output").first().prop(".content[0].text");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output.first().content[0].text`);
+		});
+		test("on a sub array", () => {
+			const builder = $("data.output[0].content").first().prop(".text");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output[0].content.first().text`);
+		});
+		test("on a sub array in an object with brackets", () => {
+			const builder = $("['Http Request']['something with spaces'].again")
+				.first()
+				.prop(".and_again");
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('Http Request')['something with spaces'].again.first().and_again`,
+			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").first();
+		});
+	});
+
+	describe("split", () => {
+		test("on a string", () => {
+			const builder = $("data.output[0].content[0].text").split(" ");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output[0].content[0].text.split(" ")`);
+		});
+		test("on a string - then join", () => {
+			const builder = $("data.output[0].content[0].text").split(" ").join("-");
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('data').output[0].content[0].text.split(" ").join("-")`,
+			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").toLowerCase();
 		});
 	});
 

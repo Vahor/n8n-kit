@@ -48,6 +48,8 @@ type FormatWithPrefix<
 		? T
 		: `${Prefix}.${T}`;
 
+type NumberStr = `${number}`;
+
 export type JoinKeys<T, OnlyLeaf = false, Prefix extends string = ""> = {
 	[K in keyof T]: T[K] extends Function
 		? `${Prefix}${Extract<K, string>}`
@@ -61,7 +63,7 @@ export type JoinKeys<T, OnlyLeaf = false, Prefix extends string = ""> = {
 						| JoinKeys<
 								U,
 								OnlyLeaf,
-								`${FormatWithPrefix<Extract<K, string>, Prefix>}[${number}]`
+								`${FormatWithPrefix<Extract<K, string>, Prefix>}[${NumberStr}]`
 						  >
 				: T[K] extends object
 					?
@@ -83,33 +85,44 @@ export type OnlyRootLevel<T> = T extends `${infer _1}.${infer _2}` ? never : T;
 export type RecursiveDotNotation<
 	T,
 	Path extends string,
-> = Path extends `${infer Key}.${infer Rest}`
-	? //
-		Key extends `${infer ArrayKey}[${number}]`
-		? ArrayKey extends keyof T
-			? T[ArrayKey] extends readonly (infer U)[]
-				? RecursiveDotNotation<U, Rest>
+> = Path extends `['${infer Key}']${infer Rest}`
+	? // Traverse brackets
+		Key extends keyof T
+		? Rest extends ""
+			? T[Key]
+			: Rest extends `['${string}']${string}`
+				? RecursiveDotNotation<T[Key], Rest>
+				: Rest extends `.${infer DotRest}`
+					? RecursiveDotNotation<T[Key], DotRest>
+					: never
+		: never
+	: // Traverse dot notation
+		Path extends `${infer Key}.${infer Rest}`
+		? //
+			Key extends `${infer ArrayKey}[${string}]`
+			? ArrayKey extends keyof T
+				? T[ArrayKey] extends readonly (infer U)[]
+					? RecursiveDotNotation<U, Rest>
+					: never
 				: never
-			: never
-		: Key extends keyof T
-			? RecursiveDotNotation<T[Key], Rest>
-			: never
-	: //
-		// TODO: I'm pretty sure we can refactor this as both are quite similar
-		Path extends `${infer ArrayKey}[${number}]`
-		? ArrayKey extends keyof T
-			? T[ArrayKey] extends readonly (infer U)[]
-				? U
+			: Key extends keyof T
+				? RecursiveDotNotation<T[Key], Rest>
 				: never
-			: never
-		: Path extends keyof T
-			? T[Path]
-			: never;
+		: // TODO: I'm pretty sure we can refactor this as both are quite similar
+			Path extends `${infer ArrayKey}[${string}]`
+			? ArrayKey extends keyof T
+				? T[ArrayKey] extends readonly (infer U)[]
+					? U
+					: never
+				: never
+			: Path extends keyof T
+				? T[Path]
+				: never;
 
 export type TypeOfField<
 	Field extends string,
 	Context extends Record<string, unknown>,
-> = RecursiveDotNotation<Context, Field>;
+> = IsAny<Context> extends true ? any : RecursiveDotNotation<Context, Field>;
 
 export type Last<T extends any[]> = T extends [...any[], infer _Last]
 	? _Last
