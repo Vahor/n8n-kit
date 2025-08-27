@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.2.1
+
+### Patch Changes
+
+- [#50](https://github.com/Vahor/n8n-kit/pull/50) [`2217829`](https://github.com/Vahor/n8n-kit/commit/221782925a063377d8cdf89ebe6c121a65556ae8) Thanks [@Vahor](https://github.com/Vahor)! - Add { preserveChainConnections: boolean} option to clone method (breaking)
+
 ## 0.2.0
 
 ### Minor Changes
