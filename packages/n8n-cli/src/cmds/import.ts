@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { confirm } from "@inquirer/prompts";
 import type { WorkflowDefinition } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import { type Tree, TreeBuilder } from "@vahor/n8n-kit/utils";
@@ -71,16 +72,32 @@ export const handler = async (options: Options) => {
 		logger.error("Either id or path must be provided");
 		process.exit(1);
 	}
+
+	const filePath = path.resolve(process.cwd(), options.out);
+	if (fs.existsSync(filePath)) {
+		console.log();
+		if (!options.yes) {
+			const result = await confirm({
+				message: `File ${chalk.bold(filePath)} already exists. Overwrite?`,
+			});
+			if (!result) process.exit(0);
+		} else {
+			logger.log("File already exists, overwriting due to --yes flag");
+		}
+		console.log();
+	}
+
 	banner();
 
 	const n8n = new N8nApi();
 	const workflowData = await getWorkflowData(n8n, options);
-	await writeTypescriptFile(options, workflowData);
+	await writeTypescriptFile(options, workflowData, filePath);
 };
 
 const writeTypescriptFile = async (
 	options: Options,
 	workflowData: WorkflowDefinition,
+	filePath: string,
 ) => {
 	const code = new CodeMaker();
 
@@ -97,7 +114,6 @@ const writeTypescriptFile = async (
 		rootImports.push("Credentials");
 	}
 
-	const filePath = path.resolve(process.cwd(), options.out);
 	const fileName = path.basename(filePath);
 	const fileDir = path.dirname(filePath);
 	logger.log(`Writing to ${chalk.bold(filePath)}...`);
