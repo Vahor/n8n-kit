@@ -1,29 +1,11 @@
-import type { JoinKeys, TypeOfField } from "../../utils/types";
+import type {
+	ErrorMessage,
+	IsAny,
+	JoinKeys,
+	TypeOfField,
+} from "../../utils/types";
 import type { ChainContext, ExtractChainContext } from "./chain";
 import { expr } from "./expression";
-
-type ExtractNodeId<T extends string> =
-	T extends `['${infer NodeId}'][${infer _Rest}`
-		? NodeId
-		: T extends `${infer NodeId}[${infer _Rest}`
-			? NodeId
-			: T extends `${infer NodeId}.${infer _Rest}`
-				? NodeId
-				: never;
-
-// TODO: split into two types
-type ExtractPath<T extends string> =
-	T extends `['${infer _NodeId}']['${infer Rest}'].${infer _Rest2}`
-		? `['${Rest}'].${_Rest2}`
-		: T extends `['${infer _NodeId}']['${infer Rest}']`
-			? `['${Rest}']`
-			: T extends `${infer _NodeId}['${infer Rest}']`
-				? `['${Rest}']`
-				: T extends `${infer _NodeId}.${infer Rest}['${infer _Rest2}']`
-					? `['${Rest}']['${_Rest2}']`
-					: T extends `${infer _NodeId}.${infer Rest}`
-						? Rest
-						: never;
 
 type ExtractStartingWith<
 	T extends string,
@@ -65,7 +47,7 @@ export class ExpressionBuilder<
 		return this.path;
 	}
 
-	public getNodeId(): ExtractNodeId<Path> {
+	public getNodeId(): string {
 		// nodeId is bracket notation
 		const bracketMatch = this.path.match(/^\['[^\]]+'\]/);
 		const isBracketNotation = bracketMatch?.[0];
@@ -77,7 +59,7 @@ export class ExpressionBuilder<
 		return firstPart as any;
 	}
 
-	public getPath(): ExtractPath<Path> {
+	public getPath(): string {
 		const nodeId = this.getNodeId();
 		// handle brackets
 		if (this.path.startsWith("[")) {
@@ -122,7 +104,7 @@ export class ExpressionBuilder<
 	/**
 	 * Arbitrary method call
 	 */
-	public call(methodName: string, ...args: any[]): ExpressionBuilder<T, Path> {
+	public call(methodName: string, ...args: any[]): ExpressionBuilder<T, any> {
 		const params = args
 			.map((arg) => {
 				if (typeof arg === "function") {
@@ -137,9 +119,28 @@ export class ExpressionBuilder<
 		return this.clone(methodCall);
 	}
 
+	public find<TCurr extends TypeOfField<Path, T>>(
+		predicate: TCurr extends Array<infer TElem>
+			? (item: TElem) => boolean
+			: ErrorMessage<"Expected array">,
+	): ExpressionBuilder<T, `${Path}[${number}]`> {
+		return this.call("find", predicate);
+	}
+
+	public filter<TCurr extends TypeOfField<Path, T>>(
+		predicate: TCurr extends Array<infer TElem>
+			? (item: TElem) => boolean
+			: ErrorMessage<"Expected array">,
+	): this {
+		return this.call("filter", predicate) as any;
+	}
+
 	// Property access
-	public prop(propertyName: SubPath<T, Path>): ExpressionBuilder<T, Path> {
-		return this.clone(`${propertyName}`);
+	// TODO: check if we can add a Proxy on the class to intercept property access and automatically call prop (still keeping the type)
+	public prop<P extends SubPath<T, Path>>(
+		propertyName: P,
+	): ExpressionBuilder<T, IsAny<Path> extends true ? any : `${Path}${P}`> {
+		return this.clone(`${propertyName}`) as any;
 	}
 }
 

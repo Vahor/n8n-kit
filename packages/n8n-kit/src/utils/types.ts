@@ -51,19 +51,29 @@ type FormatWithPrefix<
 export type JoinKeys<T, OnlyLeaf = false, Prefix extends string = ""> = {
 	[K in keyof T]: T[K] extends Function
 		? `${Prefix}${Extract<K, string>}`
-		: T[K] extends Primitive | Array<Primitive> | Date
+		: T[K] extends Primitive | Date
 			? FormatWithPrefix<Extract<K, string>, Prefix>
-			: T[K] extends object
+			: T[K] extends Array<infer U>
 				?
 						| (OnlyLeaf extends true
 								? never
 								: FormatWithPrefix<Extract<K, string>, Prefix>)
 						| JoinKeys<
-								T[K],
+								U,
 								OnlyLeaf,
-								FormatWithPrefix<Extract<K, string>, Prefix>
+								`${FormatWithPrefix<Extract<K, string>, Prefix>}[${number}]`
 						  >
-				: FormatWithPrefix<Extract<K, string>, Prefix>;
+				: T[K] extends object
+					?
+							| (OnlyLeaf extends true
+									? never
+									: FormatWithPrefix<Extract<K, string>, Prefix>)
+							| JoinKeys<
+									T[K],
+									OnlyLeaf,
+									FormatWithPrefix<Extract<K, string>, Prefix>
+							  >
+					: FormatWithPrefix<Extract<K, string>, Prefix>;
 }[keyof T];
 
 export type OmitRootLevel<T> = T extends `${infer _1}.${infer _2}` ? T : never;
@@ -74,12 +84,27 @@ export type RecursiveDotNotation<
 	T,
 	Path extends string,
 > = Path extends `${infer Key}.${infer Rest}`
-	? Key extends keyof T
-		? RecursiveDotNotation<T[Key], Rest>
-		: never
-	: Path extends keyof T
-		? T[Path]
-		: never;
+	? //
+		Key extends `${infer ArrayKey}[${number}]`
+		? ArrayKey extends keyof T
+			? T[ArrayKey] extends readonly (infer U)[]
+				? RecursiveDotNotation<U, Rest>
+				: never
+			: never
+		: Key extends keyof T
+			? RecursiveDotNotation<T[Key], Rest>
+			: never
+	: //
+		// TODO: I'm pretty sure we can refactor this as both are quite similar
+		Path extends `${infer ArrayKey}[${number}]`
+		? ArrayKey extends keyof T
+			? T[ArrayKey] extends readonly (infer U)[]
+				? U
+				: never
+			: never
+		: Path extends keyof T
+			? T[Path]
+			: never;
 
 export type TypeOfField<
 	Field extends string,
