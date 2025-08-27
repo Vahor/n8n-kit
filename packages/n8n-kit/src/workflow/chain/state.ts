@@ -20,10 +20,10 @@ export abstract class State<
 	public readonly startState: State;
 	public abstract readonly endStates: INextable[];
 
-	private readonly nextStates: IChainable[] = [];
+	protected readonly nextStates: IChainable[] = [];
 
 	// from id to <string, index>. If missing 0
-	private readonly connectionsOptions: Record<string, ConnectionOptions> = {};
+	protected connectionsOptions: Record<string, ConnectionOptions> = {};
 
 	public constructor(id: LiteralId) {
 		checkInternalIdentifier(id);

@@ -50,6 +50,9 @@ jobs:
               sha: pr.data.head.sha
             };
 
+      - name: Debug PR info
+        run: echo 'PR info ${{ steps.pr-info.outputs.result }}'
+
       - name: Checkout
         uses: actions/checkout@v4
         with:

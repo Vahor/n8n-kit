@@ -114,6 +114,7 @@ export abstract class Node<
 	public clone<Id extends string>(
 		id: Id,
 		props?: NodeProps,
+		cloneOptions?: { preserveChainConnections?: boolean },
 	): Omit<this, "id"> & Node<Id, C> {
 		checkInternalIdentifier(id);
 		const newInstance = clone(this) as unknown as Node<Id, C>;
@@ -131,6 +132,12 @@ export abstract class Node<
 		newInstance.startState = newInstance;
 		const indexOfSelf = newInstance.endStates.indexOf(this);
 		if (indexOfSelf !== -1) newInstance.endStates[indexOfSelf] = newInstance;
+
+		if (!cloneOptions?.preserveChainConnections) {
+			newInstance.nextStates.length = 0;
+			newInstance.nextStates.push(newInstance);
+			newInstance.connectionsOptions = {};
+		}
 
 		return newInstance as any;
 	}
