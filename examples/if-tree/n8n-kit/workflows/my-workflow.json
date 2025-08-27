@@ -3,17 +3,29 @@
 	"name": "If Tree",
 	"nodes": [
 		{
-			"id": "manual-trigger",
-			"name": "manual-trigger",
-			"type": "n8n-nodes-base.manualTrigger",
-			"position": [60, 125],
-			"typeVersion": 1
+			"id": "schedule-trigger",
+			"name": "Schedule",
+			"type": "n8n-nodes-base.scheduleTrigger",
+			"position": [60, 255],
+			"typeVersion": 1.2,
+			"parameters": {
+				"rule": {
+					"interval": [
+						{
+							"field": "weeks",
+							"triggerAtDay": [1],
+							"triggerAtHour": 9,
+							"weeksInterval": 1
+						}
+					]
+				}
+			}
 		},
 		{
 			"id": "if-root",
 			"name": "if-root",
 			"type": "n8n-nodes-base.if",
-			"position": [260, 125],
+			"position": [260, 255],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -31,21 +43,21 @@
 			"id": "true",
 			"name": "true",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1060, 180],
+			"position": [1060, 70],
 			"typeVersion": 1
 		},
 		{
 			"id": "false",
 			"name": "false",
 			"type": "n8n-nodes-base.noOp",
-			"position": [460, 190],
+			"position": [460, 385],
 			"typeVersion": 1
 		},
 		{
 			"id": "if-true",
 			"name": "if-true",
 			"type": "n8n-nodes-base.if",
-			"position": [1260, 180],
+			"position": [1260, 70],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -63,7 +75,7 @@
 			"id": "if-false",
 			"name": "if-false",
 			"type": "n8n-nodes-base.if",
-			"position": [660, 180],
+			"position": [660, 385],
 			"typeVersion": 2.2,
 			"parameters": {
 				"conditions": {
@@ -88,169 +100,69 @@
 			"id": "if-true-false",
 			"name": "if-true-false",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1460, 300],
+			"position": [1460, 310],
 			"typeVersion": 1
 		},
 		{
 			"id": "if-false-true",
 			"name": "if-false-true",
 			"type": "n8n-nodes-base.noOp",
-			"position": [860, 180],
+			"position": [1260, 320],
 			"typeVersion": 1
 		},
 		{
 			"id": "if-false-false",
 			"name": "if-false-false",
 			"type": "n8n-nodes-base.noOp",
-			"position": [860, 420],
+			"position": [860, 450],
 			"typeVersion": 1
 		},
 		{
 			"id": "end",
 			"name": "end",
 			"type": "n8n-nodes-base.noOp",
-			"position": [1660, 180],
+			"position": [1660, 190],
 			"typeVersion": 1
 		}
 	],
 	"connections": {
-		"manual-trigger": {
-			"main": [
-				[
-					{
-						"node": "if-root",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
+		"Schedule": {
+			"main": [[{ "node": "if-root", "type": "main", "index": 0 }]]
 		},
 		"if-root": {
 			"main": [
-				[
-					{
-						"node": "true",
-						"type": "main",
-						"index": 0
-					}
-				],
-				[
-					{
-						"node": "false",
-						"type": "main",
-						"index": 0
-					}
-				]
+				[{ "node": "true", "type": "main", "index": 0 }],
+				[{ "node": "false", "type": "main", "index": 0 }]
 			]
 		},
-		"true": {
-			"main": [
-				[
-					{
-						"node": "if-true",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
-		},
-		"false": {
-			"main": [
-				[
-					{
-						"node": "if-false",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
-		},
+		"true": { "main": [[{ "node": "if-true", "type": "main", "index": 0 }]] },
+		"false": { "main": [[{ "node": "if-false", "type": "main", "index": 0 }]] },
 		"if-true": {
 			"main": [
-				[
-					{
-						"node": "if-true-true",
-						"type": "main",
-						"index": 0
-					}
-				],
-				[
-					{
-						"node": "if-true-false",
-						"type": "main",
-						"index": 0
-					}
-				]
+				[{ "node": "if-true-true", "type": "main", "index": 0 }],
+				[{ "node": "if-true-false", "type": "main", "index": 0 }]
 			]
 		},
 		"if-false": {
 			"main": [
-				[
-					{
-						"node": "if-false-true",
-						"type": "main",
-						"index": 0
-					}
-				],
-				[
-					{
-						"node": "if-false-false",
-						"type": "main",
-						"index": 0
-					}
-				]
+				[{ "node": "if-false-true", "type": "main", "index": 0 }],
+				[{ "node": "if-false-false", "type": "main", "index": 0 }]
 			]
 		},
 		"if-true-true": {
-			"main": [
-				[
-					{
-						"node": "end",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
+			"main": [[{ "node": "end", "type": "main", "index": 0 }]]
 		},
 		"if-true-false": {
-			"main": [
-				[
-					{
-						"node": "end",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
+			"main": [[{ "node": "end", "type": "main", "index": 0 }]]
 		},
 		"if-false-true": {
-			"main": [
-				[
-					{
-						"node": "false",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
+			"main": [[{ "node": "if-true-false", "type": "main", "index": 0 }]]
 		},
 		"if-false-false": {
-			"main": [
-				[
-					{
-						"node": "true",
-						"type": "main",
-						"index": 0
-					}
-				]
-			]
+			"main": [[{ "node": "true", "type": "main", "index": 0 }]]
 		}
 	},
 	"settings": {},
 	"active": true,
-	"tags": [
-		{
-			"name": "@vahor/n8n-iJFYtqyGWaroz"
-		}
-	]
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }
