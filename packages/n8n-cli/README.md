@@ -160,10 +160,9 @@ bunx @vahor/n8n diff --id my-workflow-1 --id my-workflow-2
 
 ### import
 
-> **⚠️ Warning**: 
 > [!WARNING]  
-> This command is very experimental and may produce incomplete or incorrect TypeScript code.
-> But you can still use it as a starting point for your own workflows.
+> This command is very experimental and may produce incomplete or incorrect TypeScript code.\
+> It's only intended for use as a starting point for your own workflows.
 
 Generate TypeScript code from existing n8n workflows.
 
