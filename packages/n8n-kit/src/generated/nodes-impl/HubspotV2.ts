@@ -21,7 +21,7 @@ export interface HubspotV2Props extends NodeProps {
  */
 export class HubspotV2<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.hubspot" as const;
-    protected typeVersion = 2.1 as const;
+    protected typeVersion = 2.2 as const;
 
     constructor(id: L, override props?: HubspotV2Props) {
         super(id, props);

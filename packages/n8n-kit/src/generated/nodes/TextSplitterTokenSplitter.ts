@@ -8,9 +8,13 @@ export const inputs = {} as const;
 export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 
 export interface TextSplitterTokenSplitterNodeParameters {
-    /** Default: 1000 */
+    /**
+     * Maximum number of tokens per chunk
+     * Default: 1000
+     */
     readonly chunkSize?: number;
 
+    /** Number of tokens shared between consecutive chunks to preserve context */
     readonly chunkOverlap?: number;
 
 }

@@ -12,7 +12,7 @@ export interface DataTableNodeParameters {
     readonly resource?: "row";
 
     /** Default: "insert" */
-    readonly operation?: "get" | "insert";
+    readonly operation?: "deleteRows" | "get" | "insert" | "update" | "upsert";
 
     /** Default: {"mode":"list","value":""} */
     readonly dataTableId?: {
@@ -26,8 +26,11 @@ export interface DataTableNodeParameters {
     /**
      * Filter to decide which rows get
      * Default: {}
-     * Type options: {"multipleValues":true}
+     * Type options: {"multipleValues":true,"minRequiredFields":0}
      */
     readonly filters?: { conditions: Array<{ keyName?: string, condition?: "eq" | "neq", keyValue?: string }> };
+
+    /** Default: {} */
+    readonly options?: { dryRun?: boolean };
 
 }
