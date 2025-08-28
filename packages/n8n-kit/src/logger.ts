@@ -42,7 +42,7 @@ class Logger {
 	}
 
 	error(message: string, error?: Error | null): void {
-		console.error(chalk.red(this._format(message)));
+		console.error(chalk.red(this._format(message ?? error?.message)));
 		if (error) {
 			console.error(chalk.gray(error.stack));
 		}

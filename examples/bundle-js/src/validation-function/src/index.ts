@@ -1,10 +1,5 @@
-import * as z from "zod/mini";
-import { default as data } from "./some-data.json" with { type: "json" };
-
-const schema = z.object({
-	action: z.enum(["create", "update", "delete"]),
-	user_id: z.string().check(z.length(24)),
-});
+import { default as data } from "./data/some-data.json" with { type: "json" };
+import { schema } from "./other-file";
 
 type Input = {
 	action: string;

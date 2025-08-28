@@ -75,13 +75,15 @@ export class NodejsFunction {
 		const possibleEntrypoints = ["index.ts", "index.js"];
 		for (const entrypoint of possibleEntrypoints) {
 			const fullPath = path.join(this.props.projectRoot, entrypoint);
-			logger.log(`Checking if ${fullPath} exists`);
+			logger.debug(`Checking if ${fullPath} exists`);
 			if (fs.existsSync(fullPath)) {
 				return entrypoint;
 			}
 		}
 
-		throw new Error("Could not find entrypoint file");
+		throw new Error(
+			`Could not find entrypoint file in ${this.props.projectRoot}`,
+		);
 	}
 
 	private getPackageJson() {
@@ -98,8 +100,8 @@ export class NodejsFunction {
 	}
 
 	public getBundledFile(outDir: string) {
-		const entrypoint = this.entrypoint.replace(".ts", ".js");
-		return path.join(outDir, entrypoint);
+		const entrypoint = path.basename(this.entrypoint);
+		return path.join(outDir, entrypoint.replace(".ts", ".js"));
 	}
 
 	/**

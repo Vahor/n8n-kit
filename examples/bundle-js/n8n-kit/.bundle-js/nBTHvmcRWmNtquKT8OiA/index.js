@@ -678,12 +678,7 @@ function _enum(values, params) {
 }
 
 //#endregion
-//#region some-data.json
-var hello = "world";
-var some_data_default = { hello };
-
-//#endregion
-//#region index.ts
+//#region src/other-file.ts
 const schema = object({
 	action: _enum([
 		"create",
@@ -692,6 +687,14 @@ const schema = object({
 	]),
 	user_id: string().check(_length(24))
 });
+
+//#endregion
+//#region src/data/some-data.json
+var hello = "world";
+var some_data_default = { hello };
+
+//#endregion
+//#region src/index.ts
 const handler = (input) => {
 	console.log(input);
 	console.log(some_data_default);

@@ -59,6 +59,7 @@ const workflow = new Workflow("my-workflow", {
 						language: "javaScript",
 						jsCode: NodejsFunction.from({
 							projectRoot: path.join(__dirname, "validation-function"),
+							entrypoint: "src/index.ts",
 							input: {
 								action: $("json.action"),
 								user_id: $("json.user_id"),
