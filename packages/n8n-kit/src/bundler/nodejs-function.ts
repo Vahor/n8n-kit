@@ -133,13 +133,16 @@ export class NodejsFunction {
 		const formattedParameters: Record<string, unknown> = {};
 		for (const [key, value] of Object.entries(parameters)) {
 			if (value instanceof ExpressionBuilder) {
-				formattedParameters[key] = value.format();
+				formattedParameters[key] = value.toExpression();
 			} else {
 				formattedParameters[key] = value;
 			}
 		}
 		// TODO: we'll have to refactor this as we don't want quotes around expressions
-		return JSON.stringify(formattedParameters);
+		let data = JSON.stringify(formattedParameters, null, 2);
+		// remove quotes if the value starts with a ={{ and ends with }}
+		data = data.replace(/"=\{\{\s*(.*?)\s*\}\}"/g, "$1");
+		return data;
 	}
 
 	private async installDeps() {

@@ -10,18 +10,36 @@ const workflow = new Workflow("my-workflow", {
 			new Fields("Set some data", {
 				label: "Get data from some API",
 				parameters: {
-					assignments: [
-						{
-							name: "action",
-							type: type("string"),
-							value: "create",
-						},
-						{
-							name: "user_id",
-							type: type("string"),
-							value: "invalid-user-id",
-						},
-					],
+					assignments: {
+						assignments: [
+							{
+								name: "action",
+								type: type("string"),
+								value: "create",
+							},
+							{
+								name: "user_id",
+								type: type("string"),
+								value: "invalid-user-id",
+							},
+							{
+								name: "some_constant",
+								type: type("string"),
+								value: "some-constant",
+							},
+							{
+								name: "some_object",
+								type: type({
+									some_field: type("string"),
+									other_field: type("number"),
+								}),
+								value: {
+									some_field: "some-field",
+									other_field: 123,
+								},
+							},
+						],
+					},
 				},
 			}),
 		)
@@ -30,12 +48,15 @@ const workflow = new Workflow("my-workflow", {
 				new Code("Bundle JS", {
 					label: "Validate data",
 					parameters: {
+						mode: "runOnceForEachItem", // required to access $json
 						language: "javaScript",
 						jsCode: NodejsFunction.from({
 							projectRoot: path.join(__dirname, "validation-function"),
 							input: {
 								action: $("json.action"),
 								user_id: $("json.user_id"),
+								some_constant: "some-constant",
+								some_object: $("json.some_object"),
 							},
 						}),
 					},

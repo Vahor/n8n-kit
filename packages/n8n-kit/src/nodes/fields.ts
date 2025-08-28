@@ -15,7 +15,9 @@ type Assignment<T extends Type = Type> = {
 
 export interface SetProps<A extends readonly Assignment[]> extends NodeProps {
 	parameters: Omit<SetV2NodeParameters, "assignments"> & {
-		assignments: A;
+		assignments: {
+			assignments: A;
+		};
 	};
 }
 
@@ -33,7 +35,9 @@ export class Fields<
 	const A extends readonly Assignment[],
 	P extends SetProps<A>,
 > extends _Fields<
-	UnionToIntersection<AssignmentsToObject<P["parameters"]["assignments"]>>,
+	UnionToIntersection<
+		AssignmentsToObject<P["parameters"]["assignments"]["assignments"]>
+	>,
 	L
 > {
 	public constructor(
@@ -50,7 +54,7 @@ export class Fields<
 			this.props.parameters.mode === undefined ||
 			this.props.parameters.mode === "manual"
 		) {
-			const assignments = this.props.parameters.assignments;
+			const assignments = this.props.parameters.assignments.assignments;
 			if (assignments == null) {
 				throw new Error(`Mode is 'manual' but 'assignments' is undefined.`);
 			}
@@ -61,6 +65,9 @@ export class Fields<
 				if (assignment.value instanceof ExpressionBuilder) {
 					assignment.value = assignment.value.toExpression();
 				}
+
+				const typeSchema = assignment.type.toJsonSchema();
+				assignment.type = (typeSchema as any).type;
 			}
 		}
 
