@@ -707,5 +707,7 @@ return handler({
   "action": $json.action,
   "user_id": $json.user_id,
   "some_constant": "some-constant",
-  "some_object": $json.some_object
+  "some_object": $json.some_object,
+  "custom_expression": $now,
+  "same_without_expr": $now
 });

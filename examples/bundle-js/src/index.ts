@@ -1,5 +1,12 @@
 import path from "node:path";
-import { App, Chain, NodejsFunction, type, Workflow } from "@vahor/n8n-kit";
+import {
+	App,
+	Chain,
+	expr,
+	NodejsFunction,
+	type,
+	Workflow,
+} from "@vahor/n8n-kit";
 import { Code, Fields } from "@vahor/n8n-kit/nodes";
 import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
@@ -57,6 +64,8 @@ const workflow = new Workflow("my-workflow", {
 								user_id: $("json.user_id"),
 								some_constant: "some-constant",
 								some_object: $("json.some_object"),
+								custom_expression: expr`{{ $now }}`, // required to wrap in ={{ }}
+								same_without_expr: `={{ $now }}`,
 							},
 						}),
 					},
