@@ -75,14 +75,8 @@ yargsInstance
 			process.exit(1);
 		},
 	})
-	.fail(async (message, error) => {
-		if (message) {
-			logger.error(message);
-		}
-
-		if (error) {
-			logger.error(chalk.red(error));
-		}
+	.fail((message, error) => {
+		logger.error(message, error);
 		process.exit(1);
 	})
 	.parse();
