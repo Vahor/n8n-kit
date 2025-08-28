@@ -66,6 +66,7 @@ export class Fields<
 					assignment.value = assignment.value.toExpression();
 				}
 
+				// transform arktype type to "string" | "object" ... to match n8n
 				const typeSchema = assignment.type.toJsonSchema();
 				assignment.type = (typeSchema as any).type;
 			}
