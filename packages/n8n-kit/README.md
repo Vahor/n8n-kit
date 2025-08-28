@@ -311,7 +311,7 @@ type Input = {
 const handler = (input: Input) => {
 	const schema = z.object({
 		action: z.enum(["create", "update", "delete"]),
-		user_id: z.string().min(24),
+		user_id: z.string().check(z.length(24)),
 	});
 	
 	return schema.safeParse(input);
