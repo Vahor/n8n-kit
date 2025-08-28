@@ -65,7 +65,7 @@ const workflow = new Workflow("my-workflow", {
 								user_id: $("json.user_id"),
 								some_constant: "some-constant",
 								some_object: $("json.some_object"),
-								custom_expression: expr`{{ $now }}`, // required to wrap in ={{ }}
+								custom_expression: expr`{{ $now }}`, // NodejsFunction requires to wrap in ={{ }} to detect n8n expressions
 								same_without_expr: `={{ $now }}`,
 							},
 						}),
