@@ -147,6 +147,7 @@ export class NodejsFunction {
 		await spawn("npm", ["ci"], {
 			cwd: this.props.projectRoot,
 			stdio: "inherit",
+			timeout: 15 * 1000,
 		});
 		logger.log(`Installed dependencies for ${this.name}`);
 	}

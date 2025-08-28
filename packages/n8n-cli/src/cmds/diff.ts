@@ -58,6 +58,7 @@ const getDiff = async (file1: string, file2: string) => {
 	try {
 		await spawn("git", ["--no-pager", "diff", "--no-index", file1, file2], {
 			stdio: "inherit",
+			timeout: 5 * 1000,
 		});
 		return false;
 	} catch (_) {
