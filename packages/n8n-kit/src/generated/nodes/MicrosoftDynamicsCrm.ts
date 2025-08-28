@@ -34,7 +34,7 @@ export interface MicrosoftDynamicsCrmNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { returnFields?: any[], expandFields?: any[] } | { returnFields?: any[] };
+    readonly options?: { returnFields?: unknown[], expandFields?: unknown[] } | { returnFields?: unknown[] };
 
     /** Default: {} */
     readonly filters?: { query?: string };

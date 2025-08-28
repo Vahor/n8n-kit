@@ -12,7 +12,7 @@ export interface ShopifyOAuth2ApiCredentials {
     readonly "shopSubdomain": string;
 
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     readonly "clientId": string;
 
@@ -20,19 +20,19 @@ export interface ShopifyOAuth2ApiCredentials {
     readonly "clientSecret": string;
 
     /** Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "=https://{{$self[\"shopSubdomain\"]}}.myshopify.com/admin/oauth/access_token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "write_orders read_orders write_products read_products" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "access_mode=value" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "shopifyOAuth2Api";
 }

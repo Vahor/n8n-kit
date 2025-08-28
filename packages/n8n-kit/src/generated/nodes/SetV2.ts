@@ -33,7 +33,7 @@ export interface SetV2NodeParameters {
     readonly fields?: { values: Array<{ name?: string, type?: "stringValue" | "numberValue" | "booleanValue" | "arrayValue" | "objectValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string }> };
 
     /** Default: {} */
-    readonly assignments?: any;
+    readonly assignments?: unknown;
 
     /**
      * How to select the fields you want to include in your output items

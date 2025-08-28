@@ -90,6 +90,6 @@ export interface SentryIoNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getProjects"}
      */
-    readonly projects?: any[];
+    readonly projects?: unknown[];
 
 }

@@ -9,7 +9,7 @@ export const name = "googleBusinessProfileOAuth2Api" as const;
  */
 export interface GoogleBusinessProfileOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/business.manage" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly "notice"?: string;
 

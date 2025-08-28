@@ -18,7 +18,7 @@ export interface AzureStorageSharedKeyApiCredentials {
     readonly "key"?: string;
 
     /** Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net" */
-    readonly "baseUrl"?: any;
+    readonly "baseUrl"?: unknown;
 
     readonly __name: "azureStorageSharedKeyApi";
 }

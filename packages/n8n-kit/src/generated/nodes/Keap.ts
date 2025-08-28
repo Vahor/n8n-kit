@@ -87,7 +87,7 @@ export interface KeapNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getTags"}
      */
-    readonly tagIds?: any[] | string;
+    readonly tagIds?: unknown[] | string;
 
     readonly orderDate?: string;
 

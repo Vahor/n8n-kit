@@ -12,19 +12,19 @@ export interface ZendeskOAuth2ApiCredentials {
     readonly "subdomain": string;
 
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /**
      * URL to get authorization code. Replace {SUBDOMAIN_HERE} with your subdomain.
      * Default: "=https://{{$self[\"subdomain\"]}}.zendesk.com/oauth/authorizations/new"
      */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /**
      * URL to get access token. Replace {SUBDOMAIN_HERE} with your subdomain.
      * Default: "=https://{{$self[\"subdomain\"]}}.zendesk.com/oauth/tokens"
      */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     readonly "clientId": string;
 
@@ -32,13 +32,13 @@ export interface ZendeskOAuth2ApiCredentials {
     readonly "clientSecret": string;
 
     /** Default: "read write" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** For some services additional query parameters have to be set which can be defined here */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "zendeskOAuth2Api";
 }

@@ -9,7 +9,7 @@ export const name = "googleContactsOAuth2Api" as const;
  */
 export interface GoogleContactsOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/contacts" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleContactsOAuth2Api";
 }

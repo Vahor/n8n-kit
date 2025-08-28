@@ -9,7 +9,7 @@ export const name = "webflowOAuth2Api" as const;
  */
 export interface WebflowOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /**
      * If the legacy API should be used
@@ -18,19 +18,19 @@ export interface WebflowOAuth2ApiCredentials {
     readonly "legacy"?: boolean;
 
     /** Default: "https://webflow.com/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://api.webflow.com/oauth/access_token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "={{$self[\"legacy\"] ? \"\" : \"cms:read cms:write sites:read forms:read\"}}" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** For some services additional query parameters have to be set which can be defined here */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "webflowOAuth2Api";
 }

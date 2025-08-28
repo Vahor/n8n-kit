@@ -9,20 +9,20 @@ export const name = "asanaOAuth2Api" as const;
  */
 export interface AsanaOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://app.asana.com/-/oauth_authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://app.asana.com/-/oauth_token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "asanaOAuth2Api";
 }

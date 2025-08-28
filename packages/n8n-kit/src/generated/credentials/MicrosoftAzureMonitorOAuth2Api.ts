@@ -17,19 +17,19 @@ export interface MicrosoftAzureMonitorOAuth2ApiCredentials {
     readonly "resource"?: "https://api.loganalytics.azure.com" | "https://api.loganalytics.io" | "https://monitor.azure.com" | "https://management.azure.com";
 
     /** Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/authorize" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/{{$self[\"grantType\"] === \"clientCredentials\" ? \"v2.0/\" : \"\"}}token" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "={{$self[\"grantType\"] === \"clientCredentials\" ? \"\" : \"resource=\" + $self[\"resource\"]}}" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "={{$self[\"grantType\"] === \"clientCredentials\" ? $self[\"resource\"] + \"/.default\" : \"\"}}" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "microsoftAzureMonitorOAuth2Api";
 }

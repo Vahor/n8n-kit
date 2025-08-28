@@ -9,21 +9,21 @@ export const name = "airtableOAuth2Api" as const;
  */
 export interface AirtableOAuth2ApiCredentials {
     /** Default: "pkce" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://airtable.com/oauth2/v1/authorize" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "https://airtable.com/oauth2/v1/token" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "schema.bases:read data.records:read data.records:write" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "airtableOAuth2Api";
 }

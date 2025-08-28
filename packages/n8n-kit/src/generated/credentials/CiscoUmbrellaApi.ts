@@ -9,7 +9,7 @@ export const name = "ciscoUmbrellaApi" as const;
  */
 export interface CiscoUmbrellaApiCredentials {
     /** Type options: {"expirable":true} */
-    readonly "sessionToken"?: any;
+    readonly "sessionToken"?: unknown;
 
     /** Type options: {"password":true} */
     readonly "apiKey": string;

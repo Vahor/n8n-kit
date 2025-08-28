@@ -9,26 +9,26 @@ export const name = "bitlyOAuth2Api" as const;
  */
 export interface BitlyOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://bitly.com/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://api-ssl.bitly.com/oauth/access_token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     readonly "clientId": string;
 
     /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** For some services additional query parameters have to be set which can be defined here */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "bitlyOAuth2Api";
 }

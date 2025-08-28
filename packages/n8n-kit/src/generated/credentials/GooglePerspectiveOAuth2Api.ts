@@ -9,7 +9,7 @@ export const name = "googlePerspectiveOAuth2Api" as const;
  */
 export interface GooglePerspectiveOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/userinfo.email" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googlePerspectiveOAuth2Api";
 }

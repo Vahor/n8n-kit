@@ -9,7 +9,7 @@ export const name = "googleChatOAuth2Api" as const;
  */
 export interface GoogleChatOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/chat.spaces https://www.googleapis.com/auth/chat.messages https://www.googleapis.com/auth/chat.memberships" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleChatOAuth2Api";
 }

@@ -9,7 +9,7 @@ export const name = "googleSlidesOAuth2Api" as const;
  */
 export interface GoogleSlidesOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/presentations" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleSlidesOAuth2Api";
 }

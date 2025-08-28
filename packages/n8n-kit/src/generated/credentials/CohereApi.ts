@@ -12,7 +12,7 @@ export interface CohereApiCredentials {
     readonly "apiKey": string;
 
     /** Default: "https://api.cohere.ai" */
-    readonly "url"?: any;
+    readonly "url"?: unknown;
 
     readonly __name: "cohereApi";
 }

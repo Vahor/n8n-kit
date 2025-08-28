@@ -34,7 +34,7 @@ export const handler = async (options: Options) => {
 
 		const workflowPath = path.join(workflowsFolder, `${workflow.id}.json`);
 
-		const buildWorkflow = workflow.build();
+		const buildWorkflow = await workflow.build();
 		const workflowJson = JSON.stringify(buildWorkflow, null, options.indent);
 
 		if (!options.dryRun) {

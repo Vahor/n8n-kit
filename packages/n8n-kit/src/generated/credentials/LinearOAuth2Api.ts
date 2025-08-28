@@ -9,13 +9,13 @@ export const name = "linearOAuth2Api" as const;
  */
 export interface LinearOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://linear.app/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://api.linear.app/oauth/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "user" */
     readonly "actor"?: "user" | "application";
@@ -24,13 +24,13 @@ export interface LinearOAuth2ApiCredentials {
     readonly "includeAdminScope"?: boolean;
 
     /** Default: "={{$self[\"includeAdminScope\"] ? \"read write issues:create comments:create admin\" : \"read write issues:create comments:create\"}}" */
-    readonly "scope": any;
+    readonly "scope": unknown;
 
     /** Default: "={{\"actor=\"+$self[\"actor\"]}}" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "linearOAuth2Api";
 }

@@ -35,10 +35,10 @@ export interface AwsElbNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSubnets"}
      */
-    readonly subnets?: any[];
+    readonly subnets?: unknown[];
 
     /** Default: {} */
-    readonly additionalFields?: { securityGroups?: any[], tagsUi?: { tagValues: Array<{ key?: string, value?: string }> } };
+    readonly additionalFields?: { securityGroups?: unknown[], tagsUi?: { tagValues: Array<{ key?: string, value?: string }> } };
 
     /** Unique identifier for a particular loadBalancer */
     readonly loadBalancerId?: string;

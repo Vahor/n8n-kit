@@ -33,7 +33,7 @@ export interface MailchimpNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly options?: { emailType?: "html" | "text", language?: string, ipOptIn?: string, ipSignup?: string, timestampSignup?: string, tags?: string, vip?: boolean, timestampOpt?: string } | { fields?: string, excludeFields?: string } | { beforeLastChanged?: string, beforeTimestampOpt?: string, emailType?: "html" | "text", status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", sinceLastChanged?: string } | { isSyncing?: boolean } | { beforeCreateTime?: string, beforeSendTime?: string, excludeFields?: any[], fields?: any[], listId?: string, sinceCreateTime?: string, sinceSendTime?: string, sortDirection?: "ASC" | "DESC", sortField?: "create_time" | "send_time", status?: "save" | "sending" | "sent" | "schedule" };
+    readonly options?: { emailType?: "html" | "text", language?: string, ipOptIn?: string, ipSignup?: string, timestampSignup?: string, tags?: string, vip?: boolean, timestampOpt?: string } | { fields?: string, excludeFields?: string } | { beforeLastChanged?: string, beforeTimestampOpt?: string, emailType?: "html" | "text", status?: "cleaned" | "pending" | "subscribed" | "transactional" | "unsubscribed", sinceLastChanged?: string } | { isSyncing?: boolean } | { beforeCreateTime?: string, beforeSendTime?: string, excludeFields?: unknown[], fields?: unknown[], listId?: string, sinceCreateTime?: string, sinceSendTime?: string, sortDirection?: "ASC" | "DESC", sortField?: "create_time" | "send_time", status?: "save" | "sending" | "sent" | "schedule" };
 
     /**
      * Subscriber location information.n

@@ -129,7 +129,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		return nodes;
 	}
 
-	public build() {
+	public async build() {
 		const nodes = this.getNodes();
 
 		// Groups are added in dynamicalyAddedNodes
@@ -181,7 +181,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		return {
 			id: this.hashId,
 			name: this.getName(),
-			nodes: layoutNodes.map((node) => node.toNode()),
+			nodes: await Promise.all(layoutNodes.flatMap((node) => node.toNode())),
 			connections: connections,
 			settings: this.props.settings ?? {},
 			active: this.props.active ?? false,
@@ -269,7 +269,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	}
 }
 
-export type WorkflowDefinition = ReturnType<Workflow["build"]>;
+export type WorkflowDefinition = Awaited<ReturnType<Workflow["build"]>>;
 
 export const workflowTagId = (id: string) => `${prefix}${id}`;
 export const RESOLVED_WORKFLOW_ID_PREFIX = `${prefix}_resolved_workflow_id@`;

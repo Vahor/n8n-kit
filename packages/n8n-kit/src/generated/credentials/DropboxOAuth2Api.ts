@@ -9,22 +9,22 @@ export const name = "dropboxOAuth2Api" as const;
  */
 export interface DropboxOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://www.dropbox.com/oauth2/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://api.dropboxapi.com/oauth2/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "files.content.write files.content.read sharing.read account_info.read" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "token_access_type=offline&force_reapprove=true" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     /** Default: "full" */
     readonly "accessType"?: "folder" | "full";

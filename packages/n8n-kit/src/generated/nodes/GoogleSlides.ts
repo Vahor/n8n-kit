@@ -41,7 +41,7 @@ export interface GoogleSlidesNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly textUi?: { textValues: Array<{ matchCase?: boolean, pageObjectIds?: any[], text?: string, replaceText?: string }> };
+    readonly textUi?: { textValues: Array<{ matchCase?: boolean, pageObjectIds?: unknown[], text?: string, replaceText?: string }> };
 
     /** Default: {} */
     readonly options?: { revisionId?: string };

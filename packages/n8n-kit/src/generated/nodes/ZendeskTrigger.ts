@@ -16,7 +16,7 @@ export interface ZendeskTriggerNodeParameters {
     readonly service?: "support";
 
     /** Default: {} */
-    readonly options?: { fields?: any[] };
+    readonly options?: { fields?: unknown[] };
 
     /**
      * The condition to set

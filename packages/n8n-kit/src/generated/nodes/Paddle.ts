@@ -26,7 +26,7 @@ export interface PaddleNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getProducts"}
      */
-    readonly productIds?: any[];
+    readonly productIds?: unknown[];
 
     /**
      * Either flat or percentage

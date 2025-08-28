@@ -11,10 +11,10 @@ export interface AzureStorageOAuth2ApiCredentials {
     readonly "account"?: string;
 
     /** Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net" */
-    readonly "baseUrl"?: any;
+    readonly "baseUrl"?: unknown;
 
     /** Default: "https://storage.azure.com/.default" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "azureStorageOAuth2Api";
 }

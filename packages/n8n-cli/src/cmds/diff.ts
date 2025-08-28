@@ -58,6 +58,7 @@ const getDiff = async (file1: string, file2: string) => {
 	try {
 		await spawn("git", ["--no-pager", "diff", "--no-index", file1, file2], {
 			stdio: "inherit",
+			timeout: 5 * 1000,
 		});
 		return false;
 	} catch (_) {
@@ -124,7 +125,7 @@ export const handler = async (options: Options) => {
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
-		const from = sortObjectByKey(workflow.build());
+		const from = sortObjectByKey(await workflow.build());
 		const to = sortObjectByKey(matchMap.get(workflow.id)!);
 
 		format(from);

@@ -22,7 +22,7 @@ export const mapPropertyType = (type: string) => {
 		case "number":
 			return "number";
 	}
-	return "any";
+	return "unknown";
 };
 
 export const toTypescriptType = (
@@ -41,7 +41,7 @@ export const toTypescriptType = (
 				const values = formatOptions(property.options).join(" | ") || "string";
 				return `(${values})[]`;
 			}
-			return "any[]";
+			return "unknown[]";
 
 		case "fixedCollection": {
 			let result = "{ ";

@@ -17,7 +17,7 @@ export interface MauticTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getEvents"}
      */
-    readonly events?: any[];
+    readonly events?: unknown[];
 
     /**
      * Order direction for queued events in one webhook. Can be “DESC” or “ASC”.

@@ -37,7 +37,7 @@ export interface GoogleSheetsTriggerNodeParameters {
     readonly includeInOutput?: "new" | "old" | "both";
 
     /** Default: {} */
-    readonly options?: { columnsToWatch?: any[], dataLocationOnSheet?: { values: { rangeDefinition?: "specifyRangeA1" | "specifyRange", headerRow?: number, firstDataRow?: number, range?: string } }, valueRender?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", dateTimeRenderOption?: "SERIAL_NUMBER" | "FORMATTED_STRING" };
+    readonly options?: { columnsToWatch?: unknown[], dataLocationOnSheet?: { values: { rangeDefinition?: "specifyRangeA1" | "specifyRange", headerRow?: number, firstDataRow?: number, range?: string } }, valueRender?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", dateTimeRenderOption?: "SERIAL_NUMBER" | "FORMATTED_STRING" };
 
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }

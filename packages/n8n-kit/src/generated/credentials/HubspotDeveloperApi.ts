@@ -9,19 +9,19 @@ export const name = "hubspotDeveloperApi" as const;
  */
 export interface HubspotDeveloperApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://app.hubspot.com/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://api.hubapi.com/oauth/v1/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "grant_type=authorization_code" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     /** Type options: {"password":true} */
     readonly "apiKey": string;
@@ -29,7 +29,7 @@ export interface HubspotDeveloperApiCredentials {
     readonly "appId": string;
 
     /** Default: "crm.objects.contacts.read crm.schemas.contacts.read crm.objects.companies.read crm.schemas.companies.read crm.objects.deals.read crm.schemas.deals.read" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "hubspotDeveloperApi";
 }

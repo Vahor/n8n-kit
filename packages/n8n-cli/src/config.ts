@@ -1,4 +1,6 @@
 import * as fs from "node:fs";
+import * as path from "node:path";
+import { DEFAULT_CONFIG } from "@vahor/n8n-kit/utils";
 import { type } from "arktype";
 import { formatArkErrors } from "./utils/ark";
 
@@ -41,6 +43,8 @@ export const readConfigFile = async (): Promise<N8nKitConfig> => {
 		process.exit(1);
 	}
 	cachedConfig = parsed;
+
+	DEFAULT_CONFIG.out = path.resolve(`${process.cwd()}/${config.out}`);
 
 	return cachedConfig;
 };

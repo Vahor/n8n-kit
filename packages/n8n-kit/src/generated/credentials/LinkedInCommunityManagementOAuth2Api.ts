@@ -9,21 +9,21 @@ export const name = "linkedInCommunityManagementOAuth2Api" as const;
  */
 export interface LinkedInCommunityManagementOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://www.linkedin.com/oauth/v2/authorization" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://www.linkedin.com/oauth/v2/accessToken" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "w_member_social w_organization_social r_basicprofile" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "linkedInCommunityManagementOAuth2Api";
 }

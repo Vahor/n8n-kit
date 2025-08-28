@@ -6,7 +6,7 @@ import { Chain } from "../../../src/workflow/chain/chain";
 
 describe("Chain", () => {
 	describe("next", () => {
-		test("can chain elements", () => {
+		test("can chain elements", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new NoOp("c");
@@ -16,11 +16,11 @@ describe("Chain", () => {
 				definition: chain,
 			});
 
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c"]);
 		});
 
-		test("can chain with ifs", () => {
+		test("can chain with ifs", async () => {
 			const A = new NoOp("a");
 			const B = new If("b", { conditions: [] });
 			const C = new Code("c", {
@@ -37,7 +37,7 @@ describe("Chain", () => {
 				definition: chain,
 			});
 
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c", "d"]);
 		});
 
@@ -82,7 +82,7 @@ describe("Chain", () => {
 			expectTypeOf<Context["json"]>().toEqualTypeOf<{ hello: "c" }>();
 		});
 
-		test("can loop elements in if", () => {
+		test("can loop elements in if", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new If("c", { conditions: [] });
@@ -94,11 +94,11 @@ describe("Chain", () => {
 				definition: chain,
 			});
 
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c", "d"]);
 		});
 
-		test("can loop elements", () => {
+		test("can loop elements", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const chain = Chain.start(A).next(B).next(A);
@@ -107,11 +107,11 @@ describe("Chain", () => {
 				definition: chain,
 			});
 
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b"]);
 		});
 
-		test("can connect to merge", () => {
+		test("can connect to merge", async () => {
 			const Start = new NoOp("start");
 			const A = new NoOp("a");
 			const B = new NoOp("b");
@@ -129,7 +129,7 @@ describe("Chain", () => {
 				definition: chain,
 			});
 
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id).toSorted()).toEqual([
 				"a",
 				"b",
@@ -150,7 +150,7 @@ describe("Chain", () => {
 	});
 
 	describe("multiple", () => {
-		test("can chain multiple elements", () => {
+		test("can chain multiple elements", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new Code("c", {
@@ -168,11 +168,11 @@ describe("Chain", () => {
 				definition: chain,
 			});
 
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual(["a", "b", "c", "d", "e"]);
 		});
 
-		test("works with groups", () => {
+		test("works with groups", async () => {
 			const Start = new NoOp("start");
 			const A = new Code("a", {
 				outputSchema: type({ hello: "'a'" }),
@@ -199,7 +199,7 @@ describe("Chain", () => {
 						.multiple([AA(wf), BB(wf)])
 						.connect(["a", "c"], D),
 			});
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id).toSorted()).toEqual([
 				"a",
 				"aa",

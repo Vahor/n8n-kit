@@ -25,7 +25,7 @@ export interface AsanaNodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly otherProperties?: { assignee?: string, assignee_status?: "inbox" | "today" | "upcoming" | "later", completed?: boolean, due_on?: string, liked?: boolean, notes?: string, workspace?: string } | { assignee?: string, assignee_status?: "inbox" | "today" | "upcoming" | "later", completed?: boolean, due_on?: string, name?: string, liked?: boolean, notes?: string, projects?: any[] };
+    readonly otherProperties?: { assignee?: string, assignee_status?: "inbox" | "today" | "upcoming" | "later", completed?: boolean, due_on?: string, liked?: boolean, notes?: string, workspace?: string } | { assignee?: string, assignee_status?: "inbox" | "today" | "upcoming" | "later", completed?: boolean, due_on?: string, name?: string, liked?: boolean, notes?: string, projects?: unknown[] };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -38,7 +38,7 @@ export interface AsanaNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { opt_fields?: any[], opt_pretty?: boolean };
+    readonly options?: { opt_fields?: unknown[], opt_pretty?: boolean };
 
     /**
      * The workspace to create the task in. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
@@ -53,7 +53,7 @@ export interface AsanaNodeParameters {
      * Properties to search for
      * Default: {}
      */
-    readonly filters?: { assignee?: string, opt_fields?: any[], opt_pretty?: boolean, project?: string, section?: string, workspace?: string, completed_since?: string, modified_since?: string };
+    readonly filters?: { assignee?: string, opt_fields?: unknown[], opt_pretty?: boolean, project?: string, section?: string, workspace?: string, completed_since?: string, modified_since?: string };
 
     /**
      * Project to show the sections of. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

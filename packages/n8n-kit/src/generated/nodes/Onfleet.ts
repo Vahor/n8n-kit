@@ -38,10 +38,10 @@ export interface OnfleetNodeParameters {
     readonly email?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { phone?: string, isReadOnly?: boolean } | { addressApartment?: string, addressName?: string, addressNotes?: string } | { addressApartment?: string, addressName?: string, addressNotes?: string, addressPostalCode?: string } | { teams?: any[] } | { recipientNotes?: string, recipientSkipSMSNotifications?: boolean } | { notes?: string } | { completeAfter?: string, completeBefore?: string, executor?: string, merchant?: string, notes?: string, pickupTask?: boolean, quantity?: number, recipient?: { recipientProperties: { recipientName: string, recipientPhone: string, recipientNotes?: string, recipientSkipSMSNotifications?: boolean } }, recipientName?: string, recipientNotes?: string, recipientSkipSMSNotifications?: boolean, serviceTime?: number, useMerchantForProxy?: boolean } | { hub?: string, enableSelfAssignment?: boolean } | { endingRoute?: { endingRouteProperties: { routeEnd: "team_hub" | "worker_routing_address" | "hub" | "anywhere", hub?: string } }, maxAllowedDelay?: number, maxTasksPerRoute?: number, scheduleTimeWindow?: { scheduleTimeWindowProperties: { startTime?: string, endTime?: string } }, serviceTime?: number, taskTimeWindow?: { taskTimeWindowProperties: { startTime?: string, endTime?: string } } } | { capacity?: number, displayName?: string, vehicle?: { vehicleProperties: { type: "BICYCLE" | "CAR" | "MOTORCYCLE" | "TRUCK", description?: string, licensePlate?: string, color?: string } } };
+    readonly additionalFields?: { phone?: string, isReadOnly?: boolean } | { addressApartment?: string, addressName?: string, addressNotes?: string } | { addressApartment?: string, addressName?: string, addressNotes?: string, addressPostalCode?: string } | { teams?: unknown[] } | { recipientNotes?: string, recipientSkipSMSNotifications?: boolean } | { notes?: string } | { completeAfter?: string, completeBefore?: string, executor?: string, merchant?: string, notes?: string, pickupTask?: boolean, quantity?: number, recipient?: { recipientProperties: { recipientName: string, recipientPhone: string, recipientNotes?: string, recipientSkipSMSNotifications?: boolean } }, recipientName?: string, recipientNotes?: string, recipientSkipSMSNotifications?: boolean, serviceTime?: number, useMerchantForProxy?: boolean } | { hub?: string, enableSelfAssignment?: boolean } | { endingRoute?: { endingRouteProperties: { routeEnd: "team_hub" | "worker_routing_address" | "hub" | "anywhere", hub?: string } }, maxAllowedDelay?: number, maxTasksPerRoute?: number, scheduleTimeWindow?: { scheduleTimeWindowProperties: { startTime?: string, endTime?: string } }, serviceTime?: number, taskTimeWindow?: { taskTimeWindowProperties: { startTime?: string, endTime?: string } } } | { capacity?: number, displayName?: string, vehicle?: { vehicleProperties: { type: "BICYCLE" | "CAR" | "MOTORCYCLE" | "TRUCK", description?: string, licensePlate?: string, color?: string } } };
 
     /** Default: {} */
-    readonly updateFields?: { name?: string, phone?: string, isReadOnly?: boolean } | { destination?: { destinationProperties: { unparsed?: boolean, address: string, addressNumber: string, addressStreet: string, addressCity: string, addressState: string, addressCountry: string, addressPostalCode?: string, addressName?: string, addressApartment?: string, addressNotes?: string } }, name?: string, teams?: any[] } | { recipientName?: string, notes?: string, recipientPhone?: string, skipSMSNotifications?: boolean } | { completeAfter?: string, completeBefore?: string, executor?: string, merchant?: string, notes?: string, pickupTask?: boolean, quantity?: number, serviceTime?: number } | { managers?: any[], hub?: string, name?: string, enableSelfAssignment?: boolean, workers?: any[] } | { capacity?: number, displayName?: string, name?: string, teams?: any[] };
+    readonly updateFields?: { name?: string, phone?: string, isReadOnly?: boolean } | { destination?: { destinationProperties: { unparsed?: boolean, address: string, addressNumber: string, addressStreet: string, addressCity: string, addressState: string, addressCountry: string, addressPostalCode?: string, addressName?: string, addressApartment?: string, addressNotes?: string } }, name?: string, teams?: unknown[] } | { recipientName?: string, notes?: string, recipientPhone?: string, skipSMSNotifications?: boolean } | { completeAfter?: string, completeBefore?: string, executor?: string, merchant?: string, notes?: string, pickupTask?: boolean, quantity?: number, serviceTime?: number } | { managers?: unknown[], hub?: string, name?: string, enableSelfAssignment?: boolean, workers?: unknown[] } | { capacity?: number, displayName?: string, name?: string, teams?: unknown[] };
 
     readonly containerType?: "organizations" | "teams" | "workers";
 
@@ -106,7 +106,7 @@ export interface OnfleetNodeParameters {
     readonly success?: boolean;
 
     /** Default: {} */
-    readonly filters?: { from?: string, state?: ("all" | 2 | 1 | 3 | 0)[], to?: string } | { dropOff?: { dropOffProperties: { dropOffLongitude: number, dropOffLatitude: number } }, pickUp?: { pickUpProperties: { pickupLongitude: number, pickupLatitude: number, pickupTime?: string } }, restrictedVehicleTypes?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", serviceTime?: number } | { radius?: number } | { states?: (2 | 1 | 0)[], teams?: any[], phones?: string };
+    readonly filters?: { from?: string, state?: ("all" | 2 | 1 | 3 | 0)[], to?: string } | { dropOff?: { dropOffProperties: { dropOffLongitude: number, dropOffLatitude: number } }, pickUp?: { pickUpProperties: { pickupLongitude: number, pickupLatitude: number, pickupTime?: string } }, restrictedVehicleTypes?: "CAR" | "MOTORCYCLE" | "BICYCLE" | "TRUCK", serviceTime?: number } | { radius?: number } | { states?: (2 | 1 | 0)[], teams?: unknown[], phones?: string };
 
     /** Default: {} */
     readonly overrideFields?: { completeAfter?: string, completeBefore?: string, includeBarcodes?: boolean, includeDependencies?: boolean, includeMetadata?: boolean, notes?: string, pickupTask?: boolean, serviceTime?: number };
@@ -116,14 +116,14 @@ export interface OnfleetNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getWorkers"}
      */
-    readonly workers?: any[];
+    readonly workers?: unknown[];
 
     /**
      * A list of managing administrators. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getAdmins"}
      */
-    readonly managers?: any[];
+    readonly managers?: unknown[];
 
     /** Whether to search for only those workers who are currently within a certain target area */
     readonly byLocation?: boolean;
@@ -133,7 +133,7 @@ export interface OnfleetNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getTeams"}
      */
-    readonly teams?: any[];
+    readonly teams?: unknown[];
 
     /**
      * The longitude component of the coordinate pair

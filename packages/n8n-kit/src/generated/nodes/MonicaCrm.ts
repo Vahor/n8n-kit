@@ -89,14 +89,14 @@ export interface MonicaCrmNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getTagsToAdd"}
      */
-    readonly tagsToAdd?: any[];
+    readonly tagsToAdd?: unknown[];
 
     /**
      * Tags to remove from the contact. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getTagsToRemove"}
      */
-    readonly tagsToRemove?: any[];
+    readonly tagsToRemove?: unknown[];
 
     /** ID of the conversation to delete */
     readonly conversationId?: string;

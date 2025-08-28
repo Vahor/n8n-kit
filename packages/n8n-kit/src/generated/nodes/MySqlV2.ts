@@ -38,7 +38,7 @@ export interface MySqlV2NodeParameters {
     readonly combineConditions?: "AND" | "OR";
 
     /** Default: {} */
-    readonly options?: { connectionTimeoutMillis?: number, connectionLimit?: number, queryBatching?: "single" | "independently" | "transaction", queryReplacement?: string, outputColumns?: any[], largeNumbersOutput?: "numbers" | "text", decimalNumbers?: boolean, priority?: "LOW_PRIORITY" | "HIGH_PRIORITY", replaceEmptyStrings?: boolean, selectDistinct?: boolean, detailedOutput?: boolean, skipOnConflict?: boolean };
+    readonly options?: { connectionTimeoutMillis?: number, connectionLimit?: number, queryBatching?: "single" | "independently" | "transaction", queryReplacement?: string, outputColumns?: unknown[], largeNumbersOutput?: "numbers" | "text", decimalNumbers?: boolean, priority?: "LOW_PRIORITY" | "HIGH_PRIORITY", replaceEmptyStrings?: boolean, selectDistinct?: boolean, detailedOutput?: boolean, skipOnConflict?: boolean };
 
     /**
      * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.

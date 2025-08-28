@@ -20,7 +20,7 @@ export interface GetResponseTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getLists"}
      */
-    readonly listIds?: any[];
+    readonly listIds?: unknown[];
 
     /** Default: {} */
     readonly options?: { delete?: boolean };

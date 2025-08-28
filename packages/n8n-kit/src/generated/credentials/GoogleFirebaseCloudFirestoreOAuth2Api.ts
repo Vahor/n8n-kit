@@ -9,7 +9,7 @@ export const name = "googleFirebaseCloudFirestoreOAuth2Api" as const;
  */
 export interface GoogleFirebaseCloudFirestoreOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/datastore https://www.googleapis.com/auth/firebase" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleFirebaseCloudFirestoreOAuth2Api";
 }

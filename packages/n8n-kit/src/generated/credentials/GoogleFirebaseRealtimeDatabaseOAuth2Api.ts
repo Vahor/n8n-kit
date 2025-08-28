@@ -9,7 +9,7 @@ export const name = "googleFirebaseRealtimeDatabaseOAuth2Api" as const;
  */
 export interface GoogleFirebaseRealtimeDatabaseOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/firebase.database https://www.googleapis.com/auth/firebase" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "firebaseio.com" */
     readonly "region"?: "firebaseio.com" | "europe-west1.firebasedatabase.app" | "asia-southeast1.firebasedatabase.app";

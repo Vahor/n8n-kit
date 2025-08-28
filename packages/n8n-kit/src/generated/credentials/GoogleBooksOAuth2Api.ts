@@ -9,7 +9,7 @@ export const name = "googleBooksOAuth2Api" as const;
  */
 export interface GoogleBooksOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/books" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleBooksOAuth2Api";
 }

@@ -12,7 +12,7 @@ export interface DeepSeekApiCredentials {
     readonly "apiKey": string;
 
     /** Default: "https://api.deepseek.com" */
-    readonly "url"?: any;
+    readonly "url"?: unknown;
 
     readonly __name: "deepSeekApi";
 }

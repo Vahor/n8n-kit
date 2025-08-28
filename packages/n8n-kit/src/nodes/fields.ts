@@ -1,41 +1,43 @@
 import type { Type } from "arktype";
 import type { SetV2NodeParameters } from "../generated/nodes/SetV2";
 import { SetV2 as _Fields } from "../generated/nodes-impl/SetV2";
-import type { IsNever } from "../utils/types";
+import type { UnionToIntersection } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import type { NodeProps } from "./node";
 
-export interface SetProps extends NodeProps {
-	parameters: SetV2NodeParameters & {
-		assignments?: Array<{
-			id?: string;
-			name: string;
-			type: Type;
-			value: ExpressionBuilder<any, any> | string;
-		}>;
+type Assignment<T extends Type = Type> = {
+	id?: string;
+	name: string;
+	type: T;
+	// TODO: need to figure why infer is not working
+	value: T["infer"] | ExpressionBuilder;
+};
+
+export interface SetProps<A extends readonly Assignment[]> extends NodeProps {
+	parameters: Omit<SetV2NodeParameters, "assignments"> & {
+		assignments: {
+			assignments: A;
+		};
 	};
 }
 
-type AssignementsToObject<
-	T extends Array<{
-		name: string;
-		type: Type;
-	}>,
-> = {
+type AssignmentsToObject<T extends readonly { name: string; type: Type }[]> = {
 	[K in keyof T]: T[K] extends {
 		name: infer N extends string;
 		type: infer T extends Type;
 	}
-		? {
-				[K in N]: T["infer"];
-			}
+		? { [K in N]: T["infer"] }
 		: never;
-};
+}[number];
 
-export class Fields<L extends string, P extends SetProps> extends _Fields<
-	IsNever<P["parameters"]["assignments"]> extends true
-		? never
-		: AssignementsToObject<NonNullable<P["parameters"]["assignments"]>>,
+export class Fields<
+	L extends string,
+	const A extends readonly Assignment[],
+	P extends SetProps<A>,
+> extends _Fields<
+	UnionToIntersection<
+		AssignmentsToObject<P["parameters"]["assignments"]["assignments"]>
+	>,
 	L
 > {
 	public constructor(
@@ -48,8 +50,11 @@ export class Fields<L extends string, P extends SetProps> extends _Fields<
 	override "~validate"(): void {
 		super["~validate"]();
 		// if mode is manual, then assignments are required
-		if (this.props.parameters.mode === "manual") {
-			const assignments = this.props.parameters.assignments;
+		if (
+			this.props.parameters.mode === undefined ||
+			this.props.parameters.mode === "manual"
+		) {
+			const assignments = this.props.parameters.assignments.assignments;
 			if (assignments == null) {
 				throw new Error(`Mode is 'manual' but 'assignments' is undefined.`);
 			}
@@ -60,6 +65,10 @@ export class Fields<L extends string, P extends SetProps> extends _Fields<
 				if (assignment.value instanceof ExpressionBuilder) {
 					assignment.value = assignment.value.toExpression();
 				}
+
+				// transform arktype type to "string" | "object" ... to match n8n
+				const typeSchema = assignment.type.toJsonSchema();
+				assignment.type = (typeSchema as any).type;
 			}
 		}
 

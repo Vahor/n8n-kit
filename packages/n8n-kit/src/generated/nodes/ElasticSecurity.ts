@@ -79,7 +79,7 @@ export interface ElasticSecurityNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { status?: "open" | "in-progress" | "closed", tags?: any[] };
+    readonly filters?: { status?: "open" | "in-progress" | "closed", tags?: unknown[] };
 
     /** Default: {} */
     readonly sortOptions?: { sortOptionsProperties: { sortField?: "createdAt" | "updatedAt", sortOrder?: "asc" | "desc" } };

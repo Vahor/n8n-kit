@@ -21,7 +21,7 @@ export interface BitlyNodeParameters {
     readonly longUrl?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { domain?: string, group?: string, tags?: any[], title?: string };
+    readonly additionalFields?: { domain?: string, group?: string, tags?: unknown[], title?: string };
 
     /**
      * Default: {}
@@ -32,6 +32,6 @@ export interface BitlyNodeParameters {
     readonly id?: string;
 
     /** Default: {} */
-    readonly updateFields?: { archived?: boolean, group?: string, longUrl?: string, tags?: any[], title?: string };
+    readonly updateFields?: { archived?: boolean, group?: string, longUrl?: string, tags?: unknown[], title?: string };
 
 }

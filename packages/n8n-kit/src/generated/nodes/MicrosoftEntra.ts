@@ -51,7 +51,7 @@ export interface MicrosoftEntraNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getGroupProperties"}
      */
-    readonly fields?: any[];
+    readonly fields?: unknown[];
 
     /** Default: {} */
     readonly options?: { includeMembers?: boolean };

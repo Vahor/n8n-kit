@@ -104,6 +104,9 @@
 		"@dagrejs/dagre": "^1.1.5",
 		"arktype": "catalog:",
 		"lodash.clonedeep": "^4.5.0",
+		"nano-spawn": "catalog:",
+		"tsdown": "catalog:",
+		"chalk": "catalog:",
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
@@ -114,7 +117,6 @@
 		"eventsource": "2.0.2",
 		"n8n-core": "1.106.2",
 		"tinyglobby": "^0.2.14",
-		"tsdown": "catalog:",
 		"typescript": "catalog:"
 	},
 	"scripts": {

@@ -32,7 +32,7 @@ export interface ERPNextNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { fields?: any[], filters?: { customProperty: Array<{ field?: string, operator?: "equalsGreater" | "equalsLess" | "is" | "greater" | "less" | "isNot", value?: string }> } };
+    readonly options?: { fields?: unknown[], filters?: { customProperty: Array<{ field?: string, operator?: "equalsGreater" | "equalsLess" | "is" | "greater" | "less" | "isNot", value?: string }> } };
 
     /**
      * Default: {}

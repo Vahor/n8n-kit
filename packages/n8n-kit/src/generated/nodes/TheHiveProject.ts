@@ -151,7 +151,7 @@ export interface TheHiveProjectNodeParameters {
      * Default: []
      * Type options: {"loadOptionsDependsOn":["observableId.value","dataType"],"loadOptionsMethod":"loadAnalyzers"}
      */
-    readonly analyzers?: any[];
+    readonly analyzers?: unknown[];
 
     /** Default: "case" */
     readonly location?: "case" | "knowledgeBase";

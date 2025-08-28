@@ -3,7 +3,6 @@ process.env.NODE_ENV = process.env.NODE_ENV || "production";
 
 import logger from "@vahor/n8n-kit/logger";
 
-import chalk from "chalk";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
@@ -75,14 +74,8 @@ yargsInstance
 			process.exit(1);
 		},
 	})
-	.fail(async (message, error) => {
-		if (message) {
-			console.error(message);
-		}
-
-		if (error) {
-			console.error(chalk.red(error));
-		}
+	.fail((message, error) => {
+		logger.error(message, error);
 		process.exit(1);
 	})
 	.parse();

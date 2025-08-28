@@ -32,7 +32,7 @@ export interface GmailV1NodeParameters {
     readonly message?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { toList?: string, ccList?: string, bccList?: string, attachmentsUi?: { attachmentsBinary: Array<{ property?: string }> } } | { dataPropertyAttachmentsPrefixName?: string, format?: "full" | "metadata" | "minimal" | "raw" | "resolved" } | { dataPropertyAttachmentsPrefixName?: string, format?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", includeSpamTrash?: boolean } | { attachmentsUi?: { attachmentsBinary: Array<{ property?: string }> }, bccList?: string, ccList?: string, senderName?: string } | { format?: "full" | "metadata" | "minimal" | "raw" | "resolved", dataPropertyAttachmentsPrefixName?: string } | { dataPropertyAttachmentsPrefixName?: string, format?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", includeSpamTrash?: boolean, labelIds?: any[], q?: string };
+    readonly additionalFields?: { toList?: string, ccList?: string, bccList?: string, attachmentsUi?: { attachmentsBinary: Array<{ property?: string }> } } | { dataPropertyAttachmentsPrefixName?: string, format?: "full" | "metadata" | "minimal" | "raw" | "resolved" } | { dataPropertyAttachmentsPrefixName?: string, format?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", includeSpamTrash?: boolean } | { attachmentsUi?: { attachmentsBinary: Array<{ property?: string }> }, bccList?: string, ccList?: string, senderName?: string } | { format?: "full" | "metadata" | "minimal" | "raw" | "resolved", dataPropertyAttachmentsPrefixName?: string } | { dataPropertyAttachmentsPrefixName?: string, format?: "full" | "ids" | "metadata" | "minimal" | "raw" | "resolved", includeSpamTrash?: boolean, labelIds?: unknown[], q?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
@@ -76,6 +76,6 @@ export interface GmailV1NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */
-    readonly labelIds?: any[];
+    readonly labelIds?: unknown[];
 
 }

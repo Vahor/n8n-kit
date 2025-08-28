@@ -53,7 +53,7 @@ export interface PagerDutyNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { dateRange?: "all", incidentKey?: string, include?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], serviceIds?: any[], since?: string, sortBy?: string, statuses?: ("acknowledged" | "resolved" | "triggered")[], teamIds?: string, timeZone?: string, until?: string, urgencies?: ("high" | "low")[], userIds?: string } | { include?: ("channels" | "incidents" | "services" | "teams")[], isOverview?: boolean, since?: string, timeZone?: string, until?: string };
+    readonly options?: { dateRange?: "all", incidentKey?: string, include?: ("acknowledgers" | "assignees" | "conferenceBridge" | "escalationPolicies" | "firstTriggerLogEntries" | "priorities" | "services" | "teams" | "users")[], serviceIds?: unknown[], since?: string, sortBy?: string, statuses?: ("acknowledged" | "resolved" | "triggered")[], teamIds?: string, timeZone?: string, until?: string, urgencies?: ("high" | "low")[], userIds?: string } | { include?: ("channels" | "incidents" | "services" | "teams")[], isOverview?: boolean, since?: string, timeZone?: string, until?: string };
 
     /** Default: {} */
     readonly updateFields?: { escalationLevel?: number, escalationPolicyId?: string, priorityId?: string, resolution?: string, status?: "acknowledged" | "resolved", title?: string, urgency?: "high" | "low" };

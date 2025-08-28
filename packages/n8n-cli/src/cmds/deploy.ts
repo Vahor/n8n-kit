@@ -64,7 +64,7 @@ export const handler = async (options: DeployOptions) => {
 	for (const workflow of app.workflows) {
 		logger.setContext(`deploy:${workflow.id}`);
 
-		const buildWorkflow = workflow.build();
+		const buildWorkflow = await workflow.build();
 		const { id: _id, tags: workflowTags, active, ...rest } = buildWorkflow;
 
 		// If merge flag is enabled and workflow exists, merge node positions

@@ -43,7 +43,7 @@ export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 		super(id, props as any);
 	}
 
-	override getParameters() {
+	override async getParameters() {
 		const { outputSchema: _, ...rest } = this.props;
 		return rest;
 	}

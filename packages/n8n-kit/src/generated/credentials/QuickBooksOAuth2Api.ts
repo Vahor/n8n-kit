@@ -9,21 +9,21 @@ export const name = "quickBooksOAuth2Api" as const;
  */
 export interface QuickBooksOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://appcenter.intuit.com/connect/oauth2" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "com.intuit.quickbooks.accounting" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";

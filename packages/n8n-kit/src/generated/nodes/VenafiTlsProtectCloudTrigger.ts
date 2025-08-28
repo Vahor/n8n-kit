@@ -21,6 +21,6 @@ export interface VenafiTlsProtectCloudTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getActivitySubTypes","loadOptionsDependsOn":["resource"]}
      */
-    readonly triggerOn?: any[];
+    readonly triggerOn?: unknown[];
 
 }

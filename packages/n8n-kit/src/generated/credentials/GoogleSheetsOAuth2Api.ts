@@ -9,7 +9,7 @@ export const name = "googleSheetsOAuth2Api" as const;
  */
 export interface GoogleSheetsOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly "notice"?: string;
 

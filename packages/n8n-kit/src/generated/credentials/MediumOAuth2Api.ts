@@ -9,26 +9,26 @@ export const name = "mediumOAuth2Api" as const;
  */
 export interface MediumOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://medium.com/m/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://medium.com/v1/tokens" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "basicProfile,publishPost,listPublications" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly "clientId": string;
 
     /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "mediumOAuth2Api";
 }

@@ -56,14 +56,14 @@ export interface GmailV2NodeParameters {
     readonly simple?: boolean;
 
     /** Default: {} */
-    readonly filters?: { includeSpamTrash?: boolean, labelIds?: any[], q?: string, readStatus?: "both" | "unread" | "read", receivedAfter?: string, receivedBefore?: string, sender?: string } | { includeSpamTrash?: boolean, labelIds?: any[], q?: string, readStatus?: "both" | "unread" | "read", receivedAfter?: string, receivedBefore?: string };
+    readonly filters?: { includeSpamTrash?: boolean, labelIds?: unknown[], q?: string, readStatus?: "both" | "unread" | "read", receivedAfter?: string, receivedBefore?: string, sender?: string } | { includeSpamTrash?: boolean, labelIds?: unknown[], q?: string, readStatus?: "both" | "unread" | "read", receivedAfter?: string, receivedBefore?: string };
 
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */
-    readonly labelIds?: any[];
+    readonly labelIds?: unknown[];
 
     /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";

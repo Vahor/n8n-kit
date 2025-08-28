@@ -14,7 +14,8 @@
 			"!**/node_modules",
 			"!**/dist",
 			"!**/generated",
-			"!**/vendor"
+			"!**/vendor",
+			"!**/.bundle-js"
 		]
 	},
 	"formatter": {

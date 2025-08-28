@@ -29,7 +29,7 @@ export interface HaloPSAApiCredentials {
     readonly "tenant"?: string;
 
     /** Default: "admin edit:tickets edit:customers" */
-    readonly "scope": any;
+    readonly "scope": unknown;
 
     readonly __name: "haloPSAApi";
 }
