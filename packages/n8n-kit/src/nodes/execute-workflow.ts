@@ -27,7 +27,7 @@ export class ExecuteWorkflow<
 		super(id, props);
 	}
 
-	override getParameters() {
+	override async getParameters() {
 		return {
 			...this.props.parameters,
 			// @ts-expect-error: remove workflow from output as it's onlu used for the workflowId

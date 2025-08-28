@@ -38,7 +38,7 @@ export class StickyNote<L extends string> extends _StickyNote<{}, L> {
 		this.position = props.position;
 	}
 
-	override getParameters() {
+	override async getParameters() {
 		return {
 			...this.props.parameters,
 			height: this.size.height,

@@ -1,0 +1,6 @@
+{
+	"name": "validation-function",
+	"dependencies": {
+		"zod": "^4"
+	}
+}

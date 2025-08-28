@@ -52,7 +52,7 @@ export abstract class Node<
 
 	readonly endStates: INextable[];
 
-	public getParameters() {
+	public async getParameters() {
 		const p = this.props?.parameters;
 		if (p == null) return undefined;
 		if (Object.keys(p).length === 0) return undefined;
@@ -142,14 +142,14 @@ export abstract class Node<
 		return newInstance as any;
 	}
 
-	toNode() {
+	async toNode() {
 		return {
 			id: this.id,
 			name: this.getLabel(),
 			type: this.type,
 			position: this.position,
 			typeVersion: this.typeVersion,
-			parameters: this.getParameters(),
+			parameters: await this.getParameters(),
 			credentials: this.credentialsToNode(),
 		};
 	}

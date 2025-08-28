@@ -91,7 +91,7 @@ export class If<
 		}
 	}
 
-	override getParameters() {
+	override async getParameters() {
 		return {
 			conditions: {
 				conditions: this.props.conditions,

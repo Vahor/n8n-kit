@@ -124,7 +124,7 @@ export const handler = async (options: Options) => {
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
-		const from = sortObjectByKey(workflow.build());
+		const from = sortObjectByKey(await workflow.build());
 		const to = sortObjectByKey(matchMap.get(workflow.id)!);
 
 		format(from);

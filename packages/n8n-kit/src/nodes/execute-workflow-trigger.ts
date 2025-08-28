@@ -53,7 +53,7 @@ export class ExecuteWorkflowTrigger<
 		return undefined;
 	}
 
-	override getParameters() {
+	override async getParameters() {
 		return {
 			...this.props.parameters,
 			workflowInputs: this.buildWorkflowInputsSchema(),

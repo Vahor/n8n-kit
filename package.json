@@ -9,7 +9,8 @@
 		"catalog": {
 			"tsdown": "^0.14.1",
 			"typescript": "^5.9.2",
-			"arktype": "^2.1.20"
+			"arktype": "^2.1.20",
+			"nano-spawn": "^1.0.2"
 		}
 	},
 	"description": "Build n8n workflows using code",

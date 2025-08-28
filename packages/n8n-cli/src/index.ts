@@ -77,11 +77,11 @@ yargsInstance
 	})
 	.fail(async (message, error) => {
 		if (message) {
-			console.error(message);
+			logger.error(message);
 		}
 
 		if (error) {
-			console.error(chalk.red(error));
+			logger.error(chalk.red(error));
 		}
 		process.exit(1);
 	})
