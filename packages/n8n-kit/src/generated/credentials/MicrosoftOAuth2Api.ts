@@ -9,7 +9,7 @@ export const name = "microsoftOAuth2Api" as const;
  */
 export interface MicrosoftOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://login.microsoftonline.com/common/oauth2/v2.0/authorize" */
     readonly "authUrl"?: string;
@@ -18,10 +18,10 @@ export interface MicrosoftOAuth2ApiCredentials {
     readonly "accessTokenUrl"?: string;
 
     /** Default: "response_mode=query" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "microsoftOAuth2Api";
 }

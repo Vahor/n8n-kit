@@ -50,7 +50,7 @@ export interface PostgresV2NodeParameters {
     readonly combineConditions?: "AND" | "OR";
 
     /** Default: {} */
-    readonly options?: { cascade?: boolean, connectionTimeout?: number, delayClosingIdleConnection?: number, queryBatching?: "single" | "independently" | "transaction", queryReplacement?: string, treatQueryParametersInSingleQuotesAsText?: boolean, outputColumns?: any[], largeNumbersOutput?: "numbers" | "text", skipOnConflict?: boolean, replaceEmptyStrings?: boolean };
+    readonly options?: { cascade?: boolean, connectionTimeout?: number, delayClosingIdleConnection?: number, queryBatching?: "single" | "independently" | "transaction", queryReplacement?: string, treatQueryParametersInSingleQuotesAsText?: boolean, outputColumns?: unknown[], largeNumbersOutput?: "numbers" | "text", skipOnConflict?: boolean, replaceEmptyStrings?: boolean };
 
     /**
      * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.

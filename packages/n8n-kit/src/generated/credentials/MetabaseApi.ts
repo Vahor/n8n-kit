@@ -9,7 +9,7 @@ export const name = "metabaseApi" as const;
  */
 export interface MetabaseApiCredentials {
     /** Type options: {"expirable":true} */
-    readonly "sessionToken"?: any;
+    readonly "sessionToken"?: unknown;
 
     readonly "url"?: string;
 

@@ -43,7 +43,7 @@ export interface KitemakerNodeParameters {
     readonly statusId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { description?: string, effort?: "SMALL" | "MEDIUM" | "LARGE", impact?: "SMALL" | "MEDIUM" | "LARGE", labelIds?: any[], memberIds?: any[] };
+    readonly additionalFields?: { description?: string, effort?: "SMALL" | "MEDIUM" | "LARGE", impact?: "SMALL" | "MEDIUM" | "LARGE", labelIds?: unknown[], memberIds?: unknown[] };
 
     /** ID of the work item to retrieve */
     readonly workItemId?: string;

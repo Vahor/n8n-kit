@@ -40,7 +40,7 @@ export interface OdooNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { fieldsList?: any[] };
+    readonly options?: { fieldsList?: unknown[] };
 
     /**
      * Filter request by applying filters

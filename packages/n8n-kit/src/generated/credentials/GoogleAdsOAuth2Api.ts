@@ -12,7 +12,7 @@ export interface GoogleAdsOAuth2ApiCredentials {
     readonly "developerToken": string;
 
     /** Default: "https://www.googleapis.com/auth/adwords" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleAdsOAuth2Api";
 }

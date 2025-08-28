@@ -21,10 +21,10 @@ export interface VenafiTlsProtectDatacenterApiCredentials {
     readonly "allowUnauthorizedCerts"?: boolean;
 
     /** Type options: {"expirable":true} */
-    readonly "token"?: any;
+    readonly "token"?: unknown;
 
     /** Default: "certificate:manage" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "venafiTlsProtectDatacenterApi";
 }

@@ -127,6 +127,6 @@ export interface GSuiteAdminNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getSchemas"}
      */
-    readonly customFieldMask?: any[];
+    readonly customFieldMask?: unknown[];
 
 }

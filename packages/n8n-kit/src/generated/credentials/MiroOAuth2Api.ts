@@ -9,20 +9,20 @@ export const name = "miroOAuth2Api" as const;
  */
 export interface MiroOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://miro.com/oauth/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://api.miro.com/v1/oauth/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
-    readonly "scope": any;
+    readonly "scope": unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "miroOAuth2Api";
 }

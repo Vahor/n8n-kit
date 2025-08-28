@@ -9,7 +9,7 @@ export const name = "crowdStrikeOAuth2Api" as const;
  */
 export interface CrowdStrikeOAuth2ApiCredentials {
     /** Type options: {"expirable":true} */
-    readonly "sessionToken"?: any;
+    readonly "sessionToken"?: unknown;
 
     readonly "url": string;
 

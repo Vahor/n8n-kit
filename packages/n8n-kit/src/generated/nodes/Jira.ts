@@ -36,10 +36,10 @@ export interface JiraNodeParameters {
     readonly additionalFields?: { assignee?: {
 	value: string,
 	mode: "list" | "id",
-}, description?: string, componentIds?: any[], customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
+}, description?: string, componentIds?: unknown[], customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
 	value: string,
 	mode: "list" | "id",
-}, fieldValue?: string }> }, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
+}, fieldValue?: string }> }, labels?: unknown[], serverLabels?: string, parentIssueKey?: string, priority?: {
 	value: string,
 	mode: "list" | "id",
 }, reporter?: {
@@ -56,7 +56,7 @@ export interface JiraNodeParameters {
 }, description?: string, customFieldsUi?: { customFieldsValues: Array<{ fieldId?: {
 	value: string,
 	mode: "list" | "id",
-}, fieldValue?: string }> }, issueType?: string, labels?: any[], serverLabels?: string, parentIssueKey?: string, priority?: {
+}, fieldValue?: string }> }, issueType?: string, labels?: unknown[], serverLabels?: string, parentIssueKey?: string, priority?: {
 	value: string,
 	mode: "list" | "id",
 }, reporter?: {
@@ -92,7 +92,7 @@ export interface JiraNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly notificationRecipientsUi?: { notificationRecipientsValues: { reporter?: boolean, assignee?: boolean, watchers?: boolean, voters?: boolean, users?: any[], groups?: any[] } };
+    readonly notificationRecipientsUi?: { notificationRecipientsValues: { reporter?: boolean, assignee?: boolean, watchers?: boolean, voters?: boolean, users?: unknown[], groups?: unknown[] } };
 
     /**
      * The recipients of the email notification for the issue
@@ -105,7 +105,7 @@ export interface JiraNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly notificationRecipientsRestrictionsUi?: { notificationRecipientsRestrictionsValues: { users?: any[], groups?: any[] } };
+    readonly notificationRecipientsRestrictionsUi?: { notificationRecipientsRestrictionsValues: { users?: unknown[], groups?: unknown[] } };
 
     /**
      * Restricts the notifications to users with the specified permissions

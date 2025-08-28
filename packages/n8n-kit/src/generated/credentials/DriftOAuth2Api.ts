@@ -9,20 +9,20 @@ export const name = "driftOAuth2Api" as const;
  */
 export interface DriftOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://dev.drift.com/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://driftapi.com/oauth2/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "driftOAuth2Api";
 }

@@ -51,7 +51,7 @@ export interface SplunkV1NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getRoles"}
      */
-    readonly roles?: any[];
+    readonly roles?: unknown[];
 
     /** Type options: {"password":true} */
     readonly password?: string;
@@ -60,6 +60,6 @@ export interface SplunkV1NodeParameters {
     readonly userId?: string;
 
     /** Default: {} */
-    readonly updateFields?: { email?: string, realname?: string, password?: string, roles?: any[] };
+    readonly updateFields?: { email?: string, realname?: string, password?: string, roles?: unknown[] };
 
 }

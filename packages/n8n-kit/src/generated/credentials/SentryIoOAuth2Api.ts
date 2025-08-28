@@ -9,21 +9,21 @@ export const name = "sentryIoOAuth2Api" as const;
  */
 export interface SentryIoOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://sentry.io/oauth/authorize/" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://sentry.io/oauth/token/" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "event:admin event:read org:read project:read project:releases team:read event:write org:admin project:write team:write project:admin team:admin" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "sentryIoOAuth2Api";
 }

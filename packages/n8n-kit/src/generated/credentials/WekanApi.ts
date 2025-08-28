@@ -16,7 +16,7 @@ export interface WekanApiCredentials {
     readonly "url"?: string;
 
     /** Type options: {"expirable":true} */
-    readonly "token"?: any;
+    readonly "token"?: unknown;
 
     readonly __name: "wekanApi";
 }

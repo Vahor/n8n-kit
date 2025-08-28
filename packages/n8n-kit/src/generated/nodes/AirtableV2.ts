@@ -34,7 +34,7 @@ export interface AirtableV2NodeParameters {
 };
 
     /** Default: {} */
-    readonly options?: { typecast?: boolean, ignoreFields?: string, updateAllMatches?: boolean } | { downloadFields?: any[] } | { downloadFields?: any[], fields?: any[], view?: {
+    readonly options?: { typecast?: boolean, ignoreFields?: string, updateAllMatches?: boolean } | { downloadFields?: unknown[] } | { downloadFields?: unknown[], fields?: unknown[], view?: {
 	value: string,
 	mode: "list" | "url" | "id",
 } } | { permissionLevel?: ("comment" | "create" | "edit" | "none" | "read")[] };

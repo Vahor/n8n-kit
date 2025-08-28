@@ -9,22 +9,22 @@ export const name = "redditOAuth2Api" as const;
  */
 export interface RedditOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "response_type=code" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "https://www.reddit.com/api/v1/authorize" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "https://www.reddit.com/api/v1/access_token" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "identity edit history mysubreddits read save submit" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "redditOAuth2Api";
 }

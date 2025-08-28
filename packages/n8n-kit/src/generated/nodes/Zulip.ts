@@ -20,7 +20,7 @@ export interface ZulipNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly to?: any[];
+    readonly to?: unknown[];
 
     /** The content of the message */
     readonly content?: string;

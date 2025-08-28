@@ -105,7 +105,7 @@ export interface TheHiveNodeParameters {
     readonly options?: { sort?: string } | { includeSimilar?: boolean } | { tags?: string } | { customFieldsUi?: { customFields: Array<{ field?: string, value?: string }> }, customFieldsJson?: string, endDate?: string, summary?: string, metrics?: string } | { description?: string, endDate?: string, owner?: string, startDate?: string } | { attachmentValues?: { attachmentValues: { binaryProperty?: string } } };
 
     /** Default: {} */
-    readonly filters?: { customFieldsUi?: { customFields: Array<{ field?: string, value?: string }> }, description?: string, follow?: boolean, severity?: 1 | 2 | 3, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { dataType?: any[], range?: { dateRange: { fromDate?: string, toDate?: string } }, description?: string, ioc?: boolean, keyword?: string, message?: string, tags?: string, sighted?: boolean, Status?: "Ok" | "Deleted", tlp?: 0 | 1 | 2 | 3, data?: string } | { customFieldsUi?: { customFields: Array<{ field?: string, value?: string }> }, description?: string, endDate?: string, flag?: boolean, impactStatus?: "NoImpact" | "WithImpact" | "NotApplicable", owner?: string, resolutionStatus?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", severity?: 1 | 2 | 3, startDate?: string, status?: "Open" | "Resolved" | "Deleted", summary?: string, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { description?: string, endDate?: string, flag?: boolean, owner?: string, startDate?: string, status?: "Cancel" | "Completed" | "InProgress" | "Waiting", title?: string };
+    readonly filters?: { customFieldsUi?: { customFields: Array<{ field?: string, value?: string }> }, description?: string, follow?: boolean, severity?: 1 | 2 | 3, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { dataType?: unknown[], range?: { dateRange: { fromDate?: string, toDate?: string } }, description?: string, ioc?: boolean, keyword?: string, message?: string, tags?: string, sighted?: boolean, Status?: "Ok" | "Deleted", tlp?: 0 | 1 | 2 | 3, data?: string } | { customFieldsUi?: { customFields: Array<{ field?: string, value?: string }> }, description?: string, endDate?: string, flag?: boolean, impactStatus?: "NoImpact" | "WithImpact" | "NotApplicable", owner?: string, resolutionStatus?: "Duplicated" | "False Positive" | "Indeterminate" | "Other" | "True Positive", severity?: 1 | 2 | 3, startDate?: string, status?: "Open" | "Resolved" | "Deleted", summary?: string, tags?: string, title?: string, tlp?: 0 | 1 | 2 | 3 } | { description?: string, endDate?: string, flag?: boolean, owner?: string, startDate?: string, status?: "Cancel" | "Completed" | "InProgress" | "Waiting", title?: string };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -138,7 +138,7 @@ export interface TheHiveNodeParameters {
      * Default: []
      * Type options: {"loadOptionsDependsOn":["id","dataType"],"loadOptionsMethod":"loadAnalyzers"}
      */
-    readonly analyzers?: any[];
+    readonly analyzers?: unknown[];
 
     readonly owner?: string;
 

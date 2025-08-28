@@ -9,7 +9,7 @@ export const name = "zscalerZiaApi" as const;
  */
 export interface ZscalerZiaApiCredentials {
     /** Type options: {"expirable":true} */
-    readonly "cookie"?: any;
+    readonly "cookie"?: unknown;
 
     readonly "baseUrl": string;
 

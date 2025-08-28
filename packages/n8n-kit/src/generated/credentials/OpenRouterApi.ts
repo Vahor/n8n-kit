@@ -12,7 +12,7 @@ export interface OpenRouterApiCredentials {
     readonly "apiKey": string;
 
     /** Default: "https://openrouter.ai/api/v1" */
-    readonly "url"?: any;
+    readonly "url"?: unknown;
 
     readonly __name: "openRouterApi";
 }

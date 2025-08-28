@@ -9,7 +9,7 @@ export const name = "googleBigQueryOAuth2Api" as const;
  */
 export interface GoogleBigQueryOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/drive" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleBigQueryOAuth2Api";
 }

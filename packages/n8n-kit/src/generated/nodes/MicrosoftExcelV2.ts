@@ -80,7 +80,7 @@ export interface MicrosoftExcelV2NodeParameters {
     readonly dataProperty?: string;
 
     /** Default: {} */
-    readonly filters?: { fields?: string } | { fields?: string, column?: any[] };
+    readonly filters?: { fields?: string } | { fields?: string, column?: unknown[] };
 
     /** The name of the column in which to look for value */
     readonly lookupColumn?: string;

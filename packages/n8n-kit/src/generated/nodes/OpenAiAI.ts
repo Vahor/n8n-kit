@@ -44,10 +44,10 @@ export interface OpenAiAINodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getFiles"}
      */
-    readonly file_ids?: any[];
+    readonly file_ids?: unknown[];
 
     /** Default: {} */
-    readonly options?: { temperature?: number, topP?: number, failIfExists?: boolean } | { baseURL?: string, maxRetries?: number, timeout?: number, preserveOriginalTools?: boolean } | { codeInterpreter?: boolean, description?: string, file_ids?: any[], instructions?: string, knowledgeRetrieval?: boolean, modelId?: {
+    readonly options?: { temperature?: number, topP?: number, failIfExists?: boolean } | { baseURL?: string, maxRetries?: number, timeout?: number, preserveOriginalTools?: boolean } | { codeInterpreter?: boolean, description?: string, file_ids?: unknown[], instructions?: string, knowledgeRetrieval?: boolean, modelId?: {
 	value: string,
 	mode: "list" | "id",
 }, name?: string, removeCustomTools?: boolean, temperature?: number, topP?: number } | { response_format?: "mp3" | "opus" | "aac" | "flac", speed?: number, binaryPropertyOutput?: string } | { language?: string, temperature?: number } | { temperature?: number } | { purpose?: "assistants" | "fine-tune" } | { purpose?: "any" | "assistants" | "fine-tune" } | { n?: number, dalleQuality?: "hd" | "standard", quality?: "high" | "medium" | "low", size?: "256x256" | "512x512" | "1024x1024" | "1024x1024" | "1792x1024" | "1024x1792" | "1024x1024" | "1024x1536" | "1536x1024", style?: "natural" | "vivid", returnImageUrls?: boolean, binaryPropertyOutput?: string } | { detail?: "auto" | "low" | "high", maxTokens?: number } | { useStableModel?: boolean } | { frequency_penalty?: number, maxTokens?: number, n?: number, presence_penalty?: number, temperature?: number, topP?: number, reasoning_effort?: "low" | "medium" | "high", maxToolsIterations?: number };

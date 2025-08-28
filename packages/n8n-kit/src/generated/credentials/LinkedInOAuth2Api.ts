@@ -9,7 +9,7 @@ export const name = "linkedInOAuth2Api" as const;
  */
 export interface LinkedInOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /**
      * Whether to request permissions to post as an organization
@@ -18,21 +18,21 @@ export interface LinkedInOAuth2ApiCredentials {
     readonly "organizationSupport"?: boolean;
 
     /** Default: "https://www.linkedin.com/oauth/v2/authorization" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://www.linkedin.com/oauth/v2/accessToken" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /**
      * Standard scopes for posting on behalf of a user or organization. See <a href="https://docs.microsoft.com/en-us/linkedin/marketing/getting-started#available-permissions"> this resource </a>.
      * Default: "=w_member_social{{$self[\"organizationSupport\"] === true ? \",w_organization_social\": $self[\"legacy\"] === true ? \",r_liteprofile,r_emailaddress\" : \",profile,email,openid\"}}"
      */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     /**
      * Whether to use the legacy API

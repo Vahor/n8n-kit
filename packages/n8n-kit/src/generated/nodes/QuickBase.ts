@@ -29,7 +29,7 @@ export interface QuickBaseNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { includeFieldPerms?: boolean } | { fields?: any[], useFieldIDs?: boolean } | { select?: any[], sortByUi?: { sortByValues: Array<{ fieldId?: string, order?: "ASC" | "DESC" }> }, where?: string };
+    readonly options?: { includeFieldPerms?: boolean } | { fields?: unknown[], useFieldIDs?: boolean } | { select?: unknown[], sortByUi?: { sortByValues: Array<{ fieldId?: string, order?: "ASC" | "DESC" }> }, where?: string };
 
     /** The unique identifier of the record */
     readonly recordId?: string;

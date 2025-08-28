@@ -20,7 +20,7 @@ export interface MicrosoftEntraOAuth2ApiCredentials {
     readonly "enabledScopes"?: string;
 
     /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access AccessReview.ReadWrite.All Directory.ReadWrite.All NetworkAccessPolicy.ReadWrite.All DelegatedAdminRelationship.ReadWrite.All EntitlementManagement.ReadWrite.All User.ReadWrite.All Directory.AccessAsUser.All Sites.FullControl.All GroupMember.ReadWrite.All\"}}" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "microsoftEntraOAuth2Api";
 }

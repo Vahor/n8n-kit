@@ -9,7 +9,7 @@ export const name = "nextCloudOAuth2Api" as const;
  */
 export interface NextCloudOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     readonly "webDavUrl"?: string;
 
@@ -19,12 +19,12 @@ export interface NextCloudOAuth2ApiCredentials {
     /** Default: "https://nextcloud.example.com/apps/oauth2/api/v1/token" */
     readonly "accessTokenUrl": string;
 
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "nextCloudOAuth2Api";
 }

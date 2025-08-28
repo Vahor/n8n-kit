@@ -25,14 +25,14 @@ export interface SlackV1NodeParameters {
     readonly channelId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { isPrivate?: boolean } | { includeNumMembers?: boolean } | { channelIds?: any[], description?: string, handle?: string, include_count?: boolean } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean } | { customFieldUi?: { customFieldValues: Array<{ id?: string, value?: string, alt?: string }> }, email?: string, first_name?: string, last_name?: string, status_emoji?: string, status_expiration?: string, status_text?: string, user?: string } | { include_labels?: boolean, user?: string };
+    readonly additionalFields?: { isPrivate?: boolean } | { includeNumMembers?: boolean } | { channelIds?: unknown[], description?: string, handle?: string, include_count?: boolean } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean } | { customFieldUi?: { customFieldValues: Array<{ id?: string, value?: string, alt?: string }> }, email?: string, first_name?: string, last_name?: string, status_emoji?: string, status_expiration?: string, status_text?: string, user?: string } | { include_labels?: boolean, user?: string };
 
     /**
      * The ID of the user to invite into channel. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
      * Default: []
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userIds?: any[];
+    readonly userIds?: unknown[];
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -57,7 +57,7 @@ export interface SlackV1NodeParameters {
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly options?: { channelId?: string, returnIm?: boolean, users?: any[] } | { channelId?: string, fileComment?: string, fileId?: string, timestamp?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: string } | { channelIds?: any[], fileName?: string, initialComment?: string, threadTs?: string, title?: string };
+    readonly options?: { channelId?: string, returnIm?: boolean, users?: unknown[] } | { channelId?: string, fileComment?: string, fileId?: string, timestamp?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: string } | { channelIds?: unknown[], fileName?: string, initialComment?: string, threadTs?: string, title?: string };
 
     /** New name for conversation */
     readonly name?: string;
@@ -99,7 +99,7 @@ export interface SlackV1NodeParameters {
     readonly attachments?: { fallback?: string, text?: string, title?: string, title_link?: string, color?: string, pretext?: string, author_name?: string, author_link?: string, author_icon?: string, image_url?: string, thumb_url?: string, footer?: string, footer_icon?: string, ts?: string, fields?: { item: Array<{ title?: string, value?: string, short?: boolean }> } };
 
     /** Default: {} */
-    readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: any[], description?: string, handle?: string, include_count?: boolean, name?: string };
+    readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: unknown[], description?: string, handle?: string, include_count?: boolean, name?: string };
 
     /**
      * The attachments to add

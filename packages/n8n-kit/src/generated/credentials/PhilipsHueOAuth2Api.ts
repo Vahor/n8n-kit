@@ -9,23 +9,23 @@ export const name = "philipsHueOAuth2Api" as const;
  */
 export interface PhilipsHueOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     readonly "appId"?: string;
 
     /** Default: "https://api.meethue.com/v2/oauth2/authorize" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "https://api.meethue.com/v2/oauth2/token" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "={{\"appid=\"+$self[\"appId\"]}}" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "philipsHueOAuth2Api";
 }

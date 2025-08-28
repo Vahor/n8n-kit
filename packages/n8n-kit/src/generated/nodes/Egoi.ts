@@ -34,10 +34,10 @@ export interface EgoiNodeParameters {
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { birth_date?: string, cellphone?: string, extraFieldsUi?: { extraFieldValues: Array<{ field_id?: string, value?: string }> }, first_name?: string, last_name?: string, status?: "unconfirmed" | "active" | "inactive" | "removed", tagIds?: any[] };
+    readonly additionalFields?: { birth_date?: string, cellphone?: string, extraFieldsUi?: { extraFieldValues: Array<{ field_id?: string, value?: string }> }, first_name?: string, last_name?: string, status?: "unconfirmed" | "active" | "inactive" | "removed", tagIds?: unknown[] };
 
     /** Default: {} */
-    readonly updateFields?: { birth_date?: string, cellphone?: string, email?: string, extraFieldsUi?: { extraFieldValues: Array<{ field_id?: string, value?: string }> }, first_name?: string, last_name?: string, status?: "unconfirmed" | "active" | "inactive" | "removed", tagIds?: any[] };
+    readonly updateFields?: { birth_date?: string, cellphone?: string, email?: string, extraFieldsUi?: { extraFieldValues: Array<{ field_id?: string, value?: string }> }, first_name?: string, last_name?: string, status?: "unconfirmed" | "active" | "inactive" | "removed", tagIds?: unknown[] };
 
     /**
      * Search by

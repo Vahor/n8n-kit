@@ -34,7 +34,7 @@ export interface GhostNodeParameters {
     readonly content?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { authors?: any[], canonical_url?: string, codeinjection_foot?: string, codeinjection_head?: string, featured?: boolean, meta_description?: string, meta_title?: string, og_description?: string, og_image?: string, og_title?: string, published_at?: string, slug?: string, status?: "draft" | "published" | "scheduled", tags?: any[], twitter_description?: string, twitter_image?: string, twitter_title?: string };
+    readonly additionalFields?: { authors?: unknown[], canonical_url?: string, codeinjection_foot?: string, codeinjection_head?: string, featured?: boolean, meta_description?: string, meta_title?: string, og_description?: string, og_image?: string, og_title?: string, published_at?: string, slug?: string, status?: "draft" | "published" | "scheduled", tags?: unknown[], twitter_description?: string, twitter_image?: string, twitter_title?: string };
 
     /** The ID of the post to delete */
     readonly postId?: string;
@@ -62,6 +62,6 @@ export interface GhostNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { authors?: any[], canonical_url?: string, codeinjection_foot?: string, codeinjection_head?: string, content?: string, contentJson?: string, featured?: boolean, meta_description?: string, meta_title?: string, og_description?: string, og_image?: string, og_title?: string, published_at?: string, slug?: string, status?: "draft" | "published" | "scheduled", tags?: any[], title?: string, twitter_description?: string, twitter_image?: string, twitter_title?: string };
+    readonly updateFields?: { authors?: unknown[], canonical_url?: string, codeinjection_foot?: string, codeinjection_head?: string, content?: string, contentJson?: string, featured?: boolean, meta_description?: string, meta_title?: string, og_description?: string, og_image?: string, og_title?: string, published_at?: string, slug?: string, status?: "draft" | "published" | "scheduled", tags?: unknown[], title?: string, twitter_description?: string, twitter_image?: string, twitter_title?: string };
 
 }

@@ -40,7 +40,7 @@ export interface TodoistV1NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getLabels"}
      */
-    readonly labels?: any[];
+    readonly labels?: unknown[];
 
     /**
      * Task content
@@ -71,6 +71,6 @@ export interface TodoistV1NodeParameters {
     readonly filters?: { filter?: string, ids?: string, labelId?: string, lang?: string, parentId?: string, projectId?: string, sectionId?: string };
 
     /** Default: {} */
-    readonly updateFields?: { content?: string, description?: string, dueDateTime?: string, dueLang?: string, dueString?: string, labels?: any[], priority?: number };
+    readonly updateFields?: { content?: string, description?: string, dueDateTime?: string, dueLang?: string, dueString?: string, labels?: unknown[], priority?: number };
 
 }

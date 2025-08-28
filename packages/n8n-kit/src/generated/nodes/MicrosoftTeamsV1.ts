@@ -44,7 +44,7 @@ export interface MicrosoftTeamsV1NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly updateFields?: { name?: string, description?: string } | { assignedTo?: string, bucketId?: string, dueDateTime?: string, groupId?: string, labels?: any[], percentComplete?: number, planId?: string, title?: string };
+    readonly updateFields?: { name?: string, description?: string } | { assignedTo?: string, bucketId?: string, dueDateTime?: string, groupId?: string, labels?: unknown[], percentComplete?: number, planId?: string, title?: string };
 
     /**
      * The type of the content
@@ -88,7 +88,7 @@ export interface MicrosoftTeamsV1NodeParameters {
     readonly title?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { assignedTo?: string, dueDateTime?: string, labels?: any[], percentComplete?: number };
+    readonly additionalFields?: { assignedTo?: string, dueDateTime?: string, labels?: unknown[], percentComplete?: number };
 
     readonly taskId?: string;
 

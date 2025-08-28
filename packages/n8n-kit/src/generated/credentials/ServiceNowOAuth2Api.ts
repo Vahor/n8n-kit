@@ -11,22 +11,22 @@ export interface ServiceNowOAuth2ApiCredentials {
     readonly "subdomain": string;
 
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "=https://{{$self[\"subdomain\"]}}.service-now.com/oauth_auth.do" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "=https://{{$self[\"subdomain\"]}}.service-now.com/oauth_token.do" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "useraccount" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     /** Default: "response_type=code" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "serviceNowOAuth2Api";
 }

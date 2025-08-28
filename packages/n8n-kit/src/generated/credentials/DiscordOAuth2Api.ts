@@ -12,16 +12,16 @@ export interface DiscordOAuth2ApiCredentials {
     readonly "botToken"?: string;
 
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://discord.com/api/oauth2/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://discord.com/api/oauth2/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "permissions=1642758929655" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Define custom scopes */
     readonly "customScopes"?: boolean;
@@ -35,7 +35,7 @@ export interface DiscordOAuth2ApiCredentials {
     readonly "enabledScopes"?: string;
 
     /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"identify guilds guilds.join bot\"}}" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "discordOAuth2Api";
 }

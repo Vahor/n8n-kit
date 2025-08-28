@@ -15,7 +15,7 @@ export interface TrelloApiCredentials {
     readonly "apiToken": string;
 
     /** Type options: {"password":true} */
-    readonly "oauthSecret"?: any;
+    readonly "oauthSecret"?: unknown;
 
     readonly __name: "trelloApi";
 }

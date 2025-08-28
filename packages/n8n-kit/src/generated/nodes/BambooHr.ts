@@ -81,7 +81,7 @@ export interface BambooHrNodeParameters {
     readonly employeeId?: string;
 
     /** Default: {} */
-    readonly options?: { fields?: any[] } | { share?: boolean } | { fd?: boolean, onlyCurrent?: boolean };
+    readonly options?: { fields?: unknown[] } | { share?: boolean } | { fd?: boolean, onlyCurrent?: boolean };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

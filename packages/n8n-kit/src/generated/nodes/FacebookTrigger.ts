@@ -23,7 +23,7 @@ export interface FacebookTriggerNodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getObjectFields","loadOptionsDependsOn":["object"]}
      */
-    readonly fields?: any[];
+    readonly fields?: unknown[];
 
     /** Default: {} */
     readonly options?: { includeValues?: boolean };

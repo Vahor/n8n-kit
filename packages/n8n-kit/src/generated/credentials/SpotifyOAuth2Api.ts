@@ -9,24 +9,24 @@ export const name = "spotifyOAuth2Api" as const;
  */
 export interface SpotifyOAuth2ApiCredentials {
     /** Default: "https://api.spotify.com/" */
-    readonly "server"?: any;
+    readonly "server"?: unknown;
 
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://accounts.spotify.com/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://accounts.spotify.com/api/token" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "user-read-playback-state playlist-read-collaborative user-modify-playback-state playlist-modify-public user-read-currently-playing playlist-read-private user-read-recently-played playlist-modify-private user-library-read user-follow-read" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "spotifyOAuth2Api";
 }

@@ -41,10 +41,10 @@ export interface SlackV2NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getUsers"}
      */
-    readonly userIds?: any[];
+    readonly userIds?: unknown[];
 
     /** Default: {} */
-    readonly options?: { includeNumMembers?: boolean } | { channelId?: string, returnIm?: boolean, users?: any[] } | { searchChannel?: any[] } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { fileComment?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: number } | { channelIds?: any[], channelId?: string, fileName?: string, initialComment?: string, threadTs?: string, title?: string } | { customFieldUi?: { customFieldValues: Array<{ id?: string, value?: string, alt?: string }> }, email?: string, first_name?: string, last_name?: string, status?: { set_status: Array<{ status_emoji?: string, status_expiration?: string, status_text?: string }> }, user?: string } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean };
+    readonly options?: { includeNumMembers?: boolean } | { channelId?: string, returnIm?: boolean, users?: unknown[] } | { searchChannel?: unknown[] } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { fileComment?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: number } | { channelIds?: unknown[], channelId?: string, fileName?: string, initialComment?: string, threadTs?: string, title?: string } | { customFieldUi?: { customFieldValues: Array<{ id?: string, value?: string, alt?: string }> }, email?: string, first_name?: string, last_name?: string, status?: { set_status: Array<{ status_emoji?: string, status_expiration?: string, status_text?: string }> }, user?: string } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -124,7 +124,7 @@ export interface SlackV2NodeParameters {
 }, ephemeral?: boolean } } | boolean, sendAsUser?: string } | { includeLinkToWorkflow?: boolean };
 
     /** Default: {} */
-    readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: any[], description?: string, handle?: string, include_count?: boolean, name?: string };
+    readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: unknown[], description?: string, handle?: string, include_count?: boolean, name?: string };
 
     /** The text to search for within messages */
     readonly query?: string;
@@ -177,7 +177,7 @@ export interface SlackV2NodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Default: {} */
-    readonly Options?: { channelIds?: any[], description?: string, handle?: string, include_count?: boolean };
+    readonly Options?: { channelIds?: unknown[], description?: string, handle?: string, include_count?: boolean };
 
     /** The encoded ID of the User Group to update */
     readonly userGroupId?: string;

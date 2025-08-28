@@ -9,7 +9,7 @@ export const name = "auth0ManagementApi" as const;
  */
 export interface Auth0ManagementApiCredentials {
     /** Type options: {"expirable":true,"password":true} */
-    readonly "sessionToken"?: any;
+    readonly "sessionToken"?: unknown;
 
     /** Default: "your-domain.eu.auth0.com" */
     readonly "domain": string;

@@ -9,21 +9,21 @@ export const name = "xeroOAuth2Api" as const;
  */
 export interface XeroOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://login.xero.com/identity/connect/authorize" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "https://identity.xero.com/connect/token" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "offline_access accounting.transactions accounting.settings accounting.contacts" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "xeroOAuth2Api";
 }

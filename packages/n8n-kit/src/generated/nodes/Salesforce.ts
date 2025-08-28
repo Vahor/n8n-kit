@@ -56,7 +56,7 @@ export interface SalesforceNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { conditionsUi?: { conditionValues: Array<{ field?: string, operation?: "<" | "<=" | "equal" | ">" | ">=", value?: string }> }, fields?: string } | { status?: string } | { body?: string, isPrivate?: boolean, owner?: string } | { conditionsUi?: { conditionValues: Array<{ field?: string, operation?: "<" | "<=" | "equal" | ">" | ">=", value?: string }> }, fields?: any[] } | { fields?: string, conditionsUi?: { conditionValues: Array<{ field?: string, operation?: "<" | "<=" | "equal" | ">" | ">=", value?: string }> } } | { body?: string, isPrivate?: boolean, ownerId?: string } | { commentBody?: string, isPublished?: boolean };
+    readonly options?: { conditionsUi?: { conditionValues: Array<{ field?: string, operation?: "<" | "<=" | "equal" | ">" | ">=", value?: string }> }, fields?: string } | { status?: string } | { body?: string, isPrivate?: boolean, owner?: string } | { conditionsUi?: { conditionValues: Array<{ field?: string, operation?: "<" | "<=" | "equal" | ">" | ">=", value?: string }> }, fields?: unknown[] } | { fields?: string, conditionsUi?: { conditionValues: Array<{ field?: string, operation?: "<" | "<=" | "equal" | ">" | ">=", value?: string }> } } | { body?: string, isPrivate?: boolean, ownerId?: string } | { commentBody?: string, isPublished?: boolean };
 
     /**
      * ID of the campaign that needs to be fetched. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.

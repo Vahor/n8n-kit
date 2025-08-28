@@ -37,7 +37,7 @@ export interface HelpScoutNodeParameters {
     readonly resolveData?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { assignTo?: number, autoReply?: boolean, closedAt?: string, createdAt?: string, customerEmail?: string, customerId?: number, imported?: boolean, tags?: any[], user?: number } | { age?: number, firstName?: string, gender?: "female" | "male" | "unknown", jobTitle?: string, lastName?: string, location?: string, background?: string, organization?: string, photoUrl?: string } | { createdAt?: string, customerEmail?: string, customerId?: number, draft?: boolean, imported?: boolean };
+    readonly additionalFields?: { assignTo?: number, autoReply?: boolean, closedAt?: string, createdAt?: string, customerEmail?: string, customerId?: number, imported?: boolean, tags?: unknown[], user?: number } | { age?: number, firstName?: string, gender?: "female" | "male" | "unknown", jobTitle?: string, lastName?: string, location?: string, background?: string, organization?: string, photoUrl?: string } | { createdAt?: string, customerEmail?: string, customerId?: number, draft?: boolean, imported?: boolean };
 
     /**
      * Default: {}
@@ -58,7 +58,7 @@ export interface HelpScoutNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { assignTo?: number, embed?: "threads", folder?: string, mailbox?: string, modifiedSince?: string, number?: number, query?: string, sortField?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", sortOrder?: "asc" | "desc", status?: "active" | "all" | "closed" | "open" | "pending" | "spam", tags?: any[] } | { firstName?: string, lastName?: string, mailbox?: string, modifiedSince?: string, sortField?: "score" | "firstName" | "lastName" | "modifiedAt", sortOrder?: "asc" | "desc", query?: string };
+    readonly options?: { assignTo?: number, embed?: "threads", folder?: string, mailbox?: string, modifiedSince?: string, number?: number, query?: string, sortField?: "createdAt" | "customerEmail" | "customerName" | "mailboxid" | "modifiedAt" | "number" | "score" | "status" | "subject", sortOrder?: "asc" | "desc", status?: "active" | "all" | "closed" | "open" | "pending" | "spam", tags?: unknown[] } | { firstName?: string, lastName?: string, mailbox?: string, modifiedSince?: string, sortField?: "score" | "firstName" | "lastName" | "modifiedAt", sortOrder?: "asc" | "desc", query?: string };
 
     /** Default: {} */
     readonly addressUi?: { addressValue: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postalCode?: string } };

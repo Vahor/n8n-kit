@@ -9,7 +9,7 @@ export const name = "googleDocsOAuth2Api" as const;
  */
 export interface GoogleDocsOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/documents https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleDocsOAuth2Api";
 }

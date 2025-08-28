@@ -12,7 +12,7 @@ export interface IfV2NodeParameters {
      * Default: {}
      * Type options: {"filter":{"caseSensitive":"={{!$parameter.options.ignoreCase}}","typeValidation":"={{ ($nodeVersion < 2.1 ? $parameter.options.looseTypeValidation :  $parameter.looseTypeValidation) ? \"loose\" : \"strict\" }}","version":"={{ $nodeVersion >= 2.2 ? 2 : 1 }}"}}
      */
-    readonly conditions?: any;
+    readonly conditions?: unknown;
 
     /** If the type of an expression doesn't match the type of the comparison, n8n will try to cast the expression to the required type. E.g. for booleans <code>"false"</code> or <code>0</code> will be cast to <code>false</code> */
     readonly looseTypeValidation?: boolean;

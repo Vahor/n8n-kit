@@ -132,6 +132,6 @@ export interface DiscordV2NodeParameters {
      * Default: []
      * Type options: {"loadOptionsMethod":"getRoles","loadOptionsDependsOn":["userId.value","guildId.value","operation"]}
      */
-    readonly role?: any[];
+    readonly role?: unknown[];
 
 }

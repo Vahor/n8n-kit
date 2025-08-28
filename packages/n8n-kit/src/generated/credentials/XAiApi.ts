@@ -12,7 +12,7 @@ export interface XAiApiCredentials {
     readonly "apiKey": string;
 
     /** Default: "https://api.x.ai/v1" */
-    readonly "url"?: any;
+    readonly "url"?: unknown;
 
     readonly __name: "xAiApi";
 }

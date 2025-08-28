@@ -9,24 +9,24 @@ export const name = "salesforceOAuth2Api" as const;
  */
 export interface SalesforceOAuth2ApiCredentials {
     /** Default: "pkce" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";
 
     /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/authorize\" : \"https://login.salesforce.com/services/oauth2/authorize\" }}" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/token\" : \"https://login.salesforce.com/services/oauth2/token\" }}" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "full refresh_token" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "header" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
     readonly __name: "salesforceOAuth2Api";
 }

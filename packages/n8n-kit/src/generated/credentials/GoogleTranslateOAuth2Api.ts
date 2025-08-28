@@ -9,7 +9,7 @@ export const name = "googleTranslateOAuth2Api" as const;
  */
 export interface GoogleTranslateOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/cloud-translation" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleTranslateOAuth2Api";
 }

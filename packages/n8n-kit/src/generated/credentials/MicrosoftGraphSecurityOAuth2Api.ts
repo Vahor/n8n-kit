@@ -9,7 +9,7 @@ export const name = "microsoftGraphSecurityOAuth2Api" as const;
  */
 export interface MicrosoftGraphSecurityOAuth2ApiCredentials {
     /** Default: "SecurityEvents.ReadWrite.All" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "microsoftGraphSecurityOAuth2Api";
 }

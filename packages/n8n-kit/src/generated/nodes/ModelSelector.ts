@@ -19,6 +19,6 @@ export interface ModelSelectorNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly rules?: { rule: Array<{ modelIndex: string, conditions?: any }> };
+    readonly rules?: { rule: Array<{ modelIndex: string, conditions?: unknown }> };
 
 }

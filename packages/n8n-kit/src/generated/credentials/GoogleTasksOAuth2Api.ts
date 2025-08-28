@@ -9,7 +9,7 @@ export const name = "googleTasksOAuth2Api" as const;
  */
 export interface GoogleTasksOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/tasks" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "googleTasksOAuth2Api";
 }

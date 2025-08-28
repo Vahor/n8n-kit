@@ -9,7 +9,7 @@ export const name = "gSuiteAdminOAuth2Api" as const;
  */
 export interface GSuiteAdminOAuth2ApiCredentials {
     /** Default: "https://www.googleapis.com/auth/admin.directory.group https://www.googleapis.com/auth/admin.directory.user https://www.googleapis.com/auth/admin.directory.domain.readonly https://www.googleapis.com/auth/admin.directory.userschema.readonly https://www.googleapis.com/auth/admin.directory.device.chromeos https://www.googleapis.com/auth/admin.directory.orgunit.readonly" */
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "gSuiteAdminOAuth2Api";
 }

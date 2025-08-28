@@ -77,6 +77,6 @@ export interface LdapNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { attributes?: any[], pageSize?: number, scope?: "base" | "one" | "sub" };
+    readonly options?: { attributes?: unknown[], pageSize?: number, scope?: "base" | "one" | "sub" };
 
 }

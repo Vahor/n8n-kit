@@ -9,21 +9,21 @@ export const name = "beeminderOAuth2Api" as const;
  */
 export interface BeeminderOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
-    readonly "grantType"?: any;
+    readonly "grantType"?: unknown;
 
     /** Default: "https://www.beeminder.com/apps/authorize" */
-    readonly "authUrl": any;
+    readonly "authUrl": unknown;
 
     /** Default: "https://www.beeminder.com/apps/authorize" */
-    readonly "accessTokenUrl": any;
+    readonly "accessTokenUrl": unknown;
 
     /** Default: "response_type=token" */
-    readonly "authQueryParameters"?: any;
+    readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */
-    readonly "authentication"?: any;
+    readonly "authentication"?: unknown;
 
-    readonly "scope"?: any;
+    readonly "scope"?: unknown;
 
     readonly __name: "beeminderOAuth2Api";
 }

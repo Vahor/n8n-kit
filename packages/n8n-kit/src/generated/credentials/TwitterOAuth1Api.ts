@@ -9,16 +9,16 @@ export const name = "twitterOAuth1Api" as const;
  */
 export interface TwitterOAuth1ApiCredentials {
     /** Default: "https://api.twitter.com/oauth/request_token" */
-    readonly "requestTokenUrl"?: any;
+    readonly "requestTokenUrl"?: unknown;
 
     /** Default: "https://api.twitter.com/oauth/authorize" */
-    readonly "authUrl"?: any;
+    readonly "authUrl"?: unknown;
 
     /** Default: "https://api.twitter.com/oauth/access_token" */
-    readonly "accessTokenUrl"?: any;
+    readonly "accessTokenUrl"?: unknown;
 
     /** Default: "HMAC-SHA1" */
-    readonly "signatureMethod"?: any;
+    readonly "signatureMethod"?: unknown;
 
     readonly "apiPermissions"?: string;
 
