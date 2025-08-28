@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.3.0
+
+### Minor Changes
+
+- [#55](https://github.com/Vahor/n8n-kit/pull/55) [`d21e800`](https://github.com/Vahor/n8n-kit/commit/d21e800eb8c504bdc9c04f54b20c487d42f09c0c) Thanks [@Vahor](https://github.com/Vahor)! - Add `NodejsFunction` class to bundle js code in a `Code` node
+
 ## 0.2.2
 
 ### Patch Changes
