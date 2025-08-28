@@ -9,14 +9,14 @@ import {
 describe("Workflow", () => {
 	describe("can build", () => {
 		describe("with a single chain", () => {
-			test("can build a workflow", () => {
+			test("can build a workflow", async () => {
 				const A = new NoOp("a");
 				const B = new NoOp("b");
 
 				const workflow = new Workflow("test", {
 					definition: Chain.start(A).next(B),
 				});
-				const result = workflow.build();
+				const result = await workflow.build();
 				expect(result.nodes.map((n) => n.id)).toEqual(["a", "b"]);
 				expect(result.connections.a!.main![0]!.map((c) => c.node)).toEqual([
 					"b",
@@ -25,7 +25,7 @@ describe("Workflow", () => {
 			});
 		});
 
-		test("can build a workflow with multiple that inter-connect", () => {
+		test("can build a workflow with multiple that inter-connect", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new NoOp("c");
@@ -34,7 +34,7 @@ describe("Workflow", () => {
 			const workflow = new Workflow("test", {
 				definition: [Chain.start(A).next(B), Chain.start(C).multiple([A, D])],
 			});
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id).toSorted()).toEqual([
 				"a",
 				"b",
@@ -50,7 +50,7 @@ describe("Workflow", () => {
 			expect(result.connections).not.toHaveProperty("d");
 		});
 
-		test("can build a workflow with multiple chains", () => {
+		test("can build a workflow with multiple chains", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new NoOp("c");
@@ -59,7 +59,7 @@ describe("Workflow", () => {
 			const workflow = new Workflow("test", {
 				definition: [Chain.start(A).next(B), Chain.start(C).next(D).next(B)],
 			});
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id).toSorted()).toEqual([
 				"a",
 				"b",
@@ -72,7 +72,7 @@ describe("Workflow", () => {
 			expect(result.connections.d!.main![0]!.map((c) => c.node)).toEqual(["b"]);
 		});
 
-		test.only("can reverse chain elements", () => {
+		test.only("can reverse chain elements", async () => {
 			const chain = Chain.start(
 				new VectorStorePineconeInsert("upload-to-pinecone", {
 					label: "Pinecone Vector Store",
@@ -102,7 +102,7 @@ describe("Workflow", () => {
 			const workflow = new Workflow("test", {
 				definition: chain,
 			});
-			const result = workflow.build();
+			const result = await workflow.build();
 			expect(result.nodes.map((n) => n.id)).toEqual([
 				"upload-to-pinecone",
 				"embeddings-google-gemini",

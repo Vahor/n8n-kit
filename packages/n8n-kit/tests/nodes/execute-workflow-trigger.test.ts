@@ -4,7 +4,7 @@ import { Chain, Workflow } from "../../src";
 import { ExecuteWorkflowTrigger, NoOp } from "../../src/nodes";
 
 describe("ExecuteWorkflowTrigger", () => {
-	test("it works", () => {
+	test("it works", async () => {
 		const workflow = new Workflow("test", {
 			definition: Chain.start(new NoOp("test")),
 			inputSchema: type({
@@ -19,7 +19,7 @@ describe("ExecuteWorkflowTrigger", () => {
 		});
 
 		const executeNode = new ExecuteWorkflowTrigger(workflow, "test", {});
-		const parameters = executeNode.getParameters();
+		const parameters = await executeNode.getParameters();
 		expect(parameters.workflowInputs).toEqual({
 			values: [
 				{

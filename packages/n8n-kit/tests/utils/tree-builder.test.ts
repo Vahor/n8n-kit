@@ -6,26 +6,26 @@ import { TreeBuilder } from "../../src/utils/tree-builder";
 
 describe("TreeBuilder", () => {
 	describe("buildTrees", () => {
-		test("handles empty workflow", () => {
+		test("handles empty workflow", async () => {
 			const workflow = new Workflow("test", {
 				name: "Empty Workflow",
 				definition: [],
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
 			expect(trees).toEqual([]);
 		});
 
-		test("builds single node tree", () => {
+		test("builds single node tree", async () => {
 			const workflow = new Workflow("test", {
 				name: "Single Node",
 				definition: new ManualTrigger("trigger"),
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
@@ -35,7 +35,7 @@ describe("TreeBuilder", () => {
 			expect(trees[0]!.root.connectionsTo).toHaveLength(0);
 		});
 
-		test("builds linear chain", () => {
+		test("builds linear chain", async () => {
 			const workflow = new Workflow("test", {
 				name: "Linear Chain",
 				definition: Chain.start(new ManualTrigger("trigger"))
@@ -43,7 +43,7 @@ describe("TreeBuilder", () => {
 					.next(new NoOp("end")),
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
@@ -56,7 +56,7 @@ describe("TreeBuilder", () => {
 			expect(root.children[0]!.children[0]!.node.name).toBe("end");
 		});
 
-		test("builds multiple parallel chains", () => {
+		test("builds multiple parallel chains", async () => {
 			const workflow = new Workflow("test", {
 				name: "Multiple Chains",
 				definition: [
@@ -65,7 +65,7 @@ describe("TreeBuilder", () => {
 				],
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
@@ -78,7 +78,7 @@ describe("TreeBuilder", () => {
 			expect(trees[1]!.root.children[0]!.node.name).toBe("end2");
 		});
 
-		test("handles branching with multiple", () => {
+		test("handles branching with multiple", async () => {
 			const workflow = new Workflow("test", {
 				name: "Multiple",
 				definition: Chain.start(new ManualTrigger("trigger")).multiple([
@@ -87,7 +87,7 @@ describe("TreeBuilder", () => {
 				]),
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
@@ -99,7 +99,7 @@ describe("TreeBuilder", () => {
 			expect(childNames).toEqual(["branch1", "branch2"]);
 		});
 
-		test("handles branching with connect", () => {
+		test("handles branching with connect", async () => {
 			const trigger = new ManualTrigger("trigger");
 			const noop1 = new NoOp("noop1");
 			const noop2 = new NoOp("noop2");
@@ -114,7 +114,7 @@ describe("TreeBuilder", () => {
 					.connect(["noop1", "noop2"], merge),
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
@@ -126,7 +126,7 @@ describe("TreeBuilder", () => {
 			expect(root.children[1]!.node.name).toBe("noop2");
 		});
 
-		test("handle cross chain connections", () => {
+		test("handle cross chain connections", async () => {
 			const trigger = new ManualTrigger("trigger");
 			const trigger2 = new ManualTrigger("trigger2");
 			const noop1 = new NoOp("noop1");
@@ -139,7 +139,7 @@ describe("TreeBuilder", () => {
 					Chain.start(trigger2).next(new Placeholder("noop1")),
 				],
 			});
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 
@@ -159,7 +159,7 @@ describe("TreeBuilder", () => {
 			expect(tree1.root.crossTreeConnections[0]!.name).toBe("noop1");
 		});
 
-		test("support connection options", () => {
+		test("support connection options", async () => {
 			const trigger = new ManualTrigger("trigger");
 			const noop1 = new NoOp("noop1");
 			const noop2 = new NoOp("noop2");
@@ -176,7 +176,7 @@ describe("TreeBuilder", () => {
 				],
 			});
 
-			const workflowDefinition = workflow.build();
+			const workflowDefinition = await workflow.build();
 			const builder = new TreeBuilder(workflowDefinition);
 			const trees = builder.buildTrees();
 

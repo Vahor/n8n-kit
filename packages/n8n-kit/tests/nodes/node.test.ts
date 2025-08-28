@@ -4,7 +4,7 @@ import { Code } from "../../src/nodes";
 import { NoOp } from "../../src/nodes/generated";
 
 describe("clone", () => {
-	test("all properties are cloned", () => {
+	test("all properties are cloned", async () => {
 		const node = new Code("id", {
 			label: "Label",
 			position: [0, 0],
@@ -17,7 +17,7 @@ describe("clone", () => {
 		expect(cloned.id).toEqual("id2");
 		expect(cloned.label).toEqual("Label");
 		expect(cloned.position).toEqual([0, 0]);
-		expect(cloned.getParameters()).toEqual({
+		expect(await cloned.getParameters()).toEqual({
 			language: "javaScript",
 			jsCode: "console.log('hello')",
 		});
