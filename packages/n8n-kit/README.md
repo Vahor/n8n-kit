@@ -14,6 +14,7 @@ npm install @vahor/n8n-kit
 - **Type Safety**: Full TypeScript support with intelligent autocomplete
 - **Expression Builder**: Type-safe n8n expressions with IDE support
 - **Chain API**: Fluent API for building workflow chains
+- **Bundle JS**: Can bundle dependencies inside your `Code` nodes
 
 ## Exports
 
@@ -25,6 +26,7 @@ Main export containing core functionality:
 - `Chain` - Workflow chain builder
 - `Workflow` - Workflow definition
 - `Credentials` - Credential management
+- `NodejsFunction` - Bundle TypeScript/JavaScript code for Code nodes
 
 ### `@vahor/n8n-kit/nodes`
 Manually implemented nodes with full type definitions:
@@ -252,6 +254,115 @@ expr`Hello ${$("json.name")}, you have ${$("json.count")} messages.`
 
 Note: You can still use string values directly instead of using the builder.
 
+## Code Bundling
+
+The `NodejsFunction` class allows you to bundle dependencies inside your `Code` nodes, enabling you to use npm packages and write complex logic in separate files without having to install them on your n8n instance.
+
+### Basic Usage
+
+```typescript
+import { NodejsFunction } from "@vahor/n8n-kit";
+import { Code } from "@vahor/n8n-kit/nodes";
+
+new Code("Bundle JS", {
+	parameters: {
+		language: "javaScript",
+		jsCode: NodejsFunction.from({
+			projectRoot: path.join(__dirname, "my-function"),
+			input: {
+				action: $("json.action"),
+				user_id: $("json.user_id"),
+			},
+		}),
+	},
+})
+```
+
+### Project Structure
+
+Your bundled function should be in its own directory with a `package.json`:
+
+```
+my-function/
+├── package.json
+├── index.ts       # Default entrypoint
+└── package-lock.json
+```
+
+**package.json example:**
+```json
+{
+	"name": "my-function",
+	"dependencies": {
+		"zod": "^4"
+	}
+}
+```
+
+**index.ts example:**
+```typescript
+import * as z from "zod/mini";
+
+type Input = {
+	action: string;
+	user_id: string;
+};
+
+const handler = (input: Input) => {
+	const schema = z.object({
+		action: z.enum(["create", "update", "delete"]),
+		user_id: z.string().min(24),
+	});
+	
+	return schema.safeParse(input);
+};
+```
+
+### Configuration Options
+
+```typescript
+NodejsFunction.from({
+	projectRoot: "/path/to/function",    // Required: Directory with package.json
+	entrypoint: "index.ts",              // Optional: Default is "index.ts" or "index.js"
+	mainFunctionName: "handler",         // Optional: Default is "handler"
+	input: {                             // Optional: Parameters to pass to the function
+		param1: "value",
+		param2: $("json.field"),         // Can use expression builder
+	},
+	bundlerOptions: {                    // Optional: tsdown bundler options
+		// Advanced bundling configuration
+	},
+})
+```
+
+
+### Input Parameter
+
+Passing `input` to the `NodejsFunction` constructor will automatically pass the input parameters to your function.
+Example:
+```typescript
+NodejsFunction.from({
+	projectRoot: "/path/to/function",
+	input: {
+		param1: "value",
+		param2: $("json.field"),         // Can use expression builder
+	},
+})
+```
+
+will be transformed to:
+```js
+return handler({
+	param1: "value",
+	param2: $json.field 
+});
+```
+
+
+### How It Works
+
+1. **Bundle Time**: Dependencies are installed with `npm ci` and code is bundled using `tsdown`
+2. **Output**: The returned value of your main function becomes the node's output
 
 ## TypeScript Integration
 
