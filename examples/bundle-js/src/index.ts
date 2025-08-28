@@ -37,8 +37,8 @@ const workflow = new Workflow("my-workflow", {
 							{
 								name: "some_object",
 								type: type({
-									some_field: type("string"),
-									other_field: type("number"),
+									some_field: "string",
+									other_field: "number",
 								}),
 								value: {
 									some_field: "some-field",
