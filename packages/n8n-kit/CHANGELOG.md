@@ -1,5 +1,43 @@
 # @vahor/n8n-kit
 
+## 0.2.2
+
+### Patch Changes
+
+- [#52](https://github.com/Vahor/n8n-kit/pull/52) [`cc635e4`](https://github.com/Vahor/n8n-kit/commit/cc635e4f2c066fabee253c15c19c82e86b256a2f) Thanks [@Vahor](https://github.com/Vahor)! - Adds new typed methods in the ExpressionBuilder `# @vahor/n8n-kit.
+
+  Array methods:
+
+  - `find`
+  - `filter`
+  - `join`
+  - `first`
+  - `last`
+
+  String methods:
+
+  - `toLowerCase`
+  - `toUpperCase`
+  - `trim`
+  - `split`
+
+  These methods are simply typed versions of the equivalent `.call("methodName")` calls.
+
+  For example.
+
+  ```ts
+  // context is { data: Array<{ element: { name: string } }> }
+  $("data").first((d) => d.element.name.toLowerCase().startsWith("a"));
+  ```
+
+  will be transformed to
+
+  ```txt
+  {{ $('data').first((d) => d.element.name.toLowerCase().startsWith("a")) }}
+  ```
+
+  Note that here `d` is correctly typed as `{ element: { name: string } }`.
+
 ## 0.2.1
 
 ### Patch Changes
