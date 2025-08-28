@@ -53,7 +53,7 @@ export class NodejsFunction {
 
 	private findEntrypoint() {
 		if (this.props.entrypoint) {
-			const fullPath = `${this.props.projectRoot}/${this.props.entrypoint}`;
+			const fullPath = path.join(this.props.projectRoot, this.props.entrypoint);
 			if (!fs.existsSync(fullPath)) {
 				throw new Error(
 					`Entrypoint file ${this.props.entrypoint} does not exist`,
@@ -64,7 +64,7 @@ export class NodejsFunction {
 
 		const possibleEntrypoints = ["index.ts", "index.js"];
 		for (const entrypoint of possibleEntrypoints) {
-			const fullPath = `${this.props.projectRoot}/${entrypoint}`;
+			const fullPath = path.join(this.props.projectRoot, entrypoint);
 			logger.log(`Checking if ${fullPath} exists`);
 			if (fs.existsSync(fullPath)) {
 				return entrypoint;
@@ -89,7 +89,7 @@ export class NodejsFunction {
 
 	public getBundledFile(outDir: string) {
 		const entrypoint = this.entrypoint.replace(".ts", ".js");
-		return `${outDir}/${entrypoint}`;
+		return path.join(outDir, entrypoint);
 	}
 
 	/**
@@ -99,17 +99,18 @@ export class NodejsFunction {
 	public async bundle() {
 		await this.installDeps();
 		logger.log(`Bundling ${this.name}...`);
-		const outDir = `${DEFAULT_CONFIG.out}/.bundle-js/${this.id}`;
+		const outDir = path.join(DEFAULT_CONFIG.out, ".bundle-js", this.id);
 		await build({
-			...this.props.bundlerOptions,
+			minify: false,
 			target: ["es2020"],
+			...this.props.bundlerOptions,
 			platform: "node",
 			entry: [this.entrypoint],
 			cwd: this.props.projectRoot,
 			clean: true,
 			unbundle: false,
 			dts: false,
-			outDir: `${DEFAULT_CONFIG.out}/.bundle-js/${this.id}`,
+			outDir,
 			format: ["cjs"],
 			footer: {
 				js: `return ${this.props.mainFunctionName ?? "handler"}(${this.prepareHandleParameters()});`,
