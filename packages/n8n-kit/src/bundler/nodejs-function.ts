@@ -1,5 +1,6 @@
 import * as fs from "node:fs";
 import path from "node:path";
+import chalk from "chalk";
 import spawn from "nano-spawn";
 import { build, type Options } from "tsdown";
 import { DEFAULT_CONFIG } from "../constants";
@@ -34,6 +35,12 @@ interface NodejsFunctionProps {
 	 * Parameters to call the main function with
 	 */
 	input?: Record<string, unknown>;
+
+	/**
+	 * Installation command
+	 * @default ["npm", ["ci"]]
+	 */
+	installCommand?: [string, string[]];
 }
 
 export class NodejsFunction {
@@ -41,10 +48,13 @@ export class NodejsFunction {
 	private readonly id: string;
 	private readonly name: string;
 
+	private readonly installCommand: [string, string[]];
+
 	private constructor(private readonly props: NodejsFunctionProps) {
 		this.entrypoint = this.findEntrypoint();
 		this.id = shortHash(`${this.props.projectRoot}/${this.entrypoint}`, 20);
 		this.name = `${path.basename(this.props.projectRoot)}/${this.entrypoint}`;
+		this.installCommand = this.props.installCommand ?? ["npm", ["ci"]];
 	}
 
 	public static from(props: NodejsFunctionProps) {
@@ -136,7 +146,6 @@ export class NodejsFunction {
 				formattedParameters[key] = value;
 			}
 		}
-		// TODO: we'll have to refactor this as we don't want quotes around expressions
 		let data = JSON.stringify(formattedParameters, null, 2);
 		// remove quotes if the value starts with a ={{ and ends with }}
 		data = data.replace(/"=\{\{\s*(.*?)\s*\}\}"/g, "$1");
@@ -144,8 +153,10 @@ export class NodejsFunction {
 	}
 
 	private async installDeps() {
-		logger.log(`Installing dependencies for ${this.name}...`);
-		await spawn("npm", ["ci"], {
+		logger.log(
+			`Installing dependencies for ${this.name}... ${chalk.gray(`(${this.installCommand[0]} ${this.installCommand[1].join(" ")})`)}`,
+		);
+		await spawn(this.installCommand[0], this.installCommand[1], {
 			cwd: this.props.projectRoot,
 			stdio: "inherit",
 			timeout: 15 * 1000,

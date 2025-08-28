@@ -325,6 +325,7 @@ NodejsFunction.from({
 	projectRoot: "/path/to/function",    // Required: Directory with package.json
 	entrypoint: "index.ts",              // Optional: Default is "index.ts" or "index.js"
 	mainFunctionName: "handler",         // Optional: Default is "handler"
+	installCommand: ["npm", ["ci"]],     // Optional: Install command to run before bundling (default: ["npm", ["ci"]])
 	input: {                             // Optional: Parameters to pass to the function
 		param1: "value",
 		param2: $("json.field"),         // Can use expression builder
