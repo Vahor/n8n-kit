@@ -64,7 +64,7 @@ describe("ExpressionBuilder", () => {
 		});
 	});
 
-	describe("join", () => {
+	describe("fin", () => {
 		test("on an array", () => {
 			const builder = $("data.output")
 				.find((o) => o.type === "message")

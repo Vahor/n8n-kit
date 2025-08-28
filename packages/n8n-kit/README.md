@@ -168,7 +168,8 @@ new NodeType("unique-id", {
 
 ## Expression Builder
 
-> ![Warning] This feature is experimental and may change in the future.
+> [!WARNING]
+> This feature is experimental and may change in the future.\
 > As a lot of n8n nodes are auto-generated they don't have output types.
 
 The ExpressionBuilder provides type-safe n8n expressions with IDE support:
