@@ -210,6 +210,23 @@ $("json.text")
 // Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
 ```
 
+### Typed Methods
+
+The expression builder includes typed methods for common operations:
+
+**Array methods**: `find`, `filter`, `join`, `first`, `last`\
+**String methods**: `toLowerCase`, `toUpperCase`, `trim`, `split`
+
+```typescript
+// Example with typed array and string methods
+$("data").first(d => d.element.name.toLowerCase().startsWith("a")).toExpression()
+// Results in: "={{ $('data').first((d) => d.element.name.toLowerCase().startsWith("a")) }}"
+```
+
+These typed methods provide full IDE support and type safety, equivalent to using `.call()` with the same method names.
+
+Note: Using an array method on a non-array will result in a type error (same with string methods...).
+
 ### Property Navigation
 
 ```typescript
