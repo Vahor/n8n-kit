@@ -1,4 +1,9 @@
 
+//#region src/data/some-data.json
+var hello = "world";
+var some_data_default = { hello };
+
+//#endregion
 //#region node_modules/zod/v4/core/core.js
 /** A special constant with type `never` */
 const NEVER = Object.freeze({ status: "aborted" });
@@ -687,11 +692,6 @@ const schema = object({
 	]),
 	user_id: string().check(_length(24))
 });
-
-//#endregion
-//#region src/data/some-data.json
-var hello = "world";
-var some_data_default = { hello };
 
 //#endregion
 //#region src/index.ts

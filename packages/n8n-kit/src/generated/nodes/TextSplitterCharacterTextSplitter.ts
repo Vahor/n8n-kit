@@ -10,9 +10,13 @@ export const outputs = {"ai_textSplitter":"ai_textSplitter"} as const;
 export interface TextSplitterCharacterTextSplitterNodeParameters {
     readonly separator?: string;
 
-    /** Default: 1000 */
+    /**
+     * Maximum number of characters per chunk
+     * Default: 1000
+     */
     readonly chunkSize?: number;
 
+    /** Number of characters shared between consecutive chunks to preserve context */
     readonly chunkOverlap?: number;
 
 }

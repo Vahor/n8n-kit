@@ -19,13 +19,13 @@ done
 # Build each example
 echo "Building examples:"
 for example_dir in $EXAMPLE_DIRS; do
-    example_name=$(basename "$example_dir")
-    echo " - Building $example_name..."
+	example_name=$(basename "$example_dir")
+	echo " - Building $example_name..."
 
-    cd "$example_dir"
+	cd "$example_dir"
 
-	bunx tsc --noEmit
 	bun ../../packages/n8n-cli/dist/index.js build
+	bunx tsc --noEmit
 
 	cd "$ROOT_DIR"
 done
