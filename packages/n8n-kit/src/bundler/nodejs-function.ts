@@ -101,6 +101,7 @@ export class NodejsFunction {
 		logger.log(`Bundling ${this.name}...`);
 		const outDir = `${DEFAULT_CONFIG.out}/.bundle-js/${this.id}`;
 		build({
+			...this.props.bundlerOptions,
 			target: ["es2020"],
 			platform: "node",
 			entry: [this.entrypoint],
