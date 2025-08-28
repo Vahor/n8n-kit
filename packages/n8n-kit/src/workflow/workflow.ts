@@ -181,7 +181,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		return {
 			id: this.hashId,
 			name: this.getName(),
-			nodes: await Promise.all(layoutNodes.map((node) => node.toNode())),
+			nodes: await Promise.all(layoutNodes.flatMap((node) => node.toNode())),
 			connections: connections,
 			settings: this.props.settings ?? {},
 			active: this.props.active ?? false,
