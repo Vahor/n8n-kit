@@ -16,6 +16,9 @@ type Context = {
 		};
 		"something with spaces": {
 			field: "value";
+			again: Array<{
+				and_again: string;
+			}>;
 		};
 	};
 	json: {
@@ -23,73 +26,20 @@ type Context = {
 			"d.e.f": number;
 		};
 	};
+	data: {
+		output: Array<{
+			type: string;
+			content: Array<{
+				type: string;
+				text: string;
+			}>;
+		}>;
+	};
 };
 
 const $ = $$<Context>();
 
 describe("ExpressionBuilder", () => {
-	describe("getPath", () => {
-		test("with dot notation one level", () => {
-			const builder = $("a.hello");
-			expect(builder.getPath()).toEqual("hello");
-		});
-
-		test("with dot notation two levels", () => {
-			const builder = $("Webhook.body.fields.hello");
-			expect(builder.getPath()).toEqual("body.fields.hello");
-		});
-
-		test("with bracket notation one level", () => {
-			const builder = $("json['a.b.c']");
-			expect(builder.getPath()).toEqual("['a.b.c']");
-		});
-
-		test("with bracket notation two levels", () => {
-			const builder = $("json['a.b.c']['d.e.f']");
-			expect(builder.getPath()).toEqual("['a.b.c']['d.e.f']");
-		});
-
-		test("with space 1st level", () => {
-			const builder = $("['Http Request']['something with spaces'].field");
-			expect(builder.getPath()).toEqual("['something with spaces'].field");
-		});
-		test("with space 2nd levels", () => {
-			const builder = $("['Http Request']['something.with.dots']['a number?']");
-			expect(builder.getPath()).toEqual("['something.with.dots']['a number?']");
-		});
-	});
-
-	describe("getNodeId", () => {
-		test("with dot notation one level", () => {
-			const builder = $("a.hello");
-			expect(builder.getNodeId()).toEqual("a");
-		});
-
-		test("with dot notation two levels", () => {
-			const builder = $("Webhook.body.fields.hello");
-			expect(builder.getNodeId()).toEqual("Webhook");
-		});
-
-		test("with bracket notation one level", () => {
-			const builder = $("json['a.b.c']");
-			expect(builder.getNodeId()).toEqual("json");
-		});
-
-		test("with bracket notation two levels", () => {
-			const builder = $("json['a.b.c']['d.e.f']");
-			expect(builder.getNodeId()).toEqual("json");
-		});
-
-		test("with space 1st level", () => {
-			const builder = $("['Http Request']['something with spaces'].field");
-			expect(builder.getNodeId()).toEqual("Http Request");
-		});
-		test("with space 2nd levels", () => {
-			const builder = $("['Http Request']['something.with.dots']['a number?']");
-			expect(builder.getNodeId()).toEqual("Http Request");
-		});
-	});
-
 	describe("call", () => {
 		test("call arbitrary method on json", () => {
 			const builder = $("json['a.b.c']").call("keys");
@@ -114,6 +64,85 @@ describe("ExpressionBuilder", () => {
 		});
 	});
 
+	describe("fin", () => {
+		test("on an array", () => {
+			const builder = $("data.output")
+				.find((o) => o.type === "message")
+				.prop(".content[0].text");
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('data').output.find((o) => o.type === "message").content[0].text`,
+			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").find((o) => o.type === "message");
+		});
+	});
+
+	describe("filter", () => {
+		test("on an array", () => {
+			const builder = $("data.output")
+				.filter((o) => o.type === "message")
+				.prop("[0].content")
+				.find((o) => o.text.length > 0);
+
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('data').output.filter((o) => o.type === "message")[0].content.find((o) => o.text.length > 0)`,
+			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").filter((o) => o.type === "message");
+		});
+	});
+
+	describe("first", () => {
+		test("on an array", () => {
+			const builder = $("data.output").first().prop(".content[0].text");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output.first().content[0].text`);
+		});
+		test("on a sub array", () => {
+			const builder = $("data.output[0].content").first().prop(".text");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output[0].content.first().text`);
+		});
+		test("on a sub array in an object with brackets", () => {
+			const builder = $("['Http Request']['something with spaces'].again")
+				.first()
+				.prop(".and_again");
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('Http Request')['something with spaces'].again.first().and_again`,
+			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").first();
+		});
+	});
+
+	describe("split", () => {
+		test("on a string", () => {
+			const builder = $("data.output[0].content[0].text").split(" ");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output[0].content[0].text.split(" ")`);
+		});
+		test("on a string - then join", () => {
+			const builder = $("data.output[0].content[0].text").split(" ").join("-");
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('data').output[0].content[0].text.split(" ").join("-")`,
+			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").toLowerCase();
+		});
+	});
+
 	describe("prop", () => {
 		test("get bracket notation property", () => {
 			const builder = $("json['a.b.c']").prop("['d.e.f']");
@@ -124,6 +153,12 @@ describe("ExpressionBuilder", () => {
 			const builder = $("a").prop(".hello");
 			const format = builder.format();
 			expect(format).toEqual(`$('a').hello`);
+		});
+
+		test("with array root", () => {
+			const builder = $("data.output").prop("[0].content[0].text");
+			const format = builder.format();
+			expect(format).toEqual(`$('data').output[0].content[0].text`);
 		});
 	});
 });
