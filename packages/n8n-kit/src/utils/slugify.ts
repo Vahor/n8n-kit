@@ -30,6 +30,6 @@ export const validateIdentifier = <A extends string>(str: A): A => {
 
 // TODO: add tests to check possible collisions
 export function shortHash(text: string, length = 12) {
-	const hash = crypto.createHash("sha256").update(text).digest("base64");
-	return hash.substring(0, length).replace("/", "-");
+	const hash = crypto.createHash("sha256").update(text).digest("base64url");
+	return hash.substring(0, length);
 }
