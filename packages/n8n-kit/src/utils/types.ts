@@ -58,31 +58,22 @@ type FormatWithPrefix<
 
 type NumberStr = `${number}`;
 
-export type JoinKeys<T, OnlyLeaf = false, Prefix extends string = ""> = {
+export type JoinKeys<T, Prefix extends string = ""> = {
 	[K in keyof T]: T[K] extends Function
 		? `${Prefix}${Extract<K, string>}`
 		: T[K] extends Primitive | Date
 			? FormatWithPrefix<Extract<K, string>, Prefix>
 			: T[K] extends Array<infer U>
 				?
-						| (OnlyLeaf extends true
-								? never
-								: FormatWithPrefix<Extract<K, string>, Prefix>)
+						| FormatWithPrefix<Extract<K, string>, Prefix>
 						| JoinKeys<
 								U,
-								OnlyLeaf,
 								`${FormatWithPrefix<Extract<K, string>, Prefix>}[${NumberStr}]`
 						  >
 				: T[K] extends object
 					?
-							| (OnlyLeaf extends true
-									? never
-									: FormatWithPrefix<Extract<K, string>, Prefix>)
-							| JoinKeys<
-									T[K],
-									OnlyLeaf,
-									FormatWithPrefix<Extract<K, string>, Prefix>
-							  >
+							| FormatWithPrefix<Extract<K, string>, Prefix>
+							| JoinKeys<T[K], FormatWithPrefix<Extract<K, string>, Prefix>>
 					: FormatWithPrefix<Extract<K, string>, Prefix>;
 }[keyof T];
 
@@ -150,15 +141,3 @@ export type ZeroWidthSpace = typeof zeroWidthSpace;
 export type ErrorMessage<message extends string = string> =
 	`${message}${ZeroWidthSpace}`;
 // end
-
-export type ToString<T> = T extends string | number | boolean | undefined | null
-	? `${T}`
-	: T extends Function
-		? "function"
-		: T extends Array<any>
-			? `Array`
-			: T extends object
-				? "object"
-				: T extends any
-					? "any"
-					: "unknown";
