@@ -6,91 +6,53 @@
 			"id": "webhook",
 			"name": "webhook",
 			"type": "n8n-nodes-base.webhook",
-			"position": [60, 180],
+			"position": [60, 60],
 			"typeVersion": 2.1,
 			"parameters": {
-				"parameters": { "httpMethod": "POST", "path": "path-to-webhook" }
+				"httpMethod": "GET",
+				"path": "path-to-webhook"
 			}
 		},
 		{
-			"id": "nasa",
-			"name": "nasa",
-			"type": "n8n-nodes-base.nasa",
-			"position": [260, 180],
-			"typeVersion": 1,
+			"id": "send-to-analytics",
+			"name": "send-to-analytics",
+			"type": "n8n-nodes-base.httpRequest",
+			"position": [260, 60],
+			"typeVersion": 4.2,
 			"parameters": {
-				"resource": "donkiSolarFlare",
-				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" }
+				"method": "POST",
+				"url": "https://httpbin.org/post",
+				"authentication": "genericCredentialType",
+				"genericAuthType": "httpCustomAuth",
+				"specifyBody": "json",
+				"sendBody": true,
+				"jsonBody": "={\n  \"events\": [\n    {\n      \"user_id\": \"{{ $('webhook').item.json.headers['cf-connecting-ip'] }}\",\n      \"event_type\": \"workflow_end\",\n      \"event_properties\": {\n        \"workflow_id\": \"{{ $workflow.id }}\"\n      }\n    }\n  ]\n}"
 			},
-			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } }
-		},
-		{
-			"id": "if",
-			"name": "if",
-			"type": "n8n-nodes-base.if",
-			"position": [460, 180],
-			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [
-						{
-							"operator": {
-								"type": "string",
-								"operation": "contains",
-								"singleValue": false
-							},
-							"leftValue": "={{ $json.classType }}",
-							"rightValue": "C",
-							"id": "my-workflow/if/0"
-						}
-					],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": true,
-						"version": 2,
-						"typeValidation": "strict"
-					}
+			"credentials": {
+				"httpCustomAuth": {
+					"id": "hEQRwqdMuqRSHlXX"
 				}
-			}
-		},
-		{
-			"id": "PostBin(true)",
-			"name": "PostBin(true)",
-			"type": "n8n-nodes-base.postBin",
-			"position": [660, 60],
-			"typeVersion": 1,
-			"parameters": {
-				"resource": "request",
-				"binId": "1741914338605-0907339996192",
-				"binContent": "=There was a solar flare of class {{ $json.classType }}",
-				"operation": "send"
-			}
-		},
-		{
-			"id": "PostBin(false)",
-			"name": "PostBin(false)",
-			"type": "n8n-nodes-base.postBin",
-			"position": [660, 300],
-			"typeVersion": 1,
-			"parameters": {
-				"resource": "request",
-				"binId": "1741914338605-0907339996192",
-				"binContent": "=There was a solar flare of class {{ $json.classType }}",
-				"operation": "send"
 			}
 		}
 	],
 	"connections": {
-		"webhook": { "main": [[{ "node": "nasa", "type": "main", "index": 0 }]] },
-		"nasa": { "main": [[{ "node": "if", "type": "main", "index": 0 }]] },
-		"if": {
+		"webhook": {
 			"main": [
-				[{ "node": "PostBin(true)", "type": "main", "index": 0 }],
-				[{ "node": "PostBin(false)", "type": "main", "index": 0 }]
+				[
+					{
+						"node": "send-to-analytics",
+						"type": "main",
+						"index": 0
+					}
+				]
 			]
 		}
 	},
 	"settings": {},
 	"active": true,
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [
+		{
+			"name": "@vahor/n8n-iJFYtqyGWaroz"
+		}
+	]
 }

@@ -1,3 +1,4 @@
+import type { Writeable } from "../../utils/types";
 import { ExpressionBuilder } from "./expression-builder";
 
 export function expr(strings: TemplateStringsArray, ...values: any[]) {
@@ -5,7 +6,7 @@ export function expr(strings: TemplateStringsArray, ...values: any[]) {
 		const value = values[i];
 
 		if (value instanceof ExpressionBuilder) {
-			return `${cur}{{ ${value.format()} }}`;
+			return `${acc + cur}{{ ${value.format()} }}`;
 		}
 
 		if (typeof value === "string") {
@@ -20,4 +21,35 @@ export function expr(strings: TemplateStringsArray, ...values: any[]) {
 	}, "");
 
 	return `=${result}`;
+}
+
+type InferJsonExpression<T> = T extends readonly any[] | Record<string, any>
+	? {
+			[K in keyof T]: T[K] extends ExpressionBuilder<any, any, infer U>
+				? U
+				: T[K] extends Record<string, any>
+					? InferJsonExpression<T[K]>
+					: T[K] extends Array<any>
+						? InferJsonExpression<T[K]>
+						: T[K];
+		}
+	: never;
+
+export class JsonExpression<Type = any> {
+	/**
+	 * Only used to infer the type of the data
+	 */
+	infer: Type = null as any;
+
+	constructor(private data: Type) {}
+
+	public static from<const T>(
+		data: T,
+	): JsonExpression<Writeable<InferJsonExpression<T>>> {
+		return new JsonExpression(data) as any;
+	}
+
+	public toExpression(options?: { indent?: number }) {
+		return `=${JSON.stringify(this.data, null, options?.indent ? 2 : 0)}`;
+	}
 }

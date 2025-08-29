@@ -9,6 +9,9 @@ type Context = {
 				hello: "world";
 			};
 		};
+		headers: {
+			"x-user-id": string;
+		};
 	};
 	"Http Request": {
 		"something.with.dots": {
@@ -64,7 +67,7 @@ describe("ExpressionBuilder", () => {
 		});
 	});
 
-	describe("fin", () => {
+	describe("find", () => {
 		test("on an array", () => {
 			const builder = $("data.output")
 				.find((o) => o.type === "message")
@@ -136,6 +139,18 @@ describe("ExpressionBuilder", () => {
 			expect(format).toEqual(
 				`$('data').output[0].content[0].text.split(" ").join("-")`,
 			);
+		});
+		test("on something else", () => {
+			// @ts-expect-error: this should fail
+			$("data").toLowerCase();
+		});
+	});
+
+	describe("toLowerCase", () => {
+		test("on a string", () => {
+			const builder = $("Webhook.headers['x-user-id']");
+			const format = builder.format();
+			expect(format).toEqual(`$('Webhook').headers['x-user-id'].toLowerCase()`);
 		});
 		test("on something else", () => {
 			// @ts-expect-error: this should fail

@@ -27,7 +27,6 @@ type GetOutputSchemaField<
 			: P["outputSchema"][F]["infer"]
 		: never;
 
-// @ts-expect-error: we override the parameters type
 export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 	{
 		executionMode: "production" | "test";
@@ -42,10 +41,5 @@ export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 		override props: P,
 	) {
 		super(id, props as any);
-	}
-
-	override async getParameters() {
-		const { outputSchema: _, ...rest } = this.props;
-		return rest;
 	}
 }

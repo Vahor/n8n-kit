@@ -2,6 +2,8 @@ export type Prettify<T> = {
 	[K in keyof T]: T[K];
 } & {};
 
+export type Writeable<T> = { -readonly [P in keyof T]: Writeable<T[P]> };
+
 export type UnionToIntersection<U> = (
 	U extends any
 		? (k: U) => void
@@ -41,11 +43,13 @@ export type Primitive =
 	| null
 	| undefined;
 
-export type NeedsBrackets<T> = T extends `${infer _1}.${infer _2}`
+export type NeedsBrackets<T> = T extends
+	| `${any}.${any}`
+	| `${any}[${any}]`
+	| `${any} ${any}`
+	| `${any}-${any}`
 	? true
-	: T extends `${infer _1} ${infer _2}`
-		? true
-		: false;
+	: false;
 
 type FormatWithPrefix<
 	T extends string,
@@ -98,7 +102,7 @@ export type RecursiveDotNotation<
 	: // Traverse dot notation
 		Path extends `${infer Key}.${infer Rest}`
 		? //
-			Key extends `${infer ArrayKey}[${string}]`
+			Key extends `${infer ArrayKey}[${infer Rest}]`
 			? ArrayKey extends keyof T
 				? T[ArrayKey] extends readonly (infer U)[]
 					? RecursiveDotNotation<U, Rest>
@@ -108,15 +112,19 @@ export type RecursiveDotNotation<
 				? RecursiveDotNotation<T[Key], Rest>
 				: never
 		: // TODO: I'm pretty sure we can refactor this as both are quite similar
-			Path extends `${infer ArrayKey}[${string}]`
+			Path extends `${infer ArrayKey}[${infer Rest}]`
 			? ArrayKey extends keyof T
 				? T[ArrayKey] extends readonly (infer U)[]
 					? U
-					: never
+					: RecursiveDotNotation<T[ArrayKey], Rest>
 				: never
 			: Path extends keyof T
 				? T[Path]
-				: never;
+				: Path extends `'${infer Rest}'`
+					? Rest extends keyof T
+						? T[Rest]
+						: never
+					: never;
 
 export type TypeOfField<
 	Field extends string,

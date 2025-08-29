@@ -22,7 +22,7 @@ describe("Chain", () => {
 
 		test("can chain with ifs", async () => {
 			const A = new NoOp("a");
-			const B = new If("b", { conditions: [] });
+			const B = new If("b", { parameters: { conditions: [] } });
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
 				parameters: {},
@@ -85,7 +85,7 @@ describe("Chain", () => {
 		test("can loop elements in if", async () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
-			const C = new If("c", { conditions: [] });
+			const C = new If("c", { parameters: { conditions: [] } });
 			const D = new NoOp("d");
 
 			const chain = Chain.start(A).next(B).next(C.true(A).false(D));

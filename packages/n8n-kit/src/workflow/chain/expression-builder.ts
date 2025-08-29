@@ -28,6 +28,8 @@ type SubPath<T extends ChainContext, Path extends string> = ExtractStartingWith<
 type ExpectedArray = ErrorMessage<"Expected array">;
 type ExpectedString = ErrorMessage<"Expected string">;
 
+type ExpressionBuilderMode = "item";
+
 export class ExpressionBuilder<
 	T extends ChainContext = any,
 	Path extends string = any,
@@ -35,6 +37,8 @@ export class ExpressionBuilder<
 > {
 	private readonly path: Path;
 	private readonly methodCalls: string[] = [];
+
+	private _mode: ExpressionBuilderMode = "item";
 
 	/**
 	 * The type of the current field
@@ -57,6 +61,11 @@ export class ExpressionBuilder<
 
 	public getFullPath(): Path {
 		return this.path;
+	}
+
+	public mode(mode: ExpressionBuilderMode) {
+		this._mode = mode;
+		return this;
 	}
 
 	public getNodeId(): string {
@@ -91,10 +100,14 @@ export class ExpressionBuilder<
 		let path = this.getPath() as string;
 		if (!path.startsWith("[") && path.length > 0) path = `.${path}`;
 
-		if (nodeId === "json") {
-			baseExpression = `$json${path}`;
+		if (this._mode === "item") {
+			if (nodeId === "json") {
+				baseExpression = `$json${path}`;
+			} else {
+				baseExpression = `$('${nodeId}').item.json${path}`;
+			}
 		} else {
-			baseExpression = `$('${nodeId}')${path}`;
+			throw new Error(`Unexpected mode: ${this._mode}`);
 		}
 
 		// Append method calls
@@ -110,6 +123,9 @@ export class ExpressionBuilder<
 	 */
 	public toExpression() {
 		return expr`${this}`;
+	}
+	public toJSON() {
+		return this.toExpression().slice(1);
 	}
 
 	//
