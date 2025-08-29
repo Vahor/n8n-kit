@@ -19,14 +19,14 @@
         "@vahor/n8n-kit": "workspace:*",
       },
     },
-    "examples/code-merge": {
-      "name": "example-merge",
+    "examples/code-http-anthropic": {
+      "name": "example-code-http-anthropic",
       "dependencies": {
         "@vahor/n8n-kit": "workspace:*",
       },
     },
-    "examples/code-openai": {
-      "name": "example-code-openai",
+    "examples/code-merge": {
+      "name": "example-merge",
       "dependencies": {
         "@vahor/n8n-kit": "workspace:*",
       },
@@ -1417,7 +1417,7 @@
 
     "example-bundle-js": ["example-bundle-js@workspace:examples/bundle-js"],
 
-    "example-code-openai": ["example-code-openai@workspace:examples/code-openai"],
+    "example-code-http-anthropic": ["example-code-http-anthropic@workspace:examples/code-http-anthropic"],
 
     "example-if-tree": ["example-if-tree@workspace:examples/if-tree"],
 
