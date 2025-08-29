@@ -5,36 +5,13 @@ import spawn from "nano-spawn";
 import { build, type Options } from "tsdown";
 import { DEFAULT_CONFIG } from "../constants";
 import logger from "../logger";
-import { shortHash } from "../utils/slugify";
-import { ExpressionBuilder } from "../workflow";
+import { BundledFunction, type BundledFunctionProps } from "./function";
 
-interface NodejsFunctionProps {
-	/**
-	 * Path containing the `package.json` and entrypoint file
-	 */
-	projectRoot: string;
-
-	/**
-	 * Path to the entrypoint file (relative to `projectRoot`)
-	 * @default "index.ts" or "index.js"
-	 */
-	entrypoint?: string;
-
-	/**
-	 * Main function name
-	 * @default "handler"
-	 */
-	mainFunctionName?: string;
-
+interface NodejsFunctionProps extends BundledFunctionProps {
 	/**
 	 * Bundler options
 	 */
 	bundlerOptions?: Options;
-
-	/**
-	 * Parameters to call the main function with
-	 */
-	input?: Record<string, unknown>;
 
 	/**
 	 * Installation command
@@ -43,17 +20,12 @@ interface NodejsFunctionProps {
 	installCommand?: [string, string[]];
 }
 
-export class NodejsFunction {
-	private readonly entrypoint: string;
-	private readonly id: string;
-	private readonly name: string;
-
+export class NodejsFunction extends BundledFunction {
+	protected override possibleEntrypoints = ["index.ts", "index.js"];
 	private readonly installCommand: [string, string[]];
 
-	private constructor(private readonly props: NodejsFunctionProps) {
-		this.entrypoint = this.findEntrypoint();
-		this.id = shortHash(`${this.props.projectRoot}/${this.entrypoint}`, 20);
-		this.name = `${path.basename(this.props.projectRoot)}/${this.entrypoint}`;
+	private constructor(override props: NodejsFunctionProps) {
+		super(props);
 		this.installCommand = this.props.installCommand ?? ["npm", ["ci"]];
 	}
 
@@ -61,41 +33,12 @@ export class NodejsFunction {
 		return new NodejsFunction(props);
 	}
 
-	private findEntrypoint() {
-		if (this.props.entrypoint) {
-			const fullPath = path.join(this.props.projectRoot, this.props.entrypoint);
-			if (!fs.existsSync(fullPath)) {
-				throw new Error(
-					`Entrypoint file ${this.props.entrypoint} does not exist`,
-				);
-			}
-			return this.props.entrypoint;
-		}
-
-		const possibleEntrypoints = ["index.ts", "index.js"];
-		for (const entrypoint of possibleEntrypoints) {
-			const fullPath = path.join(this.props.projectRoot, entrypoint);
-			logger.debug(`Checking if ${fullPath} exists`);
-			if (fs.existsSync(fullPath)) {
-				return entrypoint;
-			}
-		}
-
-		throw new Error(
-			`Could not find entrypoint file in ${this.props.projectRoot}`,
-		);
-	}
-
-	public getBundledFile(outDir: string) {
+	public override getBundledFile(outDir: string) {
 		const entrypoint = path.basename(this.entrypoint);
 		return path.join(outDir, entrypoint.replace(".ts", ".js"));
 	}
 
-	/**
-	 * @internal
-	 * Bundles the function
-	 */
-	public async bundle() {
+	override async bundle() {
 		await this.installDeps();
 		logger.log(`Bundling ${this.name}...`);
 		const outDir = path.join(DEFAULT_CONFIG.out, ".bundle-js", this.id);
@@ -123,22 +66,6 @@ export class NodejsFunction {
 			"utf8",
 		);
 		return fileContent;
-	}
-
-	private prepareHandleParameters() {
-		const parameters = this.props.input ?? {};
-		const formattedParameters: Record<string, unknown> = {};
-		for (const [key, value] of Object.entries(parameters)) {
-			if (value instanceof ExpressionBuilder) {
-				formattedParameters[key] = value.toExpression();
-			} else {
-				formattedParameters[key] = value;
-			}
-		}
-		let data = JSON.stringify(formattedParameters, null, 2);
-		// remove quotes if the value starts with a ={{ and ends with }}
-		data = data.replace(/"=\{\{\s*(.*?)\s*\}\}"/g, "$1");
-		return data;
 	}
 
 	private async installDeps() {
