@@ -86,19 +86,6 @@ export class NodejsFunction {
 		);
 	}
 
-	private getPackageJson() {
-		const packageJsonPath = `${this.props.projectRoot}/package.json`;
-		if (!fs.existsSync(packageJsonPath)) {
-			throw new Error("Could not find package.json");
-		}
-		return JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-	}
-
-	public getDependencies() {
-		const packageJson = this.getPackageJson();
-		return Object.keys(packageJson.dependencies ?? {});
-	}
-
 	public getBundledFile(outDir: string) {
 		const entrypoint = path.basename(this.entrypoint);
 		return path.join(outDir, entrypoint.replace(".ts", ".js"));

@@ -21,12 +21,27 @@ export interface SetProps<A extends readonly Assignment[]> extends NodeProps {
 	};
 }
 
-type AssignmentsToObject<T extends readonly { name: string; type: Type }[]> = {
+type IsValidValue<T extends Type, V> = V extends ExpressionBuilder<
+	any,
+	any,
+	infer VType
+>
+	? VType extends T["infer"]
+		? true
+		: false
+	: V extends T["infer"]
+		? true
+		: false;
+
+type AssignmentsToObject<T extends readonly Assignment[]> = {
 	[K in keyof T]: T[K] extends {
 		name: infer N extends string;
 		type: infer T extends Type;
+		value: infer V;
 	}
-		? { [K in N]: T["infer"] }
+		? {
+				[K in N]: IsValidValue<T, V> extends true ? T["infer"] : never;
+			}
 		: never;
 }[number];
 
