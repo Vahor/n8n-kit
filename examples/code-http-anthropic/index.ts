@@ -50,7 +50,7 @@ const workflow = new Workflow("my-workflow", {
 			}),
 		).multiple(({ $ }) => [
 			new HttpRequest("send-to-analytics", {
-				disabled: process.env.NODE_ENV !== "production",
+				disabled: true, // process.env.NODE_ENV !== "production",
 				httpCustomAuthCredentials: analyticsCredentials,
 				parameters: {
 					method: "POST",
