@@ -259,7 +259,9 @@ const writeWorkflowDefinitionNode = async (
 
 	const newNode = `new ${className}("${node.node.id}",`;
 	const withChain =
-		mainConnectionChildren.length > 0 || node.crossTreeConnections.length > 0;
+		(mainConnectionChildren.length > 0 ||
+			node.crossTreeConnections.length > 0) &&
+		className !== "If";
 	if (isRoot) code.line();
 	if (withChain) code.openBlock(`Chain.start(${newNode}`);
 	else code.openBlock(`${newNode}`);
@@ -310,7 +312,7 @@ const writeWorkflowDefinitionNode = async (
 		for (const child of node.children) {
 			const isTrueConnection =
 				node.connectionsTo.find((conn) => conn.name === child.node.name)
-					?.toIndex === 0;
+					?.fromIndex === 0;
 			const chainMethod = isTrueConnection ? ".true(" : ".false(";
 			code.line(`${chainMethod}`);
 			code.indent();
