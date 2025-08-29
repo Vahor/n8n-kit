@@ -1,0 +1,96 @@
+{
+	"id": "iJFYtqyGWaroz",
+	"name": "Webhook -> Analytics + OpenAI",
+	"nodes": [
+		{
+			"id": "webhook",
+			"name": "webhook",
+			"type": "n8n-nodes-base.webhook",
+			"position": [60, 180],
+			"typeVersion": 2.1,
+			"parameters": {
+				"parameters": { "httpMethod": "POST", "path": "path-to-webhook" }
+			}
+		},
+		{
+			"id": "nasa",
+			"name": "nasa",
+			"type": "n8n-nodes-base.nasa",
+			"position": [260, 180],
+			"typeVersion": 1,
+			"parameters": {
+				"resource": "donkiSolarFlare",
+				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" }
+			},
+			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } }
+		},
+		{
+			"id": "if",
+			"name": "if",
+			"type": "n8n-nodes-base.if",
+			"position": [460, 180],
+			"typeVersion": 2.2,
+			"parameters": {
+				"conditions": {
+					"conditions": [
+						{
+							"operator": {
+								"type": "string",
+								"operation": "contains",
+								"singleValue": false
+							},
+							"leftValue": "={{ $json.classType }}",
+							"rightValue": "C",
+							"id": "my-workflow/if/0"
+						}
+					],
+					"combinator": "and",
+					"options": {
+						"caseSensitive": true,
+						"version": 2,
+						"typeValidation": "strict"
+					}
+				}
+			}
+		},
+		{
+			"id": "PostBin(true)",
+			"name": "PostBin(true)",
+			"type": "n8n-nodes-base.postBin",
+			"position": [660, 60],
+			"typeVersion": 1,
+			"parameters": {
+				"resource": "request",
+				"binId": "1741914338605-0907339996192",
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"operation": "send"
+			}
+		},
+		{
+			"id": "PostBin(false)",
+			"name": "PostBin(false)",
+			"type": "n8n-nodes-base.postBin",
+			"position": [660, 300],
+			"typeVersion": 1,
+			"parameters": {
+				"resource": "request",
+				"binId": "1741914338605-0907339996192",
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"operation": "send"
+			}
+		}
+	],
+	"connections": {
+		"webhook": { "main": [[{ "node": "nasa", "type": "main", "index": 0 }]] },
+		"nasa": { "main": [[{ "node": "if", "type": "main", "index": 0 }]] },
+		"if": {
+			"main": [
+				[{ "node": "PostBin(true)", "type": "main", "index": 0 }],
+				[{ "node": "PostBin(false)", "type": "main", "index": 0 }]
+			]
+		}
+	},
+	"settings": {},
+	"active": true,
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+}

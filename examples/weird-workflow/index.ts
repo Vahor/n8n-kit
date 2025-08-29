@@ -44,15 +44,17 @@ const checkValidEntityId = ({
 	workflow: Workflow;
 }) => {
 	return new If("check-valid-entity-id", {
-		conditions: [
-			{
-				leftValue: $("json.body.execution_type"),
-				operator: {
-					type: "string",
-					operation: "exists",
+		parameters: {
+			conditions: [
+				{
+					leftValue: $("json.body.execution_type"),
+					operator: {
+						type: "string",
+						operation: "exists",
+					},
 				},
-			},
-		],
+			],
+		},
 	}).false(
 		handleErrorMessageChain(workflow, "invalid-entity-id", {
 			error: "Invalid entity id",
@@ -86,16 +88,18 @@ const checkValidExecutionType = ({
 		},
 		Chain.start(
 			new If("check-valid-execution-type", {
-				combinator: "and",
-				conditions: [
-					{
-						leftValue: $("json.body.execution_type"),
-						operator: {
-							type: "string",
-							operation: "exists",
+				parameters: {
+					combinator: "and",
+					conditions: [
+						{
+							leftValue: $("json.body.execution_type"),
+							operator: {
+								type: "string",
+								operation: "exists",
+							},
 						},
-					},
-				],
+					],
+				},
 			})
 				.false(
 					handleErrorMessageChain(workflow, "invalid-execution-type", {
@@ -113,9 +117,11 @@ const checkValidExecutionType = ({
 const entryNode = Chain.start(
 	new Webhook("webhook", {
 		label: "Webhook",
-		httpMethod: "POST",
-		path: "abc",
-		responseMode: "responseNode",
+		parameters: {
+			httpMethod: "POST",
+			path: "abc",
+			responseMode: "responseNode",
+		},
 		outputSchema: {
 			body: type({
 				entity_id: "string",

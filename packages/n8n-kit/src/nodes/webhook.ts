@@ -7,7 +7,8 @@ import type { NodeProps } from "./node";
 interface WebhookBaseProps
 	extends RequireFields<WebhookNodeParameters, "httpMethod" | "path"> {}
 
-export interface WebhookProps extends NodeProps, WebhookBaseProps {
+export interface WebhookProps extends NodeProps {
+	parameters: WebhookBaseProps;
 	outputSchema?: {
 		params?: Type;
 		headers?: Type;

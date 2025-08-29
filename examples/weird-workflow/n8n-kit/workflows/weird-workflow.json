@@ -10,9 +10,11 @@
 			"typeVersion": 2.1,
 			"parameters": {
 				"label": "Webhook",
-				"httpMethod": "POST",
-				"path": "abc",
-				"responseMode": "responseNode"
+				"parameters": {
+					"httpMethod": "POST",
+					"path": "abc",
+					"responseMode": "responseNode"
+				}
 			}
 		},
 		{

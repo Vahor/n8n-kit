@@ -273,14 +273,10 @@ const writeWorkflowDefinitionNode = async (
 	}
 	// parameters
 	const parameters = node.node.parameters as Record<string, any>;
-	if (className === "If") {
-		writeObject(code, parameters.conditions as Record<string, any>);
-	} else {
-		code.openBlock(`parameters: `);
-		writeObject(code, parameters);
-		code.unindent(false);
-		code.line("},");
-	}
+	code.openBlock(`parameters: `);
+	writeObject(code, parameters);
+	code.unindent(false);
+	code.line("},");
 
 	code.unindent(false);
 	code.line("})");

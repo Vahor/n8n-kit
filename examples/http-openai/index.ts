@@ -1,5 +1,11 @@
 import { App, Chain, Credentials, expr, Workflow } from "@vahor/n8n-kit";
-import { If, Nasa, ScheduleTrigger, StickyNote } from "@vahor/n8n-kit/nodes";
+import {
+	If,
+	Nasa,
+	ScheduleTrigger,
+	StickyNote,
+	Webhook,
+} from "@vahor/n8n-kit/nodes";
 import { PostBin } from "@vahor/n8n-kit/nodes/generated";
 
 const nasaCredentials = Credentials.byId({
@@ -9,32 +15,13 @@ const nasaCredentials = Credentials.byId({
 
 const workflow = new Workflow("my-workflow", {
 	active: true,
-	name: "NASA Example",
+	name: "Webhook -> Analytics + OpenAI",
 	definition: [
-		new StickyNote("note", {
-			position: [0, 0],
-			parameters: {
-				content:
-					"## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
-				height: 120,
-				width: 600,
-			},
-		}),
-
 		Chain.start(
-			new ScheduleTrigger("schedule-trigger", {
-				label: "Schedule trigger",
+			new Webhook("webhook", {
 				parameters: {
-					rule: {
-						interval: [
-							{
-								field: "weeks",
-								triggerAtDay: [1],
-								triggerAtHour: 9,
-								weeksInterval: 1,
-							},
-						],
-					},
+					httpMethod: "POST",
+					path: "path-to-webhook",
 				},
 			}),
 		)
