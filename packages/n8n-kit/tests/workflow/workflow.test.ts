@@ -72,7 +72,7 @@ describe("Workflow", () => {
 			expect(result.connections.d!.main![0]!.map((c) => c.node)).toEqual(["b"]);
 		});
 
-		test.only("can reverse chain elements", async () => {
+		test("can reverse chain elements", async () => {
 			const chain = Chain.start(
 				new VectorStorePineconeInsert("upload-to-pinecone", {
 					label: "Pinecone Vector Store",

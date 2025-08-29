@@ -52,7 +52,7 @@ describe("ExpressionBuilder", () => {
 		],
 		[$("data"), "$('data').item.json"],
 	] as const;
-	describe.only("format", () => {
+	describe("format", () => {
 		test.each(formatCases)("format", (builder, expected) => {
 			expect(builder.format()).toEqual(expected);
 		});
@@ -89,7 +89,7 @@ describe("ExpressionBuilder", () => {
 				.prop(".content[0].text");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output.find((o) => o.type === "message").content[0].text`,
+				`$('data').item.json.output.find((o) => o.type === 'message').content[0].text`,
 			);
 		});
 		test("on something else", () => {
@@ -107,7 +107,7 @@ describe("ExpressionBuilder", () => {
 
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output.filter((o) => o.type === "message")[0].content.find((o) => o.text.length > 0)`,
+				`$('data').item.json.output.filter((o) => o.type === 'message')[0].content.find((o) => o.text.length > 0)`,
 			);
 		});
 		test("on something else", () => {
