@@ -52,11 +52,13 @@ export class ExpressionBuilder<
 	constructor(
 		path: Path,
 		methodCalls: string[] = [],
-		mode: ExpressionBuilderMode,
-		prefix: ExpressionPrefix,
+		mode: ExpressionBuilderMode = "item",
+		prefix: ExpressionPrefix = "$",
 	) {
 		this.path = path;
 		this.methodCalls = methodCalls;
+		this._mode = mode;
+		this._prefix = prefix;
 	}
 
 	private clone(additionalMethodCall?: string): ExpressionBuilder<T, Path> {
@@ -75,22 +77,24 @@ export class ExpressionBuilder<
 		return this.path;
 	}
 
-	public mode(mode: ExpressionBuilderMode) {
+	public mode(mode: ExpressionBuilderMode): this {
+		if (this._mode === mode) return this;
 		return new ExpressionBuilder(
 			this.path,
 			this.methodCalls,
 			mode,
 			this._prefix,
-		);
+		) as any;
 	}
 
-	public prefix(prefix: ExpressionPrefix) {
+	public prefix(prefix: ExpressionPrefix): this {
+		if (this._prefix === prefix) return this;
 		return new ExpressionBuilder(
 			this.path,
 			this.methodCalls,
 			this._mode,
 			prefix,
-		);
+		) as any;
 	}
 
 	public getNodeId(): string {

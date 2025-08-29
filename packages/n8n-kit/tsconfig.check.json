@@ -7,12 +7,13 @@
 		"declaration": true,
 		// TODO: ../../node_modules/@n8n/tournament/src/FunctionEvaluator.ts:10:4 - error TS2322: Type 'Function | undefined' is not assignable to type 'Function'.
 		"strictNullChecks": false,
+		"noImplicitAny": false,
 		"paths": {
 			"n8n-nodes-base/*": ["./vendor/n8n/packages/nodes-base/*"],
 			"generated/nodes/*": ["./generated/nodes/*"],
 			"generated/credentials/*": ["./generated/credentials/*"]
 		}
 	},
-	"include": ["src/**/*.ts"],
+	"include": ["src/**/*.ts", "tests/**/*.ts"],
 	"exclude": ["node_modules", "vendor"]
 }

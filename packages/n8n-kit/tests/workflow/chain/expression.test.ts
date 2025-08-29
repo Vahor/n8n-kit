@@ -209,4 +209,27 @@ describe("JsonExpression", () => {
 			})}`,
 		);
 	});
+
+	test("handles expressions with underscore prefix", () => {
+		const obj = {
+			name: $("user.name"),
+			prefixed: $("user.email").prefix("_"),
+			static: "value",
+		};
+
+		const result = JsonExpression.from(obj);
+		expectTypeOf<typeof result.infer>().toEqualTypeOf<{
+			name: string;
+			prefixed: string;
+			static: string;
+		}>();
+
+		expect(result.toExpression()).toEqual(
+			`=${JSON.stringify({
+				name: "{{ $('user').item.json.name }}",
+				prefixed: "{{ _('user').item.json.email }}",
+				static: "value",
+			})}`,
+		);
+	});
 });
