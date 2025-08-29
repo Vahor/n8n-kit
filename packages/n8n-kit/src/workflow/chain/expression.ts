@@ -48,7 +48,7 @@ export class JsonExpression<Type = any> {
 	}
 
 	public toExpression(options?: { indent?: number }) {
-		let data = JSON.stringify(this.data, null, options?.indent ? 2 : 0);
+		let data = JSON.stringify(this.data, null, options?.indent ?? 0);
 		// TODO: add a test for the <no-quotes> part
 		data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "{{ $1 }}");
 		return `=${data}`;
