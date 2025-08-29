@@ -10,7 +10,7 @@ type Assignment<T extends Type = Type> = {
 	name: string;
 	type: T;
 	// TODO: need to figure why infer is not working
-	value: T["infer"] | ExpressionBuilder;
+	value: T["infer"] | ExpressionBuilder<any, any, T["infer"]>;
 };
 
 export interface SetProps<A extends readonly Assignment[]> extends NodeProps {
