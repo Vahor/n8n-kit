@@ -150,3 +150,15 @@ export type ZeroWidthSpace = typeof zeroWidthSpace;
 export type ErrorMessage<message extends string = string> =
 	`${message}${ZeroWidthSpace}`;
 // end
+
+export type ToString<T> = T extends string | number | boolean | undefined | null
+	? `${T}`
+	: T extends Function
+		? "function"
+		: T extends Array<any>
+			? `Array`
+			: T extends object
+				? "object"
+				: T extends any
+					? "any"
+					: "unknown";
