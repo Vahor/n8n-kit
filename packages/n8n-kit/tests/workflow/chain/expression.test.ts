@@ -40,7 +40,7 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify({
-				name: "{{ $('user').name }}",
+				name: "{{ $('user').item.json.name }}",
 				static: "value",
 			})}`,
 		);
@@ -57,9 +57,9 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify([
-				"{{ $('user').age }}",
+				"{{ $('user').item.json.age }}",
 				"static",
-				"{{ $('user').email }}",
+				"{{ $('user').item.json.email }}",
 			])}`,
 		);
 		expect(result.toExpression()).toEqual(expr`${JSON.stringify(arr)}`);
@@ -92,8 +92,8 @@ describe("JsonExpression", () => {
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify([
 				{
-					name: "{{ $('user').name }}",
-					age: "{{ $('user').age }}",
+					name: "{{ $('user').item.json.name }}",
+					age: "{{ $('user').item.json.age }}",
 				},
 				{
 					name: "static",
@@ -139,14 +139,14 @@ describe("JsonExpression", () => {
 			`=${JSON.stringify({
 				items: [
 					{
-						id: "{{ $('data').items[0].id }}",
-						value: "{{ $('data').items[0].value }}",
+						id: "{{ $('data').item.json.items[0].id }}",
+						value: "{{ $('data').item.json.items[0].value }}",
 					},
 					{
-						id: "{{ $('data').items[1].id }}",
-						value: "{{ $('data').items[1].value }}",
+						id: "{{ $('data').item.json.items[1].id }}",
+						value: "{{ $('data').item.json.items[1].value }}",
 						nested: {
-							value: "{{ $('data').items[1].sub.nested }}",
+							value: "{{ $('data').item.json.items[1].sub.nested }}",
 						},
 					},
 				],
@@ -176,7 +176,7 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify({
-				data: "{{ $('data') }}",
+				data: "{{ $('data').item.json }}",
 				manual: "{{ $now }}",
 				long_json: `
 {{
