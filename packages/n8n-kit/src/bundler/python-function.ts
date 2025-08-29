@@ -11,7 +11,7 @@ export class PythonFunction extends BundledFunction {
 	protected override expressionPrefix: ExpressionPrefix = "_";
 	protected override possibleEntrypoints = ["main.py"];
 
-	private constructor(override props: PythonFunctionProps) {
+	private constructor(props: PythonFunctionProps) {
 		super(props);
 	}
 
