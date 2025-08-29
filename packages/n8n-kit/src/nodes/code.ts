@@ -1,14 +1,23 @@
 import type { Type } from "arktype";
-import type { NodejsFunction } from "../bundler";
+import type { NodejsFunction, PythonFunction } from "../bundler";
+import type { BundledFunction } from "../bundler/function";
 import type { CodeNodeParameters } from "../generated/nodes/Code";
 import { Code as _Code } from "../generated/nodes-impl/Code";
 import type { IsNever } from "../utils/types";
 import type { NodeProps } from "./node";
 
 export interface CodeProps extends NodeProps {
-	parameters: Omit<CodeNodeParameters, "jsCode"> & {
-		jsCode?: string | NodejsFunction;
-	};
+	parameters:
+		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {
+				language?: "javaScript";
+				jsCode: string | NodejsFunction;
+				pythonCode?: never;
+		  })
+		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {
+				language: "python";
+				pythonCode: string | PythonFunction;
+				jsCode?: never;
+		  });
 	outputSchema?: Type;
 }
 
@@ -63,19 +72,26 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 	}
 
 	override async getParameters() {
-		const { jsCode, ...rest } = this.props.parameters;
-		if (!jsCode) return rest;
+		const { jsCode, pythonCode, ...rest } = this.props.parameters;
+		let code: string | undefined;
+		let key: "jsCode" | "pythonCode" | undefined;
 
-		let jsCodeString: string;
-		if (typeof jsCode === "string") {
-			jsCodeString = jsCode;
-		} else {
-			jsCodeString = await jsCode.bundle();
+		const getOrBundle = async (code: string | BundledFunction) =>
+			typeof code === "string" ? code : await code.bundle();
+
+		if (jsCode) {
+			key = "jsCode";
+			code = await getOrBundle(jsCode);
+		} else if (pythonCode) {
+			key = "pythonCode";
+			code = await getOrBundle(pythonCode);
 		}
+
+		if (!code || !key) return rest;
 
 		return {
 			...rest,
-			jsCode: jsCodeString,
+			[key]: code,
 		};
 	}
 }

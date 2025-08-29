@@ -2,7 +2,7 @@ import * as fs from "node:fs";
 import path from "node:path";
 import logger from "../logger";
 import { shortHash } from "../utils/slugify";
-import { ExpressionBuilder } from "../workflow";
+import { ExpressionBuilder, type ExpressionPrefix } from "../workflow";
 
 export interface BundledFunctionProps {
 	/**
@@ -32,6 +32,7 @@ export abstract class BundledFunction {
 	protected readonly entrypoint: string;
 	protected readonly id: string;
 	protected readonly name: string;
+	protected readonly expressionPrefix: ExpressionPrefix = "$";
 
 	protected abstract possibleEntrypoints: string[];
 
@@ -81,7 +82,9 @@ export abstract class BundledFunction {
 		const formattedParameters: Record<string, unknown> = {};
 		for (const [key, value] of Object.entries(parameters)) {
 			if (value instanceof ExpressionBuilder) {
-				formattedParameters[key] = value.toExpression();
+				formattedParameters[key] = value
+					.prefix(this.expressionPrefix)
+					.toExpression();
 			} else {
 				formattedParameters[key] = value;
 			}

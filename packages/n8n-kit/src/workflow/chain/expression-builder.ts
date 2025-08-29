@@ -29,6 +29,7 @@ type ExpectedArray = ErrorMessage<"Expected array">;
 type ExpectedString = ErrorMessage<"Expected string">;
 
 type ExpressionBuilderMode = "item";
+export type ExpressionPrefix = "$" | "_";
 
 export class ExpressionBuilder<
 	T extends ChainContext = any,
@@ -39,6 +40,7 @@ export class ExpressionBuilder<
 	private readonly methodCalls: string[] = [];
 
 	private _mode: ExpressionBuilderMode = "item";
+	private _prefix: ExpressionPrefix = "$";
 
 	/**
 	 * The type of the current field
@@ -47,7 +49,12 @@ export class ExpressionBuilder<
 	 */
 	public readonly type: TCurr = null as any;
 
-	constructor(path: Path, methodCalls: string[] = []) {
+	constructor(
+		path: Path,
+		methodCalls: string[] = [],
+		mode: ExpressionBuilderMode,
+		prefix: ExpressionPrefix,
+	) {
 		this.path = path;
 		this.methodCalls = methodCalls;
 	}
@@ -56,7 +63,12 @@ export class ExpressionBuilder<
 		const newMethodCalls = additionalMethodCall
 			? [...this.methodCalls, additionalMethodCall]
 			: [...this.methodCalls];
-		return new ExpressionBuilder(this.path, newMethodCalls);
+		return new ExpressionBuilder(
+			this.path,
+			newMethodCalls,
+			this._mode,
+			this._prefix,
+		);
 	}
 
 	public getFullPath(): Path {
@@ -64,8 +76,21 @@ export class ExpressionBuilder<
 	}
 
 	public mode(mode: ExpressionBuilderMode) {
-		this._mode = mode;
-		return this;
+		return new ExpressionBuilder(
+			this.path,
+			this.methodCalls,
+			mode,
+			this._prefix,
+		);
+	}
+
+	public prefix(prefix: ExpressionPrefix) {
+		return new ExpressionBuilder(
+			this.path,
+			this.methodCalls,
+			this._mode,
+			prefix,
+		);
 	}
 
 	public getNodeId(): string {
@@ -102,9 +127,9 @@ export class ExpressionBuilder<
 
 		if (this._mode === "item") {
 			if (nodeId === "json") {
-				baseExpression = `$json${path}`;
+				baseExpression = `${this._prefix}json${path}`;
 			} else {
-				baseExpression = `$('${nodeId}').item.json${path}`;
+				baseExpression = `${this._prefix}('${nodeId}').item.json${path}`;
 			}
 		} else {
 			throw new Error(`Unexpected mode: ${this._mode}`);
