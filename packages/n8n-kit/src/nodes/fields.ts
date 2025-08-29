@@ -1,11 +1,7 @@
 import type { Type } from "arktype";
 import type { SetV2NodeParameters } from "../generated/nodes/SetV2";
 import { SetV2 as _Fields } from "../generated/nodes-impl/SetV2";
-import type {
-	ErrorMessage,
-	ToString,
-	UnionToIntersection,
-} from "../utils/types";
+import type { UnionToIntersection } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import type { NodeProps } from "./node";
 
@@ -37,16 +33,14 @@ type IsValidValue<T extends Type, V> = V extends ExpressionBuilder<
 		? true
 		: false;
 
-type AssignmentsToObject<T extends readonly { name: string; type: Type }[]> = {
+type AssignmentsToObject<T extends readonly Assignment[]> = {
 	[K in keyof T]: T[K] extends {
 		name: infer N extends string;
 		type: infer T extends Type;
 		value: infer V;
 	}
 		? {
-				[K in N]: IsValidValue<T, V> extends true
-					? T["infer"]
-					: ErrorMessage<`Expected type '${ToString<T["infer"]>}' but got '${ToString<V>}'.`>;
+				[K in N]: IsValidValue<T, V> extends true ? T["infer"] : never;
 			}
 		: never;
 }[number];
