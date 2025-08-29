@@ -29,6 +29,11 @@ export type NodeProps = {
 	label?: string;
 	parameters?: unknown;
 	position?: NodePosition;
+	/**
+	 * If true, the node won't run but subsequent nodes WILL be executed
+	 * @default false
+	 */
+	disabled?: boolean;
 };
 
 export abstract class Node<
@@ -151,6 +156,7 @@ export abstract class Node<
 			typeVersion: this.typeVersion,
 			parameters: await this.getParameters(),
 			credentials: this.credentialsToNode(),
+			disabled: this.props?.disabled ?? undefined,
 		};
 	}
 }

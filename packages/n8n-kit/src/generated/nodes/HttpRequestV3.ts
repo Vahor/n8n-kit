@@ -21,6 +21,10 @@ export interface HttpRequestV3NodeParameters {
     /** Default: "none" */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
+    readonly nodeCredentialType?: string;
+
+    readonly genericAuthType?: string;
+
     readonly provideSslCertificates?: boolean;
 
     /** Whether the request has query params or not */

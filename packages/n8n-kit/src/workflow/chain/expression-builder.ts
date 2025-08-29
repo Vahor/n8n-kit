@@ -28,6 +28,11 @@ type SubPath<T extends ChainContext, Path extends string> = ExtractStartingWith<
 type ExpectedArray = ErrorMessage<"Expected array">;
 type ExpectedString = ErrorMessage<"Expected string">;
 
+type ExpressionBuilderMode = "item";
+export type ExpressionPrefix = "$" | "_";
+
+const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");
+
 export class ExpressionBuilder<
 	T extends ChainContext = any,
 	Path extends string = any,
@@ -36,6 +41,10 @@ export class ExpressionBuilder<
 	private readonly path: Path;
 	private readonly methodCalls: string[] = [];
 
+	private _mode: ExpressionBuilderMode = "item";
+	private _prefix: ExpressionPrefix = "$";
+	private _isJson: boolean = false;
+
 	/**
 	 * The type of the current field
 	 * Should only be used with `typeof`
@@ -43,20 +52,58 @@ export class ExpressionBuilder<
 	 */
 	public readonly type: TCurr = null as any;
 
-	constructor(path: Path, methodCalls: string[] = []) {
+	constructor(
+		path: Path,
+		methodCalls: string[] = [],
+		// TODO: make a "options" object or something to group all options
+		mode: ExpressionBuilderMode = "item",
+		prefix: ExpressionPrefix = "$",
+		isJson: boolean = false,
+	) {
 		this.path = path;
 		this.methodCalls = methodCalls;
+		this._mode = mode;
+		this._prefix = prefix;
+		this._isJson = isJson;
 	}
 
 	private clone(additionalMethodCall?: string): ExpressionBuilder<T, Path> {
 		const newMethodCalls = additionalMethodCall
 			? [...this.methodCalls, additionalMethodCall]
 			: [...this.methodCalls];
-		return new ExpressionBuilder(this.path, newMethodCalls);
+		return new ExpressionBuilder(
+			this.path,
+			newMethodCalls,
+			this._mode,
+			this._prefix,
+			this._isJson,
+		);
 	}
 
 	public getFullPath(): Path {
 		return this.path;
+	}
+
+	public mode(mode: ExpressionBuilderMode): this {
+		if (this._mode === mode) return this;
+		return new ExpressionBuilder(
+			this.path,
+			this.methodCalls,
+			mode,
+			this._prefix,
+			this._isJson,
+		) as any;
+	}
+
+	public prefix(prefix: ExpressionPrefix): this {
+		if (this._prefix === prefix) return this;
+		return new ExpressionBuilder(
+			this.path,
+			this.methodCalls,
+			this._mode,
+			prefix,
+			this._isJson,
+		) as any;
 	}
 
 	public getNodeId(): string {
@@ -89,12 +136,17 @@ export class ExpressionBuilder<
 		let baseExpression: string;
 
 		let path = this.getPath() as string;
-		if (!path.startsWith("[") && path.length > 0) path = `.${path}`;
+		if (path.length > 0 && path[0] !== "." && path[0] !== "[")
+			path = `.${path}`;
 
-		if (nodeId === "json") {
-			baseExpression = `$json${path}`;
+		if (this._mode === "item") {
+			if (nodeId === "json") {
+				baseExpression = `${this._prefix}json${path}`;
+			} else {
+				baseExpression = `${this._prefix}('${nodeId}').item.json${path}`;
+			}
 		} else {
-			baseExpression = `$('${nodeId}')${path}`;
+			throw new Error(`Unexpected mode: ${this._mode}`);
 		}
 
 		// Append method calls
@@ -109,7 +161,16 @@ export class ExpressionBuilder<
 	 * return ={{ format() }}
 	 */
 	public toExpression() {
-		return expr`${this}`;
+		// Feels very hack, and it is
+		// Used in JsonExpression.toExpression to remove quotes when we don't need them
+		return expr`${this._isJson ? "<no-quotes>" : ""}${this}`;
+	}
+	/*
+	 * @internal
+	 * Used by JSON.stringify
+	 */
+	public toJSON() {
+		return this.toExpression().slice(1);
 	}
 
 	//
@@ -120,7 +181,7 @@ export class ExpressionBuilder<
 		const params = args
 			.map((arg) => {
 				if (typeof arg === "function") {
-					return arg.toString();
+					return replaceDoubleQuotes(arg.toString());
 				}
 				return JSON.stringify(arg);
 			})
@@ -130,6 +191,15 @@ export class ExpressionBuilder<
 			params.length > 0 ? `.${methodName}(${params})` : `.${methodName}()`;
 		return this.clone(methodCall);
 	}
+
+	// =========
+	// All types
+	// =========
+
+	toJsonString: () => this = () => {
+		this._isJson = true;
+		return this.call("toJsonString") as any;
+	};
 
 	// =========
 	// Array
@@ -201,19 +271,3 @@ export type ExpressionBuilderProvider<CC extends ChainContext> = ReturnType<
 >;
 
 export type $Selector<T> = ExpressionBuilderProvider<ExtractChainContext<T>>;
-
-export const recursiveExpression = (value: Record<string, any>) => {
-	const entries = Object.entries(value);
-	for (let i = 0; i < entries.length; i++) {
-		const [key, value] = entries[i]!;
-		entries[i] = [
-			key,
-			value instanceof ExpressionBuilder
-				? value.toExpression().slice(1)
-				: typeof value === "object"
-					? recursiveExpression(value)
-					: value,
-		];
-	}
-	return Object.fromEntries(entries);
-};

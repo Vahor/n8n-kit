@@ -3,7 +3,7 @@ import { prefix } from "../constants";
 import { shortHash, validateIdentifier } from "../utils/slugify";
 import type { N8nCredentialsUnion } from "./generated";
 
-type ByName<T extends N8nCredentialsUnion["__name"]> = Extract<
+export type CredentialsByName<T extends string> = Extract<
 	N8nCredentialsUnion,
 	{ __name: T }
 >;
@@ -27,7 +27,7 @@ export class Credentials<N extends N8nCredentialsUnion = any> {
 
 	public static byId<
 		Name extends N8nCredentialsUnion["__name"],
-		N extends ByName<Name>,
+		N extends CredentialsByName<Name>,
 	>(props: { id: string; name: Name }) {
 		const id = crypto.randomUUID();
 		const instance = new Credentials<N>(id, props.name as any);

@@ -7,7 +7,7 @@ import type { Prettify } from "../../src/utils/types";
 describe("If", () => {
 	test.failing("fails if there are more than two inputs", () => {
 		new If("if", {
-			conditions: [],
+			parameters: { conditions: [] },
 		})
 			.true(new NoOp("true"))
 			// @ts-expect-error: this should fail
@@ -17,7 +17,7 @@ describe("If", () => {
 	describe("type test, cannot chain two true/false", () => {
 		test("true().true()", () => {
 			new If("if", {
-				conditions: [],
+				parameters: { conditions: [] },
 			})
 				.true(new NoOp("true"))
 				// @ts-expect-error: this should fail
@@ -25,7 +25,7 @@ describe("If", () => {
 		});
 		test("false().false()", () => {
 			new If("if", {
-				conditions: [],
+				parameters: { conditions: [] },
 			})
 				.false(new NoOp("false"))
 				// @ts-expect-error: this should fail
@@ -33,7 +33,7 @@ describe("If", () => {
 		});
 		test("true().false()", () => {
 			new If("if", {
-				conditions: [],
+				parameters: { conditions: [] },
 			})
 				.true(new NoOp("true"))
 				// this works
@@ -41,7 +41,9 @@ describe("If", () => {
 		});
 		test("false().true()", () => {
 			new If("if", {
-				conditions: [],
+				parameters: {
+					conditions: [],
+				},
 			})
 				.false(new NoOp("false"))
 				// this works
@@ -52,16 +54,20 @@ describe("If", () => {
 	describe("type test, chaining if -> true/false -> connect, we have access to the context of the if", () => {
 		const baseifNode = () =>
 			new If("if", {
-				conditions: [],
+				parameters: { conditions: [] },
 			});
 		const trueNode = new Code("true", {
 			outputSchema: type({ hello: "'true'" }),
-			parameters: {},
+			parameters: {
+				jsCode: "",
+			},
 		});
 		type trueNodeInContext = { true: { hello: "true" } };
 		const falseNode = new Code("false", {
 			outputSchema: type({ something: "1" }),
-			parameters: {},
+			parameters: {
+				jsCode: "",
+			},
 		});
 		type falseNodeInContext = { false: { something: 1 } };
 		const trueNodeChain = Chain.start(

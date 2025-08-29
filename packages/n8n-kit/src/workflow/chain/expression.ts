@@ -1,3 +1,4 @@
+import type { Writeable } from "../../utils/types";
 import { ExpressionBuilder } from "./expression-builder";
 
 export function expr(strings: TemplateStringsArray, ...values: any[]) {
@@ -5,7 +6,7 @@ export function expr(strings: TemplateStringsArray, ...values: any[]) {
 		const value = values[i];
 
 		if (value instanceof ExpressionBuilder) {
-			return `${cur}{{ ${value.format()} }}`;
+			return `${acc + cur}{{ ${value.format()} }}`;
 		}
 
 		if (typeof value === "string") {
@@ -20,4 +21,36 @@ export function expr(strings: TemplateStringsArray, ...values: any[]) {
 	}, "");
 
 	return `=${result}`;
+}
+
+type InferJsonExpression<T> = T extends readonly any[] | Record<string, any>
+	? {
+			[K in keyof T]: T[K] extends ExpressionBuilder<any, any, infer U>
+				? U
+				: T[K] extends Array<any> | Record<string, any>
+					? InferJsonExpression<T[K]>
+					: T[K];
+		}
+	: never;
+
+export class JsonExpression<Type = any> {
+	/**
+	 * Only used to infer the type of the data
+	 */
+	infer: Type = null as any;
+
+	constructor(private data: Type) {}
+
+	public static from<const T>(
+		data: T,
+	): JsonExpression<Writeable<InferJsonExpression<T>>> {
+		return new JsonExpression(data) as any;
+	}
+
+	public toExpression(options?: { indent?: number }) {
+		let data = JSON.stringify(this.data, null, options?.indent ?? 0);
+		// TODO: add a test for the <no-quotes> part
+		data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "{{ $1 }}");
+		return `=${data}`;
+	}
 }

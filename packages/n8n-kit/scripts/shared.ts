@@ -14,6 +14,7 @@ export const mapPropertyType = (type: string) => {
 		case "dateTime":
 		case "json":
 		case "workflowSelector":
+		case "credentialsSelect":
 		case "color":
 		case "string":
 			return "string";

@@ -30,7 +30,7 @@ export class ExecuteWorkflow<
 	override async getParameters() {
 		return {
 			...this.props.parameters,
-			// @ts-expect-error: remove workflow from output as it's onlu used for the workflowId
+			// remove workflow from output as it's only used for the workflowId
 			workflow: undefined,
 			workflowId: {
 				value: RESOLVED_WORKFLOW_ID(this.props.parameters.workflow.id),

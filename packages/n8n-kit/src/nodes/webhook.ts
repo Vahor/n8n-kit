@@ -7,11 +7,13 @@ import type { NodeProps } from "./node";
 interface WebhookBaseProps
 	extends RequireFields<WebhookNodeParameters, "httpMethod" | "path"> {}
 
-export interface WebhookProps extends NodeProps, WebhookBaseProps {
+export interface WebhookProps extends NodeProps {
+	parameters: WebhookBaseProps;
 	outputSchema?: {
 		params?: Type;
 		headers?: Type;
 		body?: Type;
+		query?: Type;
 	};
 }
 
@@ -23,16 +25,18 @@ type GetOutputSchemaField<
 	: F extends keyof P["outputSchema"]
 		? IsNever<P["outputSchema"][F]> extends true
 			? never
-			: P["outputSchema"][F]["infer"]
+			: // @ts-ignore: ts doesn't know what IsNever is
+				P["outputSchema"][F]["infer"]
 		: never;
 
-// @ts-expect-error: we override the parameters type
 export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 	{
 		executionMode: "production" | "test";
+		webhookUrl: string;
 		headers: GetOutputSchemaField<P, "headers">;
 		params: GetOutputSchemaField<P, "params">;
 		body: GetOutputSchemaField<P, "body">;
+		query: GetOutputSchemaField<P, "query">;
 	},
 	L
 > {
@@ -41,10 +45,5 @@ export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 		override props: P,
 	) {
 		super(id, props as any);
-	}
-
-	override async getParameters() {
-		const { outputSchema: _, ...rest } = this.props;
-		return rest;
 	}
 }

@@ -36,7 +36,7 @@ class Logger {
 	}
 
 	debug(message: string): void {
-		if (process.env.NODE_ENV === "development" || process.env.DEBUG) {
+		if (process.env.DEBUG) {
 			console.debug(chalk.magentaBright(this._format(message)));
 		}
 	}

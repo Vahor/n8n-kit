@@ -109,7 +109,6 @@ const generateTypescriptNodeOutput = async (
 			property.type === "hidden" ||
 			property.type === "button" ||
 			property.type === "curlImport" ||
-			property.type === "credentialsSelect" ||
 			property.type === "notice" ||
 			property.type === "resourceMapper" ||
 			property.type === "credentials" ||

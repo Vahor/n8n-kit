@@ -51,17 +51,19 @@ const workflow = new Workflow("my-workflow", {
 			)
 			.next(({ $ }) =>
 				new If("if", {
-					combinator: "and",
-					conditions: [
-						{
-							operator: {
-								type: "string",
-								operation: "contains",
+					parameters: {
+						combinator: "and",
+						conditions: [
+							{
+								operator: {
+									type: "string",
+									operation: "contains",
+								},
+								leftValue: $("json.classType").toExpression(),
+								rightValue: "C",
 							},
-							leftValue: $("json.classType").toExpression(),
-							rightValue: "C",
-						},
-					],
+						],
+					},
 				})
 					.true(
 						new PostBin("PostBin(true)", {
