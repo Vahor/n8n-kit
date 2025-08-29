@@ -5,6 +5,7 @@ export * from "./code";
 export * from "./execute-workflow";
 export * from "./execute-workflow-trigger";
 export * from "./fields";
+export * from "./http-request";
 export * from "./if";
 export * from "./merge";
 export * from "./nasa";
