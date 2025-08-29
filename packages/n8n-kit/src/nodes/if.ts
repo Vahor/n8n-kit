@@ -98,7 +98,7 @@ export class If<
 				conditions: this.props.parameters.conditions,
 				combinator: this.props.parameters.combinator ?? "and",
 				options: {
-					caseSensitive: this.props.parameters.options?.ignoreCase ?? true,
+					caseSensitive: !(this.props.parameters.options?.ignoreCase ?? true),
 					version: 2,
 					typeValidation: "strict",
 				},
