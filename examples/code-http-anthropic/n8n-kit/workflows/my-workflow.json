@@ -1,6 +1,6 @@
 {
 	"id": "iJFYtqyGWaroz",
-	"name": "Webhook -> Analytics + OpenAI",
+	"name": "Webhook -> Analytics + Anthropic",
 	"nodes": [
 		{
 			"id": "webhook",
