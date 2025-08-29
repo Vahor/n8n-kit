@@ -79,19 +79,15 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 		const getOrBundle = async (code: string | BundledFunction) =>
 			typeof code === "string" ? code : await code.bundle();
 
-		if (jsCode) {
+		if (jsCode != null) {
 			key = "jsCode";
 			code = await getOrBundle(jsCode);
-		} else if (pythonCode) {
+		} else if (pythonCode != null) {
 			key = "pythonCode";
 			code = await getOrBundle(pythonCode);
 		}
 
-		if (!code || !key)
-			return rest as Omit<CodeNodeParameters, "jsCode" | "pythonCode"> & {
-				jsCode?: string | undefined;
-				pythonCode?: string | undefined;
-			};
+		if (!code || !key) return rest;
 
 		return {
 			...rest,
