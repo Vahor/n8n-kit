@@ -29,7 +29,7 @@ const anthropicCredentials = Credentials.byId({
 
 const workflow = new Workflow("my-workflow", {
 	active: true,
-	name: "Webhook -> Analytics + OpenAI",
+	name: "Webhook -> Analytics + Anthropic",
 	definition: [
 		Chain.start(
 			new Webhook("webhook", {
