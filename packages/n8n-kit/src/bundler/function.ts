@@ -80,6 +80,7 @@ export abstract class BundledFunction {
 	protected prepareHandleParameters() {
 		const parameters = this.props.input ?? {};
 		const formattedParameters: Record<string, unknown> = {};
+		// TODO: with the new toJSON method, we can remove this and adapt the regex (remove = I suppose)
 		for (const [key, value] of Object.entries(parameters)) {
 			if (value instanceof ExpressionBuilder) {
 				formattedParameters[key] = value

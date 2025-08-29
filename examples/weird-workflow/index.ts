@@ -26,7 +26,7 @@ const handleErrorMessageChain = <Id extends string>(
 			new WebhookResponse(`${id}-response`, {
 				parameters: {
 					respondWith: "json",
-					responseBody: errorResponse,
+					responseBody: JSON.stringify(errorResponse),
 					options: {
 						responseCode: 400,
 					},

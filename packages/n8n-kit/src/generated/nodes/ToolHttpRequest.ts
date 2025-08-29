@@ -26,6 +26,10 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
+    readonly nodeCredentialType?: string;
+
+    readonly genericAuthType?: string;
+
     /** Whether the request has query params or not */
     readonly sendQuery?: boolean;
 

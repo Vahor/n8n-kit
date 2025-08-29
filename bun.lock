@@ -25,6 +25,12 @@
         "@vahor/n8n-kit": "workspace:*",
       },
     },
+    "examples/code-openai": {
+      "name": "example-code-openai",
+      "dependencies": {
+        "@vahor/n8n-kit": "workspace:*",
+      },
+    },
     "examples/if-tree": {
       "name": "example-if-tree",
       "dependencies": {
@@ -1410,6 +1416,8 @@
     "eventsource-parser": ["eventsource-parser@3.0.5", "", {}, "sha512-bSRG85ZrMdmWtm7qkF9He9TNRzc/Bm99gEJMaQoHJ9E6Kv9QBbsldh2oMj7iXmYNEAVvNgvv5vPorG6W+XtBhQ=="],
 
     "example-bundle-js": ["example-bundle-js@workspace:examples/bundle-js"],
+
+    "example-code-openai": ["example-code-openai@workspace:examples/code-openai"],
 
     "example-if-tree": ["example-if-tree@workspace:examples/if-tree"],
 

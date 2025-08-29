@@ -43,7 +43,7 @@ const workflow = new Workflow("workflow-trigger", {
 			({ $ }) =>
 				new Code("log-result", {
 					parameters: {
-						jsCode: expr`console.log(${$("call-reusable-workflow.hello")});`,
+						jsCode: expr`console.log(${$("['call-reusable-workflow'].hello")})`,
 					},
 				}),
 		),

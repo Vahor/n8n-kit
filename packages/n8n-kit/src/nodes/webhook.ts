@@ -13,6 +13,7 @@ export interface WebhookProps extends NodeProps {
 		params?: Type;
 		headers?: Type;
 		body?: Type;
+		query?: Type;
 	};
 }
 
@@ -31,9 +32,11 @@ type GetOutputSchemaField<
 export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 	{
 		executionMode: "production" | "test";
+		webhookUrl: string;
 		headers: GetOutputSchemaField<P, "headers">;
 		params: GetOutputSchemaField<P, "params">;
 		body: GetOutputSchemaField<P, "body">;
+		query: GetOutputSchemaField<P, "query">;
 	},
 	L
 > {

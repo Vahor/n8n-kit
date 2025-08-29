@@ -14,6 +14,7 @@ type Context = {
 		};
 	};
 	"Http Request": {
+		hello: string;
 		"something.with.dots": {
 			"a number?": 1;
 		};
@@ -43,6 +44,20 @@ type Context = {
 const $ = $$<Context>();
 
 describe("ExpressionBuilder", () => {
+	const formatCases = [
+		[$("['Http Request'].hello"), "$('Http Request').item.json.hello"],
+		[
+			$("data.output[0].content[0].text"),
+			"$('data').item.json.output[0].content[0].text",
+		],
+		[$("data"), "$('data').item.json"],
+	] as const;
+	describe.only("format", () => {
+		test.each(formatCases)("format", (builder, expected) => {
+			expect(builder.format()).toEqual(expected);
+		});
+	});
+
 	describe("call", () => {
 		test("call arbitrary method on json", () => {
 			const builder = $("json['a.b.c']").call("keys");

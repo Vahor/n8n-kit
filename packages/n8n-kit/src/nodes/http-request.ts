@@ -1,6 +1,6 @@
 import type { Type } from "arktype";
-import type { Credentials } from "../credentials";
-import type { HttpCustomAuthCredentials } from "../generated/credentials/HttpCustomAuth";
+import type { Credentials, CredentialsByName } from "../credentials";
+import type { N8nCredentialsUnion } from "../generated/credentials";
 import {
 	HttpRequestV3,
 	type HttpRequestV3Props,
@@ -8,18 +8,15 @@ import {
 import type { IsNever, RequireFields } from "../utils/types";
 
 type HttpRequestProps = Omit<HttpRequestV3Props, "parameters"> & {
-	parameters: RequireFields<
-		HttpRequestV3Props["parameters"],
-		"method" | "url"
-	> & {
-		genericAuthType: string;
-	};
+	parameters: RequireFields<HttpRequestV3Props["parameters"], "method" | "url">;
 	outputSchema?: Type;
 };
 
-// TODO: make this based on the genericAuthType property
+// TODO: make this based on the genericAuthType and nodeCredentialType
 type WithCredentials<T extends HttpRequestProps> = T & {
-	httpCustomAuth?: Credentials<HttpCustomAuthCredentials>;
+	[k in N8nCredentialsUnion["__name"] as `${k}Credentials`]?: Credentials<
+		CredentialsByName<k>
+	>;
 };
 
 export class HttpRequest<
@@ -50,6 +47,14 @@ export class HttpRequest<
 			}
 		}
 
+		if (this.props.parameters.headerParameters != null) {
+			if (this.props.parameters.sendHeaders !== true) {
+				throw new Error(
+					`When 'headerParameters' is present, 'sendHeaders' must be true.`,
+				);
+			}
+		}
+
 		if (this.props.parameters.jsonBody != null) {
 			if (!this.props.parameters.sendBody) {
 				throw new Error(`When 'jsonBody' is present, 'sendBody' must be true.`);
@@ -71,6 +76,8 @@ export class HttpRequest<
 	}
 
 	override getCredentials(): Array<Credentials | undefined> {
-		return [this.props?.httpSslAuthCredentials, this.props?.httpCustomAuth];
+		return Object.entries(this.props)
+			.filter(([k]) => k.endsWith("Credentials"))
+			.map(([_, value]) => value as Credentials);
 	}
 }

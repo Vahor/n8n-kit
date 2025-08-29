@@ -9,12 +9,9 @@
 			"position": [60, 300],
 			"typeVersion": 2.1,
 			"parameters": {
-				"label": "Webhook",
-				"parameters": {
-					"httpMethod": "POST",
-					"path": "abc",
-					"responseMode": "responseNode"
-				}
+				"httpMethod": "POST",
+				"path": "abc",
+				"responseMode": "responseNode"
 			}
 		},
 		{
@@ -88,7 +85,7 @@
 			"typeVersion": 1.5,
 			"parameters": {
 				"respondWith": "json",
-				"responseBody": "={\n  \"error\": \"Invalid entity id\",\n  \"data\": {\n    \"body\": \"{{ $json.body }}\"\n  }\n}",
+				"responseBody": "{\"error\":\"Invalid entity id\",\"data\":{\"body\":\"{{ $json.body }}\"}}",
 				"options": { "responseCode": 400 }
 			}
 		},
@@ -114,7 +111,7 @@
 			"typeVersion": 1.5,
 			"parameters": {
 				"respondWith": "json",
-				"responseBody": "={\n  \"error\": \"Invalid execution type\",\n  \"data\": {\n    \"body\": \"{{ $json.body }}\"\n  }\n}",
+				"responseBody": "{\"error\":\"Invalid execution type\",\"data\":{\"body\":\"{{ $json.body }}\"}}",
 				"options": { "responseCode": 400 }
 			}
 		},

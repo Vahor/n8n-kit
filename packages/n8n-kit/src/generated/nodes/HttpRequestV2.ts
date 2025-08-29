@@ -12,6 +12,10 @@ export interface HttpRequestV2NodeParameters {
     /** Default: "none" */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
+    readonly nodeCredentialType?: string;
+
+    readonly genericAuthType?: string;
+
     /**
      * The request method to use
      * Default: "GET"
