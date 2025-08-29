@@ -27,11 +27,9 @@ type InferJsonExpression<T> = T extends readonly any[] | Record<string, any>
 	? {
 			[K in keyof T]: T[K] extends ExpressionBuilder<any, any, infer U>
 				? U
-				: T[K] extends Record<string, any>
+				: T[K] extends Array<any> | Record<string, any>
 					? InferJsonExpression<T[K]>
-					: T[K] extends Array<any>
-						? InferJsonExpression<T[K]>
-						: T[K];
+					: T[K];
 		}
 	: never;
 
