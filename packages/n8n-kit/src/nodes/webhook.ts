@@ -24,7 +24,8 @@ type GetOutputSchemaField<
 	: F extends keyof P["outputSchema"]
 		? IsNever<P["outputSchema"][F]> extends true
 			? never
-			: P["outputSchema"][F]["infer"]
+			: // @ts-ignore: ts doesn't know what IsNever is
+				P["outputSchema"][F]["infer"]
 		: never;
 
 export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<

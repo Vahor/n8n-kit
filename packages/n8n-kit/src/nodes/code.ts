@@ -87,7 +87,11 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 			code = await getOrBundle(pythonCode);
 		}
 
-		if (!code || !key) return rest;
+		if (!code || !key)
+			return rest as Omit<CodeNodeParameters, "jsCode" | "pythonCode"> & {
+				jsCode?: string | undefined;
+				pythonCode?: string | undefined;
+			};
 
 		return {
 			...rest,

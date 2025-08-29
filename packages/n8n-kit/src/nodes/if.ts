@@ -128,7 +128,9 @@ export class If<
 	> {
 		if (typeof next === "string") throw new Error(next);
 		super.addNext(next.startState, { ...connectionOptions, from: 0 });
-		this.endStates = [...this.endStates, next.endStates[0]].filter(Boolean);
+		this.endStates = [...this.endStates, next.endStates[0]].filter(
+			Boolean,
+		) as INextable[];
 		return this as any;
 	}
 
@@ -146,7 +148,9 @@ export class If<
 	> {
 		if (typeof next === "string") throw new Error(next);
 		super.addNext(next.startState, { ...connectionOptions, from: 1 });
-		this.endStates = [...this.endStates, next.endStates[0]].filter(Boolean);
+		this.endStates = [...this.endStates, next.endStates[0]].filter(
+			Boolean,
+		) as INextable[];
 		return this as any;
 	}
 }

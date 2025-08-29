@@ -58,12 +58,16 @@ describe("If", () => {
 			});
 		const trueNode = new Code("true", {
 			outputSchema: type({ hello: "'true'" }),
-			parameters: {},
+			parameters: {
+				jsCode: "",
+			},
 		});
 		type trueNodeInContext = { true: { hello: "true" } };
 		const falseNode = new Code("false", {
 			outputSchema: type({ something: "1" }),
-			parameters: {},
+			parameters: {
+				jsCode: "",
+			},
 		});
 		type falseNodeInContext = { false: { something: 1 } };
 		const trueNodeChain = Chain.start(

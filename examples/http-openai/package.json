@@ -1,8 +1,0 @@
-{
-	"name": "example-http-openai",
-	"private": true,
-	"type": "module",
-	"dependencies": {
-		"@vahor/n8n-kit": "workspace:*"
-	}
-}

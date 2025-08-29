@@ -45,7 +45,6 @@ export type Primitive =
 
 export type NeedsBrackets<T> = T extends
 	| `${any}.${any}`
-	| `${any}[${any}]`
 	| `${any} ${any}`
 	| `${any}-${any}`
 	? true
@@ -102,7 +101,7 @@ export type RecursiveDotNotation<
 	: // Traverse dot notation
 		Path extends `${infer Key}.${infer Rest}`
 		? //
-			Key extends `${infer ArrayKey}[${infer Rest}]`
+			Key extends `${infer ArrayKey}[${string}]`
 			? ArrayKey extends keyof T
 				? T[ArrayKey] extends readonly (infer U)[]
 					? RecursiveDotNotation<U, Rest>

@@ -25,11 +25,15 @@ describe("Chain", () => {
 			const B = new If("b", { parameters: { conditions: [] } });
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const D = new Code("d", {
 				outputSchema: type({ hello: "'d'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 
 			const chain = Chain.start(A).next(B.true(C).false(D));
@@ -44,15 +48,21 @@ describe("Chain", () => {
 		test("works with groups", () => {
 			const A = new Code("a", {
 				outputSchema: type({ hello: "'a'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const B = new Code("b", {
 				outputSchema: type({ hello: "'b'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const wf = {
 				addToDynamicalyAddedNodes: () => {},
@@ -155,11 +165,15 @@ describe("Chain", () => {
 			const B = new NoOp("b");
 			const C = new Code("c", {
 				outputSchema: type({ hello: "1" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const D = new Code("d", {
 				outputSchema: type({ hello: "2" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const E = new NoOp("e");
 
@@ -176,15 +190,21 @@ describe("Chain", () => {
 			const Start = new NoOp("start");
 			const A = new Code("a", {
 				outputSchema: type({ hello: "'a'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const B = new Code("b", {
 				outputSchema: type({ hello: "'b'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const C = new Code("c", {
 				outputSchema: type({ hello: "'c'" }),
-				parameters: {},
+				parameters: {
+					jsCode: "",
+				},
 			});
 			const D = new NoOp("d");
 
