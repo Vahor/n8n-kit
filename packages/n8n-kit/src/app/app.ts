@@ -15,8 +15,7 @@ export class App {
 			return this.addCredentials(thing);
 		}
 		if (thing instanceof ImportedWorkflow) {
-			this.importedWorkflows.push(thing);
-			return this;
+			return this.addImportedWorkflow(thing);
 		}
 		throw new Error("Invalid thing");
 	}
@@ -34,6 +33,29 @@ export class App {
 			throw new Error(`Workflow with id ${workflow.id} already exists`);
 		}
 		this.workflows.push(workflow);
+		return this;
+	}
+
+	private addImportedWorkflow(workflow: ImportedWorkflow): this {
+		const hashId = workflow.getHashId();
+		if (
+			hashId &&
+			this.importedWorkflows.some((w) => w.getHashId() === hashId)
+		) {
+			throw new Error(`ImportedWorkflow with hashId ${hashId} already exists`);
+		}
+
+		const n8nWorkflowId = workflow.getN8nWorkflowId();
+		if (
+			n8nWorkflowId &&
+			this.importedWorkflows.some((w) => w.getN8nWorkflowId() === n8nWorkflowId)
+		) {
+			throw new Error(
+				`ImportedWorkflow with n8nWorkflowId ${n8nWorkflowId} already exists`,
+			);
+		}
+
+		this.importedWorkflows.push(workflow);
 		return this;
 	}
 
