@@ -3,7 +3,7 @@ import chalk from "chalk";
 class Logger {
 	private context: string = "";
 	private isDryRun: boolean = false;
-	private enabled: boolean = true;
+	private enabled: boolean = false;
 
 	constructor() {}
 
