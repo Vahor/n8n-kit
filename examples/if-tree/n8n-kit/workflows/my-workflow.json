@@ -41,6 +41,72 @@
 	"name": "If Tree",
 	"nodes": [
 		{
+			"id": "end",
+			"name": "end",
+			"position": [1660, 190],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "false",
+			"name": "false",
+			"position": [460, 385],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-false",
+			"name": "if-false",
+			"parameters": {},
+			"position": [660, 385],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "if-false-false",
+			"name": "if-false-false",
+			"position": [860, 450],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-false-true",
+			"name": "if-false-true",
+			"position": [1260, 320],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-root",
+			"name": "if-root",
+			"parameters": {},
+			"position": [260, 255],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "if-true",
+			"name": "if-true",
+			"parameters": {},
+			"position": [1260, 70],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "if-true-false",
+			"name": "if-true-false",
+			"position": [1460, 310],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-true-true",
+			"name": "if-true-true",
+			"position": [1460, 60],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
 			"id": "schedule-trigger",
 			"name": "Schedule",
 			"parameters": {
@@ -60,75 +126,9 @@
 			"typeVersion": 1.2
 		},
 		{
-			"id": "if-root",
-			"name": "if-root",
-			"parameters": {},
-			"position": [260, 255],
-			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
-		},
-		{
 			"id": "true",
 			"name": "true",
 			"position": [1060, 70],
-			"type": "n8n-nodes-base.noOp",
-			"typeVersion": 1
-		},
-		{
-			"id": "false",
-			"name": "false",
-			"position": [460, 385],
-			"type": "n8n-nodes-base.noOp",
-			"typeVersion": 1
-		},
-		{
-			"id": "if-true",
-			"name": "if-true",
-			"parameters": {},
-			"position": [1260, 70],
-			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
-		},
-		{
-			"id": "if-false",
-			"name": "if-false",
-			"parameters": {},
-			"position": [660, 385],
-			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
-		},
-		{
-			"id": "if-true-true",
-			"name": "if-true-true",
-			"position": [1460, 60],
-			"type": "n8n-nodes-base.noOp",
-			"typeVersion": 1
-		},
-		{
-			"id": "if-true-false",
-			"name": "if-true-false",
-			"position": [1460, 310],
-			"type": "n8n-nodes-base.noOp",
-			"typeVersion": 1
-		},
-		{
-			"id": "if-false-true",
-			"name": "if-false-true",
-			"position": [1260, 320],
-			"type": "n8n-nodes-base.noOp",
-			"typeVersion": 1
-		},
-		{
-			"id": "if-false-false",
-			"name": "if-false-false",
-			"position": [860, 450],
-			"type": "n8n-nodes-base.noOp",
-			"typeVersion": 1
-		},
-		{
-			"id": "end",
-			"name": "end",
-			"position": [1660, 190],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		}

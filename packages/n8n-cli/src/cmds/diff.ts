@@ -69,7 +69,14 @@ const getDiff = async (file1: string, file2: string) => {
 
 function sortObjectByKey<T>(obj: T): T {
 	if (Array.isArray(obj)) {
-		return obj.map((el) => sortObjectByKey(el)) as unknown as T;
+		return obj
+			.map((el) => sortObjectByKey(el))
+			.sort((a, b) => {
+				if (a.id && b.id) {
+					return a.id.localeCompare(b.id);
+				}
+				return 0;
+			}) as unknown as T;
 	}
 	if (typeof obj !== "object" || obj === null) {
 		return obj;

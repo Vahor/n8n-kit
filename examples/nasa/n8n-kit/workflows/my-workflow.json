@@ -16,49 +16,6 @@
 	"name": "NASA Example",
 	"nodes": [
 		{
-			"id": "note",
-			"name": "note",
-			"parameters": {
-				"content": "## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
-				"height": 120,
-				"width": 600
-			},
-			"position": [0, 0],
-			"type": "n8n-nodes-base.stickyNote",
-			"typeVersion": 1
-		},
-		{
-			"id": "schedule-trigger",
-			"name": "Schedule trigger",
-			"parameters": {
-				"rule": {
-					"interval": [
-						{
-							"field": "weeks",
-							"triggerAtDay": [1],
-							"triggerAtHour": 9,
-							"weeksInterval": 1
-						}
-					]
-				}
-			},
-			"position": [300, 300],
-			"type": "n8n-nodes-base.scheduleTrigger",
-			"typeVersion": 1.2
-		},
-		{
-			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } },
-			"id": "nasa",
-			"name": "nasa",
-			"parameters": {
-				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" },
-				"resource": "donkiSolarFlare"
-			},
-			"position": [740, 300],
-			"type": "n8n-nodes-base.nasa",
-			"typeVersion": 1
-		},
-		{
 			"id": "if",
 			"name": "if",
 			"parameters": {
@@ -88,16 +45,27 @@
 			"typeVersion": 2.2
 		},
 		{
-			"id": "PostBin(true)",
-			"name": "PostBin(true)",
+			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } },
+			"id": "nasa",
+			"name": "nasa",
 			"parameters": {
-				"binContent": "=There was a solar flare of class {{ $json.classType }}",
-				"binId": "1741914338605-0907339996192",
-				"operation": "send",
-				"resource": "request"
+				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" },
+				"resource": "donkiSolarFlare"
 			},
-			"position": [1140, 180],
-			"type": "n8n-nodes-base.postBin",
+			"position": [740, 300],
+			"type": "n8n-nodes-base.nasa",
+			"typeVersion": 1
+		},
+		{
+			"id": "note",
+			"name": "note",
+			"parameters": {
+				"content": "## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
+				"height": 120,
+				"width": 600
+			},
+			"position": [0, 0],
+			"type": "n8n-nodes-base.stickyNote",
 			"typeVersion": 1
 		},
 		{
@@ -112,6 +80,38 @@
 			"position": [1140, 420],
 			"type": "n8n-nodes-base.postBin",
 			"typeVersion": 1
+		},
+		{
+			"id": "PostBin(true)",
+			"name": "PostBin(true)",
+			"parameters": {
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"binId": "1741914338605-0907339996192",
+				"operation": "send",
+				"resource": "request"
+			},
+			"position": [1140, 180],
+			"type": "n8n-nodes-base.postBin",
+			"typeVersion": 1
+		},
+		{
+			"id": "schedule-trigger",
+			"name": "Schedule trigger",
+			"parameters": {
+				"rule": {
+					"interval": [
+						{
+							"field": "weeks",
+							"triggerAtDay": [1],
+							"triggerAtHour": 9,
+							"weeksInterval": 1
+						}
+					]
+				}
+			},
+			"position": [300, 300],
+			"type": "n8n-nodes-base.scheduleTrigger",
+			"typeVersion": 1.2
 		}
 	],
 	"settings": {},

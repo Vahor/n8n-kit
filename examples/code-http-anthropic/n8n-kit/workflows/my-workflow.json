@@ -20,16 +20,27 @@
 	"name": "Webhook -> Analytics + Anthropic",
 	"nodes": [
 		{
-			"id": "webhook",
-			"name": "webhook",
+			"id": "format-output",
+			"name": "format-output",
 			"parameters": {
-				"httpMethod": "GET",
-				"path": "path-to-webhook",
-				"responseMode": "responseNode"
+				"respondWith": "json",
+				"responseBody": "={\"message\":{{ $('send-to-anthropic').item.json.content.find((item) => item.type === 'text').text.toJsonString() }}}"
 			},
-			"position": [60, 180],
-			"type": "n8n-nodes-base.webhook",
-			"typeVersion": 2.1
+			"position": [660, 300],
+			"type": "n8n-nodes-base.respondToWebhook",
+			"typeVersion": 1.5
+		},
+		{
+			"id": "generate-prompt",
+			"name": "generate-prompt",
+			"parameters": {
+				"language": "python",
+				"mode": "runOnceForEachItem",
+				"pythonCode": "def handler(input):\n    if(input[\"type\"] == \"type1\"):\n        return {\n            \"prompt\": f\"Reply as if you were a gangster.\"\n        }\n    if(input[\"type\"] == \"type2\"):\n        return {\n            \"prompt\": f\"Reply as if you were a pirate.\"\n        }\n\n    raise Exception(\"Invalid type\")\n\nreturn handler({\n  \"type\": _('webhook').item.json.query.type\n});"
+			},
+			"position": [260, 300],
+			"type": "n8n-nodes-base.code",
+			"typeVersion": 2
 		},
 		{
 			"credentials": { "httpCustomAuth": { "id": "hEQRwqdMuqRSHlXX" } },
@@ -48,18 +59,6 @@
 			"position": [260, 60],
 			"type": "n8n-nodes-base.httpRequest",
 			"typeVersion": 4.2
-		},
-		{
-			"id": "generate-prompt",
-			"name": "generate-prompt",
-			"parameters": {
-				"language": "python",
-				"mode": "runOnceForEachItem",
-				"pythonCode": "def handler(input):\n    if(input[\"type\"] == \"type1\"):\n        return {\n            \"prompt\": f\"Reply as if you were a gangster.\"\n        }\n    if(input[\"type\"] == \"type2\"):\n        return {\n            \"prompt\": f\"Reply as if you were a pirate.\"\n        }\n\n    raise Exception(\"Invalid type\")\n\nreturn handler({\n  \"type\": _('webhook').item.json.query.type\n});"
-			},
-			"position": [260, 300],
-			"type": "n8n-nodes-base.code",
-			"typeVersion": 2
 		},
 		{
 			"credentials": { "anthropicApi": { "id": "qtQFvIABHtrMfErE" } },
@@ -83,15 +82,16 @@
 			"typeVersion": 4.2
 		},
 		{
-			"id": "format-output",
-			"name": "format-output",
+			"id": "webhook",
+			"name": "webhook",
 			"parameters": {
-				"respondWith": "json",
-				"responseBody": "={\"message\":{{ $('send-to-anthropic').item.json.content.find((item) => item.type === 'text').text.toJsonString() }}}"
+				"httpMethod": "GET",
+				"path": "path-to-webhook",
+				"responseMode": "responseNode"
 			},
-			"position": [660, 300],
-			"type": "n8n-nodes-base.respondToWebhook",
-			"typeVersion": 1.5
+			"position": [60, 180],
+			"type": "n8n-nodes-base.webhook",
+			"typeVersion": 2.1
 		}
 	],
 	"settings": {},
