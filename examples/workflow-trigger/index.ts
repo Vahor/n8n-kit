@@ -1,4 +1,11 @@
-import { App, Chain, expr, type, Workflow } from "@vahor/n8n-kit";
+import {
+	App,
+	Chain,
+	expr,
+	JsonExpression,
+	type,
+	Workflow,
+} from "@vahor/n8n-kit";
 import {
 	Code,
 	ExecuteWorkflow,
@@ -42,23 +49,24 @@ new Workflow(app, "workflow-trigger", {
 			}),
 		)
 		.next(
-			new ExecuteWorkflow("import-by-id", {
-				parameters: {
-					workflow: Workflow.import(app, {
-						hashId: reusableWorkflow.getHashId(), // Usually this would come from an environment variable
-						inputSchema: type({
-							// Suppose it's a different workflow
-							hello: "string",
+			({ $ }) =>
+				new ExecuteWorkflow("import-by-id", {
+					parameters: {
+						workflow: Workflow.import(app, {
+							hashId: reusableWorkflow.getHashId(), // Usually this would come from an environment variable
+							inputSchema: type({
+								// Suppose it's a different workflow with a different input schema
+								a: "string",
+							}),
+							outputSchema: type({
+								something: "string",
+							}),
 						}),
-						outputSchema: type({
-							something: "string",
-						}),
-					}),
-					workflowInputs: {
-						hello: "world",
+						workflowInputs: {
+							a: $("json.hello").toExpression(),
+						},
 					},
-				},
-			}),
+				}),
 		)
 
 		.next(

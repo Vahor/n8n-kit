@@ -22,11 +22,17 @@
 			"parameters": {
 				"source": "database",
 				"workflowId": {
+					"__rl": true,
 					"cachedResultName": "Reusable workflow",
 					"mode": "list",
 					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
 				},
-				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" }
+				"workflowInputs": {
+					"mappingMode": "defineBelow",
+					"matchingColumns": [],
+					"schema": [],
+					"value": { "a": "hello", "b": 1, "c": 2, "d": "world" }
+				}
 			},
 			"position": [260, 60],
 			"type": "n8n-nodes-base.executeWorkflow",
@@ -38,11 +44,17 @@
 			"parameters": {
 				"source": "database",
 				"workflowId": {
+					"__rl": true,
 					"cachedResultName": "Untitled",
 					"mode": "list",
 					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
 				},
-				"workflowInputs": { "hello": "world" }
+				"workflowInputs": {
+					"mappingMode": "defineBelow",
+					"matchingColumns": [],
+					"schema": [],
+					"value": { "a": "={{ $json.hello }}" }
+				}
 			},
 			"position": [460, 60],
 			"type": "n8n-nodes-base.executeWorkflow",
