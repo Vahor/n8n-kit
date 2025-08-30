@@ -57,8 +57,6 @@ const workflow = new Workflow("my-workflow", {
 					url: "https://httpbin.org/post",
 					authentication: "genericCredentialType",
 					genericAuthType: "httpCustomAuth",
-					specifyBody: "json",
-					sendBody: true,
 					jsonBody: JsonExpression.from({
 						events: [
 							{
