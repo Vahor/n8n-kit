@@ -57,8 +57,6 @@ const workflow = new Workflow("my-workflow", {
 					url: "https://httpbin.org/post",
 					authentication: "genericCredentialType",
 					genericAuthType: "httpCustomAuth",
-					specifyBody: "json",
-					sendBody: true,
 					jsonBody: JsonExpression.from({
 						events: [
 							{
@@ -106,9 +104,7 @@ const workflow = new Workflow("my-workflow", {
 								url: "https://api.anthropic.com/v1/messages",
 								authentication: "predefinedCredentialType",
 								nodeCredentialType: "anthropicApi",
-								specifyBody: "json",
-								sendBody: true,
-								sendHeaders: true,
+
 								headerParameters: {
 									parameters: [
 										{

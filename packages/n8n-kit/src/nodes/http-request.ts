@@ -33,6 +33,26 @@ export class HttpRequest<
 		override props: P,
 	) {
 		super(id, props);
+		this.props.parameters = this.setDefaultParameters(props.parameters);
+	}
+
+	private setDefaultParameters(
+		parameters: HttpRequestProps["parameters"],
+	): HttpRequestProps["parameters"] {
+		const result = { ...parameters };
+
+		// If jsonBody is present, set defaults for sendBody and specifyBody
+		if (result.jsonBody != null) {
+			if (result.sendBody === undefined) result.sendBody = true;
+			if (result.specifyBody === undefined) result.specifyBody = "json";
+		}
+
+		// If headerParameters is present, set default for sendHeaders
+		if (result.headerParameters != null) {
+			if (result.sendHeaders === undefined) result.sendHeaders = true;
+		}
+
+		return result;
 	}
 
 	override "~validate"(): void {
