@@ -1,12 +1,12 @@
 import path from "node:path";
 import {
 	type App,
-	setProjectSalt,
 	type Workflow,
 	type WorkflowDefinition,
 	workflowTagId,
 } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
+import { setProjectSalt } from "@vahor/n8n-kit/utils";
 import chalk from "chalk";
 import type { GlobalOptions } from "..";
 import { getProjectIdentifier, readConfigFile } from "../config";

@@ -6,6 +6,9 @@ export const DEFAULT_CONFIG = {
 
 let projectSalt: string | null = null;
 
+/*
+ * @internal
+ */
 export const setProjectSalt = (salt: string) => {
 	projectSalt = salt;
 };
