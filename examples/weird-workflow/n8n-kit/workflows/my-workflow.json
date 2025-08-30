@@ -37,7 +37,7 @@
 		},
 		"nooo": { "main": [[{ "index": 0, "node": "2", "type": "main" }]] }
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "N8DKxRz0NOaMc",
 	"name": "Weird Workflow",
 	"nodes": [
 		{
@@ -207,5 +207,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-N8DKxRz0NOaMc" }]
 }

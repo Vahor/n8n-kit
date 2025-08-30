@@ -97,7 +97,7 @@
 			"ai_memory": [[{ "index": 0, "node": "AI Agent", "type": "ai_memory" }]]
 		}
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "IBw2DRuXJxIsM",
 	"name": "RAG Workflow For Company Documents stored in Google Drive",
 	"nodes": [
 		{
@@ -297,5 +297,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-IBw2DRuXJxIsM" }]
 }

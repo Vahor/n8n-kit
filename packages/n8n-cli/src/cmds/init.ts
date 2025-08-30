@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import type { ArgumentsCamelCase, Argv } from "yargs";
 import { configFileExists, writeConfigFile } from "../config";
 
@@ -25,5 +26,6 @@ export const handler = async (
 	await writeConfigFile({
 		entrypoint: argv.entrypoint ?? "src/index.ts",
 		out: argv.out ?? "n8n-kit",
+		projectId: randomUUID(),
 	});
 };

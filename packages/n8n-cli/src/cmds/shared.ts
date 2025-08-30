@@ -6,14 +6,18 @@ import {
 	workflowTagId,
 } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
+import { setProjectSalt } from "@vahor/n8n-kit/utils";
 import chalk from "chalk";
 import type { GlobalOptions } from "..";
-import { readConfigFile } from "../config";
+import { getProjectIdentifier, readConfigFile } from "../config";
 import type { N8nApi } from "../n8n-api";
 
 export const loadApplication = async (options: GlobalOptions) => {
 	logger.log("Loading application...");
 	const config = await readConfigFile();
+
+	const projectIdentifier = await getProjectIdentifier();
+	setProjectSalt(projectIdentifier);
 	const entrypoint = path.resolve(
 		process.cwd(),
 		options.entrypoint ?? config.entrypoint,

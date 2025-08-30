@@ -12,7 +12,7 @@
 		},
 		"nasa": { "main": [[{ "index": 0, "node": "if", "type": "main" }]] }
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "K8yurfQ_ddCou",
 	"name": "NASA Example",
 	"nodes": [
 		{
@@ -115,5 +115,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-K8yurfQ_ddCou" }]
 }
