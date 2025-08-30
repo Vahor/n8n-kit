@@ -57,6 +57,8 @@ jobs:
           if [ ! -z "$existing_pr" ]; then
             echo "Closing existing PR #$existing_pr"
             gh pr close $existing_pr --comment "Closing in favor of new automated update"
+            git branch -D $BRANCH_NAME
+            git push origin $BRANCH_NAME --force
           fi
 
       - name: Create new branch
