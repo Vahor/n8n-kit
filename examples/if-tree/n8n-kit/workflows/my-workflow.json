@@ -37,7 +37,7 @@
 		},
 		"true": { "main": [[{ "index": 0, "node": "if-true", "type": "main" }]] }
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "lWfc2dDoqr834",
 	"name": "If Tree",
 	"nodes": [
 		{
@@ -134,5 +134,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-lWfc2dDoqr834" }]
 }

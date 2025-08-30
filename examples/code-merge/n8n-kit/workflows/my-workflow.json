@@ -40,7 +40,7 @@
 			]
 		}
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "FBnnuXjBlA55u",
 	"name": "Merge Example",
 	"nodes": [
 		{
@@ -80,5 +80,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-FBnnuXjBlA55u" }]
 }

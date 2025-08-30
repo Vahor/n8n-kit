@@ -16,7 +16,7 @@
 			]
 		}
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "1xE-9lGXWZxsp",
 	"name": "Webhook -> Analytics + Anthropic",
 	"nodes": [
 		{
@@ -95,5 +95,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-1xE-9lGXWZxsp" }]
 }
