@@ -10,6 +10,9 @@ let projectSalt: string | null = null;
  * @internal
  */
 export const setProjectSalt = (salt: string) => {
+	if (projectSalt !== null && projectSalt !== salt) {
+		throw new Error("Project salt cannot be changed at runtime");
+	}
 	projectSalt = salt;
 };
 
