@@ -6,9 +6,8 @@ EXAMPLES_DIR="$ROOT_DIR/examples"
 
 # Examples to skip (folder names)
 SKIP_EXAMPLES=(
-    "bundle-js" # TODO: works but as we escape the jsCode it's invalid 
-    "multiple-sources" # use Agent and import is wrong
-    # "weird-workflow" # TODO: this one should work
+    "bundle-js" # NOTE: works but we have some diffs with escaped values in the jsCode. 
+    "multiple-sources" # use Agent so import is wrong
     "workflow-trigger" # TODO: currently the diff only support one workflow
 )
 
@@ -55,7 +54,7 @@ for example_dir in $EXAMPLE_DIRS; do
 
 	bun ../../packages/n8n-cli/dist/index.js build --entrypoint "index2.ts" --sort
 
-	# rm "index2.ts"
+	rm "index2.ts"
 
 	cd "$ROOT_DIR"
 done
