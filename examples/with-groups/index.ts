@@ -2,7 +2,9 @@ import { App, Chain, Group, Workflow } from "@vahor/n8n-kit";
 import { NoOp } from "@vahor/n8n-kit/nodes";
 import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
 	name: "Workflow with groups",
 	definition: (wf) =>
 		Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
@@ -33,8 +35,5 @@ const workflow = new Workflow("my-workflow", {
 				new NoOp("after groups"),
 			),
 });
-
-const app = new App();
-app.add(workflow);
 
 export { app };

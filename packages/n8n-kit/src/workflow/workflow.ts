@@ -1,11 +1,18 @@
 import type { Type } from "arktype";
+import type { App } from "../app";
 import { getProjectSalt, prefix } from "../constants";
 import { Node } from "../nodes/node";
+import { WORKFLOW_SYMBOL } from "../symbols";
 import { shortHash, validateIdentifier } from "../utils/slugify";
 import { Placeholder, type State } from "./chain";
 import { Chain } from "./chain/chain";
 import { Group } from "./group";
+import {
+	ImportedWorkflow,
+	type ImportedWorkflowProps,
+} from "./imported-workflow";
 import { calculateLayout } from "./layout";
+import { ResolvedWorkflow } from "./resolved-workflow";
 import type { Tag } from "./tag";
 
 type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
@@ -14,7 +21,7 @@ type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
 	| Array<T>
 	| ((workflow: Workflow<Input, Output>) => Array<T>);
 
-interface WorkflowProps<Input extends Type, Output extends Type> {
+export interface WorkflowProps<Input extends Type, Output extends Type> {
 	name?: string;
 	inputSchema?: Input;
 	outputSchema?: Output;
@@ -63,13 +70,15 @@ interface WorkflowProps<Input extends Type, Output extends Type> {
 	};
 }
 
-export class Workflow<Input extends Type = any, Output extends Type = any> {
-	public readonly id: string;
-	public readonly hashId: string;
-	private readonly tags: string[];
+export class Workflow<
+	Input extends Type = any,
+	Output extends Type = any,
+> extends ResolvedWorkflow {
+	static readonly [WORKFLOW_SYMBOL] = true;
+	readonly [WORKFLOW_SYMBOL] = true;
 
-	// Undefined until we know the id
-	public n8nWorkflowId: string | undefined = undefined;
+	public readonly id: string;
+	private readonly tags: string[];
 
 	/**
 	 * @internal
@@ -78,13 +87,25 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	private dynamicalyAddedNodes: Node<any, any>[] = [];
 
 	public constructor(
+		app: App,
 		id: string,
 		public readonly props: WorkflowProps<Input, Output>,
 	) {
+		super();
+
 		const saltedId = `${getProjectSalt()}-${id}`;
-		this.hashId = shortHash(saltedId, 24 - prefix.length);
+		this.setHashId(shortHash(saltedId, 24 - prefix.length));
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
+
+		app.add(this);
+	}
+
+	public static import<Input extends Type, Output extends Type>(
+		app: App,
+		props: ImportedWorkflowProps<Input, Output>,
+	) {
+		return new ImportedWorkflow(app, props);
 	}
 
 	public addToDynamicalyAddedNodes(node: Node<any, any>) {
@@ -180,7 +201,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		}
 
 		return {
-			id: this.hashId,
+			id: this.getHashId()!,
 			name: this.getName(),
 			nodes: await Promise.all(layoutNodes.flatMap((node) => node.toNode())),
 			connections: connections,
@@ -193,7 +214,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	}
 
 	private buildTags() {
-		const workflowTag = workflowTagId(this.hashId);
+		const workflowTag = workflowTagId(this.getHashId()!);
 		const tags = [...(this.props.tags ?? [])].filter(
 			(tag) => !tag.startsWith(prefix),
 		);
@@ -224,6 +245,10 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 
 	public getOutputSchema(): Output | null {
 		return this.props.outputSchema ?? null;
+	}
+
+	public override getInternalId() {
+		return this.id;
 	}
 
 	public "~validate"(): void {

@@ -34,7 +34,9 @@ const pineconeIndex = {
 	mode: "list",
 } as const;
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
 	active: true,
 	name: "RAG Workflow For Company Documents stored in Google Drive",
 	definition: [
@@ -248,8 +250,5 @@ const workflow = new Workflow("my-workflow", {
 		),
 	],
 });
-
-const app = new App();
-app.add(workflow);
 
 export { app };

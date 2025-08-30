@@ -1,6 +1,6 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { type } from "arktype";
-import { Group, Workflow } from "../../../src";
+import { App, Group, Workflow } from "../../../src";
 import { Code, If, Merge, NoOp } from "../../../src/nodes";
 import { Chain } from "../../../src/workflow/chain/chain";
 
@@ -10,9 +10,10 @@ describe("Chain", () => {
 			const A = new NoOp("a");
 			const B = new NoOp("b");
 			const C = new NoOp("c");
+			const app = new App();
 
 			const chain = Chain.start(A).next(B).next(C);
-			const workflow = new Workflow("test", {
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 
@@ -35,9 +36,10 @@ describe("Chain", () => {
 					jsCode: "",
 				},
 			});
+			const app = new App();
 
 			const chain = Chain.start(A).next(B.true(C).false(D));
-			const workflow = new Workflow("test", {
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 
@@ -100,7 +102,8 @@ describe("Chain", () => {
 
 			const chain = Chain.start(A).next(B).next(C.true(A).false(D));
 
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 
@@ -113,7 +116,8 @@ describe("Chain", () => {
 			const B = new NoOp("b");
 			const chain = Chain.start(A).next(B).next(A);
 
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 
@@ -135,7 +139,8 @@ describe("Chain", () => {
 				.connect(["a", "b"], C, { b: { to: 1 } })
 				.next(D);
 
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 
@@ -178,7 +183,8 @@ describe("Chain", () => {
 			const E = new NoOp("e");
 
 			const chain = Chain.start(A).multiple([B, C, D, E]);
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 
@@ -213,7 +219,8 @@ describe("Chain", () => {
 			const BB = (wf: Workflow) =>
 				new Group(wf, "bb", { content: "Group B" }, Chain.start(B).next(C));
 
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: (wf) =>
 					Chain.start(Start)
 						.multiple([AA(wf), BB(wf)])

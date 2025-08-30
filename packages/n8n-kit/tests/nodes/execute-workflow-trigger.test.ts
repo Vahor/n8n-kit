@@ -1,11 +1,12 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { type } from "arktype";
-import { Chain, Workflow } from "../../src";
+import { App, Chain, Workflow } from "../../src";
 import { ExecuteWorkflowTrigger, NoOp } from "../../src/nodes";
 
 describe("ExecuteWorkflowTrigger", () => {
 	test("it works", async () => {
-		const workflow = new Workflow("test", {
+		const app = new App();
+		const workflow = new Workflow(app, "test", {
 			definition: Chain.start(new NoOp("test")),
 			inputSchema: type({
 				a: "string",

@@ -135,11 +135,14 @@ export const handler = async (options: Options) => {
 	let hasAnyDiff = false;
 	for (const workflow of toDiff) {
 		logger.setContext(`diff:${workflow.id}`);
+
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
+		const match = matchMap.get(workflow.id)!;
+
 		const from = prepareWorkflowForDiff(await workflow.build());
-		const to = prepareWorkflowForDiff(matchMap.get(workflow.id)!);
+		const to = prepareWorkflowForDiff(match);
 
 		redact.redact(from);
 		redact.redact(to);

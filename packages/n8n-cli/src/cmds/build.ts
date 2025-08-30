@@ -34,7 +34,10 @@ type Options = GlobalOptions & {
 export const handler = async (options: Options) => {
 	const { app, config } = await loadApplication(options);
 	console.log(
-		table([["ID", "Name"], ...app.workflows.map((w) => [w.id, w.getName()])]),
+		table([
+			["ID", "HashId", "Name"],
+			...app.workflows.map((w) => [w.id, w.getHashId(), w.getName()]),
+		]),
 	);
 
 	const workflowsFolder = resolvePath(config, "workflows");

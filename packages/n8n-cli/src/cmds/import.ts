@@ -153,10 +153,12 @@ const writeTypescriptFile = async (
 		}
 	}
 
+	code.line(`const app = new App();`);
+	code.line();
 	logger.debug("Writing workflow");
 	// workflow
 	code.line("// Workflow");
-	code.openBlock(`const workflow = new Workflow("my-workflow",`);
+	code.openBlock(`new Workflow(app, "my-workflow",`);
 	code.line(`name: "${workflowData.name}",`);
 	code.line(`active: ${workflowData.active},`);
 	code.line(
@@ -177,12 +179,6 @@ const writeTypescriptFile = async (
 	code.line("});");
 	code.line();
 
-	logger.debug("Writing app");
-	// App
-	code.line("// App");
-	code.line(`const app = new App();`);
-	code.line(`app.add(workflow);`);
-	code.line();
 	code.line(`export { app };`);
 
 	logger.debug("Saving file");

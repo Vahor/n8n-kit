@@ -1,16 +1,21 @@
 import { Credentials } from "../credentials";
 import { Workflow } from "../workflow";
+import { ImportedWorkflow } from "../workflow/imported-workflow";
 
 export class App {
 	public readonly workflows: Workflow[] = [];
 	public readonly credentials: Credentials[] = [];
+	public readonly importedWorkflows: ImportedWorkflow[] = [];
 
-	public add(thing: Workflow | Credentials): this {
+	public add(thing: Workflow | Credentials | ImportedWorkflow): this {
 		if (thing instanceof Workflow) {
 			return this.addWorkflow(thing);
 		}
 		if (thing instanceof Credentials) {
 			return this.addCredentials(thing);
+		}
+		if (thing instanceof ImportedWorkflow) {
+			return this.addImportedWorkflow(thing);
 		}
 		throw new Error("Invalid thing");
 	}
@@ -28,6 +33,11 @@ export class App {
 			throw new Error(`Workflow with id ${workflow.id} already exists`);
 		}
 		this.workflows.push(workflow);
+		return this;
+	}
+
+	private addImportedWorkflow(workflow: ImportedWorkflow): this {
+		this.importedWorkflows.push(workflow);
 		return this;
 	}
 

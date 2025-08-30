@@ -135,7 +135,9 @@ const entryNode = Chain.start(
 	}),
 );
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
 	active: true,
 	name: "Weird Workflow",
 	definition: (workflow) =>
@@ -151,8 +153,5 @@ const workflow = new Workflow("my-workflow", {
 			),
 		),
 });
-
-const app = new App();
-app.add(workflow);
 
 export { app };
