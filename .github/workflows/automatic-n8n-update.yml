@@ -79,6 +79,11 @@ jobs:
         run: |
           bun run generate
 
+      - name: Run format command
+        if: steps.check-updates.outputs.has_updates == 'true'
+        run: |
+          bun run format
+
       - name: Add changeset
         if: steps.check-updates.outputs.has_updates == 'true'
         run: |
