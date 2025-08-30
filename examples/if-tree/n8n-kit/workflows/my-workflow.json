@@ -27,17 +27,7 @@
 			"type": "n8n-nodes-base.if",
 			"position": [260, 255],
 			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [],
-					"combinator": "or",
-					"options": {
-						"caseSensitive": false,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
+			"parameters": {}
 		},
 		{
 			"id": "true",
@@ -59,17 +49,7 @@
 			"type": "n8n-nodes-base.if",
 			"position": [1260, 70],
 			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": false,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
+			"parameters": {}
 		},
 		{
 			"id": "if-false",
@@ -77,17 +57,7 @@
 			"type": "n8n-nodes-base.if",
 			"position": [660, 385],
 			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": false,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
+			"parameters": {}
 		},
 		{
 			"id": "if-true-true",
