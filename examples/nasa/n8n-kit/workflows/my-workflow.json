@@ -67,7 +67,7 @@
 					],
 					"combinator": "and",
 					"options": {
-						"caseSensitive": true,
+						"caseSensitive": false,
 						"version": 2,
 						"typeValidation": "strict"
 					}

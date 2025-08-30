@@ -32,7 +32,7 @@
 					"conditions": [],
 					"combinator": "or",
 					"options": {
-						"caseSensitive": true,
+						"caseSensitive": false,
 						"version": 2,
 						"typeValidation": "strict"
 					}
@@ -64,7 +64,7 @@
 					"conditions": [],
 					"combinator": "and",
 					"options": {
-						"caseSensitive": true,
+						"caseSensitive": false,
 						"version": 2,
 						"typeValidation": "strict"
 					}
@@ -82,7 +82,7 @@
 					"conditions": [],
 					"combinator": "and",
 					"options": {
-						"caseSensitive": true,
+						"caseSensitive": false,
 						"version": 2,
 						"typeValidation": "strict"
 					}

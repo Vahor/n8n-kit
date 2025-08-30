@@ -1,5 +1,5 @@
 {
-	"id": "SZ23gbg+KGGHL",
+	"id": "SZ23gbg-KGGHL",
 	"name": "Workflow with trigger",
 	"nodes": [
 		{
@@ -48,5 +48,5 @@
 	},
 	"settings": {},
 	"active": false,
-	"tags": [{ "name": "client-id" }, { "name": "@vahor/n8n-SZ23gbg+KGGHL" }]
+	"tags": [{ "name": "client-id" }, { "name": "@vahor/n8n-SZ23gbg-KGGHL" }]
 }

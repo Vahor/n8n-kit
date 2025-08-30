@@ -1,5 +1,5 @@
 {
-	"id": "IuNO+W5pw5tVI",
+	"id": "IuNO-W5pw5tVI",
 	"name": "Weird Workflow",
 	"nodes": [
 		{
@@ -35,7 +35,7 @@
 					],
 					"combinator": "and",
 					"options": {
-						"caseSensitive": true,
+						"caseSensitive": false,
 						"version": 2,
 						"typeValidation": "strict"
 					}
@@ -70,7 +70,7 @@
 					],
 					"combinator": "and",
 					"options": {
-						"caseSensitive": true,
+						"caseSensitive": false,
 						"version": 2,
 						"typeValidation": "strict"
 					}
@@ -207,5 +207,5 @@
 	},
 	"settings": {},
 	"active": true,
-	"tags": [{ "name": "@vahor/n8n-IuNO+W5pw5tVI" }]
+	"tags": [{ "name": "@vahor/n8n-IuNO-W5pw5tVI" }]
 }
