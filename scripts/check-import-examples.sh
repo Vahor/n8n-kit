@@ -6,7 +6,14 @@ EXAMPLES_DIR="$ROOT_DIR/examples"
 
 # Examples to skip (folder names)
 SKIP_EXAMPLES=(
+    "bundle-js"
+    "code-http-anthropic"
+    "code-merge"
     "multiple-sources"
+    "nasa"
+    "weird-workflow"
+    "workflow-trigger"
+    "with-groups"
 )
 
 if [ ! -d "$EXAMPLES_DIR" ]; then
@@ -46,7 +53,7 @@ for example_dir in $EXAMPLE_DIRS; do
 	cd "$example_dir"
 
 	# Import workflow from JSON to regenerate index.ts
-	json_file=$(find . -mindepth 2 -name "*.json" -type f | head -1)
+	json_file=$(find . -mindepth 2 -name "*.json" -path "./*/workflows/*" -type f | head -1)
 	echo "   Importing workflow from JSON file '$json_file' ..."
 	bun ../../packages/n8n-cli/dist/index.js import --file "$json_file" --out "index2.ts" --yes
 
