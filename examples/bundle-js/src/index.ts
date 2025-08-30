@@ -10,7 +10,9 @@ import {
 import { Code, Fields } from "@vahor/n8n-kit/nodes";
 import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
 	name: "Code Bundle Example",
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
 		.next(
@@ -73,8 +75,5 @@ const workflow = new Workflow("my-workflow", {
 				}),
 		),
 });
-
-const app = new App();
-app.add(workflow);
 
 export { app };

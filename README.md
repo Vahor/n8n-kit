@@ -26,12 +26,14 @@ Find more examples in the [examples folder](https://github.com/Vahor/n8n-kit/tre
 ![Example workflow](https://github.com/Vahor/n8n-kit/blob/main/examples/nasa/output.png?raw=true)
 
 ```ts
+const app = new App();
+
 const nasaCredentials = Credentials.byId({
 	name: "nasaApi",
 	id: "credential-id",
 });
 
-const workflow = new Workflow("my-workflow", {
+const workflow = new Workflow(app, "my-workflow", {
 	active: true,
 	name: "NASA Example",
 	definition: [
@@ -110,10 +112,6 @@ const workflow = new Workflow("my-workflow", {
 			),
 	],
 });
-
-const app = new App();
-app.add(nasaCredentials);
-app.add(workflow);
 
 export { app };
 ```

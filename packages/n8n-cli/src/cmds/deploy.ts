@@ -33,7 +33,10 @@ type DeployOptions = GlobalOptions & {
 export const handler = async (options: DeployOptions) => {
 	const { app } = await loadApplication(options);
 	console.log(
-		table([["ID", "Name"], ...app.workflows.map((w) => [w.id, w.getName()])]),
+		table([
+			["ID", "HashId", "Name"],
+			...app.workflows.map((w) => [w.id, w.hashId, w.getName()]),
+		]),
 	);
 
 	console.log();

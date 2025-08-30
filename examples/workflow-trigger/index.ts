@@ -6,7 +6,9 @@ import {
 } from "@vahor/n8n-kit/nodes";
 import { ManualTrigger } from "@vahor/n8n-kit/nodes/generated";
 
-const reusableWorkflow = new Workflow("my-workflow", {
+const app = new App();
+
+const reusableWorkflow = new Workflow(app, "my-workflow", {
 	name: "Reusable workflow",
 	tags: ["reusable"],
 	inputSchema: type({
@@ -22,7 +24,7 @@ const reusableWorkflow = new Workflow("my-workflow", {
 		Chain.start(new ExecuteWorkflowTrigger(wf, "workflow-trigger", {})),
 });
 
-const workflow = new Workflow("workflow-trigger", {
+new Workflow(app, "workflow-trigger", {
 	name: "Workflow with trigger",
 	tags: ["client-id"],
 	definition: Chain.start(new ManualTrigger("When clicking ‘Test workflow’"))
@@ -48,8 +50,5 @@ const workflow = new Workflow("workflow-trigger", {
 				}),
 		),
 });
-
-const app = new App();
-app.add(workflow).add(reusableWorkflow);
 
 export { app };

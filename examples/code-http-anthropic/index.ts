@@ -25,9 +25,11 @@ const anthropicCredentials = Credentials.byId({
 	id: "qtQFvIABHtrMfErE",
 });
 
+const app = new App();
+
 // Call with https://n8n.instance.fr/webhook-test/path-to-webhook?type=type1&prompt=Hello%20World
 
-const workflow = new Workflow("my-workflow", {
+new Workflow(app, "my-workflow", {
 	active: true,
 	name: "Webhook -> Analytics + Anthropic",
 	definition: [
@@ -150,9 +152,5 @@ const workflow = new Workflow("my-workflow", {
 		]),
 	],
 });
-
-const app = new App();
-app.add(analyticsCredentials);
-app.add(workflow);
 
 export { app };

@@ -1,7 +1,9 @@
 import { App, Chain, Placeholder, Workflow } from "@vahor/n8n-kit";
 import { If, NoOp, ScheduleTrigger } from "@vahor/n8n-kit/nodes";
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
 	active: true,
 	name: "If Tree",
 	definition: [
@@ -52,8 +54,5 @@ const workflow = new Workflow("my-workflow", {
 		),
 	],
 });
-
-const app = new App();
-app.add(workflow);
 
 export { app };
