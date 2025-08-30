@@ -54,43 +54,46 @@ export const getWorkflowMapping = async (
 ) => {
 	const matchMap = new Map<string, WorkflowDefinition>();
 	for (const workflow of workflows) {
-		logger.setContext(`resolve:${workflow.getInternalId()}`);
-		if (workflow.isResolved()) {
-			const match = await n8n.getWorkflowById(workflow.getN8nWorkflowId()!);
-			if (!match) {
-				throw new Error(
-					`Tried to resolve workflow ${workflow.getInternalId()} but it does not exist`,
-				);
+		try {
+			logger.setContext(`resolve:${workflow.getInternalId()}`);
+			if (workflow.isResolved()) {
+				const match = await n8n.getWorkflowById(workflow.getN8nWorkflowId()!);
+				if (!match) {
+					throw new Error(
+						`Tried to resolve workflow ${workflow.getInternalId()} but it does not exist`,
+					);
+				}
+				callback?.(workflow, match);
+				matchMap.set(workflow.getInternalId(), match);
+				continue;
 			}
-			callback?.(workflow, match);
-			matchMap.set(workflow.getInternalId(), match);
-			continue;
-		}
-		if (!workflow.getHashId()) {
-			throw new Error("Workflow hashId is not set");
-		}
+			if (!workflow.getHashId()) {
+				throw new Error("Workflow hashId is not set");
+			}
 
-		const tag = workflowTagId(workflow.getHashId()!);
-		const match = (
-			await n8n.listWorkflows({
-				tags: [tag],
-			})
-		).filter((w) => w.isArchived === false);
-		if (match.length === 0) logger.debug("No match found");
-		if (match.length > 1) {
-			logger.error(
-				`Multiple matches found for workflow ${workflow.getInternalId()} (${tag})`,
-			);
-			process.exit(1);
+			const tag = workflowTagId(workflow.getHashId()!);
+			const match = (
+				await n8n.listWorkflows({
+					tags: [tag],
+				})
+			).filter((w) => w.isArchived === false);
+			if (match.length === 0) logger.debug("No match found");
+			if (match.length > 1) {
+				logger.error(
+					`Multiple matches found for workflow ${workflow.getInternalId()} (${tag})`,
+				);
+				process.exit(1);
+			}
+			if (match.length === 1) {
+				callback?.(workflow, match[0]!);
+				logger.log(`Found match with workflow ${chalk.cyan(match[0]!.id)}`);
+				matchMap.set(workflow.getInternalId(), match[0]!);
+			} else {
+				logger.log("No match found");
+			}
+		} finally {
+			logger.setContext(null);
 		}
-		if (match.length === 1) {
-			callback?.(workflow, match[0]!);
-			logger.log(`Found match with workflow ${chalk.cyan(match[0]!.id)}`);
-			matchMap.set(workflow.getInternalId(), match[0]!);
-		} else {
-			logger.log("No match found");
-		}
-		logger.setContext(null);
 	}
 	return matchMap;
 };
