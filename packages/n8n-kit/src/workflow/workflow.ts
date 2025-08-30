@@ -93,12 +93,12 @@ export class Workflow<
 	) {
 		super();
 
-		app.add(this);
-
 		const saltedId = `${getProjectSalt()}-${id}`;
 		this.setHashId(shortHash(saltedId, 24 - prefix.length));
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
+
+		app.add(this);
 	}
 
 	public static import<Input extends Type, Output extends Type>(
