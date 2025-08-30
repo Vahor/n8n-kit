@@ -35,7 +35,7 @@ export const handler = async (options: DeployOptions) => {
 	console.log(
 		table([
 			["ID", "HashId", "Name"],
-			...app.workflows.map((w) => [w.id, w.hashId, w.getName()]),
+			...app.workflows.map((w) => [w.id, w.getHashId(), w.getName()]),
 		]),
 	);
 
@@ -60,9 +60,9 @@ export const handler = async (options: DeployOptions) => {
 	// custom id -> n8n id
 	const matchMap = await getWorkflowMapping(
 		n8n,
-		app.workflows,
+		[...app.workflows, ...app.importedWorkflows],
 		(workflow, match) => {
-			workflow.n8nWorkflowId = match.id;
+			workflow.setN8nWorkflowId(match.id);
 		},
 	);
 
@@ -76,10 +76,13 @@ export const handler = async (options: DeployOptions) => {
 
 		// If merge flag is enabled and workflow exists, merge node positions
 		if (options.merge) {
-			if (workflow.n8nWorkflowId) {
+			if (workflow.getN8nWorkflowId()) {
 				try {
 					logger.log("Merging node positions from existing workflow...");
 					const existingWorkflow = matchMap.get(workflow.id)!;
+					if (!("nodes" in existingWorkflow)) {
+						continue;
+					}
 
 					for (const node of rest.nodes) {
 						const existingNode = existingWorkflow.nodes.find(
@@ -136,24 +139,27 @@ export const handler = async (options: DeployOptions) => {
 			process.exit(1);
 		}
 		logger.log("Deploying workflow...");
-		if (workflow.n8nWorkflowId) {
+		if (workflow.getN8nWorkflowId()) {
 			!options.dryRun &&
-				(await n8n.updateWorkflow(workflow.n8nWorkflowId, jsonRepresentation));
+				(await n8n.updateWorkflow(
+					workflow.getN8nWorkflowId()!,
+					jsonRepresentation,
+				));
 			logger.log(
-				`Updated workflow with id ${chalk.cyan(workflow.n8nWorkflowId)}`,
+				`Updated workflow with id ${chalk.cyan(workflow.getN8nWorkflowId()!)}`,
 			);
 		} else {
 			if (!options.dryRun) {
 				const result = await n8n.createWorkflow(jsonRepresentation);
-				workflow.n8nWorkflowId = result.id;
+				workflow.setN8nWorkflowId(result.id);
 				if (!matchMap.has(workflow.id)) {
 					matchMap.set(workflow.id, result);
 				}
 			} else {
-				workflow.n8nWorkflowId = UNDEFINED_ID;
+				workflow.setN8nWorkflowId(UNDEFINED_ID);
 			}
 			logger.log(
-				`Created workflow with id ${chalk.cyan(workflow.n8nWorkflowId)}`,
+				`Created workflow with id ${chalk.cyan(workflow.getN8nWorkflowId()!)}`,
 			);
 		}
 
@@ -161,7 +167,7 @@ export const handler = async (options: DeployOptions) => {
 		logger.log("Applying tags...");
 		if (!options.dryRun) {
 			await n8n.updateTags(
-				workflow.n8nWorkflowId,
+				workflow.getN8nWorkflowId()!,
 				workflowTags.map((t) => ({ id: t.id! })),
 			);
 		}
@@ -169,7 +175,7 @@ export const handler = async (options: DeployOptions) => {
 		// Set active
 		logger.log(`Setting ${active ? "active" : "inactive"} state...`);
 		!options.dryRun &&
-			(await n8n.setActiveWorkflow(workflow.n8nWorkflowId, active));
+			(await n8n.setActiveWorkflow(workflow.getN8nWorkflowId()!, active));
 
 		logger.log("Done");
 		logger.setContext(null);
@@ -183,7 +189,7 @@ export const handler = async (options: DeployOptions) => {
 			...app.workflows.map((w) => [
 				w.id,
 				w.getName(),
-				n8n.formatWorkflowUrl(w.n8nWorkflowId!),
+				n8n.formatWorkflowUrl(w.getN8nWorkflowId()!),
 			]),
 		]),
 	);

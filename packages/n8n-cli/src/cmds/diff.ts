@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { confirm } from "@inquirer/prompts";
-import type { WorkflowDefinition } from "@vahor/n8n-kit";
+import { isWorkflow, type WorkflowDefinition } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import spawn from "nano-spawn";
 import { table } from "table";
@@ -135,11 +135,18 @@ export const handler = async (options: Options) => {
 	let hasAnyDiff = false;
 	for (const workflow of toDiff) {
 		logger.setContext(`diff:${workflow.id}`);
+
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
+		const match = matchMap.get(workflow.id)!;
+		if (!("nodes" in match)) {
+			logger.warn("Skipping imported workflow");
+			continue;
+		}
+
 		const from = prepareWorkflowForDiff(await workflow.build());
-		const to = prepareWorkflowForDiff(matchMap.get(workflow.id)!);
+		const to = prepareWorkflowForDiff(match);
 
 		redact.redact(from);
 		redact.redact(to);

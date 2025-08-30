@@ -1,7 +1,7 @@
 import path from "node:path";
 import {
 	type App,
-	type Workflow,
+	type ResolvedWorkflow,
 	type WorkflowDefinition,
 	workflowTagId,
 } from "@vahor/n8n-kit";
@@ -49,14 +49,31 @@ export const loadApplication = async (options: GlobalOptions) => {
 
 export const getWorkflowMapping = async (
 	n8n: N8nApi,
-	workflows: App["workflows"],
-	callback?: (workflow: Workflow<any, any>, match: WorkflowDefinition) => void,
+	workflows: ResolvedWorkflow[],
+	callback?: (
+		workflow: ResolvedWorkflow,
+		match: Pick<WorkflowDefinition, "id"> | WorkflowDefinition,
+	) => void,
 ) => {
-	const matchMap = new Map<string, WorkflowDefinition>();
+	const matchMap = new Map<
+		string,
+		Pick<WorkflowDefinition, "id"> | WorkflowDefinition
+	>();
 	for (const workflow of workflows) {
-		logger.setContext(`resolve:${workflow.id}`);
+		logger.setContext(`resolve:${workflow.getInternalId()}`);
+		if (workflow.isResolved()) {
+			const match = {
+				id: workflow.getN8nWorkflowId()!,
+			};
+			callback?.(workflow, match);
+			matchMap.set(workflow.getInternalId(), match);
+			continue;
+		}
+		if (!workflow.getHashId()) {
+			throw new Error("Workflow hashId is not set");
+		}
 
-		const tag = workflowTagId(workflow.hashId);
+		const tag = workflowTagId(workflow.getHashId()!);
 		const match = (
 			await n8n.listWorkflows({
 				tags: [tag],
@@ -65,14 +82,14 @@ export const getWorkflowMapping = async (
 		if (match.length === 0) logger.debug("No match found");
 		if (match.length > 1) {
 			logger.error(
-				`Multiple matches found for workflow ${workflow.id} (${tag})`,
+				`Multiple matches found for workflow ${workflow.getInternalId()} (${tag})`,
 			);
 			process.exit(1);
 		}
 		if (match.length === 1) {
 			callback?.(workflow, match[0]!);
 			logger.log(`Found match with workflow ${chalk.cyan(match[0]!.id)}`);
-			matchMap.set(workflow.id, match[0]!);
+			matchMap.set(workflow.getInternalId(), match[0]!);
 		} else {
 			logger.log("No match found");
 		}

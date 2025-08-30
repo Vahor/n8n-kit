@@ -36,7 +36,7 @@ export const handler = async (options: Options) => {
 	console.log(
 		table([
 			["ID", "HashId", "Name"],
-			...app.workflows.map((w) => [w.id, w.hashId, w.getName()]),
+			...app.workflows.map((w) => [w.id, w.getHashId(), w.getName()]),
 		]),
 	);
 

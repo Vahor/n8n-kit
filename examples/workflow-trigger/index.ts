@@ -45,7 +45,7 @@ new Workflow(app, "workflow-trigger", {
 			new ExecuteWorkflow("import-by-id", {
 				parameters: {
 					workflow: Workflow.import(app, {
-						hashId: reusableWorkflow.hashId, // Usually this would come from an environment variable
+						hashId: reusableWorkflow.getHashId(), // Usually this would come from an environment variable
 						inputSchema: type({
 							// Suppose it's a different workflow
 							hello: "string",

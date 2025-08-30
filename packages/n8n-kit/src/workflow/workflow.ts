@@ -12,6 +12,7 @@ import {
 	type ImportedWorkflowProps,
 } from "./imported-workflow";
 import { calculateLayout } from "./layout";
+import { ResolvedWorkflow } from "./resolved-workflow";
 import type { Tag } from "./tag";
 
 type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
@@ -69,16 +70,15 @@ export interface WorkflowProps<Input extends Type, Output extends Type> {
 	};
 }
 
-export class Workflow<Input extends Type = any, Output extends Type = any> {
+export class Workflow<
+	Input extends Type = any,
+	Output extends Type = any,
+> extends ResolvedWorkflow {
 	static readonly [WORKFLOW_SYMBOL] = true;
 	readonly [WORKFLOW_SYMBOL] = true;
 
 	public readonly id: string;
-	public readonly hashId: string;
 	private readonly tags: string[];
-
-	// Undefined until we know the id
-	public n8nWorkflowId: string | undefined = undefined;
 
 	/**
 	 * @internal
@@ -91,10 +91,12 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		id: string,
 		public readonly props: WorkflowProps<Input, Output>,
 	) {
+		super();
+
 		app.add(this);
 
 		const saltedId = `${getProjectSalt()}-${id}`;
-		this.hashId = shortHash(saltedId, 24 - prefix.length);
+		this.setHashId(shortHash(saltedId, 24 - prefix.length));
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
 	}
@@ -199,7 +201,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		}
 
 		return {
-			id: this.hashId,
+			id: this.getHashId()!,
 			name: this.getName(),
 			nodes: await Promise.all(layoutNodes.flatMap((node) => node.toNode())),
 			connections: connections,
@@ -212,7 +214,7 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	}
 
 	private buildTags() {
-		const workflowTag = workflowTagId(this.hashId);
+		const workflowTag = workflowTagId(this.getHashId()!);
 		const tags = [...(this.props.tags ?? [])].filter(
 			(tag) => !tag.startsWith(prefix),
 		);
@@ -243,6 +245,10 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 
 	public getOutputSchema(): Output | null {
 		return this.props.outputSchema ?? null;
+	}
+
+	public override getInternalId() {
+		return this.id;
 	}
 
 	public "~validate"(): void {
