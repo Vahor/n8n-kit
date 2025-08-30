@@ -106,6 +106,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
+          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}')
           git push origin $BRANCH_NAME
 
           gh pr create \
@@ -113,6 +114,8 @@ jobs:
             --body "## Automated n8n Nodes Update
 
           This PR was automatically generated to update n8n nodes.
+
+          Updated to n8n version [$submodule_version](https://github.com/n8n-io/n8n/tree/$submodule_version)
 
           ---
           *Generated in $JOB_URL*" \
