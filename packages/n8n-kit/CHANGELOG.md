@@ -1,5 +1,37 @@
 # @vahor/n8n-kit
 
+## 0.4.0
+
+### Minor Changes
+
+- [#70](https://github.com/Vahor/n8n-kit/pull/70) [`1d01592`](https://github.com/Vahor/n8n-kit/commit/1d0159268c127d762de6bc2396b2bb8dbc89f4c5) Thanks [@Vahor](https://github.com/Vahor)! - If node conditions are now nested inside another condition object to match n8n properties
+
+### Patch Changes
+
+- [#73](https://github.com/Vahor/n8n-kit/pull/73) [`1a9d3dd`](https://github.com/Vahor/n8n-kit/commit/1a9d3dddff47fca9e34aab9107c0dee7176aea29) Thanks [@Vahor](https://github.com/Vahor)! - set default values for `sendBody`, `sendHeaders` and `specifyBody` in HttpRequest based on the other parameters
+
+  Example if we set `jsonBody` this automatically sets `specifyBody` to `json` and `sendBody` to `true`.
+
+- [#63](https://github.com/Vahor/n8n-kit/pull/63) [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890) Thanks [@Vahor](https://github.com/Vahor)! - Add `JsonExpression` helper to build JSON stringified expressions.
+
+  Example:
+
+  ```ts
+  JsonExpression.from({
+    value: $("data.value"),
+  }).toExpression();
+  ```
+
+  results in `={ "value": {{ $data.item.json.value }} }`
+
+- [#63](https://github.com/Vahor/n8n-kit/pull/63) [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890) Thanks [@Vahor](https://github.com/Vahor)! - Add `PythonFunction` class that can be used in `Code` nodes.
+
+- [#61](https://github.com/Vahor/n8n-kit/pull/61) [`8c012c9`](https://github.com/Vahor/n8n-kit/commit/8c012c91ba8449dee3cdaa3e82fffab19499b939) Thanks [@Vahor](https://github.com/Vahor)! - Improve assignment type validation in Fields node
+
+  Only include assignments with valid value types in the output type.
+
+- [#63](https://github.com/Vahor/n8n-kit/pull/63) [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890) Thanks [@Vahor](https://github.com/Vahor)! - Move if parameters inside a `parameters` object to keep the same pattern as other nodes
+
 ## 0.3.0
 
 ### Minor Changes
