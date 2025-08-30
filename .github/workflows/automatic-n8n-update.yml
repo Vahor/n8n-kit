@@ -10,6 +10,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  BRANCH_NAME: automated/update-n8n-nodes
+
 jobs:
   generate-nodes:
     runs-on: ubuntu-latest
@@ -60,10 +63,10 @@ jobs:
           if [ ! -z "$EXISTING_PR" ]; then
             echo "Reusing existing branch and PR #$EXISTING_PR"
             git fetch origin automated/update-n8n-nodes
-            git checkout automated/update-n8n-nodes
+            git checkout $BRANCH_NAME
           else
             echo "Creating new branch"
-            git checkout -b automated/update-n8n-nodes
+            git checkout -b $BRANCH_NAME
           fi
 
       - name: Run generate command
