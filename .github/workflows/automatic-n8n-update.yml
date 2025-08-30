@@ -123,7 +123,8 @@ jobs:
             *Generated in $JOB_URL*
         run: |
           git push --set-upstream origin $BRANCH_NAME
-          $pr_title="chore: automated n8n nodes update $(date +%Y-%m-%d)"
+
+          pr_title="chore: automated n8n nodes update $(date +%Y-%m-%d)"
 
           if [ ! -z "$EXISTING_PR" ]; then
             echo "Updating existing PR #$EXISTING_PR"
