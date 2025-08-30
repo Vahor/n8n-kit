@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { Chain, Placeholder, Workflow } from "../../src";
+import { App, Chain, Placeholder, Workflow } from "../../src";
 import { Merge } from "../../src/nodes";
 import { ManualTrigger, NoOp } from "../../src/nodes/generated";
 import { TreeBuilder } from "../../src/utils/tree-builder";
@@ -7,7 +7,8 @@ import { TreeBuilder } from "../../src/utils/tree-builder";
 describe("TreeBuilder", () => {
 	describe("buildTrees", () => {
 		test("handles empty workflow", async () => {
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				name: "Empty Workflow",
 				definition: [],
 			});
@@ -20,7 +21,8 @@ describe("TreeBuilder", () => {
 		});
 
 		test("builds single node tree", async () => {
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				name: "Single Node",
 				definition: new ManualTrigger("trigger"),
 			});
@@ -36,7 +38,8 @@ describe("TreeBuilder", () => {
 		});
 
 		test("builds linear chain", async () => {
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				name: "Linear Chain",
 				definition: Chain.start(new ManualTrigger("trigger"))
 					.next(new NoOp("middle"))
@@ -57,7 +60,8 @@ describe("TreeBuilder", () => {
 		});
 
 		test("builds multiple parallel chains", async () => {
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				name: "Multiple Chains",
 				definition: [
 					Chain.start(new ManualTrigger("trigger1")).next(new NoOp("end1")),
@@ -79,7 +83,8 @@ describe("TreeBuilder", () => {
 		});
 
 		test("handles branching with multiple", async () => {
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				name: "Multiple",
 				definition: Chain.start(new ManualTrigger("trigger")).multiple([
 					new NoOp("branch1"),
@@ -106,8 +111,9 @@ describe("TreeBuilder", () => {
 			const merge = new Merge("merge", {
 				parameters: { mode: "combine" },
 			});
+			const app = new App();
 
-			const workflow = new Workflow("test", {
+			const workflow = new Workflow(app, "test", {
 				name: "Cross-tree Connection",
 				definition: Chain.start(trigger)
 					.multiple([noop1, noop2])
@@ -131,8 +137,9 @@ describe("TreeBuilder", () => {
 			const trigger2 = new ManualTrigger("trigger2");
 			const noop1 = new NoOp("noop1");
 			const noop2 = new NoOp("noop2");
+			const app = new App();
 
-			const workflow = new Workflow("test", {
+			const workflow = new Workflow(app, "test", {
 				name: "Cross Chain",
 				definition: [
 					Chain.start(trigger).next(noop1).next(noop2),
@@ -166,8 +173,9 @@ describe("TreeBuilder", () => {
 			const merge = new Merge("merge", {
 				parameters: { mode: "combine" },
 			});
+			const app = new App();
 
-			const workflow = new Workflow("test", {
+			const workflow = new Workflow(app, "test", {
 				name: "Cross Chain",
 				definition: [
 					Chain.start(trigger)

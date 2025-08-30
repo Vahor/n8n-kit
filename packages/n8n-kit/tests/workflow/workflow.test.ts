@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { Chain, Credentials, Workflow } from "../../src";
+import { App, Chain, Credentials, Workflow } from "../../src";
 import { NoOp } from "../../src/nodes";
 import {
 	EmbeddingsGoogleGemini,
@@ -13,7 +13,8 @@ describe("Workflow", () => {
 				const A = new NoOp("a");
 				const B = new NoOp("b");
 
-				const workflow = new Workflow("test", {
+				const app = new App();
+				const workflow = new Workflow(app, "test", {
 					definition: Chain.start(A).next(B),
 				});
 				const result = await workflow.build();
@@ -31,7 +32,8 @@ describe("Workflow", () => {
 			const C = new NoOp("c");
 			const D = new NoOp("d");
 
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: [Chain.start(A).next(B), Chain.start(C).multiple([A, D])],
 			});
 			const result = await workflow.build();
@@ -56,7 +58,8 @@ describe("Workflow", () => {
 			const C = new NoOp("c");
 			const D = new NoOp("d");
 
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: [Chain.start(A).next(B), Chain.start(C).next(D).next(B)],
 			});
 			const result = await workflow.build();
@@ -99,7 +102,8 @@ describe("Workflow", () => {
 					}),
 				),
 			);
-			const workflow = new Workflow("test", {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
 				definition: chain,
 			});
 			const result = await workflow.build();
