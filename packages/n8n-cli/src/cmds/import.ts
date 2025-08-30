@@ -102,9 +102,13 @@ const writeTypescriptFile = async (
 
 	const trees = new TreeBuilder(workflowData).buildTrees();
 
-	const rootImports: string[] = ["App", "Chain", "Workflow", "Placeholder"];
+	const rootImports: string[] = ["App", "Chain", "Workflow"];
 	const nodesImports: Set<string> = new Set();
 	const generatedNodesImports: Set<string> = new Set();
+
+	if (trees.some((tree) => tree.hasCrossTreeConnections)) {
+		rootImports.push("Placeholder");
+	}
 
 	const credentials: Map<string, string> = new Map();
 	extractCredentials(workflowData, credentials);
