@@ -64,6 +64,7 @@ jobs:
             echo "Reusing existing branch and PR #$EXISTING_PR"
             git fetch origin automated/update-n8n-nodes
             git checkout $BRANCH_NAME
+            git pull 
           else
             echo "Creating new branch"
             git checkout -b $BRANCH_NAME
