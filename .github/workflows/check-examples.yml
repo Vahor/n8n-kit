@@ -65,8 +65,11 @@ jobs:
       - name: Build
         run: bun run --filter '*' build
 
-      - name: Check examples
+      - name: Check build examples
         run: bash scripts/build-and-check-examples.sh
+
+      - name: Check import examples
+        run: bash scripts/check-import-examples.sh
 
       - name: Post success comment
         if: ${{ success() }}
