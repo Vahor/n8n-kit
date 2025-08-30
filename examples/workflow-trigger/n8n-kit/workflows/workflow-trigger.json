@@ -10,7 +10,7 @@
 			"main": [[{ "index": 0, "node": "log-result", "type": "main" }]]
 		}
 	},
-	"id": "SZ23gbg-KGGHL",
+	"id": "d9XK3wQxadKaQ",
 	"name": "Workflow with trigger",
 	"nodes": [
 		{
@@ -48,5 +48,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-SZ23gbg-KGGHL" }, { "name": "client-id" }]
+	"tags": [{ "name": "@vahor/n8n-d9XK3wQxadKaQ" }, { "name": "client-id" }]
 }

@@ -9,6 +9,7 @@ const configFileName = "n8n-kit.config.json";
 export const n8nKitConfig = type({
 	entrypoint: "string",
 	out: "string",
+	projectId: "string?",
 });
 
 export type N8nKitConfig = (typeof n8nKitConfig)["infer"];
@@ -47,6 +48,30 @@ export const readConfigFile = async (): Promise<N8nKitConfig> => {
 	DEFAULT_CONFIG.out = path.resolve(`${process.cwd()}/${config.out}`);
 
 	return cachedConfig;
+};
+
+export const getProjectIdentifier = async (): Promise<string> => {
+	const config = await readConfigFile();
+
+	if (config.projectId) {
+		return config.projectId;
+	}
+
+	try {
+		const packageJsonPath = path.resolve(process.cwd(), "package.json");
+		const packageJson = JSON.parse(
+			await fs.promises.readFile(packageJsonPath, "utf-8"),
+		);
+		if (packageJson.name && typeof packageJson.name === "string") {
+			return packageJson.name;
+		}
+	} catch (_ignored) {
+		// package.json doesn't exist or is invalid
+	}
+
+	throw new Error(
+		"No projectId in config and no package.json name found. Consider running 'n8n-kit init' to regenerate config with projectId.",
+	);
 };
 
 export const writeConfigFile = async (config: N8nKitConfig) => {

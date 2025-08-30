@@ -38,13 +38,14 @@ type Options = GlobalOptions & {
 	file?: string;
 };
 
-const getWorkflowData = async (n8n: N8nApi, options: Options) => {
+const getWorkflowData = async (options: Options) => {
 	if (options.file) {
 		const filePath = path.resolve(process.cwd(), options.file);
 		logger.log(`Reading workflow from ${chalk.bold(filePath)}...`);
 		const rawData = await fs.promises.readFile(filePath, "utf-8");
 		return JSON.parse(rawData) as WorkflowDefinition;
 	} else {
+		const n8n = new N8nApi();
 		logger.log(`Fetching workflow ${chalk.bold(options.id)}...`);
 		return await n8n.getWorkflowById(options.id!);
 	}
@@ -89,8 +90,7 @@ export const handler = async (options: Options) => {
 
 	banner();
 
-	const n8n = new N8nApi();
-	const workflowData = await getWorkflowData(n8n, options);
+	const workflowData = await getWorkflowData(options);
 	await writeTypescriptFile(workflowData, filePath);
 };
 

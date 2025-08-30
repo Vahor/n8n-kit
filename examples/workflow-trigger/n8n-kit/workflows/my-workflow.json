@@ -1,7 +1,7 @@
 {
 	"active": false,
 	"connections": {},
-	"id": "iJFYtqyGWaroz",
+	"id": "qL2pzX8jc7NDe",
 	"name": "Reusable workflow",
 	"nodes": [
 		{
@@ -23,5 +23,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }, { "name": "reusable" }]
+	"tags": [{ "name": "@vahor/n8n-qL2pzX8jc7NDe" }, { "name": "reusable" }]
 }

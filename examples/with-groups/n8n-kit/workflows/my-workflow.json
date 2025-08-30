@@ -19,7 +19,7 @@
 			"main": [[{ "index": 0, "node": "after groups", "type": "main" }]]
 		}
 	},
-	"id": "iJFYtqyGWaroz",
+	"id": "ac-VH_xe508Na",
 	"name": "Workflow with groups",
 	"nodes": [
 		{
@@ -85,5 +85,5 @@
 		}
 	],
 	"settings": {},
-	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-ac-VH_xe508Na" }]
 }

@@ -1,5 +1,5 @@
 import type { Type } from "arktype";
-import { prefix } from "../constants";
+import { getProjectSalt, prefix } from "../constants";
 import { Node } from "../nodes/node";
 import { shortHash, validateIdentifier } from "../utils/slugify";
 import { Placeholder, type State } from "./chain";
@@ -81,7 +81,8 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 		id: string,
 		public readonly props: WorkflowProps<Input, Output>,
 	) {
-		this.hashId = shortHash(id, 24 - prefix.length);
+		const saltedId = `${getProjectSalt()}-${id}`;
+		this.hashId = shortHash(saltedId, 24 - prefix.length);
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
 	}
