@@ -92,7 +92,7 @@ const format = (workflow: WorkflowDefinition) => {
 };
 
 export const handler = async (options: Options) => {
-	const { app, config } = await loadApplication();
+	const { app, config } = await loadApplication(options);
 
 	const toDiff =
 		options.id.length > 0

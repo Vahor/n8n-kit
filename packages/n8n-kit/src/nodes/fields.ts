@@ -80,10 +80,11 @@ export class Fields<
 				if (assignment.value instanceof ExpressionBuilder) {
 					assignment.value = assignment.value.toExpression();
 				}
-
-				// transform arktype type to "string" | "object" ... to match n8n
-				const typeSchema = assignment.type.toJsonSchema();
-				assignment.type = (typeSchema as any).type;
+				if (typeof assignment.type !== "string") {
+					// transform arktype type to "string" | "object" ... to match n8n
+					const typeSchema = assignment.type.toJsonSchema();
+					assignment.type = (typeSchema as any).type;
+				}
 			}
 		}
 

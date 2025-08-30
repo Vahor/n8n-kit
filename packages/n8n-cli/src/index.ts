@@ -11,6 +11,7 @@ export type GlobalOptions = {
 	dryRun: boolean;
 	yes: boolean;
 	debug: boolean;
+	entrypoint: string;
 };
 
 yargsInstance
@@ -36,6 +37,10 @@ yargsInstance
 		type: "boolean",
 		describe: "Enable debug mode",
 		default: false,
+	})
+	.option("entrypoint", {
+		type: "string",
+		describe: "Override entrypoint path",
 	})
 
 	.middleware((argv) => {

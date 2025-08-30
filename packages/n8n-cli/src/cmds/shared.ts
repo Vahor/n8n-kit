@@ -7,13 +7,17 @@ import {
 } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import chalk from "chalk";
+import type { GlobalOptions } from "..";
 import { readConfigFile } from "../config";
 import type { N8nApi } from "../n8n-api";
 
-export const loadApplication = async () => {
+export const loadApplication = async (options: GlobalOptions) => {
 	logger.log("Loading application...");
 	const config = await readConfigFile();
-	const entrypoint = path.resolve(process.cwd(), config.entrypoint);
+	const entrypoint = path.resolve(
+		process.cwd(),
+		options.entrypoint ?? config.entrypoint,
+	);
 	const fullPath = path.resolve(entrypoint);
 
 	// Resolve the entrypoint path
