@@ -45,15 +45,17 @@ const checkValidEntityId = ({
 }) => {
 	return new If("check-valid-entity-id", {
 		parameters: {
-			conditions: [
-				{
-					leftValue: $("json.body.execution_type"),
-					operator: {
-						type: "string",
-						operation: "exists",
+			conditions: {
+				conditions: [
+					{
+						leftValue: $("json.body.execution_type"),
+						operator: {
+							type: "string",
+							operation: "exists",
+						},
 					},
-				},
-			],
+				],
+			},
 		},
 	}).false(
 		handleErrorMessageChain(workflow, "invalid-entity-id", {
@@ -89,16 +91,18 @@ const checkValidExecutionType = ({
 		Chain.start(
 			new If("check-valid-execution-type", {
 				parameters: {
-					combinator: "and",
-					conditions: [
-						{
-							leftValue: $("json.body.execution_type"),
-							operator: {
-								type: "string",
-								operation: "exists",
+					conditions: {
+						combinator: "and",
+						conditions: [
+							{
+								leftValue: $("json.body.execution_type"),
+								operator: {
+									type: "string",
+									operation: "exists",
+								},
 							},
-						},
-					],
+						],
+					},
 				},
 			})
 				.false(
@@ -131,7 +135,7 @@ const entryNode = Chain.start(
 	}),
 );
 
-const workflow = new Workflow("weird-workflow", {
+const workflow = new Workflow("my-workflow", {
 	active: true,
 	name: "Weird Workflow",
 	definition: (workflow) =>

@@ -1,89 +1,89 @@
 {
+	"active": false,
+	"connections": {
+		"When clicking ‘Test workflow’": {
+			"main": [
+				[
+					{ "index": 0, "node": "inside group 1", "type": "main" },
+					{ "index": 0, "node": "inside group 2", "type": "main" }
+				]
+			]
+		},
+		"inside group 1": {
+			"main": [[{ "index": 0, "node": "inside group 1 - 2", "type": "main" }]]
+		},
+		"inside group 1 - 2": {
+			"main": [[{ "index": 0, "node": "after groups", "type": "main" }]]
+		},
+		"inside group 2": {
+			"main": [[{ "index": 0, "node": "after groups", "type": "main" }]]
+		}
+	},
 	"id": "iJFYtqyGWaroz",
 	"name": "Workflow with groups",
 	"nodes": [
 		{
-			"id": "When clicking ‘Test workflow’",
-			"name": "When clicking ‘Test workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
-			"position": [60, 180],
-			"typeVersion": 1
-		},
-		{
-			"id": "inside group 1",
-			"name": "inside group 1",
-			"type": "n8n-nodes-base.noOp",
-			"position": [420, 60],
-			"typeVersion": 1
-		},
-		{
-			"id": "inside group 2",
-			"name": "inside group 2",
-			"type": "n8n-nodes-base.noOp",
-			"position": [780, 300],
-			"typeVersion": 1
-		},
-		{
-			"id": "inside group 1 - 2",
-			"name": "inside group 1 - 2",
-			"type": "n8n-nodes-base.noOp",
-			"position": [780, 60],
-			"typeVersion": 1
-		},
-		{
 			"id": "after groups",
 			"name": "after groups",
-			"type": "n8n-nodes-base.noOp",
 			"position": [1140, 180],
+			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
 		{
 			"id": "group-1",
 			"name": "group-1",
-			"type": "n8n-nodes-base.stickyNote",
-			"position": [360, 0],
-			"typeVersion": 1,
 			"parameters": {
-				"content": "Group 1",
 				"color": 1,
-				"width": 600,
-				"height": 240
-			}
+				"content": "Group 1",
+				"height": 240,
+				"width": 600
+			},
+			"position": [360, 0],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
 		},
 		{
 			"id": "group-2",
 			"name": "group-2",
-			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 240],
-			"typeVersion": 1,
 			"parameters": {
-				"content": "Group 2",
 				"color": 3,
-				"width": 240,
-				"height": 240
-			}
+				"content": "Group 2",
+				"height": 240,
+				"width": 240
+			},
+			"position": [720, 240],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
+		},
+		{
+			"id": "inside group 1",
+			"name": "inside group 1",
+			"position": [420, 60],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "inside group 1 - 2",
+			"name": "inside group 1 - 2",
+			"position": [780, 60],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "inside group 2",
+			"name": "inside group 2",
+			"position": [780, 300],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "When clicking ‘Test workflow’",
+			"name": "When clicking ‘Test workflow’",
+			"position": [60, 180],
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1
 		}
 	],
-	"connections": {
-		"When clicking ‘Test workflow’": {
-			"main": [
-				[
-					{ "node": "inside group 1", "type": "main", "index": 0 },
-					{ "node": "inside group 2", "type": "main", "index": 0 }
-				]
-			]
-		},
-		"inside group 1": {
-			"main": [[{ "node": "inside group 1 - 2", "type": "main", "index": 0 }]]
-		},
-		"inside group 2": {
-			"main": [[{ "node": "after groups", "type": "main", "index": 0 }]]
-		},
-		"inside group 1 - 2": {
-			"main": [[{ "node": "after groups", "type": "main", "index": 0 }]]
-		}
-	},
 	"settings": {},
-	"active": false,
 	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }

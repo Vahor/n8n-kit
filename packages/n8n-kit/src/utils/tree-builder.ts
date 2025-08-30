@@ -21,6 +21,7 @@ type TreeNode = {
 
 export type Tree = {
 	root: TreeNode;
+	hasCrossTreeConnections: boolean;
 };
 
 export class TreeBuilder {
@@ -105,7 +106,18 @@ export class TreeBuilder {
 			return null;
 		}
 
-		return { root };
+		const hasCrossTreeConnections = this.hasCrossTreeConnections(root);
+		return { root, hasCrossTreeConnections };
+	}
+
+	private hasCrossTreeConnections(root: TreeNode): boolean {
+		if (root.crossTreeConnections.length > 0) return true;
+		for (const child of root.children) {
+			if (this.hasCrossTreeConnections(child)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private buildSubtree(

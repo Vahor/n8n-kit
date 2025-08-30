@@ -7,6 +7,7 @@ import logger from "@vahor/n8n-kit/logger";
 import chalk from "chalk";
 import { table } from "table";
 import type { Argv } from "yargs";
+import type { GlobalOptions } from "..";
 import { UNDEFINED_ID } from "../constants";
 import { N8nApi } from "../n8n-api";
 import { getWorkflowMapping, loadApplication } from "./shared";
@@ -14,20 +15,23 @@ import { getWorkflowMapping, loadApplication } from "./shared";
 export const command = "deploy";
 export const description = "Deploy app to n8n";
 export const builder = (yargs: Argv) =>
-	yargs.showHelpOnFail(true).option("merge", {
-		type: "boolean",
-		default: true,
-		describe: "Preserve node positions from existing workflows",
-	});
+	yargs
+		.showHelpOnFail(true)
+		.option("merge", {
+			type: "boolean",
+			default: true,
+			describe: "Preserve node positions from existing workflows",
+		})
+		.strict();
 
-type DeployOptions = {
+type DeployOptions = GlobalOptions & {
 	dryRun: boolean;
 	yes: boolean;
 	merge: boolean;
 };
 
 export const handler = async (options: DeployOptions) => {
-	const { app } = await loadApplication();
+	const { app } = await loadApplication(options);
 	console.log(
 		table([["ID", "Name"], ...app.workflows.map((w) => [w.id, w.getName()])]),
 	);

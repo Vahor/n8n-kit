@@ -23,15 +23,12 @@ const workflow = new Workflow("my-workflow", {
 			}),
 		).next(
 			new If("if-root", {
-				parameters: {
-					combinator: "or",
-					conditions: [],
-				},
+				parameters: {},
 			})
 				.true(
 					Chain.start(new NoOp("true"))
 						.next(
-							new If("if-true", { parameters: { conditions: [] } })
+							new If("if-true", { parameters: {} })
 								.true(new NoOp("if-true-true"))
 								.false(new NoOp("if-true-false")),
 						)
@@ -39,7 +36,7 @@ const workflow = new Workflow("my-workflow", {
 				)
 				.false(
 					Chain.start(new NoOp("false")).next(
-						new If("if-false", { parameters: { conditions: [] } })
+						new If("if-false", { parameters: {} })
 							.true(
 								Chain.start(new NoOp("if-false-true")).next(
 									new Placeholder("if-true-false"),

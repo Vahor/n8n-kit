@@ -69,7 +69,14 @@ const getDiff = async (file1: string, file2: string) => {
 
 function sortObjectByKey<T>(obj: T): T {
 	if (Array.isArray(obj)) {
-		return obj.map((el) => sortObjectByKey(el)) as unknown as T;
+		return obj
+			.map((el) => sortObjectByKey(el))
+			.sort((a, b) => {
+				if (a.id && b.id) {
+					return a.id.localeCompare(b.id);
+				}
+				return 0;
+			}) as unknown as T;
 	}
 	if (typeof obj !== "object" || obj === null) {
 		return obj;
@@ -91,8 +98,14 @@ const format = (workflow: WorkflowDefinition) => {
 	workflow.tags.sort((a, b) => a.name.localeCompare(b.name));
 };
 
+export const prepareWorkflowForDiff = (workflow: WorkflowDefinition) => {
+	const cleanWorkflow = sortObjectByKey(workflow);
+	format(cleanWorkflow);
+	return cleanWorkflow;
+};
+
 export const handler = async (options: Options) => {
-	const { app, config } = await loadApplication();
+	const { app, config } = await loadApplication(options);
 
 	const toDiff =
 		options.id.length > 0
@@ -125,11 +138,8 @@ export const handler = async (options: Options) => {
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
-		const from = sortObjectByKey(await workflow.build());
-		const to = sortObjectByKey(matchMap.get(workflow.id)!);
-
-		format(from);
-		format(to);
+		const from = prepareWorkflowForDiff(await workflow.build());
+		const to = prepareWorkflowForDiff(matchMap.get(workflow.id)!);
 
 		redact.redact(from);
 		redact.redact(to);

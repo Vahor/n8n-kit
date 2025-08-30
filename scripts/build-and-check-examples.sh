@@ -24,7 +24,7 @@ for example_dir in $EXAMPLE_DIRS; do
 
 	cd "$example_dir"
 
-	bun ../../packages/n8n-cli/dist/index.js build
+	bun ../../packages/n8n-cli/dist/index.js build --sort
 	bunx tsc --noEmit
 
 	cd "$ROOT_DIR"

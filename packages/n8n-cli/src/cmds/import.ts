@@ -102,9 +102,13 @@ const writeTypescriptFile = async (
 
 	const trees = new TreeBuilder(workflowData).buildTrees();
 
-	const rootImports: string[] = ["App", "Chain", "Workflow", "Placeholder"];
+	const rootImports: string[] = ["App", "Chain", "Workflow"];
 	const nodesImports: Set<string> = new Set();
 	const generatedNodesImports: Set<string> = new Set();
+
+	if (trees.some((tree) => tree.hasCrossTreeConnections)) {
+		rootImports.push("Placeholder");
+	}
 
 	const credentials: Map<string, string> = new Map();
 	extractCredentials(workflowData, credentials);
@@ -205,9 +209,10 @@ const extractNodesTypes = (
 	nodesImports: Set<string>,
 	generatedNodesImports: Set<string>,
 ): void => {
+	const customNodes = ["If", "Merge", "Fields", "HttpRequest"];
 	for (const node of workflowData.nodes) {
 		const asImport = nodeToClassname(node);
-		if (asImport === "If" || asImport === "Merge") {
+		if (customNodes.includes(asImport)) {
 			nodesImports.add(asImport);
 		} else {
 			generatedNodesImports.add(asImport);
@@ -221,6 +226,9 @@ const nodeToClassname = (node: WorkflowDefinition["nodes"][number]) => {
 	// NOTE: not possible to add the version suffix
 	//  as for instance `GoogleDriveV2` has `typeVersion: 3`
 	//  and some node in v1 have a suffix and others don't
+
+	// set is renamed to Fields in our custom nodes
+	if (nodeName === "set") return "Fields";
 
 	return toPascalCase(nodeName);
 };
@@ -268,6 +276,7 @@ const writeWorkflowDefinitionNode = async (
 
 	code.line(`label: "${node.node.name}",`);
 	code.line(`position: [${node.node.position}],`);
+	if (node.node.disabled) code.line(`disabled: ${node.node.disabled},`);
 	if (node.node.credentials) {
 		for (const type of Object.keys(node.node.credentials)) {
 			code.line(`${type}Credentials: ${type}Credentials,`);
@@ -361,7 +370,8 @@ const writeWorkflowDefinitionNode = async (
 };
 
 const formatString = (str: any) => {
-	if (typeof str === "string" && str.includes("\n")) return `\`${str}\``;
+	if (typeof str === "string" && str.includes("\n"))
+		return `\`${str.replace(/`/g, "\\`").replace(/\$/g, "\\$")}\``;
 	return JSON.stringify(str);
 };
 

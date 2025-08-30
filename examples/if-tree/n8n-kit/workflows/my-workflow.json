@@ -1,13 +1,114 @@
 {
+	"active": true,
+	"connections": {
+		"Schedule": {
+			"main": [[{ "index": 0, "node": "if-root", "type": "main" }]]
+		},
+		"false": { "main": [[{ "index": 0, "node": "if-false", "type": "main" }]] },
+		"if-false": {
+			"main": [
+				[{ "index": 0, "node": "if-false-true", "type": "main" }],
+				[{ "index": 0, "node": "if-false-false", "type": "main" }]
+			]
+		},
+		"if-false-false": {
+			"main": [[{ "index": 0, "node": "true", "type": "main" }]]
+		},
+		"if-false-true": {
+			"main": [[{ "index": 0, "node": "if-true-false", "type": "main" }]]
+		},
+		"if-root": {
+			"main": [
+				[{ "index": 0, "node": "true", "type": "main" }],
+				[{ "index": 0, "node": "false", "type": "main" }]
+			]
+		},
+		"if-true": {
+			"main": [
+				[{ "index": 0, "node": "if-true-true", "type": "main" }],
+				[{ "index": 0, "node": "if-true-false", "type": "main" }]
+			]
+		},
+		"if-true-false": {
+			"main": [[{ "index": 0, "node": "end", "type": "main" }]]
+		},
+		"if-true-true": {
+			"main": [[{ "index": 0, "node": "end", "type": "main" }]]
+		},
+		"true": { "main": [[{ "index": 0, "node": "if-true", "type": "main" }]] }
+	},
 	"id": "iJFYtqyGWaroz",
 	"name": "If Tree",
 	"nodes": [
 		{
+			"id": "end",
+			"name": "end",
+			"position": [1660, 190],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "false",
+			"name": "false",
+			"position": [460, 385],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-false",
+			"name": "if-false",
+			"parameters": {},
+			"position": [660, 385],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "if-false-false",
+			"name": "if-false-false",
+			"position": [860, 450],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-false-true",
+			"name": "if-false-true",
+			"position": [1260, 320],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-root",
+			"name": "if-root",
+			"parameters": {},
+			"position": [260, 255],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "if-true",
+			"name": "if-true",
+			"parameters": {},
+			"position": [1260, 70],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "if-true-false",
+			"name": "if-true-false",
+			"position": [1460, 310],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "if-true-true",
+			"name": "if-true-true",
+			"position": [1460, 60],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
 			"id": "schedule-trigger",
 			"name": "Schedule",
-			"type": "n8n-nodes-base.scheduleTrigger",
-			"position": [60, 255],
-			"typeVersion": 1.2,
 			"parameters": {
 				"rule": {
 					"interval": [
@@ -19,150 +120,19 @@
 						}
 					]
 				}
-			}
-		},
-		{
-			"id": "if-root",
-			"name": "if-root",
-			"type": "n8n-nodes-base.if",
-			"position": [260, 255],
-			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [],
-					"combinator": "or",
-					"options": {
-						"caseSensitive": true,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
+			},
+			"position": [60, 255],
+			"type": "n8n-nodes-base.scheduleTrigger",
+			"typeVersion": 1.2
 		},
 		{
 			"id": "true",
 			"name": "true",
-			"type": "n8n-nodes-base.noOp",
 			"position": [1060, 70],
-			"typeVersion": 1
-		},
-		{
-			"id": "false",
-			"name": "false",
 			"type": "n8n-nodes-base.noOp",
-			"position": [460, 385],
-			"typeVersion": 1
-		},
-		{
-			"id": "if-true",
-			"name": "if-true",
-			"type": "n8n-nodes-base.if",
-			"position": [1260, 70],
-			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": true,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
-		},
-		{
-			"id": "if-false",
-			"name": "if-false",
-			"type": "n8n-nodes-base.if",
-			"position": [660, 385],
-			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": true,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
-		},
-		{
-			"id": "if-true-true",
-			"name": "if-true-true",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1460, 60],
-			"typeVersion": 1
-		},
-		{
-			"id": "if-true-false",
-			"name": "if-true-false",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1460, 310],
-			"typeVersion": 1
-		},
-		{
-			"id": "if-false-true",
-			"name": "if-false-true",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1260, 320],
-			"typeVersion": 1
-		},
-		{
-			"id": "if-false-false",
-			"name": "if-false-false",
-			"type": "n8n-nodes-base.noOp",
-			"position": [860, 450],
-			"typeVersion": 1
-		},
-		{
-			"id": "end",
-			"name": "end",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1660, 190],
 			"typeVersion": 1
 		}
 	],
-	"connections": {
-		"Schedule": {
-			"main": [[{ "node": "if-root", "type": "main", "index": 0 }]]
-		},
-		"if-root": {
-			"main": [
-				[{ "node": "true", "type": "main", "index": 0 }],
-				[{ "node": "false", "type": "main", "index": 0 }]
-			]
-		},
-		"true": { "main": [[{ "node": "if-true", "type": "main", "index": 0 }]] },
-		"false": { "main": [[{ "node": "if-false", "type": "main", "index": 0 }]] },
-		"if-true": {
-			"main": [
-				[{ "node": "if-true-true", "type": "main", "index": 0 }],
-				[{ "node": "if-true-false", "type": "main", "index": 0 }]
-			]
-		},
-		"if-false": {
-			"main": [
-				[{ "node": "if-false-true", "type": "main", "index": 0 }],
-				[{ "node": "if-false-false", "type": "main", "index": 0 }]
-			]
-		},
-		"if-true-true": {
-			"main": [[{ "node": "end", "type": "main", "index": 0 }]]
-		},
-		"if-true-false": {
-			"main": [[{ "node": "end", "type": "main", "index": 0 }]]
-		},
-		"if-false-true": {
-			"main": [[{ "node": "if-true-false", "type": "main", "index": 0 }]]
-		},
-		"if-false-false": {
-			"main": [[{ "node": "true", "type": "main", "index": 0 }]]
-		}
-	},
 	"settings": {},
-	"active": true,
 	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }

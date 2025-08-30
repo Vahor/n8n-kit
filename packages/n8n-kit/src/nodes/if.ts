@@ -51,10 +51,12 @@ type BaseCondition = {
 
 export interface IfProps extends NodeProps {
 	parameters: {
-		conditions: Array<StringCondition>;
-		combinator?: ConditionCombinator;
-		options?: {
-			ignoreCase?: boolean;
+		conditions?: {
+			conditions: Array<StringCondition>;
+			combinator?: ConditionCombinator;
+			options?: {
+				ignoreCase?: boolean;
+			};
 		};
 	};
 }
@@ -79,8 +81,14 @@ export class If<
 	override "~validate"(): void {
 		super["~validate"]();
 		// add ids to conditions
-		for (let i = 0; i < this.props.parameters.conditions.length; i++) {
-			const condition = this.props.parameters.conditions[i]!;
+		if (!this.props.parameters.conditions) return;
+
+		for (
+			let i = 0;
+			i < this.props.parameters.conditions.conditions.length;
+			i++
+		) {
+			const condition = this.props.parameters.conditions.conditions[i]!;
 			condition.id = `${this.getPath()}/${i}`;
 			condition.operator.singleValue = condition.rightValue === undefined;
 			if (condition.leftValue instanceof ExpressionBuilder) {
@@ -93,12 +101,15 @@ export class If<
 	}
 
 	override async getParameters() {
+		const conditions = this.props.parameters.conditions;
+		if (!conditions) return {};
+
 		return {
 			conditions: {
-				conditions: this.props.parameters.conditions,
-				combinator: this.props.parameters.combinator ?? "and",
+				conditions: conditions.conditions,
+				combinator: conditions.combinator ?? "and",
 				options: {
-					caseSensitive: !(this.props.parameters.options?.ignoreCase ?? true),
+					caseSensitive: !(conditions.options?.ignoreCase ?? true),
 					version: 2,
 					typeValidation: "strict",
 				},

@@ -52,17 +52,19 @@ const workflow = new Workflow("my-workflow", {
 			.next(({ $ }) =>
 				new If("if", {
 					parameters: {
-						combinator: "and",
-						conditions: [
-							{
-								operator: {
-									type: "string",
-									operation: "contains",
+						conditions: {
+							combinator: "and",
+							conditions: [
+								{
+									operator: {
+										type: "string",
+										operation: "contains",
+									},
+									leftValue: $("json.classType").toExpression(),
+									rightValue: "C",
 								},
-								leftValue: $("json.classType").toExpression(),
-								rightValue: "C",
-							},
-						],
+							],
+						},
 					},
 				})
 					.true(
