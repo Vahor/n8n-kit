@@ -10,7 +10,7 @@ export interface DataTableProps extends NodeProps {
 }
 
 /**
- * Save data across workflow executions in a table
+ * Permanently save data across workflow executions in a table
  */
 export class DataTable<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.dataTable" as const;
