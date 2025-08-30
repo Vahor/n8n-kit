@@ -1,7 +1,9 @@
 import type { Type } from "arktype";
 import type { ExecuteWorkflowNodeParameters } from "../generated/nodes/ExecuteWorkflow";
 import { ExecuteWorkflow as _ExecuteWorkflow } from "../generated/nodes-impl/ExecuteWorkflow";
+import { isWorkflow } from "../symbols";
 import { RESOLVED_WORKFLOW_ID, type Workflow } from "../workflow";
+import type { ImportedWorkflow } from "../workflow/imported-workflow";
 import type { NodeProps } from "./node";
 
 export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
@@ -10,7 +12,7 @@ export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
 		ExecuteWorkflowNodeParameters,
 		"workflowId" | "source" | "workflowInputs"
 	> & {
-		workflow: Workflow<Input, Output>;
+		workflow: Workflow<Input, Output> | ImportedWorkflow<Input, Output>;
 		workflowInputs: Input["infer"];
 	};
 }
@@ -28,14 +30,18 @@ export class ExecuteWorkflow<
 	}
 
 	override async getParameters() {
+		const workflowId = isWorkflow(this.props.parameters.workflow)
+			? this.props.parameters.workflow.id
+			: this.props.parameters.workflow.getId();
+
 		return {
 			...this.props.parameters,
 			// remove workflow from output as it's only used for the workflowId
 			workflow: undefined,
 			workflowId: {
-				value: RESOLVED_WORKFLOW_ID(this.props.parameters.workflow.id),
+				value: RESOLVED_WORKFLOW_ID(workflowId),
 				mode: "list",
-				cachedResultName: this.props.parameters.workflow.id,
+				cachedResultName: workflowId,
 			},
 			source: "database",
 		};

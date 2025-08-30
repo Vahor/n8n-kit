@@ -2,6 +2,7 @@ import type { Type } from "arktype";
 import type { App } from "../app";
 import { getProjectSalt, prefix } from "../constants";
 import { Node } from "../nodes/node";
+import { WORKFLOW_SYMBOL } from "../symbols";
 import { shortHash, validateIdentifier } from "../utils/slugify";
 import { Placeholder, type State } from "./chain";
 import { Chain } from "./chain/chain";
@@ -69,6 +70,9 @@ export interface WorkflowProps<Input extends Type, Output extends Type> {
 }
 
 export class Workflow<Input extends Type = any, Output extends Type = any> {
+	static readonly [WORKFLOW_SYMBOL] = true;
+	readonly [WORKFLOW_SYMBOL] = true;
+
 	public readonly id: string;
 	public readonly hashId: string;
 	private readonly tags: string[];
@@ -96,9 +100,10 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	}
 
 	public static import<Input extends Type, Output extends Type>(
+		app: App,
 		props: ImportedWorkflowProps<Input, Output>,
 	) {
-		return new ImportedWorkflow(props);
+		return new ImportedWorkflow(app, props);
 	}
 
 	public addToDynamicalyAddedNodes(node: Node<any, any>) {

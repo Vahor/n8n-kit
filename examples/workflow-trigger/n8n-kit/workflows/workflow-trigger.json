@@ -7,6 +7,9 @@
 			]
 		},
 		"call-reusable-workflow": {
+			"main": [[{ "index": 0, "node": "import-by-id", "type": "main" }]]
+		},
+		"import-by-id": {
 			"main": [[{ "index": 0, "node": "log-result", "type": "main" }]]
 		}
 	},
@@ -30,12 +33,28 @@
 			"typeVersion": 1.2
 		},
 		{
+			"id": "import-by-id",
+			"name": "import-by-id",
+			"parameters": {
+				"source": "database",
+				"workflowId": {
+					"cachedResultName": "qL2pzX8jc7NDe",
+					"mode": "list",
+					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
+				},
+				"workflowInputs": { "hello": "world" }
+			},
+			"position": [460, 60],
+			"type": "n8n-nodes-base.executeWorkflow",
+			"typeVersion": 1.2
+		},
+		{
 			"id": "log-result",
 			"name": "log-result",
 			"parameters": {
-				"jsCode": "=console.log({{ $('call-reusable-workflow').item.json.hello }})"
+				"jsCode": "=console.log({{ $('call-reusable-workflow').item.json.hello }}, {{ $('import-by-id').item.json.something }})"
 			},
-			"position": [460, 60],
+			"position": [660, 60],
 			"type": "n8n-nodes-base.code",
 			"typeVersion": 2
 		},

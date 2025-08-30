@@ -42,10 +42,30 @@ new Workflow(app, "workflow-trigger", {
 			}),
 		)
 		.next(
+			new ExecuteWorkflow("import-by-id", {
+				parameters: {
+					workflow: Workflow.import(app, {
+						hashId: reusableWorkflow.hashId, // Usually this would come from an environment variable
+						inputSchema: type({
+							// Suppose it's a different workflow
+							hello: "string",
+						}),
+						outputSchema: type({
+							something: "string",
+						}),
+					}),
+					workflowInputs: {
+						hello: "world",
+					},
+				},
+			}),
+		)
+
+		.next(
 			({ $ }) =>
 				new Code("log-result", {
 					parameters: {
-						jsCode: expr`console.log(${$("['call-reusable-workflow'].hello")})`,
+						jsCode: expr`console.log(${$("['call-reusable-workflow'].hello")}, ${$("['import-by-id'].something")})`,
 					},
 				}),
 		),

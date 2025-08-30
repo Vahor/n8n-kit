@@ -1,5 +1,6 @@
 import type { Type } from "arktype";
 import type { App } from "../app";
+import { IMPORTED_WORKFLOW_SYMBOL } from "../symbols";
 import type { WorkflowProps } from "./workflow";
 
 export interface ImportedWorkflowProps<Input extends Type, Output extends Type>
@@ -21,6 +22,9 @@ export class ImportedWorkflow<
 	Input extends Type = any,
 	Output extends Type = any,
 > {
+	static readonly [IMPORTED_WORKFLOW_SYMBOL] = true;
+	readonly [IMPORTED_WORKFLOW_SYMBOL] = true;
+
 	public constructor(
 		app: App,
 		public readonly props: ImportedWorkflowProps<Input, Output>,
@@ -29,5 +33,9 @@ export class ImportedWorkflow<
 		if (!props.hashId && !props.n8nWorkflowId) {
 			throw new Error("Either hashId or n8nWorkflowId must be provided");
 		}
+	}
+
+	public getId() {
+		return this.props.hashId ?? this.props.n8nWorkflowId!;
 	}
 }
