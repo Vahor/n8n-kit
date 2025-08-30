@@ -39,8 +39,8 @@ export class ImportedWorkflow<
 			throw new Error("Either hashId or n8nWorkflowId must be provided");
 		}
 
-		this.setHashId(props.hashId!);
-		this.setN8nWorkflowId(props.n8nWorkflowId!);
+		if (props.hashId != null) this.setHashId(props.hashId);
+		if (props.n8nWorkflowId != null) this.setN8nWorkflowId(props.n8nWorkflowId);
 
 		app.add(this);
 	}
