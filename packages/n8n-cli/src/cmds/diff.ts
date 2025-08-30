@@ -91,6 +91,12 @@ const format = (workflow: WorkflowDefinition) => {
 	workflow.tags.sort((a, b) => a.name.localeCompare(b.name));
 };
 
+export const prepareWorkflowForDiff = (workflow: WorkflowDefinition) => {
+	const cleanWorkflow = sortObjectByKey(workflow);
+	format(cleanWorkflow);
+	return cleanWorkflow;
+};
+
 export const handler = async (options: Options) => {
 	const { app, config } = await loadApplication(options);
 
@@ -125,11 +131,8 @@ export const handler = async (options: Options) => {
 		if (!matchMap.has(workflow.id)) {
 			continue;
 		}
-		const from = sortObjectByKey(await workflow.build());
-		const to = sortObjectByKey(matchMap.get(workflow.id)!);
-
-		format(from);
-		format(to);
+		const from = prepareWorkflowForDiff(await workflow.build());
+		const to = prepareWorkflowForDiff(matchMap.get(workflow.id)!);
 
 		redact.redact(from);
 		redact.redact(to);

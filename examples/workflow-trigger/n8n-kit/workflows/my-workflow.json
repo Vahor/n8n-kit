@@ -1,13 +1,12 @@
 {
+	"active": false,
+	"connections": {},
 	"id": "iJFYtqyGWaroz",
 	"name": "Reusable workflow",
 	"nodes": [
 		{
 			"id": "workflow-trigger",
 			"name": "workflow-trigger",
-			"type": "n8n-nodes-base.executeWorkflowTrigger",
-			"position": [60, 60],
-			"typeVersion": 1.1,
 			"parameters": {
 				"workflowInputs": {
 					"values": [
@@ -17,11 +16,12 @@
 						{ "name": "d", "type": "any" }
 					]
 				}
-			}
+			},
+			"position": [60, 60],
+			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"typeVersion": 1.1
 		}
 	],
-	"connections": {},
 	"settings": {},
-	"active": false,
-	"tags": [{ "name": "reusable" }, { "name": "@vahor/n8n-iJFYtqyGWaroz" }]
+	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }, { "name": "reusable" }]
 }

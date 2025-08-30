@@ -135,7 +135,7 @@ const entryNode = Chain.start(
 	}),
 );
 
-const workflow = new Workflow("weird-workflow", {
+const workflow = new Workflow("my-workflow", {
 	active: true,
 	name: "Weird Workflow",
 	definition: (workflow) =>

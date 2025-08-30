@@ -6,14 +6,10 @@ EXAMPLES_DIR="$ROOT_DIR/examples"
 
 # Examples to skip (folder names)
 SKIP_EXAMPLES=(
-    "bundle-js"
-    "code-http-anthropic"
-    "code-merge"
-    "multiple-sources"
-    "nasa"
-    "weird-workflow"
-    "workflow-trigger"
-    "with-groups"
+    "bundle-js" # TODO: works but as we escape the jsCode it's invalid 
+    "multiple-sources" # use Agent and import is wrong
+    # "weird-workflow" # TODO: this one should work
+    "workflow-trigger" # TODO: currently the diff only support one workflow
 )
 
 if [ ! -d "$EXAMPLES_DIR" ]; then
@@ -57,9 +53,9 @@ for example_dir in $EXAMPLE_DIRS; do
 	echo "   Importing workflow from JSON file '$json_file' ..."
 	bun ../../packages/n8n-cli/dist/index.js import --file "$json_file" --out "index2.ts" --yes
 
-	bun ../../packages/n8n-cli/dist/index.js build --entrypoint "index2.ts"
+	bun ../../packages/n8n-cli/dist/index.js build --entrypoint "index2.ts" --sort
 
-	rm "index2.ts"
+	# rm "index2.ts"
 
 	cd "$ROOT_DIR"
 done

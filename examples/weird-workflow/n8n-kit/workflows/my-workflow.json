@@ -1,212 +1,211 @@
 {
-	"id": "iJFYtqyGWaroz",
-	"name": "Weird Workflow",
-	"nodes": [
-		{
-			"id": "webhook",
-			"name": "Webhook",
-			"type": "n8n-nodes-base.webhook",
-			"position": [60, 300],
-			"typeVersion": 2.1,
-			"parameters": {
-				"label": "Webhook",
-				"httpMethod": "POST",
-				"path": "abc",
-				"responseMode": "responseNode"
-			}
-		},
-		{
-			"id": "check-valid-entity-id",
-			"name": "check-valid-entity-id",
-			"type": "n8n-nodes-base.if",
-			"position": [420, 300],
-			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [
-						{
-							"leftValue": "={{ $json.body.execution_type }}",
-							"operator": {
-								"type": "string",
-								"operation": "exists",
-								"singleValue": true
-							},
-							"id": "my-workflow/check-valid-entity-id/0"
-						}
-					],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": true,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
-		},
-		{
-			"id": "invalid-entity-id",
-			"name": "invalid-entity-id",
-			"type": "n8n-nodes-base.noOp",
-			"position": [780, 60],
-			"typeVersion": 1
-		},
-		{
-			"id": "check-valid-execution-type",
-			"name": "check-valid-execution-type",
-			"type": "n8n-nodes-base.if",
-			"position": [780, 420],
-			"typeVersion": 2.2,
-			"parameters": {
-				"conditions": {
-					"conditions": [
-						{
-							"leftValue": "={{ $json.body.execution_type }}",
-							"operator": {
-								"type": "string",
-								"operation": "exists",
-								"singleValue": true
-							},
-							"id": "my-workflow/check-valid-execution-type/0"
-						}
-					],
-					"combinator": "and",
-					"options": {
-						"caseSensitive": true,
-						"version": 2,
-						"typeValidation": "strict"
-					}
-				}
-			}
-		},
-		{
-			"id": "invalid-entity-id-response",
-			"name": "invalid-entity-id-response",
-			"type": "n8n-nodes-base.respondToWebhook",
-			"position": [1140, 60],
-			"typeVersion": 1.5,
-			"parameters": {
-				"respondWith": "json",
-				"responseBody": "={\n  \"error\": \"Invalid entity id\",\n  \"data\": {\n    \"body\": \"{{ $json.body }}\"\n  }\n}",
-				"options": { "responseCode": 400 }
-			}
-		},
-		{
-			"id": "invalid-execution-type",
-			"name": "invalid-execution-type",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1140, 300],
-			"typeVersion": 1
-		},
-		{
-			"id": "nooo",
-			"name": "nooo",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1140, 540],
-			"typeVersion": 1
-		},
-		{
-			"id": "invalid-execution-type-response",
-			"name": "invalid-execution-type-response",
-			"type": "n8n-nodes-base.respondToWebhook",
-			"position": [1500, 300],
-			"typeVersion": 1.5,
-			"parameters": {
-				"respondWith": "json",
-				"responseBody": "={\n  \"error\": \"Invalid execution type\",\n  \"data\": {\n    \"body\": \"{{ $json.body }}\"\n  }\n}",
-				"options": { "responseCode": 400 }
-			}
-		},
-		{
-			"id": "2",
-			"name": "2",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1500, 540],
-			"typeVersion": 1
-		},
-		{
-			"id": "3",
-			"name": "3",
-			"type": "n8n-nodes-base.noOp",
-			"position": [1860, 540],
-			"typeVersion": 1
-		},
-		{
-			"id": "invalid-entity-id-handle-error-message-group",
-			"name": "invalid-entity-id-handle-error-message-group",
-			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 0],
-			"typeVersion": 1,
-			"parameters": {
-				"content": "Handle error message",
-				"color": 3,
-				"width": 600,
-				"height": 240
-			}
-		},
-		{
-			"id": "invalid-execution-type-handle-error-message-group",
-			"name": "invalid-execution-type-handle-error-message-group",
-			"type": "n8n-nodes-base.stickyNote",
-			"position": [1080, 240],
-			"typeVersion": 1,
-			"parameters": {
-				"content": "Handle error message",
-				"color": 3,
-				"width": 600,
-				"height": 240
-			}
-		},
-		{
-			"id": "check-valid-execution-type-group",
-			"name": "check-valid-execution-type-group",
-			"type": "n8n-nodes-base.stickyNote",
-			"position": [720, 240],
-			"typeVersion": 1,
-			"parameters": {
-				"content": "Check valid execution type",
-				"width": 960,
-				"height": 360
-			}
-		}
-	],
+	"active": true,
 	"connections": {
-		"2": { "main": [[{ "node": "3", "type": "main", "index": 0 }]] },
+		"2": { "main": [[{ "index": 0, "node": "3", "type": "main" }]] },
 		"Webhook": {
 			"main": [
-				[{ "node": "check-valid-entity-id", "type": "main", "index": 0 }]
+				[{ "index": 0, "node": "check-valid-entity-id", "type": "main" }]
 			]
 		},
 		"check-valid-entity-id": {
 			"main": [
-				[{ "node": "check-valid-execution-type", "type": "main", "index": 0 }],
-				[{ "node": "invalid-entity-id", "type": "main", "index": 0 }]
-			]
-		},
-		"invalid-entity-id": {
-			"main": [
-				[{ "node": "invalid-entity-id-response", "type": "main", "index": 0 }]
+				[{ "index": 0, "node": "check-valid-execution-type", "type": "main" }],
+				[{ "index": 0, "node": "invalid-entity-id", "type": "main" }]
 			]
 		},
 		"check-valid-execution-type": {
 			"main": [
-				[{ "node": "nooo", "type": "main", "index": 0 }],
-				[{ "node": "invalid-execution-type", "type": "main", "index": 0 }]
+				[{ "index": 0, "node": "nooo", "type": "main" }],
+				[{ "index": 0, "node": "invalid-execution-type", "type": "main" }]
+			]
+		},
+		"invalid-entity-id": {
+			"main": [
+				[{ "index": 0, "node": "invalid-entity-id-response", "type": "main" }]
 			]
 		},
 		"invalid-execution-type": {
 			"main": [
 				[
 					{
+						"index": 0,
 						"node": "invalid-execution-type-response",
-						"type": "main",
-						"index": 0
+						"type": "main"
 					}
 				]
 			]
 		},
-		"nooo": { "main": [[{ "node": "2", "type": "main", "index": 0 }]] }
+		"nooo": { "main": [[{ "index": 0, "node": "2", "type": "main" }]] }
 	},
+	"id": "iJFYtqyGWaroz",
+	"name": "Weird Workflow",
+	"nodes": [
+		{
+			"id": "webhook",
+			"name": "Webhook",
+			"parameters": {
+				"httpMethod": "POST",
+				"path": "abc",
+				"responseMode": "responseNode"
+			},
+			"position": [60, 300],
+			"type": "n8n-nodes-base.webhook",
+			"typeVersion": 2.1
+		},
+		{
+			"id": "check-valid-entity-id",
+			"name": "check-valid-entity-id",
+			"parameters": {
+				"conditions": {
+					"combinator": "and",
+					"conditions": [
+						{
+							"id": "my-workflow/check-valid-entity-id/0",
+							"leftValue": "={{ $json.body.execution_type }}",
+							"operator": {
+								"operation": "exists",
+								"singleValue": true,
+								"type": "string"
+							}
+						}
+					],
+					"options": {
+						"caseSensitive": false,
+						"typeValidation": "strict",
+						"version": 2
+					}
+				}
+			},
+			"position": [420, 300],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "invalid-entity-id",
+			"name": "invalid-entity-id",
+			"position": [780, 60],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "check-valid-execution-type",
+			"name": "check-valid-execution-type",
+			"parameters": {
+				"conditions": {
+					"combinator": "and",
+					"conditions": [
+						{
+							"id": "my-workflow/check-valid-execution-type/0",
+							"leftValue": "={{ $json.body.execution_type }}",
+							"operator": {
+								"operation": "exists",
+								"singleValue": true,
+								"type": "string"
+							}
+						}
+					],
+					"options": {
+						"caseSensitive": false,
+						"typeValidation": "strict",
+						"version": 2
+					}
+				}
+			},
+			"position": [780, 420],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.2
+		},
+		{
+			"id": "invalid-entity-id-response",
+			"name": "invalid-entity-id-response",
+			"parameters": {
+				"options": { "responseCode": 400 },
+				"respondWith": "json",
+				"responseBody": "{\"error\":\"Invalid entity id\",\"data\":{\"body\":\"{{ $json.body }}\"}}"
+			},
+			"position": [1140, 60],
+			"type": "n8n-nodes-base.respondToWebhook",
+			"typeVersion": 1.5
+		},
+		{
+			"id": "invalid-execution-type",
+			"name": "invalid-execution-type",
+			"position": [1140, 300],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "nooo",
+			"name": "nooo",
+			"position": [1140, 540],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "invalid-execution-type-response",
+			"name": "invalid-execution-type-response",
+			"parameters": {
+				"options": { "responseCode": 400 },
+				"respondWith": "json",
+				"responseBody": "{\"error\":\"Invalid execution type\",\"data\":{\"body\":\"{{ $json.body }}\"}}"
+			},
+			"position": [1500, 300],
+			"type": "n8n-nodes-base.respondToWebhook",
+			"typeVersion": 1.5
+		},
+		{
+			"id": "2",
+			"name": "2",
+			"position": [1500, 540],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "3",
+			"name": "3",
+			"position": [1860, 540],
+			"type": "n8n-nodes-base.noOp",
+			"typeVersion": 1
+		},
+		{
+			"id": "invalid-entity-id-handle-error-message-group",
+			"name": "invalid-entity-id-handle-error-message-group",
+			"parameters": {
+				"color": 3,
+				"content": "Handle error message",
+				"height": 240,
+				"width": 600
+			},
+			"position": [720, 0],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
+		},
+		{
+			"id": "invalid-execution-type-handle-error-message-group",
+			"name": "invalid-execution-type-handle-error-message-group",
+			"parameters": {
+				"color": 3,
+				"content": "Handle error message",
+				"height": 240,
+				"width": 600
+			},
+			"position": [1080, 240],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
+		},
+		{
+			"id": "check-valid-execution-type-group",
+			"name": "check-valid-execution-type-group",
+			"parameters": {
+				"content": "Check valid execution type",
+				"height": 360,
+				"width": 960
+			},
+			"position": [720, 240],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
+		}
+	],
 	"settings": {},
-	"active": true,
 	"tags": [{ "name": "@vahor/n8n-iJFYtqyGWaroz" }]
 }

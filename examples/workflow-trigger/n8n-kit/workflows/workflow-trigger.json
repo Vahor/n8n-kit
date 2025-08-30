@@ -1,52 +1,52 @@
 {
+	"active": false,
+	"connections": {
+		"When clicking ‘Test workflow’": {
+			"main": [
+				[{ "index": 0, "node": "call-reusable-workflow", "type": "main" }]
+			]
+		},
+		"call-reusable-workflow": {
+			"main": [[{ "index": 0, "node": "log-result", "type": "main" }]]
+		}
+	},
 	"id": "SZ23gbg-KGGHL",
 	"name": "Workflow with trigger",
 	"nodes": [
 		{
 			"id": "When clicking ‘Test workflow’",
 			"name": "When clicking ‘Test workflow’",
-			"type": "n8n-nodes-base.manualTrigger",
 			"position": [60, 60],
+			"type": "n8n-nodes-base.manualTrigger",
 			"typeVersion": 1
 		},
 		{
 			"id": "call-reusable-workflow",
 			"name": "call-reusable-workflow",
-			"type": "n8n-nodes-base.executeWorkflow",
-			"position": [260, 60],
-			"typeVersion": 1.2,
 			"parameters": {
-				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" },
+				"source": "database",
 				"workflowId": {
-					"value": "@vahor/n8n-_resolved_workflow_id@my-workflow",
+					"cachedResultName": "my-workflow",
 					"mode": "list",
-					"cachedResultName": "my-workflow"
+					"value": "@vahor/n8n-_resolved_workflow_id@my-workflow"
 				},
-				"source": "database"
-			}
+				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" }
+			},
+			"position": [260, 60],
+			"type": "n8n-nodes-base.executeWorkflow",
+			"typeVersion": 1.2
 		},
 		{
 			"id": "log-result",
 			"name": "log-result",
-			"type": "n8n-nodes-base.code",
-			"position": [460, 60],
-			"typeVersion": 2,
 			"parameters": {
 				"jsCode": "=console.log({{ $('call-reusable-workflow').item.json.hello }})"
-			}
+			},
+			"position": [460, 60],
+			"type": "n8n-nodes-base.code",
+			"typeVersion": 2
 		}
 	],
-	"connections": {
-		"When clicking ‘Test workflow’": {
-			"main": [
-				[{ "node": "call-reusable-workflow", "type": "main", "index": 0 }]
-			]
-		},
-		"call-reusable-workflow": {
-			"main": [[{ "node": "log-result", "type": "main", "index": 0 }]]
-		}
-	},
 	"settings": {},
-	"active": false,
-	"tags": [{ "name": "client-id" }, { "name": "@vahor/n8n-SZ23gbg-KGGHL" }]
+	"tags": [{ "name": "@vahor/n8n-SZ23gbg-KGGHL" }, { "name": "client-id" }]
 }
