@@ -53,6 +53,8 @@ jobs:
 
       - name: Check for existing PR
         if: steps.check-updates.outputs.has_updates == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           existing_pr=$(gh pr list --head "automated/update-n8n-nodes" --json number --jq '.[0].number' || echo "")
           echo "EXISTING_PR=$existing_pr" >> $GITHUB_ENV
