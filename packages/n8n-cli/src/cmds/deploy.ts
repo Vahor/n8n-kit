@@ -80,9 +80,6 @@ export const handler = async (options: DeployOptions) => {
 				try {
 					logger.log("Merging node positions from existing workflow...");
 					const existingWorkflow = matchMap.get(workflow.id)!;
-					if (!("nodes" in existingWorkflow)) {
-						continue;
-					}
 
 					for (const node of rest.nodes) {
 						const existingNode = existingWorkflow.nodes.find(

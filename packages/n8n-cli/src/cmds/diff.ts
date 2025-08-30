@@ -140,10 +140,6 @@ export const handler = async (options: Options) => {
 			continue;
 		}
 		const match = matchMap.get(workflow.id)!;
-		if (!("nodes" in match)) {
-			logger.warn("Skipping imported workflow");
-			continue;
-		}
 
 		const from = prepareWorkflowForDiff(await workflow.build());
 		const to = prepareWorkflowForDiff(match);

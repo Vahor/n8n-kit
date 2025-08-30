@@ -50,21 +50,18 @@ export const loadApplication = async (options: GlobalOptions) => {
 export const getWorkflowMapping = async (
 	n8n: N8nApi,
 	workflows: ResolvedWorkflow[],
-	callback?: (
-		workflow: ResolvedWorkflow,
-		match: Pick<WorkflowDefinition, "id"> | WorkflowDefinition,
-	) => void,
+	callback?: (workflow: ResolvedWorkflow, match: WorkflowDefinition) => void,
 ) => {
-	const matchMap = new Map<
-		string,
-		Pick<WorkflowDefinition, "id"> | WorkflowDefinition
-	>();
+	const matchMap = new Map<string, WorkflowDefinition>();
 	for (const workflow of workflows) {
 		logger.setContext(`resolve:${workflow.getInternalId()}`);
 		if (workflow.isResolved()) {
-			const match = {
-				id: workflow.getN8nWorkflowId()!,
-			};
+			const match = await n8n.getWorkflowById(workflow.getN8nWorkflowId()!);
+			if (!match) {
+				throw new Error(
+					`Tried to resolve workflow ${workflow.getInternalId()} but it does not exist`,
+				);
+			}
 			callback?.(workflow, match);
 			matchMap.set(workflow.getInternalId(), match);
 			continue;
