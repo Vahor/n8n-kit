@@ -1,10 +1,15 @@
 import type { Type } from "arktype";
+import type { App } from "../app";
 import { getProjectSalt, prefix } from "../constants";
 import { Node } from "../nodes/node";
 import { shortHash, validateIdentifier } from "../utils/slugify";
 import { Placeholder, type State } from "./chain";
 import { Chain } from "./chain/chain";
 import { Group } from "./group";
+import {
+	ImportedWorkflow,
+	type ImportedWorkflowProps,
+} from "./imported-workflow";
 import { calculateLayout } from "./layout";
 import type { Tag } from "./tag";
 
@@ -14,7 +19,7 @@ type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
 	| Array<T>
 	| ((workflow: Workflow<Input, Output>) => Array<T>);
 
-interface WorkflowProps<Input extends Type, Output extends Type> {
+export interface WorkflowProps<Input extends Type, Output extends Type> {
 	name?: string;
 	inputSchema?: Input;
 	outputSchema?: Output;
@@ -78,13 +83,22 @@ export class Workflow<Input extends Type = any, Output extends Type = any> {
 	private dynamicalyAddedNodes: Node<any, any>[] = [];
 
 	public constructor(
+		app: App,
 		id: string,
 		public readonly props: WorkflowProps<Input, Output>,
 	) {
+		app.add(this);
+
 		const saltedId = `${getProjectSalt()}-${id}`;
 		this.hashId = shortHash(saltedId, 24 - prefix.length);
 		this.id = validateIdentifier(id);
 		this.tags = this.buildTags();
+	}
+
+	public static import<Input extends Type, Output extends Type>(
+		props: ImportedWorkflowProps<Input, Output>,
+	) {
+		return new ImportedWorkflow(props);
 	}
 
 	public addToDynamicalyAddedNodes(node: Node<any, any>) {
