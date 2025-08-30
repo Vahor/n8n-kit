@@ -32,7 +32,8 @@ jobs:
       - name: Update submodules
         run: |
           git submodule update --remote --merge
-          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}')
+          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}' | sed 's/^+//')
+          echo "Submodule version: $submodule_version"
           echo "SUBMODULE_VERSION=$submodule_version" >> $GITHUB_ENV
 
       - name: Check if submodules have updates
@@ -101,11 +102,7 @@ jobs:
         if: steps.check-updates.outputs.has_updates == 'true'
         run: |
           git add .
-          git commit -m "chore: automated n8n nodes update
-
-          - Updated submodules to latest version
-          - Regenerated n8n nodes
-          - Added changeset for release" --allow-empty
+          git commit -m "chore: automated n8n nodes update" --allow-empty
 
       - name: Push changes and create PR
         if: steps.check-updates.outputs.has_updates == 'true'
