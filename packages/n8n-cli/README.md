@@ -66,7 +66,9 @@ Your entrypoint file should export an `app` instance:
 // src/index.ts
 import { App, Workflow, Chain } from "@vahor/n8n-kit";
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
   active: true,
   name: "My Workflow",
   definition: [
@@ -75,9 +77,6 @@ const workflow = new Workflow("my-workflow", {
     ),
   ],
 });
-
-const app = new App();
-app.add(workflow);
 
 export { app };
 ```

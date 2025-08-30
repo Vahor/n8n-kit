@@ -33,7 +33,7 @@ const nasaCredentials = Credentials.byId({
 	id: "credential-id",
 });
 
-const workflow = new Workflow(app, "my-workflow", {
+new Workflow(app, "my-workflow", {
 	active: true,
 	name: "NASA Example",
 	definition: [

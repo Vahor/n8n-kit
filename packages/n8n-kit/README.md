@@ -50,7 +50,9 @@ Your entrypoint file should export an `app` instance:
 // src/index.ts
 import { App, Workflow, Chain } from "@vahor/n8n-kit";
 
-const workflow = new Workflow("my-workflow", {
+const app = new App();
+
+new Workflow(app, "my-workflow", {
   active: true,
   name: "My Workflow",
   definition: [
@@ -60,9 +62,6 @@ const workflow = new Workflow("my-workflow", {
   ],
 });
 
-const app = new App();
-app.add(workflow);
-
 export { app };
 ```
 
@@ -70,20 +69,15 @@ export { app };
 
 ### App
 
-The `App` class serves as the main container for your n8n workspace:
-
-```typescript
-const app = new App();
-app.add(workflow1);     // Add workflows
-app.add(workflow2);
-```
+The `App` class serves as the main container for your n8n workspace.
+Passing an instance of `App` in the constructor of a `Workflow` will automatically add the workflow to the list of workflows to deploy.
 
 ### Workflow
 
 You know what a workflow is, right?
 
 ```ts
-const workflow = new Workflow("my-workflow", {
+new Workflow(app, "my-workflow", {
 	active: true,
 	name: "My Workflow",
 	tags: ["tag1", "tag2"],
@@ -162,6 +156,7 @@ Each node has a label and properties:
 new NodeType("unique-id", {
 	label: "Display Name",           // Optional, defaults to node id
 	position: [0, 0],                // Optional, when missing the node is automatically positioned
+	disabled: true,                  // Optional, defaults to false
 	parameters: {                    // Node-specific parameters
 		// ... type-safe parameters
 	},
@@ -257,6 +252,8 @@ Note: You can still use string values directly instead of using the builder.
 ## Code Bundling
 
 The `NodejsFunction` class allows you to bundle dependencies inside your `Code` nodes, enabling you to use npm packages and write complex logic in separate files without having to install them on your n8n instance.
+
+A similar class exists for `PythonFunction` without the bundling functionality. (does not support importing modules)
 
 ### Basic Usage
 
@@ -358,7 +355,6 @@ return handler({
 	param2: $json.field 
 });
 ```
-
 
 ### How It Works
 
