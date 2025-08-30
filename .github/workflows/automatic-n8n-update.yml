@@ -20,9 +20,6 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
-      - uses: oven-sh/setup-bun@v2
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
 
       - name: Configure Git
         run: |
@@ -41,6 +38,14 @@ jobs:
           else
             echo "has_updates=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Setup Bun
+        if: steps.check-updates.outputs.has_updates == 'true'
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        if: steps.check-updates.outputs.has_updates == 'true'
+        run: bun install --frozen-lockfile
+
 
       - name: Close existing PR if it exists
         if: steps.check-updates.outputs.has_updates == 'true'
