@@ -3,6 +3,7 @@ import chalk from "chalk";
 class Logger {
 	private context: string = "";
 	private isDryRun: boolean = false;
+	private enabled: boolean = true;
 
 	constructor() {}
 
@@ -13,6 +14,11 @@ class Logger {
 
 	setDryRun(enabled: boolean = true): this {
 		this.isDryRun = enabled;
+		return this;
+	}
+
+	setEnabled(enabled: boolean): this {
+		this.enabled = enabled;
 		return this;
 	}
 
@@ -28,20 +34,24 @@ class Logger {
 	}
 
 	log(message: string): void {
+		if (!this.enabled) return;
 		console.log(this._format(message));
 	}
 
 	warn(message: string): void {
+		if (!this.enabled) return;
 		console.warn(chalk.yellow(this._format(message)));
 	}
 
 	debug(message: string): void {
+		if (!this.enabled) return;
 		if (process.env.DEBUG) {
 			console.debug(chalk.magentaBright(this._format(message)));
 		}
 	}
 
 	error(message: string, error?: Error | null): void {
+		if (!this.enabled) return;
 		console.error(chalk.red(this._format(message ?? error?.message)));
 		if (error) {
 			console.error(chalk.gray(error.stack));
