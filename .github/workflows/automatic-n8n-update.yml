@@ -112,28 +112,27 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          BODY: |
-            ## Automated n8n Nodes Update
+        run: |
+          git push --set-upstream origin $BRANCH_NAME
+
+          pr_title="chore: automated n8n nodes update $(date +%Y-%m-%d)"
+          pr_body="## Automated n8n Nodes Update
 
             This PR was automatically generated to update n8n nodes.
 
             Updated to n8n version [$SUBMODULE_VERSION](https://github.com/n8n-io/n8n/tree/$SUBMODULE_VERSION)
 
             ---
-            *Generated in $JOB_URL*
-        run: |
-          git push --set-upstream origin $BRANCH_NAME
-
-          pr_title="chore: automated n8n nodes update $(date +%Y-%m-%d)"
+            *Generated in $JOB_URL*"
 
           if [ ! -z "$EXISTING_PR" ]; then
             echo "Updating existing PR #$EXISTING_PR"
-            gh pr edit $EXISTING_PR --title "$pr_title" --body "$BODY"
+            gh pr edit $EXISTING_PR --title "$pr_title" --body "$pr_body"
           else
             echo "Creating new PR"
             gh pr create \
               --title "$pr_title" \
-              --body "$BODY" \
+              --body "$pr_body" \
               --head $BRANCH_NAME \
               --base main
           fi
