@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { confirm } from "@inquirer/prompts";
-import { isWorkflow, type WorkflowDefinition } from "@vahor/n8n-kit";
+import type { WorkflowDefinition } from "@vahor/n8n-kit";
 import logger from "@vahor/n8n-kit/logger";
 import spawn from "nano-spawn";
 import { table } from "table";

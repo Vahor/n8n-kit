@@ -1,11 +1,4 @@
-import {
-	App,
-	Chain,
-	expr,
-	JsonExpression,
-	type,
-	Workflow,
-} from "@vahor/n8n-kit";
+import { App, Chain, expr, type, Workflow } from "@vahor/n8n-kit";
 import {
 	Code,
 	ExecuteWorkflow,

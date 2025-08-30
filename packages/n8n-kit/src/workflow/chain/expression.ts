@@ -53,19 +53,4 @@ export class JsonExpression<Type = any> {
 		data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "{{ $1 }}");
 		return `=${data}`;
 	}
-
-	public toJSON() {
-		if (Array.isArray(this.data)) {
-			return this.data.map((item) => JSON.stringify(item));
-		}
-		if (typeof this.data === "object") {
-			return Object.fromEntries(
-				Object.entries(this.data as Record<string, any>).map(([key, value]) => [
-					key,
-					value,
-				]),
-			);
-		}
-		return this.toExpression().slice(1);
-	}
 }
