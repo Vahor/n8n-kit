@@ -72,20 +72,26 @@ export const handler = async (options: DeployOptions) => {
 		const { id: _id, tags: workflowTags, active, ...rest } = buildWorkflow;
 
 		// If merge flag is enabled and workflow exists, merge node positions
-		if (options.merge && workflow.n8nWorkflowId) {
-			try {
-				logger.log("Merging node positions from existing workflow...");
-				const existingWorkflow = matchMap.get(workflow.id)!;
+		if (options.merge) {
+			if (workflow.n8nWorkflowId) {
+				try {
+					logger.log("Merging node positions from existing workflow...");
+					const existingWorkflow = matchMap.get(workflow.id)!;
 
-				for (const node of rest.nodes) {
-					const existingNode = existingWorkflow.nodes.find(
-						(n) => n.name === node.name,
-					);
-					if (!existingNode || !existingNode.position) continue;
-					node.position = existingNode.position;
+					for (const node of rest.nodes) {
+						const existingNode = existingWorkflow.nodes.find(
+							(n) => n.name === node.name,
+						);
+						if (!existingNode || !existingNode.position) continue;
+						node.position = existingNode.position;
+					}
+				} catch (error) {
+					logger.warn(`Failed to merge positions: ${error}`);
 				}
-			} catch (error) {
-				logger.warn(`Failed to merge positions: ${error}`);
+			} else {
+				logger.warn(
+					`Workflow ${workflow.id} does not exist in n8n, skipping merging positions`,
+				);
 			}
 		}
 
