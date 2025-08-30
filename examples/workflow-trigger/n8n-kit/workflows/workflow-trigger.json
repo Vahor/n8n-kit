@@ -22,9 +22,9 @@
 			"parameters": {
 				"source": "database",
 				"workflowId": {
-					"cachedResultName": "my-workflow",
+					"cachedResultName": "Reusable workflow",
 					"mode": "list",
-					"value": "@vahor/n8n-_resolved_workflow_id@my-workflow"
+					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
 				},
 				"workflowInputs": { "a": "hello", "b": 1, "c": 2, "d": "world" }
 			},
@@ -38,7 +38,7 @@
 			"parameters": {
 				"source": "database",
 				"workflowId": {
-					"cachedResultName": "qL2pzX8jc7NDe",
+					"cachedResultName": "Untitled",
 					"mode": "list",
 					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
 				},
