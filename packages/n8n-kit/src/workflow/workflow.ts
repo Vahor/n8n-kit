@@ -23,8 +23,6 @@ type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
 
 export interface WorkflowProps<Input extends Type, Output extends Type> {
 	name?: string;
-	inputSchema?: Input;
-	outputSchema?: Output;
 	definition: WorkflowDefinitionProvider<
 		Input,
 		Output,
@@ -32,6 +30,11 @@ export interface WorkflowProps<Input extends Type, Output extends Type> {
 	>;
 	tags?: string[] | undefined;
 	active?: boolean;
+
+	/** {@replace OutputSchema} */
+	outputSchema?: Output;
+	/** {@replace InputSchema} */
+	inputSchema?: Input;
 
 	settings?: {
 		/**
