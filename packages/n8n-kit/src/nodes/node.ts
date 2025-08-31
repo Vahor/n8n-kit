@@ -91,6 +91,7 @@ export abstract class Node<
 	public position?: NodePosition;
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
+	/** @internal */
 	public groupIds: string[] = [];
 
 	public readonly props?: NodeProps;

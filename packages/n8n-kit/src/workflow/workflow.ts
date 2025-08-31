@@ -77,7 +77,9 @@ export class Workflow<
 	Input extends Type = any,
 	Output extends Type = any,
 > extends ResolvedWorkflow {
+	/** @internal */
 	static readonly [WORKFLOW_SYMBOL] = true;
+	/** @internal */
 	readonly [WORKFLOW_SYMBOL] = true;
 
 	public readonly id: string;
@@ -254,6 +256,7 @@ export class Workflow<
 		return this.id;
 	}
 
+	/** @internal */
 	public "~validate"(): void {
 		const nodes = this.getNodes();
 

@@ -32,6 +32,7 @@ export interface ConnectionOptions {
 
 /**
  * Interface for states that can have 'next' states
+ * @internal
  */
 export interface INextable {
 	/*
@@ -50,6 +51,7 @@ export interface Identifiable<Id extends string = string> {
 
 /**
  * Interface for objects that can be used in a Chain
+ * @internal
  */
 export interface IChainable<
 	Id extends string = string,
@@ -72,4 +74,5 @@ export interface IChainable<
 	readonly "~context": C;
 }
 
+/** @hidden */
 export type IContext = any;

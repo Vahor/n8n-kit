@@ -29,6 +29,7 @@ type ExpectedArray = ErrorMessage<"Expected array">;
 type ExpectedString = ErrorMessage<"Expected string">;
 
 type ExpressionBuilderMode = "item";
+/** @hidden */
 export type ExpressionPrefix = "$" | "_";
 
 const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");

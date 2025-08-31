@@ -53,6 +53,7 @@ export abstract class State<
 		return true;
 	}
 
+	/** @internal */
 	public addNext(state: IChainable, connectionOptions?: ConnectionOptions) {
 		if (!this.canTakeInput(state, connectionOptions)) {
 			throw new Error(
