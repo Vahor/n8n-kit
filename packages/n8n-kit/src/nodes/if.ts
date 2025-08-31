@@ -67,6 +67,7 @@ export class If<
 	CC extends ChainContext = {},
 	IdsInContext extends string[] = [],
 > extends _If<{}, L> {
+	/** @internal */
 	override endStates: INextable[] = [];
 
 	constructor(
