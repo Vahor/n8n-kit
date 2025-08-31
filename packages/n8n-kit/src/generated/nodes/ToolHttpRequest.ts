@@ -1,6 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/tools/ToolHttpRequest/ToolHttpRequest.node.ts' node
 
+import type { N8nCredentialsUnion } from "../credentials/index";
+
 export const description = "Makes an HTTP request and returns the response data" as const;
 export const type = "@n8n/n8n-nodes-langchain.toolHttpRequest" as const;
 export const version = 1.1 as const;
@@ -26,9 +28,9 @@ export interface ToolHttpRequestNodeParameters {
      */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    readonly nodeCredentialType?: string;
+    readonly nodeCredentialType?: N8nCredentialsUnion["__name"];
 
-    readonly genericAuthType?: string;
+    readonly genericAuthType?: N8nCredentialsUnion["__name"];
 
     /** Whether the request has query params or not */
     readonly sendQuery?: boolean;

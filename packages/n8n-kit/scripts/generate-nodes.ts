@@ -63,39 +63,6 @@ const generateTypescriptNodeOutput = async (
 	result: INodeTypeDescription & { __filepath: string; __nodename: string },
 	outputFile: string,
 ) => {
-	const code = new CodeMaker();
-
-	code.openFile(outputFile);
-
-	code.line(`// GENERATED FILE, DO NOT EDIT`);
-	code.line(`// Generated from '${result.__filepath}' node`);
-	code.line();
-
-	code.line(`export const description = "${result.description}" as const;`);
-	const prefix = isLangChainNode(result.__filepath)
-		? "@n8n/n8n-nodes-langchain"
-		: "n8n-nodes-base";
-	code.line(`export const type = "${prefix}.${result.name}" as const;`);
-	code.line(
-		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : (result.version ?? 0)} as const;`,
-	);
-	if (result.credentials) {
-		code.line(
-			`export const credentials = ${JSON.stringify(result.credentials)} as const;`,
-		);
-	}
-
-	code.line(
-		`export const inputs = ${JSON.stringify(parseConnectionsTypes(result, "inputs"))} as const;`,
-	);
-	code.line(
-		`export const outputs = ${JSON.stringify(parseConnectionsTypes(result, "outputs"))} as const;`,
-	);
-
-	code.line();
-
-	code.openBlock(`export interface ${result.__nodename}NodeParameters`);
-
 	if (!result.properties) result.properties = [];
 
 	const visitedProperties: Record<
@@ -133,6 +100,50 @@ const generateTypescriptNodeOutput = async (
 			visitedProperties[property.name].required = false;
 		}
 	}
+
+	const hasCredentialsSelectProperty = Object.values(visitedProperties).some(
+		(property) => property.type === "credentialsSelect",
+	);
+
+	const code = new CodeMaker();
+
+	code.openFile(outputFile);
+
+	code.line(`// GENERATED FILE, DO NOT EDIT`);
+	code.line(`// Generated from '${result.__filepath}' node`);
+	code.line();
+
+	if (hasCredentialsSelectProperty) {
+		code.line(
+			`import type { N8nCredentialsUnion } from "../credentials/index";`,
+		);
+		code.line();
+	}
+
+	code.line(`export const description = "${result.description}" as const;`);
+	const prefix = isLangChainNode(result.__filepath)
+		? "@n8n/n8n-nodes-langchain"
+		: "n8n-nodes-base";
+	code.line(`export const type = "${prefix}.${result.name}" as const;`);
+	code.line(
+		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : (result.version ?? 0)} as const;`,
+	);
+	if (result.credentials) {
+		code.line(
+			`export const credentials = ${JSON.stringify(result.credentials)} as const;`,
+		);
+	}
+
+	code.line(
+		`export const inputs = ${JSON.stringify(parseConnectionsTypes(result, "inputs"))} as const;`,
+	);
+	code.line(
+		`export const outputs = ${JSON.stringify(parseConnectionsTypes(result, "outputs"))} as const;`,
+	);
+
+	code.line();
+
+	code.openBlock(`export interface ${result.__nodename}NodeParameters`);
 
 	for (const property of Object.values(visitedProperties)) {
 		// if (property.name !== "fieldsToSummarize") continue;

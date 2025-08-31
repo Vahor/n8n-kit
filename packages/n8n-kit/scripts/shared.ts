@@ -14,10 +14,11 @@ export const mapPropertyType = (type: string) => {
 		case "dateTime":
 		case "json":
 		case "workflowSelector":
-		case "credentialsSelect":
 		case "color":
 		case "string":
 			return "string";
+		case "credentialsSelect":
+			return 'N8nCredentialsUnion["__name"]';
 		case "options":
 			return "string";
 		case "number":
