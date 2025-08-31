@@ -95,7 +95,7 @@ type BooleanCondition = BaseCondition & {
 
 type ArrayCondition = BaseCondition & {
 	leftValue: ExpressionBuilder<any, any, Array<any>> | Array<any>;
-	rightValue?: ExpressionBuilder<any, any, Array<any>> | Array<any>;
+	rightValue?: ExpressionBuilder<any, any, any> | any;
 	operator: {
 		type: "array";
 		operation:
@@ -118,9 +118,7 @@ type ObjectCondition = BaseCondition & {
 	leftValue:
 		| ExpressionBuilder<any, any, Record<string, any>>
 		| Record<string, any>;
-	rightValue?:
-		| ExpressionBuilder<any, any, Record<string, any>>
-		| Record<string, any>;
+	rightValue?: never;
 	operator: {
 		type: "object";
 		operation: "exists" | "notExists" | "empty" | "notEmpty";
