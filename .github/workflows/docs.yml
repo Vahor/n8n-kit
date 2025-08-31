@@ -1,57 +1,48 @@
 name: Deploy Documentation
 
 on:
-	push:
-		branches: [ main ]
-	pull_request:
-		branches: [ main ]
-	workflow_dispatch:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
-permissions:
-	contents: read
-	pages: write
-	id-token: write
 
 concurrency:
-	group: "pages"
-	cancel-in-progress: false
+  group: docs
+  cancel-in-progress: true
 
 jobs:
-	build:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Checkout
-			  uses: actions/checkout@v4
-			  with:
-				  submodules: recursive
+  # Build job
+  build:
+    # Specify runner +  build & upload the static files as an artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+      - name: Build docs
+        run: bun run docs 
 
-			- name: Setup Bun
-			  uses: oven-sh/setup-bun@v2
-			  with:
-				  bun-version: latest
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs
 
-			- name: Install dependencies
-			  run: bun install --frozen-lockfile
-
-			- name: Build documentation
-			  run: bun run docs:build
-
-			- name: Setup Pages
-			  uses: actions/configure-pages@v5
-
-			- name: Upload artifact
-			  uses: actions/upload-pages-artifact@v3
-			  with:
-				  path: './docs'
-
-	deploy:
-		environment:
-			name: github-pages
-			url: ${{ steps.deployment.outputs.page_url }}
-		runs-on: ubuntu-latest
-		needs: build
-		if: github.ref == 'refs/heads/main'
-		steps:
-			- name: Deploy to GitHub Pages
-			  id: deployment
-			  uses: actions/deploy-pages@v4
+  deploy:
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
