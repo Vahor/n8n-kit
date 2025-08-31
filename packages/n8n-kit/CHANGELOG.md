@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.4.1
+
+### Patch Changes
+
+- [#83](https://github.com/Vahor/n8n-kit/pull/83) [`9d5171d`](https://github.com/Vahor/n8n-kit/commit/9d5171d3f871b396c4040915681b211010fcb04a) Thanks [@Vahor](https://github.com/Vahor)! - Add type for other condition types in `If` node.
+
 ## 0.4.0
 
 ### Minor Changes
