@@ -1,6 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/HttpRequest/V3/HttpRequestV3.node.ts' node
 
+import type { N8nCredentialsUnion } from "../credentials/index";
+
 export const description = "Makes an HTTP request and returns the response data" as const;
 export const type = "n8n-nodes-base.httpRequest" as const;
 export const version = 4.2 as const;
@@ -21,9 +23,9 @@ export interface HttpRequestV3NodeParameters {
     /** Default: "none" */
     readonly authentication?: "none" | "predefinedCredentialType" | "genericCredentialType";
 
-    readonly nodeCredentialType?: string;
+    readonly nodeCredentialType?: N8nCredentialsUnion["__name"];
 
-    readonly genericAuthType?: string;
+    readonly genericAuthType?: N8nCredentialsUnion["__name"];
 
     readonly provideSslCertificates?: boolean;
 
