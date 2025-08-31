@@ -102,7 +102,9 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	const hasCredentialsSelectProperty = Object.values(visitedProperties).some(
-		(property) => property.type === "credentialsSelect",
+		(property) =>
+			property.type === "credentialsSelect" ||
+			property.__versionsOfProperty.some((p) => p.type === "credentialsSelect"),
 	);
 
 	const code = new CodeMaker();
