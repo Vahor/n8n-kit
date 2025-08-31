@@ -31,7 +31,7 @@ export const process = async () => {
 		for (const file of allFiles) {
 			// Skill issue I wanted to use sed but escaping was hard :(
 			const content = fs.readFileSync(file, "utf8");
-			const newContent = content.replaceAll(`{@replace ${key}}`, value);
+			const newContent = content.replaceAll(`{@inheritDoc ${key}}`, value);
 			if (newContent !== content) {
 				fs.writeFileSync(file, newContent);
 				console.log(`Replaced ${key} in ${file}`);
