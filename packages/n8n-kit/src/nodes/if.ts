@@ -1,4 +1,4 @@
-import { IfV2 as _If } from "../generated/nodes-impl/IfV2";
+import { IfV2 as _If, type IfV2Props } from "../generated/nodes-impl/IfV2";
 import type { ErrorMessage, IsNullable } from "../utils/types";
 import { ExpressionBuilder } from "../workflow";
 import type {
@@ -50,13 +50,11 @@ type BaseCondition = {
 };
 
 export interface IfProps extends NodeProps {
-	parameters: {
+	parameters: Omit<IfV2Props["parameters"], "conditions"> & {
 		conditions?: {
 			conditions: Array<StringCondition>;
+			/** @default "and" */
 			combinator?: ConditionCombinator;
-			options?: {
-				ignoreCase?: boolean;
-			};
 		};
 	};
 }
@@ -102,18 +100,24 @@ export class If<
 
 	override async getParameters() {
 		const conditions = this.props.parameters.conditions;
-		if (!conditions) return {};
 
 		return {
-			conditions: {
-				conditions: conditions.conditions,
-				combinator: conditions.combinator ?? "and",
-				options: {
-					caseSensitive: !(conditions.options?.ignoreCase ?? true),
-					version: 2,
-					typeValidation: "strict",
-				},
-			},
+			looseTypeValidation: this.props.parameters.looseTypeValidation,
+			options: this.props.parameters.options,
+			conditions:
+				conditions === undefined
+					? undefined
+					: {
+							conditions: conditions.conditions,
+							combinator: conditions.combinator ?? "and",
+							options: {
+								// TODO: check if this is correct, on n8n if we set ignoreCase to true it sets caseSensitive to true. Which seems incorrect
+								caseSensitive:
+									this.props.parameters.options?.ignoreCase ?? false,
+								version: 2,
+								typeValidation: "strict",
+							},
+						},
 		};
 	}
 

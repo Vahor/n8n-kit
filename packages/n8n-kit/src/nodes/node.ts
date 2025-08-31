@@ -34,6 +34,44 @@ export type NodeProps = {
 	 * @default false
 	 */
 	disabled?: boolean;
+	/**
+	 * If active, the node tries to execute again when it fails
+	 * @default false
+	 */
+	retryOnFail?: boolean;
+	/**
+	 * Number of times to attempt to execute the node before failing the execution
+	 * Enabled if `retryOnFail` is true
+	 * @default 3
+	 */
+	maxTries?: number;
+	/**
+	 * If active, the node executes only once, with data from the first item it receives
+	 * @default false
+	 */
+	executeOnce?: boolean;
+	/*
+	 * If active, will output a single, empty item when the output would have been empty. Use to prevent the workflow finishing on this node.
+	 * @default false
+	 */
+	alwaysOutputData?: boolean;
+
+	/**
+	 * Optional note to save with the node
+	 * @default undefined
+	 */
+	notes?: string;
+	/*
+	 * If active, the note above will display in the flow as a subtitle
+	 * @default false
+	 */
+	notesInFlow?: boolean;
+	/**
+	 * Action to take when the node execution fails
+	 * When undefined, an error will stop the workflow execution
+	 * @default undefined
+	 */
+	onError?: "continueRegularOutput" | "continueErrorOutput";
 };
 
 export abstract class Node<
@@ -156,7 +194,15 @@ export abstract class Node<
 			typeVersion: this.typeVersion,
 			parameters: await this.getParameters(),
 			credentials: this.credentialsToNode(),
+			//
 			disabled: this.props?.disabled ?? undefined,
+			retryOnFail: this.props?.retryOnFail ?? undefined,
+			maxTries: this.props?.maxTries ?? undefined,
+			executeOnce: this.props?.executeOnce ?? undefined,
+			alwaysOutputData: this.props?.alwaysOutputData ?? undefined,
+			notes: this.props?.notes ?? undefined,
+			notesInFlow: this.props?.notesInFlow ?? undefined,
+			onError: this.props?.onError ?? undefined,
 		};
 	}
 }
