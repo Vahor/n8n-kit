@@ -121,6 +121,10 @@ export class If<
 		};
 	}
 
+	/**
+	 * Determines if this `If` node can accept additional input connections
+	 * @returns True if less than 2 end states are connected (allowing one true/false branches)
+	 */
 	override canTakeInput(
 		_fromState: IChainable,
 		_withConnectionOptions?: ConnectionOptions,
@@ -129,6 +133,12 @@ export class If<
 		return this.endStates.length < 2;
 	}
 
+	/**
+	 * Connects a node or chain to execute when the `If` condition evaluates to true
+	 * @param next - The node or chain to execute on true condition
+	 * @param connectionOptions - Optional connection configuration (excluding 'from' which is set to 0)
+	 * @returns Updated `If` node with the true branch configured
+	 */
 	public true<N extends IChainable>(
 		next: IsNullable<True> extends true
 			? N
@@ -149,6 +159,12 @@ export class If<
 		return this as any;
 	}
 
+	/**
+	 * Connects a node or chain to execute when the `If` condition evaluates to false
+	 * @param next - The node or chain to execute on false condition
+	 * @param connectionOptions - Optional connection configuration (excluding 'from' which is set to 1)
+	 * @returns Updated `If` node with the false branch configured
+	 */
 	public false<N extends IChainable>(
 		next: IsNullable<False> extends true
 			? N

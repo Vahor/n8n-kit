@@ -78,6 +78,10 @@ export abstract class Node<
 	LiteralId extends string = string,
 	C extends IContext = never,
 > extends State<LiteralId, C> {
+	/**
+	 * Reference to the workflow that contains this node
+	 * @internal
+	 */
 	protected workflowParent?: Workflow;
 
 	/** @internal */
@@ -85,19 +89,46 @@ export abstract class Node<
 	/** @internal */
 	readonly [NODE_SYMBOL] = true;
 
+	/**
+	 * The n8n node type identifier (e.g., 'n8n-nodes-base.httpRequest')
+	 */
 	protected abstract readonly type: string;
+
+	/**
+	 * Version of the node type implementation
+	 */
 	protected abstract typeVersion: number;
 
+	/**
+	 * Position of the node in the n8n workflow editor canvas
+	 * When undefined, the node will be placed automatically
+	 * @default undefined
+	 */
 	public position?: NodePosition;
+
+	/**
+	 * Size of the node in the n8n workflow editor
+	 * @default DEFAULT_NODE_SIZE
+	 */
 	public size: NodeSize = DEFAULT_NODE_SIZE;
 
-	/** @internal */
+	/**
+	 * Array of group IDs this node belongs to
+	 * @internal
+	 */
 	public groupIds: string[] = [];
 
+	/**
+	 * Node configuration properties including execution settings and metadata
+	 */
 	public readonly props?: NodeProps;
 
 	readonly endStates: INextable[];
 
+	/**
+	 * Retrieves the parameters configured for this node
+	 * @returns The node parameters or undefined if none are set
+	 */
 	public async getParameters() {
 		const p = this.props?.parameters;
 		if (p == null) return undefined;
@@ -105,6 +136,10 @@ export abstract class Node<
 		return p;
 	}
 
+	/**
+	 * Returns the credentials required by this node
+	 * @returns Array of credentials or undefined if no credentials are needed
+	 */
 	public getCredentials(): Array<Credentials<any> | undefined> | undefined {
 		return undefined;
 	}
@@ -140,11 +175,19 @@ export abstract class Node<
 	/** @internal */
 	public "~validate"(): void {}
 
+	/**
+	 * Gets the full path of this node including its parent workflow
+	 * @returns The path in format "workflowId/nodeId" or "none/nodeId" if no parent
+	 */
 	public getPath() {
 		const parentId = this.workflowParent?.id ?? "none";
 		return `${parentId}/${this.id}`;
 	}
 
+	/**
+	 * Gets the display label for this node
+	 * @returns The configured label or the node ID if no label is set
+	 */
 	public getLabel() {
 		return this.label ?? this.id;
 	}
@@ -160,6 +203,13 @@ export abstract class Node<
 		);
 	}
 
+	/**
+	 * Creates a deep copy of this node with a new ID and optional property overrides
+	 * @param id - The new unique identifier for the cloned node
+	 * @param props - Optional properties to override in the cloned node
+	 * @param cloneOptions.preserveChainConnections - If true, keeps the chain connections intact
+	 * @returns A new node instance with the specified ID
+	 */
 	public clone<Id extends string>(
 		id: Id,
 		props?: NodeProps,
@@ -191,6 +241,9 @@ export abstract class Node<
 		return newInstance as any;
 	}
 
+	/**
+	 * @returns The node data in n8n's expected format
+	 */
 	async toNode() {
 		return {
 			id: this.id,

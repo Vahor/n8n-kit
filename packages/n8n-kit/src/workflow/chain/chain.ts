@@ -99,7 +99,9 @@ export class Chain<
 	readonly id = "chain";
 
 	/**
-	 * Begin a new Chain from one chainable
+	 * Begin a new `Chain` from one chainable state
+	 * @param state - The chainable state to start the chain with
+	 * @returns A new `Chain` instance starting from the given state
 	 */
 	public static start<N1 extends IChainable>(state: N1) {
 		return new Chain<AddIChainableToChainContext<N1, {}>, [N1["id"]]>(
@@ -107,17 +109,6 @@ export class Chain<
 			state.endStates,
 			state,
 		);
-	}
-
-	/**
-	 * Make a Chain with specific start and end states, and a last-added Chainable
-	 */
-	public static custom(
-		startState: State<any>,
-		endStates: INextable[],
-		lastAdded: IChainable,
-	) {
-		return new Chain(startState, endStates, lastAdded);
 	}
 
 	/**
@@ -148,7 +139,10 @@ export class Chain<
 	}
 
 	/**
-	 * Continue normal execution with the given state
+	 * Continue normal execution by adding the next state to the chain
+	 * @param _next - The next chainable state or a function that provides it
+	 * @param connectionOptions - Optional connection configuration
+	 * @returns A new `Chain` instance with the added state
 	 */
 	public next<N extends IChainable>(
 		_next: EndsInMultiple extends true
@@ -180,6 +174,13 @@ export class Chain<
 		return new Chain(this.startState, next.endStates, next);
 	}
 
+	/**
+	 * Connect multiple states in parallel to all current end states
+	 * After using `multiple()`, you must use `connect()` to continue the chain
+	 * @param _next - Array of chainable states or a function that provides them
+	 * @returns A new `Chain` instance marked as ending in multiple states
+	 * @throws Error if no states are provided
+	 */
 	public multiple<N extends IChainable>(
 		_next: MultipleChainableProvider<N, CC>,
 	): Chain<
@@ -211,6 +212,15 @@ export class Chain<
 		return new Chain(this.startState, this.endStates, next.at(-1)!);
 	}
 
+	/**
+	 * Connect a new state to specific states in the chain by their IDs
+	 * Used to create connections from specific nodes rather than all end states
+	 * @param ids - Array of state IDs to connect from
+	 * @param _next - The next chainable state or a function that provides it
+	 * @param connectionOptions - Optional connection configuration for each ID
+	 * @returns A new `Chain` instance with the connected state
+	 * @throws Error if any specified state ID does not exist in the chain
+	 */
 	public connect<
 		Keys extends IdsInContext[number],
 		Ids extends Array<Keys>,
@@ -245,7 +255,9 @@ export class Chain<
 	}
 
 	/**
-	 * Get all nodes that this chain traverses
+	 * Get all states that this chain traverses
+	 * Performs a breadth-first traversal of the chain to collect all reachable states
+	 * @returns Array of all states in the chain, including nested `Chain` instances
 	 */
 	public toList(): State[] {
 		const visited = new Set<State>();
