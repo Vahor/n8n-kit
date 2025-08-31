@@ -16,24 +16,114 @@ import type { NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
 type StringCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any> | string;
-	rightValue?: ExpressionBuilder<any, any> | string;
+	leftValue: ExpressionBuilder<any, any, string> | string;
+	rightValue?: ExpressionBuilder<any, any, string> | string;
 	operator: {
 		type: "string";
 		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
 			| "contains"
 			| "notContains"
-			| "endsWith"
-			| "notEndsWith"
-			| "equal"
-			| "notEqual"
-			| "regex"
-			| "notRegex"
 			| "startsWith"
 			| "notStartsWith"
-			| "isEmpty"
-			| "isNotEmpty"
-			| "exists";
+			| "endsWith"
+			| "notEndsWith"
+			| "regex"
+			| "notRegex";
+	};
+};
+
+type NumberCondition = BaseCondition & {
+	leftValue: ExpressionBuilder<any, any, number> | number;
+	rightValue?: ExpressionBuilder<any, any, number> | number;
+	operator: {
+		type: "number";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
+			| "gt"
+			| "gte"
+			| "lt"
+			| "lte";
+	};
+};
+
+type DateTimeCondition = BaseCondition & {
+	leftValue: ExpressionBuilder<any, any, string> | string;
+	rightValue?: ExpressionBuilder<any, any, string> | string;
+	operator: {
+		type: "dateTime";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
+			| "after"
+			| "afterOrEquals"
+			| "before"
+			| "beforeOrEquals";
+	};
+};
+
+type BooleanCondition = BaseCondition & {
+	leftValue: ExpressionBuilder<any, any, boolean> | boolean;
+	rightValue?: ExpressionBuilder<any, any, boolean> | boolean;
+	operator: {
+		type: "boolean";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
+			| "true"
+			| "false";
+	};
+};
+
+type ArrayCondition = BaseCondition & {
+	leftValue: ExpressionBuilder<any, any, Array<any>> | Array<any>;
+	rightValue?: ExpressionBuilder<any, any, Array<any>> | Array<any>;
+	operator: {
+		type: "array";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "contains"
+			| "notContains"
+			| "lengthEquals"
+			| "lengthNotEquals"
+			| "lengthGt"
+			| "lengthGte"
+			| "lengthLt"
+			| "lengthLte";
+	};
+};
+
+type ObjectCondition = BaseCondition & {
+	leftValue:
+		| ExpressionBuilder<any, any, Record<string, any>>
+		| Record<string, any>;
+	rightValue?:
+		| ExpressionBuilder<any, any, Record<string, any>>
+		| Record<string, any>;
+	operator: {
+		type: "object";
+		operation: "exists" | "notExists" | "empty" | "notEmpty";
 	};
 };
 
@@ -52,7 +142,14 @@ type BaseCondition = {
 export interface IfProps extends NodeProps {
 	parameters: Omit<IfV2Props["parameters"], "conditions"> & {
 		conditions?: {
-			conditions: Array<StringCondition>;
+			conditions: Array<
+				| StringCondition
+				| NumberCondition
+				| DateTimeCondition
+				| BooleanCondition
+				| ArrayCondition
+				| ObjectCondition
+			>;
 			/** @default "and" */
 			combinator?: ConditionCombinator;
 		};
@@ -81,6 +178,7 @@ export class If<
 		super["~validate"]();
 		// add ids to conditions
 		if (!this.props.parameters.conditions) return;
+		// NOTE: n8n seems to accept up to 10 conditions, should we add a validation on our side ?
 
 		for (
 			let i = 0;
