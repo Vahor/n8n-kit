@@ -1,4 +1,5 @@
 import { defineConfig } from "tsdown";
+import { process } from "./scripts/copy-comments.ts";
 
 export const input = [
 	"src/index.ts",
@@ -27,4 +28,9 @@ export default defineConfig({
 		dts: ctx.format === "cjs" ? ".d.cts" : ".d.mts",
 		js: ctx.format === "cjs" ? ".cjs" : ".mjs",
 	}),
+	hooks: {
+		"build:done": async () => {
+			await process();
+		},
+	},
 });

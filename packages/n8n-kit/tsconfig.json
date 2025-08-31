@@ -23,6 +23,7 @@
 	},
 	"include": [
 		"src/**/*.ts",
+		"scripts/**/*.ts",
 		"tests/**/*.ts",
 		"vendor/n8n/packages/nodes-base/**/*.ts",
 		"generated/credentials/**/*.ts",
