@@ -80,7 +80,9 @@ export abstract class Node<
 > extends State<LiteralId, C> {
 	protected workflowParent?: Workflow;
 
+	/** @internal */
 	static readonly [NODE_SYMBOL] = true;
+	/** @internal */
 	readonly [NODE_SYMBOL] = true;
 
 	protected abstract readonly type: string;
@@ -117,6 +119,7 @@ export abstract class Node<
 		return this.props?.label;
 	}
 
+	/** @internal */
 	public "~setParent"(parent: Workflow) {
 		if (this.workflowParent) {
 			if (this.workflowParent.id === parent.id) {
@@ -127,11 +130,13 @@ export abstract class Node<
 		this.workflowParent = parent;
 	}
 
+	/** @internal */
 	public "~setGroup"(groupId: string) {
 		if (this.groupIds.includes(groupId)) return;
 		this.groupIds.push(groupId);
 	}
 
+	/** @internal */
 	public "~validate"(): void {}
 
 	public getPath() {

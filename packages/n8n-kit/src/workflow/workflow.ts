@@ -31,9 +31,9 @@ export interface WorkflowProps<Input extends Type, Output extends Type> {
 	tags?: string[] | undefined;
 	active?: boolean;
 
-	/** {@replace OutputSchema} */
+	/** {@inheritDoc OutputSchema} */
 	outputSchema?: Output;
-	/** {@replace InputSchema} */
+	/** {@inheritDoc InputSchema} */
 	inputSchema?: Input;
 
 	settings?: {
@@ -300,7 +300,10 @@ export class Workflow<
 
 export type WorkflowDefinition = Awaited<ReturnType<Workflow["build"]>>;
 
+/** @internal */
 export const workflowTagId = (id: string) => `${prefix}${id}`;
+/** @internal */
 export const RESOLVED_WORKFLOW_ID_PREFIX = `${prefix}_resolved_workflow_id@`;
+/** @internal */
 export const RESOLVED_WORKFLOW_ID = (workflowId: string) =>
 	`${RESOLVED_WORKFLOW_ID_PREFIX}${workflowId}`;

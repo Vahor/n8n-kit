@@ -4,7 +4,7 @@ import { NO_END_STATES } from "../workflow/chain/chain";
 import type { INextable } from "../workflow/chain/types";
 import type { NodePosition, NodeProps } from "./node";
 
-export const StickyNoteColors = {
+const StickyNoteColors = {
 	YELLOW: 1,
 	BROWN: 2,
 	RED: 3,

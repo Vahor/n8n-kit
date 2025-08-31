@@ -39,3 +39,5 @@ dist
 packages/n8n-kit/vendor/*
 .npmrc
 examples/**/.diff
+
+docs

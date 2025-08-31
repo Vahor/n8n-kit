@@ -7,7 +7,7 @@ import type { IsNever } from "../utils/types";
 import type { NodeProps } from "./node";
 
 export interface CodeProps extends NodeProps {
-	/** {@replace OutputSchema} */
+	/** {@inheritDoc OutputSchema} */
 	outputSchema?: Type;
 	parameters:
 		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {

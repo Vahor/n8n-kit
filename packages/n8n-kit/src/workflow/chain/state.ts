@@ -13,13 +13,17 @@ export abstract class State<
 	T extends IContext = IContext,
 > implements IChainable<LiteralId, T>, INextable
 {
+	/** @internal */
 	"~context": T = undefined as any;
 
 	public readonly id: LiteralId;
 
+	/** @internal */
 	public readonly startState: State;
+	/** @internal */
 	public abstract readonly endStates: INextable[];
 
+	/** @internal */
 	protected readonly nextStates: IChainable[] = [];
 
 	// from id to <string, index>. If missing 0
@@ -31,6 +35,7 @@ export abstract class State<
 		this.startState = this;
 	}
 
+	/** @internal */
 	public "~getConnectionOptions"(id: string): Required<ConnectionOptions> {
 		const connectionOptions = this.connectionsOptions[id];
 		return {

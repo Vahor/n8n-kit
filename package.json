@@ -37,12 +37,17 @@
 		"@types/bun": "^1.2.21",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.5",
-		"pkg-pr-new": "^0.0.58"
+		"pkg-pr-new": "^0.0.58",
+		"typedoc": "^0.28.11",
+		"typedoc-theme-oxide": "^0.2.0"
 	},
 	"scripts": {
-		"build": "bun run build.ts",
+		"build": "bun run --filter '*' build",
+		"dev": "bun run --filter '*' dev",
 		"format": "bunx @biomejs/biome check ./ --write",
 		"typecheck": "tsc --noEmit --declaration",
+		"docs": "bunx typedoc",
+		"docs:watch": "bunx typedoc --watch",
 		"ci:version": "bunx @changesets/cli version && bun update",
 		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun run build && bun publish || true); done && changeset tag"
 	},

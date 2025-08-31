@@ -11,10 +11,12 @@ import { $$, type ExpressionBuilderProvider } from "./expression-builder";
 import { State } from "./state";
 import type { ConnectionOptions, IChainable, INextable } from "./types";
 
+/** @hidden */
 export const NO_END_STATES: INextable[] = [] as const;
 
 type PREVIOUS_CONTENT = "json";
 
+/** @hidden */
 export type ChainContext = {
 	[nodeId: string]: any;
 };
@@ -27,6 +29,7 @@ type IgnoreContext<T> = IsNever<T> extends true
 			? true
 			: false;
 
+/** @hidden */
 export type AddIChainableToChainContext<
 	N,
 	CC extends ChainContext,
@@ -55,6 +58,7 @@ export type AddIChainableToChainContext<
 					: CC
 >;
 
+/** @hidden */
 export type AddNodeIdToIds<N, Ids extends readonly string[]> = N extends Group<
 	infer _,
 	any,

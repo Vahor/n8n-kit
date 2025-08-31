@@ -21,7 +21,7 @@ export const process = async () => {
 		"grep",
 		"-H",
 		"-l",
-		"{@replace",
+		"{@inheritDoc",
 		"{}",
 		";",
 	]);

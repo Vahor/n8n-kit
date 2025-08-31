@@ -261,6 +261,7 @@ export class ExpressionBuilder<
 	}
 }
 
+/** @hidden */
 export function $$<T extends ChainContext>() {
 	return <Path extends JoinKeys<T>>(path: Path): ExpressionBuilder<T, Path> =>
 		new ExpressionBuilder<T, Path>(path);
