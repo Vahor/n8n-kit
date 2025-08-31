@@ -105,18 +105,19 @@ export class If<
 			looseTypeValidation: this.props.parameters.looseTypeValidation,
 			options: this.props.parameters.options,
 			conditions:
-				conditions !== undefined
-					? {
+				conditions === undefined
+					? undefined
+					: {
 							conditions: conditions.conditions,
 							combinator: conditions.combinator ?? "and",
 							options: {
+								// TODO: check if this is correct, on n8n if we set ignoreCase to true it sets caseSensitive to true. Which seems incorrect
 								caseSensitive:
 									this.props.parameters.options?.ignoreCase ?? false,
 								version: 2,
 								typeValidation: "strict",
 							},
-						}
-					: {},
+						},
 		};
 	}
 
