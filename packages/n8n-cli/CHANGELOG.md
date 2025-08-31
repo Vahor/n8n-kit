@@ -1,5 +1,22 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.0
+
+### Minor Changes
+
+- [#74](https://github.com/Vahor/n8n-kit/pull/74) [`976a0a9`](https://github.com/Vahor/n8n-kit/commit/976a0a9de63ae0f16097041eab1bbc7de8a77918) Thanks [@Vahor](https://github.com/Vahor)! - Add `projectId` in config file, currently used as a salt in the workflow hashId generation
+
+### Patch Changes
+
+- [#75](https://github.com/Vahor/n8n-kit/pull/75) [`d5ae2b0`](https://github.com/Vahor/n8n-kit/commit/d5ae2b050abc89951a4144c4884790983b380ab2) Thanks [@Vahor](https://github.com/Vahor)! - Add `Workflow.import` method to import an existing n8n workflow into your app. (ex: to use in ExecuteWorkflow)
+
+- [#70](https://github.com/Vahor/n8n-kit/pull/70) [`1d01592`](https://github.com/Vahor/n8n-kit/commit/1d0159268c127d762de6bc2396b2bb8dbc89f4c5) Thanks [@Vahor](https://github.com/Vahor)! - Add a `--sort` option to the build command to output JSON that is easily diffable.
+
+- [#63](https://github.com/Vahor/n8n-kit/pull/63) [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890) Thanks [@Vahor](https://github.com/Vahor)! - Move if parameters inside a `parameters` object to keep the same pattern as other nodes
+
+- Updated dependencies [[`1a9d3dd`](https://github.com/Vahor/n8n-kit/commit/1a9d3dddff47fca9e34aab9107c0dee7176aea29), [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890), [`1c37767`](https://github.com/Vahor/n8n-kit/commit/1c377671c54eac93676e5ef1154db636c8d54b3e), [`976a0a9`](https://github.com/Vahor/n8n-kit/commit/976a0a9de63ae0f16097041eab1bbc7de8a77918), [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890), [`1c37767`](https://github.com/Vahor/n8n-kit/commit/1c377671c54eac93676e5ef1154db636c8d54b3e), [`8c012c9`](https://github.com/Vahor/n8n-kit/commit/8c012c91ba8449dee3cdaa3e82fffab19499b939), [`506c8a9`](https://github.com/Vahor/n8n-kit/commit/506c8a9ef95a7d0ee283b42242dbe02a97f2d48b), [`d5ae2b0`](https://github.com/Vahor/n8n-kit/commit/d5ae2b050abc89951a4144c4884790983b380ab2), [`98a73ee`](https://github.com/Vahor/n8n-kit/commit/98a73ee26e295504c723b8d20c068e9dd55c0890), [`1d01592`](https://github.com/Vahor/n8n-kit/commit/1d0159268c127d762de6bc2396b2bb8dbc89f4c5)]:
+  - @vahor/n8n-kit@0.4.0
+
 ## 0.3.0
 
 ### Minor Changes
