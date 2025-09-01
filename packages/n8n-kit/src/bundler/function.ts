@@ -3,7 +3,7 @@ import path from "node:path";
 import logger from "../logger";
 import { shortHash } from "../utils/slugify";
 import {
-	ExpressionBuilder,
+	applyToExpression,
 	type ExpressionPrefix,
 	JsonExpression,
 } from "../workflow";
@@ -83,14 +83,10 @@ export abstract class BundledFunction {
 
 	protected prepareHandleParameters() {
 		const parameters = this.props.input ?? {};
-		const formattedParameters: Record<string, unknown> = {};
-		for (const [key, value] of Object.entries(parameters)) {
-			if (value instanceof ExpressionBuilder) {
-				formattedParameters[key] = value.prefix(this.expressionPrefix);
-			} else {
-				formattedParameters[key] = value;
-			}
-		}
+		const formattedParameters = applyToExpression(parameters, (expression) => {
+			return expression.prefix(this.expressionPrefix);
+		});
+
 		return JsonExpression.from(formattedParameters).toExpression({
 			indent: 2,
 			withPrefix: false,

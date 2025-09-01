@@ -123,3 +123,60 @@ export function resolveExpressionValue<T>(
 	}
 	return value;
 }
+
+/**
+ * @internal
+ *
+ * Recursively applies a transformation function to all ExpressionBuilder instances
+ * within a nested object structure. This utility function is used to modify expressions
+ * throughout complex data structures while preserving the overall structure.
+ *
+ * The function performs a deep traversal of the object, identifying ExpressionBuilder
+ * instances at any nesting level and applying the provided transformation function
+ * to each one. Other values (primitives, null, etc.) are left unchanged.
+ *
+ * @param obj - The object to traverse and transform
+ * @param fn - Transformation function to apply to each ExpressionBuilder instance
+ * @returns A new object with the same structure but transformed ExpressionBuilder instances
+ *
+ * @example
+ * ```typescript
+ * const data = {
+ *   name: "test",
+ *   expr: $("item.id"),
+ *   nested: {
+ *     value: $("item.value")
+ *   }
+ * };
+ *
+ * const transformed = applyToExpression(data, (expr) => expr.prefix("_"));
+ * // Result: ExpressionBuilder instances are transformed, other values unchanged
+ * ```
+ */
+export function applyToExpression(
+	obj: object,
+	fn: (expression: ExpressionBuilder) => ExpressionBuilder,
+) {
+	const result: Record<string, unknown> = {};
+	for (const [key, value] of Object.entries(obj)) {
+		// Transform ExpressionBuilder instances using the provided function
+		if (value instanceof ExpressionBuilder) {
+			result[key] = fn(value);
+			continue;
+		}
+		// Recursively process arrays, transforming any ExpressionBuilder elements
+		if (Array.isArray(value)) {
+			result[key] = value.map((v) => applyToExpression(v, fn));
+			continue;
+		}
+		// Recursively process nested objects
+		if (typeof value === "object" && value !== null) {
+			result[key] = applyToExpression(value, fn);
+			continue;
+		}
+
+		// Leave primitive values unchanged
+		result[key] = value;
+	}
+	return result;
+}
