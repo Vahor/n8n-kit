@@ -20,8 +20,8 @@ export interface DataTableNodeParameters {
 	mode: "list" | "id",
 };
 
-    /** Default: "anyFilter" */
-    readonly matchType?: "anyFilter" | "allFilters";
+    /** Default: "anyCondition" */
+    readonly matchType?: "anyCondition" | "allConditions";
 
     /**
      * Filter to decide which rows get
