@@ -41,6 +41,7 @@ export class App {
 		return this;
 	}
 
+	/** @internal */
 	public "~validate"() {
 		for (const workflow of this.workflows) {
 			workflow["~validate"]();

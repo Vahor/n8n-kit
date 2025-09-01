@@ -4,7 +4,7 @@ import { DEFAULT_CONFIG } from "@vahor/n8n-kit/utils";
 import { type } from "arktype";
 import { formatArkErrors } from "./utils/ark";
 
-const configFileName = "n8n-kit.config.json";
+export const configFileName = "n8n-kit.config.json";
 
 export const n8nKitConfig = type({
 	entrypoint: "string",

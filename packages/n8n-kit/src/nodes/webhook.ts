@@ -10,9 +10,13 @@ interface WebhookBaseProps
 export interface WebhookProps extends NodeProps {
 	parameters: WebhookBaseProps;
 	outputSchema?: {
+		/** {@inheritDoc OutputSchema} */
 		params?: Type;
+		/** {@inheritDoc OutputSchema} */
 		headers?: Type;
+		/** {@inheritDoc OutputSchema} */
 		body?: Type;
+		/** {@inheritDoc OutputSchema} */
 		query?: Type;
 	};
 }

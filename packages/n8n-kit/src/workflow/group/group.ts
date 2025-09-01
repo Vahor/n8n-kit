@@ -16,7 +16,9 @@ export class Group<
 	C_CC extends ChainContext = {},
 	C_Ids extends string[] = [],
 > extends StickyNote<LiteralId> {
+	/** @internal */
 	static readonly [GROUP_SYMBOL] = true;
+	/** @internal */
 	readonly [GROUP_SYMBOL] = true;
 
 	constructor(

@@ -1,6 +1,6 @@
-import { IfV2 as _If } from "../generated/nodes-impl/IfV2";
+import { IfV2 as _If, type IfV2Props } from "../generated/nodes-impl/IfV2";
 import type { ErrorMessage, IsNullable } from "../utils/types";
-import { ExpressionBuilder } from "../workflow";
+import { type ExpressionOrValue, resolveExpressionValue } from "../workflow";
 import type {
 	AddIChainableToChainContext,
 	AddNodeIdToIds,
@@ -16,24 +16,110 @@ import type { NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
 type StringCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any> | string;
-	rightValue?: ExpressionBuilder<any, any> | string;
+	leftValue: ExpressionOrValue<string>;
+	rightValue?: ExpressionOrValue<string>;
 	operator: {
 		type: "string";
 		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
 			| "contains"
 			| "notContains"
-			| "endsWith"
-			| "notEndsWith"
-			| "equal"
-			| "notEqual"
-			| "regex"
-			| "notRegex"
 			| "startsWith"
 			| "notStartsWith"
-			| "isEmpty"
-			| "isNotEmpty"
-			| "exists";
+			| "endsWith"
+			| "notEndsWith"
+			| "regex"
+			| "notRegex";
+	};
+};
+
+type NumberCondition = BaseCondition & {
+	leftValue: ExpressionOrValue<number>;
+	rightValue?: ExpressionOrValue<number>;
+	operator: {
+		type: "number";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
+			| "gt"
+			| "gte"
+			| "lt"
+			| "lte";
+	};
+};
+
+type DateTimeCondition = BaseCondition & {
+	leftValue: ExpressionOrValue<string>;
+	rightValue?: ExpressionOrValue<string>;
+	operator: {
+		type: "dateTime";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
+			| "after"
+			| "afterOrEquals"
+			| "before"
+			| "beforeOrEquals";
+	};
+};
+
+type BooleanCondition = BaseCondition & {
+	leftValue: ExpressionOrValue<boolean>;
+	rightValue?: ExpressionOrValue<boolean>;
+	operator: {
+		type: "boolean";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "equals"
+			| "notEquals"
+			| "true"
+			| "false";
+	};
+};
+
+type ArrayCondition = BaseCondition & {
+	leftValue: ExpressionOrValue<Array<any>>;
+	rightValue?: ExpressionOrValue<any>;
+	operator: {
+		type: "array";
+		operation:
+			| "exists"
+			| "notExists"
+			| "empty"
+			| "notEmpty"
+			| "contains"
+			| "notContains"
+			| "lengthEquals"
+			| "lengthNotEquals"
+			| "lengthGt"
+			| "lengthGte"
+			| "lengthLt"
+			| "lengthLte";
+	};
+};
+
+type ObjectCondition = BaseCondition & {
+	leftValue: ExpressionOrValue<Record<string, any>>;
+	rightValue?: never;
+	operator: {
+		type: "object";
+		operation: "exists" | "notExists" | "empty" | "notEmpty";
 	};
 };
 
@@ -50,13 +136,18 @@ type BaseCondition = {
 };
 
 export interface IfProps extends NodeProps {
-	parameters: {
+	parameters: Omit<IfV2Props["parameters"], "conditions"> & {
 		conditions?: {
-			conditions: Array<StringCondition>;
+			conditions: Array<
+				| StringCondition
+				| NumberCondition
+				| DateTimeCondition
+				| BooleanCondition
+				| ArrayCondition
+				| ObjectCondition
+			>;
+			/** @default "and" */
 			combinator?: ConditionCombinator;
-			options?: {
-				ignoreCase?: boolean;
-			};
 		};
 	};
 }
@@ -69,6 +160,7 @@ export class If<
 	CC extends ChainContext = {},
 	IdsInContext extends string[] = [],
 > extends _If<{}, L> {
+	/** @internal */
 	override endStates: INextable[] = [];
 
 	constructor(
@@ -82,6 +174,7 @@ export class If<
 		super["~validate"]();
 		// add ids to conditions
 		if (!this.props.parameters.conditions) return;
+		// NOTE: n8n seems to accept up to 10 conditions, should we add a validation on our side ?
 
 		for (
 			let i = 0;
@@ -91,32 +184,40 @@ export class If<
 			const condition = this.props.parameters.conditions.conditions[i]!;
 			condition.id = `${this.getPath()}/${i}`;
 			condition.operator.singleValue = condition.rightValue === undefined;
-			if (condition.leftValue instanceof ExpressionBuilder) {
-				condition.leftValue = condition.leftValue.toExpression();
-			}
-			if (condition.rightValue instanceof ExpressionBuilder) {
-				condition.rightValue = condition.rightValue.toExpression();
+			condition.leftValue = resolveExpressionValue(condition.leftValue);
+			if (condition.rightValue !== undefined) {
+				condition.rightValue = resolveExpressionValue(condition.rightValue);
 			}
 		}
 	}
 
 	override async getParameters() {
 		const conditions = this.props.parameters.conditions;
-		if (!conditions) return {};
 
 		return {
-			conditions: {
-				conditions: conditions.conditions,
-				combinator: conditions.combinator ?? "and",
-				options: {
-					caseSensitive: !(conditions.options?.ignoreCase ?? true),
-					version: 2,
-					typeValidation: "strict",
-				},
-			},
+			looseTypeValidation: this.props.parameters.looseTypeValidation,
+			options: this.props.parameters.options,
+			conditions:
+				conditions === undefined
+					? undefined
+					: {
+							conditions: conditions.conditions,
+							combinator: conditions.combinator ?? "and",
+							options: {
+								// TODO: check if this is correct, on n8n if we set ignoreCase to true it sets caseSensitive to true. Which seems incorrect
+								caseSensitive:
+									this.props.parameters.options?.ignoreCase ?? false,
+								version: 2,
+								typeValidation: "strict",
+							},
+						},
 		};
 	}
 
+	/**
+	 * Determines if this `If` node can accept additional input connections
+	 * @returns True if less than 2 end states are connected (allowing one true/false branches)
+	 */
 	override canTakeInput(
 		_fromState: IChainable,
 		_withConnectionOptions?: ConnectionOptions,
@@ -125,6 +226,12 @@ export class If<
 		return this.endStates.length < 2;
 	}
 
+	/**
+	 * Connects a node or chain to execute when the `If` condition evaluates to true
+	 * @param next - The node or chain to execute on true condition
+	 * @param connectionOptions - Optional connection configuration (excluding 'from' which is set to 0)
+	 * @returns Updated `If` node with the true branch configured
+	 */
 	public true<N extends IChainable>(
 		next: IsNullable<True> extends true
 			? N
@@ -145,6 +252,12 @@ export class If<
 		return this as any;
 	}
 
+	/**
+	 * Connects a node or chain to execute when the `If` condition evaluates to false
+	 * @param next - The node or chain to execute on false condition
+	 * @param connectionOptions - Optional connection configuration (excluding 'from' which is set to 1)
+	 * @returns Updated `If` node with the false branch configured
+	 */
 	public false<N extends IChainable>(
 		next: IsNullable<False> extends true
 			? N

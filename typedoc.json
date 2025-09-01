@@ -1,0 +1,43 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+
+	"entryPoints": [
+		"packages/n8n-kit/src/workflow/index.ts",
+		"packages/n8n-kit/src/nodes/index.ts",
+		"packages/n8n-kit/src/nodes/generated.ts",
+		"packages/n8n-kit/src/credentials/index.ts",
+		"packages/n8n-kit/src/credentials/generated.ts"
+	],
+	"tsconfig": "packages/n8n-kit/tsconfig.build.json",
+	"out": "docs",
+
+	"plugin": ["typedoc-theme-oxide"],
+	"theme": "oxide",
+	"typePrintWidth": 60,
+	"includeVersion": true,
+
+	"gitRevision": "main",
+	"name": "n8n-kit",
+	"readme": "packages/n8n-kit/README.md",
+
+	"githubPages": true,
+	"hostedBaseUrl": "https://vahor.github.io/n8n-kit",
+
+	"sort": ["alphabetical", "source-order"],
+
+	"navigation": {
+		"excludeReferences": true
+	},
+
+	"excludePrivate": true,
+	"excludeProtected": true,
+	"excludeInternal": true,
+	"cleanOutputDir": true,
+	"externalPattern": ["**/node_modules/**", "**/symbols.ts"],
+
+	"validation": {
+		"notExported": true,
+		"invalidLink": true,
+		"notDocumented": false
+	}
+}

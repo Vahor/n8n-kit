@@ -6,6 +6,7 @@ import { table } from "table";
 import type { Argv } from "yargs";
 import type { GlobalOptions } from "..";
 import { createFolder, resolvePath } from "../files";
+import { setupWatch, type WatchOptions } from "../utils/watch";
 import { prepareWorkflowForDiff } from "./diff";
 import { loadApplication } from "./shared";
 
@@ -24,14 +25,20 @@ export const builder = (yargs: Argv) =>
 			describe: "Sort keys alphabetically, useful to compare json files",
 			default: false,
 		})
+		.option("watch", {
+			type: "string",
+			describe:
+				"Watch for changes and rebuild. Pass a path to watch specific folder, or leave empty to watch entrypoint",
+		})
 		.strict();
 
-type Options = GlobalOptions & {
-	indent: number;
-	sort: boolean;
-};
+type Options = GlobalOptions &
+	WatchOptions & {
+		indent: number;
+		sort: boolean;
+	};
 
-export const handler = async (options: Options) => {
+const buildWorkflows = async (options: Options) => {
 	const { app, config } = await loadApplication(options);
 	console.log(
 		table([
@@ -59,6 +66,22 @@ export const handler = async (options: Options) => {
 		logger.setContext(null);
 		logger.log(
 			`Wrote workflow ${chalk.bold(workflow.id)} to ${chalk.blue(relativePath)}`,
+		);
+	}
+	return { app, config };
+};
+
+export const handler = async (options: Options) => {
+	const { config } = await buildWorkflows(options);
+
+	if (options.watch !== undefined) {
+		await setupWatch(
+			{
+				callback: () => buildWorkflows(options),
+				actionName: "rebuilding",
+				successName: "Rebuild",
+			},
+			options.watch || config.entrypoint,
 		);
 	}
 };

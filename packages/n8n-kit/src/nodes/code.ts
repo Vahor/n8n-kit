@@ -7,6 +7,8 @@ import type { IsNever } from "../utils/types";
 import type { NodeProps } from "./node";
 
 export interface CodeProps extends NodeProps {
+	/** {@inheritDoc OutputSchema} */
+	outputSchema?: Type;
 	parameters:
 		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {
 				language?: "javaScript";
@@ -18,7 +20,6 @@ export interface CodeProps extends NodeProps {
 				pythonCode: string | PythonFunction;
 				jsCode?: never;
 		  });
-	outputSchema?: Type;
 }
 
 // @ts-expect-error: we override the parameters type

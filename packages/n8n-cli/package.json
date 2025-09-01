@@ -1,6 +1,6 @@
 {
 	"name": "@vahor/n8n-kit-cli",
-	"version": "0.3.0",
+	"version": "0.4.1",
 	"description": "CLI for n8n-kit",
 	"license": "MIT",
 	"repository": {
@@ -37,6 +37,7 @@
 		"@vahor/n8n-kit": "workspace:*",
 		"arktype": "catalog:",
 		"chalk": "catalog:",
+		"chokidar": "^4.0.3",
 		"codemaker": "^1.113.0",
 		"nano-spawn": "catalog:",
 		"table": "^6.9.0",

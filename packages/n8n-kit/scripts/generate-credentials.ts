@@ -12,7 +12,7 @@ const allNodes = globSync(
 	{
 		cwd: path.resolve(__dirname),
 	},
-);
+).sort();
 
 const generateEntrypoint = async () => {
 	const code = new CodeMaker();

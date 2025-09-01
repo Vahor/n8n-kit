@@ -29,6 +29,7 @@ type ExpectedArray = ErrorMessage<"Expected array">;
 type ExpectedString = ErrorMessage<"Expected string">;
 
 type ExpressionBuilderMode = "item";
+/** @hidden */
 export type ExpressionPrefix = "$" | "_";
 
 const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");
@@ -168,6 +169,8 @@ export class ExpressionBuilder<
 	/*
 	 * @internal
 	 * Used by JSON.stringify
+	 *
+	 * Return {{ format() }}
 	 */
 	public toJSON() {
 		return this.toExpression().slice(1);
@@ -261,6 +264,7 @@ export class ExpressionBuilder<
 	}
 }
 
+/** @hidden */
 export function $$<T extends ChainContext>() {
 	return <Path extends JoinKeys<T>>(path: Path): ExpressionBuilder<T, Path> =>
 		new ExpressionBuilder<T, Path>(path);

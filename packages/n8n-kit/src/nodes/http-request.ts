@@ -9,6 +9,8 @@ import type { IsNever, RequireFields } from "../utils/types";
 
 type HttpRequestProps = Omit<HttpRequestV3Props, "parameters"> & {
 	parameters: RequireFields<HttpRequestV3Props["parameters"], "method" | "url">;
+} & {
+	/** {@inheritDoc OutputSchema} */
 	outputSchema?: Type;
 };
 

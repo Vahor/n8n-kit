@@ -2,13 +2,16 @@ name: Scheduled n8n Nodes Generation
 
 on:
   schedule:
-    # Run every Monday at 9:00 AM UTC
-    - cron: '0 9 * * 1'
+    # Run every Tuesday at 9:00 AM UTC
+    - cron: '0 9 * * 2'
   workflow_dispatch: # Allow manual triggering
 
 permissions:
   contents: write
   pull-requests: write
+
+env:
+  BRANCH_NAME: automated/update-n8n-nodes
 
 jobs:
   generate-nodes:
@@ -29,6 +32,9 @@ jobs:
       - name: Update submodules
         run: |
           git submodule update --remote --merge
+          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}' | sed 's/^+//')
+          echo "Submodule version: $submodule_version"
+          echo "SUBMODULE_VERSION=$submodule_version" >> $GITHUB_ENV
 
       - name: Check if submodules have updates
         id: check-updates
@@ -39,6 +45,27 @@ jobs:
             echo "has_updates=true" >> $GITHUB_OUTPUT
           fi
 
+      - name: Check for existing PR
+        if: steps.check-updates.outputs.has_updates == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          existing_pr=$(gh pr list --head "automated/update-n8n-nodes" --json number --jq '.[0].number' || echo "")
+          echo "EXISTING_PR=$existing_pr" >> $GITHUB_ENV
+
+      - name: Switch to existing branch or create new one
+        if: steps.check-updates.outputs.has_updates == 'true'
+        run: |
+          if [ ! -z "$EXISTING_PR" ]; then
+            echo "Reusing existing branch and PR #$EXISTING_PR"
+            git fetch origin automated/update-n8n-nodes
+            git checkout $BRANCH_NAME
+            git pull 
+          else
+            echo "Creating new branch"
+            git checkout -b $BRANCH_NAME
+          fi
+
       - name: Setup Bun
         if: steps.check-updates.outputs.has_updates == 'true'
         uses: oven-sh/setup-bun@v2
@@ -46,48 +73,32 @@ jobs:
         if: steps.check-updates.outputs.has_updates == 'true'
         run: bun install --frozen-lockfile
 
-
-      - name: Close existing PR if it exists
-        if: steps.check-updates.outputs.has_updates == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Check if PR already exists and close it
-          existing_pr=$(gh pr list --head "automated/update-n8n-nodes" --json number --jq '.[0].number' || echo "")
-          if [ ! -z "$existing_pr" ]; then
-            echo "Closing existing PR #$existing_pr"
-            gh pr close $existing_pr --comment "Closing in favor of new automated update"
-            git branch -D $BRANCH_NAME
-            git push origin $BRANCH_NAME --force
-          fi
-
-      - name: Create new branch
-        if: steps.check-updates.outputs.has_updates == 'true'
-        run: |
-          # Create a new branch with timestamp to ensure uniqueness
-          branch_name="automated/update-n8n-nodes"
-          git checkout -b $branch_name
-          echo "BRANCH_NAME=$branch_name" >> $GITHUB_ENV
-
       - name: Run generate command
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-kit
         run: |
           bun run generate
 
+      - name: Run format command
+        if: steps.check-updates.outputs.has_updates == 'true'
+        run: |
+          bun run format
+
       - name: Add changeset
         if: steps.check-updates.outputs.has_updates == 'true'
         run: |
+          # remove previous changesets
+          rm .changeset/automated-n8n-nodes-update-*.md || true
+
           # Create changeset file
           changeset_file=".changeset/automated-n8n-nodes-update-$(date +%Y%m%d-%H%M%S).md"
-          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}')
 
           cat > $changeset_file << EOF
           ---
           "@vahor/n8n-kit": minor
           ---
 
-          Automated update of n8n nodes from upstream submodule (version [$submodule_version](https://github.com/n8n-io/n8n/tree/$submodule_version))
+          Automated update of n8n nodes from upstream submodule (version [$SUBMODULE_VERSION](https://github.com/n8n-io/n8n/tree/$SUBMODULE_VERSION))
           EOF
 
           echo "Created changeset: $changeset_file"
@@ -96,11 +107,7 @@ jobs:
         if: steps.check-updates.outputs.has_updates == 'true'
         run: |
           git add .
-          git commit -m "chore: automated n8n nodes update
-
-          - Updated submodules to latest version
-          - Regenerated n8n nodes
-          - Added changeset for release"
+          git commit -m "chore: automated n8n nodes update" --allow-empty
 
       - name: Push changes and create PR
         if: steps.check-updates.outputs.has_updates == 'true'
@@ -108,21 +115,29 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}')
-          git push origin $BRANCH_NAME
+          git push --set-upstream origin $BRANCH_NAME
 
-          gh pr create \
-            --title "chore: automated n8n nodes update $(date +%Y-%m-%d)" \
-            --body "## Automated n8n Nodes Update
+          pr_title="chore: automated n8n nodes update $(date +%Y-%m-%d)"
+          pr_body="## Automated n8n Nodes Update
 
-          This PR was automatically generated to update n8n nodes.
+            This PR was automatically generated to update n8n nodes.
 
-          Updated to n8n version [$submodule_version](https://github.com/n8n-io/n8n/tree/$submodule_version)
+            Updated to n8n version [$SUBMODULE_VERSION](https://github.com/n8n-io/n8n/tree/$SUBMODULE_VERSION)
 
-          ---
-          *Generated in $JOB_URL*" \
-            --head $BRANCH_NAME \
-            --base main
+            ---
+            *Generated in $JOB_URL*"
+
+          if [ ! -z "$EXISTING_PR" ]; then
+            echo "Updating existing PR #$EXISTING_PR"
+            gh pr edit $EXISTING_PR --title "$pr_title" --body "$pr_body"
+          else
+            echo "Creating new PR"
+            gh pr create \
+              --title "$pr_title" \
+              --body "$pr_body" \
+              --head $BRANCH_NAME \
+              --base main
+          fi
 
       - name: No updates needed
         if: steps.check-updates.outputs.has_updates == 'false'

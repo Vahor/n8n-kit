@@ -1,6 +1,6 @@
 {
 	"name": "@vahor/n8n-kit",
-	"version": "0.3.0",
+	"version": "0.4.1",
 	"description": "Build n8n workflows using code",
 	"license": "MIT",
 	"repository": {
@@ -110,12 +110,12 @@
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
-		"@n8n/n8n-nodes-langchain": "1.108.0",
+		"@n8n/n8n-nodes-langchain": "1.109.0",
+		"n8n-core": "1.109.0",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "^1.113.0",
 		"eventsource": "2.0.2",
-		"n8n-core": "1.108.0",
 		"tinyglobby": "^0.2.14",
 		"typescript": "catalog:"
 	},

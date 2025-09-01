@@ -1,6 +1,11 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { $$ } from "../../../src";
-import { expr, JsonExpression } from "../../../src/workflow/chain/expression";
+import {
+	applyToExpression,
+	expr,
+	JsonExpression,
+	resolveExpressionValue,
+} from "../../../src/workflow/chain/expression";
 
 type Context = {
 	user: {
@@ -230,6 +235,135 @@ describe("JsonExpression", () => {
 				prefixed: "{{ _('user').item.json.email }}",
 				static: "value",
 			})}`,
+		);
+	});
+
+	test("handles <no-quotes> expressions with toJsonString()", () => {
+		const obj = {
+			name: $("user.name"),
+			jsonValue: $("data").toJsonString(),
+			static: "value",
+		};
+
+		const result = JsonExpression.from(obj);
+
+		expect(result.toExpression()).toEqual(
+			`={"name":"{{ $('user').item.json.name }}","jsonValue":{{ $('data').item.json.toJsonString() }},"static":"value"}`,
+		);
+	});
+
+	test("handles withPrefix: false", () => {
+		const obj = {
+			static: "value",
+			raw: `={{ $now }}`,
+			expr: expr`{{ $now }}`,
+		};
+
+		const result = JsonExpression.from(obj);
+
+		expect(result.toExpression({ withPrefix: false })).toEqual(
+			`{"static":"value","raw":"{{ $now }}","expr":"{{ $now }}"}`,
+		);
+	});
+
+	test("does not strip '=' when not a leading token", () => {
+		const obj = {
+			mixed: "prefix ={{ $now }} suffix",
+		};
+		const result = JsonExpression.from(obj);
+		expect(
+			result.toExpression({
+				withPrefix: false,
+				removeCurly: true,
+				removeEquals: true,
+			}),
+		).toEqual(JSON.stringify({ mixed: "prefix ={{ $now }} suffix" }));
+	});
+
+	test("handles removeCurly: true", () => {
+		const obj = {
+			name: $("user.name"),
+			jsonValue: $("data").toJsonString(),
+			data: $("data"),
+			static: "value",
+			raw: `={{ $now }}`,
+			expr: expr`{{ $now }}`,
+		};
+
+		const result = JsonExpression.from(obj);
+
+		expect(
+			result.toExpression({ removeCurly: true, withPrefix: false }),
+		).toEqual(
+			`{"name":$('user').item.json.name,"jsonValue":$('data').item.json.toJsonString(),"data":$('data').item.json,"static":"value","raw":$now,"expr":$now}`,
+		);
+	});
+});
+
+describe("ExpressionOrValue utilities", () => {
+	test("resolveExpressionValue handles ExpressionBuilder", () => {
+		const expressionBuilder = $("user.name");
+		const result = resolveExpressionValue(expressionBuilder);
+
+		expect(result).toBe("={{ $('user').item.json.name }}");
+	});
+
+	test("resolveExpressionValue handles raw value", () => {
+		const stringValue = "static value";
+		const result = resolveExpressionValue(stringValue);
+
+		expect(result).toBe("static value");
+	});
+});
+
+describe("applyToExpression", () => {
+	test("transforms single ExpressionBuilder", () => {
+		const expr = $("user.name");
+		const result = applyToExpression(expr, (e) => e.prefix("_"));
+
+		expect((result as any).format()).toBe("_('user').item.json.name");
+	});
+
+	test("transforms ExpressionBuilder in nested structures", () => {
+		const complex = {
+			user: {
+				profile: {
+					name: $("user.name"),
+					details: [$("user.email"), $("user.age")],
+				},
+				settings: {
+					theme: "dark",
+					notifications: $("user.properties[0].value"),
+				},
+			},
+			metadata: [
+				{
+					id: $("data.items[0].id"),
+					nested: {
+						value: $("data.items[0].sub.nested"),
+					},
+				},
+			],
+		};
+
+		const result = applyToExpression(complex, (expr) => expr.prefix("_"));
+
+		expect(result.user.profile.name.format()).toBe("_('user').item.json.name");
+		expect(result.user.profile.details[0]!.format()).toBe(
+			"_('user').item.json.email",
+		);
+		expect(result.user.profile.details[1]!.format()).toBe(
+			"_('user').item.json.age",
+		);
+		expect(result.user.settings.theme).toBe("dark");
+		expect((result.user.settings.notifications as any).format()).toBe(
+			"_('user').item.json.properties[0].value",
+		);
+		expect((result.metadata[0]!.id as any).format()).toBe(
+			"_('data').item.json.items[0].id",
+		);
+		expect((result.metadata[0]!.nested.value as any).format()).toBe(
+			"_('data').item.json.items[0].sub.nested",
 		);
 	});
 });

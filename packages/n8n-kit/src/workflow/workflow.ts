@@ -23,8 +23,6 @@ type WorkflowDefinitionProvider<Input extends Type, Output extends Type, T> =
 
 export interface WorkflowProps<Input extends Type, Output extends Type> {
 	name?: string;
-	inputSchema?: Input;
-	outputSchema?: Output;
 	definition: WorkflowDefinitionProvider<
 		Input,
 		Output,
@@ -32,6 +30,11 @@ export interface WorkflowProps<Input extends Type, Output extends Type> {
 	>;
 	tags?: string[] | undefined;
 	active?: boolean;
+
+	/** {@inheritDoc OutputSchema} */
+	outputSchema?: Output;
+	/** {@inheritDoc InputSchema} */
+	inputSchema?: Input;
 
 	settings?: {
 		/**
@@ -74,7 +77,9 @@ export class Workflow<
 	Input extends Type = any,
 	Output extends Type = any,
 > extends ResolvedWorkflow {
+	/** @internal */
 	static readonly [WORKFLOW_SYMBOL] = true;
+	/** @internal */
 	readonly [WORKFLOW_SYMBOL] = true;
 
 	public readonly id: string;
@@ -251,6 +256,7 @@ export class Workflow<
 		return this.id;
 	}
 
+	/** @internal */
 	public "~validate"(): void {
 		const nodes = this.getNodes();
 
@@ -297,7 +303,10 @@ export class Workflow<
 
 export type WorkflowDefinition = Awaited<ReturnType<Workflow["build"]>>;
 
+/** @internal */
 export const workflowTagId = (id: string) => `${prefix}${id}`;
+/** @internal */
 export const RESOLVED_WORKFLOW_ID_PREFIX = `${prefix}_resolved_workflow_id@`;
+/** @internal */
 export const RESOLVED_WORKFLOW_ID = (workflowId: string) =>
 	`${RESOLVED_WORKFLOW_ID_PREFIX}${workflowId}`;

@@ -13,16 +13,35 @@ export abstract class State<
 	T extends IContext = IContext,
 > implements IChainable<LiteralId, T>, INextable
 {
+	/**
+	 * @internal
+	 */
 	"~context": T = undefined as any;
 
+	/**
+	 * Unique identifier for this state
+	 */
 	public readonly id: LiteralId;
 
+	/**
+	 * @internal
+	 */
 	public readonly startState: State;
+
+	/**
+	 * @internal
+	 */
 	public abstract readonly endStates: INextable[];
 
+	/**
+	 * @internal
+	 */
 	protected readonly nextStates: IChainable[] = [];
 
-	// from id to <string, index>. If missing 0
+	/**
+	 * Connection configuration options for connected state
+	 * keyed by state ID
+	 */
 	protected connectionsOptions: Record<string, ConnectionOptions> = {};
 
 	public constructor(id: LiteralId) {
@@ -31,6 +50,7 @@ export abstract class State<
 		this.startState = this;
 	}
 
+	/** @internal */
 	public "~getConnectionOptions"(id: string): Required<ConnectionOptions> {
 		const connectionOptions = this.connectionsOptions[id];
 		return {
@@ -41,6 +61,12 @@ export abstract class State<
 		};
 	}
 
+	/**
+	 * Determines if this state can accept input from another state
+	 * @param _fromState - The state that wants to connect to this state
+	 * @param _withConnectionOptions - Optional connection configuration
+	 * @returns True if this state can accept the input, false otherwise
+	 */
 	public canTakeInput(
 		_fromState: IChainable,
 		_withConnectionOptions?: ConnectionOptions,
@@ -48,6 +74,7 @@ export abstract class State<
 		return true;
 	}
 
+	/** @internal */
 	public addNext(state: IChainable, connectionOptions?: ConnectionOptions) {
 		if (!this.canTakeInput(state, connectionOptions)) {
 			throw new Error(
@@ -79,6 +106,10 @@ export abstract class State<
 		}
 	}
 
+	/**
+	 * Returns all states that are connected as next states from this state
+	 * @returns Array of chainable states that follow this state
+	 */
 	public listOutgoing(): IChainable[] {
 		const ret: IChainable[] = [];
 		for (const state of this.nextStates.values()) {
