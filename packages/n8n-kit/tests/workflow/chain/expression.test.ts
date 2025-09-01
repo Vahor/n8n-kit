@@ -1,10 +1,12 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { $$ } from "../../../src";
 import {
+	applyToExpression,
 	expr,
 	JsonExpression,
 	resolveExpressionValue,
 } from "../../../src/workflow/chain/expression";
+import { ExpressionBuilder } from "../../../src/workflow/chain/expression-builder";
 
 type Context = {
 	user: {
@@ -312,5 +314,57 @@ describe("ExpressionOrValue utilities", () => {
 		const result = resolveExpressionValue(stringValue);
 
 		expect(result).toBe("static value");
+	});
+});
+
+describe("applyToExpression", () => {
+	test("transforms single ExpressionBuilder", () => {
+		const expr = $("user.name");
+		const result = applyToExpression(expr, (e) => e.prefix("_"));
+
+		expect((result as any).format()).toBe("_('user').item.json.name");
+	});
+
+	test("transforms ExpressionBuilder in nested structures", () => {
+		const complex = {
+			user: {
+				profile: {
+					name: $("user.name"),
+					details: [$("user.email"), $("user.age")],
+				},
+				settings: {
+					theme: "dark",
+					notifications: $("user.properties[0].value"),
+				},
+			},
+			metadata: [
+				{
+					id: $("data.items[0].id"),
+					nested: {
+						value: $("data.items[0].sub.nested"),
+					},
+				},
+			],
+		};
+
+		const result = applyToExpression(complex, (expr) => expr.prefix("_"));
+
+		expect(result.user.profile.name.format()).toBe("_('user').item.json.name");
+		expect(result.user.profile.details[0]!.format()).toBe(
+			"_('user').item.json.email",
+		);
+		expect(result.user.profile.details[1]!.format()).toBe(
+			"_('user').item.json.age",
+		);
+		expect(result.user.settings.theme).toBe("dark");
+		expect((result.user.settings.notifications as any).format()).toBe(
+			"_('user').item.json.properties[0].value",
+		);
+		expect((result.metadata[0]!.id as any).format()).toBe(
+			"_('data').item.json.items[0].id",
+		);
+		expect((result.metadata[0]!.nested.value as any).format()).toBe(
+			"_('data').item.json.items[0].sub.nested",
+		);
 	});
 });

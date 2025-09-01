@@ -155,30 +155,28 @@ export function resolveExpressionValue<T>(
  * // Result: ExpressionBuilder instances are transformed, other values unchanged
  * ```
  */
-export function applyToExpression(
-	obj: object,
+export function applyToExpression<T>(
+	obj: T,
 	fn: (expression: ExpressionBuilder) => ExpressionBuilder,
-) {
-	const result: Record<string, unknown> = {};
-	for (const [key, value] of Object.entries(obj)) {
-		// Transform ExpressionBuilder instances using the provided function
-		if (value instanceof ExpressionBuilder) {
-			result[key] = fn(value);
-			continue;
-		}
-		// Recursively process arrays, transforming any ExpressionBuilder elements
-		if (Array.isArray(value)) {
-			result[key] = value.map((v) => applyToExpression(v, fn));
-			continue;
-		}
-		// Recursively process nested objects
-		if (typeof value === "object" && value !== null) {
-			result[key] = applyToExpression(value, fn);
-			continue;
-		}
-
-		// Leave primitive values unchanged
-		result[key] = value;
+): T {
+	if (obj instanceof ExpressionBuilder) {
+		return fn(obj) as unknown as T;
 	}
-	return result;
+
+	// Recursively process arrays, transforming any ExpressionBuilder elements
+	if (Array.isArray(obj)) {
+		return obj.map((v) => applyToExpression(v, fn)) as T;
+	}
+
+	// Object
+	if (obj !== null && typeof obj === "object") {
+		const out: Record<string, unknown> = {};
+		for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
+			out[key] = applyToExpression(value as any, fn);
+		}
+		return out as unknown as T;
+	}
+
+	// Primitive
+	return obj;
 }
