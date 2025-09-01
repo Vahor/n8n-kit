@@ -2,7 +2,11 @@ import type { Type } from "arktype";
 import type { SetV2NodeParameters } from "../generated/nodes/SetV2";
 import { SetV2 as _Fields } from "../generated/nodes-impl/SetV2";
 import type { UnionToIntersection } from "../utils/types";
-import { ExpressionBuilder } from "../workflow";
+import {
+	type ExpressionBuilder,
+	type ExpressionOrValue,
+	resolveExpressionValue,
+} from "../workflow";
 import type { NodeProps } from "./node";
 
 type Assignment<T extends Type = Type> = {
@@ -10,7 +14,7 @@ type Assignment<T extends Type = Type> = {
 	name: string;
 	type: T;
 	// TODO: need to figure why infer is not working
-	value: T["infer"] | ExpressionBuilder<any, any, T["infer"]>;
+	value: ExpressionOrValue<T["infer"]>;
 };
 
 export interface SetProps<A extends readonly Assignment[]> extends NodeProps {
@@ -77,9 +81,7 @@ export class Fields<
 			for (let i = 0; i < assignments.length; i++) {
 				const assignment = assignments[i]!;
 				assignment.id = `${this.getPath()}/${i}`;
-				if (assignment.value instanceof ExpressionBuilder) {
-					assignment.value = assignment.value.toExpression();
-				}
+				assignment.value = resolveExpressionValue(assignment.value);
 				if (typeof assignment.type !== "string") {
 					// transform arktype type to "string" | "object" ... to match n8n
 					const typeSchema = assignment.type.toJsonSchema();
