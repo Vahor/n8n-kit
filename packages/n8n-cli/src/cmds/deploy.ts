@@ -10,6 +10,7 @@ import type { Argv } from "yargs";
 import type { GlobalOptions } from "..";
 import { UNDEFINED_ID } from "../constants";
 import { N8nApi } from "../n8n-api";
+import { setupWatch, type WatchOptions } from "../utils/watch";
 import { getWorkflowMapping, loadApplication } from "./shared";
 
 export const command = "deploy";
@@ -22,16 +23,22 @@ export const builder = (yargs: Argv) =>
 			default: true,
 			describe: "Preserve node positions from existing workflows",
 		})
+		.option("watch", {
+			type: "string",
+			describe:
+				"Watch for changes and redeploy. Pass a path to watch specific folder, or leave empty to watch entrypoint",
+		})
 		.strict();
 
-type DeployOptions = GlobalOptions & {
-	dryRun: boolean;
-	yes: boolean;
-	merge: boolean;
-};
+type DeployOptions = GlobalOptions &
+	WatchOptions & {
+		dryRun: boolean;
+		yes: boolean;
+		merge: boolean;
+	};
 
-export const handler = async (options: DeployOptions) => {
-	const { app } = await loadApplication(options);
+const deployWorkflows = async (options: DeployOptions) => {
+	const { app, config } = await loadApplication(options);
 	console.log(
 		table([
 			["ID", "HashId", "Name"],
@@ -190,4 +197,21 @@ export const handler = async (options: DeployOptions) => {
 			]),
 		]),
 	);
+
+	return { app, config };
+};
+
+export const handler = async (options: DeployOptions) => {
+	const { config } = await deployWorkflows(options);
+
+	if (options.watch !== undefined) {
+		await setupWatch(
+			{
+				callback: () => deployWorkflows(options).then(() => {}),
+				actionName: "redeploying",
+				successName: "Redeploy",
+			},
+			options.watch || config.entrypoint,
+		);
+	}
 };

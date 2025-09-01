@@ -101,11 +101,25 @@ bunx @vahor/n8n build [options]
 
 **Options:**
 - `--indent <number>` - Indent JSON files (default: 0)
+- `--sort` - Sort keys alphabetically, useful to compare JSON files
+- `--watch [path]` - Watch for changes and rebuild automatically. Pass a path to watch a specific folder, or leave empty to watch the entrypoint
 
-**Example:**
+**Examples:**
 ```sh
+# Regular build with indentation
 bunx @vahor/n8n build --indent 2
+
+# Watch mode - watches the entrypoint file
+bunx @vahor/n8n build --watch --yes
+
+# Watch mode - watches a specific directory
+bunx @vahor/n8n build --yes --watch src/
 ```
+
+**Watch Mode:**
+- Automatically rebuilds when files change
+- Uses a 300ms debounce to avoid excessive rebuilds
+- Press `Ctrl+C` to stop watching
 
 ### deploy
 
@@ -117,6 +131,7 @@ bunx @vahor/n8n deploy [options]
 
 **Options:**
 - `--merge` - Do not overwrite nodes position in existing workflows (default: true)
+- `--watch [path]` - Watch for changes and redeploy automatically. Pass a path to watch a specific folder, or leave empty to watch the entrypoint
 
 **Workflow Matching:**
 
@@ -126,10 +141,22 @@ bunx @vahor/n8n deploy [options]
 
 **Note:** The CLI will never delete workflows or ids. If you want to delete a workflow that is no longer defined in your code, you can do it manually in n8n.
 
-**Example:**
+**Examples:**
 ```sh
+# Regular deploy
 bunx @vahor/n8n deploy --yes
+
+# Watch mode - watches the entrypoint file and redeploys on changes
+bunx @vahor/n8n deploy --watch --yes
+
+# Watch mode - watches a specific directory
+bunx @vahor/n8n deploy --watch src/ --yes
 ```
+
+**Watch Mode:**
+- Automatically redeploys when files change
+- Uses a 300ms debounce to avoid excessive deploys
+- Press `Ctrl+C` to stop watching
 
 ### diff
 
