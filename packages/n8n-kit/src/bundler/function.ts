@@ -2,7 +2,11 @@ import * as fs from "node:fs";
 import path from "node:path";
 import logger from "../logger";
 import { shortHash } from "../utils/slugify";
-import { ExpressionBuilder, type ExpressionPrefix } from "../workflow";
+import {
+	applyToExpression,
+	type ExpressionPrefix,
+	JsonExpression,
+} from "../workflow";
 
 export interface BundledFunctionProps {
 	/**
@@ -79,20 +83,14 @@ export abstract class BundledFunction {
 
 	protected prepareHandleParameters() {
 		const parameters = this.props.input ?? {};
-		const formattedParameters: Record<string, unknown> = {};
-		// TODO: with the new toJSON method, we can remove this and adapt the regex (remove = I suppose)
-		for (const [key, value] of Object.entries(parameters)) {
-			if (value instanceof ExpressionBuilder) {
-				formattedParameters[key] = value
-					.prefix(this.expressionPrefix)
-					.toExpression();
-			} else {
-				formattedParameters[key] = value;
-			}
-		}
-		let data = JSON.stringify(formattedParameters, null, 2);
-		// remove quotes if the value starts with a ={{ and ends with }}
-		data = data.replace(/"=\{\{\s*(.*?)\s*\}\}"/g, "$1");
-		return data;
+		const formattedParameters = applyToExpression(parameters, (expression) => {
+			return expression.prefix(this.expressionPrefix);
+		});
+
+		return JsonExpression.from(formattedParameters).toExpression({
+			indent: 2,
+			withPrefix: false,
+			removeCurly: true,
+		});
 	}
 }
