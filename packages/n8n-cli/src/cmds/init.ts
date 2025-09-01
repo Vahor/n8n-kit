@@ -25,9 +25,9 @@ export const handler = async (
 		throw new Error("Config file already exists");
 	}
 	await writeConfigFile({
+		projectId: randomUUID(),
 		entrypoint: argv.entrypoint ?? "src/index.ts",
 		out: argv.out ?? "n8n-kit",
-		projectId: randomUUID(),
 	});
 	logger.log(`Wrote config file ${configFileName}`);
 };
