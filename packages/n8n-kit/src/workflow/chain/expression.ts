@@ -93,9 +93,11 @@ export class JsonExpression<Type = any> {
 		if (!options || options.removeEquals !== false) {
 			data = data.replace(/"=\{\{\s*(.*?)\s*\}\}"/g, '"{{ $1 }}"');
 		}
-		data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "{{ $1 }}");
 		if (options?.removeCurly) {
-			data = data.replace(/"?{{\s*(.*?)\s*}}"?/g, "$1");
+			data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "$1");
+			data = data.replace(/"{{\s*(.*?)\s*}}"/g, "$1");
+		} else {
+			data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "{{ $1 }}");
 		}
 		if (options && options.withPrefix === false) return data;
 		return `=${data}`;

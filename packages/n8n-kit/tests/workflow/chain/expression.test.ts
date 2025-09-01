@@ -265,6 +265,20 @@ describe("JsonExpression", () => {
 		);
 	});
 
+	test("does not strip '=' when not a leading token", () => {
+		const obj = {
+			mixed: "prefix ={{ $now }} suffix",
+		};
+		const result = JsonExpression.from(obj);
+		expect(
+			result.toExpression({
+				withPrefix: false,
+				removeCurly: true,
+				removeEquals: true,
+			}),
+		).toEqual(JSON.stringify({ mixed: "prefix ={{ $now }} suffix" }));
+	});
+
 	test("handles removeCurly: true", () => {
 		const obj = {
 			name: $("user.name"),
