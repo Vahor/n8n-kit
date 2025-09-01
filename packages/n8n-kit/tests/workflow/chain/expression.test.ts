@@ -1,6 +1,10 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
 import { $$ } from "../../../src";
-import { expr, JsonExpression } from "../../../src/workflow/chain/expression";
+import {
+	expr,
+	JsonExpression,
+	resolveExpressionValue,
+} from "../../../src/workflow/chain/expression";
 
 type Context = {
 	user: {
@@ -231,5 +235,21 @@ describe("JsonExpression", () => {
 				static: "value",
 			})}`,
 		);
+	});
+});
+
+describe("ExpressionOrValue utilities", () => {
+	test("resolveExpressionValue handles ExpressionBuilder", () => {
+		const expressionBuilder = $("user.name");
+		const result = resolveExpressionValue(expressionBuilder);
+
+		expect(result).toBe("={{ $('user').item.json.name }}");
+	});
+
+	test("resolveExpressionValue handles raw value", () => {
+		const stringValue = "static value";
+		const result = resolveExpressionValue(stringValue);
+
+		expect(result).toBe("static value");
 	});
 });

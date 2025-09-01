@@ -54,3 +54,25 @@ export class JsonExpression<Type = any> {
 		return `=${data}`;
 	}
 }
+
+/**
+ * Type utility for values that can be either an ExpressionBuilder or a direct value
+ */
+export type ExpressionOrValue<T> = ExpressionBuilder<any, any, T> | T;
+
+/**
+ * Resolves an ExpressionOrValue to its string representation for use in n8n workflows.
+ * If the value is an ExpressionBuilder, returns its expression string.
+ * Otherwise, returns the value as-is.
+ *
+ * @param value - The value to resolve, either an ExpressionBuilder or direct value
+ * @returns The resolved value (expression string for ExpressionBuilder, original value otherwise)
+ */
+export function resolveExpressionValue<T>(
+	value: ExpressionOrValue<T>,
+): T | string {
+	if (value instanceof ExpressionBuilder) {
+		return value.toExpression();
+	}
+	return value;
+}

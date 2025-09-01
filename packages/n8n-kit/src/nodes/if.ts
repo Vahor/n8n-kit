@@ -1,6 +1,6 @@
 import { IfV2 as _If, type IfV2Props } from "../generated/nodes-impl/IfV2";
 import type { ErrorMessage, IsNullable } from "../utils/types";
-import { ExpressionBuilder } from "../workflow";
+import { type ExpressionOrValue, resolveExpressionValue } from "../workflow";
 import type {
 	AddIChainableToChainContext,
 	AddNodeIdToIds,
@@ -16,8 +16,8 @@ import type { NodeProps } from "./node";
 
 type ConditionCombinator = "and" | "or";
 type StringCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any, string> | string;
-	rightValue?: ExpressionBuilder<any, any, string> | string;
+	leftValue: ExpressionOrValue<string>;
+	rightValue?: ExpressionOrValue<string>;
 	operator: {
 		type: "string";
 		operation:
@@ -39,8 +39,8 @@ type StringCondition = BaseCondition & {
 };
 
 type NumberCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any, number> | number;
-	rightValue?: ExpressionBuilder<any, any, number> | number;
+	leftValue: ExpressionOrValue<number>;
+	rightValue?: ExpressionOrValue<number>;
 	operator: {
 		type: "number";
 		operation:
@@ -58,8 +58,8 @@ type NumberCondition = BaseCondition & {
 };
 
 type DateTimeCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any, string> | string;
-	rightValue?: ExpressionBuilder<any, any, string> | string;
+	leftValue: ExpressionOrValue<string>;
+	rightValue?: ExpressionOrValue<string>;
 	operator: {
 		type: "dateTime";
 		operation:
@@ -77,8 +77,8 @@ type DateTimeCondition = BaseCondition & {
 };
 
 type BooleanCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any, boolean> | boolean;
-	rightValue?: ExpressionBuilder<any, any, boolean> | boolean;
+	leftValue: ExpressionOrValue<boolean>;
+	rightValue?: ExpressionOrValue<boolean>;
 	operator: {
 		type: "boolean";
 		operation:
@@ -94,8 +94,8 @@ type BooleanCondition = BaseCondition & {
 };
 
 type ArrayCondition = BaseCondition & {
-	leftValue: ExpressionBuilder<any, any, Array<any>> | Array<any>;
-	rightValue?: ExpressionBuilder<any, any, any> | any;
+	leftValue: ExpressionOrValue<Array<any>>;
+	rightValue?: ExpressionOrValue<any>;
 	operator: {
 		type: "array";
 		operation:
@@ -115,9 +115,7 @@ type ArrayCondition = BaseCondition & {
 };
 
 type ObjectCondition = BaseCondition & {
-	leftValue:
-		| ExpressionBuilder<any, any, Record<string, any>>
-		| Record<string, any>;
+	leftValue: ExpressionOrValue<Record<string, any>>;
 	rightValue?: never;
 	operator: {
 		type: "object";
@@ -186,11 +184,9 @@ export class If<
 			const condition = this.props.parameters.conditions.conditions[i]!;
 			condition.id = `${this.getPath()}/${i}`;
 			condition.operator.singleValue = condition.rightValue === undefined;
-			if (condition.leftValue instanceof ExpressionBuilder) {
-				condition.leftValue = condition.leftValue.toExpression();
-			}
-			if (condition.rightValue instanceof ExpressionBuilder) {
-				condition.rightValue = condition.rightValue.toExpression();
+			condition.leftValue = resolveExpressionValue(condition.leftValue);
+			if (condition.rightValue !== undefined) {
+				condition.rightValue = resolveExpressionValue(condition.rightValue);
 			}
 		}
 	}
