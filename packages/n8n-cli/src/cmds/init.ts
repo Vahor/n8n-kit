@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
+import logger from "@vahor/n8n-kit/logger";
 import type { ArgumentsCamelCase, Argv } from "yargs";
-import { configFileExists, writeConfigFile } from "../config";
+import { configFileExists, configFileName, writeConfigFile } from "../config";
 
 export const command = "init";
 export const description = "Initialize the configuration file";
@@ -28,4 +29,5 @@ export const handler = async (
 		out: argv.out ?? "n8n-kit",
 		projectId: randomUUID(),
 	});
+	logger.log(`Wrote config file ${configFileName}`);
 };
