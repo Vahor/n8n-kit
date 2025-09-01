@@ -169,6 +169,8 @@ export class ExpressionBuilder<
 	/*
 	 * @internal
 	 * Used by JSON.stringify
+	 *
+	 * Return {{ format() }}
 	 */
 	public toJSON() {
 		return this.toExpression().slice(1);

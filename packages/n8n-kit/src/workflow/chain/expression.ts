@@ -1,6 +1,18 @@
 import type { Writeable } from "../../utils/types";
 import { ExpressionBuilder } from "./expression-builder";
 
+/**
+ * Template literal function for creating n8n expressions.
+ * Combines string literals with ExpressionBuilder instances and other values
+ * to produce n8n-compatible expression strings.
+ *
+ * Format to `string{{ expression.format() }}`
+ *
+ * @param strings - Template string array from template literal
+ * @param values - Interpolated values (ExpressionBuilder instances, strings, etc.)
+ * @returns n8n expression string prefixed with '='
+ * @throws Error if unsupported value type is provided
+ */
 export function expr(strings: TemplateStringsArray, ...values: any[]) {
 	const result = strings.reduce((acc, cur, i) => {
 		const value = values[i];
@@ -33,6 +45,11 @@ type InferJsonExpression<T> = T extends readonly any[] | Record<string, any>
 		}
 	: never;
 
+/**
+ * Class for creating JSON-based n8n expressions with type safety.
+ * Allows combining static JSON data with ExpressionBuilder instances
+ * to create complex n8n expressions.
+ */
 export class JsonExpression<Type = any> {
 	/**
 	 * Only used to infer the type of the data
@@ -41,16 +58,46 @@ export class JsonExpression<Type = any> {
 
 	constructor(private data: Type) {}
 
+	/**
+	 * Factory method to create a JsonExpression with proper type inference.
+	 * Recursively infers types from nested ExpressionBuilder instances.
+	 *
+	 * @param data - The data structure containing JSON and ExpressionBuilder instances
+	 * @returns A JsonExpression with inferred types
+	 */
 	public static from<const T>(
 		data: T,
 	): JsonExpression<Writeable<InferJsonExpression<T>>> {
 		return new JsonExpression(data) as any;
 	}
 
-	public toExpression(options?: { indent?: number }) {
+	/**
+	 * Converts the JsonExpression to an n8n expression string.
+	 * Serializes the data to JSON and processes special markers to inject expressions.
+	 *
+	 * @param options - Formatting options
+	 * @param options.indent - Number of spaces for JSON indentation (default: 0)
+	 * @param options.withPrefix - Whether to prefix with '=' (default: true)
+	 * @param options.removeCurly - Whether to remove curly braces from expressions (`{{ x }}` => `x`) (default: false)
+	 * @param options.removeEquals - Whether to remove equals signs from expressions (`=x` => `x`) (default: true)
+	 * @returns n8n-compatible expression string
+	 */
+	public toExpression(options?: {
+		indent?: number;
+		withPrefix?: boolean;
+		removeCurly?: boolean;
+		removeEquals?: boolean;
+	}) {
 		let data = JSON.stringify(this.data, null, options?.indent ?? 0);
-		// TODO: add a test for the <no-quotes> part
+		// remove =sign from expressions
+		if (!options || options.removeEquals !== false) {
+			data = data.replace(/"=\{\{\s*(.*?)\s*\}\}"/g, '"{{ $1 }}"');
+		}
 		data = data.replace(/"<no-quotes>\{\{\s*(.*?)\s*\}\}"/g, "{{ $1 }}");
+		if (options?.removeCurly) {
+			data = data.replace(/"?{{\s*(.*?)\s*}}"?/g, "$1");
+		}
+		if (options && options.withPrefix === false) return data;
 		return `=${data}`;
 	}
 }

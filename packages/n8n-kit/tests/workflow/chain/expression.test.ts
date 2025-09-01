@@ -236,6 +236,53 @@ describe("JsonExpression", () => {
 			})}`,
 		);
 	});
+
+	test("handles <no-quotes> expressions with toJsonString()", () => {
+		const obj = {
+			name: $("user.name"),
+			jsonValue: $("data").toJsonString(),
+			static: "value",
+		};
+
+		const result = JsonExpression.from(obj);
+
+		expect(result.toExpression()).toEqual(
+			`={"name":"{{ $('user').item.json.name }}","jsonValue":{{ $('data').item.json.toJsonString() }},"static":"value"}`,
+		);
+	});
+
+	test("handles withPrefix: false", () => {
+		const obj = {
+			static: "value",
+			raw: `={{ $now }}`,
+			expr: expr`{{ $now }}`,
+		};
+
+		const result = JsonExpression.from(obj);
+
+		expect(result.toExpression({ withPrefix: false })).toEqual(
+			`{"static":"value","raw":"{{ $now }}","expr":"{{ $now }}"}`,
+		);
+	});
+
+	test("handles removeCurly: true", () => {
+		const obj = {
+			name: $("user.name"),
+			jsonValue: $("data").toJsonString(),
+			data: $("data"),
+			static: "value",
+			raw: `={{ $now }}`,
+			expr: expr`{{ $now }}`,
+		};
+
+		const result = JsonExpression.from(obj);
+
+		expect(
+			result.toExpression({ removeCurly: true, withPrefix: false }),
+		).toEqual(
+			`{"name":$('user').item.json.name,"jsonValue":$('data').item.json.toJsonString(),"data":$('data').item.json,"static":"value","raw":$now,"expr":$now}`,
+		);
+	});
 });
 
 describe("ExpressionOrValue utilities", () => {

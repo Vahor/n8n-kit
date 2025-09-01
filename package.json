@@ -45,7 +45,7 @@
 		"build": "bun run --filter '*' build",
 		"dev": "bun run --filter '*' dev",
 		"format": "bunx @biomejs/biome check ./ --write",
-		"typecheck": "tsc --noEmit --declaration",
+		"typecheck": "bun run --filter '*' typecheck",
 		"docs": "bunx typedoc",
 		"docs:watch": "bunx typedoc --watch",
 		"ci:version": "bunx @changesets/cli version && bun update",
