@@ -124,6 +124,10 @@ jobs:
 
             Updated to n8n version [$SUBMODULE_VERSION](https://github.com/n8n-io/n8n/tree/$SUBMODULE_VERSION)
 
+            Notes for reviewers:
+
+            Check [n8n-workflow](https://www.npmjs.com/package/n8n-workflow?activeTab=versions), [n8n-core](https://www.npmjs.com/package/n8n-core?activeTab=versions), [@n8n/n8n-nodes/langchain](https://www.npmjs.com/package/@n8n/n8n-nodes-langchain?activeTab=versions) and other n8n dependencies. Update them to latest version.
+
             ---
             *Generated in $JOB_URL*"
 
