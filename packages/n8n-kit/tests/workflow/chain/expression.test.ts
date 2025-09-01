@@ -6,7 +6,6 @@ import {
 	JsonExpression,
 	resolveExpressionValue,
 } from "../../../src/workflow/chain/expression";
-import { ExpressionBuilder } from "../../../src/workflow/chain/expression-builder";
 
 type Context = {
 	user: {
