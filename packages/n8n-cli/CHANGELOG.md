@@ -1,5 +1,14 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.2
+
+### Patch Changes
+
+- [#90](https://github.com/Vahor/n8n-kit/pull/90) [`759881f`](https://github.com/Vahor/n8n-kit/commit/759881f651a1cbae67e53f284715d61fc497d48f) Thanks [@Vahor](https://github.com/Vahor)! - Add `--watch` flag on build and deploy commands
+
+- Updated dependencies [[`ff4c520`](https://github.com/Vahor/n8n-kit/commit/ff4c520e87e6db717abc033b86a7372b23492d81), [`756a7a1`](https://github.com/Vahor/n8n-kit/commit/756a7a1aa75538505d18d7c41e240577baa9e0fb)]:
+  - @vahor/n8n-kit@0.5.0
+
 ## 0.4.1
 
 ### Patch Changes

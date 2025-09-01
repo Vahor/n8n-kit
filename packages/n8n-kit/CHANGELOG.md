@@ -1,5 +1,15 @@
 # @vahor/n8n-kit
 
+## 0.5.0
+
+### Minor Changes
+
+- [#77](https://github.com/Vahor/n8n-kit/pull/77) [`ff4c520`](https://github.com/Vahor/n8n-kit/commit/ff4c520e87e6db717abc033b86a7372b23492d81) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [1b5f9b220f59cc58016ca8cd3a33ae9af44758fc](https://github.com/n8n-io/n8n/tree/1b5f9b220f59cc58016ca8cd3a33ae9af44758fc))
+
+### Patch Changes
+
+- [#88](https://github.com/Vahor/n8n-kit/pull/88) [`756a7a1`](https://github.com/Vahor/n8n-kit/commit/756a7a1aa75538505d18d7c41e240577baa9e0fb) Thanks [@Vahor](https://github.com/Vahor)! - Add options parameters to JsonExpression to change output format
+
 ## 0.4.1
 
 ### Patch Changes
