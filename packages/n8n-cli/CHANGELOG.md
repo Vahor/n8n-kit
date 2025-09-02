@@ -1,5 +1,11 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.5
+
+### Patch Changes
+
+- [`6b75854`](https://github.com/Vahor/n8n-kit/commit/6b7585492e674c88abde529b065b2cbe5a34f90a) Thanks [@Vahor](https://github.com/Vahor)! - ignore lockfile in watch mode
+
 ## 0.4.4
 
 ### Patch Changes
