@@ -30,8 +30,9 @@ export const setupWatch = async (
 	let isProcessing = false;
 	let timeoutId: NodeJS.Timeout | null = null;
 
-	const rebuild = async () => {
+	const rebuild = async (path: string | undefined) => {
 		if (isProcessing) return;
+		logger.debug(`File change detected: ${path}`);
 		isProcessing = true;
 
 		try {
@@ -49,9 +50,9 @@ export const setupWatch = async (
 		}
 	};
 
-	const debouncedRebuild = () => {
+	const debouncedRebuild = (path: string | undefined) => {
 		if (timeoutId) clearTimeout(timeoutId);
-		timeoutId = setTimeout(rebuild, 300);
+		timeoutId = setTimeout(() => rebuild(path), 300);
 	};
 
 	// Watch for changes
