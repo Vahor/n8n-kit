@@ -197,4 +197,42 @@ describe("ExpressionBuilder", () => {
 			expect(format).toEqual(`$('data').item.json.output[0].content[0].text`);
 		});
 	});
+
+	describe("noQuotes", () => {
+		test("toExpression with noQuotes false", () => {
+			const builder = $("json['a.b.c']");
+			const expression = builder.toExpression();
+			expect(expression).toEqual("={{ $json['a.b.c'] }}");
+		});
+
+		test("toExpression with noQuotes true", () => {
+			const builder = $("json['a.b.c']").noQuotes();
+			const expression = builder.toExpression();
+			expect(expression).toEqual("=<no-quotes>{{ $json['a.b.c'] }}");
+		});
+
+		test("toJsonString sets noQuotes to true", () => {
+			const builder = $("json['a.b.c']").toJsonString();
+			const expression = builder.toExpression();
+			expect(expression).toEqual(
+				"=<no-quotes>{{ $json['a.b.c'].toJsonString() }}",
+			);
+		});
+
+		test("noQuotes can be toggled", () => {
+			const builder = $("json['a.b.c']").noQuotes(true).noQuotes(false);
+			const expression = builder.toExpression();
+			expect(expression).toEqual("={{ $json['a.b.c'] }}");
+		});
+
+		test("noQuotes with method calls", () => {
+			const builder = $("data.output")
+				.filter((o) => o.type === "message")
+				.noQuotes();
+			const expression = builder.toExpression();
+			expect(expression).toEqual(
+				"=<no-quotes>{{ $('data').item.json.output.filter((o) => o.type === 'message') }}",
+			);
+		});
+	});
 });
