@@ -71,7 +71,7 @@
     },
     "packages/n8n-cli": {
       "name": "@vahor/n8n-kit-cli",
-      "version": "0.4.4",
+      "version": "0.4.5",
       "bin": {
         "@vahor/n8n": "./dist/index.js",
       },
