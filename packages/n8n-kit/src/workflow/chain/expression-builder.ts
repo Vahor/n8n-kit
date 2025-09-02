@@ -282,6 +282,5 @@ export type ExpressionBuilderProvider<CC extends ChainContext> = ReturnType<
 export type $Selector<T> = ExpressionBuilderProvider<ExtractChainContext<T>>;
 
 export const RESOLVED_NODE_ID_PREFIX = `${prefix}resolved_node_id@`;
-/** @internal */
 export const RESOLVED_NODE_ID = (nodeId: string) =>
 	`${RESOLVED_NODE_ID_PREFIX}${nodeId}`;
