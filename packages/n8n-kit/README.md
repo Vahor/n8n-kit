@@ -228,7 +228,7 @@ $("['Node Name'].nested.property").toExpression()
 // Results in: "={{ $('Node Name').nested.property }}"
 ```
 
-Nodes ids are automatically replaced with the node label when workflow is built:
+Node IDs are automatically replaced with the node label when the workflow is built:
 
 ```typescript
 const node = new Code("code", {
