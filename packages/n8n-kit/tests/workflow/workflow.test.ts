@@ -149,5 +149,25 @@ describe("Workflow", () => {
 				jsCode: "={{ $('Some very long label').item.json }}",
 			});
 		});
+
+		test.failing("fails when two nodes have the same id", async () => {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
+				definition: [Chain.start(new NoOp("a")).next(new NoOp("a"))],
+			});
+			workflow["~validate"]();
+		});
+
+		test.failing("fails when two nodes have the same id (label)", async () => {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
+				definition: [
+					Chain.start(new NoOp("a", { label: "a" })).next(
+						new NoOp("b", { label: "a" }),
+					),
+				],
+			});
+			workflow["~validate"]();
+		});
 	});
 });

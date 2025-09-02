@@ -77,17 +77,21 @@ new Workflow(app, "my-workflow", {
 			)
 			.next(({ $ }) =>
 				new If("if", {
-					combinator: "and",
-					conditions: [
-						{
-							operator: {
-								type: "string",
-								operation: "contains",
-							},
-							leftValue: $("json.classType").toExpression(),
-							rightValue: "C",
+					parameters: {
+						conditions: {
+							combinator: "and",
+							conditions: [
+								{
+									operator: {
+										type: "string",
+										operation: "contains",
+									},
+									leftValue: $("json.classType").toExpression(),
+									rightValue: "C",
+								},
+							],
 						},
-					],
+					},
 				})
 					.true(
 						new PostBin("PostBin(true)", {

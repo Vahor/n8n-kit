@@ -285,10 +285,10 @@ export class Workflow<
 		const ids = new Set<string>();
 		const allNodes = [...nodes, ...this.dynamicalyAddedNodes];
 		for (const node of allNodes) {
-			if (ids.has(node.id)) {
+			if (ids.has(node.getLabel())) {
 				throw new Error(`Node with id ${node.id} already exists`);
 			}
-			ids.add(node.id);
+			ids.add(node.getLabel());
 		}
 
 		const groups = this.dynamicalyAddedNodes.filter(

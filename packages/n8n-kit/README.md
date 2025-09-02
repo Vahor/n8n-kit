@@ -228,6 +228,25 @@ $("['Node Name'].nested.property").toExpression()
 // Results in: "={{ $('Node Name').nested.property }}"
 ```
 
+Nodes ids are automatically replaced with the node label when workflow is built:
+
+```typescript
+const node = new Code("code", {
+	label: "Some very long label",
+	outputSchema: type({ type: "string" }),
+	parameters: {
+		jsCode: "...",
+	},
+});
+
+// and then
+$("code.type").toExpression()
+
+// Results in: "={{ $('Some very long label').item.json.type }}"
+```
+
+This helps having to type long names and having to changes everything when the node name changes.
+
 ### Method Calls
 
 ```typescript
