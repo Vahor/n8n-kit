@@ -12,7 +12,7 @@ const StickyNoteColors = {
 	BLUE: 5,
 	VIOLET: 6,
 	GRAY: 7,
-};
+} as const;
 
 export interface StickyNoteProps extends NodeProps {
 	position: NodePosition;
