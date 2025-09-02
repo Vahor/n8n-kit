@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.5.2
+
+### Patch Changes
+
+- [#98](https://github.com/Vahor/n8n-kit/pull/98) [`7427a48`](https://github.com/Vahor/n8n-kit/commit/7427a48e2febd8b19738ab6e9cc874c6611b8aa2) Thanks [@Vahor](https://github.com/Vahor)! - In ExecuteWorkflow node, remove the need to call toExpression on simple ExpressionBuilders
+
 ## 0.5.1
 
 ### Patch Changes
