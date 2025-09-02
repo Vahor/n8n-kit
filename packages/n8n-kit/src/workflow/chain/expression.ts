@@ -106,8 +106,10 @@ export class JsonExpression<Type = any> {
 
 /**
  * Type utility for values that can be either an ExpressionBuilder or a direct value
+ *
+ * Also allows string as they can represent "={{ }}" expressions pointing to a T value
  */
-export type ExpressionOrValue<T> = ExpressionBuilder<any, any, T> | T;
+export type ExpressionOrValue<T> = ExpressionBuilder<any, any, T> | T | string;
 
 /**
  * Resolves an ExpressionOrValue to its string representation for use in n8n workflows.
