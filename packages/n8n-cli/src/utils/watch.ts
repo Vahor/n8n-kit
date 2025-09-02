@@ -58,6 +58,8 @@ export const setupWatch = async (
 	const watcher = chokidar.watch(watchPath, {
 		ignored: [
 			"**/node_modules/**",
+			"**/.bundle-*/**",
+			"**/**-lock.json",
 			"**/.git/**",
 			"**/dist/**",
 			"**/workflows/*.json",
