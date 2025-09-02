@@ -86,7 +86,7 @@ new Workflow(app, "my-workflow", {
 										type: "string",
 										operation: "contains",
 									},
-									leftValue: $("json.classType").toExpression(),
+									leftValue: $("json.classType"),
 									rightValue: "C",
 								},
 							],

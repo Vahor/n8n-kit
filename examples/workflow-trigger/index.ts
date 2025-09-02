@@ -56,7 +56,7 @@ new Workflow(app, "workflow-trigger", {
 							}),
 						}),
 						workflowInputs: {
-							a: $("json.hello").toExpression(),
+							a: $("json.hello"),
 						},
 					},
 				}),
