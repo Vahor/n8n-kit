@@ -1,5 +1,11 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.3
+
+### Patch Changes
+
+- [`30a8804`](https://github.com/Vahor/n8n-kit/commit/30a8804f15c709d2ecb167dbebff619138c88836) Thanks [@Vahor](https://github.com/Vahor)! - Import using a different cache key so that watch mode starts from the begining
+
 ## 0.4.2
 
 ### Patch Changes
