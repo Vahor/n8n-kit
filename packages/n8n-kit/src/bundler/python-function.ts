@@ -9,10 +9,11 @@ interface PythonFunctionProps extends BundledFunctionProps {}
 
 export class PythonFunction extends BundledFunction {
 	protected override expressionPrefix: ExpressionPrefix = "_";
-	protected override possibleEntrypoints = ["main.py"];
 
 	private constructor(props: PythonFunctionProps) {
-		super(props);
+		super(props, {
+			possibleEntrypoints: ["main.py"],
+		});
 	}
 
 	public static from(props: PythonFunctionProps) {

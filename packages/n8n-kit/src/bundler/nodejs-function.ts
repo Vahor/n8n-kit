@@ -21,11 +21,12 @@ interface NodejsFunctionProps extends BundledFunctionProps {
 }
 
 export class NodejsFunction extends BundledFunction {
-	protected override possibleEntrypoints = ["index.ts", "index.js"];
 	private readonly installCommand: [string, string[]];
 
 	private constructor(override props: NodejsFunctionProps) {
-		super(props);
+		super(props, {
+			possibleEntrypoints: ["index.ts", "index.js"],
+		});
 		this.installCommand = this.props.installCommand ?? ["npm", ["ci"]];
 	}
 
