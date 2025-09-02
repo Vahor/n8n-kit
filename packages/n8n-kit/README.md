@@ -245,8 +245,7 @@ $("code.type").toExpression()
 // Results in: "={{ $('Some very long label').item.json.type }}"
 ```
 
-This helps having to type long names and having to changes everything when the node name changes.
-
+This avoids typing long names and changing references when the node label changes.
 ### Method Calls
 
 ```typescript
