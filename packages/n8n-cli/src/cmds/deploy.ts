@@ -207,7 +207,7 @@ export const handler = async (options: DeployOptions) => {
 	if (options.watch !== undefined) {
 		await setupWatch(
 			{
-				callback: () => deployWorkflows(options).then(() => {}),
+				callback: () => deployWorkflows(options),
 				actionName: "redeploying",
 				successName: "Redeploy",
 			},
