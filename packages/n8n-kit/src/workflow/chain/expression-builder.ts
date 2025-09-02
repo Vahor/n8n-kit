@@ -44,7 +44,7 @@ export class ExpressionBuilder<
 
 	private _mode: ExpressionBuilderMode = "item";
 	private _prefix: ExpressionPrefix = "$";
-	private _isJson: boolean = false;
+	private _noQuotes: boolean = false;
 
 	/**
 	 * The type of the current field
@@ -65,7 +65,7 @@ export class ExpressionBuilder<
 		this.methodCalls = methodCalls;
 		this._mode = mode;
 		this._prefix = prefix;
-		this._isJson = isJson;
+		this._noQuotes = isJson;
 	}
 
 	private clone(additionalMethodCall?: string): ExpressionBuilder<T, Path> {
@@ -77,7 +77,7 @@ export class ExpressionBuilder<
 			newMethodCalls,
 			this._mode,
 			this._prefix,
-			this._isJson,
+			this._noQuotes,
 		);
 	}
 
@@ -92,7 +92,7 @@ export class ExpressionBuilder<
 			this.methodCalls,
 			mode,
 			this._prefix,
-			this._isJson,
+			this._noQuotes,
 		) as any;
 	}
 
@@ -103,8 +103,13 @@ export class ExpressionBuilder<
 			this.methodCalls,
 			this._mode,
 			prefix,
-			this._isJson,
+			this._noQuotes,
 		) as any;
+	}
+
+	public noQuotes(value = true): this {
+		this._noQuotes = value;
+		return this;
 	}
 
 	public getNodeId(): string {
@@ -164,7 +169,7 @@ export class ExpressionBuilder<
 	public toExpression() {
 		// Feels very hack, and it is
 		// Used in JsonExpression.toExpression to remove quotes when we don't need them
-		return expr`${this._isJson ? "<no-quotes>" : ""}${this}`;
+		return expr`${this._noQuotes ? "<no-quotes>" : ""}${this}`;
 	}
 	/*
 	 * @internal
@@ -200,7 +205,7 @@ export class ExpressionBuilder<
 	// =========
 
 	toJsonString: () => this = () => {
-		this._isJson = true;
+		this._noQuotes = true;
 		return this.call("toJsonString") as any;
 	};
 
