@@ -11,5 +11,5 @@ def handler(input):
     raise Exception("Invalid type")
 
 return handler({
-  "type": _('webhook').item.json.query.type
+  "type": _('@vahor/n8n-resolved_node_id@webhook').item.json.query.type
 });

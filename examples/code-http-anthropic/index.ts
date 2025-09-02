@@ -35,6 +35,7 @@ new Workflow(app, "my-workflow", {
 	definition: [
 		Chain.start(
 			new Webhook("webhook", {
+				label: "Webhook Trigger",
 				parameters: {
 					responseMode: "responseNode",
 					httpMethod: "GET",

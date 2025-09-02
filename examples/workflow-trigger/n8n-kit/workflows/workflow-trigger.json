@@ -25,7 +25,7 @@
 					"__rl": true,
 					"cachedResultName": "Reusable workflow",
 					"mode": "list",
-					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
+					"value": "@vahor/n8n-resolved_workflow_id@qL2pzX8jc7NDe"
 				},
 				"workflowInputs": {
 					"mappingMode": "defineBelow",
@@ -47,7 +47,7 @@
 					"__rl": true,
 					"cachedResultName": "Untitled",
 					"mode": "list",
-					"value": "@vahor/n8n-_resolved_workflow_id@qL2pzX8jc7NDe"
+					"value": "@vahor/n8n-resolved_workflow_id@qL2pzX8jc7NDe"
 				},
 				"workflowInputs": {
 					"mappingMode": "defineBelow",

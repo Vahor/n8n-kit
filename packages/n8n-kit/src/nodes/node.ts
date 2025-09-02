@@ -90,6 +90,11 @@ export abstract class Node<
 	readonly [NODE_SYMBOL] = true;
 
 	/**
+	 * The node label
+	 */
+	public readonly label: string | undefined;
+
+	/**
 	 * The n8n node type identifier (e.g., 'n8n-nodes-base.httpRequest')
 	 */
 	protected abstract readonly type: string;
@@ -149,10 +154,12 @@ export abstract class Node<
 		this.props = props;
 		this.position = props?.position;
 		this.endStates = [this];
-	}
 
-	get label() {
-		return this.props?.label;
+		// escape quotes in label as they will be used in json and replaced manually
+		this.label = this.props?.label
+			?.replaceAll('"', '\\"')
+			.replaceAll("\\", "\\\\")
+			.replaceAll("'", "\\'");
 	}
 
 	/** @internal */
