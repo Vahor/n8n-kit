@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { $$ } from "../../../src";
+import { $$, RESOLVED_NODE_ID } from "../../../src";
 
 type Context = {
 	a: { hello: "a" };
@@ -45,12 +45,15 @@ const $ = $$<Context>();
 
 describe("ExpressionBuilder", () => {
 	const formatCases = [
-		[$("['Http Request'].hello"), "$('Http Request').item.json.hello"],
+		[
+			$("['Http Request'].hello"),
+			`$('${RESOLVED_NODE_ID("Http Request")}').item.json.hello`,
+		],
 		[
 			$("data.output[0].content[0].text"),
-			"$('data').item.json.output[0].content[0].text",
+			`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text`,
 		],
-		[$("data"), "$('data').item.json"],
+		[$("data"), `$('${RESOLVED_NODE_ID("data")}').item.json`],
 	] as const;
 	describe("format", () => {
 		test.each(formatCases)("format", (builder, expected) => {
@@ -89,7 +92,7 @@ describe("ExpressionBuilder", () => {
 				.prop(".content[0].text");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output.find((o) => o.type === 'message').content[0].text`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output.find((o) => o.type === 'message').content[0].text`,
 			);
 		});
 		test("on something else", () => {
@@ -107,7 +110,7 @@ describe("ExpressionBuilder", () => {
 
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output.filter((o) => o.type === 'message')[0].content.find((o) => o.text.length > 0)`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output.filter((o) => o.type === 'message')[0].content.find((o) => o.text.length > 0)`,
 			);
 		});
 		test("on something else", () => {
@@ -121,14 +124,14 @@ describe("ExpressionBuilder", () => {
 			const builder = $("data.output").first().prop(".content[0].text");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output.first().content[0].text`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output.first().content[0].text`,
 			);
 		});
 		test("on a sub array", () => {
 			const builder = $("data.output[0].content").first().prop(".text");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output[0].content.first().text`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content.first().text`,
 			);
 		});
 		test("on a sub array in an object with brackets", () => {
@@ -137,7 +140,7 @@ describe("ExpressionBuilder", () => {
 				.prop(".and_again");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('Http Request').item.json['something with spaces'].again.first().and_again`,
+				`$('${RESOLVED_NODE_ID("Http Request")}').item.json['something with spaces'].again.first().and_again`,
 			);
 		});
 		test("on something else", () => {
@@ -151,14 +154,14 @@ describe("ExpressionBuilder", () => {
 			const builder = $("data.output[0].content[0].text").split(" ");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output[0].content[0].text.split(" ")`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ")`,
 			);
 		});
 		test("on a string - then join", () => {
 			const builder = $("data.output[0].content[0].text").split(" ").join("-");
 			const format = builder.format();
 			expect(format).toEqual(
-				`$('data').item.json.output[0].content[0].text.split(" ").join("-")`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
 			);
 		});
 		test("on something else", () => {
@@ -171,7 +174,9 @@ describe("ExpressionBuilder", () => {
 		test("on a string", () => {
 			const builder = $("Webhook.headers['x-user-id']");
 			const format = builder.format();
-			expect(format).toEqual(`$('Webhook').item.json.headers['x-user-id']`);
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("Webhook")}').item.json.headers['x-user-id']`,
+			);
 		});
 		test("on something else", () => {
 			// @ts-expect-error: this should fail
@@ -188,13 +193,15 @@ describe("ExpressionBuilder", () => {
 		test("get dot notation property", () => {
 			const builder = $("a").prop(".hello");
 			const format = builder.format();
-			expect(format).toEqual(`$('a').item.json.hello`);
+			expect(format).toEqual(`$('${RESOLVED_NODE_ID("a")}').item.json.hello`);
 		});
 
 		test("with array root", () => {
 			const builder = $("data.output").prop("[0].content[0].text");
 			const format = builder.format();
-			expect(format).toEqual(`$('data').item.json.output[0].content[0].text`);
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text`,
+			);
 		});
 	});
 
@@ -231,7 +238,7 @@ describe("ExpressionBuilder", () => {
 				.noQuotes();
 			const expression = builder.toExpression();
 			expect(expression).toEqual(
-				"=<no-quotes>{{ $('data').item.json.output.filter((o) => o.type === 'message') }}",
+				`=<no-quotes>{{ $('${RESOLVED_NODE_ID("data")}').item.json.output.filter((o) => o.type === 'message') }}`,
 			);
 		});
 	});

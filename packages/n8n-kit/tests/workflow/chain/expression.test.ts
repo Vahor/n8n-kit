@@ -1,5 +1,5 @@
 import { describe, expect, expectTypeOf, test } from "bun:test";
-import { $$ } from "../../../src";
+import { $$, RESOLVED_NODE_ID } from "../../../src";
 import {
 	applyToExpression,
 	expr,
@@ -45,7 +45,7 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify({
-				name: "{{ $('user').item.json.name }}",
+				name: `{{ $('${RESOLVED_NODE_ID("user")}').item.json.name }}`,
 				static: "value",
 			})}`,
 		);
@@ -62,9 +62,9 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify([
-				"{{ $('user').item.json.age }}",
+				`{{ $('${RESOLVED_NODE_ID("user")}').item.json.age }}`,
 				"static",
-				"{{ $('user').item.json.email }}",
+				`{{ $('${RESOLVED_NODE_ID("user")}').item.json.email }}`,
 			])}`,
 		);
 		expect(result.toExpression()).toEqual(expr`${JSON.stringify(arr)}`);
@@ -97,8 +97,8 @@ describe("JsonExpression", () => {
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify([
 				{
-					name: "{{ $('user').item.json.name }}",
-					age: "{{ $('user').item.json.age }}",
+					name: `{{ $('${RESOLVED_NODE_ID("user")}').item.json.name }}`,
+					age: `{{ $('${RESOLVED_NODE_ID("user")}').item.json.age }}`,
 				},
 				{
 					name: "static",
@@ -144,14 +144,14 @@ describe("JsonExpression", () => {
 			`=${JSON.stringify({
 				items: [
 					{
-						id: "{{ $('data').item.json.items[0].id }}",
-						value: "{{ $('data').item.json.items[0].value }}",
+						id: `{{ $('${RESOLVED_NODE_ID("data")}').item.json.items[0].id }}`,
+						value: `{{ $('${RESOLVED_NODE_ID("data")}').item.json.items[0].value }}`,
 					},
 					{
-						id: "{{ $('data').item.json.items[1].id }}",
-						value: "{{ $('data').item.json.items[1].value }}",
+						id: `{{ $('${RESOLVED_NODE_ID("data")}').item.json.items[1].id }}`,
+						value: `{{ $('${RESOLVED_NODE_ID("data")}').item.json.items[1].value }}`,
 						nested: {
-							value: "{{ $('data').item.json.items[1].sub.nested }}",
+							value: `{{ $('${RESOLVED_NODE_ID("data")}').item.json.items[1].sub.nested }}`,
 						},
 					},
 				],
@@ -181,7 +181,7 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify({
-				data: "{{ $('data').item.json }}",
+				data: `{{ $('${RESOLVED_NODE_ID("data")}').item.json }}`,
 				manual: "{{ $now }}",
 				long_json: `
 {{
@@ -231,8 +231,8 @@ describe("JsonExpression", () => {
 
 		expect(result.toExpression()).toEqual(
 			`=${JSON.stringify({
-				name: "{{ $('user').item.json.name }}",
-				prefixed: "{{ _('user').item.json.email }}",
+				name: `{{ $('${RESOLVED_NODE_ID("user")}').item.json.name }}`,
+				prefixed: `{{ _('${RESOLVED_NODE_ID("user")}').item.json.email }}`,
 				static: "value",
 			})}`,
 		);
@@ -248,7 +248,7 @@ describe("JsonExpression", () => {
 		const result = JsonExpression.from(obj);
 
 		expect(result.toExpression()).toEqual(
-			`={"name":"{{ $('user').item.json.name }}","jsonValue":{{ $('data').item.json.toJsonString() }},"static":"value"}`,
+			`={"name":"{{ $('${RESOLVED_NODE_ID("user")}').item.json.name }}","jsonValue":{{ $('${RESOLVED_NODE_ID("data")}').item.json.toJsonString() }},"static":"value"}`,
 		);
 	});
 
@@ -295,7 +295,7 @@ describe("JsonExpression", () => {
 		expect(
 			result.toExpression({ removeCurly: true, withPrefix: false }),
 		).toEqual(
-			`{"name":$('user').item.json.name,"jsonValue":$('data').item.json.toJsonString(),"data":$('data').item.json,"static":"value","raw":$now,"expr":$now}`,
+			`{"name":$('${RESOLVED_NODE_ID("user")}').item.json.name,"jsonValue":$('${RESOLVED_NODE_ID("data")}').item.json.toJsonString(),"data":$('${RESOLVED_NODE_ID("data")}').item.json,"static":"value","raw":$now,"expr":$now}`,
 		);
 	});
 });
@@ -305,7 +305,9 @@ describe("ExpressionOrValue utilities", () => {
 		const expressionBuilder = $("user.name");
 		const result = resolveExpressionValue(expressionBuilder);
 
-		expect(result).toBe("={{ $('user').item.json.name }}");
+		expect(result).toBe(
+			`={{ $('${RESOLVED_NODE_ID("user")}').item.json.name }}`,
+		);
 	});
 
 	test("resolveExpressionValue handles raw value", () => {
@@ -321,7 +323,9 @@ describe("applyToExpression", () => {
 		const expr = $("user.name");
 		const result = applyToExpression(expr, (e) => e.prefix("_"));
 
-		expect((result as any).format()).toBe("_('user').item.json.name");
+		expect((result as any).format()).toBe(
+			`_('${RESOLVED_NODE_ID("user")}').item.json.name`,
+		);
 	});
 
 	test("transforms ExpressionBuilder in nested structures", () => {
@@ -348,22 +352,24 @@ describe("applyToExpression", () => {
 
 		const result = applyToExpression(complex, (expr) => expr.prefix("_"));
 
-		expect(result.user.profile.name.format()).toBe("_('user').item.json.name");
+		expect(result.user.profile.name.format()).toBe(
+			`_('${RESOLVED_NODE_ID("user")}').item.json.name`,
+		);
 		expect(result.user.profile.details[0]!.format()).toBe(
-			"_('user').item.json.email",
+			`_('${RESOLVED_NODE_ID("user")}').item.json.email`,
 		);
 		expect(result.user.profile.details[1]!.format()).toBe(
-			"_('user').item.json.age",
+			`_('${RESOLVED_NODE_ID("user")}').item.json.age`,
 		);
 		expect(result.user.settings.theme).toBe("dark");
 		expect((result.user.settings.notifications as any).format()).toBe(
-			"_('user').item.json.properties[0].value",
+			`_('${RESOLVED_NODE_ID("user")}').item.json.properties[0].value`,
 		);
 		expect((result.metadata[0]!.id as any).format()).toBe(
-			"_('data').item.json.items[0].id",
+			`_('${RESOLVED_NODE_ID("data")}').item.json.items[0].id`,
 		);
 		expect((result.metadata[0]!.nested.value as any).format()).toBe(
-			"_('data').item.json.items[0].sub.nested",
+			`_('${RESOLVED_NODE_ID("data")}').item.json.items[0].sub.nested`,
 		);
 	});
 });
