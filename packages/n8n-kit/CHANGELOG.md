@@ -1,5 +1,15 @@
 # @vahor/n8n-kit
 
+## 0.5.1
+
+### Patch Changes
+
+- [#95](https://github.com/Vahor/n8n-kit/pull/95) [`2a9a2df`](https://github.com/Vahor/n8n-kit/commit/2a9a2dfeec3d5fcf0598b90c1137ecffd66302a9) Thanks [@Vahor](https://github.com/Vahor)! - Add `noQuotes` method in ExpressionBuilder
+
+- [#96](https://github.com/Vahor/n8n-kit/pull/96) [`d0cbbe5`](https://github.com/Vahor/n8n-kit/commit/d0cbbe582a5e0977421f7344195b9c628874473c) Thanks [@Vahor](https://github.com/Vahor)! - fix: expression should use node label instead of node id
+
+- [`869dee8`](https://github.com/Vahor/n8n-kit/commit/869dee8c059b1aee52946d867f0be0d3d9647315) Thanks [@Vahor](https://github.com/Vahor)! - Fix: possibleEntrypoints was undefined
+
 ## 0.5.0
 
 ### Minor Changes

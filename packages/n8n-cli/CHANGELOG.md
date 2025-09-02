@@ -1,5 +1,12 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [[`2a9a2df`](https://github.com/Vahor/n8n-kit/commit/2a9a2dfeec3d5fcf0598b90c1137ecffd66302a9), [`d0cbbe5`](https://github.com/Vahor/n8n-kit/commit/d0cbbe582a5e0977421f7344195b9c628874473c), [`869dee8`](https://github.com/Vahor/n8n-kit/commit/869dee8c059b1aee52946d867f0be0d3d9647315)]:
+  - @vahor/n8n-kit@0.5.1
+
 ## 0.4.3
 
 ### Patch Changes
