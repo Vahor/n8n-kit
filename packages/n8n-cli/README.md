@@ -81,6 +81,8 @@ new Workflow(app, "my-workflow", {
 export { app };
 ```
 
+**Note:** If you want to use a `.ts` entrypoint you'll need to use `node >= 22.18` (Type stripping) or `bun`.
+
 ## Commands
 
 ### init
