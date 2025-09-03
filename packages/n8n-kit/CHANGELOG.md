@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.5.3
+
+### Patch Changes
+
+- [`bbec2a3`](https://github.com/Vahor/n8n-kit/commit/bbec2a3e6aeec6c0de92b3c47bdc308900a3a0d2) Thanks [@Vahor](https://github.com/Vahor)! - Infer Code language based on props: `pythonCode` sets to python, `jsCode` leaves undefined as it's the default value
+
 ## 0.5.2
 
 ### Patch Changes
