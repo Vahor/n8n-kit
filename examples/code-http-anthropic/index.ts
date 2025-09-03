@@ -81,7 +81,6 @@ new Workflow(app, "my-workflow", {
 					}),
 					parameters: {
 						mode: "runOnceForEachItem",
-						language: "python",
 						pythonCode: PythonFunction.from({
 							projectRoot: path.join(__dirname, "python-function"),
 							entrypoint: "generate-prompt.py",
