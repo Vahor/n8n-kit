@@ -82,7 +82,11 @@ yargsInstance
 		},
 	})
 	.fail((message, error) => {
-		if ("code" in error && error.code === "ERR_UNKNOWN_FILE_EXTENSION") {
+		if (
+			error instanceof Error &&
+			"code" in error &&
+			error.code === "ERR_UNKNOWN_FILE_EXTENSION"
+		) {
 			logger.error(
 				"To use a .ts entrypoint, you need to use node >= 22.18 or bun",
 			);
