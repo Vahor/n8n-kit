@@ -37,7 +37,7 @@
 		"@types/bun": "^1.2.21",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.6",
-		"pkg-pr-new": "^0.0.58",
+		"pkg-pr-new": "^0.0.59",
 		"typedoc": "^0.28.12",
 		"typedoc-theme-oxide": "^0.2.0"
 	},
