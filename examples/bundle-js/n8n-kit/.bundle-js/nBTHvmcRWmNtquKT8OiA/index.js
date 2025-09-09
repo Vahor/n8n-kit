@@ -56,8 +56,7 @@ function config(newConfig) {
 //#region node_modules/zod/v4/core/util.js
 function getEnumValues(entries) {
 	const numericValues = Object.values(entries).filter((v) => typeof v === "number");
-	const values = Object.entries(entries).filter(([k, _]) => numericValues.indexOf(+k) === -1).map(([_, v]) => v);
-	return values;
+	return Object.entries(entries).filter(([k, _]) => numericValues.indexOf(+k) === -1).map(([_, v]) => v);
 }
 function jsonStringifyReplacer(_, value) {
 	if (typeof value === "bigint") return value.toString();
@@ -81,7 +80,7 @@ function defineLazy(object$1, key, getter) {
 	let value = void 0;
 	Object.defineProperty(object$1, key, {
 		get() {
-			if (value === EVALUATING) return void 0;
+			if (value === EVALUATING) return;
 			if (value === void 0) {
 				value = EVALUATING;
 				value = getter();
@@ -109,8 +108,7 @@ function isObject(data) {
 const allowsEval = cached(() => {
 	if (typeof navigator !== "undefined" && navigator?.userAgent?.includes("Cloudflare")) return false;
 	try {
-		const F = Function;
-		new F("");
+		new Function("");
 		return true;
 	} catch (_) {
 		return false;
@@ -177,10 +175,7 @@ function finalizeIssue(iss, ctx, config$1) {
 		...iss,
 		path: iss.path ?? []
 	};
-	if (!iss.message) {
-		const message = unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config$1.customError?.(iss)) ?? unwrapMessage(config$1.localeError?.(iss)) ?? "Invalid input";
-		full.message = message;
-	}
+	if (!iss.message) full.message = unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config$1.customError?.(iss)) ?? unwrapMessage(config$1.localeError?.(iss)) ?? "Invalid input";
 	delete full.inst;
 	delete full.continue;
 	if (!ctx?.reportInput) delete full.input;
@@ -401,21 +396,18 @@ const $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
 			let asyncResult;
 			for (const ch of checks$1) {
 				if (ch._zod.def.when) {
-					const shouldRun = ch._zod.def.when(payload);
-					if (!shouldRun) continue;
+					if (!ch._zod.def.when(payload)) continue;
 				} else if (isAborted) continue;
 				const currLen = payload.issues.length;
 				const _ = ch._zod.check(payload);
 				if (_ instanceof Promise && ctx?.async === false) throw new $ZodAsyncError();
 				if (asyncResult || _ instanceof Promise) asyncResult = (asyncResult ?? Promise.resolve()).then(async () => {
 					await _;
-					const nextLen = payload.issues.length;
-					if (nextLen === currLen) return;
+					if (payload.issues.length === currLen) return;
 					if (!isAborted) isAborted = aborted(payload, currLen);
 				});
 				else {
-					const nextLen = payload.issues.length;
-					if (nextLen === currLen) continue;
+					if (payload.issues.length === currLen) continue;
 					if (!isAborted) isAborted = aborted(payload, currLen);
 				}
 			}
@@ -570,8 +562,7 @@ const $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
 		const proms = [];
 		const shape = value.shape;
 		for (const key of value.keys) {
-			const el = shape[key];
-			const r = el._zod.run({
+			const r = shape[key]._zod.run({
 				value: input[key],
 				issues: []
 			}, ctx);
