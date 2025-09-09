@@ -155,6 +155,12 @@ export interface AirtopNodeParameters {
     readonly prompt?: string;
 
     /**
+     * The type of click to perform. Defaults to left click.
+     * Default: "click"
+     */
+    readonly clickType?: "click" | "doubleClick" | "rightClick";
+
+    /**
      * The information to fill into the form written in natural language
      * Type options: {"rows":4}
      */

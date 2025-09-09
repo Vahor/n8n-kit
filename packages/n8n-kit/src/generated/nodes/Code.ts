@@ -12,7 +12,7 @@ export interface CodeNodeParameters {
     readonly mode?: "runOnceForAllItems" | "runOnceForEachItem";
 
     /** Default: "javaScript" */
-    readonly language?: "javaScript" | "python";
+    readonly language?: "javaScript" | "python" | "pythonNative";
 
     /**
      * JavaScript code to execute.<br><br>Tip: You can use luxon vars like <code>$today</code> for dates and <code>$jmespath</code> for querying JSON structures. <a href="https://docs.n8n.io/nodes/n8n-nodes-base.function">Learn more</a>.
