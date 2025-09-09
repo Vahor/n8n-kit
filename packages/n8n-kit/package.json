@@ -114,9 +114,9 @@
 		"n8n-core": "1.110.0",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
-		"codemaker": "^1.113.0",
+		"codemaker": "^1.114.1",
 		"eventsource": "2.0.2",
-		"tinyglobby": "^0.2.14",
+		"tinyglobby": "^0.2.15",
 		"typescript": "catalog:"
 	},
 	"scripts": {
