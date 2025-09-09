@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
-import { App, Chain, Credentials, Workflow } from "../../src";
-import { NoOp } from "../../src/nodes";
+import { App, Chain, Credentials, type, Workflow } from "../../src";
+import { Code, NoOp } from "../../src/nodes";
 import {
 	EmbeddingsGoogleGemini,
 	VectorStorePineconeInsert,
@@ -116,6 +116,58 @@ describe("Workflow", () => {
 					(c) => [c.node, c.type],
 				),
 			).toEqual([["Pinecone Vector Store", "ai_embedding"]]);
+		});
+
+		test("correctly replaces node ids in expression", async () => {
+			const code = new Code("code", {
+				label: "Some very long label",
+				outputSchema: type({ type: "string" }),
+				parameters: {
+					jsCode: "",
+				},
+			});
+
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
+				definition: [
+					Chain.start(code).next(
+						({ $ }) =>
+							new Code("code2", {
+								parameters: {
+									jsCode: $("code").toExpression(),
+								},
+							}),
+					),
+				],
+			});
+			const result = await workflow.build();
+			expect(result.nodes.map((n) => n.id)).toEqual(["code", "code2"]);
+			const code2Parameters = result.nodes.find(
+				(n) => n.id === "code2",
+			)!.parameters;
+			expect(code2Parameters).toEqual({
+				jsCode: "={{ $('Some very long label').item.json }}",
+			});
+		});
+
+		test.failing("fails when two nodes have the same id", async () => {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
+				definition: [Chain.start(new NoOp("a")).next(new NoOp("a"))],
+			});
+			workflow["~validate"]();
+		});
+
+		test.failing("fails when two nodes have the same id (label)", async () => {
+			const app = new App();
+			const workflow = new Workflow(app, "test", {
+				definition: [
+					Chain.start(new NoOp("a", { label: "a" })).next(
+						new NoOp("b", { label: "a" }),
+					),
+				],
+			});
+			workflow["~validate"]();
 		});
 	});
 });

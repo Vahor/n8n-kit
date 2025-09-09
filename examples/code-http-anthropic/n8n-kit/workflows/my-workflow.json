@@ -1,19 +1,19 @@
 {
 	"active": true,
 	"connections": {
-		"generate-prompt": {
-			"main": [[{ "index": 0, "node": "send-to-anthropic", "type": "main" }]]
-		},
-		"send-to-anthropic": {
-			"main": [[{ "index": 0, "node": "format-output", "type": "main" }]]
-		},
-		"webhook": {
+		"Webhook Trigger": {
 			"main": [
 				[
 					{ "index": 0, "node": "send-to-analytics", "type": "main" },
 					{ "index": 0, "node": "generate-prompt", "type": "main" }
 				]
 			]
+		},
+		"generate-prompt": {
+			"main": [[{ "index": 0, "node": "send-to-anthropic", "type": "main" }]]
+		},
+		"send-to-anthropic": {
+			"main": [[{ "index": 0, "node": "format-output", "type": "main" }]]
 		}
 	},
 	"id": "1xE-9lGXWZxsp",
@@ -36,7 +36,7 @@
 			"parameters": {
 				"language": "python",
 				"mode": "runOnceForEachItem",
-				"pythonCode": "def handler(input):\n    if(input[\"type\"] == \"type1\"):\n        return {\n            \"prompt\": f\"Reply as if you were a gangster.\"\n        }\n    if(input[\"type\"] == \"type2\"):\n        return {\n            \"prompt\": f\"Reply as if you were a pirate.\"\n        }\n\n    raise Exception(\"Invalid type\")\n\nreturn handler({\n  \"type\": _('webhook').item.json.query.type\n});"
+				"pythonCode": "def handler(input):\n    if(input[\"type\"] == \"type1\"):\n        return {\n            \"prompt\": f\"Reply as if you were a gangster.\"\n        }\n    if(input[\"type\"] == \"type2\"):\n        return {\n            \"prompt\": f\"Reply as if you were a pirate.\"\n        }\n\n    raise Exception(\"Invalid type\")\n\nreturn handler({\n  \"type\": _('Webhook Trigger').item.json.query.type\n});"
 			},
 			"position": [260, 300],
 			"type": "n8n-nodes-base.code",
@@ -50,7 +50,7 @@
 			"parameters": {
 				"authentication": "genericCredentialType",
 				"genericAuthType": "httpCustomAuth",
-				"jsonBody": "={\n  \"events\": [\n    {\n      \"user_id\": \"{{ $('webhook').item.json.headers['cf-connecting-ip'] }}\",\n      \"event_type\": \"workflow_end\",\n      \"event_properties\": {\n        \"workflow_id\": \"{{ $workflow.id }}\"\n      }\n    }\n  ]\n}",
+				"jsonBody": "={\n  \"events\": [\n    {\n      \"user_id\": \"{{ $('Webhook Trigger').item.json.headers['cf-connecting-ip'] }}\",\n      \"event_type\": \"workflow_end\",\n      \"event_properties\": {\n        \"workflow_id\": \"{{ $workflow.id }}\"\n      }\n    }\n  ]\n}",
 				"method": "POST",
 				"sendBody": true,
 				"specifyBody": "json",
@@ -69,7 +69,7 @@
 				"headerParameters": {
 					"parameters": [{ "name": "anthropic-version", "value": "2023-06-01" }]
 				},
-				"jsonBody": "={\n  \"model\": \"claude-3-haiku-20240307\",\n  \"temperature\": 1,\n  \"max_tokens\": 200,\n  \"system\": [\n    {\n      \"text\": \"{{ $('generate-prompt').item.json.prompt }}\",\n      \"type\": \"text\"\n    }\n  ],\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $('webhook').item.json.query.prompt }}\"\n    }\n  ]\n}",
+				"jsonBody": "={\n  \"model\": \"claude-3-haiku-20240307\",\n  \"temperature\": 1,\n  \"max_tokens\": 200,\n  \"system\": [\n    {\n      \"text\": \"{{ $('generate-prompt').item.json.prompt }}\",\n      \"type\": \"text\"\n    }\n  ],\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $('Webhook Trigger').item.json.query.prompt }}\"\n    }\n  ]\n}",
 				"method": "POST",
 				"nodeCredentialType": "anthropicApi",
 				"sendBody": true,
@@ -83,7 +83,7 @@
 		},
 		{
 			"id": "webhook",
-			"name": "webhook",
+			"name": "Webhook Trigger",
 			"parameters": {
 				"httpMethod": "GET",
 				"path": "path-to-webhook",

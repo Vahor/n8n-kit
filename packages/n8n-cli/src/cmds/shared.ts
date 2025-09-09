@@ -22,10 +22,9 @@ export const loadApplication = async (options: GlobalOptions) => {
 		process.cwd(),
 		options.entrypoint ?? config.entrypoint,
 	);
-	const fullPath = path.resolve(entrypoint);
+	const fullPath = `${path.resolve(entrypoint)}?v=${Date.now()}`;
 
 	// Resolve the entrypoint path
-	delete require.cache[fullPath];
 	const { app: _app } = await import(fullPath);
 
 	if (_app === undefined) {

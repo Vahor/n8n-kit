@@ -148,6 +148,8 @@ export interface IfProps extends NodeProps {
 			>;
 			/** @default "and" */
 			combinator?: ConditionCombinator;
+			// TODO: should we type this ? We provide default values
+			options?: Record<string, unknown>;
 		};
 	};
 }
@@ -184,7 +186,7 @@ export class If<
 			const condition = this.props.parameters.conditions.conditions[i]!;
 			condition.id = `${this.getPath()}/${i}`;
 			condition.operator.singleValue = condition.rightValue === undefined;
-			condition.leftValue = resolveExpressionValue(condition.leftValue);
+			condition.leftValue = resolveExpressionValue(condition.leftValue as any);
 			if (condition.rightValue !== undefined) {
 				condition.rightValue = resolveExpressionValue(condition.rightValue);
 			}
@@ -209,6 +211,7 @@ export class If<
 									this.props.parameters.options?.ignoreCase ?? false,
 								version: 2,
 								typeValidation: "strict",
+								...conditions.options,
 							},
 						},
 		};

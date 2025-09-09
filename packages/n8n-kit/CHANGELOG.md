@@ -1,5 +1,27 @@
 # @vahor/n8n-kit
 
+## 0.5.3
+
+### Patch Changes
+
+- [`bbec2a3`](https://github.com/Vahor/n8n-kit/commit/bbec2a3e6aeec6c0de92b3c47bdc308900a3a0d2) Thanks [@Vahor](https://github.com/Vahor)! - Infer Code language based on props: `pythonCode` sets to python, `jsCode` leaves undefined as it's the default value
+
+## 0.5.2
+
+### Patch Changes
+
+- [#98](https://github.com/Vahor/n8n-kit/pull/98) [`7427a48`](https://github.com/Vahor/n8n-kit/commit/7427a48e2febd8b19738ab6e9cc874c6611b8aa2) Thanks [@Vahor](https://github.com/Vahor)! - In ExecuteWorkflow node, remove the need to call toExpression on simple ExpressionBuilders
+
+## 0.5.1
+
+### Patch Changes
+
+- [#95](https://github.com/Vahor/n8n-kit/pull/95) [`2a9a2df`](https://github.com/Vahor/n8n-kit/commit/2a9a2dfeec3d5fcf0598b90c1137ecffd66302a9) Thanks [@Vahor](https://github.com/Vahor)! - Add `noQuotes` method in ExpressionBuilder
+
+- [#96](https://github.com/Vahor/n8n-kit/pull/96) [`d0cbbe5`](https://github.com/Vahor/n8n-kit/commit/d0cbbe582a5e0977421f7344195b9c628874473c) Thanks [@Vahor](https://github.com/Vahor)! - fix: expression should use node label instead of node id
+
+- [`869dee8`](https://github.com/Vahor/n8n-kit/commit/869dee8c059b1aee52946d867f0be0d3d9647315) Thanks [@Vahor](https://github.com/Vahor)! - Fix: possibleEntrypoints was undefined
+
 ## 0.5.0
 
 ### Minor Changes

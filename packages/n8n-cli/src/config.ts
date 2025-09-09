@@ -1,5 +1,6 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
+import logger from "@vahor/n8n-kit/logger";
 import { DEFAULT_CONFIG } from "@vahor/n8n-kit/utils";
 import { type } from "arktype";
 import { formatArkErrors } from "./utils/ark";
@@ -29,6 +30,7 @@ export const readConfigFile = async (): Promise<N8nKitConfig> => {
 	if (cachedConfig !== undefined) return Promise.resolve(cachedConfig);
 
 	const configFilePath = configFileName;
+	logger.debug(`Reading config file ${configFilePath}`);
 
 	if (!(await configFileExists())) {
 		throw new Error(`Config file ${configFilePath} does not exist`);
@@ -44,6 +46,7 @@ export const readConfigFile = async (): Promise<N8nKitConfig> => {
 		process.exit(1);
 	}
 	cachedConfig = parsed;
+	logger.debug(`Loaded config: ${JSON.stringify(cachedConfig)}`);
 
 	DEFAULT_CONFIG.out = path.resolve(`${process.cwd()}/${config.out}`);
 
@@ -65,8 +68,9 @@ export const getProjectIdentifier = async (): Promise<string> => {
 		if (packageJson.name && typeof packageJson.name === "string") {
 			return packageJson.name;
 		}
-	} catch (_ignored) {
+	} catch (error) {
 		// package.json doesn't exist or is invalid
+		logger.error("Error reading package.json", error as Error);
 	}
 
 	throw new Error(

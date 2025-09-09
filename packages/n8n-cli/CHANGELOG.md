@@ -1,5 +1,38 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.7
+
+### Patch Changes
+
+- Updated dependencies [[`bbec2a3`](https://github.com/Vahor/n8n-kit/commit/bbec2a3e6aeec6c0de92b3c47bdc308900a3a0d2)]:
+  - @vahor/n8n-kit@0.5.3
+
+## 0.4.6
+
+### Patch Changes
+
+- Updated dependencies [[`7427a48`](https://github.com/Vahor/n8n-kit/commit/7427a48e2febd8b19738ab6e9cc874c6611b8aa2)]:
+  - @vahor/n8n-kit@0.5.2
+
+## 0.4.5
+
+### Patch Changes
+
+- [`6b75854`](https://github.com/Vahor/n8n-kit/commit/6b7585492e674c88abde529b065b2cbe5a34f90a) Thanks [@Vahor](https://github.com/Vahor)! - ignore lockfile in watch mode
+
+## 0.4.4
+
+### Patch Changes
+
+- Updated dependencies [[`2a9a2df`](https://github.com/Vahor/n8n-kit/commit/2a9a2dfeec3d5fcf0598b90c1137ecffd66302a9), [`d0cbbe5`](https://github.com/Vahor/n8n-kit/commit/d0cbbe582a5e0977421f7344195b9c628874473c), [`869dee8`](https://github.com/Vahor/n8n-kit/commit/869dee8c059b1aee52946d867f0be0d3d9647315)]:
+  - @vahor/n8n-kit@0.5.1
+
+## 0.4.3
+
+### Patch Changes
+
+- [`30a8804`](https://github.com/Vahor/n8n-kit/commit/30a8804f15c709d2ecb167dbebff619138c88836) Thanks [@Vahor](https://github.com/Vahor)! - Import using a different cache key so that watch mode starts from the begining
+
 ## 0.4.2
 
 ### Patch Changes

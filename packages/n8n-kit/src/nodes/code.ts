@@ -16,7 +16,7 @@ export interface CodeProps extends NodeProps {
 				pythonCode?: never;
 		  })
 		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {
-				language: "python";
+				language?: "python";
 				pythonCode: string | PythonFunction;
 				jsCode?: never;
 		  });
@@ -76,15 +76,19 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 		const { jsCode, pythonCode, ...rest } = this.props.parameters;
 		let code: string | undefined;
 		let key: "jsCode" | "pythonCode" | undefined;
+		let language: "javaScript" | "python" | undefined;
 
 		const getOrBundle = async (code: string | BundledFunction) =>
 			typeof code === "string" ? code : await code.bundle();
 
 		if (jsCode != null) {
 			key = "jsCode";
+			// leade undefined as it's the default value
+			// language = "javaScript";
 			code = await getOrBundle(jsCode);
 		} else if (pythonCode != null) {
 			key = "pythonCode";
+			language = "python";
 			code = await getOrBundle(pythonCode);
 		}
 
@@ -95,6 +99,7 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 			};
 
 		return {
+			language,
 			...rest,
 			[key]: code,
 		};

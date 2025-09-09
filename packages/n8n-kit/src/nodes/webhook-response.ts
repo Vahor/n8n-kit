@@ -24,7 +24,7 @@ export class WebhookResponse<L extends string> extends _WebhookResponse<{}, L> {
 				this.props.parameters.respondWith === "firstIncomingItem"
 			) {
 				throw new Error(
-					`When 'responseBody' is present, 'respondWith' must be set to semething oother than 'allIncomingItems' or 'firstIncomingItem'.`,
+					`When 'responseBody' is present, 'respondWith' must be set to semething other than 'allIncomingItems' or 'firstIncomingItem'.`,
 				);
 			}
 		}

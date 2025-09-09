@@ -1,3 +1,4 @@
+import { prefix } from "../../constants";
 import type {
 	ErrorMessage,
 	IsAny,
@@ -32,6 +33,12 @@ type ExpressionBuilderMode = "item";
 /** @hidden */
 export type ExpressionPrefix = "$" | "_";
 
+type ExpressionBuilderOptions = {
+	mode: ExpressionBuilderMode;
+	prefix: ExpressionPrefix;
+	noQuotes: boolean;
+};
+
 const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");
 
 export class ExpressionBuilder<
@@ -42,9 +49,11 @@ export class ExpressionBuilder<
 	private readonly path: Path;
 	private readonly methodCalls: string[] = [];
 
-	private _mode: ExpressionBuilderMode = "item";
-	private _prefix: ExpressionPrefix = "$";
-	private _isJson: boolean = false;
+	private options: ExpressionBuilderOptions = {
+		mode: "item",
+		prefix: "$",
+		noQuotes: false,
+	};
 
 	/**
 	 * The type of the current field
@@ -57,28 +66,22 @@ export class ExpressionBuilder<
 		path: Path,
 		methodCalls: string[] = [],
 		// TODO: make a "options" object or something to group all options
-		mode: ExpressionBuilderMode = "item",
-		prefix: ExpressionPrefix = "$",
-		isJson: boolean = false,
+		options?: ExpressionBuilderOptions,
 	) {
 		this.path = path;
 		this.methodCalls = methodCalls;
-		this._mode = mode;
-		this._prefix = prefix;
-		this._isJson = isJson;
+		this.options = {
+			mode: options?.mode ?? "item",
+			prefix: options?.prefix ?? "$",
+			noQuotes: options?.noQuotes ?? false,
+		};
 	}
 
 	private clone(additionalMethodCall?: string): ExpressionBuilder<T, Path> {
 		const newMethodCalls = additionalMethodCall
 			? [...this.methodCalls, additionalMethodCall]
 			: [...this.methodCalls];
-		return new ExpressionBuilder(
-			this.path,
-			newMethodCalls,
-			this._mode,
-			this._prefix,
-			this._isJson,
-		);
+		return new ExpressionBuilder(this.path, newMethodCalls, this.options);
 	}
 
 	public getFullPath(): Path {
@@ -86,25 +89,27 @@ export class ExpressionBuilder<
 	}
 
 	public mode(mode: ExpressionBuilderMode): this {
-		if (this._mode === mode) return this;
-		return new ExpressionBuilder(
-			this.path,
-			this.methodCalls,
+		if (this.options.mode === mode) return this;
+		return new ExpressionBuilder(this.path, this.methodCalls, {
+			...this.options,
 			mode,
-			this._prefix,
-			this._isJson,
-		) as any;
+		}) as any;
 	}
 
 	public prefix(prefix: ExpressionPrefix): this {
-		if (this._prefix === prefix) return this;
-		return new ExpressionBuilder(
-			this.path,
-			this.methodCalls,
-			this._mode,
+		if (this.options.prefix === prefix) return this;
+		return new ExpressionBuilder(this.path, this.methodCalls, {
+			...this.options,
 			prefix,
-			this._isJson,
-		) as any;
+		}) as any;
+	}
+
+	public noQuotes(value = true): this {
+		if (this.options.noQuotes === value) return this;
+		return new ExpressionBuilder(this.path, this.methodCalls, {
+			...this.options,
+			noQuotes: value,
+		}) as any;
 	}
 
 	public getNodeId(): string {
@@ -140,14 +145,15 @@ export class ExpressionBuilder<
 		if (path.length > 0 && path[0] !== "." && path[0] !== "[")
 			path = `.${path}`;
 
-		if (this._mode === "item") {
+		if (this.options.mode === "item") {
 			if (nodeId === "json") {
-				baseExpression = `${this._prefix}json${path}`;
+				baseExpression = `${this.options.prefix}json${path}`;
 			} else {
-				baseExpression = `${this._prefix}('${nodeId}').item.json${path}`;
+				// NOTE: n8n needs the node label and here we have a node id. So we need to replace it with the label at some point
+				baseExpression = `${this.options.prefix}('${RESOLVED_NODE_ID(nodeId)}').item.json${path}`;
 			}
 		} else {
-			throw new Error(`Unexpected mode: ${this._mode}`);
+			throw new Error(`Unexpected mode: ${this.options.mode}`);
 		}
 
 		// Append method calls
@@ -164,7 +170,7 @@ export class ExpressionBuilder<
 	public toExpression() {
 		// Feels very hack, and it is
 		// Used in JsonExpression.toExpression to remove quotes when we don't need them
-		return expr`${this._isJson ? "<no-quotes>" : ""}${this}`;
+		return expr`${this.options.noQuotes ? "<no-quotes>" : ""}${this}`;
 	}
 	/*
 	 * @internal
@@ -200,8 +206,7 @@ export class ExpressionBuilder<
 	// =========
 
 	toJsonString: () => this = () => {
-		this._isJson = true;
-		return this.call("toJsonString") as any;
+		return this.noQuotes(true).call("toJsonString") as any;
 	};
 
 	// =========
@@ -275,3 +280,7 @@ export type ExpressionBuilderProvider<CC extends ChainContext> = ReturnType<
 >;
 
 export type $Selector<T> = ExpressionBuilderProvider<ExtractChainContext<T>>;
+
+export const RESOLVED_NODE_ID_PREFIX = `${prefix}resolved_node_id@`;
+export const RESOLVED_NODE_ID = (nodeId: string) =>
+	`${RESOLVED_NODE_ID_PREFIX}${nodeId}`;

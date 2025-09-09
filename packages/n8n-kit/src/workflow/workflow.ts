@@ -4,7 +4,7 @@ import { getProjectSalt, prefix } from "../constants";
 import { Node } from "../nodes/node";
 import { WORKFLOW_SYMBOL } from "../symbols";
 import { shortHash, validateIdentifier } from "../utils/slugify";
-import { Placeholder, type State } from "./chain";
+import { Placeholder, RESOLVED_NODE_ID, type State } from "./chain";
 import { Chain } from "./chain/chain";
 import { Group } from "./group";
 import {
@@ -205,10 +205,31 @@ export class Workflow<
 			}
 		}
 
+		const builtNodes = await Promise.all(
+			layoutNodes.flatMap((node) => node.toNode()),
+		);
+
+		// HACK: As we have to replace the node id in label in each expression, we need to do it here
+		const resolvedNodes = builtNodes.map((node) => {
+			const nodeParameters = node.parameters;
+			if (nodeParameters) {
+				// using stringify to make it easier to replaceAll
+				let jsonParameters = JSON.stringify(nodeParameters);
+				for (const n of nodes) {
+					jsonParameters = jsonParameters.replaceAll(
+						RESOLVED_NODE_ID(n.id),
+						n.getLabel(),
+					);
+				}
+				node.parameters = JSON.parse(jsonParameters);
+			}
+			return node;
+		});
+
 		return {
 			id: this.getHashId()!,
 			name: this.getName(),
-			nodes: await Promise.all(layoutNodes.flatMap((node) => node.toNode())),
+			nodes: resolvedNodes,
 			connections: connections,
 			settings: this.props.settings ?? {},
 			active: this.props.active ?? false,
@@ -264,10 +285,10 @@ export class Workflow<
 		const ids = new Set<string>();
 		const allNodes = [...nodes, ...this.dynamicalyAddedNodes];
 		for (const node of allNodes) {
-			if (ids.has(node.id)) {
+			if (ids.has(node.getLabel())) {
 				throw new Error(`Node with id ${node.id} already exists`);
 			}
-			ids.add(node.id);
+			ids.add(node.getLabel());
 		}
 
 		const groups = this.dynamicalyAddedNodes.filter(
@@ -306,7 +327,7 @@ export type WorkflowDefinition = Awaited<ReturnType<Workflow["build"]>>;
 /** @internal */
 export const workflowTagId = (id: string) => `${prefix}${id}`;
 /** @internal */
-export const RESOLVED_WORKFLOW_ID_PREFIX = `${prefix}_resolved_workflow_id@`;
+export const RESOLVED_WORKFLOW_ID_PREFIX = `${prefix}resolved_workflow_id@`;
 /** @internal */
 export const RESOLVED_WORKFLOW_ID = (workflowId: string) =>
 	`${RESOLVED_WORKFLOW_ID_PREFIX}${workflowId}`;

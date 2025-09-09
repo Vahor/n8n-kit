@@ -38,9 +38,13 @@ export abstract class BundledFunction {
 	protected readonly name: string;
 	protected readonly expressionPrefix: ExpressionPrefix = "$";
 
-	protected abstract possibleEntrypoints: string[];
+	protected possibleEntrypoints: string[];
 
-	protected constructor(readonly props: BundledFunctionProps) {
+	protected constructor(
+		readonly props: BundledFunctionProps,
+		{ possibleEntrypoints }: { possibleEntrypoints?: string[] } = {},
+	) {
+		this.possibleEntrypoints = possibleEntrypoints ?? [];
 		this.entrypoint = this.findEntrypoint();
 		this.id = shortHash(`${this.props.projectRoot}/${this.entrypoint}`, 20);
 		this.name = `${path.basename(this.props.projectRoot)}/${this.entrypoint}`;

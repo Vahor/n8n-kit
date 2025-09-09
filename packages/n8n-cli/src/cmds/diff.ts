@@ -44,6 +44,7 @@ const defaultRedactKeys = [
 	"triggerCount",
 	"pinData",
 	"isArchived",
+	"webhookId",
 	/nodes\[.*\]\.position/,
 	/nodes\[.*\]\.parameters.*\.value/,
 	/nodes\[.*\]\.credentials.*\.name/,
