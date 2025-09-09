@@ -33,4 +33,10 @@ export interface DataTableNodeParameters {
     /** Default: {} */
     readonly options?: { dryRun?: boolean };
 
+    /**
+     * Max number of results to return
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
 }
