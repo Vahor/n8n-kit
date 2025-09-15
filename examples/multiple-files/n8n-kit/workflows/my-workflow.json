@@ -1,0 +1,34 @@
+{
+	"active": true,
+	"connections": {},
+	"id": "iIrrfKMb3WDkx",
+	"name": "Workflow name",
+	"nodes": [
+		{
+			"credentials": { "httpBasicAuth": { "id": "some-basic-auth-id" } },
+			"id": "http-request",
+			"name": "http-request",
+			"parameters": {
+				"method": "GET",
+				"url": "https://some-api.com/some-endpoint"
+			},
+			"position": [300, 300],
+			"type": "n8n-nodes-base.httpRequest",
+			"typeVersion": 4.2
+		},
+		{
+			"id": "note",
+			"name": "note",
+			"parameters": {
+				"content": "## Import Example\n\nThis workflow and its credentials are imported from separate files.",
+				"height": 120,
+				"width": 600
+			},
+			"position": [0, 0],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
+		}
+	],
+	"settings": {},
+	"tags": [{ "name": "@vahor/n8n-iIrrfKMb3WDkx" }]
+}
