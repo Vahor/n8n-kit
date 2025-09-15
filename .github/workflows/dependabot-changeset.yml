@@ -1,0 +1,57 @@
+name: Dependabot Changeset
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  add-changeset:
+    runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'dependabot/')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Checkout PR branch
+        env:
+          BRANCH_NAME: ${{ github.head_ref }}
+        run: |
+          git fetch origin $BRANCH_NAME
+          git checkout $BRANCH_NAME
+
+      - name: Create changeset
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          # Create changeset file with timestamp
+          changeset_file=".changeset/dependabot-$PR_NUMBER.md"
+
+          cat > $changeset_file << EOF
+          ---
+          "@vahor/n8n-kit": patch
+          "@vahor/n8n-cli": patch
+          ---
+
+          $PR_TITLE
+          EOF
+
+          echo "Created changeset: $changeset_file"
+
+          # Add and commit the changeset
+          git add $changeset_file
+          git commit -m "chore: add changeset for dependabot PR #$PR_NUMBER"
+          git push
