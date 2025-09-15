@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.6.1
+
+### Patch Changes
+
+- [#117](https://github.com/Vahor/n8n-kit/pull/117) [`9532ae0`](https://github.com/Vahor/n8n-kit/commit/9532ae09d8c109f230600d73be6a35ab2d23cc78) Thanks [@Vahor](https://github.com/Vahor)! - Add support for 'pythonNative' language in Code node
+
 ## 0.6.0
 
 ### Minor Changes
