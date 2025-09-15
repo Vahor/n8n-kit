@@ -16,7 +16,7 @@ export interface CodeProps extends NodeProps {
 				pythonCode?: never;
 		  })
 		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {
-				language?: "python";
+				language?: "python" | "pythonNative";
 				pythonCode: string | PythonFunction;
 				jsCode?: never;
 		  });
@@ -38,8 +38,8 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 
 	override "~validate"() {
 		if (
-			this.props.parameters.jsCode == null &&
-			this.props.parameters.pythonCode == null
+			this.props.parameters?.jsCode == null &&
+			this.props.parameters?.pythonCode == null
 		) {
 			throw new Error("Either 'jsCode' or 'pythonCode' must be provided.");
 		}
@@ -64,10 +64,11 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 		if (
 			this.props.parameters.language &&
 			this.props.parameters.language !== "python" &&
+			this.props.parameters.language !== "pythonNative" &&
 			this.props.parameters.pythonCode
 		) {
 			throw new Error(
-				"Language must be 'python' when 'pythonCode' is provided.",
+				"Language must be 'python' or 'pythonNative' when 'pythonCode' is provided.",
 			);
 		}
 	}
@@ -76,7 +77,7 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 		const { jsCode, pythonCode, ...rest } = this.props.parameters;
 		let code: string | undefined;
 		let key: "jsCode" | "pythonCode" | undefined;
-		let language: "javaScript" | "python" | undefined;
+		let language: "javaScript" | "python" | "pythonNative" | undefined;
 
 		const getOrBundle = async (code: string | BundledFunction) =>
 			typeof code === "string" ? code : await code.bundle();
@@ -88,7 +89,10 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 			code = await getOrBundle(jsCode);
 		} else if (pythonCode != null) {
 			key = "pythonCode";
-			language = "python";
+			language =
+				this.props.parameters.language === "pythonNative"
+					? "pythonNative"
+					: "python";
 			code = await getOrBundle(pythonCode);
 		}
 
