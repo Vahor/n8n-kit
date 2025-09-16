@@ -1,7 +1,7 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import logger from "@vahor/n8n-kit/logger";
-import { DEFAULT_CONFIG } from "@vahor/n8n-kit/utils";
+import { DEFAULT_CONFIG, setProjectRoot } from "@vahor/n8n-kit/utils";
 import { type } from "arktype";
 import { formatArkErrors } from "./utils/ark";
 
@@ -31,6 +31,7 @@ export const readConfigFile = async (): Promise<N8nKitConfig> => {
 
 	const configFilePath = configFileName;
 	logger.debug(`Reading config file ${configFilePath}`);
+	setProjectRoot(path.resolve(process.cwd(), configFilePath));
 
 	if (!(await configFileExists())) {
 		throw new Error(`Config file ${configFilePath} does not exist`);

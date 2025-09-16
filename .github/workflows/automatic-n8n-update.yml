@@ -84,6 +84,14 @@ jobs:
         run: |
           bun run format
 
+      - name: Build packages
+        if: steps.check-updates.outputs.has_updates == 'true'
+        run: bun run --filter '*' build
+
+      - name: Build examples using new nodes
+        if: steps.check-updates.outputs.has_updates == 'true'
+        run: bash scripts/build-and-check-examples.sh || true
+
       - name: Add changeset
         if: steps.check-updates.outputs.has_updates == 'true'
         run: |

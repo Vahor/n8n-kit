@@ -1,5 +1,6 @@
 import * as fs from "node:fs";
 import path from "node:path";
+import { getProjectRoot } from "../constants";
 import logger from "../logger";
 import { shortHash } from "../utils/slugify";
 import {
@@ -46,7 +47,10 @@ export abstract class BundledFunction {
 	) {
 		this.possibleEntrypoints = possibleEntrypoints ?? [];
 		this.entrypoint = this.findEntrypoint();
-		this.id = shortHash(`${this.props.projectRoot}/${this.entrypoint}`, 20);
+		this.id = shortHash(
+			`${path.relative(getProjectRoot(), this.props.projectRoot)}/${this.entrypoint}`,
+			20,
+		);
 		this.name = `${path.basename(this.props.projectRoot)}/${this.entrypoint}`;
 	}
 
