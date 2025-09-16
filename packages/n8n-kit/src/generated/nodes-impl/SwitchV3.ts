@@ -14,7 +14,7 @@ export interface SwitchV3Props extends NodeProps {
  */
 export class SwitchV3<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.switch" as const;
-    protected typeVersion = 3.2 as const;
+    protected typeVersion = 3.3 as const;
 
     constructor(id: L, override props?: SwitchV3Props) {
         super(id, props);

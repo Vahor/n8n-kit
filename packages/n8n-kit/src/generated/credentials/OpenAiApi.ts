@@ -20,5 +20,12 @@ export interface OpenAiApiCredentials {
      */
     readonly "url"?: string;
 
+    readonly "header"?: boolean;
+
+    readonly "headerName"?: string;
+
+    /** Type options: {"password":true} */
+    readonly "headerValue"?: string;
+
     readonly __name: "openAiApi";
 }

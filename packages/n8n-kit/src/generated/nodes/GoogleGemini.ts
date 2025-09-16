@@ -13,7 +13,7 @@ export interface GoogleGeminiNodeParameters {
     readonly resource?: "audio" | "document" | "file" | "image" | "text" | "video";
 
     /** Default: "transcribe" */
-    readonly operation?: "analyze" | "transcribe" | "analyze" | "upload" | "analyze" | "generate" | "message" | "analyze" | "generate" | "download";
+    readonly operation?: "analyze" | "transcribe" | "analyze" | "upload" | "analyze" | "generate" | "edit" | "message" | "analyze" | "generate" | "download";
 
     /** Default: {"mode":"list","value":""} */
     readonly modelId?: {
@@ -46,7 +46,7 @@ export interface GoogleGeminiNodeParameters {
     readonly simplify?: boolean;
 
     /** Default: {} */
-    readonly options?: { maxOutputTokens?: number } | { startTime?: string, endTime?: string } | { sampleCount?: number, binaryPropertyOutput?: string } | { systemMessage?: string, codeExecution?: boolean, frequencyPenalty?: number, maxOutputTokens?: number, candidateCount?: number, presencePenalty?: number, temperature?: number, topP?: number, topK?: number, maxToolsIterations?: number } | { binaryPropertyOutput?: string } | { sampleCount?: number, durationSeconds?: number, aspectRatio?: "16:9" | "9:16", personGeneration?: "dont_allow" | "allow_adult" | "allow_all", binaryPropertyOutput?: string };
+    readonly options?: { maxOutputTokens?: number } | { startTime?: string, endTime?: string } | { binaryPropertyOutput?: string } | { sampleCount?: number, binaryPropertyOutput?: string } | { systemMessage?: string, codeExecution?: boolean, frequencyPenalty?: number, maxOutputTokens?: number, candidateCount?: number, presencePenalty?: number, temperature?: number, topP?: number, topK?: number, maxToolsIterations?: number } | { sampleCount?: number, durationSeconds?: number, aspectRatio?: "16:9" | "9:16", personGeneration?: "dont_allow" | "allow_adult" | "allow_all", binaryPropertyOutput?: string };
 
     /** URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma */
     readonly documentUrls?: string;
@@ -58,10 +58,17 @@ export interface GoogleGeminiNodeParameters {
     readonly imageUrls?: string;
 
     /**
-     * A text description of the desired image(s)
+     * Instruction describing how to edit the image
      * Type options: {"rows":2}
      */
     readonly prompt?: string;
+
+    /**
+     * Add one or more binary fields to include images with your prompt
+     * Default: {"values":[{"binaryPropertyName":"data"}]}
+     * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Image"}
+     */
+    readonly images?: { values: Array<{ binaryPropertyName?: string }> };
 
     /**
      * Default: {"values":[{"content":""}]}

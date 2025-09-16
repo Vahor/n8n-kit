@@ -14,7 +14,7 @@ export interface ExecuteWorkflowProps extends NodeProps {
  */
 export class ExecuteWorkflow<C extends IContext, L extends string> extends Node<L, C> {
     protected type = "n8n-nodes-base.executeWorkflow" as const;
-    protected typeVersion = 1.2 as const;
+    protected typeVersion = 1.3 as const;
 
     constructor(id: L, override props?: ExecuteWorkflowProps) {
         super(id, props);

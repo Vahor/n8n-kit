@@ -31,10 +31,14 @@ export interface DataTableNodeParameters {
     readonly filters?: { conditions: Array<{ keyName?: string, condition?: string, keyValue?: string }> };
 
     /** Default: {} */
-    readonly options?: { dryRun?: boolean };
+    readonly options?: { dryRun?: boolean } | { optimizeBulk?: boolean };
+
+    /** Whether to return all results or only up to a given limit */
+    readonly returnAll?: boolean;
 
     /**
      * Max number of results to return
+     * Default: 50
      * Type options: {"minValue":1}
      */
     readonly limit?: number;

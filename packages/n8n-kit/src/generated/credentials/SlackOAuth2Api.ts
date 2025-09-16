@@ -20,7 +20,7 @@ export interface SlackOAuth2ApiCredentials {
     /** Default: "chat:write" */
     readonly "scope"?: unknown;
 
-    /** Default: "user_scope=channels:read channels:write chat:write files:read files:write groups:read im:read mpim:read reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read" */
+    /** Default: "user_scope=channels:read channels:write chat:write files:read files:write groups:read im:read mpim:read reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read search:read" */
     readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */

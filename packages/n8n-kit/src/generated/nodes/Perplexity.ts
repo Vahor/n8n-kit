@@ -14,9 +14,9 @@ export interface PerplexityNodeParameters {
 
     /**
      * The model which will generate the completion
-     * Default: "r1-1776"
+     * Default: "sonar"
      */
-    readonly model?: "r1-1776" | "sonar" | "sonar-deep-research" | "sonar-pro" | "sonar-reasoning" | "sonar-reasoning-pro";
+    readonly model?: "sonar" | "sonar-deep-research" | "sonar-pro" | "sonar-reasoning" | "sonar-reasoning-pro";
 
     /**
      * Any optional system messages must be sent first, followed by alternating user and assistant messages
