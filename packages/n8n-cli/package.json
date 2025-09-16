@@ -33,7 +33,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@inquirer/prompts": "^7.8.4",
+		"@inquirer/prompts": "^7.8.6",
 		"@vahor/n8n-kit": "workspace:*",
 		"arktype": "catalog:",
 		"chalk": "catalog:",
