@@ -110,8 +110,8 @@
 		"slugify": "^1.6.6"
 	},
 	"devDependencies": {
-		"@n8n/n8n-nodes-langchain": "1.110.0",
-		"n8n-core": "1.110.0",
+		"@n8n/n8n-nodes-langchain": "1.111.0",
+		"n8n-core": "1.111.0",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "^1.114.1",

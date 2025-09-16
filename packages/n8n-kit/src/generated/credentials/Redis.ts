@@ -23,5 +23,8 @@ export interface RedisCredentials {
 
     readonly "ssl"?: boolean;
 
+    /** Whether to disable TLS certificate verification. Enable this to use self-signed certificates. WARNING: This makes the connection less secure. */
+    readonly "disableTlsVerification"?: boolean;
+
     readonly __name: "redis";
 }
