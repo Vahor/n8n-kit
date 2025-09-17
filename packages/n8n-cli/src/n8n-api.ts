@@ -6,6 +6,16 @@ const urlEncode = (data: Record<string, string | string[]>) => {
 	return new URLSearchParams(data).toString();
 };
 
+const getErrorMessage = (error: any) => {
+	if (typeof error === "string") {
+		try {
+			return JSON.parse(error).message;
+		} catch (_ignored) {
+			return null;
+		}
+	}
+};
+
 export class N8nApi {
 	private apiKey: string;
 	private baseUrl: string;
@@ -37,9 +47,10 @@ export class N8nApi {
 		if (!response.ok) {
 			const responseBody = await response.text();
 			logger.debug(responseBody);
+			const message = getErrorMessage(responseBody);
 
 			throw new Error(
-				`N8N API error: ${response.status} ${response.statusText}`,
+				`N8N API error: ${response.status} ${response.statusText}${message ? `. ${message}` : ""}`,
 			);
 		}
 
