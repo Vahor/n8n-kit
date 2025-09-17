@@ -2,6 +2,7 @@ Error.stackTraceLimit = Infinity;
 process.env.NODE_ENV = process.env.NODE_ENV || "production";
 
 import logger from "@vahor/n8n-kit/logger";
+import { version } from "../package.json";
 
 logger.setEnabled(true);
 
@@ -18,6 +19,7 @@ export type GlobalOptions = {
 
 yargsInstance
 	.scriptName("n8n-kit")
+	.version(version)
 
 	.command(require("./cmds/init"))
 	.command(require("./cmds/deploy"))
