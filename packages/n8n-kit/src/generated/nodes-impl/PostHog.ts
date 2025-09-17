@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { PostHogNodeParameters } from "../nodes/PostHog";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface PostHogProps extends NodeProps {
-    readonly parameters: PostHogNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: PostHogNodeParameters;
     readonly postHogApiCredentials: Credentials<PostHogApiCredentials>;
 }
 
 /**
  * Consume PostHog API
  */
-export class PostHog<C extends IContext, L extends string> extends Node<L, C> {
+export class PostHog<L extends string, C extends IContext = never, P extends PostHogProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.postHog" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: PostHogProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.postHogApiCredentials];
+        return [this.props.postHogApiCredentials];
     }
 
 }

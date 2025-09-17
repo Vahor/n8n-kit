@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { PhilipsHueNodeParameters } from "../nodes/PhilipsHue";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface PhilipsHueProps extends NodeProps {
-    readonly parameters: PhilipsHueNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: PhilipsHueNodeParameters;
     readonly philipsHueOAuth2ApiCredentials: Credentials<PhilipsHueOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Philips Hue API
  */
-export class PhilipsHue<C extends IContext, L extends string> extends Node<L, C> {
+export class PhilipsHue<L extends string, C extends IContext = never, P extends PhilipsHueProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.philipsHue" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: PhilipsHueProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.philipsHueOAuth2ApiCredentials];
+        return [this.props.philipsHueOAuth2ApiCredentials];
     }
 
 }

@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { IntervalNodeParameters } from "../nodes/Interval";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface IntervalProps extends NodeProps {
-    readonly parameters: IntervalNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: IntervalNodeParameters;
 }
 
 /**
  * Triggers the workflow in a given interval
  */
-export class Interval<C extends IContext, L extends string> extends Node<L, C> {
+export class Interval<L extends string, C extends IContext = never, P extends IntervalProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.interval" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: IntervalProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

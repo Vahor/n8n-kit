@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { ZoomNodeParameters } from "../nodes/Zoom";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ZoomProps extends NodeProps {
-    readonly parameters: ZoomNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ZoomNodeParameters;
     readonly zoomApiCredentials?: Credentials<ZoomApiCredentials>;
     readonly zoomOAuth2ApiCredentials?: Credentials<ZoomOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface ZoomProps extends NodeProps {
 /**
  * Consume Zoom API
  */
-export class Zoom<C extends IContext, L extends string> extends Node<L, C> {
+export class Zoom<L extends string, C extends IContext = never, P extends ZoomProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.zoom" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: ZoomProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.zoomApiCredentials, this.props!.zoomOAuth2ApiCredentials];
+        return [this.props?.zoomApiCredentials, this.props?.zoomOAuth2ApiCredentials];
     }
 
 }

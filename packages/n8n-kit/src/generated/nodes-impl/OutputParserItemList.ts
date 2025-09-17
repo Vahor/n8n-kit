@@ -4,19 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { OutputParserItemListNodeParameters } from "../nodes/OutputParserItemList";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface OutputParserItemListProps extends NodeProps {
-    readonly parameters: OutputParserItemListNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: OutputParserItemListNodeParameters;
 }
 
 /**
  * Return the results as separate items
  */
-export class OutputParserItemList<C extends IContext, L extends string> extends Node<L, C> {
+export class OutputParserItemList<L extends string, C extends IContext = never, P extends OutputParserItemListProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.outputParserItemList" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: OutputParserItemListProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

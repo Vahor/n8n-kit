@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { Msg91NodeParameters } from "../nodes/Msg91";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface Msg91Props extends NodeProps {
-    readonly parameters: Msg91NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: Msg91NodeParameters;
     readonly msg91ApiCredentials: Credentials<Msg91ApiCredentials>;
 }
 
 /**
  * Sends transactional SMS via MSG91
  */
-export class Msg91<C extends IContext, L extends string> extends Node<L, C> {
+export class Msg91<L extends string, C extends IContext = never, P extends Msg91Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.msg91" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: Msg91Props) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.msg91ApiCredentials];
+        return [this.props.msg91ApiCredentials];
     }
 
 }

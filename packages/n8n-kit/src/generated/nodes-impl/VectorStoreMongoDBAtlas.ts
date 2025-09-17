@@ -8,26 +8,29 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreMongoDBAtlasNodeParameters } from "../nodes/VectorStoreMongoDBAtlas";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VectorStoreMongoDBAtlasProps extends NodeProps {
-    readonly parameters: VectorStoreMongoDBAtlasNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VectorStoreMongoDBAtlasNodeParameters;
     readonly mongoDbCredentials: Credentials<MongoDbCredentials>;
 }
 
 /**
  * Work with your data in MongoDB Atlas Vector Store
  */
-export class VectorStoreMongoDBAtlas<C extends IContext, L extends string> extends Node<L, C> {
+export class VectorStoreMongoDBAtlas<L extends string, C extends IContext = never, P extends VectorStoreMongoDBAtlasProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, override props: VectorStoreMongoDBAtlasProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.mongoDbCredentials];
+        return [this.props.mongoDbCredentials];
     }
 
     public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {

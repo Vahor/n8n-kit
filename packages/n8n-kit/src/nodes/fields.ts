@@ -49,21 +49,22 @@ type AssignmentsToObject<T extends readonly Assignment[]> = {
 		: never;
 }[number];
 
+// @ts-expect-error: we override the type
 export class Fields<
 	L extends string,
 	const A extends readonly Assignment[],
 	P extends SetProps<A>,
 > extends _Fields<
+	L,
 	UnionToIntersection<
 		AssignmentsToObject<P["parameters"]["assignments"]["assignments"]>
-	>,
-	L
+	>
 > {
 	public constructor(
 		id: L,
 		override props: P,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 
 	override "~validate"(): void {

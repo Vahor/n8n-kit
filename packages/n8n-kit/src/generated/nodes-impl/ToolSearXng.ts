@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolSearXngNodeParameters } from "../nodes/ToolSearXng";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ToolSearXngProps extends NodeProps {
-    readonly parameters: ToolSearXngNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ToolSearXngNodeParameters;
     readonly searXngApiCredentials: Credentials<SearXngApiCredentials>;
 }
 
 /**
  * Search in SearXNG
  */
-export class ToolSearXng<C extends IContext, L extends string> extends Node<L, C> {
+export class ToolSearXng<L extends string, C extends IContext = never, P extends ToolSearXngProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.toolSearXng" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: ToolSearXngProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.searXngApiCredentials];
+        return [this.props.searXngApiCredentials];
     }
 
     public toAiTool(next: IChainable): this {

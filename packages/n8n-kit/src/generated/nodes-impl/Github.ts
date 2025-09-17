@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GithubNodeParameters } from "../nodes/Github";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GithubProps extends NodeProps {
-    readonly parameters: GithubNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GithubNodeParameters;
     readonly githubApiCredentials?: Credentials<GithubApiCredentials>;
     readonly githubOAuth2ApiCredentials?: Credentials<GithubOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface GithubProps extends NodeProps {
 /**
  * Consume GitHub API
  */
-export class Github<C extends IContext, L extends string> extends Node<L, C> {
+export class Github<L extends string, C extends IContext = never, P extends GithubProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.github" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: GithubProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.githubApiCredentials, this.props!.githubOAuth2ApiCredentials];
+        return [this.props?.githubApiCredentials, this.props?.githubOAuth2ApiCredentials];
     }
 
 }

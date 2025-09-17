@@ -8,9 +8,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { WaitNodeParameters } from "../nodes/Wait";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface WaitProps extends NodeProps {
-    readonly parameters: WaitNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: WaitNodeParameters;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
     readonly httpHeaderAuthCredentials?: Credentials<HttpHeaderAuthCredentials>;
     readonly jwtAuthCredentials?: Credentials<JwtAuthCredentials>;
@@ -19,16 +22,16 @@ export interface WaitProps extends NodeProps {
 /**
  * Wait before continue with execution
  */
-export class Wait<C extends IContext, L extends string> extends Node<L, C> {
+export class Wait<L extends string, C extends IContext = never, P extends WaitProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.wait" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: WaitProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.httpBasicAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.jwtAuthCredentials];
+        return [this.props?.httpBasicAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.jwtAuthCredentials];
     }
 
 }

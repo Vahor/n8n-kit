@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { FormTriggerV2NodeParameters } from "../nodes/FormTriggerV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface FormTriggerV2Props extends NodeProps {
-    readonly parameters: FormTriggerV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: FormTriggerV2NodeParameters;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
 }
 
 /**
  * Generate webforms in n8n and pass their responses to the workflow
  */
-export class FormTriggerV2<C extends IContext, L extends string> extends Node<L, C> {
+export class FormTriggerV2<L extends string, C extends IContext = never, P extends FormTriggerV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.formTrigger" as const;
     protected typeVersion = 2.3 as const;
 
-    constructor(id: L, override props?: FormTriggerV2Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.httpBasicAuthCredentials];
+        return [this.props?.httpBasicAuthCredentials];
     }
 
 }

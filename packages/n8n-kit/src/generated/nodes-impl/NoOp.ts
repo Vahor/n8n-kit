@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { NoOpNodeParameters } from "../nodes/NoOp";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface NoOpProps extends NodeProps {
-    readonly parameters: NoOpNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: NoOpNodeParameters;
 }
 
 /**
  * No Operation
  */
-export class NoOp<C extends IContext, L extends string> extends Node<L, C> {
+export class NoOp<L extends string, C extends IContext = never, P extends NoOpProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.noOp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: NoOpProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

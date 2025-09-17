@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { TwilioNodeParameters } from "../nodes/Twilio";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface TwilioProps extends NodeProps {
-    readonly parameters: TwilioNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: TwilioNodeParameters;
     readonly twilioApiCredentials: Credentials<TwilioApiCredentials>;
 }
 
 /**
  * Send SMS and WhatsApp messages or make phone calls
  */
-export class Twilio<C extends IContext, L extends string> extends Node<L, C> {
+export class Twilio<L extends string, C extends IContext = never, P extends TwilioProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.twilio" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: TwilioProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.twilioApiCredentials];
+        return [this.props.twilioApiCredentials];
     }
 
 }

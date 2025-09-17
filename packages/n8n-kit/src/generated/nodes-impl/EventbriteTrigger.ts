@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { EventbriteTriggerNodeParameters } from "../nodes/EventbriteTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface EventbriteTriggerProps extends NodeProps {
-    readonly parameters: EventbriteTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: EventbriteTriggerNodeParameters;
     readonly eventbriteApiCredentials?: Credentials<EventbriteApiCredentials>;
     readonly eventbriteOAuth2ApiCredentials?: Credentials<EventbriteOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface EventbriteTriggerProps extends NodeProps {
 /**
  * Handle Eventbrite events via webhooks
  */
-export class EventbriteTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class EventbriteTrigger<L extends string, C extends IContext = never, P extends EventbriteTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.eventbriteTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: EventbriteTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.eventbriteApiCredentials, this.props!.eventbriteOAuth2ApiCredentials];
+        return [this.props?.eventbriteApiCredentials, this.props?.eventbriteOAuth2ApiCredentials];
     }
 
 }

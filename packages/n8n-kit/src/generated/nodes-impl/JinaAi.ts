@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { JinaAiNodeParameters } from "../nodes/JinaAi";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface JinaAiProps extends NodeProps {
-    readonly parameters: JinaAiNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: JinaAiNodeParameters;
     readonly jinaAiApiCredentials: Credentials<JinaAiApiCredentials>;
 }
 
 /**
  * Interact with Jina AI API
  */
-export class JinaAi<C extends IContext, L extends string> extends Node<L, C> {
+export class JinaAi<L extends string, C extends IContext = never, P extends JinaAiProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.jinaAi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: JinaAiProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.jinaAiApiCredentials];
+        return [this.props.jinaAiApiCredentials];
     }
 
 }

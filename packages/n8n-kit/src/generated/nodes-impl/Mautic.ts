@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MauticNodeParameters } from "../nodes/Mautic";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MauticProps extends NodeProps {
-    readonly parameters: MauticNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MauticNodeParameters;
     readonly mauticApiCredentials?: Credentials<MauticApiCredentials>;
     readonly mauticOAuth2ApiCredentials?: Credentials<MauticOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface MauticProps extends NodeProps {
 /**
  * Consume Mautic API
  */
-export class Mautic<C extends IContext, L extends string> extends Node<L, C> {
+export class Mautic<L extends string, C extends IContext = never, P extends MauticProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mautic" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: MauticProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.mauticApiCredentials, this.props!.mauticOAuth2ApiCredentials];
+        return [this.props?.mauticApiCredentials, this.props?.mauticOAuth2ApiCredentials];
     }
 
 }

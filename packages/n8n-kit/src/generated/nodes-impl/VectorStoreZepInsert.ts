@@ -8,26 +8,29 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreZepInsertNodeParameters } from "../nodes/VectorStoreZepInsert";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VectorStoreZepInsertProps extends NodeProps {
-    readonly parameters: VectorStoreZepInsertNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VectorStoreZepInsertNodeParameters;
     readonly zepApiCredentials: Credentials<ZepApiCredentials>;
 }
 
 /**
  * Insert data into Zep Vector Store index
  */
-export class VectorStoreZepInsert<C extends IContext, L extends string> extends Node<L, C> {
+export class VectorStoreZepInsert<L extends string, C extends IContext = never, P extends VectorStoreZepInsertProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreZepInsert" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: VectorStoreZepInsertProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.zepApiCredentials];
+        return [this.props.zepApiCredentials];
     }
 
     public withDocument(next: State): this {

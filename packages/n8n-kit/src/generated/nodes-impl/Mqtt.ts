@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MqttNodeParameters } from "../nodes/Mqtt";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MqttProps extends NodeProps {
-    readonly parameters: MqttNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MqttNodeParameters;
     readonly mqttCredentials: Credentials<MqttCredentials>;
 }
 
 /**
  * Push messages to MQTT
  */
-export class Mqtt<C extends IContext, L extends string> extends Node<L, C> {
+export class Mqtt<L extends string, C extends IContext = never, P extends MqttProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mqtt" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: MqttProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.mqttCredentials];
+        return [this.props.mqttCredentials];
     }
 
 }

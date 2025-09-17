@@ -8,9 +8,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { HubspotV1NodeParameters } from "../nodes/HubspotV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface HubspotV1Props extends NodeProps {
-    readonly parameters: HubspotV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: HubspotV1NodeParameters;
     readonly hubspotApiCredentials?: Credentials<HubspotApiCredentials>;
     readonly hubspotAppTokenCredentials?: Credentials<HubspotAppTokenCredentials>;
     readonly hubspotOAuth2ApiCredentials?: Credentials<HubspotOAuth2ApiCredentials>;
@@ -19,16 +22,16 @@ export interface HubspotV1Props extends NodeProps {
 /**
  * Consume HubSpot API
  */
-export class HubspotV1<C extends IContext, L extends string> extends Node<L, C> {
+export class HubspotV1<L extends string, C extends IContext = never, P extends HubspotV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.hubspot" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: HubspotV1Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.hubspotApiCredentials, this.props!.hubspotAppTokenCredentials, this.props!.hubspotOAuth2ApiCredentials];
+        return [this.props?.hubspotApiCredentials, this.props?.hubspotAppTokenCredentials, this.props?.hubspotOAuth2ApiCredentials];
     }
 
 }

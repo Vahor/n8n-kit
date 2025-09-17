@@ -8,9 +8,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AirtableTriggerNodeParameters } from "../nodes/AirtableTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AirtableTriggerProps extends NodeProps {
-    readonly parameters: AirtableTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AirtableTriggerNodeParameters;
     readonly airtableApiCredentials?: Credentials<AirtableApiCredentials>;
     readonly airtableTokenApiCredentials?: Credentials<AirtableTokenApiCredentials>;
     readonly airtableOAuth2ApiCredentials?: Credentials<AirtableOAuth2ApiCredentials>;
@@ -19,16 +22,16 @@ export interface AirtableTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Airtable events occur
  */
-export class AirtableTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class AirtableTrigger<L extends string, C extends IContext = never, P extends AirtableTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.airtableTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: AirtableTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.airtableApiCredentials, this.props!.airtableTokenApiCredentials, this.props!.airtableOAuth2ApiCredentials];
+        return [this.props?.airtableApiCredentials, this.props?.airtableTokenApiCredentials, this.props?.airtableOAuth2ApiCredentials];
     }
 
 }

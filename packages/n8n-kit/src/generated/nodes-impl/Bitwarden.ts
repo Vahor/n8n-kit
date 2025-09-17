@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BitwardenNodeParameters } from "../nodes/Bitwarden";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface BitwardenProps extends NodeProps {
-    readonly parameters: BitwardenNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: BitwardenNodeParameters;
     readonly bitwardenApiCredentials: Credentials<BitwardenApiCredentials>;
 }
 
 /**
  * Consume the Bitwarden API
  */
-export class Bitwarden<C extends IContext, L extends string> extends Node<L, C> {
+export class Bitwarden<L extends string, C extends IContext = never, P extends BitwardenProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.bitwarden" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: BitwardenProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.bitwardenApiCredentials];
+        return [this.props.bitwardenApiCredentials];
     }
 
 }

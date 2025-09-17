@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { NetlifyNodeParameters } from "../nodes/Netlify";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface NetlifyProps extends NodeProps {
-    readonly parameters: NetlifyNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: NetlifyNodeParameters;
     readonly netlifyApiCredentials: Credentials<NetlifyApiCredentials>;
 }
 
 /**
  * Consume Netlify API
  */
-export class Netlify<C extends IContext, L extends string> extends Node<L, C> {
+export class Netlify<L extends string, C extends IContext = never, P extends NetlifyProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.netlify" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: NetlifyProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.netlifyApiCredentials];
+        return [this.props.netlifyApiCredentials];
     }
 
 }

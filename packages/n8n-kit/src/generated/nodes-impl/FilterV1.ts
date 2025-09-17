@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { FilterV1NodeParameters } from "../nodes/FilterV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface FilterV1Props extends NodeProps {
-    readonly parameters: FilterV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: FilterV1NodeParameters;
 }
 
 /**
  * Remove items matching a condition
  */
-export class FilterV1<C extends IContext, L extends string> extends Node<L, C> {
+export class FilterV1<L extends string, C extends IContext = never, P extends FilterV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.filter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: FilterV1Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

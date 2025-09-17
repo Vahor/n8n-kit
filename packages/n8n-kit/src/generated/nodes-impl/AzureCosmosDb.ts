@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AzureCosmosDbNodeParameters } from "../nodes/AzureCosmosDb";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AzureCosmosDbProps extends NodeProps {
-    readonly parameters: AzureCosmosDbNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AzureCosmosDbNodeParameters;
     readonly microsoftAzureCosmosDbSharedKeyApiCredentials: Credentials<MicrosoftAzureCosmosDbSharedKeyApiCredentials>;
 }
 
 /**
  * Interact with Azure Cosmos DB API
  */
-export class AzureCosmosDb<C extends IContext, L extends string> extends Node<L, C> {
+export class AzureCosmosDb<L extends string, C extends IContext = never, P extends AzureCosmosDbProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.azureCosmosDb" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AzureCosmosDbProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.microsoftAzureCosmosDbSharedKeyApiCredentials];
+        return [this.props.microsoftAzureCosmosDbSharedKeyApiCredentials];
     }
 
 }

@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { FtpNodeParameters } from "../nodes/Ftp";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface FtpProps extends NodeProps {
-    readonly parameters: FtpNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: FtpNodeParameters;
     readonly ftpCredentials?: Credentials<FtpCredentials>;
     readonly sftpCredentials?: Credentials<SftpCredentials>;
 }
@@ -17,16 +20,16 @@ export interface FtpProps extends NodeProps {
 /**
  * Transfer files via FTP or SFTP
  */
-export class Ftp<C extends IContext, L extends string> extends Node<L, C> {
+export class Ftp<L extends string, C extends IContext = never, P extends FtpProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.ftp" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: FtpProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.ftpCredentials, this.props!.sftpCredentials];
+        return [this.props?.ftpCredentials, this.props?.sftpCredentials];
     }
 
 }

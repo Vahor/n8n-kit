@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AwsSnsTriggerNodeParameters } from "../nodes/AwsSnsTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AwsSnsTriggerProps extends NodeProps {
-    readonly parameters: AwsSnsTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AwsSnsTriggerNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 }
 
 /**
  * Handle AWS SNS events via webhooks
  */
-export class AwsSnsTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class AwsSnsTrigger<L extends string, C extends IContext = never, P extends AwsSnsTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.awsSnsTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AwsSnsTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.awsCredentials];
+        return [this.props.awsCredentials];
     }
 
 }

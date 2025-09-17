@@ -9,9 +9,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { JiraTriggerNodeParameters } from "../nodes/JiraTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface JiraTriggerProps extends NodeProps {
-    readonly parameters: JiraTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: JiraTriggerNodeParameters;
     readonly jiraSoftwareCloudApiCredentials?: Credentials<JiraSoftwareCloudApiCredentials>;
     readonly jiraSoftwareServerApiCredentials?: Credentials<JiraSoftwareServerApiCredentials>;
     readonly jiraSoftwareServerPatApiCredentials?: Credentials<JiraSoftwareServerPatApiCredentials>;
@@ -21,16 +24,16 @@ export interface JiraTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Jira events occur
  */
-export class JiraTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class JiraTrigger<L extends string, C extends IContext = never, P extends JiraTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.jiraTrigger" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: JiraTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.jiraSoftwareCloudApiCredentials, this.props!.jiraSoftwareServerApiCredentials, this.props!.jiraSoftwareServerPatApiCredentials, this.props!.httpQueryAuthCredentials];
+        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials, this.props?.httpQueryAuthCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BaserowNodeParameters } from "../nodes/Baserow";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface BaserowProps extends NodeProps {
-    readonly parameters: BaserowNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: BaserowNodeParameters;
     readonly baserowApiCredentials: Credentials<BaserowApiCredentials>;
 }
 
 /**
  * Consume the Baserow API
  */
-export class Baserow<C extends IContext, L extends string> extends Node<L, C> {
+export class Baserow<L extends string, C extends IContext = never, P extends BaserowProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.baserow" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: BaserowProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.baserowApiCredentials];
+        return [this.props.baserowApiCredentials];
     }
 
 }

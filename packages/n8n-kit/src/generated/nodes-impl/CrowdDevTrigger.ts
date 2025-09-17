@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { CrowdDevTriggerNodeParameters } from "../nodes/CrowdDevTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface CrowdDevTriggerProps extends NodeProps {
-    readonly parameters: CrowdDevTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: CrowdDevTriggerNodeParameters;
     readonly crowdDevApiCredentials: Credentials<CrowdDevApiCredentials>;
 }
 
 /**
  * Starts the workflow when crowd.dev events occur.
  */
-export class CrowdDevTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class CrowdDevTrigger<L extends string, C extends IContext = never, P extends CrowdDevTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.crowdDevTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: CrowdDevTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.crowdDevApiCredentials];
+        return [this.props.crowdDevApiCredentials];
     }
 
 }

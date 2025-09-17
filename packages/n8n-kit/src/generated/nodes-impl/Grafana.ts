@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GrafanaNodeParameters } from "../nodes/Grafana";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GrafanaProps extends NodeProps {
-    readonly parameters: GrafanaNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GrafanaNodeParameters;
     readonly grafanaApiCredentials: Credentials<GrafanaApiCredentials>;
 }
 
 /**
  * Consume the Grafana API
  */
-export class Grafana<C extends IContext, L extends string> extends Node<L, C> {
+export class Grafana<L extends string, C extends IContext = never, P extends GrafanaProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.grafana" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: GrafanaProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.grafanaApiCredentials];
+        return [this.props.grafanaApiCredentials];
     }
 
 }

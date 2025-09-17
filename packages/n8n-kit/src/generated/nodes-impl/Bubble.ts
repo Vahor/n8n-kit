@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BubbleNodeParameters } from "../nodes/Bubble";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface BubbleProps extends NodeProps {
-    readonly parameters: BubbleNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: BubbleNodeParameters;
     readonly bubbleApiCredentials: Credentials<BubbleApiCredentials>;
 }
 
 /**
  * Consume the Bubble Data API
  */
-export class Bubble<C extends IContext, L extends string> extends Node<L, C> {
+export class Bubble<L extends string, C extends IContext = never, P extends BubbleProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.bubble" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: BubbleProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.bubbleApiCredentials];
+        return [this.props.bubbleApiCredentials];
     }
 
 }

@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AcuitySchedulingTriggerNodeParameters } from "../nodes/AcuitySchedulingTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AcuitySchedulingTriggerProps extends NodeProps {
-    readonly parameters: AcuitySchedulingTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AcuitySchedulingTriggerNodeParameters;
     readonly acuitySchedulingApiCredentials?: Credentials<AcuitySchedulingApiCredentials>;
     readonly acuitySchedulingOAuth2ApiCredentials?: Credentials<AcuitySchedulingOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface AcuitySchedulingTriggerProps extends NodeProps {
 /**
  * Handle Acuity Scheduling events via webhooks
  */
-export class AcuitySchedulingTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class AcuitySchedulingTrigger<L extends string, C extends IContext = never, P extends AcuitySchedulingTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.acuitySchedulingTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: AcuitySchedulingTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.acuitySchedulingApiCredentials, this.props!.acuitySchedulingOAuth2ApiCredentials];
+        return [this.props?.acuitySchedulingApiCredentials, this.props?.acuitySchedulingOAuth2ApiCredentials];
     }
 
 }

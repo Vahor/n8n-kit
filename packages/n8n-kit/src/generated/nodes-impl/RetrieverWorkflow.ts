@@ -4,19 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { RetrieverWorkflowNodeParameters } from "../nodes/RetrieverWorkflow";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface RetrieverWorkflowProps extends NodeProps {
-    readonly parameters: RetrieverWorkflowNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: RetrieverWorkflowNodeParameters;
 }
 
 /**
  * Use an n8n Workflow as Retriever
  */
-export class RetrieverWorkflow<C extends IContext, L extends string> extends Node<L, C> {
+export class RetrieverWorkflow<L extends string, C extends IContext = never, P extends RetrieverWorkflowProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.retrieverWorkflow" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: RetrieverWorkflowProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

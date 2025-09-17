@@ -3,7 +3,9 @@ import {
 	type ScheduleTriggerProps,
 } from "../generated/nodes-impl/ScheduleTrigger";
 
+// @ts-expect-error: we override the type.
 export class ScheduleTrigger<L extends string> extends _ScheduleTrigger<
+	L,
 	{
 		timestamp: string;
 		"Readable date": string;
@@ -15,13 +17,12 @@ export class ScheduleTrigger<L extends string> extends _ScheduleTrigger<
 		Minute: string;
 		Second: string;
 		Timezone: string;
-	},
-	L
+	}
 > {
 	constructor(
 		id: L,
-		override props: ScheduleTriggerProps,
+		override props: Omit<ScheduleTriggerProps, "outputSchema">,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 }

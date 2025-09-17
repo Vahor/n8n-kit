@@ -1,4 +1,11 @@
-import { App, Chain, Credentials, Placeholder, Workflow } from "@vahor/n8n-kit";
+import {
+	App,
+	Chain,
+	Credentials,
+	Placeholder,
+	type,
+	Workflow,
+} from "@vahor/n8n-kit";
 import { StickyNote } from "@vahor/n8n-kit/nodes";
 import {
 	AgentV1,
@@ -91,6 +98,10 @@ new Workflow(app, "my-workflow", {
 			new GoogleDriveTrigger("gdrive-file-updated", {
 				label: "Google Drive File Updated",
 				googleDriveOAuth2ApiCredentials: googleDriveApiCredentials,
+				outputSchema: type({
+					id: "string",
+					name: "string",
+				}),
 				parameters: {
 					event: "fileUpdated",
 					triggerOn: "specificFolder",
@@ -109,20 +120,21 @@ new Workflow(app, "my-workflow", {
 			}),
 		)
 			.next(
-				new GoogleDriveV2("download-from-drive", {
-					label: "Download File From Google Drive",
-					googleDriveOAuth2ApiCredentials: googleDriveApiCredentials,
-					parameters: {
-						operation: "download",
-						fileId: {
-							mode: "id", // TODO: not sure if mode is required
-							value: "={{ $json.id }}",
+				({ $ }) =>
+					new GoogleDriveV2("download-from-drive", {
+						label: "Download File From Google Drive",
+						googleDriveOAuth2ApiCredentials: googleDriveApiCredentials,
+						parameters: {
+							operation: "download",
+							fileId: {
+								mode: "id", // TODO: not sure if mode is required
+								value: $("json.id").toExpression(),
+							},
+							options: {
+								fileName: $("json.name").toExpression(),
+							},
 						},
-						options: {
-							fileName: "={{ $json.name }}",
-						},
-					},
-				}),
+					}),
 			)
 			.next(
 				new VectorStorePinecone("upload-to-pinecone", {

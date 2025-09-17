@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MailjetTriggerNodeParameters } from "../nodes/MailjetTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MailjetTriggerProps extends NodeProps {
-    readonly parameters: MailjetTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MailjetTriggerNodeParameters;
     readonly mailjetEmailApiCredentials: Credentials<MailjetEmailApiCredentials>;
 }
 
 /**
  * Handle Mailjet events via webhooks
  */
-export class MailjetTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class MailjetTrigger<L extends string, C extends IContext = never, P extends MailjetTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mailjetTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: MailjetTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.mailjetEmailApiCredentials];
+        return [this.props.mailjetEmailApiCredentials];
     }
 
 }

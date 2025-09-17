@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SurveyMonkeyTriggerNodeParameters } from "../nodes/SurveyMonkeyTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface SurveyMonkeyTriggerProps extends NodeProps {
-    readonly parameters: SurveyMonkeyTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: SurveyMonkeyTriggerNodeParameters;
     readonly surveyMonkeyApiCredentials?: Credentials<SurveyMonkeyApiCredentials>;
     readonly surveyMonkeyOAuth2ApiCredentials?: Credentials<SurveyMonkeyOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface SurveyMonkeyTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Survey Monkey events occur
  */
-export class SurveyMonkeyTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class SurveyMonkeyTrigger<L extends string, C extends IContext = never, P extends SurveyMonkeyTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.surveyMonkeyTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: SurveyMonkeyTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.surveyMonkeyApiCredentials, this.props!.surveyMonkeyOAuth2ApiCredentials];
+        return [this.props?.surveyMonkeyApiCredentials, this.props?.surveyMonkeyOAuth2ApiCredentials];
     }
 
 }

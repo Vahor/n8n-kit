@@ -8,26 +8,29 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreSupabaseLoadNodeParameters } from "../nodes/VectorStoreSupabaseLoad";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VectorStoreSupabaseLoadProps extends NodeProps {
-    readonly parameters: VectorStoreSupabaseLoadNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VectorStoreSupabaseLoadNodeParameters;
     readonly supabaseApiCredentials: Credentials<SupabaseApiCredentials>;
 }
 
 /**
  * Load data from Supabase Vector Store index
  */
-export class VectorStoreSupabaseLoad<C extends IContext, L extends string> extends Node<L, C> {
+export class VectorStoreSupabaseLoad<L extends string, C extends IContext = never, P extends VectorStoreSupabaseLoadProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreSupabaseLoad" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: VectorStoreSupabaseLoadProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.supabaseApiCredentials];
+        return [this.props.supabaseApiCredentials];
     }
 
     public withEmbedding(next: State): this {

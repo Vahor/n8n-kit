@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { MarkdownNodeParameters } from "../nodes/Markdown";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MarkdownProps extends NodeProps {
-    readonly parameters: MarkdownNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MarkdownNodeParameters;
 }
 
 /**
  * Convert data between Markdown and HTML
  */
-export class Markdown<C extends IContext, L extends string> extends Node<L, C> {
+export class Markdown<L extends string, C extends IContext = never, P extends MarkdownProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.markdown" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: MarkdownProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

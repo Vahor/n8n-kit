@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { PostmarkTriggerNodeParameters } from "../nodes/PostmarkTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface PostmarkTriggerProps extends NodeProps {
-    readonly parameters: PostmarkTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: PostmarkTriggerNodeParameters;
     readonly postmarkApiCredentials: Credentials<PostmarkApiCredentials>;
 }
 
 /**
  * Starts the workflow when Postmark events occur
  */
-export class PostmarkTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class PostmarkTrigger<L extends string, C extends IContext = never, P extends PostmarkTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.postmarkTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: PostmarkTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.postmarkApiCredentials];
+        return [this.props.postmarkApiCredentials];
     }
 
 }

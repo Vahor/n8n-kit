@@ -8,11 +8,11 @@ export interface ExecuteWorkflowTriggerProps extends NodeProps {
 	parameters?: Omit<ExecuteWorkflowTriggerNodeParameters, "workflowInputs">;
 }
 
-// @ts-expect-error: we override the parameters type
+// @ts-expect-error: we override the type
 export class ExecuteWorkflowTrigger<
 	L extends string,
 	Input extends Type,
-> extends _ExecuteWorkflowTrigger<Input["infer"], L> {
+> extends _ExecuteWorkflowTrigger<L, Input["infer"]> {
 	public constructor(
 		private readonly workflow: Workflow<Input, any>,
 		id: L,

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { RabbitMQTriggerNodeParameters } from "../nodes/RabbitMQTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface RabbitMQTriggerProps extends NodeProps {
-    readonly parameters: RabbitMQTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: RabbitMQTriggerNodeParameters;
     readonly rabbitmqCredentials: Credentials<RabbitMQCredentials>;
 }
 
 /**
  * Listens to RabbitMQ messages
  */
-export class RabbitMQTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class RabbitMQTrigger<L extends string, C extends IContext = never, P extends RabbitMQTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.rabbitmqTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: RabbitMQTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.rabbitmqCredentials];
+        return [this.props.rabbitmqCredentials];
     }
 
 }

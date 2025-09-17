@@ -1,15 +1,14 @@
-import type { RespondToWebhookNodeParameters } from "../generated/nodes/RespondToWebhook";
-import { RespondToWebhook as _WebhookResponse } from "../generated/nodes-impl/RespondToWebhook";
-import type { NodeProps } from "./node";
+import {
+	RespondToWebhook as _WebhookResponse,
+	type RespondToWebhookProps as _WebhookResponseProps,
+} from "../generated/nodes-impl/RespondToWebhook";
+import type { RequireFields } from "../utils/types";
 
-export interface WebhookResponseProps extends NodeProps {
-	parameters: RespondToWebhookNodeParameters;
-}
-
-export class WebhookResponse<L extends string> extends _WebhookResponse<{}, L> {
+// @ts-expect-error: we override the type.
+export class WebhookResponse<L extends string> extends _WebhookResponse<L> {
 	constructor(
 		id: L,
-		override props: WebhookResponseProps,
+		override props: RequireFields<_WebhookResponseProps, "parameters">,
 	) {
 		super(id, props as any);
 	}

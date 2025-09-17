@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SlackV2NodeParameters } from "../nodes/SlackV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface SlackV2Props extends NodeProps {
-    readonly parameters: SlackV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: SlackV2NodeParameters;
     readonly slackApiCredentials?: Credentials<SlackApiCredentials>;
     readonly slackOAuth2ApiCredentials?: Credentials<SlackOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface SlackV2Props extends NodeProps {
 /**
  * Consume Slack API
  */
-export class SlackV2<C extends IContext, L extends string> extends Node<L, C> {
+export class SlackV2<L extends string, C extends IContext = never, P extends SlackV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.slack" as const;
     protected typeVersion = 2.3 as const;
 
-    constructor(id: L, override props?: SlackV2Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.slackApiCredentials, this.props!.slackOAuth2ApiCredentials];
+        return [this.props?.slackApiCredentials, this.props?.slackOAuth2ApiCredentials];
     }
 
 }

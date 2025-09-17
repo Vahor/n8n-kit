@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AirtopNodeParameters } from "../nodes/Airtop";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AirtopProps extends NodeProps {
-    readonly parameters: AirtopNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AirtopNodeParameters;
     readonly airtopApiCredentials: Credentials<AirtopApiCredentials>;
 }
 
 /**
  * Scrape and control any site with Airtop
  */
-export class Airtop<C extends IContext, L extends string> extends Node<L, C> {
+export class Airtop<L extends string, C extends IContext = never, P extends AirtopProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.airtop" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AirtopProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.airtopApiCredentials];
+        return [this.props.airtopApiCredentials];
     }
 
 }

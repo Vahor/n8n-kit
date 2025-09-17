@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryXataNodeParameters } from "../nodes/MemoryXata";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MemoryXataProps extends NodeProps {
-    readonly parameters: MemoryXataNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MemoryXataNodeParameters;
     readonly xataApiCredentials: Credentials<XataApiCredentials>;
 }
 
 /**
  * Use Xata Memory
  */
-export class MemoryXata<C extends IContext, L extends string> extends Node<L, C> {
+export class MemoryXata<L extends string, C extends IContext = never, P extends MemoryXataProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.memoryXata" as const;
     protected typeVersion = 1.4 as const;
 
-    constructor(id: L, override props: MemoryXataProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.xataApiCredentials];
+        return [this.props.xataApiCredentials];
     }
 
     public toAiMemory(next: IChainable): this {

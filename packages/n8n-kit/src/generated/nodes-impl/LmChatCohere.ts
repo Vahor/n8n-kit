@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatCohereNodeParameters } from "../nodes/LmChatCohere";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface LmChatCohereProps extends NodeProps {
-    readonly parameters: LmChatCohereNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: LmChatCohereNodeParameters;
     readonly cohereApiCredentials: Credentials<CohereApiCredentials>;
 }
 
 /**
  * For advanced usage with an AI chain
  */
-export class LmChatCohere<C extends IContext, L extends string> extends Node<L, C> {
+export class LmChatCohere<L extends string, C extends IContext = never, P extends LmChatCohereProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatCohere" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: LmChatCohereProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.cohereApiCredentials];
+        return [this.props.cohereApiCredentials];
     }
 
     public toAiLanguageModel(next: IChainable): this {

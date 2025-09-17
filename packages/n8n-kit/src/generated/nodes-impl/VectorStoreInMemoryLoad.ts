@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreInMemoryLoadNodeParameters } from "../nodes/VectorStoreInMemoryLoad";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VectorStoreInMemoryLoadProps extends NodeProps {
-    readonly parameters: VectorStoreInMemoryLoadNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VectorStoreInMemoryLoadNodeParameters;
 }
 
 /**
  * Load embedded data from an in-memory vector store
  */
-export class VectorStoreInMemoryLoad<C extends IContext, L extends string> extends Node<L, C> {
+export class VectorStoreInMemoryLoad<L extends string, C extends IContext = never, P extends VectorStoreInMemoryLoadProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreInMemoryLoad" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: VectorStoreInMemoryLoadProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

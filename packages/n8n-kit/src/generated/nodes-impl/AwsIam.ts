@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AwsIamNodeParameters } from "../nodes/AwsIam";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AwsIamProps extends NodeProps {
-    readonly parameters: AwsIamNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AwsIamNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 }
 
 /**
  * Interacts with Amazon IAM
  */
-export class AwsIam<C extends IContext, L extends string> extends Node<L, C> {
+export class AwsIam<L extends string, C extends IContext = never, P extends AwsIamProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.awsIam" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AwsIamProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.awsCredentials];
+        return [this.props.awsCredentials];
     }
 
 }

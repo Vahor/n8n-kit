@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BitlyNodeParameters } from "../nodes/Bitly";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface BitlyProps extends NodeProps {
-    readonly parameters: BitlyNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: BitlyNodeParameters;
     readonly bitlyApiCredentials?: Credentials<BitlyApiCredentials>;
     readonly bitlyOAuth2ApiCredentials?: Credentials<BitlyOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface BitlyProps extends NodeProps {
 /**
  * Consume Bitly API
  */
-export class Bitly<C extends IContext, L extends string> extends Node<L, C> {
+export class Bitly<L extends string, C extends IContext = never, P extends BitlyProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.bitly" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: BitlyProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.bitlyApiCredentials, this.props!.bitlyOAuth2ApiCredentials];
+        return [this.props?.bitlyApiCredentials, this.props?.bitlyOAuth2ApiCredentials];
     }
 
 }

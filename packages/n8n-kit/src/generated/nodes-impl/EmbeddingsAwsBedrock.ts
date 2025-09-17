@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsAwsBedrockNodeParameters } from "../nodes/EmbeddingsAwsBedrock";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface EmbeddingsAwsBedrockProps extends NodeProps {
-    readonly parameters: EmbeddingsAwsBedrockNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: EmbeddingsAwsBedrockNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 }
 
 /**
  * Use Embeddings AWS Bedrock
  */
-export class EmbeddingsAwsBedrock<C extends IContext, L extends string> extends Node<L, C> {
+export class EmbeddingsAwsBedrock<L extends string, C extends IContext = never, P extends EmbeddingsAwsBedrockProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsAwsBedrock" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: EmbeddingsAwsBedrockProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.awsCredentials];
+        return [this.props.awsCredentials];
     }
 
     public toAiEmbedding(next: IChainable): this {

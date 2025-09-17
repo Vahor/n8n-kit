@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { StopAndErrorNodeParameters } from "../nodes/StopAndError";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface StopAndErrorProps extends NodeProps {
-    readonly parameters: StopAndErrorNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: StopAndErrorNodeParameters;
 }
 
 /**
  * Throw an error in the workflow
  */
-export class StopAndError<C extends IContext, L extends string> extends Node<L, C> {
+export class StopAndError<L extends string, C extends IContext = never, P extends StopAndErrorProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.stopAndError" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: StopAndErrorProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

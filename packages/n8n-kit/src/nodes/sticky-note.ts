@@ -22,8 +22,8 @@ export interface StickyNoteProps extends NodeProps {
 	};
 }
 
-// @ts-expect-error: we override the parameters type
-export class StickyNote<L extends string> extends _StickyNote<{}, L> {
+// @ts-expect-error: we override the type.
+export class StickyNote<L extends string> extends _StickyNote<L> {
 	/** @internal */
 	override endStates: INextable[] = NO_END_STATES;
 

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmOpenHuggingFaceInferenceNodeParameters } from "../nodes/LmOpenHuggingFaceInference";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface LmOpenHuggingFaceInferenceProps extends NodeProps {
-    readonly parameters: LmOpenHuggingFaceInferenceNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: LmOpenHuggingFaceInferenceNodeParameters;
     readonly huggingFaceApiCredentials: Credentials<HuggingFaceApiCredentials>;
 }
 
 /**
  * Language Model HuggingFaceInference
  */
-export class LmOpenHuggingFaceInference<C extends IContext, L extends string> extends Node<L, C> {
+export class LmOpenHuggingFaceInference<L extends string, C extends IContext = never, P extends LmOpenHuggingFaceInferenceProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.lmOpenHuggingFaceInference" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: LmOpenHuggingFaceInferenceProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.huggingFaceApiCredentials];
+        return [this.props.huggingFaceApiCredentials];
     }
 
     public toAiLanguageModel(next: IChainable): this {

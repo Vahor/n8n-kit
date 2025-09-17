@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GoogleDriveV2NodeParameters } from "../nodes/GoogleDriveV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GoogleDriveV2Props extends NodeProps {
-    readonly parameters: GoogleDriveV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GoogleDriveV2NodeParameters;
     readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
     readonly googleDriveOAuth2ApiCredentials?: Credentials<GoogleDriveOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface GoogleDriveV2Props extends NodeProps {
 /**
  * Access data on Google Drive
  */
-export class GoogleDriveV2<C extends IContext, L extends string> extends Node<L, C> {
+export class GoogleDriveV2<L extends string, C extends IContext = never, P extends GoogleDriveV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.googleDrive" as const;
     protected typeVersion = 3 as const;
 
-    constructor(id: L, override props?: GoogleDriveV2Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.googleApiCredentials, this.props!.googleDriveOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleDriveOAuth2ApiCredentials];
     }
 
 }

@@ -9,9 +9,12 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { McpTriggerNodeParameters } from "../nodes/McpTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface McpTriggerProps extends NodeProps {
-    readonly parameters: McpTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: McpTriggerNodeParameters;
     readonly httpBearerAuthCredentials?: Credentials<HttpBearerAuthCredentials>;
     readonly httpHeaderAuthCredentials?: Credentials<HttpHeaderAuthCredentials>;
 }
@@ -19,17 +22,17 @@ export interface McpTriggerProps extends NodeProps {
 /**
  * Expose n8n tools as an MCP Server endpoint
  */
-export class McpTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class McpTrigger<L extends string, C extends IContext = never, P extends McpTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.mcpTrigger" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, override props?: McpTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.httpBearerAuthCredentials, this.props!.httpHeaderAuthCredentials];
+        return [this.props?.httpBearerAuthCredentials, this.props?.httpHeaderAuthCredentials];
     }
 
     public withTools(next: State): this {

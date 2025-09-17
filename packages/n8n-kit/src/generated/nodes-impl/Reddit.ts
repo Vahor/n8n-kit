@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { RedditNodeParameters } from "../nodes/Reddit";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface RedditProps extends NodeProps {
-    readonly parameters: RedditNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: RedditNodeParameters;
     readonly redditOAuth2ApiCredentials?: Credentials<RedditOAuth2ApiCredentials>;
 }
 
 /**
  * Consume the Reddit API
  */
-export class Reddit<C extends IContext, L extends string> extends Node<L, C> {
+export class Reddit<L extends string, C extends IContext = never, P extends RedditProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.reddit" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: RedditProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.redditOAuth2ApiCredentials];
+        return [this.props?.redditOAuth2ApiCredentials];
     }
 
 }

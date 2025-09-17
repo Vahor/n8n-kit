@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MetabaseNodeParameters } from "../nodes/Metabase";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MetabaseProps extends NodeProps {
-    readonly parameters: MetabaseNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MetabaseNodeParameters;
     readonly metabaseApiCredentials: Credentials<MetabaseApiCredentials>;
 }
 
 /**
  * Use the Metabase API
  */
-export class Metabase<C extends IContext, L extends string> extends Node<L, C> {
+export class Metabase<L extends string, C extends IContext = never, P extends MetabaseProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.metabase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: MetabaseProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.metabaseApiCredentials];
+        return [this.props.metabaseApiCredentials];
     }
 
 }

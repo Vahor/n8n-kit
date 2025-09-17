@@ -83,12 +83,15 @@ const generateTypescriptNodeOutput = async (
 		`import type { ${result.nodeName}NodeParameters } from "../nodes/${result.nodeName}";`,
 	);
 	code.line(`import { Node, type NodeProps } from "../../nodes/node";`);
+	code.line(`import type { Type } from "arktype";`);
 
 	code.line();
 
 	// interface
 	code.openBlock(`export interface ${result.nodeName}Props extends NodeProps`);
-	code.line(`readonly parameters: ${result.nodeName}NodeParameters;`);
+	code.line(`/** {@inheritDoc OutputSchema} */`);
+	code.line(`readonly outputSchema?: Type;`);
+	code.line(`readonly parameters?: ${result.nodeName}NodeParameters;`);
 	for (const cred of result.credentials) {
 		const credName = code.toCamelCase(cred.name);
 		code.line(
@@ -104,7 +107,7 @@ const generateTypescriptNodeOutput = async (
 	code.line(` * ${result.description}`);
 	code.line(` */`);
 	code.openBlock(
-		`export class ${result.nodeName}<C extends IContext, L extends string> extends Node<L, C>`,
+		`export class ${result.nodeName}<L extends string, C extends IContext = never, P extends ${result.nodeName}Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]>`,
 	);
 
 	code.line(`protected type = "${result.type}" as const;`);
@@ -113,7 +116,7 @@ const generateTypescriptNodeOutput = async (
 
 	const hasRequiredProps = result.credentials.some((cred) => cred.required);
 	code.openBlock(
-		`constructor(id: L, override props${hasRequiredProps ? "" : "?"}: ${result.nodeName}Props)`,
+		`constructor(id: L, override props${hasRequiredProps ? "" : "?"}: P)`,
 	);
 	code.line(`super(id, props);`);
 	if (hasInputs) {
@@ -131,7 +134,7 @@ const generateTypescriptNodeOutput = async (
 		);
 		code.openBlock(`override getCredentials()`);
 		code.line(
-			`return [${credsArray.map((c) => `this.props!.${c}Credentials`).join(", ")}];`,
+			`return [${credsArray.map((c) => `this.props${hasRequiredProps ? "" : "?"}.${c}Credentials`).join(", ")}];`,
 		);
 		code.closeBlock();
 		code.line();

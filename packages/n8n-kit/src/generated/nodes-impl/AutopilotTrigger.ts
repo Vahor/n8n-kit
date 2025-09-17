@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AutopilotTriggerNodeParameters } from "../nodes/AutopilotTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AutopilotTriggerProps extends NodeProps {
-    readonly parameters: AutopilotTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AutopilotTriggerNodeParameters;
     readonly autopilotApiCredentials: Credentials<AutopilotApiCredentials>;
 }
 
 /**
  * Handle Autopilot events via webhooks
  */
-export class AutopilotTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class AutopilotTrigger<L extends string, C extends IContext = never, P extends AutopilotTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.autopilotTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AutopilotTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.autopilotApiCredentials];
+        return [this.props.autopilotApiCredentials];
     }
 
 }

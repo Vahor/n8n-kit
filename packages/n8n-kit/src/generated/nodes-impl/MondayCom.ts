@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MondayComNodeParameters } from "../nodes/MondayCom";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MondayComProps extends NodeProps {
-    readonly parameters: MondayComNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MondayComNodeParameters;
     readonly mondayComApiCredentials?: Credentials<MondayComApiCredentials>;
     readonly mondayComOAuth2ApiCredentials?: Credentials<MondayComOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface MondayComProps extends NodeProps {
 /**
  * Consume Monday.com API
  */
-export class MondayCom<C extends IContext, L extends string> extends Node<L, C> {
+export class MondayCom<L extends string, C extends IContext = never, P extends MondayComProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mondayCom" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: MondayComProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.mondayComApiCredentials, this.props!.mondayComOAuth2ApiCredentials];
+        return [this.props?.mondayComApiCredentials, this.props?.mondayComOAuth2ApiCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SendGridNodeParameters } from "../nodes/SendGrid";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface SendGridProps extends NodeProps {
-    readonly parameters: SendGridNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: SendGridNodeParameters;
     readonly sendGridApiCredentials: Credentials<SendGridApiCredentials>;
 }
 
 /**
  * Consume SendGrid API
  */
-export class SendGrid<C extends IContext, L extends string> extends Node<L, C> {
+export class SendGrid<L extends string, C extends IContext = never, P extends SendGridProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.sendGrid" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: SendGridProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.sendGridApiCredentials];
+        return [this.props.sendGridApiCredentials];
     }
 
 }

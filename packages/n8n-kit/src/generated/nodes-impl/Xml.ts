@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { XmlNodeParameters } from "../nodes/Xml";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface XmlProps extends NodeProps {
-    readonly parameters: XmlNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: XmlNodeParameters;
 }
 
 /**
  * Convert data from and to XML
  */
-export class Xml<C extends IContext, L extends string> extends Node<L, C> {
+export class Xml<L extends string, C extends IContext = never, P extends XmlProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.xml" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: XmlProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

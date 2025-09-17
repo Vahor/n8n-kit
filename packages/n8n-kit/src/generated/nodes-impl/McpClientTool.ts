@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { McpClientToolNodeParameters } from "../nodes/McpClientTool";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface McpClientToolProps extends NodeProps {
-    readonly parameters: McpClientToolNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: McpClientToolNodeParameters;
     readonly httpBearerAuthCredentials?: Credentials<HttpBearerAuthCredentials>;
     readonly httpHeaderAuthCredentials?: Credentials<HttpHeaderAuthCredentials>;
 }
@@ -17,16 +20,16 @@ export interface McpClientToolProps extends NodeProps {
 /**
  * Connect tools from an MCP Server
  */
-export class McpClientTool<C extends IContext, L extends string> extends Node<L, C> {
+export class McpClientTool<L extends string, C extends IContext = never, P extends McpClientToolProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: McpClientToolProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.httpBearerAuthCredentials, this.props!.httpHeaderAuthCredentials];
+        return [this.props?.httpBearerAuthCredentials, this.props?.httpHeaderAuthCredentials];
     }
 
     public toTools(next: IChainable): this {

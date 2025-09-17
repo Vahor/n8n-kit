@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { StickyNoteNodeParameters } from "../nodes/StickyNote";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface StickyNoteProps extends NodeProps {
-    readonly parameters: StickyNoteNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: StickyNoteNodeParameters;
 }
 
 /**
  * Make your workflow easier to understand
  */
-export class StickyNote<C extends IContext, L extends string> extends Node<L, C> {
+export class StickyNote<L extends string, C extends IContext = never, P extends StickyNoteProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.stickyNote" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: StickyNoteProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

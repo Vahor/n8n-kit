@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BeeminderNodeParameters } from "../nodes/Beeminder";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface BeeminderProps extends NodeProps {
-    readonly parameters: BeeminderNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: BeeminderNodeParameters;
     readonly beeminderApiCredentials?: Credentials<BeeminderApiCredentials>;
     readonly beeminderOAuth2ApiCredentials?: Credentials<BeeminderOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface BeeminderProps extends NodeProps {
 /**
  * Consume Beeminder API
  */
-export class Beeminder<C extends IContext, L extends string> extends Node<L, C> {
+export class Beeminder<L extends string, C extends IContext = never, P extends BeeminderProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.beeminder" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: BeeminderProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.beeminderApiCredentials, this.props!.beeminderOAuth2ApiCredentials];
+        return [this.props?.beeminderApiCredentials, this.props?.beeminderOAuth2ApiCredentials];
     }
 
 }

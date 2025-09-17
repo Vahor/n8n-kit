@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { FunctionItemNodeParameters } from "../nodes/FunctionItem";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface FunctionItemProps extends NodeProps {
-    readonly parameters: FunctionItemNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: FunctionItemNodeParameters;
 }
 
 /**
  * Run custom function code which gets executed once per item
  */
-export class FunctionItem<C extends IContext, L extends string> extends Node<L, C> {
+export class FunctionItem<L extends string, C extends IContext = never, P extends FunctionItemProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.functionItem" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: FunctionItemProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

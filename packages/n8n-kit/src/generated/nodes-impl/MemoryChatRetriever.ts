@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { MemoryChatRetrieverNodeParameters } from "../nodes/MemoryChatRetriever";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MemoryChatRetrieverProps extends NodeProps {
-    readonly parameters: MemoryChatRetrieverNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MemoryChatRetrieverNodeParameters;
 }
 
 /**
  * Retrieve chat messages from memory and use them in the workflow
  */
-export class MemoryChatRetriever<C extends IContext, L extends string> extends Node<L, C> {
+export class MemoryChatRetriever<L extends string, C extends IContext = never, P extends MemoryChatRetrieverProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.memoryChatRetriever" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: MemoryChatRetrieverProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
