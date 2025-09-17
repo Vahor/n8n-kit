@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { PeekalinkNodeParameters } from "../nodes/Peekalink";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface PeekalinkProps extends NodeProps {
-    readonly parameters: PeekalinkNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: PeekalinkNodeParameters;
     readonly peekalinkApiCredentials: Credentials<PeekalinkApiCredentials>;
 }
 
 /**
  * Consume the Peekalink API
  */
-export class Peekalink<C extends IContext, L extends string> extends Node<L, C> {
+export class Peekalink<L extends string, C extends IContext = never, P extends PeekalinkProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.peekalink" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: PeekalinkProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.peekalinkApiCredentials];
+        return [this.props.peekalinkApiCredentials];
     }
 
 }

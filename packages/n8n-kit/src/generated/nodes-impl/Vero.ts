@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { VeroNodeParameters } from "../nodes/Vero";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VeroProps extends NodeProps {
-    readonly parameters: VeroNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VeroNodeParameters;
     readonly veroApiCredentials: Credentials<VeroApiCredentials>;
 }
 
 /**
  * Consume Vero API
  */
-export class Vero<C extends IContext, L extends string> extends Node<L, C> {
+export class Vero<L extends string, C extends IContext = never, P extends VeroProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.vero" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: VeroProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.veroApiCredentials];
+        return [this.props.veroApiCredentials];
     }
 
 }

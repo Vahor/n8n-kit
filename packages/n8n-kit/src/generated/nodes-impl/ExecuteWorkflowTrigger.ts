@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { ExecuteWorkflowTriggerNodeParameters } from "../nodes/ExecuteWorkflowTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ExecuteWorkflowTriggerProps extends NodeProps {
-    readonly parameters: ExecuteWorkflowTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ExecuteWorkflowTriggerNodeParameters;
 }
 
 /**
  * Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.
  */
-export class ExecuteWorkflowTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class ExecuteWorkflowTrigger<L extends string, C extends IContext = never, P extends ExecuteWorkflowTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.executeWorkflowTrigger" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: ExecuteWorkflowTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

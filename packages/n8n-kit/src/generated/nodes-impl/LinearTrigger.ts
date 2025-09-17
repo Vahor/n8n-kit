@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { LinearTriggerNodeParameters } from "../nodes/LinearTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface LinearTriggerProps extends NodeProps {
-    readonly parameters: LinearTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: LinearTriggerNodeParameters;
     readonly linearApiCredentials?: Credentials<LinearApiCredentials>;
     readonly linearOAuth2ApiCredentials?: Credentials<LinearOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface LinearTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Linear events occur
  */
-export class LinearTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class LinearTrigger<L extends string, C extends IContext = never, P extends LinearTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.linearTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: LinearTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.linearApiCredentials, this.props!.linearOAuth2ApiCredentials];
+        return [this.props?.linearApiCredentials, this.props?.linearOAuth2ApiCredentials];
     }
 
 }

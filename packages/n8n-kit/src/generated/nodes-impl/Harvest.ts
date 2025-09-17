@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { HarvestNodeParameters } from "../nodes/Harvest";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface HarvestProps extends NodeProps {
-    readonly parameters: HarvestNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: HarvestNodeParameters;
     readonly harvestApiCredentials?: Credentials<HarvestApiCredentials>;
     readonly harvestOAuth2ApiCredentials?: Credentials<HarvestOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface HarvestProps extends NodeProps {
 /**
  * Access data on Harvest
  */
-export class Harvest<C extends IContext, L extends string> extends Node<L, C> {
+export class Harvest<L extends string, C extends IContext = never, P extends HarvestProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.harvest" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: HarvestProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.harvestApiCredentials, this.props!.harvestOAuth2ApiCredentials];
+        return [this.props?.harvestApiCredentials, this.props?.harvestOAuth2ApiCredentials];
     }
 
 }

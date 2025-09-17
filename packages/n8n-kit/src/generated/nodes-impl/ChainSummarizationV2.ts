@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChainSummarizationV2NodeParameters } from "../nodes/ChainSummarizationV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ChainSummarizationV2Props extends NodeProps {
-    readonly parameters: ChainSummarizationV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ChainSummarizationV2NodeParameters;
 }
 
 /**
  * Transforms text into a concise summary
  */
-export class ChainSummarizationV2<C extends IContext, L extends string> extends Node<L, C> {
+export class ChainSummarizationV2<L extends string, C extends IContext = never, P extends ChainSummarizationV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.chainSummarization" as const;
     protected typeVersion = 2.1 as const;
 
-    constructor(id: L, override props?: ChainSummarizationV2Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

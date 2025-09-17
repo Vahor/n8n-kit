@@ -8,9 +8,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SentryIoNodeParameters } from "../nodes/SentryIo";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface SentryIoProps extends NodeProps {
-    readonly parameters: SentryIoNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: SentryIoNodeParameters;
     readonly sentryIoOAuth2ApiCredentials?: Credentials<SentryIoOAuth2ApiCredentials>;
     readonly sentryIoApiCredentials?: Credentials<SentryIoApiCredentials>;
     readonly sentryIoServerApiCredentials?: Credentials<SentryIoServerApiCredentials>;
@@ -19,16 +22,16 @@ export interface SentryIoProps extends NodeProps {
 /**
  * Consume Sentry.io API
  */
-export class SentryIo<C extends IContext, L extends string> extends Node<L, C> {
+export class SentryIo<L extends string, C extends IContext = never, P extends SentryIoProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.sentryIo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: SentryIoProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.sentryIoOAuth2ApiCredentials, this.props!.sentryIoApiCredentials, this.props!.sentryIoServerApiCredentials];
+        return [this.props?.sentryIoOAuth2ApiCredentials, this.props?.sentryIoApiCredentials, this.props?.sentryIoServerApiCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { KafkaTriggerNodeParameters } from "../nodes/KafkaTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface KafkaTriggerProps extends NodeProps {
-    readonly parameters: KafkaTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: KafkaTriggerNodeParameters;
     readonly kafkaCredentials: Credentials<KafkaCredentials>;
 }
 
 /**
  * Consume messages from a Kafka topic
  */
-export class KafkaTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class KafkaTrigger<L extends string, C extends IContext = never, P extends KafkaTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.kafkaTrigger" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props: KafkaTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.kafkaCredentials];
+        return [this.props.kafkaCredentials];
     }
 
 }

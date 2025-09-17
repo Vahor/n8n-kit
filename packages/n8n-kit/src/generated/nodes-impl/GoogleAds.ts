@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GoogleAdsNodeParameters } from "../nodes/GoogleAds";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GoogleAdsProps extends NodeProps {
-    readonly parameters: GoogleAdsNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GoogleAdsNodeParameters;
     readonly googleAdsOAuth2ApiCredentials: Credentials<GoogleAdsOAuth2ApiCredentials>;
 }
 
 /**
  * Use the Google Ads API
  */
-export class GoogleAds<C extends IContext, L extends string> extends Node<L, C> {
+export class GoogleAds<L extends string, C extends IContext = never, P extends GoogleAdsProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.googleAds" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: GoogleAdsProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.googleAdsOAuth2ApiCredentials];
+        return [this.props.googleAdsOAuth2ApiCredentials];
     }
 
 }

@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { ExecuteCommandNodeParameters } from "../nodes/ExecuteCommand";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ExecuteCommandProps extends NodeProps {
-    readonly parameters: ExecuteCommandNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ExecuteCommandNodeParameters;
 }
 
 /**
  * Executes a command on the host
  */
-export class ExecuteCommand<C extends IContext, L extends string> extends Node<L, C> {
+export class ExecuteCommand<L extends string, C extends IContext = never, P extends ExecuteCommandProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.executeCommand" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: ExecuteCommandProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

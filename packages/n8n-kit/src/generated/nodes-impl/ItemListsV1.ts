@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { ItemListsV1NodeParameters } from "../nodes/ItemListsV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ItemListsV1Props extends NodeProps {
-    readonly parameters: ItemListsV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ItemListsV1NodeParameters;
 }
 
 /**
  * Helper for working with lists of items and transforming arrays
  */
-export class ItemListsV1<C extends IContext, L extends string> extends Node<L, C> {
+export class ItemListsV1<L extends string, C extends IContext = never, P extends ItemListsV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.itemLists" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: ItemListsV1Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

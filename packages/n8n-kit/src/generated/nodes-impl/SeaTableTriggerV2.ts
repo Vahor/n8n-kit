@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SeaTableTriggerV2NodeParameters } from "../nodes/SeaTableTriggerV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface SeaTableTriggerV2Props extends NodeProps {
-    readonly parameters: SeaTableTriggerV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: SeaTableTriggerV2NodeParameters;
     readonly seaTableApiCredentials: Credentials<SeaTableApiCredentials>;
 }
 
 /**
  * Starts the workflow when SeaTable events occur
  */
-export class SeaTableTriggerV2<C extends IContext, L extends string> extends Node<L, C> {
+export class SeaTableTriggerV2<L extends string, C extends IContext = never, P extends SeaTableTriggerV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.seaTableTrigger" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, override props: SeaTableTriggerV2Props) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.seaTableApiCredentials];
+        return [this.props.seaTableApiCredentials];
     }
 
 }

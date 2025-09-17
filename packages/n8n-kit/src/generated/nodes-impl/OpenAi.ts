@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { OpenAiNodeParameters } from "../nodes/OpenAi";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface OpenAiProps extends NodeProps {
-    readonly parameters: OpenAiNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: OpenAiNodeParameters;
     readonly openAiApiCredentials: Credentials<OpenAiApiCredentials>;
 }
 
 /**
  * Consume Open AI
  */
-export class OpenAi<C extends IContext, L extends string> extends Node<L, C> {
+export class OpenAi<L extends string, C extends IContext = never, P extends OpenAiProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.openAi" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props: OpenAiProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.openAiApiCredentials];
+        return [this.props.openAiApiCredentials];
     }
 
 }

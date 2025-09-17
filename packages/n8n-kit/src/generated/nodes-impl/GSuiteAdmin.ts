@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GSuiteAdminNodeParameters } from "../nodes/GSuiteAdmin";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GSuiteAdminProps extends NodeProps {
-    readonly parameters: GSuiteAdminNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GSuiteAdminNodeParameters;
     readonly gSuiteAdminOAuth2ApiCredentials: Credentials<GSuiteAdminOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Google Workspace Admin API
  */
-export class GSuiteAdmin<C extends IContext, L extends string> extends Node<L, C> {
+export class GSuiteAdmin<L extends string, C extends IContext = never, P extends GSuiteAdminProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.gSuiteAdmin" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: GSuiteAdminProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.gSuiteAdminOAuth2ApiCredentials];
+        return [this.props.gSuiteAdminOAuth2ApiCredentials];
     }
 
 }

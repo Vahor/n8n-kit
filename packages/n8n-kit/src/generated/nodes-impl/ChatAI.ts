@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChatAINodeParameters } from "../nodes/ChatAI";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ChatAIProps extends NodeProps {
-    readonly parameters: ChatAINodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ChatAINodeParameters;
 }
 
 /**
  * Send a message to a chat
  */
-export class ChatAI<C extends IContext, L extends string> extends Node<L, C> {
+export class ChatAI<L extends string, C extends IContext = never, P extends ChatAIProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.chat" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: ChatAIProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

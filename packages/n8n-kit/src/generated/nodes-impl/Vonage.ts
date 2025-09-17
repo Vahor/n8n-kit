@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { VonageNodeParameters } from "../nodes/Vonage";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VonageProps extends NodeProps {
-    readonly parameters: VonageNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VonageNodeParameters;
     readonly vonageApiCredentials: Credentials<VonageApiCredentials>;
 }
 
 /**
  * Consume Vonage API
  */
-export class Vonage<C extends IContext, L extends string> extends Node<L, C> {
+export class Vonage<L extends string, C extends IContext = never, P extends VonageProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.vonage" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: VonageProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.vonageApiCredentials];
+        return [this.props.vonageApiCredentials];
     }
 
 }

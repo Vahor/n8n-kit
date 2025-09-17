@@ -8,26 +8,29 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreQdrantNodeParameters } from "../nodes/VectorStoreQdrant";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VectorStoreQdrantProps extends NodeProps {
-    readonly parameters: VectorStoreQdrantNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VectorStoreQdrantNodeParameters;
     readonly qdrantApiCredentials: Credentials<QdrantApiCredentials>;
 }
 
 /**
  * Work with your data in a Qdrant collection
  */
-export class VectorStoreQdrant<C extends IContext, L extends string> extends Node<L, C> {
+export class VectorStoreQdrant<L extends string, C extends IContext = never, P extends VectorStoreQdrantProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreQdrant" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, override props: VectorStoreQdrantProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.qdrantApiCredentials];
+        return [this.props.qdrantApiCredentials];
     }
 
     public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {

@@ -4,19 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { SwitchV3NodeParameters } from "../nodes/SwitchV3";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface SwitchV3Props extends NodeProps {
-    readonly parameters: SwitchV3NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: SwitchV3NodeParameters;
 }
 
 /**
  * Route items depending on defined expression or rules
  */
-export class SwitchV3<C extends IContext, L extends string> extends Node<L, C> {
+export class SwitchV3<L extends string, C extends IContext = never, P extends SwitchV3Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.switch" as const;
     protected typeVersion = 3.3 as const;
 
-    constructor(id: L, override props?: SwitchV3Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

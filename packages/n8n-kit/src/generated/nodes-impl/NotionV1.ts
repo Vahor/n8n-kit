@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { NotionV1NodeParameters } from "../nodes/NotionV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface NotionV1Props extends NodeProps {
-    readonly parameters: NotionV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: NotionV1NodeParameters;
     readonly notionApiCredentials: Credentials<NotionApiCredentials>;
 }
 
 /**
  * Consume Notion API
  */
-export class NotionV1<C extends IContext, L extends string> extends Node<L, C> {
+export class NotionV1<L extends string, C extends IContext = never, P extends NotionV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.notion" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: NotionV1Props) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.notionApiCredentials];
+        return [this.props.notionApiCredentials];
     }
 
 }

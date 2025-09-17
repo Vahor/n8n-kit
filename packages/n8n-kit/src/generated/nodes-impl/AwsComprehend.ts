@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AwsComprehendNodeParameters } from "../nodes/AwsComprehend";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AwsComprehendProps extends NodeProps {
-    readonly parameters: AwsComprehendNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AwsComprehendNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 }
 
 /**
  * Sends data to Amazon Comprehend
  */
-export class AwsComprehend<C extends IContext, L extends string> extends Node<L, C> {
+export class AwsComprehend<L extends string, C extends IContext = never, P extends AwsComprehendProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.awsComprehend" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AwsComprehendProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.awsCredentials];
+        return [this.props.awsCredentials];
     }
 
 }

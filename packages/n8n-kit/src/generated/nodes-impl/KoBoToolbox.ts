@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { KoBoToolboxNodeParameters } from "../nodes/KoBoToolbox";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface KoBoToolboxProps extends NodeProps {
-    readonly parameters: KoBoToolboxNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: KoBoToolboxNodeParameters;
     readonly koBoToolboxApiCredentials: Credentials<KoBoToolboxApiCredentials>;
 }
 
 /**
  * Work with KoBoToolbox forms and submissions
  */
-export class KoBoToolbox<C extends IContext, L extends string> extends Node<L, C> {
+export class KoBoToolbox<L extends string, C extends IContext = never, P extends KoBoToolboxProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.koBoToolbox" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: KoBoToolboxProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.koBoToolboxApiCredentials];
+        return [this.props.koBoToolboxApiCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftOutlookV1NodeParameters } from "../nodes/MicrosoftOutlookV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MicrosoftOutlookV1Props extends NodeProps {
-    readonly parameters: MicrosoftOutlookV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MicrosoftOutlookV1NodeParameters;
     readonly microsoftOutlookOAuth2ApiCredentials: Credentials<MicrosoftOutlookOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Microsoft Outlook API
  */
-export class MicrosoftOutlookV1<C extends IContext, L extends string> extends Node<L, C> {
+export class MicrosoftOutlookV1<L extends string, C extends IContext = never, P extends MicrosoftOutlookV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.microsoftOutlook" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: MicrosoftOutlookV1Props) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.microsoftOutlookOAuth2ApiCredentials];
+        return [this.props.microsoftOutlookOAuth2ApiCredentials];
     }
 
 }

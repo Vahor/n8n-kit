@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { WiseNodeParameters } from "../nodes/Wise";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface WiseProps extends NodeProps {
-    readonly parameters: WiseNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: WiseNodeParameters;
     readonly wiseApiCredentials: Credentials<WiseApiCredentials>;
 }
 
 /**
  * Consume the Wise API
  */
-export class Wise<C extends IContext, L extends string> extends Node<L, C> {
+export class Wise<L extends string, C extends IContext = never, P extends WiseProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.wise" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: WiseProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.wiseApiCredentials];
+        return [this.props.wiseApiCredentials];
     }
 
 }

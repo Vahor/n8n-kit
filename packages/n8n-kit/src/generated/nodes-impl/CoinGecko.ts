@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { CoinGeckoNodeParameters } from "../nodes/CoinGecko";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface CoinGeckoProps extends NodeProps {
-    readonly parameters: CoinGeckoNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: CoinGeckoNodeParameters;
 }
 
 /**
  * Consume CoinGecko API
  */
-export class CoinGecko<C extends IContext, L extends string> extends Node<L, C> {
+export class CoinGecko<L extends string, C extends IContext = never, P extends CoinGeckoProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.coinGecko" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: CoinGeckoProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

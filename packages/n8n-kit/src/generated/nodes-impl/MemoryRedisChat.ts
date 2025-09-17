@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { MemoryRedisChatNodeParameters } from "../nodes/MemoryRedisChat";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MemoryRedisChatProps extends NodeProps {
-    readonly parameters: MemoryRedisChatNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MemoryRedisChatNodeParameters;
     readonly redisCredentials: Credentials<RedisCredentials>;
 }
 
 /**
  * Stores the chat history in Redis.
  */
-export class MemoryRedisChat<C extends IContext, L extends string> extends Node<L, C> {
+export class MemoryRedisChat<L extends string, C extends IContext = never, P extends MemoryRedisChatProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.memoryRedisChat" as const;
     protected typeVersion = 1.5 as const;
 
-    constructor(id: L, override props: MemoryRedisChatProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.redisCredentials];
+        return [this.props.redisCredentials];
     }
 
     public toAiMemory(next: IChainable): this {

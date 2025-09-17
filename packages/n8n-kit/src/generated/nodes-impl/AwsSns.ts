@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AwsSnsNodeParameters } from "../nodes/AwsSns";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AwsSnsProps extends NodeProps {
-    readonly parameters: AwsSnsNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AwsSnsNodeParameters;
     readonly awsCredentials: Credentials<AwsCredentials>;
 }
 
 /**
  * Sends data to AWS SNS
  */
-export class AwsSns<C extends IContext, L extends string> extends Node<L, C> {
+export class AwsSns<L extends string, C extends IContext = never, P extends AwsSnsProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.awsSns" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: AwsSnsProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.awsCredentials];
+        return [this.props.awsCredentials];
     }
 
 }

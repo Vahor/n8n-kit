@@ -8,26 +8,29 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { VectorStoreWeaviateNodeParameters } from "../nodes/VectorStoreWeaviate";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VectorStoreWeaviateProps extends NodeProps {
-    readonly parameters: VectorStoreWeaviateNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VectorStoreWeaviateNodeParameters;
     readonly weaviateApiCredentials: Credentials<WeaviateApiCredentials>;
 }
 
 /**
  * Work with your data in a Weaviate Cluster
  */
-export class VectorStoreWeaviate<C extends IContext, L extends string> extends Node<L, C> {
+export class VectorStoreWeaviate<L extends string, C extends IContext = never, P extends VectorStoreWeaviateProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreWeaviate" as const;
     protected typeVersion = 1.3 as const;
 
-    constructor(id: L, override props: VectorStoreWeaviateProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.weaviateApiCredentials];
+        return [this.props.weaviateApiCredentials];
     }
 
     public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {

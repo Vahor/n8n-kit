@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GoogleTranslateNodeParameters } from "../nodes/GoogleTranslate";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GoogleTranslateProps extends NodeProps {
-    readonly parameters: GoogleTranslateNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GoogleTranslateNodeParameters;
     readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
     readonly googleTranslateOAuth2ApiCredentials?: Credentials<GoogleTranslateOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface GoogleTranslateProps extends NodeProps {
 /**
  * Translate data using Google Translate
  */
-export class GoogleTranslate<C extends IContext, L extends string> extends Node<L, C> {
+export class GoogleTranslate<L extends string, C extends IContext = never, P extends GoogleTranslateProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.googleTranslate" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, override props?: GoogleTranslateProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.googleApiCredentials, this.props!.googleTranslateOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleTranslateOAuth2ApiCredentials];
     }
 
 }

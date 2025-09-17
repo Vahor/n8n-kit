@@ -12,9 +12,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GraphQLNodeParameters } from "../nodes/GraphQL";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GraphQLProps extends NodeProps {
-    readonly parameters: GraphQLNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GraphQLNodeParameters;
     readonly httpBasicAuthCredentials?: Credentials<HttpBasicAuthCredentials>;
     readonly httpCustomAuthCredentials?: Credentials<HttpCustomAuthCredentials>;
     readonly httpDigestAuthCredentials?: Credentials<HttpDigestAuthCredentials>;
@@ -27,16 +30,16 @@ export interface GraphQLProps extends NodeProps {
 /**
  * Makes a GraphQL request and returns the received data
  */
-export class GraphQL<C extends IContext, L extends string> extends Node<L, C> {
+export class GraphQL<L extends string, C extends IContext = never, P extends GraphQLProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.graphql" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: GraphQLProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.httpBasicAuthCredentials, this.props!.httpCustomAuthCredentials, this.props!.httpDigestAuthCredentials, this.props!.httpHeaderAuthCredentials, this.props!.httpQueryAuthCredentials, this.props!.oAuth1ApiCredentials, this.props!.oAuth2ApiCredentials];
+        return [this.props?.httpBasicAuthCredentials, this.props?.httpCustomAuthCredentials, this.props?.httpDigestAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.httpQueryAuthCredentials, this.props?.oAuth1ApiCredentials, this.props?.oAuth2ApiCredentials];
     }
 
 }

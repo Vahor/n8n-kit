@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { TextClassifierNodeParameters } from "../nodes/TextClassifier";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface TextClassifierProps extends NodeProps {
-    readonly parameters: TextClassifierNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: TextClassifierNodeParameters;
 }
 
 /**
  * Classify your text into distinct categories
  */
-export class TextClassifier<C extends IContext, L extends string> extends Node<L, C> {
+export class TextClassifier<L extends string, C extends IContext = never, P extends TextClassifierProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.textClassifier" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: TextClassifierProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

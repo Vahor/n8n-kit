@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { FreshserviceNodeParameters } from "../nodes/Freshservice";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface FreshserviceProps extends NodeProps {
-    readonly parameters: FreshserviceNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: FreshserviceNodeParameters;
     readonly freshserviceApiCredentials: Credentials<FreshserviceApiCredentials>;
 }
 
 /**
  * Consume the Freshservice API
  */
-export class Freshservice<C extends IContext, L extends string> extends Node<L, C> {
+export class Freshservice<L extends string, C extends IContext = never, P extends FreshserviceProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.freshservice" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: FreshserviceProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.freshserviceApiCredentials];
+        return [this.props.freshserviceApiCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { VenafiTlsProtectCloudNodeParameters } from "../nodes/VenafiTlsProtectCloud";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface VenafiTlsProtectCloudProps extends NodeProps {
-    readonly parameters: VenafiTlsProtectCloudNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: VenafiTlsProtectCloudNodeParameters;
     readonly venafiTlsProtectCloudApiCredentials: Credentials<VenafiTlsProtectCloudApiCredentials>;
 }
 
 /**
  * Consume Venafi TLS Protect Cloud API
  */
-export class VenafiTlsProtectCloud<C extends IContext, L extends string> extends Node<L, C> {
+export class VenafiTlsProtectCloud<L extends string, C extends IContext = never, P extends VenafiTlsProtectCloudProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.venafiTlsProtectCloud" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: VenafiTlsProtectCloudProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.venafiTlsProtectCloudApiCredentials];
+        return [this.props.venafiTlsProtectCloudApiCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { CiscoWebexNodeParameters } from "../nodes/CiscoWebex";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface CiscoWebexProps extends NodeProps {
-    readonly parameters: CiscoWebexNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: CiscoWebexNodeParameters;
     readonly ciscoWebexOAuth2ApiCredentials: Credentials<CiscoWebexOAuth2ApiCredentials>;
 }
 
 /**
  * Consume the Cisco Webex API
  */
-export class CiscoWebex<C extends IContext, L extends string> extends Node<L, C> {
+export class CiscoWebex<L extends string, C extends IContext = never, P extends CiscoWebexProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.ciscoWebex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: CiscoWebexProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.ciscoWebexOAuth2ApiCredentials];
+        return [this.props.ciscoWebexOAuth2ApiCredentials];
     }
 
 }

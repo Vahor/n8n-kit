@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { DropcontactNodeParameters } from "../nodes/Dropcontact";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface DropcontactProps extends NodeProps {
-    readonly parameters: DropcontactNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: DropcontactNodeParameters;
     readonly dropcontactApiCredentials: Credentials<DropcontactApiCredentials>;
 }
 
 /**
  * Find B2B emails and enrich contacts
  */
-export class Dropcontact<C extends IContext, L extends string> extends Node<L, C> {
+export class Dropcontact<L extends string, C extends IContext = never, P extends DropcontactProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.dropcontact" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: DropcontactProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.dropcontactApiCredentials];
+        return [this.props.dropcontactApiCredentials];
     }
 
 }

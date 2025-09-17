@@ -4,19 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { TextSplitterTokenSplitterNodeParameters } from "../nodes/TextSplitterTokenSplitter";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface TextSplitterTokenSplitterProps extends NodeProps {
-    readonly parameters: TextSplitterTokenSplitterNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: TextSplitterTokenSplitterNodeParameters;
 }
 
 /**
  * Split text into chunks by tokens
  */
-export class TextSplitterTokenSplitter<C extends IContext, L extends string> extends Node<L, C> {
+export class TextSplitterTokenSplitter<L extends string, C extends IContext = never, P extends TextSplitterTokenSplitterProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: TextSplitterTokenSplitterProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

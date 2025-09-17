@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GetResponseNodeParameters } from "../nodes/GetResponse";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GetResponseProps extends NodeProps {
-    readonly parameters: GetResponseNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GetResponseNodeParameters;
     readonly getResponseApiCredentials?: Credentials<GetResponseApiCredentials>;
     readonly getResponseOAuth2ApiCredentials?: Credentials<GetResponseOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface GetResponseProps extends NodeProps {
 /**
  * Consume GetResponse API
  */
-export class GetResponse<C extends IContext, L extends string> extends Node<L, C> {
+export class GetResponse<L extends string, C extends IContext = never, P extends GetResponseProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.getResponse" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: GetResponseProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.getResponseApiCredentials, this.props!.getResponseOAuth2ApiCredentials];
+        return [this.props?.getResponseApiCredentials, this.props?.getResponseOAuth2ApiCredentials];
     }
 
 }

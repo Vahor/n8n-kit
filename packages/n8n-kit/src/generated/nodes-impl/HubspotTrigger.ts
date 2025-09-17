@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { HubspotTriggerNodeParameters } from "../nodes/HubspotTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface HubspotTriggerProps extends NodeProps {
-    readonly parameters: HubspotTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: HubspotTriggerNodeParameters;
     readonly hubspotDeveloperApiCredentials: Credentials<HubspotDeveloperApiCredentials>;
 }
 
 /**
  * Starts the workflow when HubSpot events occur
  */
-export class HubspotTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class HubspotTrigger<L extends string, C extends IContext = never, P extends HubspotTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.hubspotTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: HubspotTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.hubspotDeveloperApiCredentials];
+        return [this.props.hubspotDeveloperApiCredentials];
     }
 
 }

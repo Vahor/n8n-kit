@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { UpleadNodeParameters } from "../nodes/Uplead";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface UpleadProps extends NodeProps {
-    readonly parameters: UpleadNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: UpleadNodeParameters;
     readonly upleadApiCredentials: Credentials<UpleadApiCredentials>;
 }
 
 /**
  * Consume Uplead API
  */
-export class Uplead<C extends IContext, L extends string> extends Node<L, C> {
+export class Uplead<L extends string, C extends IContext = never, P extends UpleadProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.uplead" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: UpleadProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.upleadApiCredentials];
+        return [this.props.upleadApiCredentials];
     }
 
 }

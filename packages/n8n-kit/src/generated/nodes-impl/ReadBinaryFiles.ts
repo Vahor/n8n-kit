@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { ReadBinaryFilesNodeParameters } from "../nodes/ReadBinaryFiles";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ReadBinaryFilesProps extends NodeProps {
-    readonly parameters: ReadBinaryFilesNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ReadBinaryFilesNodeParameters;
 }
 
 /**
  * Reads binary files from disk
  */
-export class ReadBinaryFiles<C extends IContext, L extends string> extends Node<L, C> {
+export class ReadBinaryFiles<L extends string, C extends IContext = never, P extends ReadBinaryFilesProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.readBinaryFiles" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: ReadBinaryFilesProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

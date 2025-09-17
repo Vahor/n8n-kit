@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { LdapNodeParameters } from "../nodes/Ldap";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface LdapProps extends NodeProps {
-    readonly parameters: LdapNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: LdapNodeParameters;
     readonly ldapCredentials: Credentials<LdapCredentials>;
 }
 
 /**
  * Interact with LDAP servers
  */
-export class Ldap<C extends IContext, L extends string> extends Node<L, C> {
+export class Ldap<L extends string, C extends IContext = never, P extends LdapProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.ldap" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: LdapProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.ldapCredentials];
+        return [this.props.ldapCredentials];
     }
 
 }

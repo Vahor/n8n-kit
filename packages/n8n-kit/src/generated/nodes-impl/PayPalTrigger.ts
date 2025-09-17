@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { PayPalTriggerNodeParameters } from "../nodes/PayPalTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface PayPalTriggerProps extends NodeProps {
-    readonly parameters: PayPalTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: PayPalTriggerNodeParameters;
     readonly payPalApiCredentials: Credentials<PayPalApiCredentials>;
 }
 
 /**
  * Handle PayPal events via webhooks
  */
-export class PayPalTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class PayPalTrigger<L extends string, C extends IContext = never, P extends PayPalTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.payPalTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: PayPalTriggerProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.payPalApiCredentials];
+        return [this.props.payPalApiCredentials];
     }
 
 }

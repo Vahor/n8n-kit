@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolWolframAlphaNodeParameters } from "../nodes/ToolWolframAlpha";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ToolWolframAlphaProps extends NodeProps {
-    readonly parameters: ToolWolframAlphaNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ToolWolframAlphaNodeParameters;
     readonly wolframAlphaApiCredentials: Credentials<WolframAlphaApiCredentials>;
 }
 
 /**
  * Connects to WolframAlpha's computational intelligence engine.
  */
-export class ToolWolframAlpha<C extends IContext, L extends string> extends Node<L, C> {
+export class ToolWolframAlpha<L extends string, C extends IContext = never, P extends ToolWolframAlphaProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.toolWolframAlpha" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: ToolWolframAlphaProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.wolframAlphaApiCredentials];
+        return [this.props.wolframAlphaApiCredentials];
     }
 
     public toAiTool(next: IChainable): this {

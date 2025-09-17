@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { InformationExtractorNodeParameters } from "../nodes/InformationExtractor";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface InformationExtractorProps extends NodeProps {
-    readonly parameters: InformationExtractorNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: InformationExtractorNodeParameters;
 }
 
 /**
  * Extract information from text in a structured format
  */
-export class InformationExtractor<C extends IContext, L extends string> extends Node<L, C> {
+export class InformationExtractor<L extends string, C extends IContext = never, P extends InformationExtractorProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.informationExtractor" as const;
     protected typeVersion = 1.2 as const;
 
-    constructor(id: L, override props?: InformationExtractorProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { TwistNodeParameters } from "../nodes/Twist";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface TwistProps extends NodeProps {
-    readonly parameters: TwistNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: TwistNodeParameters;
     readonly twistOAuth2ApiCredentials: Credentials<TwistOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Twist API
  */
-export class Twist<C extends IContext, L extends string> extends Node<L, C> {
+export class Twist<L extends string, C extends IContext = never, P extends TwistProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.twist" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: TwistProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.twistOAuth2ApiCredentials];
+        return [this.props.twistOAuth2ApiCredentials];
     }
 
 }

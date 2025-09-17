@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentV2NodeParameters } from "../nodes/AgentV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AgentV2Props extends NodeProps {
-    readonly parameters: AgentV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AgentV2NodeParameters;
 }
 
 /**
  * Generates an action plan and executes it. Can use external tools.
  */
-export class AgentV2<C extends IContext, L extends string> extends Node<L, C> {
+export class AgentV2<L extends string, C extends IContext = never, P extends AgentV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;
     protected typeVersion = 2.2 as const;
 
-    constructor(id: L, override props?: AgentV2Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

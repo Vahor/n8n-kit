@@ -4,19 +4,22 @@
 import type { IContext } from "../../workflow/chain/types";
 import type { RemoveDuplicatesV2NodeParameters } from "../nodes/RemoveDuplicatesV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface RemoveDuplicatesV2Props extends NodeProps {
-    readonly parameters: RemoveDuplicatesV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: RemoveDuplicatesV2NodeParameters;
 }
 
 /**
  * Delete items with matching field values
  */
-export class RemoveDuplicatesV2<C extends IContext, L extends string> extends Node<L, C> {
+export class RemoveDuplicatesV2<L extends string, C extends IContext = never, P extends RemoveDuplicatesV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.removeDuplicates" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, override props?: RemoveDuplicatesV2Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

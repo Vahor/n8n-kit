@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftGraphSecurityNodeParameters } from "../nodes/MicrosoftGraphSecurity";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MicrosoftGraphSecurityProps extends NodeProps {
-    readonly parameters: MicrosoftGraphSecurityNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MicrosoftGraphSecurityNodeParameters;
     readonly microsoftGraphSecurityOAuth2ApiCredentials: Credentials<MicrosoftGraphSecurityOAuth2ApiCredentials>;
 }
 
 /**
  * Consume the Microsoft Graph Security API
  */
-export class MicrosoftGraphSecurity<C extends IContext, L extends string> extends Node<L, C> {
+export class MicrosoftGraphSecurity<L extends string, C extends IContext = never, P extends MicrosoftGraphSecurityProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.microsoftGraphSecurity" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: MicrosoftGraphSecurityProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.microsoftGraphSecurityOAuth2ApiCredentials];
+        return [this.props.microsoftGraphSecurityOAuth2ApiCredentials];
     }
 
 }

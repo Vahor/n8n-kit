@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ModelSelectorNodeParameters } from "../nodes/ModelSelector";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ModelSelectorProps extends NodeProps {
-    readonly parameters: ModelSelectorNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ModelSelectorNodeParameters;
 }
 
 /**
  * Use this node to select one of the connected models to this node based on workflow data
  */
-export class ModelSelector<C extends IContext, L extends string> extends Node<L, C> {
+export class ModelSelector<L extends string, C extends IContext = never, P extends ModelSelectorProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.modelSelector" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: ModelSelectorProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GoogleTasksNodeParameters } from "../nodes/GoogleTasks";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GoogleTasksProps extends NodeProps {
-    readonly parameters: GoogleTasksNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GoogleTasksNodeParameters;
     readonly googleTasksOAuth2ApiCredentials: Credentials<GoogleTasksOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Google Tasks API
  */
-export class GoogleTasks<C extends IContext, L extends string> extends Node<L, C> {
+export class GoogleTasks<L extends string, C extends IContext = never, P extends GoogleTasksProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.googleTasks" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: GoogleTasksProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.googleTasksOAuth2ApiCredentials];
+        return [this.props.googleTasksOAuth2ApiCredentials];
     }
 
 }

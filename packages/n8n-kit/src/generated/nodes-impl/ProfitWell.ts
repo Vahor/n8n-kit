@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { ProfitWellNodeParameters } from "../nodes/ProfitWell";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ProfitWellProps extends NodeProps {
-    readonly parameters: ProfitWellNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ProfitWellNodeParameters;
     readonly profitWellApiCredentials: Credentials<ProfitWellApiCredentials>;
 }
 
 /**
  * Consume ProfitWell API
  */
-export class ProfitWell<C extends IContext, L extends string> extends Node<L, C> {
+export class ProfitWell<L extends string, C extends IContext = never, P extends ProfitWellProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.profitWell" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: ProfitWellProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.profitWellApiCredentials];
+        return [this.props.profitWellApiCredentials];
     }
 
 }

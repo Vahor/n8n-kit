@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftTeamsV1NodeParameters } from "../nodes/MicrosoftTeamsV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MicrosoftTeamsV1Props extends NodeProps {
-    readonly parameters: MicrosoftTeamsV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MicrosoftTeamsV1NodeParameters;
     readonly microsoftTeamsOAuth2ApiCredentials: Credentials<MicrosoftTeamsOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Microsoft Teams API
  */
-export class MicrosoftTeamsV1<C extends IContext, L extends string> extends Node<L, C> {
+export class MicrosoftTeamsV1<L extends string, C extends IContext = never, P extends MicrosoftTeamsV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.microsoftTeams" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props: MicrosoftTeamsV1Props) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.microsoftTeamsOAuth2ApiCredentials];
+        return [this.props.microsoftTeamsOAuth2ApiCredentials];
     }
 
 }

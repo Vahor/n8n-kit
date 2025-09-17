@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { EmailReadImapV2NodeParameters } from "../nodes/EmailReadImapV2";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface EmailReadImapV2Props extends NodeProps {
-    readonly parameters: EmailReadImapV2NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: EmailReadImapV2NodeParameters;
     readonly imapCredentials: Credentials<ImapCredentials>;
 }
 
 /**
  * Triggers the workflow when a new email is received
  */
-export class EmailReadImapV2<C extends IContext, L extends string> extends Node<L, C> {
+export class EmailReadImapV2<L extends string, C extends IContext = never, P extends EmailReadImapV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.emailReadImap" as const;
     protected typeVersion = 2.1 as const;
 
-    constructor(id: L, override props: EmailReadImapV2Props) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.imapCredentials];
+        return [this.props.imapCredentials];
     }
 
 }

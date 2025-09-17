@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GitlabNodeParameters } from "../nodes/Gitlab";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface GitlabProps extends NodeProps {
-    readonly parameters: GitlabNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: GitlabNodeParameters;
     readonly gitlabApiCredentials?: Credentials<GitlabApiCredentials>;
     readonly gitlabOAuth2ApiCredentials?: Credentials<GitlabOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface GitlabProps extends NodeProps {
 /**
  * Retrieve data from GitLab API
  */
-export class Gitlab<C extends IContext, L extends string> extends Node<L, C> {
+export class Gitlab<L extends string, C extends IContext = never, P extends GitlabProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.gitlab" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: GitlabProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.gitlabApiCredentials, this.props!.gitlabOAuth2ApiCredentials];
+        return [this.props?.gitlabApiCredentials, this.props?.gitlabOAuth2ApiCredentials];
     }
 
 }

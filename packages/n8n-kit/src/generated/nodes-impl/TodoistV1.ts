@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { TodoistV1NodeParameters } from "../nodes/TodoistV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface TodoistV1Props extends NodeProps {
-    readonly parameters: TodoistV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: TodoistV1NodeParameters;
     readonly todoistApiCredentials?: Credentials<TodoistApiCredentials>;
     readonly todoistOAuth2ApiCredentials?: Credentials<TodoistOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface TodoistV1Props extends NodeProps {
 /**
  * Consume Todoist API
  */
-export class TodoistV1<C extends IContext, L extends string> extends Node<L, C> {
+export class TodoistV1<L extends string, C extends IContext = never, P extends TodoistV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.todoist" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: TodoistV1Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.todoistApiCredentials, this.props!.todoistOAuth2ApiCredentials];
+        return [this.props?.todoistApiCredentials, this.props?.todoistOAuth2ApiCredentials];
     }
 
 }

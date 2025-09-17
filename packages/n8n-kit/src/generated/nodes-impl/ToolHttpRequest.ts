@@ -4,19 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolHttpRequestNodeParameters } from "../nodes/ToolHttpRequest";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ToolHttpRequestProps extends NodeProps {
-    readonly parameters: ToolHttpRequestNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ToolHttpRequestNodeParameters;
 }
 
 /**
  * Makes an HTTP request and returns the response data
  */
-export class ToolHttpRequest<C extends IContext, L extends string> extends Node<L, C> {
+export class ToolHttpRequest<L extends string, C extends IContext = never, P extends ToolHttpRequestProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.toolHttpRequest" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props?: ToolHttpRequestProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 

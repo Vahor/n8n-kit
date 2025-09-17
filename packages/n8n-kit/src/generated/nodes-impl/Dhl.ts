@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { DhlNodeParameters } from "../nodes/Dhl";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface DhlProps extends NodeProps {
-    readonly parameters: DhlNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: DhlNodeParameters;
     readonly dhlApiCredentials: Credentials<DhlApiCredentials>;
 }
 
 /**
  * Consume DHL API
  */
-export class Dhl<C extends IContext, L extends string> extends Node<L, C> {
+export class Dhl<L extends string, C extends IContext = never, P extends DhlProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.dhl" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: DhlProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.dhlApiCredentials];
+        return [this.props.dhlApiCredentials];
     }
 
 }

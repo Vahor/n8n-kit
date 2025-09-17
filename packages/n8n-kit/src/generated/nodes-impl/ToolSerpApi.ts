@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { ToolSerpApiNodeParameters } from "../nodes/ToolSerpApi";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ToolSerpApiProps extends NodeProps {
-    readonly parameters: ToolSerpApiNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ToolSerpApiNodeParameters;
     readonly serpApiCredentials: Credentials<SerpApiCredentials>;
 }
 
 /**
  * Search in Google using SerpAPI
  */
-export class ToolSerpApi<C extends IContext, L extends string> extends Node<L, C> {
+export class ToolSerpApi<L extends string, C extends IContext = never, P extends ToolSerpApiProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.toolSerpApi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: ToolSerpApiProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.serpApiCredentials];
+        return [this.props.serpApiCredentials];
     }
 
     public toAiTool(next: IChainable): this {

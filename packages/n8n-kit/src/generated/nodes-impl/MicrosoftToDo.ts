@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftToDoNodeParameters } from "../nodes/MicrosoftToDo";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MicrosoftToDoProps extends NodeProps {
-    readonly parameters: MicrosoftToDoNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MicrosoftToDoNodeParameters;
     readonly microsoftToDoOAuth2ApiCredentials: Credentials<MicrosoftToDoOAuth2ApiCredentials>;
 }
 
 /**
  * Consume Microsoft To Do API.
  */
-export class MicrosoftToDo<C extends IContext, L extends string> extends Node<L, C> {
+export class MicrosoftToDo<L extends string, C extends IContext = never, P extends MicrosoftToDoProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.microsoftToDo" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: MicrosoftToDoProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.microsoftToDoOAuth2ApiCredentials];
+        return [this.props.microsoftToDoOAuth2ApiCredentials];
     }
 
 }

@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { TapfiliateNodeParameters } from "../nodes/Tapfiliate";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface TapfiliateProps extends NodeProps {
-    readonly parameters: TapfiliateNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: TapfiliateNodeParameters;
     readonly tapfiliateApiCredentials: Credentials<TapfiliateApiCredentials>;
 }
 
 /**
  * Consume Tapfiliate API
  */
-export class Tapfiliate<C extends IContext, L extends string> extends Node<L, C> {
+export class Tapfiliate<L extends string, C extends IContext = never, P extends TapfiliateProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.tapfiliate" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: TapfiliateProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.tapfiliateApiCredentials];
+        return [this.props.tapfiliateApiCredentials];
     }
 
 }

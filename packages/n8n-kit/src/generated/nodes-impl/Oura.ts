@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { OuraNodeParameters } from "../nodes/Oura";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface OuraProps extends NodeProps {
-    readonly parameters: OuraNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: OuraNodeParameters;
     readonly ouraApiCredentials: Credentials<OuraApiCredentials>;
 }
 
 /**
  * Consume Oura API
  */
-export class Oura<C extends IContext, L extends string> extends Node<L, C> {
+export class Oura<L extends string, C extends IContext = never, P extends OuraProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.oura" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: OuraProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.ouraApiCredentials];
+        return [this.props.ouraApiCredentials];
     }
 
 }

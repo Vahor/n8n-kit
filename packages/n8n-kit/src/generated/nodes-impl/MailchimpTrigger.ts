@@ -7,9 +7,12 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MailchimpTriggerNodeParameters } from "../nodes/MailchimpTrigger";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface MailchimpTriggerProps extends NodeProps {
-    readonly parameters: MailchimpTriggerNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: MailchimpTriggerNodeParameters;
     readonly mailchimpApiCredentials?: Credentials<MailchimpApiCredentials>;
     readonly mailchimpOAuth2ApiCredentials?: Credentials<MailchimpOAuth2ApiCredentials>;
 }
@@ -17,16 +20,16 @@ export interface MailchimpTriggerProps extends NodeProps {
 /**
  * Handle Mailchimp events via webhooks
  */
-export class MailchimpTrigger<C extends IContext, L extends string> extends Node<L, C> {
+export class MailchimpTrigger<L extends string, C extends IContext = never, P extends MailchimpTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mailchimpTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props?: MailchimpTriggerProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.mailchimpApiCredentials, this.props!.mailchimpOAuth2ApiCredentials];
+        return [this.props?.mailchimpApiCredentials, this.props?.mailchimpOAuth2ApiCredentials];
     }
 
 }

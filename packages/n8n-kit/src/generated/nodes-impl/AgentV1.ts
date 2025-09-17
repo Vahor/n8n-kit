@@ -9,9 +9,12 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { AgentV1NodeParameters } from "../nodes/AgentV1";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface AgentV1Props extends NodeProps {
-    readonly parameters: AgentV1NodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: AgentV1NodeParameters;
     readonly mySqlCredentials?: Credentials<MySqlCredentials>;
     readonly postgresCredentials?: Credentials<PostgresCredentials>;
 }
@@ -19,17 +22,17 @@ export interface AgentV1Props extends NodeProps {
 /**
  * Generates an action plan and executes it. Can use external tools.
  */
-export class AgentV1<C extends IContext, L extends string> extends Node<L, C> {
+export class AgentV1<L extends string, C extends IContext = never, P extends AgentV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;
     protected typeVersion = 1.9 as const;
 
-    constructor(id: L, override props?: AgentV1Props) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }
 
     override getCredentials() {
-        return [this.props!.mySqlCredentials, this.props!.postgresCredentials];
+        return [this.props?.mySqlCredentials, this.props?.postgresCredentials];
     }
 
     public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {

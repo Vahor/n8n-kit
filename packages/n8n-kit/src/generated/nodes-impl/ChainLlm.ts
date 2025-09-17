@@ -6,19 +6,22 @@ import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
 import type { ChainLlmNodeParameters } from "../nodes/ChainLlm";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface ChainLlmProps extends NodeProps {
-    readonly parameters: ChainLlmNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: ChainLlmNodeParameters;
 }
 
 /**
  * A simple chain to prompt a large language model
  */
-export class ChainLlm<C extends IContext, L extends string> extends Node<L, C> {
+export class ChainLlm<L extends string, C extends IContext = never, P extends ChainLlmProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.chainLlm" as const;
     protected typeVersion = 1.7 as const;
 
-    constructor(id: L, override props?: ChainLlmProps) {
+    constructor(id: L, override props?: P) {
         super(id, props);
         this.size = { width: DEFAULT_NODE_SIZE.width * 2, height: DEFAULT_NODE_SIZE.height };
     }

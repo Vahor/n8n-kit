@@ -6,25 +6,28 @@ import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { FreshworksCrmNodeParameters } from "../nodes/FreshworksCrm";
 import { Node, type NodeProps } from "../../nodes/node";
+import type { Type } from "arktype";
 
 export interface FreshworksCrmProps extends NodeProps {
-    readonly parameters: FreshworksCrmNodeParameters;
+    /** {@inheritDoc OutputSchema} */
+    readonly outputSchema?: Type;
+    readonly parameters?: FreshworksCrmNodeParameters;
     readonly freshworksCrmApiCredentials: Credentials<FreshworksCrmApiCredentials>;
 }
 
 /**
  * Consume the Freshworks CRM API
  */
-export class FreshworksCrm<C extends IContext, L extends string> extends Node<L, C> {
+export class FreshworksCrm<L extends string, C extends IContext = never, P extends FreshworksCrmProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.freshworksCrm" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: FreshworksCrmProps) {
+    constructor(id: L, override props: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props!.freshworksCrmApiCredentials];
+        return [this.props.freshworksCrmApiCredentials];
     }
 
 }
