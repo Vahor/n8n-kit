@@ -1,5 +1,14 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.12
+
+### Patch Changes
+
+- [`329f8fa`](https://github.com/Vahor/n8n-kit/commit/329f8faf2ace4f09ab8a4c0d5cfe90cbb9f7f686) Thanks [@Vahor](https://github.com/Vahor)! - extract error message for n8n api error
+
+- Updated dependencies [[`9974979`](https://github.com/Vahor/n8n-kit/commit/9974979f5e03d89b86b70d508f2734a942d86880)]:
+  - @vahor/n8n-kit@0.8.0
+
 ## 0.4.11
 
 ### Patch Changes
