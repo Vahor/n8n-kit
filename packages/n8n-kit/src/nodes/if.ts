@@ -136,7 +136,7 @@ type BaseCondition = {
 };
 
 export interface IfProps extends NodeProps {
-	parameters: Omit<IfV2Props["parameters"], "conditions"> & {
+	parameters: Omit<NonNullable<IfV2Props["parameters"]>, "conditions"> & {
 		conditions?: {
 			conditions: Array<
 				| StringCondition
@@ -154,6 +154,7 @@ export interface IfProps extends NodeProps {
 	};
 }
 
+// @ts-expect-error: we override the type
 export class If<
 	L extends string,
 	True extends IContext | null = null,
@@ -161,7 +162,7 @@ export class If<
 	// Make If behave like a Chain
 	CC extends ChainContext = {},
 	IdsInContext extends string[] = [],
-> extends _If<{}, L> {
+> extends _If<L> {
 	/** @internal */
 	override endStates: INextable[] = [];
 

@@ -1,14 +1,12 @@
-import type { Type } from "arktype";
 import type { NodejsFunction, PythonFunction } from "../bundler";
 import type { BundledFunction } from "../bundler/function";
 import type { CodeNodeParameters } from "../generated/nodes/Code";
-import { Code as _Code } from "../generated/nodes-impl/Code";
-import type { IsNever } from "../utils/types";
-import type { NodeProps } from "./node";
+import {
+	Code as _Code,
+	type CodeProps as _CodeProps,
+} from "../generated/nodes-impl/Code";
 
-export interface CodeProps extends NodeProps {
-	/** {@inheritDoc OutputSchema} */
-	outputSchema?: Type;
+export interface CodeProps extends Omit<_CodeProps, "parameters"> {
 	parameters:
 		| (Omit<CodeNodeParameters, "language" | "jsCode" | "pythonCode"> & {
 				language?: "javaScript";
@@ -22,18 +20,17 @@ export interface CodeProps extends NodeProps {
 		  });
 }
 
-// @ts-expect-error: we override the parameters type
 export class Code<L extends string, P extends CodeProps> extends _Code<
-	IsNever<P["outputSchema"]> extends true
-		? never
-		: NonNullable<P["outputSchema"]>["infer"],
-	L
+	L,
+	never,
+	// @ts-expect-error: we override the type
+	P
 > {
 	public constructor(
 		id: L,
 		override props: P,
 	) {
-		super(id, props as any);
+		super(id, props);
 	}
 
 	override "~validate"() {

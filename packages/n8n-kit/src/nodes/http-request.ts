@@ -1,17 +1,16 @@
-import type { Type } from "arktype";
 import type { Credentials, CredentialsByName } from "../credentials";
 import type { N8nCredentialsUnion } from "../generated/credentials";
 import {
 	HttpRequestV3,
 	type HttpRequestV3Props,
 } from "../generated/nodes-impl/HttpRequestV3";
-import type { IsNever, RequireFields } from "../utils/types";
+import type { RequireFields } from "../utils/types";
 
 type HttpRequestProps = Omit<HttpRequestV3Props, "parameters"> & {
-	parameters: RequireFields<HttpRequestV3Props["parameters"], "method" | "url">;
-} & {
-	/** {@inheritDoc OutputSchema} */
-	outputSchema?: Type;
+	parameters: RequireFields<
+		NonNullable<HttpRequestV3Props["parameters"]>,
+		"method" | "url"
+	>;
 };
 
 // TODO: make this based on the genericAuthType and nodeCredentialType
@@ -24,12 +23,7 @@ type WithCredentials<T extends HttpRequestProps> = T & {
 export class HttpRequest<
 	L extends string,
 	const P extends WithCredentials<HttpRequestProps>,
-> extends HttpRequestV3<
-	IsNever<P["outputSchema"]> extends true
-		? never
-		: NonNullable<P["outputSchema"]>["infer"],
-	L
-> {
+> extends HttpRequestV3<L, {}, P> {
 	constructor(
 		id: L,
 		override props: P,

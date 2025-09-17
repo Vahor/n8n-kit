@@ -25,16 +25,17 @@ export interface ExecuteWorkflowProps<Input extends Type, Output extends Type>
 	};
 }
 
+// @ts-expect-error: we override the type
 export class ExecuteWorkflow<
 	L extends string,
 	Input extends Type,
 	Output extends Type,
-> extends _ExecuteWorkflow<Output["infer"], L> {
+> extends _ExecuteWorkflow<L, Output["infer"]> {
 	public constructor(
 		id: L,
 		override props: ExecuteWorkflowProps<Input, Output>,
 	) {
-		super(id, props);
+		super(id, props as any);
 	}
 
 	private formatWorkflowInput() {

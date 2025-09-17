@@ -1,14 +1,14 @@
 import type { Type } from "arktype";
 import type { WebhookNodeParameters } from "../generated/nodes/Webhook";
-import { Webhook as _Webhook } from "../generated/nodes-impl/Webhook";
+import {
+	Webhook as _Webhook,
+	type WebhookProps as _WebhookProps,
+} from "../generated/nodes-impl/Webhook";
 import type { IsNever, RequireFields } from "../utils/types";
-import type { NodeProps } from "./node";
 
-interface WebhookBaseProps
-	extends RequireFields<WebhookNodeParameters, "httpMethod" | "path"> {}
-
-export interface WebhookProps extends NodeProps {
-	parameters: WebhookBaseProps;
+export interface WebhookProps
+	extends Omit<_WebhookProps, "parameters" | "outputSchema"> {
+	parameters: RequireFields<WebhookNodeParameters, "httpMethod" | "path">;
 	outputSchema?: {
 		/** {@inheritDoc OutputSchema} */
 		params?: Type;
@@ -33,7 +33,9 @@ type GetOutputSchemaField<
 				P["outputSchema"][F]["infer"]
 		: never;
 
+// @ts-expect-error: we override the type. TODO: I think we can fix this
 export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
+	L,
 	{
 		executionMode: "production" | "test";
 		webhookUrl: string;
@@ -41,8 +43,7 @@ export class Webhook<L extends string, P extends WebhookProps> extends _Webhook<
 		params: GetOutputSchemaField<P, "params">;
 		body: GetOutputSchemaField<P, "body">;
 		query: GetOutputSchemaField<P, "query">;
-	},
-	L
+	}
 > {
 	constructor(
 		id: L,
