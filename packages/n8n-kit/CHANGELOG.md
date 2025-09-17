@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.8.0
+
+### Minor Changes
+
+- [#128](https://github.com/Vahor/n8n-kit/pull/128) [`9974979`](https://github.com/Vahor/n8n-kit/commit/9974979f5e03d89b86b70d508f2734a942d86880) Thanks [@Vahor](https://github.com/Vahor)! - Add `outputSchema` support to generated nodes.
+
 ## 0.7.0
 
 ### Minor Changes
