@@ -2,6 +2,7 @@
 
 [![Code quality](https://github.com/vahor/typed-es/actions/workflows/quality.yml/badge.svg)](https://github.com/vahor/n8n-kit/actions/workflows/quality.yml)
 [![npm downloads](https://img.shields.io/npm/dm/%40vahor%2Fn8n-kit)](https://www.npmjs.com/package/@vahor/n8n-kit)
+[![n8n](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/Vahor/n8n-kit/refs/heads/main/packages/n8n-kit/package.json&query=$.devDependencies%5B%22n8n-core%22%5D&logo=n8n&label=n8n&labelColor=white)](https://n8n.io)
 
 > [!WARNING]  
 > This project is currently in alpha stage. APIs may change and some features are still under development.\
@@ -18,6 +19,9 @@ Build n8n workflows using TypeScript code and deploy them using the CLI.
 ```sh
 npm install @vahor/n8n-kit @vahor/n8n-kit-cli
 ```
+
+> [!NOTE]
+> The n8n version shown in the badge indicates the version this library was built against. Most nodes will work with lower n8n versions, but some newer nodes might not be available. For best compatibility, we recommend using the indicated n8n version or using a previous version of this library if you're on an older n8n version.
 
 ### Example
 

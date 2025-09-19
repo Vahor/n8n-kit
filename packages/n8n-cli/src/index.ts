@@ -2,12 +2,20 @@ Error.stackTraceLimit = Infinity;
 process.env.NODE_ENV = process.env.NODE_ENV || "production";
 
 import logger from "@vahor/n8n-kit/logger";
-import { version } from "../package.json";
+import { version as kitVersion } from "@vahor/n8n-kit/package.json" with {
+	type: "json",
+};
+import { version as n8nCoreVersion } from "n8n-core/package.json" with {
+	type: "json",
+};
+import { version } from "../package.json" with { type: "json" };
 
 logger.setEnabled(true);
 
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+
+const versionString = `cli:${version} kit:${kitVersion} n8n:${n8nCoreVersion}`;
 
 export const yargsInstance = yargs(hideBin(process.argv));
 export type GlobalOptions = {
@@ -19,7 +27,7 @@ export type GlobalOptions = {
 
 yargsInstance
 	.scriptName("n8n-kit")
-	.version(version)
+	.version(versionString)
 
 	.command(require("./cmds/init"))
 	.command(require("./cmds/deploy"))
