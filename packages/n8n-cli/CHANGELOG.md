@@ -1,5 +1,11 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.13
+
+### Patch Changes
+
+- [#130](https://github.com/Vahor/n8n-kit/pull/130) [`49edb27`](https://github.com/Vahor/n8n-kit/commit/49edb275cc2c1ba6724b63ad5a20244606a88f9f) Thanks [@Vahor](https://github.com/Vahor)! - In `--version` add the `n8n-kit` version and `n8n` version
+
 ## 0.4.12
 
 ### Patch Changes
