@@ -14,7 +14,7 @@ export interface SalesforceOAuth2ApiCredentials {
     /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";
 
-    /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/authorize\" : \"https://login.salesforce.com/services/oauth2/authorize\" }}" */
+    /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/authorize?prompt=login\" : \"https://login.salesforce.com/services/oauth2/authorize?prompt=login\" }}" */
     readonly "authUrl": unknown;
 
     /** Default: "={{ $self[\"environment\"] === \"sandbox\" ? \"https://test.salesforce.com/services/oauth2/token\" : \"https://login.salesforce.com/services/oauth2/token\" }}" */
