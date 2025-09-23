@@ -43,7 +43,7 @@ jobs:
           cat > $changeset_file << EOF
           ---
           "@vahor/n8n-kit": patch
-          "@vahor/n8n-cli": patch
+          "@vahor/n8n-kit-cli": patch
           ---
 
           $PR_TITLE
