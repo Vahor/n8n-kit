@@ -46,7 +46,7 @@ export interface GoogleGeminiNodeParameters {
     readonly simplify?: boolean;
 
     /** Default: {} */
-    readonly options?: { maxOutputTokens?: number } | { startTime?: string, endTime?: string } | { binaryPropertyOutput?: string } | { sampleCount?: number, binaryPropertyOutput?: string } | { systemMessage?: string, codeExecution?: boolean, frequencyPenalty?: number, maxOutputTokens?: number, candidateCount?: number, presencePenalty?: number, temperature?: number, topP?: number, topK?: number, maxToolsIterations?: number } | { sampleCount?: number, durationSeconds?: number, aspectRatio?: "16:9" | "9:16", personGeneration?: "dont_allow" | "allow_adult" | "allow_all", binaryPropertyOutput?: string };
+    readonly options?: { maxOutputTokens?: number } | { startTime?: string, endTime?: string } | { binaryPropertyOutput?: string } | { sampleCount?: number, binaryPropertyOutput?: string } | { systemMessage?: string, codeExecution?: boolean, frequencyPenalty?: number, maxOutputTokens?: number, candidateCount?: number, presencePenalty?: number, temperature?: number, topP?: number, topK?: number, thinkingBudget?: number, maxToolsIterations?: number } | { sampleCount?: number, durationSeconds?: number, aspectRatio?: "16:9" | "9:16", personGeneration?: "dont_allow" | "allow_adult" | "allow_all", binaryPropertyOutput?: string };
 
     /** URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma */
     readonly documentUrls?: string;

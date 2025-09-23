@@ -12,7 +12,7 @@ export interface DataTableNodeParameters {
     readonly resource?: "row";
 
     /** Default: "insert" */
-    readonly operation?: "deleteRows" | "get" | "insert" | "update" | "upsert";
+    readonly operation?: "deleteRows" | "get" | "rowExists" | "rowNotExists" | "insert" | "update" | "upsert";
 
     /** Default: {"mode":"list","value":""} */
     readonly dataTableId?: {

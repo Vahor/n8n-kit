@@ -20,7 +20,7 @@ export interface LmChatGoogleVertexNodeParameters {
 
     /**
      * The model which will generate the completion. <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/models">Learn more</a>.
-     * Default: "gemini-1.5-flash"
+     * Default: "gemini-2.5-flash"
      */
     readonly modelName?: string;
 
@@ -28,6 +28,6 @@ export interface LmChatGoogleVertexNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { maxOutputTokens?: number, temperature?: number, topK?: number, topP?: number, safetySettings?: { values: Array<{ category?: "HARM_CATEGORY_HARASSMENT" | "HARM_CATEGORY_HATE_SPEECH" | "HARM_CATEGORY_SEXUALLY_EXPLICIT" | "HARM_CATEGORY_DANGEROUS_CONTENT", threshold?: "HARM_BLOCK_THRESHOLD_UNSPECIFIED" | "BLOCK_LOW_AND_ABOVE" | "BLOCK_MEDIUM_AND_ABOVE" | "BLOCK_ONLY_HIGH" | "BLOCK_NONE" }> } };
+    readonly options?: { maxOutputTokens?: number, temperature?: number, topK?: number, topP?: number, safetySettings?: { values: Array<{ category?: "HARM_CATEGORY_HARASSMENT" | "HARM_CATEGORY_HATE_SPEECH" | "HARM_CATEGORY_SEXUALLY_EXPLICIT" | "HARM_CATEGORY_DANGEROUS_CONTENT", threshold?: "HARM_BLOCK_THRESHOLD_UNSPECIFIED" | "BLOCK_LOW_AND_ABOVE" | "BLOCK_MEDIUM_AND_ABOVE" | "BLOCK_ONLY_HIGH" | "BLOCK_NONE" }> }, thinkingBudget?: number };
 
 }
