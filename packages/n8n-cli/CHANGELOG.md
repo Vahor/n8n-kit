@@ -1,5 +1,16 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.13
+
+### Patch Changes
+
+- [#132](https://github.com/Vahor/n8n-kit/pull/132) [`01319a7`](https://github.com/Vahor/n8n-kit/commit/01319a774b540e589aff6241b003f48eeb270d4f) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump lint-staged from 16.1.6 to 16.2.0
+
+- [#130](https://github.com/Vahor/n8n-kit/pull/130) [`49edb27`](https://github.com/Vahor/n8n-kit/commit/49edb275cc2c1ba6724b63ad5a20244606a88f9f) Thanks [@Vahor](https://github.com/Vahor)! - In `--version` add the `n8n-kit` version and `n8n` version
+
+- Updated dependencies [[`9942f32`](https://github.com/Vahor/n8n-kit/commit/9942f3256e3080460e326a15454face1db0b572b), [`01319a7`](https://github.com/Vahor/n8n-kit/commit/01319a774b540e589aff6241b003f48eeb270d4f)]:
+  - @vahor/n8n-kit@0.9.0
+
 ## 0.4.12
 
 ### Patch Changes
