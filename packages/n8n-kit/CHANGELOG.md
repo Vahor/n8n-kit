@@ -1,5 +1,15 @@
 # @vahor/n8n-kit
 
+## 0.9.0
+
+### Minor Changes
+
+- [#133](https://github.com/Vahor/n8n-kit/pull/133) [`9942f32`](https://github.com/Vahor/n8n-kit/commit/9942f3256e3080460e326a15454face1db0b572b) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [83272570e4b9175c5cbe73d784805a3563485ec2](https://github.com/n8n-io/n8n/tree/83272570e4b9175c5cbe73d784805a3563485ec2))
+
+### Patch Changes
+
+- [#132](https://github.com/Vahor/n8n-kit/pull/132) [`01319a7`](https://github.com/Vahor/n8n-kit/commit/01319a774b540e589aff6241b003f48eeb270d4f) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump lint-staged from 16.1.6 to 16.2.0
+
 ## 0.8.0
 
 ### Minor Changes
