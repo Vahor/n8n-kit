@@ -20,7 +20,7 @@ export interface MicrosoftExcelV2Props extends NodeProps {
  */
 export class MicrosoftExcelV2<L extends string, C extends IContext = never, P extends MicrosoftExcelV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.microsoftExcel" as const;
-    protected typeVersion = 2.1 as const;
+    protected typeVersion = 2.2 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

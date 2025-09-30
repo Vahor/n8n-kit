@@ -11,6 +11,7 @@ export type { AffinityTriggerNodeParameters } from "./AffinityTrigger";
 export type { AgentToolV2NodeParameters } from "./AgentToolV2";
 export type { AgentV1NodeParameters } from "./AgentV1";
 export type { AgentV2NodeParameters } from "./AgentV2";
+export type { AgentV3NodeParameters } from "./AgentV3";
 export type { AggregateNodeParameters } from "./Aggregate";
 export type { AgileCrmNodeParameters } from "./AgileCrm";
 export type { AiTransformNodeParameters } from "./AiTransform";
