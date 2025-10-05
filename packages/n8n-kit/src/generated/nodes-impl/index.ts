@@ -11,6 +11,7 @@ export * from "./AffinityTrigger";
 export * from "./AgentToolV2";
 export * from "./AgentV1";
 export * from "./AgentV2";
+export * from "./AgentV3";
 export * from "./Aggregate";
 export * from "./AgileCrm";
 export * from "./AiTransform";

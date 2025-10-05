@@ -11,6 +11,7 @@ export interface SetV2NodeParameters {
     /** Default: "manual" */
     readonly mode?: "manual" | "raw";
 
+    /** Whether this item should be duplicated a set number of times */
     readonly duplicateItem?: boolean;
 
     /**

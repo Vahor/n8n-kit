@@ -3,7 +3,7 @@
 
 export const description = "Access WhatsApp API" as const;
 export const type = "n8n-nodes-base.whatsApp" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"whatsAppApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -37,7 +37,7 @@ export interface WhatsAppNodeParameters {
     readonly name?: { data: { formatted_name: string, first_name?: string, last_name?: string, middle_name?: string, suffix?: string, prefix?: string } };
 
     /** Default: {} */
-    readonly additionalFields?: { addresses?: { address: Array<{ type?: "HOME" | "WORK", street?: string, city?: string, state?: string, zip?: string, country?: string, country_code?: string }> }, birthday?: string, emails?: { data: Array<{ type?: "HOME" | "WORK", email?: string }> }, organization?: { data: { company?: string, department?: string, title?: string } }, phones?: { data: Array<{ type?: "CELL" | "HOME" | "IPHONE" | "MAIN" | "wa_id" | "WORK", phone?: string }> }, urls?: { url: Array<{ type?: "HOME" | "WORK", url?: string }> } } | { nameAndAddress: { name?: string, address?: string } } | { mediaFilename?: string, mediaCaption?: string } | { previewUrl?: boolean } | { mediaFileName?: string };
+    readonly additionalFields?: { addresses?: { address: Array<{ type?: "HOME" | "WORK", street?: string, city?: string, state?: string, zip?: string, country?: string, country_code?: string }> }, birthday?: string, emails?: { data: Array<{ type?: "HOME" | "WORK", email?: string }> }, organization?: { data: { company?: string, department?: string, title?: string } }, phones?: { data: Array<{ type?: "CELL" | "HOME" | "IPHONE" | "MAIN" | "wa_id" | "WORK" | "CELL" | "HOME" | "IPHONE" | "MAIN" | "WORK", phone?: string, whatsapp_user_id?: string }> }, urls?: { url: Array<{ type?: "HOME" | "WORK", url?: string }> } } | { nameAndAddress: { name?: string, address?: string } } | { mediaFilename?: string, mediaCaption?: string } | { previewUrl?: boolean } | { mediaFileName?: string };
 
     /** Type options: {"minValue":-180,"maxValue":180} */
     readonly longitude?: number;
