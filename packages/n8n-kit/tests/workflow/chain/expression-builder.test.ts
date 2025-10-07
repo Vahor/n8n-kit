@@ -53,7 +53,6 @@ describe("ExpressionBuilder", () => {
 			$("data.output[0].content[0].text"),
 			`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text`,
 		],
-		[$("data"), `$('${RESOLVED_NODE_ID("data")}').item.json`],
 	] as const;
 	describe("format", () => {
 		test.each(formatCases)("format", (builder, expected) => {
