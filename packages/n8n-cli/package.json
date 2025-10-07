@@ -1,6 +1,6 @@
 {
 	"name": "@vahor/n8n-kit-cli",
-	"version": "0.4.14",
+	"version": "0.4.15",
 	"description": "CLI for n8n-kit",
 	"license": "MIT",
 	"repository": {
