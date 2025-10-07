@@ -16,7 +16,7 @@ export interface GithubNodeParameters {
     readonly resource?: "file" | "issue" | "organization" | "release" | "repository" | "review" | "user" | "workflow";
 
     /** Default: "getRepositories" */
-    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
+    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "getIssues" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
 
     /** Default: {"mode":"list","value":""} */
     readonly owner?: {
@@ -166,5 +166,11 @@ export interface GithubNodeParameters {
 
     /** The email address of the invited user */
     readonly email?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValueButtonText":"Add Filter"}
+     */
+    readonly getUserIssuesFilters?: { mentioned?: string, labels?: string, since?: string, state?: "all" | "closed" | "open", sort?: "created" | "updated" | "comments", direction?: "asc" | "desc" };
 
 }
