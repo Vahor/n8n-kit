@@ -1,5 +1,19 @@
 # @vahor/n8n-kit
 
+## 0.12.0
+
+### Minor Changes
+
+- [#142](https://github.com/Vahor/n8n-kit/pull/142) [`2a9bd76`](https://github.com/Vahor/n8n-kit/commit/2a9bd7656f88b3a93cd9283ae5f04f1829c453cf) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [64ad7586c6040ef94e487b861fceba89c4a8afff](https://github.com/n8n-io/n8n/tree/64ad7586c6040ef94e487b861fceba89c4a8afff))
+
+### Patch Changes
+
+- [#134](https://github.com/Vahor/n8n-kit/pull/134) [`ff1e5e9`](https://github.com/Vahor/n8n-kit/commit/ff1e5e998e1d181a481f7e9d6321173798a6e871) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump @types/bun from 1.2.22 to 1.2.23
+
+- [#140](https://github.com/Vahor/n8n-kit/pull/140) [`681e534`](https://github.com/Vahor/n8n-kit/commit/681e534214f2dd17b7447c8a89daea2f459dc456) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump typedoc from 0.28.13 to 0.28.14
+
+- [#141](https://github.com/Vahor/n8n-kit/pull/141) [`0cc7d1d`](https://github.com/Vahor/n8n-kit/commit/0cc7d1d104546c6a168d6a882abd4fb4d94de5ec) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump lint-staged from 16.2.3 to 16.2.4
+
 ## 0.11.0
 
 ### Minor Changes
