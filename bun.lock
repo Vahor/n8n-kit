@@ -94,6 +94,7 @@
       },
       "devDependencies": {
         "@types/yargs": "^17.0.33",
+        "n8n-core": "1.115.0",
         "tsdown": "catalog:",
         "typescript": "catalog:",
       },
