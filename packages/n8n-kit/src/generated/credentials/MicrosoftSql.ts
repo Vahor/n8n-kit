@@ -5,7 +5,7 @@ export const name = "microsoftSql" as const;
 
 /**
  * displayName: Microsoft SQL
- * documentationUrl: microsoftSql
+ * documentationUrl: microsoftsql
  */
 export interface MicrosoftSqlCredentials {
     /** Default: "localhost" */

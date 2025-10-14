@@ -5,7 +5,7 @@ export const name = "crateDb" as const;
 
 /**
  * displayName: CrateDB
- * documentationUrl: crateDb
+ * documentationUrl: cratedb
  */
 export interface CrateDbCredentials {
     /** Default: "localhost" */

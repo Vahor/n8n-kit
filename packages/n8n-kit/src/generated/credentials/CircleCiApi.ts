@@ -5,7 +5,7 @@ export const name = "circleCiApi" as const;
 
 /**
  * displayName: CircleCI API
- * documentationUrl: circleCi
+ * documentationUrl: circleci
  */
 export interface CircleCiApiCredentials {
     /** Type options: {"password":true} */

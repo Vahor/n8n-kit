@@ -5,7 +5,7 @@ export const name = "surveyMonkeyOAuth2Api" as const;
 
 /**
  * displayName: SurveyMonkey OAuth2 API
- * documentationUrl: surveyMonkey
+ * documentationUrl: surveymonkey
  */
 export interface SurveyMonkeyOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

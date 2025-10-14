@@ -5,7 +5,7 @@ export const name = "httpBasicAuth" as const;
 
 /**
  * displayName: Basic Auth
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpBasicAuthCredentials {
     readonly "user"?: string;

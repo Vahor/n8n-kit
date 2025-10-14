@@ -5,7 +5,7 @@ export const name = "urlScanIoApi" as const;
 
 /**
  * displayName: urlscan.io API
- * documentationUrl: urlScanIo
+ * documentationUrl: urlscanio
  */
 export interface UrlScanIoApiCredentials {
     /** Type options: {"password":true} */

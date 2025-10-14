@@ -5,7 +5,7 @@ export const name = "pagerDutyApi" as const;
 
 /**
  * displayName: PagerDuty API
- * documentationUrl: pagerDuty
+ * documentationUrl: pagerduty
  */
 export interface PagerDutyApiCredentials {
     /** Type options: {"password":true} */

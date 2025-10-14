@@ -5,7 +5,7 @@ export const name = "invoiceNinjaApi" as const;
 
 /**
  * displayName: Invoice Ninja API
- * documentationUrl: invoiceNinja
+ * documentationUrl: invoiceninja
  */
 export interface InvoiceNinjaApiCredentials {
     readonly "url"?: string;

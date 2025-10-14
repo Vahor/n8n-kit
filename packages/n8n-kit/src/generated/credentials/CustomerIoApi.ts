@@ -5,7 +5,7 @@ export const name = "customerIoApi" as const;
 
 /**
  * displayName: Customer.io API
- * documentationUrl: customerIo
+ * documentationUrl: customerio
  */
 export interface CustomerIoApiCredentials {
     /**

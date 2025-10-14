@@ -5,7 +5,7 @@ export const name = "unleashedSoftwareApi" as const;
 
 /**
  * displayName: Unleashed API
- * documentationUrl: unleashedSoftware
+ * documentationUrl: unleashedsoftware
  */
 export interface UnleashedSoftwareApiCredentials {
     readonly "apiId"?: string;

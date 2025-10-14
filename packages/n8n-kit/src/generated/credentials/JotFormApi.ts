@@ -5,7 +5,7 @@ export const name = "jotFormApi" as const;
 
 /**
  * displayName: JotForm API
- * documentationUrl: jotForm
+ * documentationUrl: jotform
  */
 export interface JotFormApiCredentials {
     /** Type options: {"password":true} */

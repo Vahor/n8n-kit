@@ -5,7 +5,7 @@ export const name = "sentryIoOAuth2Api" as const;
 
 /**
  * displayName: Sentry.io OAuth2 API
- * documentationUrl: sentryIo
+ * documentationUrl: sentryio
  */
 export interface SentryIoOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

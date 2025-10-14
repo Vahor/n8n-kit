@@ -5,7 +5,7 @@ export const name = "surveyMonkeyApi" as const;
 
 /**
  * displayName: SurveyMonkey API
- * documentationUrl: surveyMonkey
+ * documentationUrl: surveymonkey
  */
 export interface SurveyMonkeyApiCredentials {
     /**

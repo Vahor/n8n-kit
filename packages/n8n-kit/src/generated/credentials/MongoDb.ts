@@ -5,7 +5,7 @@ export const name = "mongoDb" as const;
 
 /**
  * displayName: MongoDB
- * documentationUrl: mongoDb
+ * documentationUrl: mongodb
  */
 export interface MongoDbCredentials {
     /** Default: "values" */

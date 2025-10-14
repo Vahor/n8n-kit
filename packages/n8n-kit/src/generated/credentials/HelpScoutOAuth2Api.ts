@@ -5,7 +5,7 @@ export const name = "helpScoutOAuth2Api" as const;
 
 /**
  * displayName: HelpScout OAuth2 API
- * documentationUrl: helpScout
+ * documentationUrl: helpscout
  */
 export interface HelpScoutOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

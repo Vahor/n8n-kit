@@ -5,7 +5,7 @@ export const name = "azureEntraCognitiveServicesOAuth2Api" as const;
 
 /**
  * displayName: Azure Entra ID (Azure Active Directory) API
- * documentationUrl: azureEntraCognitiveServicesOAuth2Api
+ * documentationUrl: azureentracognitiveservicesoauth2api
  */
 export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

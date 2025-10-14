@@ -5,7 +5,7 @@ export const name = "elasticSecurityApi" as const;
 
 /**
  * displayName: Elastic Security API
- * documentationUrl: elasticSecurity
+ * documentationUrl: elasticsecurity
  */
 export interface ElasticSecurityApiCredentials {
     /** Referred to as Kibana 'endpoint' in the Elastic deployment dashboard */

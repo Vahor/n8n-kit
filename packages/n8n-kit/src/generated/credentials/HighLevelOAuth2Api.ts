@@ -5,7 +5,7 @@ export const name = "highLevelOAuth2Api" as const;
 
 /**
  * displayName: HighLevel OAuth2 API
- * documentationUrl: highLevel
+ * documentationUrl: highlevel
  */
 export interface HighLevelOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

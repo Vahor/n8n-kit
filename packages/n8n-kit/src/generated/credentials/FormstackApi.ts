@@ -5,7 +5,7 @@ export const name = "formstackApi" as const;
 
 /**
  * displayName: Formstack API
- * documentationUrl: formstackTrigger
+ * documentationUrl: formstacktrigger
  */
 export interface FormstackApiCredentials {
     /** Type options: {"password":true} */

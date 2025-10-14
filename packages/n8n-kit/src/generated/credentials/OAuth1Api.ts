@@ -5,7 +5,7 @@ export const name = "oAuth1Api" as const;
 
 /**
  * displayName: OAuth1 API
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface OAuth1ApiCredentials {
     readonly "authUrl": string;

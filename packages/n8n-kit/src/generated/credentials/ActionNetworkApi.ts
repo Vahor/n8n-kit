@@ -5,7 +5,7 @@ export const name = "actionNetworkApi" as const;
 
 /**
  * displayName: Action Network API
- * documentationUrl: actionNetwork
+ * documentationUrl: actionnetwork
  */
 export interface ActionNetworkApiCredentials {
     /** Type options: {"password":true} */

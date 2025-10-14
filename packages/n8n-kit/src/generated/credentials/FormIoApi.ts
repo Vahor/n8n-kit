@@ -5,7 +5,7 @@ export const name = "formIoApi" as const;
 
 /**
  * displayName: Form.io API
- * documentationUrl: formIoTrigger
+ * documentationUrl: formiotrigger
  */
 export interface FormIoApiCredentials {
     /** Default: "cloudHosted" */

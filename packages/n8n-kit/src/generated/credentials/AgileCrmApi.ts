@@ -5,7 +5,7 @@ export const name = "agileCrmApi" as const;
 
 /**
  * displayName: AgileCRM API
- * documentationUrl: agileCrm
+ * documentationUrl: agilecrm
  */
 export interface AgileCrmApiCredentials {
     readonly "email"?: string;

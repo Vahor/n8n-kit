@@ -5,7 +5,7 @@ export const name = "openWeatherMapApi" as const;
 
 /**
  * displayName: OpenWeatherMap API
- * documentationUrl: openWeatherMap
+ * documentationUrl: openweathermap
  */
 export interface OpenWeatherMapApiCredentials {
     /** Type options: {"password":true} */

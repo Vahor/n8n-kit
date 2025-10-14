@@ -5,7 +5,7 @@ export const name = "httpSslAuth" as const;
 
 /**
  * displayName: SSL Certificates
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpSslAuthCredentials {
     /**

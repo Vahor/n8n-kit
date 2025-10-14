@@ -5,7 +5,7 @@ export const name = "mailerLiteApi" as const;
 
 /**
  * displayName: Mailer Lite API
- * documentationUrl: mailerLite
+ * documentationUrl: mailerlite
  */
 export interface MailerLiteApiCredentials {
     /** Type options: {"password":true} */

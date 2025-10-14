@@ -5,7 +5,7 @@ export const name = "fileMaker" as const;
 
 /**
  * displayName: FileMaker API
- * documentationUrl: fileMaker
+ * documentationUrl: filemaker
  */
 export interface FileMakerCredentials {
     readonly "host"?: string;

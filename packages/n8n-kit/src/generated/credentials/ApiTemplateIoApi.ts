@@ -5,7 +5,7 @@ export const name = "apiTemplateIoApi" as const;
 
 /**
  * displayName: APITemplate.io API
- * documentationUrl: apiTemplateIo
+ * documentationUrl: apitemplateio
  */
 export interface ApiTemplateIoApiCredentials {
     /** Type options: {"password":true} */

@@ -5,7 +5,7 @@ export const name = "goToWebinarOAuth2Api" as const;
 
 /**
  * displayName: GoToWebinar OAuth2 API
- * documentationUrl: goToWebinar
+ * documentationUrl: gotowebinar
  */
 export interface GoToWebinarOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

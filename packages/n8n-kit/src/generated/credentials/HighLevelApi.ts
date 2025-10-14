@@ -5,7 +5,7 @@ export const name = "highLevelApi" as const;
 
 /**
  * displayName: HighLevel API
- * documentationUrl: highLevel
+ * documentationUrl: highlevel
  */
 export interface HighLevelApiCredentials {
     /** Type options: {"password":true} */

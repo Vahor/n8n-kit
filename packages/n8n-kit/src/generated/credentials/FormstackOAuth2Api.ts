@@ -5,7 +5,7 @@ export const name = "formstackOAuth2Api" as const;
 
 /**
  * displayName: Formstack OAuth2 API
- * documentationUrl: formstackTrigger
+ * documentationUrl: formstacktrigger
  */
 export interface FormstackOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

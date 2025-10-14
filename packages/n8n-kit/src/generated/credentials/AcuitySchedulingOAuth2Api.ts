@@ -5,7 +5,7 @@ export const name = "acuitySchedulingOAuth2Api" as const;
 
 /**
  * displayName: AcuityScheduling OAuth2 API
- * documentationUrl: acuityScheduling
+ * documentationUrl: acuityscheduling
  */
 export interface AcuitySchedulingOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

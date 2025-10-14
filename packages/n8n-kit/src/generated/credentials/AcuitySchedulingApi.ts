@@ -5,7 +5,7 @@ export const name = "acuitySchedulingApi" as const;
 
 /**
  * displayName: Acuity Scheduling API
- * documentationUrl: acuityScheduling
+ * documentationUrl: acuityscheduling
  */
 export interface AcuitySchedulingApiCredentials {
     readonly "userId"?: string;

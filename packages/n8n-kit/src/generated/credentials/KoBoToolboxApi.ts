@@ -5,7 +5,7 @@ export const name = "koBoToolboxApi" as const;
 
 /**
  * displayName: KoBoToolbox API Token
- * documentationUrl: koBoToolbox
+ * documentationUrl: kobotoolbox
  */
 export interface KoBoToolboxApiCredentials {
     /** Default: "https://kf.kobotoolbox.org/" */

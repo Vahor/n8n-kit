@@ -5,7 +5,7 @@ export const name = "nocoDb" as const;
 
 /**
  * displayName: NocoDB
- * documentationUrl: nocoDb
+ * documentationUrl: nocodb
  */
 export interface NocoDbCredentials {
     /** Type options: {"password":true} */

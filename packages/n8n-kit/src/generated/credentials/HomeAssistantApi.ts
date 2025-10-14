@@ -5,7 +5,7 @@ export const name = "homeAssistantApi" as const;
 
 /**
  * displayName: Home Assistant API
- * documentationUrl: homeAssistant
+ * documentationUrl: homeassistant
  */
 export interface HomeAssistantApiCredentials {
     readonly "host"?: string;

@@ -5,7 +5,7 @@ export const name = "monicaCrmApi" as const;
 
 /**
  * displayName: Monica CRM API
- * documentationUrl: monicaCrm
+ * documentationUrl: monicacrm
  */
 export interface MonicaCrmApiCredentials {
     /** Default: "cloudHosted" */
