@@ -5,7 +5,7 @@ export const name = "securityScorecardApi" as const;
 
 /**
  * displayName: SecurityScorecard API
- * documentationUrl: securityScorecard
+ * documentationUrl: securityscorecard
  */
 export interface SecurityScorecardApiCredentials {
     /** Type options: {"password":true} */

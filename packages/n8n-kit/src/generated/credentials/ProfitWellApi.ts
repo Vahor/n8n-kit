@@ -5,7 +5,7 @@ export const name = "profitWellApi" as const;
 
 /**
  * displayName: ProfitWell API
- * documentationUrl: profitWell
+ * documentationUrl: profitwell
  */
 export interface ProfitWellApiCredentials {
     /**

@@ -5,7 +5,7 @@ export const name = "httpCustomAuth" as const;
 
 /**
  * displayName: Custom Auth
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpCustomAuthCredentials {
     /** Use json to specify authentication values for headers, body and qs. */

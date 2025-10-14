@@ -5,7 +5,7 @@ export const name = "postHogApi" as const;
 
 /**
  * displayName: PostHog API
- * documentationUrl: postHog
+ * documentationUrl: posthog
  */
 export interface PostHogApiCredentials {
     /** Default: "https://app.posthog.com" */

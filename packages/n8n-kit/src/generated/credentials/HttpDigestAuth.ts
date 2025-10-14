@@ -5,7 +5,7 @@ export const name = "httpDigestAuth" as const;
 
 /**
  * displayName: Digest Auth
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpDigestAuthCredentials {
     readonly "user"?: string;

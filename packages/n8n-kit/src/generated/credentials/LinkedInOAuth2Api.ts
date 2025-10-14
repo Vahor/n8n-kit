@@ -5,7 +5,7 @@ export const name = "linkedInOAuth2Api" as const;
 
 /**
  * displayName: LinkedIn OAuth2 API
- * documentationUrl: linkedIn
+ * documentationUrl: linkedin
  */
 export interface LinkedInOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

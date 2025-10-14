@@ -5,7 +5,7 @@ export const name = "travisCiApi" as const;
 
 /**
  * displayName: Travis API
- * documentationUrl: travisCi
+ * documentationUrl: travisci
  */
 export interface TravisCiApiCredentials {
     /** Type options: {"password":true} */

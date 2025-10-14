@@ -5,7 +5,7 @@ export const name = "serviceNowBasicApi" as const;
 
 /**
  * displayName: ServiceNow Basic Auth API
- * documentationUrl: serviceNow
+ * documentationUrl: servicenow
  */
 export interface ServiceNowBasicApiCredentials {
     readonly "user": string;

@@ -5,7 +5,7 @@ export const name = "getResponseApi" as const;
 
 /**
  * displayName: GetResponse API
- * documentationUrl: getResponse
+ * documentationUrl: getresponse
  */
 export interface GetResponseApiCredentials {
     /** Type options: {"password":true} */

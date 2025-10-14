@@ -5,7 +5,7 @@ export const name = "timescaleDb" as const;
 
 /**
  * displayName: TimescaleDB
- * documentationUrl: timescaleDb
+ * documentationUrl: timescaledb
  */
 export interface TimescaleDbCredentials {
     /** Default: "localhost" */

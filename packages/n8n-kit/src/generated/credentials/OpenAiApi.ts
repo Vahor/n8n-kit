@@ -5,7 +5,7 @@ export const name = "openAiApi" as const;
 
 /**
  * displayName: OpenAi
- * documentationUrl: openAi
+ * documentationUrl: openai
  */
 export interface OpenAiApiCredentials {
     /** Type options: {"password":true} */

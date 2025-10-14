@@ -5,7 +5,7 @@ export const name = "payPalApi" as const;
 
 /**
  * displayName: PayPal API
- * documentationUrl: payPal
+ * documentationUrl: paypal
  */
 export interface PayPalApiCredentials {
     readonly "clientId"?: string;

@@ -5,7 +5,7 @@ export const name = "deepLApi" as const;
 
 /**
  * displayName: DeepL API
- * documentationUrl: deepL
+ * documentationUrl: deepl
  */
 export interface DeepLApiCredentials {
     /** Type options: {"password":true} */

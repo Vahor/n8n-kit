@@ -5,7 +5,7 @@ export const name = "nextCloudOAuth2Api" as const;
 
 /**
  * displayName: NextCloud OAuth2 API
- * documentationUrl: nextCloud
+ * documentationUrl: nextcloud
  */
 export interface NextCloudOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

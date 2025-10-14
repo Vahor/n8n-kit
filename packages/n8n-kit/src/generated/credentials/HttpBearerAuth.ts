@@ -5,7 +5,7 @@ export const name = "httpBearerAuth" as const;
 
 /**
  * displayName: Bearer Auth
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpBearerAuthCredentials {
     /** Type options: {"password":true} */

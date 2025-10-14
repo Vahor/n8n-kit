@@ -5,7 +5,7 @@ export const name = "serviceNowOAuth2Api" as const;
 
 /**
  * displayName: ServiceNow OAuth2 API
- * documentationUrl: serviceNow
+ * documentationUrl: servicenow
  */
 export interface ServiceNowOAuth2ApiCredentials {
     readonly "subdomain": string;

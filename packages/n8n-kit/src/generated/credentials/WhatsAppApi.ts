@@ -5,7 +5,7 @@ export const name = "whatsAppApi" as const;
 
 /**
  * displayName: WhatsApp API
- * documentationUrl: whatsApp
+ * documentationUrl: whatsapp
  */
 export interface WhatsAppApiCredentials {
     /** Type options: {"password":true} */

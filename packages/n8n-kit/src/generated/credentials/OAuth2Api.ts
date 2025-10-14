@@ -5,7 +5,7 @@ export const name = "oAuth2Api" as const;
 
 /**
  * displayName: OAuth2 API
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface OAuth2ApiCredentials {
     /** Default: "authorizationCode" */

@@ -5,7 +5,7 @@ export const name = "httpHeaderAuth" as const;
 
 /**
  * displayName: Header Auth
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpHeaderAuthCredentials {
     readonly "name"?: string;

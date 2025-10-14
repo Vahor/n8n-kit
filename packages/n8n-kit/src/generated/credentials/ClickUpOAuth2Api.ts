@@ -5,7 +5,7 @@ export const name = "clickUpOAuth2Api" as const;
 
 /**
  * displayName: ClickUp OAuth2 API
- * documentationUrl: clickUp
+ * documentationUrl: clickup
  */
 export interface ClickUpOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

@@ -5,7 +5,7 @@ export const name = "lingvaNexApi" as const;
 
 /**
  * displayName: LingvaNex API
- * documentationUrl: lingvaNex
+ * documentationUrl: lingvanex
  */
 export interface LingvaNexApiCredentials {
     /** Type options: {"password":true} */

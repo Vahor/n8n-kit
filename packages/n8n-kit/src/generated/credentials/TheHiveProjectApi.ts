@@ -5,7 +5,7 @@ export const name = "theHiveProjectApi" as const;
 
 /**
  * displayName: The Hive 5 API
- * documentationUrl: theHive
+ * documentationUrl: thehive
  */
 export interface TheHiveProjectApiCredentials {
     /** Type options: {"password":true} */

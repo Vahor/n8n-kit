@@ -5,7 +5,7 @@ export const name = "clickUpApi" as const;
 
 /**
  * displayName: ClickUp API
- * documentationUrl: clickUp
+ * documentationUrl: clickup
  */
 export interface ClickUpApiCredentials {
     /** Type options: {"password":true} */

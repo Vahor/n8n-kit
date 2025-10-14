@@ -5,7 +5,7 @@ export const name = "mySql" as const;
 
 /**
  * displayName: MySQL
- * documentationUrl: mySql
+ * documentationUrl: mysql
  */
 export interface MySqlCredentials {
     /** Default: "localhost" */

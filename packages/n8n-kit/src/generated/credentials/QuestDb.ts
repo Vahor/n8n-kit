@@ -5,7 +5,7 @@ export const name = "questDb" as const;
 
 /**
  * displayName: QuestDB
- * documentationUrl: questDb
+ * documentationUrl: questdb
  */
 export interface QuestDbCredentials {
     /** Default: "localhost" */

@@ -5,7 +5,7 @@ export const name = "nextCloudApi" as const;
 
 /**
  * displayName: NextCloud API
- * documentationUrl: nextCloud
+ * documentationUrl: nextcloud
  */
 export interface NextCloudApiCredentials {
     readonly "webDavUrl"?: string;

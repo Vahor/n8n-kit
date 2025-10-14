@@ -5,7 +5,7 @@ export const name = "humanticAiApi" as const;
 
 /**
  * displayName: Humantic AI API
- * documentationUrl: humanticAi
+ * documentationUrl: humanticai
  */
 export interface HumanticAiApiCredentials {
     /** Type options: {"password":true} */

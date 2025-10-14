@@ -5,7 +5,7 @@ export const name = "uprocApi" as const;
 
 /**
  * displayName: uProc API
- * documentationUrl: uProc
+ * documentationUrl: uproc
  */
 export interface UProcApiCredentials {
     readonly "email"?: string;

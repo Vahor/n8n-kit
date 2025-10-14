@@ -5,7 +5,7 @@ export const name = "wooCommerceApi" as const;
 
 /**
  * displayName: WooCommerce API
- * documentationUrl: wooCommerce
+ * documentationUrl: woocommerce
  */
 export interface WooCommerceApiCredentials {
     /** Type options: {"password":true} */

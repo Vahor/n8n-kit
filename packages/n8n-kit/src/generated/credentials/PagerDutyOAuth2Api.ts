@@ -5,7 +5,7 @@ export const name = "pagerDutyOAuth2Api" as const;
 
 /**
  * displayName: PagerDuty OAuth2 API
- * documentationUrl: pagerDuty
+ * documentationUrl: pagerduty
  */
 export interface PagerDutyOAuth2ApiCredentials {
     /** Default: "authorizationCode" */

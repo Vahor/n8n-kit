@@ -5,7 +5,7 @@ export const name = "nocoDbApiToken" as const;
 
 /**
  * displayName: NocoDB API Token
- * documentationUrl: nocoDb
+ * documentationUrl: nocodb
  */
 export interface NocoDbApiTokenCredentials {
     /** Type options: {"password":true} */

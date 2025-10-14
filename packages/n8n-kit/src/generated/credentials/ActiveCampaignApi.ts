@@ -5,7 +5,7 @@ export const name = "activeCampaignApi" as const;
 
 /**
  * displayName: ActiveCampaign API
- * documentationUrl: activeCampaign
+ * documentationUrl: activecampaign
  */
 export interface ActiveCampaignApiCredentials {
     readonly "apiUrl"?: string;

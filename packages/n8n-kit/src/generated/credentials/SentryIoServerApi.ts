@@ -5,7 +5,7 @@ export const name = "sentryIoServerApi" as const;
 
 /**
  * displayName: Sentry.io Server API
- * documentationUrl: sentryIo
+ * documentationUrl: sentryio
  */
 export interface SentryIoServerApiCredentials {
     /** Type options: {"password":true} */

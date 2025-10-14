@@ -5,7 +5,7 @@ export const name = "oneSimpleApi" as const;
 
 /**
  * displayName: One Simple API
- * documentationUrl: oneSimpleApi
+ * documentationUrl: onesimpleapi
  */
 export interface OneSimpleApiCredentials {
     /** Type options: {"password":true} */

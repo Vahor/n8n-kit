@@ -5,7 +5,7 @@ export const name = "httpQueryAuth" as const;
 
 /**
  * displayName: Query Auth
- * documentationUrl: httpRequest
+ * documentationUrl: httprequest
  */
 export interface HttpQueryAuthCredentials {
     readonly "name"?: string;

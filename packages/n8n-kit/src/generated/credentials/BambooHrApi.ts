@@ -5,7 +5,7 @@ export const name = "bambooHrApi" as const;
 
 /**
  * displayName: BambooHR API
- * documentationUrl: bambooHr
+ * documentationUrl: bamboohr
  */
 export interface BambooHrApiCredentials {
     readonly "subdomain"?: string;

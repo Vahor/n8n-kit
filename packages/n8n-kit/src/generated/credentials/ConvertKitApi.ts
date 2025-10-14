@@ -5,7 +5,7 @@ export const name = "convertKitApi" as const;
 
 /**
  * displayName: ConvertKit API
- * documentationUrl: convertKit
+ * documentationUrl: convertkit
  */
 export interface ConvertKitApiCredentials {
     /** Type options: {"password":true} */

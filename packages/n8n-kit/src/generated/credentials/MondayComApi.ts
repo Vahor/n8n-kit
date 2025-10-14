@@ -5,7 +5,7 @@ export const name = "mondayComApi" as const;
 
 /**
  * displayName: Monday.com API
- * documentationUrl: mondayCom
+ * documentationUrl: mondaycom
  */
 export interface MondayComApiCredentials {
     /** Type options: {"password":true} */

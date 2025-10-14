@@ -5,7 +5,7 @@ export const name = "uptimeRobotApi" as const;
 
 /**
  * displayName: Uptime Robot API
- * documentationUrl: uptimeRobot
+ * documentationUrl: uptimerobot
  */
 export interface UptimeRobotApiCredentials {
     /** Type options: {"password":true} */

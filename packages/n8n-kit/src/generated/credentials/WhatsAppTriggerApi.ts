@@ -5,7 +5,7 @@ export const name = "whatsAppTriggerApi" as const;
 
 /**
  * displayName: WhatsApp OAuth API
- * documentationUrl: whatsApp
+ * documentationUrl: whatsapp
  */
 export interface WhatsAppTriggerApiCredentials {
     readonly "clientId": string;

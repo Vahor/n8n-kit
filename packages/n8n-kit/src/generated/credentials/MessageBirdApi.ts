@@ -5,7 +5,7 @@ export const name = "messageBirdApi" as const;
 
 /**
  * displayName: MessageBird API
- * documentationUrl: messageBird
+ * documentationUrl: messagebird
  */
 export interface MessageBirdApiCredentials {
     /** Type options: {"password":true} */
