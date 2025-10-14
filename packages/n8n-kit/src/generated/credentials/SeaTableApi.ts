@@ -5,7 +5,7 @@ export const name = "seaTableApi" as const;
 
 /**
  * displayName: SeaTable API
- * documentationUrl: seaTable
+ * documentationUrl: seatable
  */
 export interface SeaTableApiCredentials {
     /** Default: "cloudHosted" */
