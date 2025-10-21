@@ -9,6 +9,7 @@ import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
 import type { GroqApiCredentials } from "./GroqApi.ts";
 import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
+import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
 import type { MilvusApiCredentials } from "./MilvusApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
@@ -276,6 +277,7 @@ import type { OnfleetApiCredentials } from "./OnfleetApi.ts";
 import type { OpenAiApiCredentials } from "./OpenAiApi.ts";
 import type { OpenCTIApiCredentials } from "./OpenCTIApi.ts";
 import type { OpenWeatherMapApiCredentials } from "./OpenWeatherMapApi.ts";
+import type { OracleDBApiCredentials } from "./OracleDBApi.ts";
 import type { OrbitApiCredentials } from "./OrbitApi.ts";
 import type { OuraApiCredentials } from "./OuraApi.ts";
 import type { PaddleApiCredentials } from "./PaddleApi.ts";
@@ -420,6 +422,7 @@ export type N8nCredentialsUnion =
     | GooglePalmApiCredentials
     | GroqApiCredentials
     | HuggingFaceApiCredentials
+    | LemonadeApiCredentials
     | MilvusApiCredentials
     | MistralCloudApiCredentials
     | MotorheadApiCredentials
@@ -687,6 +690,7 @@ export type N8nCredentialsUnion =
     | OpenAiApiCredentials
     | OpenCTIApiCredentials
     | OpenWeatherMapApiCredentials
+    | OracleDBApiCredentials
     | OrbitApiCredentials
     | OuraApiCredentials
     | PaddleApiCredentials

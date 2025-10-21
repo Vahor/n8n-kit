@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/JotForm/JotFormTrigger.node.ts' node
 
-export const description = "Handle JotForm events via webhooks" as const;
+export const description = "Handle Jotform events via webhooks" as const;
 export const type = "n8n-nodes-base.jotFormTrigger" as const;
 export const version = 1 as const;
 export const credentials = [{"name":"jotFormApi","required":true}] as const;
