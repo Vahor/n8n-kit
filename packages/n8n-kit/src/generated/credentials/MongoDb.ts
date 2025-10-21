@@ -11,7 +11,10 @@ export interface MongoDbCredentials {
     /** Default: "values" */
     readonly "configurationType"?: "connectionString" | "values";
 
-    /** If provided, the value here will be used as a MongoDB connection string, and the MongoDB credentials will be ignored */
+    /**
+     * If provided, the value here will be used as a MongoDB connection string, and the MongoDB credentials will be ignored
+     * Type options: {"password":true}
+     */
     readonly "connectionString"?: string;
 
     /** Default: "localhost" */
