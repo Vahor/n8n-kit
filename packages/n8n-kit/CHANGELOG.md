@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.13.0
+
+### Minor Changes
+
+- [#144](https://github.com/Vahor/n8n-kit/pull/144) [`98d261c`](https://github.com/Vahor/n8n-kit/commit/98d261c3c9c66f8997f636f205d7b16dfb03e2f8) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [b4a92f32f607394788be5f389371f1e8020d0ed2](https://github.com/n8n-io/n8n/tree/b4a92f32f607394788be5f389371f1e8020d0ed2))
+
 ## 0.12.0
 
 ### Minor Changes
