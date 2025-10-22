@@ -31,12 +31,12 @@
 		"automation"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "2.2.6",
+		"@biomejs/biome": "2.2.7",
 		"@changesets/changelog-github": "^0.5.1",
 		"@changesets/cli": "^2.29.7",
 		"@types/bun": "1.3.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.2.5",
+		"lint-staged": "^16.2.6",
 		"pkg-pr-new": "^0.0.60",
 		"typedoc": "^0.28.14",
 		"typedoc-theme-oxide": "^0.2.0"
@@ -52,7 +52,7 @@
 		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun run build && bun publish || true); done && changeset tag"
 	},
 	"engines": {
-		"bun": ">=1.2.20"
+		"bun": ">=1.3.1"
 	},
 	"lint-staged": {
 		"!(**/generated/**)": [
