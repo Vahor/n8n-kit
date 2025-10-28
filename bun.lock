@@ -118,7 +118,7 @@
         "cheerio": "1.0.0-rc.6",
         "codemaker": "^1.114.1",
         "eventsource": "2.0.2",
-        "n8n-core": "^1.117.0",
+        "n8n-core": "1.117.0",
         "tinyglobby": "^0.2.15",
         "typescript": "catalog:",
       },

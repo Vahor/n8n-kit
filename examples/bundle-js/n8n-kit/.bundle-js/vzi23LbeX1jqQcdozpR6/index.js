@@ -1,7 +1,6 @@
 
 //#region src/data/some-data.json
-var hello = "world";
-var some_data_default = { hello };
+var some_data_default = { hello: "world" };
 
 //#endregion
 //#region node_modules/zod/v4/core/core.js
@@ -649,15 +648,14 @@ const ZodMiniObject = /* @__PURE__ */ $constructor("ZodMiniObject", (inst, def) 
 	defineLazy(inst, "shape", () => def.shape);
 });
 function object(shape, params) {
-	const def = {
+	return new ZodMiniObject({
 		type: "object",
 		get shape() {
 			assignProp(this, "shape", { ...shape });
 			return this.shape;
 		},
 		...normalizeParams(params)
-	};
-	return new ZodMiniObject(def);
+	});
 }
 const ZodMiniEnum = /* @__PURE__ */ $constructor("ZodMiniEnum", (inst, def) => {
 	$ZodEnum.init(inst, def);
@@ -665,10 +663,9 @@ const ZodMiniEnum = /* @__PURE__ */ $constructor("ZodMiniEnum", (inst, def) => {
 	inst.options = Object.values(def.entries);
 });
 function _enum(values, params) {
-	const entries = Array.isArray(values) ? Object.fromEntries(values.map((v) => [v, v])) : values;
 	return new ZodMiniEnum({
 		type: "enum",
-		entries,
+		entries: Array.isArray(values) ? Object.fromEntries(values.map((v) => [v, v])) : values,
 		...normalizeParams(params)
 	});
 }
