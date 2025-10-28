@@ -1,5 +1,14 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.18
+
+### Patch Changes
+
+- [#146](https://github.com/Vahor/n8n-kit/pull/146) [`bcec047`](https://github.com/Vahor/n8n-kit/commit/bcec047d2769a561f74242f414e90f684a2bdfe8) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump @types/bun from 1.3.0 to 1.3.1
+
+- Updated dependencies [[`ffed46d`](https://github.com/Vahor/n8n-kit/commit/ffed46d51474a4e0d75c0235c26850e27da0d959), [`bcec047`](https://github.com/Vahor/n8n-kit/commit/bcec047d2769a561f74242f414e90f684a2bdfe8)]:
+  - @vahor/n8n-kit@0.14.0
+
 ## 0.4.17
 
 ### Patch Changes
