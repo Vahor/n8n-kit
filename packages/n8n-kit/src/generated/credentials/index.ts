@@ -10,6 +10,7 @@ import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
 import type { GroqApiCredentials } from "./GroqApi.ts";
 import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
 import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
+import type { McpOAuth2ApiCredentials } from "./McpOAuth2Api.ts";
 import type { MilvusApiCredentials } from "./MilvusApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
@@ -423,6 +424,7 @@ export type N8nCredentialsUnion =
     | GroqApiCredentials
     | HuggingFaceApiCredentials
     | LemonadeApiCredentials
+    | McpOAuth2ApiCredentials
     | MilvusApiCredentials
     | MistralCloudApiCredentials
     | MotorheadApiCredentials

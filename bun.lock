@@ -107,7 +107,7 @@
         "arktype": "catalog:",
         "chalk": "catalog:",
         "lodash.clonedeep": "^4.5.0",
-        "n8n-workflow": "^1.114.0",
+        "n8n-workflow": "^1.115.0",
         "nano-spawn": "catalog:",
         "slugify": "^1.6.6",
         "tsdown": "catalog:",
@@ -118,7 +118,7 @@
         "cheerio": "1.0.0-rc.6",
         "codemaker": "^1.114.1",
         "eventsource": "2.0.2",
-        "n8n-core": "1.116.0",
+        "n8n-core": "^1.117.0",
         "tinyglobby": "^0.2.15",
         "typescript": "catalog:",
       },
@@ -530,7 +530,7 @@
 
     "@mozilla/readability": ["@mozilla/readability@0.6.0", "", {}, "sha512-juG5VWh4qAivzTAeMzvY9xs9HY5rAcr2E4I7tiSSCokRFi7XIZCAu92ZkSTsIj1OPceCifL3cpfteP3pDT9/QQ=="],
 
-    "@n8n/backend-common": ["@n8n/backend-common@0.27.0", "", { "dependencies": { "@n8n/config": "^1.59.0", "@n8n/constants": "^0.13.0", "@n8n/decorators": "^0.27.0", "@n8n/di": "^0.9.0", "callsites": "3.1.0", "n8n-workflow": "^1.114.0", "picocolors": "1.0.1", "reflect-metadata": "0.2.2", "winston": "3.14.2", "yargs-parser": "21.1.1" } }, "sha512-eOs/8JuovmMjYkn4SOq2nhc0xro+2EsIDask58itjjNFxrFVxNGWKhJygPhYv2Vcx5FxfYI915QA8l1ttQsHFQ=="],
+    "@n8n/backend-common": ["@n8n/backend-common@0.28.0", "", { "dependencies": { "@n8n/config": "^1.60.0", "@n8n/constants": "^0.13.0", "@n8n/decorators": "^0.28.0", "@n8n/di": "^0.9.0", "callsites": "3.1.0", "n8n-workflow": "^1.115.0", "picocolors": "1.0.1", "reflect-metadata": "0.2.2", "winston": "3.14.2", "yargs-parser": "21.1.1" } }, "sha512-mq6thMpl565lKXEqpLL/JbWloi3zh/YPON7xzJT9P4ZqdFtIaiE6QTgSJVHW0I5deOqHiC5cISp//PMRYzzEHA=="],
 
     "@n8n/client-oauth2": ["@n8n/client-oauth2@0.30.0", "", { "dependencies": { "axios": "1.12.0" } }, "sha512-XoRl9UQqKbaTa+cahewbZPkwlsyqSq7yK6HJ5W7t/zQVvH+emYPGXCb6EdRM6DLAjnfE5oifTjuLile8flccmA=="],
 
@@ -538,7 +538,7 @@
 
     "@n8n/constants": ["@n8n/constants@0.13.0", "", {}, "sha512-y6IL0/hho+1q3jEXUm/qdkajqzO+hIiJlAsbMXCaUwjvRsSyQg0YBZYCbhEFhAyWt1VuQAJn5Hl333TSCzVbEw=="],
 
-    "@n8n/decorators": ["@n8n/decorators@0.27.0", "", { "dependencies": { "@n8n/constants": "^0.13.0", "@n8n/di": "^0.9.0", "@n8n/permissions": "^0.40.0", "lodash": "4.17.21", "n8n-workflow": "^1.114.0" } }, "sha512-1kmKpin9ziyIYqt/zLP9ckNkHDgnJuxAZbTurJuMsFZ3j+dJIc8oyESHTsuvImKR1siqMWvEKxk4FUKyhrasjg=="],
+    "@n8n/decorators": ["@n8n/decorators@0.28.0", "", { "dependencies": { "@n8n/constants": "^0.13.0", "@n8n/di": "^0.9.0", "@n8n/permissions": "^0.40.0", "lodash": "4.17.21", "n8n-workflow": "^1.115.0" } }, "sha512-DWh90o8Zq7PYMGA/FnC3zLYtZU6KC/UZy3QUAW5A6IF3oWPCUQ+7fvRV9hBMRBPZTiHF5E2gSBhB2Mc2AFcRCA=="],
 
     "@n8n/di": ["@n8n/di@0.9.0", "", { "dependencies": { "reflect-metadata": "0.2.2" } }, "sha512-eHXzxSsGfSJg6pRvPEFAJ9fMFW26qfU07JCCSDvCiI0+teFejj+x5comqS/g+lXT11+rKRoSKT//5PILZcR/CA=="],
 
@@ -2004,11 +2004,11 @@
 
     "mysql2": ["mysql2@2.3.3", "", { "dependencies": { "denque": "^2.0.1", "generate-function": "^2.3.1", "iconv-lite": "^0.6.3", "long": "^4.0.0", "lru-cache": "^6.0.0", "named-placeholders": "^1.1.2", "seq-queue": "^0.0.5", "sqlstring": "^2.3.2" } }, "sha512-wxJUev6LgMSgACDkb/InIFxDprRa6T95+VEoR+xPvtngtccNH2dGjEB/fVZ8yg1gWv1510c9CvXuJHi5zUm0ZA=="],
 
-    "n8n-core": ["n8n-core@1.116.0", "", { "dependencies": { "@aws-sdk/client-s3": "3.808.0", "@langchain/core": "0.3.68", "@n8n/backend-common": "^0.27.0", "@n8n/client-oauth2": "0.30.0", "@n8n/config": "1.59.0", "@n8n/constants": "0.13.0", "@n8n/decorators": "0.27.0", "@n8n/di": "0.9.0", "@sentry/node": "^9.42.1", "@sentry/node-native": "^9.42.1", "axios": "1.12.0", "callsites": "3.1.0", "chardet": "2.0.0", "cron": "3.1.7", "fast-glob": "3.2.12", "file-type": "16.5.4", "form-data": "4.0.0", "htmlparser2": "^10.0.0", "http-proxy-agent": "7.0.2", "https-proxy-agent": "7.0.6", "iconv-lite": "0.6.3", "jsonwebtoken": "9.0.2", "lodash": "4.17.21", "luxon": "3.4.4", "mime-types": "2.1.35", "n8n-workflow": "1.114.0", "nanoid": "3.3.8", "oauth-1.0a": "2.2.6", "p-cancelable": "2.1.1", "picocolors": "1.0.1", "pretty-bytes": "5.6.0", "proxy-from-env": "^1.1.0", "qs": "6.11.0", "ssh2": "1.15.0", "uuid": "10.0.0", "winston": "3.14.2", "xml2js": "0.6.2", "zod": "3.25.67" }, "bin": { "n8n-copy-static-files": "bin/copy-static-files", "n8n-generate-translations": "bin/generate-translations", "n8n-generate-metadata": "bin/generate-metadata" } }, "sha512-DhA4g8/vTNay9Vr0vrJH1Jb4aqu5UJe0f8LOHP4buK2Jij+CrvUXoGz5QP/y9g0WCekJNIT0oOlGDKxpeaIK1g=="],
+    "n8n-core": ["n8n-core@1.117.0", "", { "dependencies": { "@aws-sdk/client-s3": "3.808.0", "@langchain/core": "0.3.68", "@n8n/backend-common": "^0.28.0", "@n8n/client-oauth2": "0.30.0", "@n8n/config": "1.60.0", "@n8n/constants": "0.13.0", "@n8n/decorators": "0.28.0", "@n8n/di": "0.9.0", "@sentry/node": "^9.42.1", "@sentry/node-native": "^9.42.1", "axios": "1.12.0", "callsites": "3.1.0", "chardet": "2.0.0", "cron": "3.1.7", "fast-glob": "3.2.12", "file-type": "16.5.4", "form-data": "4.0.0", "htmlparser2": "^10.0.0", "http-proxy-agent": "7.0.2", "https-proxy-agent": "7.0.6", "iconv-lite": "0.6.3", "jsonwebtoken": "9.0.2", "lodash": "4.17.21", "luxon": "3.4.4", "mime-types": "2.1.35", "n8n-workflow": "1.115.0", "nanoid": "3.3.8", "oauth-1.0a": "2.2.6", "p-cancelable": "2.1.1", "picocolors": "1.0.1", "pretty-bytes": "5.6.0", "proxy-from-env": "^1.1.0", "qs": "6.11.0", "ssh2": "1.15.0", "uuid": "10.0.0", "winston": "3.14.2", "xml2js": "0.6.2", "zod": "3.25.67" }, "bin": { "n8n-copy-static-files": "bin/copy-static-files", "n8n-generate-translations": "bin/generate-translations", "n8n-generate-metadata": "bin/generate-metadata" } }, "sha512-N5vSDainj0hhzzvL2W/kT83SY8eBboh10G+TVOriT6VAp7vi/ju+IkzdhgN5Eh20gt5iOLbLIVUWbSnNBhg+wQ=="],
 
     "n8n-nodes-base": ["n8n-nodes-base@1.112.0", "", { "dependencies": { "@aws-sdk/client-sso-oidc": "3.808.0", "@kafkajs/confluent-schema-registry": "3.8.0", "@mozilla/readability": "0.6.0", "@n8n/config": "1.57.0", "@n8n/di": "0.9.0", "@n8n/errors": "^0.5.0", "@n8n/imap": "0.15.0", "@n8n/vm2": "3.9.25", "alasql": "4.4.0", "amqplib": "0.10.6", "aws4": "1.11.0", "basic-auth": "2.0.1", "change-case": "4.1.2", "cheerio": "1.0.0-rc.6", "chokidar": "4.0.3", "cron": "3.1.7", "csv-parse": "5.5.0", "currency-codes": "2.1.0", "eventsource": "2.0.2", "fast-glob": "3.2.12", "fastest-levenshtein": "^1.0.16", "fflate": "0.7.4", "generate-schema": "2.6.0", "get-system-fonts": "2.0.2", "gm": "1.25.1", "html-to-text": "9.0.5", "iconv-lite": "0.6.3", "ics": "2.40.0", "isbot": "3.6.13", "iso-639-1": "2.1.15", "js-nacl": "1.4.0", "jsdom": "23.0.1", "jsonwebtoken": "9.0.2", "kafkajs": "2.2.4", "ldapts": "4.2.6", "lodash": "4.17.21", "lossless-json": "1.0.5", "luxon": "3.4.4", "mailparser": "3.6.7", "minifaker": "1.34.1", "moment-timezone": "0.5.48", "mongodb": "6.11.0", "mqtt": "5.7.2", "mssql": "10.0.2", "mysql2": "3.15.0", "n8n-workflow": "1.111.0", "node-html-markdown": "1.2.0", "node-ssh": "13.2.0", "nodemailer": "6.9.9", "otpauth": "9.1.1", "pdfjs-dist": "5.3.31", "pg": "8.12.0", "pg-promise": "11.9.1", "promise-ftp": "1.3.5", "pyodide": "0.28.0", "redis": "4.6.14", "rfc2047": "4.0.1", "rhea": "3.0.4", "rrule": "2.8.1", "rss-parser": "3.13.0", "sanitize-html": "2.12.1", "semver": "7.5.4", "showdown": "2.1.0", "simple-git": "3.28.0", "snowflake-sdk": "2.1.0", "ssh2-sftp-client": "12.0.1", "tmp-promise": "3.0.3", "ts-ics": "1.2.2", "uuid": "10.0.0", "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz", "xml2js": "0.6.2", "xmlhttprequest-ssl": "3.1.0" } }, "sha512-Hh7G3LJsSI1QSOJYF8jSO9bnUB+laS6jTOL0qwhY8wbQxpwT+TVtDorOjlijfDuqQNfvPjmDM6/qL3soGZjnpQ=="],
 
-    "n8n-workflow": ["n8n-workflow@1.114.0", "", { "dependencies": { "@n8n/errors": "^0.5.0", "@n8n/tournament": "1.0.6", "ast-types": "0.15.2", "callsites": "3.1.0", "esprima-next": "5.8.4", "form-data": "4.0.0", "jmespath": "0.16.0", "js-base64": "3.7.2", "jssha": "3.3.1", "lodash": "4.17.21", "luxon": "3.4.4", "md5": "2.3.0", "recast": "0.22.0", "title-case": "3.0.3", "transliteration": "2.3.5", "xml2js": "0.6.2", "zod": "3.25.67" } }, "sha512-qYXkaBmBlJN5E3xn1EnGoVQb6fOXGHiMC4Vs98TZKxaoaLoc2ZXpeTtMOBnKs937mOdeVXpJKqkS1XS7wQ6wQw=="],
+    "n8n-workflow": ["n8n-workflow@1.115.0", "", { "dependencies": { "@n8n/errors": "^0.5.0", "@n8n/tournament": "1.0.6", "ast-types": "0.15.2", "callsites": "3.1.0", "esprima-next": "5.8.4", "form-data": "4.0.0", "jmespath": "0.16.0", "js-base64": "3.7.2", "jssha": "3.3.1", "lodash": "4.17.21", "luxon": "3.4.4", "md5": "2.3.0", "recast": "0.22.0", "title-case": "3.0.3", "transliteration": "2.3.5", "xml2js": "0.6.2", "zod": "3.25.67" } }, "sha512-O1DaB10/3wWBr8xT9DYhYC+7B1yy5gxLDEpe0FgYjaUwNjNqMzqTzz/oVPnmV7DEwdUKj+xri1inZ/YozpQ39Q=="],
 
     "named-placeholders": ["named-placeholders@1.1.3", "", { "dependencies": { "lru-cache": "^7.14.1" } }, "sha512-eLoBxg6wE/rZkJPhU/xRX1WTpkFEwDJEN96oxFrTsqBdbT5ec295Q+CoHrL9IT0DipqKhmGcaZmwOt8OON5x1w=="],
 
@@ -3094,7 +3094,7 @@
 
     "@modelcontextprotocol/sdk/zod-to-json-schema": ["zod-to-json-schema@3.24.6", "", { "peerDependencies": { "zod": "^3.24.1" } }, "sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg=="],
 
-    "@n8n/backend-common/@n8n/config": ["@n8n/config@1.59.0", "", { "dependencies": { "@n8n/di": "0.9.0", "reflect-metadata": "0.2.2", "zod": "3.25.67" } }, "sha512-Y5y44fu6TgzA1Ue7gAylmKkkYUnY5V3aKpGm3lB7/alqRNywq9xIacoK4kaqgCGW7Gfs7QpOK8m4H969EgKSiA=="],
+    "@n8n/backend-common/@n8n/config": ["@n8n/config@1.60.0", "", { "dependencies": { "@n8n/di": "0.9.0", "reflect-metadata": "0.2.2", "zod": "3.25.67" } }, "sha512-W2JE4HUqEUYBP8tAgAtFpaHQNMSCG8nXE9iAtNzLlgWT5JZFcCPduK38gW5NWk+fFI9F8hlTG2oZvCib60XPng=="],
 
     "@n8n/backend-common/picocolors": ["picocolors@1.0.1", "", {}, "sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew=="],
 
@@ -3376,7 +3376,7 @@
 
     "mysql2/lru-cache": ["lru-cache@6.0.0", "", { "dependencies": { "yallist": "^4.0.0" } }, "sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA=="],
 
-    "n8n-core/@n8n/config": ["@n8n/config@1.59.0", "", { "dependencies": { "@n8n/di": "0.9.0", "reflect-metadata": "0.2.2", "zod": "3.25.67" } }, "sha512-Y5y44fu6TgzA1Ue7gAylmKkkYUnY5V3aKpGm3lB7/alqRNywq9xIacoK4kaqgCGW7Gfs7QpOK8m4H969EgKSiA=="],
+    "n8n-core/@n8n/config": ["@n8n/config@1.60.0", "", { "dependencies": { "@n8n/di": "0.9.0", "reflect-metadata": "0.2.2", "zod": "3.25.67" } }, "sha512-W2JE4HUqEUYBP8tAgAtFpaHQNMSCG8nXE9iAtNzLlgWT5JZFcCPduK38gW5NWk+fFI9F8hlTG2oZvCib60XPng=="],
 
     "n8n-core/htmlparser2": ["htmlparser2@10.0.0", "", { "dependencies": { "domelementtype": "^2.3.0", "domhandler": "^5.0.3", "domutils": "^3.2.1", "entities": "^6.0.0" } }, "sha512-TwAZM+zE5Tq3lrEHvOlvwgj1XLWQCtaaibSN11Q+gGBAS7Y1uZSWwXXRe4iF6OXnaq1riyQAPFOBtYc77Mxq0g=="],
 

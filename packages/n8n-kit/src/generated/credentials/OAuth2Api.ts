@@ -8,8 +8,12 @@ export const name = "oAuth2Api" as const;
  * documentationUrl: httprequest
  */
 export interface OAuth2ApiCredentials {
+    readonly "useDynamicClientRegistration"?: unknown;
+
     /** Default: "authorizationCode" */
     readonly "grantType"?: "authorizationCode" | "clientCredentials" | "pkce";
+
+    readonly "serverUrl": string;
 
     readonly "authUrl": string;
 

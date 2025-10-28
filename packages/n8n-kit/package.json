@@ -105,14 +105,14 @@
 		"arktype": "catalog:",
 		"chalk": "catalog:",
 		"lodash.clonedeep": "^4.5.0",
-		"n8n-workflow": "^1.114.0",
+		"n8n-workflow": "^1.115.0",
 		"nano-spawn": "catalog:",
 		"slugify": "^1.6.6",
 		"tsdown": "catalog:"
 	},
 	"devDependencies": {
 		"@n8n/n8n-nodes-langchain": "1.113.1",
-		"n8n-core": "1.116.0",
+		"n8n-core": "1.117.0",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "^1.114.1",
