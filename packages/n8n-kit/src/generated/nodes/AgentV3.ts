@@ -9,10 +9,10 @@ export const outputs = {"main":"main"} as const;
 
 export interface AgentV3NodeParameters {
     /** Default: "auto" */
-    readonly promptType?: "auto" | "define";
+    readonly promptType?: "auto" | "guardrails" | "define";
 
     /**
-     * Default: "={{ $json.chatInput }}"
+     * Default: "={{ $json.guardrailsInput }}"
      * Type options: {"rows":2}
      */
     readonly text?: string;
@@ -22,6 +22,6 @@ export interface AgentV3NodeParameters {
     readonly needsFallback?: boolean;
 
     /** Default: {} */
-    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, enableStreaming?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };
+    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, enableStreaming?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number }, maxTokensFromMemory?: unknown };
 
 }

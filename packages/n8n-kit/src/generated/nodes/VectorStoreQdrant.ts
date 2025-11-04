@@ -34,7 +34,7 @@ export interface VectorStoreQdrantNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { collectionConfig?: string } | { searchFilterJson?: string };
+    readonly options?: { collectionConfig?: string, contentPayloadKey?: string, metadataPayloadKey?: string } | { searchFilterJson?: string, contentPayloadKey?: string, metadataPayloadKey?: string };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

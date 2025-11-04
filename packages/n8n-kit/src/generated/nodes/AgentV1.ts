@@ -13,10 +13,10 @@ export interface AgentV1NodeParameters {
     readonly agent?: "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent" | "toolsAgent" | "conversationalAgent" | "openAiFunctionsAgent" | "planAndExecuteAgent" | "reActAgent" | "sqlAgent";
 
     /** Default: "auto" */
-    readonly promptType?: "auto" | "define";
+    readonly promptType?: "auto" | "guardrails" | "define";
 
     /**
-     * Default: "={{ $json.chatInput }}"
+     * Default: "={{ $json.guardrailsInput }}"
      * Type options: {"rows":2}
      */
     readonly text?: string;

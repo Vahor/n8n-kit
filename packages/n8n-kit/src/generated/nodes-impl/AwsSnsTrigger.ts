@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
+import type { AwsAssumeRoleCredentials } from "../credentials/AwsAssumeRole.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AwsSnsTriggerNodeParameters } from "../nodes/AwsSnsTrigger";
@@ -12,7 +13,8 @@ export interface AwsSnsTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: AwsSnsTriggerNodeParameters;
-    readonly awsCredentials: Credentials<AwsCredentials>;
+    readonly awsCredentials?: Credentials<AwsCredentials>;
+    readonly awsAssumeRoleCredentials?: Credentials<AwsAssumeRoleCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class AwsSnsTrigger<L extends string, C extends IContext = never, P exten
     protected type = "n8n-nodes-base.awsSnsTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.awsCredentials];
+        return [this.props?.awsCredentials, this.props?.awsAssumeRoleCredentials];
     }
 
 }

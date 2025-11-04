@@ -21,6 +21,9 @@ export interface AirtopNodeParameters {
     /** Whether to automatically save the <a href="https://docs.airtop.ai/guides/how-to/saving-a-profile" target="_blank">Airtop profile</a> for this session upon termination */
     readonly saveProfileOnTermination?: boolean;
 
+    /** Whether to record the browser session. <a href="https://docs.airtop.ai/guides/how-to/recording-a-session" target="_blank">More details</a>. */
+    readonly record?: boolean;
+
     /**
      * Minutes to wait before the session is terminated due to inactivity
      * Default: 10

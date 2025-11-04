@@ -9,10 +9,10 @@ export const outputs = {"main":"main"} as const;
 
 export interface AgentV2NodeParameters {
     /** Default: "auto" */
-    readonly promptType?: "auto" | "define";
+    readonly promptType?: "auto" | "guardrails" | "define";
 
     /**
-     * Default: "={{ $json.chatInput }}"
+     * Default: "={{ $json.guardrailsInput }}"
      * Type options: {"rows":2}
      */
     readonly text?: string;

@@ -3,7 +3,7 @@
 
 export const description = "For advanced usage with an AI chain" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatOpenAi" as const;
-export const version = 1.2 as const;
+export const version = 1.3 as const;
 export const credentials = [{"name":"openAiApi","required":true}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
@@ -20,9 +20,18 @@ export interface LmChatOpenAiNodeParameters {
 };
 
     /**
+     * Whether to use the Responses API to generate the response. <a href="https://docs.n8n.io/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatopenai/#use-responses-api">Learn more</a>.
+     * Default: true
+     */
+    readonly responsesApiEnabled?: boolean;
+
+    /** Default: {} */
+    readonly builtInTools?: { webSearch?: { searchContextSize?: "low" | "medium" | "high", allowedDomains?: string, country?: string, city?: string, region?: string }, fileSearch?: { vectorStoreIds: string, filters?: string, maxResults?: number }, codeInterpreter?: boolean };
+
+    /**
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { baseURL?: string, frequencyPenalty?: number, maxTokens?: number, responseFormat?: "text" | "json_object", presencePenalty?: number, temperature?: number, reasoningEffort?: "low" | "medium" | "high", timeout?: number, maxRetries?: number, topP?: number };
+    readonly options?: { baseURL?: string, frequencyPenalty?: number, maxTokens?: number, responseFormat?: "text" | "json_object", textFormat?: { textOptions: { type?: "text" | "json_schema" | "json_object", verbosity?: "low" | "medium" | "high", name?: string, requiredNotice?: string, schema?: string, description?: string, strict?: boolean } }, presencePenalty?: number, temperature?: number, reasoningEffort?: "low" | "medium" | "high", timeout?: number, maxRetries?: number, topP?: number, conversationId?: string, promptCacheKey?: string, safetyIdentifier?: string, serviceTier?: "auto" | "flex" | "default" | "priority", metadata?: string, topLogprobs?: number, promptConfig?: { promptOptions: { promptId?: string, version?: string, variables?: string } } };
 
 }

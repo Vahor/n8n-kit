@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { AwsCredentials } from "../credentials/Aws.ts";
+import type { AwsAssumeRoleCredentials } from "../credentials/AwsAssumeRole.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { AwsS3V2NodeParameters } from "../nodes/AwsS3V2";
@@ -12,7 +13,8 @@ export interface AwsS3V2Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: AwsS3V2NodeParameters;
-    readonly awsCredentials: Credentials<AwsCredentials>;
+    readonly awsCredentials?: Credentials<AwsCredentials>;
+    readonly awsAssumeRoleCredentials?: Credentials<AwsAssumeRoleCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class AwsS3V2<L extends string, C extends IContext = never, P extends Aws
     protected type = "n8n-nodes-base.awsS3" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.awsCredentials];
+        return [this.props?.awsCredentials, this.props?.awsAssumeRoleCredentials];
     }
 
 }
