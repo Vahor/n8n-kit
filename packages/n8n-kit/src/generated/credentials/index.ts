@@ -46,6 +46,7 @@ import type { Auth0ManagementApiCredentials } from "./Auth0ManagementApi.ts";
 import type { AutomizyApiCredentials } from "./AutomizyApi.ts";
 import type { AutopilotApiCredentials } from "./AutopilotApi.ts";
 import type { AwsCredentials } from "./Aws.ts";
+import type { AwsAssumeRoleCredentials } from "./AwsAssumeRole.ts";
 import type { AzureStorageOAuth2ApiCredentials } from "./AzureStorageOAuth2Api.ts";
 import type { AzureStorageSharedKeyApiCredentials } from "./AzureStorageSharedKeyApi.ts";
 import type { BambooHrApiCredentials } from "./BambooHrApi.ts";
@@ -53,6 +54,7 @@ import type { BannerbearApiCredentials } from "./BannerbearApi.ts";
 import type { BaserowApiCredentials } from "./BaserowApi.ts";
 import type { BeeminderApiCredentials } from "./BeeminderApi.ts";
 import type { BeeminderOAuth2ApiCredentials } from "./BeeminderOAuth2Api.ts";
+import type { BitbucketAccessTokenApiCredentials } from "./BitbucketAccessTokenApi.ts";
 import type { BitbucketApiCredentials } from "./BitbucketApi.ts";
 import type { BitlyApiCredentials } from "./BitlyApi.ts";
 import type { BitlyOAuth2ApiCredentials } from "./BitlyOAuth2Api.ts";
@@ -460,6 +462,7 @@ export type N8nCredentialsUnion =
     | AutomizyApiCredentials
     | AutopilotApiCredentials
     | AwsCredentials
+    | AwsAssumeRoleCredentials
     | AzureStorageOAuth2ApiCredentials
     | AzureStorageSharedKeyApiCredentials
     | BambooHrApiCredentials
@@ -467,6 +470,7 @@ export type N8nCredentialsUnion =
     | BaserowApiCredentials
     | BeeminderApiCredentials
     | BeeminderOAuth2ApiCredentials
+    | BitbucketAccessTokenApiCredentials
     | BitbucketApiCredentials
     | BitlyApiCredentials
     | BitlyOAuth2ApiCredentials

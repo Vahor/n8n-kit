@@ -4,11 +4,14 @@
 export const description = "Sends messages to AWS SQS" as const;
 export const type = "n8n-nodes-base.awsSqs" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"aws","required":true}] as const;
+export const credentials = [{"name":"aws","required":true,"displayOptions":{"show":{"authentication":["iam"]}}},{"name":"awsAssumeRole","required":true,"displayOptions":{"show":{"authentication":["assumeRole"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsSqsNodeParameters {
+    /** Default: "iam" */
+    readonly authentication?: "iam" | "assumeRole";
+
     /** Default: "sendMessage" */
     readonly operation?: "sendMessage";
 

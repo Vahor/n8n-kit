@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { BitbucketApiCredentials } from "../credentials/BitbucketApi.ts";
+import type { BitbucketAccessTokenApiCredentials } from "../credentials/BitbucketAccessTokenApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BitbucketTriggerNodeParameters } from "../nodes/BitbucketTrigger";
@@ -12,7 +13,8 @@ export interface BitbucketTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: BitbucketTriggerNodeParameters;
-    readonly bitbucketApiCredentials: Credentials<BitbucketApiCredentials>;
+    readonly bitbucketApiCredentials?: Credentials<BitbucketApiCredentials>;
+    readonly bitbucketAccessTokenApiCredentials?: Credentials<BitbucketAccessTokenApiCredentials>;
 }
 
 /**
@@ -20,14 +22,14 @@ export interface BitbucketTriggerProps extends NodeProps {
  */
 export class BitbucketTrigger<L extends string, C extends IContext = never, P extends BitbucketTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.bitbucketTrigger" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.bitbucketApiCredentials];
+        return [this.props?.bitbucketApiCredentials, this.props?.bitbucketAccessTokenApiCredentials];
     }
 
 }

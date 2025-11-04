@@ -133,7 +133,7 @@
 			"parameters": { "method": "GET", "url": "https://other-api.com/posts/1" },
 			"position": [1500, 540],
 			"type": "n8n-nodes-base.httpRequest",
-			"typeVersion": 4.2
+			"typeVersion": 4.3
 		},
 		{
 			"id": "final-response",

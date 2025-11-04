@@ -20,6 +20,6 @@ export interface EmbeddingsOpenAiNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { dimensions?: 256 | 512 | 1024 | 1536 | 3072, baseURL?: string, batchSize?: number, stripNewLines?: boolean, timeout?: number };
+    readonly options?: { dimensions?: 256 | 512 | 1024 | 1536 | 3072, baseURL?: string, batchSize?: number, stripNewLines?: boolean, timeout?: number, encodingFormat?: "float" | "base64" };
 
 }

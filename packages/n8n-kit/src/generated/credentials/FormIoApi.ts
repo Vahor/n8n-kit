@@ -18,5 +18,8 @@ export interface FormIoApiCredentials {
     /** Type options: {"password":true} */
     readonly "password"?: string;
 
+    /** Type options: {"expirable":true,"password":true} */
+    readonly "token"?: unknown;
+
     readonly __name: "formIoApi";
 }

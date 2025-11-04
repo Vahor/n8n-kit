@@ -4,11 +4,14 @@
 export const description = "Consume the AWS DynamoDB API" as const;
 export const type = "n8n-nodes-base.awsDynamoDb" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"aws","required":true}] as const;
+export const credentials = [{"name":"aws","required":true,"displayOptions":{"show":{"authentication":["iam"]}}},{"name":"awsAssumeRole","required":true,"displayOptions":{"show":{"authentication":["assumeRole"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AwsDynamoDBNodeParameters {
+    /** Default: "iam" */
+    readonly authentication?: "iam" | "assumeRole";
+
     /** Default: "item" */
     readonly resource?: "item";
 

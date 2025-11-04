@@ -3,6 +3,7 @@
 
 import type { HttpBearerAuthCredentials } from "../credentials/HttpBearerAuth.ts";
 import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts";
+import type { McpOAuth2ApiCredentials } from "../credentials/McpOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { McpClientToolNodeParameters } from "../nodes/McpClientTool";
@@ -15,6 +16,7 @@ export interface McpClientToolProps extends NodeProps {
     readonly parameters?: McpClientToolNodeParameters;
     readonly httpBearerAuthCredentials?: Credentials<HttpBearerAuthCredentials>;
     readonly httpHeaderAuthCredentials?: Credentials<HttpHeaderAuthCredentials>;
+    readonly mcpOAuth2ApiCredentials?: Credentials<McpOAuth2ApiCredentials>;
 }
 
 /**
@@ -29,7 +31,7 @@ export class McpClientTool<L extends string, C extends IContext = never, P exten
     }
 
     override getCredentials() {
-        return [this.props?.httpBearerAuthCredentials, this.props?.httpHeaderAuthCredentials];
+        return [this.props?.httpBearerAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.mcpOAuth2ApiCredentials];
     }
 
     public toTools(next: IChainable): this {
