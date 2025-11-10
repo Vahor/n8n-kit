@@ -81,7 +81,7 @@ export const handler = async (options: Options) => {
 				actionName: "rebuilding",
 				successName: "Rebuild",
 			},
-			options.watch || config.entrypoint,
+			options.watch || options.entrypoint || config.entrypoint,
 		);
 	}
 };

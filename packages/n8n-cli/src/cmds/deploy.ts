@@ -211,7 +211,7 @@ export const handler = async (options: DeployOptions) => {
 				actionName: "redeploying",
 				successName: "Redeploy",
 			},
-			options.watch || config.entrypoint,
+			options.watch || options.entrypoint || config.entrypoint,
 		);
 	}
 };

@@ -255,6 +255,17 @@ Enable debug logging for troubleshooting.
 bunx @vahor/n8n build --debug
 ```
 
+### `--entrypoint`
+
+Override the entrypoint path defined in `n8n-kit.config.json`.
+
+```sh
+bunx @vahor/n8n build --entrypoint src/alt-index.ts
+bunx @vahor/n8n deploy --entrypoint examples/my-app/index.ts --yes
+```
+
+Used for both loading the app and as the default watch path when `--watch` is passed without a path.
+
 ### `--help`
 
 Show help information for any command.
