@@ -20,23 +20,15 @@ jobs:
 
     steps:
       - name: Post starting comment
-        uses: actions/github-script@v7
+        uses: marocchino/sticky-pull-request-comment@v2
         env:
-          MESSAGE: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          header: "check-examples (${{ matrix.runner }})"
+          message: |
             Check Example job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} with runner ${{ matrix.runner}}.
 
             Please wait.
-
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          result-encoding: string
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.MESSAGE
-            })
 
       - name: Get PR info
         uses: actions/github-script@v7
@@ -85,36 +77,22 @@ jobs:
 
       - name: Post success comment
         if: ${{ success() }}
-        uses: actions/github-script@v7
+        uses: marocchino/sticky-pull-request-comment@v2
         env:
-          MESSAGE: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          header: "check-examples (${{ matrix.runner }})"
+          message: |
             Check examples job succeeded with runner ${{ matrix.runner}}.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          result-encoding: string
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.MESSAGE
-            })
 
       - name: Post failure comment
         if: ${{ failure() }}
-        uses: actions/github-script@v7
+        uses: marocchino/sticky-pull-request-comment@v2
         env:
-          MESSAGE: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          header: "check-examples (${{ matrix.runner }})"
+          message: |
             Check examples job failed with runner ${{ matrix.runner}}.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          result-encoding: string
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.MESSAGE
-            })
