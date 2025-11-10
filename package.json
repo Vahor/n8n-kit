@@ -52,7 +52,8 @@
 		"ci:publish": "for dir in packages/*; do (cd \"$dir\" && bun run build && bun publish || true); done && changeset tag"
 	},
 	"engines": {
-		"bun": ">=1.3.1"
+		"bun": ">=1.3.1",
+		"node": ">=22.18.0"
 	},
 	"lint-staged": {
 		"!(**/generated/**)": [
