@@ -33,7 +33,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@inquirer/prompts": "^7.8.6",
+		"@inquirer/prompts": "^7.10.0",
 		"@vahor/n8n-kit": "workspace:*",
 		"arktype": "catalog:",
 		"chalk": "catalog:",
@@ -44,7 +44,7 @@
 		"yargs": "^18.0.0"
 	},
 	"devDependencies": {
-		"@types/yargs": "^17.0.33",
+		"@types/yargs": "^17.0.34",
 		"tsdown": "catalog:",
 		"typescript": "catalog:",
 		"n8n-core": "1.115.0"
