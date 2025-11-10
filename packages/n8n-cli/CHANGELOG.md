@@ -1,5 +1,16 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.20
+
+### Patch Changes
+
+- [`1fdc7a6`](https://github.com/Vahor/n8n-kit/commit/1fdc7a6c32e98146dc98c7e35e555cccb71d95bb) Thanks [@Vahor](https://github.com/Vahor)! - fix n8n-kit version detection on node runtime
+
+- [`bf79cc5`](https://github.com/Vahor/n8n-kit/commit/bf79cc5310a52b1effca87c2878f38083d74b107) Thanks [@Vahor](https://github.com/Vahor)! - update tsdown
+
+- Updated dependencies [[`bf79cc5`](https://github.com/Vahor/n8n-kit/commit/bf79cc5310a52b1effca87c2878f38083d74b107)]:
+  - @vahor/n8n-kit@0.15.1
+
 ## 0.4.19
 
 ### Patch Changes
