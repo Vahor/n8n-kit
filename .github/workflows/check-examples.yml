@@ -13,6 +13,10 @@ jobs:
     if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/check-examples')
     runs-on: ubuntu-latest
     permissions: write-all
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ 'node', 'bun' ]
 
     steps:
       - name: Post starting comment
@@ -58,7 +62,12 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ fromJSON(steps.pr-info.outputs.result).ref }}
+
       - uses: oven-sh/setup-bun@v2
+
+      - uses: actions/setup-node@v6
+        if: ${{ matrix.runner == 'node' }}
+
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
@@ -66,7 +75,7 @@ jobs:
         run: bun run --filter '*' build
 
       - name: Check build examples
-        run: bash scripts/build-and-check-examples.sh
+        run: bash scripts/build-and-check-examples.sh ${{ matrix.runner }}
 
       - name: Check import examples
         run: bash scripts/check-import-examples.sh
@@ -76,7 +85,7 @@ jobs:
         uses: actions/github-script@v7
         env:
           MESSAGE: |
-            Check examples job succeeded.
+            Check examples job succeeded with runner ${{ matrix.runner}}.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -94,7 +103,7 @@ jobs:
         uses: actions/github-script@v7
         env:
           MESSAGE: |
-            Check examples job failed.
+            Check examples job failed with runner ${{ matrix.runner}}.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
