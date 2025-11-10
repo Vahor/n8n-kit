@@ -24,6 +24,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          number: ${{ github.event.issue.number }}
           header: "check-examples (${{ matrix.runner }})"
           message: |
             Check Example job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} with runner ${{ matrix.runner}}.
@@ -81,6 +82,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          number: ${{ github.event.issue.number }}
           header: "check-examples (${{ matrix.runner }})"
           message: |
             Check examples job succeeded with runner ${{ matrix.runner}}.
@@ -92,6 +94,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          number: ${{ github.event.issue.number }}
           header: "check-examples (${{ matrix.runner }})"
           message: |
             Check examples job failed with runner ${{ matrix.runner}}.
