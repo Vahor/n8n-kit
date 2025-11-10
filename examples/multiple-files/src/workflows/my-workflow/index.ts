@@ -1,6 +1,6 @@
 import { type App, Workflow } from "@vahor/n8n-kit";
 import { HttpRequest, StickyNote } from "@vahor/n8n-kit/nodes";
-import { basicAuthCredentials } from "../../credentials/basic-auth";
+import { basicAuthCredentials } from "../../credentials/basic-auth/index.ts";
 
 export function createMyWorkflow(app: App) {
 	return new Workflow(app, "my-workflow", {
