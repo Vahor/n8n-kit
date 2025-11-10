@@ -50,9 +50,9 @@ for example_dir in $EXAMPLE_DIRS; do
 	# Import workflow from JSON to regenerate index.ts
 	json_file=$(find . -mindepth 2 -name "*.json" -path "./*/workflows/*" -type f | head -1)
 	echo "   Importing workflow from JSON file '$json_file' ..."
-	bun ../../packages/n8n-cli/dist/index.js import --file "$json_file" --out "index2.ts" --yes
+	bun ../../packages/n8n-cli/dist/index.mjs import --file "$json_file" --out "index2.ts" --yes
 
-	bun ../../packages/n8n-cli/dist/index.js build --entrypoint "index2.ts" --sort
+	bun ../../packages/n8n-cli/dist/index.mjs build --entrypoint "index2.ts" --sort
 
 	rm "index2.ts"
 

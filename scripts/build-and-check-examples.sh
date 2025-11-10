@@ -30,7 +30,7 @@ for example_dir in $EXAMPLE_DIRS; do
 
 	cd "$example_dir"
 
-	$RUNNER ../../packages/n8n-cli/dist/index.js build --sort
+	$RUNNER ../../packages/n8n-cli/dist/index.mjs build --sort
 	bunx tsc --noEmit
 
 	cd "$ROOT_DIR"

@@ -36,7 +36,7 @@ export class NodejsFunction extends BundledFunction {
 
 	public override getBundledFile(outDir: string) {
 		const entrypoint = path.basename(this.entrypoint);
-		return path.join(outDir, entrypoint.replace(".ts", ".js"));
+		return path.join(outDir, entrypoint.replace(".ts", ".cjs"));
 	}
 
 	override async bundle() {

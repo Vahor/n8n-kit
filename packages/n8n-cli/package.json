@@ -9,7 +9,7 @@
 		"directory": "packages/n8n-cli"
 	},
 	"bin": {
-		"@vahor/n8n": "./dist/index.js"
+		"@vahor/n8n": "./dist/index.mjs"
 	},
 	"type": "module",
 	"private": false,
