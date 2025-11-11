@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [ 'node', 'bun' ]
+        runtime: [ 'node', 'bun' ]
 
     steps:
       - name: Post starting comment
@@ -25,9 +25,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           number: ${{ github.event.issue.number }}
-          header: "check-examples (${{ matrix.runner }})"
+          header: "check-examples (${{ matrix.runtime }})"
           message: |
-            Check Example job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} with runner ${{ matrix.runner}}.
+            Check Example job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} with runtime ${{ matrix.runtime}}.
 
             Please wait.
 
@@ -59,7 +59,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - uses: actions/setup-node@v6
-        if: ${{ matrix.runner == 'node' }}
+        if: ${{ matrix.runtime == 'node' }}
         with:
           node-version: 22.18
 
@@ -71,7 +71,7 @@ jobs:
         run: bun run --filter '*' build
 
       - name: Check build examples
-        run: bash scripts/build-and-check-examples.sh ${{ matrix.runner }}
+        run: bash scripts/build-and-check-examples.sh ${{ matrix.runtime }}
 
       - name: Check import examples
         run: bash scripts/check-import-examples.sh
@@ -83,9 +83,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           number: ${{ github.event.issue.number }}
-          header: "check-examples (${{ matrix.runner }})"
+          header: "check-examples (${{ matrix.runtime }})"
           message: |
-            Check examples job succeeded with runner ${{ matrix.runner}}.
+            Check examples job succeeded with runtime ${{ matrix.runtime}}.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
       - name: Post failure comment
@@ -95,7 +95,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           number: ${{ github.event.issue.number }}
-          header: "check-examples (${{ matrix.runner }})"
+          header: "check-examples (${{ matrix.runtime }})"
           message: |
-            Check examples job failed with runner ${{ matrix.runner}}.
+            Check examples job failed with runtime ${{ matrix.runtime}}.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
