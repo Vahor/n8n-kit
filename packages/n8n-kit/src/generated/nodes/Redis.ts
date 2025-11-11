@@ -10,7 +10,7 @@ export const outputs = {"main":"main"} as const;
 
 export interface RedisNodeParameters {
     /** Default: "info" */
-    readonly operation?: "delete" | "get" | "incr" | "info" | "keys" | "pop" | "publish" | "push" | "set";
+    readonly operation?: "delete" | "get" | "incr" | "info" | "keys" | "llen" | "pop" | "publish" | "push" | "set";
 
     /** Name of the key to delete from Redis */
     readonly key?: string;
@@ -49,6 +49,9 @@ export interface RedisNodeParameters {
      */
     readonly getValues?: boolean;
 
+    /** Name of the list in Redis */
+    readonly list?: string;
+
     /** The value to write in Redis */
     readonly value?: string;
 
@@ -63,9 +66,6 @@ export interface RedisNodeParameters {
 
     /** Data to publish */
     readonly messageData?: string;
-
-    /** Name of the list in Redis */
-    readonly list?: string;
 
     /** Whether to push or pop data from the end of the list */
     readonly tail?: boolean;
