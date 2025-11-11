@@ -16,23 +16,27 @@ jobs:
 
     steps:
       - name: Post starting comment
-        uses: actions/github-script@v7
+        uses: marocchino/sticky-pull-request-comment@v2
         env:
-          MESSAGE: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          number: ${{ github.event.issue.number }}
+          header: "check-generate"
+          message: |
             Check Generate job is scheduled at ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
 
             Please wait.
 
+      - name: Delete starting comment
+        uses: actions/github-script@v7
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          result-encoding: string
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
+            await github.rest.issues.deleteComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: process.env.MESSAGE
-            })
+              comment_id: context.payload.comment.id
+            });
 
       - name: Get PR info
         uses: actions/github-script@v7
@@ -72,36 +76,24 @@ jobs:
 
       - name: Post success comment
         if: ${{ success() }}
-        uses: actions/github-script@v7
+        uses: marocchino/sticky-pull-request-comment@v2
         env:
-          MESSAGE: |
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          number: ${{ github.event.issue.number }}
+          header: "check-generate"
+          message: |
             Check generate job completed.
             Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          result-encoding: string
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.MESSAGE
-            })
 
       - name: Post failure comment
         if: ${{ failure() }}
-        uses: actions/github-script@v7
+        uses: marocchino/sticky-pull-request-comment@v2
         env:
-          MESSAGE: |
-            Check examples job failed.
-            Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          result-encoding: string
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.MESSAGE
-            })
+          number: ${{ github.event.issue.number }}
+          header: "check-generate"
+          message: |
+            Check generate job failed.
+            Please check ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}.
