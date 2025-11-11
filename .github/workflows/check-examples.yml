@@ -31,6 +31,17 @@ jobs:
 
             Please wait.
 
+      - name: Delete starting comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.issues.deleteComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id
+            });
+
       - name: Get PR info
         uses: actions/github-script@v7
         id: pr-info
