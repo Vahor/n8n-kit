@@ -2,7 +2,7 @@ import * as fs from "node:fs";
 import path from "node:path";
 import chalk from "chalk";
 import spawn from "nano-spawn";
-import { build, type Options } from "tsdown";
+import { build, type UserConfig } from "tsdown";
 import { DEFAULT_CONFIG } from "../constants";
 import logger from "../logger";
 import { BundledFunction, type BundledFunctionProps } from "./function";
@@ -11,7 +11,7 @@ interface NodejsFunctionProps extends BundledFunctionProps {
 	/**
 	 * Bundler options
 	 */
-	bundlerOptions?: Options;
+	bundlerOptions?: UserConfig;
 
 	/**
 	 * Installation command
