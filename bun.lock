@@ -78,7 +78,7 @@
     },
     "packages/n8n-cli": {
       "name": "@vahor/n8n-kit-cli",
-      "version": "0.4.21",
+      "version": "0.4.22",
       "bin": {
         "@vahor/n8n": "./dist/index.mjs",
       },
@@ -102,7 +102,7 @@
     },
     "packages/n8n-kit": {
       "name": "@vahor/n8n-kit",
-      "version": "0.16.0",
+      "version": "0.17.0",
       "dependencies": {
         "@dagrejs/dagre": "^1.1.8",
         "arktype": "catalog:",
@@ -119,7 +119,7 @@
         "cheerio": "1.0.0-rc.6",
         "codemaker": "^1.114.1",
         "eventsource": "2.0.2",
-        "n8n-core": "^1.120.0",
+        "n8n-core": "1.120.0",
         "tinyglobby": "^0.2.15",
         "typescript": "catalog:",
       },
