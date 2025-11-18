@@ -3,17 +3,38 @@
 
 export const description = "Scrape and control any site with Airtop" as const;
 export const type = "n8n-nodes-base.airtop" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"airtopApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AirtopNodeParameters {
     /** Default: "session" */
-    readonly resource?: "extraction" | "file" | "interaction" | "session" | "window";
+    readonly resource?: "agent" | "extraction" | "file" | "interaction" | "session" | "window";
 
-    /** Default: "create" */
-    readonly operation?: "create" | "save" | "terminate" | "waitForDownload" | "close" | "create" | "getLiveView" | "list" | "load" | "takeScreenshot" | "deleteFile" | "get" | "getMany" | "load" | "upload" | "query" | "getPaginated" | "scrape" | "click" | "fill" | "hover" | "scroll" | "type";
+    /** Default: "run" */
+    readonly operation?: "run" | "create" | "save" | "terminate" | "waitForDownload" | "close" | "create" | "getLiveView" | "list" | "load" | "takeScreenshot" | "deleteFile" | "get" | "getMany" | "load" | "upload" | "query" | "getPaginated" | "scrape" | "click" | "fill" | "hover" | "scroll" | "type";
+
+    /** Webhook URL to invoke the Airtop agent. Visit <a href="https://portal.airtop.ai/agents" target="_blank">Airtop Agents</a> for more information. */
+    readonly webhookUrl?: string;
+
+    /**
+     * Agent's input parameters in JSON format. Visit <a href="https://portal.airtop.ai/agents" target="_blank">Airtop Agents</a> for more information.
+     * Default: "{}"
+     */
+    readonly agentParameters?: string;
+
+    /**
+     * Whether to wait for the agent to complete its execution
+     * Default: true
+     */
+    readonly awaitExecution?: boolean;
+
+    /**
+     * Timeout in seconds to wait for the agent to finish
+     * Default: 600
+     */
+    readonly timeout?: number;
 
     /** The name of the Airtop profile to load or create */
     readonly profileName?: string;
