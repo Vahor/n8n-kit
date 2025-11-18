@@ -15,6 +15,6 @@ export interface ChatAINodeParameters {
     readonly waitUserReply?: boolean;
 
     /** Default: {} */
-    readonly options?: { memoryConnection?: boolean, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } } };
+    readonly options?: { memoryConnection?: boolean, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } } } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } } };
 
 }

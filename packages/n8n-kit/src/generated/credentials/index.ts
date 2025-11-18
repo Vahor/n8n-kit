@@ -2,6 +2,7 @@
 // see scripts/generate-credentials.ts
 
 import type { AnthropicApiCredentials } from "./AnthropicApi.ts";
+import type { AzureAiSearchApiCredentials } from "./AzureAiSearchApi.ts";
 import type { AzureEntraCognitiveServicesOAuth2ApiCredentials } from "./AzureEntraCognitiveServicesOAuth2Api.ts";
 import type { AzureOpenAiApiCredentials } from "./AzureOpenAiApi.ts";
 import type { CohereApiCredentials } from "./CohereApi.ts";
@@ -180,6 +181,7 @@ import type { HttpBearerAuthCredentials } from "./HttpBearerAuth.ts";
 import type { HttpCustomAuthCredentials } from "./HttpCustomAuth.ts";
 import type { HttpDigestAuthCredentials } from "./HttpDigestAuth.ts";
 import type { HttpHeaderAuthCredentials } from "./HttpHeaderAuth.ts";
+import type { HttpMultipleHeadersAuthCredentials } from "./HttpMultipleHeadersAuth.ts";
 import type { HttpQueryAuthCredentials } from "./HttpQueryAuth.ts";
 import type { HttpSslAuthCredentials } from "./HttpSslAuth.ts";
 import type { HubspotApiCredentials } from "./HubspotApi.ts";
@@ -418,6 +420,7 @@ import type { ZulipApiCredentials } from "./ZulipApi.ts";
 export type N8nCredentialsUnion =
 
     | AnthropicApiCredentials
+    | AzureAiSearchApiCredentials
     | AzureEntraCognitiveServicesOAuth2ApiCredentials
     | AzureOpenAiApiCredentials
     | CohereApiCredentials
@@ -596,6 +599,7 @@ export type N8nCredentialsUnion =
     | HttpCustomAuthCredentials
     | HttpDigestAuthCredentials
     | HttpHeaderAuthCredentials
+    | HttpMultipleHeadersAuthCredentials
     | HttpQueryAuthCredentials
     | HttpSslAuthCredentials
     | HubspotApiCredentials

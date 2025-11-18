@@ -3,7 +3,7 @@
 
 export const description = "Triggers the workflow on a given schedule" as const;
 export const type = "n8n-nodes-base.scheduleTrigger" as const;
-export const version = 1.2 as const;
+export const version = 1.3 as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
