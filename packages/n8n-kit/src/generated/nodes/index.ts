@@ -308,6 +308,7 @@ export type { MatrixNodeParameters } from "./Matrix";
 export type { MattermostV1NodeParameters } from "./MattermostV1";
 export type { MauticNodeParameters } from "./Mautic";
 export type { MauticTriggerNodeParameters } from "./MauticTrigger";
+export type { McpClientNodeParameters } from "./McpClient";
 export type { McpClientToolNodeParameters } from "./McpClientTool";
 export type { McpTriggerNodeParameters } from "./McpTrigger";
 export type { MediumNodeParameters } from "./Medium";
