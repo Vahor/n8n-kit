@@ -6,15 +6,15 @@ import type { HttpHeaderAuthCredentials } from "../credentials/HttpHeaderAuth.ts
 import type { McpOAuth2ApiCredentials } from "../credentials/McpOAuth2Api.ts";
 import type { HttpMultipleHeadersAuthCredentials } from "../credentials/HttpMultipleHeadersAuth.ts";
 import type { Credentials } from "../../credentials";
-import type { IContext, IChainable } from "../../workflow/chain/types";
-import type { McpClientToolNodeParameters } from "../nodes/McpClientTool";
+import type { IContext } from "../../workflow/chain/types";
+import type { McpClientNodeParameters } from "../nodes/McpClient";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface McpClientToolProps extends NodeProps {
+export interface McpClientProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: McpClientToolNodeParameters;
+    readonly parameters?: McpClientNodeParameters;
     readonly httpBearerAuthCredentials?: Credentials<HttpBearerAuthCredentials>;
     readonly httpHeaderAuthCredentials?: Credentials<HttpHeaderAuthCredentials>;
     readonly mcpOAuth2ApiCredentials?: Credentials<McpOAuth2ApiCredentials>;
@@ -22,11 +22,11 @@ export interface McpClientToolProps extends NodeProps {
 }
 
 /**
- * Connect tools from an MCP Server
+ * Standalone MCP Client
  */
-export class McpClientTool<L extends string, C extends IContext = never, P extends McpClientToolProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
-    protected type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;
-    protected typeVersion = 1.2 as const;
+export class McpClient<L extends string, C extends IContext = never, P extends McpClientProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+    protected type = "@n8n/n8n-nodes-langchain.mcpClient" as const;
+    protected typeVersion = 1 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);
@@ -34,11 +34,6 @@ export class McpClientTool<L extends string, C extends IContext = never, P exten
 
     override getCredentials() {
         return [this.props?.httpBearerAuthCredentials, this.props?.httpHeaderAuthCredentials, this.props?.mcpOAuth2ApiCredentials, this.props?.httpMultipleHeadersAuthCredentials];
-    }
-
-    public toTools(next: IChainable): this {
-        super.addNext(next.startState, { type: "ai_tool" });
-        return this;
     }
 
 }
