@@ -54,7 +54,7 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
      */
     readonly limit?: number;
 
-    /** Must correspond to a document ID */
+    /** Name of the field in an input item that contains the document ID */
     readonly updateKey?: string;
 
     /** JSON query to execute */

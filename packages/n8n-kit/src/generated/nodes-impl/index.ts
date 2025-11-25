@@ -306,6 +306,7 @@ export * from "./Matrix";
 export * from "./MattermostV1";
 export * from "./Mautic";
 export * from "./MauticTrigger";
+export * from "./McpClient";
 export * from "./McpClientTool";
 export * from "./McpTrigger";
 export * from "./Medium";
