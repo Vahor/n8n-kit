@@ -5,7 +5,7 @@ export const name = "vercelAiGatewayApi" as const;
 
 /**
  * displayName: Vercel AI Gateway
- * documentationUrl: vercelaigateway
+ * documentationUrl: vercel
  */
 export interface VercelAiGatewayApiCredentials {
     /**

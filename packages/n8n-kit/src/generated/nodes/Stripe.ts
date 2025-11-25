@@ -10,10 +10,10 @@ export const outputs = {"main":"main"} as const;
 
 export interface StripeNodeParameters {
     /** Default: "balance" */
-    readonly resource?: "balance" | "charge" | "coupon" | "customer" | "customerCard" | "source" | "token";
+    readonly resource?: "balance" | "charge" | "coupon" | "customer" | "customerCard" | "meterEvent" | "source" | "token";
 
     /** Default: "get" */
-    readonly operation?: "get" | "add" | "get" | "remove" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "create";
+    readonly operation?: "get" | "add" | "get" | "remove" | "create" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "create" | "delete" | "get";
 
     /** ID of the customer to be associated with this card */
     readonly customerId?: string;
@@ -46,7 +46,7 @@ export interface StripeNodeParameters {
     readonly source?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { description?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, receipt_email?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } } }> } } | { address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, description?: string, email?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, phone?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, phone?: string }> } } | { metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, statement_descriptor?: string };
+    readonly additionalFields?: { description?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, receipt_email?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } } }> } } | { address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, description?: string, email?: string, metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, phone?: string, shipping?: { shippingProperties: Array<{ name?: string, address?: { details: { line1?: string, line2?: string, city?: string, state?: string, country?: string, postal_code?: string } }, phone?: string }> } } | { identifier?: string, timestamp?: string, customPayload?: { properties: Array<{ key?: string, value?: string }> } } | { metadata?: { metadataProperties: Array<{ key?: string, value?: string }> }, statement_descriptor?: string };
 
     /** ID of the charge to retrieve */
     readonly chargeId?: string;
@@ -94,6 +94,15 @@ export interface StripeNodeParameters {
 
     /** Default: {} */
     readonly filters?: { email?: string };
+
+    /** The name of the meter event. Corresponds with the event_name field on a meter. */
+    readonly eventName?: string;
+
+    /**
+     * The value of the meter event. Must be an integer. Can be positive or negative.
+     * Default: 1
+     */
+    readonly value?: number;
 
     readonly number?: string;
 
