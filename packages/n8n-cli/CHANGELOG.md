@@ -1,5 +1,18 @@
 # @vahor/n8n-kit-cli
 
+## 0.4.23
+
+### Patch Changes
+
+- [#160](https://github.com/Vahor/n8n-kit/pull/160) [`3c0b299`](https://github.com/Vahor/n8n-kit/commit/3c0b29997b476c80bc141e6f23a8b36bf3efa287) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump lint-staged from 16.2.6 to 16.2.7
+
+- [#161](https://github.com/Vahor/n8n-kit/pull/161) [`d0d1905`](https://github.com/Vahor/n8n-kit/commit/d0d1905b8620d6e9b058ab7544428491ceab6362) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump @biomejs/biome from 2.3.4 to 2.3.7
+
+- [#162](https://github.com/Vahor/n8n-kit/pull/162) [`bf3fb6f`](https://github.com/Vahor/n8n-kit/commit/bf3fb6f8d40dcc6942bc89e0094a63991e2e6fca) Thanks [@dependabot](https://github.com/apps/dependabot)! - Bump @types/bun from 1.3.2 to 1.3.3
+
+- Updated dependencies [[`d2e84ab`](https://github.com/Vahor/n8n-kit/commit/d2e84ab509c2612f504eb8abe51bc27e6fbe2f1d), [`3c0b299`](https://github.com/Vahor/n8n-kit/commit/3c0b29997b476c80bc141e6f23a8b36bf3efa287), [`d0d1905`](https://github.com/Vahor/n8n-kit/commit/d0d1905b8620d6e9b058ab7544428491ceab6362), [`bf3fb6f`](https://github.com/Vahor/n8n-kit/commit/bf3fb6f8d40dcc6942bc89e0094a63991e2e6fca)]:
+  - @vahor/n8n-kit@0.18.0
+
 ## 0.4.22
 
 ### Patch Changes
