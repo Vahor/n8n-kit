@@ -163,8 +163,6 @@ const googleDriveApiCredentials = Credentials.byId({
 To get the id, go on your n8n instance, click on a credential, and copy the id from the URL.
 e.g. `https://n8n.instance.com/home/credentials/yTwI5ccVwfGll1Kf` => `yTwI5ccVwfGll1Kf`
 
-**Note:** As these credentials are not deployed using the CLI, you don't need to add them to the app. 
-
 ### Chain
 
 Chains represent connected sequences of nodes:
