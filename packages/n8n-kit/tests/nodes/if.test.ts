@@ -78,31 +78,27 @@ describe("If", () => {
 		describe("node ids are correctly inferred", () => {
 			test("true().false()", () => {
 				const ifNode = baseifNode().true(trueNode).false(falseNode);
-				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
-					? Ids
-					: never;
+				type IdsInIf =
+					typeof ifNode extends If<any, any, any, any, infer Ids> ? Ids : never;
 				expectTypeOf<IdsInIf>().toEqualTypeOf<["true", "false"]>();
 			});
 
 			test("true()", () => {
 				const ifNode = baseifNode().true(trueNode);
-				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
-					? Ids
-					: never;
+				type IdsInIf =
+					typeof ifNode extends If<any, any, any, any, infer Ids> ? Ids : never;
 				expectTypeOf<IdsInIf>().toEqualTypeOf<["true"]>();
 			});
 			test("false()", () => {
 				const ifNode = baseifNode().false(falseNode);
-				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
-					? Ids
-					: never;
+				type IdsInIf =
+					typeof ifNode extends If<any, any, any, any, infer Ids> ? Ids : never;
 				expectTypeOf<IdsInIf>().toEqualTypeOf<["false"]>();
 			});
 			test("false().true()", () => {
 				const ifNode = baseifNode().false(falseNode).true(trueNode);
-				type IdsInIf = typeof ifNode extends If<any, any, any, any, infer Ids>
-					? Ids
-					: never;
+				type IdsInIf =
+					typeof ifNode extends If<any, any, any, any, infer Ids> ? Ids : never;
 				expectTypeOf<IdsInIf>().toEqualTypeOf<["false", "true"]>();
 			});
 		});
@@ -155,9 +151,8 @@ describe("If", () => {
 			type ExpectedContext = true2NodeInContext;
 			expectTypeOf<ChainContext>().toEqualTypeOf<ExpectedContext>();
 
-			type IdsInChain = typeof chain extends Chain<any, infer Ids>
-				? Ids
-				: never;
+			type IdsInChain =
+				typeof chain extends Chain<any, infer Ids> ? Ids : never;
 			expectTypeOf<IdsInChain>().toEqualTypeOf<
 				["start", "true2", "something", "end"]
 			>();

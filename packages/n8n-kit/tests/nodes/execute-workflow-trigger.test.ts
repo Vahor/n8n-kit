@@ -41,9 +41,10 @@ describe("ExecuteWorkflowTrigger", () => {
 				},
 			],
 		});
-		type Input = typeof executeNode extends ExecuteWorkflowTrigger<any, infer I>
-			? I["infer"]
-			: never;
+		type Input =
+			typeof executeNode extends ExecuteWorkflowTrigger<any, infer I>
+				? I["infer"]
+				: never;
 		expectTypeOf<Input>().toEqualTypeOf<{
 			a: string;
 			b: 1 | 2;
