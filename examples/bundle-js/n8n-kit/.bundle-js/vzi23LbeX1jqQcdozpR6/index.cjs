@@ -39,7 +39,6 @@ function $constructor(name, initializer$1, params) {
 	Object.defineProperty(_, "name", { value: name });
 	return _;
 }
-const $brand = Symbol("zod_brand");
 var $ZodAsyncError = class extends Error {
 	constructor() {
 		super(`Encountered Promise during synchronous parse. Use .parseAsync() instead.`);

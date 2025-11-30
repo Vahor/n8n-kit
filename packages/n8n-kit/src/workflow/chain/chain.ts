@@ -21,13 +21,14 @@ export type ChainContext = {
 	[nodeId: string]: any;
 };
 
-type IgnoreContext<T> = IsNever<T> extends true
-	? true
-	: IsUnknown<T> extends true
+type IgnoreContext<T> =
+	IsNever<T> extends true
 		? true
-		: IsAny<T> extends true
+		: IsUnknown<T> extends true
 			? true
-			: false;
+			: IsAny<T> extends true
+				? true
+				: false;
 
 /** @hidden */
 export type AddIChainableToChainContext<
