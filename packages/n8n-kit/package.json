@@ -101,7 +101,7 @@
 		"automation"
 	],
 	"dependencies": {
-		"@dagrejs/dagre": "^1.1.8",
+		"@dagrejs/dagre": "^2.0.0",
 		"arktype": "catalog:",
 		"chalk": "catalog:",
 		"lodash.clonedeep": "^4.5.0",
