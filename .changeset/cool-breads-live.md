@@ -2,4 +2,4 @@
 "@vahor/n8n-kit": minor
 ---
 
-Update "@dagrejs" to v2
+Update "@dagrejs/dagre" to v2

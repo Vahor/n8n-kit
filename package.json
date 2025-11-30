@@ -7,9 +7,9 @@
 			"examples/*"
 		],
 		"catalog": {
-			"tsdown": "^0.16.1",
+			"tsdown": "^0.16.8",
 			"typescript": "^5.9.3",
-			"arktype": "^2.1.24",
+			"arktype": "^2.1.27",
 			"nano-spawn": "^2.0.0",
 			"chalk": "^5.6.2"
 		}

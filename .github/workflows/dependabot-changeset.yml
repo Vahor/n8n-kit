@@ -1,8 +1,12 @@
 name: Dependabot Changeset
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -10,48 +14,76 @@ permissions:
 
 jobs:
   add-changeset:
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/dependabot-changeset')
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'dependabot/')
 
     steps:
+      - name: Get PR info
+        id: pr-info
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number
+            });
+            return {
+              ref: pr.data.head.ref,
+              sha: pr.data.head.sha,
+              headRef: pr.data.head.ref,
+              title: pr.data.title
+            };
+
       - name: Checkout repository
+        if: ${{ startsWith(fromJSON(steps.pr-info.outputs.result).headRef, 'dependabot/') }}
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+          ref: ${{ fromJSON(steps.pr-info.outputs.result).ref }}
 
       - name: Configure Git
+        if: ${{ startsWith(fromJSON(steps.pr-info.outputs.result).headRef, 'dependabot/') }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Checkout PR branch
         env:
-          BRANCH_NAME: ${{ github.head_ref }}
-        run: |
-          git fetch origin $BRANCH_NAME
-          git checkout $BRANCH_NAME
+          HUSKY: 0
 
       - name: Create changeset
+        if: ${{ startsWith(fromJSON(steps.pr-info.outputs.result).headRef, 'dependabot/') }}
         env:
-          PR_TITLE: ${{ github.event.pull_request.title }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ fromJSON(steps.pr-info.outputs.result).title }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+          HUSKY: 0
         run: |
-          # Create changeset file with timestamp
+          # Ensure directory exists
+          mkdir -p .changeset
+
+          # Create changeset file with PR number
           changeset_file=".changeset/dependabot-$PR_NUMBER.md"
 
-          cat > $changeset_file << EOF
+          cat > "$changeset_file" << 'EOF'
           ---
           "@vahor/n8n-kit": patch
           "@vahor/n8n-kit-cli": patch
           ---
 
-          $PR_TITLE
           EOF
+
+          # Append PR title (allowing special chars safely)
+          printf "%s\n" "$PR_TITLE" >> "$changeset_file"
 
           echo "Created changeset: $changeset_file"
 
           # Add and commit the changeset
-          git add $changeset_file
-          git commit -m "chore: add changeset for dependabot PR #$PR_NUMBER"
-          git push
+          git add "$changeset_file"
+          git commit -m "chore: add changeset for dependabot PR #$PR_NUMBER" || echo "No changes to commit"
+          git push || true
+
+      - name: Skip non-Dependabot PRs
+        if: ${{ !startsWith(fromJSON(steps.pr-info.outputs.result).headRef, 'dependabot/') }}
+        run: |
+          echo "Skipping: branch is not dependabot/*"
