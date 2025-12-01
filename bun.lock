@@ -104,7 +104,7 @@
       "name": "@vahor/n8n-kit",
       "version": "0.18.0",
       "dependencies": {
-        "@dagrejs/dagre": "^2.0.0",
+        "@dagrejs/dagre": "^2.0.1",
         "arktype": "catalog:",
         "chalk": "catalog:",
         "lodash.clonedeep": "^4.5.0",
@@ -375,7 +375,7 @@
 
     "@dabh/diagnostics": ["@dabh/diagnostics@2.0.3", "", { "dependencies": { "colorspace": "1.1.x", "enabled": "2.0.x", "kuler": "^2.0.0" } }, "sha512-hrlQOIi7hAfzsMqlGSFyVucrx38O+j6wiGOf//H2ecvIEqYN4ADBSS2iLMh5UFyDunCNniUIPk/q3riFv45xRA=="],
 
-    "@dagrejs/dagre": ["@dagrejs/dagre@2.0.0", "", { "dependencies": { "@dagrejs/graphlib": "2.2.4" } }, "sha512-L87v5pFRQDjTSXULl5HbJyMfGZRS2fqvbQsmROt9pmy7CeoC54n7kRBsYs4AmvVnNdChIWuE1F9EEWAL+ZJNGw=="],
+    "@dagrejs/dagre": ["@dagrejs/dagre@2.0.1", "", { "dependencies": { "@dagrejs/graphlib": "2.2.4" } }, "sha512-KEI+nyPrI6l8qeAZ9+Ju7+rWGYJnGRR9GUu7AEFUTrm/WC1i5d6/qo/HqQ+/LQRyDed0XjaNeqFBhaWd91Ho1g=="],
 
     "@dagrejs/graphlib": ["@dagrejs/graphlib@2.2.4", "", {}, "sha512-mepCf/e9+SKYy1d02/UkvSy6+6MoyXhVxP8lLDfA7BPE1X1d4dR0sZznmbM8/XVJ1GPM+Svnx7Xj6ZweByWUkw=="],
 
