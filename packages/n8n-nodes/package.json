@@ -1,0 +1,51 @@
+{
+	"name": "@vahor/n8n-nodes-custom",
+	"version": "0.0.0",
+	"description": "Custom nodes used with n8n-kit, can be used with any n8n instances",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Vahor/n8n-kit.git",
+		"directory": "packages/custom-nodes"
+	},
+	"private": false,
+	"author": {
+		"email": "me@vahor.fr"
+	},
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [],
+		"nodes": [
+			"dist/nodes/BetterCode/BetterCode.node.js"
+		]
+	},
+	"files": [
+		"dist"
+	],
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"builder",
+		"workflow",
+		"automation"
+	],
+	"scripts": {
+		"build": "n8n-node build",
+		"dev": "tsc --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"n8n-nodes-base": "^1.121.0",
+		"n8n-workflow": "^1.120.0",
+		"@n8n/node-cli": "*"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"bun": ">=1.2.20",
+		"node": ">=18"
+	}
+}
