@@ -77,7 +77,7 @@
 			},
 			"position": [420, 300],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "check-valid-execution-type",
@@ -105,7 +105,7 @@
 			},
 			"position": [780, 420],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "check-valid-execution-type-group",
