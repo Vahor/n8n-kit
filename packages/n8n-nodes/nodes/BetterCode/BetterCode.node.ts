@@ -1,3 +1,4 @@
+import { Code } from "n8n-nodes-base/dist/nodes/Code/Code.node";
 import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
@@ -5,8 +6,7 @@ import {
 	type INodeTypeDescription,
 	NodeConnectionTypes,
 } from "n8n-workflow";
-
-import { Code } from "n8n-nodes-base/dist/nodes/Code/Code.node";
+import { CREDENTIALS_NAMES } from "../constants";
 
 export class BetterCode implements INodeType {
 	description: INodeTypeDescription = {
@@ -21,9 +21,34 @@ export class BetterCode implements INodeType {
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
 
-		credentials: [],
+		// https://github.com/n8n-io/n8n/blob/e46f5137a02418021b67292c82fe8e4f4ec91da5/packages/core/src/execution-engine/node-execution-context/node-execution-context.ts#L266-L272
+		// Only HTTP nodes are not required to pass the full list of credentials
+		// so we have to list them all YEY !!
+		// TODO: if we hide using displayOption the credential is no usable.
+		//       but if we list them all, the node is not usable on the ui as it want to show all of them
+		credentials: CREDENTIALS_NAMES.filter((name) =>
+			name.startsWith("openAi"),
+		).map((name) => ({
+			name,
+			required: false,
+		})),
 
 		properties: [
+			// custom
+			{
+				displayName: "Generic Auth Type",
+				name: "genericAuthType",
+				type: "credentialsSelect",
+				noDataExpression: true,
+				credentialTypes: [
+					"extends:oAuth2Api",
+					"extends:oAuth1Api",
+					"has:authenticate",
+				],
+				default: "",
+				required: false,
+			},
+			// Base Code
 			{
 				displayName: "Mode",
 				name: "mode",
@@ -59,19 +84,6 @@ export class BetterCode implements INodeType {
 				default: "javaScript",
 			},
 			{
-				displayName: "Generic Auth Type",
-				name: "genericAuthType",
-				type: "credentialsSelect",
-				noDataExpression: true,
-				credentialTypes: [
-					"extends:oAuth2Api",
-					"extends:oAuth1Api",
-					"has:authenticate",
-				],
-				default: "",
-				required: false,
-			},
-			{
 				displayName: "JavaScript",
 				name: "jsCode",
 				type: "string",
@@ -89,30 +101,28 @@ export class BetterCode implements INodeType {
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		let cred: any = null;
-		try {
-			const genericAuthType = this.getNodeParameter(
-				"genericAuthType",
-				0,
-			) as string;
-			cred = await this.getCredentials(genericAuthType, 0);
-		} catch {}
+		const genericAuthType = this.getNodeParameter(
+			"genericAuthType",
+			0,
+		) as string;
+		cred = await this.getCredentials(genericAuthType, 0);
 
-		console.log("cred", cred);
-
-		const nativeCodeNode = new Code();
-		// @ts-ignore
-		const dataProxy = this.getWorkflowDataProxy(0);
-		dataProxy.$creds = {
-			cred,
-			test: 1,
+		// HACK: was not able to override helpers or context, so we override the
+		//       code value to add the credentials
+		const origialGetNodeParameter = this.getNodeParameter.bind(this);
+		// @ts-expect-error: yeah it's a hack
+		this.getNodeParameter = (name, index) => {
+			const result = origialGetNodeParameter.call(this, name, index);
+			if (name !== "jsCode") {
+				return result;
+			}
+			return `
+				const $creds = ${JSON.stringify(cred, null, 2)} 
+				${result}
+			`;
 		};
 
-		// @ts-ignore
-		// Monkey-patch the execution context to expose credentials
-		// This makes "cred" available inside the Code node execution environment
-		this.helpers.creds = () => ({ cred, test: 1 });
-
-		// Forward the execution call into the real Code node
+		const nativeCodeNode = new Code();
 		return await nativeCodeNode.execute.call(this);
 	}
 }

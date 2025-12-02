@@ -1,2 +1,1 @@
 export * from "../generated/credentials/constants";
-export * from "../generated/credentials/index";

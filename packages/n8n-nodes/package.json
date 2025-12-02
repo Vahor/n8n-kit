@@ -31,12 +31,14 @@
 		"automation"
 	],
 	"scripts": {
-		"build": "n8n-node build",
-		"dev": "tsc --watch",
+		"//": "sleep required to wait n8n-kit output: https://github.com/oven-sh/bun/issues/12203",
+		"build": "sleep 4 && n8n-node build",
+		"dev": "n8n-node dev",
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"@vahor/n8n-kit": "workspace:*",
 		"n8n-nodes-base": "^1.121.0",
 		"n8n-workflow": "^1.120.0",
 		"@n8n/node-cli": "*"

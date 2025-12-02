@@ -9,6 +9,7 @@ export const input = [
 	"src/utils/index.ts",
 	"src/nodes/generated.ts",
 	"src/credentials/generated.ts",
+	"src/credentials/constants.ts",
 ];
 
 export default defineConfig({

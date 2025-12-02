@@ -20,12 +20,12 @@
 		"declaration": true,
 		"sourceMap": true,
 		"skipLibCheck": true,
-		"outDir": "../n8n-nodes/dist"
+		"outDir": "./dist"
 	},
 	"include": [
-		"../n8n-nodes/credentials/**/*",
-		"../n8n-nodes/nodes/**/*",
-		"../n8n-nodes/nodes/**/*.json",
-		"../n8n-nodes/package.json"
+		"./credentials/**/*",
+		"./nodes/**/*",
+		"./nodes/**/*.json",
+		"./package.json"
 	]
 }

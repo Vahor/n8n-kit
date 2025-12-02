@@ -827,4 +827,3 @@ export type N8nCredentialsUnion =
     | ZscalerZiaApiCredentials
     | ZulipApiCredentials
 
-

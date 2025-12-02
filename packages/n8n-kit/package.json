@@ -44,6 +44,16 @@
 				"default": "./dist/workflow/index.cjs"
 			}
 		},
+		"./credentials/constants": {
+			"import": {
+				"types": "./dist/credentials/constants.d.mts",
+				"default": "./dist/credentials/constants.mjs"
+			},
+			"require": {
+				"types": "./dist/credentials/constants.d.cts",
+				"default": "./dist/credentials/constants.cjs"
+			}
+		},
 		"./credentials/generated": {
 			"import": {
 				"types": "./dist/credentials/generated.d.mts",

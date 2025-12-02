@@ -76,15 +76,6 @@
         "@vahor/n8n-kit": "workspace:*",
       },
     },
-    "packages/custom-nodes": {
-      "name": "@vahor/n8n-kit-custom-nodes",
-      "version": "0.0.0",
-      "devDependencies": {
-        "@n8n/node-cli": "*",
-        "n8n-nodes-base": "^1.121.0",
-        "n8n-workflow": "^1.120.0",
-      },
-    },
     "packages/n8n-cli": {
       "name": "@vahor/n8n-kit-cli",
       "version": "0.4.24",
@@ -132,6 +123,16 @@
         "rimraf": "^6.1.2",
         "tinyglobby": "^0.2.15",
         "typescript": "catalog:",
+      },
+    },
+    "packages/n8n-nodes": {
+      "name": "@vahor/n8n-nodes-custom",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@n8n/node-cli": "*",
+        "@vahor/n8n-kit": "workspace:*",
+        "n8n-nodes-base": "^1.121.0",
+        "n8n-workflow": "^1.120.0",
       },
     },
   },
@@ -1105,7 +1106,7 @@
 
     "@vahor/n8n-kit-cli": ["@vahor/n8n-kit-cli@workspace:packages/n8n-cli"],
 
-    "@vahor/n8n-kit-custom-nodes": ["@vahor/n8n-kit-custom-nodes@workspace:packages/custom-nodes"],
+    "@vahor/n8n-nodes-custom": ["@vahor/n8n-nodes-custom@workspace:packages/n8n-nodes"],
 
     "@xata.io/client": ["@xata.io/client@0.28.4", "", { "peerDependencies": { "typescript": ">=4.5" } }, "sha512-B02WHIA/ViHya84XvH6JCo13rd5h4S5vVyY2aYi6fIcjDIbCpsSLJ4oGWpdodovRYeAZy9Go4OhdyZwMIRC4BQ=="],
 

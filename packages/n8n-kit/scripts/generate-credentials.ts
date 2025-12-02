@@ -14,7 +14,7 @@ const allNodes = globSync(
 	},
 ).sort();
 
-const generateEntrypoint = async () => {
+const generateEntrypoint = async (allNames: Set<string>) => {
 	const code = new CodeMaker();
 	code.openFile("index.ts");
 
@@ -39,9 +39,22 @@ const generateEntrypoint = async () => {
 		code.line(`| ${nodeName}Credentials`);
 	}
 	code.unindent();
-	code.line();
 
 	code.closeFile("index.ts");
+
+	code.openFile("constants.ts");
+	code.line(`// GENERATED FILE, DO NOT EDIT`);
+	code.line(`// see scripts/generate-credentials.ts`);
+	code.line();
+	code.line(`export const CREDENTIALS_NAMES = [`);
+	code.indent();
+	for (const name of allNames) {
+		code.line(`"${name}",`);
+	}
+	code.unindent();
+	code.line(`] as const;`);
+	code.closeFile("constants.ts");
+
 	await code.save("src/generated/credentials");
 };
 
@@ -96,6 +109,7 @@ const generateTypescriptCredentialsOutput = async (
 
 const count = allNodes.length;
 let current = 0;
+const allNames = new Set<string>();
 for (const node of allNodes) {
 	try {
 		const nodeName = node.split("/").pop()!.split(".")[0]!;
@@ -110,6 +124,7 @@ for (const node of allNodes) {
 			console.error(nodeName);
 			continue;
 		}
+		allNames.add(instance.name);
 
 		const nodePathWithoutStartingSlash = node.split("vendor")[1];
 		instance.__filepath = nodePathWithoutStartingSlash;
@@ -125,4 +140,4 @@ for (const node of allNodes) {
 }
 console.log();
 console.log(count - current, "nodes failed to parse");
-await generateEntrypoint();
+await generateEntrypoint(allNames);
