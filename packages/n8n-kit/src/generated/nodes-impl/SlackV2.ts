@@ -22,7 +22,7 @@ export interface SlackV2Props extends NodeProps {
  */
 export class SlackV2<L extends string, C extends IContext = never, P extends SlackV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.slack" as const;
-    protected typeVersion = 2.3 as const;
+    protected typeVersion = 2.4 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

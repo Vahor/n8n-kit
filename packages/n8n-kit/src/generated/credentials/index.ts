@@ -44,7 +44,6 @@ import type { ApiTemplateIoApiCredentials } from "./ApiTemplateIoApi.ts";
 import type { AsanaApiCredentials } from "./AsanaApi.ts";
 import type { AsanaOAuth2ApiCredentials } from "./AsanaOAuth2Api.ts";
 import type { Auth0ManagementApiCredentials } from "./Auth0ManagementApi.ts";
-import type { AutomizyApiCredentials } from "./AutomizyApi.ts";
 import type { AutopilotApiCredentials } from "./AutopilotApi.ts";
 import type { AwsCredentials } from "./Aws.ts";
 import type { AwsAssumeRoleCredentials } from "./AwsAssumeRole.ts";
@@ -87,7 +86,6 @@ import type { ConvertKitApiCredentials } from "./ConvertKitApi.ts";
 import type { CopperApiCredentials } from "./CopperApi.ts";
 import type { CortexApiCredentials } from "./CortexApi.ts";
 import type { CrateDbCredentials } from "./CrateDb.ts";
-import type { CrowdDevApiCredentials } from "./CrowdDevApi.ts";
 import type { CrowdStrikeOAuth2ApiCredentials } from "./CrowdStrikeOAuth2Api.ts";
 import type { CustomerIoApiCredentials } from "./CustomerIoApi.ts";
 import type { DatadogApiCredentials } from "./DatadogApi.ts";
@@ -206,7 +204,6 @@ import type { JwtAuthCredentials } from "./JwtAuth.ts";
 import type { KafkaCredentials } from "./Kafka.ts";
 import type { KeapOAuth2ApiCredentials } from "./KeapOAuth2Api.ts";
 import type { KibanaApiCredentials } from "./KibanaApi.ts";
-import type { KitemakerApiCredentials } from "./KitemakerApi.ts";
 import type { KoBoToolboxApiCredentials } from "./KoBoToolboxApi.ts";
 import type { LdapCredentials } from "./Ldap.ts";
 import type { LemlistApiCredentials } from "./LemlistApi.ts";
@@ -345,7 +342,6 @@ import type { SnowflakeCredentials } from "./Snowflake.ts";
 import type { SolarWindsIpamApiCredentials } from "./SolarWindsIpamApi.ts";
 import type { SolarWindsObservabilityApiCredentials } from "./SolarWindsObservabilityApi.ts";
 import type { SplunkApiCredentials } from "./SplunkApi.ts";
-import type { SpontitApiCredentials } from "./SpontitApi.ts";
 import type { SpotifyOAuth2ApiCredentials } from "./SpotifyOAuth2Api.ts";
 import type { SshPasswordCredentials } from "./SshPassword.ts";
 import type { SshPrivateKeyCredentials } from "./SshPrivateKey.ts";
@@ -462,7 +458,6 @@ export type N8nCredentialsUnion =
     | AsanaApiCredentials
     | AsanaOAuth2ApiCredentials
     | Auth0ManagementApiCredentials
-    | AutomizyApiCredentials
     | AutopilotApiCredentials
     | AwsCredentials
     | AwsAssumeRoleCredentials
@@ -505,7 +500,6 @@ export type N8nCredentialsUnion =
     | CopperApiCredentials
     | CortexApiCredentials
     | CrateDbCredentials
-    | CrowdDevApiCredentials
     | CrowdStrikeOAuth2ApiCredentials
     | CustomerIoApiCredentials
     | DatadogApiCredentials
@@ -624,7 +618,6 @@ export type N8nCredentialsUnion =
     | KafkaCredentials
     | KeapOAuth2ApiCredentials
     | KibanaApiCredentials
-    | KitemakerApiCredentials
     | KoBoToolboxApiCredentials
     | LdapCredentials
     | LemlistApiCredentials
@@ -763,7 +756,6 @@ export type N8nCredentialsUnion =
     | SolarWindsIpamApiCredentials
     | SolarWindsObservabilityApiCredentials
     | SplunkApiCredentials
-    | SpontitApiCredentials
     | SpotifyOAuth2ApiCredentials
     | SshPasswordCredentials
     | SshPrivateKeyCredentials
