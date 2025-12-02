@@ -78,7 +78,7 @@
     },
     "packages/n8n-cli": {
       "name": "@vahor/n8n-kit-cli",
-      "version": "0.4.23",
+      "version": "0.4.24",
       "bin": {
         "@vahor/n8n": "./dist/index.mjs",
       },
@@ -102,7 +102,7 @@
     },
     "packages/n8n-kit": {
       "name": "@vahor/n8n-kit",
-      "version": "0.18.0",
+      "version": "0.19.0",
       "dependencies": {
         "@dagrejs/dagre": "^1.1.8",
         "arktype": "catalog:",

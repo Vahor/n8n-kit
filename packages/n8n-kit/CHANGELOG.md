@@ -1,5 +1,15 @@
 # @vahor/n8n-kit
 
+## 0.19.0
+
+### Minor Changes
+
+- [#169](https://github.com/Vahor/n8n-kit/pull/169) [`6acddbf`](https://github.com/Vahor/n8n-kit/commit/6acddbfdec86dfea7bcffb32e54def5835ceb0f2) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [f482809f916aa45b7bb4623faab5cdb0e60d258c](https://github.com/n8n-io/n8n/tree/f482809f916aa45b7bb4623faab5cdb0e60d258c))
+
+### Patch Changes
+
+- [#167](https://github.com/Vahor/n8n-kit/pull/167) [`bf4b1d3`](https://github.com/Vahor/n8n-kit/commit/bf4b1d3b2a295b0311c63d6a11b985fcbcb7fc71) Thanks [@Vahor](https://github.com/Vahor)! - Update tsdown dependency. Build output may change
+
 ## 0.18.0
 
 ### Minor Changes
