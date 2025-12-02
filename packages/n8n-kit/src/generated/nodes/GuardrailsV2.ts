@@ -1,13 +1,13 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/Guardrails/Guardrails.node.ts' node
+// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/Guardrails/v2/GuardrailsV2.node.ts' node
 
 export const description = "Safeguard AI models from malicious input or prevent them from generating undesirable responses" as const;
 export const type = "@n8n/n8n-nodes-langchain.guardrails" as const;
-export const version = 1 as const;
+export const version = 2 as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
-export interface GuardrailsNodeParameters {
+export interface GuardrailsV2NodeParameters {
     /** Default: "classify" */
     readonly operation?: "classify" | "sanitize";
 

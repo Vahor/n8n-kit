@@ -4,22 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
-import type { GuardrailsNodeParameters } from "../nodes/Guardrails";
+import type { GuardrailsV2NodeParameters } from "../nodes/GuardrailsV2";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface GuardrailsProps extends NodeProps {
+export interface GuardrailsV2Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: GuardrailsNodeParameters;
+    readonly parameters?: GuardrailsV2NodeParameters;
 }
 
 /**
  * Safeguard AI models from malicious input or prevent them from generating undesirable responses
  */
-export class Guardrails<L extends string, C extends IContext = never, P extends GuardrailsProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class GuardrailsV2<L extends string, C extends IContext = never, P extends GuardrailsV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.guardrails" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 2 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);
