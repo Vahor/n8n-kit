@@ -218,31 +218,45 @@ export class ExpressionBuilder<
 	 * - The input parameter of the function is typed as the current field type (`TCurr`).
 	 * - The resulting ExpressionBuilder's output type will be inferred from the function return type.
 	 * - Not all JS globals or helper functions may be available inside n8n expression evaluation.
+	 * - Only single-parameter expression-bodied arrow functions are supported (e.g. `x => x.trim().toUpperCase()`).
+	 *   If the function cannot be parsed as such, `apply()` will throw an error.
 	 */
 	public apply<TOutput = any>(
 		fn: (value: TCurr) => TOutput,
 	): ExpressionBuilder<any, any, TOutput> {
 		const fnStr = fn.toString();
-		// Extract method calls from function body
-		// Match patterns like: value.method(...).method2(...) or param.method(...).method2(...)
-		const match = fnStr.match(/=>\s*(.+?)(?:\s*$|;)/);
-		const body = match?.[1]?.trim() ?? fnStr;
 
-		// Remove parameter name prefix (e.g., "text." or "value.")
-		const paramMatch = fnStr.match(/\((\w+)\)/);
-		const paramName = paramMatch?.[1] ?? "";
-		let methodChain = body;
+		// Extract the arrow function body (supports multiline bodies)
+		const arrowMatch = fnStr.match(/=>\s*([\s\S]+?)(?:\s*$|;)/);
+		const body =
+			arrowMatch && arrowMatch[1]
+				? arrowMatch[1].trim()
+				: (() => {
+						throw new Error(
+							"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported (e.g. x => x.trim()).",
+						);
+					})();
 
-		if (paramName) {
-			// Remove the parameter name prefix and the dot
-			methodChain = body.replace(new RegExp(`^${paramName}\\.`), "");
+		// Extract parameter name accepting both parenthesized '(name)' and bare 'name =>' forms
+		const paramMatch = fnStr.match(
+			/\(\s*([A-Za-z_$][\w$]*)\s*\)|\b([A-Za-z_$][\w$]*)\s*=>/,
+		);
+		const paramName = paramMatch ? (paramMatch[1] ?? paramMatch[2] ?? "") : "";
+
+		if (!paramName) {
+			throw new Error(
+				"ExpressionBuilder.apply: could not determine function parameter name. Use a single-parameter expression-bodied arrow function like `x => x.foo()`.",
+			);
 		}
 
-		// Build the method call chain directly as a string
-		// Preserve the original method chain syntax (e.g., ".toUpperCase().split(" ").join("-")")
+		// Escape parameter name for use in RegExp and remove the leading 'param.' from the body
+		const escapeRegExp = (s: string) =>
+			s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+		const paramAnchored = new RegExp(`^${escapeRegExp(paramName)}\\.`);
+		const methodChain = body.replace(paramAnchored, "");
+
 		const methodCallStr = `.${methodChain}`;
 
-		// Clone with the raw method call string
 		return this.clone(methodCallStr) as ExpressionBuilder<any, any, TOutput>;
 	}
 

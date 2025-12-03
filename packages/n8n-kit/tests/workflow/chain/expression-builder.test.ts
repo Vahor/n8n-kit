@@ -190,6 +190,16 @@ describe("ExpressionBuilder", () => {
 			);
 		});
 
+		test("accepts bare-parameter arrow functions", () => {
+			const builder = $("data.output[0].content[0].text").apply((text) =>
+				text.toUpperCase().split(" ").join("-"),
+			);
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.toUpperCase().split(" ").join("-")`,
+			);
+		});
+
 		test("chaining two apply calls with type preservation", () => {
 			// First apply: string -> string[]
 			// Second apply: string[] -> string
