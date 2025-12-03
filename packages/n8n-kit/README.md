@@ -261,12 +261,15 @@ If you need to run an arbitrary transform that is easier to write as a lambda, u
 
 ```ts
 $("json.text").apply((text) => text.toUpperCase().split(" ").join("-"))
-// Results in: "={{ ((text) => text.toUpperCase().split(' ').join('-'))($json.text) }}"
+// Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
 ```
 
+The function body is parsed and emitted as a direct method chain. Type inference works as expected:
+- The function parameter is typed as the current field type
+- The output type is inferred from the function's return type (e.g., `string`, `string[]` after `split()`)
+
 Notes:
-- The function parameter is typed as the current field type and the output type is inferred from the function return type.
-- The emitted function is inlined into the expression; not all JS helpers or globals are guaranteed to be available in n8n expressions.
+- Not all JS helpers or globals are guaranteed to be available in n8n expressions.
 
 
 ### Typed Methods

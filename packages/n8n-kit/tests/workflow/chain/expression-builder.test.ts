@@ -176,7 +176,7 @@ describe("ExpressionBuilder", () => {
 			);
 			const format = builder.format();
 			expect(format).toEqual(
-				`((text) => text.toUpperCase().split(' ').join('-'))($('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text)`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.toUpperCase().split(" ").join("-")`,
 			);
 		});
 
@@ -186,7 +186,19 @@ describe("ExpressionBuilder", () => {
 				.join("-");
 			const format = builder.format();
 			expect(format).toEqual(
-				`((text) => text.split(' '))($('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text).join("-")`,
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
+			);
+		});
+
+		test("chaining two apply calls with type preservation", () => {
+			// First apply: string -> string[]
+			// Second apply: string[] -> string
+			const builder = $("data.output[0].content[0].text")
+				.apply((text: string) => text.split(" "))
+				.apply((arr: string[]) => arr.join("-"));
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
 			);
 		});
 

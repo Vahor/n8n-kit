@@ -84,8 +84,6 @@ export class ExpressionBuilder<
 		return new ExpressionBuilder(this.path, newMethodCalls, this.options);
 	}
 
-	private static readonly WRAP_PREFIX = "__WRAP__";
-
 	public getFullPath(): Path {
 		return this.path;
 	}
@@ -158,14 +156,8 @@ export class ExpressionBuilder<
 			throw new Error(`Unexpected mode: ${this.options.mode}`);
 		}
 
-		// Special wrapper: apply(fn) -> produce (fn)(baseExpression)
+		// Append method calls
 		if (this.methodCalls.length > 0) {
-			const first = this.methodCalls[0];
-			if (first?.startsWith(ExpressionBuilder.WRAP_PREFIX)) {
-				const fn = first.slice(ExpressionBuilder.WRAP_PREFIX.length);
-				const rest = this.methodCalls.slice(1).join("");
-				return `(${fn})(${baseExpression})${rest}`;
-			}
 			return baseExpression + this.methodCalls.join("");
 		}
 
@@ -212,23 +204,46 @@ export class ExpressionBuilder<
 	/**
 	 * Apply an arbitrary transform function to the current value.
 	 *
+	 * The function body is parsed and converted into a chain of method calls.
+	 * The parameter type is inferred from the current field type, and the output
+	 * type is inferred from the function's return type.
+	 *
 	 * Example:
 	 * ```ts
 	 * $("json.text").apply(text => text.toUpperCase().split(" ").join("-"))
+	 * // Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
 	 * ```
 	 *
 	 * Notes:
 	 * - The input parameter of the function is typed as the current field type (`TCurr`).
 	 * - The resulting ExpressionBuilder's output type will be inferred from the function return type.
-	 * - At runtime the function is emitted inline inside the expression. Not all JS globals or
-	 *   helper functions may be available inside n8n expression evaluation.
+	 * - Not all JS globals or helper functions may be available inside n8n expression evaluation.
 	 */
 	public apply<TOutput = any>(
 		fn: (value: TCurr) => TOutput,
 	): ExpressionBuilder<any, any, TOutput> {
-		const fnStr = replaceDoubleQuotes(fn.toString());
-		const methodCall = `${ExpressionBuilder.WRAP_PREFIX}${fnStr}`;
-		return this.clone(methodCall) as any;
+		const fnStr = fn.toString();
+		// Extract method calls from function body
+		// Match patterns like: value.method(...).method2(...) or param.method(...).method2(...)
+		const match = fnStr.match(/=>\s*(.+?)(?:\s*$|;)/);
+		const body = match?.[1]?.trim() ?? fnStr;
+
+		// Remove parameter name prefix (e.g., "text." or "value.")
+		const paramMatch = fnStr.match(/\((\w+)\)/);
+		const paramName = paramMatch?.[1] ?? "";
+		let methodChain = body;
+
+		if (paramName) {
+			// Remove the parameter name prefix and the dot
+			methodChain = body.replace(new RegExp(`^${paramName}\\.`), "");
+		}
+
+		// Build the method call chain directly as a string
+		// Preserve the original method chain syntax (e.g., ".toUpperCase().split(" ").join("-")")
+		const methodCallStr = `.${methodChain}`;
+
+		// Clone with the raw method call string
+		return this.clone(methodCallStr) as ExpressionBuilder<any, any, TOutput>;
 	}
 
 	// =========
