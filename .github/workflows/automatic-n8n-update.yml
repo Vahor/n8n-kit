@@ -98,7 +98,7 @@ jobs:
 
       - name: Build examples using new nodes
         if: steps.check-updates.outputs.has_updates == 'true'
-        run: bash scripts/build-and-check-examples.sh || true
+        run: bash scripts/build-and-check-examples.sh bun || true
 
       - name: Add changeset
         if: steps.check-updates.outputs.has_updates == 'true'

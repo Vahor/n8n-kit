@@ -3,7 +3,7 @@
 
 export const description = "Route items depending on defined expression or rules" as const;
 export const type = "n8n-nodes-base.switch" as const;
-export const version = 3.3 as const;
+export const version = 3.4 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"custom":"custom"} as const;
 
