@@ -232,6 +232,7 @@ export class ExpressionBuilder<
 			arrowMatch && arrowMatch[1]
 				? arrowMatch[1].trim()
 				: (() => {
+						// getting there
 						throw new Error(
 							"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported (e.g. x => x.trim()).",
 						);
