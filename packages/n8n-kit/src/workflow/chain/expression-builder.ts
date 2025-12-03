@@ -221,22 +221,21 @@ export class ExpressionBuilder<
 	 * - Only single-parameter expression-bodied arrow functions are supported (e.g. `x => x.trim().toUpperCase()`).
 	 *   If the function cannot be parsed as such, `apply()` will throw an error.
 	 */
-	public apply<TOutput = any>(
+	public apply<TOutput = unknown>(
 		fn: (value: TCurr) => TOutput,
-	): ExpressionBuilder<any, any, TOutput> {
+	): ExpressionBuilder<T, Path, TOutput> {
 		const fnStr = fn.toString();
 
 		// Extract the arrow function body (supports multiline bodies)
 		const arrowMatch = fnStr.match(/=>\s*([\s\S]+?)(?:\s*$|;)/);
-		const body =
-			arrowMatch && arrowMatch[1]
-				? arrowMatch[1].trim()
-				: (() => {
-						// getting there
-						throw new Error(
-							"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported (e.g. x => x.trim()).",
-						);
-					})();
+		const body = arrowMatch?.[1]
+			? arrowMatch[1].trim()
+			: (() => {
+					// getting there
+					throw new Error(
+						"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported (e.g. x => x.trim()).",
+					);
+				})();
 
 		// Extract parameter name accepting both parenthesized '(name)' and bare 'name =>' forms
 		const paramMatch = fnStr.match(
@@ -258,7 +257,13 @@ export class ExpressionBuilder<
 
 		const methodCallStr = `.${methodChain}`;
 
-		return this.clone(methodCallStr) as ExpressionBuilder<any, any, TOutput>;
+		// Cast via `unknown` to avoid introducing `any` while acknowledging we
+		// cannot preserve the original generic `T`/`Path` here.
+		return this.clone(methodCallStr) as unknown as ExpressionBuilder<
+			T,
+			Path,
+			TOutput
+		>;
 	}
 
 	// =========
