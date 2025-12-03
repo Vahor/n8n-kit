@@ -169,6 +169,33 @@ describe("ExpressionBuilder", () => {
 		});
 	});
 
+	describe("apply", () => {
+		test("simple transform", () => {
+			const builder = $("data.output[0].content[0].text").apply(
+				(text: string) => text.toUpperCase().split(" ").join("-"),
+			);
+			const format = builder.format();
+			expect(format).toEqual(
+				`((text) => text.toUpperCase().split(' ').join('-'))($('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text)`,
+			);
+		});
+
+		test("chaining after apply", () => {
+			const builder = $("data.output[0].content[0].text")
+				.apply((text: string) => text.split(" "))
+				.join("-");
+			const format = builder.format();
+			expect(format).toEqual(
+				`((text) => text.split(' '))($('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text).join("-")`,
+			);
+		});
+
+		test("type checking on input", () => {
+			// @ts-expect-error: applying string fn to non-string path should fail
+			$("data").apply((s: string) => s.toLowerCase());
+		});
+	});
+
 	describe("toLowerCase", () => {
 		test("on a string", () => {
 			const builder = $("Webhook.headers['x-user-id']");

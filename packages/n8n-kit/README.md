@@ -255,6 +255,20 @@ $("json.text")
 // Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
 ```
 
+### Apply
+
+If you need to run an arbitrary transform that is easier to write as a lambda, use `apply`:
+
+```ts
+$("json.text").apply((text) => text.toUpperCase().split(" ").join("-"))
+// Results in: "={{ ((text) => text.toUpperCase().split(' ').join('-'))($json.text) }}"
+```
+
+Notes:
+- The function parameter is typed as the current field type and the output type is inferred from the function return type.
+- The emitted function is inlined into the expression; not all JS helpers or globals are guaranteed to be available in n8n expressions.
+
+
 ### Typed Methods
 
 The expression builder includes typed methods for common operations:

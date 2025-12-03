@@ -84,6 +84,8 @@ export class ExpressionBuilder<
 		return new ExpressionBuilder(this.path, newMethodCalls, this.options);
 	}
 
+	private static readonly WRAP_PREFIX = "__WRAP__";
+
 	public getFullPath(): Path {
 		return this.path;
 	}
@@ -156,8 +158,14 @@ export class ExpressionBuilder<
 			throw new Error(`Unexpected mode: ${this.options.mode}`);
 		}
 
-		// Append method calls
+		// Special wrapper: apply(fn) -> produce (fn)(baseExpression)
 		if (this.methodCalls.length > 0) {
+			const first = this.methodCalls[0];
+			if (first?.startsWith(ExpressionBuilder.WRAP_PREFIX)) {
+				const fn = first.slice(ExpressionBuilder.WRAP_PREFIX.length);
+				const rest = this.methodCalls.slice(1).join("");
+				return `(${fn})(${baseExpression})${rest}`;
+			}
 			return baseExpression + this.methodCalls.join("");
 		}
 
@@ -199,6 +207,28 @@ export class ExpressionBuilder<
 		const methodCall =
 			params.length > 0 ? `.${methodName}(${params})` : `.${methodName}()`;
 		return this.clone(methodCall);
+	}
+
+	/**
+	 * Apply an arbitrary transform function to the current value.
+	 *
+	 * Example:
+	 * ```ts
+	 * $("json.text").apply(text => text.toUpperCase().split(" ").join("-"))
+	 * ```
+	 *
+	 * Notes:
+	 * - The input parameter of the function is typed as the current field type (`TCurr`).
+	 * - The resulting ExpressionBuilder's output type will be inferred from the function return type.
+	 * - At runtime the function is emitted inline inside the expression. Not all JS globals or
+	 *   helper functions may be available inside n8n expression evaluation.
+	 */
+	public apply<TOutput = any>(
+		fn: (value: TCurr) => TOutput,
+	): ExpressionBuilder<any, any, TOutput> {
+		const fnStr = replaceDoubleQuotes(fn.toString());
+		const methodCall = `${ExpressionBuilder.WRAP_PREFIX}${fnStr}`;
+		return this.clone(methodCall) as any;
 	}
 
 	// =========
