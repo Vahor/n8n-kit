@@ -19,7 +19,7 @@ export interface AgentV3Props extends NodeProps {
  */
 export class AgentV3<L extends string, C extends IContext = never, P extends AgentV3Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.agent" as const;
-    protected typeVersion = 3 as const;
+    protected typeVersion = 3.1 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

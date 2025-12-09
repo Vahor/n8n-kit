@@ -1,20 +1,21 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/agents/Agent/V3/AgentV3.node.ts' node
+// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/agents/Agent/V3/AgentToolV3.node.ts' node
 
 export const description = "Generates an action plan and executes it. Can use external tools." as const;
-export const type = "@n8n/n8n-nodes-langchain.agent" as const;
-export const version = 3.1 as const;
+export const type = "@n8n/n8n-nodes-langchain.agentTool" as const;
+export const version = 3 as const;
 export const inputs = {"custom":"custom"} as const;
-export const outputs = {"main":"main"} as const;
+export const outputs = {"ai_tool":"ai_tool"} as const;
 
-export interface AgentV3NodeParameters {
-    /** Default: "auto" */
-    readonly promptType?: "auto" | "guardrails" | "define" | "auto" | "define";
-
+export interface AgentToolV3NodeParameters {
     /**
-     * Default: "={{ $json.guardrailsInput }}"
+     * Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often
+     * Default: "AI Agent that can call other tools"
      * Type options: {"rows":2}
      */
+    readonly toolDescription?: string;
+
+    /** Type options: {"rows":2} */
     readonly text?: string;
 
     readonly hasOutputParser?: boolean;
