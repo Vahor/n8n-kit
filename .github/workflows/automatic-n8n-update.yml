@@ -23,6 +23,7 @@ jobs:
         with:
           fetch-depth: 0
           submodules: recursive
+          submodules-depth: 1
 
       - name: Configure Git
         run: |
