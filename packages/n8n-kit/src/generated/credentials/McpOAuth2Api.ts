@@ -9,7 +9,7 @@ export const name = "mcpOAuth2Api" as const;
  */
 export interface McpOAuth2ApiCredentials {
     /** Default: true */
-    readonly "useDynamicClientRegistration": boolean;
+    readonly "useDynamicClientRegistration"?: boolean;
 
     readonly __name: "mcpOAuth2Api";
 }
