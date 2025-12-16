@@ -3,17 +3,17 @@
 
 export const description = "Interact with Google Gemini AI models" as const;
 export const type = "@n8n/n8n-nodes-langchain.googleGemini" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleGeminiNodeParameters {
     /** Default: "text" */
-    readonly resource?: "audio" | "document" | "file" | "image" | "text" | "video";
+    readonly resource?: "audio" | "document" | "fileSearch" | "image" | "file" | "text" | "video";
 
     /** Default: "transcribe" */
-    readonly operation?: "analyze" | "transcribe" | "analyze" | "upload" | "analyze" | "generate" | "edit" | "message" | "analyze" | "generate" | "download";
+    readonly operation?: "analyze" | "transcribe" | "analyze" | "upload" | "createStore" | "deleteStore" | "listStores" | "uploadToStore" | "analyze" | "generate" | "edit" | "message" | "analyze" | "generate" | "download";
 
     /** Default: {"mode":"list","value":""} */
     readonly modelId?: {
@@ -46,13 +46,32 @@ export interface GoogleGeminiNodeParameters {
     readonly simplify?: boolean;
 
     /** Default: {} */
-    readonly options?: { maxOutputTokens?: number } | { startTime?: string, endTime?: string } | { binaryPropertyOutput?: string } | { sampleCount?: number, binaryPropertyOutput?: string } | { systemMessage?: string, codeExecution?: boolean, frequencyPenalty?: number, maxOutputTokens?: number, candidateCount?: number, presencePenalty?: number, temperature?: number, topP?: number, topK?: number, thinkingBudget?: number, maxToolsIterations?: number } | { sampleCount?: number, durationSeconds?: number, aspectRatio?: "16:9" | "9:16", personGeneration?: "dont_allow" | "allow_adult" | "allow_all", binaryPropertyOutput?: string };
+    readonly options?: { maxOutputTokens?: number } | { startTime?: string, endTime?: string } | { binaryPropertyOutput?: string } | { sampleCount?: number, binaryPropertyOutput?: string } | { includeMergedResponse?: boolean, systemMessage?: string, codeExecution?: boolean, frequencyPenalty?: number, maxOutputTokens?: number, candidateCount?: number, presencePenalty?: number, temperature?: number, topP?: number, topK?: number, thinkingBudget?: number, maxToolsIterations?: number } | { sampleCount?: number, durationSeconds?: number, aspectRatio?: "16:9" | "9:16", personGeneration?: "dont_allow" | "allow_adult" | "allow_all", binaryPropertyOutput?: string };
 
     /** URL(s) of the document(s) to analyze, multiple URLs can be added separated by comma */
     readonly documentUrls?: string;
 
     /** URL of the file to upload */
     readonly fileUrl?: string;
+
+    /** A human-readable name for the File Search store */
+    readonly displayName?: string;
+
+    /** The full name of the File Search store to delete (format: fileSearchStores/...) */
+    readonly fileSearchStoreName?: string;
+
+    /** Whether to delete related Documents and objects. If false, deletion will fail if the store contains any Documents. */
+    readonly force?: boolean;
+
+    /**
+     * Maximum number of File Search stores to return per page (max 20)
+     * Default: 10
+     * Type options: {"minValue":1,"maxValue":20}
+     */
+    readonly pageSize?: number;
+
+    /** Token from a previous page to retrieve the next page of results */
+    readonly pageToken?: string;
 
     /** URL(s) of the image(s) to analyze, multiple URLs can be added separated by comma */
     readonly imageUrls?: string;
@@ -78,6 +97,9 @@ export interface GoogleGeminiNodeParameters {
 
     /** Whether to attempt to return the response in JSON format */
     readonly jsonOutput?: boolean;
+
+    /** Default: {} */
+    readonly builtInTools?: { googleSearch?: boolean, googleMaps?: { latitude?: number, longitude?: number }, urlContext?: boolean, fileSearch?: { fileSearchStoreNames: string, metadataFilter?: string }, codeExecution?: boolean };
 
     /** URL(s) of the video(s) to analyze, multiple URLs can be added separated by comma */
     readonly videoUrls?: string;

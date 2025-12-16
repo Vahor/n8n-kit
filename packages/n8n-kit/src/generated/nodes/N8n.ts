@@ -13,7 +13,7 @@ export interface N8nNodeParameters {
     readonly resource?: "audit" | "credential" | "execution" | "workflow";
 
     /** Default: "get" */
-    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
 
     /** Default: {} */
     readonly additionalOptions?: { categories?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], daysAbandonedWorkflow?: number };
@@ -62,11 +62,17 @@ export interface N8nNodeParameters {
 	mode: "list" | "url" | "id",
 };
 
+    /** Default: {} */
+    readonly additionalFields?: { versionId?: string, name?: string, description?: string };
+
     /**
      * A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href="https://docs.n8n.io/api/api-reference/#tag/workflow/paths/~1workflows/post">documentation</a>.
      * Default: "{ \"name\": \"My workflow\", \"nodes\": [], \"connections\": {}, \"settings\": {} }"
      * Type options: {"alwaysOpenEditWindow":true}
      */
     readonly workflowObject?: string;
+
+    /** The version ID to retrieve */
+    readonly versionId?: string;
 
 }

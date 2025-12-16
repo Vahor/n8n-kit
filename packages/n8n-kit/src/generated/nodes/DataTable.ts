@@ -3,7 +3,7 @@
 
 export const description = "Permanently save data across workflow executions in a table" as const;
 export const type = "n8n-nodes-base.dataTable" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
