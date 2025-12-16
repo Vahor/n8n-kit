@@ -33,12 +33,12 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@inquirer/prompts": "^8.0.1",
+		"@inquirer/prompts": "^8.1.0",
 		"@vahor/n8n-kit": "workspace:*",
 		"arktype": "catalog:",
 		"chalk": "catalog:",
 		"chokidar": "^4.0.3",
-		"codemaker": "^1.120.0",
+		"codemaker": "^1.121.0",
 		"nano-spawn": "catalog:",
 		"table": "^6.9.0",
 		"yargs": "^18.0.0"

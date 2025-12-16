@@ -57,16 +57,16 @@ export class TreeBuilder {
 							// HACK: add a connection
 							this.connections[connection.node] ??= {};
 							this.connections[connection.node]![connection.type] ??= [[]];
-							this.connections[connection.node]![connection.type]![0]!.push({
+							this.connections[connection.node][connection.type][0]!.push({
 								node: toNode,
 								type: connection.type,
 								index: 0,
 							});
 
 							// remove the old one
-							this.connections[toNode]![connection.type]![i] = this.connections[
+							this.connections[toNode][connection.type]![i] = this.connections[
 								toNode
-							]![connection.type]![i]!.filter(
+							][connection.type][i]!.filter(
 								(conn) => conn.node !== connection.node,
 							);
 						} else {

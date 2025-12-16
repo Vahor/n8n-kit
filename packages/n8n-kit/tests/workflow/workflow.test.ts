@@ -19,9 +19,7 @@ describe("Workflow", () => {
 				});
 				const result = await workflow.build();
 				expect(result.nodes.map((n) => n.id)).toEqual(["a", "b"]);
-				expect(result.connections.a!.main![0]!.map((c) => c.node)).toEqual([
-					"b",
-				]);
+				expect(result.connections.a.main[0]!.map((c) => c.node)).toEqual(["b"]);
 				expect(result.connections).not.toHaveProperty("b");
 			});
 		});
@@ -43,9 +41,9 @@ describe("Workflow", () => {
 				"c",
 				"d",
 			]);
-			expect(result.connections.a!.main![0]!.map((c) => c.node)).toEqual(["b"]);
+			expect(result.connections.a.main[0]!.map((c) => c.node)).toEqual(["b"]);
 			expect(result.connections).not.toHaveProperty("b");
-			expect(result.connections.c!.main![0]!.map((c) => c.node)).toEqual([
+			expect(result.connections.c.main[0]!.map((c) => c.node)).toEqual([
 				"a",
 				"d",
 			]);
@@ -69,10 +67,10 @@ describe("Workflow", () => {
 				"c",
 				"d",
 			]);
-			expect(result.connections.a!.main![0]!.map((c) => c.node)).toEqual(["b"]);
+			expect(result.connections.a.main[0]!.map((c) => c.node)).toEqual(["b"]);
 			expect(result.connections).not.toHaveProperty("b");
-			expect(result.connections.c!.main![0]!.map((c) => c.node)).toEqual(["d"]);
-			expect(result.connections.d!.main![0]!.map((c) => c.node)).toEqual(["b"]);
+			expect(result.connections.c.main[0]!.map((c) => c.node)).toEqual(["d"]);
+			expect(result.connections.d.main[0]!.map((c) => c.node)).toEqual(["b"]);
 		});
 
 		test("can reverse chain elements", async () => {
@@ -112,7 +110,7 @@ describe("Workflow", () => {
 				"embeddings-google-gemini",
 			]);
 			expect(
-				result.connections["Embeddings Google Gemini"]!.ai_embedding![0]!.map(
+				result.connections["Embeddings Google Gemini"].ai_embedding[0]!.map(
 					(c) => [c.node, c.type],
 				),
 			).toEqual([["Pinecone Vector Store", "ai_embedding"]]);
