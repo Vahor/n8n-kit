@@ -38,7 +38,7 @@
 		"arktype": "catalog:",
 		"chalk": "catalog:",
 		"chokidar": "^4.0.3",
-		"codemaker": "^1.120.0",
+		"codemaker": "^1.121.0",
 		"nano-spawn": "catalog:",
 		"table": "^6.9.0",
 		"yargs": "^18.0.0"
