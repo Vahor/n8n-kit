@@ -475,7 +475,6 @@ export type { SpreadsheetFileV2NodeParameters } from "./SpreadsheetFileV2";
 export type { SseTriggerNodeParameters } from "./SseTrigger";
 export type { SshNodeParameters } from "./Ssh";
 export type { StackbyNodeParameters } from "./Stackby";
-export type { StartNodeParameters } from "./Start";
 export type { StickyNoteNodeParameters } from "./StickyNote";
 export type { StopAndErrorNodeParameters } from "./StopAndError";
 export type { StoryblokNodeParameters } from "./Storyblok";

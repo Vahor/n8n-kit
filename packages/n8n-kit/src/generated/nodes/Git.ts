@@ -3,7 +3,7 @@
 
 export const description = "Control git." as const;
 export const type = "n8n-nodes-base.git" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"gitPassword","required":true,"displayOptions":{"show":{"authentication":["gitPassword"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -25,7 +25,7 @@ export interface GitNodeParameters {
     readonly pathsToAdd?: string;
 
     /** Name of the key to set */
-    readonly key?: string;
+    readonly key?: "user.email" | "user.name" | "remote.origin.url" | string;
 
     /** Value of the key to set */
     readonly value?: string;

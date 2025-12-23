@@ -3,7 +3,7 @@
 
 export const description = "A simple chain to prompt a large language model" as const;
 export const type = "@n8n/n8n-nodes-langchain.chainLlm" as const;
-export const version = 1.8 as const;
+export const version = 1.9 as const;
 export const credentials = [] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;

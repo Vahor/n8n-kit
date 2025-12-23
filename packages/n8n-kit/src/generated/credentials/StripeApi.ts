@@ -11,5 +11,13 @@ export interface StripeApiCredentials {
     /** Type options: {"password":true} */
     readonly "secretKey"?: string;
 
+    /**
+     * The signature secret is used to verify the authenticity of requests sent by Stripe.
+     * Type options: {"password":true}
+     */
+    readonly "signatureSecret"?: string;
+
+    readonly "notice"?: string;
+
     readonly __name: "stripeApi";
 }
