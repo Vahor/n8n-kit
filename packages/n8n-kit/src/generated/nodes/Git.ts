@@ -16,7 +16,7 @@ export interface GitNodeParameters {
     readonly authentication?: "gitPassword" | "none";
 
     /** Default: "log" */
-    readonly operation?: "add" | "addConfig" | "clone" | "commit" | "fetch" | "listConfig" | "log" | "pull" | "push" | "pushTags" | "status" | "switchBranch" | "tag" | "userSetup";
+    readonly operation?: "add" | "addConfig" | "clone" | "commit" | "fetch" | "listConfig" | "log" | "pull" | "push" | "pushTags" | "reflog" | "status" | "switchBranch" | "tag" | "userSetup";
 
     /** Local path of the git repository to operate on */
     readonly repositoryPath?: string;
@@ -31,7 +31,7 @@ export interface GitNodeParameters {
     readonly value?: string;
 
     /** Default: {} */
-    readonly options?: { mode?: "append" | "set" } | { branch?: string, pathsToAdd?: string } | { file?: string } | { branch?: string, targetRepository?: string } | { createBranch?: boolean, startPoint?: string, force?: boolean, setUpstream?: boolean, remoteName?: string };
+    readonly options?: { mode?: "append" | "set" } | { branch?: string, pathsToAdd?: string } | { file?: string } | { branch?: string, targetRepository?: string } | { reference?: string } | { createBranch?: boolean, startPoint?: string, force?: boolean, setUpstream?: boolean, remoteName?: string };
 
     /** The URL or path of the repository to clone */
     readonly sourceRepository?: string;

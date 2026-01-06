@@ -31,6 +31,12 @@ export interface ChatTriggerNodeParameters {
     /** Whether to make the agent available in n8n Chat */
     readonly availableInChat?: boolean;
 
+    /**
+     * The icon of the agent on n8n Chat
+     * Default: {"type":"icon","value":"bot"}
+     */
+    readonly agentIcon?: unknown;
+
     /** The name of the agent on n8n Chat. Name of the workflow is used if left empty. */
     readonly agentName?: string;
 

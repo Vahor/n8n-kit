@@ -105,18 +105,18 @@
 		"arktype": "catalog:",
 		"chalk": "catalog:",
 		"lodash.clonedeep": "^4.5.0",
-		"n8n-workflow": "^2.2.1",
+		"n8n-workflow": "^2.3.0",
 		"nano-spawn": "catalog:",
 		"slugify": "^1.6.6",
 		"tsdown": "catalog:"
 	},
 	"devDependencies": {
-		"@n8n/n8n-nodes-langchain": "2.2.1",
+		"@n8n/n8n-nodes-langchain": "2.3.0",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "^1.121.0",
 		"eventsource": "2.0.2",
-		"n8n-core": "2.2.1",
+		"n8n-core": "2.3.0",
 		"rimraf": "^6.1.2",
 		"tinyglobby": "^0.2.15",
 		"typescript": "catalog:"
