@@ -37,7 +37,7 @@
 		"@vahor/n8n-kit": "workspace:*",
 		"arktype": "catalog:",
 		"chalk": "catalog:",
-		"chokidar": "^4.0.3",
+		"chokidar": "^5.0.0",
 		"codemaker": "^1.121.0",
 		"nano-spawn": "catalog:",
 		"table": "^6.9.0",
