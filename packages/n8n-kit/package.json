@@ -111,7 +111,7 @@
 		"tsdown": "catalog:"
 	},
 	"devDependencies": {
-		"@n8n/n8n-nodes-langchain": "2.3.0",
+		"@n8n/n8n-nodes-langchain": "2.3.1",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "^1.121.0",
