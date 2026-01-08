@@ -115,7 +115,7 @@
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "^1.121.0",
-		"eventsource": "2.0.2",
+		"eventsource": "4.1.0",
 		"n8n-core": "2.3.0",
 		"rimraf": "^6.1.2",
 		"tinyglobby": "^0.2.15",
