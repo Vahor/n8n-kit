@@ -92,10 +92,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /** Comma-separated list of email addresses of recipients */
     readonly to?: string;
 
-    /** Default: "2026-01-06T09:07:26.071+00:00" */
+    /** Default: "2026-01-27T09:09:47.736+00:00" */
     readonly startDateTime?: string;
 
-    /** Default: "2026-01-06T09:37:26.071+00:00" */
+    /** Default: "2026-01-27T09:39:47.736+00:00" */
     readonly endDateTime?: string;
 
     /**
@@ -154,7 +154,7 @@ export interface MicrosoftOutlookV2NodeParameters {
 
     /**
      * Default: {}
-     * Type options: {"multipleValues":true,"sortable":true}
+     * Type options: {"multipleValues":true,"sortable":true,"fixedCollection":{"itemTitle":"={{ $collection.item.properties.find(p => p.name === \"fieldType\").options.find(o => o.value === $collection.item.value.fieldType).name }}"}}
      */
     readonly formFields?: { values: Array<{ fieldName: string, fieldLabel: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, defaultValue?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 

@@ -41,14 +41,14 @@ export interface WaitNodeParameters {
     readonly formTitle?: string;
 
     /**
-     * Shown underneath the Form Title. Can be used to prompt the user on how to complete the form. Accepts HTML.
+     * Shown underneath the Form Title. Can be used to prompt the user on how to complete the form. Accepts HTML. Does not accept <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> or <code>&lt;input&gt;</code> tags.
      * Type options: {"rows":2}
      */
     readonly formDescription?: string;
 
     /**
      * Default: {}
-     * Type options: {"multipleValues":true,"sortable":true}
+     * Type options: {"multipleValues":true,"sortable":true,"fixedCollection":{"itemTitle":"={{ $collection.item.properties.find(p => p.name === \"fieldType\").options.find(o => o.value === $collection.item.value.fieldType).name }}"}}
      */
     readonly formFields?: { values: Array<{ fieldName: string, fieldLabel: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, defaultValue?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 

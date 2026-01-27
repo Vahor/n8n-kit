@@ -1,16 +1,16 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreAzureAISearch/VectorStoreAzureAISearch.node.ts' node
+// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreChromaDB/VectorStoreChromaDB.node.ts' node
 
-export const description = "Work with your data in Azure AI Search Vector Store" as const;
-export const type = "@n8n/n8n-nodes-langchain.vectorStoreAzureAISearch" as const;
+export const description = "Work with your data in Chroma Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreChromaDB" as const;
 export const version = 1.3 as const;
-export const credentials = [{"name":"azureAiSearchApi","required":true}] as const;
+export const credentials = [{"name":"chromaSelfHostedApi","required":true,"displayOptions":{"show":{"authentication":["chromaSelfHostedApi"]}}},{"name":"chromaCloudApi","required":true,"displayOptions":{"show":{"authentication":["chromaCloudApi"]}}}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
 
-export interface VectorStoreAzureAISearchNodeParameters {
+export interface VectorStoreChromaDBNodeParameters {
     /** Default: "retrieve" */
-    readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool" | "update";
+    readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
 
     /** Name of the vector store */
     readonly toolName?: string;
@@ -21,11 +21,14 @@ export interface VectorStoreAzureAISearchNodeParameters {
      */
     readonly toolDescription?: string;
 
-    /**
-     * The name of the Azure AI Search index. Will be created automatically if it does not exist.
-     * Default: "n8n-vectorstore"
-     */
-    readonly indexName?: string;
+    /** Default: "chromaSelfHostedApi" */
+    readonly authentication?: "chromaSelfHostedApi" | "chromaCloudApi";
+
+    /** Default: {"mode":"list","value":""} */
+    readonly chromaCollection?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Number of documents to embed in a single batch
@@ -34,7 +37,7 @@ export interface VectorStoreAzureAISearchNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { clearIndex?: boolean, metadataKeysToInsert?: string } | { queryType?: "vector" | "hybrid" | "semanticHybrid", filter?: string, semanticConfiguration?: string };
+    readonly options?: { clearCollection?: boolean } | { metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;
