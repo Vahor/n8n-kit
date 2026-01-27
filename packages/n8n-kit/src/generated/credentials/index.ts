@@ -5,6 +5,8 @@ import type { AnthropicApiCredentials } from "./AnthropicApi.ts";
 import type { AzureAiSearchApiCredentials } from "./AzureAiSearchApi.ts";
 import type { AzureEntraCognitiveServicesOAuth2ApiCredentials } from "./AzureEntraCognitiveServicesOAuth2Api.ts";
 import type { AzureOpenAiApiCredentials } from "./AzureOpenAiApi.ts";
+import type { ChromaCloudApiCredentials } from "./ChromaCloudApi.ts";
+import type { ChromaSelfHostedApiCredentials } from "./ChromaSelfHostedApi.ts";
 import type { CohereApiCredentials } from "./CohereApi.ts";
 import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
@@ -419,6 +421,8 @@ export type N8nCredentialsUnion =
     | AzureAiSearchApiCredentials
     | AzureEntraCognitiveServicesOAuth2ApiCredentials
     | AzureOpenAiApiCredentials
+    | ChromaCloudApiCredentials
+    | ChromaSelfHostedApiCredentials
     | CohereApiCredentials
     | DeepSeekApiCredentials
     | GooglePalmApiCredentials

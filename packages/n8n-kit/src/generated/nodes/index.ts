@@ -537,6 +537,7 @@ export type { UpleadNodeParameters } from "./Uplead";
 export type { UptimeRobotNodeParameters } from "./UptimeRobot";
 export type { UrlScanIoNodeParameters } from "./UrlScanIo";
 export type { VectorStoreAzureAISearchNodeParameters } from "./VectorStoreAzureAISearch";
+export type { VectorStoreChromaDBNodeParameters } from "./VectorStoreChromaDB";
 export type { VectorStoreInMemoryNodeParameters } from "./VectorStoreInMemory";
 export type { VectorStoreInMemoryInsertNodeParameters } from "./VectorStoreInMemoryInsert";
 export type { VectorStoreInMemoryLoadNodeParameters } from "./VectorStoreInMemoryLoad";

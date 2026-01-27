@@ -58,7 +58,7 @@
 			},
 			"position": [260, 60],
 			"type": "n8n-nodes-base.httpRequest",
-			"typeVersion": 4.3
+			"typeVersion": 4.4
 		},
 		{
 			"credentials": { "anthropicApi": { "id": "qtQFvIABHtrMfErE" } },
@@ -79,7 +79,7 @@
 			},
 			"position": [460, 300],
 			"type": "n8n-nodes-base.httpRequest",
-			"typeVersion": 4.3
+			"typeVersion": 4.4
 		},
 		{
 			"id": "webhook",

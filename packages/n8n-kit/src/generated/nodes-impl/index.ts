@@ -534,6 +534,7 @@ export * from "./Uplead";
 export * from "./UptimeRobot";
 export * from "./UrlScanIo";
 export * from "./VectorStoreAzureAISearch";
+export * from "./VectorStoreChromaDB";
 export * from "./VectorStoreInMemory";
 export * from "./VectorStoreInMemoryInsert";
 export * from "./VectorStoreInMemoryLoad";
