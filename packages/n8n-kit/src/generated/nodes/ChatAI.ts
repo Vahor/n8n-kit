@@ -3,7 +3,7 @@
 
 export const description = "Send a message into the chat" as const;
 export const type = "@n8n/n8n-nodes-langchain.chat" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 

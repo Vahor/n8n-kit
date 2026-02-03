@@ -18,7 +18,7 @@ export interface LinearOAuth2ApiCredentials {
     readonly "accessTokenUrl": unknown;
 
     /** Default: "user" */
-    readonly "actor"?: "user" | "application";
+    readonly "actor"?: "user" | "app";
 
     /** Grants the "Admin" scope, Needed to create webhooks */
     readonly "includeAdminScope"?: boolean;

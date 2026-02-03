@@ -14,6 +14,7 @@ import type { GroqApiCredentials } from "./GroqApi.ts";
 import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
 import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
 import type { McpOAuth2ApiCredentials } from "./McpOAuth2Api.ts";
+import type { MicrosoftAgent365ApiCredentials } from "./MicrosoftAgent365Api.ts";
 import type { MilvusApiCredentials } from "./MilvusApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
@@ -89,6 +90,8 @@ import type { CopperApiCredentials } from "./CopperApi.ts";
 import type { CortexApiCredentials } from "./CortexApi.ts";
 import type { CrateDbCredentials } from "./CrateDb.ts";
 import type { CrowdStrikeOAuth2ApiCredentials } from "./CrowdStrikeOAuth2Api.ts";
+import type { CryptoCredentials } from "./Crypto.ts";
+import type { CurrentsApiCredentials } from "./CurrentsApi.ts";
 import type { CustomerIoApiCredentials } from "./CustomerIoApi.ts";
 import type { DatadogApiCredentials } from "./DatadogApi.ts";
 import type { DeepLApiCredentials } from "./DeepLApi.ts";
@@ -430,6 +433,7 @@ export type N8nCredentialsUnion =
     | HuggingFaceApiCredentials
     | LemonadeApiCredentials
     | McpOAuth2ApiCredentials
+    | MicrosoftAgent365ApiCredentials
     | MilvusApiCredentials
     | MistralCloudApiCredentials
     | MotorheadApiCredentials
@@ -505,6 +509,8 @@ export type N8nCredentialsUnion =
     | CortexApiCredentials
     | CrateDbCredentials
     | CrowdStrikeOAuth2ApiCredentials
+    | CryptoCredentials
+    | CurrentsApiCredentials
     | CustomerIoApiCredentials
     | DatadogApiCredentials
     | DeepLApiCredentials
