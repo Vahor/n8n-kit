@@ -2,20 +2,20 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { IContext } from "../../workflow/chain/types";
-import type { CryptoNodeParameters } from "../nodes/Crypto";
+import type { CryptoV1NodeParameters } from "../nodes/CryptoV1";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface CryptoProps extends NodeProps {
+export interface CryptoV1Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: CryptoNodeParameters;
+    readonly parameters?: CryptoV1NodeParameters;
 }
 
 /**
  * Provide cryptographic utilities
  */
-export class Crypto<L extends string, C extends IContext = never, P extends CryptoProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class CryptoV1<L extends string, C extends IContext = never, P extends CryptoV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.crypto" as const;
     protected typeVersion = 1 as const;
 

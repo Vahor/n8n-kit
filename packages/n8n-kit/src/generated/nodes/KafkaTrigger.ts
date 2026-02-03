@@ -3,7 +3,7 @@
 
 export const description = "Consume messages from a Kafka topic" as const;
 export const type = "n8n-nodes-base.kafkaTrigger" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const credentials = [{"name":"kafka","required":true}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
@@ -22,6 +22,6 @@ export interface KafkaTriggerNodeParameters {
     readonly schemaRegistryUrl?: string;
 
     /** Default: {} */
-    readonly options?: { allowAutoTopicCreation?: boolean, autoCommitThreshold?: number, autoCommitInterval?: number, batchSize?: number, fetchMaxBytes?: number, fetchMinBytes?: number, heartbeatInterval?: number, maxInFlightRequests?: number, fromBeginning?: boolean, jsonParseMessage?: boolean, parallelProcessing?: boolean, partitionsConsumedConcurrently?: number, onlyMessage?: boolean, returnHeaders?: boolean, rebalanceTimeout?: number, sessionTimeout?: number };
+    readonly options?: { allowAutoTopicCreation?: boolean, autoCommitThreshold?: number, autoCommitInterval?: number, batchSize?: number, fetchMaxBytes?: number, fetchMinBytes?: number, heartbeatInterval?: number, maxInFlightRequests?: number, fromBeginning?: boolean, jsonParseMessage?: boolean, keepBinaryData?: boolean, parallelProcessing?: boolean, partitionsConsumedConcurrently?: number, onlyMessage?: boolean, returnHeaders?: boolean, rebalanceTimeout?: number, sessionTimeout?: number };
 
 }
