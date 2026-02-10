@@ -28,7 +28,7 @@ export interface CurrentsNodeParameters {
 };
 
     /** Default: {} */
-    readonly filters?: { search?: string, status?: ("active" | "disabled")[] } | { branch?: string, ciBuildId?: string, tag?: string } | { author?: string, branch?: string, completionState?: ("CANCELED" | "COMPLETE" | "IN_PROGRESS" | "TIMEOUT")[], dateEnd?: string, dateStart?: string, search?: string, status?: ("FAILED" | "FAILING" | "PASSED" | "RUNNING")[], tag?: string, tagOperator?: "AND" | "OR" } | { authors?: string, branches?: string, groups?: string, specNameFilter?: string, tags?: string } | { authors?: string, branches?: string, groups?: string, minExecutions?: number, spec?: string, tags?: string, testState?: ("failed" | "passed" | "pending" | "skipped")[], title?: string } | { branch?: string, gitAuthor?: string, group?: string, status?: ("failed" | "passed" | "pending" | "skipped")[], tag?: string };
+    readonly filters?: { search?: string, status?: ("active" | "archived" | "disabled" | "expired")[] } | { branch?: string, ciBuildId?: string, tags?: string } | { authors?: string, branches?: string, completionState?: ("CANCELED" | "COMPLETE" | "IN_PROGRESS" | "TIMEOUT")[], dateEnd?: string, dateStart?: string, search?: string, status?: ("FAILED" | "FAILING" | "PASSED" | "RUNNING")[], tags?: string, tagOperator?: "AND" | "OR" } | { authors?: string, branches?: string, groups?: string, specNameFilter?: string, tags?: string } | { authors?: string, branches?: string, groups?: string, minExecutions?: number, spec?: string, tags?: string, testState?: ("failed" | "passed" | "pending" | "skipped")[], title?: string } | { branches?: string, authors?: string, groups?: string, status?: ("failed" | "passed" | "pending" | "skipped")[], tags?: string };
 
     /** The name of the action (1-255 characters) */
     readonly name?: string;
@@ -71,7 +71,7 @@ export interface CurrentsNodeParameters {
     readonly dateEnd?: string;
 
     /** Default: {} */
-    readonly options?: { authors?: string, branches?: string, groups?: string, resolution?: "1h" | "1d" | "1w", tags?: string } | { startingAfter?: string, endingBefore?: string } | { includeFailedInDuration?: boolean, order?: "avgDuration" | "failedExecutions" | "failureRate" | "flakeRate" | "flakyExecutions" | "fullyReported" | "overallExecutions" | "suiteSize" | "timeoutExecutions" | "timeoutRate", dir?: "asc" | "desc", page?: number } | { order?: "duration" | "duration_x_samples" | "executions" | "failure_rate_delta" | "failures" | "flakiness" | "flakiness_x_samples" | "flakiness_rate_delta" | "passes" | "title", dir?: "asc" | "desc", page?: number };
+    readonly options?: { authors?: string, branches?: string, groups?: string, resolution?: "1h" | "1d" | "1w", tags?: string } | { startingAfter?: string, endingBefore?: string } | { includeFailedInDuration?: boolean, order?: "avgDuration" | "failedExecutions" | "failureRate" | "flakeRate" | "flakyExecutions" | "fullyReported" | "overallExecutions" | "suiteSize" | "timeoutExecutions" | "timeoutRate", dir?: "asc" | "desc", page?: number } | { order?: "duration" | "durationDelta" | "durationXSamples" | "executions" | "failRateXSamples" | "failureRateDelta" | "failures" | "flakiness" | "flakinessXSamples" | "flakinessRateDelta" | "passes" | "title", dir?: "asc" | "desc", page?: number, metric_settings?: string };
 
     /** The ID of the run */
     readonly runId?: string;
