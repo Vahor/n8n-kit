@@ -16,7 +16,7 @@ export interface PerplexityProps extends NodeProps {
 }
 
 /**
- * Interact with the Perplexity API to generate AI responses with citations
+ *  AI-powered answer engine that provides accurate, trusted, and real-time answers to any question. Generates AI responses with citations
  */
 export class Perplexity<L extends string, C extends IContext = never, P extends PerplexityProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.perplexity" as const;
