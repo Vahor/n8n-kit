@@ -209,7 +209,7 @@ for (const nodePath of allNodes.sort((a, b) =>
 		current++;
 		continue;
 	}
-	// if (nodeName !== "ScheduleTrigger") continue;
+	// if (!nodeName.startsWith("Agent")) continue;
 
 	if (
 		isLangChainNode(nodePath) &&
@@ -219,30 +219,36 @@ for (const nodePath of allNodes.sort((a, b) =>
 	}
 
 	try {
-		delete require.cache[nodePath];
-		const file = await import(nodePath);
-		const firstClassExport = Object.values(file).find(
-			(v) => typeof v === "function",
-		);
-		if (!firstClassExport) {
-			console.error(`No class export for ${nodePathWithoutStartingSlash}`);
-			continue;
-		}
-		// @ts-expect-error: it works
-		const instance = new firstClassExport();
-
-		if (instance.nodeVersions != null) {
-			// We expect to find a .v2.node.ts file later
-			for (const [version, node] of Object.entries(instance.nodeVersions)) {
-				versionsCache[`${nodeName}V${version}`] = node;
+		let instance: any;
+		if (nodeName in versionsCache) {
+			const fromCache = versionsCache[nodeName]!;
+			instance = { ...fromCache };
+		} else {
+			delete require.cache[nodePath];
+			const file = await import(nodePath);
+			const firstClassExport = Object.values(file).find(
+				(v) => typeof v === "function",
+			);
+			if (!firstClassExport) {
+				console.error(`No class export for ${nodePathWithoutStartingSlash}`);
+				continue;
 			}
-			current++;
-			continue;
-		}
+			// @ts-expect-error: it works
+			instance = new firstClassExport();
 
-		if (!instance.description) {
-			console.error(`No description for ${nodePathWithoutStartingSlash}`);
-			continue;
+			if (instance.nodeVersions != null) {
+				// We expect to find a .v2.node.ts file later
+				for (const [version, node] of Object.entries(instance.nodeVersions)) {
+					versionsCache[`${nodeName}V${version}`] = node;
+				}
+				current++;
+				continue;
+			}
+
+			if (!instance.description) {
+				console.error(`No description for ${nodePathWithoutStartingSlash}`);
+				continue;
+			}
 		}
 
 		const description = instance.description;
