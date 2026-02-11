@@ -64,7 +64,7 @@ export class Code<L extends string, P extends CodeProps> extends _Code<
 			this.props.parameters.pythonCode
 		) {
 			throw new Error(
-				"Language must be 'python' when 'pythonCode' is provided.",
+				"Language must be 'pythonNative' when 'pythonCode' is provided.",
 			);
 		}
 	}

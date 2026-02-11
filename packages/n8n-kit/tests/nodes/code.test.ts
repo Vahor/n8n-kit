@@ -129,7 +129,7 @@ describe("Code node validation", () => {
 			);
 		});
 
-		test("throws error when language is not python/pythonNative but pythonCode is provided", () => {
+		test("throws error when language is not pythonNative but pythonCode is provided", () => {
 			const node = new Code("test", {
 				// @ts-expect-error - Testing invalid configuration with wrong language
 				parameters: {
@@ -139,7 +139,7 @@ describe("Code node validation", () => {
 			});
 
 			expect(() => node["~validate"]()).toThrow(
-				"Language must be 'python' or 'pythonNative' when 'pythonCode' is provided.",
+				"Language must be 'pythonNative' when 'pythonCode' is provided.",
 			);
 		});
 	});
