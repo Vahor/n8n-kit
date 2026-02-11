@@ -16,7 +16,7 @@ export interface SlackV2NodeParameters {
     readonly resource?: "channel" | "file" | "message" | "reaction" | "star" | "user" | "userGroup";
 
     /** Default: "create" */
-    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "search" | "post" | "sendAndWait" | "update" | "add" | "delete" | "getAll" | "get" | "getAll" | "upload" | "add" | "get" | "remove" | "info" | "getAll" | "getProfile" | "getPresence" | "updateProfile" | "create" | "disable" | "enable" | "getAll" | "update";
+    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "search" | "post" | "sendAndWait" | "update" | "add" | "delete" | "getAll" | "get" | "getAll" | "upload" | "add" | "get" | "remove" | "info" | "getAll" | "getProfile" | "getPresence" | "updateProfile" | "updateUsers" | "create" | "disable" | "enable" | "getAll" | "getUsers" | "update";
 
     /**
      * The Slack channel to archive
@@ -44,7 +44,7 @@ export interface SlackV2NodeParameters {
     readonly userIds?: unknown[];
 
     /** Default: {} */
-    readonly options?: { includeNumMembers?: boolean } | { channelId?: string, returnIm?: boolean, users?: unknown[] } | { searchChannel?: unknown[] } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { fileComment?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: number } | { channelIds?: unknown[], channelId?: string, fileName?: string, initialComment?: string, threadTs?: string, title?: string } | { customFieldUi?: { customFieldValues: Array<{ id?: string, value?: string, alt?: string }> }, email?: string, first_name?: string, last_name?: string, status?: { set_status: Array<{ status_emoji?: string, status_expiration?: string, status_text?: string }> }, user?: string } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean };
+    readonly options?: { includeNumMembers?: boolean } | { channelId?: string, returnIm?: boolean, users?: unknown[] } | { searchChannel?: unknown[] } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean, thread_ts?: { replyValues: { thread_ts?: number, reply_broadcast?: boolean } } } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean, thread_ts?: { replyValues: { thread_ts?: number, reply_broadcast?: boolean } } } | { fileComment?: string } | { channelId?: string, fileId?: string, fileComment?: string, timestamp?: number } | { channelIds?: unknown[], channelId?: string, fileName?: string, initialComment?: string, threadTs?: string, title?: string } | { customFieldUi?: { customFieldValues: Array<{ id?: string, value?: string, alt?: string }> }, email?: string, first_name?: string, last_name?: string, status?: { set_status: Array<{ status_emoji?: string, status_expiration?: string, status_text?: string }> }, user?: string } | { include_count?: boolean } | { include_count?: boolean, include_disabled?: boolean, include_users?: boolean } | { resolveData?: boolean };
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
@@ -152,7 +152,7 @@ export interface SlackV2NodeParameters {
 
     /**
      * Default: {}
-     * Type options: {"multipleValues":true,"sortable":true}
+     * Type options: {"multipleValues":true,"sortable":true,"fixedCollection":{"itemTitle":"={{ $collection.item.properties.find(p => p.name === \"fieldType\").options.find(o => o.value === $collection.item.value.fieldType).name }}"}}
      */
     readonly formFields?: { values: Array<{ fieldName: string, fieldLabel: string, fieldType: "checkbox" | "html" | "date" | "dropdown" | "email" | "file" | "hiddenField" | "number" | "password" | "radio" | "text" | "textarea", elementName?: string, placeholder?: string, defaultValue?: string, fieldValue?: string, fieldOptions: { values: Array<{ option?: string }> }, multiselectLegacyNotice?: string, multiselect?: boolean, limitSelection?: "exact" | "range" | "unlimited", numberOfSelections?: number, minSelections?: number, maxSelections?: number, html?: string, multipleFiles?: boolean, acceptFileTypes?: string, formatDate?: string, requiredField?: boolean }> };
 
@@ -184,5 +184,12 @@ export interface SlackV2NodeParameters {
 
     /** Default: {} */
     readonly option?: { include_count?: boolean };
+
+    /**
+     * Users to add to the User Group. Existing users will be preserved. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: []
+     * Type options: {"loadOptionsMethod":"getUsers"}
+     */
+    readonly users?: unknown[];
 
 }

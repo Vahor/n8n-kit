@@ -182,6 +182,6 @@ export interface EditImageNodeParameters {
     readonly degreesY?: number;
 
     /** Default: {} */
-    readonly options?: { fileName?: string, font?: string, format?: "bmp" | "gif" | "jpeg" | "png" | "tiff" | "webp", quality?: number };
+    readonly options?: { destinationKey?: string, fileName?: string, font?: string, format?: "bmp" | "gif" | "jpeg" | "png" | "tiff" | "webp", quality?: number };
 
 }

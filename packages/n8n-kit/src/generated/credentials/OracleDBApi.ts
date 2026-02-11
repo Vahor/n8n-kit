@@ -19,6 +19,9 @@ export interface OracleDBApiCredentials {
      */
     readonly "connectionString"?: string;
 
+    /** The privilege to use when connecting to the database */
+    readonly "privilege"?: 32768 | 131072 | 2 | 262144 | 524288 | 4 | 8 | 1048576;
+
     /** Define type of connection with database */
     readonly "useThickMode"?: boolean;
 
