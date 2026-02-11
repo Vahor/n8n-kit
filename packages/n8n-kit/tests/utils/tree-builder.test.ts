@@ -56,7 +56,7 @@ describe("TreeBuilder", () => {
 			expect(root.children).toHaveLength(1);
 			expect(root.children[0]!.node.name).toBe("middle");
 			expect(root.children[0]!.children).toHaveLength(1);
-			expect(root.children[0].children[0]!.node.name).toBe("end");
+			expect(root.children[0]!.children[0]!.node.name).toBe("end");
 		});
 
 		test("builds multiple parallel chains", async () => {
@@ -77,9 +77,9 @@ describe("TreeBuilder", () => {
 			const rootNames = trees.map((t) => t.root.node.name).sort();
 			expect(rootNames).toEqual(["trigger1", "trigger2"]);
 			expect(trees[0]!.root.children).toHaveLength(1);
-			expect(trees[0].root.children[0]!.node.name).toBe("end1");
+			expect(trees[0]!.root.children[0]!.node.name).toBe("end1");
 			expect(trees[1]!.root.children).toHaveLength(1);
-			expect(trees[1].root.children[0]!.node.name).toBe("end2");
+			expect(trees[1]!.root.children[0]!.node.name).toBe("end2");
 		});
 
 		test("handles branching with multiple", async () => {
@@ -158,7 +158,7 @@ describe("TreeBuilder", () => {
 			expect(tree0.root.children).toHaveLength(1);
 			expect(tree0.root.children[0]!.node.name).toBe("noop1");
 			expect(tree0.root.children[0]!.children).toHaveLength(1);
-			expect(tree0.root.children[0].children[0]!.node.name).toBe("noop2");
+			expect(tree0.root.children[0]!.children[0]!.node.name).toBe("noop2");
 
 			expect(tree1.root.node.name).toBe("trigger2");
 			expect(tree1.root.children).toHaveLength(0);
@@ -195,13 +195,13 @@ describe("TreeBuilder", () => {
 
 			expect(root.children[0]!.node.name).toBe("noop1");
 			expect(root.children[0]!.connectionsTo).toHaveLength(1);
-			expect(root.children[0].connectionsTo[0]!.fromIndex).toBe(0);
-			expect(root.children[0].connectionsTo[0]!.toIndex).toBe(1);
+			expect(root.children[0]!.connectionsTo[0]!.fromIndex).toBe(0);
+			expect(root.children[0]!.connectionsTo[0]!.toIndex).toBe(1);
 
 			expect(root.children[1]!.node.name).toBe("noop2");
 			expect(root.children[1]!.connectionsTo).toHaveLength(1);
-			expect(root.children[1].connectionsTo[0]!.fromIndex).toBe(0);
-			expect(root.children[1].connectionsTo[0]!.toIndex).toBe(0);
+			expect(root.children[1]!.connectionsTo[0]!.fromIndex).toBe(0);
+			expect(root.children[1]!.connectionsTo[0]!.toIndex).toBe(0);
 		});
 	});
 });

@@ -119,7 +119,7 @@ describe("Code node validation", () => {
 			const node = new Code("test", {
 				// @ts-expect-error - Testing invalid configuration with wrong language
 				parameters: {
-					language: "python",
+					language: "pythonNative",
 					jsCode: "console.log('hello')",
 				},
 			});

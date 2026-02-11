@@ -153,9 +153,12 @@ describe("Chain", () => {
 				"start",
 			]);
 			const connections = result.connections;
-			expect(connections.start.main[0]!.map((c) => c.node)).toEqual(["a", "b"]);
-			expect(connections.a.main[0]!.map((c) => c.node)).toEqual(["c"]);
-			expect(connections.b.main[0]!.map((c) => [c.node, c.index])).toEqual([
+			expect(connections.start!.main![0]!.map((c) => c.node)).toEqual([
+				"a",
+				"b",
+			]);
+			expect(connections.a!.main![0]!.map((c) => c.node)).toEqual(["c"]);
+			expect(connections.b!.main![0]!.map((c) => [c.node, c.index])).toEqual([
 				["c", 1],
 			]);
 		});
@@ -234,12 +237,15 @@ describe("Chain", () => {
 				"start",
 			]);
 			const connections = result.connections;
-			expect(connections.start.main[0]!.map((c) => c.node)).toEqual(["a", "b"]);
-			expect(connections.a.main[0]!.map((c) => c.node)).toEqual(["d"]);
-			expect(connections.b.main[0]!.map((c) => [c.node, c.index])).toEqual([
+			expect(connections.start!.main![0]!.map((c) => c.node)).toEqual([
+				"a",
+				"b",
+			]);
+			expect(connections.a!.main![0]!.map((c) => c.node)).toEqual(["d"]);
+			expect(connections.b!.main![0]!.map((c) => [c.node, c.index])).toEqual([
 				["c", 0],
 			]);
-			expect(connections.c.main[0]!.map((c) => [c.node, c.index])).toEqual([
+			expect(connections.c!.main![0]!.map((c) => [c.node, c.index])).toEqual([
 				["d", 0],
 			]);
 
