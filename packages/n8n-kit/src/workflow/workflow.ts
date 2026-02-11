@@ -197,7 +197,7 @@ export class Workflow<
 					nodeConnection[connectionType]![connectionOptions.from] = [];
 				}
 
-				nodeConnection[connectionType][connectionOptions.from]!.push({
+				nodeConnection[connectionType]![connectionOptions.from]!.push({
 					node: to.getLabel(),
 					type: connectionType,
 					index: connectionOptions.to,
