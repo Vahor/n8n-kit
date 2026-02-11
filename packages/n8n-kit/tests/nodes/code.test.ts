@@ -28,14 +28,14 @@ describe("Code node validation", () => {
 			expect(() => node["~validate"]()).not.toThrow();
 
 			const params = await node.getParameters();
-			expect(params.language).toBe("python");
+			expect(params.language).toBe("pythonNative");
 			expect(params.pythonCode).toBe("print('hello world')");
 		});
 
 		test("accepts python language with pythonCode", async () => {
 			const node = new Code("test", {
 				parameters: {
-					language: "python",
+					language: "pythonNative",
 					pythonCode: "print('hello world')",
 				},
 			});
@@ -43,7 +43,7 @@ describe("Code node validation", () => {
 			expect(() => node["~validate"]()).not.toThrow();
 
 			const params = await node.getParameters();
-			expect(params.language).toBe("python");
+			expect(params.language).toBe("pythonNative");
 			expect(params.pythonCode).toBe("print('hello world')");
 		});
 	});
