@@ -8,7 +8,6 @@ export * from "./AcuitySchedulingTrigger";
 export * from "./Adalo";
 export * from "./Affinity";
 export * from "./AffinityTrigger";
-export * from "./AgentToolV2";
 export * from "./AgentToolV3";
 export * from "./AgentV1";
 export * from "./AgentV2";

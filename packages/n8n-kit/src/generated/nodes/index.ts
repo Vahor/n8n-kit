@@ -8,7 +8,6 @@ export type { AcuitySchedulingTriggerNodeParameters } from "./AcuitySchedulingTr
 export type { AdaloNodeParameters } from "./Adalo";
 export type { AffinityNodeParameters } from "./Affinity";
 export type { AffinityTriggerNodeParameters } from "./AffinityTrigger";
-export type { AgentToolV2NodeParameters } from "./AgentToolV2";
 export type { AgentToolV3NodeParameters } from "./AgentToolV3";
 export type { AgentV1NodeParameters } from "./AgentV1";
 export type { AgentV2NodeParameters } from "./AgentV2";
