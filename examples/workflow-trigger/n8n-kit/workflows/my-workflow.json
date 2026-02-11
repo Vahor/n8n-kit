@@ -1,1 +1,27 @@
-{"active":false,"connections":{},"id":"qL2pzX8jc7NDe","name":"Reusable workflow","nodes":[{"id":"workflow-trigger","name":"workflow-trigger","parameters":{"workflowInputs":{"values":[{"name":"a","type":"string"},{"name":"b","type":"number"},{"name":"c","type":"number"},{"name":"d","type":"any"}]}},"position":[60,60],"type":"n8n-nodes-base.executeWorkflowTrigger","typeVersion":1.1}],"settings":{},"tags":[{"name":"@vahor/n8n-qL2pzX8jc7NDe"},{"name":"reusable"}]}
+{
+	"active": false,
+	"connections": {},
+	"id": "qL2pzX8jc7NDe",
+	"name": "Reusable workflow",
+	"nodes": [
+		{
+			"id": "workflow-trigger",
+			"name": "workflow-trigger",
+			"parameters": {
+				"workflowInputs": {
+					"values": [
+						{ "name": "a", "type": "string" },
+						{ "name": "b", "type": "number" },
+						{ "name": "c", "type": "number" },
+						{ "name": "d", "type": "any" }
+					]
+				}
+			},
+			"position": [60, 60],
+			"type": "n8n-nodes-base.executeWorkflowTrigger",
+			"typeVersion": 1.1
+		}
+	],
+	"settings": {},
+	"tags": [{ "name": "@vahor/n8n-qL2pzX8jc7NDe" }, { "name": "reusable" }]
+}

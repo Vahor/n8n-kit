@@ -3,77 +3,23 @@
 
 export const description = "Read, update and write data to Google Sheets" as const;
 export const type = "n8n-nodes-base.googleSheets" as const;
-export const version = 4.7 as const;
+export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}},"testedBy":"googleApiCredentialTest"},{"name":"googleSheetsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsV2NodeParameters {
-    /** Default: "oAuth2" */
-    readonly authentication?: "serviceAccount" | "oAuth2";
+    /** Default: "serviceAccount" */
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /** Default: "sheet" */
     readonly resource?: "spreadsheet" | "sheet";
 
     /** Default: "read" */
-    readonly operation?: "appendOrUpdate" | "append" | "clear" | "create" | "remove" | "delete" | "read" | "update" | "create" | "deleteSpreadsheet";
+    readonly operation?: "append" | "clear" | "create" | "upsert" | "delete" | "lookup" | "read" | "remove" | "update" | "create";
 
-    /** Default: {"mode":"list","value":""} */
-    readonly documentId?: {
-	value: string,
-	mode: "list" | "url" | "id",
-};
-
-    /**
-     * Default: {"mode":"list","value":""}
-     * Type options: {"loadOptionsDependsOn":["documentId.value"]}
-     */
-    readonly sheetName?: {
-	value: string,
-	mode: "list" | "url" | "id" | "name",
-};
-
-    /**
-     * Whether to insert the input data this node receives in the new row
-     * Default: "defineBelow"
-     */
-    readonly dataMode?: "autoMapInputData" | "defineBelow" | "nothing";
-
-    /**
-     * Default: {}
-     * Type options: {"multipleValueButtonText":"Add Field to Send","multipleValues":true}
-     */
-    readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> } | { values: Array<{ column?: string, columnName?: string, fieldValue?: string }> };
-
-    /** Default: {} */
-    readonly options?: { cellFormat?: "USER_ENTERED" | "RAW", locationDefine?: { values: { headerRow?: number } }, handlingExtraData?: "insertInNewColumn" | "ignoreIt" | "error", useAppend?: boolean } | { hidden?: boolean, rightToLeft?: boolean, sheetId?: number, index?: number, tabColor?: string } | { dataLocationOnSheet?: { values: { rangeDefinition?: "detectAutomatically" | "specifyRangeA1" | "specifyRange", readRowsUntil?: "firstEmptyRow" | "lastRowInSheet", headerRow?: number, firstDataRow?: number, range?: string } }, outputFormatting?: { values: { general?: "UNFORMATTED_VALUE" | "FORMATTED_VALUE" | "FORMULA", date?: "FORMATTED_STRING" | "SERIAL_NUMBER" } }, returnFirstMatch?: boolean, returnAllMatches?: "returnFirstMatch" | "returnAllMatches" } | { cellFormat?: "USER_ENTERED" | "RAW", locationDefine?: { values: { headerRow?: number, firstDataRow?: number } }, handlingExtraData?: "insertInNewColumn" | "ignoreIt" | "error" } | { cellFormat?: "USER_ENTERED" | "RAW", locationDefine?: { values: { headerRow?: number, firstDataRow?: number } }, handlingExtraData?: "insertInNewColumn" | "ignoreIt" | "error", useAppend?: boolean } | { locale?: string, autoRecalc?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" };
-
-    /**
-     * What to clear
-     * Default: "wholeSheet"
-     */
-    readonly clear?: "wholeSheet" | "specificRows" | "specificColumns" | "specificRange";
-
-    readonly keepFirstRow?: boolean;
-
-    /**
-     * The row number to delete from, The first row is 1
-     * Default: 1
-     * Type options: {"minValue":1}
-     */
-    readonly startIndex?: number | string;
-
-    /**
-     * Default: 1
-     * Type options: {"minValue":1}
-     */
-    readonly rowsToDelete?: number;
-
-    /**
-     * Default: 1
-     * Type options: {"minValue":1}
-     */
-    readonly columnsToDelete?: number;
+    /** The ID of the Google Spreadsheet. Found as part of the sheet URL https://docs.google.com/spreadsheets/d/{ID}/. */
+    readonly sheetId?: string;
 
     /**
      * The table range to read from or to append data to. See the Google <a href="https://developers.google.com/sheets/api/guides/values#writing">documentation</a> for the details. If it contains multiple sheets it can also be added like this: "MySheet!A:F"
@@ -82,47 +28,65 @@ export interface GoogleSheetsV2NodeParameters {
     readonly range?: string;
 
     /**
-     * The name of the sheet
-     * Default: "n8n-sheet"
+     * Deletes columns and rows from a sheet
+     * Default: {}
+     * Type options: {"multipleValues":true}
      */
-    readonly title?: string;
+    readonly toDelete?: { columns: Array<{ sheetId: string, startIndex?: number, amount?: number }>, rows: Array<{ sheetId: string, startIndex?: number, amount?: number }> };
+
+    /** Whether the data should be returned RAW instead of parsed into keys according to their header */
+    readonly rawData?: boolean;
 
     /**
-     * What to delete
-     * Default: "rows"
+     * The name of the property into which to write the RAW data
+     * Default: "data"
      */
-    readonly toDelete?: "rows" | "columns";
+    readonly dataProperty?: string;
 
     /**
+     * Index of the first row which contains the actual data and not the keys. Starts with 0.
      * Default: 1
      * Type options: {"minValue":1}
      */
-    readonly numberToDelete?: number;
+    readonly dataStartRow?: number;
 
     /**
-     * Default: {}
-     * Type options: {"multipleValueButtonText":"Add Filter","multipleValues":true}
+     * Index of the row which contains the keys. Starts at 0. The incoming node data is matched to the keys for assignment. The matching is case sensitive.
+     * Type options: {"minValue":0}
      */
-    readonly filtersUI?: { values: Array<{ lookupColumn?: string, lookupValue?: string }> };
+    readonly keyRow?: number;
+
+    /** The name of the column in which to look for value */
+    readonly lookupColumn?: string;
+
+    /** The value to look for in column */
+    readonly lookupValue?: string;
 
     /**
-     * How to combine the conditions defined in "Filters": AND requires all conditions to be true, OR requires at least one condition to be true
-     * Default: "OR"
+     * The name of the key to identify which data should be updated in the sheet
+     * Default: "id"
      */
-    readonly combineFilters?: "AND" | "OR";
+    readonly key?: string;
 
-    /**
-     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-     * Type options: {"loadOptionsDependsOn":["sheetName.value"],"loadOptionsMethod":"getSheetHeaderRowAndSkipEmpty"}
-     */
-    readonly columnToMatchOn?: string;
+    /** Default: {} */
+    readonly options?: { continue?: boolean, returnAllMatches?: boolean, usePathForKeyRow?: boolean, valueInputMode?: "RAW" | "USER_ENTERED", valueRenderMode?: "FORMATTED_VALUE" | "FORMULA" | "UNFORMATTED_VALUE" } | { locale?: string, autoRecalc?: "" | "ON_CHANGE" | "MINUTE" | "HOUR" } | { gridProperties?: { columnCount?: number, columnGroupControlAfter?: boolean, frozenColumnCount?: number, frozenRowCount?: number, hideGridlines?: boolean, rowCount?: number, rowGroupControlAfter?: boolean }, hidden?: boolean, rightToLeft?: boolean, sheetId?: number, index?: number, tabColor?: string, title?: string };
 
-    readonly valueToMatchOn?: string;
+    /** The title of the spreadsheet */
+    readonly title?: string;
 
     /**
      * Default: {}
      * Type options: {"multipleValues":true}
      */
-    readonly sheetsUi?: { sheetValues: Array<{ title?: string, hidden?: boolean }> };
+    readonly sheetsUi?: { sheetValues: Array<{ propertiesUi?: { hidden?: boolean, title?: string } }> };
+
+    /**
+     * Whether to return a simplified version of the response instead of the raw data
+     * Default: true
+     */
+    readonly simple?: boolean;
+
+    /** The ID of the sheet to delete */
+    readonly id?: string;
 
 }

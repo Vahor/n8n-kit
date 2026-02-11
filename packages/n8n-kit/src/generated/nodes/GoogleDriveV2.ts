@@ -3,29 +3,86 @@
 
 export const description = "Access data on Google Drive" as const;
 export const type = "n8n-nodes-base.googleDrive" as const;
-export const version = 3 as const;
+export const version = 2 as const;
 export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}}},{"name":"googleDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleDriveV2NodeParameters {
-    /** Default: "oAuth2" */
-    readonly authentication?: "oAuth2" | "serviceAccount";
+    /** Default: "serviceAccount" */
+    readonly authentication?: "serviceAccount" | "oAuth2" | "oAuth2" | "serviceAccount";
 
     /** Default: "file" */
-    readonly resource?: "file" | "fileFolder" | "folder" | "drive";
+    readonly resource?: "drive" | "file" | "folder";
 
-    /** Default: "create" */
-    readonly operation?: "create" | "deleteDrive" | "get" | "list" | "update" | "copy" | "createFromText" | "deleteFile" | "download" | "move" | "share" | "update" | "upload" | "search" | "create" | "deleteFolder" | "share";
-
-    /** The name of the shared drive to create */
-    readonly name?: string;
-
-    /** Default: {} */
-    readonly options?: { capabilities?: { canAddChildren?: boolean, canChangeCopyRequiresWriterPermissionRestriction?: boolean, canChangeDomainUsersOnlyRestriction?: boolean, canChangeDriveBackground?: boolean, canChangeDriveMembersOnlyRestriction?: boolean, canComment?: boolean, canCopy?: boolean, canDeleteChildren?: boolean, canDeleteDrive?: boolean, canDownload?: boolean, canEdit?: boolean, canListChildren?: boolean, canManageMembers?: boolean, canReadRevisions?: boolean, canRename?: boolean, canRenameDrive?: boolean, canShare?: boolean, canTrashChildren?: boolean }, colorRgb?: string, hidden?: boolean, restrictions?: { adminManagedRestrictions?: boolean, copyRequiresWriterPermission?: boolean, domainUsersOnly?: boolean, driveMembersOnly?: boolean } } | { useDomainAdminAccess?: boolean } | { q?: string, useDomainAdminAccess?: boolean } | { colorRgb?: string, name?: string, restrictions?: { adminManagedRestrictions?: boolean, copyRequiresWriterPermission?: boolean, domainUsersOnly?: boolean, driveMembersOnly?: boolean } } | { copyRequiresWriterPermission?: boolean, description?: string } | { deletePermanently?: boolean } | { appPropertiesUi?: { appPropertyValues: Array<{ key?: string, value?: string }> }, propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> }, keepRevisionForever?: boolean, ocrLanguage?: string, useContentAsIndexableText?: boolean, convertToGoogleDocument?: boolean } | { binaryPropertyName?: string, googleFileConversion?: { conversion: { docsToFormat?: "text/html" | "application/vnd.openxmlformats-officedocument.wordprocessingml.document" | "application/vnd.oasis.opendocument.text" | "application/pdf" | "application/rtf" | "text/plain", drawingsToFormat?: "image/jpeg" | "application/pdf" | "image/png" | "image/svg+xml", slidesToFormat?: "application/vnd.openxmlformats-officedocument.presentationml.presentation" | "application/vnd.oasis.opendocument.presentation" | "application/pdf", sheetsToFormat?: "text/csv" | "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" | "application/vnd.oasis.opendocument.spreadsheet" | "application/pdf" } }, fileName?: string } | { emailMessage?: string, moveToNewOwnersRoot?: boolean, sendNotificationEmail?: boolean, transferOwnership?: boolean, useDomainAdminAccess?: boolean } | { appPropertiesUi?: { appPropertyValues: Array<{ key?: string, value?: string }> }, propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> }, keepRevisionForever?: boolean, ocrLanguage?: string, useContentAsIndexableText?: boolean, trashed?: boolean, fields?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { appPropertiesUi?: { appPropertyValues: Array<{ key?: string, value?: string }> }, propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> }, keepRevisionForever?: boolean, ocrLanguage?: string, useContentAsIndexableText?: boolean, simplifyOutput?: boolean } | { fields?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { simplifyOutput?: boolean, folderColorRgb?: string };
+    /** Default: "upload" */
+    readonly operation?: "copy" | "delete" | "download" | "list" | "share" | "update" | "upload" | "create" | "delete" | "share" | "create" | "delete" | "get" | "list" | "update";
 
     /**
-     * The shared drive to delete
+     * The ID of the file
+     * Default: {"mode":"list","value":""}
+     */
+    readonly fileId?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
+
+    /** Default: "data" */
+    readonly binaryPropertyName?: string;
+
+    /** Default: {} */
+    readonly options?: { googleFileConversion?: { conversion: { docsToFormat?: "text/html" | "application/vnd.openxmlformats-officedocument.wordprocessingml.document" | "application/vnd.oasis.opendocument.text" | "application/pdf" | "application/rtf", drawingsToFormat?: "image/jpeg" | "image/png" | "image/svg+xml" | "application/pdf", slidesToFormat?: "application/vnd.openxmlformats-officedocument.presentationml.presentation" | "application/pdf" | "application/vnd.oasis.opendocument.presentation" | "text/plain", sheetsToFormat?: "application/x-vnd.oasis.opendocument.spreadsheet" | "application/pdf" | "text/csv" } }, fileName?: string } | { fields?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[] } | { emailMessage?: string, enforceSingleParent?: boolean, fields?: ("*" | "explicitlyTrashed" | "exportLinks" | "hasThumbnail" | "iconLink" | "id" | "kind" | "mimeType" | "name" | "permissions" | "shared" | "spaces" | "starred" | "thumbnailLink" | "trashed" | "version" | "webViewLink")[], moveToNewOwnersRoot?: boolean, sendNotificationEmail?: boolean, supportsAllDrives?: boolean, transferOwnership?: boolean, useDomainAdminAccess?: boolean, name?: string, parents?: string, spaces?: ("*" | "appDataFolder" | "drive" | "photos")[], corpora?: "user" | "domain" | "drive" | "allDrives", driveId?: string } | { capabilities?: { canAddChildren?: boolean, canChangeCopyRequiresWriterPermissionRestriction?: boolean, canChangeDomainUsersOnlyRestriction?: boolean, canChangeDriveBackground?: boolean, canChangeDriveMembersOnlyRestriction?: boolean, canComment?: boolean, canCopy?: boolean, canDeleteChildren?: boolean, canDeleteDrive?: boolean, canDownload?: boolean, canEdit?: boolean, canListChildren?: boolean, canManageMembers?: boolean, canReadRevisions?: boolean, canRename?: boolean, canRenameDrive?: boolean, canShare?: boolean, canTrashChildren?: boolean }, colorRgb?: string, createdTime?: string, hidden?: boolean, restrictions?: { adminManagedRestrictions?: boolean, copyRequiresWriterPermission?: boolean, domainUsersOnly?: boolean, driveMembersOnly?: boolean } } | { useDomainAdminAccess?: boolean } | { q?: string, useDomainAdminAccess?: boolean } | { colorRgb?: string, name?: string, restrictions?: { adminManagedRestrictions?: boolean, copyRequiresWriterPermission?: boolean, domainUsersOnly?: boolean, driveMembersOnly?: boolean } } | { appPropertiesUi?: { appPropertyValues: Array<{ key?: string, value?: string }> }, propertiesUi?: { propertyValues: Array<{ key?: string, value?: string }> } };
+
+    /** Whether a query string should be used to filter results */
+    readonly useQueryString?: boolean;
+
+    /** Query to use to return only specific files */
+    readonly queryString?: string;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1,"maxValue":1000}
+     */
+    readonly limit?: number;
+
+    /**
+     * Filters to use to return only specific files
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly queryFilters?: { name: Array<{ operation?: "contains" | "is" | "isNot", value?: string }>, mimeType: Array<{ mimeType?: "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "custom" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.file" | "application/vnd.google-apps.folder" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.site" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video", customMimeType?: string }> };
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":false}
+     */
+    readonly permissionsUi?: { permissionsValues: { role?: "commenter" | "fileOrganizer" | "organizer" | "owner" | "reader" | "writer", type?: "user" | "group" | "domain" | "anyone", emailAddress?: string, domain?: string, allowFileDiscovery?: boolean } };
+
+    /** Whether the data to upload should be taken from binary field */
+    readonly binaryData?: boolean;
+
+    /** The text content of the file to upload */
+    readonly fileContent?: string;
+
+    /** Default: {} */
+    readonly updateFields?: { fileName?: string, keepRevisionForever?: boolean, trashed?: boolean, ocrLanguage?: string, parentId?: string, useContentAsIndexableText?: boolean };
+
+    /** The name the file should be saved as */
+    readonly name?: string;
+
+    /** By default the response only contain the ID of the file. If this option gets activated, it will resolve the data automatically. */
+    readonly resolveData?: boolean;
+
+    /**
+     * The IDs of the parent folders which contain the file
+     * Default: []
+     * Type options: {"multipleValues":true}
+     */
+    readonly parents?: string;
+
+    /**
+     * The ID of the drive
      * Default: {"mode":"list","value":""}
      */
     readonly driveId?: {
@@ -35,87 +92,5 @@ export interface GoogleDriveV2NodeParameters {
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
-
-    /**
-     * Max number of results to return
-     * Default: 100
-     * Type options: {"minValue":1,"maxValue":200}
-     */
-    readonly limit?: number;
-
-    /**
-     * The file to copy
-     * Default: {"mode":"list","value":""}
-     */
-    readonly fileId?: {
-	value: string,
-	mode: "list" | "url" | "id",
-};
-
-    /**
-     * Whether to copy the file in the same folder as the original file
-     * Default: true
-     */
-    readonly sameFolder?: boolean;
-
-    /**
-     * The folder where to save the copied file
-     * Default: {"mode":"list","value":"root","cachedResultName":"/ (Root folder)"}
-     */
-    readonly folderId?: {
-	value: string,
-	mode: "list" | "url" | "id",
-};
-
-    /**
-     * The text to create the file with
-     * Type options: {"rows":2}
-     */
-    readonly content?: string;
-
-    /**
-     * Default: {}
-     * Type options: {"multipleValues":false}
-     */
-    readonly permissionsUi?: { permissionsValues: { role?: "commenter" | "fileOrganizer" | "organizer" | "owner" | "reader" | "writer", type?: "user" | "group" | "domain" | "anyone", emailAddress?: string, domain?: string, allowFileDiscovery?: boolean } };
-
-    /** Whether to send a new binary data to update the file */
-    readonly changeFileContent?: boolean;
-
-    /**
-     * Find the name of input field containing the binary data to update the file in the Input panel on the left, in the Binary tab
-     * Default: "data"
-     */
-    readonly inputDataFieldName?: string;
-
-    /** If not specified, the file name will not be changed */
-    readonly newUpdatedFileName?: string;
-
-    /**
-     * Whether to search for the file/folder name or use a query string
-     * Default: "name"
-     */
-    readonly searchMethod?: "name" | "query";
-
-    /** The name of the file or folder to search for. Returns also files and folders whose names partially match this search term. */
-    readonly queryString?: string;
-
-    /** Default: {} */
-    readonly filter?: { driveId?: {
-	value: string,
-	mode: "list" | "url" | "id",
-}, folderId?: {
-	value: string,
-	mode: "list" | "url" | "id",
-}, whatToSearch?: "all" | "files" | "folders", fileTypes?: ("*" | "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.folder" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.sites" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video")[] | ("*" | "application/vnd.google-apps.drive-sdk" | "application/vnd.google-apps.audio" | "application/vnd.google-apps.script" | "application/vnd.google-apps.document" | "application/vnd.google-apps.drawing" | "application/vnd.google-apps.form" | "application/vnd.google-apps.fusiontable" | "application/vnd.google-apps.map" | "application/vnd.google-apps.spreadsheet" | "application/vnd.google-apps.sites" | "application/vnd.google-apps.presentation" | "application/vnd.google-apps.photo" | "application/vnd.google-apps.unknown" | "application/vnd.google-apps.video")[], includeTrashed?: boolean };
-
-    /**
-     * The folder to delete
-     * Default: {"mode":"list","value":""}
-     */
-    readonly folderNoRootId?: {
-	value: string,
-	mode: "list" | "url" | "id",
-};
 
 }

@@ -142,7 +142,7 @@
 			},
 			"position": [620, 1140],
 			"type": "n8n-nodes-base.googleDrive",
-			"typeVersion": 3
+			"typeVersion": 2
 		},
 		{
 			"credentials": { "googlePalmApi": { "id": "some-id-=" } },
