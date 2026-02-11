@@ -44,14 +44,12 @@ export type NeedsBrackets<T> = T extends
 	? true
 	: false;
 
-type FormatWithPrefix<
-	T extends string,
-	Prefix extends string,
-> = NeedsBrackets<T> extends true
-	? `${Prefix}['${T}']`
-	: Prefix extends ""
-		? T
-		: `${Prefix}.${T}`;
+type FormatWithPrefix<T extends string, Prefix extends string> =
+	NeedsBrackets<T> extends true
+		? `${Prefix}['${T}']`
+		: Prefix extends ""
+			? T
+			: `${Prefix}.${T}`;
 
 type NumberStr = `${number}`;
 
