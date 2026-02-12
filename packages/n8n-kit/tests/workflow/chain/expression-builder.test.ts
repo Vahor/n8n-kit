@@ -253,6 +253,22 @@ describe("ExpressionBuilder", () => {
 			expect(builder.format()).toEqual(expected.format());
 		});
 
+		test("support named function", () => {
+			const fn = (o: string) => o.toUpperCase();
+			const builder = $(textKey).apply(fn);
+			const expected = $(textKey).toUpperCase();
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("support 'function' keyword", () => {
+			// biome-ignore lint/complexity/useArrowFunction:  that's the test
+			const builder = $(textKey).apply(function (o) {
+				return o.toUpperCase();
+			});
+			const expected = $(textKey).toUpperCase();
+			expect(builder.format()).toEqual(expected.format());
+		});
+
 		test("fail on unsupprted methods", () => {
 			expect(() => $(textKey).apply((o) => o.slice(0, 2))).toThrow();
 			expect(() => $(textKey).apply((o) => o.concat(" "))).toThrow();

@@ -267,11 +267,7 @@ $("json.text").apply((text) => text.toUpperCase().split(" ").join("-"))
 The function body is parsed and emitted as a direct method chain. Type inference works as expected:
 - The function parameter is typed as the current field type
 - The output type is inferred from the function's return type (e.g., `string`, `string[]` after `split()`)
-
-**Important limitations:**
-- **Method chains only**: `apply()` parses the arrow function body as a method chain. Expressions like `$("json.text").apply((text) => text + text)` won't work because `text + text` isn't a method call—the parser only extracts direct method invocations.
-- **Arrow functions only**: Only arrow function syntax is supported (e.g., `(x) => x.method()` or `x => x.method()`). Traditional `function` declarations will fail.
-- **Single expression**: Must be a single-expression arrow function with no curly braces or intermediate variables. The body must be a direct chain starting with the parameter name.
+- Using condition in the lambda function to change the method call is supported at compile time only.
 
 
 Notes:
