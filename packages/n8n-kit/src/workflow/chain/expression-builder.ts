@@ -244,7 +244,7 @@ export class ExpressionBuilder<
 			return new Proxy(builder, {
 				get(target, prop, receiver) {
 					if (typeof prop === "symbol") {
-						return Reflect.get(target, prop, receiver);
+						throw new Error("Unexpected symbol property");
 					}
 
 					// Numeric index: o[0] → target.prop("[0]")
@@ -264,11 +264,8 @@ export class ExpressionBuilder<
 
 					// Unknown property (e.g. `.text`): treat as .prop("text")
 					if (val === undefined) {
-						if (val === undefined) {
-							const segment = /^\d+$/.test(prop) ? `[${prop}]` : `.${prop}`;
-							return wrapBuilder((target as any).prop(segment));
-						}
-						return wrapBuilder((target as any).prop(prop));
+						const segment = /^\d+$/.test(prop) ? `[${prop}]` : `.${prop}`;
+						return wrapBuilder((target as any).prop(segment));
 					}
 
 					return val;

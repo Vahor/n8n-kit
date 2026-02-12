@@ -252,6 +252,14 @@ describe("ExpressionBuilder", () => {
 			const expected = $(contentKey);
 			expect(builder.format()).toEqual(expected.format());
 		});
+
+		test("fail on unsupprted methods", () => {
+			expect(() => $(textKey).apply((o) => o.slice(0, 2))).toThrow();
+			expect(() => $(textKey).apply((o) => o.concat(" "))).toThrow();
+			expect(() => $(textKey).apply((o) => o.replace(" ", "-"))).toThrow();
+			expect(() => $(textKey).apply((o) => o.substring(0, 2))).toThrow();
+			expect(() => $(textKey).apply((o) => `${o} message`)).toThrow();
+		});
 	});
 
 	describe("toLowerCase", () => {
