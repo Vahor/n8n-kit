@@ -67,33 +67,34 @@ export class Fields<
 	override "~validate"(): void {
 		super["~validate"]();
 		// if mode is manual, then assignments are required
-		if (
-			this.props.parameters.mode === undefined ||
-			this.props.parameters.mode === "manual"
-		) {
+        {
 			const assignments = this.props.parameters.assignments.assignments;
 			if (assignments == null) {
 				throw new Error(`Mode is 'manual' but 'assignments' is undefined.`);
 			}
 
+			const typeToAssignments: { [key: string]: Assignment[] } = {};
+
 			for (let i = 0; i < assignments.length; i++) {
 				const assignment = assignments[i]!;
-				assignment.id = `${this.getPath()}/${i}`;
+				assignment.id = `${this.id}/${i}`;
 				assignment.value = resolveExpressionValue(assignment.value);
 				if (typeof assignment.type !== "string") {
 					// transform arktype type to "string" | "object" ... to match n8n
 					const typeSchema = assignment.type.toJsonSchema();
 					assignment.type = (typeSchema as any).type;
 				}
-			}
-		}
 
-		if (this.props.parameters.mode === "raw") {
-			if (this.props.parameters.fields == null) {
-				throw new Error(`Mode is 'raw' but 'fields' is undefined.`);
+				// Group assignments by type
+				const typeStr = assignment.type as string;
+				if (!typeToAssignments[typeStr]) {
+					typeToAssignments[typeStr] = [];
+				}
+				typeToAssignments[typeStr].push(assignment);
 			}
 
-			throw new Error(`Raw mode is not supported yet.`);
+			// Populate the values object
+			(this.props.parameters as any).values = typeToAssignments;
 		}
 	}
 }
