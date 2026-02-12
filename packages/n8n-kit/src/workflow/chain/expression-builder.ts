@@ -41,13 +41,6 @@ type ExpressionBuilderOptions = {
 
 const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");
 
-// Reject multi-parameter arrow functions like (a, b) => ...
-const MULTI_PARAM_ARROW_RE = /^\s*\([^)]*,[^)]*\)\s*=>/;
-
-// Match a single-param arrow function: `param => ...` or `(param) => ...`
-const SINGLE_PARAM_ARROW_RE =
-	/^\s*(?:\(\s*)?([A-Za-z_$][A-Za-z0-9_$]*)\s*(?:\))?\s*=>/;
-
 // Numeric index access: o[0], o[42], etc.
 const NUMERIC_INDEX_RE = /^\d+$/;
 
@@ -228,8 +221,6 @@ export class ExpressionBuilder<
 	 * - The input parameter of the function is typed as the current field type (`TCurr`).
 	 * - The resulting ExpressionBuilder's output type will be inferred from the function return type.
 	 * - Not all JS globals or helper functions may be available inside n8n expression evaluation.
-	 * - Only single-parameter expression-bodied arrow functions are supported (e.g. `x => x.trim().toUpperCase()`).
-	 *   If the function cannot be parsed as such, `apply()` will throw an error.
 	 */
 	public apply<TOutput = unknown>(
 		fn: (value: TCurr) => TOutput,
