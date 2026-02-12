@@ -170,33 +170,33 @@ describe("ExpressionBuilder", () => {
 	});
 
 	describe("apply", () => {
+		const textKey = "data.output[0].content[0].text" as const;
+		const contentKey = "data.output[0].content" as const;
+
 		test("simple transform", () => {
-			const key = "data.output[0].content[0].text" as const;
-			const builder = $(key).apply((text: string) =>
+			const builder = $(textKey).apply((text: string) =>
 				text.toUpperCase().split(" ").join("-"),
 			);
 
-			const expected = $(key).toUpperCase().split(" ").join("-");
+			const expected = $(textKey).toUpperCase().split(" ").join("-");
 			expect(builder.format()).toEqual(expected.format());
 		});
 
 		test("chaining after apply", () => {
-			const key = "data.output[0].content[0].text" as const;
-			const builder = $(key)
+			const builder = $(textKey)
 				.apply((text: string) => text.split(" "))
 				.join("-");
-			const expected = $(key).split(" ").join("-");
+			const expected = $(textKey).split(" ").join("-");
 			expect(builder.format()).toEqual(expected.format());
 		});
 
 		test("chaining two apply calls with type preservation", () => {
 			// First apply: string -> string[]
 			// Second apply: string[] -> string
-			const key = "data.output[0].content[0].text" as const;
-			const builder = $(key)
+			const builder = $(textKey)
 				.apply((text) => text.split(" "))
 				.apply((arr) => arr.join("-"));
-			const expected = $(key).split(" ").join("-");
+			const expected = $(textKey).split(" ").join("-");
 			expect(builder.format()).toEqual(expected.format());
 		});
 
@@ -205,28 +205,51 @@ describe("ExpressionBuilder", () => {
 			$("data").apply((s) => s.toLowerCase());
 		});
 
-		test("throws for multi-parameter arrow function", () => {
-			// Arrow with multiple params should not be accepted
-			expect(() =>
-				$("data.output[0].content[0].text").apply(
-					((a: any, _b: any) => a) as any,
-				),
-			).toThrow(
-				"ExpressionBuilder.apply: could not determine function parameter name",
-			);
+		test("can access sub properties", () => {
+			const builder = $(contentKey).apply((o) => o[0]!.text);
+			const expected = $(contentKey).prop("[0].text");
+			expect(builder.format()).toEqual(expected.format());
 		});
 
-		test("can access sub properties", () => {
-			const key = "data.output[0].content" as const;
-			const builder = $(key).apply((o) => o[0]!.text);
-			const expected = $(key).prop("[0].text");
+		test("can chain property access", () => {
+			const builder = $("Webhook").apply((w) => w.body.fields.hello);
+			const expected = $("Webhook")
+				.prop(".body")
+				.prop(".fields")
+				.prop(".hello");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("can chain array index access", () => {
+			const builder = $("data").apply((o) => o.output[0]!.content[0]!.text);
+			const expected = $("data")
+				.prop(".output")
+				.prop("[0].content")
+				.prop("[0].text");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("support multi-line arrow function", () => {
+			const externalCondition = true;
+			const builder = $("data").apply((o) => {
+				if (externalCondition) {
+					// some external call
+					Promise.resolve();
+
+					return o.output[0]!.content[0]!.text;
+				}
+				return null;
+			});
+			const expected = $("data")
+				.prop(".output")
+				.prop("[0].content")
+				.prop("[0].text");
 			expect(builder.format()).toEqual(expected.format());
 		});
 
 		test("identity function", () => {
-			const key = "data.output[0].content" as const;
-			const builder = $(key).apply((o) => o);
-			const expected = $(key);
+			const builder = $(contentKey).apply((o) => o);
+			const expected = $(contentKey);
 			expect(builder.format()).toEqual(expected.format());
 		});
 	});

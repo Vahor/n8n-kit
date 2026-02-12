@@ -41,6 +41,16 @@ type ExpressionBuilderOptions = {
 
 const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");
 
+// Reject multi-parameter arrow functions like (a, b) => ...
+const MULTI_PARAM_ARROW_RE = /^\s*\([^)]*,[^)]*\)\s*=>/;
+
+// Match a single-param arrow function: `param => ...` or `(param) => ...`
+const SINGLE_PARAM_ARROW_RE =
+	/^\s*(?:\(\s*)?([A-Za-z_$][A-Za-z0-9_$]*)\s*(?:\))?\s*=>/;
+
+// Numeric index access: o[0], o[42], etc.
+const NUMERIC_INDEX_RE = /^\d+$/;
+
 export class ExpressionBuilder<
 	T extends ChainContext = any,
 	Path extends string = any,
@@ -224,46 +234,54 @@ export class ExpressionBuilder<
 	public apply<TOutput = unknown>(
 		fn: (value: TCurr) => TOutput,
 	): ExpressionBuilder<T, Path, TOutput> {
-		const fnStr = fn.toString();
+		// Recursively wraps an ExpressionBuilder in a Proxy so that:
+		// - method calls (.toUpperCase(), .split(), etc.) work normally and return wrapped builders
+		// - numeric index access (o[0]) is converted to .prop("[0]")
+		// - unknown property access (.text) is converted to .prop("text")
+		const wrapBuilder = (
+			builder: ExpressionBuilder<any, any, any>,
+		): ExpressionBuilder<any, any, any> => {
+			return new Proxy(builder, {
+				get(target, prop, receiver) {
+					if (typeof prop === "symbol") {
+						return Reflect.get(target, prop, receiver);
+					}
 
-		// Extract the arrow function body (supports multiline bodies)
-		const arrowMatch = fnStr.match(/=>\s*([\s\S]+?)(?:\s*$|;)/);
-		const body = arrowMatch?.[1]
-			? arrowMatch[1].trim()
-			: (() => {
-					// getting there
-					throw new Error(
-						"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported (e.g. x => x.trim()).",
-					);
-				})();
+					// Numeric index: o[0] → target.prop("[0]")
+					if (NUMERIC_INDEX_RE.test(prop)) {
+						return wrapBuilder((target as any).prop(`[${prop}]`));
+					}
 
-		// Extract parameter name accepting both parenthesized '(name)' and bare 'name =>' forms
-		const paramMatch = fnStr.match(
-			/\(\s*([A-Za-z_$][\w$]*)\s*\)|\b([A-Za-z_$][\w$]*)\s*=>/,
+					const val = Reflect.get(target, prop, receiver);
+
+					// Known builder method: wrap the return value
+					if (typeof val === "function") {
+						return (...args: any[]) => {
+							const ret = val.apply(target, args);
+							return ret instanceof ExpressionBuilder ? wrapBuilder(ret) : ret;
+						};
+					}
+
+					// Unknown property (e.g. `.text`): treat as .prop("text")
+					if (val === undefined) {
+						if (val === undefined) {
+							const segment = /^\d+$/.test(prop) ? `[${prop}]` : `.${prop}`;
+							return wrapBuilder((target as any).prop(segment));
+						}
+						return wrapBuilder((target as any).prop(prop));
+					}
+
+					return val;
+				},
+			});
+		};
+
+		const proxy = wrapBuilder(
+			this as unknown as ExpressionBuilder<any, any, any>,
 		);
-		const paramName = paramMatch ? (paramMatch[1] ?? paramMatch[2] ?? "") : "";
+		const result = fn(proxy as unknown as TCurr);
 
-		if (!paramName) {
-			throw new Error(
-				"ExpressionBuilder.apply: could not determine function parameter name. Use a single-parameter expression-bodied arrow function like `x => x.foo()`.",
-			);
-		}
-
-		// Escape parameter name for use in RegExp and remove the leading 'param.' from the body
-		const escapeRegExp = (s: string) =>
-			s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-		const paramAnchored = new RegExp(`^${escapeRegExp(paramName)}\\.`);
-		const methodChain = body.replace(paramAnchored, "");
-
-		const methodCallStr = `.${methodChain}`;
-
-		// Cast via `unknown` to avoid introducing `any` while acknowledging we
-		// cannot preserve the original generic `T`/`Path` here.
-		return this.clone(methodCallStr) as unknown as ExpressionBuilder<
-			T,
-			Path,
-			TOutput
-		>;
+		return result as unknown as ExpressionBuilder<T, Path, TOutput>;
 	}
 
 	// =========
