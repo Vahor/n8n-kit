@@ -269,7 +269,7 @@ describe("ExpressionBuilder", () => {
 			expect(builder.format()).toEqual(expected.format());
 		});
 
-		test("fail on unsupprted methods", () => {
+		test("fail on unsupported methods", () => {
 			expect(() => $(textKey).apply((o) => o.slice(0, 2))).toThrow();
 			expect(() => $(textKey).apply((o) => o.concat(" "))).toThrow();
 			expect(() => $(textKey).apply((o) => o.replace(" ", "-"))).toThrow();
