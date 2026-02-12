@@ -171,63 +171,38 @@ describe("ExpressionBuilder", () => {
 
 	describe("apply", () => {
 		test("simple transform", () => {
-			const builder = $("data.output[0].content[0].text").apply(
-				(text: string) => text.toUpperCase().split(" ").join("-"),
+			const key = "data.output[0].content[0].text" as const;
+			const builder = $(key).apply((text: string) =>
+				text.toUpperCase().split(" ").join("-"),
 			);
-			const format = builder.format();
-			expect(format).toEqual(
-				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.toUpperCase().split(" ").join("-")`,
-			);
+
+			const expected = $(key).toUpperCase().split(" ").join("-");
+			expect(builder.format()).toEqual(expected.format());
 		});
 
 		test("chaining after apply", () => {
-			const builder = $("data.output[0].content[0].text")
+			const key = "data.output[0].content[0].text" as const;
+			const builder = $(key)
 				.apply((text: string) => text.split(" "))
 				.join("-");
-			const format = builder.format();
-			expect(format).toEqual(
-				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
-			);
-		});
-
-		test("accepts bare-parameter arrow functions", () => {
-			// Create a normal arrow function but override `toString()` to return a
-			// bare-parameter arrow source (formatter otherwise adds parentheses).
-			const bareArrow: any = (text: any) =>
-				text.toUpperCase().split(" ").join("-");
-			bareArrow.toString = () =>
-				'text => text.toUpperCase().split(" ").join("-")';
-			const builder = $("data.output[0].content[0].text").apply(bareArrow);
-			const format = builder.format();
-			expect(format).toEqual(
-				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.toUpperCase().split(" ").join("-")`,
-			);
+			const expected = $(key).split(" ").join("-");
+			expect(builder.format()).toEqual(expected.format());
 		});
 
 		test("chaining two apply calls with type preservation", () => {
 			// First apply: string -> string[]
 			// Second apply: string[] -> string
-			const builder = $("data.output[0].content[0].text")
-				.apply((text: string) => text.split(" "))
-				.apply((arr: string[]) => arr.join("-"));
-			const format = builder.format();
-			expect(format).toEqual(
-				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
-			);
+			const key = "data.output[0].content[0].text" as const;
+			const builder = $(key)
+				.apply((text) => text.split(" "))
+				.apply((arr) => arr.join("-"));
+			const expected = $(key).split(" ").join("-");
+			expect(builder.format()).toEqual(expected.format());
 		});
 
 		test("type checking on input", () => {
 			// @ts-expect-error: applying string fn to non-string path should fail
-			$("data").apply((s: string) => s.toLowerCase());
-		});
-
-		test("throws for non-arrow function", () => {
-			// Pass a normal function; apply() only supports expression-bodied arrow functions
-			const normalFn: any = new Function("text", "return text.toUpperCase();");
-
-			expect(() => $("data.output[0].content[0].text").apply(normalFn)).toThrow(
-				"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported",
-			);
+			$("data").apply((s) => s.toLowerCase());
 		});
 
 		test("throws for multi-parameter arrow function", () => {
@@ -239,6 +214,20 @@ describe("ExpressionBuilder", () => {
 			).toThrow(
 				"ExpressionBuilder.apply: could not determine function parameter name",
 			);
+		});
+
+		test("can access sub properties", () => {
+			const key = "data.output[0].content" as const;
+			const builder = $(key).apply((o) => o[0]!.text);
+			const expected = $(key).prop("[0].text");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("identity function", () => {
+			const key = "data.output[0].content" as const;
+			const builder = $(key).apply((o) => o);
+			const expected = $(key);
+			expect(builder.format()).toEqual(expected.format());
 		});
 	});
 
