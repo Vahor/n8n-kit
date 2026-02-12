@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.23.0
+
+### Minor Changes
+
+- [#195](https://github.com/Vahor/n8n-kit/pull/195) [`b40e091`](https://github.com/Vahor/n8n-kit/commit/b40e091d97be54d0eaee2c69bebf238924846a62) Thanks [@Vahor](https://github.com/Vahor)! - Add `apply` method on JsonExpression to make chaining method calls easier.
+
 ## 0.22.0
 
 ### Minor Changes
