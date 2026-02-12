@@ -169,6 +169,79 @@ describe("ExpressionBuilder", () => {
 		});
 	});
 
+	describe("apply", () => {
+		test("simple transform", () => {
+			const builder = $("data.output[0].content[0].text").apply(
+				(text: string) => text.toUpperCase().split(" ").join("-"),
+			);
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.toUpperCase().split(" ").join("-")`,
+			);
+		});
+
+		test("chaining after apply", () => {
+			const builder = $("data.output[0].content[0].text")
+				.apply((text: string) => text.split(" "))
+				.join("-");
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
+			);
+		});
+
+		test("accepts bare-parameter arrow functions", () => {
+			// Create a normal arrow function but override `toString()` to return a
+			// bare-parameter arrow source (formatter otherwise adds parentheses).
+			const bareArrow: any = (text: any) =>
+				text.toUpperCase().split(" ").join("-");
+			bareArrow.toString = () =>
+				'text => text.toUpperCase().split(" ").join("-")';
+			const builder = $("data.output[0].content[0].text").apply(bareArrow);
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.toUpperCase().split(" ").join("-")`,
+			);
+		});
+
+		test("chaining two apply calls with type preservation", () => {
+			// First apply: string -> string[]
+			// Second apply: string[] -> string
+			const builder = $("data.output[0].content[0].text")
+				.apply((text: string) => text.split(" "))
+				.apply((arr: string[]) => arr.join("-"));
+			const format = builder.format();
+			expect(format).toEqual(
+				`$('${RESOLVED_NODE_ID("data")}').item.json.output[0].content[0].text.split(" ").join("-")`,
+			);
+		});
+
+		test("type checking on input", () => {
+			// @ts-expect-error: applying string fn to non-string path should fail
+			$("data").apply((s: string) => s.toLowerCase());
+		});
+
+		test("throws for non-arrow function", () => {
+			// Pass a normal function; apply() only supports expression-bodied arrow functions
+			const normalFn: any = new Function("text", "return text.toUpperCase();");
+
+			expect(() => $("data.output[0].content[0].text").apply(normalFn)).toThrow(
+				"ExpressionBuilder.apply: only single-parameter expression-bodied arrow functions are supported",
+			);
+		});
+
+		test("throws for multi-parameter arrow function", () => {
+			// Arrow with multiple params should not be accepted
+			expect(() =>
+				$("data.output[0].content[0].text").apply(
+					((a: any, _b: any) => a) as any,
+				),
+			).toThrow(
+				"ExpressionBuilder.apply: could not determine function parameter name",
+			);
+		});
+	});
+
 	describe("toLowerCase", () => {
 		test("on a string", () => {
 			const builder = $("Webhook.headers['x-user-id']");
