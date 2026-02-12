@@ -41,6 +41,9 @@ type ExpressionBuilderOptions = {
 
 const replaceDoubleQuotes = (str: string) => str.replace(/"/g, "'");
 
+// Numeric index access: o[0], o[42], etc.
+const NUMERIC_INDEX_RE = /^\d+$/;
+
 export class ExpressionBuilder<
 	T extends ChainContext = any,
 	Path extends string = any,
@@ -199,6 +202,74 @@ export class ExpressionBuilder<
 		const methodCall =
 			params.length > 0 ? `.${methodName}(${params})` : `.${methodName}()`;
 		return this.clone(methodCall);
+	}
+
+	/**
+	 * Apply an arbitrary transform function to the current value.
+	 *
+	 * The function body is parsed and converted into a chain of method calls.
+	 * The parameter type is inferred from the current field type, and the output
+	 * type is inferred from the function's return type.
+	 *
+	 * Example:
+	 * ```ts
+	 * $("json.text").apply(text => text.toUpperCase().split(" ").join("-"))
+	 * // Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
+	 * ```
+	 *
+	 * Notes:
+	 * - The input parameter of the function is typed as the current field type (`TCurr`).
+	 * - The resulting ExpressionBuilder's output type will be inferred from the function return type.
+	 * - Not all JS globals or helper functions may be available inside n8n expression evaluation.
+	 */
+	public apply<TOutput = unknown>(
+		fn: (value: TCurr) => TOutput,
+	): ExpressionBuilder<T, Path, TOutput> {
+		// Recursively wraps an ExpressionBuilder in a Proxy so that:
+		// - method calls (.toUpperCase(), .split(), etc.) work normally and return wrapped builders
+		// - numeric index access (o[0]) is converted to .prop("[0]")
+		// - unknown property access (.text) is converted to .prop("text")
+		const wrapBuilder = (
+			builder: ExpressionBuilder<any, any, any>,
+		): ExpressionBuilder<any, any, any> => {
+			return new Proxy(builder, {
+				get(target, prop, receiver) {
+					if (typeof prop === "symbol") {
+						throw new Error("Unexpected symbol property");
+					}
+
+					// Numeric index: o[0] → target.prop("[0]")
+					if (NUMERIC_INDEX_RE.test(prop)) {
+						return wrapBuilder((target as any).prop(`[${prop}]`));
+					}
+
+					const val = Reflect.get(target, prop, receiver);
+
+					// Known builder method: wrap the return value
+					if (typeof val === "function") {
+						return (...args: any[]) => {
+							const ret = val.apply(target, args);
+							return ret instanceof ExpressionBuilder ? wrapBuilder(ret) : ret;
+						};
+					}
+
+					// Unknown property (e.g. `.text`): treat as .prop("text")
+					if (val === undefined) {
+						const segment = /^\d+$/.test(prop) ? `[${prop}]` : `.${prop}`;
+						return wrapBuilder((target as any).prop(segment));
+					}
+
+					return val;
+				},
+			});
+		};
+
+		const proxy = wrapBuilder(
+			this as unknown as ExpressionBuilder<any, any, any>,
+		);
+		const result = fn(proxy as unknown as TCurr);
+
+		return result as unknown as ExpressionBuilder<T, Path, TOutput>;
 	}
 
 	// =========

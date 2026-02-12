@@ -169,6 +169,115 @@ describe("ExpressionBuilder", () => {
 		});
 	});
 
+	describe("apply", () => {
+		const textKey = "data.output[0].content[0].text" as const;
+		const contentKey = "data.output[0].content" as const;
+
+		test("simple transform", () => {
+			const builder = $(textKey).apply((text: string) =>
+				text.toUpperCase().split(" ").join("-"),
+			);
+
+			const expected = $(textKey).toUpperCase().split(" ").join("-");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("chaining after apply", () => {
+			const builder = $(textKey)
+				.apply((text: string) => text.split(" "))
+				.join("-");
+			const expected = $(textKey).split(" ").join("-");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("chaining two apply calls with type preservation", () => {
+			// First apply: string -> string[]
+			// Second apply: string[] -> string
+			const builder = $(textKey)
+				.apply((text) => text.split(" "))
+				.apply((arr) => arr.join("-"));
+			const expected = $(textKey).split(" ").join("-");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("type checking on input", () => {
+			// @ts-expect-error: applying string fn to non-string path should fail
+			$("data").apply((s) => s.toLowerCase());
+		});
+
+		test("can access sub properties", () => {
+			const builder = $(contentKey).apply((o) => o[0]!.text);
+			const expected = $(contentKey).prop("[0].text");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("can chain property access", () => {
+			const builder = $("Webhook").apply((w) => w.body.fields.hello);
+			const expected = $("Webhook")
+				.prop(".body")
+				.prop(".fields")
+				.prop(".hello");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("can chain array index access", () => {
+			const builder = $("data").apply((o) => o.output[0]!.content[0]!.text);
+			const expected = $("data")
+				.prop(".output")
+				.prop("[0].content")
+				.prop("[0].text");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("support multi-line arrow function", () => {
+			const externalCondition = true;
+			const builder = $("data").apply((o) => {
+				if (externalCondition) {
+					// some external call
+					Promise.resolve();
+
+					return o.output[0]!.content[0]!.text;
+				}
+				return null;
+			});
+			const expected = $("data")
+				.prop(".output")
+				.prop("[0].content")
+				.prop("[0].text");
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("identity function", () => {
+			const builder = $(contentKey).apply((o) => o);
+			const expected = $(contentKey);
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("support named function", () => {
+			const fn = (o: string) => o.toUpperCase();
+			const builder = $(textKey).apply(fn);
+			const expected = $(textKey).toUpperCase();
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("support 'function' keyword", () => {
+			// biome-ignore lint/complexity/useArrowFunction:  that's the test
+			const builder = $(textKey).apply(function (o) {
+				return o.toUpperCase();
+			});
+			const expected = $(textKey).toUpperCase();
+			expect(builder.format()).toEqual(expected.format());
+		});
+
+		test("fail on unsupported methods", () => {
+			expect(() => $(textKey).apply((o) => o.slice(0, 2))).toThrow();
+			expect(() => $(textKey).apply((o) => o.concat(" "))).toThrow();
+			expect(() => $(textKey).apply((o) => o.replace(" ", "-"))).toThrow();
+			expect(() => $(textKey).apply((o) => o.substring(0, 2))).toThrow();
+			expect(() => $(textKey).apply((o) => `${o} message`)).toThrow();
+		});
+	});
+
 	describe("toLowerCase", () => {
 		test("on a string", () => {
 			const builder = $("Webhook.headers['x-user-id']");
