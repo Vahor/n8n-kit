@@ -25,7 +25,7 @@ export interface ToolCodeNodeParameters {
 
     /**
      * E.g. Converts any text to uppercase
-     * Default: "# Example: convert the incoming query to uppercase and return it\nreturn query.upper()"
+     * Default: "# Example: convert the incoming query to uppercase and return it\nreturn _query.upper()"
      * Type options: {"editor":"codeNodeEditor","editorLanguage":"python"}
      */
     readonly pythonCode?: string;

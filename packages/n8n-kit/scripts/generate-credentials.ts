@@ -23,7 +23,7 @@ const generateEntrypoint = async () => {
 	code.line();
 
 	for (const node of allNodes) {
-		const nodeName = node.split("/").pop()!.split(".")[0]!;
+		const nodeName = node.split("/").pop().split(".")[0]!;
 
 		code.line(
 			`import type { ${nodeName}Credentials } from "./${nodeName}.ts";`,
@@ -34,7 +34,7 @@ const generateEntrypoint = async () => {
 	code.line(`export type N8nCredentialsUnion =`);
 	code.indent();
 	for (const node of allNodes) {
-		const nodeName = node.split("/").pop()!.split(".")[0]!;
+		const nodeName = node.split("/").pop().split(".")[0]!;
 
 		code.line(`| ${nodeName}Credentials`);
 	}
@@ -98,7 +98,7 @@ const count = allNodes.length;
 let current = 0;
 for (const node of allNodes) {
 	try {
-		const nodeName = node.split("/").pop()!.split(".")[0]!;
+		const nodeName = node.split("/").pop().split(".")[0]!;
 
 		delete require.cache[node];
 		const file = await import(node);

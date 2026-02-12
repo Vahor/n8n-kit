@@ -23,5 +23,11 @@ export interface MicrosoftOAuth2ApiCredentials {
     /** Default: "body" */
     readonly "authentication"?: unknown;
 
+    /**
+     * Select the endpoint for your Microsoft cloud environment.
+     * Default: "https://graph.microsoft.com"
+     */
+    readonly "graphApiBaseUrl"?: "https://graph.microsoft.com" | "https://graph.microsoft.us" | "https://dod-graph.microsoft.us" | "https://microsoftgraph.chinacloudapi.cn";
+
     readonly __name: "microsoftOAuth2Api";
 }

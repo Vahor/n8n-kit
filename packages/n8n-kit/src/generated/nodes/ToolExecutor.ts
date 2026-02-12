@@ -9,12 +9,15 @@ export const outputs = {"main":"main"} as const;
 
 export interface ToolExecutorNodeParameters {
     /**
-     * Parameters to pass to the tool as JSON or string
+     * Key-value pairs, where key is the name of the tool name and value is the parameters to pass to the tool
      * Default: "{}"
      */
     readonly query?: string;
 
     /** Name of the tool to execute if the connected tool is a toolkit */
     readonly toolName?: string;
+
+    /** Name of the node that is being executed */
+    readonly node?: string;
 
 }

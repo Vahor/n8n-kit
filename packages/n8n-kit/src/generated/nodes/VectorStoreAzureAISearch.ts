@@ -34,7 +34,7 @@ export interface VectorStoreAzureAISearchNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { clearIndex?: boolean } | { queryType?: "vector" | "hybrid" | "semanticHybrid", filter?: string, semanticConfiguration?: string };
+    readonly options?: { clearIndex?: boolean, metadataKeysToInsert?: string } | { queryType?: "vector" | "hybrid" | "semanticHybrid", filter?: string, semanticConfiguration?: string };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

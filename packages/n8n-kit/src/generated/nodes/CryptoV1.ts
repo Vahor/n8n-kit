@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Crypto/Crypto.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Crypto/v1/CryptoV1.node.ts' node
 
 export const description = "Provide cryptographic utilities" as const;
 export const type = "n8n-nodes-base.crypto" as const;
@@ -7,15 +7,9 @@ export const version = 1 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface CryptoNodeParameters {
+export interface CryptoV1NodeParameters {
     /** Default: "hash" */
     readonly action?: "generate" | "hash" | "hmac" | "sign";
-
-    /**
-     * The hash type to use
-     * Default: "MD5"
-     */
-    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
     /** Whether the data to hashed should be taken from binary field */
     readonly binaryData?: boolean;
@@ -25,6 +19,12 @@ export interface CryptoNodeParameters {
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
+
+    /**
+     * The hash type to use
+     * Default: "MD5"
+     */
+    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
     /** The value that should be hashed */
     readonly value?: string;
@@ -38,13 +38,19 @@ export interface CryptoNodeParameters {
     /** Default: "hex" */
     readonly encoding?: "base64" | "hex";
 
-    /** Type options: {"password":true} */
+    /**
+     * Secret used for Hmac
+     * Type options: {"password":true}
+     */
     readonly secret?: string;
 
     /** Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a> */
-    readonly algorithm?: "md5" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "sha512-224" | "sha512-256" | "ripemd160";
+    readonly algorithm?: "md5" | "ripemd160" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "sha512-224" | "sha512-256";
 
-    /** Private key to use when signing the string */
+    /**
+     * Private key to use when signing the string
+     * Type options: {"password":true}
+     */
     readonly privateKey?: string;
 
     /**

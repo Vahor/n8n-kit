@@ -22,7 +22,7 @@ export interface GoogleSheetsV2Props extends NodeProps {
  */
 export class GoogleSheetsV2<L extends string, C extends IContext = never, P extends GoogleSheetsV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.googleSheets" as const;
-    protected typeVersion = 4.7 as const;
+    protected typeVersion = 2 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

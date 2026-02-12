@@ -3,7 +3,7 @@
 
 export const description = "Control git." as const;
 export const type = "n8n-nodes-base.git" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"gitPassword","required":true,"displayOptions":{"show":{"authentication":["gitPassword"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -16,7 +16,7 @@ export interface GitNodeParameters {
     readonly authentication?: "gitPassword" | "none";
 
     /** Default: "log" */
-    readonly operation?: "add" | "addConfig" | "clone" | "commit" | "fetch" | "listConfig" | "log" | "pull" | "push" | "pushTags" | "status" | "switchBranch" | "tag" | "userSetup";
+    readonly operation?: "add" | "addConfig" | "clone" | "commit" | "fetch" | "listConfig" | "log" | "pull" | "push" | "pushTags" | "reflog" | "status" | "switchBranch" | "tag" | "userSetup";
 
     /** Local path of the git repository to operate on */
     readonly repositoryPath?: string;
@@ -25,13 +25,13 @@ export interface GitNodeParameters {
     readonly pathsToAdd?: string;
 
     /** Name of the key to set */
-    readonly key?: string;
+    readonly key?: "user.email" | "user.name" | "remote.origin.url" | string;
 
     /** Value of the key to set */
     readonly value?: string;
 
     /** Default: {} */
-    readonly options?: { mode?: "append" | "set" } | { branch?: string, pathsToAdd?: string } | { file?: string } | { branch?: string, targetRepository?: string } | { createBranch?: boolean, startPoint?: string, force?: boolean, setUpstream?: boolean, remoteName?: string };
+    readonly options?: { mode?: "append" | "set" } | { branch?: string, pathsToAdd?: string } | { file?: string } | { branch?: string, targetRepository?: string } | { reference?: string } | { createBranch?: boolean, startPoint?: string, force?: boolean, setUpstream?: boolean, remoteName?: string };
 
     /** The URL or path of the repository to clone */
     readonly sourceRepository?: string;

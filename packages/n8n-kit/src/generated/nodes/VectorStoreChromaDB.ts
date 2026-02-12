@@ -1,0 +1,63 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/vector_store/VectorStoreChromaDB/VectorStoreChromaDB.node.ts' node
+
+export const description = "Work with your data in Chroma Vector Store" as const;
+export const type = "@n8n/n8n-nodes-langchain.vectorStoreChromaDB" as const;
+export const version = 1.3 as const;
+export const credentials = [{"name":"chromaSelfHostedApi","required":true,"displayOptions":{"show":{"authentication":["chromaSelfHostedApi"]}}},{"name":"chromaCloudApi","required":true,"displayOptions":{"show":{"authentication":["chromaCloudApi"]}}}] as const;
+export const inputs = {"custom":"custom"} as const;
+export const outputs = {"custom":"custom"} as const;
+
+export interface VectorStoreChromaDBNodeParameters {
+    /** Default: "retrieve" */
+    readonly mode?: "load" | "insert" | "retrieve" | "retrieve-as-tool";
+
+    /** Name of the vector store */
+    readonly toolName?: string;
+
+    /**
+     * Explain to the LLM what this tool does, a good, specific description would allow LLMs to produce expected results much more often
+     * Type options: {"rows":2}
+     */
+    readonly toolDescription?: string;
+
+    /** Default: "chromaSelfHostedApi" */
+    readonly authentication?: "chromaSelfHostedApi" | "chromaCloudApi";
+
+    /** Default: {"mode":"list","value":""} */
+    readonly chromaCollection?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * Number of documents to embed in a single batch
+     * Default: 200
+     */
+    readonly embeddingBatchSize?: number;
+
+    /** Default: {} */
+    readonly options?: { clearCollection?: boolean } | { metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
+
+    /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
+    readonly prompt?: string;
+
+    /**
+     * Number of top results to fetch from vector store
+     * Default: 4
+     */
+    readonly topK?: number;
+
+    /**
+     * Whether or not to include document metadata
+     * Default: true
+     */
+    readonly includeDocumentMetadata?: boolean;
+
+    /** Whether or not to rerank results */
+    readonly useReranker?: boolean;
+
+    /** ID of an embedding entry */
+    readonly id?: string;
+
+}

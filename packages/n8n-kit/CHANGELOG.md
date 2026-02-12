@@ -1,5 +1,25 @@
 # @vahor/n8n-kit
 
+## 0.22.0
+
+### Minor Changes
+
+- [#191](https://github.com/Vahor/n8n-kit/pull/191) [`5a7a5f1`](https://github.com/Vahor/n8n-kit/commit/5a7a5f1b4e1d14c6edc3a7eb3a6c8c6c317e582a) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [73cdd618d313d5a442460940de5eae3f88bd42c6](https://github.com/n8n-io/n8n/tree/73cdd618d313d5a442460940de5eae3f88bd42c6))
+
+- [#192](https://github.com/Vahor/n8n-kit/pull/192) [`e37fcb4`](https://github.com/Vahor/n8n-kit/commit/e37fcb438a9281457a1d5bebca428f19958118e3) Thanks [@Vahor](https://github.com/Vahor)! - Code language `python` is no longer available. Use `pythonNative` instead.
+
+## 0.21.0
+
+### Minor Changes
+
+- [#190](https://github.com/Vahor/n8n-kit/pull/190) [`1ae5af2`](https://github.com/Vahor/n8n-kit/commit/1ae5af223cf82c3ada17d718f8ca35d9c4d9b886) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [cfd59cc55b998fe7921a2d11ba495e0410ad4aeb](https://github.com/n8n-io/n8n/tree/cfd59cc55b998fe7921a2d11ba495e0410ad4aeb))
+
+## 0.20.0
+
+### Minor Changes
+
+- [#171](https://github.com/Vahor/n8n-kit/pull/171) [`223c4a2`](https://github.com/Vahor/n8n-kit/commit/223c4a20dc6e6fa2672b91798eab145af0fcab10) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [a08944835d9bf442ae3c70bf92e3030634f0e5fe](https://github.com/n8n-io/n8n/tree/a08944835d9bf442ae3c70bf92e3030634f0e5fe))
+
 ## 0.19.0
 
 ### Minor Changes

@@ -13,7 +13,7 @@ export interface TimeSavedProps extends NodeProps {
 }
 
 /**
- * Track dynamic time savings for this workflow execution
+ * Dynamically track time saved based on the workflow’s execution path and the number of items processed
  */
 export class TimeSaved<L extends string, C extends IContext = never, P extends TimeSavedProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.timeSaved" as const;

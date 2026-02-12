@@ -4,22 +4,22 @@
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
-import type { AgentToolV2NodeParameters } from "../nodes/AgentToolV2";
+import type { AgentToolV3NodeParameters } from "../nodes/AgentToolV3";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface AgentToolV2Props extends NodeProps {
+export interface AgentToolV3Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: AgentToolV2NodeParameters;
+    readonly parameters?: AgentToolV3NodeParameters;
 }
 
 /**
  * Generates an action plan and executes it. Can use external tools.
  */
-export class AgentToolV2<L extends string, C extends IContext = never, P extends AgentToolV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class AgentToolV3<L extends string, C extends IContext = never, P extends AgentToolV3Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.agentTool" as const;
-    protected typeVersion = 2.2 as const;
+    protected typeVersion = 3 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

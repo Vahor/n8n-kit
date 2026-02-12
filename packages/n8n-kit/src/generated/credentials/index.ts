@@ -5,6 +5,8 @@ import type { AnthropicApiCredentials } from "./AnthropicApi.ts";
 import type { AzureAiSearchApiCredentials } from "./AzureAiSearchApi.ts";
 import type { AzureEntraCognitiveServicesOAuth2ApiCredentials } from "./AzureEntraCognitiveServicesOAuth2Api.ts";
 import type { AzureOpenAiApiCredentials } from "./AzureOpenAiApi.ts";
+import type { ChromaCloudApiCredentials } from "./ChromaCloudApi.ts";
+import type { ChromaSelfHostedApiCredentials } from "./ChromaSelfHostedApi.ts";
 import type { CohereApiCredentials } from "./CohereApi.ts";
 import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
@@ -12,6 +14,7 @@ import type { GroqApiCredentials } from "./GroqApi.ts";
 import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
 import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
 import type { McpOAuth2ApiCredentials } from "./McpOAuth2Api.ts";
+import type { MicrosoftAgent365ApiCredentials } from "./MicrosoftAgent365Api.ts";
 import type { MilvusApiCredentials } from "./MilvusApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
@@ -87,6 +90,8 @@ import type { CopperApiCredentials } from "./CopperApi.ts";
 import type { CortexApiCredentials } from "./CortexApi.ts";
 import type { CrateDbCredentials } from "./CrateDb.ts";
 import type { CrowdStrikeOAuth2ApiCredentials } from "./CrowdStrikeOAuth2Api.ts";
+import type { CryptoCredentials } from "./Crypto.ts";
+import type { CurrentsApiCredentials } from "./CurrentsApi.ts";
 import type { CustomerIoApiCredentials } from "./CustomerIoApi.ts";
 import type { DatadogApiCredentials } from "./DatadogApi.ts";
 import type { DeepLApiCredentials } from "./DeepLApi.ts";
@@ -419,6 +424,8 @@ export type N8nCredentialsUnion =
     | AzureAiSearchApiCredentials
     | AzureEntraCognitiveServicesOAuth2ApiCredentials
     | AzureOpenAiApiCredentials
+    | ChromaCloudApiCredentials
+    | ChromaSelfHostedApiCredentials
     | CohereApiCredentials
     | DeepSeekApiCredentials
     | GooglePalmApiCredentials
@@ -426,6 +433,7 @@ export type N8nCredentialsUnion =
     | HuggingFaceApiCredentials
     | LemonadeApiCredentials
     | McpOAuth2ApiCredentials
+    | MicrosoftAgent365ApiCredentials
     | MilvusApiCredentials
     | MistralCloudApiCredentials
     | MotorheadApiCredentials
@@ -501,6 +509,8 @@ export type N8nCredentialsUnion =
     | CortexApiCredentials
     | CrateDbCredentials
     | CrowdStrikeOAuth2ApiCredentials
+    | CryptoCredentials
+    | CurrentsApiCredentials
     | CustomerIoApiCredentials
     | DatadogApiCredentials
     | DeepLApiCredentials
