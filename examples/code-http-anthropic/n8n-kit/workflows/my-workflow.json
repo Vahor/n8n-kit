@@ -34,7 +34,7 @@
 			"id": "generate-prompt",
 			"name": "generate-prompt",
 			"parameters": {
-				"language": "python",
+				"language": "pythonNative",
 				"mode": "runOnceForEachItem",
 				"pythonCode": "def handler(input):\n    if(input[\"type\"] == \"type1\"):\n        return {\n            \"prompt\": f\"Reply as if you were a gangster.\"\n        }\n    if(input[\"type\"] == \"type2\"):\n        return {\n            \"prompt\": f\"Reply as if you were a pirate.\"\n        }\n\n    raise Exception(\"Invalid type\")\n\nreturn handler({\n  \"type\": _('Webhook Trigger').item.json.query.type\n});"
 			},
