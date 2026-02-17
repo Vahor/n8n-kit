@@ -118,7 +118,7 @@
 		"codemaker": "^1.121.0",
 		"eventsource": "2.0.2",
 		"n8n-core": "2.9.0",
-		"rimraf": "^6.1.2",
+		"rimraf": "^6.1.3",
 		"tinyglobby": "^0.2.15",
 		"typescript": "catalog:"
 	},
