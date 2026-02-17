@@ -1,5 +1,13 @@
 # @vahor/n8n-kit
 
+## 0.23.0
+
+### Minor Changes
+
+- [#203](https://github.com/Vahor/n8n-kit/pull/203) [`78d2deb`](https://github.com/Vahor/n8n-kit/commit/78d2debd724d391f2b906dc766ae2e73c4ede5ce) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream submodule (version [8d0251d1deef256fd3d9176f05dedab62afde918](https://github.com/n8n-io/n8n/tree/8d0251d1deef256fd3d9176f05dedab62afde918))
+
+- [#195](https://github.com/Vahor/n8n-kit/pull/195) [`b40e091`](https://github.com/Vahor/n8n-kit/commit/b40e091d97be54d0eaee2c69bebf238924846a62) Thanks [@Vahor](https://github.com/Vahor)! - Add `apply` method on JsonExpression to make chaining method calls easier.
+
 ## 0.22.0
 
 ### Minor Changes
