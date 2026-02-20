@@ -23,12 +23,9 @@ const allNodes = globSync(
 const testDir = path.resolve(__dirname, "../test");
 const testDataDir = path.resolve(__dirname, "../test/data");
 
-// Create test files that some nodes require during generation
 const createTestFiles = () => {
-	// https://github.com/Vahor/n8n-kit/blob/4f0be9a2ba3d7e2ce70cff40a8d8afc7e5b9194c/packages/n8n-kit/test/README.md
 	cleanupTestFiles();
 	fs.mkdirSync(testDataDir, { recursive: true });
-
 	const pdfPath = path.join(testDataDir, "05-versions-space.pdf");
 	fs.writeFileSync(pdfPath, "");
 };
@@ -41,23 +38,25 @@ const parseConnectionsTypes = (
 	result: INodeTypeDescription,
 	type: "inputs" | "outputs",
 ) => {
-	const r = {};
+	const r: Record<string, string> = {};
 	const connections = result[type];
 	if (typeof connections === "string") {
-		// HACK: impossible to parse so we add a custom type and let the user choose
 		r.custom = "custom";
 		return r;
-	} else {
-		for (const connection of connections) {
-			if (typeof connection === "string") {
-				r[connection] = connection;
-			} else {
-				r[connection.displayName] = connection.type;
-			}
+	}
+	for (const connection of connections) {
+		if (typeof connection === "string") {
+			r[connection] = connection;
+		} else {
+			r[connection.displayName] = connection.type;
 		}
 	}
 	return r;
 };
+
+// Detect if this is an explicit versioned node file (SetV2, etc.)
+const isExplicitVersionedNode = (nodePath: string) =>
+	/\/v\d+\/.+V\d+\.node\.ts$/.test(nodePath);
 
 const generateTypescriptNodeOutput = async (
 	result: INodeTypeDescription & { __filepath: string; __nodename: string },
@@ -67,21 +66,22 @@ const generateTypescriptNodeOutput = async (
 
 	const visitedProperties: Record<
 		string,
-		INodeProperties & {
-			__versionsOfProperty: INodeProperties[];
-		}
+		INodeProperties & { __versionsOfProperty: INodeProperties[] }
 	> = {};
+
 	for (const property of result.properties) {
 		if (
-			property.type === "hidden" ||
-			property.type === "button" ||
-			property.type === "curlImport" ||
-			property.type === "notice" ||
-			property.type === "resourceMapper" ||
-			property.type === "credentials" ||
-			property.type === "callout"
+			[
+				"hidden",
+				"button",
+				"curlImport",
+				"notice",
+				"resourceMapper",
+				"credentials",
+				"callout",
+			].includes(property.type)
 		)
-			continue; // I suppose ?
+			continue;
 
 		if (visitedProperties[property.name]) {
 			visitedProperties[property.name].__versionsOfProperty.push(property);
@@ -108,7 +108,6 @@ const generateTypescriptNodeOutput = async (
 	);
 
 	const code = new CodeMaker();
-
 	code.openFile(outputFile);
 
 	code.line(`// GENERATED FILE, DO NOT EDIT`);
@@ -123,13 +122,21 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	code.line(`export const description = "${result.description}" as const;`);
+
 	const prefix = isLangChainNode(result.__filepath)
 		? "@n8n/n8n-nodes-langchain"
 		: "n8n-nodes-base";
 	code.line(`export const type = "${prefix}.${result.name}" as const;`);
-	code.line(
-		`export const version = ${Array.isArray(result.version) ? result.version.at(-1) : (result.version ?? 0)} as const;`,
-	);
+
+	const resolvedVersion = Array.isArray(result.version)
+		? result.version[result.version.length - 1]
+		: result.version;
+
+	if (resolvedVersion == null)
+		throw new Error(`Missing version for node ${result.__nodename}`);
+
+	code.line(`export const version = ${resolvedVersion} as const;`);
+
 	if (result.credentials) {
 		code.line(
 			`export const credentials = ${JSON.stringify(result.credentials)} as const;`,
@@ -142,13 +149,11 @@ const generateTypescriptNodeOutput = async (
 	code.line(
 		`export const outputs = ${JSON.stringify(parseConnectionsTypes(result, "outputs"))} as const;`,
 	);
-
 	code.line();
 
 	code.openBlock(`export interface ${result.__nodename}NodeParameters`);
 
 	for (const property of Object.values(visitedProperties)) {
-		// if (property.name !== "fieldsToSummarize") continue;
 		const comments = [
 			property.description?.replaceAll("*/", "*<space>/"),
 			property.default && `Default: ${JSON.stringify(property.default)}`,
@@ -159,7 +164,6 @@ const generateTypescriptNodeOutput = async (
 
 		renderComments(code, comments);
 
-		// There will be duplicates but theses are ok (like "GET" | "GET")
 		const typeUnion = [
 			...new Set(property.__versionsOfProperty.map((p) => toTypescriptType(p))),
 		].join(" | ");
@@ -170,21 +174,19 @@ const generateTypescriptNodeOutput = async (
 	}
 
 	if (result.polling) {
-		// TODO: make a shared type ?
 		code.line(
 			`readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };`,
 		);
 	}
 
 	code.closeBlock();
-
 	code.closeFile(outputFile);
 	await code.save("src/generated/nodes");
 };
 
 if (allNodes.length === 0) {
 	console.error("No nodes found");
-	process.exit(0);
+	process.exit(1);
 }
 
 const count = allNodes.length;
@@ -194,22 +196,21 @@ createTestFiles();
 const baseNodes = allNodes.filter(
 	(node) => !node.includes("@n8n/nodes-langchain"),
 );
-const langChainNodeAlreadyExistInBaseNode = (node: string) => {
-	return baseNodes.some((baseNode) => baseNode.includes(node));
-};
+const langChainNodeAlreadyExistInBaseNode = (node: string) =>
+	baseNodes.some((baseNode) => baseNode.includes(node));
 
-const versionsCache = {};
+const versionsCache: Record<string, any> = {};
 
 for (const nodePath of allNodes.sort((a, b) =>
 	getNodeName(a).localeCompare(getNodeName(b)),
 )) {
 	let nodeName = getNodeName(nodePath);
 	const nodePathWithoutStartingSlash = nodePath.split("vendor")[1];
+
 	if (nodeName === "index") {
 		current++;
 		continue;
 	}
-	// if (!nodeName.startsWith("Agent")) continue;
 
 	if (
 		isLangChainNode(nodePath) &&
@@ -218,11 +219,13 @@ for (const nodePath of allNodes.sort((a, b) =>
 		nodeName = `${nodeName}AI`;
 	}
 
+	const explicitVersion = isExplicitVersionedNode(nodePath);
+
 	try {
 		let instance: any;
-		if (nodeName in versionsCache) {
-			const fromCache = versionsCache[nodeName]!;
-			instance = { ...fromCache };
+
+		if (nodeName in versionsCache && !explicitVersion) {
+			instance = { ...versionsCache[nodeName]! };
 		} else {
 			delete require.cache[nodePath];
 			const file = await import(nodePath);
@@ -233,11 +236,9 @@ for (const nodePath of allNodes.sort((a, b) =>
 				console.error(`No class export for ${nodePathWithoutStartingSlash}`);
 				continue;
 			}
-			// @ts-expect-error: it works
 			instance = new firstClassExport();
 
-			if (instance.nodeVersions != null) {
-				// We expect to find a .v2.node.ts file later
+			if (instance.nodeVersions != null && !explicitVersion) {
 				for (const [version, node] of Object.entries(instance.nodeVersions)) {
 					versionsCache[`${nodeName}V${version}`] = node;
 				}
@@ -255,7 +256,10 @@ for (const nodePath of allNodes.sort((a, b) =>
 		description.__filepath = nodePathWithoutStartingSlash;
 		description.__nodename = nodeName;
 
-		if (description.version === undefined || description.name === undefined) {
+		if (
+			(description.version === undefined || description.name === undefined) &&
+			!explicitVersion
+		) {
 			const nodeNameWithoutVersion = nodeName.split("V")[0];
 			const currentVersion = Array.isArray(description.version)
 				? description.version.at(-1)
@@ -280,6 +284,7 @@ for (const nodePath of allNodes.sort((a, b) =>
 	}
 	process.stdout.write(`\r${current}/${count}`);
 }
+
 console.log();
 console.log(count - current, "nodes failed to parse");
 cleanupTestFiles();
