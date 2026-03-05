@@ -24,6 +24,10 @@ jobs:
           fetch-depth: 0
           submodules: recursive
 
+      - name: Install isolated-vm build requirements
+        run: |
+          sudo apt-get install python3 g++ build-essential
+
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions[bot]'

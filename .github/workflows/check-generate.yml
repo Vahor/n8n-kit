@@ -64,6 +64,9 @@ jobs:
           submodules: true
           ref: ${{ fromJSON(steps.pr-info.outputs.result).ref }}
       - uses: oven-sh/setup-bun@v2
+      - name: Install isolated-vm build requirements
+        run: |
+          sudo apt-get install python3 g++ build-essential
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
@@ -72,7 +75,7 @@ jobs:
 
       - name: Check examples
         working-directory: packages/n8n-kit/
-        run: bun generate 
+        run: bun generate
 
       - name: Post success comment
         if: ${{ success() }}

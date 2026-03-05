@@ -6,7 +6,6 @@ on:
       - main
   workflow_dispatch:
 
-
 concurrency:
   group: docs
   cancel-in-progress: true
@@ -22,10 +21,13 @@ jobs:
         with:
           fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
+      - name: Install isolated-vm build requirements
+        run: |
+          sudo apt-get install python3 g++ build-essential
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Build docs
-        run: bun run docs 
+        run: bun run docs
 
       - name: Upload static files as artifact
         id: deployment
@@ -35,8 +37,8 @@ jobs:
 
   deploy:
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

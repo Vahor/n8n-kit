@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runtime: [ 'node', 'bun' ]
+        runtime: ["node", "bun"]
 
     steps:
       - name: Post starting comment
@@ -75,7 +75,9 @@ jobs:
         with:
           node-version: 22.18
 
-
+      - name: Install isolated-vm build requirements
+        run: |
+          sudo apt-get install python3 g++ build-essential
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
