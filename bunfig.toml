@@ -1,6 +1,2 @@
 [install]
 linker = "hoisted"
-
-[install.alias]
-"isolated-vm" = "./stubs/empty.js"
-"@microsoft/agents-hosting" = "./stubs/empty.js"

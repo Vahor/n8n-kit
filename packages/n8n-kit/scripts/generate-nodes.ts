@@ -262,8 +262,9 @@ for (const nodePath of allNodes.sort((a, b) =>
 		description.__nodename = nodeName;
 
 		if (
-			(description.version === undefined || description.name === undefined) &&
-			!explicitVersion
+			description.version === undefined ||
+			description.name === undefined ||
+			description.description === undefined
 		) {
 			const nodeNameWithoutVersion = nodeName.split("V")[0];
 			const currentVersion = Array.isArray(description.version)
@@ -276,8 +277,8 @@ for (const nodePath of allNodes.sort((a, b) =>
 				continue;
 			}
 			delete versionsCache[cacheKey];
-			description.version = fromCache.description.version;
-			description.name = fromCache.description.name;
+			description.version ??= fromCache.description.version;
+			description.name ??= fromCache.description.name;
 			description.description ??= fromCache.description.description;
 		}
 

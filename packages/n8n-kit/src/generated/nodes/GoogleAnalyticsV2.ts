@@ -33,10 +33,10 @@ export interface GoogleAnalyticsV2NodeParameters {
     /** Default: "last7days" */
     readonly dateRange?: "last7days" | "last30days" | "today" | "yesterday" | "lastCalendarWeek" | "lastCalendarMonth" | "custom";
 
-    /** Default: "2026-02-16T00:00:00.000+00:00" */
+    /** Default: "2026-02-25T00:00:00.000+01:00" */
     readonly startDate?: string;
 
-    /** Default: "2026-02-23T00:00:00.000+00:00" */
+    /** Default: "2026-03-04T00:00:00.000+01:00" */
     readonly endDate?: string;
 
     /**

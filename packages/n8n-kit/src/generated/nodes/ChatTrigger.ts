@@ -46,6 +46,13 @@ export interface ChatTriggerNodeParameters {
      */
     readonly agentDescription?: string;
 
+    /**
+     * Suggested prompts shown to users in n8n Chat Hub to start a conversation with the agent
+     * Default: {}
+     * Type options: {"multipleValues":true,"fixedCollection":{"layout":"inline"}}
+     */
+    readonly suggestedPrompts?: { prompts: Array<{ icon?: unknown, text: string }> };
+
     /** Default: {} */
     readonly options?: { allowFileUploads?: boolean, allowedFilesMimeTypes?: string } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "responseNode" } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "responseNode" | "streaming" | "streaming" | "lastNode" } | { allowFileUploads?: boolean, allowedFilesMimeTypes?: string, responseMode?: "lastNode" | "responseNodes" | "streaming" | "streaming" | "lastNode" | "responseNodes" } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "streaming" | "responseNode" | "streaming" | "lastNode" | "lastNode" | "streaming" | "responseNodes" | "streaming" | "lastNode" | "responseNodes" };
 

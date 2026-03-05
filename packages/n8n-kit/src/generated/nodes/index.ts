@@ -64,7 +64,6 @@ export type { ChainSummarizationV1NodeParameters } from "./ChainSummarizationV1"
 export type { ChainSummarizationV2NodeParameters } from "./ChainSummarizationV2";
 export type { ChargebeeNodeParameters } from "./Chargebee";
 export type { ChargebeeTriggerNodeParameters } from "./ChargebeeTrigger";
-export type { ChatAINodeParameters } from "./ChatAI";
 export type { ChatTriggerNodeParameters } from "./ChatTrigger";
 export type { CircleCiNodeParameters } from "./CircleCi";
 export type { CiscoWebexNodeParameters } from "./CiscoWebex";
@@ -326,7 +325,6 @@ export type { MergeV2NodeParameters } from "./MergeV2";
 export type { MergeV3NodeParameters } from "./MergeV3";
 export type { MessageBirdNodeParameters } from "./MessageBird";
 export type { MetabaseNodeParameters } from "./Metabase";
-export type { MicrosoftAgent365TriggerNodeParameters } from "./MicrosoftAgent365Trigger";
 export type { MicrosoftDynamicsCrmNodeParameters } from "./MicrosoftDynamicsCrm";
 export type { MicrosoftEntraNodeParameters } from "./MicrosoftEntra";
 export type { MicrosoftExcelV1NodeParameters } from "./MicrosoftExcelV1";
