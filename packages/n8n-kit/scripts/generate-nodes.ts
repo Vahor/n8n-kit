@@ -124,7 +124,9 @@ const generateTypescriptNodeOutput = async (
 		code.line();
 	}
 
-	code.line(`export const description = "${result.description}" as const;`);
+	code.line(
+		`export const description = ${JSON.stringify(result.description)} as const;`,
+	);
 
 	const prefix = isLangChainNode(result.__filepath)
 		? "@n8n/n8n-nodes-langchain"
