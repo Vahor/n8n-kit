@@ -15,6 +15,9 @@
 			"codemaker": "^1.129.0"
 		}
 	},
+	"overrides": {
+		"isolated-vm": "file:./stubs/empty"
+	},
 	"description": "Build n8n workflows using code",
 	"license": "MIT",
 	"repository": {
