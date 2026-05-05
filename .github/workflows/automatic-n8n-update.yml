@@ -66,6 +66,12 @@ jobs:
             git checkout -b $BRANCH_NAME
           fi
 
+      - name: Setup Node
+        if: steps.check-updates.outputs.has_updates == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
       - name: Setup Bun
         if: steps.check-updates.outputs.has_updates == 'true'
         uses: oven-sh/setup-bun@v2
