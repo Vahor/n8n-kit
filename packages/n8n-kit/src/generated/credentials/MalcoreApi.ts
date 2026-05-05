@@ -4,7 +4,7 @@
 export const name = "malcoreApi" as const;
 
 /**
- * displayName: MalcoreAPI
+ * displayName: Malcore API
  * documentationUrl: malcore
  */
 export interface MalcoreApiCredentials {

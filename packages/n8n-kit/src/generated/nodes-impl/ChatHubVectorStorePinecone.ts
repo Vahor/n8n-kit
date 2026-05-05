@@ -1,27 +1,27 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
-import type { PostgresCredentials } from "../credentials/Postgres.ts";
+import type { ChatHubVectorStorePineconeApiCredentials } from "../credentials/ChatHubVectorStorePineconeApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { State } from "../../workflow/chain/state";
 import { DEFAULT_NODE_SIZE } from "../../nodes/node";
-import type { VectorStorePGVectorNodeParameters } from "../nodes/VectorStorePGVector";
+import type { ChatHubVectorStorePineconeNodeParameters } from "../nodes/ChatHubVectorStorePinecone";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface VectorStorePGVectorProps extends NodeProps {
+export interface ChatHubVectorStorePineconeProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: VectorStorePGVectorNodeParameters;
-    readonly postgresCredentials: Credentials<PostgresCredentials>;
+    readonly parameters?: ChatHubVectorStorePineconeNodeParameters;
+    readonly chatHubVectorStorePineconeApiCredentials: Credentials<ChatHubVectorStorePineconeApiCredentials>;
 }
 
 /**
- * Work with your data in Postgresql with the PGVector extension
+ * Internal-use vector store for ChatHub
  */
-export class VectorStorePGVector<L extends string, C extends IContext = never, P extends VectorStorePGVectorProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
-    protected type = "@n8n/n8n-nodes-langchain.vectorStorePGVector" as const;
+export class ChatHubVectorStorePinecone<L extends string, C extends IContext = never, P extends ChatHubVectorStorePineconeProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+    protected type = "@n8n/n8n-nodes-langchain.chatHubVectorStorePinecone" as const;
     protected typeVersion = 1.3 as const;
 
     constructor(id: L, override props: P) {
@@ -30,7 +30,7 @@ export class VectorStorePGVector<L extends string, C extends IContext = never, P
     }
 
     override getCredentials() {
-        return [this.props.postgresCredentials];
+        return [this.props.chatHubVectorStorePineconeApiCredentials];
     }
 
     public withCustom(type: "ai_textSplitter" | "ai_embedding" | "ai_document" | "ai_languageModel" | "ai_memory" | "ai_tool" | "ai_vectorStore" | "ai_outputParser", next: State): this {

@@ -9,7 +9,7 @@ export const name = "facebookGraphAppApi" as const;
  */
 export interface FacebookGraphAppApiCredentials {
     /**
-     * (Optional) When the app secret is set the node will verify this signature to validate the integrity and origin of the payload
+     * (Optional) When set, the node will sign API calls and verify incoming webhook payloads for added security
      * Type options: {"password":true}
      */
     readonly "appSecret"?: string;

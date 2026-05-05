@@ -4,7 +4,7 @@
 export const name = "wolframAlphaApi" as const;
 
 /**
- * displayName: WolframAlphaApi
+ * displayName: Wolfram Alpha API
  * documentationUrl: wolframalpha
  */
 export interface WolframAlphaApiCredentials {

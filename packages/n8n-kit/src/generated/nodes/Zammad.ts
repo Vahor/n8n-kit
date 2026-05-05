@@ -16,7 +16,7 @@ export interface ZammadNodeParameters {
     readonly resource?: "group" | "organization" | "ticket" | "user";
 
     /** Default: "create" */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "create" | "delete" | "get" | "getAll" | "getSelf" | "update";
+    readonly operation?: "create" | "delete" | "get" | "getAll" | "update" | "create" | "delete" | "get" | "getAll" | "getSelf" | "update";
 
     readonly name?: string;
 
@@ -27,7 +27,7 @@ export interface ZammadNodeParameters {
     readonly additionalFields?: { active?: boolean, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> }, note?: string } | { shared?: boolean, domain?: string, domain_assignment?: boolean, active?: boolean, vip?: boolean, note?: string, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> } } | { customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> } } | { active?: boolean, addressUi?: { addressDetails: { city?: string, country?: string, address?: string, zip?: string } }, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> }, department?: string, email?: string, fax?: string, note?: string, organization?: string, phone?: string, mobile?: string, verified?: boolean, vip?: boolean, web?: string };
 
     /** Default: {} */
-    readonly updateFields?: { active?: boolean, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> }, name?: string, note?: string } | { shared?: boolean, domain?: string, domain_assignment?: boolean, active?: boolean, vip?: boolean, note?: string, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> } } | { active?: boolean, addressUi?: { addressDetails: { city?: string, country?: string, address?: string, zip?: string } }, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> }, department?: string, email?: string, fax?: string, firstname?: string, lastname?: string, note?: string, organization?: string, phone?: string, mobile?: string, verified?: boolean, vip?: boolean, web?: string };
+    readonly updateFields?: { active?: boolean, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> }, name?: string, note?: string } | { shared?: boolean, domain?: string, domain_assignment?: boolean, active?: boolean, vip?: boolean, note?: string, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> } } | { title?: string, group?: string, state_id?: string, pending_time?: string, priority_id?: string, owner_id?: string, customer_id?: string, note?: string, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> } } | { active?: boolean, addressUi?: { addressDetails: { city?: string, country?: string, address?: string, zip?: string } }, customFieldsUi?: { customFieldPairs: Array<{ name?: string, value?: string }> }, department?: string, email?: string, fax?: string, firstname?: string, lastname?: string, note?: string, organization?: string, phone?: string, mobile?: string, verified?: boolean, vip?: boolean, web?: string };
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

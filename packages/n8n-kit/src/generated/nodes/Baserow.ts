@@ -3,20 +3,24 @@
 
 export const description = "Consume the Baserow API" as const;
 export const type = "n8n-nodes-base.baserow" as const;
-export const version = 1 as const;
-export const credentials = [{"name":"baserowApi","required":true}] as const;
+export const version = 1.1 as const;
+export const credentials = [{"name":"baserowApi","required":true,"displayOptions":{"show":{"authentication":["usernamePassword"]}}},{"name":"baserowTokenApi","required":true,"displayOptions":{"show":{"authentication":["databaseToken"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface BaserowNodeParameters {
+    /** Default: "usernamePassword" */
+    readonly authentication?: "usernamePassword" | "databaseToken";
+
     /** Default: "row" */
     readonly resource?: "row";
 
     /** Default: "getAll" */
-    readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
+    readonly operation?: "batchCreate" | "batchDelete" | "batchUpdate" | "create" | "delete" | "get" | "getAll" | "update";
 
     /**
      * Database to operate on. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: "0"
      * Type options: {"loadOptionsMethod":"getDatabaseIds"}
      */
     readonly databaseId?: string;
@@ -45,6 +49,25 @@ export interface BaserowNodeParameters {
      */
     readonly fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> };
 
+    /**
+     * Default: []
+     * Type options: {"multipleValues":true}
+     */
+    readonly rowsUi?: { rowValues: Array<{ id: string, fieldsUi?: { fieldValues: Array<{ fieldId?: string, fieldValue?: string }> } }> };
+
+    /**
+     * IDs of the rows to delete
+     * Default: []
+     * Type options: {"multipleValues":true}
+     */
+    readonly rowIds?: string;
+
+    /**
+     * Name of the property in each input item that contains the row ID
+     * Default: "id"
+     */
+    readonly rowIdProperty?: string;
+
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;
 
@@ -56,6 +79,6 @@ export interface BaserowNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly additionalOptions?: { filters?: { fields: Array<{ field?: string, operator?: "contains" | "contains_not" | "date_after" | "date_before" | "date_equal" | "date_equals_month" | "date_equals_today" | "date_equals_year" | "date_not_equal" | "equal" | "filename_contains" | "higher_than" | "empty" | "not_empty" | "boolean" | "link_row_has_not" | "link_row_has" | "lower_than" | "not_equal" | "single_select_equal" | "single_select_not_equal", value?: string }> }, filterType?: "AND" | "OR", search?: string, order?: { fields: Array<{ field?: string, direction?: "" | "-" }> } };
+    readonly additionalOptions?: { filters?: { fields: Array<{ field?: string, operator?: "equal" | "not_equal" | "contains" | "contains_not" | "contains_word" | "doesnt_contain_word" | "length_is_lower_than" | "higher_than" | "higher_than_or_equal" | "lower_than" | "lower_than_or_equal" | "is_even_and_whole" | "date_is" | "date_is_not" | "date_is_before" | "date_is_on_or_before" | "date_is_after" | "date_is_on_or_after" | "date_is_within" | "date_equals_today" | "date_equals_month" | "date_equals_year" | "date_equals_day_of_month" | "date_equal" | "date_not_equal" | "date_before" | "date_before_or_equal" | "date_after" | "date_after_or_equal" | "date_after_days_ago" | "date_within_days" | "date_within_weeks" | "date_within_months" | "date_equals_days_ago" | "date_equals_months_ago" | "date_equals_years_ago" | "date_before_today" | "date_after_today" | "date_equals_week" | "filename_contains" | "has_file_type" | "files_lower_than" | "single_select_equal" | "single_select_not_equal" | "single_select_is_any_of" | "single_select_is_none_of" | "multiple_select_has" | "multiple_select_has_not" | "multiple_collaborators_has" | "multiple_collaborators_has_not" | "user_is" | "user_is_not" | "link_row_has" | "link_row_has_not" | "link_row_contains" | "link_row_not_contains" | "boolean" | "empty" | "not_empty", value?: string }> }, filterType?: "AND" | "OR", search?: string, order?: { fields: Array<{ field?: string, direction?: "" | "-" }> } };
 
 }

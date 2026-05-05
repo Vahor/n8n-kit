@@ -1,13 +1,19 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-credentials.ts
 
+import type { AlibabaCloudApiCredentials } from "./AlibabaCloudApi.ts";
 import type { AnthropicApiCredentials } from "./AnthropicApi.ts";
 import type { AzureAiSearchApiCredentials } from "./AzureAiSearchApi.ts";
 import type { AzureEntraCognitiveServicesOAuth2ApiCredentials } from "./AzureEntraCognitiveServicesOAuth2Api.ts";
 import type { AzureOpenAiApiCredentials } from "./AzureOpenAiApi.ts";
+import type { BraveSearchApiCredentials } from "./BraveSearchApi.ts";
+import type { ChatHubVectorStorePGVectorApiCredentials } from "./ChatHubVectorStorePGVectorApi.ts";
+import type { ChatHubVectorStorePineconeApiCredentials } from "./ChatHubVectorStorePineconeApi.ts";
+import type { ChatHubVectorStoreQdrantApiCredentials } from "./ChatHubVectorStoreQdrantApi.ts";
 import type { ChromaCloudApiCredentials } from "./ChromaCloudApi.ts";
 import type { ChromaSelfHostedApiCredentials } from "./ChromaSelfHostedApi.ts";
 import type { CohereApiCredentials } from "./CohereApi.ts";
+import type { DaytonaApiCredentials } from "./DaytonaApi.ts";
 import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
 import type { GroqApiCredentials } from "./GroqApi.ts";
@@ -16,7 +22,9 @@ import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
 import type { McpOAuth2ApiCredentials } from "./McpOAuth2Api.ts";
 import type { MicrosoftAgent365ApiCredentials } from "./MicrosoftAgent365Api.ts";
 import type { MilvusApiCredentials } from "./MilvusApi.ts";
+import type { MinimaxApiCredentials } from "./MinimaxApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
+import type { MoonshotApiCredentials } from "./MoonshotApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
 import type { OllamaApiCredentials } from "./OllamaApi.ts";
 import type { OpenRouterApiCredentials } from "./OpenRouterApi.ts";
@@ -55,6 +63,7 @@ import type { AzureStorageSharedKeyApiCredentials } from "./AzureStorageSharedKe
 import type { BambooHrApiCredentials } from "./BambooHrApi.ts";
 import type { BannerbearApiCredentials } from "./BannerbearApi.ts";
 import type { BaserowApiCredentials } from "./BaserowApi.ts";
+import type { BaserowTokenApiCredentials } from "./BaserowTokenApi.ts";
 import type { BeeminderApiCredentials } from "./BeeminderApi.ts";
 import type { BeeminderOAuth2ApiCredentials } from "./BeeminderOAuth2Api.ts";
 import type { BitbucketAccessTokenApiCredentials } from "./BitbucketAccessTokenApi.ts";
@@ -93,6 +102,8 @@ import type { CrowdStrikeOAuth2ApiCredentials } from "./CrowdStrikeOAuth2Api.ts"
 import type { CryptoCredentials } from "./Crypto.ts";
 import type { CurrentsApiCredentials } from "./CurrentsApi.ts";
 import type { CustomerIoApiCredentials } from "./CustomerIoApi.ts";
+import type { DatabricksApiCredentials } from "./DatabricksApi.ts";
+import type { DatabricksOAuth2ApiCredentials } from "./DatabricksOAuth2Api.ts";
 import type { DatadogApiCredentials } from "./DatadogApi.ts";
 import type { DeepLApiCredentials } from "./DeepLApi.ts";
 import type { DemioApiCredentials } from "./DemioApi.ts";
@@ -402,6 +413,7 @@ import type { WhatsAppTriggerApiCredentials } from "./WhatsAppTriggerApi.ts";
 import type { WiseApiCredentials } from "./WiseApi.ts";
 import type { WooCommerceApiCredentials } from "./WooCommerceApi.ts";
 import type { WordpressApiCredentials } from "./WordpressApi.ts";
+import type { WordpressOAuth2ApiCredentials } from "./WordpressOAuth2Api.ts";
 import type { WorkableApiCredentials } from "./WorkableApi.ts";
 import type { WufooApiCredentials } from "./WufooApi.ts";
 import type { XeroOAuth2ApiCredentials } from "./XeroOAuth2Api.ts";
@@ -420,13 +432,19 @@ import type { ZulipApiCredentials } from "./ZulipApi.ts";
 
 export type N8nCredentialsUnion =
 
+    | AlibabaCloudApiCredentials
     | AnthropicApiCredentials
     | AzureAiSearchApiCredentials
     | AzureEntraCognitiveServicesOAuth2ApiCredentials
     | AzureOpenAiApiCredentials
+    | BraveSearchApiCredentials
+    | ChatHubVectorStorePGVectorApiCredentials
+    | ChatHubVectorStorePineconeApiCredentials
+    | ChatHubVectorStoreQdrantApiCredentials
     | ChromaCloudApiCredentials
     | ChromaSelfHostedApiCredentials
     | CohereApiCredentials
+    | DaytonaApiCredentials
     | DeepSeekApiCredentials
     | GooglePalmApiCredentials
     | GroqApiCredentials
@@ -435,7 +453,9 @@ export type N8nCredentialsUnion =
     | McpOAuth2ApiCredentials
     | MicrosoftAgent365ApiCredentials
     | MilvusApiCredentials
+    | MinimaxApiCredentials
     | MistralCloudApiCredentials
+    | MoonshotApiCredentials
     | MotorheadApiCredentials
     | OllamaApiCredentials
     | OpenRouterApiCredentials
@@ -474,6 +494,7 @@ export type N8nCredentialsUnion =
     | BambooHrApiCredentials
     | BannerbearApiCredentials
     | BaserowApiCredentials
+    | BaserowTokenApiCredentials
     | BeeminderApiCredentials
     | BeeminderOAuth2ApiCredentials
     | BitbucketAccessTokenApiCredentials
@@ -512,6 +533,8 @@ export type N8nCredentialsUnion =
     | CryptoCredentials
     | CurrentsApiCredentials
     | CustomerIoApiCredentials
+    | DatabricksApiCredentials
+    | DatabricksOAuth2ApiCredentials
     | DatadogApiCredentials
     | DeepLApiCredentials
     | DemioApiCredentials
@@ -821,6 +844,7 @@ export type N8nCredentialsUnion =
     | WiseApiCredentials
     | WooCommerceApiCredentials
     | WordpressApiCredentials
+    | WordpressOAuth2ApiCredentials
     | WorkableApiCredentials
     | WufooApiCredentials
     | XeroOAuth2ApiCredentials

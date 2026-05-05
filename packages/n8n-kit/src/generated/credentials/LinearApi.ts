@@ -11,5 +11,11 @@ export interface LinearApiCredentials {
     /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
+    /**
+     * The signing secret is used to verify the authenticity of webhook requests sent by Linear.
+     * Type options: {"password":true}
+     */
+    readonly "signingSecret"?: string;
+
     readonly __name: "linearApi";
 }

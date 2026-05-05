@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { BaserowApiCredentials } from "../credentials/BaserowApi.ts";
+import type { BaserowTokenApiCredentials } from "../credentials/BaserowTokenApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { BaserowNodeParameters } from "../nodes/Baserow";
@@ -12,7 +13,8 @@ export interface BaserowProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: BaserowNodeParameters;
-    readonly baserowApiCredentials: Credentials<BaserowApiCredentials>;
+    readonly baserowApiCredentials?: Credentials<BaserowApiCredentials>;
+    readonly baserowTokenApiCredentials?: Credentials<BaserowTokenApiCredentials>;
 }
 
 /**
@@ -20,14 +22,14 @@ export interface BaserowProps extends NodeProps {
  */
 export class Baserow<L extends string, C extends IContext = never, P extends BaserowProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.baserow" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.baserowApiCredentials];
+        return [this.props?.baserowApiCredentials, this.props?.baserowTokenApiCredentials];
     }
 
 }

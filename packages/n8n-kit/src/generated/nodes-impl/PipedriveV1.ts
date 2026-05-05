@@ -5,14 +5,14 @@ import type { PipedriveApiCredentials } from "../credentials/PipedriveApi.ts";
 import type { PipedriveOAuth2ApiCredentials } from "../credentials/PipedriveOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { PipedriveNodeParameters } from "../nodes/Pipedrive";
+import type { PipedriveV1NodeParameters } from "../nodes/PipedriveV1";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface PipedriveProps extends NodeProps {
+export interface PipedriveV1Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: PipedriveNodeParameters;
+    readonly parameters?: PipedriveV1NodeParameters;
     readonly pipedriveApiCredentials?: Credentials<PipedriveApiCredentials>;
     readonly pipedriveOAuth2ApiCredentials?: Credentials<PipedriveOAuth2ApiCredentials>;
 }
@@ -20,7 +20,7 @@ export interface PipedriveProps extends NodeProps {
 /**
  * Create and edit data in Pipedrive
  */
-export class Pipedrive<L extends string, C extends IContext = never, P extends PipedriveProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class PipedriveV1<L extends string, C extends IContext = never, P extends PipedriveV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.pipedrive" as const;
     protected typeVersion = 1 as const;
 
