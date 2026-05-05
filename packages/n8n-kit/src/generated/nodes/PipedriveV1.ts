@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Pipedrive/Pipedrive.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Pipedrive/v1/PipedriveV1.node.ts' node
 
 export const description = "Create and edit data in Pipedrive" as const;
 export const type = "n8n-nodes-base.pipedrive" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"pipedriveApi","required":true,"displayOptio
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface PipedriveNodeParameters {
+export interface PipedriveV1NodeParameters {
     /** Default: "apiToken" */
     readonly authentication?: "apiToken" | "oAuth2";
 

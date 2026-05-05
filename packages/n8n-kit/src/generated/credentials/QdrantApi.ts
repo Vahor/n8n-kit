@@ -4,7 +4,7 @@
 export const name = "qdrantApi" as const;
 
 /**
- * displayName: QdrantApi
+ * displayName: Qdrant API
  * documentationUrl: https://docs.n8n.io/integrations/builtin/credentials/qdrant/
  */
 export interface QdrantApiCredentials {

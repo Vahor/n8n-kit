@@ -39,5 +39,16 @@ export interface OAuth2ApiCredentials {
 
     readonly "ignoreSSLIssues"?: boolean;
 
+    /**
+     * HTTP status code that indicates the token has expired. Some APIs return 403 instead of 401.
+     * Default: 401
+     */
+    readonly "tokenExpiredStatusCode"?: number;
+
+    /** Whether the IdP returns tokens encrypted as JWE to the public key at this instance’s JWKS endpoint. The response must contain at least one JWE-encrypted token (access or ID token); fully plaintext responses are rejected. The field is hidden by the server unless the OAuth2 JWE feature is enabled. */
+    readonly "jweEnabled"?: boolean;
+
+    readonly "jwksUriNotice"?: string;
+
     readonly __name: "oAuth2Api";
 }

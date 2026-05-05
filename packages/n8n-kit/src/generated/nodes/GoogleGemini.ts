@@ -3,7 +3,7 @@
 
 export const description = "Interact with Google Gemini AI models" as const;
 export const type = "@n8n/n8n-nodes-langchain.googleGemini" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
@@ -15,7 +15,10 @@ export interface GoogleGeminiNodeParameters {
     /** Default: "transcribe" */
     readonly operation?: "analyze" | "transcribe" | "analyze" | "upload" | "createStore" | "deleteStore" | "listStores" | "uploadToStore" | "analyze" | "generate" | "edit" | "message" | "analyze" | "generate" | "download";
 
-    /** Default: {"mode":"list","value":""} */
+    /**
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["operation","resource"]}
+     */
     readonly modelId?: {
 	value: string,
 	mode: "list" | "id",

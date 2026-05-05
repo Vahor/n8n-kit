@@ -13,7 +13,7 @@ export interface FilterV2Props extends NodeProps {
 }
 
 /**
- * Remove items matching a condition
+ * Keep only items matching a condition
  */
 export class FilterV2<L extends string, C extends IContext = never, P extends FilterV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.filter" as const;

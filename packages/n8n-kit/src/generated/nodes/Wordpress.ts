@@ -4,11 +4,17 @@
 export const description = "Consume Wordpress API" as const;
 export const type = "n8n-nodes-base.wordpress" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"wordpressApi","required":true}] as const;
+export const credentials = [{"name":"wordpressApi","required":true,"displayOptions":{"show":{"authType":["basicAuth"]}}},{"name":"wordpressOAuth2Api","required":true,"displayOptions":{"show":{"authType":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface WordpressNodeParameters {
+    /**
+     * The authentication method to use
+     * Default: "basicAuth"
+     */
+    readonly authType?: "basicAuth" | "oAuth2";
+
     /** Default: "post" */
     readonly resource?: "post" | "page" | "user";
 

@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { WordpressApiCredentials } from "../credentials/WordpressApi.ts";
+import type { WordpressOAuth2ApiCredentials } from "../credentials/WordpressOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { WordpressNodeParameters } from "../nodes/Wordpress";
@@ -12,7 +13,8 @@ export interface WordpressProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: WordpressNodeParameters;
-    readonly wordpressApiCredentials: Credentials<WordpressApiCredentials>;
+    readonly wordpressApiCredentials?: Credentials<WordpressApiCredentials>;
+    readonly wordpressOAuth2ApiCredentials?: Credentials<WordpressOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class Wordpress<L extends string, C extends IContext = never, P extends W
     protected type = "n8n-nodes-base.wordpress" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.wordpressApiCredentials];
+        return [this.props?.wordpressApiCredentials, this.props?.wordpressOAuth2ApiCredentials];
     }
 
 }

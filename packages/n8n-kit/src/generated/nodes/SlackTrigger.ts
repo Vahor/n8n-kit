@@ -10,7 +10,7 @@ export const outputs = {"main":"main"} as const;
 
 export interface SlackTriggerNodeParameters {
     /** Default: [] */
-    readonly trigger?: ("any_event" | "app_mention" | "file_public" | "file_share" | "message" | "channel_created" | "team_join" | "reaction_added")[];
+    readonly trigger?: ("any_event" | "app_home_opened" | "app_mention" | "file_public" | "file_share" | "message" | "channel_created" | "team_join" | "reaction_added")[];
 
     /** Whether to watch for the event in the whole workspace, rather than a specific channel */
     readonly watchWorkspace?: boolean;
@@ -28,6 +28,6 @@ export interface SlackTriggerNodeParameters {
     readonly downloadFiles?: boolean;
 
     /** Default: {} */
-    readonly options?: { resolveIds?: boolean, userIds?: unknown[] };
+    readonly options?: { resolveIds?: boolean, userIds?: unknown[], reactionEmojis?: string };
 
 }

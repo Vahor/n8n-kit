@@ -45,7 +45,7 @@ export interface CryptoV1NodeParameters {
     readonly secret?: string;
 
     /** Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a> */
-    readonly algorithm?: "md5" | "ripemd160" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "sha512-224" | "sha512-256";
+    readonly algorithm?: "md5" | "ripemd160" | "sha1" | "sha224" | "sha256" | "sha384" | "sha512" | "sha512-224" | "sha512-256" | "sha3-224" | "sha3-256" | "sha3-384" | "sha3-512";
 
     /**
      * Private key to use when signing the string

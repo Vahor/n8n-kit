@@ -13,7 +13,7 @@ export interface TimeSavedNodeParameters {
 
     /**
      * Number of minutes saved by this workflow execution
-     * Type options: {"minValue":0}
+     * Type options: {"minValue":0,"numberPrecision":0}
      */
     readonly minutesSaved?: number;
 

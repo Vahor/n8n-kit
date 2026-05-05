@@ -8,6 +8,8 @@ export const name = "serpApi" as const;
  * documentationUrl: serp
  */
 export interface SerpApiCredentials {
+    readonly "oldVersionNotice"?: string;
+
     /** Type options: {"password":true} */
     readonly "apiKey": string;
 

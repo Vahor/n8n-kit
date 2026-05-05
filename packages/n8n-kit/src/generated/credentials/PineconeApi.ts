@@ -4,7 +4,7 @@
 export const name = "pineconeApi" as const;
 
 /**
- * displayName: PineconeApi
+ * displayName: Pinecone API
  * documentationUrl: pinecone
  */
 export interface PineconeApiCredentials {

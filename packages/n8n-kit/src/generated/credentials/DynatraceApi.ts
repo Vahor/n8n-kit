@@ -4,7 +4,7 @@
 export const name = "dynatraceApi" as const;
 
 /**
- * displayName: DynatraceAPI
+ * displayName: Dynatrace API
  * documentationUrl: dynatrace
  */
 export interface DynatraceApiCredentials {

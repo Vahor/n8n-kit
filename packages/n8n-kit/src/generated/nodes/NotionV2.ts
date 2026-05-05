@@ -4,11 +4,14 @@
 export const description = "Consume Notion API" as const;
 export const type = "n8n-nodes-base.notion" as const;
 export const version = 2.2 as const;
-export const credentials = [{"name":"notionApi","required":true}] as const;
+export const credentials = [{"name":"notionApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"notionOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface NotionV2NodeParameters {
+    /** Default: "apiKey" */
+    readonly authentication?: "apiKey" | "oAuth2";
+
     /** Default: "page" */
     readonly resource?: "block" | "database" | "databasePage" | "page" | "user";
 
