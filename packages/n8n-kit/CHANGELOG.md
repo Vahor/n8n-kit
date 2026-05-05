@@ -1,5 +1,15 @@
 # @vahor/n8n-kit
 
+## 0.24.0
+
+### Minor Changes
+
+- [#221](https://github.com/Vahor/n8n-kit/pull/221) [`9046aab`](https://github.com/Vahor/n8n-kit/commit/9046aab2db610bf363c13da4e881896ed221bd97) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream stable release [2.18.7](https://github.com/n8n-io/n8n/tree/n8n@2.18.7)
+
+- [#166](https://github.com/Vahor/n8n-kit/pull/166) [`40e9ab9`](https://github.com/Vahor/n8n-kit/commit/40e9ab92b2fb67b9ee503a8e398ce0ff1bdd2015) Thanks [@Vahor](https://github.com/Vahor)! - Update "@dagrejs/dagre" to v3.
+
+  This may change generated workflow graph layouts/positions due to Dagre layout changes.
+
 ## 0.23.0
 
 ### Minor Changes
