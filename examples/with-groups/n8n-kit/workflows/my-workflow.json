@@ -25,7 +25,7 @@
 		{
 			"id": "after groups",
 			"name": "after groups",
-			"position": [1140, 180],
+			"position": [780, 180],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
@@ -36,9 +36,9 @@
 				"color": 1,
 				"content": "Group 1",
 				"height": 240,
-				"width": 600
+				"width": 480
 			},
-			"position": [360, 0],
+			"position": [240, 0],
 			"type": "n8n-nodes-base.stickyNote",
 			"typeVersion": 1
 		},
@@ -51,28 +51,28 @@
 				"height": 240,
 				"width": 240
 			},
-			"position": [720, 240],
+			"position": [480, 240],
 			"type": "n8n-nodes-base.stickyNote",
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 1",
 			"name": "inside group 1",
-			"position": [420, 60],
+			"position": [300, 60],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 1 - 2",
 			"name": "inside group 1 - 2",
-			"position": [780, 60],
+			"position": [540, 60],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
 		{
 			"id": "inside group 2",
 			"name": "inside group 2",
-			"position": [780, 300],
+			"position": [540, 300],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
