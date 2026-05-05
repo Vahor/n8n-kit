@@ -1,3 +1,4 @@
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
 //#region src/data/some-data.json
 var some_data_default = { hello: "world" };
@@ -6,7 +7,7 @@ var some_data_default = { hello: "world" };
 //#region node_modules/zod/v4/core/core.js
 /** A special constant with type `never` */
 const NEVER = Object.freeze({ status: "aborted" });
-function $constructor(name, initializer$1, params) {
+function $constructor(name, initializer, params) {
 	function init(inst, def) {
 		var _a;
 		Object.defineProperty(inst, "_zod", {
@@ -15,7 +16,7 @@ function $constructor(name, initializer$1, params) {
 		});
 		(_a = inst._zod).traits ?? (_a.traits = /* @__PURE__ */ new Set());
 		inst._zod.traits.add(name);
-		initializer$1(inst, def);
+		initializer(inst, def);
 		for (const k in _.prototype) if (!(k in inst)) Object.defineProperty(inst, k, { value: _.prototype[k].bind(inst) });
 		inst._zod.constr = _;
 		inst._zod.def = def;
@@ -74,9 +75,9 @@ function nullish(input) {
 	return input === null || input === void 0;
 }
 const EVALUATING = Symbol("evaluating");
-function defineLazy(object$1, key, getter) {
+function defineLazy(object, key, getter) {
 	let value = void 0;
-	Object.defineProperty(object$1, key, {
+	Object.defineProperty(object, key, {
 		get() {
 			if (value === EVALUATING) return;
 			if (value === void 0) {
@@ -86,7 +87,7 @@ function defineLazy(object$1, key, getter) {
 			return value;
 		},
 		set(v) {
-			Object.defineProperty(object$1, key, { value: v });
+			Object.defineProperty(object, key, { value: v });
 		},
 		configurable: true
 	});
@@ -168,12 +169,12 @@ function prefixIssues(path, issues) {
 function unwrapMessage(message) {
 	return typeof message === "string" ? message : message?.message;
 }
-function finalizeIssue(iss, ctx, config$1) {
+function finalizeIssue(iss, ctx, config) {
 	const full = {
 		...iss,
 		path: iss.path ?? []
 	};
-	if (!iss.message) full.message = unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config$1.customError?.(iss)) ?? unwrapMessage(config$1.localeError?.(iss)) ?? "Invalid input";
+	if (!iss.message) full.message = unwrapMessage(iss.inst?._zod.def?.error?.(iss)) ?? unwrapMessage(ctx?.error?.(iss)) ?? unwrapMessage(config.customError?.(iss)) ?? unwrapMessage(config.localeError?.(iss)) ?? "Invalid input";
 	delete full.inst;
 	delete full.continue;
 	if (!ctx?.reportInput) delete full.input;
@@ -208,9 +209,9 @@ const $ZodRealError = $constructor("$ZodError", initializer, { Parent: Error });
 
 //#endregion
 //#region node_modules/zod/v4/core/parse.js
-const _parse = (_Err) => (schema$1, value, _ctx, _params) => {
+const _parse = (_Err) => (schema, value, _ctx, _params) => {
 	const ctx = _ctx ? Object.assign(_ctx, { async: false }) : { async: false };
-	const result = schema$1._zod.run({
+	const result = schema._zod.run({
 		value,
 		issues: []
 	}, ctx);
@@ -223,9 +224,9 @@ const _parse = (_Err) => (schema$1, value, _ctx, _params) => {
 	return result.value;
 };
 const parse = /* @__PURE__ */ _parse($ZodRealError);
-const _parseAsync = (_Err) => async (schema$1, value, _ctx, params) => {
+const _parseAsync = (_Err) => async (schema, value, _ctx, params) => {
 	const ctx = _ctx ? Object.assign(_ctx, { async: true }) : { async: true };
-	let result = schema$1._zod.run({
+	let result = schema._zod.run({
 		value,
 		issues: []
 	}, ctx);
@@ -238,12 +239,12 @@ const _parseAsync = (_Err) => async (schema$1, value, _ctx, params) => {
 	return result.value;
 };
 const parseAsync = /* @__PURE__ */ _parseAsync($ZodRealError);
-const _safeParse = (_Err) => (schema$1, value, _ctx) => {
+const _safeParse = (_Err) => (schema, value, _ctx) => {
 	const ctx = _ctx ? {
 		..._ctx,
 		async: false
 	} : { async: false };
-	const result = schema$1._zod.run({
+	const result = schema._zod.run({
 		value,
 		issues: []
 	}, ctx);
@@ -257,9 +258,9 @@ const _safeParse = (_Err) => (schema$1, value, _ctx) => {
 	};
 };
 const safeParse = /* @__PURE__ */ _safeParse($ZodRealError);
-const _safeParseAsync = (_Err) => async (schema$1, value, _ctx) => {
+const _safeParseAsync = (_Err) => async (schema, value, _ctx) => {
 	const ctx = _ctx ? Object.assign(_ctx, { async: true }) : { async: true };
-	let result = schema$1._zod.run({
+	let result = schema._zod.run({
 		value,
 		issues: []
 	}, ctx);
@@ -273,42 +274,6 @@ const _safeParseAsync = (_Err) => async (schema$1, value, _ctx) => {
 	};
 };
 const safeParseAsync = /* @__PURE__ */ _safeParseAsync($ZodRealError);
-const _encode = (_Err) => (schema$1, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _parse(_Err)(schema$1, value, ctx);
-};
-const encode = /* @__PURE__ */ _encode($ZodRealError);
-const _decode = (_Err) => (schema$1, value, _ctx) => {
-	return _parse(_Err)(schema$1, value, _ctx);
-};
-const decode = /* @__PURE__ */ _decode($ZodRealError);
-const _encodeAsync = (_Err) => async (schema$1, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _parseAsync(_Err)(schema$1, value, ctx);
-};
-const encodeAsync = /* @__PURE__ */ _encodeAsync($ZodRealError);
-const _decodeAsync = (_Err) => async (schema$1, value, _ctx) => {
-	return _parseAsync(_Err)(schema$1, value, _ctx);
-};
-const decodeAsync = /* @__PURE__ */ _decodeAsync($ZodRealError);
-const _safeEncode = (_Err) => (schema$1, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _safeParse(_Err)(schema$1, value, ctx);
-};
-const safeEncode = /* @__PURE__ */ _safeEncode($ZodRealError);
-const _safeDecode = (_Err) => (schema$1, value, _ctx) => {
-	return _safeParse(_Err)(schema$1, value, _ctx);
-};
-const safeDecode = /* @__PURE__ */ _safeDecode($ZodRealError);
-const _safeEncodeAsync = (_Err) => async (schema$1, value, _ctx) => {
-	const ctx = _ctx ? Object.assign(_ctx, { direction: "backward" }) : { direction: "backward" };
-	return _safeParseAsync(_Err)(schema$1, value, ctx);
-};
-const safeEncodeAsync = /* @__PURE__ */ _safeEncodeAsync($ZodRealError);
-const _safeDecodeAsync = (_Err) => async (schema$1, value, _ctx) => {
-	return _safeParseAsync(_Err)(schema$1, value, _ctx);
-};
-const safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
 
 //#endregion
 //#region node_modules/zod/v4/core/regexes.js
@@ -316,7 +281,7 @@ const dateSource = `(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468
 const date = /* @__PURE__ */ new RegExp(`^${dateSource}$`);
 const string$1 = (params) => {
 	const regex = params ? `[\\s\\S]{${params?.minimum ?? 0},${params?.maximum ?? ""}}` : `[\\s\\S]*`;
-	return /* @__PURE__ */ new RegExp(`^${regex}$`);
+	return new RegExp(`^${regex}$`);
 };
 
 //#endregion
@@ -334,8 +299,8 @@ const $ZodCheckLengthEquals = /* @__PURE__ */ $constructor("$ZodCheckLengthEqual
 		const val = payload.value;
 		return !nullish(val) && val.length !== void 0;
 	});
-	inst._zod.onattach.push((inst$1) => {
-		const bag = inst$1._zod.bag;
+	inst._zod.onattach.push((inst) => {
+		const bag = inst._zod.bag;
 		bag.minimum = def.length;
 		bag.maximum = def.length;
 		bag.length = def.length;
@@ -389,10 +354,10 @@ const $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
 			inst._zod.run = inst._zod.parse;
 		});
 	} else {
-		const runChecks = (payload, checks$1, ctx) => {
+		const runChecks = (payload, checks, ctx) => {
 			let isAborted = aborted(payload);
 			let asyncResult;
-			for (const ch of checks$1) {
+			for (const ch of checks) {
 				if (ch._zod.def.when) {
 					if (!ch._zod.def.when(payload)) continue;
 				} else if (isAborted) continue;
@@ -422,7 +387,7 @@ const $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
 			const checkResult = runChecks(payload, checks, ctx);
 			if (checkResult instanceof Promise) {
 				if (ctx.async === false) throw new $ZodAsyncError();
-				return checkResult.then((checkResult$1) => inst._zod.parse(checkResult$1, ctx));
+				return checkResult.then((checkResult) => inst._zod.parse(checkResult, ctx));
 			}
 			return inst._zod.parse(checkResult, ctx);
 		};
@@ -436,15 +401,15 @@ const $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
 					...ctx,
 					skipChecks: true
 				});
-				if (canary instanceof Promise) return canary.then((canary$1) => {
-					return handleCanaryResult(canary$1, payload, ctx);
+				if (canary instanceof Promise) return canary.then((canary) => {
+					return handleCanaryResult(canary, payload, ctx);
 				});
 				return handleCanaryResult(canary, payload, ctx);
 			}
 			const result = inst._zod.parse(payload, ctx);
 			if (result instanceof Promise) {
 				if (ctx.async === false) throw new $ZodAsyncError();
-				return result.then((result$1) => runChecks(result$1, checks, ctx));
+				return result.then((result) => runChecks(result, checks, ctx));
 			}
 			return runChecks(result, checks, ctx);
 		};
@@ -468,7 +433,7 @@ const $ZodString = /* @__PURE__ */ $constructor("$ZodString", (inst, def) => {
 	inst._zod.parse = (payload, _) => {
 		if (def.coerce) try {
 			payload.value = String(payload.value);
-		} catch (_$1) {}
+		} catch (_) {}
 		if (typeof payload.value === "string") return payload;
 		payload.issues.push({
 			expected: "string",
@@ -512,7 +477,7 @@ function handleCatchall(proms, input, payload, ctx, def, inst) {
 			value: input[key],
 			issues: []
 		}, ctx);
-		if (r instanceof Promise) proms.push(r.then((r$1) => handlePropertyResult(r$1, payload, key, input)));
+		if (r instanceof Promise) proms.push(r.then((r) => handlePropertyResult(r, payload, key, input)));
 		else handlePropertyResult(r, payload, key, input);
 	}
 	if (unrecognized.length) payload.issues.push({
@@ -541,13 +506,13 @@ const $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
 		}
 		return propValues;
 	});
-	const isObject$1 = isObject;
+	const isObject$2 = isObject;
 	const catchall = def.catchall;
 	let value;
 	inst._zod.parse = (payload, ctx) => {
 		value ?? (value = _normalized.value);
 		const input = payload.value;
-		if (!isObject$1(input)) {
+		if (!isObject$2(input)) {
 			payload.issues.push({
 				expected: "object",
 				code: "invalid_type",
@@ -564,7 +529,7 @@ const $ZodObject = /* @__PURE__ */ $constructor("$ZodObject", (inst, def) => {
 				value: input[key],
 				issues: []
 			}, ctx);
-			if (r instanceof Promise) proms.push(r.then((r$1) => handlePropertyResult(r$1, payload, key, input)));
+			if (r instanceof Promise) proms.push(r.then((r) => handlePropertyResult(r, payload, key, input)));
 			else handlePropertyResult(r, payload, key, input);
 		}
 		if (!catchall) return proms.length ? Promise.all(proms).then(() => payload) : payload;
@@ -576,7 +541,7 @@ const $ZodEnum = /* @__PURE__ */ $constructor("$ZodEnum", (inst, def) => {
 	const values = getEnumValues(def.entries);
 	const valuesSet = new Set(values);
 	inst._zod.values = valuesSet;
-	inst._zod.pattern = /* @__PURE__ */ new RegExp(`^(${values.filter((k) => propertyKeyTypes.has(typeof k)).map((o) => typeof o === "string" ? escapeRegex(o) : o.toString()).join("|")})$`);
+	inst._zod.pattern = new RegExp(`^(${values.filter((k) => propertyKeyTypes.has(typeof k)).map((o) => typeof o === "string" ? escapeRegex(o) : o.toString()).join("|")})$`);
 	inst._zod.parse = (payload, _ctx) => {
 		const input = payload.value;
 		if (valuesSet.has(input)) return payload;
