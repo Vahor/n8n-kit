@@ -46,7 +46,7 @@ export interface OllamaNodeParameters {
     readonly simplify?: boolean;
 
     /** Default: {} */
-    readonly options?: { system?: string, temperature?: number, think?: boolean, top_p?: number, top_k?: number, num_predict?: number, frequency_penalty?: number, presence_penalty?: number, repeat_penalty?: number, num_ctx?: number, repeat_last_n?: number, min_p?: number, seed?: number, stop?: string, keep_alive?: string, low_vram?: boolean, main_gpu?: number, num_batch?: number, num_gpu?: number, num_thread?: number, penalize_newline?: boolean, use_mlock?: boolean, use_mmap?: boolean, vocab_only?: boolean, format?: "" | "json" };
+    readonly options?: { system?: string, temperature?: number, top_p?: number, top_k?: number, num_predict?: number, frequency_penalty?: number, presence_penalty?: number, repeat_penalty?: number, num_ctx?: number, repeat_last_n?: number, min_p?: number, seed?: number, stop?: string, keep_alive?: string, low_vram?: boolean, main_gpu?: number, num_batch?: number, num_gpu?: number, num_thread?: number, penalize_newline?: boolean, use_mlock?: boolean, use_mmap?: boolean, vocab_only?: boolean, format?: "" | "json" };
 
     /**
      * Default: {"values":[{"content":"","role":"user"}]}

@@ -3,7 +3,7 @@
 
 export const description = "Stores the chat history in Postgres table." as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryPostgresChat" as const;
-export const version = 1.4 as const;
+export const version = 1.3 as const;
 export const credentials = [{"name":"postgres","required":true,"testedBy":"postgresConnectionTest"}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;

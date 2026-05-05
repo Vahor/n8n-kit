@@ -28,6 +28,6 @@ export interface SlackTriggerNodeParameters {
     readonly downloadFiles?: boolean;
 
     /** Default: {} */
-    readonly options?: { resolveIds?: boolean, userIds?: unknown[], reactionEmojis?: string };
+    readonly options?: { resolveIds?: boolean, userIds?: unknown[] };
 
 }

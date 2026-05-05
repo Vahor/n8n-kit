@@ -3,7 +3,7 @@
 
 export const description = "For advanced usage with an AI chain" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatMoonshot" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const credentials = [{"name":"moonshotApi","required":true}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;

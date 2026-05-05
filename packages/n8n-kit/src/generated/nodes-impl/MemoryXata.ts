@@ -20,7 +20,7 @@ export interface MemoryXataProps extends NodeProps {
  */
 export class MemoryXata<L extends string, C extends IContext = never, P extends MemoryXataProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.memoryXata" as const;
-    protected typeVersion = 1.5 as const;
+    protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

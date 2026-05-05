@@ -20,7 +20,7 @@ export interface LmChatMoonshotProps extends NodeProps {
  */
 export class LmChatMoonshot<L extends string, C extends IContext = never, P extends LmChatMoonshotProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatMoonshot" as const;
-    protected typeVersion = 1.1 as const;
+    protected typeVersion = 1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

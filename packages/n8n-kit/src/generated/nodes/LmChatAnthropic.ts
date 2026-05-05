@@ -3,7 +3,7 @@
 
 export const description = "Language Model Anthropic" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatAnthropic" as const;
-export const version = 1.5 as const;
+export const version = 1.3 as const;
 export const credentials = [{"name":"anthropicApi","required":true}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
@@ -22,6 +22,6 @@ export interface LmChatAnthropicNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { maxTokensToSample?: number, temperature?: number, topK?: number, topP?: number, thinking?: boolean, thinkingBudget?: number, thinkingMode?: "disabled" | "adaptive" | "manual", effort?: "low" | "medium" | "high" | "xhigh" | "max" | "low" | "medium" | "high" };
+    readonly options?: { maxTokensToSample?: number, temperature?: number, topK?: number, topP?: number, thinking?: boolean, thinkingBudget?: number };
 
 }

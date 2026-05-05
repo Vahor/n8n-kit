@@ -3,7 +3,7 @@
 
 export const description = "Interact with Alibaba Cloud Qwen models via Model Studio" as const;
 export const type = "@n8n/n8n-nodes-langchain.alibabaCloud" as const;
-export const version = 1.1 as const;
+export const version = 1 as const;
 export const credentials = [{"name":"alibabaCloudApi","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
@@ -19,10 +19,7 @@ export interface AlibabaCloudNodeParameters {
      * The model to use for generation
      * Default: "qwen3.5-flash"
      */
-    readonly modelId?: "qwen3-max" | "qwen3-max-2026-01-23" | "qwen3.5-122b-a10b" | "qwen3.5-27b" | "qwen3.5-35b-a3b" | "qwen3.5-397b-a17b" | "qwen3.5-flash" | "qwen3.5-flash-2026-02-23" | "qwen3.5-plus" | "qwen3.5-plus-2026-02-15" | {
-	value: string,
-	mode: "list" | "id",
-} | "qwen3-vl-flash" | "qwen3-vl-plus" | "qwen-image" | "qwen-image-max" | "qwen-image-plus" | "wan2.6-t2i" | "z-image-turbo" | "wan2.6-t2v" | "wan2.6-i2v-flash" | "wan2.6-i2v";
+    readonly modelId?: "qwen3-max" | "qwen3-max-2026-01-23" | "qwen3.5-122b-a10b" | "qwen3.5-27b" | "qwen3.5-35b-a3b" | "qwen3.5-397b-a17b" | "qwen3.5-flash" | "qwen3.5-flash-2026-02-23" | "qwen3.5-plus" | "qwen3.5-plus-2026-02-15" | "qwen3-vl-flash" | "qwen3-vl-plus" | "qwen-image" | "qwen-image-max" | "qwen-image-plus" | "wan2.6-t2i" | "z-image-turbo" | "wan2.6-t2v" | "wan2.6-i2v-flash" | "wan2.6-i2v";
 
     /**
      * Default: {"messageValues":[{"content":"","role":"user"}]}

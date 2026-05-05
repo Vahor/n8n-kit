@@ -3,7 +3,7 @@
 
 export const description = "Use Motorhead Memory" as const;
 export const type = "@n8n/n8n-nodes-langchain.memoryMotorhead" as const;
-export const version = 1.4 as const;
+export const version = 1.3 as const;
 export const credentials = [{"name":"motorheadApi","required":true}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_memory":"ai_memory"} as const;
