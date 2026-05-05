@@ -75,7 +75,7 @@
 					}
 				}
 			},
-			"position": [420, 300],
+			"position": [260, 300],
 			"type": "n8n-nodes-base.if",
 			"typeVersion": 2.3
 		},
@@ -103,7 +103,7 @@
 					}
 				}
 			},
-			"position": [780, 420],
+			"position": [500, 420],
 			"type": "n8n-nodes-base.if",
 			"typeVersion": 2.3
 		},
@@ -113,9 +113,9 @@
 			"parameters": {
 				"content": "Check valid execution type",
 				"height": 480,
-				"width": 1320
+				"width": 880
 			},
-			"position": [720, 240],
+			"position": [440, 240],
 			"type": "n8n-nodes-base.stickyNote",
 			"typeVersion": 1
 		},
@@ -123,7 +123,7 @@
 			"id": "code",
 			"name": "code",
 			"parameters": { "jsCode": "return { codeOutput: 'world' }" },
-			"position": [1140, 300],
+			"position": [700, 300],
 			"type": "n8n-nodes-base.code",
 			"typeVersion": 2
 		},
@@ -131,7 +131,7 @@
 			"id": "conditional-data-fetch",
 			"name": "conditional-data-fetch",
 			"parameters": { "method": "GET", "url": "https://other-api.com/posts/1" },
-			"position": [1500, 540],
+			"position": [940, 540],
 			"type": "n8n-nodes-base.httpRequest",
 			"typeVersion": 4.4
 		},
@@ -142,14 +142,14 @@
 				"respondWith": "json",
 				"responseBody": "{\"message\":\"Data fetched successfully\",\"source\":\"{{ $('conditional-data-fetch').item.json.conditional_output }}\"}"
 			},
-			"position": [1860, 540],
+			"position": [1140, 540],
 			"type": "n8n-nodes-base.respondToWebhook",
 			"typeVersion": 1.5
 		},
 		{
 			"id": "invalid-entity-id",
 			"name": "invalid-entity-id",
-			"position": [780, 60],
+			"position": [500, 60],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
@@ -160,9 +160,9 @@
 				"color": 3,
 				"content": "Handle error message",
 				"height": 240,
-				"width": 600
+				"width": 440
 			},
-			"position": [720, 0],
+			"position": [440, 0],
 			"type": "n8n-nodes-base.stickyNote",
 			"typeVersion": 1
 		},
@@ -174,14 +174,14 @@
 				"respondWith": "json",
 				"responseBody": "{\"error\":\"Invalid entity id\",\"data\":{\"body\":\"{{ $json.body }}\"}}"
 			},
-			"position": [1140, 60],
+			"position": [700, 60],
 			"type": "n8n-nodes-base.respondToWebhook",
 			"typeVersion": 1.5
 		},
 		{
 			"id": "invalid-execution-type",
 			"name": "invalid-execution-type",
-			"position": [1500, 300],
+			"position": [940, 300],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
@@ -192,9 +192,9 @@
 				"color": 3,
 				"content": "Handle error message",
 				"height": 240,
-				"width": 600
+				"width": 440
 			},
-			"position": [1440, 240],
+			"position": [880, 240],
 			"type": "n8n-nodes-base.stickyNote",
 			"typeVersion": 1
 		},
@@ -206,14 +206,14 @@
 				"respondWith": "json",
 				"responseBody": "{\"error\":\"Invalid execution type\",\"data\":{\"body\":\"{{ $('code').item.json.codeOutput }}\"}}"
 			},
-			"position": [1860, 300],
+			"position": [1140, 300],
 			"type": "n8n-nodes-base.respondToWebhook",
 			"typeVersion": 1.5
 		},
 		{
 			"id": "noop-2",
 			"name": "noop-2",
-			"position": [1140, 540],
+			"position": [700, 540],
 			"type": "n8n-nodes-base.noOp",
 			"typeVersion": 1
 		},
