@@ -34,8 +34,11 @@ jobs:
         run: |
           git submodule update --remote --merge
           submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}' | sed 's/^+//')
+          n8n_package_version=$(jq -r '.version' packages/n8n-kit/vendor/n8n/package.json)
           echo "Submodule version: $submodule_version"
+          echo "n8n package version: $n8n_package_version"
           echo "SUBMODULE_VERSION=$submodule_version" >> $GITHUB_ENV
+          echo "N8N_PACKAGE_VERSION=$n8n_package_version" >> $GITHUB_ENV
 
       - name: Check if submodules have updates
         id: check-updates
@@ -79,12 +82,16 @@ jobs:
       - name: Update kit dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-kit
-        run: bun update "n8n-core" "n8n-workflow" "@n8n/n8n-nodes-langchain"
-          "@n8n/ai-utilities" --latest
+        run: |
+          bun add --dev \
+            "n8n-core@$N8N_PACKAGE_VERSION" \
+            "n8n-workflow@$N8N_PACKAGE_VERSION" \
+            "@n8n/n8n-nodes-langchain@$N8N_PACKAGE_VERSION"
+          bun update "@n8n/ai-utilities" --latest
       - name: Update cli dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-cli
-        run: bun update n8n-core --latest
+        run: bun add --dev "n8n-core@$N8N_PACKAGE_VERSION"
       - name: Install dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         run: bun install --frozen-lockfile
