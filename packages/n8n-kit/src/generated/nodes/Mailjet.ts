@@ -33,7 +33,7 @@ export interface MailjetNodeParameters {
     readonly jsonParameters?: boolean;
 
     /** Default: {} */
-    readonly additionalFields?: { bccEmail?: string, ccAddresses?: string, fromName?: string, priority?: number, replyTo?: string, templateLanguage?: boolean, trackClicks?: "account_default" | "disabled" | "enabled", trackOpens?: "account_default" | "disabled" | "enabled" } | { bccEmail?: string, ccEmail?: string, fromName?: string, priority?: number, replyTo?: string, subject?: string, templateLanguage?: boolean, trackClicks?: string, trackOpens?: string };
+    readonly additionalFields?: { bccEmail?: string, ccAddresses?: string, fromName?: string, priority?: number, replyTo?: string, templateLanguage?: boolean, trackClicks?: "account_default" | "disabled" | "enabled", trackOpens?: "account_default" | "disabled" | "enabled", customCampaign?: string, deduplicateCampaign?: boolean } | { bccEmail?: string, ccEmail?: string, fromName?: string, priority?: number, replyTo?: string, subject?: string, templateLanguage?: boolean, trackClicks?: string, trackOpens?: string, customCampaign?: string, deduplicateCampaign?: boolean };
 
     /** HTML text message of email */
     readonly variablesJson?: string;

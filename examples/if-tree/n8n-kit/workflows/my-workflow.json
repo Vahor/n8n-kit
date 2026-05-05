@@ -60,7 +60,7 @@
 			"parameters": {},
 			"position": [660, 385],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "if-false-false",
@@ -82,7 +82,7 @@
 			"parameters": {},
 			"position": [260, 255],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "if-true",
@@ -90,7 +90,7 @@
 			"parameters": {},
 			"position": [1260, 70],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "if-true-false",

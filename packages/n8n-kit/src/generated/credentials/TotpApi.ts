@@ -15,7 +15,7 @@ export interface TotpApiCredentials {
     readonly "secret": string;
 
     /** Identifier for the TOTP account, in the <code>issuer:username</code> format. <a href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format#label">Learn more</a>. */
-    readonly "label": string;
+    readonly "label"?: string;
 
     readonly __name: "totpApi";
 }

@@ -28,7 +28,7 @@ export interface HubspotDeveloperApiCredentials {
 
     readonly "appId": string;
 
-    /** Default: "crm.objects.contacts.read crm.schemas.contacts.read crm.objects.companies.read crm.schemas.companies.read crm.objects.deals.read crm.schemas.deals.read" */
+    /** Default: "crm.objects.contacts.read crm.schemas.contacts.read crm.objects.companies.read crm.schemas.companies.read crm.objects.deals.read crm.schemas.deals.read conversations.read tickets" */
     readonly "scope"?: unknown;
 
     readonly __name: "hubspotDeveloperApi";

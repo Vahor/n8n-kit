@@ -8,7 +8,18 @@ export const name = "microsoftExcelOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftExcelOAuth2ApiCredentials {
-    /** Default: "openid offline_access Files.ReadWrite" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "openid offline_access Files.ReadWrite"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access Files.ReadWrite\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "microsoftExcelOAuth2Api";

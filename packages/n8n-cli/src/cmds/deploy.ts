@@ -92,7 +92,7 @@ const deployWorkflows = async (options: DeployOptions) => {
 						const existingNode = existingWorkflow.nodes.find(
 							(n) => n.name === node.name,
 						);
-						if (!existingNode || !existingNode.position) continue;
+						if (!existingNode?.position) continue;
 						node.position = existingNode.position;
 					}
 				} catch (error) {

@@ -60,19 +60,16 @@ export type AddIChainableToChainContext<
 >;
 
 /** @hidden */
-export type AddNodeIdToIds<N, Ids extends readonly string[]> = N extends Group<
-	infer _,
-	any,
-	infer G_Chain_Ids
->
-	? [...Ids, ...G_Chain_Ids]
-	: N extends If<any, any, any, any, infer G_Chain_Ids>
+export type AddNodeIdToIds<N, Ids extends readonly string[]> =
+	N extends Group<infer _, any, infer G_Chain_Ids>
 		? [...Ids, ...G_Chain_Ids]
-		: N extends Chain<any, infer G_Chain_Ids>
+		: N extends If<any, any, any, any, infer G_Chain_Ids>
 			? [...Ids, ...G_Chain_Ids]
-			: N extends IChainable<infer Id>
-				? [...Ids, Id]
-				: Ids;
+			: N extends Chain<any, infer G_Chain_Ids>
+				? [...Ids, ...G_Chain_Ids]
+				: N extends IChainable<infer Id>
+					? [...Ids, Id]
+					: Ids;
 
 export type ExtractChainContext<C> = C extends Chain<infer CC> ? CC : {};
 

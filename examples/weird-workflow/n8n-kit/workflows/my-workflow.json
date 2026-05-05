@@ -77,7 +77,7 @@
 			},
 			"position": [260, 300],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "check-valid-execution-type",
@@ -105,7 +105,7 @@
 			},
 			"position": [500, 420],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"id": "check-valid-execution-type-group",
@@ -133,7 +133,7 @@
 			"parameters": { "method": "GET", "url": "https://other-api.com/posts/1" },
 			"position": [940, 540],
 			"type": "n8n-nodes-base.httpRequest",
-			"typeVersion": 4.3
+			"typeVersion": 4.4
 		},
 		{
 			"id": "final-response",

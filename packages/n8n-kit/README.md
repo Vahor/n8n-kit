@@ -255,6 +255,25 @@ $("json.text")
 // Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
 ```
 
+### Apply
+
+If you need to run an arbitrary transform that is easier to write as a lambda, use `apply`:
+
+```ts
+$("json.text").apply((text) => text.toUpperCase().split(" ").join("-"))
+// Results in: "={{ $json.text.toUpperCase().split(' ').join('-') }}"
+```
+
+The function body is parsed and emitted as a direct method chain. Type inference works as expected:
+- The function parameter is typed as the current field type
+- The output type is inferred from the function's return type (e.g., `string`, `string[]` after `split()`)
+- Using condition in the lambda function to change the method call is supported at compile time only.
+
+
+Notes:
+- Not all JS helpers or globals are guaranteed to be available in n8n expressions.
+
+
 ### Typed Methods
 
 The expression builder includes typed methods for common operations:

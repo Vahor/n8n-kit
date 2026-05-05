@@ -204,7 +204,7 @@ if (allNodesTypes.length === 0) {
 	process.exit(0);
 }
 for (const nodePath of allNodesTypes) {
-	const nodeName = nodePath.split("/").pop()!.split(".")[0]!;
+	const nodeName = nodePath.split("/").pop().split(".")[0]!;
 	if (nodeName === "index") {
 		current++;
 		continue;
@@ -241,7 +241,7 @@ for (const nodePath of allNodesTypes) {
 					const matchingCredentialsFile = getMatchingCredentialsFile(cred.name);
 					const matchingCredentialsFileName = matchingCredentialsFile
 						.split("/")
-						.pop()!
+						.pop()
 						.split(".")[0]!;
 
 					return {

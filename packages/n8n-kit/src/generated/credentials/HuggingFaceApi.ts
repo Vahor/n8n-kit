@@ -4,7 +4,7 @@
 export const name = "huggingFaceApi" as const;
 
 /**
- * displayName: HuggingFaceApi
+ * displayName: Hugging Face API
  * documentationUrl: huggingface
  */
 export interface HuggingFaceApiCredentials {

@@ -15,14 +15,14 @@ export interface AirtopNodeParameters {
     /** Default: "run" */
     readonly operation?: "run" | "create" | "save" | "terminate" | "waitForDownload" | "close" | "create" | "getLiveView" | "list" | "load" | "takeScreenshot" | "deleteFile" | "get" | "getMany" | "load" | "upload" | "query" | "getPaginated" | "scrape" | "click" | "fill" | "hover" | "scroll" | "type";
 
-    /** Webhook URL to invoke the Airtop agent. Visit <a href="https://portal.airtop.ai/agents" target="_blank">Airtop Agents</a> for more information. */
-    readonly webhookUrl?: string;
-
     /**
-     * Agent's input parameters in JSON format. Visit <a href="https://portal.airtop.ai/agents" target="_blank">Airtop Agents</a> for more information.
-     * Default: "{}"
+     * The Airtop agent to run. Visit <a href="https://portal.airtop.ai/agents" target="_blank">Airtop Agents</a> for more information.
+     * Default: {"mode":"list","value":""}
      */
-    readonly agentParameters?: string;
+    readonly agentId?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     /**
      * Whether to wait for the agent to complete its execution

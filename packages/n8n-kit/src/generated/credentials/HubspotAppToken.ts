@@ -4,7 +4,7 @@
 export const name = "hubspotAppToken" as const;
 
 /**
- * displayName: HubSpot App Token
+ * displayName: HubSpot Service Key
  * documentationUrl: hubspot
  */
 export interface HubspotAppTokenCredentials {

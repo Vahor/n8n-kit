@@ -16,5 +16,8 @@ export interface MicrosoftDynamicsOAuth2ApiCredentials {
     /** Default: "=openid offline_access https://{{$self.subdomain}}.{{$self.region}}/.default" */
     readonly "scope"?: unknown;
 
+    /** Default: "https://graph.microsoft.com" */
+    readonly "graphApiBaseUrl"?: unknown;
+
     readonly __name: "microsoftDynamicsOAuth2Api";
 }

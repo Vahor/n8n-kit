@@ -42,6 +42,6 @@ export interface PushoverNodeParameters {
     readonly expire?: number;
 
     /** Default: {} */
-    readonly additionalFields?: { attachmentsUi?: { attachmentsValues: { binaryPropertyName?: string } }, device?: string, html?: boolean, sound?: string, timestamp?: string, title?: string, url?: string, url_title?: string };
+    readonly additionalFields?: { attachmentsUi?: { attachmentsValues: { binaryPropertyName?: string } }, device?: string, html?: boolean, sound?: string, timestamp?: string, title?: string, ttl?: number, url?: string, url_title?: string };
 
 }

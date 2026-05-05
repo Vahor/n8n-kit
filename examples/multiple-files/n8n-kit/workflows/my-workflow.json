@@ -14,7 +14,7 @@
 			},
 			"position": [300, 300],
 			"type": "n8n-nodes-base.httpRequest",
-			"typeVersion": 4.3
+			"typeVersion": 4.4
 		},
 		{
 			"id": "note",

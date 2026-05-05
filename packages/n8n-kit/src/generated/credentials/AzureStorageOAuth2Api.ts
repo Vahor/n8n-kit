@@ -16,5 +16,8 @@ export interface AzureStorageOAuth2ApiCredentials {
     /** Default: "https://storage.azure.com/.default" */
     readonly "scope"?: unknown;
 
+    /** Default: "https://graph.microsoft.com" */
+    readonly "graphApiBaseUrl"?: unknown;
+
     readonly __name: "azureStorageOAuth2Api";
 }

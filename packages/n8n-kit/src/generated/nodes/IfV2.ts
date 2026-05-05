@@ -3,14 +3,14 @@
 
 export const description = "Route items to different branches (true/false)" as const;
 export const type = "n8n-nodes-base.if" as const;
-export const version = 2.2 as const;
+export const version = 2.3 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface IfV2NodeParameters {
     /**
      * Default: {}
-     * Type options: {"filter":{"caseSensitive":"={{!$parameter.options.ignoreCase}}","typeValidation":"={{ ($nodeVersion < 2.1 ? $parameter.options.looseTypeValidation :  $parameter.looseTypeValidation) ? \"loose\" : \"strict\" }}","version":"={{ $nodeVersion >= 2.2 ? 2 : 1 }}"}}
+     * Type options: {"filter":{"caseSensitive":"={{!$parameter.options.ignoreCase}}","typeValidation":"={{ ($nodeVersion < 2.1 ? $parameter.options.looseTypeValidation :  $parameter.looseTypeValidation) ? \"loose\" : \"strict\" }}","version":"={{ $nodeVersion >= 2.3 ? 3 : $nodeVersion >= 2.2 ? 2 : 1 }}"}}
      */
     readonly conditions?: unknown;
 

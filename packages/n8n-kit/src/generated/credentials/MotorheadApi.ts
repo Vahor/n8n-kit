@@ -4,7 +4,7 @@
 export const name = "motorheadApi" as const;
 
 /**
- * displayName: MotorheadApi
+ * displayName: Motorhead API
  * documentationUrl: motorhead
  */
 export interface MotorheadApiCredentials {

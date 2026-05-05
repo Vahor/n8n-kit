@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { NotionApiCredentials } from "../credentials/NotionApi.ts";
+import type { NotionOAuth2ApiCredentials } from "../credentials/NotionOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { NotionTriggerNodeParameters } from "../nodes/NotionTrigger";
@@ -12,7 +13,8 @@ export interface NotionTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: NotionTriggerNodeParameters;
-    readonly notionApiCredentials: Credentials<NotionApiCredentials>;
+    readonly notionApiCredentials?: Credentials<NotionApiCredentials>;
+    readonly notionOAuth2ApiCredentials?: Credentials<NotionOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class NotionTrigger<L extends string, C extends IContext = never, P exten
     protected type = "n8n-nodes-base.notionTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.notionApiCredentials];
+        return [this.props?.notionApiCredentials, this.props?.notionOAuth2ApiCredentials];
     }
 
 }

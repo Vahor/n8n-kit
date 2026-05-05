@@ -28,14 +28,14 @@ describe("Code node validation", () => {
 			expect(() => node["~validate"]()).not.toThrow();
 
 			const params = await node.getParameters();
-			expect(params.language).toBe("python");
+			expect(params.language).toBe("pythonNative");
 			expect(params.pythonCode).toBe("print('hello world')");
 		});
 
 		test("accepts python language with pythonCode", async () => {
 			const node = new Code("test", {
 				parameters: {
-					language: "python",
+					language: "pythonNative",
 					pythonCode: "print('hello world')",
 				},
 			});
@@ -43,7 +43,7 @@ describe("Code node validation", () => {
 			expect(() => node["~validate"]()).not.toThrow();
 
 			const params = await node.getParameters();
-			expect(params.language).toBe("python");
+			expect(params.language).toBe("pythonNative");
 			expect(params.pythonCode).toBe("print('hello world')");
 		});
 	});
@@ -119,7 +119,7 @@ describe("Code node validation", () => {
 			const node = new Code("test", {
 				// @ts-expect-error - Testing invalid configuration with wrong language
 				parameters: {
-					language: "python",
+					language: "pythonNative",
 					jsCode: "console.log('hello')",
 				},
 			});
@@ -129,7 +129,7 @@ describe("Code node validation", () => {
 			);
 		});
 
-		test("throws error when language is not python/pythonNative but pythonCode is provided", () => {
+		test("throws error when language is not pythonNative but pythonCode is provided", () => {
 			const node = new Code("test", {
 				// @ts-expect-error - Testing invalid configuration with wrong language
 				parameters: {
@@ -139,7 +139,7 @@ describe("Code node validation", () => {
 			});
 
 			expect(() => node["~validate"]()).toThrow(
-				"Language must be 'python' or 'pythonNative' when 'pythonCode' is provided.",
+				"Language must be 'pythonNative' when 'pythonCode' is provided.",
 			);
 		});
 	});

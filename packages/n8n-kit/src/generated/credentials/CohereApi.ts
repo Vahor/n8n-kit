@@ -4,7 +4,7 @@
 export const name = "cohereApi" as const;
 
 /**
- * displayName: CohereApi
+ * displayName: Cohere API
  * documentationUrl: cohere
  */
 export interface CohereApiCredentials {

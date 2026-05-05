@@ -39,5 +39,11 @@ export interface OAuth2ApiCredentials {
 
     readonly "ignoreSSLIssues"?: boolean;
 
+    /**
+     * HTTP status code that indicates the token has expired. Some APIs return 403 instead of 401.
+     * Default: 401
+     */
+    readonly "tokenExpiredStatusCode"?: number;
+
     readonly __name: "oAuth2Api";
 }

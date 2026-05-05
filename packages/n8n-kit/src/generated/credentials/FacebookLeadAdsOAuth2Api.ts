@@ -17,7 +17,7 @@ export interface FacebookLeadAdsOAuth2ApiCredentials {
     /** Default: "https://graph.facebook.com/v17.0/oauth/access_token" */
     readonly "accessTokenUrl": unknown;
 
-    /** Default: "leads_retrieval pages_show_list pages_manage_metadata pages_manage_ads business_management" */
+    /** Default: "leads_retrieval pages_show_list pages_manage_metadata pages_manage_ads business_management pages_read_engagement" */
     readonly "scope"?: unknown;
 
     readonly "authQueryParameters"?: unknown;

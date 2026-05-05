@@ -148,7 +148,7 @@ export const isLangChainNode = (nodePath: string) => {
 };
 
 export const getNodeName = (nodePath: string) => {
-	return nodePath.split("/").pop()!.split(".")[0]!;
+	return nodePath.split("/").pop().split(".")[0]!;
 };
 
 export const validCustomType = [

@@ -17,7 +17,7 @@ export interface SwitchV3Props extends NodeProps {
  */
 export class SwitchV3<L extends string, C extends IContext = never, P extends SwitchV3Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.switch" as const;
-    protected typeVersion = 3.3 as const;
+    protected typeVersion = 3.4 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

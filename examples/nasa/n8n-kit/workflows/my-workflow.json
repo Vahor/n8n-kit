@@ -42,7 +42,7 @@
 			},
 			"position": [940, 300],
 			"type": "n8n-nodes-base.if",
-			"typeVersion": 2.2
+			"typeVersion": 2.3
 		},
 		{
 			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } },

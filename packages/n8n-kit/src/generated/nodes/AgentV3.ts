@@ -3,13 +3,13 @@
 
 export const description = "Generates an action plan and executes it. Can use external tools." as const;
 export const type = "@n8n/n8n-nodes-langchain.agent" as const;
-export const version = 3 as const;
+export const version = 3.1 as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface AgentV3NodeParameters {
     /** Default: "auto" */
-    readonly promptType?: "auto" | "guardrails" | "define";
+    readonly promptType?: "auto" | "guardrails" | "define" | "auto" | "define";
 
     /**
      * Default: "={{ $json.guardrailsInput }}"
@@ -22,6 +22,6 @@ export interface AgentV3NodeParameters {
     readonly needsFallback?: boolean;
 
     /** Default: {} */
-    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, enableStreaming?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number }, maxTokensFromMemory?: unknown };
+    readonly options?: { systemMessage?: string, maxIterations?: number, returnIntermediateSteps?: boolean, passthroughBinaryImages?: boolean, tracingMetadata?: { values: Array<{ key?: string, type?: "arrayValue" | "booleanValue" | "numberValue" | "objectValue" | "stringValue", stringValue?: string, numberValue?: string, booleanValue?: "true" | "false", arrayValue?: string, objectValue?: string }> }, autoSaveHighlightedData?: boolean, enableStreaming?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number }, maxTokensFromMemory?: unknown };
 
 }

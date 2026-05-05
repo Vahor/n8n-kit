@@ -31,6 +31,12 @@ export interface AwsDynamoDBNodeParameters {
      */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
+    /**
+     * Whether to convert number-looking string values to DynamoDB Number (N). Disable to keep strings as String (S).
+     * Default: true
+     */
+    readonly autoParseNumbers?: boolean;
+
     /** List of input properties to avoid sending, separated by commas. Leave empty to send all properties. */
     readonly inputsToIgnore?: string;
 

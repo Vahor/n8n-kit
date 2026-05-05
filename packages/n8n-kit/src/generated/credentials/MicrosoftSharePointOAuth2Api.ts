@@ -13,5 +13,8 @@ export interface MicrosoftSharePointOAuth2ApiCredentials {
 
     readonly "subdomain"?: string;
 
+    /** Default: "https://graph.microsoft.com" */
+    readonly "graphApiBaseUrl"?: unknown;
+
     readonly __name: "microsoftSharePointOAuth2Api";
 }

@@ -18,7 +18,7 @@ export interface LinearOAuth2ApiCredentials {
     readonly "accessTokenUrl": unknown;
 
     /** Default: "user" */
-    readonly "actor"?: "user" | "application";
+    readonly "actor"?: "user" | "app";
 
     /** Grants the "Admin" scope, Needed to create webhooks */
     readonly "includeAdminScope"?: boolean;
@@ -31,6 +31,12 @@ export interface LinearOAuth2ApiCredentials {
 
     /** Default: "body" */
     readonly "authentication"?: unknown;
+
+    /**
+     * The signing secret is used to verify the authenticity of webhook requests sent by Linear.
+     * Type options: {"password":true}
+     */
+    readonly "signingSecret"?: string;
 
     readonly __name: "linearOAuth2Api";
 }

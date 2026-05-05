@@ -28,10 +28,16 @@ export interface ChatTriggerNodeParameters {
      */
     readonly initialMessages?: string;
 
-    /** Whether to make the agent available in n8n Chat */
+    /** Whether to make the agent available in n8n Chat Hub for n8n instance users to chat with */
     readonly availableInChat?: boolean;
 
-    /** The name of the agent on n8n Chat */
+    /**
+     * The icon of the agent on n8n Chat
+     * Default: {"type":"icon","value":"bot"}
+     */
+    readonly agentIcon?: unknown;
+
+    /** The name of the agent on n8n Chat. Name of the workflow is used if left empty. */
     readonly agentName?: string;
 
     /**
@@ -40,7 +46,14 @@ export interface ChatTriggerNodeParameters {
      */
     readonly agentDescription?: string;
 
+    /**
+     * Suggested prompts shown to users in n8n Chat Hub to start a conversation with the agent
+     * Default: {}
+     * Type options: {"multipleValues":true,"fixedCollection":{"layout":"inline"}}
+     */
+    readonly suggestedPrompts?: { prompts: Array<{ icon?: unknown, text: string }> };
+
     /** Default: {} */
-    readonly options?: { allowFileUploads?: boolean, allowedFilesMimeTypes?: string } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "responseNode" } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "responseNode" | "streaming" } | { allowFileUploads?: boolean, allowedFilesMimeTypes?: string, responseMode?: "lastNode" | "responseNodes" } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "streaming" | "responseNode" | "lastNode" | "streaming" | "responseNodes" };
+    readonly options?: { allowFileUploads?: boolean, allowedFilesMimeTypes?: string } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "responseNode", autoSaveHighlightedData?: boolean } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "responseNode" | "streaming" | "streaming" | "lastNode", autoSaveHighlightedData?: boolean } | { allowFileUploads?: boolean, allowedFilesMimeTypes?: string, responseMode?: "lastNode" | "responseNodes" | "streaming" | "streaming" | "lastNode" | "responseNodes", autoSaveHighlightedData?: boolean } | { allowedOrigins?: string, allowFileUploads?: boolean, allowedFilesMimeTypes?: string, inputPlaceholder?: string, loadPreviousSession?: "notSupported" | "memory" | "manually", showWelcomeScreen?: boolean, getStarted?: string, subtitle?: string, title?: string, customCss?: string, responseMode?: "lastNode" | "streaming" | "responseNode" | "streaming" | "lastNode" | "lastNode" | "streaming" | "responseNodes" | "streaming" | "lastNode" | "responseNodes", autoSaveHighlightedData?: boolean };
 
 }

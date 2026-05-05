@@ -13,10 +13,13 @@ export interface MicrosoftSqlNodeParameters {
     readonly operation?: "executeQuery" | "insert" | "update" | "delete";
 
     /**
-     * The SQL query to execute
+     * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
      * Type options: {"editor":"sqlEditor","sqlDialect":"MSSQL"}
      */
     readonly query?: string;
+
+    /** Default: {} */
+    readonly options?: { queryReplacement?: string };
 
     /** Name of the table in which to insert data to */
     readonly table?: string;
