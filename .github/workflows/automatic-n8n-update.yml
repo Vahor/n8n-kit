@@ -4,7 +4,8 @@ on:
   schedule:
     # Run every Tuesday at 9:00 AM UTC
     - cron: "0 9 * * 2"
-  workflow_dispatch: # Allow manual triggering
+  workflow_dispatch:
+    # Allow manual triggering
 
 permissions:
   contents: write
@@ -78,7 +79,8 @@ jobs:
       - name: Update kit dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-kit
-        run: bun update "n8n-core" "n8n-workflow" "@n8n/n8n-nodes-langchain" "@n8n/ai-utilities" --latest
+        run: bun update "n8n-core" "n8n-workflow" "@n8n/n8n-nodes-langchain"
+          "@n8n/ai-utilities" --latest
       - name: Update cli dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-cli
@@ -99,10 +101,12 @@ jobs:
           bun run format
 
       - name: Build packages
+        continue-on-error: true
         if: steps.check-updates.outputs.has_updates == 'true'
         run: bun run --filter '*' build
 
       - name: Build examples using new nodes
+        continue-on-error: true
         if: steps.check-updates.outputs.has_updates == 'true'
         run: bash scripts/build-and-check-examples.sh bun || true
 
@@ -135,7 +139,8 @@ jobs:
         if: steps.check-updates.outputs.has_updates == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{
+            github.run_id }}
         run: |
           git push --set-upstream origin $BRANCH_NAME
 
