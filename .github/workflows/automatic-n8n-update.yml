@@ -30,15 +30,27 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Update submodules
+      - name: Checkout stable n8n submodule
         run: |
-          git submodule update --remote --merge
-          submodule_version=$(git submodule status | grep 'vendor/n8n' | awk '{print $1}' | sed 's/^+//')
-          n8n_package_version=$(jq -r '.version' packages/n8n-kit/vendor/n8n/package.json)
+          n8n_metadata=$(curl -fsSL https://registry.npmjs.org/n8n/stable)
+          n8n_stable_version=$(jq -r '.version' <<< "$n8n_metadata")
+          n8n_core_version=$(jq -r '.dependencies["n8n-core"]' <<< "$n8n_metadata")
+          n8n_workflow_version=$(jq -r '.dependencies["n8n-workflow"]' <<< "$n8n_metadata")
+          n8n_langchain_version=$(jq -r '.dependencies["@n8n/n8n-nodes-langchain"]' <<< "$n8n_metadata")
+          n8n_ai_utilities_version=$(jq -r '.dependencies["@n8n/ai-utilities"]' <<< "$n8n_metadata")
+
+          git -C packages/n8n-kit/vendor/n8n fetch --tags origin "refs/tags/n8n@$n8n_stable_version:refs/tags/n8n@$n8n_stable_version"
+          git -C packages/n8n-kit/vendor/n8n checkout "n8n@$n8n_stable_version"
+          submodule_version=$(git -C packages/n8n-kit/vendor/n8n rev-parse HEAD)
+
+          echo "n8n stable version: $n8n_stable_version"
           echo "Submodule version: $submodule_version"
-          echo "n8n package version: $n8n_package_version"
           echo "SUBMODULE_VERSION=$submodule_version" >> $GITHUB_ENV
-          echo "N8N_PACKAGE_VERSION=$n8n_package_version" >> $GITHUB_ENV
+          echo "N8N_STABLE_VERSION=$n8n_stable_version" >> $GITHUB_ENV
+          echo "N8N_CORE_VERSION=$n8n_core_version" >> $GITHUB_ENV
+          echo "N8N_WORKFLOW_VERSION=$n8n_workflow_version" >> $GITHUB_ENV
+          echo "N8N_LANGCHAIN_VERSION=$n8n_langchain_version" >> $GITHUB_ENV
+          echo "N8N_AI_UTILITIES_VERSION=$n8n_ai_utilities_version" >> $GITHUB_ENV
 
       - name: Check if submodules have updates
         id: check-updates
@@ -84,14 +96,14 @@ jobs:
         working-directory: packages/n8n-kit
         run: |
           bun add --dev \
-            "n8n-core@$N8N_PACKAGE_VERSION" \
-            "n8n-workflow@$N8N_PACKAGE_VERSION" \
-            "@n8n/n8n-nodes-langchain@$N8N_PACKAGE_VERSION"
-          bun update "@n8n/ai-utilities" --latest
+            "n8n-core@$N8N_CORE_VERSION" \
+            "n8n-workflow@$N8N_WORKFLOW_VERSION" \
+            "@n8n/n8n-nodes-langchain@$N8N_LANGCHAIN_VERSION" \
+            "@n8n/ai-utilities@$N8N_AI_UTILITIES_VERSION"
       - name: Update cli dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-cli
-        run: bun add --dev "n8n-core@$N8N_PACKAGE_VERSION"
+        run: bun add --dev "n8n-core@$N8N_CORE_VERSION"
       - name: Install dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         run: bun install --frozen-lockfile
@@ -131,7 +143,7 @@ jobs:
           "@vahor/n8n-kit": minor
           ---
 
-          Automated update of n8n nodes from upstream submodule (version [$SUBMODULE_VERSION](https://github.com/n8n-io/n8n/tree/$SUBMODULE_VERSION))
+          Automated update of n8n nodes from upstream stable release [$N8N_STABLE_VERSION](https://github.com/n8n-io/n8n/tree/n8n@$N8N_STABLE_VERSION)
           EOF
 
           echo "Created changeset: $changeset_file"
@@ -156,11 +168,9 @@ jobs:
 
             This PR was automatically generated to update n8n nodes.
 
-            Updated to n8n version [$SUBMODULE_VERSION](https://github.com/n8n-io/n8n/tree/$SUBMODULE_VERSION)
+            Updated to n8n stable version [$N8N_STABLE_VERSION](https://github.com/n8n-io/n8n/tree/n8n@$N8N_STABLE_VERSION).
 
-            Notes for reviewers:
-
-            Check [n8n-workflow](https://www.npmjs.com/package/n8n-workflow?activeTab=versions), [n8n-core](https://www.npmjs.com/package/n8n-core?activeTab=versions), [@n8n/n8n-nodes/langchain](https://www.npmjs.com/package/@n8n/n8n-nodes-langchain?activeTab=versions) and other n8n dependencies. Update them to latest version.
+            n8n dependency versions are read from the published n8n stable package.
 
             ---
             *Generated in $JOB_URL*"
