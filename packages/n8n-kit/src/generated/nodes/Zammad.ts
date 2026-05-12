@@ -55,7 +55,7 @@ export interface ZammadNodeParameters {
     readonly customer?: string;
 
     /** Default: {} */
-    readonly article?: { articleDetails: { subject?: string, body?: string, visibility?: "external" | "internal", sender?: "Agent" | "Customer" | "System", type?: "chat" | "email" | "fax" | "note" | "phone" | "sms", reply_to?: string } };
+    readonly article?: { articleDetails: { subject?: string, body?: string, visibility?: "external" | "internal", sender?: "Agent" | "Customer" | "System", type?: "chat" | "email" | "fax" | "note" | "phone" | "sms", to: string, cc?: string, reply_to?: string } };
 
     readonly firstname?: string;
 

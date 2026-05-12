@@ -17,10 +17,20 @@ export interface SlackOAuth2ApiCredentials {
     /** Default: "https://slack.com/api/oauth.v2.access" */
     readonly "accessTokenUrl"?: unknown;
 
-    /** Default: "chat:write" */
     readonly "scope"?: unknown;
 
-    /** Default: "user_scope=channels:read channels:write channels:history chat:write files:read files:write groups:read groups:history im:read im:history mpim:read mpim:history reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read search:read" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Space-separated user-level scopes for your Slack app
+     * Default: "channels:read channels:write channels:history chat:write files:read files:write groups:read groups:history im:read im:history mpim:read mpim:history reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read search:read"
+     */
+    readonly "userScope"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? \"user_scope=\" + $self[\"userScope\"] : \"user_scope=channels:read channels:write channels:history chat:write files:read files:write groups:read groups:history im:read im:history mpim:read mpim:history reactions:read reactions:write stars:read stars:write usergroups:write usergroups:read users.profile:read users.profile:write users:read search:read\"}}" */
     readonly "authQueryParameters"?: unknown;
 
     /** Default: "body" */

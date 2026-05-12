@@ -22,5 +22,8 @@ export interface SalesforceJwtApiCredentials {
      */
     readonly "privateKey": string;
 
+    /** Your org's My Domain URL (e.g. <code>https://mycompany.my.salesforce.com</code>). Required for Spring '26 and later orgs; leave blank to keep the default audience used by earlier orgs. */
+    readonly "myDomainUrl"?: string;
+
     readonly __name: "salesforceJwtApi";
 }

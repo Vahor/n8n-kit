@@ -17,7 +17,7 @@ export interface XeroOAuth2ApiCredentials {
     /** Default: "https://identity.xero.com/connect/token" */
     readonly "accessTokenUrl"?: unknown;
 
-    /** Default: "offline_access accounting.transactions accounting.settings accounting.contacts" */
+    /** Default: "offline_access accounting.invoices accounting.payments accounting.banktransactions accounting.manualjournals accounting.attachments accounting.settings accounting.contacts" */
     readonly "scope"?: unknown;
 
     readonly "authQueryParameters"?: unknown;

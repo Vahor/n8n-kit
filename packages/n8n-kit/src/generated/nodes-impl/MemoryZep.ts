@@ -20,7 +20,7 @@ export interface MemoryZepProps extends NodeProps {
  */
 export class MemoryZep<L extends string, C extends IContext = never, P extends MemoryZepProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.memoryZep" as const;
-    protected typeVersion = 1.3 as const;
+    protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);
