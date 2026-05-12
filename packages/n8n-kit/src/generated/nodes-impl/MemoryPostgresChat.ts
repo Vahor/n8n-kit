@@ -20,7 +20,7 @@ export interface MemoryPostgresChatProps extends NodeProps {
  */
 export class MemoryPostgresChat<L extends string, C extends IContext = never, P extends MemoryPostgresChatProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.memoryPostgresChat" as const;
-    protected typeVersion = 1.3 as const;
+    protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);
