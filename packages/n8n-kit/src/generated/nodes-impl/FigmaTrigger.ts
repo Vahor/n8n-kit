@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { FigmaApiCredentials } from "../credentials/FigmaApi.ts";
+import type { FigmaOAuth2ApiCredentials } from "../credentials/FigmaOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { FigmaTriggerNodeParameters } from "../nodes/FigmaTrigger";
@@ -12,7 +13,8 @@ export interface FigmaTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: FigmaTriggerNodeParameters;
-    readonly figmaApiCredentials: Credentials<FigmaApiCredentials>;
+    readonly figmaApiCredentials?: Credentials<FigmaApiCredentials>;
+    readonly figmaOAuth2ApiCredentials?: Credentials<FigmaOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class FigmaTrigger<L extends string, C extends IContext = never, P extend
     protected type = "n8n-nodes-base.figmaTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.figmaApiCredentials];
+        return [this.props?.figmaApiCredentials, this.props?.figmaOAuth2ApiCredentials];
     }
 
 }

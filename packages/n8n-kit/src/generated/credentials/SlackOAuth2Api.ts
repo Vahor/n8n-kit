@@ -8,6 +8,12 @@ export const name = "slackOAuth2Api" as const;
  * documentationUrl: slack
  */
 export interface SlackOAuth2ApiCredentials {
+    /**
+     * The signing secret is used to verify the authenticity of requests sent by Slack.
+     * Type options: {"password":true}
+     */
+    readonly "signatureSecret"?: string;
+
     /** Default: "authorizationCode" */
     readonly "grantType"?: unknown;
 

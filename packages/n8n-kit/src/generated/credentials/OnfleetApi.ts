@@ -11,5 +11,11 @@ export interface OnfleetApiCredentials {
     /** Type options: {"password":true} */
     readonly "apiKey"?: string;
 
+    /**
+     * Used to verify webhook authenticity. Found in Onfleet under Settings → API & Webhooks.
+     * Type options: {"password":true}
+     */
+    readonly "signingSecret"?: string;
+
     readonly __name: "onfleetApi";
 }

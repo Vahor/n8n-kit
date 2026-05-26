@@ -4,6 +4,7 @@
 import type { JiraSoftwareCloudApiCredentials } from "../credentials/JiraSoftwareCloudApi.ts";
 import type { JiraSoftwareServerApiCredentials } from "../credentials/JiraSoftwareServerApi.ts";
 import type { JiraSoftwareServerPatApiCredentials } from "../credentials/JiraSoftwareServerPatApi.ts";
+import type { JiraSoftwareCloudOAuth2ApiCredentials } from "../credentials/JiraSoftwareCloudOAuth2Api.ts";
 import type { HttpQueryAuthCredentials } from "../credentials/HttpQueryAuth.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
@@ -18,6 +19,7 @@ export interface JiraTriggerProps extends NodeProps {
     readonly jiraSoftwareCloudApiCredentials?: Credentials<JiraSoftwareCloudApiCredentials>;
     readonly jiraSoftwareServerApiCredentials?: Credentials<JiraSoftwareServerApiCredentials>;
     readonly jiraSoftwareServerPatApiCredentials?: Credentials<JiraSoftwareServerPatApiCredentials>;
+    readonly jiraSoftwareCloudOAuth2ApiCredentials?: Credentials<JiraSoftwareCloudOAuth2ApiCredentials>;
     readonly httpQueryAuthCredentials?: Credentials<HttpQueryAuthCredentials>;
 }
 
@@ -33,7 +35,7 @@ export class JiraTrigger<L extends string, C extends IContext = never, P extends
     }
 
     override getCredentials() {
-        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials, this.props?.httpQueryAuthCredentials];
+        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials, this.props?.jiraSoftwareCloudOAuth2ApiCredentials, this.props?.httpQueryAuthCredentials];
     }
 
 }

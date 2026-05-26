@@ -132,6 +132,7 @@ import type { FacebookGraphApiCredentials } from "./FacebookGraphApi.ts";
 import type { FacebookGraphAppApiCredentials } from "./FacebookGraphAppApi.ts";
 import type { FacebookLeadAdsOAuth2ApiCredentials } from "./FacebookLeadAdsOAuth2Api.ts";
 import type { FigmaApiCredentials } from "./FigmaApi.ts";
+import type { FigmaOAuth2ApiCredentials } from "./FigmaOAuth2Api.ts";
 import type { FileMakerCredentials } from "./FileMaker.ts";
 import type { FilescanApiCredentials } from "./FilescanApi.ts";
 import type { FlowApiCredentials } from "./FlowApi.ts";
@@ -213,6 +214,7 @@ import type { IterableApiCredentials } from "./IterableApi.ts";
 import type { JenkinsApiCredentials } from "./JenkinsApi.ts";
 import type { JinaAiApiCredentials } from "./JinaAiApi.ts";
 import type { JiraSoftwareCloudApiCredentials } from "./JiraSoftwareCloudApi.ts";
+import type { JiraSoftwareCloudOAuth2ApiCredentials } from "./JiraSoftwareCloudOAuth2Api.ts";
 import type { JiraSoftwareServerApiCredentials } from "./JiraSoftwareServerApi.ts";
 import type { JiraSoftwareServerPatApiCredentials } from "./JiraSoftwareServerPatApi.ts";
 import type { JotFormApiCredentials } from "./JotFormApi.ts";
@@ -563,6 +565,7 @@ export type N8nCredentialsUnion =
     | FacebookGraphAppApiCredentials
     | FacebookLeadAdsOAuth2ApiCredentials
     | FigmaApiCredentials
+    | FigmaOAuth2ApiCredentials
     | FileMakerCredentials
     | FilescanApiCredentials
     | FlowApiCredentials
@@ -644,6 +647,7 @@ export type N8nCredentialsUnion =
     | JenkinsApiCredentials
     | JinaAiApiCredentials
     | JiraSoftwareCloudApiCredentials
+    | JiraSoftwareCloudOAuth2ApiCredentials
     | JiraSoftwareServerApiCredentials
     | JiraSoftwareServerPatApiCredentials
     | JotFormApiCredentials

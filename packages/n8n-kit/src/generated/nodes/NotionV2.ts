@@ -42,7 +42,7 @@ export interface NotionV2NodeParameters {
     /**
      * Max number of results to return
      * Default: 50
-     * Type options: {"minValue":1,"maxValue":100}
+     * Type options: {"minValue":1}
      */
     readonly limit?: number;
 
