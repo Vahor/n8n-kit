@@ -53,7 +53,7 @@ export interface GoogleChatNodeParameters {
     /** Default: {} */
     readonly additionalFields?: { requestId?: string };
 
-    /** Resource name of the message to be deleted, in the form "spaces//messages/" */
+    /** Resource name of the message. Format: spaces/{space}/messages/{message}. For system-assigned IDs, use the full message name, such as spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB. For custom IDs, use spaces/AAAAAAAAAAA/messages/client-custom-name. */
     readonly messageId?: string;
 
     /** Default: {} */

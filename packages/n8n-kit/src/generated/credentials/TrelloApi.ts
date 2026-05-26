@@ -14,8 +14,11 @@ export interface TrelloApiCredentials {
     /** Type options: {"password":true} */
     readonly "apiToken": string;
 
-    /** Type options: {"password":true} */
-    readonly "oauthSecret"?: unknown;
+    /**
+     * Used to verify webhook authenticity. Found under the API Key tab at trello.com/power-ups/admin.
+     * Type options: {"password":true}
+     */
+    readonly "oauthSecret"?: string;
 
     readonly __name: "trelloApi";
 }

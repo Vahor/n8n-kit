@@ -17,10 +17,21 @@ export interface StravaOAuth2ApiCredentials {
     /** Default: "https://www.strava.com/oauth/token" */
     readonly "accessTokenUrl": unknown;
 
-    /** Default: "activity:read_all,activity:write" */
-    readonly "scope": unknown;
-
     readonly "authQueryParameters"?: unknown;
+
+    /** Whether to define custom OAuth2 scopes instead of the defaults */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Comma-separated list of Strava OAuth2 scopes to request
+     * Default: "activity:read_all,activity:write"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"activity:read_all,activity:write\"}}" */
+    readonly "scope": unknown;
 
     /** Default: "body" */
     readonly "authentication"?: unknown;
