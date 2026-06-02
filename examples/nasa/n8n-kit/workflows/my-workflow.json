@@ -1,1 +1,119 @@
-{"active":true,"connections":{"Schedule trigger":{"main":[[{"index":0,"node":"nasa","type":"main"}]]},"if":{"main":[[{"index":0,"node":"PostBin(true)","type":"main"}],[{"index":0,"node":"PostBin(false)","type":"main"}]]},"nasa":{"main":[[{"index":0,"node":"if","type":"main"}]]}},"id":"K8yurfQ_ddCou","name":"NASA Example","nodes":[{"id":"if","name":"if","parameters":{"conditions":{"combinator":"and","conditions":[{"id":"my-workflow/if/0","leftValue":"={{ $json.classType }}","operator":{"operation":"contains","singleValue":false,"type":"string"},"rightValue":"C"}],"options":{"caseSensitive":false,"typeValidation":"strict","version":2}}},"position":[940,300],"type":"n8n-nodes-base.if","typeVersion":2.3},{"credentials":{"nasaApi":{"id":"yTwI5ccVwfGll1Kf"}},"id":"nasa","name":"nasa","parameters":{"additionalFields":{"startDate":"={{ $today.minus(1, 'day') }}"},"resource":"donkiSolarFlare"},"position":[740,300],"type":"n8n-nodes-base.nasa","typeVersion":1},{"id":"note","name":"note","parameters":{"content":"## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)","height":120,"width":600},"position":[0,0],"type":"n8n-nodes-base.stickyNote","typeVersion":1},{"id":"PostBin(false)","name":"PostBin(false)","parameters":{"binContent":"=There was a solar flare of class {{ $json.classType }}","binId":"1741914338605-0907339996192","operation":"send","resource":"request"},"position":[1140,420],"type":"n8n-nodes-base.postBin","typeVersion":1},{"id":"PostBin(true)","name":"PostBin(true)","parameters":{"binContent":"=There was a solar flare of class {{ $json.classType }}","binId":"1741914338605-0907339996192","operation":"send","resource":"request"},"position":[1140,180],"type":"n8n-nodes-base.postBin","typeVersion":1},{"id":"schedule-trigger","name":"Schedule trigger","parameters":{"rule":{"interval":[{"field":"weeks","triggerAtDay":[1],"triggerAtHour":9,"weeksInterval":1}]}},"position":[300,300],"type":"n8n-nodes-base.scheduleTrigger","typeVersion":1.3}],"settings":{},"tags":[{"name":"@vahor/n8n-K8yurfQ_ddCou"}]}
+{
+	"active": true,
+	"connections": {
+		"Schedule trigger": {
+			"main": [[{ "index": 0, "node": "nasa", "type": "main" }]]
+		},
+		"if": {
+			"main": [
+				[{ "index": 0, "node": "PostBin(true)", "type": "main" }],
+				[{ "index": 0, "node": "PostBin(false)", "type": "main" }]
+			]
+		},
+		"nasa": { "main": [[{ "index": 0, "node": "if", "type": "main" }]] }
+	},
+	"id": "K8yurfQ_ddCou",
+	"name": "NASA Example",
+	"nodes": [
+		{
+			"id": "if",
+			"name": "if",
+			"parameters": {
+				"conditions": {
+					"combinator": "and",
+					"conditions": [
+						{
+							"id": "my-workflow/if/0",
+							"leftValue": "={{ $json.classType }}",
+							"operator": {
+								"operation": "contains",
+								"singleValue": false,
+								"type": "string"
+							},
+							"rightValue": "C"
+						}
+					],
+					"options": {
+						"caseSensitive": false,
+						"typeValidation": "strict",
+						"version": 2
+					}
+				}
+			},
+			"position": [940, 300],
+			"type": "n8n-nodes-base.if",
+			"typeVersion": 2.3
+		},
+		{
+			"credentials": { "nasaApi": { "id": "yTwI5ccVwfGll1Kf" } },
+			"id": "nasa",
+			"name": "nasa",
+			"parameters": {
+				"additionalFields": { "startDate": "={{ $today.minus(1, 'day') }}" },
+				"resource": "donkiSolarFlare"
+			},
+			"position": [740, 300],
+			"type": "n8n-nodes-base.nasa",
+			"typeVersion": 1
+		},
+		{
+			"id": "note",
+			"name": "note",
+			"parameters": {
+				"content": "## Setup required\n\nYou need to create a NASA account and create credentials, and create a bin with Postbin and enter the ID - see [the documentation](https://docs.n8n.io/try-it-out/longer-introduction/)",
+				"height": 120,
+				"width": 600
+			},
+			"position": [0, 0],
+			"type": "n8n-nodes-base.stickyNote",
+			"typeVersion": 1
+		},
+		{
+			"id": "PostBin(false)",
+			"name": "PostBin(false)",
+			"parameters": {
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"binId": "1741914338605-0907339996192",
+				"operation": "send",
+				"resource": "request"
+			},
+			"position": [1140, 420],
+			"type": "n8n-nodes-base.postBin",
+			"typeVersion": 1
+		},
+		{
+			"id": "PostBin(true)",
+			"name": "PostBin(true)",
+			"parameters": {
+				"binContent": "=There was a solar flare of class {{ $json.classType }}",
+				"binId": "1741914338605-0907339996192",
+				"operation": "send",
+				"resource": "request"
+			},
+			"position": [1140, 180],
+			"type": "n8n-nodes-base.postBin",
+			"typeVersion": 1
+		},
+		{
+			"id": "schedule-trigger",
+			"name": "Schedule trigger",
+			"parameters": {
+				"rule": {
+					"interval": [
+						{
+							"field": "weeks",
+							"triggerAtDay": [1],
+							"triggerAtHour": 9,
+							"weeksInterval": 1
+						}
+					]
+				}
+			},
+			"position": [300, 300],
+			"type": "n8n-nodes-base.scheduleTrigger",
+			"typeVersion": 1.3
+		}
+	],
+	"settings": {},
+	"tags": [{ "name": "@vahor/n8n-K8yurfQ_ddCou" }]
+}

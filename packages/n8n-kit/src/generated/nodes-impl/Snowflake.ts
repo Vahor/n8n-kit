@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SnowflakeCredentials } from "../credentials/Snowflake.ts";
+import type { SnowflakeOAuth2ApiCredentials } from "../credentials/SnowflakeOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SnowflakeNodeParameters } from "../nodes/Snowflake";
@@ -12,7 +13,8 @@ export interface SnowflakeProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: SnowflakeNodeParameters;
-    readonly snowflakeCredentials: Credentials<SnowflakeCredentials>;
+    readonly snowflakeCredentials?: Credentials<SnowflakeCredentials>;
+    readonly snowflakeOAuth2ApiCredentials?: Credentials<SnowflakeOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class Snowflake<L extends string, C extends IContext = never, P extends S
     protected type = "n8n-nodes-base.snowflake" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.snowflakeCredentials];
+        return [this.props?.snowflakeCredentials, this.props?.snowflakeOAuth2ApiCredentials];
     }
 
 }

@@ -24,5 +24,17 @@ export interface BoxOAuth2ApiCredentials {
     /** Default: "body" */
     readonly "authentication"?: unknown;
 
+    /**
+     * Used to verify the authenticity of webhook requests. Find it in the Box Developer Console under your app's Webhooks tab > Manage signature keys.
+     * Type options: {"password":true}
+     */
+    readonly "signingKeyPrimary"?: string;
+
+    /**
+     * Used to verify the authenticity of webhook requests during key rotation. Find it in the Box Developer Console under your app's Webhooks tab > Manage signature keys.
+     * Type options: {"password":true}
+     */
+    readonly "signingKeySecondary"?: string;
+
     readonly __name: "boxOAuth2Api";
 }

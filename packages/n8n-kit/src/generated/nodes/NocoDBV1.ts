@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/NocoDB/NocoDB.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/NocoDB/v1/NocoDBV1.node.ts' node
 
 export const description = "Read, update, write and delete data from NocoDB" as const;
 export const type = "n8n-nodes-base.nocoDb" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"nocoDb","required":true,"displayOptions":{"
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface NocoDBNodeParameters {
+export interface NocoDBV1NodeParameters {
     /** Default: "nocoDb" */
     readonly authentication?: "nocoDbApiToken" | "nocoDb";
 

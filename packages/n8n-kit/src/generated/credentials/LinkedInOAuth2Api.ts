@@ -8,6 +8,8 @@ export const name = "linkedInOAuth2Api" as const;
  * documentationUrl: linkedin
  */
 export interface LinkedInOAuth2ApiCredentials {
+    readonly "standardAuthNotice"?: string;
+
     /** Default: "authorizationCode" */
     readonly "grantType"?: unknown;
 

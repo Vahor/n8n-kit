@@ -26,6 +26,7 @@ import type { MinimaxApiCredentials } from "./MinimaxApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
 import type { MoonshotApiCredentials } from "./MoonshotApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
+import type { NvidiaApiCredentials } from "./NvidiaApi.ts";
 import type { OllamaApiCredentials } from "./OllamaApi.ts";
 import type { OpenRouterApiCredentials } from "./OpenRouterApi.ts";
 import type { PineconeApiCredentials } from "./PineconeApi.ts";
@@ -129,7 +130,9 @@ import type { EventbriteApiCredentials } from "./EventbriteApi.ts";
 import type { EventbriteOAuth2ApiCredentials } from "./EventbriteOAuth2Api.ts";
 import type { F5BigIpApiCredentials } from "./F5BigIpApi.ts";
 import type { FacebookGraphApiCredentials } from "./FacebookGraphApi.ts";
+import type { FacebookGraphApiOAuth2ApiCredentials } from "./FacebookGraphApiOAuth2Api.ts";
 import type { FacebookGraphAppApiCredentials } from "./FacebookGraphAppApi.ts";
+import type { FacebookGraphAppOAuth2ApiCredentials } from "./FacebookGraphAppOAuth2Api.ts";
 import type { FacebookLeadAdsOAuth2ApiCredentials } from "./FacebookLeadAdsOAuth2Api.ts";
 import type { FigmaApiCredentials } from "./FigmaApi.ts";
 import type { FigmaOAuth2ApiCredentials } from "./FigmaOAuth2Api.ts";
@@ -357,6 +360,7 @@ import type { SlackOAuth2ApiCredentials } from "./SlackOAuth2Api.ts";
 import type { Sms77ApiCredentials } from "./Sms77Api.ts";
 import type { SmtpCredentials } from "./Smtp.ts";
 import type { SnowflakeCredentials } from "./Snowflake.ts";
+import type { SnowflakeOAuth2ApiCredentials } from "./SnowflakeOAuth2Api.ts";
 import type { SolarWindsIpamApiCredentials } from "./SolarWindsIpamApi.ts";
 import type { SolarWindsObservabilityApiCredentials } from "./SolarWindsObservabilityApi.ts";
 import type { SplunkApiCredentials } from "./SplunkApi.ts";
@@ -459,6 +463,7 @@ export type N8nCredentialsUnion =
     | MistralCloudApiCredentials
     | MoonshotApiCredentials
     | MotorheadApiCredentials
+    | NvidiaApiCredentials
     | OllamaApiCredentials
     | OpenRouterApiCredentials
     | PineconeApiCredentials
@@ -562,7 +567,9 @@ export type N8nCredentialsUnion =
     | EventbriteOAuth2ApiCredentials
     | F5BigIpApiCredentials
     | FacebookGraphApiCredentials
+    | FacebookGraphApiOAuth2ApiCredentials
     | FacebookGraphAppApiCredentials
+    | FacebookGraphAppOAuth2ApiCredentials
     | FacebookLeadAdsOAuth2ApiCredentials
     | FigmaApiCredentials
     | FigmaOAuth2ApiCredentials
@@ -790,6 +797,7 @@ export type N8nCredentialsUnion =
     | Sms77ApiCredentials
     | SmtpCredentials
     | SnowflakeCredentials
+    | SnowflakeOAuth2ApiCredentials
     | SolarWindsIpamApiCredentials
     | SolarWindsObservabilityApiCredentials
     | SplunkApiCredentials

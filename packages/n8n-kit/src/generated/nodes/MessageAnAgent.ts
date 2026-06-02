@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/MessageAnAgent/MessageAnAgent.node.ts' node
 
-export const description = "Send a message to an SDK agent and receive its response" as const;
+export const description = "Send a message to a n8n agent" as const;
 export const type = "n8n-nodes-base.messageAnAgent" as const;
 export const version = 1 as const;
 export const inputs = {"main":"main"} as const;
