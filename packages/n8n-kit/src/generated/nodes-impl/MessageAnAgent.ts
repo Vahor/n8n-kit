@@ -13,7 +13,7 @@ export interface MessageAnAgentProps extends NodeProps {
 }
 
 /**
- * Send a message to an SDK agent and receive its response
+ * Send a message to a n8n agent
  */
 export class MessageAnAgent<L extends string, C extends IContext = never, P extends MessageAnAgentProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.messageAnAgent" as const;

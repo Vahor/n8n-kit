@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Odoo/Odoo.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Odoo/v1/OdooV1.node.ts' node
 
 export const description = "Consume Odoo API" as const;
 export const type = "n8n-nodes-base.odoo" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"odooApi","required":true,"testedBy":"odooAp
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface OdooNodeParameters {
+export interface OdooV1NodeParameters {
     /** Default: "contact" */
     readonly resource?: "contact" | "custom" | "note" | "opportunity";
 

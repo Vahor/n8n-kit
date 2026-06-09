@@ -4,11 +4,17 @@
 export const description = "Starts the workflow when Facebook events occur" as const;
 export const type = "n8n-nodes-base.facebookTrigger" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"facebookGraphAppApi","required":true}] as const;
+export const credentials = [{"name":"facebookGraphAppApi","required":true,"displayOptions":{"show":{"authType":["accessToken"]}}},{"name":"facebookGraphAppOAuth2Api","required":true,"displayOptions":{"show":{"authType":["oAuth2"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FacebookTriggerNodeParameters {
+    /**
+     * The authentication method to use
+     * Default: "accessToken"
+     */
+    readonly authType?: "accessToken" | "oAuth2";
+
     /** Facebook APP ID */
     readonly appId?: string;
 

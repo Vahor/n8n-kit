@@ -3,7 +3,7 @@
 
 export const description = "Consume Slack API" as const;
 export const type = "n8n-nodes-base.slack" as const;
-export const version = 2.4 as const;
+export const version = 2.5 as const;
 export const credentials = [{"name":"slackApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"slackOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

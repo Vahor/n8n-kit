@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { GumroadApiCredentials } from "../credentials/GumroadApi.ts";
+import type { GumroadOAuth2ApiCredentials } from "../credentials/GumroadOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GumroadTriggerNodeParameters } from "../nodes/GumroadTrigger";
@@ -12,7 +13,8 @@ export interface GumroadTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: GumroadTriggerNodeParameters;
-    readonly gumroadApiCredentials: Credentials<GumroadApiCredentials>;
+    readonly gumroadApiCredentials?: Credentials<GumroadApiCredentials>;
+    readonly gumroadOAuth2ApiCredentials?: Credentials<GumroadOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class GumroadTrigger<L extends string, C extends IContext = never, P exte
     protected type = "n8n-nodes-base.gumroadTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.gumroadApiCredentials];
+        return [this.props?.gumroadApiCredentials, this.props?.gumroadOAuth2ApiCredentials];
     }
 
 }

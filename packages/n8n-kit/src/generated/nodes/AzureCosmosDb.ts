@@ -77,6 +77,6 @@ export interface AzureCosmosDbNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":false}
      */
-    readonly options?: { queryOptions: { queryParameters?: string } };
+    readonly options?: { queryOptions: { queryParameters?: string, queryParametersJson?: string } };
 
 }

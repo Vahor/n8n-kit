@@ -5,7 +5,7 @@ export const name = "bitbucketAccessTokenApi" as const;
 
 /**
  * displayName: Bitbucket Access Token API
- * documentationUrl: bitbuckettokenapi
+ * documentationUrl: bitbucket
  */
 export interface BitbucketAccessTokenApiCredentials {
     readonly "email"?: string;

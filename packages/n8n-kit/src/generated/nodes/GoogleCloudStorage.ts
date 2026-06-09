@@ -3,7 +3,7 @@
 
 export const description = "Use the Google Cloud Storage API" as const;
 export const type = "n8n-nodes-base.googleCloudStorage" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"googleCloudStorageOAuth2Api","required":true,"testedBy":{"request":{"method":"GET","url":"/b/"}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -16,6 +16,12 @@ export interface GoogleCloudStorageNodeParameters {
     readonly operation?: "create" | "delete" | "get" | "getAll" | "update";
 
     readonly projectId?: string;
+
+    /** Default: {"mode":"list","value":""} */
+    readonly projectRLC?: {
+	value: string,
+	mode: "list" | "id",
+};
 
     readonly bucketName?: string;
 

@@ -3,7 +3,7 @@
 
 export const description = "Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows." as const;
 export const type = "n8n-nodes-base.executeWorkflowTrigger" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -20,5 +20,11 @@ export interface ExecuteWorkflowTriggerNodeParameters {
      * Type options: {"multipleValues":true,"sortable":true,"minRequiredFields":1}
      */
     readonly workflowInputs?: { values: Array<{ name: string, type: "any" | "string" | "number" | "boolean" | "array" | "object" }> };
+
+    /**
+     * Choose what to send back when the last node ran multiple times (for example, after a Loop Over Items)
+     * Default: "lastRunOnly"
+     */
+    readonly returnOutput?: "allRuns" | "lastRunOnly";
 
 }

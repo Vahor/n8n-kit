@@ -8,6 +8,8 @@ export const name = "odooApi" as const;
  * documentationUrl: odoo
  */
 export interface OdooApiCredentials {
+    readonly "deprecationNotice"?: string;
+
     readonly "url": string;
 
     readonly "username": string;
