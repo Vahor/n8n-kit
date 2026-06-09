@@ -1,9 +1,9 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/mcp/McpClientTool/McpClientTool.node.ts' node
 
-export const description = "Connect to a custom MCP server" as const;
+export const description = "Connect tools from an MCP Server" as const;
 export const type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;
-export const version = 1.2 as const;
+export const version = 1.3 as const;
 export const credentials = [{"name":"httpBearerAuth","required":true,"displayOptions":{"show":{"authentication":["bearerAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"mcpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["mcpOAuth2Api"]}}},{"name":"httpMultipleHeadersAuth","required":true,"displayOptions":{"show":{"authentication":["multipleHeadersAuth"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"Tools":"ai_tool"} as const;

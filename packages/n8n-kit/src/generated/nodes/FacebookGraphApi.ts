@@ -39,10 +39,10 @@ export interface FacebookGraphApiNodeParameters {
     /** Whether to connect even if SSL certificate validation is not possible */
     readonly allowUnauthorizedCerts?: boolean;
 
-    /** Whether binary data should be sent as body */
+    /** Whether to upload binary data as multipart/form-data */
     readonly sendBinaryData?: boolean;
 
-    /** For Form-Data Multipart, they can be provided in the format: <code>"sendKey1:binaryProperty1,sendKey2:binaryProperty2</code> */
+    /** For Form-Data Multipart, multiple files can be provided in the format: <code>sendKey1:binaryProperty1,sendKey2:binaryProperty2</code> */
     readonly binaryPropertyName?: string;
 
     /** Default: {} */

@@ -54,5 +54,8 @@ export interface OAuth2ApiCredentials {
      */
     readonly "jwksUri"?: string;
 
+    /** Whether to send the public keys directly in the dynamic client registration payload instead of advertising a JWKS URI. Enable this when the IdP cannot reach this instance (e.g. when self-hosted behind a firewall). */
+    readonly "inlineJwks"?: boolean;
+
     readonly __name: "oAuth2Api";
 }

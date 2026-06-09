@@ -187,6 +187,7 @@ import type { GotifyApiCredentials } from "./GotifyApi.ts";
 import type { GrafanaApiCredentials } from "./GrafanaApi.ts";
 import type { GristApiCredentials } from "./GristApi.ts";
 import type { GumroadApiCredentials } from "./GumroadApi.ts";
+import type { GumroadOAuth2ApiCredentials } from "./GumroadOAuth2Api.ts";
 import type { HaloPSAApiCredentials } from "./HaloPSAApi.ts";
 import type { HarvestApiCredentials } from "./HarvestApi.ts";
 import type { HarvestOAuth2ApiCredentials } from "./HarvestOAuth2Api.ts";
@@ -294,6 +295,7 @@ import type { NpmApiCredentials } from "./NpmApi.ts";
 import type { OAuth1ApiCredentials } from "./OAuth1Api.ts";
 import type { OAuth2ApiCredentials } from "./OAuth2Api.ts";
 import type { OdooApiCredentials } from "./OdooApi.ts";
+import type { OdooApiKeyApiCredentials } from "./OdooApiKeyApi.ts";
 import type { OktaApiCredentials } from "./OktaApi.ts";
 import type { OneSimpleApiCredentials } from "./OneSimpleApi.ts";
 import type { OnfleetApiCredentials } from "./OnfleetApi.ts";
@@ -624,6 +626,7 @@ export type N8nCredentialsUnion =
     | GrafanaApiCredentials
     | GristApiCredentials
     | GumroadApiCredentials
+    | GumroadOAuth2ApiCredentials
     | HaloPSAApiCredentials
     | HarvestApiCredentials
     | HarvestOAuth2ApiCredentials
@@ -731,6 +734,7 @@ export type N8nCredentialsUnion =
     | OAuth1ApiCredentials
     | OAuth2ApiCredentials
     | OdooApiCredentials
+    | OdooApiKeyApiCredentials
     | OktaApiCredentials
     | OneSimpleApiCredentials
     | OnfleetApiCredentials

@@ -22,11 +22,11 @@ export interface McpClientToolProps extends NodeProps {
 }
 
 /**
- * Connect to a custom MCP server
+ * Connect tools from an MCP Server
  */
 export class McpClientTool<L extends string, C extends IContext = never, P extends McpClientToolProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.mcpClientTool" as const;
-    protected typeVersion = 1.2 as const;
+    protected typeVersion = 1.3 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);
