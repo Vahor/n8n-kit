@@ -8,7 +8,18 @@ export const name = "microsoftOutlookOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftOutlookOAuth2ApiCredentials {
-    /** Default: "openid offline_access Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.Read.Shared Calendars.ReadWrite Mail.ReadWrite Mail.ReadWrite.Shared Mail.Send Mail.Send.Shared MailboxSettings.Read" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "openid offline_access Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.Read.Shared Calendars.ReadWrite Mail.ReadWrite Mail.ReadWrite.Shared Mail.Send Mail.Send.Shared MailboxSettings.Read"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access Contacts.Read Contacts.ReadWrite Calendars.Read Calendars.Read.Shared Calendars.ReadWrite Mail.ReadWrite Mail.ReadWrite.Shared Mail.Send Mail.Send.Shared MailboxSettings.Read\"}}" */
     readonly "scope"?: unknown;
 
     readonly "useShared"?: boolean;
