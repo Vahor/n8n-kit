@@ -37,7 +37,7 @@ export interface EmailSendV2NodeParameters {
     readonly html?: string;
 
     /** Default: {} */
-    readonly options?: { appendAttribution?: boolean, attachments?: string, ccEmail?: string, bccEmail?: string, allowUnauthorizedCerts?: boolean, replyTo?: string } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean };
+    readonly options?: { appendAttribution?: boolean, attachments?: string, fileAttachments?: string, ccEmail?: string, bccEmail?: string, allowUnauthorizedCerts?: boolean, replyTo?: string } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean };
 
     /** Type options: {"rows":4} */
     readonly message?: string;

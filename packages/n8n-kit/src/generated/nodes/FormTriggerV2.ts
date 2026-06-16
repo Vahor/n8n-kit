@@ -3,14 +3,14 @@
 
 export const description = "Generate webforms in n8n and pass their responses to the workflow" as const;
 export const type = "n8n-nodes-base.formTrigger" as const;
-export const version = 2.5 as const;
+export const version = 2.6 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface FormTriggerV2NodeParameters {
     /** Default: "none" */
-    readonly authentication?: "basicAuth" | "none";
+    readonly authentication?: "basicAuth" | "none" | "basicAuth" | "n8nUserAuth" | "none";
 
     /** The final segment of the form's URL, both for test and production */
     readonly path?: string;
@@ -37,6 +37,6 @@ export interface FormTriggerV2NodeParameters {
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode";
 
     /** Default: {} */
-    readonly options?: { appendAttribution?: boolean, ipWhitelist?: string, buttonLabel?: string, path?: string, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, ignoreBots?: boolean, useWorkflowTimezone?: boolean, customCss?: string };
+    readonly options?: { appendAttribution?: boolean, ipWhitelist?: string, buttonLabel?: string, path?: string, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, ignoreBots?: boolean, includeUserInOutput?: boolean, useWorkflowTimezone?: boolean, customCss?: string };
 
 }

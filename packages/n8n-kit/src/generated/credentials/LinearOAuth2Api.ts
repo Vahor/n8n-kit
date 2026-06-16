@@ -23,7 +23,7 @@ export interface LinearOAuth2ApiCredentials {
     /** Grants the "Admin" scope, Needed to create webhooks */
     readonly "includeAdminScope"?: boolean;
 
-    /** Default: "={{$self[\"includeAdminScope\"] ? \"read write issues:create comments:create admin\" : \"read write issues:create comments:create\"}}" */
+    /** Default: "={{\"read write issues:create comments:create\" + ($self[\"includeAdminScope\"] ? \" admin\" : \"\") + ($self[\"actor\"] === \"app\" ? \" app:mentionable\" : \"\")}}" */
     readonly "scope": unknown;
 
     /** Default: "={{\"actor=\"+$self[\"actor\"]}}" */
