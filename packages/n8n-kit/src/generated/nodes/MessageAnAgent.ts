@@ -23,6 +23,16 @@ export interface MessageAnAgentNodeParameters {
      */
     readonly message?: string;
 
+    /** Whether to constrain the agent response to a JSON Schema you provide. The conforming object is returned on the "structuredOutput" field. */
+    readonly useStructuredOutput?: boolean;
+
+    /**
+     * The JSON Schema that the agent response must conform to
+     * Default: "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"string\",\n      \"description\": \"The result of the task\"\n    }\n  },\n  \"required\": [\"result\"]\n}"
+     * Type options: {"rows":10}
+     */
+    readonly outputSchema?: string;
+
     /** Default: {} */
     readonly advanced?: { sessionId?: string };
 

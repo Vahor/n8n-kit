@@ -13,7 +13,7 @@ export interface DynamicCredentialCheckProps extends NodeProps {
 }
 
 /**
- * Checks whether the triggering user has the required Dynamic credential configured. Routes to "Ready" or "Not Ready" and returns auth URLs when the credential is missing.
+ * Checks whether the triggering user has the required Private credential configured. Routes to "Ready" or "Not Ready" and returns auth URLs when the credential is missing.
  */
 export class DynamicCredentialCheck<L extends string, C extends IContext = never, P extends DynamicCredentialCheckProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.dynamicCredentialCheck" as const;

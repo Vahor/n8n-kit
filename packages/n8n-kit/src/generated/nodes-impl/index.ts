@@ -134,6 +134,7 @@ export * from "./EmbeddingsGoogleVertex";
 export * from "./EmbeddingsHuggingFaceInference";
 export * from "./EmbeddingsLemonade";
 export * from "./EmbeddingsMistralCloud";
+export * from "./EmbeddingsNvidia";
 export * from "./EmbeddingsOllama";
 export * from "./EmbeddingsOpenAi";
 export * from "./EmbeddingsOracleDb";

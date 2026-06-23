@@ -4,11 +4,14 @@
 export const description = "Create, change and delete boards and cards" as const;
 export const type = "n8n-nodes-base.trello" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"trelloApi","required":true}] as const;
+export const credentials = [{"name":"trelloApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"trelloOAuth1Api","required":true,"displayOptions":{"show":{"authentication":["oAuth1"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface TrelloNodeParameters {
+    /** Default: "apiKey" */
+    readonly authentication?: "apiKey" | "oAuth1";
+
     /** Default: "card" */
     readonly resource?: "attachment" | "board" | "boardMember" | "card" | "cardComment" | "checklist" | "label" | "list";
 

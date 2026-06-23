@@ -394,6 +394,7 @@ import type { TotpApiCredentials } from "./TotpApi.ts";
 import type { TravisCiApiCredentials } from "./TravisCiApi.ts";
 import type { TrellixEpoApiCredentials } from "./TrellixEpoApi.ts";
 import type { TrelloApiCredentials } from "./TrelloApi.ts";
+import type { TrelloOAuth1ApiCredentials } from "./TrelloOAuth1Api.ts";
 import type { TwakeCloudApiCredentials } from "./TwakeCloudApi.ts";
 import type { TwakeServerApiCredentials } from "./TwakeServerApi.ts";
 import type { TwilioApiCredentials } from "./TwilioApi.ts";
@@ -833,6 +834,7 @@ export type N8nCredentialsUnion =
     | TravisCiApiCredentials
     | TrellixEpoApiCredentials
     | TrelloApiCredentials
+    | TrelloOAuth1ApiCredentials
     | TwakeCloudApiCredentials
     | TwakeServerApiCredentials
     | TwilioApiCredentials

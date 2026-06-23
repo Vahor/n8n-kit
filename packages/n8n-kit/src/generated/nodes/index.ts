@@ -136,6 +136,7 @@ export type { EmbeddingsGoogleVertexNodeParameters } from "./EmbeddingsGoogleVer
 export type { EmbeddingsHuggingFaceInferenceNodeParameters } from "./EmbeddingsHuggingFaceInference";
 export type { EmbeddingsLemonadeNodeParameters } from "./EmbeddingsLemonade";
 export type { EmbeddingsMistralCloudNodeParameters } from "./EmbeddingsMistralCloud";
+export type { EmbeddingsNvidiaNodeParameters } from "./EmbeddingsNvidia";
 export type { EmbeddingsOllamaNodeParameters } from "./EmbeddingsOllama";
 export type { EmbeddingsOpenAiNodeParameters } from "./EmbeddingsOpenAi";
 export type { EmbeddingsOracleDbNodeParameters } from "./EmbeddingsOracleDb";
