@@ -8,7 +8,18 @@ export const name = "googleSheetsOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleSheetsOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata\"}}" */
     readonly "scope"?: unknown;
 
     readonly "notice"?: string;

@@ -1,0 +1,5 @@
+---
+"@vahor/n8n-kit": minor
+---
+
+Automated update of n8n nodes from upstream stable release [2.28.3](https://github.com/n8n-io/n8n/tree/n8n@2.28.3)

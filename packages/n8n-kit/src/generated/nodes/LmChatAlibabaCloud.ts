@@ -10,7 +10,7 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatAlibabaCloudNodeParameters {
     /**
-     * The model which will generate the completion. <a href="https://www.alibabacloud.com/help/en/model-studio/getting-started/models">Learn more</a>.
+     * The model which will generate the completion. <a href="https://www.qwencloud.com/models">Learn more</a>.
      * Default: "qwen-plus"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */

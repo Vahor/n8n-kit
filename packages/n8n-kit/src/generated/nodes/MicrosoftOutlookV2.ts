@@ -4,11 +4,14 @@
 export const description = "Consume Microsoft Outlook API" as const;
 export const type = "n8n-nodes-base.microsoftOutlook" as const;
 export const version = 2 as const;
-export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOutlookOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOutlookV2NodeParameters {
+    /** Default: "microsoftOutlookOAuth2Api" */
+    readonly authentication?: "microsoftOutlookOAuth2Api" | "microsoftOAuth2Api";
+
     /** Default: "message" */
     readonly resource?: "calendar" | "contact" | "draft" | "event" | "folder" | "folderMessage" | "message" | "messageAttachment";
 
@@ -92,10 +95,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /** Comma-separated list of email addresses of recipients */
     readonly to?: string;
 
-    /** Default: "2026-06-23T10:16:27.818+00:00" */
+    /** Default: "2026-06-30T10:13:58.840+00:00" */
     readonly startDateTime?: string;
 
-    /** Default: "2026-06-23T10:46:27.818+00:00" */
+    /** Default: "2026-06-30T10:43:58.840+00:00" */
     readonly endDateTime?: string;
 
     /**

@@ -36,7 +36,7 @@ export interface McpClientToolNodeParameters {
     /**
      * Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
      * Default: []
-     * Type options: {"loadOptionsMethod":"getTools","loadOptionsDependsOn":["sseEndpoint"]}
+     * Type options: {"loadOptionsMethod":"getTools","loadOptionsDependsOn":["sseEndpoint","endpointUrl"]}
      */
     readonly includeTools?: unknown[];
 

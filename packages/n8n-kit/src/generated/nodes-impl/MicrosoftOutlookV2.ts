@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "../credentials/MicrosoftOutlookOAuth2Api.ts";
+import type { MicrosoftOAuth2ApiCredentials } from "../credentials/MicrosoftOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftOutlookV2NodeParameters } from "../nodes/MicrosoftOutlookV2";
@@ -12,7 +13,8 @@ export interface MicrosoftOutlookV2Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: MicrosoftOutlookV2NodeParameters;
-    readonly microsoftOutlookOAuth2ApiCredentials: Credentials<MicrosoftOutlookOAuth2ApiCredentials>;
+    readonly microsoftOutlookOAuth2ApiCredentials?: Credentials<MicrosoftOutlookOAuth2ApiCredentials>;
+    readonly microsoftOAuth2ApiCredentials?: Credentials<MicrosoftOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class MicrosoftOutlookV2<L extends string, C extends IContext = never, P 
     protected type = "n8n-nodes-base.microsoftOutlook" as const;
     protected typeVersion = 2 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.microsoftOutlookOAuth2ApiCredentials];
+        return [this.props?.microsoftOutlookOAuth2ApiCredentials, this.props?.microsoftOAuth2ApiCredentials];
     }
 
 }

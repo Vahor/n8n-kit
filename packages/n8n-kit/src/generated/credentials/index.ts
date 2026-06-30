@@ -340,6 +340,7 @@ import type { S3Credentials } from "./S3.ts";
 import type { SalesforceJwtApiCredentials } from "./SalesforceJwtApi.ts";
 import type { SalesforceOAuth2ApiCredentials } from "./SalesforceOAuth2Api.ts";
 import type { SalesmateApiCredentials } from "./SalesmateApi.ts";
+import type { SchemaRegistryApiCredentials } from "./SchemaRegistryApi.ts";
 import type { SeaTableApiCredentials } from "./SeaTableApi.ts";
 import type { SecurityScorecardApiCredentials } from "./SecurityScorecardApi.ts";
 import type { SegmentApiCredentials } from "./SegmentApi.ts";
@@ -780,6 +781,7 @@ export type N8nCredentialsUnion =
     | SalesforceJwtApiCredentials
     | SalesforceOAuth2ApiCredentials
     | SalesmateApiCredentials
+    | SchemaRegistryApiCredentials
     | SeaTableApiCredentials
     | SecurityScorecardApiCredentials
     | SegmentApiCredentials

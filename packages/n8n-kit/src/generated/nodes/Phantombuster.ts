@@ -13,7 +13,7 @@ export interface PhantombusterNodeParameters {
     readonly resource?: "agent";
 
     /** Default: "launch" */
-    readonly operation?: "delete" | "get" | "getAll" | "getOutput" | "launch";
+    readonly operation?: "delete" | "get" | "getAll" | "getOutput" | "launch" | "launchSync";
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>

@@ -13,7 +13,7 @@ export interface MySqlV1NodeParameters {
     readonly operation?: "executeQuery" | "insert" | "update";
 
     /**
-     * The SQL query to execute
+     * The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.
      * Type options: {"editor":"sqlEditor","sqlDialect":"MySQL"}
      */
     readonly query?: string;
@@ -30,11 +30,8 @@ export interface MySqlV1NodeParameters {
     /** Comma-separated list of the properties which should used as columns for the new rows */
     readonly columns?: string;
 
-    /**
-     * Modifiers for INSERT statement
-     * Default: {}
-     */
-    readonly options?: { ignore?: boolean, priority?: "LOW_PRIORITY" | "HIGH_PRIORITY" };
+    /** Default: {} */
+    readonly options?: { queryReplacement?: string, ignore?: boolean, priority?: "LOW_PRIORITY" | "HIGH_PRIORITY" };
 
     /**
      * Name of the property which decides which rows in the database should be updated. Normally that would be "id".

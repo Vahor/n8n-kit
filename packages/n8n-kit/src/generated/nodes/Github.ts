@@ -13,10 +13,49 @@ export interface GithubNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /** Default: "issue" */
-    readonly resource?: "file" | "issue" | "organization" | "release" | "repository" | "review" | "user" | "workflow";
+    readonly resource?: "file" | "issue" | "organization" | "pullRequest" | "release" | "repository" | "review" | "user" | "workflow";
 
     /** Default: "getRepositories" */
-    readonly operation?: "getRepositories" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "getUserIssues" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
+    readonly operation?: "getRepositories" | "getMembers" | "create" | "update" | "close" | "reopen" | "get" | "createComment" | "editComment" | "getDiff" | "getPatch" | "merge" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "getUserIssues" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
+
+    /** The branch you want to merge into (e.g. master) */
+    readonly base?: string;
+
+    /** The branch containing your changes. For a cross‑fork PR, use the format owner:branchname (e.g. johndoe:featurebranch). */
+    readonly head?: string;
+
+    /** The title of the pull request */
+    readonly title?: string;
+
+    /**
+     * The body of the pull request
+     * Type options: {"rows":5}
+     */
+    readonly body?: string;
+
+    /** Whether to create the pull request as a draft */
+    readonly draft?: boolean;
+
+    /** The number of the pull request */
+    readonly pullRequestNumber?: number;
+
+    /** Default: {} */
+    readonly editFields?: { title?: string, body?: string, state?: "open" | "closed", base?: string } | { assignees?: { assignee?: string }, body?: string, labels?: { label?: string }, state?: "closed" | "open", state_reason?: "completed" | "not_planned" | "reopened", title?: string };
+
+    /** The ID of the comment to edit */
+    readonly commentId?: number;
+
+    /** Default: "merge" */
+    readonly mergeMethod?: "merge" | "squash" | "rebase";
+
+    /** Title for the automatic merge commit */
+    readonly commitTitle?: string;
+
+    /**
+     * Extra detail to append to automatic merge commit
+     * Type options: {"rows":4}
+     */
+    readonly commitMessage?: string;
 
     /** Default: {"mode":"list","value":""} */
     readonly owner?: {
@@ -66,8 +105,6 @@ export interface GithubNodeParameters {
     /** Default: "data" */
     readonly binaryPropertyName?: string;
 
-    readonly commitMessage?: string;
-
     /**
      * Additional fields to add
      * Default: {}
@@ -79,15 +116,6 @@ export interface GithubNodeParameters {
      * Default: true
      */
     readonly asBinaryProperty?: boolean;
-
-    /** The title of the issue */
-    readonly title?: string;
-
-    /**
-     * The body of the issue
-     * Type options: {"rows":5}
-     */
-    readonly body?: string;
 
     /**
      * Default: {"label":""}
@@ -103,12 +131,6 @@ export interface GithubNodeParameters {
 
     /** The number of the issue on which to create the comment on */
     readonly issueNumber?: number;
-
-    /**
-     * Default: {}
-     * Type options: {"multipleValueButtonText":"Add Field"}
-     */
-    readonly editFields?: { assignees?: { assignee?: string }, body?: string, labels?: { label?: string }, state?: "closed" | "open", state_reason?: "completed" | "not_planned" | "reopened", title?: string };
 
     /**
      * The reason for locking the issue
@@ -148,9 +170,6 @@ export interface GithubNodeParameters {
      * Type options: {"multipleValueButtonText":"Add Filter"}
      */
     readonly getRepositoryPullRequestsFilters?: { state?: "all" | "closed" | "open", sort?: "created" | "updated" | "popularity" | "long-running", direction?: "asc" | "desc" };
-
-    /** The number of the pull request */
-    readonly pullRequestNumber?: number;
 
     /** ID of the review */
     readonly reviewId?: string;

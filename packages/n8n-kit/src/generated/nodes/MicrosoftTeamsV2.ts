@@ -4,11 +4,14 @@
 export const description = "Consume Microsoft Teams API" as const;
 export const type = "n8n-nodes-base.microsoftTeams" as const;
 export const version = 2 as const;
-export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftTeamsOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftTeamsV2NodeParameters {
+    /** Default: "microsoftTeamsOAuth2Api" */
+    readonly authentication?: "microsoftTeamsOAuth2Api" | "microsoftOAuth2Api";
+
     /** Default: "channel" */
     readonly resource?: "channel" | "channelMessage" | "chatMessage" | "task";
 

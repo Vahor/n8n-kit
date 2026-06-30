@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MicrosoftExcelOAuth2ApiCredentials } from "../credentials/MicrosoftExcelOAuth2Api.ts";
+import type { MicrosoftOAuth2ApiCredentials } from "../credentials/MicrosoftOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftExcelV2NodeParameters } from "../nodes/MicrosoftExcelV2";
@@ -12,7 +13,8 @@ export interface MicrosoftExcelV2Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: MicrosoftExcelV2NodeParameters;
-    readonly microsoftExcelOAuth2ApiCredentials: Credentials<MicrosoftExcelOAuth2ApiCredentials>;
+    readonly microsoftExcelOAuth2ApiCredentials?: Credentials<MicrosoftExcelOAuth2ApiCredentials>;
+    readonly microsoftOAuth2ApiCredentials?: Credentials<MicrosoftOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class MicrosoftExcelV2<L extends string, C extends IContext = never, P ex
     protected type = "n8n-nodes-base.microsoftExcel" as const;
     protected typeVersion = 2.2 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.microsoftExcelOAuth2ApiCredentials];
+        return [this.props?.microsoftExcelOAuth2ApiCredentials, this.props?.microsoftOAuth2ApiCredentials];
     }
 
 }

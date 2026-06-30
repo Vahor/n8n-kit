@@ -13,7 +13,7 @@ export interface TelegramNodeParameters {
     readonly resource?: "chat" | "callback" | "file" | "message";
 
     /** Default: "get" */
-    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "get" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendAndWait" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
+    readonly operation?: "get" | "administrators" | "member" | "leave" | "setDescription" | "setTitle" | "answerQuery" | "answerInlineQuery" | "get" | "deleteMessage" | "editMessageText" | "pinChatMessage" | "sendAnimation" | "sendAudio" | "sendChatAction" | "sendDocument" | "sendLocation" | "sendMediaGroup" | "sendMessage" | "sendMessageDraft" | "sendRichMessage" | "sendRichMessageDraft" | "sendAndWait" | "sendPhoto" | "sendSticker" | "sendVideo" | "unpinChatMessage";
 
     /** Unique identifier for the target chat or username, To find your chat ID ask @get_id_bot */
     readonly chatId?: string;
@@ -22,7 +22,7 @@ export interface TelegramNodeParameters {
     readonly messageId?: string;
 
     /** Default: {} */
-    readonly additionalFields?: { disable_notification?: boolean } | { cache_time?: number, show_alert?: boolean, text?: string, url?: string } | { mimeType?: string } | { appendAttribution?: boolean, caption?: string, disable_notification?: boolean, disable_web_page_preview?: boolean, duration?: number, fileName?: string, height?: number, parse_mode?: "Markdown" | "MarkdownV2" | "HTML", performer?: string, reply_to_message_id?: number, message_thread_id?: number, title?: string, thumb?: string, width?: number };
+    readonly additionalFields?: { disable_notification?: boolean } | { cache_time?: number, show_alert?: boolean, text?: string, url?: string } | { mimeType?: string } | { appendAttribution?: boolean, caption?: string, disable_notification?: boolean, disable_web_page_preview?: boolean, duration?: number, fileName?: string, height?: number, parse_mode?: "Markdown" | "MarkdownV2" | "HTML", performer?: string, reply_to_message_id?: number, message_thread_id?: number, title?: string, thumb?: string, width?: number } | { message_thread_id?: number, parse_mode?: "Markdown" | "MarkdownV2" | "HTML" } | { disable_notification?: boolean, message_effect_id?: string, message_thread_id?: number, protect_content?: boolean, is_rtl?: boolean, skip_entity_detection?: boolean };
 
     /** Unique identifier of the target user */
     readonly userId?: string;
@@ -103,6 +103,18 @@ export interface TelegramNodeParameters {
     /** Text of the message to be sent */
     readonly text?: string;
 
+    /**
+     * Which formatting syntax the rich message content uses
+     * Default: "html"
+     */
+    readonly richFormat?: "markdown" | "html";
+
+    /**
+     * Content of the rich message, written in the selected Markdown or HTML syntax. Supports headings, lists, tables, block quotes, media, collapsible blocks and more.
+     * Type options: {"rows":6}
+     */
+    readonly richMessageText?: string;
+
     /** Default: {} */
     readonly forceReply?: { force_reply?: boolean, selective?: boolean };
 
@@ -125,6 +137,12 @@ export interface TelegramNodeParameters {
 
     /** Default: {} */
     readonly replyKeyboardRemove?: { remove_keyboard?: boolean, selective?: boolean };
+
+    /**
+     * Unique identifier of the message draft; must be non-zero. Updates streamed with the same draft ID are animated.
+     * Default: 1
+     */
+    readonly draftId?: number;
 
     /** Type options: {"rows":4} */
     readonly message?: string;

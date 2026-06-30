@@ -13,7 +13,7 @@ export interface McpTriggerNodeParameters {
      * The way to authenticate
      * Default: "none"
      */
-    readonly authentication?: "none" | "bearerAuth" | "headerAuth";
+    readonly authentication?: "none" | "n8nOAuth2" | "bearerAuth" | "headerAuth";
 
     /** The base path for this MCP server */
     readonly path?: string;

@@ -4,11 +4,14 @@
 export const description = "Trigger for Microsoft OneDrive API." as const;
 export const type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOneDriveOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOneDriveTriggerNodeParameters {
+    /** Default: "microsoftOneDriveOAuth2Api" */
+    readonly authentication?: "microsoftOneDriveOAuth2Api" | "microsoftOAuth2Api";
+
     /** Default: "fileCreated" */
     readonly event?: "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated";
 

@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MicrosoftGraphSecurityOAuth2ApiCredentials } from "../credentials/MicrosoftGraphSecurityOAuth2Api.ts";
+import type { MicrosoftOAuth2ApiCredentials } from "../credentials/MicrosoftOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftGraphSecurityNodeParameters } from "../nodes/MicrosoftGraphSecurity";
@@ -12,7 +13,8 @@ export interface MicrosoftGraphSecurityProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: MicrosoftGraphSecurityNodeParameters;
-    readonly microsoftGraphSecurityOAuth2ApiCredentials: Credentials<MicrosoftGraphSecurityOAuth2ApiCredentials>;
+    readonly microsoftGraphSecurityOAuth2ApiCredentials?: Credentials<MicrosoftGraphSecurityOAuth2ApiCredentials>;
+    readonly microsoftOAuth2ApiCredentials?: Credentials<MicrosoftOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class MicrosoftGraphSecurity<L extends string, C extends IContext = never
     protected type = "n8n-nodes-base.microsoftGraphSecurity" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.microsoftGraphSecurityOAuth2ApiCredentials];
+        return [this.props?.microsoftGraphSecurityOAuth2ApiCredentials, this.props?.microsoftOAuth2ApiCredentials];
     }
 
 }

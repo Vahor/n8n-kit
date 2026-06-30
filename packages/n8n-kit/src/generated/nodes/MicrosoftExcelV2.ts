@@ -4,11 +4,14 @@
 export const description = "Consume Microsoft Excel API" as const;
 export const type = "n8n-nodes-base.microsoftExcel" as const;
 export const version = 2.2 as const;
-export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftExcelOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftExcelV2NodeParameters {
+    /** Default: "microsoftExcelOAuth2Api" */
+    readonly authentication?: "microsoftExcelOAuth2Api" | "microsoftOAuth2Api";
+
     /** Default: "workbook" */
     readonly resource?: "table" | "workbook" | "worksheet";
 
