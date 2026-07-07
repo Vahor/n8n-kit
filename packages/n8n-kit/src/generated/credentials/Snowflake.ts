@@ -46,6 +46,9 @@ export interface SnowflakeCredentials {
     /** Enter the security role you want to use after creating the connection */
     readonly "role"?: string;
 
+    /** Optional Snowflake hostname to use for the connection */
+    readonly "host"?: string;
+
     /** Whether to keep alive the client session. By default, client connections typically time out approximately 3-4 hours after the most recent query was executed. If the parameter clientSessionKeepAlive is set to true, the client’s connection to the server will be kept alive indefinitely, even if no queries are executed. */
     readonly "clientSessionKeepAlive"?: boolean;
 

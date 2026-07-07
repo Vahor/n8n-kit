@@ -23,6 +23,12 @@ export interface MessageAnAgentNodeParameters {
      */
     readonly message?: string;
 
+    /**
+     * Whether to call the agent once per input item or a single time for all items
+     * Default: "allItems"
+     */
+    readonly invokeMode?: "allItems" | "perItem";
+
     /** Whether to constrain the agent response to a JSON Schema you provide. The conforming object is returned on the "structuredOutput" field. */
     readonly useStructuredOutput?: boolean;
 
@@ -34,6 +40,6 @@ export interface MessageAnAgentNodeParameters {
     readonly outputSchema?: string;
 
     /** Default: {} */
-    readonly advanced?: { sessionId?: string };
+    readonly advanced?: { sessionId?: string, allowOtherNodesData?: boolean };
 
 }

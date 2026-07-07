@@ -3,7 +3,7 @@
 
 export const description = "Runtime backing for MCP registry-derived nodes" as const;
 export const type = "@n8n/n8n-nodes-langchain.mcpRegistryClientTool" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"mcpOAuth2Api","required":true}] as const;
 export const inputs = {} as const;
 export const outputs = {"Tools":"ai_tool"} as const;

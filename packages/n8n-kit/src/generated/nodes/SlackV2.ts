@@ -16,7 +16,7 @@ export interface SlackV2NodeParameters {
     readonly resource?: "channel" | "file" | "message" | "reaction" | "star" | "user" | "userGroup";
 
     /** Default: "create" */
-    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "getPermalink" | "search" | "post" | "sendAndWait" | "update" | "add" | "delete" | "getAll" | "get" | "getAll" | "upload" | "add" | "get" | "remove" | "info" | "getAll" | "getProfile" | "getPresence" | "updateProfile" | "updateUsers" | "create" | "disable" | "enable" | "getAll" | "getUsers" | "update";
+    readonly operation?: "archive" | "close" | "create" | "get" | "getAll" | "history" | "invite" | "join" | "kick" | "leave" | "member" | "open" | "rename" | "replies" | "setPurpose" | "setTopic" | "unarchive" | "delete" | "deleteScheduled" | "getManyScheduled" | "getPermalink" | "schedule" | "search" | "post" | "sendAndWait" | "update" | "add" | "delete" | "getAll" | "get" | "getAll" | "upload" | "add" | "get" | "remove" | "info" | "getAll" | "getProfile" | "getPresence" | "lookupByEmail" | "updateProfile" | "updateUsers" | "create" | "disable" | "enable" | "getAll" | "getUsers" | "update";
 
     /**
      * The Slack channel to archive
@@ -63,7 +63,10 @@ export interface SlackV2NodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly filters?: { excludeArchived?: boolean, types?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { inclusive?: boolean, latest?: string, oldest?: string } | { channelId?: string, showFilesHidden?: boolean, tsFrom?: string, tsTo?: string, types?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], userId?: string };
+    readonly filters?: { excludeArchived?: boolean, types?: ("public_channel" | "private_channel" | "mpim" | "im")[] } | { inclusive?: boolean, latest?: string, oldest?: string } | { channelId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+}, latest?: string, oldest?: string } | { channelId?: string, showFilesHidden?: boolean, tsFrom?: string, tsTo?: string, types?: ("all" | "gdocs" | "images" | "pdfs" | "snippets" | "spaces" | "zips")[], userId?: string };
 
     /** Whether to resolve the data automatically. By default the response only contain the ID to resource. */
     readonly resolveData?: boolean;
@@ -114,6 +117,9 @@ export interface SlackV2NodeParameters {
      */
     readonly attachments?: { fallback?: string, text?: string, title?: string, title_link?: string, color?: string, pretext?: string, author_name?: string, author_link?: string, author_icon?: string, image_url?: string, thumb_url?: string, footer?: string, footer_icon?: string, ts?: number, fields?: { item: Array<{ title?: string, value?: string, short?: boolean }> } };
 
+    /** When the message should be sent. Must be in the future and within 120 days from now. */
+    readonly postAt?: string;
+
     /**
      * Other options to set
      * Default: {}
@@ -122,6 +128,9 @@ export interface SlackV2NodeParameters {
 	value: string,
 	mode: "list" | "id",
 }, ephemeral?: boolean } } | boolean, sendAsUser?: string } | { includeLinkToWorkflow?: boolean };
+
+    /** The ID returned when the message was originally scheduled */
+    readonly scheduledMessageId?: string;
 
     /** Default: {} */
     readonly updateFields?: { link_names?: boolean, parse?: "client" | "full" | "none" } | { channels?: unknown[], description?: string, handle?: string, include_count?: boolean, name?: string };
@@ -175,6 +184,9 @@ export interface SlackV2NodeParameters {
      * Default: "data"
      */
     readonly binaryPropertyName?: string;
+
+    /** The email address of the user to look up */
+    readonly email?: string;
 
     /** Default: {} */
     readonly Options?: { channelIds?: unknown[], description?: string, handle?: string, include_count?: boolean };

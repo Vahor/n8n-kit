@@ -154,6 +154,7 @@ import type { GhostAdminApiCredentials } from "./GhostAdminApi.ts";
 import type { GhostContentApiCredentials } from "./GhostContentApi.ts";
 import type { GitPasswordCredentials } from "./GitPassword.ts";
 import type { GithubApiCredentials } from "./GithubApi.ts";
+import type { GithubAppApiCredentials } from "./GithubAppApi.ts";
 import type { GithubOAuth2ApiCredentials } from "./GithubOAuth2Api.ts";
 import type { GitlabApiCredentials } from "./GitlabApi.ts";
 import type { GitlabOAuth2ApiCredentials } from "./GitlabOAuth2Api.ts";
@@ -259,6 +260,7 @@ import type { MicrosoftAzureCosmosDbSharedKeyApiCredentials } from "./MicrosoftA
 import type { MicrosoftAzureMonitorOAuth2ApiCredentials } from "./MicrosoftAzureMonitorOAuth2Api.ts";
 import type { MicrosoftDynamicsOAuth2ApiCredentials } from "./MicrosoftDynamicsOAuth2Api.ts";
 import type { MicrosoftEntraOAuth2ApiCredentials } from "./MicrosoftEntraOAuth2Api.ts";
+import type { MicrosoftEntraServicePrincipalApiCredentials } from "./MicrosoftEntraServicePrincipalApi.ts";
 import type { MicrosoftExcelOAuth2ApiCredentials } from "./MicrosoftExcelOAuth2Api.ts";
 import type { MicrosoftGraphSecurityOAuth2ApiCredentials } from "./MicrosoftGraphSecurityOAuth2Api.ts";
 import type { MicrosoftOAuth2ApiCredentials } from "./MicrosoftOAuth2Api.ts";
@@ -595,6 +597,7 @@ export type N8nCredentialsUnion =
     | GhostContentApiCredentials
     | GitPasswordCredentials
     | GithubApiCredentials
+    | GithubAppApiCredentials
     | GithubOAuth2ApiCredentials
     | GitlabApiCredentials
     | GitlabOAuth2ApiCredentials
@@ -700,6 +703,7 @@ export type N8nCredentialsUnion =
     | MicrosoftAzureMonitorOAuth2ApiCredentials
     | MicrosoftDynamicsOAuth2ApiCredentials
     | MicrosoftEntraOAuth2ApiCredentials
+    | MicrosoftEntraServicePrincipalApiCredentials
     | MicrosoftExcelOAuth2ApiCredentials
     | MicrosoftGraphSecurityOAuth2ApiCredentials
     | MicrosoftOAuth2ApiCredentials

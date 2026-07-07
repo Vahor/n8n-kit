@@ -26,7 +26,7 @@ export interface DataTableNodeParameters {
     /**
      * Filter to decide which rows get
      * Default: {}
-     * Type options: {"multipleValues":true,"minRequiredFields":0}
+     * Type options: {"multipleValues":true,"minRequiredFields":1}
      */
     readonly filters?: { conditions: Array<{ keyName?: string, condition?: string, keyValue?: string }> };
 

@@ -4,13 +4,13 @@
 export const description = "Consume GitHub API" as const;
 export const type = "n8n-nodes-base.github" as const;
 export const version = 1.1 as const;
-export const credentials = [{"name":"githubApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"githubOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
+export const credentials = [{"name":"githubApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"githubOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}},{"name":"githubAppApi","required":true,"displayOptions":{"show":{"authentication":["githubAppApi"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GithubNodeParameters {
     /** Default: "accessToken" */
-    readonly authentication?: "accessToken" | "oAuth2";
+    readonly authentication?: "accessToken" | "oAuth2" | "githubAppApi";
 
     /** Default: "issue" */
     readonly resource?: "file" | "issue" | "organization" | "pullRequest" | "release" | "repository" | "review" | "user" | "workflow";

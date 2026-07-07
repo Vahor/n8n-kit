@@ -45,7 +45,7 @@
 	},
 	"devDependencies": {
 		"@types/yargs": "^17.0.35",
-		"n8n-core": "2.28.2",
+		"n8n-core": "2.29.6",
 		"tsdown": "catalog:",
 		"typescript": "catalog:"
 	},
