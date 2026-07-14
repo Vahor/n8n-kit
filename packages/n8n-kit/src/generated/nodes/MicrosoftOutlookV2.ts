@@ -13,7 +13,7 @@ export interface MicrosoftOutlookV2NodeParameters {
     readonly authentication?: "microsoftOutlookOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
 
     /**
-     * The mailbox the Service Principal should act on
+     * The mailbox the Service Principal should act on. Applies to the whole node (every item in the execution).
      * Default: {"mode":"id","value":""}
      */
     readonly mailbox?: {
@@ -104,10 +104,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /** Comma-separated list of email addresses of recipients */
     readonly to?: string;
 
-    /** Default: "2026-07-07T10:10:48.233+00:00" */
+    /** Default: "2026-07-14T09:34:36.314+00:00" */
     readonly startDateTime?: string;
 
-    /** Default: "2026-07-07T10:40:48.233+00:00" */
+    /** Default: "2026-07-14T10:04:36.314+00:00" */
     readonly endDateTime?: string;
 
     /**

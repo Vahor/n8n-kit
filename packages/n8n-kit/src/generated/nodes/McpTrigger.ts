@@ -15,6 +15,12 @@ export interface McpTriggerNodeParameters {
      */
     readonly authentication?: "none" | "n8nOAuth2" | "bearerAuth" | "headerAuth";
 
+    /**
+     * Whether the triggering user must also have permission to execute the workflow in the project it belongs to
+     * Default: true
+     */
+    readonly requireExecuteAccess?: boolean;
+
     /** The base path for this MCP server */
     readonly path?: string;
 

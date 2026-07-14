@@ -4,13 +4,22 @@
 export const description = "Consume Microsoft To Do API." as const;
 export const type = "n8n-nodes-base.microsoftToDo" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"microsoftToDoOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftToDoOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}}] as const;
+export const credentials = [{"name":"microsoftToDoOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftToDoOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftToDoNodeParameters {
     /** Default: "microsoftToDoOAuth2Api" */
-    readonly authentication?: "microsoftToDoOAuth2Api" | "microsoftOAuth2Api";
+    readonly authentication?: "microsoftToDoOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
+
+    /**
+     * The user whose To Do lists and tasks the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * Default: {"mode":"id","value":""}
+     */
+    readonly userTarget?: {
+	value: string,
+	mode: "id",
+};
 
     /** Default: "task" */
     readonly resource?: "linkedResource" | "list" | "task";
