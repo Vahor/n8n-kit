@@ -31,8 +31,19 @@ export interface ZendeskOAuth2ApiCredentials {
     /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
-    /** Default: "read write" */
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"read write\"}}" */
     readonly "scope"?: unknown;
+
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "read write"
+     */
+    readonly "enabledScopes"?: string;
 
     /** For some services additional query parameters have to be set which can be defined here */
     readonly "authQueryParameters"?: unknown;

@@ -3,7 +3,7 @@
 
 export const description = "Starts the workflow when Notion events occur" as const;
 export const type = "n8n-nodes-base.notionTrigger" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"notionApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"notionOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
@@ -22,6 +22,15 @@ export interface NotionTriggerNodeParameters {
     readonly databaseId?: {
 	value: string,
 	mode: "list" | "url" | "id",
+};
+
+    /**
+     * The Notion Data Source to operate on
+     * Default: {"mode":"list","value":""}
+     */
+    readonly dataSourceId?: {
+	value: string,
+	mode: "list" | "id",
 };
 
     /**

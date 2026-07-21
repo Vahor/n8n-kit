@@ -5,24 +5,24 @@ import type { NotionApiCredentials } from "../credentials/NotionApi.ts";
 import type { NotionOAuth2ApiCredentials } from "../credentials/NotionOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { NotionTriggerNodeParameters } from "../nodes/NotionTrigger";
+import type { NotionV3NodeParameters } from "../nodes/NotionV3";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface NotionTriggerProps extends NodeProps {
+export interface NotionV3Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: NotionTriggerNodeParameters;
+    readonly parameters?: NotionV3NodeParameters;
     readonly notionApiCredentials?: Credentials<NotionApiCredentials>;
     readonly notionOAuth2ApiCredentials?: Credentials<NotionOAuth2ApiCredentials>;
 }
 
 /**
- * Starts the workflow when Notion events occur
+ * Consume Notion API
  */
-export class NotionTrigger<L extends string, C extends IContext = never, P extends NotionTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
-    protected type = "n8n-nodes-base.notionTrigger" as const;
-    protected typeVersion = 1.1 as const;
+export class NotionV3<L extends string, C extends IContext = never, P extends NotionV3Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+    protected type = "n8n-nodes-base.notion" as const;
+    protected typeVersion = 3 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

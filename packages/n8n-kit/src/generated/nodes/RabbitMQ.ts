@@ -3,7 +3,7 @@
 
 export const description = "Sends messages to a RabbitMQ topic" as const;
 export const type = "n8n-nodes-base.rabbitmq" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const credentials = [{"name":"rabbitmq","required":true,"testedBy":"rabbitmqConnectionTest"}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

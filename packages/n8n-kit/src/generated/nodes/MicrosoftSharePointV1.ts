@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/SharePoint/MicrosoftSharePoint.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Microsoft/SharePoint/v1/MicrosoftSharePointV1.node.ts' node
 
 export const description = "Interact with Microsoft SharePoint API" as const;
 export const type = "n8n-nodes-base.microsoftSharePoint" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"microsoftSharePointOAuth2Api","required":tr
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface MicrosoftSharePointNodeParameters {
+export interface MicrosoftSharePointV1NodeParameters {
     /** Default: "file" */
     readonly resource?: "file" | "item" | "list";
 

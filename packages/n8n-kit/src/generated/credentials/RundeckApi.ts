@@ -13,5 +13,8 @@ export interface RundeckApiCredentials {
     /** Type options: {"password":true} */
     readonly "token"?: string;
 
+    /** Default: "default" */
+    readonly "sslCertificateValidation"?: "default" | "enabled" | "disabled";
+
     readonly __name: "rundeckApi";
 }

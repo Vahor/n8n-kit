@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/MessageAnAgent/MessageAnAgent.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/MessageAnAgent/v1/MessageAnAgentV1.node.ts' node
 
 export const description = "Send a message to a n8n agent" as const;
 export const type = "n8n-nodes-base.messageAnAgent" as const;
@@ -7,7 +7,7 @@ export const version = 1 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface MessageAnAgentNodeParameters {
+export interface MessageAnAgentV1NodeParameters {
     /**
      * The agent to send the message to
      * Default: {"mode":"list","value":""}
@@ -23,12 +23,6 @@ export interface MessageAnAgentNodeParameters {
      */
     readonly message?: string;
 
-    /**
-     * Whether to call the agent once per input item or a single time for all items
-     * Default: "allItems"
-     */
-    readonly invokeMode?: "allItems" | "perItem";
-
     /** Whether to constrain the agent response to a JSON Schema you provide. The conforming object is returned on the "structuredOutput" field. */
     readonly useStructuredOutput?: boolean;
 
@@ -40,6 +34,6 @@ export interface MessageAnAgentNodeParameters {
     readonly outputSchema?: string;
 
     /** Default: {} */
-    readonly advanced?: { sessionId?: string, allowOtherNodesData?: boolean };
+    readonly advanced?: { invokeMode?: "allItems" | "perItem", sessionId?: string, allowOtherNodesData?: boolean };
 
 }
