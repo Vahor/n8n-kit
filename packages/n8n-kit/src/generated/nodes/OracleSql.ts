@@ -47,7 +47,7 @@ export interface OracleSqlNodeParameters {
     readonly combineConditions?: "AND" | "OR";
 
     /** Default: {} */
-    readonly options?: { autoCommit?: boolean, params?: { values: Array<{ name: string, bindDirection: "in" | "out" | "inout", datatype: "blob" | "boolean" | "date" | "json" | "number" | "sparse" | "string" | "vector", valueString?: string, valueNumber?: number, valueDate?: string, valueBoolean?: boolean, valueJson?: string, valueVector?: string, valueBlob?: string, valueSparse?: { dimensions?: number, indices?: string, values?: string }, parseInStatement: false | true }> }, fetchArraySize?: number, prefetchRows?: number, outputColumns?: unknown[], largeNumbersOutputAsString?: boolean, stmtBatching?: "single" | "independently" | "transaction" };
+    readonly options?: { autoCommit?: boolean, params?: { values: Array<{ name: string, bindDirection: "in" | "out" | "inout", datatype: "blob" | "boolean" | "date" | "json" | "number" | "sparse" | "string" | "vector", valueString?: string, valueNumber?: number, valueDate?: string, valueBoolean?: boolean, valueJson?: string, valueVector?: string, valueBlob?: string, valueSparse?: { dimensions?: number, indices?: string, values?: string }, parseInStatement: false | true }> }, fetchArraySize?: number, prefetchRows?: number, stringOutBindMaxSize?: number, outputColumns?: unknown[], largeNumbersOutputAsString?: boolean, stmtBatching?: "single" | "independently" | "transaction" };
 
     /**
      * The SQL statement to execute. You can use n8n expressions and positional parameters like :1, :2, :3, or named parameters like :name, :ID, etc to refer to the 'Bind Variable Placeholder Values' set in options below.

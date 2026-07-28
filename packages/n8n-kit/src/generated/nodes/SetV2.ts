@@ -3,7 +3,7 @@
 
 export const description = "Modify, add, or remove item fields" as const;
 export const type = "n8n-nodes-base.set" as const;
-export const version = 3.4 as const;
+export const version = 3.5 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 

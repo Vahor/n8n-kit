@@ -1,1 +1,84 @@
-{"active":false,"connections":{"Sample data (greeting + language)":{"main":[[{"index":1,"node":"Merge (name + language + greeting)","type":"main"}]]},"Sample data (name + language)":{"main":[[{"index":0,"node":"Merge (name + language + greeting)","type":"main"}]]},"When clicking ‘Test workflow’":{"main":[[{"index":0,"node":"Sample data (name + language)","type":"main"},{"index":0,"node":"Sample data (greeting + language)","type":"main"}]]}},"id":"FBnnuXjBlA55u","name":"Merge Example","nodes":[{"id":"Merge (name + language + greeting)","name":"Merge (name + language + greeting)","parameters":{"fieldsToMatchString":"language","mode":"combine"},"position":[520,180],"type":"n8n-nodes-base.merge","typeVersion":3.2},{"id":"Sample data (greeting + language)","name":"Sample data (greeting + language)","parameters":{"jsCode":"\nreturn [\n  {\n    json: {\n      greeting: 'Hello',\n      language: 'en',\n    }\n  },\n  {\n    json: {\n      greeting: 'Hallo',\n      language: 'de',\n    }\n  }\n];\n"},"position":[260,300],"type":"n8n-nodes-base.code","typeVersion":2},{"id":"Sample data (name + language)","name":"Sample data (name + language)","parameters":{"jsCode":"\nreturn [\n  {\n    json: {\n      name: 'Stefan',\n      language: 'de',\n    }\n  },\n  {\n    json: {\n      name: 'Jim',\n      language: 'en',\n    }\n  },\n  {\n    json: {\n      name: 'Hans',\n      language: 'de',\n    }\n  }\n];\n"},"position":[260,60],"type":"n8n-nodes-base.code","typeVersion":2},{"id":"When clicking ‘Test workflow’","name":"When clicking ‘Test workflow’","position":[60,180],"type":"n8n-nodes-base.manualTrigger","typeVersion":1}],"settings":{},"tags":[{"name":"@vahor/n8n-FBnnuXjBlA55u"}]}
+{
+	"active": false,
+	"connections": {
+		"Sample data (greeting + language)": {
+			"main": [
+				[
+					{
+						"index": 1,
+						"node": "Merge (name + language + greeting)",
+						"type": "main"
+					}
+				]
+			]
+		},
+		"Sample data (name + language)": {
+			"main": [
+				[
+					{
+						"index": 0,
+						"node": "Merge (name + language + greeting)",
+						"type": "main"
+					}
+				]
+			]
+		},
+		"When clicking ‘Test workflow’": {
+			"main": [
+				[
+					{
+						"index": 0,
+						"node": "Sample data (name + language)",
+						"type": "main"
+					},
+					{
+						"index": 0,
+						"node": "Sample data (greeting + language)",
+						"type": "main"
+					}
+				]
+			]
+		}
+	},
+	"id": "FBnnuXjBlA55u",
+	"name": "Merge Example",
+	"nodes": [
+		{
+			"id": "Merge (name + language + greeting)",
+			"name": "Merge (name + language + greeting)",
+			"parameters": { "fieldsToMatchString": "language", "mode": "combine" },
+			"position": [520, 180],
+			"type": "n8n-nodes-base.merge",
+			"typeVersion": 3.2
+		},
+		{
+			"id": "Sample data (greeting + language)",
+			"name": "Sample data (greeting + language)",
+			"parameters": {
+				"jsCode": "\nreturn [\n  {\n    json: {\n      greeting: 'Hello',\n      language: 'en',\n    }\n  },\n  {\n    json: {\n      greeting: 'Hallo',\n      language: 'de',\n    }\n  }\n];\n"
+			},
+			"position": [260, 300],
+			"type": "n8n-nodes-base.code",
+			"typeVersion": 2
+		},
+		{
+			"id": "Sample data (name + language)",
+			"name": "Sample data (name + language)",
+			"parameters": {
+				"jsCode": "\nreturn [\n  {\n    json: {\n      name: 'Stefan',\n      language: 'de',\n    }\n  },\n  {\n    json: {\n      name: 'Jim',\n      language: 'en',\n    }\n  },\n  {\n    json: {\n      name: 'Hans',\n      language: 'de',\n    }\n  }\n];\n"
+			},
+			"position": [260, 60],
+			"type": "n8n-nodes-base.code",
+			"typeVersion": 2
+		},
+		{
+			"id": "When clicking ‘Test workflow’",
+			"name": "When clicking ‘Test workflow’",
+			"position": [60, 180],
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1
+		}
+	],
+	"settings": {},
+	"tags": [{ "name": "@vahor/n8n-FBnnuXjBlA55u" }]
+}

@@ -17,7 +17,11 @@ export interface MiroOAuth2ApiCredentials {
     /** Default: "https://api.miro.com/v1/oauth/token" */
     readonly "accessTokenUrl": unknown;
 
-    readonly "scope": unknown;
+    /**
+     * OAuth scopes to request. See <a href="https://developers.miro.com/reference/scopes">Miro scopes documentation</a>.
+     * Default: "boards:read boards:write"
+     */
+    readonly "scope": string;
 
     readonly "authQueryParameters"?: unknown;
 

@@ -4,11 +4,14 @@
 export const description = "Starts the workflow when Google Sheets events occur" as const;
 export const type = "n8n-nodes-base.googleSheetsTrigger" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"googleSheetsTriggerOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["triggerOAuth2"]}}}] as const;
+export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["serviceAccount"]}},"testedBy":"googleApiCredentialTest"},{"name":"googleSheetsTriggerOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["triggerOAuth2"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GoogleSheetsTriggerNodeParameters {
+    /** Default: "triggerOAuth2" */
+    readonly authentication?: "serviceAccount" | "triggerOAuth2";
+
     /** Default: {"mode":"list","value":""} */
     readonly documentId?: {
 	value: string,

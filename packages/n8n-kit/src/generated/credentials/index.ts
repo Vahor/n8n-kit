@@ -154,6 +154,7 @@ import type { GhostAdminApiCredentials } from "./GhostAdminApi.ts";
 import type { GhostContentApiCredentials } from "./GhostContentApi.ts";
 import type { GitPasswordCredentials } from "./GitPassword.ts";
 import type { GithubApiCredentials } from "./GithubApi.ts";
+import type { GithubAppApiCredentials } from "./GithubAppApi.ts";
 import type { GithubOAuth2ApiCredentials } from "./GithubOAuth2Api.ts";
 import type { GitlabApiCredentials } from "./GitlabApi.ts";
 import type { GitlabOAuth2ApiCredentials } from "./GitlabOAuth2Api.ts";
@@ -259,6 +260,7 @@ import type { MicrosoftAzureCosmosDbSharedKeyApiCredentials } from "./MicrosoftA
 import type { MicrosoftAzureMonitorOAuth2ApiCredentials } from "./MicrosoftAzureMonitorOAuth2Api.ts";
 import type { MicrosoftDynamicsOAuth2ApiCredentials } from "./MicrosoftDynamicsOAuth2Api.ts";
 import type { MicrosoftEntraOAuth2ApiCredentials } from "./MicrosoftEntraOAuth2Api.ts";
+import type { MicrosoftEntraServicePrincipalApiCredentials } from "./MicrosoftEntraServicePrincipalApi.ts";
 import type { MicrosoftExcelOAuth2ApiCredentials } from "./MicrosoftExcelOAuth2Api.ts";
 import type { MicrosoftGraphSecurityOAuth2ApiCredentials } from "./MicrosoftGraphSecurityOAuth2Api.ts";
 import type { MicrosoftOAuth2ApiCredentials } from "./MicrosoftOAuth2Api.ts";
@@ -340,6 +342,7 @@ import type { S3Credentials } from "./S3.ts";
 import type { SalesforceJwtApiCredentials } from "./SalesforceJwtApi.ts";
 import type { SalesforceOAuth2ApiCredentials } from "./SalesforceOAuth2Api.ts";
 import type { SalesmateApiCredentials } from "./SalesmateApi.ts";
+import type { SchemaRegistryApiCredentials } from "./SchemaRegistryApi.ts";
 import type { SeaTableApiCredentials } from "./SeaTableApi.ts";
 import type { SecurityScorecardApiCredentials } from "./SecurityScorecardApi.ts";
 import type { SegmentApiCredentials } from "./SegmentApi.ts";
@@ -394,6 +397,7 @@ import type { TotpApiCredentials } from "./TotpApi.ts";
 import type { TravisCiApiCredentials } from "./TravisCiApi.ts";
 import type { TrellixEpoApiCredentials } from "./TrellixEpoApi.ts";
 import type { TrelloApiCredentials } from "./TrelloApi.ts";
+import type { TrelloOAuth1ApiCredentials } from "./TrelloOAuth1Api.ts";
 import type { TwakeCloudApiCredentials } from "./TwakeCloudApi.ts";
 import type { TwakeServerApiCredentials } from "./TwakeServerApi.ts";
 import type { TwilioApiCredentials } from "./TwilioApi.ts";
@@ -593,6 +597,7 @@ export type N8nCredentialsUnion =
     | GhostContentApiCredentials
     | GitPasswordCredentials
     | GithubApiCredentials
+    | GithubAppApiCredentials
     | GithubOAuth2ApiCredentials
     | GitlabApiCredentials
     | GitlabOAuth2ApiCredentials
@@ -698,6 +703,7 @@ export type N8nCredentialsUnion =
     | MicrosoftAzureMonitorOAuth2ApiCredentials
     | MicrosoftDynamicsOAuth2ApiCredentials
     | MicrosoftEntraOAuth2ApiCredentials
+    | MicrosoftEntraServicePrincipalApiCredentials
     | MicrosoftExcelOAuth2ApiCredentials
     | MicrosoftGraphSecurityOAuth2ApiCredentials
     | MicrosoftOAuth2ApiCredentials
@@ -779,6 +785,7 @@ export type N8nCredentialsUnion =
     | SalesforceJwtApiCredentials
     | SalesforceOAuth2ApiCredentials
     | SalesmateApiCredentials
+    | SchemaRegistryApiCredentials
     | SeaTableApiCredentials
     | SecurityScorecardApiCredentials
     | SegmentApiCredentials
@@ -833,6 +840,7 @@ export type N8nCredentialsUnion =
     | TravisCiApiCredentials
     | TrellixEpoApiCredentials
     | TrelloApiCredentials
+    | TrelloOAuth1ApiCredentials
     | TwakeCloudApiCredentials
     | TwakeServerApiCredentials
     | TwilioApiCredentials

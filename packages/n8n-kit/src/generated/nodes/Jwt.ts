@@ -26,6 +26,13 @@ export interface JwtNodeParameters {
     readonly claimsJson?: string;
 
     /**
+     * Custom claims to add to the JWT header, such as a certificate thumbprint (x5t) or key ID (kid). These are merged with the auto-generated header, and values set here take precedence. Useful for building Microsoft Entra certificate client assertions.
+     * Default: "{}"
+     * Type options: {"rows":5}
+     */
+    readonly headerClaims?: string;
+
+    /**
      * The token to verify or decode
      * Type options: {"password":true}
      */

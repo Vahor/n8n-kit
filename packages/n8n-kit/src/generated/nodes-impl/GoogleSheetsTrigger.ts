@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleSheetsTriggerOAuth2ApiCredentials } from "../credentials/GoogleSheetsTriggerOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
@@ -12,6 +13,7 @@ export interface GoogleSheetsTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: GoogleSheetsTriggerNodeParameters;
+    readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
     readonly googleSheetsTriggerOAuth2ApiCredentials?: Credentials<GoogleSheetsTriggerOAuth2ApiCredentials>;
 }
 
@@ -27,7 +29,7 @@ export class GoogleSheetsTrigger<L extends string, C extends IContext = never, P
     }
 
     override getCredentials() {
-        return [this.props?.googleSheetsTriggerOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleSheetsTriggerOAuth2ApiCredentials];
     }
 
 }

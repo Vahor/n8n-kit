@@ -8,7 +8,18 @@ export const name = "microsoftToDoOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftToDoOAuth2ApiCredentials {
-    /** Default: "openid offline_access Tasks.ReadWrite" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "openid offline_access Tasks.ReadWrite"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access Tasks.ReadWrite\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "microsoftToDoOAuth2Api";

@@ -28,12 +28,12 @@ export interface PipedriveTriggerNodeParameters {
      * Type of object to receive notifications about
      * Default: "*"
      */
-    readonly entity?: "activity" | "activityType" | "*" | "deal" | "note" | "organization" | "person" | "pipeline" | "product" | "stage" | "user";
+    readonly entity?: "activity" | "activityType" | "*" | "deal" | "lead" | "note" | "organization" | "person" | "pipeline" | "product" | "stage" | "user";
 
     /**
      * Type of object to receive notifications about
      * Default: "*"
      */
-    readonly object?: "activity" | "activityType" | "*" | "deal" | "note" | "organization" | "person" | "pipeline" | "product" | "stage" | "user";
+    readonly object?: "activity" | "activityType" | "*" | "deal" | "lead" | "note" | "organization" | "person" | "pipeline" | "product" | "stage" | "user";
 
 }

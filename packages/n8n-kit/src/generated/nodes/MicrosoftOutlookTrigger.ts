@@ -4,11 +4,23 @@
 export const description = "Fetches emails from Microsoft Outlook and starts the workflow on specified polling intervals." as const;
 export const type = "n8n-nodes-base.microsoftOutlookTrigger" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOutlookOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOutlookTriggerNodeParameters {
+    /** Default: "microsoftOutlookOAuth2Api" */
+    readonly authentication?: "microsoftOutlookOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
+
+    /**
+     * The mailbox the Service Principal should act on. In the action node this is evaluated per input item (an expression can target a different mailbox per item); the trigger resolves it once.
+     * Default: {"mode":"id","value":""}
+     */
+    readonly mailbox?: {
+	value: string,
+	mode: "id",
+};
+
     /** Default: "messageReceived" */
     readonly event?: "messageReceived";
 

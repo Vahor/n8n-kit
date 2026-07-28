@@ -109,6 +109,6 @@ export interface WaitNodeParameters {
     readonly maxDateAndTime?: string;
 
     /** Default: {} */
-    readonly options?: { binaryData?: boolean, binaryPropertyName?: string, ignoreBots?: boolean, ipWhitelist?: string, noResponseBody?: boolean, rawBody?: boolean, responseData?: string, responseContentType?: string, responseHeaders?: { entries: Array<{ name?: string, value?: string }> }, responsePropertyName?: string, webhookSuffix?: string } | { appendAttribution?: boolean, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, webhookSuffix?: string } | { appendAttribution?: boolean, webhookSuffix?: string };
+    readonly options?: { binaryData?: boolean, binaryPropertyName?: string, ignoreBots?: boolean, onlyRunIf?: string, ipWhitelist?: string, noResponseBody?: boolean, rawBody?: boolean, responseData?: string, responseContentType?: string, responseHeaders?: { entries: Array<{ name?: string, value?: string }> }, responsePropertyName?: string, webhookSuffix?: string } | { appendAttribution?: boolean, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, webhookSuffix?: string } | { appendAttribution?: boolean, webhookSuffix?: string };
 
 }

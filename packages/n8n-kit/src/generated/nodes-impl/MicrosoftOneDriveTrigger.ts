@@ -2,6 +2,8 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MicrosoftOneDriveOAuth2ApiCredentials } from "../credentials/MicrosoftOneDriveOAuth2Api.ts";
+import type { MicrosoftOAuth2ApiCredentials } from "../credentials/MicrosoftOAuth2Api.ts";
+import type { MicrosoftEntraServicePrincipalApiCredentials } from "../credentials/MicrosoftEntraServicePrincipalApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftOneDriveTriggerNodeParameters } from "../nodes/MicrosoftOneDriveTrigger";
@@ -12,7 +14,9 @@ export interface MicrosoftOneDriveTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: MicrosoftOneDriveTriggerNodeParameters;
-    readonly microsoftOneDriveOAuth2ApiCredentials: Credentials<MicrosoftOneDriveOAuth2ApiCredentials>;
+    readonly microsoftOneDriveOAuth2ApiCredentials?: Credentials<MicrosoftOneDriveOAuth2ApiCredentials>;
+    readonly microsoftOAuth2ApiCredentials?: Credentials<MicrosoftOAuth2ApiCredentials>;
+    readonly microsoftEntraServicePrincipalApiCredentials?: Credentials<MicrosoftEntraServicePrincipalApiCredentials>;
 }
 
 /**
@@ -22,12 +26,12 @@ export class MicrosoftOneDriveTrigger<L extends string, C extends IContext = nev
     protected type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.microsoftOneDriveOAuth2ApiCredentials];
+        return [this.props?.microsoftOneDriveOAuth2ApiCredentials, this.props?.microsoftOAuth2ApiCredentials, this.props?.microsoftEntraServicePrincipalApiCredentials];
     }
 
 }

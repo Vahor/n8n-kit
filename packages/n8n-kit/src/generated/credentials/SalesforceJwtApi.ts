@@ -8,6 +8,11 @@ export const name = "salesforceJwtApi" as const;
  * documentationUrl: salesforce
  */
 export interface SalesforceJwtApiCredentials {
+    /** Type options: {"expirable":true} */
+    readonly "accessToken"?: unknown;
+
+    readonly "instanceUrl"?: unknown;
+
     /** Default: "production" */
     readonly "environment"?: "production" | "sandbox";
 

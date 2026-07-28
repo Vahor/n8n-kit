@@ -1,6 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // see scripts/generate-nodes-impl.ts
 
+import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
 import type { GoogleCloudStorageOAuth2ApiCredentials } from "../credentials/GoogleCloudStorageOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
@@ -12,7 +13,8 @@ export interface GoogleCloudStorageProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: GoogleCloudStorageNodeParameters;
-    readonly googleCloudStorageOAuth2ApiCredentials: Credentials<GoogleCloudStorageOAuth2ApiCredentials>;
+    readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
+    readonly googleCloudStorageOAuth2ApiCredentials?: Credentials<GoogleCloudStorageOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class GoogleCloudStorage<L extends string, C extends IContext = never, P 
     protected type = "n8n-nodes-base.googleCloudStorage" as const;
     protected typeVersion = 1.1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.googleCloudStorageOAuth2ApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleCloudStorageOAuth2ApiCredentials];
     }
 
 }

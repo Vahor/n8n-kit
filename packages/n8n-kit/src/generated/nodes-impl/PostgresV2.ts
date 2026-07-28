@@ -20,7 +20,7 @@ export interface PostgresV2Props extends NodeProps {
  */
 export class PostgresV2<L extends string, C extends IContext = never, P extends PostgresV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.postgres" as const;
-    protected typeVersion = 2.6 as const;
+    protected typeVersion = 2.7 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);
