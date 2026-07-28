@@ -35,7 +35,7 @@
 		"automation"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "2.4.14",
+		"@biomejs/biome": "2.5.6",
 		"@changesets/changelog-github": "^0.7.0",
 		"@changesets/cli": "^2.31.1",
 		"@types/bun": "1.3.13",
