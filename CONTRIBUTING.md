@@ -56,28 +56,21 @@ If the [n8n](https://github.com/n8n-io/n8n) repository has been updated with new
 git submodule update --remote
 ```
 
-2. If new `@n8n/*` packages were added upstream, add them to the sparse-checkout:
-
-```bash
-# packages/n8n-kit/vendor/n8n
-git sparse-checkout add packages/@n8n/<package-name>
-```
-
-3. Patch the generated files:
+2. Patch the generated files:
 
 ```bash
 # packages/n8n-kit
 bash scripts/replace-n8n-nodes-base-path.sh
 ```
 
-4. Generate the new files:
+3. Generate the new files:
 
 ```bash
 # packages/n8n-kit
 bun run generate
 ```
 
-5. Check that the examples still work:
+4. Check that the examples still work:
 
 ```bash
 # root directory
@@ -148,7 +141,7 @@ Note: we don't run the examples for each commit as it might take too long (updat
 git submodule add https://github.com/n8n-io/n8n.git vendor/n8n
 cd vendor/n8n
 git sparse-checkout init --cone
-git sparse-checkout set packages/nodes-base packages/@n8n/nodes-langchain packages/@n8n/backend-network
+git sparse-checkout set packages/nodes-base packages/@n8n/nodes-langchain
 ```
 
 refresh with `git submodule update --remote`
@@ -157,3 +150,5 @@ refresh with `git submodule update --remote`
 ### n8n-kit dev deps
 
 Some of the dev dependencies are only here for the generation of the nodes. So we have to make sure the versions are the same as the ones in the n8n repo. If there's a dependency issue like `Missing 'default' export in module`, `Export named 'assertParamIsOfAnyTypes' not found in module`, `Cannot find module '@langchain/community/vectorstores/supabase'` check vendor/n8n/[name]/package.json
+
+If a new `@n8n/*` scoped package is required upstream (e.g., `@n8n/backend-network`), add it as a devDependency in `packages/n8n-kit/package.json` so the generation scripts can resolve it at runtime.

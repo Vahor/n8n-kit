@@ -38,6 +38,7 @@ jobs:
           n8n_workflow_version=$(jq -r '.dependencies["n8n-workflow"]' <<< "$n8n_metadata")
           n8n_langchain_version=$(jq -r '.dependencies["@n8n/n8n-nodes-langchain"]' <<< "$n8n_metadata")
           n8n_ai_utilities_version=$(jq -r '.dependencies["@n8n/ai-utilities"]' <<< "$n8n_metadata")
+          n8n_backend_network_version=$(jq -r '.dependencies["@n8n/backend-network"]' <<< "$n8n_metadata")
 
           git -C packages/n8n-kit/vendor/n8n fetch --tags origin "refs/tags/n8n@$n8n_stable_version:refs/tags/n8n@$n8n_stable_version"
           git -C packages/n8n-kit/vendor/n8n checkout "n8n@$n8n_stable_version"
@@ -51,6 +52,7 @@ jobs:
           echo "N8N_WORKFLOW_VERSION=$n8n_workflow_version" >> $GITHUB_ENV
           echo "N8N_LANGCHAIN_VERSION=$n8n_langchain_version" >> $GITHUB_ENV
           echo "N8N_AI_UTILITIES_VERSION=$n8n_ai_utilities_version" >> $GITHUB_ENV
+          echo "N8N_BACKEND_NETWORK_VERSION=$n8n_backend_network_version" >> $GITHUB_ENV
 
       - name: Check if submodules have updates
         id: check-updates
@@ -99,7 +101,8 @@ jobs:
             "n8n-core@$N8N_CORE_VERSION" \
             "n8n-workflow@$N8N_WORKFLOW_VERSION" \
             "@n8n/n8n-nodes-langchain@$N8N_LANGCHAIN_VERSION" \
-            "@n8n/ai-utilities@$N8N_AI_UTILITIES_VERSION"
+            "@n8n/ai-utilities@$N8N_AI_UTILITIES_VERSION" \
+            "@n8n/backend-network@$N8N_BACKEND_NETWORK_VERSION"
       - name: Update cli dependencies
         if: steps.check-updates.outputs.has_updates == 'true'
         working-directory: packages/n8n-cli
