@@ -56,21 +56,28 @@ If the [n8n](https://github.com/n8n-io/n8n) repository has been updated with new
 git submodule update --remote
 ```
 
-2. Patch the generated files:
+2. If new `@n8n/*` packages were added upstream, add them to the sparse-checkout:
+
+```bash
+# packages/n8n-kit/vendor/n8n
+git sparse-checkout add packages/@n8n/<package-name>
+```
+
+3. Patch the generated files:
 
 ```bash
 # packages/n8n-kit
 bash scripts/replace-n8n-nodes-base-path.sh
 ```
 
-3. Generate the new files:
+4. Generate the new files:
 
 ```bash
 # packages/n8n-kit
 bun run generate
 ```
 
-4. Check that the examples still work:
+5. Check that the examples still work:
 
 ```bash
 # root directory
@@ -141,7 +148,7 @@ Note: we don't run the examples for each commit as it might take too long (updat
 git submodule add https://github.com/n8n-io/n8n.git vendor/n8n
 cd vendor/n8n
 git sparse-checkout init --cone
-git sparse-checkout set packages/nodes-base packages/@n8n/nodes-langchain
+git sparse-checkout set packages/nodes-base packages/@n8n/nodes-langchain packages/@n8n/backend-network
 ```
 
 refresh with `git submodule update --remote`
