@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { FacebookGraphAppApiCredentials } from "../credentials/FacebookGraphAppApi.ts";
+import type { FacebookGraphAppOAuth2ApiCredentials } from "../credentials/FacebookGraphAppOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { FacebookTriggerNodeParameters } from "../nodes/FacebookTrigger";
@@ -12,7 +13,8 @@ export interface FacebookTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: FacebookTriggerNodeParameters;
-    readonly facebookGraphAppApiCredentials: Credentials<FacebookGraphAppApiCredentials>;
+    readonly facebookGraphAppApiCredentials?: Credentials<FacebookGraphAppApiCredentials>;
+    readonly facebookGraphAppOAuth2ApiCredentials?: Credentials<FacebookGraphAppOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class FacebookTrigger<L extends string, C extends IContext = never, P ext
     protected type = "n8n-nodes-base.facebookTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.facebookGraphAppApiCredentials];
+        return [this.props?.facebookGraphAppApiCredentials, this.props?.facebookGraphAppOAuth2ApiCredentials];
     }
 
 }

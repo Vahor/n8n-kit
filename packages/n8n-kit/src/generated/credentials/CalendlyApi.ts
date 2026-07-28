@@ -4,7 +4,7 @@
 export const name = "calendlyApi" as const;
 
 /**
- * displayName: Calendly API
+ * displayName: Calendly Personal Access Token API
  * documentationUrl: calendly
  */
 export interface CalendlyApiCredentials {

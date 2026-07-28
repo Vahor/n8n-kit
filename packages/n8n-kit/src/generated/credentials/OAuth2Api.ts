@@ -45,10 +45,17 @@ export interface OAuth2ApiCredentials {
      */
     readonly "tokenExpiredStatusCode"?: number;
 
-    /** Whether the IdP returns tokens encrypted as JWE to the public key at this instance’s JWKS endpoint. The response must contain at least one JWE-encrypted token (access or ID token); fully plaintext responses are rejected. The field is hidden by the server unless the OAuth2 JWE feature is enabled. */
+    /** Whether the IdP returns tokens encrypted as JWE to the public key at this instance’s JWKS endpoint. The response must contain at least one JWE-encrypted token (access or ID token); fully plaintext responses are rejected. */
     readonly "jweEnabled"?: boolean;
 
-    readonly "jwksUriNotice"?: string;
+    /**
+     * Provide this URL to your IdP so it can fetch the public key used to encrypt access and ID tokens for this instance.
+     * Type options: {"copyButton":true}
+     */
+    readonly "jwksUri"?: string;
+
+    /** Whether to send the public keys directly in the dynamic client registration payload instead of advertising a JWKS URI. Enable this when the IdP cannot reach this instance (e.g. when self-hosted behind a firewall). */
+    readonly "inlineJwks"?: boolean;
 
     readonly __name: "oAuth2Api";
 }

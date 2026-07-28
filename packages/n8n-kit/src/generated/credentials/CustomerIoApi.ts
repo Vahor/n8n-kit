@@ -29,5 +29,11 @@ export interface CustomerIoApiCredentials {
      */
     readonly "appApiKey"?: string;
 
+    /**
+     * Used to verify webhook authenticity. Found in Customer.io under Integrations → Reporting Webhooks.
+     * Type options: {"password":true}
+     */
+    readonly "webhookSigningKey"?: string;
+
     readonly __name: "customerIoApi";
 }

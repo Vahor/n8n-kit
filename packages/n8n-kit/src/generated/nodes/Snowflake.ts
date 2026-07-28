@@ -4,11 +4,14 @@
 export const description = "Get, add and update data in Snowflake" as const;
 export const type = "n8n-nodes-base.snowflake" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"snowflake","required":true}] as const;
+export const credentials = [{"name":"snowflake","required":true,"displayOptions":{"show":{"authentication":["credentials"]}}},{"name":"snowflakeOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SnowflakeNodeParameters {
+    /** Default: "credentials" */
+    readonly authentication?: "credentials" | "oAuth2";
+
     /** Default: "insert" */
     readonly operation?: "executeQuery" | "insert" | "update";
 

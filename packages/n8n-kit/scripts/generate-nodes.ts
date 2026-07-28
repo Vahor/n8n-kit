@@ -234,7 +234,7 @@ for (const nodePath of allNodes.sort((a, b) =>
 			instance = { ...versionsCache[nodeName]! };
 		} else {
 			delete require.cache[nodePath];
-			const file = await import(nodePath);
+			const file = require(nodePath);
 			const firstClassExport = Object.values(file).find(
 				(v) => typeof v === "function",
 			);

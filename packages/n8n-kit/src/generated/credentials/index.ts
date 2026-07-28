@@ -26,6 +26,7 @@ import type { MinimaxApiCredentials } from "./MinimaxApi.ts";
 import type { MistralCloudApiCredentials } from "./MistralCloudApi.ts";
 import type { MoonshotApiCredentials } from "./MoonshotApi.ts";
 import type { MotorheadApiCredentials } from "./MotorheadApi.ts";
+import type { NvidiaApiCredentials } from "./NvidiaApi.ts";
 import type { OllamaApiCredentials } from "./OllamaApi.ts";
 import type { OpenRouterApiCredentials } from "./OpenRouterApi.ts";
 import type { PineconeApiCredentials } from "./PineconeApi.ts";
@@ -129,9 +130,12 @@ import type { EventbriteApiCredentials } from "./EventbriteApi.ts";
 import type { EventbriteOAuth2ApiCredentials } from "./EventbriteOAuth2Api.ts";
 import type { F5BigIpApiCredentials } from "./F5BigIpApi.ts";
 import type { FacebookGraphApiCredentials } from "./FacebookGraphApi.ts";
+import type { FacebookGraphApiOAuth2ApiCredentials } from "./FacebookGraphApiOAuth2Api.ts";
 import type { FacebookGraphAppApiCredentials } from "./FacebookGraphAppApi.ts";
+import type { FacebookGraphAppOAuth2ApiCredentials } from "./FacebookGraphAppOAuth2Api.ts";
 import type { FacebookLeadAdsOAuth2ApiCredentials } from "./FacebookLeadAdsOAuth2Api.ts";
 import type { FigmaApiCredentials } from "./FigmaApi.ts";
+import type { FigmaOAuth2ApiCredentials } from "./FigmaOAuth2Api.ts";
 import type { FileMakerCredentials } from "./FileMaker.ts";
 import type { FilescanApiCredentials } from "./FilescanApi.ts";
 import type { FlowApiCredentials } from "./FlowApi.ts";
@@ -183,6 +187,7 @@ import type { GotifyApiCredentials } from "./GotifyApi.ts";
 import type { GrafanaApiCredentials } from "./GrafanaApi.ts";
 import type { GristApiCredentials } from "./GristApi.ts";
 import type { GumroadApiCredentials } from "./GumroadApi.ts";
+import type { GumroadOAuth2ApiCredentials } from "./GumroadOAuth2Api.ts";
 import type { HaloPSAApiCredentials } from "./HaloPSAApi.ts";
 import type { HarvestApiCredentials } from "./HarvestApi.ts";
 import type { HarvestOAuth2ApiCredentials } from "./HarvestOAuth2Api.ts";
@@ -213,6 +218,7 @@ import type { IterableApiCredentials } from "./IterableApi.ts";
 import type { JenkinsApiCredentials } from "./JenkinsApi.ts";
 import type { JinaAiApiCredentials } from "./JinaAiApi.ts";
 import type { JiraSoftwareCloudApiCredentials } from "./JiraSoftwareCloudApi.ts";
+import type { JiraSoftwareCloudOAuth2ApiCredentials } from "./JiraSoftwareCloudOAuth2Api.ts";
 import type { JiraSoftwareServerApiCredentials } from "./JiraSoftwareServerApi.ts";
 import type { JiraSoftwareServerPatApiCredentials } from "./JiraSoftwareServerPatApi.ts";
 import type { JotFormApiCredentials } from "./JotFormApi.ts";
@@ -289,6 +295,7 @@ import type { NpmApiCredentials } from "./NpmApi.ts";
 import type { OAuth1ApiCredentials } from "./OAuth1Api.ts";
 import type { OAuth2ApiCredentials } from "./OAuth2Api.ts";
 import type { OdooApiCredentials } from "./OdooApi.ts";
+import type { OdooApiKeyApiCredentials } from "./OdooApiKeyApi.ts";
 import type { OktaApiCredentials } from "./OktaApi.ts";
 import type { OneSimpleApiCredentials } from "./OneSimpleApi.ts";
 import type { OnfleetApiCredentials } from "./OnfleetApi.ts";
@@ -355,6 +362,7 @@ import type { SlackOAuth2ApiCredentials } from "./SlackOAuth2Api.ts";
 import type { Sms77ApiCredentials } from "./Sms77Api.ts";
 import type { SmtpCredentials } from "./Smtp.ts";
 import type { SnowflakeCredentials } from "./Snowflake.ts";
+import type { SnowflakeOAuth2ApiCredentials } from "./SnowflakeOAuth2Api.ts";
 import type { SolarWindsIpamApiCredentials } from "./SolarWindsIpamApi.ts";
 import type { SolarWindsObservabilityApiCredentials } from "./SolarWindsObservabilityApi.ts";
 import type { SplunkApiCredentials } from "./SplunkApi.ts";
@@ -457,6 +465,7 @@ export type N8nCredentialsUnion =
     | MistralCloudApiCredentials
     | MoonshotApiCredentials
     | MotorheadApiCredentials
+    | NvidiaApiCredentials
     | OllamaApiCredentials
     | OpenRouterApiCredentials
     | PineconeApiCredentials
@@ -560,9 +569,12 @@ export type N8nCredentialsUnion =
     | EventbriteOAuth2ApiCredentials
     | F5BigIpApiCredentials
     | FacebookGraphApiCredentials
+    | FacebookGraphApiOAuth2ApiCredentials
     | FacebookGraphAppApiCredentials
+    | FacebookGraphAppOAuth2ApiCredentials
     | FacebookLeadAdsOAuth2ApiCredentials
     | FigmaApiCredentials
+    | FigmaOAuth2ApiCredentials
     | FileMakerCredentials
     | FilescanApiCredentials
     | FlowApiCredentials
@@ -614,6 +626,7 @@ export type N8nCredentialsUnion =
     | GrafanaApiCredentials
     | GristApiCredentials
     | GumroadApiCredentials
+    | GumroadOAuth2ApiCredentials
     | HaloPSAApiCredentials
     | HarvestApiCredentials
     | HarvestOAuth2ApiCredentials
@@ -644,6 +657,7 @@ export type N8nCredentialsUnion =
     | JenkinsApiCredentials
     | JinaAiApiCredentials
     | JiraSoftwareCloudApiCredentials
+    | JiraSoftwareCloudOAuth2ApiCredentials
     | JiraSoftwareServerApiCredentials
     | JiraSoftwareServerPatApiCredentials
     | JotFormApiCredentials
@@ -720,6 +734,7 @@ export type N8nCredentialsUnion =
     | OAuth1ApiCredentials
     | OAuth2ApiCredentials
     | OdooApiCredentials
+    | OdooApiKeyApiCredentials
     | OktaApiCredentials
     | OneSimpleApiCredentials
     | OnfleetApiCredentials
@@ -786,6 +801,7 @@ export type N8nCredentialsUnion =
     | Sms77ApiCredentials
     | SmtpCredentials
     | SnowflakeCredentials
+    | SnowflakeOAuth2ApiCredentials
     | SolarWindsIpamApiCredentials
     | SolarWindsObservabilityApiCredentials
     | SplunkApiCredentials

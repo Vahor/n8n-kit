@@ -24,7 +24,7 @@ export interface CryptoV1NodeParameters {
      * The hash type to use
      * Default: "MD5"
      */
-    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
+    readonly type?: "MD5" | "SHA1" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
     /** The value that should be hashed */
     readonly value?: string;

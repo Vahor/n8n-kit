@@ -4,13 +4,13 @@
 export const description = "Provide cryptographic utilities" as const;
 export const type = "n8n-nodes-base.crypto" as const;
 export const version = 2 as const;
-export const credentials = [{"name":"crypto","required":true,"displayOptions":{"show":{"action":["hmac","sign"]}}}] as const;
+export const credentials = [{"name":"crypto","required":true,"displayOptions":{"show":{"action":["hmac","sign","encrypt","decrypt"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface CryptoV2NodeParameters {
     /** Default: "hash" */
-    readonly action?: "generate" | "hash" | "hmac" | "sign";
+    readonly action?: "decrypt" | "encrypt" | "generate" | "hash" | "hmac" | "sign";
 
     /** Whether the data to hashed should be taken from binary field */
     readonly binaryData?: boolean;
@@ -25,7 +25,7 @@ export interface CryptoV2NodeParameters {
      * The hash type to use
      * Default: "SHA256"
      */
-    readonly type?: "MD5" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
+    readonly type?: "MD5" | "SHA1" | "SHA256" | "SHA3-256" | "SHA3-384" | "SHA3-512" | "SHA384" | "SHA512";
 
     /** The value that should be hashed */
     readonly value?: string;
@@ -53,5 +53,14 @@ export interface CryptoV2NodeParameters {
      * Default: 32
      */
     readonly stringLength?: number;
+
+    /** Default: "symmetric" */
+    readonly mode?: "symmetric" | "asymmetric";
+
+    /**
+     * Authenticated cipher to use. The same value must be selected on encrypt and decrypt.
+     * Default: "aes-256-gcm"
+     */
+    readonly cipher?: "aes-256-gcm" | "aes-192-gcm" | "aes-128-gcm" | "chacha20-poly1305";
 
 }

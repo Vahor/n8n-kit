@@ -150,3 +150,5 @@ refresh with `git submodule update --remote`
 ### n8n-kit dev deps
 
 Some of the dev dependencies are only here for the generation of the nodes. So we have to make sure the versions are the same as the ones in the n8n repo. If there's a dependency issue like `Missing 'default' export in module`, `Export named 'assertParamIsOfAnyTypes' not found in module`, `Cannot find module '@langchain/community/vectorstores/supabase'` check vendor/n8n/[name]/package.json
+
+If a new `@n8n/*` scoped package is required upstream (e.g., `@n8n/backend-network`), add it as a devDependency in `packages/n8n-kit/package.json` so the generation scripts can resolve it at runtime.

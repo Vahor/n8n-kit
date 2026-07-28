@@ -8,7 +8,18 @@ export const name = "microsoftSharePointOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftSharePointOAuth2ApiCredentials {
-    /** Default: "=openid offline_access https://{{$self.subdomain}}.sharepoint.com/.default" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled. Use <code>{subdomain}</code> as a placeholder that will be replaced with the Subdomain value.
+     * Default: "openid offline_access https://{subdomain}.sharepoint.com/.default"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{($self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access https://{subdomain}.sharepoint.com/.default\").replace(/\\{subdomain\\}/g, $self[\"subdomain\"])}}" */
     readonly "scope"?: unknown;
 
     readonly "subdomain"?: string;

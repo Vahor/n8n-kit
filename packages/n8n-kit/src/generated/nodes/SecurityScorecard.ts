@@ -79,7 +79,7 @@ export interface SecurityScorecardNodeParameters {
 
     readonly date?: string;
 
-    /** URL to a generated report */
+    /** Report file path or HTTPS download URL from the SecurityScorecard API (api.securityscorecard.io) */
     readonly url?: string;
 
     /** Default: "data" */

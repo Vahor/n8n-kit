@@ -4,13 +4,13 @@
 export const description = "Consume Jira Software API" as const;
 export const type = "n8n-nodes-base.jira" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}}] as const;
+export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}},{"name":"jiraSoftwareCloudOAuth2Api","required":true,"displayOptions":{"show":{"jiraVersion":["cloudOAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JiraNodeParameters {
     /** Default: "cloud" */
-    readonly jiraVersion?: "cloud" | "server" | "serverPat";
+    readonly jiraVersion?: "cloud" | "cloudOAuth2" | "server" | "serverPat";
 
     /** Default: "issue" */
     readonly resource?: "issue" | "issueAttachment" | "issueComment" | "user";

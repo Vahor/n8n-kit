@@ -19,7 +19,7 @@
 			},
 			"position": [60, 60],
 			"type": "n8n-nodes-base.executeWorkflowTrigger",
-			"typeVersion": 1.1
+			"typeVersion": 1.2
 		}
 	],
 	"settings": {},

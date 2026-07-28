@@ -67,4 +67,7 @@ export interface SupabaseNodeParameters {
      */
     readonly limit?: number;
 
+    /** Column(s) to order results by, e.g. <code>ID</code> or <code>created_at.desc</code>. Recommended when using Return All or Limit ≥ 1000 to avoid duplicate or missing records. */
+    readonly orderBy?: string;
+
 }
