@@ -19,7 +19,7 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
     readonly resourceTarget?: "user" | "drive";
 
     /**
-     * The user whose OneDrive the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * The user whose OneDrive the Service Principal should act on. Resolved once per poll.
      * Default: {"mode":"id","value":""}
      */
     readonly userTarget?: {
@@ -28,7 +28,7 @@ export interface MicrosoftOneDriveTriggerNodeParameters {
 };
 
     /**
-     * The drive the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * The drive the Service Principal should act on. Resolved once per poll.
      * Default: {"mode":"id","value":""}
      */
     readonly driveTarget?: {

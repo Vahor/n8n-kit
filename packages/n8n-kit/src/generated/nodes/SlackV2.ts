@@ -168,6 +168,16 @@ export interface SlackV2NodeParameters {
     /** Default: {} */
     readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, buttonApprovalStyle?: "primary" | "secondary", disapproveLabel?: string, buttonDisapprovalStyle?: "primary" | "secondary" } };
 
+    /** Whether to use Slack interactive buttons so the responder's identity (ID, name, email) is captured and returned with the response. Requires the Slack app to have Interactivity enabled (Request URL pointed at this n8n instance), a signing secret on the credential, and the users:read and users:read.email scopes. */
+    readonly captureResponder?: boolean;
+
+    /**
+     * Restrict who can approve or decline: a click from anyone not listed is ignored and they get a private notice. Leave empty to let anyone respond. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: []
+     * Type options: {"loadOptionsMethod":"getUsers"}
+     */
+    readonly approvers?: unknown[];
+
     /** Choose whether to add a star to a message or a file */
     readonly target?: "message" | "file";
 

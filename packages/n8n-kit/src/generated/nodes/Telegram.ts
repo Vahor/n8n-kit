@@ -171,4 +171,10 @@ export interface TelegramNodeParameters {
     /** Default: {} */
     readonly options?: { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean };
 
+    /** Whether approvers respond with one tap on buttons inside the Telegram chat, instead of opening a link in the browser. Requires this n8n instance to be reachable over public HTTPS. */
+    readonly chatApproval?: boolean;
+
+    /** Default: {} */
+    readonly chatApprovalOptions?: { approverIds?: string, unauthorizedReplyText?: string, postDecisionBehavior?: "showOutcome" | "removeButtons" | "keepMessage" };
+
 }

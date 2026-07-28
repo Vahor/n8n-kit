@@ -28,6 +28,6 @@ export interface LmChatAwsBedrockNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { maxTokensToSample?: number, temperature?: number, topP?: number, maxRetries?: number, additionalModelRequestFields?: string, latency?: "standard" | "optimized", guardrail?: { values: { guardrailIdentifier?: string, guardrailVersion?: string, trace?: "disabled" | "enabled" | "enabled_full" } } };
+    readonly options?: { maxTokensToSample?: number, temperature?: number, topP?: number, maxRetries?: number, timeout?: number, additionalModelRequestFields?: string, latency?: "standard" | "optimized", guardrail?: { values: { guardrailIdentifier?: string, guardrailVersion?: string, trace?: "disabled" | "enabled" | "enabled_full" } } };
 
 }

@@ -8,17 +8,17 @@ export const name = "gristApi" as const;
  * documentationUrl: grist
  */
 export interface GristApiCredentials {
-    /** Type options: {"password":true} */
+    /**
+     * In Grist, open the account menu (top right) > Account settings > Developer to create or copy your API key
+     * Type options: {"password":true}
+     */
     readonly "apiKey": string;
 
-    /** Default: "free" */
-    readonly "planType"?: "free" | "paid" | "selfHosted";
-
-    /** Custom subdomain of your team */
-    readonly "customSubdomain": string;
-
-    /** URL of your Grist instance. Include http/https without /api and no trailing slash. */
-    readonly "selfHostedUrl": string;
+    /**
+     * Defaults to hosted Grist. Use https://YOUR_TEAM.getgrist.com for a single team, or your own URL if self-managed. Do not include /api.
+     * Default: "https://api.getgrist.com"
+     */
+    readonly "url": string;
 
     readonly __name: "gristApi";
 }

@@ -13,7 +13,7 @@ export interface MicrosoftToDoNodeParameters {
     readonly authentication?: "microsoftToDoOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
 
     /**
-     * The user whose To Do lists and tasks the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * The user whose To Do lists and tasks the Service Principal should act on. Evaluated per input item — an expression can target a different user for each item.
      * Default: {"mode":"id","value":""}
      */
     readonly userTarget?: {

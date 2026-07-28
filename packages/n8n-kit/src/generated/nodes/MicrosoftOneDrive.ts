@@ -19,7 +19,7 @@ export interface MicrosoftOneDriveNodeParameters {
     readonly resourceTarget?: "user" | "drive";
 
     /**
-     * The user whose OneDrive the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * The user whose OneDrive the Service Principal should act on. Evaluated per input item, so an expression can target a different user for each item.
      * Default: {"mode":"id","value":""}
      */
     readonly userTarget?: {
@@ -28,7 +28,7 @@ export interface MicrosoftOneDriveNodeParameters {
 };
 
     /**
-     * The drive the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * The drive the Service Principal should act on. Evaluated per input item, so an expression can target a different drive for each item.
      * Default: {"mode":"id","value":""}
      */
     readonly driveTarget?: {

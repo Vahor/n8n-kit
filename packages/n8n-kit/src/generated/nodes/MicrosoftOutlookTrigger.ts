@@ -13,7 +13,7 @@ export interface MicrosoftOutlookTriggerNodeParameters {
     readonly authentication?: "microsoftOutlookOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
 
     /**
-     * The mailbox the Service Principal should act on. Applies to the whole node (every item in the execution).
+     * The mailbox the Service Principal should act on. In the action node this is evaluated per input item (an expression can target a different mailbox per item); the trigger resolves it once.
      * Default: {"mode":"id","value":""}
      */
     readonly mailbox?: {

@@ -339,6 +339,7 @@ export type { MessageBirdNodeParameters } from "./MessageBird";
 export type { MetabaseNodeParameters } from "./Metabase";
 export type { MicrosoftDynamicsCrmNodeParameters } from "./MicrosoftDynamicsCrm";
 export type { MicrosoftEntraNodeParameters } from "./MicrosoftEntra";
+export type { MicrosoftExcelSharePointNodeParameters } from "./MicrosoftExcelSharePoint";
 export type { MicrosoftExcelV1NodeParameters } from "./MicrosoftExcelV1";
 export type { MicrosoftExcelV2NodeParameters } from "./MicrosoftExcelV2";
 export type { MicrosoftGraphSecurityNodeParameters } from "./MicrosoftGraphSecurity";

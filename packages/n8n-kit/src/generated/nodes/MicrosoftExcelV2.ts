@@ -19,7 +19,7 @@ export interface MicrosoftExcelV2NodeParameters {
     readonly resourceTarget?: "user" | "drive";
 
     /**
-     * The user whose drive the Service Principal should act on
+     * The user whose drive the Service Principal should act on. Evaluated per input item — an expression can target a different user for each item. Operations that write all rows in one request (append, update, upsert) use the first item's target.
      * Default: {"mode":"id","value":""}
      */
     readonly userTarget?: {
@@ -28,7 +28,7 @@ export interface MicrosoftExcelV2NodeParameters {
 };
 
     /**
-     * The drive the Service Principal should act on
+     * The drive the Service Principal should act on. Evaluated per input item — an expression can target a different drive for each item. Operations that write all rows in one request (append, update, upsert) use the first item's target.
      * Default: {"mode":"id","value":""}
      */
     readonly driveTarget?: {
