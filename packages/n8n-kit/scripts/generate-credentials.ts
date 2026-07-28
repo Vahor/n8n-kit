@@ -101,7 +101,7 @@ for (const node of allNodes) {
 		const nodeName = node.split("/").pop().split(".")[0]!;
 
 		delete require.cache[node];
-		const file = await import(node);
+		const file = require(node);
 		const firstExport = Object.values(file)[0];
 		// @ts-expect-error: it works
 		const instance = new firstExport();
