@@ -104,10 +104,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /** Comma-separated list of email addresses of recipients */
     readonly to?: string;
 
-    /** Default: "2026-07-28T09:52:51.034+00:00" */
+    /** Default: "2026-07-28T20:09:06.597+00:00" */
     readonly startDateTime?: string;
 
-    /** Default: "2026-07-28T10:22:51.034+00:00" */
+    /** Default: "2026-07-28T20:39:06.597+00:00" */
     readonly endDateTime?: string;
 
     /**
