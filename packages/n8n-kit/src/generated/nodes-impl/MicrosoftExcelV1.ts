@@ -16,7 +16,7 @@ export interface MicrosoftExcelV1Props extends NodeProps {
 }
 
 /**
- * Consume Microsoft Excel API
+ * Consume the Microsoft Excel API for workbooks stored in OneDrive
  */
 export class MicrosoftExcelV1<L extends string, C extends IContext = never, P extends MicrosoftExcelV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.microsoftExcel" as const;

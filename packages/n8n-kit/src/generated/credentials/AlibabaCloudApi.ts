@@ -4,7 +4,7 @@
 export const name = "alibabaCloudApi" as const;
 
 /**
- * displayName: Alibaba Cloud
+ * displayName: Qwen Cloud
  * documentationUrl: alibaba
  */
 export interface AlibabaCloudApiCredentials {
@@ -12,12 +12,12 @@ export interface AlibabaCloudApiCredentials {
     readonly "apiKey": string;
 
     /**
-     * The region for the Alibaba Cloud Model Studio API endpoint
+     * The region for the Qwen Cloud API endpoint. Currently only Singapore is supported - other regions are only available through Alibaba Cloud Model Studio.
      * Default: "ap-southeast-1"
      */
     readonly "region"?: "ap-southeast-1" | "us-east-1" | "cn-beijing" | "cn-hongkong" | "eu-central-1";
 
-    /** The Workspace ID required for the Germany (Frankfurt) region. Find it in the Model Studio console under the Germany region settings. */
+    /** The Workspace ID required for the Germany (Frankfurt) region. Not yet supported for Qwen Cloud. Find it in the Alibaba Cloud Model Studio console under the Germany region settings. */
     readonly "workspaceId": string;
 
     /** Default: "={{ (() => { const hosts = {\"ap-southeast-1\":\"https://dashscope-intl.aliyuncs.com\",\"us-east-1\":\"https://dashscope-us.aliyuncs.com\",\"cn-beijing\":\"https://dashscope.aliyuncs.com\",\"cn-hongkong\":\"https://cn-hongkong.dashscope.aliyuncs.com\"}; const region = $self.region; if (region === \"eu-central-1\") { return \"https://\" + $self.workspaceId + \".eu-central-1.maas.aliyuncs.com\"; } return hosts[region] || hosts[\"ap-southeast-1\"]; })() }}" */

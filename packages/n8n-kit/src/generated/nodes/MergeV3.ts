@@ -27,7 +27,7 @@ export interface MergeV3NodeParameters {
     readonly numberInputs?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
     /** Default: {} */
-    readonly options?: { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, fuzzyCompare?: boolean } | { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, disableDotNotation?: boolean, fuzzyCompare?: boolean, multipleMatches?: "all" | "first" } | { emptyQueryResult?: "success" | "empty" } | { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, includeUnpaired?: boolean };
+    readonly options?: { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, fuzzyCompare?: boolean } | { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, disableDotNotation?: boolean, fuzzyCompare?: boolean, multipleMatches?: "all" | "first" } | { emptyQueryResult?: "success" | "empty", queryParameters?: string } | { clashHandling?: { values: { resolveClash?: string, mergeMode?: "deepMerge" | "shallowMerge", overrideEmpty?: boolean } }, includeUnpaired?: boolean };
 
     /** Whether name(s) of field to match are different in input 1 and input 2 */
     readonly advanced?: boolean;

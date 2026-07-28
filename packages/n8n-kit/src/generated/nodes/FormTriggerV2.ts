@@ -37,6 +37,6 @@ export interface FormTriggerV2NodeParameters {
     readonly responseMode?: "onReceived" | "lastNode" | "responseNode" | "onReceived" | "lastNode";
 
     /** Default: {} */
-    readonly options?: { appendAttribution?: boolean, ipWhitelist?: string, buttonLabel?: string, path?: string, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, ignoreBots?: boolean, includeUserInOutput?: boolean, useWorkflowTimezone?: boolean, customCss?: string };
+    readonly options?: { appendAttribution?: boolean, ipWhitelist?: string, buttonLabel?: string, path?: string, respondWithOptions?: { values: { respondWith?: "text" | "redirect", formSubmittedText?: string, redirectUrl?: string } }, ignoreBots?: boolean, includeUserInOutput?: boolean, useWorkflowTimezone?: boolean, customCss?: string, showHeaders?: boolean };
 
 }

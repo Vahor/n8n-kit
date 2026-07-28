@@ -86,6 +86,15 @@ export interface GmailV2NodeParameters {
     /** Default: {} */
     readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, buttonApprovalStyle?: "primary" | "secondary", disapproveLabel?: string, buttonDisapprovalStyle?: "primary" | "secondary" } };
 
+    /** Whether to set additional email fields such as CC, BCC, sender name, and reply threading. Also allows multiple addresses in the "To" field, separated by commas. */
+    readonly advancedEmail?: boolean;
+
+    /** Default: {} */
+    readonly advancedEmailOptions?: { bccList?: string, ccList?: string, threadId?: string, replyTo?: string, senderName?: string };
+
+    /** Whether the response link opens a page where the responder confirms their choice. If disabled, the response is recorded as soon as the link is opened. */
+    readonly confirmationPage?: boolean;
+
     /** The ID of the thread you are operating on */
     readonly threadId?: string;
 

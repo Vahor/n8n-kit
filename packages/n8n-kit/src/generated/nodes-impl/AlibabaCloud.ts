@@ -18,7 +18,7 @@ export interface AlibabaCloudProps extends NodeProps {
 }
 
 /**
- * Interact with Alibaba Cloud Qwen models via Model Studio
+ * Interact with all models available on Qwen Cloud
  */
 export class AlibabaCloud<L extends string, C extends IContext = never, P extends AlibabaCloudProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.alibabaCloud" as const;

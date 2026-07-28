@@ -24,6 +24,9 @@ export interface LmChatGoogleVertexNodeParameters {
      */
     readonly modelName?: string;
 
+    /** Where the model runs. Newer Gemini models (3.x) are only available on the Global or the EU/US multi-region locations. Leave as Default to use the region set in the credential. */
+    readonly location?: "" | "global" | "eu" | "us";
+
     /**
      * Additional options to add
      * Default: {}

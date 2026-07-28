@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { KafkaCredentials } from "../credentials/Kafka.ts";
+import type { SchemaRegistryApiCredentials } from "../credentials/SchemaRegistryApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { KafkaNodeParameters } from "../nodes/Kafka";
@@ -13,6 +14,7 @@ export interface KafkaProps extends NodeProps {
     readonly outputSchema?: Type;
     readonly parameters?: KafkaNodeParameters;
     readonly kafkaCredentials: Credentials<KafkaCredentials>;
+    readonly schemaRegistryApiCredentials?: Credentials<SchemaRegistryApiCredentials>;
 }
 
 /**
@@ -27,7 +29,7 @@ export class Kafka<L extends string, C extends IContext = never, P extends Kafka
     }
 
     override getCredentials() {
-        return [this.props.kafkaCredentials];
+        return [this.props.kafkaCredentials, this.props.schemaRegistryApiCredentials];
     }
 
 }

@@ -22,6 +22,6 @@ export interface LmChatAnthropicNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { maxTokensToSample?: number, temperature?: number, topK?: number, topP?: number, thinking?: boolean, thinkingBudget?: number, thinkingMode?: "disabled" | "adaptive" | "manual", effort?: "low" | "medium" | "high" | "xhigh" | "max" | "low" | "medium" | "high" };
+    readonly options?: { maxTokensToSample?: number, temperature?: number, topK?: number, topP?: number, thinking?: boolean, thinkingBudget?: number, thinkingMode?: "disabled" | "adaptive" | "manual", effort?: "low" | "medium" | "high" | "xhigh" | "max" | "low" | "medium" | "high", streaming?: boolean };
 
 }

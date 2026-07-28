@@ -8,7 +8,18 @@ export const name = "googleBigQueryOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleBigQueryOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/drive" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/drive"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/bigquery https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/drive\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleBigQueryOAuth2Api";

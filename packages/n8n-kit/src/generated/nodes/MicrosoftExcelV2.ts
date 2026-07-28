@@ -1,14 +1,41 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/Microsoft/Excel/v2/MicrosoftExcelV2.node.ts' node
 
-export const description = "Consume Microsoft Excel API" as const;
+export const description = "Consume the Microsoft Excel API for workbooks stored in OneDrive" as const;
 export const type = "n8n-nodes-base.microsoftExcel" as const;
 export const version = 2.2 as const;
-export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftExcelOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftExcelV2NodeParameters {
+    /** Default: "microsoftExcelOAuth2Api" */
+    readonly authentication?: "microsoftExcelOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
+
+    /**
+     * Which drive the Service Principal should act on (app-only has no personal drive)
+     * Default: "user"
+     */
+    readonly resourceTarget?: "user" | "drive";
+
+    /**
+     * The user whose drive the Service Principal should act on. Evaluated per input item — an expression can target a different user for each item. Operations that write all rows in one request (append, update, upsert) use the first item's target.
+     * Default: {"mode":"id","value":""}
+     */
+    readonly userTarget?: {
+	value: string,
+	mode: "id",
+};
+
+    /**
+     * The drive the Service Principal should act on. Evaluated per input item — an expression can target a different drive for each item. Operations that write all rows in one request (append, update, upsert) use the first item's target.
+     * Default: {"mode":"id","value":""}
+     */
+    readonly driveTarget?: {
+	value: string,
+	mode: "id",
+};
+
     /** Default: "workbook" */
     readonly resource?: "table" | "workbook" | "worksheet";
 
