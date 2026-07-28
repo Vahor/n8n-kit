@@ -212,7 +212,7 @@ for (const nodePath of allNodesTypes) {
 
 	try {
 		delete require.cache[nodePath];
-		const file = await import(nodePath);
+		const file = require(nodePath);
 
 		const allCredentials: TypeData["credentials"] = [];
 		const isCredentialOptional = (cred: TypeData["credentials"][0]) => {
