@@ -4,11 +4,14 @@
 export const description = "Consume Microsoft Teams API" as const;
 export const type = "n8n-nodes-base.microsoftTeams" as const;
 export const version = 2 as const;
-export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftTeamsOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftTeamsOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftTeamsV2NodeParameters {
+    /** Default: "microsoftTeamsOAuth2Api" */
+    readonly authentication?: "microsoftTeamsOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
+
     /** Default: "channel" */
     readonly resource?: "channel" | "channelMessage" | "chatMessage" | "task";
 
@@ -31,6 +34,9 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly options?: { description?: string, type?: "private" | "standard" } | { description?: string } | { includeLinkToWorkflow?: boolean, makeReply?: string } | { includeLinkToWorkflow?: boolean } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { assignedTo?: {
 	value: string,
 	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
 }, dueDateTime?: string, percentComplete?: number };
 
     /**
@@ -115,6 +121,9 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly planId?: {
 	value: string,
 	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
 };
 
     /**
@@ -125,6 +134,9 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly bucketId?: {
 	value: string,
 	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
 };
 
     /** Title of the task */
@@ -143,15 +155,24 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly updateFields?: { assignedTo?: {
 	value: string,
 	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
 }, bucketId?: {
 	value: string,
 	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
 }, dueDateTime?: string, groupId?: {
 	value: string,
 	mode: "list" | "id",
 }, percentComplete?: number, planId?: {
 	value: string,
 	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
 }, title?: string };
 
 }

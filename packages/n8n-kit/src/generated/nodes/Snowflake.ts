@@ -16,10 +16,13 @@ export interface SnowflakeNodeParameters {
     readonly operation?: "executeQuery" | "insert" | "update";
 
     /**
-     * The SQL query to execute
+     * The SQL query to execute. Use ? (bound in order) or :1, :2, :3 to refer to the 'Query Parameters' set in the options below.
      * Type options: {"editor":"sqlEditor"}
      */
     readonly query?: string;
+
+    /** Default: {} */
+    readonly options?: { queryReplacement?: string };
 
     /** Name of the table in which to insert data to */
     readonly table?: string;

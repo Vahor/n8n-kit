@@ -12,9 +12,9 @@ export interface LmChatNvidiaNodeParameters {
     /**
      * The Nemotron model which will generate the completion. <a href="https://build.nvidia.com/models">Learn more</a>.
      * Default: "nvidia/llama-3.3-nemotron-super-49b-v1"
-     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ /nemotron/i.test($responseItem.id) }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
+     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ [\"nvidia/llama-3.1-nemotron-nano-8b-v1\",\"nvidia/llama-3.3-nemotron-super-49b-v1\",\"nvidia/llama-3.3-nemotron-super-49b-v1.5\",\"nvidia/nemotron-3-nano-30b-a3b\",\"nvidia/nemotron-3-nano-omni-30b-a3b-reasoning\",\"nvidia/nemotron-3-super-120b-a12b\",\"nvidia/nemotron-nano-12b-v2-vl\",\"nvidia/nvidia-nemotron-nano-9b-v2\"].includes($responseItem.id) }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
-    readonly model?: "nvidia/llama-3.3-nemotron-super-49b-v1" | "nvidia/llama-3.1-nemotron-70b-instruct" | "nvidia/llama-3.1-nemotron-nano-8b-v1" | "nvidia/nemotron-4-340b-instruct" | "nvidia/nemotron-mini-4b-instruct";
+    readonly model?: "nvidia/llama-3.1-nemotron-nano-8b-v1" | "nvidia/llama-3.3-nemotron-super-49b-v1" | "nvidia/llama-3.3-nemotron-super-49b-v1.5" | "nvidia/nemotron-3-nano-30b-a3b" | "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning" | "nvidia/nemotron-3-super-120b-a12b" | "nvidia/nemotron-nano-12b-v2-vl" | "nvidia/nvidia-nemotron-nano-9b-v2";
 
     /**
      * Additional options to add

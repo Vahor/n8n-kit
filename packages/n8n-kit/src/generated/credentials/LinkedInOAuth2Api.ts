@@ -27,7 +27,7 @@ export interface LinkedInOAuth2ApiCredentials {
 
     /**
      * Standard scopes for posting on behalf of a user or organization. See <a href="https://docs.microsoft.com/en-us/linkedin/marketing/getting-started#available-permissions"> this resource </a>.
-     * Default: "=w_member_social{{$self[\"organizationSupport\"] === true ? \",w_organization_social\": $self[\"legacy\"] === true ? \",r_liteprofile,r_emailaddress\" : \",profile,email,openid\"}}"
+     * Default: "=w_member_social{{ $self[\"organizationSupport\"] === true ? \",w_organization_social\" : \"\" }}{{ $self[\"legacy\"] === true ? \",r_liteprofile,r_emailaddress\" : \",profile,email,openid\" }}"
      */
     readonly "scope"?: unknown;
 

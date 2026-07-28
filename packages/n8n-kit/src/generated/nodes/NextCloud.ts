@@ -33,7 +33,7 @@ export interface NextCloudNodeParameters {
     readonly fileContent?: string;
 
     /** The share permissions to set */
-    readonly shareType?: 7 | 4 | 1 | 3 | 0;
+    readonly shareType?: 7 | 4 | 1 | 200 | 3 | 0;
 
     /** The ID of the circle to share with */
     readonly circleId?: string;

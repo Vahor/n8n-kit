@@ -4,7 +4,7 @@
 export const description = "Consume messages from a Kafka topic" as const;
 export const type = "n8n-nodes-base.kafkaTrigger" as const;
 export const version = 1.3 as const;
-export const credentials = [{"name":"kafka","required":true}] as const;
+export const credentials = [{"name":"kafka","required":true},{"name":"schemaRegistryApi","required":false,"displayName":"Schema Registry","displayOptions":{"show":{"useSchemaRegistry":[true]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -27,7 +27,7 @@ export interface KafkaTriggerNodeParameters {
     /** Whether to use Confluent Schema Registry */
     readonly useSchemaRegistry?: boolean;
 
-    /** URL of the schema registry */
+    /** URL of the schema registry. Only used when no Schema Registry credential is selected. */
     readonly schemaRegistryUrl?: string;
 
     /** Default: {} */

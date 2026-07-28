@@ -4,11 +4,14 @@
 export const description = "Use Embeddings AWS Bedrock" as const;
 export const type = "@n8n/n8n-nodes-langchain.embeddingsAwsBedrock" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"aws","required":true}] as const;
+export const credentials = [{"name":"aws","required":true,"displayOptions":{"show":{"authentication":["iam"]}}},{"name":"awsAssumeRole","required":true,"displayOptions":{"show":{"authentication":["assumeRole"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsAwsBedrockNodeParameters {
+    /** Default: "iam" */
+    readonly authentication?: "iam" | "assumeRole";
+
     /**
      * The model which will generate the completion. <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Learn more</a>.
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/foundation-models?byInferenceType=ON_DEMAND&byOutputModality=EMBEDDING"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"modelSummaries"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.modelName}}","description":"={{$responseItem.modelArn}}","value":"={{$responseItem.modelId}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}

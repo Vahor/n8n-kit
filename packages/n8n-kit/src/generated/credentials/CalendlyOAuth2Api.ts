@@ -22,6 +22,7 @@ export interface CalendlyOAuth2ApiCredentials {
 
     readonly "authQueryParameters"?: unknown;
 
+    /** Default: "users:read webhooks:read webhooks:write scheduled_events:read" */
     readonly "scope"?: unknown;
 
     readonly __name: "calendlyOAuth2Api";

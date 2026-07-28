@@ -4,11 +4,23 @@
 export const description = "Consume Microsoft Outlook API" as const;
 export const type = "n8n-nodes-base.microsoftOutlook" as const;
 export const version = 2 as const;
-export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftOutlookOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOutlookOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOutlookV2NodeParameters {
+    /** Default: "microsoftOutlookOAuth2Api" */
+    readonly authentication?: "microsoftOutlookOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
+
+    /**
+     * The mailbox the Service Principal should act on. In the action node this is evaluated per input item (an expression can target a different mailbox per item); the trigger resolves it once.
+     * Default: {"mode":"id","value":""}
+     */
+    readonly mailbox?: {
+	value: string,
+	mode: "id",
+};
+
     /** Default: "message" */
     readonly resource?: "calendar" | "contact" | "draft" | "event" | "folder" | "folderMessage" | "message" | "messageAttachment";
 
@@ -92,10 +104,10 @@ export interface MicrosoftOutlookV2NodeParameters {
     /** Comma-separated list of email addresses of recipients */
     readonly to?: string;
 
-    /** Default: "2026-06-16T10:37:10.145+00:00" */
+    /** Default: "2026-07-28T20:34:48.202+00:00" */
     readonly startDateTime?: string;
 
-    /** Default: "2026-06-16T11:07:10.145+00:00" */
+    /** Default: "2026-07-28T21:04:48.203+00:00" */
     readonly endDateTime?: string;
 
     /**

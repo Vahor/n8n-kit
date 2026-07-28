@@ -18,7 +18,7 @@ export interface CompressionNodeParameters {
     readonly binaryPropertyName?: string;
 
     /** Format of the output */
-    readonly outputFormat?: "gzip" | "zip";
+    readonly outputFormat?: "gzip" | "tar" | "targz" | "zip";
 
     /** Name of the output file */
     readonly fileName?: string;
