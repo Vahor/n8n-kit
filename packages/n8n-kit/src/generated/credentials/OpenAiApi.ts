@@ -22,9 +22,10 @@ export interface OpenAiApiCredentials {
 
     readonly "header"?: boolean;
 
+    /** Type options: {"ignoreCredentialExpressionResolveError":true} */
     readonly "headerName"?: string;
 
-    /** Type options: {"password":true} */
+    /** Type options: {"ignoreCredentialExpressionResolveError":true,"password":true} */
     readonly "headerValue"?: string;
 
     readonly __name: "openAiApi";

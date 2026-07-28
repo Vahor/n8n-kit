@@ -67,5 +67,11 @@ export interface AwsAssumeRoleCredentials {
     /** Endpoint for AWS Systems Manager (SSM) */
     readonly "ssmEndpoint"?: string;
 
+    /** Control-plane endpoint used to list Bedrock models (e.g. in the AWS Bedrock model dropdowns). If you route Bedrock through a VPC endpoint (PrivateLink) without Private DNS, set the endpoint here. Leave blank to use the default endpoint. */
+    readonly "bedrockEndpoint"?: string;
+
+    /** Runtime endpoint used for Bedrock inference (chat and embeddings). If you route Bedrock through a VPC endpoint (PrivateLink) without Private DNS, set the endpoint here. Leave blank to use the default endpoint. */
+    readonly "bedrockRuntimeEndpoint"?: string;
+
     readonly __name: "awsAssumeRole";
 }

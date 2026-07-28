@@ -8,7 +8,18 @@ export const name = "googleCalendarOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleCalendarOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleCalendarOAuth2Api";

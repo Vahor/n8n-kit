@@ -10,10 +10,23 @@ export const outputs = {"main":"main"} as const;
 
 export interface RocketchatNodeParameters {
     /** Default: "chat" */
-    readonly resource?: "chat";
+    readonly resource?: "chat" | "subscriptions" | "dm";
 
     /** Default: "postMessage" */
-    readonly operation?: "postMessage";
+    readonly operation?: "postMessage" | "get" | "read" | "messages";
+
+    /** The room identifier */
+    readonly roomId?: string;
+
+    /** Whether to return all results or only up to a given limit */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
 
     /** The channel name with the prefix in front of it */
     readonly channel?: string;

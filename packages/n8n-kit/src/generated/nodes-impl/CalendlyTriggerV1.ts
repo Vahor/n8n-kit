@@ -5,14 +5,14 @@ import type { CalendlyApiCredentials } from "../credentials/CalendlyApi.ts";
 import type { CalendlyOAuth2ApiCredentials } from "../credentials/CalendlyOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { CalendlyTriggerNodeParameters } from "../nodes/CalendlyTrigger";
+import type { CalendlyTriggerV1NodeParameters } from "../nodes/CalendlyTriggerV1";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface CalendlyTriggerProps extends NodeProps {
+export interface CalendlyTriggerV1Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: CalendlyTriggerNodeParameters;
+    readonly parameters?: CalendlyTriggerV1NodeParameters;
     readonly calendlyApiCredentials?: Credentials<CalendlyApiCredentials>;
     readonly calendlyOAuth2ApiCredentials?: Credentials<CalendlyOAuth2ApiCredentials>;
 }
@@ -20,7 +20,7 @@ export interface CalendlyTriggerProps extends NodeProps {
 /**
  * Starts the workflow when Calendly events occur
  */
-export class CalendlyTrigger<L extends string, C extends IContext = never, P extends CalendlyTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class CalendlyTriggerV1<L extends string, C extends IContext = never, P extends CalendlyTriggerV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.calendlyTrigger" as const;
     protected typeVersion = 1 as const;
 

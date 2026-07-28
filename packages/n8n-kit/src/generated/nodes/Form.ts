@@ -71,7 +71,7 @@ export interface FormNodeParameters {
     readonly responseText?: string;
 
     /**
-     * Find the name of input field containing the binary data to return in the Input panel on the left, in the Binary tab
+     * Find the name of input field containing the binary data to return in the Input panel on the left, in the Binary tab. You can provide multiple comma-separated field names.
      * Default: "data"
      */
     readonly inputDataFieldName?: string;

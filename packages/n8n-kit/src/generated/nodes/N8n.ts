@@ -12,7 +12,7 @@ export interface N8nNodeParameters {
     /** Default: "workflow" */
     readonly resource?: "audit" | "credential" | "execution" | "workflow";
 
-    /** Default: "get" */
+    /** Default: "generate" */
     readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
 
     /** Default: {} */

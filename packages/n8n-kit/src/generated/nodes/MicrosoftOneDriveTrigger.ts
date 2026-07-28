@@ -4,11 +4,38 @@
 export const description = "Trigger for Microsoft OneDrive API." as const;
 export const type = "n8n-nodes-base.microsoftOneDriveTrigger" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true}] as const;
+export const credentials = [{"name":"microsoftOneDriveOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOneDriveOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface MicrosoftOneDriveTriggerNodeParameters {
+    /** Default: "microsoftOneDriveOAuth2Api" */
+    readonly authentication?: "microsoftOneDriveOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
+
+    /**
+     * Which drive the Service Principal should act on (app-only has no personal drive)
+     * Default: "user"
+     */
+    readonly resourceTarget?: "user" | "drive";
+
+    /**
+     * The user whose OneDrive the Service Principal should act on. Resolved once per poll.
+     * Default: {"mode":"id","value":""}
+     */
+    readonly userTarget?: {
+	value: string,
+	mode: "id",
+};
+
+    /**
+     * The drive the Service Principal should act on. Resolved once per poll.
+     * Default: {"mode":"id","value":""}
+     */
+    readonly driveTarget?: {
+	value: string,
+	mode: "id",
+};
+
     /** Default: "fileCreated" */
     readonly event?: "fileCreated" | "fileUpdated" | "folderCreated" | "folderUpdated";
 

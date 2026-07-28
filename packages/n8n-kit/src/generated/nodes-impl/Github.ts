@@ -3,6 +3,7 @@
 
 import type { GithubApiCredentials } from "../credentials/GithubApi.ts";
 import type { GithubOAuth2ApiCredentials } from "../credentials/GithubOAuth2Api.ts";
+import type { GithubAppApiCredentials } from "../credentials/GithubAppApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GithubNodeParameters } from "../nodes/Github";
@@ -15,6 +16,7 @@ export interface GithubProps extends NodeProps {
     readonly parameters?: GithubNodeParameters;
     readonly githubApiCredentials?: Credentials<GithubApiCredentials>;
     readonly githubOAuth2ApiCredentials?: Credentials<GithubOAuth2ApiCredentials>;
+    readonly githubAppApiCredentials?: Credentials<GithubAppApiCredentials>;
 }
 
 /**
@@ -29,7 +31,7 @@ export class Github<L extends string, C extends IContext = never, P extends Gith
     }
 
     override getCredentials() {
-        return [this.props?.githubApiCredentials, this.props?.githubOAuth2ApiCredentials];
+        return [this.props?.githubApiCredentials, this.props?.githubOAuth2ApiCredentials, this.props?.githubAppApiCredentials];
     }
 
 }

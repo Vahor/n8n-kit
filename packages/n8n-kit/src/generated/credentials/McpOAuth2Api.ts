@@ -11,5 +11,11 @@ export interface McpOAuth2ApiCredentials {
     /** Default: true */
     readonly "useDynamicClientRegistration"?: boolean;
 
+    /**
+     * Optional. The exact protected resource URL required by the MCP server. Leave empty to use the server's default, discovered automatically.
+     * Type options: {"url":true}
+     */
+    readonly "resourceUrl"?: string;
+
     readonly __name: "mcpOAuth2Api";
 }

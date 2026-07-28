@@ -2,6 +2,8 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "../credentials/MicrosoftTeamsOAuth2Api.ts";
+import type { MicrosoftOAuth2ApiCredentials } from "../credentials/MicrosoftOAuth2Api.ts";
+import type { MicrosoftEntraServicePrincipalApiCredentials } from "../credentials/MicrosoftEntraServicePrincipalApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { MicrosoftTeamsTriggerNodeParameters } from "../nodes/MicrosoftTeamsTrigger";
@@ -12,7 +14,9 @@ export interface MicrosoftTeamsTriggerProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: MicrosoftTeamsTriggerNodeParameters;
-    readonly microsoftTeamsOAuth2ApiCredentials: Credentials<MicrosoftTeamsOAuth2ApiCredentials>;
+    readonly microsoftTeamsOAuth2ApiCredentials?: Credentials<MicrosoftTeamsOAuth2ApiCredentials>;
+    readonly microsoftOAuth2ApiCredentials?: Credentials<MicrosoftOAuth2ApiCredentials>;
+    readonly microsoftEntraServicePrincipalApiCredentials?: Credentials<MicrosoftEntraServicePrincipalApiCredentials>;
 }
 
 /**
@@ -22,12 +26,12 @@ export class MicrosoftTeamsTrigger<L extends string, C extends IContext = never,
     protected type = "n8n-nodes-base.microsoftTeamsTrigger" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.microsoftTeamsOAuth2ApiCredentials];
+        return [this.props?.microsoftTeamsOAuth2ApiCredentials, this.props?.microsoftOAuth2ApiCredentials, this.props?.microsoftEntraServicePrincipalApiCredentials];
     }
 
 }

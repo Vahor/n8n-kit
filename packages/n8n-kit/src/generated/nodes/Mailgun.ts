@@ -21,6 +21,19 @@ export interface MailgunNodeParameters {
     /** Bcc Email address of the recipient. Multiple ones can be separated by comma. */
     readonly bccEmail?: string;
 
+    /** Reply-To header. Recipients will use this address when replying. */
+    readonly replyTo?: string;
+
+    /**
+     * Arbitrary email headers. Enter only the header name (e.g. X-Custom-Header); the h: prefix is added automatically.
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly customHeaders?: { headers: Array<{ name?: string, value?: string }> };
+
+    /** Tags for segmentation and analytics (comma-separated). Sent as o:tag. */
+    readonly tags?: string;
+
     /** Subject line of the email */
     readonly subject?: string;
 

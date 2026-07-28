@@ -16,7 +16,7 @@ export interface LoneScaleProps extends NodeProps {
 }
 
 /**
- * Create List, add / delete items
+ * Enrich and source contacts, search companies, and manage lists
  */
 export class LoneScale<L extends string, C extends IContext = never, P extends LoneScaleProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.loneScale" as const;
