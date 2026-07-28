@@ -124,6 +124,7 @@
 		"typescript": "catalog:"
 	},
 	"scripts": {
+		"postinstall": "bun run scripts/postinstall.ts",
 		"prebuild": "bun run generate:entrypoint",
 		"build": "bunx tsdown",
 		"dev": "bunx tsdown --watch",
