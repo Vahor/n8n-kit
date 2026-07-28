@@ -6,3 +6,6 @@ updates:
     schedule:
       interval: "weekly"
     labels: ["dependencies"]
+    ignore:
+      - dependency-name: "n8n-core"
+      - dependency-name: "n8n-workflow"
