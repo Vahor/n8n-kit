@@ -14,4 +14,7 @@ export interface ScheduleTriggerNodeParameters {
      */
     readonly rule?: { interval: Array<{ field?: "seconds" | "minutes" | "hours" | "days" | "weeks" | "months" | "cronExpression", secondsInterval?: number, minutesInterval?: number, hoursInterval?: number, daysInterval?: number, weeksInterval?: number, monthsInterval?: number, triggerAtDayOfMonth?: number, triggerAtDay?: (1 | 2 | 3 | 4 | 5 | 6 | 0)[], triggerAtHour?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23, triggerAtMinute?: number, notice?: string, expression?: string }> };
 
+    /** Whether to run this trigger through the legacy in-memory scheduler instead of the durable scheduler */
+    readonly skipDurableScheduler?: boolean;
+
 }

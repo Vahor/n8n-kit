@@ -8,7 +8,18 @@ export const name = "googleBooksOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleBooksOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/books" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/books"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/books\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleBooksOAuth2Api";

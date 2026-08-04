@@ -11,7 +11,18 @@ export interface GoogleAdsOAuth2ApiCredentials {
     /** Type options: {"password":true} */
     readonly "developerToken": string;
 
-    /** Default: "https://www.googleapis.com/auth/adwords" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/adwords"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/adwords\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleAdsOAuth2Api";

@@ -25,7 +25,18 @@ export interface MicrosoftAzureMonitorOAuth2ApiCredentials {
     /** Default: "={{$self[\"grantType\"] === \"clientCredentials\" ? \"\" : \"resource=\" + $self[\"resource\"]}}" */
     readonly "authQueryParameters"?: unknown;
 
-    /** Default: "={{$self[\"grantType\"] === \"clientCredentials\" ? $self[\"resource\"] + \"/.default\" : \"\"}}" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled. Use <code>{resource}</code> as a placeholder that will be replaced with the Resource value.
+     * Default: "{resource}/.default"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{(($self[\"customScopes\"] && $self[\"enabledScopes\"] && $self[\"enabledScopes\"] !== \"{resource}/.default\") ? $self[\"enabledScopes\"] : ($self[\"grantType\"] === \"clientCredentials\" ? \"{resource}/.default\" : \"\")).replace(/\\{resource\\}/g, $self[\"resource\"])}}" */
     readonly "scope"?: unknown;
 
     /** Default: "body" */

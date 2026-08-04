@@ -110,15 +110,15 @@
 		"tsdown": "catalog:"
 	},
 	"devDependencies": {
-		"@n8n/ai-utilities": "0.25.2",
-		"@n8n/backend-network": "1.6.2",
-		"@n8n/n8n-nodes-langchain": "2.32.3",
+		"@n8n/ai-utilities": "0.26.0",
+		"@n8n/backend-network": "1.7.0",
+		"@n8n/n8n-nodes-langchain": "2.33.1",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
 		"codemaker": "catalog:",
 		"eventsource": "2.0.2",
-		"n8n-core": "2.32.2",
-		"n8n-workflow": "2.32.1",
+		"n8n-core": "2.33.0",
+		"n8n-workflow": "2.33.0",
 		"rimraf": "^6.1.3",
 		"tinyglobby": "^0.2.16",
 		"typescript": "catalog:"

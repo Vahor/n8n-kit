@@ -178,6 +178,18 @@ export interface SlackV2NodeParameters {
      */
     readonly approvers?: unknown[];
 
+    /**
+     * Private (ephemeral) message shown to someone who clicks a button but is not in the approver list
+     * Default: "You are not authorized to respond to this request."
+     */
+    readonly unauthorizedReplyText?: string;
+
+    /**
+     * What happens to the original message once someone approves or declines
+     * Default: "showOutcome"
+     */
+    readonly postDecisionBehavior?: "showOutcome" | "removeButtons" | "keepMessage";
+
     /** Choose whether to add a star to a message or a file */
     readonly target?: "message" | "file";
 

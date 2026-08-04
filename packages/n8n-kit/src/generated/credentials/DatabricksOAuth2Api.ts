@@ -26,8 +26,8 @@ export interface DatabricksOAuth2ApiCredentials {
     readonly "authentication"?: unknown;
 
     /**
-     * HTTP status code that indicates the token has expired. Some APIs return 403 instead of 401.
-     * Default: 401
+     * HTTP status code that indicates the token has expired. Databricks returns 403 when tokens expire.
+     * Default: 403
      */
     readonly "tokenExpiredStatusCode"?: number;
 

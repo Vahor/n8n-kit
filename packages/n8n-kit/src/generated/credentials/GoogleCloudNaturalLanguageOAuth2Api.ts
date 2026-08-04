@@ -8,7 +8,18 @@ export const name = "googleCloudNaturalLanguageOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleCloudNaturalLanguageOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/cloud-language https://www.googleapis.com/auth/cloud-platform" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/cloud-language https://www.googleapis.com/auth/cloud-platform"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/cloud-language https://www.googleapis.com/auth/cloud-platform\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleCloudNaturalLanguageOAuth2Api";

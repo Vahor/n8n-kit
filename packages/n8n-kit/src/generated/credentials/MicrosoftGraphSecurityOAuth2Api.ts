@@ -8,7 +8,18 @@ export const name = "microsoftGraphSecurityOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftGraphSecurityOAuth2ApiCredentials {
-    /** Default: "SecurityEvents.ReadWrite.All offline_access" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "SecurityEvents.ReadWrite.All offline_access"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"SecurityEvents.ReadWrite.All offline_access\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "microsoftGraphSecurityOAuth2Api";

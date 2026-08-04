@@ -8,7 +8,18 @@ export const name = "googleTasksOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleTasksOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/tasks" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/tasks"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/tasks\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleTasksOAuth2Api";

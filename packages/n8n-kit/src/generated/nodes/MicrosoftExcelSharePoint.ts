@@ -16,19 +16,20 @@ export interface MicrosoftExcelSharePointNodeParameters {
     readonly resource?: "worksheet" | "table" | "workbook";
 
     /** Default: "readRows" */
-    readonly operation?: "append" | "clear" | "deleteWorksheet" | "getAll" | "readRows" | "getAll" | "addWorksheet" | "deleteWorkbook";
+    readonly operation?: "append" | "upsert" | "clear" | "deleteWorksheet" | "getAll" | "readRows" | "update" | "append" | "convertToRange" | "create" | "deleteTable" | "getColumns" | "getAll" | "getRows" | "lookup" | "addWorksheet" | "deleteWorkbook" | "getAll";
 
     /**
-     * Pick the workbook by URL (no site or library needed) or by ID
+     * Pick the workbook by URL (no site or library needed), from the list, or by ID
      * Default: {"mode":"url","value":""}
+     * Type options: {"loadOptionsDependsOn":["site.value","library.value"]}
      */
     readonly workbook?: {
 	value: string,
-	mode: "url" | "id",
+	mode: "url" | "list" | "id",
 };
 
     /**
-     * The SharePoint site the workbook lives in. Only needed when the workbook is chosen by ID.
+     * The SharePoint site the workbook lives in. Only needed when the workbook is chosen from the list or by ID.
      * Default: {"mode":"list","value":""}
      */
     readonly site?: {
@@ -37,7 +38,7 @@ export interface MicrosoftExcelSharePointNodeParameters {
 };
 
     /**
-     * The document library the workbook lives in. Only needed when the workbook is chosen by ID.
+     * The document library the workbook lives in. Only needed when the workbook is chosen from the list or by ID.
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["site.value"]}
      */
@@ -46,14 +47,17 @@ export interface MicrosoftExcelSharePointNodeParameters {
 	mode: "list" | "id",
 };
 
-    /** Default: {"mode":"list","value":""} */
+    /**
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["workbook.value"]}
+     */
     readonly worksheet?: {
 	value: string,
 	mode: "list" | "id",
 };
 
     /** Default: "autoMap" */
-    readonly dataMode?: "autoMap" | "define" | "raw";
+    readonly dataMode?: "autoMap" | "define" | "raw" | "autoMap" | "define";
 
     /** Raw values for the specified range as array of string arrays in JSON format */
     readonly data?: string;
@@ -65,7 +69,7 @@ export interface MicrosoftExcelSharePointNodeParameters {
     readonly fieldsUi?: { values: Array<{ column?: string, fieldValue?: string }> };
 
     /** Default: {} */
-    readonly options?: { rawData?: boolean, dataProperty: string } | { rawData?: boolean, dataProperty: string, fields?: string } | { fields?: string } | { name?: string };
+    readonly options?: { rawData?: boolean, dataProperty: string } | { rawData?: boolean, dataProperty: string, fields?: string } | { fields?: string } | { rawData?: boolean, dataProperty: string, fields?: string, updateAll?: boolean } | { appendAfterSelectedRange?: boolean, rawData?: boolean, dataProperty: string, updateAll?: boolean } | { returnAllMatches?: boolean } | { index?: number, rawData?: boolean, dataProperty: string } | { name?: string };
 
     /** Default: "All" */
     readonly applyTo?: "All" | "Formats" | "Contents";
@@ -97,5 +101,49 @@ export interface MicrosoftExcelSharePointNodeParameters {
      * Type options: {"minValue":1,"maxValue":500}
      */
     readonly limit?: number;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsDependsOn":["worksheet.value","workbook.value","range"],"loadOptionsMethod":"getWorksheetColumnRow"}
+     */
+    readonly columnToMatchOn?: string;
+
+    readonly valueToMatchOn?: string;
+
+    /**
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["worksheet.value"]}
+     */
+    readonly table?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /** Whether the data should be returned RAW instead of parsed into keys according to their header */
+    readonly rawData?: boolean;
+
+    /**
+     * The name of the property into which to write the RAW data
+     * Default: "data"
+     */
+    readonly dataProperty?: string;
+
+    /** The name of the column in which to look for value */
+    readonly lookupColumn?: string;
+
+    /** The value to look for in column */
+    readonly lookupValue?: string;
+
+    /** Default: "auto" */
+    readonly selectRange?: "auto" | "manual";
+
+    /**
+     * Whether the range has column labels. When this property set to false Excel will automatically generate header shifting the data down by one row.
+     * Default: true
+     */
+    readonly hasHeaders?: boolean;
+
+    /** Text to search the library for. Leave empty to list every workbook. */
+    readonly filter?: string;
 
 }

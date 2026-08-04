@@ -3,7 +3,7 @@
 
 export const description = "Send a message to a n8n agent" as const;
 export const type = "n8n-nodes-base.messageAnAgent" as const;
-export const version = 2 as const;
+export const version = 3 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -22,6 +22,19 @@ export interface MessageAnAgentV2NodeParameters {
 
     /** Whether to constrain the agent response to a JSON Schema you provide. The conforming object is returned on the "structuredOutput" field. */
     readonly useStructuredOutput?: boolean;
+
+    /**
+     * How to specify the structured output schema
+     * Default: "fromJson"
+     */
+    readonly schemaType?: "fromJson" | "manual";
+
+    /**
+     * Example JSON object used to generate the output schema
+     * Default: "{\n  \"result\": \"The result of the task\"\n}"
+     * Type options: {"rows":10}
+     */
+    readonly jsonSchemaExample?: string;
 
     /**
      * The JSON Schema that the agent response must conform to

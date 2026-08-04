@@ -8,7 +8,18 @@ export const name = "googlePerspectiveOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GooglePerspectiveOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/userinfo.email" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/userinfo.email"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/userinfo.email\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googlePerspectiveOAuth2Api";

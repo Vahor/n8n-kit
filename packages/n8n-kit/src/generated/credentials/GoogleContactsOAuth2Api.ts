@@ -8,7 +8,18 @@ export const name = "googleContactsOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleContactsOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/contacts" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/contacts"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/contacts\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleContactsOAuth2Api";

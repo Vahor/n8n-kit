@@ -13,7 +13,18 @@ export interface AzureStorageOAuth2ApiCredentials {
     /** Default: "=https://{{ $self[\"account\"] }}.blob.core.windows.net" */
     readonly "baseUrl"?: unknown;
 
-    /** Default: "https://storage.azure.com/.default" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://storage.azure.com/.default"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://storage.azure.com/.default\"}}" */
     readonly "scope"?: unknown;
 
     /** Default: "https://graph.microsoft.com" */

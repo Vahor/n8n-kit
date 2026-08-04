@@ -27,6 +27,19 @@ export interface MessageAnAgentV1NodeParameters {
     readonly useStructuredOutput?: boolean;
 
     /**
+     * How to specify the structured output schema
+     * Default: "fromJson"
+     */
+    readonly schemaType?: "fromJson" | "manual";
+
+    /**
+     * Example JSON object used to generate the output schema
+     * Default: "{\n  \"result\": \"The result of the task\"\n}"
+     * Type options: {"rows":10}
+     */
+    readonly jsonSchemaExample?: string;
+
+    /**
      * The JSON Schema that the agent response must conform to
      * Default: "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"result\": {\n      \"type\": \"string\",\n      \"description\": \"The result of the task\"\n    }\n  },\n  \"required\": [\"result\"]\n}"
      * Type options: {"rows":10}

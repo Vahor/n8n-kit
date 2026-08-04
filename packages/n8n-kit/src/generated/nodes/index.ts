@@ -120,6 +120,7 @@ export type { DropboxNodeParameters } from "./Dropbox";
 export type { DropcontactNodeParameters } from "./Dropcontact";
 export type { DynamicCredentialCheckNodeParameters } from "./DynamicCredentialCheck";
 export type { E2eTestNodeParameters } from "./E2eTest";
+export type { E2eTestPollingTriggerNodeParameters } from "./E2eTestPollingTrigger";
 export type { ERPNextNodeParameters } from "./ERPNext";
 export type { EditImageNodeParameters } from "./EditImage";
 export type { EgoiNodeParameters } from "./Egoi";
