@@ -118,6 +118,7 @@ export * from "./Dropbox";
 export * from "./Dropcontact";
 export * from "./DynamicCredentialCheck";
 export * from "./E2eTest";
+export * from "./E2eTestPollingTrigger";
 export * from "./ERPNext";
 export * from "./EditImage";
 export * from "./Egoi";

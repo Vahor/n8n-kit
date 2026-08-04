@@ -8,7 +8,18 @@ export const name = "googleDocsOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleDocsOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/documents https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/documents https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/documents https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleDocsOAuth2Api";

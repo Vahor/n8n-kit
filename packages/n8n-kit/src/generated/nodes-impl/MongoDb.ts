@@ -20,7 +20,7 @@ export interface MongoDbProps extends NodeProps {
  */
 export class MongoDb<L extends string, C extends IContext = never, P extends MongoDbProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mongoDb" as const;
-    protected typeVersion = 1.3 as const;
+    protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

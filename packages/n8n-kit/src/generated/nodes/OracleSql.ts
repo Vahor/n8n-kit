@@ -3,7 +3,7 @@
 
 export const description = "Get, add and update data in Oracle database" as const;
 export const type = "n8n-nodes-base.oracleDatabase" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"oracleDBApi","required":true,"testedBy":"oracleDBConnectionTest"}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

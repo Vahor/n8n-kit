@@ -8,7 +8,18 @@ export const name = "googleBusinessProfileOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleBusinessProfileOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/business.manage" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/business.manage"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/business.manage\"}}" */
     readonly "scope"?: unknown;
 
     readonly "notice"?: string;

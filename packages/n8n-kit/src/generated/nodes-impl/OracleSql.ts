@@ -20,7 +20,7 @@ export interface OracleSqlProps extends NodeProps {
  */
 export class OracleSql<L extends string, C extends IContext = never, P extends OracleSqlProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.oracleDatabase" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

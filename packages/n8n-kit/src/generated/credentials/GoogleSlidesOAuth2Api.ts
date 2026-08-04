@@ -8,7 +8,18 @@ export const name = "googleSlidesOAuth2Api" as const;
  * documentationUrl: google/oauth-single-service
  */
 export interface GoogleSlidesOAuth2ApiCredentials {
-    /** Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/presentations" */
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/presentations"
+     */
+    readonly "enabledScopes"?: string;
+
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/presentations\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "googleSlidesOAuth2Api";
