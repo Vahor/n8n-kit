@@ -41,7 +41,7 @@
 		"@types/bun": "1.3.13",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.2.0",
-		"pkg-pr-new": "^0.0.70",
+		"pkg-pr-new": "^0.0.86",
 		"typedoc": "^0.28.20",
 		"typedoc-theme-oxide": "^0.3.0",
 		"isolated-vm": "file:./stubs/empty",
