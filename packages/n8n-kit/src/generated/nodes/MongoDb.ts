@@ -19,7 +19,7 @@ export interface MongoDbNodeParameters {
     readonly collection?: string;
 
     /**
-     * MongoDB aggregation pipeline query in JSON format
+     * MongoDB aggregation pipeline in JSON format. Use $1, $2, and so on as complete values to reference Query Parameters below.
      * Type options: {"alwaysOpenEditWindow":true}
      */
     readonly query?: string;
@@ -29,6 +29,13 @@ export interface MongoDbNodeParameters {
      * Default: {}
      */
     readonly options?: { limit?: number, skip?: number, sort?: string, projection?: string } | { dateFields?: string, useDotNotation?: boolean };
+
+    /**
+     * JSON array of values to use for $1, $2, and so on, in order. Values can be strings, numbers, booleans, null, or arrays of these values. You can also use an expression that returns an array.
+     * Default: "[]"
+     * Type options: {"rows":2}
+     */
+    readonly queryParameters?: string;
 
     /** Comma-separated list of the fields to be included into the new document */
     readonly fields?: string;
