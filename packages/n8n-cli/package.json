@@ -41,7 +41,7 @@
 		"codemaker": "catalog:",
 		"nano-spawn": "catalog:",
 		"table": "^6.9.0",
-		"yargs": "^18.0.0"
+		"yargs": "^18.1.0"
 	},
 	"devDependencies": {
 		"@types/yargs": "^17.0.35",
