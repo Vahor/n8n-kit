@@ -18,7 +18,7 @@ export interface GoogleGeminiProps extends NodeProps {
 }
 
 /**
- * Interact with Google Gemini AI models
+ * Message Gemini, analyze documents and audio, generate images and video, and search files
  */
 export class GoogleGemini<L extends string, C extends IContext = never, P extends GoogleGeminiProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.googleGemini" as const;

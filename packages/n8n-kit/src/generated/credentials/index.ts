@@ -204,6 +204,7 @@ import type { HttpHeaderAuthCredentials } from "./HttpHeaderAuth.ts";
 import type { HttpMultipleHeadersAuthCredentials } from "./HttpMultipleHeadersAuth.ts";
 import type { HttpQueryAuthCredentials } from "./HttpQueryAuth.ts";
 import type { HttpSslAuthCredentials } from "./HttpSslAuth.ts";
+import type { HttpTemplatedCustomAuthCredentials } from "./HttpTemplatedCustomAuth.ts";
 import type { HubspotApiCredentials } from "./HubspotApi.ts";
 import type { HubspotAppTokenCredentials } from "./HubspotAppToken.ts";
 import type { HubspotDeveloperApiCredentials } from "./HubspotDeveloperApi.ts";
@@ -647,6 +648,7 @@ export type N8nCredentialsUnion =
     | HttpMultipleHeadersAuthCredentials
     | HttpQueryAuthCredentials
     | HttpSslAuthCredentials
+    | HttpTemplatedCustomAuthCredentials
     | HubspotApiCredentials
     | HubspotAppTokenCredentials
     | HubspotDeveloperApiCredentials

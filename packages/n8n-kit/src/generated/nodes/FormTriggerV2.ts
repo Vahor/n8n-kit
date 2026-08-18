@@ -12,6 +12,9 @@ export interface FormTriggerV2NodeParameters {
     /** Default: "none" */
     readonly authentication?: "basicAuth" | "none" | "basicAuth" | "n8nUserAuth" | "none";
 
+    /** Whether the triggering user must also have permission to execute the workflow in the project it belongs to */
+    readonly requireExecuteAccess?: boolean;
+
     /** The final segment of the form's URL, both for test and production */
     readonly path?: string;
 

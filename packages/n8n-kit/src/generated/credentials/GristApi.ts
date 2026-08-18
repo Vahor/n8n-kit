@@ -14,11 +14,12 @@ export interface GristApiCredentials {
      */
     readonly "apiKey": string;
 
-    /**
-     * Defaults to hosted Grist. Use https://YOUR_TEAM.getgrist.com for a single team, or your own URL if self-managed. Do not include /api.
-     * Default: "https://api.getgrist.com"
-     */
-    readonly "url": string;
+    /** Leave empty for hosted Grist (https://api.getgrist.com). Use https://YOUR_TEAM.getgrist.com for a single team, or your own URL if self-managed. Do not include /api. */
+    readonly "url"?: string;
+
+    readonly "customSubdomain"?: unknown;
+
+    readonly "selfHostedUrl"?: unknown;
 
     readonly __name: "gristApi";
 }

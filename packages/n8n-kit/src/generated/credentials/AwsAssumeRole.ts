@@ -5,13 +5,13 @@ export const name = "awsAssumeRole" as const;
 
 /**
  * displayName: AWS (Assume Role)
- * documentationUrl: awsassumerole
+ * documentationUrl: aws
  */
 export interface AwsAssumeRoleCredentials {
     /** Default: "us-east-1" */
-    readonly "region"?: "af-south-1" | "ap-east-1" | "ap-south-1" | "ap-south-2" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-southeast-4" | "ap-southeast-5" | "ap-southeast-7" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ca-central-1" | "ca-west-1" | "cn-north-1" | "cn-northwest-1" | "eu-central-1" | "eu-central-2" | "eu-north-1" | "eu-south-1" | "eu-south-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "il-central-1" | "me-central-1" | "me-south-1" | "mx-central-1" | "sa-east-1" | "us-east-1" | "us-east-2" | "us-gov-east-1" | "us-west-1" | "us-west-2" | "us-gov-west-1";
+    readonly "region"?: "af-south-1" | "ap-east-1" | "ap-east-2" | "ap-south-1" | "ap-south-2" | "ap-southeast-1" | "ap-southeast-2" | "ap-southeast-3" | "ap-southeast-4" | "ap-southeast-5" | "ap-southeast-6" | "ap-southeast-7" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ca-central-1" | "ca-west-1" | "cn-north-1" | "cn-northwest-1" | "eu-central-1" | "eu-central-2" | "eu-north-1" | "eu-south-1" | "eu-south-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "il-central-1" | "me-central-1" | "me-south-1" | "mx-central-1" | "sa-east-1" | "us-east-1" | "us-east-2" | "us-gov-east-1" | "us-west-1" | "us-west-2" | "us-gov-west-1";
 
-    /** Use system credentials (environment variables, container role, etc.) to call STS.AssumeRole. Access to AWS system credentials is disabled by default and must be explicitly enabled. See <a href="https://docs.n8n.io/integrations/credentials/awsassumerole/">documentation</a> for more information. */
+    /** Use system credentials (environment variables, container role, etc.) to call STS.AssumeRole. Access to AWS system credentials is disabled by default and must be explicitly enabled. See <a href="https://docs.n8n.io/integrations/builtin/credentials/aws/">documentation</a> for more information. */
     readonly "useSystemCredentialsForRole"?: boolean;
 
     /** Access Key ID to use for the STS.AssumeRole call */

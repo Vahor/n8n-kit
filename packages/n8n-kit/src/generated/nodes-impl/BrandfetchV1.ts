@@ -4,21 +4,21 @@
 import type { BrandfetchApiCredentials } from "../credentials/BrandfetchApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { BrandfetchNodeParameters } from "../nodes/Brandfetch";
+import type { BrandfetchV1NodeParameters } from "../nodes/BrandfetchV1";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface BrandfetchProps extends NodeProps {
+export interface BrandfetchV1Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: BrandfetchNodeParameters;
+    readonly parameters?: BrandfetchV1NodeParameters;
     readonly brandfetchApiCredentials: Credentials<BrandfetchApiCredentials>;
 }
 
 /**
  * Consume Brandfetch API
  */
-export class Brandfetch<L extends string, C extends IContext = never, P extends BrandfetchProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class BrandfetchV1<L extends string, C extends IContext = never, P extends BrandfetchV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.Brandfetch" as const;
     protected typeVersion = 1 as const;
 

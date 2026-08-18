@@ -18,7 +18,7 @@ export interface MiniMaxProps extends NodeProps {
 }
 
 /**
- * Interact with MiniMax AI models
+ * Message MiniMax, generate speech, images, and video
  */
 export class MiniMax<L extends string, C extends IContext = never, P extends MiniMaxProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.minimax" as const;

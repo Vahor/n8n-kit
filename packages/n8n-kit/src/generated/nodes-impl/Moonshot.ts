@@ -18,7 +18,7 @@ export interface MoonshotProps extends NodeProps {
 }
 
 /**
- * Interact with Moonshot Kimi AI models
+ * Message Kimi and analyze images with Moonshot models
  */
 export class Moonshot<L extends string, C extends IContext = never, P extends MoonshotProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.moonshot" as const;

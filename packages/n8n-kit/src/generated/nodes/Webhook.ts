@@ -25,7 +25,13 @@ export interface WebhookNodeParameters {
      * The way to authenticate
      * Default: "none"
      */
-    readonly authentication?: "basicAuth" | "headerAuth" | "jwtAuth" | "none";
+    readonly authentication?: "basicAuth" | "headerAuth" | "jwtAuth" | "n8nOAuth2" | "none";
+
+    /**
+     * Whether the triggering user must also have permission to execute the workflow in the project it belongs to
+     * Default: true
+     */
+    readonly requireExecuteAccess?: boolean;
 
     /**
      * When and how to respond to the webhook

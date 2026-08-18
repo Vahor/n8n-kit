@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Brandfetch/Brandfetch.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Brandfetch/v1/BrandfetchV1.node.ts' node
 
 export const description = "Consume Brandfetch API" as const;
 export const type = "n8n-nodes-base.Brandfetch" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"brandfetchApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface BrandfetchNodeParameters {
+export interface BrandfetchV1NodeParameters {
     /** Default: "logo" */
     readonly operation?: "color" | "company" | "font" | "industry" | "logo";
 
