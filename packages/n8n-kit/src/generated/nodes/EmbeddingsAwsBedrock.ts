@@ -13,9 +13,15 @@ export interface EmbeddingsAwsBedrockNodeParameters {
     readonly authentication?: "iam" | "assumeRole";
 
     /**
-     * The model which will generate the completion. <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Learn more</a>.
-     * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/foundation-models?byInferenceType=ON_DEMAND&byOutputModality=EMBEDDING"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"modelSummaries"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.modelName}}","description":"={{$responseItem.modelArn}}","value":"={{$responseItem.modelId}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
+     * The model or inference profile which will generate the embeddings. <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/foundation-models.html">Learn more</a>.
+     * Type options: {"loadOptionsDependsOn":["authentication"],"loadOptionsMethod":"listModels"}
      */
     readonly model?: string;
+
+    /**
+     * Additional options to add
+     * Default: {}
+     */
+    readonly options?: { additionalModelRequestFields?: string, maxRetries?: number, timeout?: number };
 
 }

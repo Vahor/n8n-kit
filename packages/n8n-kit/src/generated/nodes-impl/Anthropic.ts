@@ -18,7 +18,7 @@ export interface AnthropicProps extends NodeProps {
 }
 
 /**
- * Interact with Anthropic AI models
+ * Message Claude, analyze documents and images, manage files, and work with prompts
  */
 export class Anthropic<L extends string, C extends IContext = never, P extends AnthropicProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.anthropic" as const;

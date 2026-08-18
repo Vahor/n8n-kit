@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/' node
 
-export const description = "Interact with Google Gemini AI models" as const;
+export const description = "Message Gemini, analyze documents and audio, generate images and video, and search files" as const;
 export const type = "@n8n/n8n-nodes-langchain.googleGemini" as const;
 export const version = 1.2 as const;
 export const credentials = [{"name":"googlePalmApi","required":true}] as const;

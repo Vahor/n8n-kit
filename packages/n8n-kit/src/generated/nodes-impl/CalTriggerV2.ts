@@ -4,23 +4,23 @@
 import type { CalApiCredentials } from "../credentials/CalApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { CalTriggerNodeParameters } from "../nodes/CalTrigger";
+import type { CalTriggerV2NodeParameters } from "../nodes/CalTriggerV2";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface CalTriggerProps extends NodeProps {
+export interface CalTriggerV2Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: CalTriggerNodeParameters;
+    readonly parameters?: CalTriggerV2NodeParameters;
     readonly calApiCredentials: Credentials<CalApiCredentials>;
 }
 
 /**
  * Handle Cal.com events via webhooks
  */
-export class CalTrigger<L extends string, C extends IContext = never, P extends CalTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class CalTriggerV2<L extends string, C extends IContext = never, P extends CalTriggerV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.calTrigger" as const;
-    protected typeVersion = 2 as const;
+    protected typeVersion = 3 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

@@ -18,7 +18,7 @@ export interface OllamaProps extends NodeProps {
 }
 
 /**
- * Interact with Ollama AI models
+ * Message local models and analyze images with Ollama
  */
 export class Ollama<L extends string, C extends IContext = never, P extends OllamaProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.ollama" as const;
