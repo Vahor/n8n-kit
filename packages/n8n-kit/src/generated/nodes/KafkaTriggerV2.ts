@@ -1,0 +1,36 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from '/n8n/packages/nodes-base/nodes/Kafka/v2/KafkaTriggerV2.node.ts' node
+
+export const description = "Consume messages from a Kafka topic" as const;
+export const type = "n8n-nodes-base.kafkaTrigger" as const;
+export const version = 2 as const;
+export const credentials = [{"name":"kafka","required":true},{"name":"schemaRegistryApi","required":false,"displayName":"Schema Registry","displayOptions":{"show":{"useSchemaRegistry":[true]}}}] as const;
+export const inputs = {} as const;
+export const outputs = {"main":"main"} as const;
+
+export interface KafkaTriggerV2NodeParameters {
+    /** Name of the queue of topic to consume from */
+    readonly topic?: string;
+
+    /** ID of the consumer group */
+    readonly groupId?: string;
+
+    /**
+     * Select on which condition the offsets should be resolved. In the manual mode, when execution started by clicking on Execute Workflow or Execute Step button, offsets are always resolved immediately after message received.
+     * Default: "onCompletion"
+     */
+    readonly resolveOffset?: "onCompletion" | "onSuccess" | "onStatus" | "immediately";
+
+    /** Default: ["success"] */
+    readonly allowedStatuses?: ("canceled" | "crashed" | "error" | "new" | "running" | "success" | "unknown" | "waiting")[];
+
+    /** Whether to use Confluent Schema Registry */
+    readonly useSchemaRegistry?: boolean;
+
+    /** URL of the schema registry. Only used when no Schema Registry credential is selected. */
+    readonly schemaRegistryUrl?: string;
+
+    /** Default: {} */
+    readonly options?: { autoCommitInterval?: number, batchSize?: number, fetchMaxBytes?: number, fetchMinBytes?: number, heartbeatInterval?: number, maxInFlightRequests?: number, fromBeginning?: boolean, jsonParseMessage?: boolean, keepBinaryData?: boolean, partitionsConsumedConcurrently?: number, onlyMessage?: boolean, returnHeaders?: boolean, rebalanceTimeout?: number, errorRetryDelay?: number, sessionTimeout?: number };
+
+}

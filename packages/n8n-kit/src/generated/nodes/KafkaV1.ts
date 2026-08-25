@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Kafka/Kafka.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Kafka/v1/KafkaV1.node.ts' node
 
 export const description = "Sends messages to a Kafka topic" as const;
 export const type = "n8n-nodes-base.kafka" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"kafka","required":true,"testedBy":"kafkaCon
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface KafkaNodeParameters {
+export interface KafkaV1NodeParameters {
     /** Name of the queue of topic to publish to */
     readonly topic?: string;
 

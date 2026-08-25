@@ -93,6 +93,9 @@ export interface GithubNodeParameters {
      */
     readonly inputs?: string;
 
+    /** Default: {} */
+    readonly options?: { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } } };
+
     /** The file path of the file. Has to contain the full path. */
     readonly filePath?: string;
 
