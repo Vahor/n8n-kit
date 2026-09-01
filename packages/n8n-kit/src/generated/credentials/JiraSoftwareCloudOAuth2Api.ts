@@ -8,23 +8,6 @@ export const name = "jiraSoftwareCloudOAuth2Api" as const;
  * documentationUrl: jira
  */
 export interface JiraSoftwareCloudOAuth2ApiCredentials {
-    readonly "domain": string;
-
-    /** Default: "authorizationCode" */
-    readonly "grantType"?: unknown;
-
-    /** Default: "https://auth.atlassian.com/authorize" */
-    readonly "authUrl": unknown;
-
-    /** Default: "https://auth.atlassian.com/oauth/token" */
-    readonly "accessTokenUrl": unknown;
-
-    /** Default: "audience=api.atlassian.com&prompt=consent" */
-    readonly "authQueryParameters"?: unknown;
-
-    /** Default: "header" */
-    readonly "authentication"?: unknown;
-
     /** Define custom scopes */
     readonly "customScopes"?: boolean;
 
@@ -32,11 +15,11 @@ export interface JiraSoftwareCloudOAuth2ApiCredentials {
 
     /**
      * Scopes that should be enabled
-     * Default: "read:jira-user read:jira-work write:jira-work manage:jira-webhook manage:jira-user offline_access"
+     * Default: "read:jira-user read:jira-work write:jira-work manage:jira-webhook offline_access"
      */
     readonly "enabledScopes"?: string;
 
-    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"read:jira-user read:jira-work write:jira-work manage:jira-webhook manage:jira-user offline_access\"}}" */
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"read:jira-user read:jira-work write:jira-work manage:jira-webhook offline_access\"}}" */
     readonly "scope"?: unknown;
 
     readonly __name: "jiraSoftwareCloudOAuth2Api";

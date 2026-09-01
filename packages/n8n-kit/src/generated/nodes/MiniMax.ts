@@ -3,7 +3,7 @@
 
 export const description = "Message MiniMax, generate speech, images, and video" as const;
 export const type = "@n8n/n8n-nodes-langchain.minimax" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"minimaxApi","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
@@ -19,7 +19,7 @@ export interface MiniMaxNodeParameters {
      * The speech synthesis model to use
      * Default: "speech-2.8-hd"
      */
-    readonly modelId?: "speech-02-hd" | "speech-02-turbo" | "speech-2.6-hd" | "speech-2.6-turbo" | "speech-2.8-hd" | "speech-2.8-turbo" | "image-01" | "MiniMax-M2" | "MiniMax-M2.1" | "MiniMax-M2.1-highspeed" | "MiniMax-M2.5" | "MiniMax-M2.5-highspeed" | "MiniMax-M2.7" | "MiniMax-M2.7-highspeed" | "MiniMax-Hailuo-2.3" | "MiniMax-Hailuo-02" | "T2V-01-Director" | "T2V-01" | "I2V-01" | "I2V-01-Director" | "I2V-01-live" | "MiniMax-Hailuo-02" | "MiniMax-Hailuo-2.3" | "MiniMax-Hailuo-2.3-Fast";
+    readonly modelId?: "speech-02-hd" | "speech-02-turbo" | "speech-2.6-hd" | "speech-2.6-turbo" | "speech-2.8-hd" | "speech-2.8-turbo" | "image-01" | "MiniMax-M2" | "MiniMax-M2.1" | "MiniMax-M2.1-highspeed" | "MiniMax-M2.5" | "MiniMax-M2.5-highspeed" | "MiniMax-M2.7" | "MiniMax-M2.7-highspeed" | "MiniMax-M2" | "MiniMax-M2.1" | "MiniMax-M2.1-highspeed" | "MiniMax-M2.5" | "MiniMax-M2.5-highspeed" | "MiniMax-M2.7" | "MiniMax-M2.7-highspeed" | "MiniMax-M3" | "MiniMax-Hailuo-2.3" | "MiniMax-Hailuo-02" | "T2V-01-Director" | "T2V-01" | "MiniMax-H3" | "MiniMax-Hailuo-2.3" | "MiniMax-Hailuo-02" | "T2V-01-Director" | "T2V-01" | "I2V-01" | "I2V-01-Director" | "I2V-01-live" | "MiniMax-Hailuo-02" | "MiniMax-Hailuo-2.3" | "MiniMax-Hailuo-2.3-Fast" | "MiniMax-H3" | "I2V-01" | "I2V-01-Director" | "I2V-01-live" | "MiniMax-Hailuo-02" | "MiniMax-Hailuo-2.3" | "MiniMax-Hailuo-2.3-Fast";
 
     /**
      * The text to convert to speech (max 10,000 characters)
@@ -81,6 +81,18 @@ export interface MiniMaxNodeParameters {
 
     /**
      * Duration of the generated video
+     * Default: 5
+     */
+    readonly h3Duration?: 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15;
+
+    /**
+     * Resolution of the generated video
+     * Default: "2K"
+     */
+    readonly h3Resolution?: "768P" | "2K";
+
+    /**
+     * Duration of the generated video
      * Default: 6
      */
     readonly duration?: 6 | 10;
@@ -90,6 +102,12 @@ export interface MiniMaxNodeParameters {
      * Default: "768P"
      */
     readonly resolution?: "720P" | "768P" | "1080P" | "512P" | "720P" | "768P" | "1080P";
+
+    /**
+     * Aspect ratio of the generated video
+     * Default: "16:9"
+     */
+    readonly ratio?: "1:1" | "16:9" | "21:9" | "3:4" | "4:3" | "9:16";
 
     /**
      * Whether to download the generated video as binary data. When disabled, only the video URL is returned.

@@ -84,6 +84,7 @@ export * from "./CodeAI";
 export * from "./CoinGecko";
 export * from "./CompareDatasets";
 export * from "./Compression";
+export * from "./Confluence";
 export * from "./Contentful";
 export * from "./ConvertKit";
 export * from "./ConvertKitTrigger";

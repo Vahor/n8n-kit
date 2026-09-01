@@ -16,7 +16,7 @@ export interface DiscordV2NodeParameters {
     readonly resource?: "channel" | "message" | "member";
 
     /** Default: "send" */
-    readonly operation?: "deleteMessage" | "get" | "getAll" | "react" | "send" | "sendAndWait" | "create" | "deleteChannel" | "get" | "getAll" | "update" | "getAll" | "roleAdd" | "roleRemove" | "sendLegacy";
+    readonly operation?: "deleteMessage" | "get" | "getAll" | "react" | "send" | "sendAndWait" | "create" | "deleteChannel" | "get" | "getAll" | "update" | "ban" | "getAll" | "kick" | "roleAdd" | "roleRemove" | "timeout" | "unban" | "sendLegacy";
 
     /**
      * Select the server (guild) that your bot is connected to
@@ -124,6 +124,18 @@ export interface DiscordV2NodeParameters {
      */
     readonly type?: "0" | "2" | "4";
 
+    /** How much of the user's recent message history to delete on ban */
+    readonly deleteMessageSeconds?: 0 | 3600 | 21600 | 43200 | 86400 | 259200 | 604800;
+
+    /**
+     * The reason recorded in the server audit log
+     * Default: "suspicious_spam"
+     */
+    readonly reason?: "suspicious_spam" | "compromised" | "rule_break" | "other";
+
+    /** The custom reason recorded in the server audit log */
+    readonly reasonCustom?: string;
+
     /** The ID of the user after which to return the members */
     readonly after?: string;
 
@@ -133,5 +145,11 @@ export interface DiscordV2NodeParameters {
      * Type options: {"loadOptionsMethod":"getRoles","loadOptionsDependsOn":["userId.value","guildId.value","operation"]}
      */
     readonly role?: unknown[];
+
+    /**
+     * How long the member is prevented from interacting (Discord max is 28 days)
+     * Default: 3600
+     */
+    readonly duration?: 60 | 300 | 3600 | 86400 | 604800 | 2419200 | "remove";
 
 }

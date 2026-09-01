@@ -17,6 +17,12 @@ export interface SlackApiCredentials {
      */
     readonly "signatureSecret"?: string;
 
+    readonly "managedAppId"?: unknown;
+
+    readonly "teamId"?: unknown;
+
+    readonly "managerCredentialId"?: unknown;
+
     readonly "notice"?: string;
 
     readonly __name: "slackApi";

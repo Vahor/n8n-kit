@@ -24,7 +24,7 @@ export interface McpTriggerProps extends NodeProps {
  */
 export class McpTrigger<L extends string, C extends IContext = never, P extends McpTriggerProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.mcpTrigger" as const;
-    protected typeVersion = 2 as const;
+    protected typeVersion = 2.1 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);
