@@ -111,7 +111,7 @@
 	},
 	"devDependencies": {
 		"@n8n/ai-utilities": "0.29.6",
-		"@n8n/backend-network": "1.10.6",
+		"@n8n/backend-network": "1.11.4",
 		"@n8n/n8n-nodes-langchain": "2.36.6",
 		"@types/lodash.clonedeep": "^4.5.9",
 		"cheerio": "1.0.0-rc.6",
