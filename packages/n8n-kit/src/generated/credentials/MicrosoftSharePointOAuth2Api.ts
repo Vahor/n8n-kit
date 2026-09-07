@@ -8,6 +8,8 @@ export const name = "microsoftSharePointOAuth2Api" as const;
  * documentationUrl: microsoft
  */
 export interface MicrosoftSharePointOAuth2ApiCredentials {
+    readonly "subdomain": string;
+
     /** Define custom scopes */
     readonly "customScopes"?: boolean;
 
@@ -19,10 +21,8 @@ export interface MicrosoftSharePointOAuth2ApiCredentials {
      */
     readonly "enabledScopes"?: string;
 
-    /** Default: "={{($self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access https://{subdomain}.sharepoint.com/.default\").replace(/\\{subdomain\\}/g, $self[\"subdomain\"])}}" */
+    /** Default: "={{($self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access https://{subdomain}.sharepoint.com/.default\").replace(/\\{subdomain\\}/g, ($self[\"subdomain\"] || \"\").trim())}}" */
     readonly "scope"?: unknown;
-
-    readonly "subdomain"?: string;
 
     /** Default: "https://graph.microsoft.com" */
     readonly "graphApiBaseUrl"?: unknown;

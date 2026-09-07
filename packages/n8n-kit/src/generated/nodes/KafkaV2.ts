@@ -1,0 +1,53 @@
+// GENERATED FILE, DO NOT EDIT
+// Generated from '/n8n/packages/nodes-base/nodes/Kafka/v2/KafkaV2.node.ts' node
+
+export const description = "Sends messages to a Kafka topic" as const;
+export const type = "n8n-nodes-base.kafka" as const;
+export const version = 2 as const;
+export const credentials = [{"name":"kafka","required":true},{"name":"schemaRegistryApi","required":false,"displayName":"Schema Registry","displayOptions":{"show":{"useSchemaRegistry":[true]}}}] as const;
+export const inputs = {"main":"main"} as const;
+export const outputs = {"main":"main"} as const;
+
+export interface KafkaV2NodeParameters {
+    /** Name of the queue of topic to publish to */
+    readonly topic?: string;
+
+    /**
+     * Whether to send the data the node receives as JSON to Kafka
+     * Default: true
+     */
+    readonly sendInputData?: boolean;
+
+    /** The message to be sent */
+    readonly message?: string;
+
+    readonly jsonParameters?: boolean;
+
+    /** Whether to use Confluent Schema Registry */
+    readonly useSchemaRegistry?: boolean;
+
+    /** URL of the schema registry. Only used when no Schema Registry credential is selected. */
+    readonly schemaRegistryUrl?: string;
+
+    /** Whether to use a message key */
+    readonly useKey?: boolean;
+
+    /** The message key */
+    readonly key?: string;
+
+    /** Namespace and Name of Schema in Schema Registry (namespace.name) */
+    readonly eventName?: string;
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly headersUi?: { headerValues: Array<{ key?: string, value?: string }> };
+
+    /** Header parameters as JSON (flat object) */
+    readonly headerParametersJson?: string;
+
+    /** Default: {} */
+    readonly options?: { acks?: boolean, compression?: "gzip" | "lz4" | "snappy" | "zstd" | "none", timeout?: number };
+
+}

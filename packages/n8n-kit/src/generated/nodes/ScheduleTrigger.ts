@@ -3,7 +3,7 @@
 
 export const description = "Triggers the workflow on a given schedule" as const;
 export const type = "n8n-nodes-base.scheduleTrigger" as const;
-export const version = 1.3 as const;
+export const version = 1.4 as const;
 export const inputs = {} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -13,6 +13,15 @@ export interface ScheduleTriggerNodeParameters {
      * Type options: {"multipleValues":true}
      */
     readonly rule?: { interval: Array<{ field?: "seconds" | "minutes" | "hours" | "days" | "weeks" | "months" | "cronExpression", secondsInterval?: number, minutesInterval?: number, hoursInterval?: number, daysInterval?: number, weeksInterval?: number, monthsInterval?: number, triggerAtDayOfMonth?: number, triggerAtDay?: (1 | 2 | 3 | 4 | 5 | 6 | 0)[], triggerAtHour?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23, triggerAtMinute?: number, notice?: string, expression?: string }> };
+
+    /** Default: "skip" */
+    readonly misfirePolicy?: "coalesce" | "coalesce_owner" | "skip";
+
+    /**
+     * How late an execution may start before it counts as missed. Set to 0 to use the instance setting.
+     * Type options: {"minValue":0,"numberPrecision":0}
+     */
+    readonly misfireGraceSeconds?: number;
 
     /** Whether to run this trigger through the legacy in-memory scheduler instead of the durable scheduler */
     readonly skipDurableScheduler?: boolean;

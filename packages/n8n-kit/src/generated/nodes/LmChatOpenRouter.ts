@@ -20,6 +20,6 @@ export interface LmChatOpenRouterNodeParameters {
      * Additional options to add
      * Default: {}
      */
-    readonly options?: { frequencyPenalty?: number, maxTokens?: number, responseFormat?: "text" | "json_object", presencePenalty?: number, temperature?: number, timeout?: number, maxRetries?: number, topP?: number };
+    readonly options?: { frequencyPenalty?: number, maxTokens?: number, responseFormat?: "text" | "json_object", presencePenalty?: number, temperature?: number, timeout?: number, maxRetries?: number, topP?: number, providerRouting?: { order?: string, allowFallbacks?: boolean, requireParameters?: boolean, dataCollection?: "allow" | "deny", zdr?: boolean, only?: string, ignore?: string, sort?: "price" | "throughput" | "latency" } };
 
 }

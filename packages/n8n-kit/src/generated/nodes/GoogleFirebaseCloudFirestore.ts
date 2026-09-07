@@ -57,7 +57,14 @@ export interface GoogleFirebaseCloudFirestoreNodeParameters {
     /** Name of the field in an input item that contains the document ID */
     readonly updateKey?: string;
 
-    /** JSON query to execute */
+    /** JSON query to execute. Use $1, $2, and so on as complete values to reference Query Parameters below. */
     readonly query?: string;
+
+    /**
+     * Array of values to use for $1, $2, and so on, in order. Values can be strings, numbers, booleans, null, or arrays of these values.
+     * Default: "={{ [] }}"
+     * Type options: {"rows":2}
+     */
+    readonly queryParameters?: string;
 
 }

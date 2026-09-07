@@ -13,10 +13,10 @@ export interface TwitterOAuth2ApiCredentials {
     /** Default: "pkce" */
     readonly "grantType"?: unknown;
 
-    /** Default: "https://twitter.com/i/oauth2/authorize" */
+    /** Default: "https://x.com/i/oauth2/authorize" */
     readonly "authUrl"?: unknown;
 
-    /** Default: "https://api.twitter.com/2/oauth2/token" */
+    /** Default: "https://api.x.com/2/oauth2/token" */
     readonly "accessTokenUrl"?: unknown;
 
     /** Default: "tweet.read users.read tweet.write tweet.moderate.write users.read follows.read follows.write offline.access like.read like.write dm.write dm.read list.read list.write" */

@@ -3,7 +3,7 @@
 
 export const description = "Expose n8n tools as an MCP Server endpoint" as const;
 export const type = "@n8n/n8n-nodes-langchain.mcpTrigger" as const;
-export const version = 2 as const;
+export const version = 2.1 as const;
 export const credentials = [{"name":"httpBearerAuth","required":true,"displayOptions":{"show":{"authentication":["bearerAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}}] as const;
 export const inputs = {"Tools":"ai_tool"} as const;
 export const outputs = {} as const;
@@ -21,7 +21,19 @@ export interface McpTriggerNodeParameters {
      */
     readonly requireExecuteAccess?: boolean;
 
+    /**
+     * Whether to include the calling user's ID, email and name in the trigger output and in the request the connected tools receive
+     * Default: true
+     */
+    readonly includeUserInOutput?: boolean;
+
     /** The base path for this MCP server */
     readonly path?: string;
+
+    /**
+     * Sent to MCP clients when they connect. Clients that support server instructions typically add them to the model's system prompt — use for guidance that spans multiple tools, such as tool-choice rules or multi-step workflows.
+     * Type options: {"rows":4}
+     */
+    readonly instructions?: string;
 
 }

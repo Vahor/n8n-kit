@@ -55,6 +55,7 @@ import type { AmqpCredentials } from "./Amqp.ts";
 import type { ApiTemplateIoApiCredentials } from "./ApiTemplateIoApi.ts";
 import type { AsanaApiCredentials } from "./AsanaApi.ts";
 import type { AsanaOAuth2ApiCredentials } from "./AsanaOAuth2Api.ts";
+import type { AtlassianOAuth2ApiCredentials } from "./AtlassianOAuth2Api.ts";
 import type { Auth0ManagementApiCredentials } from "./Auth0ManagementApi.ts";
 import type { AutopilotApiCredentials } from "./AutopilotApi.ts";
 import type { AwsCredentials } from "./Aws.ts";
@@ -93,6 +94,7 @@ import type { ClockifyApiCredentials } from "./ClockifyApi.ts";
 import type { CloudflareApiCredentials } from "./CloudflareApi.ts";
 import type { CockpitApiCredentials } from "./CockpitApi.ts";
 import type { CodaApiCredentials } from "./CodaApi.ts";
+import type { ConfluenceCloudOAuth2ApiCredentials } from "./ConfluenceCloudOAuth2Api.ts";
 import type { ContentfulApiCredentials } from "./ContentfulApi.ts";
 import type { ConvertApiCredentials } from "./ConvertApi.ts";
 import type { ConvertKitApiCredentials } from "./ConvertKitApi.ts";
@@ -362,6 +364,7 @@ import type { ShopifyOAuth2ApiCredentials } from "./ShopifyOAuth2Api.ts";
 import type { ShufflerApiCredentials } from "./ShufflerApi.ts";
 import type { Signl4ApiCredentials } from "./Signl4Api.ts";
 import type { SlackApiCredentials } from "./SlackApi.ts";
+import type { SlackManagerOAuth2ApiCredentials } from "./SlackManagerOAuth2Api.ts";
 import type { SlackOAuth2ApiCredentials } from "./SlackOAuth2Api.ts";
 import type { Sms77ApiCredentials } from "./Sms77Api.ts";
 import type { SmtpCredentials } from "./Smtp.ts";
@@ -499,6 +502,7 @@ export type N8nCredentialsUnion =
     | ApiTemplateIoApiCredentials
     | AsanaApiCredentials
     | AsanaOAuth2ApiCredentials
+    | AtlassianOAuth2ApiCredentials
     | Auth0ManagementApiCredentials
     | AutopilotApiCredentials
     | AwsCredentials
@@ -537,6 +541,7 @@ export type N8nCredentialsUnion =
     | CloudflareApiCredentials
     | CockpitApiCredentials
     | CodaApiCredentials
+    | ConfluenceCloudOAuth2ApiCredentials
     | ContentfulApiCredentials
     | ConvertApiCredentials
     | ConvertKitApiCredentials
@@ -806,6 +811,7 @@ export type N8nCredentialsUnion =
     | ShufflerApiCredentials
     | Signl4ApiCredentials
     | SlackApiCredentials
+    | SlackManagerOAuth2ApiCredentials
     | SlackOAuth2ApiCredentials
     | Sms77ApiCredentials
     | SmtpCredentials
