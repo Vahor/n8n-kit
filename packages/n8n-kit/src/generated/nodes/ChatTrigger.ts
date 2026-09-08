@@ -21,6 +21,9 @@ export interface ChatTriggerNodeParameters {
      */
     readonly authentication?: "basicAuth" | "n8nUserAuth" | "none";
 
+    /** Whether the triggering user must also have permission to execute the workflow in the project it belongs to */
+    readonly requireExecuteAccess?: boolean;
+
     /**
      * Default messages shown at the start of the chat, one per line
      * Default: "Hi there! 👋\nMy name is Nathan. How can I assist you today?"

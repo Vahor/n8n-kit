@@ -22,7 +22,7 @@ export interface GotifyNodeParameters {
     readonly additionalFields?: { priority?: number, title?: string };
 
     /** Default: {} */
-    readonly options?: { contentType?: "text/plain" | "text/markdown" };
+    readonly options?: { contentType?: "text/plain" | "text/markdown", clickUrl?: string, bigImageUrl?: string, intentUrl?: string };
 
     readonly messageId?: string;
 
