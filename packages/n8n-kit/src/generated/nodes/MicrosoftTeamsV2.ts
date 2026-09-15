@@ -13,10 +13,10 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly authentication?: "microsoftTeamsOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
 
     /** Default: "channel" */
-    readonly resource?: "channel" | "channelMessage" | "chatMessage" | "task";
+    readonly resource?: "channel" | "channelMessage" | "chatMember" | "chatMessage" | "onlineMeeting" | "task";
 
     /** Default: "create" */
-    readonly operation?: "create" | "deleteChannel" | "get" | "getAll" | "update" | "create" | "getAll" | "create" | "get" | "getAll" | "sendAndWait" | "create" | "deleteTask" | "get" | "getAll" | "update";
+    readonly operation?: "create" | "deleteChannel" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "getAllReplies" | "reply" | "getAll" | "create" | "get" | "getAll" | "sendAndWait" | "create" | "get" | "create" | "deleteTask" | "get" | "getAll" | "update";
 
     /**
      * Select the team from the list, by URL, or by ID (the ID is the "groupId" parameter in the URL you get from "Get a link to the team")
@@ -31,7 +31,7 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly name?: string;
 
     /** Default: {} */
-    readonly options?: { description?: string, type?: "private" | "standard" } | { description?: string } | { includeLinkToWorkflow?: boolean, makeReply?: string } | { includeLinkToWorkflow?: boolean } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { assignedTo?: {
+    readonly options?: { description?: string, type?: "private" | "standard" } | { description?: string } | { includeLinkToWorkflow?: boolean, makeReply?: string } | { includeLinkToWorkflow?: boolean } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { allowAttendeeToEnableCamera?: boolean, allowAttendeeToEnableMic?: boolean, allowMeetingChat?: "disabled" | "enabled" | "limited", allowTeamworkReactions?: boolean, allowedPresenters?: "everyone" | "organization" | "organizer", isEntryExitAnnounced?: boolean, lobbyBypassScope?: "everyone" | "organization" | "organizationAndFederated" | "organizer", recordAutomatically?: boolean, passcodeRequired?: boolean } | { assignedTo?: {
 	value: string,
 	mode: "list" | "id",
 } | {
@@ -71,6 +71,9 @@ export interface MicrosoftTeamsV2NodeParameters {
      */
     readonly message?: string;
 
+    /** The ID of the message to retrieve. The message ID is the number before "?tenantId" in the message URL. */
+    readonly messageId?: string;
+
     /**
      * Select the chat from the list, by URL, or by ID (find the chat ID after "conversations/" in the URL)
      * Default: {"mode":"list","value":""}
@@ -79,9 +82,6 @@ export interface MicrosoftTeamsV2NodeParameters {
 	value: string,
 	mode: "list" | "id",
 };
-
-    /** The ID of the message to retrieve */
-    readonly messageId?: string;
 
     /** Default: "approval" */
     readonly responseType?: "approval" | "freeText" | "customForm";
@@ -103,6 +103,24 @@ export interface MicrosoftTeamsV2NodeParameters {
 
     /** Default: {} */
     readonly approvalOptions?: { values: { approvalType?: "single" | "double", approveLabel?: string, disapproveLabel?: string } };
+
+    /** The subject of the meeting */
+    readonly subject?: string;
+
+    /** The date and time when the meeting starts */
+    readonly startDateTime?: string;
+
+    /** The date and time when the meeting ends. Must be later than the start time. */
+    readonly endDateTime?: string;
+
+    /**
+     * The online meeting, by its ID or by its join URL
+     * Default: {"mode":"id","value":""}
+     */
+    readonly meetingId?: {
+	value: string,
+	mode: "id" | "url",
+};
 
     /**
      * Default: {"mode":"list","value":""}

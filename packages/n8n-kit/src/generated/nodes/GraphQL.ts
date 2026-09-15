@@ -1,6 +1,8 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/nodes-base/nodes/GraphQL/GraphQL.node.ts' node
 
+import type { N8nCredentialsUnion } from "../credentials/index";
+
 export const description = "Makes a GraphQL request and returns the received data" as const;
 export const type = "n8n-nodes-base.graphql" as const;
 export const version = 1.1 as const;
@@ -13,7 +15,9 @@ export interface GraphQLNodeParameters {
      * The way to authenticate
      * Default: "none"
      */
-    readonly authentication?: "basicAuth" | "customAuth" | "digestAuth" | "headerAuth" | "none" | "oAuth1" | "oAuth2" | "queryAuth";
+    readonly authentication?: "predefinedCredentialType" | "basicAuth" | "customAuth" | "digestAuth" | "headerAuth" | "none" | "oAuth1" | "oAuth2" | "queryAuth";
+
+    readonly nodeCredentialType?: N8nCredentialsUnion["__name"];
 
     /**
      * The underlying HTTP request method to use

@@ -280,6 +280,7 @@ export * from "./LmChatAnthropic";
 export * from "./LmChatAwsBedrock";
 export * from "./LmChatAzureOpenAi";
 export * from "./LmChatCohere";
+export * from "./LmChatDatabricks";
 export * from "./LmChatDeepSeek";
 export * from "./LmChatGoogleGemini";
 export * from "./LmChatGoogleVertex";

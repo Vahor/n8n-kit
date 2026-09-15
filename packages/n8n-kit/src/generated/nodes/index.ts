@@ -282,6 +282,7 @@ export type { LmChatAnthropicNodeParameters } from "./LmChatAnthropic";
 export type { LmChatAwsBedrockNodeParameters } from "./LmChatAwsBedrock";
 export type { LmChatAzureOpenAiNodeParameters } from "./LmChatAzureOpenAi";
 export type { LmChatCohereNodeParameters } from "./LmChatCohere";
+export type { LmChatDatabricksNodeParameters } from "./LmChatDatabricks";
 export type { LmChatDeepSeekNodeParameters } from "./LmChatDeepSeek";
 export type { LmChatGoogleGeminiNodeParameters } from "./LmChatGoogleGemini";
 export type { LmChatGoogleVertexNodeParameters } from "./LmChatGoogleVertex";

@@ -56,6 +56,7 @@ import type { ApiTemplateIoApiCredentials } from "./ApiTemplateIoApi.ts";
 import type { AsanaApiCredentials } from "./AsanaApi.ts";
 import type { AsanaOAuth2ApiCredentials } from "./AsanaOAuth2Api.ts";
 import type { AtlassianOAuth2ApiCredentials } from "./AtlassianOAuth2Api.ts";
+import type { AtlassianServiceAccountApiCredentials } from "./AtlassianServiceAccountApi.ts";
 import type { Auth0ManagementApiCredentials } from "./Auth0ManagementApi.ts";
 import type { AutopilotApiCredentials } from "./AutopilotApi.ts";
 import type { AwsCredentials } from "./Aws.ts";
@@ -503,6 +504,7 @@ export type N8nCredentialsUnion =
     | AsanaApiCredentials
     | AsanaOAuth2ApiCredentials
     | AtlassianOAuth2ApiCredentials
+    | AtlassianServiceAccountApiCredentials
     | Auth0ManagementApiCredentials
     | AutopilotApiCredentials
     | AwsCredentials

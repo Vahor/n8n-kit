@@ -3,7 +3,7 @@
 
 export const description = "Runs the workflow when an n8n generated webchat is submitted" as const;
 export const type = "@n8n/n8n-nodes-langchain.chatTrigger" as const;
-export const version = 1.4 as const;
+export const version = 1.5 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"main":"main"} as const;
@@ -23,6 +23,12 @@ export interface ChatTriggerNodeParameters {
 
     /** Whether the triggering user must also have permission to execute the workflow in the project it belongs to */
     readonly requireExecuteAccess?: boolean;
+
+    /**
+     * Whether to include the logged-in user's ID, email and name in the trigger output
+     * Default: true
+     */
+    readonly includeUserInOutput?: boolean;
 
     /**
      * Default messages shown at the start of the chat, one per line
