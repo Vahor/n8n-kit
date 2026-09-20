@@ -1,5 +1,11 @@
 # @vahor/n8n-kit
 
+## 0.27.0
+
+### Minor Changes
+
+- [#263](https://github.com/Vahor/n8n-kit/pull/263) [`20f43b6`](https://github.com/Vahor/n8n-kit/commit/20f43b60815467b84d866996650e1f60fbb424a8) Thanks [@github-actions](https://github.com/apps/github-actions)! - Automated update of n8n nodes from upstream stable release [2.36.9](https://github.com/n8n-io/n8n/tree/n8n@2.36.9)
+
 ## 0.26.0
 
 ### Minor Changes
