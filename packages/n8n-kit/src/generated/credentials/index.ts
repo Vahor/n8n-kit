@@ -190,6 +190,7 @@ import type { GoogleTranslateOAuth2ApiCredentials } from "./GoogleTranslateOAuth
 import type { GotifyApiCredentials } from "./GotifyApi.ts";
 import type { GrafanaApiCredentials } from "./GrafanaApi.ts";
 import type { GristApiCredentials } from "./GristApi.ts";
+import type { GristOAuth2ApiCredentials } from "./GristOAuth2Api.ts";
 import type { GumroadApiCredentials } from "./GumroadApi.ts";
 import type { GumroadOAuth2ApiCredentials } from "./GumroadOAuth2Api.ts";
 import type { HaloPSAApiCredentials } from "./HaloPSAApi.ts";
@@ -262,6 +263,7 @@ import type { MessageBirdApiCredentials } from "./MessageBirdApi.ts";
 import type { MetabaseApiCredentials } from "./MetabaseApi.ts";
 import type { MicrosoftAzureCosmosDbSharedKeyApiCredentials } from "./MicrosoftAzureCosmosDbSharedKeyApi.ts";
 import type { MicrosoftAzureMonitorOAuth2ApiCredentials } from "./MicrosoftAzureMonitorOAuth2Api.ts";
+import type { MicrosoftDataverseOAuth2ApiCredentials } from "./MicrosoftDataverseOAuth2Api.ts";
 import type { MicrosoftDynamicsOAuth2ApiCredentials } from "./MicrosoftDynamicsOAuth2Api.ts";
 import type { MicrosoftEntraOAuth2ApiCredentials } from "./MicrosoftEntraOAuth2Api.ts";
 import type { MicrosoftEntraServicePrincipalApiCredentials } from "./MicrosoftEntraServicePrincipalApi.ts";
@@ -638,6 +640,7 @@ export type N8nCredentialsUnion =
     | GotifyApiCredentials
     | GrafanaApiCredentials
     | GristApiCredentials
+    | GristOAuth2ApiCredentials
     | GumroadApiCredentials
     | GumroadOAuth2ApiCredentials
     | HaloPSAApiCredentials
@@ -710,6 +713,7 @@ export type N8nCredentialsUnion =
     | MetabaseApiCredentials
     | MicrosoftAzureCosmosDbSharedKeyApiCredentials
     | MicrosoftAzureMonitorOAuth2ApiCredentials
+    | MicrosoftDataverseOAuth2ApiCredentials
     | MicrosoftDynamicsOAuth2ApiCredentials
     | MicrosoftEntraOAuth2ApiCredentials
     | MicrosoftEntraServicePrincipalApiCredentials

@@ -5,7 +5,7 @@ export const name = "microsoftEntraServicePrincipalApi" as const;
 
 /**
  * displayName: Microsoft Entra Service Principal
- * documentationUrl: microsoftentra
+ * documentationUrl: microsoftentraserviceprincipal
  */
 export interface MicrosoftEntraServicePrincipalApiCredentials {
     /** Type options: {"expirable":true} */

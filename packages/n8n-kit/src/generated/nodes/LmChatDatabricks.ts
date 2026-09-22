@@ -10,7 +10,7 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatDatabricksNodeParameters {
     /**
-     * The serving endpoint. Choose from the list, or specify an ID.
+     * The Unity AI Gateway model service. Choose from the list, or enter its full name (catalog.schema.service).
      * Default: {"mode":"list","value":""}
      */
     readonly model?: {

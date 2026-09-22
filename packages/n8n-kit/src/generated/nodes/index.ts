@@ -346,6 +346,7 @@ export type { MessageAnAgentV1NodeParameters } from "./MessageAnAgentV1";
 export type { MessageAnAgentV2NodeParameters } from "./MessageAnAgentV2";
 export type { MessageBirdNodeParameters } from "./MessageBird";
 export type { MetabaseNodeParameters } from "./Metabase";
+export type { MicrosoftDataverseNodeParameters } from "./MicrosoftDataverse";
 export type { MicrosoftDynamicsCrmNodeParameters } from "./MicrosoftDynamicsCrm";
 export type { MicrosoftEntraNodeParameters } from "./MicrosoftEntra";
 export type { MicrosoftExcelSharePointNodeParameters } from "./MicrosoftExcelSharePoint";

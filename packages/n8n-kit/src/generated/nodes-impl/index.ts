@@ -344,6 +344,7 @@ export * from "./MessageAnAgentV1";
 export * from "./MessageAnAgentV2";
 export * from "./MessageBird";
 export * from "./Metabase";
+export * from "./MicrosoftDataverse";
 export * from "./MicrosoftDynamicsCrm";
 export * from "./MicrosoftEntra";
 export * from "./MicrosoftExcelSharePoint";

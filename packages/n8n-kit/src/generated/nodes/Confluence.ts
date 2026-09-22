@@ -124,7 +124,7 @@ export interface ConfluenceNodeParameters {
     /** The ID of the footer comment to delete */
     readonly commentId?: string;
 
-    /** Whether to also fetch every descendant page of the page, one item per page */
+    /** Whether to also fetch every descendant page of the page, one item per page. Unpublished drafts are skipped. */
     readonly includeDescendants?: boolean;
 
     /**
@@ -148,7 +148,7 @@ export interface ConfluenceNodeParameters {
     readonly labelName?: string;
 
     /**
-     * Whether the page is published or a draft after the update
+     * Whether the update is published or saved as an unpublished draft
      * Default: "keep"
      */
     readonly status?: "draft" | "keep" | "current";
