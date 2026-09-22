@@ -4,23 +4,23 @@
 import type { PerplexityApiCredentials } from "../credentials/PerplexityApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { PerplexityNodeParameters } from "../nodes/Perplexity";
+import type { PerplexityV3NodeParameters } from "../nodes/PerplexityV3";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface PerplexityProps extends NodeProps {
+export interface PerplexityV3Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: PerplexityNodeParameters;
+    readonly parameters?: PerplexityV3NodeParameters;
     readonly perplexityApiCredentials: Credentials<PerplexityApiCredentials>;
 }
 
 /**
- * AI-powered answer engine that provides accurate, trusted, and real-time answers to any question. Supports chat completions, agent responses, web search, and embeddings.
+ * AI-powered answer engine that provides accurate, trusted, and real-time answers to any question. Supports agent responses, web search, and embeddings.
  */
-export class Perplexity<L extends string, C extends IContext = never, P extends PerplexityProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class PerplexityV3<L extends string, C extends IContext = never, P extends PerplexityV3Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.perplexity" as const;
-    protected typeVersion = 2 as const;
+    protected typeVersion = 3 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

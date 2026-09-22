@@ -8,9 +8,6 @@ export const name = "atlassianOAuth2Api" as const;
  * documentationUrl: atlassian
  */
 export interface AtlassianOAuth2ApiCredentials {
-    /** The URL of your Atlassian site, e.g. https://your-site.atlassian.net. The scheme and any path (like /wiki) are ignored. */
-    readonly "domain": string;
-
     /** Default: "authorizationCode" */
     readonly "grantType"?: unknown;
 

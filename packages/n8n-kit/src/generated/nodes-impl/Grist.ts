@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { GristApiCredentials } from "../credentials/GristApi.ts";
+import type { GristOAuth2ApiCredentials } from "../credentials/GristOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { GristNodeParameters } from "../nodes/Grist";
@@ -12,7 +13,8 @@ export interface GristProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: GristNodeParameters;
-    readonly gristApiCredentials: Credentials<GristApiCredentials>;
+    readonly gristApiCredentials?: Credentials<GristApiCredentials>;
+    readonly gristOAuth2ApiCredentials?: Credentials<GristOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class Grist<L extends string, C extends IContext = never, P extends Grist
     protected type = "n8n-nodes-base.grist" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.gristApiCredentials];
+        return [this.props?.gristApiCredentials, this.props?.gristOAuth2ApiCredentials];
     }
 
 }
