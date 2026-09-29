@@ -15,11 +15,11 @@ export interface MicrosoftTeamsOAuth2ApiCredentials {
 
     /**
      * Scopes that should be enabled
-     * Default: "openid offline_access User.Read.All Group.ReadWrite.All Chat.ReadWrite ChannelMessage.Read.All OnlineMeetings.ReadWrite ChannelMessage.ReadWrite"
+     * Default: "openid offline_access User.Read.All Group.ReadWrite.All Chat.ReadWrite ChannelMessage.Read.All OnlineMeetings.ReadWrite ChannelMessage.ReadWrite TeamworkTag.Read"
      */
     readonly "enabledScopes"?: string;
 
-    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access User.Read.All Group.ReadWrite.All Chat.ReadWrite ChannelMessage.Read.All OnlineMeetings.ReadWrite ChannelMessage.ReadWrite\"}}" */
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"openid offline_access User.Read.All Group.ReadWrite.All Chat.ReadWrite ChannelMessage.Read.All OnlineMeetings.ReadWrite ChannelMessage.ReadWrite TeamworkTag.Read\"}}" */
     readonly "scope"?: unknown;
 
     readonly "notice"?: string;

@@ -16,7 +16,7 @@ export interface DatabricksNodeParameters {
     readonly resource?: "databricksSql" | "files" | "genie" | "modelServing" | "unityCatalog" | "vectorSearch";
 
     /** Default: "listDirectory" */
-    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "run";
+    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run";
 
     /** Full path to the volume in format: catalog.schema.volume */
     readonly volumePath?: string;
@@ -245,7 +245,16 @@ export interface DatabricksNodeParameters {
     readonly options?: { filterExpression?: string, scoreThreshold?: number } | { timeout?: number };
 
     /**
-     * The job to run
+     * The job run to read
+     * Default: {"mode":"list","value":""}
+     */
+    readonly runId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
+
+    /**
+     * The job to work with
      * Default: {"mode":"list","value":""}
      */
     readonly jobId?: {
