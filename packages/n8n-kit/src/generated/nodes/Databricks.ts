@@ -16,7 +16,7 @@ export interface DatabricksNodeParameters {
     readonly resource?: "databricksSql" | "files" | "genie" | "modelServing" | "unityCatalog" | "vectorSearch";
 
     /** Default: "listDirectory" */
-    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex";
+    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run";
 
     /** Full path to the volume in format: catalog.schema.volume */
     readonly volumePath?: string;
@@ -242,6 +242,34 @@ export interface DatabricksNodeParameters {
     readonly columnsToRerank?: string;
 
     /** Default: {} */
-    readonly options?: { filterExpression?: string, scoreThreshold?: number };
+    readonly options?: { filterExpression?: string, scoreThreshold?: number } | { timeout?: number };
+
+    /**
+     * The job run to read
+     * Default: {"mode":"list","value":""}
+     */
+    readonly runId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
+
+    /**
+     * The job to work with
+     * Default: {"mode":"list","value":""}
+     */
+    readonly jobId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
+
+    /**
+     * Job-level parameters for this run. They override the default values defined on the job.
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly jobParameters?: { parameters: Array<{ name?: string, value?: string }> };
+
+    /** Whether to wait until the run finishes and return the final run. When off, the node returns the run ID right away and the job keeps running in Databricks. */
+    readonly waitForCompletion?: boolean;
 
 }

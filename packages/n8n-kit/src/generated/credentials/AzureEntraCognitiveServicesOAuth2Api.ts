@@ -11,10 +11,18 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
     /** Default: "authorizationCode" */
     readonly "grantType"?: unknown;
 
+    /**
+     * Classic targets *.openai.azure.com (resource name + deployment-based URLs). Azure AI Foundry targets *.services.ai.azure.com/openai/v1 (full endpoint URL).
+     * Default: "classic"
+     */
+    readonly "endpointType"?: "classic" | "foundry";
+
     readonly "resourceName": string;
 
     /** Default: "2025-03-01-preview" */
     readonly "apiVersion": string;
+
+    readonly "foundryEndpoint": string;
 
     readonly "endpoint"?: string;
 

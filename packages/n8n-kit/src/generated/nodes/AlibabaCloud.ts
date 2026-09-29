@@ -22,7 +22,7 @@ export interface AlibabaCloudNodeParameters {
     readonly modelId?: "qwen3-max" | "qwen3-max-2026-01-23" | "qwen3.5-122b-a10b" | "qwen3.5-27b" | "qwen3.5-35b-a3b" | "qwen3.5-397b-a17b" | "qwen3.5-flash" | "qwen3.5-flash-2026-02-23" | "qwen3.5-plus" | "qwen3.5-plus-2026-02-15" | {
 	value: string,
 	mode: "list" | "id",
-} | "qwen3-vl-flash" | "qwen3-vl-plus" | "qwen-image" | "qwen-image-max" | "qwen-image-plus" | "wan2.6-t2i" | "z-image-turbo" | "wan2.6-t2v" | "wan2.6-i2v-flash" | "wan2.6-i2v";
+} | "qwen3-vl-flash" | "qwen3-vl-plus" | "qwen-image" | "qwen-image-max" | "qwen-image-plus" | "wan2.6-image" | "wan2.6-t2i" | "z-image-turbo" | "wan2.6-t2v" | "wan2.6-i2v-flash" | "wan2.6-i2v";
 
     /**
      * Default: {"messageValues":[{"content":"","role":"user"}]}
@@ -67,13 +67,20 @@ export interface AlibabaCloudNodeParameters {
     readonly prompt?: string;
 
     /**
+     * 1 to 4 reference images for Wan image editing
+     * Default: {"values":[{"inputType":"url","imageUrl":"","binaryPropertyName":"data"}]}
+     * Type options: {"multipleValues":true,"multipleValueButtonText":"Add Image"}
+     */
+    readonly referenceImages?: { values: Array<{ inputType?: "url" | "binary", imageUrl?: string, binaryPropertyName?: string }> };
+
+    /**
      * Whether to download the generated image as binary data. When disabled, only the image URL is returned.
      * Default: true
      */
     readonly downloadImage?: boolean;
 
     /** Default: {} */
-    readonly imageOptions?: { size?: "1024*1024" | "720*1280" | "1280*720" | "1104*1472" | "1328*1328" | "1472*1104" | "1664*928" | "928*1664", promptExtend?: boolean };
+    readonly imageOptions?: { size?: "1024*1024" | "720*1280" | "1280*720" | "1104*1472" | "1280*1280" | "1472*1104" | "1696*960" | "960*1696" | "1104*1472" | "1328*1328" | "1472*1104" | "1664*928" | "928*1664", promptExtend?: boolean };
 
     /**
      * Resolution tier of the generated video
