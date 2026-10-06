@@ -21,7 +21,7 @@ export interface WordpressOAuth2ApiCredentials {
 
     readonly "authQueryParameters"?: unknown;
 
-    /** Default: "header" */
+    /** Default: "body" */
     readonly "authentication"?: unknown;
 
     /** Your WordPress.com site identifier — either a .wordpress.com subdomain (e.g. myblog.wordpress.com) or a custom domain (e.g. myblog.com). Used in API requests that still route through public-api.wordpress.com. */

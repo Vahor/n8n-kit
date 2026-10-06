@@ -1,14 +1,14 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/Perplexity/Perplexity.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/Perplexity/v2/PerplexityV2.node.ts' node
 
-export const description = "AI-powered answer engine that provides accurate, trusted, and real-time answers to any question. Supports chat completions, agent responses, web search, and embeddings." as const;
+export const description = "AI-powered answer engine that provides accurate, trusted, and real-time answers to any question. Supports agent responses, web search, and embeddings." as const;
 export const type = "n8n-nodes-base.perplexity" as const;
 export const version = 2 as const;
 export const credentials = [{"name":"perplexityApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface PerplexityNodeParameters {
+export interface PerplexityV2NodeParameters {
     /** Default: "chat" */
     readonly resource?: "agent" | "chat" | "embedding" | "search";
 

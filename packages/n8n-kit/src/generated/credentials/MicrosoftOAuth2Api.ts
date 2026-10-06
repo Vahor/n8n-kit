@@ -38,6 +38,8 @@ export interface MicrosoftOAuth2ApiCredentials {
     /** Default: "https://login.microsoftonline.com/common/oauth2/v2.0/token" */
     readonly "accessTokenUrl"?: string;
 
+    readonly "scope"?: string;
+
     /** Default: "response_mode=query&prompt=select_account" */
     readonly "authQueryParameters"?: unknown;
 

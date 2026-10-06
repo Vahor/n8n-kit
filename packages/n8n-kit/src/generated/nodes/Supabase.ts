@@ -45,6 +45,13 @@ export interface SupabaseNodeParameters {
 
     readonly filterString?: string;
 
+    /**
+     * Values to substitute for $1, $2, etc. in the filter string above.
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly filterStringParameters?: { values: Array<{ value?: string }> };
+
     /** Default: "defineBelow" */
     readonly dataToSend?: "autoMapInputData" | "defineBelow";
 
