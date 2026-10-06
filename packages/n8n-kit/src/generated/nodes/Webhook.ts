@@ -3,7 +3,7 @@
 
 export const description = "Starts the workflow when a webhook is called" as const;
 export const type = "n8n-nodes-base.webhook" as const;
-export const version = 2.1 as const;
+export const version = 2.2 as const;
 export const credentials = [{"name":"httpBasicAuth","required":true,"displayOptions":{"show":{"authentication":["basicAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"jwtAuth","required":true,"displayOptions":{"show":{"authentication":["jwtAuth"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"custom":"custom"} as const;
@@ -59,6 +59,6 @@ export interface WebhookNodeParameters {
     readonly responseBinaryPropertyName?: string;
 
     /** Default: {} */
-    readonly options?: { binaryData?: boolean, binaryPropertyName?: string, ignoreBots?: boolean, ipWhitelist?: string, noResponseBody?: boolean, onlyRunIf?: string, responsePropertyName?: string, rawBody?: boolean, responseCode?: { values: { responseCode?: 200 | 201 | 204 | 301 | 302 | 304 | 400 | 401 | 403 | 404 | "customCode", customCode?: number } }, responseContentType?: string, responseData?: string, responseHeaders?: { entries: Array<{ name?: string, value?: string }> } };
+    readonly options?: { binaryData?: boolean, binaryPropertyName?: string, ignoreBots?: boolean, ipWhitelist?: string, noResponseBody?: boolean, oauthClient?: "auto" | "bearer" | "browser", onlyRunIf?: string, responsePropertyName?: string, rawBody?: boolean, responseCode?: { values: { responseCode?: 200 | 201 | 204 | 301 | 302 | 304 | 400 | 401 | 403 | 404 | "customCode", customCode?: number } }, responseContentType?: string, responseData?: string, responseHeaders?: { entries: Array<{ name?: string, value?: string }> } };
 
 }

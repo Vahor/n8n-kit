@@ -5,7 +5,7 @@ export const name = "atlassianServiceAccountApi" as const;
 
 /**
  * displayName: Atlassian Service Account
- * documentationUrl: atlassianserviceaccount
+ * documentationUrl: jira
  */
 export interface AtlassianServiceAccountApiCredentials {
     /** Type options: {"expirable":true} */

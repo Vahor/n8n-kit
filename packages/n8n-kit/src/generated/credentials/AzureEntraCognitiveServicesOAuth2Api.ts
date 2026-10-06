@@ -5,10 +5,10 @@ export const name = "azureEntraCognitiveServicesOAuth2Api" as const;
 
 /**
  * displayName: Azure Entra ID (Azure Active Directory) API
- * documentationUrl: azureentracognitiveservicesoauth2api
+ * documentationUrl: https://docs.n8n.io/integrations/builtin/credentials/azureopenai/#using-azure-entra-id-oauth2
  */
 export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
-    /** Default: "authorizationCode" */
+    /** Default: "clientCredentials" */
     readonly "grantType"?: unknown;
 
     /**
@@ -26,11 +26,8 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
 
     readonly "endpoint"?: string;
 
-    /**
-     * Enter your Azure Tenant ID (Directory ID) or keep "common" for multi-tenant apps. Using a specific Tenant ID is generally recommended and required for certain authentication flows.
-     * Default: "common"
-     */
-    readonly "tenantId"?: string;
+    /** The Directory (tenant) ID of the Entra app registration */
+    readonly "tenantId": string;
 
     /** Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/authorize" */
     readonly "authUrl"?: unknown;
@@ -38,23 +35,21 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
     /** Default: "=https://login.microsoftonline.com/{{$self[\"tenantId\"]}}/oauth2/token" */
     readonly "accessTokenUrl"?: unknown;
 
+    readonly "sendAdditionalBodyProperties"?: unknown;
+
     /** Default: "{\"grant_type\": \"client_credentials\", \"resource\": \"https://cognitiveservices.azure.com/\"}" */
     readonly "additionalBodyProperties"?: unknown;
 
     /** Default: "body" */
     readonly "authentication"?: unknown;
 
-    /** Define custom scopes. You might need this if the default scopes are not sufficient or if you want to minimize permissions. Ensure you include "openid" and "offline_access". */
-    readonly "customScopes"?: boolean;
+    readonly "customScopes"?: unknown;
 
     /** For some services additional query parameters have to be set which can be defined here */
     readonly "authQueryParameters"?: unknown;
 
-    /**
-     * Space-separated list of scopes to request.
-     * Default: "openid offline_access"
-     */
-    readonly "enabledScopes"?: string;
+    /** Default: "openid offline_access" */
+    readonly "enabledScopes"?: unknown;
 
     /** Default: "={{ $self.customScopes ? $self.enabledScopes : \"openid offline_access\"}}" */
     readonly "scope"?: unknown;

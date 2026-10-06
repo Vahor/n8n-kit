@@ -46,7 +46,7 @@ export interface AnthropicNodeParameters {
     readonly simplify?: boolean;
 
     /** Default: {} */
-    readonly options?: { maxTokens?: number } | { fileName?: string } | { system?: string, feedback?: string } | { system?: string } | { includeMergedResponse?: boolean, system?: string, codeExecution?: boolean, webSearch?: boolean, maxUses?: number, allowedDomains?: string, blockedDomains?: string, maxTokens?: number, temperature?: number, topP?: number, topK?: number, maxToolsIterations?: number };
+    readonly options?: { maxTokens?: number } | { fileName?: string } | { system?: string, feedback?: string } | { system?: string } | { includeMergedResponse?: boolean, system?: string, promptCaching?: "disabled" | "5m" | "1h", codeExecution?: boolean, webSearch?: boolean, maxUses?: number, allowedDomains?: string, blockedDomains?: string, maxTokens?: number, temperature?: number, topP?: number, topK?: number, maxToolsIterations?: number };
 
     /** ID of the file to delete */
     readonly fileId?: string;

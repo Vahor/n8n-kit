@@ -13,10 +13,43 @@ export interface MicrosoftTeamsV2NodeParameters {
     readonly authentication?: "microsoftTeamsOAuth2Api" | "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
 
     /** Default: "channel" */
-    readonly resource?: "channel" | "channelMessage" | "chat" | "chatMember" | "chatMessage" | "onlineMeeting" | "task";
+    readonly resource?: "activityNotification" | "channel" | "channelMessage" | "chat" | "chatMember" | "chatMessage" | "onlineMeeting" | "task";
 
-    /** Default: "create" */
-    readonly operation?: "create" | "deleteChannel" | "get" | "getAll" | "update" | "create" | "softDeleteMessage" | "get" | "getAll" | "getAllReplies" | "reply" | "undoSoftDeleteMessage" | "create" | "get" | "getAll" | "add" | "getAll" | "remove" | "create" | "softDeleteMessage" | "get" | "getAll" | "sendAndWait" | "undoSoftDeleteMessage" | "create" | "createOrGet" | "deleteMeeting" | "get" | "update" | "create" | "deleteTask" | "get" | "getAll" | "update";
+    /** Default: "send" */
+    readonly operation?: "send" | "create" | "deleteChannel" | "get" | "getAll" | "update" | "create" | "softDeleteMessage" | "get" | "getAll" | "getAllReplies" | "reply" | "undoSoftDeleteMessage" | "create" | "get" | "getAll" | "add" | "getAll" | "remove" | "create" | "softDeleteMessage" | "get" | "getAll" | "sendAndWait" | "undoSoftDeleteMessage" | "create" | "createOrGet" | "deleteMeeting" | "get" | "update" | "create" | "deleteTask" | "get" | "getAll" | "update";
+
+    /**
+     * The user who receives the notification in the Teams activity feed. Select the user from the list, or enter the user ID or user principal name. Guest users must be given by their object ID.
+     * Default: {"mode":"list","value":""}
+     */
+    readonly recipientId?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /** The bold first line of the notification. Keep it short so it fits on one line. */
+    readonly headline?: string;
+
+    /** The second line of the notification. Teams shows the first 150 characters. */
+    readonly previewText?: string;
+
+    /** The third line of the notification, shown in grey. Name the item that the notification is about, for example the workflow or the order. */
+    readonly topic?: string;
+
+    /** The Microsoft Teams link that opens when the user selects the notification. It must be an https link on a Microsoft Teams domain, for example a chat, channel, message, or meeting link. Microsoft Graph rejects links to n8n or to other websites. */
+    readonly topicLink?: string;
+
+    /** Default: {} */
+    readonly options?: { chainId?: number } | { description?: string, type?: "private" | "standard" } | { description?: string } | { includeLinkToWorkflow?: boolean, mentionPlacement?: "start" | "end", makeReply?: string } | { includeLinkToWorkflow?: boolean, mentionPlacement?: "start" | "end" } | { parentMessageId?: string } | { historyStartDate?: string, role?: "guest" | "owner", shareHistory?: "all" | "fromDate" | "none" } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { allowAttendeeToEnableCamera?: boolean, allowAttendeeToEnableMic?: boolean, allowMeetingChat?: "disabled" | "enabled" | "limited", allowTeamworkReactions?: boolean, allowedPresenters?: "everyone" | "organization" | "organizer" | "roleIsPresenter", isEntryExitAnnounced?: boolean, lobbyBypassScope?: "everyone" | "invited" | "organization" | "organizationAndFederated" | "organizationExcludingGuests" | "organizer", recordAutomatically?: boolean, passcodeRequired?: boolean } | { attendees?: { attendee: Array<{ userId: {
+	value: string,
+	mode: "list" | "id",
+} }> }, endDateTime?: string, startDateTime?: string, subject?: string } | { assignedTo?: {
+	value: string,
+	mode: "list" | "id",
+} | {
+	value: string,
+	mode: "id",
+}, dueDateTime?: string, percentComplete?: number };
 
     /**
      * Select the team from the list, by URL, or by ID (the ID is the "groupId" parameter in the URL you get from "Get a link to the team")
@@ -29,15 +62,6 @@ export interface MicrosoftTeamsV2NodeParameters {
 
     /** The name of the new channel you want to create */
     readonly name?: string;
-
-    /** Default: {} */
-    readonly options?: { description?: string, type?: "private" | "standard" } | { description?: string } | { includeLinkToWorkflow?: boolean, mentionPlacement?: "start" | "end", makeReply?: string } | { includeLinkToWorkflow?: boolean, mentionPlacement?: "start" | "end" } | { parentMessageId?: string } | { historyStartDate?: string, role?: "guest" | "owner", shareHistory?: "all" | "fromDate" | "none" } | { limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { messageButtonLabel?: string, responseFormTitle?: string, responseFormDescription?: string, responseFormButtonLabel?: string, responseFormCustomCss?: string, limitWaitTime?: { values: { limitType?: "afterTimeInterval" | "atSpecifiedTime", resumeAmount?: number, resumeUnit?: "minutes" | "hours" | "days", maxDateAndTime?: string } }, appendAttribution?: boolean } | { allowAttendeeToEnableCamera?: boolean, allowAttendeeToEnableMic?: boolean, allowMeetingChat?: "disabled" | "enabled" | "limited", allowTeamworkReactions?: boolean, allowedPresenters?: "everyone" | "organization" | "organizer", isEntryExitAnnounced?: boolean, lobbyBypassScope?: "everyone" | "invited" | "organization" | "organizationAndFederated" | "organizationExcludingGuests" | "organizer", recordAutomatically?: boolean, passcodeRequired?: boolean } | { endDateTime?: string, startDateTime?: string, subject?: string } | { assignedTo?: {
-	value: string,
-	mode: "list" | "id",
-} | {
-	value: string,
-	mode: "id",
-}, dueDateTime?: string, percentComplete?: number };
 
     /**
      * Select the channel from the list, by URL, or by ID (the ID is the "threadId" in the URL)
@@ -106,9 +130,6 @@ export interface MicrosoftTeamsV2NodeParameters {
 	mode: "list" | "id",
 }, role?: "guest" | "owner", tenantId?: string }> };
 
-    /** The name of the group chat, shown to all members */
-    readonly topic?: string;
-
     /**
      * Select the chat from the list, by URL, or by ID (find the chat ID after "conversations/" in the URL)
      * Default: {"mode":"list","value":""}
@@ -176,6 +197,16 @@ export interface MicrosoftTeamsV2NodeParameters {
     /** The date and time when the meeting ends. Must be later than the start time. */
     readonly endDateTime?: string;
 
+    /**
+     * The people to invite to the meeting
+     * Default: {}
+     * Type options: {"multipleValues":true,"sortable":true}
+     */
+    readonly attendees?: { attendee: Array<{ userId: {
+	value: string,
+	mode: "list" | "id",
+}, role?: "attendee" | "presenter" }> };
+
     /** Your own ID for the meeting. Running the node again with the same ID for the same organizer returns the existing meeting instead of creating another one. */
     readonly externalId?: string;
 
@@ -189,7 +220,10 @@ export interface MicrosoftTeamsV2NodeParameters {
 };
 
     /** Default: {} */
-    readonly updateFields?: { allowAttendeeToEnableCamera?: boolean, allowAttendeeToEnableMic?: boolean, allowMeetingChat?: "disabled" | "enabled" | "limited", allowTeamworkReactions?: boolean, allowedPresenters?: "everyone" | "organization" | "organizer", isEntryExitAnnounced?: boolean, endDateTime?: string, lobbyBypassScope?: "everyone" | "invited" | "organization" | "organizationAndFederated" | "organizationExcludingGuests" | "organizer", recordAutomatically?: boolean, startDateTime?: string, subject?: string } | { assignedTo?: {
+    readonly updateFields?: { allowAttendeeToEnableCamera?: boolean, allowAttendeeToEnableMic?: boolean, allowMeetingChat?: "disabled" | "enabled" | "limited", allowTeamworkReactions?: boolean, allowedPresenters?: "everyone" | "organization" | "organizer" | "roleIsPresenter", isEntryExitAnnounced?: boolean, attendees?: { attendee: Array<{ userId: {
+	value: string,
+	mode: "list" | "id",
+}, role?: "attendee" | "presenter" }> }, endDateTime?: string, lobbyBypassScope?: "everyone" | "invited" | "organization" | "organizationAndFederated" | "organizationExcludingGuests" | "organizer", recordAutomatically?: boolean, removeAllAttendees?: boolean, startDateTime?: string, subject?: string } | { assignedTo?: {
 	value: string,
 	mode: "list" | "id",
 } | {
@@ -213,6 +247,7 @@ export interface MicrosoftTeamsV2NodeParameters {
 }, title?: string };
 
     /**
+     * Select the team from the list or by ID (the ID is the "groupId" parameter in the URL you get from "Get a link to the team")
      * Default: {"mode":"list","value":""}
      * Type options: {"loadOptionsDependsOn":["groupSource"]}
      */

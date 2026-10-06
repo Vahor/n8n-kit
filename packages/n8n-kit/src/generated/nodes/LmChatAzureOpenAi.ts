@@ -15,6 +15,9 @@ export interface LmChatAzureOpenAiNodeParameters {
     /** The name of the model(deployment) to use (e.g., gpt-4, gpt-35-turbo) */
     readonly model?: string;
 
+    /** The Azure AI Foundry project that owns the deployment. Required for an Azure AI Foundry resource; leave empty for a classic Azure OpenAI resource. */
+    readonly project?: string;
+
     /**
      * Additional options to add
      * Default: {}
