@@ -26,6 +26,8 @@ export interface SlackApiCredentials {
 
     readonly "managerCredentialId"?: unknown;
 
+    readonly "agentId"?: unknown;
+
     readonly "notice"?: string;
 
     readonly __name: "slackApi";

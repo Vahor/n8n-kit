@@ -11,6 +11,8 @@ export interface AtlassianServiceAccountApiCredentials {
     /** Type options: {"expirable":true} */
     readonly "accessToken"?: unknown;
 
+    readonly "n8n_expires_at"?: unknown;
+
     readonly "setupNotice"?: string;
 
     /** The Client ID of the service account's OAuth 2.0 credential from Atlassian administration */

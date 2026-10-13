@@ -17,7 +17,7 @@ export interface SplitOutProps extends NodeProps {
  */
 export class SplitOut<L extends string, C extends IContext = never, P extends SplitOutProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.splitOut" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

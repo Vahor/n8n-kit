@@ -358,6 +358,7 @@ export * from "./MicrosoftOneDriveTrigger";
 export * from "./MicrosoftOutlookTrigger";
 export * from "./MicrosoftOutlookV1";
 export * from "./MicrosoftOutlookV2";
+export * from "./MicrosoftSharePointTrigger";
 export * from "./MicrosoftSharePointV1";
 export * from "./MicrosoftSharePointV2";
 export * from "./MicrosoftSql";

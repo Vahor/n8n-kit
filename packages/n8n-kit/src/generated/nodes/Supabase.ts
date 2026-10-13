@@ -4,19 +4,13 @@
 export const description = "Add, get, delete and update data in a table" as const;
 export const type = "n8n-nodes-base.supabase" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"supabaseApi","required":true,"testedBy":"supabaseApiCredentialTest"}] as const;
+export const credentials = [{"name":"supabaseApi","required":true,"displayOptions":{"show":{"authentication":["secretKey"]}}},{"name":"supabaseOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface SupabaseNodeParameters {
-    /** Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>) */
-    readonly useCustomSchema?: boolean;
-
-    /**
-     * Name of database schema to use for table
-     * Default: "public"
-     */
-    readonly schema?: string;
+    /** Default: "secretKey" */
+    readonly authentication?: "secretKey" | "oAuth2";
 
     /** Default: "row" */
     readonly resource?: "row";
@@ -26,7 +20,22 @@ export interface SupabaseNodeParameters {
 
     /**
      * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
-     * Type options: {"loadOptionsDependsOn":["useCustomSchema","schema"],"loadOptionsMethod":"getTables"}
+     * Type options: {"loadOptionsMethod":"getProjects"}
+     */
+    readonly projectRef?: string;
+
+    /** Whether to use a database schema different from the default "public" schema (requires schema exposure in the <a href="https://supabase.com/docs/guides/api/using-custom-schemas?queryGroups=language&language=curl#exposing-custom-schemas">Supabase API</a>) */
+    readonly useCustomSchema?: boolean;
+
+    /**
+     * Name of database schema to use for table
+     * Default: "public"
+     */
+    readonly schema?: string;
+
+    /**
+     * Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>
+     * Type options: {"loadOptionsDependsOn":["projectRef","useCustomSchema","schema"],"loadOptionsMethod":"getTables"}
      */
     readonly tableId?: string;
 

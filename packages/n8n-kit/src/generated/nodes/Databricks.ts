@@ -13,7 +13,7 @@ export interface DatabricksNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /** Default: "databricksSql" */
-    readonly resource?: "databricksSql" | "files" | "genie" | "modelServing" | "unityCatalog" | "vectorSearch";
+    readonly resource?: "databricksSql" | "files" | "genie" | "job" | "modelServing" | "unityCatalog" | "vectorSearch";
 
     /** Default: "listDirectory" */
     readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run";

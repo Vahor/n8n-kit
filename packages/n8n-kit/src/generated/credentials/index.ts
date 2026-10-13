@@ -387,6 +387,7 @@ import type { StrapiTokenApiCredentials } from "./StrapiTokenApi.ts";
 import type { StravaOAuth2ApiCredentials } from "./StravaOAuth2Api.ts";
 import type { StripeApiCredentials } from "./StripeApi.ts";
 import type { SupabaseApiCredentials } from "./SupabaseApi.ts";
+import type { SupabaseOAuth2ApiCredentials } from "./SupabaseOAuth2Api.ts";
 import type { SurveyMonkeyApiCredentials } from "./SurveyMonkeyApi.ts";
 import type { SurveyMonkeyOAuth2ApiCredentials } from "./SurveyMonkeyOAuth2Api.ts";
 import type { SyncroMspApiCredentials } from "./SyncroMspApi.ts";
@@ -837,6 +838,7 @@ export type N8nCredentialsUnion =
     | StravaOAuth2ApiCredentials
     | StripeApiCredentials
     | SupabaseApiCredentials
+    | SupabaseOAuth2ApiCredentials
     | SurveyMonkeyApiCredentials
     | SurveyMonkeyOAuth2ApiCredentials
     | SyncroMspApiCredentials

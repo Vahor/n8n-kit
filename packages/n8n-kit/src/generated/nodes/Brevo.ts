@@ -3,7 +3,7 @@
 
 export const description = "Consume Brevo API" as const;
 export const type = "n8n-nodes-base.sendInBlue" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"sendInBlueApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -124,11 +124,13 @@ export interface BrevoNodeParameters {
 
     readonly receipients?: string;
 
+    readonly recipients?: string;
+
     /**
      * Additional fields to add
      * Default: {}
      */
-    readonly additionalFields?: { emailAttachments?: { attachment: { binaryPropertyName?: string } }, receipientsBCC?: { receipientBcc: { bcc?: string } }, receipientsCC?: { receipientCc: { cc?: string } }, emailTags?: { tags: { tag?: string } } } | { emailAttachments?: { attachment: { binaryPropertyName?: string } }, emailTags?: { tags: { tag?: string } }, templateParameters?: { parameterValues: { parameters?: string } } };
+    readonly additionalFields?: { emailAttachments?: { attachment: { binaryPropertyName?: string } }, receipientsBCC?: { receipientBcc: { bcc?: string } }, recipientsBCC?: { recipientBcc: { bcc?: string } }, receipientsCC?: { receipientCc: { cc?: string } }, recipientsCC?: { recipientCc: { cc?: string } }, emailTags?: { tags: { tag?: string } } } | { emailAttachments?: { attachment: { binaryPropertyName?: string } }, emailTags?: { tags: { tag?: string } }, templateParameters?: { parameterValues: { parameters?: string } } };
 
     /** Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v3/smtp/templates","qs":{"templateStatus":true,"limit":1000,"offset":0,"sort":"desc"}},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"templates"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}} */
     readonly templateId?: string;

@@ -360,6 +360,7 @@ export type { MicrosoftOneDriveTriggerNodeParameters } from "./MicrosoftOneDrive
 export type { MicrosoftOutlookTriggerNodeParameters } from "./MicrosoftOutlookTrigger";
 export type { MicrosoftOutlookV1NodeParameters } from "./MicrosoftOutlookV1";
 export type { MicrosoftOutlookV2NodeParameters } from "./MicrosoftOutlookV2";
+export type { MicrosoftSharePointTriggerNodeParameters } from "./MicrosoftSharePointTrigger";
 export type { MicrosoftSharePointV1NodeParameters } from "./MicrosoftSharePointV1";
 export type { MicrosoftSharePointV2NodeParameters } from "./MicrosoftSharePointV2";
 export type { MicrosoftSqlNodeParameters } from "./MicrosoftSql";
