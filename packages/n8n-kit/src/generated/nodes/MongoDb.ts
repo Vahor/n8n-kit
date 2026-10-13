@@ -3,7 +3,7 @@
 
 export const description = "Find, insert and update documents in MongoDB" as const;
 export const type = "n8n-nodes-base.mongoDb" as const;
-export const version = 1.4 as const;
+export const version = 1.5 as const;
 export const credentials = [{"name":"mongoDb","required":true,"testedBy":"mongoDbCredentialTest"}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -28,11 +28,11 @@ export interface MongoDbNodeParameters {
      * Add query options
      * Default: {}
      */
-    readonly options?: { limit?: number, skip?: number, sort?: string, projection?: string } | { dateFields?: string, useDotNotation?: boolean };
+    readonly options?: { limit?: number, skip?: number, sort?: string, sortParameters?: string, projection?: string, projectionParameters?: string } | { dateFields?: string, useDotNotation?: boolean };
 
     /**
      * JSON array of values to use for $1, $2, and so on, in order. Values can be strings, numbers, booleans, null, or arrays of these values. You can also use an expression that returns an array.
-     * Default: "[]"
+     * Default: "=[]"
      * Type options: {"rows":2}
      */
     readonly queryParameters?: string;
@@ -56,11 +56,18 @@ export interface MongoDbNodeParameters {
     readonly indexNameRequired?: string;
 
     /**
-     * The search index definition
+     * The search index definition. Use $1, $2, and so on as complete field names or values to reference Index Definition Parameters below.
      * Default: "{}"
      * Type options: {"alwaysOpenEditWindow":true}
      */
     readonly indexDefinition?: string;
+
+    /**
+     * JSON array of values to use for $1, $2, and so on, in order. Values can be strings, numbers, booleans, null, or arrays of these values. You can also use an expression that returns an array.
+     * Default: "=[]"
+     * Type options: {"rows":2}
+     */
+    readonly indexDefinitionParameters?: string;
 
     /**
      * The search index index type

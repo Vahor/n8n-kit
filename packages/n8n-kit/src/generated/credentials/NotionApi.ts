@@ -9,7 +9,7 @@ export const name = "notionApi" as const;
  */
 export interface NotionApiCredentials {
     /** Type options: {"password":true} */
-    readonly "apiKey"?: string;
+    readonly "apiKey": string;
 
     readonly __name: "notionApi";
 }

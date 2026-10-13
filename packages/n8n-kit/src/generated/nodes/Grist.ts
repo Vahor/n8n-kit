@@ -4,13 +4,16 @@
 export const description = "Consume the Grist API" as const;
 export const type = "n8n-nodes-base.grist" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"gristApi","required":true,"testedBy":"gristApiTest"}] as const;
+export const credentials = [{"name":"gristApi","required":true,"testedBy":"gristApiTest","displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"gristOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface GristNodeParameters {
+    /** Default: "apiKey" */
+    readonly authentication?: "apiKey" | "oAuth2";
+
     /** Default: "getAll" */
-    readonly operation?: "create" | "delete" | "getAll" | "update";
+    readonly operation?: "upsert" | "create" | "delete" | "getAll" | "update";
 
     /** In your document, click your profile icon, then Document Settings, then copy the value under "This document's ID" */
     readonly docId?: string;
@@ -33,6 +36,19 @@ export interface GristNodeParameters {
 
     /** Default: {} */
     readonly additionalOptions?: { filter?: { filterProperties: Array<{ field: string, values?: string }> }, sort?: { sortProperties: Array<{ field: string, direction?: "asc" | "desc" }> } };
+
+    /**
+     * Fields to use for matching existing records
+     * Default: {}
+     * Type options: {"multipleValueButtonText":"Add Criteria Field","multipleValues":true}
+     */
+    readonly upsertCriteria?: { properties: Array<{ fieldId?: string, fieldValue?: string }> };
+
+    /**
+     * What to do when multiple records match the upsert criteria
+     * Default: "first"
+     */
+    readonly onMany?: "first" | "none" | "all";
 
     /**
      * Whether to insert the input data this node receives in the new row

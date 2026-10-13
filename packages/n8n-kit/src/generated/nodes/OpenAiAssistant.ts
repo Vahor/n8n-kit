@@ -21,14 +21,14 @@ export interface OpenAiAssistantNodeParameters {
     readonly instructions?: string;
 
     /**
-     * The model which will be used to power the assistant. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>. The Retrieval tool requires gpt-3.5-turbo-1106 and gpt-4-1106-preview models.
+     * The model which will be used to power the assistant. <a href="https://developers.openai.com/api/docs/models">Learn more</a>. The Retrieval tool requires gpt-3.5-turbo-1106 and gpt-4-1106-preview models.
      * Default: "gpt-3.5-turbo-1106"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"={{ $parameter.options?.baseURL?.split(\"/\").slice(-1).pop() || \"v1\"  }}/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('gpt-') && !$responseItem.id.includes('instruct') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
     readonly model?: string;
 
     /**
-     * The assistant to use. <a href="https://beta.openai.com/docs/assistants/overview">Learn more</a>.
+     * The assistant to use. <a href="https://developers.openai.com/api/docs/assistants/migration">Learn more</a>.
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","headers":{"OpenAI-Beta":"assistants=v1"},"url":"={{ $parameter.options?.baseURL?.split(\"/\").slice(-1).pop() || \"v1\"  }}/assistants"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}}","value":"={{$responseItem.id}}","description":"={{$responseItem.model}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
     readonly assistantId?: string;

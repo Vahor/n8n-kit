@@ -66,7 +66,7 @@ export interface MondayComNodeParameters {
     readonly columnId?: string;
 
     /**
-     * The column fields and values in JSON format. Documentation can be found <a href="https://monday.com/developers/v2#mutations-section-columns-change-multiple-column-values">here</a>.
+     * The column fields and values in JSON format. Documentation can be found <a href="https://developer.monday.com/api-reference/reference/columns#change-multiple-column-values">here</a>.
      * Type options: {"alwaysOpenEditWindow":true}
      */
     readonly columnValues?: string;
