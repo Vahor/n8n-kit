@@ -23,11 +23,14 @@ export interface HttpTemplatedCustomAuthCredentials {
     /** Side-effect-free GET endpoint the credential is verified against (e.g. an account or profile endpoint). Must never trigger billable work. */
     readonly "testUrl"?: string;
 
-    /** Provider page where the user creates/copies the secret (e.g. the API-keys dashboard). The AI Assistant help thread points the user there. */
+    /** Provider page where the user creates/copies the secret (e.g. the API-keys dashboard). The n8n Assistant help thread points the user there. */
     readonly "docsUrl"?: string;
 
     /** Host of the API this credential authenticates against (e.g. api.pexels.com). Setup surfaces only offer this credential to nodes calling the same host (subdomains match). Set from the recipe when the credential is created; when empty, the credential is never offered automatically. */
     readonly "serviceHost"?: string;
+
+    /** Exact API origin used for credential verification. Set from the workflow when the credential is created. */
+    readonly "serviceOrigin"?: string;
 
     /** Status codes the credential test must not treat as an auth rejection, as a JSON array — e.g. [401] for services that answer 401 to a valid GET. Only 401 and 403 can ever count as rejection, so other codes are ignored. */
     readonly "acceptedStatusCodes"?: string;

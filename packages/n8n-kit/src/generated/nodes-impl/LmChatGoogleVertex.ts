@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
+import type { GoogleVertexAiApiCredentials } from "../credentials/GoogleVertexAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { LmChatGoogleVertexNodeParameters } from "../nodes/LmChatGoogleVertex";
@@ -12,7 +13,8 @@ export interface LmChatGoogleVertexProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: LmChatGoogleVertexNodeParameters;
-    readonly googleApiCredentials: Credentials<GoogleApiCredentials>;
+    readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
+    readonly googleVertexAiApiCredentials?: Credentials<GoogleVertexAiApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class LmChatGoogleVertex<L extends string, C extends IContext = never, P 
     protected type = "@n8n/n8n-nodes-langchain.lmChatGoogleVertex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.googleApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleVertexAiApiCredentials];
     }
 
     public toAiLanguageModel(next: IChainable): this {

@@ -13,10 +13,10 @@ export interface DatabricksNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /** Default: "databricksSql" */
-    readonly resource?: "databricksSql" | "files" | "genie" | "modelServing" | "unityCatalog" | "vectorSearch";
+    readonly resource?: "databricksSql" | "files" | "genie" | "job" | "modelServing" | "unityCatalog" | "vectorSearch";
 
     /** Default: "listDirectory" */
-    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex";
+    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run";
 
     /** Full path to the volume in format: catalog.schema.volume */
     readonly volumePath?: string;
@@ -242,6 +242,83 @@ export interface DatabricksNodeParameters {
     readonly columnsToRerank?: string;
 
     /** Default: {} */
-    readonly options?: { filterExpression?: string, scoreThreshold?: number };
+    readonly options?: { filterExpression?: string, scoreThreshold?: number } | { timeout?: number };
+
+    /**
+     * The job run to read
+     * Default: {"mode":"list","value":""}
+     */
+    readonly runId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
+
+    /**
+     * The job to work with
+     * Default: {"mode":"list","value":""}
+     */
+    readonly jobId?: {
+	value: string,
+	mode: "list" | "id" | "url",
+};
+
+    /**
+     * Job-level parameters for this run. They override the default values defined on the job.
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly jobParameters?: { parameters: Array<{ name?: string, value?: string }> };
+
+    /** Whether to wait until the run finishes and return the final run. When off, the node returns the run ID right away and the job keeps running in Databricks. */
+    readonly waitForCompletion?: boolean;
+
+    /**
+     * The Lakebase project
+     * Default: {"mode":"list","value":""}
+     */
+    readonly lakebaseProject?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The branch of the project
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value"]}
+     */
+    readonly lakebaseBranch?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The Postgres database on the branch
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value"]}
+     */
+    readonly lakebaseDatabase?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The Postgres schema. To use a schema other than public, select By ID and enter its name.
+     * Default: {"mode":"list","value":"public","cachedResultName":"public"}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value","lakebaseDatabase.value"]}
+     */
+    readonly lakebaseSchema?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The table in the schema
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value","lakebaseDatabase.value","lakebaseSchema.value"]}
+     */
+    readonly lakebaseTable?: {
+	value: string,
+	mode: "list" | "id",
+};
 
 }

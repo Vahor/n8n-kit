@@ -10,7 +10,7 @@ export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmOpenAiNodeParameters {
     /**
-     * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
+     * The model which will generate the completion. <a href="https://developers.openai.com/api/docs/models">Learn more</a>.
      * Default: {"mode":"list","value":"gpt-3.5-turbo-instruct"}
      */
     readonly model?: {

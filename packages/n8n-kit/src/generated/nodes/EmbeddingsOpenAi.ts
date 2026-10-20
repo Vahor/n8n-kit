@@ -10,7 +10,7 @@ export const outputs = {"ai_embedding":"ai_embedding"} as const;
 
 export interface EmbeddingsOpenAiNodeParameters {
     /**
-     * The model which will generate the embeddings. <a href="https://platform.openai.com/docs/models/overview">Learn more</a>.
+     * The model which will generate the embeddings. <a href="https://developers.openai.com/api/docs/models">Learn more</a>.
      * Default: "text-embedding-ada-002"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"={{ $parameter.options?.baseURL?.split(\"/\").slice(-1).pop() || $credentials?.url?.split(\"/\").slice(-1).pop() || \"v1\" }}/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{\n\t\t\t\t\t\t\t\t\t($parameter.options?.baseURL && !$parameter.options?.baseURL?.startsWith('https://api.openai.com/')) ||\n\t\t\t\t\t\t\t\t\t($credentials?.url && !$credentials.url.startsWith('https://api.openai.com/')) ||\n\t\t\t\t\t\t\t\t\t$responseItem.id.includes('embed')\n\t\t\t\t\t\t\t\t}}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
