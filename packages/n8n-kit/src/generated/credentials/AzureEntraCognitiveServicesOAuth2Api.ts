@@ -4,7 +4,7 @@
 export const name = "azureEntraCognitiveServicesOAuth2Api" as const;
 
 /**
- * displayName: Azure Entra ID (Azure Active Directory) API
+ * displayName: Microsoft Foundry (Entra ID)
  * documentationUrl: https://docs.n8n.io/integrations/builtin/credentials/azureopenai/#using-azure-entra-id-oauth2
  */
 export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
@@ -12,7 +12,7 @@ export interface AzureEntraCognitiveServicesOAuth2ApiCredentials {
     readonly "grantType"?: unknown;
 
     /**
-     * Classic targets *.openai.azure.com (resource name + deployment-based URLs). Azure AI Foundry targets *.services.ai.azure.com/openai/v1 (full endpoint URL).
+     * Classic targets *.openai.azure.com (resource name + deployment-based URLs). Microsoft Foundry targets *.services.ai.azure.com/openai/v1 (full endpoint URL).
      * Default: "classic"
      */
     readonly "endpointType"?: "classic" | "foundry";

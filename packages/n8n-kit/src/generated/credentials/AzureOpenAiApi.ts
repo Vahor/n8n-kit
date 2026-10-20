@@ -4,12 +4,12 @@
 export const name = "azureOpenAiApi" as const;
 
 /**
- * displayName: Azure Open AI
+ * displayName: Microsoft Foundry (API Key)
  * documentationUrl: azureopenai
  */
 export interface AzureOpenAiApiCredentials {
     /**
-     * Classic targets *.openai.azure.com (resource name + deployment-based URLs). Azure AI Foundry targets *.services.ai.azure.com/openai/v1 (full endpoint URL).
+     * Classic targets *.openai.azure.com (resource name + deployment-based URLs). Microsoft Foundry targets *.services.ai.azure.com/openai/v1 (full endpoint URL).
      * Default: "classic"
      */
     readonly "endpointType"?: "classic" | "foundry";

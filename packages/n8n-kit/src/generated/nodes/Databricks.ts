@@ -272,4 +272,53 @@ export interface DatabricksNodeParameters {
     /** Whether to wait until the run finishes and return the final run. When off, the node returns the run ID right away and the job keeps running in Databricks. */
     readonly waitForCompletion?: boolean;
 
+    /**
+     * The Lakebase project
+     * Default: {"mode":"list","value":""}
+     */
+    readonly lakebaseProject?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The branch of the project
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value"]}
+     */
+    readonly lakebaseBranch?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The Postgres database on the branch
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value"]}
+     */
+    readonly lakebaseDatabase?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The Postgres schema. To use a schema other than public, select By ID and enter its name.
+     * Default: {"mode":"list","value":"public","cachedResultName":"public"}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value","lakebaseDatabase.value"]}
+     */
+    readonly lakebaseSchema?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The table in the schema
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value","lakebaseDatabase.value","lakebaseSchema.value"]}
+     */
+    readonly lakebaseTable?: {
+	value: string,
+	mode: "list" | "id",
+};
+
 }

@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { AzureOpenAiApiCredentials } from "../credentials/AzureOpenAiApi.ts";
+import type { AzureEntraCognitiveServicesOAuth2ApiCredentials } from "../credentials/AzureEntraCognitiveServicesOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsAzureOpenAiNodeParameters } from "../nodes/EmbeddingsAzureOpenAi";
@@ -12,22 +13,23 @@ export interface EmbeddingsAzureOpenAiProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: EmbeddingsAzureOpenAiNodeParameters;
-    readonly azureOpenAiApiCredentials: Credentials<AzureOpenAiApiCredentials>;
+    readonly azureOpenAiApiCredentials?: Credentials<AzureOpenAiApiCredentials>;
+    readonly azureEntraCognitiveServicesOAuth2ApiCredentials?: Credentials<AzureEntraCognitiveServicesOAuth2ApiCredentials>;
 }
 
 /**
- * Use Embeddings Azure OpenAI
+ * Use Microsoft Foundry Embeddings
  */
 export class EmbeddingsAzureOpenAi<L extends string, C extends IContext = never, P extends EmbeddingsAzureOpenAiProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.embeddingsAzureOpenAi" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.azureOpenAiApiCredentials];
+        return [this.props?.azureOpenAiApiCredentials, this.props?.azureEntraCognitiveServicesOAuth2ApiCredentials];
     }
 
     public toAiEmbedding(next: IChainable): this {

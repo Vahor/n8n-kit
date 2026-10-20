@@ -16,6 +16,7 @@ import type { CohereApiCredentials } from "./CohereApi.ts";
 import type { DaytonaApiCredentials } from "./DaytonaApi.ts";
 import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
+import type { GoogleVertexAiApiCredentials } from "./GoogleVertexAiApi.ts";
 import type { GroqApiCredentials } from "./GroqApi.ts";
 import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
 import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
@@ -429,6 +430,7 @@ import type { WebflowApiCredentials } from "./WebflowApi.ts";
 import type { WebflowOAuth2ApiCredentials } from "./WebflowOAuth2Api.ts";
 import type { WekanApiCredentials } from "./WekanApi.ts";
 import type { WhatsAppApiCredentials } from "./WhatsAppApi.ts";
+import type { WhatsAppBotApiCredentials } from "./WhatsAppBotApi.ts";
 import type { WhatsAppTriggerApiCredentials } from "./WhatsAppTriggerApi.ts";
 import type { WiseApiCredentials } from "./WiseApi.ts";
 import type { WooCommerceApiCredentials } from "./WooCommerceApi.ts";
@@ -467,6 +469,7 @@ export type N8nCredentialsUnion =
     | DaytonaApiCredentials
     | DeepSeekApiCredentials
     | GooglePalmApiCredentials
+    | GoogleVertexAiApiCredentials
     | GroqApiCredentials
     | HuggingFaceApiCredentials
     | LemonadeApiCredentials
@@ -880,6 +883,7 @@ export type N8nCredentialsUnion =
     | WebflowOAuth2ApiCredentials
     | WekanApiCredentials
     | WhatsAppApiCredentials
+    | WhatsAppBotApiCredentials
     | WhatsAppTriggerApiCredentials
     | WiseApiCredentials
     | WooCommerceApiCredentials

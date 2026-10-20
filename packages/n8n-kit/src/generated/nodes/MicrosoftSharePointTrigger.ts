@@ -12,5 +12,43 @@ export interface MicrosoftSharePointTriggerNodeParameters {
     /** Default: "microsoftOAuth2Api" */
     readonly authentication?: "microsoftOAuth2Api" | "microsoftEntraServicePrincipalApi";
 
+    /**
+     * The SharePoint site holding the library to watch
+     * Default: {"mode":"list","value":""}
+     */
+    readonly site?: {
+	value: string,
+	mode: "list" | "url" | "id",
+};
+
+    /** Default: "documentLibrary" */
+    readonly resource?: "documentLibrary" | "list";
+
+    /**
+     * The document library to watch for changes
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["site.value"]}
+     */
+    readonly drive?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * The list to watch for changes
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["site.value"]}
+     */
+    readonly list?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * Which changes in the library start the workflow
+     * Default: ["changed","deleted"]
+     */
+    readonly events?: ("changed" | "deleted")[];
+
     readonly pollTimes: { item: { mode: "everyMinute" | (string & {}) }[] };
 }
