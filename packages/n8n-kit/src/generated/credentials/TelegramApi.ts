@@ -12,7 +12,7 @@ export interface TelegramApiCredentials {
      * Chat with the <a href="https://telegram.me/botfather">bot father</a> to obtain the access token
      * Type options: {"password":true}
      */
-    readonly "accessToken"?: string;
+    readonly "accessToken": string;
 
     /**
      * Base URL for Telegram Bot API

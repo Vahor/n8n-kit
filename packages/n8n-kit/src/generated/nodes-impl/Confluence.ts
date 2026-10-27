@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { ConfluenceCloudOAuth2ApiCredentials } from "../credentials/ConfluenceCloudOAuth2Api.ts";
+import type { AtlassianServiceAccountApiCredentials } from "../credentials/AtlassianServiceAccountApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { ConfluenceNodeParameters } from "../nodes/Confluence";
@@ -12,7 +13,8 @@ export interface ConfluenceProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: ConfluenceNodeParameters;
-    readonly confluenceCloudOAuth2ApiCredentials: Credentials<ConfluenceCloudOAuth2ApiCredentials>;
+    readonly confluenceCloudOAuth2ApiCredentials?: Credentials<ConfluenceCloudOAuth2ApiCredentials>;
+    readonly atlassianServiceAccountApiCredentials?: Credentials<AtlassianServiceAccountApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class Confluence<L extends string, C extends IContext = never, P extends 
     protected type = "n8n-nodes-base.confluence" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.confluenceCloudOAuth2ApiCredentials];
+        return [this.props?.confluenceCloudOAuth2ApiCredentials, this.props?.atlassianServiceAccountApiCredentials];
     }
 
 }

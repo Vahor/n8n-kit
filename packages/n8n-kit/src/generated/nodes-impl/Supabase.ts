@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { SupabaseApiCredentials } from "../credentials/SupabaseApi.ts";
+import type { SupabaseOAuth2ApiCredentials } from "../credentials/SupabaseOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { SupabaseNodeParameters } from "../nodes/Supabase";
@@ -12,7 +13,8 @@ export interface SupabaseProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: SupabaseNodeParameters;
-    readonly supabaseApiCredentials: Credentials<SupabaseApiCredentials>;
+    readonly supabaseApiCredentials?: Credentials<SupabaseApiCredentials>;
+    readonly supabaseOAuth2ApiCredentials?: Credentials<SupabaseOAuth2ApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class Supabase<L extends string, C extends IContext = never, P extends Su
     protected type = "n8n-nodes-base.supabase" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.supabaseApiCredentials];
+        return [this.props?.supabaseApiCredentials, this.props?.supabaseOAuth2ApiCredentials];
     }
 
 }

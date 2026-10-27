@@ -15,6 +15,13 @@ export interface FormTriggerV2NodeParameters {
     /** Whether the triggering user must also have permission to execute the workflow in the project it belongs to */
     readonly requireExecuteAccess?: boolean;
 
+    /**
+     * The identity provider the user signs in with. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: "n8n-internal"
+     * Type options: {"loadOptionsMethod":"listTrustedSources"}
+     */
+    readonly trustedSource?: string;
+
     /** The final segment of the form's URL, both for test and production */
     readonly path?: string;
 

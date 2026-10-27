@@ -16,6 +16,7 @@ import type { CohereApiCredentials } from "./CohereApi.ts";
 import type { DaytonaApiCredentials } from "./DaytonaApi.ts";
 import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
+import type { GoogleVertexAiApiCredentials } from "./GoogleVertexAiApi.ts";
 import type { GroqApiCredentials } from "./GroqApi.ts";
 import type { HuggingFaceApiCredentials } from "./HuggingFaceApi.ts";
 import type { LemonadeApiCredentials } from "./LemonadeApi.ts";
@@ -56,6 +57,7 @@ import type { ApiTemplateIoApiCredentials } from "./ApiTemplateIoApi.ts";
 import type { AsanaApiCredentials } from "./AsanaApi.ts";
 import type { AsanaOAuth2ApiCredentials } from "./AsanaOAuth2Api.ts";
 import type { AtlassianOAuth2ApiCredentials } from "./AtlassianOAuth2Api.ts";
+import type { AtlassianServiceAccountApiCredentials } from "./AtlassianServiceAccountApi.ts";
 import type { Auth0ManagementApiCredentials } from "./Auth0ManagementApi.ts";
 import type { AutopilotApiCredentials } from "./AutopilotApi.ts";
 import type { AwsCredentials } from "./Aws.ts";
@@ -189,6 +191,7 @@ import type { GoogleTranslateOAuth2ApiCredentials } from "./GoogleTranslateOAuth
 import type { GotifyApiCredentials } from "./GotifyApi.ts";
 import type { GrafanaApiCredentials } from "./GrafanaApi.ts";
 import type { GristApiCredentials } from "./GristApi.ts";
+import type { GristOAuth2ApiCredentials } from "./GristOAuth2Api.ts";
 import type { GumroadApiCredentials } from "./GumroadApi.ts";
 import type { GumroadOAuth2ApiCredentials } from "./GumroadOAuth2Api.ts";
 import type { HaloPSAApiCredentials } from "./HaloPSAApi.ts";
@@ -261,6 +264,7 @@ import type { MessageBirdApiCredentials } from "./MessageBirdApi.ts";
 import type { MetabaseApiCredentials } from "./MetabaseApi.ts";
 import type { MicrosoftAzureCosmosDbSharedKeyApiCredentials } from "./MicrosoftAzureCosmosDbSharedKeyApi.ts";
 import type { MicrosoftAzureMonitorOAuth2ApiCredentials } from "./MicrosoftAzureMonitorOAuth2Api.ts";
+import type { MicrosoftDataverseOAuth2ApiCredentials } from "./MicrosoftDataverseOAuth2Api.ts";
 import type { MicrosoftDynamicsOAuth2ApiCredentials } from "./MicrosoftDynamicsOAuth2Api.ts";
 import type { MicrosoftEntraOAuth2ApiCredentials } from "./MicrosoftEntraOAuth2Api.ts";
 import type { MicrosoftEntraServicePrincipalApiCredentials } from "./MicrosoftEntraServicePrincipalApi.ts";
@@ -271,6 +275,7 @@ import type { MicrosoftOneDriveOAuth2ApiCredentials } from "./MicrosoftOneDriveO
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "./MicrosoftOutlookOAuth2Api.ts";
 import type { MicrosoftSharePointOAuth2ApiCredentials } from "./MicrosoftSharePointOAuth2Api.ts";
 import type { MicrosoftSqlCredentials } from "./MicrosoftSql.ts";
+import type { MicrosoftTeamsManagerOAuth2ApiCredentials } from "./MicrosoftTeamsManagerOAuth2Api.ts";
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "./MicrosoftTeamsOAuth2Api.ts";
 import type { MicrosoftToDoOAuth2ApiCredentials } from "./MicrosoftToDoOAuth2Api.ts";
 import type { MindeeInvoiceApiCredentials } from "./MindeeInvoiceApi.ts";
@@ -384,6 +389,7 @@ import type { StrapiTokenApiCredentials } from "./StrapiTokenApi.ts";
 import type { StravaOAuth2ApiCredentials } from "./StravaOAuth2Api.ts";
 import type { StripeApiCredentials } from "./StripeApi.ts";
 import type { SupabaseApiCredentials } from "./SupabaseApi.ts";
+import type { SupabaseOAuth2ApiCredentials } from "./SupabaseOAuth2Api.ts";
 import type { SurveyMonkeyApiCredentials } from "./SurveyMonkeyApi.ts";
 import type { SurveyMonkeyOAuth2ApiCredentials } from "./SurveyMonkeyOAuth2Api.ts";
 import type { SyncroMspApiCredentials } from "./SyncroMspApi.ts";
@@ -425,6 +431,7 @@ import type { WebflowApiCredentials } from "./WebflowApi.ts";
 import type { WebflowOAuth2ApiCredentials } from "./WebflowOAuth2Api.ts";
 import type { WekanApiCredentials } from "./WekanApi.ts";
 import type { WhatsAppApiCredentials } from "./WhatsAppApi.ts";
+import type { WhatsAppBotApiCredentials } from "./WhatsAppBotApi.ts";
 import type { WhatsAppTriggerApiCredentials } from "./WhatsAppTriggerApi.ts";
 import type { WiseApiCredentials } from "./WiseApi.ts";
 import type { WooCommerceApiCredentials } from "./WooCommerceApi.ts";
@@ -463,6 +470,7 @@ export type N8nCredentialsUnion =
     | DaytonaApiCredentials
     | DeepSeekApiCredentials
     | GooglePalmApiCredentials
+    | GoogleVertexAiApiCredentials
     | GroqApiCredentials
     | HuggingFaceApiCredentials
     | LemonadeApiCredentials
@@ -503,6 +511,7 @@ export type N8nCredentialsUnion =
     | AsanaApiCredentials
     | AsanaOAuth2ApiCredentials
     | AtlassianOAuth2ApiCredentials
+    | AtlassianServiceAccountApiCredentials
     | Auth0ManagementApiCredentials
     | AutopilotApiCredentials
     | AwsCredentials
@@ -636,6 +645,7 @@ export type N8nCredentialsUnion =
     | GotifyApiCredentials
     | GrafanaApiCredentials
     | GristApiCredentials
+    | GristOAuth2ApiCredentials
     | GumroadApiCredentials
     | GumroadOAuth2ApiCredentials
     | HaloPSAApiCredentials
@@ -708,6 +718,7 @@ export type N8nCredentialsUnion =
     | MetabaseApiCredentials
     | MicrosoftAzureCosmosDbSharedKeyApiCredentials
     | MicrosoftAzureMonitorOAuth2ApiCredentials
+    | MicrosoftDataverseOAuth2ApiCredentials
     | MicrosoftDynamicsOAuth2ApiCredentials
     | MicrosoftEntraOAuth2ApiCredentials
     | MicrosoftEntraServicePrincipalApiCredentials
@@ -718,6 +729,7 @@ export type N8nCredentialsUnion =
     | MicrosoftOutlookOAuth2ApiCredentials
     | MicrosoftSharePointOAuth2ApiCredentials
     | MicrosoftSqlCredentials
+    | MicrosoftTeamsManagerOAuth2ApiCredentials
     | MicrosoftTeamsOAuth2ApiCredentials
     | MicrosoftToDoOAuth2ApiCredentials
     | MindeeInvoiceApiCredentials
@@ -831,6 +843,7 @@ export type N8nCredentialsUnion =
     | StravaOAuth2ApiCredentials
     | StripeApiCredentials
     | SupabaseApiCredentials
+    | SupabaseOAuth2ApiCredentials
     | SurveyMonkeyApiCredentials
     | SurveyMonkeyOAuth2ApiCredentials
     | SyncroMspApiCredentials
@@ -872,6 +885,7 @@ export type N8nCredentialsUnion =
     | WebflowOAuth2ApiCredentials
     | WekanApiCredentials
     | WhatsAppApiCredentials
+    | WhatsAppBotApiCredentials
     | WhatsAppTriggerApiCredentials
     | WiseApiCredentials
     | WooCommerceApiCredentials
