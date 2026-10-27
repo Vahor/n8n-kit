@@ -25,6 +25,13 @@ export interface ChatTriggerNodeParameters {
     readonly requireExecuteAccess?: boolean;
 
     /**
+     * The identity provider the visitor signs in with. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * Default: "n8n-internal"
+     * Type options: {"loadOptionsMethod":"listTrustedSources"}
+     */
+    readonly trustedSource?: string;
+
+    /**
      * Whether to include the logged-in user's ID, email and name in the trigger output
      * Default: true
      */

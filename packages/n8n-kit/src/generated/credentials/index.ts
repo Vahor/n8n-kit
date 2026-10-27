@@ -275,6 +275,7 @@ import type { MicrosoftOneDriveOAuth2ApiCredentials } from "./MicrosoftOneDriveO
 import type { MicrosoftOutlookOAuth2ApiCredentials } from "./MicrosoftOutlookOAuth2Api.ts";
 import type { MicrosoftSharePointOAuth2ApiCredentials } from "./MicrosoftSharePointOAuth2Api.ts";
 import type { MicrosoftSqlCredentials } from "./MicrosoftSql.ts";
+import type { MicrosoftTeamsManagerOAuth2ApiCredentials } from "./MicrosoftTeamsManagerOAuth2Api.ts";
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "./MicrosoftTeamsOAuth2Api.ts";
 import type { MicrosoftToDoOAuth2ApiCredentials } from "./MicrosoftToDoOAuth2Api.ts";
 import type { MindeeInvoiceApiCredentials } from "./MindeeInvoiceApi.ts";
@@ -728,6 +729,7 @@ export type N8nCredentialsUnion =
     | MicrosoftOutlookOAuth2ApiCredentials
     | MicrosoftSharePointOAuth2ApiCredentials
     | MicrosoftSqlCredentials
+    | MicrosoftTeamsManagerOAuth2ApiCredentials
     | MicrosoftTeamsOAuth2ApiCredentials
     | MicrosoftToDoOAuth2ApiCredentials
     | MindeeInvoiceApiCredentials

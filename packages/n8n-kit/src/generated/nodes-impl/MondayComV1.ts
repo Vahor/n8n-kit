@@ -5,14 +5,14 @@ import type { MondayComApiCredentials } from "../credentials/MondayComApi.ts";
 import type { MondayComOAuth2ApiCredentials } from "../credentials/MondayComOAuth2Api.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { MondayComNodeParameters } from "../nodes/MondayCom";
+import type { MondayComV1NodeParameters } from "../nodes/MondayComV1";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface MondayComProps extends NodeProps {
+export interface MondayComV1Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: MondayComNodeParameters;
+    readonly parameters?: MondayComV1NodeParameters;
     readonly mondayComApiCredentials?: Credentials<MondayComApiCredentials>;
     readonly mondayComOAuth2ApiCredentials?: Credentials<MondayComOAuth2ApiCredentials>;
 }
@@ -20,7 +20,7 @@ export interface MondayComProps extends NodeProps {
 /**
  * Consume Monday.com API
  */
-export class MondayCom<L extends string, C extends IContext = never, P extends MondayComProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class MondayComV1<L extends string, C extends IContext = never, P extends MondayComV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.mondayCom" as const;
     protected typeVersion = 1 as const;
 

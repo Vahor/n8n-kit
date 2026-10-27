@@ -28,6 +28,9 @@ export interface SlackApiCredentials {
 
     readonly "agentId"?: unknown;
 
+    /** Default: "https://slack.com" */
+    readonly "url"?: unknown;
+
     readonly "notice"?: string;
 
     readonly __name: "slackApi";

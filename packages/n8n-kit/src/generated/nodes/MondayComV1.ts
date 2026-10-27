@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/MondayCom/MondayCom.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/MondayCom/V1/MondayComV1.node.ts' node
 
 export const description = "Consume Monday.com API" as const;
 export const type = "n8n-nodes-base.mondayCom" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"mondayComApi","required":true,"displayOptio
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface MondayComNodeParameters {
+export interface MondayComV1NodeParameters {
     /** Default: "accessToken" */
     readonly authentication?: "accessToken" | "oAuth2";
 

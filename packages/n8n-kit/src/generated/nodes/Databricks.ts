@@ -16,7 +16,7 @@ export interface DatabricksNodeParameters {
     readonly resource?: "databricksSql" | "files" | "genie" | "job" | "modelServing" | "unityCatalog" | "vectorSearch";
 
     /** Default: "listDirectory" */
-    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run";
+    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run" | "deleteRows" | "getAll" | "insert" | "upsert" | "update";
 
     /** Full path to the volume in format: catalog.schema.volume */
     readonly volumePath?: string;
@@ -36,7 +36,7 @@ export interface DatabricksNodeParameters {
     /** Default: {} */
     readonly additionalFields?: { pageSize?: number, pageToken?: string, overwrite?: boolean } | { comment?: string, storage_location?: string };
 
-    /** The ID of the Genie space */
+    /** The Agent ID shown on the Genie agent's About page in Databricks (the space ID in the URL) */
     readonly spaceId?: string;
 
     /** The ID of the conversation */
@@ -49,7 +49,7 @@ export interface DatabricksNodeParameters {
     readonly attachmentId?: string;
 
     /**
-     * The message to be sent to Genie Space
+     * The message to send to the Genie agent
      * Type options: {"rows":4}
      */
     readonly message?: string;
@@ -242,7 +242,7 @@ export interface DatabricksNodeParameters {
     readonly columnsToRerank?: string;
 
     /** Default: {} */
-    readonly options?: { filterExpression?: string, scoreThreshold?: number } | { timeout?: number };
+    readonly options?: { filterExpression?: string, scoreThreshold?: number } | { timeout?: number } | { outputColumns?: unknown[] };
 
     /**
      * The job run to read
@@ -320,5 +320,34 @@ export interface DatabricksNodeParameters {
 	value: string,
 	mode: "list" | "id",
 };
+
+    /** Whether to return all results or only up to a given limit */
+    readonly returnAll?: boolean;
+
+    /**
+     * Max number of results to return
+     * Default: 50
+     * Type options: {"minValue":1}
+     */
+    readonly limit?: number;
+
+    /**
+     * Which rows to act on. Get Many returns rows from the full table if you set no conditions. Delete needs at least one condition.
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly where?: { values: Array<{ column?: string, condition?: "eq" | "gt" | "gte" | "not.is.null" | "is.null" | "lt" | "lte" | "like" | "ilike" | "neq", value?: string }> };
+
+    /**
+     * How to combine the conditions above. AND requires all of them, OR requires any one of them.
+     * Default: "AND"
+     */
+    readonly combineConditions?: "AND" | "OR";
+
+    /**
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly sort?: { values: Array<{ column?: string, direction?: "asc" | "desc" }> };
 
 }

@@ -24,6 +24,9 @@ export interface AzureOpenAiApiCredentials {
 
     readonly "foundryEndpoint": string;
 
+    /** Optional. The Microsoft Foundry project that owns your deployments. n8n uses it to list the deployments. The project overview page in the Foundry portal shows the name. */
+    readonly "project"?: string;
+
     readonly "endpoint"?: string;
 
     readonly __name: "azureOpenAiApi";
