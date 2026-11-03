@@ -22,7 +22,7 @@ export interface VectorStoreMongoDBAtlasProps extends NodeProps {
  */
 export class VectorStoreMongoDBAtlas<L extends string, C extends IContext = never, P extends VectorStoreMongoDBAtlasProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStoreMongoDBAtlas" as const;
-    protected typeVersion = 1.3 as const;
+    protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

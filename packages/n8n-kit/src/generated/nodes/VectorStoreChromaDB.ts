@@ -3,7 +3,7 @@
 
 export const description = "Work with your data in Chroma Vector Store" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreChromaDB" as const;
-export const version = 1.3 as const;
+export const version = 1.4 as const;
 export const credentials = [{"name":"chromaSelfHostedApi","required":true,"displayOptions":{"show":{"authentication":["chromaSelfHostedApi"]}}},{"name":"chromaCloudApi","required":true,"displayOptions":{"show":{"authentication":["chromaCloudApi"]}}}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;

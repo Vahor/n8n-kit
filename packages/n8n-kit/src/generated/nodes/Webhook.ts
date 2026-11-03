@@ -34,6 +34,13 @@ export interface WebhookNodeParameters {
     readonly requireExecuteAccess?: boolean;
 
     /**
+     * The identity provider whose access tokens can trigger this workflow
+     * Default: "n8n-internal"
+     * Type options: {"loadOptionsMethod":"listTrustedSources"}
+     */
+    readonly trustedSource?: string;
+
+    /**
      * When and how to respond to the webhook
      * Default: "onReceived"
      */

@@ -53,5 +53,11 @@ export interface WeaviateApiCredentials {
     /** Whether to use a secure connection for gRPC. */
     readonly "custom_connection_grpc_secure": boolean;
 
+    /**
+     * The URL of an HTTP proxy for gRPC requests. Leave empty to connect directly.
+     * Type options: {"password":true}
+     */
+    readonly "custom_connection_grpc_proxy"?: string;
+
     readonly __name: "weaviateApi";
 }

@@ -13,10 +13,10 @@ export interface DatabricksNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2";
 
     /** Default: "databricksSql" */
-    readonly resource?: "databricksSql" | "files" | "genie" | "job" | "modelServing" | "unityCatalog" | "vectorSearch";
+    readonly resource?: "databricksSql" | "files" | "genie" | "job" | "lakebase" | "modelServing" | "unityCatalog" | "vectorSearch";
 
     /** Default: "listDirectory" */
-    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run" | "deleteRows" | "getAll" | "insert" | "upsert" | "update";
+    readonly operation?: "createDirectory" | "deleteDirectory" | "deleteFile" | "downloadFile" | "getFileInfo" | "listDirectory" | "uploadFile" | "createMessage" | "executeMessageQuery" | "getMessage" | "getSpace" | "getQueryResults" | "startConversation" | "createCatalog" | "createFunction" | "createTable" | "createVolume" | "deleteCatalog" | "deleteFunction" | "deleteTable" | "deleteVolume" | "getCatalog" | "getFunction" | "getTable" | "getVolume" | "listCatalogs" | "listFunctions" | "listTables" | "listVolumes" | "updateCatalog" | "executeQuery" | "queryEndpoint" | "createIndex" | "getIndex" | "listIndexes" | "queryIndex" | "getJob" | "getRun" | "getRunOutput" | "run" | "deleteRows" | "executeFunction" | "getAll" | "insert" | "upsert" | "update";
 
     /** Full path to the volume in format: catalog.schema.volume */
     readonly volumePath?: string;
@@ -320,6 +320,28 @@ export interface DatabricksNodeParameters {
 	value: string,
 	mode: "list" | "id",
 };
+
+    /**
+     * The Postgres function in the schema
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["lakebaseProject.value","lakebaseBranch.value","lakebaseDatabase.value","lakebaseSchema.value"]}
+     */
+    readonly lakebaseFunction?: {
+	value: string,
+	mode: "list" | "id",
+};
+
+    /**
+     * Fill in one field per argument, or send the arguments as one JSON object
+     * Default: "fields"
+     */
+    readonly specifyArguments?: "fields" | "json";
+
+    /**
+     * A JSON object with one key for each argument
+     * Default: "{}"
+     */
+    readonly argumentsJson?: string;
 
     /** Whether to return all results or only up to a given limit */
     readonly returnAll?: boolean;

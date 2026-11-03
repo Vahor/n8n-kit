@@ -17,7 +17,8 @@ export interface AsanaOAuth2ApiCredentials {
     /** Default: "https://app.asana.com/-/oauth_token" */
     readonly "accessTokenUrl": unknown;
 
-    readonly "scope"?: unknown;
+    /** Space-separated list of OAuth2 scopes to request */
+    readonly "scope"?: string;
 
     readonly "authQueryParameters"?: unknown;
 

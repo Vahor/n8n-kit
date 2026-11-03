@@ -10,10 +10,10 @@ export const outputs = {"main":"main"} as const;
 
 export interface N8nNodeParameters {
     /** Default: "workflow" */
-    readonly resource?: "audit" | "credential" | "execution" | "workflow";
+    readonly resource?: "audit" | "credential" | "execution" | "project" | "workflow";
 
     /** Default: "generate" */
-    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
+    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "addUser" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
 
     /** Default: {} */
     readonly additionalOptions?: { categories?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], daysAbandonedWorkflow?: number };
@@ -52,6 +52,18 @@ export interface N8nNodeParameters {
 
     /** Default: {} */
     readonly options?: { activeWorkflows?: boolean };
+
+    /** ID of the project to add the user to */
+    readonly projectId?: string;
+
+    /** ID of the user to add to the project */
+    readonly userId?: string;
+
+    /**
+     * Role to assign to the user in the project. To use a custom project role, set this field to an expression that returns the role slug.
+     * Default: "project:viewer"
+     */
+    readonly role?: "project:admin" | "project:editor" | "project:viewer";
 
     /**
      * Workflow to filter the executions by

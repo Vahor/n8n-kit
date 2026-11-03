@@ -16,7 +16,7 @@ export interface FormTriggerV2NodeParameters {
     readonly requireExecuteAccess?: boolean;
 
     /**
-     * The identity provider the user signs in with. Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>.
+     * The identity provider the user signs in with
      * Default: "n8n-internal"
      * Type options: {"loadOptionsMethod":"listTrustedSources"}
      */

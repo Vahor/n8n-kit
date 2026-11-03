@@ -27,8 +27,10 @@ export interface OAuth2ApiCredentials {
     /** Type options: {"password":true} */
     readonly "clientSecret": string;
 
+    /** Type options: {"password":true} */
     readonly "privateKey"?: unknown;
 
+    /** Type options: {"password":true} */
     readonly "certificate"?: unknown;
 
     readonly "scope"?: string;
