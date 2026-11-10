@@ -8,7 +8,10 @@ export const name = "mcpOAuth2Api" as const;
  * documentationUrl: mcp
  */
 export interface McpOAuth2ApiCredentials {
-    /** Default: true */
+    /**
+     * When on, n8n identifies itself automatically: it uses a Client ID Metadata Document (CIMD) when the server supports CIMD, S256 PKCE, and public clients, and your instance has CIMD enabled; otherwise it uses Dynamic Client Registration (DCR). CIMD does not send a registration request. Turn it off if the provider gives you a fixed client ID and secret, requires you to register a redirect URL, or doesn't support automatic registration.
+     * Default: true
+     */
     readonly "useDynamicClientRegistration"?: boolean;
 
     /**

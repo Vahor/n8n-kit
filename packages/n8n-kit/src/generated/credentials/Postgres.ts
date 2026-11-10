@@ -32,6 +32,15 @@ export interface PostgresCredentials {
     /** Default: "disable" */
     readonly "ssl"?: "allow" | "disable" | "require";
 
+    /** Type options: {"password":true} */
+    readonly "caCertificate"?: string;
+
+    /** Type options: {"password":true} */
+    readonly "clientPrivateKey"?: string;
+
+    /** Type options: {"password":true} */
+    readonly "clientCertificate"?: string;
+
     /** Default: 5432 */
     readonly "port"?: number;
 

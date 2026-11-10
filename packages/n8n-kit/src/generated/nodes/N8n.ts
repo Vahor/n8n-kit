@@ -10,10 +10,10 @@ export const outputs = {"main":"main"} as const;
 
 export interface N8nNodeParameters {
     /** Default: "workflow" */
-    readonly resource?: "audit" | "credential" | "execution" | "project" | "workflow";
+    readonly resource?: "audit" | "credential" | "execution" | "project" | "user" | "workflow";
 
     /** Default: "generate" */
-    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "addUser" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
+    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "addUser" | "get" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
 
     /** Default: {} */
     readonly additionalOptions?: { categories?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], daysAbandonedWorkflow?: number };
@@ -64,6 +64,9 @@ export interface N8nNodeParameters {
      * Default: "project:viewer"
      */
     readonly role?: "project:admin" | "project:editor" | "project:viewer";
+
+    /** Whether to include the user's global role in the output */
+    readonly includeRole?: boolean;
 
     /**
      * Workflow to filter the executions by

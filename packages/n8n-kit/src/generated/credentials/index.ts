@@ -13,6 +13,7 @@ import type { ChatHubVectorStoreQdrantApiCredentials } from "./ChatHubVectorStor
 import type { ChromaCloudApiCredentials } from "./ChromaCloudApi.ts";
 import type { ChromaSelfHostedApiCredentials } from "./ChromaSelfHostedApi.ts";
 import type { CohereApiCredentials } from "./CohereApi.ts";
+import type { CustomModelEndpointApiCredentials } from "./CustomModelEndpointApi.ts";
 import type { DaytonaApiCredentials } from "./DaytonaApi.ts";
 import type { DeepSeekApiCredentials } from "./DeepSeekApi.ts";
 import type { GooglePalmApiCredentials } from "./GooglePalmApi.ts";
@@ -467,6 +468,7 @@ export type N8nCredentialsUnion =
     | ChromaCloudApiCredentials
     | ChromaSelfHostedApiCredentials
     | CohereApiCredentials
+    | CustomModelEndpointApiCredentials
     | DaytonaApiCredentials
     | DeepSeekApiCredentials
     | GooglePalmApiCredentials
