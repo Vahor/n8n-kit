@@ -20,7 +20,7 @@ export interface LmChatAlibabaCloudProps extends NodeProps {
  */
 export class LmChatAlibabaCloud<L extends string, C extends IContext = never, P extends LmChatAlibabaCloudProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatAlibabaCloud" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

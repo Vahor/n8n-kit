@@ -4,11 +4,14 @@
 export const description = "Chat Model Google Vertex" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatGoogleVertex" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"googleApi","required":true}] as const;
+export const credentials = [{"name":"googleApi","required":true,"displayOptions":{"show":{"authentication":["googleApi"]}}},{"name":"googleVertexAiApi","required":true,"testedBy":"googleVertexAiCredentialTest","displayOptions":{"show":{"authentication":["googleVertexAiApi"]}}}] as const;
 export const inputs = {} as const;
 export const outputs = {"ai_languageModel":"ai_languageModel"} as const;
 
 export interface LmChatGoogleVertexNodeParameters {
+    /** Default: "googleApi" */
+    readonly authentication?: "googleApi" | "googleVertexAiApi";
+
     /**
      * Select or enter your Google Cloud project ID
      * Default: {"mode":"list","value":""}

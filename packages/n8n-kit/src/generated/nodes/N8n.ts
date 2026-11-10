@@ -10,10 +10,10 @@ export const outputs = {"main":"main"} as const;
 
 export interface N8nNodeParameters {
     /** Default: "workflow" */
-    readonly resource?: "audit" | "credential" | "execution" | "workflow";
+    readonly resource?: "audit" | "credential" | "execution" | "project" | "user" | "workflow";
 
     /** Default: "generate" */
-    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
+    readonly operation?: "generate" | "create" | "delete" | "getSchema" | "get" | "getAll" | "delete" | "addUser" | "get" | "activate" | "create" | "deactivate" | "delete" | "get" | "getAll" | "getVersion" | "update";
 
     /** Default: {} */
     readonly additionalOptions?: { categories?: ("credentials" | "database" | "filesystem" | "instance" | "nodes")[], daysAbandonedWorkflow?: number };
@@ -53,6 +53,21 @@ export interface N8nNodeParameters {
     /** Default: {} */
     readonly options?: { activeWorkflows?: boolean };
 
+    /** ID of the project to add the user to */
+    readonly projectId?: string;
+
+    /** ID of the user to add to the project */
+    readonly userId?: string;
+
+    /**
+     * Role to assign to the user in the project. To use a custom project role, set this field to an expression that returns the role slug.
+     * Default: "project:viewer"
+     */
+    readonly role?: "project:admin" | "project:editor" | "project:viewer";
+
+    /** Whether to include the user's global role in the output */
+    readonly includeRole?: boolean;
+
     /**
      * Workflow to filter the executions by
      * Default: {"mode":"list","value":""}
@@ -66,7 +81,7 @@ export interface N8nNodeParameters {
     readonly additionalFields?: { versionId?: string, name?: string, description?: string };
 
     /**
-     * A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href="https://docs.n8n.io/api/api-reference/#tag/workflow/paths/~1workflows/post">documentation</a>.
+     * A valid JSON object with required fields: 'name', 'nodes', 'connections' and 'settings'. More information can be found in the <a href="https://docs.n8n.io/connect/n8n-api/workflow#post-workflows">documentation</a>.
      * Default: "{ \"name\": \"My workflow\", \"nodes\": [], \"connections\": {}, \"settings\": {} }"
      * Type options: {"alwaysOpenEditWindow":true}
      */

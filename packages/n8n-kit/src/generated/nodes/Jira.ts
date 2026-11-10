@@ -4,13 +4,22 @@
 export const description = "Consume Jira Software API" as const;
 export const type = "n8n-nodes-base.jira" as const;
 export const version = 1 as const;
-export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}},{"name":"jiraSoftwareCloudOAuth2Api","required":true,"displayOptions":{"show":{"jiraVersion":["cloudOAuth2"]}}}] as const;
+export const credentials = [{"name":"jiraSoftwareCloudApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloud"]}}},{"name":"jiraSoftwareServerApi","required":true,"displayOptions":{"show":{"jiraVersion":["server"]}}},{"name":"jiraSoftwareServerPatApi","required":true,"displayOptions":{"show":{"jiraVersion":["serverPat"]}}},{"name":"jiraSoftwareCloudOAuth2Api","required":true,"displayOptions":{"show":{"jiraVersion":["cloudOAuth2"]}}},{"name":"atlassianServiceAccountApi","required":true,"displayOptions":{"show":{"jiraVersion":["cloudServiceAccount"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
 export interface JiraNodeParameters {
     /** Default: "cloud" */
-    readonly jiraVersion?: "cloud" | "cloudOAuth2" | "server" | "serverPat";
+    readonly jiraVersion?: "cloud" | "cloudOAuth2" | "cloudServiceAccount" | "server" | "serverPat";
+
+    /**
+     * The Jira site to use. Can be left empty when the service account has access to exactly one site.
+     * Default: {"mode":"list","value":""}
+     */
+    readonly site?: {
+	value: string,
+	mode: "list" | "url",
+};
 
     /** Default: "issue" */
     readonly resource?: "issue" | "issueAttachment" | "issueComment" | "user";
@@ -18,13 +27,19 @@ export interface JiraNodeParameters {
     /** Default: "create" */
     readonly operation?: "changelog" | "create" | "delete" | "get" | "getAll" | "notify" | "transitions" | "update" | "add" | "get" | "getAll" | "remove" | "add" | "get" | "getAll" | "remove" | "update" | "create" | "delete" | "get";
 
-    /** Default: {"mode":"list","value":""} */
+    /**
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["site.value"]}
+     */
     readonly project?: {
 	value: string,
 	mode: "list" | "id",
 };
 
-    /** Default: {"mode":"list","value":""} */
+    /**
+     * Default: {"mode":"list","value":""}
+     * Type options: {"loadOptionsDependsOn":["site.value"]}
+     */
     readonly issueType?: {
 	value: string,
 	mode: "list" | "id",

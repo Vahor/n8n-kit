@@ -15,7 +15,7 @@ export interface HttpRequestV3NodeParameters {
      * The request method to use
      * Default: "GET"
      */
-    readonly method?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT";
+    readonly method?: "DELETE" | "GET" | "HEAD" | "OPTIONS" | "PATCH" | "POST" | "PUT" | "COPY" | "COPY" | "MKCOL" | "MKCOL" | "MOVE" | "MOVE" | "PROPFIND" | "PROPFIND" | "REPORT" | "REPORT";
 
     /** The URL to make the request to */
     readonly url?: string;
@@ -88,7 +88,7 @@ export interface HttpRequestV3NodeParameters {
     readonly rawContentType?: string;
 
     /** Default: {} */
-    readonly options?: { batching?: { batch: { batchSize?: number, batchInterval?: number } }, allowUnauthorizedCerts?: boolean, queryParameterArrays?: "repeat" | "brackets" | "indices", lowercaseHeaders?: boolean, redirect?: { redirect: { followRedirects?: boolean, maxRedirects?: number } }, response?: { response: { fullResponse?: boolean, neverError?: boolean, responseFormat?: "autodetect" | "file" | "json" | "text", outputPropertyName: string } }, pagination?: { pagination: { paginationMode?: "off" | "updateAParameterInEachRequest" | "responseContainsNextURL", webhookNotice?: string, nextURL?: string, parameters?: { parameters: Array<{ type?: "body" | "headers" | "qs", name?: string, value?: string }> }, paginationCompleteWhen?: "responseIsEmpty" | "receiveSpecificStatusCodes" | "other", statusCodesWhenComplete?: string, completeExpression?: string, limitPagesFetched?: boolean, maxRequests?: number, requestInterval?: number } }, proxy?: string, timeout?: number, sendCredentialsOnCrossOriginRedirect?: boolean };
+    readonly options?: { batching?: { batch: { batchSize?: number, batchInterval?: number } }, allowUnauthorizedCerts?: boolean, queryParameterArrays?: "repeat" | "brackets" | "indices", lowercaseHeaders?: boolean, redirect?: { redirect: { followRedirects?: boolean, maxRedirects?: number } }, response?: { response: { fullResponse?: boolean, neverError?: boolean, responseFormat?: "autodetect" | "file" | "json" | "text", outputPropertyName: string } }, pagination?: { pagination: { paginationMode?: "off" | "updateAParameterInEachRequest" | "responseContainsNextURL", webhookNotice?: string, nextURL?: string, parameters?: { parameters: Array<{ type?: "body" | "headers" | "qs", name?: string, value?: string }> }, paginationCompleteWhen?: "responseIsEmpty" | "receiveSpecificStatusCodes" | "other", statusCodesWhenComplete?: string, completeExpression?: string, limitPagesFetched?: boolean, maxRequests?: number, requestInterval?: number } }, proxy?: string, timeout?: number, sendCredentialsOnCrossOriginRedirect?: boolean, webdavMethods?: boolean };
 
     /** Whether the optimize the tool response to reduce amount of data passed to the LLM that could lead to better result and reduce cost */
     readonly optimizeResponse?: boolean;

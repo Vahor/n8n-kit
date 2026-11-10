@@ -9,7 +9,7 @@ export const name = "clearbitApi" as const;
  */
 export interface ClearbitApiCredentials {
     /** Type options: {"password":true} */
-    readonly "apiKey"?: string;
+    readonly "apiKey": string;
 
     readonly __name: "clearbitApi";
 }

@@ -17,8 +17,19 @@ export interface TypeformOAuth2ApiCredentials {
     /** Default: "https://api.typeform.com/oauth/token" */
     readonly "accessTokenUrl": unknown;
 
-    /** Default: "webhooks:write webhooks:read forms:read" */
+    /** Default: "={{$self[\"customScopes\"] ? $self[\"enabledScopes\"] : \"webhooks:write webhooks:read forms:read\"}}" */
     readonly "scope"?: unknown;
+
+    /** Define custom scopes */
+    readonly "customScopes"?: boolean;
+
+    readonly "customScopesNotice"?: string;
+
+    /**
+     * Scopes that should be enabled
+     * Default: "webhooks:write webhooks:read forms:read"
+     */
+    readonly "enabledScopes"?: string;
 
     readonly "authQueryParameters"?: unknown;
 

@@ -23,7 +23,4 @@ export interface ScheduleTriggerNodeParameters {
      */
     readonly misfireGraceSeconds?: number;
 
-    /** Whether to run this trigger through the legacy in-memory scheduler instead of the durable scheduler */
-    readonly skipDurableScheduler?: boolean;
-
 }

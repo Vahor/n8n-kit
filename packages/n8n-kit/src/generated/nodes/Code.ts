@@ -21,7 +21,7 @@ export interface CodeNodeParameters {
     readonly jsCode?: string;
 
     /**
-     * Python code to execute.<br><br>Tip: You can use built-in methods and variables like <code>_today</code> for dates and <code>_jmespath</code> for querying JSON structures. <a href="https://docs.n8n.io/code/builtin/">Learn more</a>.
+     * Python code to execute. Runs in a sandbox with no network access, and imports only work if your instance allowlists them: read the input items from <code>_items</code> (all-items mode) or <code>_item</code> (per-item mode). <a href="https://docs.n8n.io/code/builtin/">Learn more</a>.
      * Type options: {"editor":"codeNodeEditor","editorLanguage":"python"}
      */
     readonly pythonCode?: string;

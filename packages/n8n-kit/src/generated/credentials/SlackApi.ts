@@ -8,7 +8,10 @@ export const name = "slackApi" as const;
  * documentationUrl: slack
  */
 export interface SlackApiCredentials {
-    /** Type options: {"password":true} */
+    /**
+     * In your Slack app, open OAuth & Permissions. Copy the Bot User OAuth Token (xoxb-) or User OAuth Token (xoxp-), depending on the operations you need.
+     * Type options: {"password":true}
+     */
     readonly "accessToken": string;
 
     /**
@@ -22,6 +25,11 @@ export interface SlackApiCredentials {
     readonly "teamId"?: unknown;
 
     readonly "managerCredentialId"?: unknown;
+
+    readonly "agentId"?: unknown;
+
+    /** Default: "https://slack.com" */
+    readonly "url"?: unknown;
 
     readonly "notice"?: string;
 

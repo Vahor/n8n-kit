@@ -3,7 +3,7 @@
 
 export const description = "Work with your data in a Redis vector index" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreRedis" as const;
-export const version = 1.3 as const;
+export const version = 1.4 as const;
 export const credentials = [{"name":"redis","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
@@ -34,7 +34,7 @@ export interface VectorStoreRedisNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { keyPrefix?: string, overwriteDocuments?: boolean, metadataKey?: string, contentKey?: string, vectorKey?: string, ttl?: number } | { metadataFilter?: string, keyPrefix?: string, metadataKey?: string, contentKey?: string, vectorKey?: string };
+    readonly options?: { keyPrefix?: string, overwriteDocuments?: boolean, metadataKey?: string, metadataSchema?: string, contentKey?: string, vectorKey?: string, ttl?: number } | { metadataFilter?: string, advancedFilter?: string, metadataSchema?: string, keyPrefix?: string, metadataKey?: string, contentKey?: string, vectorKey?: string };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

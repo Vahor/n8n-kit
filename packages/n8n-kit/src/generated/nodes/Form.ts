@@ -52,7 +52,7 @@ export interface FormNodeParameters {
     readonly maxDateAndTime?: string;
 
     /** Default: {} */
-    readonly options?: { formTitle?: string, formDescription?: string, buttonLabel?: string, customCss?: string } | { formTitle?: string, customCss?: string };
+    readonly options?: { formTitle?: string, formDescription?: string, buttonLabel?: string, customCss?: string } | { formTitle?: string, appendAttribution?: boolean, customCss?: string };
 
     /** Default: "text" */
     readonly respondWith?: "text" | "redirect" | "showText" | "returnBinary";

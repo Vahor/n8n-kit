@@ -70,8 +70,8 @@ export interface WhatsAppNodeParameters {
     readonly mediaFilename?: string;
 
     /**
-     * Name of the template
-     * Type options: {"loadOptions":{"routing":{"request":{"url":"={{$credentials.businessAccountId}}/message_templates","method":"GET"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.name}} - {{$responseItem.language}}","value":"={{$responseItem.name}}|{{$responseItem.language}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
+     * Select a template from the list, or use an expression in the format <code>name|language</code>
+     * Type options: {"loadOptionsMethod":"getTemplates"}
      */
     readonly template?: string;
 

@@ -16,14 +16,14 @@ export interface OpenAiNodeParameters {
     readonly operation?: "complete" | "create" | "complete" | "edit" | "moderate";
 
     /**
-     * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
+     * The model which will generate the completion. <a href="https://developers.openai.com/api/docs/models">Learn more</a>.
      * Default: "gpt-3.5-turbo"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('gpt-') && !$responseItem.id.startsWith('gpt-4-vision') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
     readonly model?: string | "code-davinci-edit-001" | "text-davinci-edit-001" | "text-moderation-stable" | "text-moderation-latest";
 
     /**
-     * The model which will generate the completion. <a href="https://beta.openai.com/docs/models/overview">Learn more</a>.
+     * The model which will generate the completion. <a href="https://developers.openai.com/api/docs/models">Learn more</a>.
      * Default: "gpt-3.5-turbo"
      * Type options: {"loadOptions":{"routing":{"request":{"method":"GET","url":"/v1/models"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"filter","properties":{"pass":"={{ $responseItem.id.startsWith('gpt-') && !$responseItem.id.startsWith('gpt-4-vision') }}"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.id}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */

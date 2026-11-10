@@ -8,6 +8,9 @@ export const name = "jiraSoftwareCloudOAuth2Api" as const;
  * documentationUrl: jira
  */
 export interface JiraSoftwareCloudOAuth2ApiCredentials {
+    /** The URL of your Atlassian site, e.g. https://your-site.atlassian.net. The scheme and any path (like /wiki) are ignored. */
+    readonly "domain": string;
+
     /** Define custom scopes */
     readonly "customScopes"?: boolean;
 

@@ -5,7 +5,7 @@ export const name = "verticaApi" as const;
 
 /**
  * displayName: Vertica API
- * documentationUrl: vertica
+ * documentationUrl: https://docs.n8n.io/integrations/builtin/custom-api-actions-for-existing-nodes
  */
 export interface VerticaApiCredentials {
     /** Default: "https://localhost:8443" */

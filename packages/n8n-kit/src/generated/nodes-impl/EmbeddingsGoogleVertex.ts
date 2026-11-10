@@ -2,6 +2,7 @@
 // see scripts/generate-nodes-impl.ts
 
 import type { GoogleApiCredentials } from "../credentials/GoogleApi.ts";
+import type { GoogleVertexAiApiCredentials } from "../credentials/GoogleVertexAiApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext, IChainable } from "../../workflow/chain/types";
 import type { EmbeddingsGoogleVertexNodeParameters } from "../nodes/EmbeddingsGoogleVertex";
@@ -12,7 +13,8 @@ export interface EmbeddingsGoogleVertexProps extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
     readonly parameters?: EmbeddingsGoogleVertexNodeParameters;
-    readonly googleApiCredentials: Credentials<GoogleApiCredentials>;
+    readonly googleApiCredentials?: Credentials<GoogleApiCredentials>;
+    readonly googleVertexAiApiCredentials?: Credentials<GoogleVertexAiApiCredentials>;
 }
 
 /**
@@ -22,12 +24,12 @@ export class EmbeddingsGoogleVertex<L extends string, C extends IContext = never
     protected type = "@n8n/n8n-nodes-langchain.embeddingsGoogleVertex" as const;
     protected typeVersion = 1 as const;
 
-    constructor(id: L, override props: P) {
+    constructor(id: L, override props?: P) {
         super(id, props);
     }
 
     override getCredentials() {
-        return [this.props.googleApiCredentials];
+        return [this.props?.googleApiCredentials, this.props?.googleVertexAiApiCredentials];
     }
 
     public toAiEmbedding(next: IChainable): this {

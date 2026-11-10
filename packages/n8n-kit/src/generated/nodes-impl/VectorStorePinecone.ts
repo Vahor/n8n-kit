@@ -22,7 +22,7 @@ export interface VectorStorePineconeProps extends NodeProps {
  */
 export class VectorStorePinecone<L extends string, C extends IContext = never, P extends VectorStorePineconeProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.vectorStorePinecone" as const;
-    protected typeVersion = 1.3 as const;
+    protected typeVersion = 1.4 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

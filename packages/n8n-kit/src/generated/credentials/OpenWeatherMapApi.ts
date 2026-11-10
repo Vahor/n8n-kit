@@ -11,5 +11,8 @@ export interface OpenWeatherMapApiCredentials {
     /** Type options: {"password":true} */
     readonly "accessToken"?: string;
 
+    /** Default: "https://api.openweathermap.org" */
+    readonly "url"?: unknown;
+
     readonly __name: "openWeatherMapApi";
 }

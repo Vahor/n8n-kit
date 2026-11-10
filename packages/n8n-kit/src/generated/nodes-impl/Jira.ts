@@ -5,6 +5,7 @@ import type { JiraSoftwareCloudApiCredentials } from "../credentials/JiraSoftwar
 import type { JiraSoftwareServerApiCredentials } from "../credentials/JiraSoftwareServerApi.ts";
 import type { JiraSoftwareServerPatApiCredentials } from "../credentials/JiraSoftwareServerPatApi.ts";
 import type { JiraSoftwareCloudOAuth2ApiCredentials } from "../credentials/JiraSoftwareCloudOAuth2Api.ts";
+import type { AtlassianServiceAccountApiCredentials } from "../credentials/AtlassianServiceAccountApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
 import type { JiraNodeParameters } from "../nodes/Jira";
@@ -19,6 +20,7 @@ export interface JiraProps extends NodeProps {
     readonly jiraSoftwareServerApiCredentials?: Credentials<JiraSoftwareServerApiCredentials>;
     readonly jiraSoftwareServerPatApiCredentials?: Credentials<JiraSoftwareServerPatApiCredentials>;
     readonly jiraSoftwareCloudOAuth2ApiCredentials?: Credentials<JiraSoftwareCloudOAuth2ApiCredentials>;
+    readonly atlassianServiceAccountApiCredentials?: Credentials<AtlassianServiceAccountApiCredentials>;
 }
 
 /**
@@ -33,7 +35,7 @@ export class Jira<L extends string, C extends IContext = never, P extends JiraPr
     }
 
     override getCredentials() {
-        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials, this.props?.jiraSoftwareCloudOAuth2ApiCredentials];
+        return [this.props?.jiraSoftwareCloudApiCredentials, this.props?.jiraSoftwareServerApiCredentials, this.props?.jiraSoftwareServerPatApiCredentials, this.props?.jiraSoftwareCloudOAuth2ApiCredentials, this.props?.atlassianServiceAccountApiCredentials];
     }
 
 }
