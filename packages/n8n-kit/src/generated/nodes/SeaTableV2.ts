@@ -3,7 +3,7 @@
 
 export const description = "Consume the SeaTable API" as const;
 export const type = "n8n-nodes-base.seaTable" as const;
-export const version = 2 as const;
+export const version = 2.1 as const;
 export const credentials = [{"name":"seaTableApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

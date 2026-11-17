@@ -17,7 +17,7 @@ export interface WhatsAppNodeParameters {
 
     /**
      * The ID of the business account's phone number from which the message will be sent from
-     * Type options: {"loadOptions":{"routing":{"request":{"url":"={{$credentials.businessAccountId}}/phone_numbers","method":"GET"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.display_phone_number}} - {{$responseItem.verified_name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
+     * Type options: {"loadOptions":{"routing":{"request":{"url":"=/{{ toPathSegment($credentials.businessAccountId) }}/phone_numbers","method":"GET"},"output":{"postReceive":[{"type":"rootProperty","properties":{"property":"data"}},{"type":"setKeyValue","properties":{"name":"={{$responseItem.display_phone_number}} - {{$responseItem.verified_name}}","value":"={{$responseItem.id}}"}},{"type":"sort","properties":{"key":"name"}}]}}}}
      */
     readonly phoneNumberId?: string;
 

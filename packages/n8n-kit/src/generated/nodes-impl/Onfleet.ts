@@ -20,7 +20,7 @@ export interface OnfleetProps extends NodeProps {
  */
 export class Onfleet<L extends string, C extends IContext = never, P extends OnfleetProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.onfleet" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

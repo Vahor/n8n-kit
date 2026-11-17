@@ -3,7 +3,7 @@
 
 export const description = "Interact with Databricks API" as const;
 export const type = "n8n-nodes-base.databricks" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"databricksApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"databricksOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

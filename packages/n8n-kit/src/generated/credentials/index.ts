@@ -279,6 +279,7 @@ import type { MicrosoftSqlCredentials } from "./MicrosoftSql.ts";
 import type { MicrosoftTeamsManagerOAuth2ApiCredentials } from "./MicrosoftTeamsManagerOAuth2Api.ts";
 import type { MicrosoftTeamsOAuth2ApiCredentials } from "./MicrosoftTeamsOAuth2Api.ts";
 import type { MicrosoftToDoOAuth2ApiCredentials } from "./MicrosoftToDoOAuth2Api.ts";
+import type { MicrosoftWorkIqOAuth2ApiCredentials } from "./MicrosoftWorkIqOAuth2Api.ts";
 import type { MindeeInvoiceApiCredentials } from "./MindeeInvoiceApi.ts";
 import type { MindeeReceiptApiCredentials } from "./MindeeReceiptApi.ts";
 import type { MiroOAuth2ApiCredentials } from "./MiroOAuth2Api.ts";
@@ -734,6 +735,7 @@ export type N8nCredentialsUnion =
     | MicrosoftTeamsManagerOAuth2ApiCredentials
     | MicrosoftTeamsOAuth2ApiCredentials
     | MicrosoftToDoOAuth2ApiCredentials
+    | MicrosoftWorkIqOAuth2ApiCredentials
     | MindeeInvoiceApiCredentials
     | MindeeReceiptApiCredentials
     | MiroOAuth2ApiCredentials

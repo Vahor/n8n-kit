@@ -3,7 +3,7 @@
 
 export const description = "Retrieve data from GitLab API" as const;
 export const type = "n8n-nodes-base.gitlab" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"gitlabApi","required":true,"displayOptions":{"show":{"authentication":["accessToken"]}}},{"name":"gitlabOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -72,7 +72,7 @@ export interface GitlabNodeParameters {
      */
     readonly additionalFields?: { name?: string, description?: string, ref?: string } | { order_by?: "created_at" | "released_at", sort?: "asc" | "desc" } | { name?: string, description?: string, milestones?: string, released_at?: string };
 
-    /** The ID or URL-encoded path of the project */
+    /** The ID or path of the project, for example <code>group/project</code> */
     readonly projectId?: string;
 
     /** The Git tag the release is associated with */

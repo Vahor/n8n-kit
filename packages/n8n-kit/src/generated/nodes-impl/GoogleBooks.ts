@@ -22,7 +22,7 @@ export interface GoogleBooksProps extends NodeProps {
  */
 export class GoogleBooks<L extends string, C extends IContext = never, P extends GoogleBooksProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.googleBooks" as const;
-    protected typeVersion = 2 as const;
+    protected typeVersion = 2.1 as const;
 
     constructor(id: L, override props?: P) {
         super(id, props);

@@ -1,7 +1,7 @@
 // GENERATED FILE, DO NOT EDIT
 // Generated from '/n8n/packages/@n8n/nodes-langchain/nodes/llms/LmChatMoonshot/LmChatMoonshot.node.ts' node
 
-export const description = "For advanced usage with an AI chain" as const;
+export const description = "Run Kimi models, with optional response-format settings" as const;
 export const type = "@n8n/n8n-nodes-langchain.lmChatMoonshot" as const;
 export const version = 1.1 as const;
 export const credentials = [{"name":"moonshotApi","required":true}] as const;

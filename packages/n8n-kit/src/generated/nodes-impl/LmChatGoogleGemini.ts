@@ -16,7 +16,7 @@ export interface LmChatGoogleGeminiProps extends NodeProps {
 }
 
 /**
- * Chat Model Google Gemini
+ * Run Gemini models, with optional adjustable safety filters
  */
 export class LmChatGoogleGemini<L extends string, C extends IContext = never, P extends LmChatGoogleGeminiProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "@n8n/n8n-nodes-langchain.lmChatGoogleGemini" as const;

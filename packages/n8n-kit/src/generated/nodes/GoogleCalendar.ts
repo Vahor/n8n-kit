@@ -3,7 +3,7 @@
 
 export const description = "Consume Google Calendar API" as const;
 export const type = "n8n-nodes-base.googleCalendar" as const;
-export const version = 1.3 as const;
+export const version = 1.4 as const;
 export const credentials = [{"name":"googleCalendarOAuth2Api","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
