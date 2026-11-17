@@ -3,7 +3,7 @@
 
 export const description = "Work with your data in Pinecone Vector Store" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStorePinecone" as const;
-export const version = 1.3 as const;
+export const version = 1.4 as const;
 export const credentials = [{"name":"pineconeApi","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;
@@ -34,7 +34,7 @@ export interface VectorStorePineconeNodeParameters {
     readonly embeddingBatchSize?: number;
 
     /** Default: {} */
-    readonly options?: { clearNamespace?: boolean, pineconeNamespace?: string } | { pineconeNamespace?: string, metadata?: { metadataValues: Array<{ name: string, value?: string }> } };
+    readonly options?: { clearNamespace?: boolean, pineconeNamespace?: string } | { pineconeNamespace?: string, metadata?: { metadataValues: Array<{ name: string, value?: string }> }, textField?: string };
 
     /** Search prompt to retrieve matching documents from the vector store using similarity-based ranking */
     readonly prompt?: string;

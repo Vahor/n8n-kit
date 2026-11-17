@@ -3,7 +3,7 @@
 
 export const description = "Invoke functions on AWS Lambda" as const;
 export const type = "n8n-nodes-base.awsLambda" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"aws","required":true,"displayOptions":{"show":{"authentication":["iam"]}}},{"name":"awsAssumeRole","required":true,"displayOptions":{"show":{"authentication":["assumeRole"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

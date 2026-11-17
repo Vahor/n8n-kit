@@ -20,7 +20,7 @@ export interface ERPNextProps extends NodeProps {
  */
 export class ERPNext<L extends string, C extends IContext = never, P extends ERPNextProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.erpNext" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

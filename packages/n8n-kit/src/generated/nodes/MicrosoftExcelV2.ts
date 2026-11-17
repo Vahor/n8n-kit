@@ -3,7 +3,7 @@
 
 export const description = "Consume the Microsoft Excel API for workbooks stored in OneDrive" as const;
 export const type = "n8n-nodes-base.microsoftExcel" as const;
-export const version = 2.2 as const;
+export const version = 2.3 as const;
 export const credentials = [{"name":"microsoftExcelOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftExcelOAuth2Api"]}}},{"name":"microsoftOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["microsoftOAuth2Api"]}}},{"name":"microsoftEntraServicePrincipalApi","required":true,"displayOptions":{"show":{"authentication":["microsoftEntraServicePrincipalApi"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

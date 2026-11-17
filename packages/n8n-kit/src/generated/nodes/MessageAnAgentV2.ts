@@ -3,7 +3,7 @@
 
 export const description = "Send a message to a n8n agent" as const;
 export const type = "n8n-nodes-base.messageAnAgent" as const;
-export const version = 3 as const;
+export const version = 3.1 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -44,6 +44,6 @@ export interface MessageAnAgentV2NodeParameters {
     readonly outputSchema?: string;
 
     /** Default: {} */
-    readonly advanced?: { invokeMode?: "allItems" | "perItem", sessionId?: string, allowOtherNodesData?: boolean };
+    readonly advanced?: { enableStreaming?: boolean, invokeMode?: "allItems" | "perItem", sessionId?: string, session?: { session: { sessionIdType?: "fromInput" | "customKey", sessionKey?: string } }, allowOtherNodesData?: boolean };
 
 }

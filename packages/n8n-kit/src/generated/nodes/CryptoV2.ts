@@ -63,4 +63,10 @@ export interface CryptoV2NodeParameters {
      */
     readonly cipher?: "aes-256-gcm" | "aes-192-gcm" | "aes-128-gcm" | "chacha20-poly1305";
 
+    /**
+     * Hash algorithm for RSA-OAEP. Select the same value for encryption and decryption.
+     * Default: "sha256"
+     */
+    readonly oaepHash?: "sha256" | "sha1";
+
 }

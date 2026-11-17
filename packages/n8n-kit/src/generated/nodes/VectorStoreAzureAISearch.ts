@@ -3,7 +3,7 @@
 
 export const description = "Work with your data in Azure AI Search Vector Store" as const;
 export const type = "@n8n/n8n-nodes-langchain.vectorStoreAzureAISearch" as const;
-export const version = 1.3 as const;
+export const version = 1.4 as const;
 export const credentials = [{"name":"azureAiSearchApi","required":true}] as const;
 export const inputs = {"custom":"custom"} as const;
 export const outputs = {"custom":"custom"} as const;

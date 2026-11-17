@@ -29,7 +29,7 @@ export interface QuickBaseNodeParameters {
     readonly limit?: number;
 
     /** Default: {} */
-    readonly options?: { includeFieldPerms?: boolean } | { fields?: unknown[], useFieldIDs?: boolean } | { select?: unknown[], sortByUi?: { sortByValues: Array<{ fieldId?: string, order?: "ASC" | "DESC" }> }, where?: string };
+    readonly options?: { includeFieldPerms?: boolean } | { fields?: unknown[], useFieldIDs?: boolean } | { select?: unknown[], sortByUi?: { sortByValues: Array<{ fieldId?: string, order?: "ASC" | "DESC" }> }, where?: string, whereParameters?: { values: Array<{ value?: string }> } };
 
     /** The unique identifier of the record */
     readonly recordId?: string;
@@ -57,6 +57,13 @@ export interface QuickBaseNodeParameters {
 
     /** The filter to delete records. To delete all records specify a filter that will include all records, for example {3.GT.0} where 3 is the ID of the Record ID field. */
     readonly where?: string;
+
+    /**
+     * Values to insert for $1, $2, etc. in 'Where'. When you add a parameter, every $ followed by a number in 'Where' refers to a parameter. A value cannot contain ', ", { or }.
+     * Default: {}
+     * Type options: {"multipleValues":true}
+     */
+    readonly whereParameters?: { values: Array<{ value?: string }> };
 
     /** Update can use the key field on the table, or any other supported unique field */
     readonly updateKey?: string;

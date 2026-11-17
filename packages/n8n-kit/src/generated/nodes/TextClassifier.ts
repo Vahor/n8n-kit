@@ -21,6 +21,6 @@ export interface TextClassifierNodeParameters {
     readonly categories?: { categories: Array<{ category: string, description?: string }> };
 
     /** Default: {} */
-    readonly options?: { multiClass?: boolean, fallback?: "discard" | "other", systemPromptTemplate?: string, enableAutoFixing?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };
+    readonly options?: { multiClass?: boolean, fallback?: "discard" | "other", includeConfidenceScores?: boolean, systemPromptTemplate?: string, enableAutoFixing?: boolean, batching?: { batchSize?: number, delayBetweenBatches?: number } };
 
 }

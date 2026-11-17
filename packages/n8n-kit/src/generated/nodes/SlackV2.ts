@@ -106,7 +106,7 @@ export interface SlackV2NodeParameters {
     readonly text?: string;
 
     /**
-     * Enter the JSON output from Slack's visual Block Kit Builder here. You can then use expressions to add variable content to your blocks. To create blocks, use <a target='_blank' href='https://app.slack.com/block-kit-builder'>Slack's Block Kit Builder</a>
+     * Enter the JSON output from Slack's visual Block Kit Builder here, including the top-level wrapper: <code>{ "blocks": [ ... ] }</code>. A bare array of blocks is not accepted. You can then use expressions to add variable content to your blocks. To create blocks, use <a target='_blank' href='https://app.slack.com/block-kit-builder'>Slack's Block Kit Builder</a>
      * Type options: {"rows":3}
      */
     readonly blocksUi?: string;
