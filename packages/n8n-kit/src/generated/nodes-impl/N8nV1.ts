@@ -4,21 +4,21 @@
 import type { N8nApiCredentials } from "../credentials/N8nApi.ts";
 import type { Credentials } from "../../credentials";
 import type { IContext } from "../../workflow/chain/types";
-import type { N8nNodeParameters } from "../nodes/N8n";
+import type { N8nV1NodeParameters } from "../nodes/N8nV1";
 import { Node, type NodeProps } from "../../nodes/node";
 import type { Type } from "arktype";
 
-export interface N8nProps extends NodeProps {
+export interface N8nV1Props extends NodeProps {
     /** {@inheritDoc OutputSchema} */
     readonly outputSchema?: Type;
-    readonly parameters?: N8nNodeParameters;
+    readonly parameters?: N8nV1NodeParameters;
     readonly n8NApiCredentials: Credentials<N8nApiCredentials>;
 }
 
 /**
  * Handle events and perform actions on your n8n instance
  */
-export class N8n<L extends string, C extends IContext = never, P extends N8nProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
+export class N8nV1<L extends string, C extends IContext = never, P extends N8nV1Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.n8n" as const;
     protected typeVersion = 1 as const;
 

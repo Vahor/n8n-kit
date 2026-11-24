@@ -17,7 +17,7 @@ export interface WhatsAppBotApiCredentials {
     /** The bot phone number ID, from the WhatsApp > API Setup page of the Meta app */
     readonly "phoneNumberId": string;
 
-    /** The WABA ID that owns the phone number, from the same API Setup page */
+    /** The messaging account ID that owns the phone number, from the WhatsApp > API Setup page of the Meta app */
     readonly "businessAccountId": string;
 
     /**

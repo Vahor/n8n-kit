@@ -1,5 +1,5 @@
 // GENERATED FILE, DO NOT EDIT
-// Generated from '/n8n/packages/nodes-base/nodes/N8n/N8n.node.ts' node
+// Generated from '/n8n/packages/nodes-base/nodes/N8n/v1/N8nV1.node.ts' node
 
 export const description = "Handle events and perform actions on your n8n instance" as const;
 export const type = "n8n-nodes-base.n8n" as const;
@@ -8,7 +8,7 @@ export const credentials = [{"name":"n8nApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
-export interface N8nNodeParameters {
+export interface N8nV1NodeParameters {
     /** Default: "workflow" */
     readonly resource?: "audit" | "credential" | "execution" | "project" | "user" | "workflow";
 
