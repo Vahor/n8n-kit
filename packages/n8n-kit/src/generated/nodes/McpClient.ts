@@ -4,7 +4,7 @@
 export const description = "Standalone MCP Client" as const;
 export const type = "@n8n/n8n-nodes-langchain.mcpClient" as const;
 export const version = 1.1 as const;
-export const credentials = [{"name":"httpBearerAuth","required":true,"displayOptions":{"show":{"authentication":["bearerAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"mcpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["mcpOAuth2Api"]}}},{"name":"httpMultipleHeadersAuth","required":true,"displayOptions":{"show":{"authentication":["multipleHeadersAuth"]}}}] as const;
+export const credentials = [{"name":"httpBearerAuth","required":true,"displayOptions":{"show":{"authentication":["bearerAuth"]}}},{"name":"httpHeaderAuth","required":true,"displayOptions":{"show":{"authentication":["headerAuth"]}}},{"name":"mcpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["mcpOAuth2Api"]}}},{"name":"oAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2Api"]}}},{"name":"httpMultipleHeadersAuth","required":true,"displayOptions":{"show":{"authentication":["multipleHeadersAuth"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -22,7 +22,7 @@ export interface McpClientNodeParameters {
      * The way to authenticate with your endpoint
      * Default: "none"
      */
-    readonly authentication?: "bearerAuth" | "headerAuth" | "mcpOAuth2Api" | "multipleHeadersAuth" | "none";
+    readonly authentication?: "bearerAuth" | "oAuth2Api" | "headerAuth" | "mcpOAuth2Api" | "multipleHeadersAuth" | "none";
 
     /**
      * The tool to use

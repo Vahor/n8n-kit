@@ -47,6 +47,6 @@ export interface MessageAnAgentV1NodeParameters {
     readonly outputSchema?: string;
 
     /** Default: {} */
-    readonly advanced?: { invokeMode?: "allItems" | "perItem", sessionId?: string, allowOtherNodesData?: boolean };
+    readonly advanced?: { enableStreaming?: boolean, invokeMode?: "allItems" | "perItem", sessionId?: string, session?: { session: { sessionIdType?: "fromInput" | "customKey", sessionKey?: string } }, allowOtherNodesData?: boolean };
 
 }

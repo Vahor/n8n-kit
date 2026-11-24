@@ -3,7 +3,7 @@
 
 export const description = "Interacts with Facebook using the Graph API" as const;
 export const type = "n8n-nodes-base.facebookGraphApi" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"facebookGraphApi","required":true,"displayOptions":{"show":{"authType":["accessToken"]}}},{"name":"facebookGraphApiOAuth2Api","required":true,"displayOptions":{"show":{"authType":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

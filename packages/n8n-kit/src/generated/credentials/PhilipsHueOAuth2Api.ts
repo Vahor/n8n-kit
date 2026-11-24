@@ -4,7 +4,7 @@
 export const name = "philipsHueOAuth2Api" as const;
 
 /**
- * displayName: PhilipHue OAuth2 API
+ * displayName: Philips Hue OAuth2 API
  * documentationUrl: philipshue
  */
 export interface PhilipsHueOAuth2ApiCredentials {

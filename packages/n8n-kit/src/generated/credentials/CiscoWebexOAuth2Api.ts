@@ -4,7 +4,7 @@
 export const name = "ciscoWebexOAuth2Api" as const;
 
 /**
- * displayName: Cisco Webex OAuth2 API
+ * displayName: Webex by Cisco OAuth2 API
  * documentationUrl: ciscowebex
  */
 export interface CiscoWebexOAuth2ApiCredentials {

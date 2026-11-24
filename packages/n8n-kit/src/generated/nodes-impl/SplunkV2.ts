@@ -20,7 +20,7 @@ export interface SplunkV2Props extends NodeProps {
  */
 export class SplunkV2<L extends string, C extends IContext = never, P extends SplunkV2Props = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.splunk" as const;
-    protected typeVersion = 2 as const;
+    protected typeVersion = 2.1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

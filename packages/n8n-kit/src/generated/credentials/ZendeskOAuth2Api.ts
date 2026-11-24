@@ -51,5 +51,11 @@ export interface ZendeskOAuth2ApiCredentials {
     /** Default: "body" */
     readonly "authentication"?: unknown;
 
+    readonly "marketplaceName"?: unknown;
+
+    readonly "marketplaceOrganizationId"?: unknown;
+
+    readonly "marketplaceAppId"?: unknown;
+
     readonly __name: "zendeskOAuth2Api";
 }

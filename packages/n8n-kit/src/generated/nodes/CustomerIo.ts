@@ -3,7 +3,7 @@
 
 export const description = "Consume Customer.io API" as const;
 export const type = "n8n-nodes-base.customerIo" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"customerIoApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

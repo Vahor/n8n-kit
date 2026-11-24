@@ -13,10 +13,10 @@ export interface GithubNodeParameters {
     readonly authentication?: "accessToken" | "oAuth2" | "githubAppApi";
 
     /** Default: "issue" */
-    readonly resource?: "file" | "issue" | "organization" | "pullRequest" | "release" | "repository" | "review" | "user" | "workflow";
+    readonly resource?: "file" | "issue" | "organization" | "pullRequest" | "release" | "repository" | "review" | "secret" | "user" | "workflow";
 
     /** Default: "getRepositories" */
-    readonly operation?: "getRepositories" | "getMembers" | "create" | "update" | "close" | "reopen" | "get" | "createComment" | "editComment" | "getDiff" | "getPatch" | "merge" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "getUserIssues" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
+    readonly operation?: "getRepositories" | "getMembers" | "create" | "update" | "close" | "reopen" | "get" | "createComment" | "editComment" | "getDiff" | "getPatch" | "merge" | "create" | "createComment" | "edit" | "get" | "lock" | "create" | "delete" | "edit" | "get" | "list" | "get" | "getIssues" | "getLicense" | "getProfile" | "getPullRequests" | "listPopularPaths" | "listReferrers" | "getRepositories" | "getUserIssues" | "invite" | "create" | "delete" | "get" | "getAll" | "update" | "create" | "get" | "getAll" | "update" | "createOrUpdate" | "disable" | "dispatch" | "dispatchAndWait" | "enable" | "get" | "getUsage" | "list";
 
     /** The branch you want to merge into (e.g. master) */
     readonly base?: string;
@@ -182,6 +182,15 @@ export interface GithubNodeParameters {
      * Default: "approve"
      */
     readonly event?: "approve" | "requestChanges" | "comment" | "pending";
+
+    /** The name of the secret. Must contain only alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must not start with GITHUB_ or a number. */
+    readonly secretName?: string;
+
+    /**
+     * The value of the secret. This will be encrypted before being stored.
+     * Type options: {"password":true}
+     */
+    readonly secretValue?: string;
 
     /** The GitHub organization that the user is being invited to */
     readonly organization?: string;

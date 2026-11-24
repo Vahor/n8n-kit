@@ -3,7 +3,7 @@
 
 export const description = "Consume Jenkins API" as const;
 export const type = "n8n-nodes-base.jenkins" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"jenkinsApi","required":true,"testedBy":"jenkinApiCredentialTest"}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

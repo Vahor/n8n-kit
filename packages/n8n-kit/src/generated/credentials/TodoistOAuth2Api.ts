@@ -8,6 +8,9 @@ export const name = "todoistOAuth2Api" as const;
  * documentationUrl: todoist
  */
 export interface TodoistOAuth2ApiCredentials {
+    /** Default: "https://todoist.com" */
+    readonly "serverUrl"?: unknown;
+
     /** Default: "authorizationCode" */
     readonly "grantType"?: unknown;
 

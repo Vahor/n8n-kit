@@ -3,7 +3,7 @@
 
 export const description = "Consume Mailchimp API" as const;
 export const type = "n8n-nodes-base.mailchimp" as const;
-export const version = 1 as const;
+export const version = 1.1 as const;
 export const credentials = [{"name":"mailchimpApi","required":true,"displayOptions":{"show":{"authentication":["apiKey"]}}},{"name":"mailchimpOAuth2Api","required":true,"displayOptions":{"show":{"authentication":["oAuth2"]}}}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;

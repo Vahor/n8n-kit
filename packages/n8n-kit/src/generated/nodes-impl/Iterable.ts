@@ -20,7 +20,7 @@ export interface IterableProps extends NodeProps {
  */
 export class Iterable<L extends string, C extends IContext = never, P extends IterableProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.iterable" as const;
-    protected typeVersion = 1 as const;
+    protected typeVersion = 1.1 as const;
 
     constructor(id: L, override props: P) {
         super(id, props);

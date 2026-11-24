@@ -24,6 +24,9 @@ export interface AirtopNodeParameters {
 	mode: "list" | "id",
 };
 
+    /** The Airtop browser profile ID the agent should use for this run. Leave empty to use the agent's default profile. */
+    readonly profileName?: string;
+
     /**
      * Whether to wait for the agent to complete its execution
      * Default: true
@@ -35,9 +38,6 @@ export interface AirtopNodeParameters {
      * Default: 600
      */
     readonly timeout?: number;
-
-    /** The name of the Airtop profile to load or create */
-    readonly profileName?: string;
 
     /** Whether to automatically save the <a href="https://docs.airtop.ai/guides/how-to/saving-a-profile" target="_blank">Airtop profile</a> for this session upon termination */
     readonly saveProfileOnTermination?: boolean;

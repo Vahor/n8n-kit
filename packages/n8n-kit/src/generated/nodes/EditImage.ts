@@ -3,7 +3,7 @@
 
 export const description = "Edits an image like blur, resize or adding border and text" as const;
 export const type = "n8n-nodes-base.editImage" as const;
-export const version = 1 as const;
+export const version = 2 as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
 
@@ -22,7 +22,7 @@ export interface EditImageNodeParameters {
      * Default: {}
      * Type options: {"multipleValues":true,"sortable":true}
      */
-    readonly operations?: { operations: Array<{ operation?: "blur" | "border" | "composite" | "create" | "crop" | "draw" | "rotate" | "resize" | "shear" | "text" | "transparent", backgroundColor?: string, width?: number, height?: number, primitive?: "circle" | "line" | "rectangle", color?: string, startPositionX?: number, startPositionY?: number, endPositionX?: number, endPositionY?: number, cornerRadius?: number, text?: string, fontSize?: number, fontColor?: string, positionX?: number, positionY?: number, lineLength?: number, blur?: number, sigma?: number, borderWidth?: number, borderHeight?: number, borderColor?: string, dataPropertyNameComposite?: string, operator?: "Add" | "Atop" | "Bumpmap" | "Copy" | "CopyBlack" | "CopyBlue" | "CopyCyan" | "CopyGreen" | "CopyMagenta" | "CopyOpacity" | "CopyRed" | "CopyYellow" | "Difference" | "Divide" | "In" | "Minus" | "Multiply" | "Out" | "Over" | "Plus" | "Subtract" | "Xor", resizeOption?: "ignoreAspectRatio" | "maximumArea" | "minimumArea" | "onlyIfLarger" | "onlyIfSmaller" | "percent", rotate?: number, degreesX?: number, degreesY?: number, font?: string }> };
+    readonly operations?: { operations: Array<{ operation?: "blur" | "border" | "composite" | "create" | "crop" | "draw" | "rotate" | "resize" | "shear" | "text" | "transparent", backgroundColor?: string, width?: number, height?: number, primitive?: "circle" | "line" | "rectangle", color?: string, startPositionX?: number, startPositionY?: number, endPositionX?: number, endPositionY?: number, cornerRadius?: number, text?: string, fontSize?: number, fontColor?: string, positionX?: number, positionY?: number, horizontalAlignment?: "west" | "center" | "east", verticalAlignment?: "north" | "middle" | "south", lineLength?: number, blur?: number, sigma?: number, blurRadius?: number, borderWidth?: number, borderHeight?: number, borderColor?: string, dataPropertyNameComposite?: string, operator?: "Add" | "Atop" | "Bumpmap" | "Copy" | "CopyBlack" | "CopyBlue" | "CopyCyan" | "CopyGreen" | "CopyMagenta" | "CopyOpacity" | "CopyRed" | "CopyYellow" | "Difference" | "Divide" | "In" | "Minus" | "Multiply" | "Out" | "Over" | "Plus" | "Subtract" | "Xor", resizeOption?: "ignoreAspectRatio" | "maximumArea" | "minimumArea" | "onlyIfLarger" | "onlyIfSmaller" | "percent", rotate?: number, degreesX?: number, degreesY?: number, font?: string }> };
 
     /**
      * The background color of the image to create
@@ -116,6 +116,18 @@ export interface EditImageNodeParameters {
     readonly positionY?: number;
 
     /**
+     * Horizontal alignment of the text
+     * Default: "center"
+     */
+    readonly horizontalAlignment?: "west" | "center" | "east";
+
+    /**
+     * Vertical alignment of the text
+     * Default: "middle"
+     */
+    readonly verticalAlignment?: "north" | "middle" | "south";
+
+    /**
      * Max amount of characters in a line before a line-break should get added
      * Default: 80
      * Type options: {"minValue":1}
@@ -135,6 +147,13 @@ export interface EditImageNodeParameters {
      * Type options: {"minValue":0,"maxValue":1000}
      */
     readonly sigma?: number;
+
+    /**
+     * Blur radius in pixels
+     * Default: 5
+     * Type options: {"minValue":0,"maxValue":1000}
+     */
+    readonly blurRadius?: number;
 
     /**
      * The width of the border

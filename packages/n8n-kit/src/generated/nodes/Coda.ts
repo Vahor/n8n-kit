@@ -3,7 +3,7 @@
 
 export const description = "Consume Coda API" as const;
 export const type = "n8n-nodes-base.coda" as const;
-export const version = 1.1 as const;
+export const version = 1.2 as const;
 export const credentials = [{"name":"codaApi","required":true}] as const;
 export const inputs = {"main":"main"} as const;
 export const outputs = {"main":"main"} as const;
@@ -30,7 +30,7 @@ export interface CodaNodeParameters {
     /** Default: {} */
     readonly options?: { disableParsing?: boolean, keyColumns?: string } | { rawData?: boolean, useColumnNames?: boolean, valueFormat?: "simple" | "simpleWithArrays" | "rich" } | { query?: string, rawData?: boolean, sortBy?: "createdAt" | "natural", useColumnNames?: boolean, valueFormat?: "simple" | "simpleWithArrays" | "rich", visibleOnly?: boolean } | { query?: string, useColumnNames?: boolean, valueFormat?: "simple" | "simpleWithArrays" | "rich", rawData?: boolean, sortBy?: "createdAt" | "natural" } | { disableParsing?: boolean };
 
-    /** ID or name of the row. Names are discouraged because they're easily prone to being changed by users. If you're using a name, be sure to URI-encode it. If there are multiple rows with the same value in the identifying column, an arbitrary one will be selected */
+    /** ID or name of the row. Names are discouraged because they're easily prone to being changed by users. If there are multiple rows with the same value in the identifying column, an arbitrary one will be selected */
     readonly rowId?: string;
 
     /** Whether to return all results or only up to a given limit */

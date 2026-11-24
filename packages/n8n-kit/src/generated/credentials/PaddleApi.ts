@@ -4,10 +4,12 @@
 export const name = "paddleApi" as const;
 
 /**
- * displayName: Paddle API
+ * displayName: Paddle Classic API
  * documentationUrl: paddle
  */
 export interface PaddleApiCredentials {
+    readonly "paddleBillingNotice"?: string;
+
     readonly "vendorAuthCode"?: string;
 
     readonly "vendorId"?: string;

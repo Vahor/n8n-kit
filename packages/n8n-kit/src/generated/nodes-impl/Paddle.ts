@@ -16,7 +16,7 @@ export interface PaddleProps extends NodeProps {
 }
 
 /**
- * Consume Paddle API
+ * Consume Paddle Classic API
  */
 export class Paddle<L extends string, C extends IContext = never, P extends PaddleProps = never> extends Node<L, [P] extends [never] ? C : NonNullable<P["outputSchema"]>["infer"]> {
     protected type = "n8n-nodes-base.paddle" as const;
